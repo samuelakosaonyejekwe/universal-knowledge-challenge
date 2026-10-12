@@ -1,5 +1,5 @@
 // The game's 3D scenes: the universe of 20 worlds, the journey mountain of a level, and the duel arena.
-import { THREE, createStage, orbit, sprite, stars, lights, character } from './kit3d.js';
+import { THREE, createStage, orbit, sprite, stars, lights, character, glow, planetTexture } from './kit3d.js';
 import { WORLDS } from '../data/worlds.js';
 import { t } from '../core/i18n.js';
 
@@ -11,39 +11,43 @@ export function mountUniverse(host, { progress, favourites = new Set(), onPick }
   const stage = createStage(host, { height: (w) => Math.round(Math.max(320, Math.min(560, w * 0.72))), background: 0x0b0f2a, alpha: false });
   stage.el.setAttribute('aria-label', t('The 20 worlds of knowledge'));
   const { scene } = stage;
-  lights(scene, { ambient: 0.9, sun: 1.3 });
-  scene.add(stars(1100, 170));
-  // the knowledge star at the centre
-  const sun = new THREE.Mesh(new THREE.SphereGeometry(3.2, 32, 24), new THREE.MeshBasicMaterial({ color: 0xffd76a }));
-  const halo = sprite('✨', { size: 13 }); halo.material.opacity = 0.5;
-  const glow = new THREE.PointLight(0xffe6a0, 600, 120); scene.add(sun, halo, glow);
+  lights(scene, { ambient: 0.85, sun: 1.1 });
+  scene.add(stars(1400, 190));
+  // far-away nebula clouds give the sky depth and colour
+  for (const [x, y, z, c, sz] of [[-90, 30, -110, 0x7a4cff, 150], [100, -20, -100, 0x1fb6ff, 140], [20, 60, -140, 0xff5fa2, 120], [-70, -40, 100, 0x2bd4a7, 130], [90, 40, 90, 0xffb347, 110]]) { const n = glow(c, sz, 0.22); n.position.set(x, y, z); scene.add(n); }
+  // the knowledge star at the centre: a warm, softly pulsing sun
+  const sun = new THREE.Mesh(new THREE.SphereGeometry(3.4, 40, 28), new THREE.MeshBasicMaterial({ map: planetTexture('#fff3b0', '#ffb347', 'sun') }));
+  const halo = glow(0xffd76a, 22, 0.9), corona = glow(0xff9d3c, 38, 0.35);
+  const light = new THREE.PointLight(0xffe6a0, 900, 140); scene.add(sun, halo, corona, light);
   const planets = [];
   WORLDS.forEach((w, i) => {
-    const ring = i < 8 ? 0 : 1, n = ring ? 12 : 8, k = ring ? i - 8 : i;
-    const radius = ring ? 25 : 14, a = (k / n) * Math.PI * 2 + (ring ? 0.26 : 0), y = Math.sin(i * 1.7) * (ring ? 2.6 : 1.6);
+    // an even spiral (golden angle), so no two worlds sit on top of each other
+    const radius = 12 + i * 1.32, a = i * 2.39996, y = Math.sin(i * 1.9) * 2.2;
+    const size = 1.9 + ((i * 7) % 5) * 0.16;
     const g = new THREE.Group(); g.position.set(Math.cos(a) * radius, y, Math.sin(a) * radius);
-    const ball = new THREE.Mesh(new THREE.SphereGeometry(2.1, 32, 24), new THREE.MeshStandardMaterial({ color: col(w.c1), emissive: col(w.c2), emissiveIntensity: 0.35, roughness: 0.55 }));
-    ball.userData.world = w.id; g.add(ball);
-    // surface bands so the spin is visible
-    const band = new THREE.Mesh(new THREE.TorusGeometry(2.12, 0.16, 8, 40), new THREE.MeshStandardMaterial({ color: col(w.c2), emissive: col(w.c2), emissiveIntensity: 0.5 })); band.rotation.x = Math.PI / 2 + 0.3; ball.add(band);
-    // progress ring: fills as the world is mastered
+    const ball = new THREE.Mesh(new THREE.SphereGeometry(size, 40, 28), new THREE.MeshStandardMaterial({ map: planetTexture(w.c1, w.c2, w.id), emissive: col(w.c1), emissiveIntensity: 0.18, roughness: 0.72 }));
+    ball.rotation.z = (i % 5 - 2) * 0.12; ball.userData.world = w.id; g.add(ball);
+    const air = glow(w.c2, size * 3.4, 0.5); g.add(air);                                     // glowing atmosphere
+    if (i % 3 === 1) { const ringMat = new THREE.MeshBasicMaterial({ color: col(w.c2).offsetHSL(0, 0, 0.18), transparent: true, opacity: 0.55, side: THREE.DoubleSide }); const rings = new THREE.Mesh(new THREE.RingGeometry(size * 1.35, size * 1.95, 64), ringMat); rings.rotation.x = Math.PI / 2 - 0.35; rings.rotation.y = 0.3; g.add(rings); }
+    if (i % 4 === 2) { const moon = new THREE.Mesh(new THREE.SphereGeometry(size * 0.22, 16, 12), new THREE.MeshStandardMaterial({ color: 0xdfe6ff, roughness: 0.9 })); moon.userData.moon = size * 1.7; g.add(moon); }
+    // progress: a bright arc that grows around the world as it is mastered
     const p = Math.max(0, Math.min(1, progress(w.id)));
-    const track = new THREE.Mesh(new THREE.TorusGeometry(3.0, 0.07, 6, 60), new THREE.MeshBasicMaterial({ color: 0x55608f, transparent: true, opacity: 0.6 })); track.rotation.x = Math.PI / 2; g.add(track);
-    if (p > 0) { const arc = new THREE.Mesh(new THREE.TorusGeometry(3.0, 0.16, 8, 60, Math.PI * 2 * p), new THREE.MeshBasicMaterial({ color: 0x3ddc97 })); arc.rotation.x = Math.PI / 2; g.add(arc); }
-    const icon = sprite(w.em, { size: 2.6 }); icon.position.y = 3.5; g.add(icon);
-    const name = sprite(`${String(w.id).padStart(2, '0')} · ${t(w.short)}${favourites.has(w.id) ? ' ♥' : ''}`, { size: 1.3, font: 64, bg: 'rgba(20,24,60,.78)' }); name.position.y = -3.4; g.add(name);
-    scene.add(g); planets.push({ g, ball, base: g.position.clone(), w, icon });
+    if (p > 0) { const arc = new THREE.Mesh(new THREE.TorusGeometry(size * 1.22, 0.13, 8, 60, Math.PI * 2 * p), new THREE.MeshBasicMaterial({ color: 0x4dffb5 })); arc.rotation.x = Math.PI / 2; g.add(arc); }
+    const icon = sprite(w.em, { size: 2.3 }); icon.position.y = size + 1.5; g.add(icon);
+    const name = sprite(`${t(w.short)}${favourites.has(w.id) ? ' ♥' : ''}`, { size: 1.45, font: 60, bg: 'rgba(14,18,48,.82)' }); name.position.y = -(size + 1.25); g.add(name);
+    scene.add(g); planets.push({ g, ball, base: g.position.clone(), w, icon, size });
   });
-  // orbit paths
-  for (const r of [14, 25]) { const path = new THREE.Mesh(new THREE.TorusGeometry(r, 0.03, 4, 120), new THREE.MeshBasicMaterial({ color: 0x8a93c8, transparent: true, opacity: 0.35 })); path.rotation.x = Math.PI / 2; scene.add(path); }
   let picked = false;
   const balls = planets.map((p) => p.ball);
-  const ctl = orbit(stage, { dist: 52, minDist: 16, maxDist: 86, pitch: 0.6, autoSpin: 0.06,
-    onTap: (e, pick) => { const hit = pick(e, balls); if (!hit || picked) return; picked = true; const p = planets.find((x) => x.ball === hit.object) || planets.find((x) => x.w.id === hit.object.parent?.userData?.world); ctl.flyTo(p.g.position, 9, () => onPick(p.w.id)); },
+  const ctl = orbit(stage, { dist: 58, minDist: 14, maxDist: 100, pitch: 0.8, autoSpin: 0.05,
+    onTap: (e, pick) => { const hit = pick(e, balls); if (!hit || picked) return; picked = true; const p = planets.find((x) => x.ball === hit.object) || planets.find((x) => x.w.id === hit.object.parent?.userData?.world); ctl.flyTo(p.g.position, 10, () => onPick(p.w.id)); },
     onHover: (e, pick) => { stage.el.style.cursor = pick(e, balls) ? 'pointer' : 'grab'; } });
   stage.onFrame((dt, time) => {
-    for (const [i, p] of planets.entries()) { p.ball.rotation.y += dt * (0.25 + (i % 5) * 0.05); p.g.position.y = p.base.y + Math.sin(time * 0.6 + i) * 0.35; p.icon.position.y = 3.5 + Math.sin(time * 1.4 + i) * 0.15; }
-    sun.rotation.y += dt * 0.1; halo.material.rotation += dt * 0.08;
+    for (const [i, p] of planets.entries()) {
+      p.ball.rotation.y += dt * (0.22 + (i % 5) * 0.05); p.g.position.y = p.base.y + Math.sin(time * 0.6 + i) * 0.35; p.icon.position.y = p.size + 1.5 + Math.sin(time * 1.4 + i) * 0.15;
+      for (const ch of p.g.children) if (ch.userData.moon) ch.position.set(Math.cos(time * 0.8 + i) * ch.userData.moon, 0.3, Math.sin(time * 0.8 + i) * ch.userData.moon);
+    }
+    sun.rotation.y += dt * 0.08; const pulse = 1 + Math.sin(time * 1.3) * 0.05; halo.scale.set(22 * pulse, 22 * pulse, 1); corona.scale.set(38 / pulse, 38 / pulse, 1);
     ctl.update(dt);
   });
   return {

@@ -35,7 +35,7 @@ export async function dashboardView(main, [tab = 'summary', arg]) {
   const p = profile;
   await loadNorms();
   main.append(h('div', { class: 'hero row nowrap' }, avatarEl(p.avatar, { band: p.band, role: 'student', size: 'lg', cast: p.cast, emblem: Object.values(p.worlds).some((w) => w.completed.length) }),
-    h('div', null, h('h1', null, p.name), h('div', { class: 'row' }, h('span', { class: 'pill' }, t(BANDS[p.band].account), ' ', t('account')), p.tampered ? h('span', { class: 'pill bad' }, t('Records were altered — competitions are off')) : null))));
+    h('div', null, h('h1', null, p.name), h('div', { class: 'row' }, h('button', { class: 'pill', onClick: () => go('look') }, '✏️ ', t('Change my character')), h('span', { class: 'pill' }, t(BANDS[p.band].account), ' ', t('account')), p.tampered ? h('span', { class: 'pill bad' }, t('Records were altered — competitions are off')) : null))));
   const tabs = [['summary', '📊', 'Summary'], ['detail', '🔍', 'Detail'], ['report', '🧭', 'My evaluation']];
   main.append(h('div', { class: 'tabs mt' }, tabs.map(([k, e, l]) => h('button', { 'aria-selected': String(k === tab), onClick: () => go('dashboard/' + k) }, e, ' ', t(l)))));
   const body = h('div'); main.append(body);

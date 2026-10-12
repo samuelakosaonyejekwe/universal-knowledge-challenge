@@ -185,3 +185,51 @@ export function character(cfg = {}, opts = {}) {
   g.userData = { head, armL, armR, emblem, body };
   return g;
 }
+
+// A soft round glow (for suns, atmospheres and nebulae).
+export function glow(color, size, opacity = 1) {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d'), grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  const col = new THREE.Color(color), rgb = `${Math.round(col.r * 255)},${Math.round(col.g * 255)},${Math.round(col.b * 255)}`;
+  grad.addColorStop(0, `rgba(${rgb},1)`); grad.addColorStop(0.25, `rgba(${rgb},.55)`); grad.addColorStop(0.6, `rgba(${rgb},.14)`); grad.addColorStop(1, `rgba(${rgb},0)`);
+  g.fillStyle = grad; g.fillRect(0, 0, 128, 128);
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, opacity, depthWrite: false, blending: THREE.AdditiveBlending }));
+  sp.scale.set(size, size, 1);
+  return sp;
+}
+
+// A painted planet surface: flowing bands, soft continents and bright swirls in the world's two colours.
+export function planetTexture(c1, c2, seed) {
+  const rng = rngFrom('planet' + seed), W = 512, H = 256;
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d');
+  const a = new THREE.Color(c1), b = new THREE.Color(c2);
+  const mix = (t, l = 0) => { const m = a.clone().lerp(b, t); m.offsetHSL(0, 0, l); return `rgb(${Math.round(m.r * 255)},${Math.round(m.g * 255)},${Math.round(m.b * 255)})`; };
+  const base = g.createLinearGradient(0, 0, 0, H); base.addColorStop(0, mix(0.1, 0.12)); base.addColorStop(0.5, mix(0.5)); base.addColorStop(1, mix(0.95, -0.1));
+  g.fillStyle = base; g.fillRect(0, 0, W, H);
+  const kind = Math.floor(rng() * 3); // banded, continents, swirled
+  g.globalAlpha = 0.5;
+  for (let i = 0; i < (kind === 0 ? 9 : 4); i++) {
+    const y = rng() * H, hgt = 8 + rng() * 26, amp = 4 + rng() * 10, ph = rng() * 6;
+    g.fillStyle = mix(rng(), (rng() - 0.5) * 0.3);
+    g.beginPath(); g.moveTo(0, y);
+    for (let x = 0; x <= W; x += 16) g.lineTo(x, y + Math.sin((x / W) * Math.PI * 4 + ph) * amp);
+    for (let x = W; x >= 0; x -= 16) g.lineTo(x, y + hgt + Math.sin((x / W) * Math.PI * 4 + ph + 1) * amp);
+    g.closePath(); g.fill();
+  }
+  g.globalAlpha = 0.55;
+  for (let i = 0; i < (kind === 1 ? 14 : 6); i++) {
+    const x = rng() * W, y = 30 + rng() * (H - 60), r = 14 + rng() * 34;
+    g.fillStyle = mix(rng() * 0.4, 0.2 + rng() * 0.15);
+    g.beginPath();
+    for (let k = 0; k < 9; k++) { const an = (k / 9) * Math.PI * 2, rr = r * (0.6 + rng() * 0.6); g.lineTo(x + Math.cos(an) * rr * 1.5, y + Math.sin(an) * rr * 0.8); }
+    g.closePath(); g.fill();
+    if (x < 60) { g.translate(W, 0); g.fill(); g.translate(-W, 0); }
+  }
+  g.globalAlpha = 0.35; g.strokeStyle = '#ffffff'; g.lineWidth = 3; g.lineCap = 'round';
+  for (let i = 0; i < (kind === 2 ? 12 : 6); i++) { const x = rng() * W, y = rng() * H, len = 30 + rng() * 70; g.beginPath(); g.moveTo(x, y); g.bezierCurveTo(x + len * 0.3, y - 8, x + len * 0.6, y + 8, x + len, y - 2); g.stroke(); }
+  g.globalAlpha = 1;
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.wrapS = THREE.RepeatWrapping; tex.anisotropy = 4;
+  return tex;
+}

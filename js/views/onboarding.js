@@ -153,7 +153,7 @@ export function join(main) {
     drawPrev();
     box.append(sectionTitle('🧑‍🎨', t('Create your character')), prev,
       h('div', { class: 'field mt' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
-      h('div', { class: 'field' }, h('span', null, t('Hair style')), h('div', { class: 'row' }, Array.from({ length: HAIR_STYLES }, (_, i) => h('button', { class: 'chip', 'aria-pressed': String(data.avatar.hair === i), onClick: () => { data.avatar.hair = i; draw(); } }, String(i + 1))))),
+      h('div', { class: 'field' }, h('span', null, t('Hair style')), h('div', { class: 'row' }, Array.from({ length: HAIR_STYLES }, (_, i) => h('button', { class: 'chip', style: { padding: '2px' }, 'aria-label': `${t('Hair style')} ${i + 1}`, 'aria-pressed': String(data.avatar.hair === i), onClick: () => { data.avatar.hair = i; draw(); } }, avatarEl({ ...data.avatar, hair: i }, { band: data.band, role: 'student', size: 'sm', cast: data.cast }))))),
       h('div', { class: 'field' }, h('span', null, t('Hair colour')), swatches('hairColor', HAIR_COLORS)),
       h('div', { class: 'field' }, h('span', null, t('Uniform colour')), swatches('outfit', OUTFITS)),
       h('div', { class: 'field' }, h('span', null, t('Style of your teachers and masters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(data.cast === i), onClick: () => { data.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
@@ -315,4 +315,28 @@ export function aboutYou(main) {
       h('div', { class: 'field' }, h('span', null, t('These would help me')), multi('needs', [['big', '🔠', 'Bigger text'], ['aloud', '🔊', 'Things read aloud'], ['time', '⏳', 'No time limits'], ['contrast', '🌗', 'Stronger contrast'], ['calm', '🍃', 'Less movement on screen'], ['spacing', '↔️', 'More space between letters']])),
       h('div', { class: 'row' }, h('button', { class: 'btn', onClick: () => done(false) }, t('Save and continue'), ' →'), h('button', { class: 'btn ghost', onClick: () => done(true) }, t('Skip for now'))),
       h('p', { class: 'tiny muted mt' }, t('The game never asks about race, ethnicity, religion or family income, and never guesses them. Neither background nor identity decides anyone\'s ability to learn.'))));
+}
+
+// ---------- change my character (any time after sign-up) ----------
+export function editLook(main) {
+  const p = profile;
+  const draft = { avatar: { ...p.avatar }, cast: p.cast || 0 };
+  for (const k of ['skin', 'hair', 'hairColor', 'outfit']) if (draft.avatar[k] == null) draft.avatar[k] = 0;
+  const box = h('div', { class: 'card', style: { maxWidth: '640px', margin: '0 auto' } });
+  main.append(h('div', { class: 'hero mb' }, h('h1', null, '🧑‍🎨 ', t('Change my character')), h('p', { class: 'muted' }, t('Try as many looks as you like. Nothing changes until you press Save.'))), box);
+  const draw = () => {
+    const swatches = (key, cols) => h('div', { class: 'row' }, cols.map((c, i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(draft.avatar[key] === i), style: { background: c, width: '40px', height: '40px', padding: 0 }, onClick: () => { draft.avatar[key] = i; draw(); } })));
+    clear(box).append(
+      h('div', { class: 'row center' }, avatarEl(draft.avatar, { band: p.band, role: 'student', size: 'xl', cast: draft.cast, emblem: Object.values(p.worlds).some((w) => w.completed.length) }), h('div', { class: 'col' }, avatarEl({ seed: p.id + 't' }, { band: p.band, role: 'teacher', cast: draft.cast }), avatarEl({ seed: p.id + 'm' }, { band: p.band, role: 'master', cast: draft.cast }))),
+      h('div', { class: 'field mt' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
+      h('div', { class: 'field' }, h('span', null, t('Hair style')), h('div', { class: 'row' }, Array.from({ length: HAIR_STYLES }, (_, i) => h('button', { class: 'chip', style: { padding: '2px' }, 'aria-label': `${t('Hair style')} ${i + 1}`, 'aria-pressed': String(draft.avatar.hair === i), onClick: () => { draft.avatar.hair = i; draw(); } }, avatarEl({ ...draft.avatar, hair: i }, { band: p.band, role: 'student', size: 'sm', cast: draft.cast }))))),
+      h('div', { class: 'field' }, h('span', null, t('Hair colour')), swatches('hairColor', HAIR_COLORS)),
+      h('div', { class: 'field' }, h('span', null, t('Uniform colour')), swatches('outfit', OUTFITS)),
+      h('div', { class: 'field' }, h('span', null, t('Style of your teachers and masters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(draft.cast === i), onClick: () => { draft.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
+      h('div', { class: 'row' },
+        h('button', { class: 'btn ghost', onClick: () => { draft.avatar = randomAvatar(); draw(); } }, '🎲 ', t('Surprise me')),
+        h('button', { class: 'btn', onClick: () => { p.avatar = { ...draft.avatar }; p.cast = draft.cast; save(true); syncMeta(); sfx('ok'); toast('✨ ' + t('Your new look is saved.')); go('dashboard'); } }, '💾 ', t('Save')),
+        h('button', { class: 'btn ghost', onClick: () => history.length > 1 ? go('dashboard') : go('home') }, t('Cancel'))));
+  };
+  draw();
 }

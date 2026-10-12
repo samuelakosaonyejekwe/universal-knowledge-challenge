@@ -34,11 +34,10 @@ export function speak(text, code = lang, { rate } = {}) {
     u.volume = 1;
     const done = (ok) => { clearInterval(keepAlive); resolve(ok); };
     u.onend = () => done(true); u.onerror = () => done(false);
-    // Some browsers drop an utterance spoken in the same instant as a cancel, and some stop long ones part-way;
-    // a short delay and a periodic nudge keep the teacher talking.
+    // Some browsers drop an utterance spoken in the same instant as a cancel; a short delay avoids that.
     setTimeout(() => {
       synth.speak(u);
-      keepAlive = setInterval(() => { if (!synth.speaking) clearInterval(keepAlive); else if (!/android/i.test(navigator.userAgent)) { synth.pause(); synth.resume(); } }, 9000);
+
     }, 70);
   });
 }

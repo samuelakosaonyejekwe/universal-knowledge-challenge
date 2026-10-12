@@ -111,6 +111,7 @@ export function settingsView(main) {
       h('button', { class: 'btn ghost', onClick: () => kvClear('').then(() => toast(t('Saved live content and translations cleared.'))) }, '🧹 ', t('Clear saved live content')),
       h('button', { class: 'btn ghost', onClick: () => guardianGate(normsExport) }, '📊 ', t('Share anonymous puzzle results')),
       h('button', { class: 'btn ghost', onClick: () => go('class') }, '🏫 ', t('Classroom')),
+      h('button', { class: 'btn ghost', onClick: () => go('look') }, '🧑‍🎨 ', t('Change my character')),
       h('button', { class: 'btn ghost', onClick: () => go('rules') }, '📜 ', t('Game rules')), h('button', { class: 'btn ghost', onClick: () => go('about') }, '🧩 ', t('About you')),
       h('button', { class: 'btn ghost', onClick: () => { signOut(); go('welcome'); } }, '🚪 ', t('Sign out')),
       h('button', { class: 'btn bad', onClick: () => guardianGate(() => confirmBox(t('Delete this player?'), t('All progress for {name} on this device will be erased. This cannot be undone.', { name: p.name }), t('Delete'), () => { deleteProfile(p.id); go('welcome'); })) }, '🗑️ ', t('Delete my player')))));

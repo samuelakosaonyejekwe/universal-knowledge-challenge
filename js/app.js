@@ -16,6 +16,7 @@ const routes = {
   learntest: () => import('./views/onboarding.js').then((m) => m.learnTest),
   about: () => import('./views/onboarding.js').then((m) => m.aboutYou),
   rules: () => import('./views/onboarding.js').then((m) => m.rules),
+  look: () => import('./views/onboarding.js').then((m) => m.editLook),
   home: () => import('./views/home.js').then((m) => m.home),
   world: () => import('./views/world.js').then((m) => m.worldView),
   stage: () => import('./views/stage.js').then((m) => m.stageView),
