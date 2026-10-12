@@ -245,3 +245,35 @@ ol.worked { padding-inline-start: 1.3rem; margin: .4rem 0; } ol.worked li { marg
 .lab canvas { max-width: 100%; }
 .board { grid-template-rows: repeat(8, 1fr); }
 .board .sq { aspect-ratio: 1; min-width: 0; min-height: 0; overflow: hidden; }
+
+/* ---------- dark mode ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1226; --bg2: #151a36; --card: #1d2244; --ink: #eef1ff; --muted: #aab3d8; --line: #363e70;
+  --soft: #2a3162; --ok-soft: #153f31; --bad-soft: #4a212c; --shadow: 0 6px 22px rgba(0, 0, 0, .35); --shadow-lg: 0 14px 40px rgba(0, 0, 0, .5);
+}
+:root[data-theme="dark"] a { color: #aab4ff; }
+:root[data-theme="dark"] .btn.ghost, :root[data-theme="dark"] .chip, :root[data-theme="dark"] .tabs button { color: #c9d0ff; }
+:root[data-theme="dark"] .chip[aria-pressed="true"], :root[data-theme="dark"] .chip.on, :root[data-theme="dark"] .bubble .who, :root[data-theme="dark"] .term b, :root[data-theme="dark"] .lab-ctl output, :root[data-theme="dark"] #nav a[aria-current="page"] { color: #c2c9ff; }
+:root[data-theme="dark"] .tabs button[aria-selected="true"] { color: #fff; }
+:root[data-theme="dark"] .pill.gold { background: #4a3b0c; color: #ffe08a; }
+:root[data-theme="dark"] .pill.ok { color: #86e5bf; } :root[data-theme="dark"] .pill.bad { color: #ffa3b4; }
+:root[data-theme="dark"] .note.warn { background: #3d3112; }
+:root[data-theme="dark"] .offline-bar { background: #4a3b0c; color: #ffe08a; }
+:root[data-theme="dark"] .ava { box-shadow: 0 0 0 3px #2a3162, var(--shadow); }
+:root[data-theme="dark"] .ava.emblem { box-shadow: 0 0 0 3px var(--gold), 0 0 18px 4px rgba(245, 183, 0, .65); }
+:root[data-theme="dark"] .hero .pill { background: rgba(255, 255, 255, .92); color: #1c2340; }
+:root[data-theme="dark"] .hero .pill.gold { background: #fff4cc; color: #7a5a00; }
+:root[data-theme="dark"] .arena .q-card { color: var(--ink); }
+:root[data-theme="dark"] .radar text { fill: #aab3d8; }
+:root[data-theme="dark"] .radar polygon[fill="none"], :root[data-theme="dark"] .radar line { stroke: #363e70; }
+/* Labs and puzzle figures are drawn for a light surface, so they keep a sheet of "paper" in dark mode. */
+:root[data-theme="dark"] .lab {
+  --card: #ffffff; --ink: #1c2340; --muted: #5b6585; --line: #dbe2f4; --soft: #eef0ff; --ok-soft: #e2f7ee; --bad-soft: #fdecef;
+  background: #f7f9ff; color: #1c2340; border-radius: var(--r-sm); padding: .8rem; color-scheme: light;
+}
+:root[data-theme="dark"] .lab .btn.ghost, :root[data-theme="dark"] .lab .chip { color: var(--pri); }
+:root[data-theme="dark"] .lab .lab { padding: 0; background: none; }
+.toast { background: #1c2340; }
+:root[data-theme="dark"] .toast { background: #000; border: 1px solid #363e70; }
+@media (max-width: 480px) { #top { gap: .35rem; padding: 0 .5rem; } #top .brand .logo { display: none; } #top .navbtn { width: 36px; height: 36px; } }

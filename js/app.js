@@ -46,6 +46,8 @@ function drawTop() {
   const brand = h('button', { class: 'brand', onClick: () => { location.hash = profile ? '#/home' : '#/welcome'; } },
     h('img', { class: 'logo', src: 'icons/icon.svg', alt: '' }), h('span', null, w ? `${w.em} ${t(w.short)}` : t('Universal Knowledge Challenge')));
   top.append(back, fwd, brand);
+  const dark = themeNow() === 'dark';
+  top.append(h('button', { class: 'pill', title: dark ? t('Light mode') : t('Dark mode'), 'aria-label': dark ? t('Light mode') : t('Dark mode'), onClick: () => setTheme(dark ? 'light' : 'dark') }, dark ? '☀️' : '🌙'));
   if (profile) {
     if (w && profile.worlds[currentWorld]) top.append(h('span', { class: 'pill gold', title: t(w.credit) }, w.creditEm, ' ', String(profile.worlds[currentWorld].credits)));
     const music = h('button', { class: 'pill', title: t('Music'), 'aria-label': t('Music'), 'aria-pressed': String(profile.settings.music), onClick: () => { profile.settings.music = !profile.settings.music; if (profile.settings.music && currentWorld) startMusic(worldId(currentWorld)); else stopMusic(); drawTop(); } }, profile.settings.music ? '🎵' : '🔇');
@@ -103,8 +105,15 @@ addEventListener('hashchange', route);
 onChange(() => { if (top.isConnected) drawTop(); });
 
 // ---------- accessibility preferences ----------
+const darkQuery = matchMedia('(prefers-color-scheme: dark)');
+export const themeNow = () => ((device.theme || 'auto') === 'auto' ? (darkQuery.matches ? 'dark' : 'light') : device.theme);
+export function setTheme(mode) { device.theme = mode; saveDevice(); applySettings(); if (top.isConnected) drawTop(); }
+darkQuery.addEventListener?.('change', () => { applySettings(); if (top.isConnected) drawTop(); });
 export function applySettings() {
   const r = document.documentElement, s = profile?.settings;
+  r.dataset.theme = themeNow();
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeNow() === 'dark' ? '#151a36' : '#4f5bd5');
+  document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', themeNow());
   r.dataset.size = s?.size || 'm'; r.dataset.contrast = s?.contrast || 'normal'; r.dataset.spacing = s?.spacing || 'normal'; r.dataset.motion = s?.motion || 'on';
 }
 

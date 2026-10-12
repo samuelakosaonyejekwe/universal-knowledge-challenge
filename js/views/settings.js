@@ -8,7 +8,7 @@ import { kvClear } from '../core/idb.js';
 import { TARGET_LANGS } from '../data/worlds.js';
 import LABS from '../labs/index.js';
 import { go, sectionTitle, guardianGate, confirmBox } from './ui.js';
-import { changeLanguage, applySettings, installApp, isInstalled, rerender } from '../app.js';
+import { changeLanguage, applySettings, installApp, isInstalled, rerender, setTheme } from '../app.js';
 
 function toggle(label, key, { guard = false, hint = '', onChange } = {}) {
   const s = profile.settings;
@@ -50,7 +50,11 @@ export function settingsView(main) {
   main.append(h('div', { class: 'card mt' }, sectionTitle('🌐', t('Language')), h('div', { class: 'row' }, LANGS.map((l) => h('button', { class: 'chip', lang: l.code, 'aria-pressed': String(l.code === lang), onClick: () => changeLanguage(l.code).then(() => save(true)) }, l.flag, ' ', l.name))),
     lang !== 'en' ? h('p', { class: 'tiny muted mt' }, t('Menus are fully translated. Lessons are translated on your device when your browser can, otherwise through an online service, and saved for offline use. Where neither is available, lesson text appears in English.'), ' ', t('Lesson translation right now') + ': ', t({ device: 'on this device', online: 'online service', none: 'not yet used' }[trStatus.mode])) : null));
 
+  const themeRow = h('div', { class: 'row' });
+  const drawTheme = () => clear(themeRow).append(...[['auto', '🖥️', 'Automatic'], ['light', '☀️', 'Light'], ['dark', '🌙', 'Dark']].map(([v, e, l]) => h('button', { class: 'chip', 'aria-pressed': String((device.theme || 'auto') === v), onClick: () => { setTheme(v); drawTheme(); } }, e, ' ', t(l))));
+  drawTheme();
   main.append(h('div', { class: 'card mt' }, sectionTitle('♿', t('Reading and comfort')),
+    h('div', { class: 'field' }, h('span', null, t('Theme')), themeRow, h('span', { class: 'tiny muted' }, t('Automatic follows your device. You can also switch with the sun and moon button at the top.'))),
     choice('Text size', 'size', [['m', 'Normal'], ['l', 'Large'], ['xl', 'Extra large']]), choice('Contrast', 'contrast', [['normal', 'Normal'], ['high', 'High contrast']]),
     choice('Letter spacing', 'spacing', [['normal', 'Normal'], ['wide', 'Wider (easier for some readers)']]), choice('Movement on screen', 'motion', [['on', 'On'], ['off', 'Reduced']]),
     toggle('Untimed mode', 'untimed', { hint: 'No clocks in duels. Leaderboards keep timed and untimed results apart, so this never counts against you.' }),
