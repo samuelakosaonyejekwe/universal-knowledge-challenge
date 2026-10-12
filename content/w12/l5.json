@@ -1,0 +1,2886 @@
+{
+ "world": 12,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Consumer and producer theory",
+   "icon": "🧠",
+   "hook": "When your income rises 10% and you buy 15% more restaurant meals but 5% fewer bus tickets, what does that reveal about how you rank goods?",
+   "explain": [
+    "Consumer theory models a person who maximises utility subject to a budget constraint. At the optimum the marginal rate of substitution (MRS, how much of one good the person would give up for another) equals the price ratio: MRS = Px ÷ Py. Equivalently, marginal utility per unit of money is equal across goods: MUx ÷ Px = MUy ÷ Py.",
+    "A price change has two effects. The substitution effect makes the relatively cheaper good more attractive. The income effect changes purchasing power. For normal goods both push quantity in the same direction. For inferior goods the income effect works the other way. Income elasticity of demand = % change in quantity ÷ % change in income: above 1 is a luxury, between 0 and 1 a necessity, below 0 an inferior good.",
+    "Producer theory mirrors this. A cost-minimising firm uses inputs so that marginal product per unit of money is equal: MPL ÷ w = MPK ÷ r. Isoquants show combinations of labour and capital giving the same output. These models are idealisations that assume stable preferences and good information."
+   ],
+   "example": {
+    "q": "A consumer has utility U = x·y, income 120, Px = 2 and Py = 4. Find the optimal bundle.",
+    "steps": [
+     "For U = xy, MRS = y ÷ x; set equal to Px ÷ Py = 0.5, so y = 0.5x.",
+     "Budget: 2x + 4y = 120. Substitute y = 0.5x: 2x + 2x = 120, so x = 30.",
+     "y = 0.5 × 30 = 15. Check cost: 60 + 60 = 120."
+    ],
+    "a": "x = 30 and y = 15"
+   },
+   "analogies": {
+    "home": "A household balancing food and transport weighs the extra benefit of each coin spent.",
+    "farm": "A farmer shifts to more labour if machines become dearer.",
+    "music": "A band weighs extra rehearsal time against extra gigs.",
+    "tech": "A phone shopper trades camera quality for battery life at a given price."
+   },
+   "mnemonic": "Equalise bang per buck: MU/P the same everywhere; MP/price the same for inputs.",
+   "terms": [
+    [
+     "Marginal rate of substitution",
+     "The rate at which a consumer will swap one good for another keeping utility constant."
+    ],
+    [
+     "Income effect",
+     "Change in quantity due to change in purchasing power."
+    ],
+    [
+     "Substitution effect",
+     "Change in quantity due to a change in relative prices."
+    ],
+    [
+     "Income elasticity",
+     "% change in quantity demanded ÷ % change in income."
+    ]
+   ],
+   "misc": {
+    "wrong": "Consumers literally calculate utility before shopping.",
+    "right": "The model is 'as if': it predicts behaviour without claiming people compute, and its limits are tested by behavioural evidence."
+   },
+   "limits": "Preferences are assumed stable and consistent. Behavioural economics shows systematic departures, and the aggregation from individuals to markets adds further assumptions.",
+   "trip": {
+    "wiki": "Consumer choice",
+    "prompt": "Find the indifference curve and budget line diagram and the tangency condition."
+   },
+   "sources": [
+    "Consumer choice",
+    "Marginal rate of substitution",
+    "Income elasticity of demand"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "At a utility-maximising bundle with two goods, which condition holds?",
+     "o": [
+      "MRS equals the price ratio",
+      "Total spending equals zero",
+      "Marginal utility is zero for both goods",
+      "Prices are equal"
+     ],
+     "a": 0,
+     "why": "The indifference curve is tangent to the budget line.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "U = x·y, income 120, Px = 2, Py = 4. What is the optimal x?",
+     "a": 30,
+     "tol": 0,
+     "why": "Half of income is spent on each good for U = xy: 60 ÷ 2 = 30.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With the same U = x·y, income 120, Py = 4, what is the optimal y?",
+     "a": 15,
+     "tol": 0,
+     "why": "60 ÷ 4 = 15.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Income rises 10% and quantity demanded of a good rises 15%. What is the income elasticity?",
+     "a": 1.5,
+     "tol": 0.01,
+     "why": "15 ÷ 10 = 1.5, so the good is a luxury (greater than 1).",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Income elasticity of −0.4 indicates...",
+     "o": [
+      "an inferior good",
+      "a luxury good",
+      "a necessity",
+      "a Giffen good by definition"
+     ],
+     "a": 0,
+     "why": "Negative income elasticity means demand falls as income rises.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A good's price falls and the consumer buys more partly because her real income rose. This is the...",
+     "o": [
+      "income effect",
+      "substitution effect",
+      "externality",
+      "wealth tax"
+     ],
+     "a": 0,
+     "why": "Lower price raises purchasing power.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A firm finds MPL/w = 4 and MPK/r = 2. To minimise cost for a given output it should...",
+     "o": [
+      "use more labour and less capital",
+      "use more capital and less labour",
+      "change nothing",
+      "shut down"
+     ],
+     "a": 0,
+     "why": "Labour yields more output per unit of money, so shift towards it until ratios equalise (with diminishing returns).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its meaning.",
+     "pairs": [
+      [
+       "Substitution effect",
+       "Shift towards the relatively cheaper good"
+      ],
+      [
+       "Income effect",
+       "Change due to purchasing power"
+      ],
+      [
+       "Isoquant",
+       "Input combinations giving equal output"
+      ],
+      [
+       "Indifference curve",
+       "Bundles giving equal utility"
+      ]
+     ],
+     "why": "The two toolkits mirror each other.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why does the 'as if' defence of utility maximisation not prove the model is correct?",
+     "rubric": [
+      [
+       "predict",
+       "test",
+       "evidence",
+       "empirical",
+       "works"
+      ],
+      [
+       "behaviour",
+       "anomal",
+       "bias",
+       "systematic",
+       "deviat",
+       "real people"
+      ],
+      [
+       "assum",
+       "stable",
+       "consistent",
+       "preferences"
+      ]
+     ],
+     "min": 2,
+     "model": "A model can predict well without people computing utility, but it must be tested against evidence. Behavioural findings show systematic departures, such as inconsistent preferences, so its assumptions hold only in some settings.",
+     "why": "Predictive success is an empirical question.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If both goods' prices double and income doubles, the optimal bundle...",
+     "o": [
+      "is unchanged",
+      "doubles",
+      "halves",
+      "becomes zero"
+     ],
+     "a": 0,
+     "why": "The budget line is unchanged, so the optimum is the same (demand is homogeneous of degree zero).",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A Giffen good would show a rising demand curve. Why are Giffen goods considered rare?",
+     "o": [
+      "The income effect would have to outweigh the substitution effect for a strongly inferior staple",
+      "Their demand rises only when the good is cheap, so buyers react in the usual way",
+      "They have no price, so they cannot be studied",
+      "Substitution effects are always zero for every staple good"
+     ],
+     "a": 0,
+     "why": "It requires a very large budget share and strong inferiority.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the substitution effect always push quantity demanded the opposite way to price, while the income effect can go either way?",
+     "rubric": [
+      [
+       "substitution",
+       "relative price",
+       "cheaper",
+       "switch"
+      ],
+      [
+       "income",
+       "purchasing power",
+       "real income",
+       "normal",
+       "inferior"
+      ],
+      [
+       "direction",
+       "either",
+       "depends",
+       "sign"
+      ]
+     ],
+     "min": 2,
+     "model": "When a good gets cheaper relative to others, consumers shift towards it, whatever their income. The income effect depends on whether the good is normal or inferior, so it can reinforce or offset the substitution effect.",
+     "why": "The sign of the income effect depends on the good type.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might welfare comparisons using consumer surplus be contested?",
+     "o": [
+      "They depend on willingness to pay, which depends on income",
+      "Surplus is not defined for any good, so it cannot be used",
+      "Prices are random, so no comparison can be made",
+      "Utility is directly observable, so no dispute can arise"
+     ],
+     "a": 0,
+     "why": "Dollars from rich and poor are weighted equally in simple surplus measures.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Utility maximisation",
+    "model": "A consumer picks the bundle that gives the most utility within her budget. At the best bundle the rate at which she is willing to swap one good for another equals the ratio of their prices. When prices change there is a substitution effect and an income effect. For example, with U = xy, income 120, prices 2 and 4, she buys 30 of x and 15 of y.",
+    "points": [
+     {
+      "k": [
+       "utility",
+       "maximis",
+       "best",
+       "budget"
+      ],
+      "ask": "What is the consumer trying to do?"
+     },
+     {
+      "k": [
+       "mrs",
+       "price ratio",
+       "tangent",
+       "rate of substitution"
+      ],
+      "ask": "What condition holds at the optimum?"
+     },
+     {
+      "k": [
+       "substitution",
+       "income effect",
+       "price change"
+      ],
+      "ask": "What happens when a price changes?"
+     },
+     {
+      "k": [
+       "example",
+       "30",
+       "15",
+       "120",
+       "like"
+      ],
+      "ask": "Can you give a numerical example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Firm behaviour and industrial organisation",
+   "icon": "🏢",
+   "hook": "A single seller faces the whole market's demand. How much will it produce, and who loses compared with competition?",
+   "explain": [
+    "A profit-maximising firm chooses output where marginal revenue equals marginal cost. A price-taking firm in perfect competition has MR = P, so it produces where P = MC. A monopolist faces a downward-sloping demand, so MR is below price: for linear demand P = a − bQ, MR = a − 2bQ. It restricts output and sets a price above MC.",
+    "The Lerner index, (P − MC) ÷ P, measures market power. The Herfindahl-Hirschman Index (HHI) sums the squared market shares (in percentage points) and is used to gauge concentration. In oligopoly, firms' decisions are interdependent; they may compete on quantity (Cournot) or on price (Bertrand), and outcomes lie between monopoly and competition.",
+    "Market power is not the same as harm. Dominant firms may be more efficient, innovate or serve markets with large fixed costs. Competition policy weighs possible price increases against efficiency gains and dynamic effects, and economists disagree about how strictly to enforce it."
+   ],
+   "example": {
+    "q": "Demand is P = 100 − Q and MC = 20 (no fixed cost). Find monopoly output and price, and deadweight loss compared with competition.",
+    "steps": [
+     "MR = 100 − 2Q. Set MR = MC: 100 − 2Q = 20, Q = 40, P = 60.",
+     "Competitive outcome: P = MC = 20, Q = 80.",
+     "Deadweight loss = ½ × (80 − 40) × (60 − 20) = ½ × 40 × 40 = 800."
+    ],
+    "a": "Q = 40, P = 60, deadweight loss = 800"
+   },
+   "analogies": {
+    "city": "A single train line can set fares higher than if many operators competed.",
+    "farm": "The only mill in a district can pay farmers less for grain.",
+    "tech": "A dominant platform can set high commissions on sellers.",
+    "sport": "A league with one broadcaster can charge fans more for coverage."
+   },
+   "mnemonic": "MR = MC to choose quantity; read the price off the demand curve.",
+   "terms": [
+    [
+     "Marginal revenue",
+     "Extra revenue from one more unit sold."
+    ],
+    [
+     "Lerner index",
+     "(Price − marginal cost) ÷ price."
+    ],
+    [
+     "HHI",
+     "Sum of squared market shares."
+    ],
+    [
+     "Cournot competition",
+     "Firms choose quantities simultaneously."
+    ]
+   ],
+   "misc": {
+    "wrong": "A monopolist can charge any price it wants.",
+    "right": "It can pick a point on the demand curve; a higher price cuts sales, so it chooses where MR = MC."
+   },
+   "limits": "Textbook models assume known demand and costs. In practice potential entry, regulation and innovation affect behaviour, and HHI depends on how the market is defined.",
+   "trip": {
+    "wiki": "Monopoly",
+    "prompt": "Find the monopoly diagram with MR, MC and deadweight loss."
+   },
+   "sources": [
+    "Monopoly",
+    "Herfindahl–Hirschman index",
+    "Cournot competition"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Demand P = 100 − Q. What is marginal revenue at Q = 30?",
+     "a": 40,
+     "tol": 0,
+     "why": "MR = 100 − 2Q = 40.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Demand P = 100 − Q, MC = 20. What is the profit-maximising monopoly quantity?",
+     "a": 40,
+     "tol": 0,
+     "why": "100 − 2Q = 20 gives Q = 40.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "With Q = 40, P = 60 and MC = 20 (no fixed cost), what is monopoly profit?",
+     "o": [
+      "1,600",
+      "2,400",
+      "800",
+      "1,200"
+     ],
+     "a": 0,
+     "why": "(60 − 20) × 40 = 1,600.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Four firms have market shares of 40%, 30%, 20% and 10%. What is the HHI?",
+     "a": 3000,
+     "tol": 0,
+     "why": "1,600 + 900 + 400 + 100 = 3,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A firm sells at P = 60 with MC = 20. What is its Lerner index (P − MC) ÷ P?",
+     "o": [
+      "About 0.67",
+      "About 0.33",
+      "About 2",
+      "About 3"
+     ],
+     "a": 0,
+     "why": "(60 − 20) ÷ 60 = 0.667.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a monopolist's marginal revenue below its price?",
+     "o": [
+      "To sell one more unit it must lower the price on all units",
+      "It has no costs, so each extra unit adds only revenue",
+      "Demand for its product is vertical at every price",
+      "Price always equals marginal cost for a monopolist"
+     ],
+     "a": 0,
+     "why": "The price cut applies to earlier units too.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In perfect competition, the firm produces where...",
+     "o": [
+      "price equals marginal cost",
+      "price equals zero, so every unit is given away",
+      "marginal revenue is zero, whatever the price is",
+      "average cost is zero, so the firm has no costs"
+     ],
+     "a": 0,
+     "why": "Price-taking gives MR = P.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each tool or model to its use.",
+     "pairs": [
+      [
+       "Lerner index",
+       "Measures markup over marginal cost"
+      ],
+      [
+       "HHI",
+       "Measures market concentration"
+      ],
+      [
+       "Cournot",
+       "Quantity competition"
+      ],
+      [
+       "Bertrand",
+       "Price competition"
+      ]
+     ],
+     "why": "Key IO tools.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A regulator is deciding whether to block a merger that raises HHI sharply. Give one argument for and one against blocking.",
+     "rubric": [
+      [
+       "price",
+       "market power",
+       "raise prices",
+       "competition",
+       "consumers",
+       "harm"
+      ],
+      [
+       "efficien",
+       "cost saving",
+       "scale",
+       "innovat",
+       "synerg",
+       "entry"
+      ]
+     ],
+     "min": 2,
+     "model": "For: higher concentration can allow higher prices and less choice. Against: the merger could create cost savings or innovation that benefits buyers, and new entrants might discipline prices. The effect depends on evidence.",
+     "why": "Merger policy weighs competing effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A market has a very high HHI. What can be concluded?",
+     "o": [
+      "It signals potential market power, but harm depends on efficiency, entry and behaviour",
+      "Consumers are certainly harmed, since the market is concentrated",
+      "Prices are certainly high, since few firms are present",
+      "Firms are certainly colluding, since the index is so high"
+     ],
+     "a": 0,
+     "why": "Concentration is a signal, not proof.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A firm with high fixed costs and a natural monopoly is regulated with price = marginal cost. What problem does this create?",
+     "o": [
+      "It may make a loss, so subsidy or two-part pricing may be needed",
+      "It earns an infinite profit, which regulators must reduce",
+      "It raises price above marginal cost, which hurts buyers",
+      "It has no costs, so the rule cannot be applied"
+     ],
+     "a": 0,
+     "why": "With decreasing average cost, MC is below AC.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might the threat of entry limit a dominant firm's prices even without regulation?",
+     "rubric": [
+      [
+       "entry",
+       "entrant",
+       "new firms",
+       "rivals",
+       "contest"
+      ],
+      [
+       "profit",
+       "attract",
+       "high price",
+       "price"
+      ],
+      [
+       "limit",
+       "keep low",
+       "deter",
+       "discipline",
+       "barrier"
+      ]
+     ],
+     "min": 2,
+     "model": "If high prices and profits would attract new entrants, the incumbent may hold prices down to deter them, so a contestable market can behave competitively even with few firms.",
+     "why": "Contestability restrains market power.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In a Cournot duopoly the equilibrium output is usually...",
+     "o": [
+      "between monopoly and perfectly competitive levels",
+      "equal to the monopoly level, as firms behave as a single seller",
+      "equal to the competitive level, as price falls to marginal cost",
+      "zero, since the firms cancel each other's output"
+     ],
+     "a": 0,
+     "why": "Firms internalise only part of their effect on price.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Monopoly and market power",
+    "model": "A monopolist sets output where marginal revenue equals marginal cost. Because it must cut the price to sell more, marginal revenue is below price, so it produces less and charges more than a competitive market. The lost gains are the deadweight loss. For example, with P = 100 − Q and MC = 20 it picks Q = 40 and P = 60.",
+    "points": [
+     {
+      "k": [
+       "mr",
+       "marginal revenue",
+       "mc",
+       "marginal cost"
+      ],
+      "ask": "What condition does a profit-maximiser use?"
+     },
+     {
+      "k": [
+       "lower price",
+       "all units",
+       "below price",
+       "cut"
+      ],
+      "ask": "Why is marginal revenue below price?"
+     },
+     {
+      "k": [
+       "deadweight",
+       "lost",
+       "less output",
+       "higher price"
+      ],
+      "ask": "What is the cost to society?"
+     },
+     {
+      "k": [
+       "example",
+       "40",
+       "60",
+       "100",
+       "like"
+      ],
+      "ask": "Can you show me a numerical example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Macroeconomic modelling",
+   "icon": "🧩",
+   "hook": "Why can two economists use the same data and the same simple model yet recommend different policies?",
+   "explain": [
+    "Macroeconomic models simplify the economy to study relationships. In the Keynesian cross, income equals planned expenditure: Y = C + I + G with C = a + cY, giving Y = (a + I + G) ÷ (1 − c) and a multiplier of 1 ÷ (1 − c). IS-LM adds money markets; AD-AS adds price levels.",
+    "Growth models explain long-run output. In the Solow model with production y = √k, saving s and depreciation plus population growth (n + δ), steady state capital per worker satisfies s√k = (n + δ)k, so k* = (s ÷ (n + δ))². Saving raises the level of income but not the long-run growth rate; sustained growth in income per person needs technological progress.",
+    "Models rest on assumptions: how flexible prices are, how forward-looking people are, and what is held constant. Schools of thought (Keynesian, monetarist, new classical, new Keynesian) emphasise different features. The Lucas critique warns that relationships estimated under one policy regime may change when policy changes."
+   ],
+   "example": {
+    "q": "In a Keynesian cross, C = 100 + 0.8Y, I = 100, G = 100. Find equilibrium Y. Then find k* and y* in a Solow model with y = √k, s = 0.3 and n + δ = 0.1.",
+    "steps": [
+     "Y = (100 + 100 + 100) ÷ (1 − 0.8) = 300 ÷ 0.2 = 1,500.",
+     "k* = (0.3 ÷ 0.1)² = 9.",
+     "y* = √9 = 3. Check: s·y = 0.9 and (n + δ)k = 0.9."
+    ],
+    "a": "Y = 1,500; k* = 9; y* = 3"
+   },
+   "analogies": {
+    "farm": "A farm's yield depends on how many tools each worker has, but extra tools help less and less.",
+    "city": "A model city map omits many streets to show the main routes.",
+    "music": "A score is a model of a performance and leaves out details.",
+    "tech": "A flight simulator approximates real conditions but not every factor."
+   },
+   "mnemonic": "Models are maps: useful because they leave things out, risky when you forget what was left out.",
+   "terms": [
+    [
+     "Keynesian cross",
+     "Model where output adjusts to planned expenditure."
+    ],
+    [
+     "Steady state",
+     "Position where capital per worker and output per worker stay constant."
+    ],
+    [
+     "Lucas critique",
+     "Estimated relationships may change when policy changes."
+    ],
+    [
+     "Multiplier",
+     "Ratio of change in output to change in autonomous spending."
+    ]
+   ],
+   "misc": {
+    "wrong": "A model with unrealistic assumptions is useless.",
+    "right": "Simplification is the point, but conclusions must be checked against evidence and the assumptions understood."
+   },
+   "limits": "Different models can fit the same data. Macro evidence is limited by few observations, shocks that overlap and the inability to run controlled experiments.",
+   "trip": {
+    "wiki": "Solow–Swan model",
+    "prompt": "Find the steady state condition and what happens when the saving rate changes."
+   },
+   "sources": [
+    "Solow–Swan model",
+    "IS–LM model",
+    "Lucas critique"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "C = 100 + 0.8Y, I = 100, G = 100. What is equilibrium Y?",
+     "a": 1500,
+     "tol": 0,
+     "why": "Y = 300 ÷ 0.2 = 1,500.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In the same model G rises by 20. By how much does equilibrium Y rise?",
+     "a": 100,
+     "tol": 0,
+     "why": "Multiplier 5; 5 × 20 = 100.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Solow with y = √k, s = 0.3 and n + δ = 0.1. What is steady-state k?",
+     "a": 9,
+     "tol": 0,
+     "why": "k* = (0.3 ÷ 0.1)² = 9.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The saving rate rises to 0.4 (n + δ = 0.1, y = √k). What is the new steady-state output per worker?",
+     "o": [
+      "4",
+      "3",
+      "6",
+      "16"
+     ],
+     "a": 0,
+     "why": "√k* = s ÷ (n + δ) = 4, so y* = 4 (and k* = 16).",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In the basic Solow model, a higher saving rate leads to...",
+     "o": [
+      "higher income per worker in the long run but not a permanently higher growth rate",
+      "permanently faster growth, since saving always lifts the growth rate",
+      "lower capital per worker, since more saving uses up capital",
+      "no change in income per worker, in the long run or short"
+     ],
+     "a": 0,
+     "why": "It raises the steady-state level only.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What drives sustained growth in income per person in the basic Solow model?",
+     "o": [
+      "Technological progress",
+      "A higher saving rate alone",
+      "Larger population only",
+      "Depreciation"
+     ],
+     "a": 0,
+     "why": "Diminishing returns to capital limit the effect of saving.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The Lucas critique implies that...",
+     "o": [
+      "relationships estimated under one policy may break down when policy changes",
+      "models are always correct, whatever policy is used",
+      "expectations are irrelevant to how people respond to policy",
+      "policy has no effect on the economy at all"
+     ],
+     "a": 0,
+     "why": "People adapt their behaviour to new policy regimes.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each model to its main focus.",
+     "pairs": [
+      [
+       "Keynesian cross",
+       "Short-run demand-determined output"
+      ],
+      [
+       "Solow",
+       "Long-run growth and capital"
+      ],
+      [
+       "IS-LM",
+       "Goods and money markets with interest rates"
+      ],
+      [
+       "AD-AS",
+       "Output and the price level"
+      ]
+     ],
+     "why": "Each model answers different questions.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why economists may disagree on policy even when they use the same data.",
+     "rubric": [
+      [
+       "assum",
+       "model",
+       "framework",
+       "school"
+      ],
+      [
+       "prices",
+       "expectations",
+       "flexib",
+       "behaviour",
+       "sticky"
+      ],
+      [
+       "values",
+       "weigh",
+       "priorit",
+       "objective"
+      ]
+     ],
+     "min": 2,
+     "model": "They may rely on different assumptions about price flexibility, expectations and behaviour, and may weigh goals such as inflation, jobs or equity differently, so the same data can support different conclusions.",
+     "why": "Both model choice and values matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If c rises from 0.8 to 0.9, the simple multiplier changes from...",
+     "o": [
+      "5 to 10",
+      "10 to 5",
+      "5 to 9",
+      "8 to 9"
+     ],
+     "a": 0,
+     "why": "1 ÷ 0.2 = 5; 1 ÷ 0.1 = 10.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might multipliers in the data be smaller than in the Keynesian cross?",
+     "o": [
+      "Taxes, imports, interest rates and expectations dampen the effect",
+      "The cross is exact, so real data must match it",
+      "Consumption is constant, so spending cannot respond",
+      "Prices fall whenever spending is raised, which cancels it"
+     ],
+     "a": 0,
+     "why": "The simple model omits leakages and offsets.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it hard to test macroeconomic theories?",
+     "rubric": [
+      [
+       "experiment",
+       "controlled",
+       "cannot",
+       "one economy",
+       "history"
+      ],
+      [
+       "data",
+       "few",
+       "observations",
+       "short",
+       "noisy"
+      ],
+      [
+       "many",
+       "shocks",
+       "overlap",
+       "confound",
+       "causes",
+       "simultaneous"
+      ]
+     ],
+     "min": 2,
+     "model": "We have one history of each economy and cannot run controlled experiments. Shocks overlap and many variables move together, so isolating causes with limited data is difficult.",
+     "why": "Identification is a core challenge.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A model's prediction fails in a crisis. The best response is to...",
+     "o": [
+      "examine which assumptions failed and revise or combine models",
+      "discard all models, since none can be trusted after a failure",
+      "ignore the event, as a single case proves nothing",
+      "assume the data are wrong, since the model must be right"
+     ],
+     "a": 0,
+     "why": "Models are improved by learning from failures.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Macro models and the multiplier",
+    "model": "Macro models simplify the economy. In the Keynesian cross, output equals planned spending, so a rise in spending is multiplied by 1 divided by (1 minus the marginal propensity to consume). In the Solow model, saving raises the level of income but long-run growth needs new technology. Models rest on assumptions, so conclusions need testing.",
+    "points": [
+     {
+      "k": [
+       "simplif",
+       "assumption",
+       "model"
+      ],
+      "ask": "Why do we use simplified models?"
+     },
+     {
+      "k": [
+       "multiplier",
+       "1 /",
+       "mpc",
+       "spending"
+      ],
+      "ask": "How does the multiplier work?"
+     },
+     {
+      "k": [
+       "solow",
+       "saving",
+       "technology",
+       "long-run",
+       "steady"
+      ],
+      "ask": "What does Solow say about saving and growth?"
+     },
+     {
+      "k": [
+       "limit",
+       "assumption",
+       "evidence",
+       "disagree"
+      ],
+      "ask": "What are the limits?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Banking and financial systems",
+   "icon": "🏛️",
+   "hook": "A bank holds only a fraction of deposits as cash. Why is that normal, and why can it still be fragile?",
+   "explain": [
+    "Banks perform maturity transformation: they take short-term deposits and make longer-term loans. Their profit comes mainly from net interest income (interest earned on loans minus interest paid on deposits) and fees. A bank's balance sheet has assets (loans, securities, reserves) and liabilities (deposits, borrowing) plus equity (the owners' capital).",
+    "Leverage is assets ÷ equity. High leverage magnifies returns and losses. If a bank has equity of 8% of assets, losses of 8% of assets wipe out its equity. A bank run occurs when many depositors withdraw at once, fearing losses; since assets are not liquid, even a solvent bank can fail. Tools to reduce this include deposit insurance, capital and liquidity requirements, and a central bank acting as lender of last resort.",
+    "Regulation involves trade-offs. Stricter rules can reduce crises but may raise the cost of credit; deposit insurance can create moral hazard because depositors and banks take more risk. Economists and policymakers debate how to balance stability, competition and access to finance, including shadow banking and new payment technologies."
+   ],
+   "example": {
+    "q": "A bank has assets of 1,000, equity of 80, loans of 800 earning 6% and deposits of 700 costing 2%. Find (a) leverage, (b) the asset loss that wipes out equity, (c) net interest income from these loans and deposits.",
+    "steps": [
+     "(a) Leverage = 1,000 ÷ 80 = 12.5.",
+     "(b) Loss of 80 on 1,000 assets = 8%.",
+     "(c) Interest income 800 × 6% = 48; interest cost 700 × 2% = 14; net = 34."
+    ],
+    "a": "Leverage 12.5; an 8% asset loss wipes out equity; net interest income 34"
+   },
+   "analogies": {
+    "home": "Lending a neighbour money from savings you promised you could withdraw any day is risky.",
+    "farm": "A co-op that stores grain but lends out some seed may run short if all farmers ask at once.",
+    "city": "A water tower holds less than every household could use at once.",
+    "tech": "Instant payments move deposits faster, which can speed runs."
+   },
+   "mnemonic": "Short in, long out, thin equity: the recipe for profit and fragility.",
+   "terms": [
+    [
+     "Maturity transformation",
+     "Funding long-term loans with short-term deposits."
+    ],
+    [
+     "Leverage",
+     "Assets divided by equity."
+    ],
+    [
+     "Bank run",
+     "Many depositors withdrawing at once."
+    ],
+    [
+     "Lender of last resort",
+     "Central bank lending to solvent banks facing liquidity shortages."
+    ]
+   ],
+   "misc": {
+    "wrong": "Banks keep every deposit in a vault.",
+    "right": "Banks lend most of what they receive and keep only part as reserves, which is how credit is created and why runs are possible."
+   },
+   "limits": "Capital and liquidity rules are trade-offs, and crises differ in cause. Economists debate the role of moral hazard and the best design of safety nets.",
+   "trip": {
+    "wiki": "Bank run",
+    "prompt": "Find the Diamond–Dybvig idea and how deposit insurance changes it."
+   },
+   "sources": [
+    "Bank run",
+    "Maturity transformation",
+    "Capital requirement"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A bank has assets of 2,000 and equity of 100. What is its leverage ratio (assets ÷ equity)?",
+     "a": 20,
+     "tol": 0,
+     "why": "2,000 ÷ 100 = 20.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With assets 2,000 and equity 100, what percentage loss on assets would wipe out equity?",
+     "a": 5,
+     "tol": 0.01,
+     "unit": "%",
+     "why": "100 ÷ 2,000 = 5%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Loans of 500 earn 8% and deposits of 450 cost 3%. What is net interest income?",
+     "a": 26.5,
+     "tol": 0.01,
+     "why": "40 − 13.5 = 26.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a bank with positive net worth still fail in a run?",
+     "o": [
+      "Its assets are illiquid and cannot be sold fast enough without loss",
+      "Its equity is negative, so it was insolvent already",
+      "It has no deposits, so no one can withdraw them",
+      "Interest rates are zero, which stops lending"
+     ],
+     "a": 0,
+     "why": "Liquidity problems can precede insolvency.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Deposit insurance reduces runs but may increase...",
+     "o": [
+      "moral hazard",
+      "reserves",
+      "equity",
+      "transparency"
+     ],
+     "a": 0,
+     "why": "Protected depositors have less incentive to monitor risk.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A central bank acting as lender of last resort lends to...",
+     "o": [
+      "solvent banks with temporary liquidity problems",
+      "any failing firm, for free, to keep it going",
+      "households only, to help them to pay their bills",
+      "foreign governments only, to support their budgets"
+     ],
+     "a": 0,
+     "why": "The classic principle is to lend against good collateral at a penalty rate.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Equity",
+       "Owners' capital cushion"
+      ],
+      [
+       "Liquidity",
+       "Ease of converting to cash"
+      ],
+      [
+       "Solvency",
+       "Assets exceed liabilities"
+      ],
+      [
+       "Reserve requirement",
+       "Minimum cash held against deposits"
+      ]
+     ],
+     "why": "Balance sheet terms.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain the trade-off in raising banks' capital requirements.",
+     "rubric": [
+      [
+       "safer",
+       "stab",
+       "resilien",
+       "absorb",
+       "losses",
+       "crisis",
+       "fewer failures"
+      ],
+      [
+       "cost",
+       "lend",
+       "credit",
+       "expens",
+       "higher interest",
+       "less lending",
+       "growth"
+      ]
+     ],
+     "min": 2,
+     "model": "More capital lets banks absorb losses, making crises less likely. But it can raise their funding costs and reduce lending or raise loan rates, which can slow growth, so regulators weigh the two.",
+     "why": "There are benefits and costs.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If leverage is 20, a 2% rise in the value of assets raises equity by about...",
+     "o": [
+      "40%",
+      "2%",
+      "20%",
+      "4%"
+     ],
+     "a": 0,
+     "why": "A 2% gain on assets is 40% of equity when equity is 5% of assets.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which feature of banking increases the speed of a modern run?",
+     "o": [
+      "Instant digital withdrawals and information spread by social media",
+      "Longer queues at the branch, which slow down withdrawals",
+      "Higher reserves held at the central bank, which slow a run",
+      "Fewer depositors, which means less money can be withdrawn"
+     ],
+     "a": 0,
+     "why": "Information and funds can move rapidly.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Some argue large banks should be broken up; others say they are efficient. What is the fair summary?",
+     "o": [
+      "There is a trade-off between efficiency gains and risks from 'too big to fail'",
+      "Large banks have no risks, so nothing needs to be weighed",
+      "Small banks always fail, so size is the only issue",
+      "Economists unanimously agree, so there is no real debate"
+     ],
+     "a": 0,
+     "why": "The debate involves systemic risk and scale benefits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a bailout create moral hazard, and how might regulators respond?",
+     "rubric": [
+      [
+       "expect",
+       "rescue",
+       "protected",
+       "risk",
+       "incentive",
+       "bail"
+      ],
+      [
+       "take more risk",
+       "excess",
+       "careless",
+       "moral hazard"
+      ],
+      [
+       "capital",
+       "rules",
+       "resolution",
+       "requirement",
+       "penalt",
+       "supervis",
+       "limit"
+      ]
+     ],
+     "min": 2,
+     "model": "If banks expect rescue, they may take more risk because losses are shared. Regulators can respond with higher capital, supervision and resolution regimes that let failing banks close without taxpayer rescue.",
+     "why": "Safety nets alter incentives.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does credit matter for growth?",
+     "o": [
+      "It lets firms and households invest and smooth spending, but excess credit can cause crises",
+      "Credit has no effect on growth, whatever its amount",
+      "It always reduces growth, since it must be repaid",
+      "It is the same thing as printing money in every way"
+     ],
+     "a": 0,
+     "why": "Finance has both benefits and risks.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How banks work and why runs happen",
+    "model": "Banks take short-term deposits and make longer-term loans, earning the difference in interest. They hold only a fraction of deposits as cash, and use a thin layer of owners' equity. If many depositors withdraw at once, a bank can fail even if its loans are good. Insurance, capital rules and central bank lending reduce the risk.",
+    "points": [
+     {
+      "k": [
+       "deposit",
+       "loan",
+       "lend",
+       "interest"
+      ],
+      "ask": "How does a bank make money?"
+     },
+     {
+      "k": [
+       "fraction",
+       "reserve",
+       "not all",
+       "short",
+       "long"
+      ],
+      "ask": "Why can't it pay everyone at once?"
+     },
+     {
+      "k": [
+       "run",
+       "panic",
+       "withdraw"
+      ],
+      "ask": "What is a bank run?"
+     },
+     {
+      "k": [
+       "insurance",
+       "capital",
+       "regulat",
+       "lender of last resort"
+      ],
+      "ask": "How do we reduce the risk?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Econometrics fundamentals",
+   "icon": "📏",
+   "hook": "Cities with more ice cream sales have more drownings. Does ice cream cause drowning? How would an economist find out?",
+   "explain": [
+    "Econometrics uses statistics to estimate relationships in data. In simple regression y = α + βx + ε, ordinary least squares (OLS) chooses the line minimising the sum of squared residuals. The slope is β̂ = Σ(x − x̄)(y − ȳ) ÷ Σ(x − x̄)² and the intercept α̂ = ȳ − β̂x̄. R² measures the share of variation in y explained by the model.",
+    "A coefficient is an estimate with uncertainty. The standard error measures its precision; the t-statistic is estimate ÷ standard error, and a large absolute value (roughly above 2) suggests the coefficient is unlikely to be zero by chance. A p-value is the probability of seeing a result at least this extreme if the true effect were zero; it is not the probability that the hypothesis is true.",
+    "Correlation is not causation. Omitted variables (like summer heat in the ice cream example), reverse causality and measurement error can bias estimates. Researchers use randomised trials, natural experiments, difference-in-differences, instrumental variables and controls to try to identify causal effects. Good practice includes reporting uncertainty and being honest about assumptions."
+   ],
+   "example": {
+    "q": "Data (x, y): (1, 2), (2, 4), (3, 5), (4, 9). Find the OLS slope and intercept, and R².",
+    "steps": [
+     "x̄ = 2.5, ȳ = 5. Σ(x − x̄)(y − ȳ) = (−1.5)(−3) + (−0.5)(−1) + (0.5)(0) + (1.5)(4) = 11. Σ(x − x̄)² = 5. Slope = 11 ÷ 5 = 2.2.",
+     "Intercept = 5 − 2.2 × 2.5 = −0.5.",
+     "Total variation = 26; explained = 2.2² × 5 = 24.2; R² = 24.2 ÷ 26 ≈ 0.93."
+    ],
+    "a": "Slope 2.2, intercept −0.5, R² ≈ 0.93"
+   },
+   "analogies": {
+    "farm": "Comparing yields on fields that got fertiliser with fields that did not, while checking that soil and rain are similar.",
+    "city": "Comparing neighbourhoods before and after a new bus line, with a similar neighbourhood as a benchmark.",
+    "sport": "Judging a coach's effect while accounting for the quality of the squad.",
+    "tech": "An A/B test of two app designs randomly assigns users."
+   },
+   "mnemonic": "Fit the line, check the noise, hunt the confounders.",
+   "terms": [
+    [
+     "OLS",
+     "Method choosing the line that minimises squared residuals."
+    ],
+    [
+     "R²",
+     "Share of variation in the outcome explained by the model."
+    ],
+    [
+     "p-value",
+     "Probability of data this extreme if the true effect were zero."
+    ],
+    [
+     "Confounder",
+     "A variable that affects both the cause and the outcome."
+    ]
+   ],
+   "misc": {
+    "wrong": "A p-value of 0.03 means a 97% chance the effect is real.",
+    "right": "It is the probability of such data if there were no effect; it does not give the probability that the hypothesis is true."
+   },
+   "limits": "Statistical significance is not practical importance, and results depend on model choice. Replication and transparency matter.",
+   "trip": {
+    "wiki": "Ordinary least squares",
+    "prompt": "Find the formulas for slope and intercept and the assumptions behind them."
+   },
+   "sources": [
+    "Ordinary least squares",
+    "Coefficient of determination",
+    "Confounding"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "For data (1,2), (2,4), (3,5), (4,9), what is the OLS slope?",
+     "a": 2.2,
+     "tol": 0.01,
+     "why": "Sxy = 11 and Sxx = 5, giving 2.2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For the same data, what is the OLS intercept?",
+     "a": -0.5,
+     "tol": 0.01,
+     "why": "ȳ − β̂x̄ = 5 − 2.2 × 2.5 = −0.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A coefficient estimate is 3.0 with a standard error of 1.2. What is the t-statistic?",
+     "o": [
+      "2.5",
+      "3.6",
+      "0.4",
+      "1.8"
+     ],
+     "a": 0,
+     "why": "3.0 ÷ 1.2 = 2.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A model explains 45 of a total variation of 60 in y. What is R²?",
+     "a": 0.75,
+     "tol": 0.001,
+     "why": "45 ÷ 60 = 0.75.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "OLS chooses coefficients that...",
+     "o": [
+      "minimise the sum of squared residuals",
+      "maximise the residuals, so the line fits badly",
+      "set all slopes to zero, so no effect is found",
+      "match the mean of the data only and ignore the rest"
+     ],
+     "a": 0,
+     "why": "It finds the line closest in the least-squares sense.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Ice cream sales and drownings are correlated because...",
+     "o": [
+      "a third factor, hot weather, raises both",
+      "ice cream causes drowning, since eating it makes swimmers ill",
+      "drowning causes ice cream sales, as people buy it to cope",
+      "the data are random and the link is just by chance"
+     ],
+     "a": 0,
+     "why": "This is an omitted variable (confounder).",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A study reports p = 0.03. The correct interpretation is...",
+     "o": [
+      "if there were no true effect, data this extreme would occur about 3% of the time",
+      "there is a 97% chance that the effect is real",
+      "the effect is large, since the value of p is small",
+      "the effect is certainly causal, and the case is closed"
+     ],
+     "a": 0,
+     "why": "p-values are conditional on the null hypothesis.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to the problem it addresses.",
+     "pairs": [
+      [
+       "Randomised trial",
+       "Breaks the link between treatment and confounders"
+      ],
+      [
+       "Difference-in-differences",
+       "Compares changes over time between groups"
+      ],
+      [
+       "Instrumental variable",
+       "Uses outside variation to address endogeneity"
+      ],
+      [
+       "Control variables",
+       "Hold other factors fixed in the model"
+      ]
+     ],
+     "why": "Different designs help identify causal effects.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can a regression with a very high R² still fail to show a causal effect?",
+     "rubric": [
+      [
+       "correlat",
+       "association",
+       "fit"
+      ],
+      [
+       "cause",
+       "causal",
+       "direction",
+       "reverse"
+      ],
+      [
+       "omitted",
+       "confound",
+       "third",
+       "spurious",
+       "variable"
+      ]
+     ],
+     "min": 2,
+     "model": "R² only measures how well the model fits the data. A strong fit can arise from omitted variables, reverse causality or coincidence, so it does not show that x causes y.",
+     "why": "Fit is not identification.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A sample is small and the confidence interval for β is very wide. What does this indicate?",
+     "o": [
+      "The estimate is imprecise",
+      "The estimate is exact, since the sample is small",
+      "The effect is large, since the interval is wide",
+      "R² must equal 1, since the line fits so well"
+     ],
+     "a": 0,
+     "why": "Wide intervals reflect uncertainty.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two studies reach opposite findings on the effect of minimum wages. What is the most reasonable view?",
+     "o": [
+      "Differences in data, methods and settings may explain results, so evidence should be weighed together",
+      "One of the studies must be a fraud, since they differ",
+      "Statistics cannot answer anything about wages, so the question is closed",
+      "Both are right in all places, so the results never differ"
+     ],
+     "a": 0,
+     "why": "Heterogeneity and design matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it risky to run many regressions and report only the significant ones?",
+     "rubric": [
+      [
+       "chance",
+       "random",
+       "false positive",
+       "luck",
+       "spurious"
+      ],
+      [
+       "many",
+       "multiple",
+       "test",
+       "search",
+       "cherry",
+       "selective",
+       "p-hack"
+      ],
+      [
+       "replicat",
+       "unreliable",
+       "mislead",
+       "overstate"
+      ]
+     ],
+     "min": 2,
+     "model": "With many tests, some will look significant by chance alone. Reporting only those overstates the evidence and the results often fail to replicate.",
+     "why": "Selective reporting inflates false positives.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Difference-in-differences relies on which key assumption?",
+     "o": [
+      "Without treatment, the groups would have followed parallel trends",
+      "Both groups are identical in their levels before treatment",
+      "Treatment is assigned at random to the two groups",
+      "Errors are zero, so the estimate has no noise"
+     ],
+     "a": 0,
+     "why": "Parallel trends lets the control group stand in for the counterfactual.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Regression and causation",
+    "model": "Regression fits a line through data by minimising squared errors, giving a slope that shows how y changes with x on average. Standard errors show uncertainty. But a relationship in data is not automatically causal, because another factor may drive both. Researchers use experiments and careful designs to get closer to causal effects.",
+    "points": [
+     {
+      "k": [
+       "line",
+       "fit",
+       "regression",
+       "slope"
+      ],
+      "ask": "What does a regression do?"
+     },
+     {
+      "k": [
+       "error",
+       "uncertain",
+       "standard",
+       "significan",
+       "p-value"
+      ],
+      "ask": "How do we know how certain the estimate is?"
+     },
+     {
+      "k": [
+       "correlation",
+       "causation",
+       "confound",
+       "third",
+       "omitted"
+      ],
+      "ask": "Why isn't correlation enough?"
+     },
+     {
+      "k": [
+       "experiment",
+       "trial",
+       "natural",
+       "difference",
+       "design"
+      ],
+      "ask": "How can we get at causes?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Game theory",
+   "icon": "♟️",
+   "hook": "Two rival shops each know that cutting prices wins customers, yet both end up worse off. Why can't they just agree to keep prices high?",
+   "explain": [
+    "Game theory studies strategic interaction, where each player's best choice depends on what others do. A game has players, strategies and payoffs. A dominant strategy is best whatever the others do. A Nash equilibrium is a set of strategies where no player can gain by changing their own strategy while others keep theirs.",
+    "In the prisoner's dilemma, each player's dominant strategy leads to an outcome worse for both than cooperation. Repeated play can sustain cooperation if players value the future enough and can punish defection. In Cournot duopoly with P = 100 − Q and MC = 10, each firm best-responds to the other's quantity: q = (90 − q_other) ÷ 2, giving q = 30 each, P = 40, profit 900 each; if they colluded they would produce a total of 45, with profit 1,012.5 each.",
+    "Games can have several equilibria, mixed strategies (randomising) or sequential moves solved by backward induction. Game theory gives insight into pricing, auctions, bargaining and climate agreements, but real people may not play as the theory predicts, and the model depends on assumed payoffs."
+   ],
+   "example": {
+    "q": "Two firms choose Advertise or Not. Payoffs (A, B) in profit: both Advertise 3,3; A advertises, B not 5,1; A not, B advertises 1,5; neither 4,4. Find the Nash equilibrium.",
+    "steps": [
+     "If B advertises, A gets 3 by advertising and 1 by not: advertise is better. If B does not, A gets 5 versus 4: advertise again.",
+     "Advertising is dominant for A, and by symmetry for B.",
+     "Equilibrium: both advertise (3,3), although (4,4) would make both better off."
+    ],
+    "a": "Both advertise (3,3), the prisoner's dilemma outcome"
+   },
+   "analogies": {
+    "sport": "Two cyclists in a race each prefer to draft behind the other, causing a standoff.",
+    "farm": "Neighbouring farmers each overuse a shared well, though restraint would help all.",
+    "city": "Two petrol stations cut prices to win customers and both earn less.",
+    "music": "Two bands on a bill each want the best slot."
+   },
+   "mnemonic": "Nash: no regrets given what others do.",
+   "terms": [
+    [
+     "Dominant strategy",
+     "A strategy that is best whatever others do."
+    ],
+    [
+     "Nash equilibrium",
+     "No player gains by unilaterally changing strategy."
+    ],
+    [
+     "Prisoner's dilemma",
+     "A game where individual incentives produce a worse joint outcome."
+    ],
+    [
+     "Backward induction",
+     "Solving a sequential game from the end."
+    ]
+   ],
+   "misc": {
+    "wrong": "Nash equilibrium is the best outcome for the players.",
+    "right": "It is stable, not necessarily efficient. The prisoner's dilemma equilibrium is worse for both than cooperation."
+   },
+   "limits": "Results depend on assumed payoffs and rationality. Experiments show people often cooperate or reject unfair offers more than the theory predicts.",
+   "trip": {
+    "wiki": "Prisoner's dilemma",
+    "prompt": "Find the payoff matrix and how repeated play changes the outcome."
+   },
+   "sources": [
+    "Game theory",
+    "Nash equilibrium",
+    "Prisoner's dilemma"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A dominant strategy is one that...",
+     "o": [
+      "is best whatever the others choose",
+      "is best only if others cooperate",
+      "always gives the highest total payoff",
+      "is chosen last"
+     ],
+     "a": 0,
+     "why": "It does not depend on others' choices.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A Nash equilibrium is...",
+     "o": [
+      "a profile where no player gains by deviating alone",
+      "the outcome with the highest total payoff for all players",
+      "a draw, in which nobody gains or loses",
+      "always unique, so every game has just one"
+     ],
+     "a": 0,
+     "why": "It is stable against unilateral changes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Cournot: P = 100 − Q, MC = 10, two identical firms. What is each firm's equilibrium quantity?",
+     "a": 30,
+     "tol": 0,
+     "why": "q = (90 − q)/2 gives 3q = 90, q = 30.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With each firm producing 30, what is the market price?",
+     "a": 40,
+     "tol": 0,
+     "why": "P = 100 − 60 = 40.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "With P = 40, MC = 10 and q = 30, what is each firm's profit?",
+     "o": [
+      "900",
+      "1,200",
+      "300",
+      "1,800"
+     ],
+     "a": 0,
+     "why": "(40 − 10) × 30 = 900.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "If the firms colluded and produced the monopoly total Q = 45 (P = 55, MC = 10) and split it equally, what is each firm's profit?",
+     "a": 1012.5,
+     "tol": 0.01,
+     "why": "(55 − 10) × 45 = 2,025; half is 1,012.5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is cartel collusion hard to sustain?",
+     "o": [
+      "Each member gains by secretly cheating, so the agreement is unstable",
+      "Cartels always earn nothing, so no one joins them",
+      "Cheating is impossible, so the problem is something else",
+      "Payoffs are identical for every member, so none can gain"
+     ],
+     "a": 0,
+     "why": "Individually, producing more is tempting.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its description.",
+     "pairs": [
+      [
+       "Prisoner's dilemma",
+       "Individual incentives harm joint outcome"
+      ],
+      [
+       "Backward induction",
+       "Solving from the final move"
+      ],
+      [
+       "Mixed strategy",
+       "Randomising over actions"
+      ],
+      [
+       "Repeated game",
+       "Same game played many times"
+      ]
+     ],
+     "why": "Core game theory ideas.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how repeated interaction can sustain cooperation in a prisoner's dilemma.",
+     "rubric": [
+      [
+       "repeat",
+       "again",
+       "future",
+       "long-term",
+       "many times"
+      ],
+      [
+       "punish",
+       "retaliat",
+       "trigger",
+       "tit",
+       "reward",
+       "reputation",
+       "trust"
+      ],
+      [
+       "patient",
+       "value the future",
+       "discount",
+       "cost of defect",
+       "lose",
+       "gain"
+      ]
+     ],
+     "min": 2,
+     "model": "If players meet repeatedly, cheating today can be punished in later rounds, and if they value the future enough, the long-run loss from punishment outweighs the short-run gain, so cooperation can be an equilibrium.",
+     "why": "The shadow of the future disciplines behaviour.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In matching pennies (one player wins if coins match, the other if they differ), there is no pure-strategy equilibrium. Optimal play is to...",
+     "o": [
+      "randomise 50-50",
+      "always choose heads",
+      "always choose tails",
+      "alternate predictably"
+     ],
+     "a": 0,
+     "why": "Any predictable pattern can be exploited.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Experiments show many people reject very unfair offers in the ultimatum game even at a cost to themselves. What does this suggest about the theory?",
+     "o": [
+      "Payoffs may include fairness concerns not captured by money",
+      "People are random, so no theory can describe them",
+      "The theory is useless and should be dropped",
+      "People do not understand money, so they make mistakes"
+     ],
+     "a": 0,
+     "why": "Social preferences can alter payoffs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might international climate agreements face a prisoner's-dilemma-type problem?",
+     "rubric": [
+      [
+       "benefit",
+       "everyone",
+       "all share",
+       "global",
+       "free ride",
+       "free-ride"
+      ],
+      [
+       "cost",
+       "cut emissions",
+       "reduce",
+       "expens",
+       "pay"
+      ],
+      [
+       "enforce",
+       "incentive",
+       "penalt",
+       "commit",
+       "trust",
+       "compl"
+      ]
+     ],
+     "min": 2,
+     "model": "Each country bears the cost of cutting emissions but the benefits are shared globally, so each has an incentive to free-ride. Without enforcement or commitments, cooperation is hard to sustain.",
+     "why": "Shared benefits and private costs create free-riding.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the order of moves matter in sequential games?",
+     "o": [
+      "Later movers can respond, and earlier movers can commit, changing outcomes",
+      "It never matters who goes first, whatever the game",
+      "Only the last player has payoffs, so order is key",
+      "Moves are random, so order changes nothing"
+     ],
+     "a": 0,
+     "why": "Commitment and information change strategy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Nash equilibrium and the prisoner's dilemma",
+    "model": "In game theory each player picks the best action given what others do. A Nash equilibrium is where nobody gains by changing alone. In a prisoner's dilemma each player has a dominant strategy to defect, so both end up worse off than if they cooperated. Repeated play and enforcement can help. For example, two shops cutting prices both lose profit.",
+    "points": [
+     {
+      "k": [
+       "best response",
+       "depends",
+       "others",
+       "strategic"
+      ],
+      "ask": "What makes a situation a game?"
+     },
+     {
+      "k": [
+       "nash",
+       "no one gains",
+       "stable",
+       "change alone"
+      ],
+      "ask": "What is a Nash equilibrium?"
+     },
+     {
+      "k": [
+       "prisoner",
+       "dominant",
+       "defect",
+       "worse off",
+       "both"
+      ],
+      "ask": "What is the prisoner's dilemma?"
+     },
+     {
+      "k": [
+       "repeat",
+       "enforce",
+       "punish",
+       "cooperate"
+      ],
+      "ask": "How can cooperation be sustained?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Public economics",
+   "icon": "⚖️",
+   "hook": "A tax on a polluting product can improve outcomes, yet it also takes money from people. How do economists weigh the two effects?",
+   "explain": [
+    "Public economics studies how governments raise and spend money and the effects on welfare. A Pigouvian tax equal to the marginal external cost can correct a negative externality. Tax incidence asks who bears a tax in reality, not who writes the cheque: it depends on relative elasticities, with the less elastic side bearing more.",
+    "Governments choose between efficiency and equity. Optimal tax theory balances revenue and distribution against distortions. Cost-benefit analysis (CBA) compares the present value of benefits with costs: NPV = Σ (B_t − C_t) ÷ (1 + r)^t, accepting projects with positive NPV, and the choice of discount rate matters, especially for long-lived projects such as climate action.",
+    "Public choice theory notes that governments are made of people with incentives, so policy can be shaped by lobbying or short-term pressure. Economists disagree about the size of government, the efficiency cost of taxation and how much weight to give to equality, which depend on values as well as evidence."
+   ],
+   "example": {
+    "q": "Demand P = 50 − Q, private supply P = 10 + Q, external cost 8 per unit. Find the market quantity, the socially efficient quantity, the Pigouvian tax and who bears it.",
+    "steps": [
+     "Market: 50 − Q = 10 + Q gives Q = 20, P = 30.",
+     "Social cost = 18 + Q: 50 − Q = 18 + Q gives Q = 16. Pigouvian tax = 8.",
+     "With the tax: buyers pay 34 and sellers receive 26. Buyers bear 4 and sellers bear 4."
+    ],
+    "a": "Market Q = 20; efficient Q = 16; tax 8 split 4 and 4"
+   },
+   "analogies": {
+    "home": "A household rule that charges a small fee for a shared resource when someone overuses it.",
+    "farm": "A fee on water use discourages waste.",
+    "city": "Congestion charges make drivers pay for the delay they impose on others.",
+    "nature": "A levy on fishing quotas protects fish stocks."
+   },
+   "mnemonic": "Make the polluter pay the price of the harm; look at who really bears the tax.",
+   "terms": [
+    [
+     "Pigouvian tax",
+     "A tax equal to the marginal external cost."
+    ],
+    [
+     "Tax incidence",
+     "Who actually bears the burden of a tax."
+    ],
+    [
+     "Net present value",
+     "Sum of discounted benefits minus costs."
+    ],
+    [
+     "Public choice",
+     "Applying economics to political decisions."
+    ]
+   ],
+   "misc": {
+    "wrong": "The person legally required to pay a tax bears its cost.",
+    "right": "The economic burden depends on elasticities and can fall largely on the other side of the market."
+   },
+   "limits": "External costs and discount rates are hard to estimate, and the weights on equity differ across people. CBA can undervalue things that are hard to price.",
+   "trip": {
+    "wiki": "Pigouvian tax",
+    "prompt": "Find how a Pigouvian tax is shown on a supply and demand diagram."
+   },
+   "sources": [
+    "Pigouvian tax",
+    "Tax incidence",
+    "Cost–benefit analysis"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Demand P = 50 − Q and private supply P = 10 + Q. What is the market equilibrium quantity?",
+     "a": 20,
+     "tol": 0,
+     "why": "50 − Q = 10 + Q gives Q = 20.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The external cost is 8 per unit, so social cost is P = 18 + Q. What is the socially efficient quantity?",
+     "a": 16,
+     "tol": 0,
+     "why": "50 − Q = 18 + Q gives Q = 16.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "With the tax of 8, what price do buyers pay?",
+     "o": [
+      "34",
+      "30",
+      "26",
+      "42"
+     ],
+     "a": 0,
+     "why": "At Q = 16, P = 50 − 16 = 34.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "With the tax of 8 and Q = 16, what is the tax revenue?",
+     "o": [
+      "128",
+      "160",
+      "64",
+      "240"
+     ],
+     "a": 0,
+     "why": "8 × 16 = 128.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A project costs 1,000 now and gives 400 per year for 3 years. At a 5% discount rate, what is the NPV (nearest whole unit)?",
+     "a": 89,
+     "tol": 1,
+     "why": "PV of benefits ≈ 400 × 2.7232 = 1,089.3; NPV ≈ 89.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The burden of a tax falls more on the side of the market that is...",
+     "o": [
+      "less elastic",
+      "more elastic",
+      "larger",
+      "poorer by law"
+     ],
+     "a": 0,
+     "why": "The less elastic side cannot easily avoid the tax.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Raising the discount rate in a CBA of a long-term climate project generally...",
+     "o": [
+      "lowers the present value of future benefits",
+      "raises it, since waiting makes the benefits worth more",
+      "leaves it unchanged, since benefits are the same sum",
+      "makes the costs vanish, so the project looks cheaper"
+     ],
+     "a": 0,
+     "why": "Distant benefits are discounted more heavily.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its meaning.",
+     "pairs": [
+      [
+       "Pigouvian tax",
+       "Corrects an externality"
+      ],
+      [
+       "Incidence",
+       "Who bears the burden"
+      ],
+      [
+       "NPV",
+       "Discounted benefits minus costs"
+      ],
+      [
+       "Public choice",
+       "Economic analysis of political behaviour"
+      ]
+     ],
+     "why": "Core public economics ideas.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Give one reason a discount rate for climate policy is controversial.",
+     "rubric": [
+      [
+       "future",
+       "generation",
+       "long",
+       "later"
+      ],
+      [
+       "value",
+       "weigh",
+       "ethic",
+       "fair",
+       "care",
+       "count"
+      ],
+      [
+       "rate",
+       "high",
+       "low",
+       "small",
+       "large",
+       "matters",
+       "discount"
+      ]
+     ],
+     "min": 2,
+     "model": "A high discount rate makes benefits to future generations count for little, a low rate counts them more, so the choice reflects ethical judgments about fairness between generations as well as economics.",
+     "why": "Discounting involves ethics.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A government considers a tax whose revenue funds services valued by the poor. A fair assessment includes...",
+     "o": [
+      "efficiency costs, who pays and who benefits",
+      "only efficiency costs, since fairness cannot be measured",
+      "only the revenue raised, and nothing else",
+      "nothing, since taxes are neutral and affect nobody"
+     ],
+     "a": 0,
+     "why": "Both efficiency and distribution matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is it appropriate for economists to claim a policy is 'optimal'?",
+     "o": [
+      "Only given stated objectives and assumptions; different welfare weights give different answers",
+      "Always, since economics is a science and gives one best answer",
+      "Never, since economists should not talk about policy",
+      "Optimal means popular, so it is found by a vote"
+     ],
+     "a": 0,
+     "why": "Optimality depends on the objective function.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How might lobbying lead to policies that differ from cost-benefit results?",
+     "rubric": [
+      [
+       "concentrat",
+       "small group",
+       "benefit",
+       "interest",
+       "industry"
+      ],
+      [
+       "spread",
+       "cost",
+       "public",
+       "many",
+       "diffuse",
+       "voters"
+      ],
+      [
+       "influence",
+       "lobby",
+       "political",
+       "pressure",
+       "rent"
+      ]
+     ],
+     "min": 2,
+     "model": "Groups with concentrated benefits have strong incentives to lobby, while costs spread across many people attract little opposition, so policies can favour narrow interests over net social benefit.",
+     "why": "Public choice highlights concentrated benefits and dispersed costs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A Pigouvian tax is set at an estimated external cost that proves too high. The result is...",
+     "o": [
+      "output below the social optimum",
+      "output above the social optimum",
+      "exactly the optimum",
+      "no effect"
+     ],
+     "a": 0,
+     "why": "Overtaxing cuts output too far.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Pigouvian taxes and tax incidence",
+    "model": "When a product harms others, a tax equal to the harm makes the producer pay the full social cost, moving output towards the efficient level. Who really bears a tax depends on how sensitive buyers and sellers are to price, not on who sends the money to the government. For example, an 8-coin tax can be shared 4 and 4.",
+    "points": [
+     {
+      "k": [
+       "externality",
+       "harm",
+       "others",
+       "pollution"
+      ],
+      "ask": "What problem does a Pigouvian tax address?"
+     },
+     {
+      "k": [
+       "tax equals",
+       "external cost",
+       "pay the full",
+       "social cost"
+      ],
+      "ask": "How is the tax set?"
+     },
+     {
+      "k": [
+       "incidence",
+       "who bears",
+       "elastic",
+       "burden"
+      ],
+      "ask": "Who really pays a tax?"
+     },
+     {
+      "k": [
+       "cost-benefit",
+       "npv",
+       "present value",
+       "discount"
+      ],
+      "ask": "How do we compare costs and benefits over time?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Behavioural economics",
+   "icon": "🤔",
+   "hook": "People often choose the default option on forms, even when changing is free. What does that tell us about how humans really decide?",
+   "explain": [
+    "Behavioural economics uses psychology to understand real decisions. It finds systematic patterns: loss aversion (losses feel bigger than equal gains, often about twice as big), present bias (overweighting rewards now), framing (the same choice described differently changes decisions), anchoring, and a strong pull of defaults and social norms.",
+    "Prospect theory describes valuation relative to a reference point, with losses weighing more than gains. Quasi-hyperbolic discounting uses a present-bias factor β below 1 for all future rewards, which can explain procrastination: with β = 0.8, 100 now beats 110 next month (100 vs 88) but 100 in 12 months loses to 110 in 13 months (80 vs 88).",
+    "Policy applications include 'nudges' such as automatic enrolment in pensions, which shifts participation without banning options. Critics raise concerns about paternalism, manipulation and whether results scale, and note that people also have bounded rationality, using useful rules of thumb. Debates continue about whether behavioural findings should replace or refine standard models."
+   ],
+   "example": {
+    "q": "Loss aversion λ = 2: gains count at face value but losses count double. A gamble offers a 50% chance to win 150 and a 50% chance to lose 100. Compare its expected money value with its subjective value.",
+    "steps": [
+     "Expected money value = 0.5 × 150 − 0.5 × 100 = 25.",
+     "Subjective value = 0.5 × 150 − 0.5 × (2 × 100) = 75 − 100 = −25.",
+     "A loss-averse person may reject a gamble with positive expected money value."
+    ],
+    "a": "Expected value +25, subjective value −25, so it may be rejected"
+   },
+   "analogies": {
+    "home": "A subscription that renews automatically keeps many people paying.",
+    "city": "A shop labelled 'Was 100, now 70' anchors you to 100.",
+    "sport": "A fan sells a losing bet slowly to avoid 'locking in' a loss.",
+    "tech": "Apps set a default setting that most users never change."
+   },
+   "mnemonic": "Humans: loss-averse, present-biased, default-loving, frame-influenced.",
+   "terms": [
+    [
+     "Loss aversion",
+     "Losses weigh more heavily than equal gains."
+    ],
+    [
+     "Present bias",
+     "Over-weighting immediate rewards."
+    ],
+    [
+     "Nudge",
+     "A change in choice design that steers behaviour without banning options."
+    ],
+    [
+     "Framing",
+     "How wording or presentation changes choices."
+    ]
+   ],
+   "misc": {
+    "wrong": "Behavioural economics shows people are simply irrational.",
+    "right": "It shows predictable departures from the standard model, and many heuristics work well in everyday settings."
+   },
+   "limits": "Some behavioural findings have not replicated or vary across cultures, and nudges may have smaller effects at scale. The ethics of nudging are debated.",
+   "trip": {
+    "wiki": "Prospect theory",
+    "prompt": "Find the value function and what it says about gains and losses."
+   },
+   "sources": [
+    "Behavioral economics",
+    "Prospect theory",
+    "Nudge (book)"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "With loss aversion λ = 2, a 50-50 gamble wins 150 or loses 100. What is its subjective value?",
+     "a": -25,
+     "tol": 0,
+     "why": "0.5 × 150 − 0.5 × 200 = −25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Expected money value of the same gamble (win 150 or lose 100 with equal chance)?",
+     "a": 25,
+     "tol": 0,
+     "why": "75 − 50 = 25.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A present-biased person with β = 0.8 values 110 next month at what amount today (using only β, no further discounting)?",
+     "a": 88,
+     "tol": 0.01,
+     "why": "0.8 × 110 = 88.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A pension plan enrols workers automatically unless they opt out, and participation rises sharply. This illustrates...",
+     "o": [
+      "the power of defaults",
+      "loss aversion only",
+      "comparative advantage",
+      "deflation"
+     ],
+     "a": 0,
+     "why": "Inertia and defaults shape choices.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A shop says '20% off' on a price that was raised last week. Which bias is exploited?",
+     "o": [
+      "Anchoring",
+      "Diversification",
+      "Marginalism",
+      "Crowding out"
+     ],
+     "a": 0,
+     "why": "The reference price biases perceived value.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about nudges is most accurate?",
+     "o": [
+      "They steer choices without removing options, but raise ethical questions",
+      "They ban some options from the list of choices",
+      "They always work, since people follow every hint",
+      "They are the same as taxes, with another name"
+     ],
+     "a": 0,
+     "why": "Nudges preserve choice but can be debated as paternalistic.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each bias to an example.",
+     "pairs": [
+      [
+       "Loss aversion",
+       "Refusing a fair gamble to avoid losing"
+      ],
+      [
+       "Present bias",
+       "Putting off saving until later"
+      ],
+      [
+       "Anchoring",
+       "Judging a price against an initial number"
+      ],
+      [
+       "Framing",
+       "90% survival versus 10% mortality"
+      ]
+     ],
+     "why": "Each is a systematic departure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "With β = 0.8, 100 now versus 110 next month: she picks 100 now. But 100 in 12 months versus 110 in 13 months: she picks 110. This reversal shows...",
+     "o": [
+      "time inconsistency",
+      "rationality, since the person acts the same way at every date",
+      "framing, since the questions use different words",
+      "risk neutrality, since she treats each sum the same"
+     ],
+     "a": 0,
+     "why": "Preferences change as the near date approaches.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give one argument for and one against using nudges in public policy.",
+     "rubric": [
+      [
+       "cheap",
+       "effective",
+       "freedom",
+       "choice",
+       "low cost",
+       "improve",
+       "helps",
+       "welfare"
+      ],
+      [
+       "paternal",
+       "manipul",
+       "autonomy",
+       "trust",
+       "who decides",
+       "transparen",
+       "scale"
+      ]
+     ],
+     "min": 2,
+     "model": "For: they can improve outcomes at low cost while keeping options open. Against: they may be paternalistic or manipulative, depend on who sets the defaults, and effects may be small at scale.",
+     "why": "Nudging raises benefits and ethical concerns.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If 90% of employees stay in a default savings plan but only 40% join when it is opt-in, the difference is mostly explained by...",
+     "o": [
+      "inertia and framing of the default",
+      "different incomes between the two groups of employees",
+      "different tax rates between the two plans",
+      "different interest rates on the two plans"
+     ],
+     "a": 0,
+     "why": "The plan is identical; the choice architecture differs.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If people make predictable mistakes, does that justify more government paternalism?",
+     "o": [
+      "Not automatically: officials are also fallible and values about autonomy differ",
+      "Yes, always, since any mistake justifies more control",
+      "No, never, since mistakes cannot be predicted",
+      "Mistakes do not exist, since people always choose well"
+     ],
+     "a": 0,
+     "why": "The case depends on evidence and values.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a behavioural finding from a laboratory fail to scale to a real market?",
+     "rubric": [
+      [
+       "lab",
+       "student",
+       "sample",
+       "small",
+       "stakes"
+      ],
+      [
+       "market",
+       "experience",
+       "learn",
+       "competition",
+       "incentive",
+       "real"
+      ],
+      [
+       "context",
+       "culture",
+       "different",
+       "scale",
+       "replicat",
+       "vary"
+      ]
+     ],
+     "min": 2,
+     "model": "Lab samples and low stakes differ from real markets, where experience, competition and higher incentives can reduce biases, and results may vary across contexts and cultures.",
+     "why": "External validity is not guaranteed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Standard and behavioural economics are best viewed as...",
+     "o": [
+      "complementary approaches whose usefulness depends on the question",
+      "enemies, so that only one can be right",
+      "identical, so there is no difference between them",
+      "irrelevant to each other, with no shared ideas"
+     ],
+     "a": 0,
+     "why": "Each captures different aspects of behaviour.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Biases and nudges",
+    "model": "Behavioural economics shows people do not always decide like the textbook consumer. They dislike losses more than they like equal gains, favour rewards now, and stick with defaults. Policymakers can use nudges such as automatic enrolment in savings plans. For example, a plan with auto-enrolment can have 90% participation instead of 40%.",
+    "points": [
+     {
+      "k": [
+       "loss",
+       "bigger",
+       "more than gains",
+       "aversion"
+      ],
+      "ask": "What is loss aversion?"
+     },
+     {
+      "k": [
+       "present",
+       "now",
+       "impatient",
+       "procrastinat"
+      ],
+      "ask": "What is present bias?"
+     },
+     {
+      "k": [
+       "default",
+       "nudge",
+       "opt",
+       "automatic"
+      ],
+      "ask": "What is a nudge?"
+     },
+     {
+      "k": [
+       "ethic",
+       "paternal",
+       "autonomy",
+       "manipul",
+       "debate"
+      ],
+      "ask": "Is nudging always fine?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Economic policy analysis",
+   "icon": "🧭",
+   "hook": "A government wants to know whether a job-training scheme actually worked. How can it separate the scheme's effect from what would have happened anyway?",
+   "explain": [
+    "Policy analysis asks: what is the problem, what are the options, what are the likely effects, and who gains and loses? Tools include cost-benefit analysis, cost-effectiveness analysis (cost per unit of outcome), distributional analysis, and sensitivity analysis, which tests how results change if assumptions change.",
+    "Evaluation needs a counterfactual: what would have happened without the policy. Difference-in-differences compares the change in the treated group with the change in a comparison group. If treated earnings rose from 50 to 62 and comparison earnings from 48 to 54, the estimated effect is (62 − 50) − (54 − 48) = 6, assuming parallel trends.",
+    "Good analysis separates facts from values, states uncertainty, and considers unintended consequences and implementation. Different people may rank the same options differently, because they weight efficiency, equity, liberty or risk differently. The analyst's role is to make trade-offs transparent, not to hide value judgements behind numbers."
+   ],
+   "example": {
+    "q": "Programme A costs 2,000,000 zeds and gains 500 life-years of healthy living. Programme B costs 3,000,000 and gains 600. Compare cost-effectiveness, and compute the incremental cost per extra life-year of B over A.",
+    "steps": [
+     "A: 2,000,000 ÷ 500 = 4,000 per life-year.",
+     "B: 3,000,000 ÷ 600 = 5,000 per life-year.",
+     "Incremental: (3,000,000 − 2,000,000) ÷ (600 − 500) = 10,000 per additional life-year."
+    ],
+    "a": "A is 4,000, B is 5,000; B's extra years cost 10,000 each"
+   },
+   "analogies": {
+    "farm": "Testing a new seed on some fields and comparing with similar untreated fields.",
+    "city": "Comparing a district that got a new bus line with a similar one that did not.",
+    "sport": "Judging a training method by comparing improvement with a matched team.",
+    "tech": "An A/B test of a new design on random users."
+   },
+   "mnemonic": "Define, compare options, estimate, weigh, and be honest about doubts.",
+   "terms": [
+    [
+     "Counterfactual",
+     "What would have happened without the policy."
+    ],
+    [
+     "Cost-effectiveness",
+     "Cost per unit of outcome achieved."
+    ],
+    [
+     "Sensitivity analysis",
+     "Testing how results change with assumptions."
+    ],
+    [
+     "Difference-in-differences",
+     "Comparing changes over time between treated and comparison groups."
+    ]
+   ],
+   "misc": {
+    "wrong": "If an outcome improves after a policy, the policy caused it.",
+    "right": "Other factors may have changed too. Evaluation needs a credible comparison."
+   },
+   "limits": "Even good evaluations rest on assumptions, and results from one place may not carry over. Distributional and ethical judgements cannot be decided by data alone.",
+   "trip": {
+    "wiki": "Difference in differences",
+    "prompt": "Find an applied example and the parallel trends assumption."
+   },
+   "sources": [
+    "Policy analysis",
+    "Cost–effectiveness analysis",
+    "Difference in differences"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Treated earnings rose from 50 to 62; comparison earnings rose from 48 to 54. What is the difference-in-differences estimate?",
+     "a": 6,
+     "tol": 0,
+     "why": "(62 − 50) − (54 − 48) = 12 − 6 = 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A programme costs 900,000 zeds and prevents 300 hospital stays. What is the cost per stay prevented?",
+     "a": 3000,
+     "tol": 0,
+     "unit": "zeds",
+     "why": "900,000 ÷ 300 = 3,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Programme A: 2,000,000 for 500 life-years. Programme B: 3,000,000 for 600. What is B's incremental cost per extra life-year over A?",
+     "a": 10000,
+     "tol": 0,
+     "unit": "zeds",
+     "why": "1,000,000 ÷ 100 = 10,000.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The counterfactual is...",
+     "o": [
+      "what would have happened without the policy",
+      "the policy's budget for the year",
+      "the policy's goal, as set by its authors",
+      "the political opposition to the policy"
+     ],
+     "a": 0,
+     "why": "Effects are measured against it.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Sensitivity analysis is used to...",
+     "o": [
+      "see how results change if assumptions change",
+      "hide uncertainty from readers of the report",
+      "raise the budget of the project",
+      "remove the policy from the debate"
+     ],
+     "a": 0,
+     "why": "It tests robustness.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Cost-effectiveness analysis differs from cost-benefit analysis because it...",
+     "o": [
+      "measures outcomes in natural units rather than money",
+      "ignores costs and looks only at outcomes",
+      "values only the profits that a project earns",
+      "needs no comparison between different options"
+     ],
+     "a": 0,
+     "why": "It avoids putting money values on outcomes like life-years.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each tool to its purpose.",
+     "pairs": [
+      [
+       "Cost-benefit analysis",
+       "Compare monetised benefits and costs"
+      ],
+      [
+       "Distributional analysis",
+       "See who gains and loses"
+      ],
+      [
+       "Sensitivity analysis",
+       "Test robustness to assumptions"
+      ],
+      [
+       "Randomised trial",
+       "Create a credible comparison group"
+      ]
+     ],
+     "why": "A toolkit rather than a single method.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A city's crime fell after it introduced a new policy. List two other explanations that should be ruled out before crediting the policy.",
+     "rubric": [
+      [
+       "trend",
+       "already falling",
+       "national",
+       "other cities",
+       "regional"
+      ],
+      [
+       "economy",
+       "unemploy",
+       "weather",
+       "police",
+       "demographic",
+       "other policy",
+       "reporting",
+       "change in"
+      ],
+      [
+       "chance",
+       "random",
+       "regression",
+       "mean"
+      ]
+     ],
+     "min": 2,
+     "model": "Crime may have been falling anyway or in many other cities, or other changes such as the economy, policing or reporting may explain it, or it could be regression to the mean after an unusual peak. A comparison group helps rule these out.",
+     "why": "Evaluation needs a counterfactual.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two policies have the same net benefit but one helps the poorest more. What is the best analytic response?",
+     "o": [
+      "Report the distributional difference and let decision-makers weigh it",
+      "Ignore the difference, since net benefit is the same",
+      "Choose randomly between them, as they are equal",
+      "Say the data decides, so there is no need for a judgement"
+     ],
+     "a": 0,
+     "why": "Distribution is a value-laden dimension to make transparent.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pilot works in one town. Why be cautious about rolling it out nationally?",
+     "o": [
+      "Context, scale and implementation may change the results",
+      "Pilots are always accurate, so nothing will change",
+      "Towns are identical, so a result in one holds in all",
+      "Costs vanish at scale, so the rollout will be cheap"
+     ],
+     "a": 0,
+     "why": "External validity is limited.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An analyst presents one number as 'the' effect of a policy. What is missing?",
+     "o": [
+      "A range or confidence interval and assumptions",
+      "Nothing, since one number is clear enough on its own",
+      "More decimal places, which would make it more exact",
+      "A shorter report, which would be easier to read"
+     ],
+     "a": 0,
+     "why": "Transparent uncertainty is part of good practice.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a policy with positive net benefits still be politically or ethically contested?",
+     "rubric": [
+      [
+       "gain",
+       "lose",
+       "winners",
+       "losers",
+       "distribut",
+       "who"
+      ],
+      [
+       "compensat",
+       "fair",
+       "equity",
+       "unjust",
+       "rights",
+       "harm"
+      ],
+      [
+       "values",
+       "weigh",
+       "disagree",
+       "priorit",
+       "opinion"
+      ]
+     ],
+     "min": 2,
+     "model": "Net benefits can hide that some groups lose while others gain, and people differ on fairness, rights and how to weigh gains and losses, so positive net benefit alone does not settle the decision.",
+     "why": "Efficiency is not the only criterion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best description of an analyst's role in a contested policy debate?",
+     "o": [
+      "Make assumptions, evidence and trade-offs transparent",
+      "Declare a winner using only the models, and nothing else",
+      "Avoid giving any numbers, so no one can dispute them",
+      "Hide the uncertainty, so the advice sounds firm"
+     ],
+     "a": 0,
+     "why": "Transparency supports informed democratic choice.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Evaluating a policy",
+    "model": "To judge a policy you compare what happened with what would have happened without it. Difference-in-differences compares the change in a treated group with the change in a similar untreated group. Analysts use tools such as cost-benefit and cost-effectiveness, test assumptions and show who gains and loses. For example, earnings up 12 for the treated and 6 for the comparison group gives an effect of 6.",
+    "points": [
+     {
+      "k": [
+       "counterfactual",
+       "without the policy",
+       "would have happened"
+      ],
+      "ask": "What do we compare against?"
+     },
+     {
+      "k": [
+       "difference",
+       "comparison group",
+       "treated",
+       "change"
+      ],
+      "ask": "How can we estimate the effect?"
+     },
+     {
+      "k": [
+       "cost",
+       "benefit",
+       "effective",
+       "tool"
+      ],
+      "ask": "What tools help weigh the options?"
+     },
+     {
+      "k": [
+       "value",
+       "distribut",
+       "who gains",
+       "uncertain",
+       "trade-off"
+      ],
+      "ask": "What can data not decide?"
+     }
+    ]
+   }
+  }
+ ]
+}

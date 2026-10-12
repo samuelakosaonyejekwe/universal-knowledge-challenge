@@ -1,0 +1,1811 @@
+{
+ "world": 10,
+ "lang": "ja",
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced grammar",
+   "icon": "🧩",
+   "hook": "\"The teacher praised me\" and \"I was praised by the teacher\". Japanese changes the verb to flip the viewpoint.",
+   "explain": [
+    "The passive (受身, ukemi) is made with -(r)areru: 褒める → 褒められる. 先生に褒められました (I was praised by the teacher). The agent is marked with に. Japanese also has the \"suffering passive\", used when something unpleasant affects you: 雨に降られました (I got rained on).",
+    "The causative (使役, shieki) is made with -(s)aseru: 母は弟を買い物に行かせました (Mother made/let younger brother go shopping). The potential (可能形, kanōkei) says can: 日本語が話せます (I can speak Japanese), where the object often takes が.",
+    "Other advanced patterns express judgement. 〜そうだ is \"looks like\" (from appearance) or \"I heard\" (hearsay), 〜ようだ is \"seems\" from evidence, 〜らしい is \"apparently\", and 〜はずだ is \"should be\". The conditional ば (if) and なら (if it is the case) differ in nuance."
+   ],
+   "mnemonic": "られる for passive, させる for causative.",
+   "items": [
+    [
+     "passive",
+     "受身",
+     "ukemi"
+    ],
+    [
+     "causative",
+     "使役",
+     "shieki"
+    ],
+    [
+     "potential form",
+     "可能形",
+     "kanōkei"
+    ],
+    [
+     "conditional",
+     "条件",
+     "jōken"
+    ],
+    [
+     "looks like, I heard that",
+     "〜そうだ",
+     "~sō da"
+    ],
+    [
+     "it seems",
+     "〜ようだ",
+     "~yō da"
+    ],
+    [
+     "apparently",
+     "〜らしい",
+     "~rashii"
+    ],
+    [
+     "it should be",
+     "〜はずだ",
+     "~hazu da"
+    ]
+   ],
+   "sentences": [
+    [
+     "I was praised by the teacher.",
+     [
+      "先生",
+      "に",
+      "褒め",
+      "られました"
+     ]
+    ],
+    [
+     "Mother made younger brother go shopping.",
+     [
+      "母",
+      "は",
+      "弟",
+      "を",
+      "買い物",
+      "に",
+      "行か",
+      "せました"
+     ]
+    ],
+    [
+     "I can speak Japanese.",
+     [
+      "日本語",
+      "が",
+      "話せます"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which form expresses \"was praised\"?",
+     "o": [
+      "褒められました",
+      "褒めさせました",
+      "褒めたい",
+      "褒めよう"
+     ],
+     "a": 0,
+     "why": "The passive uses られる.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does 弟を行かせました express?",
+     "o": [
+      "My brother was sent to me",
+      "Made or let my brother go",
+      "My brother can go",
+      "My brother went by himself"
+     ],
+     "a": 1,
+     "why": "The causative expresses making or letting someone do something.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is a \"suffering passive\"?",
+     "o": [
+      "A passive with no agent",
+      "A polite form",
+      "A passive showing a bad effect on someone",
+      "A past tense"
+     ],
+     "a": 2,
+     "why": "It is a passive that shows an unpleasant effect on the speaker.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which pattern shows hearsay?",
+     "o": [
+      "〜はずだ",
+      "〜たい",
+      "〜ない",
+      "〜そうだ"
+     ],
+     "a": 3,
+     "why": "〜そうだ can mean \"I heard that\".",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does 日本語が話せます use が?",
+     "o": [
+      "The object often takes が",
+      "が marks time",
+      "が is wrong here",
+      "が marks the place"
+     ],
+     "a": 0,
+     "why": "With potential verbs, the object is often marked with が.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced Japanese grammar",
+    "model": "The passive is -areru, the causative is -saseru and the potential means can. Patterns such as sō da, yō da and rashii express judgement or hearsay.",
+    "points": [
+     {
+      "k": [
+       "passive",
+       "られる"
+      ],
+      "ask": "How do I make the passive?"
+     },
+     {
+      "k": [
+       "causative",
+       "させる",
+       "make",
+       "let"
+      ],
+      "ask": "What does the causative mean?"
+     },
+     {
+      "k": [
+       "hearsay",
+       "seem",
+       "apparently",
+       "rashii"
+      ],
+      "ask": "How do I express hearsay?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese grammar",
+    "prompt": "Find the passive section and read an example of the suffering passive."
+   },
+   "sources": [
+    "Japanese grammar",
+    "Japanese verb conjugation"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Complex sentence patterns",
+   "icon": "🪢",
+   "hook": "\"The more you practise, the better you get.\" Japanese has a neat pattern for that.",
+   "explain": [
+    "Pattern 〜ば〜ほど (ba… hodo) means the more… the more…: 練習すればするほど上手になります (the more you practise, the better you become). 〜にもかかわらず (ni mo kakawarazu) means in spite of: 雨にもかかわらず試合は行われました (despite the rain, the match took place).",
+    "〜わけではない (wake de wa nai) means it does not mean that…: 嫌いなわけではありません (it is not that I dislike it). 〜ことにする shows your own decision and 〜ことになる shows a decision made by circumstances: 来年日本へ留学するつもりです (I intend to study in Japan next year).",
+    "Other patterns: 〜べき (should), 〜ように (so that, in order to) and 〜はずだ (expected). Choosing between つもり (intention), ことにする (decide) and ことになる (it was decided) is a typical test of usage."
+   ],
+   "mnemonic": "Decide yourself: ことにする. Decided for you: ことになる.",
+   "items": [
+    [
+     "the more… the more…",
+     "〜ば〜ほど",
+     "~ba ~hodo"
+    ],
+    [
+     "in spite of",
+     "〜にもかかわらず",
+     "~ni mo kakawarazu"
+    ],
+    [
+     "it doesn't mean that…",
+     "〜わけではない",
+     "~wake de wa nai"
+    ],
+    [
+     "decide to…",
+     "〜ことにする",
+     "~koto ni suru"
+    ],
+    [
+     "it has been decided that…",
+     "〜ことになる",
+     "~koto ni naru"
+    ],
+    [
+     "intend to…",
+     "〜つもり",
+     "~tsumori"
+    ],
+    [
+     "ought to…",
+     "〜べき",
+     "~beki"
+    ],
+    [
+     "so that…",
+     "〜ように",
+     "~yō ni"
+    ]
+   ],
+   "sentences": [
+    [
+     "The more you practise, the better you get.",
+     [
+      "練習",
+      "すれば",
+      "する",
+      "ほど",
+      "上手",
+      "に",
+      "なります"
+     ]
+    ],
+    [
+     "Despite the rain, the match was held.",
+     [
+      "雨",
+      "にもかかわらず",
+      "試合",
+      "は",
+      "行われました"
+     ]
+    ],
+    [
+     "I intend to study in Japan next year.",
+     [
+      "来年",
+      "日本",
+      "へ",
+      "留学",
+      "する",
+      "つもり",
+      "です"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which expresses your own decision?",
+     "o": [
+      "〜ことになる",
+      "〜ことにする",
+      "〜べき",
+      "〜はず"
+     ],
+     "a": 1,
+     "why": "〜ことにする shows your own decision.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does 〜にもかかわらず express?",
+     "o": [
+      "Because of",
+      "As soon as",
+      "In spite of",
+      "In order to"
+     ],
+     "a": 2,
+     "why": "It means despite or in spite of.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A manager says 来月から東京で働くことになりました. What does this suggest?",
+     "o": [
+      "I decided myself",
+      "I refused",
+      "I might go",
+      "It was decided that I will work in Tokyo"
+     ],
+     "a": 3,
+     "why": "ことになる shows a decision made by circumstances or others.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does 嫌いなわけではありません mean?",
+     "o": [
+      "It is not that I dislike it",
+      "I hate it",
+      "I like it very much",
+      "I do not know it"
+     ],
+     "a": 0,
+     "why": "It means \"It is not that I dislike it\".",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which pattern fits \"the more you read, the more you understand\"?",
+     "o": [
+      "読んだから分かる",
+      "読めば読むほど分かる",
+      "読むために分かる",
+      "読みながら分かる"
+     ],
+     "a": 1,
+     "why": "〜ば〜ほど matches the more… the more….",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex Japanese patterns",
+    "model": "Patterns such as ~ba ~hodo, ~ni mo kakawarazu and ~wake de wa nai express nuance. ~koto ni suru is your decision, and ~koto ni naru is a decision by circumstances.",
+    "points": [
+     {
+      "k": [
+       "more",
+       "ほど",
+       "ba"
+      ],
+      "ask": "What does ~ba ~hodo mean?"
+     },
+     {
+      "k": [
+       "despite",
+       "in spite",
+       "かかわらず"
+      ],
+      "ask": "What does ~ni mo kakawarazu mean?"
+     },
+     {
+      "k": [
+       "decide",
+       "circumstances",
+       "ことにする",
+       "ことになる"
+      ],
+      "ask": "What is the difference between ~koto ni suru and ~koto ni naru?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese grammar",
+    "prompt": "Find the list of N3 or N2 grammar patterns and write two example sentences."
+   },
+   "sources": [
+    "Japanese grammar",
+    "Japanese Language Proficiency Test"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Extended conversations",
+   "icon": "🗨️",
+   "hook": "In a real conversation you do not just speak. You nod, you hedge and you shift the topic. Which small words help?",
+   "explain": [
+    "Fillers and responses keep the flow. そうですね (sō desu ne) means \"that's right\" or \"let me see\". なるほど (naruhodo) means \"I see\". たしかに (tashika ni) means \"indeed\" and やっぱり (yappari) means \"as expected\". 実は (jitsu wa) introduces a surprising truth: 実は少し迷っています (to tell the truth, I'm a little unsure).",
+    "To give opinions softly, use 〜と思います (I think) or 〜かもしれません (maybe). ところで (tokorode) changes the topic (\"by the way\") and つまり (tsumari) summarises (\"in other words\"). 例えば (tatoeba) introduces an example.",
+    "Japanese speakers often avoid saying no directly. Phrases like ちょっと難しいですね (that's a little difficult) can mean a refusal. Listen for tone, pauses and hedges, and answer with a reason rather than a bare no."
+   ],
+   "mnemonic": "Listen, nod, hedge, then give your reason.",
+   "items": [
+    [
+     "that's right, let me see",
+     "そうですね",
+     "sō desu ne"
+    ],
+    [
+     "I see",
+     "なるほど",
+     "naruhodo"
+    ],
+    [
+     "to tell the truth",
+     "実は",
+     "jitsu wa"
+    ],
+    [
+     "as expected",
+     "やっぱり",
+     "yappari"
+    ],
+    [
+     "indeed",
+     "たしかに",
+     "tashika ni"
+    ],
+    [
+     "by the way",
+     "ところで",
+     "tokorode"
+    ],
+    [
+     "in other words",
+     "つまり",
+     "tsumari"
+    ],
+    [
+     "for example",
+     "例えば",
+     "tatoeba"
+    ]
+   ],
+   "sentences": [
+    [
+     "To tell the truth, I am a little unsure.",
+     [
+      "実は",
+      "少し",
+      "迷って",
+      "います"
+     ]
+    ],
+    [
+     "I see, that way of thinking is possible too.",
+     [
+      "なるほど",
+      "そう",
+      "いう",
+      "考え方",
+      "も",
+      "あります",
+      "ね"
+     ]
+    ],
+    [
+     "By the way, what are your plans tomorrow?",
+     [
+      "ところで",
+      "明日",
+      "の",
+      "予定",
+      "は",
+      "どう",
+      "です",
+      "か"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which word means \"by the way\"?",
+     "o": [
+      "つまり",
+      "実は",
+      "ところで",
+      "たしかに"
+     ],
+     "a": 2,
+     "why": "ところで changes the topic.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which word introduces an example?",
+     "o": [
+      "つまり",
+      "ところで",
+      "やっぱり",
+      "例えば"
+     ],
+     "a": 3,
+     "why": "例えば means for example.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A colleague says ちょっと難しいですね about your request. How should you read this?",
+     "o": [
+      "Probably a polite no",
+      "A clear yes",
+      "An invitation",
+      "A joke"
+     ],
+     "a": 0,
+     "why": "It is often a polite way to refuse.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is 〜と思います useful in discussions?",
+     "o": [
+      "It makes a question",
+      "It softens opinions",
+      "It marks the past",
+      "It shows anger"
+     ],
+     "a": 1,
+     "why": "It softens an opinion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does つまり do?",
+     "o": [
+      "It starts a new topic",
+      "It asks a price",
+      "It summarises",
+      "It means \"no\""
+     ],
+     "a": 2,
+     "why": "つまり summarises: in other words.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Natural Japanese conversation",
+    "model": "Use そうですね and なるほど to respond, 〜と思います to soften an opinion, and ところで to change the topic. A phrase like ちょっと難しいです can be a polite refusal.",
+    "points": [
+     {
+      "k": [
+       "そうですね",
+       "なるほど",
+       "respond"
+      ],
+      "ask": "How do I respond?"
+     },
+     {
+      "k": [
+       "と思います",
+       "soften",
+       "opinion"
+      ],
+      "ask": "How do I soften an opinion?"
+     },
+     {
+      "k": [
+       "ちょっと",
+       "refusal",
+       "indirect"
+      ],
+      "ask": "What does ちょっと難しい suggest?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese conversation",
+    "prompt": "Read a dialogue and mark each aizuchi."
+   },
+   "sources": [
+    "Aizuchi",
+    "Japanese honorifics"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Formal and informal registers",
+   "icon": "🎩",
+   "hook": "Speaking to a customer, to a boss and to a friend: the same verb changes shape. This is keigo.",
+   "explain": [
+    "Japanese has plain style (だ), polite style (です・ます, 丁寧語, teineigo) and honorific language (敬語, keigo). Keigo has two main kinds: 尊敬語 (sonkeigo, honorific), which raises the other person's actions, and 謙譲語 (kenjōgo, humble), which lowers your own actions.",
+    "Examples: \"go/come/be\" is いらっしゃる (honorific) and 参る (humble); \"eat\" is 召し上がる (honorific) and いただく (humble); \"say\" is おっしゃる (honorific) and 申す (humble). 先生は明日いらっしゃいます (the teacher will come tomorrow); 私が資料をお送りします (I will send the materials).",
+    "Never use sonkeigo for your own actions or kenjōgo for the other person's. To a customer, a company employee refers to their own boss in humble terms. Choosing the register depends on the relationship, age, situation, and in-group or out-group status."
+   ],
+   "mnemonic": "Raise them with sonkeigo, lower yourself with kenjōgo.",
+   "items": [
+    [
+     "honorific language",
+     "尊敬語",
+     "sonkeigo"
+    ],
+    [
+     "humble language",
+     "謙譲語",
+     "kenjōgo"
+    ],
+    [
+     "polite language",
+     "丁寧語",
+     "teineigo"
+    ],
+    [
+     "to go/come/be (honorific)",
+     "いらっしゃる",
+     "irassharu"
+    ],
+    [
+     "to go/come (humble)",
+     "参る",
+     "mairu"
+    ],
+    [
+     "to eat (honorific)",
+     "召し上がる",
+     "meshiagaru"
+    ],
+    [
+     "to eat/receive (humble)",
+     "いただく",
+     "itadaku"
+    ],
+    [
+     "to say (honorific)",
+     "おっしゃる",
+     "ossharu"
+    ]
+   ],
+   "sentences": [
+    [
+     "The teacher will come tomorrow.",
+     [
+      "先生",
+      "は",
+      "明日",
+      "いらっしゃいます"
+     ]
+    ],
+    [
+     "I will send the materials.",
+     [
+      "私",
+      "が",
+      "資料",
+      "を",
+      "お送り",
+      "します"
+     ]
+    ],
+    [
+     "Please help yourself.",
+     [
+      "どうぞ",
+      "召し上がって",
+      "ください"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is honorific for \"eat\"?",
+     "o": [
+      "いただく",
+      "食べる",
+      "食う",
+      "召し上がる"
+     ],
+     "a": 3,
+     "why": "召し上がる raises the other person's action.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is humble for \"eat/receive\"?",
+     "o": [
+      "いただく",
+      "召し上がる",
+      "いらっしゃる",
+      "おっしゃる"
+     ],
+     "a": 0,
+     "why": "いただく lowers the speaker's own action.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says 私が先生におっしゃいました. What is wrong?",
+     "o": [
+      "Nothing",
+      "Honorific used for oneself",
+      "They used humble wrongly for the teacher",
+      "The particle is wrong"
+     ],
+     "a": 1,
+     "why": "おっしゃる is honorific and cannot be used for your own action.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "To a customer, how does an employee refer to the company president?",
+     "o": [
+      "With maximum honorifics always",
+      "By first name",
+      "Without raising him too highly, in humble terms",
+      "With plain style"
+     ],
+     "a": 2,
+     "why": "Toward outsiders, you lower your own in-group.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which factors affect register choice?",
+     "o": [
+      "The weather",
+      "The number of kanji",
+      "Only the verb",
+      "Relationship, age, situation and in-group status"
+     ],
+     "a": 3,
+     "why": "Relationship, age, situation and in-group status all matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Japanese keigo",
+    "model": "Keigo has honorific forms to raise another person and humble forms to lower yourself. Use the right kind for the right person, and never use honorific for your own actions.",
+    "points": [
+     {
+      "k": [
+       "honorific",
+       "sonkeigo",
+       "raise",
+       "other"
+      ],
+      "ask": "What does honorific language do?"
+     },
+     {
+      "k": [
+       "humble",
+       "kenjōgo",
+       "lower",
+       "yourself"
+      ],
+      "ask": "What does humble language do?"
+     },
+     {
+      "k": [
+       "own",
+       "yourself",
+       "not"
+      ],
+      "ask": "Can I use honorific for myself?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Honorific speech in Japanese",
+    "prompt": "Make a table of five verbs with plain, honorific and humble forms."
+   },
+   "sources": [
+    "Honorific speech in Japanese",
+    "Keigo"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Reading articles and literature",
+   "icon": "📜",
+   "hook": "\"I am a cat. I do not yet have a name.\" Which famous Japanese novel begins like this?",
+   "explain": [
+    "Reading Japanese texts means meeting different genres: 新聞 (shinbun, newspaper) with its 見出し (midashi, headline) and 社説 (shasetsu, editorial), 小説 (shōsetsu, novel), and poetry. Newspapers use kanji heavily, compact sentences and the plain style.",
+    "Natsume Sōseki (夏目漱石) wrote 『吾輩は猫である』 (1905). Its opening lines are 「吾輩は猫である。名前はまだ無い。」 (\"I am a cat. As yet I have no name.\"). The old-fashioned 吾輩 (wagahai) is a proud way to say \"I\".",
+    "A haiku (俳句) has 5-7-5 sounds and usually contains a season word (季語, kigo). Matsuo Bashō (松尾芭蕉) wrote 古池や蛙飛び込む水の音: \"An old pond; a frog jumps in, the sound of water.\" The cutting word や (ya) divides the poem. Reading tips: look for the season, the cut and the images."
+   ],
+   "mnemonic": "5-7-5 and a season word make a haiku.",
+   "items": [
+    [
+     "newspaper",
+     "新聞",
+     "shinbun"
+    ],
+    [
+     "headline",
+     "見出し",
+     "midashi"
+    ],
+    [
+     "editorial",
+     "社説",
+     "shasetsu"
+    ],
+    [
+     "novel",
+     "小説",
+     "shōsetsu"
+    ],
+    [
+     "haiku",
+     "俳句",
+     "haiku"
+    ],
+    [
+     "season word",
+     "季語",
+     "kigo"
+    ],
+    [
+     "writer",
+     "作家",
+     "sakka"
+    ],
+    [
+     "Bashō",
+     "芭蕉",
+     "Bashō"
+    ]
+   ],
+   "sentences": [
+    [
+     "I am a cat.",
+     [
+      "吾輩",
+      "は",
+      "猫",
+      "で",
+      "ある"
+     ]
+    ],
+    [
+     "As yet I have no name.",
+     [
+      "名前",
+      "は",
+      "まだ",
+      "無い"
+     ]
+    ],
+    [
+     "An old pond; a frog jumps in, the sound of water.",
+     [
+      "古池",
+      "や",
+      "蛙",
+      "飛び込む",
+      "水",
+      "の",
+      "音"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is the pattern of a haiku?",
+     "o": [
+      "5-7-5",
+      "3-5-3",
+      "7-7-7",
+      "5-5-5"
+     ],
+     "a": 0,
+     "why": "A haiku has 5-7-5 sounds.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Who wrote 『吾輩は猫である』?",
+     "o": [
+      "松尾芭蕉",
+      "夏目漱石",
+      "紫式部",
+      "川端康成"
+     ],
+     "a": 1,
+     "why": "Natsume Sōseki wrote it in 1905.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is a 季語?",
+     "o": [
+      "A cutting word",
+      "A pen name",
+      "A season word",
+      "A particle"
+     ],
+     "a": 2,
+     "why": "A kigo is a word that points to a season.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does the cutting word や do in Bashō's poem?",
+     "o": [
+      "It asks a question",
+      "It marks the past",
+      "It adds a number",
+      "It separates two images"
+     ],
+     "a": 3,
+     "why": "It divides the poem into two images.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why read the headline of a newspaper first?",
+     "o": [
+      "It summarises the topic",
+      "It is always wrong",
+      "It is a poem",
+      "It gives the date only"
+     ],
+     "a": 0,
+     "why": "It gives the topic in compact form.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading Japanese literature",
+    "model": "Newspapers use headlines and compact sentences. Natsume Sōseki wrote a novel narrated by a cat. A haiku has 5-7-5 sounds and a season word, and often a cutting word.",
+    "points": [
+     {
+      "k": [
+       "headline",
+       "topic",
+       "summary"
+      ],
+      "ask": "How do I read a newspaper?"
+     },
+     {
+      "k": [
+       "sōseki",
+       "cat",
+       "吾輩"
+      ],
+      "ask": "Who wrote the novel narrated by a cat?"
+     },
+     {
+      "k": [
+       "5-7-5",
+       "season",
+       "kigo"
+      ],
+      "ask": "What makes a haiku?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "I Am a Cat",
+    "prompt": "Read the opening of I Am a Cat and note the narrator's attitude."
+   },
+   "sources": [
+    "I Am a Cat",
+    "Haiku",
+    "Matsuo Bashō"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Essay and correspondence writing",
+   "icon": "✉️",
+   "hook": "How do you open and close a formal Japanese letter or email? There are set phrases that tell the reader you are polite.",
+   "explain": [
+    "A formal letter opens with 拝啓 (haikei, \"respectfully\") and closes with 敬具 (keigu, \"yours sincerely\"). A seasonal greeting (時候の挨拶, jikō no aisatsu) follows the opening, for example about the weather or the season. Modern emails are shorter.",
+    "A business email has a clear subject (件名, kenmei), the recipient's name and company, a greeting such as お世話になっております (thank you for your continued support), the body, and a closing like どうぞよろしくお願いいたします. 添付 (tenpu) means attachment. A signature (署名, shomei) comes last.",
+    "Use keigo throughout: 資料を添付いたします (I attach the document). Avoid casual shortenings, and use 様 (sama) for formal addresses, such as 田中様. Check the name, title and kanji, since mistakes in a name are especially rude."
+   ],
+   "mnemonic": "Haikei opens, keigu closes.",
+   "items": [
+    [
+     "opening of a formal letter",
+     "拝啓",
+     "haikei"
+    ],
+    [
+     "closing of a formal letter",
+     "敬具",
+     "keigu"
+    ],
+    [
+     "seasonal greeting",
+     "時候の挨拶",
+     "jikō no aisatsu"
+    ],
+    [
+     "thank you for your continued support",
+     "お世話になっております",
+     "osewa ni natte orimasu"
+    ],
+    [
+     "attachment",
+     "添付",
+     "tenpu"
+    ],
+    [
+     "subject line",
+     "件名",
+     "kenmei"
+    ],
+    [
+     "addressee",
+     "宛名",
+     "atena"
+    ],
+    [
+     "signature",
+     "署名",
+     "shomei"
+    ]
+   ],
+   "sentences": [
+    [
+     "Thank you for your continued support.",
+     [
+      "お世話に",
+      "なって",
+      "おります"
+     ]
+    ],
+    [
+     "I am attaching the document.",
+     [
+      "資料",
+      "を",
+      "添付",
+      "いたします"
+     ]
+    ],
+    [
+     "I look forward to your kind cooperation.",
+     [
+      "どうぞ",
+      "よろしく",
+      "お願い",
+      "いたします"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which pair opens and closes a formal letter?",
+     "o": [
+      "敬具 and 拝啓",
+      "拝啓 and 敬具",
+      "署名 and 件名",
+      "添付 and 宛名"
+     ],
+     "a": 1,
+     "why": "拝啓 opens and 敬具 closes.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is 添付?",
+     "o": [
+      "Subject line",
+      "Signature",
+      "Attachment",
+      "Greeting"
+     ],
+     "a": 2,
+     "why": "添付 means attachment.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is 様 used in 田中様?",
+     "o": [
+      "It is a first name",
+      "It marks a verb",
+      "It is a counter",
+      "It is a more formal title than さん"
+     ],
+     "a": 3,
+     "why": "様 is a more formal title than さん.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is wrong with a business email that starts with the recipient's first name only?",
+     "o": [
+      "It lacks the formal address",
+      "It is too long",
+      "It is perfect",
+      "It has no verb"
+     ],
+     "a": 0,
+     "why": "Business emails use the surname, company and honorific.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why check the kanji of a name carefully?",
+     "o": [
+      "Names have no kanji",
+      "Errors in names are rude",
+      "Names are not important",
+      "Kanji are optional"
+     ],
+     "a": 1,
+     "why": "A mistake in someone's name is considered rude.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Writing formal Japanese letters",
+    "model": "A formal letter opens with 拝啓, a seasonal greeting, the body, and closes with 敬具. Business emails use a subject line, お世話になっております, keigo and 様.",
+    "points": [
+     {
+      "k": [
+       "拝啓",
+       "haikei",
+       "敬具",
+       "keigu"
+      ],
+      "ask": "How does a formal letter start and end?"
+     },
+     {
+      "k": [
+       "お世話",
+       "greeting",
+       "support"
+      ],
+      "ask": "What do I write at the start of a business email?"
+     },
+     {
+      "k": [
+       "様",
+       "sama",
+       "honorific"
+      ],
+      "ask": "How do I address the recipient?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese business etiquette",
+    "prompt": "Read about business emails in Japan and note one rule."
+   },
+   "sources": [
+    "Japanese business etiquette",
+    "Keigo"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Translation fundamentals",
+   "icon": "🔄",
+   "hook": "Japanese often leaves out \"I\" and \"you\". How should a translator handle that in English?",
+   "explain": [
+    "Translation (翻訳, hon'yaku) means conveying meaning. 直訳 (chokuyaku) is literal translation and 意訳 (iyaku) is free translation. Japanese often omits the subject (主語, shugo): 食べました can mean I ate, you ate or she ate. A translator into English must decide the subject from context (文脈, bunmyaku).",
+    "Word order differs. Japanese puts the verb last and modifiers before nouns, so a long sentence is often reordered in English. Politeness level is another challenge: English has no direct equivalent of keigo, so the translator expresses it through word choice or tone.",
+    "Idioms need care. 猿も木から落ちる (saru mo ki kara ochiru) literally says \"even monkeys fall from trees\", meaning anyone can make a mistake. A translator should convey the meaning, not just the monkeys. Mistranslation (誤訳, goyaku) can cause confusion in contracts or manuals."
+   ],
+   "mnemonic": "Find the hidden subject, then reorder.",
+   "items": [
+    [
+     "translation",
+     "翻訳",
+     "hon'yaku"
+    ],
+    [
+     "literal translation",
+     "直訳",
+     "chokuyaku"
+    ],
+    [
+     "free translation",
+     "意訳",
+     "iyaku"
+    ],
+    [
+     "subject",
+     "主語",
+     "shugo"
+    ],
+    [
+     "context",
+     "文脈",
+     "bunmyaku"
+    ],
+    [
+     "original text",
+     "原文",
+     "genbun"
+    ],
+    [
+     "translated text",
+     "訳文",
+     "yakubun"
+    ],
+    [
+     "mistranslation",
+     "誤訳",
+     "goyaku"
+    ]
+   ],
+   "sentences": [
+    [
+     "Japanese often omits the subject.",
+     [
+      "日本語",
+      "は",
+      "主語",
+      "を",
+      "省略",
+      "します"
+     ]
+    ],
+    [
+     "A literal translation can be unnatural.",
+     [
+      "直訳",
+      "だと",
+      "不自然",
+      "に",
+      "なる",
+      "こと",
+      "が",
+      "あります"
+     ]
+    ],
+    [
+     "I translate while thinking about the context.",
+     [
+      "文脈",
+      "を",
+      "考えて",
+      "訳します"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does 猿も木から落ちる mean?",
+     "o": [
+      "Monkeys like trees",
+      "Do not climb",
+      "Even experts make mistakes",
+      "Trees are dangerous"
+     ],
+     "a": 2,
+     "why": "It means even experts make mistakes.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is 食べました hard to translate without context?",
+     "o": [
+      "The verb is future",
+      "It has no meaning",
+      "It is a question",
+      "The subject is omitted"
+     ],
+     "a": 3,
+     "why": "The subject is omitted, so context decides who ate.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is the best approach to a Japanese idiom?",
+     "o": [
+      "Convey the meaning",
+      "Translate every word",
+      "Skip it",
+      "Use romaji"
+     ],
+     "a": 0,
+     "why": "Convey the meaning or an equivalent idiom.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must a translator reorder a long Japanese sentence?",
+     "o": [
+      "Japanese has no grammar",
+      "Word order differs",
+      "English has no verbs",
+      "Order is random"
+     ],
+     "a": 1,
+     "why": "Japanese puts the verb last, while English does not.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How can English show Japanese politeness levels?",
+     "o": [
+      "Through kanji",
+      "Through particles",
+      "Through word choice and tone",
+      "It cannot"
+     ],
+     "a": 2,
+     "why": "English can use word choice and tone.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basics of Japanese translation",
+    "model": "Japanese omits subjects, puts verbs last and uses keigo. A translator reads the context, chooses the subject, reorders the sentence and translates idioms by meaning.",
+    "points": [
+     {
+      "k": [
+       "subject",
+       "omit",
+       "context"
+      ],
+      "ask": "What problem is the omitted subject?"
+     },
+     {
+      "k": [
+       "order",
+       "verb",
+       "last",
+       "reorder"
+      ],
+      "ask": "What about word order?"
+     },
+     {
+      "k": [
+       "idiom",
+       "meaning",
+       "equivalent"
+      ],
+      "ask": "What about idioms?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Translation",
+    "prompt": "Compare a literal and a free translation of a Japanese proverb."
+   },
+   "sources": [
+    "Translation",
+    "Japanese proverbs"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Regional varieties and cultural context",
+   "icon": "🗾",
+   "hook": "Does everyone in Japan speak the same? A person from Osaka may say \"ookini\" for thank you.",
+   "explain": [
+    "The standard Japanese (標準語, hyōjungo, or 共通語, kyōtsūgo) is based on Tokyo speech and is used in education and the media. Dialects (方言, hōgen) vary widely. 関西弁 (Kansai-ben), spoken around Osaka and Kyoto, has features such as おおきに (thank you) and ほんま (really).",
+    "Beyond Japanese dialects, the Ryukyuan languages (琉球諸語) of Okinawa and nearby islands are related to Japanese but are usually considered separate languages and are endangered. Ainu (アイヌ語), the language of the Indigenous Ainu people of Hokkaido, is unrelated to Japanese and also endangered.",
+    "Regional speech reflects local history and culture. Many Japanese people use standard Japanese at work and dialect at home or with friends, so they switch codes. Dialect words are valued as local heritage, and dialect-based revitalisation projects exist."
+   ],
+   "mnemonic": "Standard for the nation, dialects for the home.",
+   "items": [
+    [
+     "standard Japanese",
+     "標準語",
+     "hyōjungo"
+    ],
+    [
+     "dialect",
+     "方言",
+     "hōgen"
+    ],
+    [
+     "Kansai dialect",
+     "関西弁",
+     "Kansai-ben"
+    ],
+    [
+     "Osaka",
+     "大阪",
+     "Ōsaka"
+    ],
+    [
+     "Ryukyuan languages",
+     "琉球諸語",
+     "Ryūkyū shogo"
+    ],
+    [
+     "Ainu language",
+     "アイヌ語",
+     "Ainugo"
+    ],
+    [
+     "Tokyo",
+     "東京",
+     "Tōkyō"
+    ],
+    [
+     "region",
+     "地域",
+     "chiiki"
+    ]
+   ],
+   "sentences": [
+    [
+     "People in Osaka speak Kansai dialect.",
+     [
+      "大阪",
+      "の",
+      "人",
+      "は",
+      "関西弁",
+      "を",
+      "話します"
+     ]
+    ],
+    [
+     "Dialects carry local culture.",
+     [
+      "方言",
+      "には",
+      "その",
+      "地域",
+      "の",
+      "文化",
+      "が",
+      "あります"
+     ]
+    ],
+    [
+     "The Ainu language differs from Japanese in origin.",
+     [
+      "アイヌ語",
+      "は",
+      "日本語",
+      "と",
+      "系統",
+      "が",
+      "違います"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is the standard Japanese based on?",
+     "o": [
+      "Osaka speech",
+      "Okinawan speech",
+      "Ainu",
+      "Tokyo speech"
+     ],
+     "a": 3,
+     "why": "Standard Japanese is based on Tokyo speech.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which language is unrelated to Japanese?",
+     "o": [
+      "アイヌ語",
+      "琉球諸語",
+      "関西弁",
+      "標準語"
+     ],
+     "a": 0,
+     "why": "Ainu is not known to be related to Japanese.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are Ryukyuan languages usually considered separate languages?",
+     "o": [
+      "They are the same as Kansai-ben",
+      "They differ greatly from Japanese",
+      "They are written only in English",
+      "They have no speakers"
+     ],
+     "a": 1,
+     "why": "They differ greatly from Japanese and are not mutually intelligible.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does code-switching mean for a Japanese speaker?",
+     "o": [
+      "Writing in two scripts",
+      "Changing a name",
+      "Using different varieties in different settings",
+      "Changing a verb"
+     ],
+     "a": 2,
+     "why": "Using standard Japanese in some settings and a dialect in others.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are dialect revitalisation projects important?",
+     "o": [
+      "They replace Japanese",
+      "They are unnecessary",
+      "They are only for tourists",
+      "They preserve local heritage"
+     ],
+     "a": 3,
+     "why": "Dialects and local languages carry heritage and are disappearing.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Japanese dialects and languages",
+    "model": "Standard Japanese is based on Tokyo speech. Dialects such as Kansai-ben vary. Ryukyuan languages are related to Japanese but different, and Ainu is unrelated. People switch codes between settings.",
+    "points": [
+     {
+      "k": [
+       "tokyo",
+       "standard",
+       "hyōjungo"
+      ],
+      "ask": "What is standard Japanese based on?"
+     },
+     {
+      "k": [
+       "ryukyuan",
+       "okinawa",
+       "related"
+      ],
+      "ask": "What about Ryukyuan?"
+     },
+     {
+      "k": [
+       "ainu",
+       "unrelated",
+       "hokkaido"
+      ],
+      "ask": "What about Ainu?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese dialects",
+    "prompt": "Find a map of Japanese dialect regions and note two features."
+   },
+   "sources": [
+    "Japanese dialects",
+    "Ryukyuan languages",
+    "Ainu language"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Structured debates and presentations",
+   "icon": "🎙️",
+   "hook": "Give a clear 2-minute talk: how do you open, give reasons and close in Japanese?",
+   "explain": [
+    "A Japanese presentation (発表, happyō) is clear and polite. Open with これから発表を始めます (I will now begin my presentation) and introduce your topic. State your opinion with 私は…と考えます and give reasons with 理由は三つあります (there are three reasons).",
+    "In discussions, you can agree (賛成, sansei) or disagree (反対, hantai) politely: 私はこの意見に賛成です. When disagreeing, soften the tone: 少し違う考えを持っています (I have a slightly different view). Support your point with evidence (根拠, konkyo) and examples.",
+    "End with a summary (まとめ, matome) and thank the audience: ご清聴ありがとうございました (thank you for your kind attention). Speak slowly, look at the audience and keep your slides simple. Avoid attacking people, focus on ideas."
+   ],
+   "mnemonic": "Open, reasons, evidence, summary, thanks.",
+   "items": [
+    [
+     "presentation",
+     "発表",
+     "happyō"
+    ],
+    [
+     "agreement",
+     "賛成",
+     "sansei"
+    ],
+    [
+     "opposition",
+     "反対",
+     "hantai"
+    ],
+    [
+     "reason",
+     "理由",
+     "riyū"
+    ],
+    [
+     "grounds, evidence",
+     "根拠",
+     "konkyo"
+    ],
+    [
+     "summary",
+     "まとめ",
+     "matome"
+    ],
+    [
+     "opinion",
+     "意見",
+     "iken"
+    ],
+    [
+     "thank you for listening",
+     "ご清聴ありがとうございました",
+     "go-seichō arigatō gozaimashita"
+    ]
+   ],
+   "sentences": [
+    [
+     "I agree with this opinion.",
+     [
+      "私",
+      "は",
+      "この",
+      "意見",
+      "に",
+      "賛成",
+      "です"
+     ]
+    ],
+    [
+     "There are three reasons.",
+     [
+      "その",
+      "理由",
+      "は",
+      "三つ",
+      "あります"
+     ]
+    ],
+    [
+     "Thank you for your kind attention.",
+     [
+      "ご清聴",
+      "ありがとう",
+      "ございました"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase ends a presentation?",
+     "o": [
+      "ご清聴ありがとうございました",
+      "これから始めます",
+      "賛成です",
+      "反対です"
+     ],
+     "a": 0,
+     "why": "ご清聴ありがとうございました thanks the audience.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does 根拠 mean?",
+     "o": [
+      "Opinion",
+      "Evidence",
+      "Summary",
+      "Greeting"
+     ],
+     "a": 1,
+     "why": "根拠 means grounds or evidence.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "How can you disagree politely?",
+     "o": [
+      "それは間違いです",
+      "ばかな",
+      "少し違う考えを持っています",
+      "聞きたくない"
+     ],
+     "a": 2,
+     "why": "Soften the tone with a mild phrase.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of まとめ?",
+     "o": [
+      "To start",
+      "To thank",
+      "To ask a price",
+      "To summarise"
+     ],
+     "a": 3,
+     "why": "It summarises the main points.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why avoid attacking people in debate?",
+     "o": [
+      "It keeps the debate respectful",
+      "It is against grammar",
+      "It is only for kanji",
+      "Attacks win debates"
+     ],
+     "a": 0,
+     "why": "Focus on ideas, not on the person.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Japanese presentation skills",
+    "model": "Open with これから発表を始めます, state your opinion, give reasons and evidence, summarise and thank the audience. Disagree politely and focus on ideas.",
+    "points": [
+     {
+      "k": [
+       "open",
+       "start",
+       "これから"
+      ],
+      "ask": "How do I begin?"
+     },
+     {
+      "k": [
+       "reason",
+       "evidence",
+       "根拠",
+       "理由"
+      ],
+      "ask": "How do I support my view?"
+     },
+     {
+      "k": [
+       "thank",
+       "ご清聴",
+       "end"
+      ],
+      "ask": "How do I end?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Public speaking",
+    "prompt": "Watch a short Japanese presentation and note its structure."
+   },
+   "sources": [
+    "Public speaking",
+    "Debate"
+   ]
+  }
+ ]
+}

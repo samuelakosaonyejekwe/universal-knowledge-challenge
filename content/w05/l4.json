@@ -1,0 +1,2738 @@
+{
+ "world": 5,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced marine hydrodynamics",
+   "icon": "🌀",
+   "hook": "A wave looks like it carries water forward, yet a floating buoy stays nearly in place. What is a regular wave really carrying, and how much of it?",
+   "explain": [
+    "Linear (Airy) wave theory treats waves as small, smooth, sinusoidal disturbances of an ideal fluid (inviscid and irrotational, so a velocity potential exists). The wave number is k = 2π ÷ λ and angular frequency ω = 2π ÷ T. They are linked by the dispersion relation ω² = g k tanh(kh), where h is the water depth. In deep water (h > λ/2) tanh → 1, so λ = gT²/(2π) and the phase speed is c = gT/(2π).",
+    "Waves carry energy, not water. The mean energy per unit sea-surface area is E = ρ g H² ÷ 8 (half kinetic, half potential). The energy moves at the group velocity c_g, which in deep water is c/2, so a wave group travels at half the speed of its individual crests. The power per metre of crest in deep water is P = E × c_g = ρ g² H² T ÷ (32π). Doubling the wave height quadruples the power.",
+    "Particles move in nearly circular orbits whose radius decays as e^(kz) with depth, so the motion is tiny below about λ/2. The surface orbital velocity amplitude is π H ÷ T. Floating bodies respond to these motions with added mass (water carried along when accelerating), radiation damping (energy lost to waves the body makes) and viscous drag. For large bodies diffraction changes the incident wave; for slender members drag and inertia dominate (Morison)."
+   ],
+   "example": {
+    "q": "A regular deep-water wave has H = 2 m and T = 8 s. Find the energy per square metre and the power per metre of crest. (ρ = 1025 kg/m³, g = 9.81 m/s²)",
+    "steps": [
+     "E = ρ g H²/8 = 1025 × 9.81 × 4 ÷ 8 = 5028 J/m².",
+     "P = ρ g² H² T/(32π) = 1025 × 96.24 × 4 × 8 ÷ 100.53.",
+     "= 31 400 W per metre."
+    ],
+    "a": "E ≈ 5.03 kJ/m²; P ≈ 31.4 kW/m"
+   },
+   "analogies": {
+    "sport": "In a stadium wave the pattern travels far while each spectator just stands and sits: energy and shape move, people do not.",
+    "music": "A pulse in a guitar string moves along the string, but each piece of string vibrates in place. Group velocity is like the speed of a packet of notes.",
+    "nature": "Wind-blown grass ripples across a field, but each blade stays rooted.",
+    "tech": "Data move across a network of cables without any single electron travelling the full distance."
+   },
+   "mnemonic": "ω² = g k tanh(kh). Deep: group speed is half. Energy goes as H squared.",
+   "terms": [
+    [
+     "Dispersion relation",
+     "The link between frequency and wave number: ω² = g k tanh(kh)."
+    ],
+    [
+     "Group velocity",
+     "Speed at which wave energy travels, c_g; half the phase speed in deep water."
+    ],
+    [
+     "Added mass",
+     "Extra apparent mass of a body accelerating in a fluid."
+    ],
+    [
+     "Radiation damping",
+     "Energy a moving body loses by creating waves."
+    ]
+   ],
+   "misc": {
+    "wrong": "Wave energy is proportional to wave height.",
+    "right": "In linear theory energy per unit area goes as H², so a wave twice as high carries four times the energy and power."
+   },
+   "limits": "Linear theory assumes small steepness (H/λ well below about 1/10). Steep storm waves have sharper crests and need nonlinear (Stokes, stream function) theory or computational fluid dynamics.",
+   "trip": {
+    "wiki": "Airy wave theory",
+    "prompt": "Find the dispersion relation and the deep-water and shallow-water limits. Which limit applies to a tsunami?"
+   },
+   "sources": [
+    "Airy wave theory",
+    "Wave power",
+    "Group velocity"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In deep water the group velocity of waves is...",
+     "o": [
+      "Half the phase speed",
+      "Equal to the phase speed",
+      "Twice the phase speed",
+      "Zero"
+     ],
+     "a": 0,
+     "why": "For deep-water gravity waves c_g = c/2.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If the wave height doubles at the same period, the wave power per metre of crest...",
+     "o": [
+      "Increases four times",
+      "Doubles, because power scales linearly with H",
+      "Stays the same",
+      "Halves"
+     ],
+     "a": 0,
+     "why": "P ∝ H² in linear theory.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A submarine at depth λ/2 beneath a wave feels little motion. Why?",
+     "o": [
+      "Orbital motion decays exponentially with depth as e^(kz)",
+      "Water is colder at depth so viscosity damps the wave motion",
+      "Pressure is lower",
+      "Waves reflect off the sea bed before reaching that depth"
+     ],
+     "a": 0,
+     "why": "At z = λ/2, e^(−π) ≈ 0.04, so only about 4% of the surface motion remains.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does linear theory fail for a very steep storm wave?",
+     "o": [
+      "It assumes small wave steepness",
+      "Water density changes strongly inside steep storm waves",
+      "Gravity vanishes",
+      "It assumes shallow water"
+     ],
+     "a": 0,
+     "why": "Non-linear terms matter when H/λ is large, giving sharper crests and flatter troughs.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does added mass describe?",
+     "o": [
+      "Extra apparent inertia from accelerating surrounding fluid",
+      "The mass of marine growth and barnacles attached to the hull",
+      "Ballast water",
+      "Cargo"
+     ],
+     "a": 0,
+     "why": "A body accelerating in a fluid must also accelerate some of the fluid.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³ and g = 9.81 m/s². Find the energy per unit area E = ρgH²/8 for H = 2 m, in joules per square metre.",
+     "a": 5028,
+     "tol": 5,
+     "unit": "J/m²",
+     "why": "1025 × 9.81 × 4 ÷ 8 = 5027.6 J/m².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A regular deep-water wave has H = 2 m and T = 8 s. Use P = ρ g² H² T/(32π) with ρ = 1025 kg/m³, g = 9.81 m/s². Find P in kW per metre of crest (1 decimal place).",
+     "a": 31.4,
+     "tol": 0.3,
+     "unit": "kW/m",
+     "why": "1025 × 96.24 × 4 × 8 ÷ 100.53 = 31.4 kW/m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A deep-water swell has period 10 s. Use c = gT/(2π) with g = 9.81 m/s². What is its group velocity in m/s (1 decimal place)?",
+     "a": 7.8,
+     "tol": 0.1,
+     "unit": "m/s",
+     "why": "c = 9.81 × 10 ÷ 6.283 = 15.6 m/s; c_g = c/2 = 7.8 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its expression.",
+     "pairs": [
+      [
+       "Wave number",
+       "k = 2π/λ"
+      ],
+      [
+       "Angular frequency",
+       "ω = 2π/T"
+      ],
+      [
+       "Wave energy per area",
+       "E = ρgH²/8"
+      ],
+      [
+       "Deep-water phase speed",
+       "c = gT/(2π)"
+      ]
+     ],
+     "why": "These are the basic relations of linear wave theory.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Swell from a distant storm arrives at a coast about a day later than the long-period crests seem to travel. Explain this using group velocity.",
+     "rubric": [
+      [
+       "group",
+       "energy"
+      ],
+      [
+       "half",
+       "slower",
+       "c/2",
+       "less than"
+      ],
+      [
+       "crest",
+       "phase",
+       "individual"
+      ],
+      [
+       "packet",
+       "travel",
+       "arrive",
+       "delay"
+      ]
+     ],
+     "min": 2,
+     "model": "The energy of a wave group travels at the group velocity, which in deep water is half the speed of the individual crests. So the energy, and the increase in swell height at the coast, arrives later than the crests themselves would suggest.",
+     "why": "Energy transport is governed by c_g = c/2 in deep water.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A wave of period 12 s enters shallow water. What happens to its period and speed?",
+     "o": [
+      "Period stays the same; speed decreases",
+      "Speed stays the same; period decreases as depth falls",
+      "Both increase",
+      "Both decrease as the water gets shallower"
+     ],
+     "a": 0,
+     "why": "Frequency is set by the source and does not change; the wavelength and speed fall as depth decreases.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A floating wave-energy device captures 30 kW per metre in 2 m high regular waves. If waves become 1 m high at the same period, available power is closer to...",
+     "o": [
+      "One quarter as much",
+      "Half as much, since power varies linearly with height",
+      "Unchanged",
+      "Twice as much"
+     ],
+     "a": 0,
+     "why": "P ∝ H², so halving H cuts power to a quarter.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it important that engineers use the correct wave theory when designing a platform for a 100-year storm?",
+     "rubric": [
+      [
+       "steep",
+       "nonlinear",
+       "non-linear",
+       "linear",
+       "theory"
+      ],
+      [
+       "crest",
+       "load",
+       "force",
+       "velocity",
+       "elevation",
+       "air gap"
+      ],
+      [
+       "underestimate",
+       "wrong",
+       "safe",
+       "fail",
+       "accurate",
+       "conservative"
+      ]
+     ],
+     "min": 2,
+     "model": "In extreme storms waves are steep and nonlinear, with higher crests and velocities than linear theory predicts. Using the wrong theory could underestimate loads and crest height, leaving too little air gap and strength.",
+     "why": "Load and air-gap predictions depend on the wave model; the wrong choice can be unsafe.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why waves carry energy but not water",
+    "model": "In a wave the water moves in small circles and returns near its start, while the wave pattern and its energy move on. The energy depends on the height squared, so doubling the height gives four times the energy. In deep water a group of waves moves at half the speed of the individual crests.",
+    "points": [
+     {
+      "k": [
+       "circle",
+       "orbit",
+       "circular",
+       "return",
+       "up and down"
+      ],
+      "ask": "How does the water itself move?"
+     },
+     {
+      "k": [
+       "energy",
+       "power"
+      ],
+      "ask": "So what does a wave carry forward?"
+     },
+     {
+      "k": [
+       "square",
+       "squared",
+       "four",
+       "quadruple"
+      ],
+      "ask": "How does energy depend on height?"
+     },
+     {
+      "k": [
+       "group",
+       "half",
+       "slower"
+      ],
+      "ask": "How fast does the energy travel compared with the crests?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Seakeeping analysis",
+   "icon": "📈",
+   "hook": "A ship designer must say how much a vessel will heave in a sea that is a random mix of thousands of waves. How can you predict motion in a random sea?",
+   "explain": [
+    "Real seas are random but their statistics are stable over a few hours. A wave spectrum S(ω) shows how the wave energy is spread over frequency. The area under it is m₀ = ∫S dω, the variance of the surface, and the significant wave height is H_s ≈ 4√m₀ (about the mean height of the highest third of waves). Standard shapes are Pierson-Moskowitz (fully developed seas) and JONSWAP (growing seas).",
+    "Seakeeping uses linearity. A vessel's response amplitude operator (RAO) is the ratio of motion amplitude to wave amplitude at each frequency, e.g. heave RAO in m/m. The response spectrum is S_R(ω) = |RAO(ω)|² × S(ω). Its area gives the response variance, and the same statistics apply: for a narrow-band response the amplitudes follow a Rayleigh distribution. The expected largest value in N cycles is about σ√(2 ln N).",
+    "Resonance occurs when wave frequency is near the natural frequency of heave, pitch or roll, so designers aim to place natural periods outside the energetic wave range, add damping (bilge keels, anti-roll tanks, fins) and then check motion criteria: slamming, green water on deck, propeller emergence, crew comfort and cargo safety. Limits like operability (percentage of time below a motion limit) decide whether a vessel can work at a site."
+   ],
+   "example": {
+    "q": "In a sea with H_s = 4 m the wave heights are Rayleigh distributed. Estimate the expected largest wave height in N = 1000 waves using H_max ≈ H_s √(ln N ÷ 2).",
+    "steps": [
+     "ln 1000 = 6.908.",
+     "6.908 ÷ 2 = 3.454; √3.454 = 1.858.",
+     "H_max ≈ 4 × 1.858 = 7.43 m."
+    ],
+    "a": "About 7.4 m, nearly twice H_s"
+   },
+   "analogies": {
+    "music": "A spectrum is like an equaliser display showing how loud each pitch is. The RAO is a filter that boosts some pitches.",
+    "sport": "A runner's finishing time is random on the day but the distribution over many races is predictable.",
+    "home": "A pendulum swings largest when pushed at its own rhythm, like resonant roll.",
+    "city": "Traffic on a road follows daily patterns but each car is random."
+   },
+   "mnemonic": "S_response = RAO² × S_wave. Hs = 4 times root m-zero.",
+   "terms": [
+    [
+     "Significant wave height",
+     "H_s ≈ 4√m₀; mean of the highest third of waves."
+    ],
+    [
+     "RAO",
+     "Response amplitude operator: motion per unit wave amplitude at a frequency."
+    ],
+    [
+     "Spectrum",
+     "Distribution of energy over frequency."
+    ],
+    [
+     "Operability",
+     "Fraction of time a vessel can work within motion limits."
+    ]
+   ],
+   "misc": {
+    "wrong": "The biggest wave is about the same as the significant wave height.",
+    "right": "In a typical sea state, the largest wave of a few hundred is about 1.6 to 2 times H_s, and rare freak waves can be higher still."
+   },
+   "limits": "Linear seakeeping works for moderate seas. Large motions, green water, and slamming are nonlinear and need time-domain simulation or model tests.",
+   "trip": {
+    "wiki": "Response amplitude operator",
+    "prompt": "Find an example RAO curve. Where does it peak, and what does the peak mean?"
+   },
+   "sources": [
+    "Response amplitude operator",
+    "Significant wave height",
+    "Rogue wave"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does an RAO relate?",
+     "o": [
+      "Vessel motion amplitude to wave amplitude",
+      "Wave height to wind speed at the sea surface",
+      "Draught to freeboard",
+      "Fuel use to speed"
+     ],
+     "a": 0,
+     "why": "RAO = response amplitude ÷ wave amplitude at a given frequency.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How is the response spectrum obtained from the wave spectrum?",
+     "o": [
+      "Multiply by the square of the RAO",
+      "Add the RAO to the wave spectrum ordinates",
+      "Divide by the RAO",
+      "Take the square root"
+     ],
+     "a": 0,
+     "why": "S_R(ω) = |RAO|² S(ω) for a linear system.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A vessel's heave RAO peaks near a period of 9 s, and the site's most energetic waves have a period near 9 s. What should the designer do?",
+     "o": [
+      "Change the design to move the natural period or add damping",
+      "Nothing; resonance only matters for fixed platforms and not for floating vessels",
+      "Increase waves",
+      "Remove the RAO"
+     ],
+     "a": 0,
+     "why": "Resonance amplifies motion, so avoid it or damp it.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A vessel is operable when roll is below 6° for 95% of the time. What does this tell a client?",
+     "o": [
+      "It can work in most, not all, sea states at this site",
+      "It never rolls beyond 6 degrees in any sea state at all",
+      "It can work in any storm",
+      "It has no motion"
+     ],
+     "a": 0,
+     "why": "Operability is a statistical measure, so 5% of the time exceeds the limit.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In a Rayleigh distribution, as the number of waves N increases, the expected largest wave...",
+     "o": [
+      "Increases slowly (like √ln N)",
+      "Stays constant because wave heights are independent",
+      "Decreases",
+      "Doubles with each wave"
+     ],
+     "a": 0,
+     "why": "The maximum grows with √(ln N), so it rises slowly.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A heave RAO is 0.8 m/m near the wave peak period and H_s = 4 m. Assuming a constant RAO, what is the significant heave height in metres?",
+     "a": 3.2,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "Linear response scales the sea state: 0.8 × 4 = 3.2 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use H_max ≈ H_s √(ln N/2). For H_s = 4 m and N = 1000, find H_max in metres (1 decimal place).",
+     "a": 7.4,
+     "tol": 0.1,
+     "unit": "m",
+     "why": "√(6.908 ÷ 2) = 1.858; × 4 = 7.43 m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The area under a wave spectrum is m₀ = 1.0 m². Using H_s = 4√m₀, what is H_s in metres?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "4 × √1.0 = 4 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a frequency-domain seakeeping calculation.",
+     "items": [
+      "Choose the wave spectrum for the site",
+      "Compute the vessel RAOs",
+      "Multiply spectrum by RAO squared",
+      "Integrate to get response statistics"
+     ],
+     "why": "Waves and RAOs are combined to give the response spectrum, whose area gives the statistics.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can a ship that handles a 4 m H_s sea well still be at risk from a single very large wave?",
+     "rubric": [
+      [
+       "random",
+       "statistic",
+       "rare",
+       "occasionally",
+       "chance"
+      ],
+      [
+       "larger",
+       "bigger",
+       "higher",
+       "maximum",
+       "twice",
+       "extreme",
+       "freak"
+      ],
+      [
+       "significant",
+       "average",
+       "hs",
+       "mean",
+       "typical"
+      ]
+     ],
+     "min": 2,
+     "model": "H_s describes the average of the highest third of waves, but in a random sea some waves are much higher, nearly twice H_s or more in rare cases. A design based only on H_s may not cover those rare extremes.",
+     "why": "Wave heights are random, so extremes exceed H_s.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A designer adds bilge keels to a ship. What does this do to the roll RAO peak?",
+     "o": [
+      "Lowers it by adding damping",
+      "Raises it by adding extra roll inertia",
+      "Shifts it to infinity",
+      "Removes it entirely"
+     ],
+     "a": 0,
+     "why": "Bilge keels increase viscous damping, which cuts resonant amplitude.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A supply vessel at a platform is limited to H_s of 2.5 m for transfers. A forecast shows H_s will rise to 3.2 m. What is the best action?",
+     "o": [
+      "Stop operations and move to safe water",
+      "Carry on",
+      "Lift faster",
+      "Increase crew"
+     ],
+     "a": 0,
+     "why": "Limits protect crew; do not continue when forecast exceeds them.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we run model tests as well as calculations?",
+     "o": [
+      "Nonlinear effects like slamming are hard to compute",
+      "Calculations are always wrong by a large margin, so models replace them",
+      "Models are cheaper",
+      "Models avoid waves"
+     ],
+     "a": 0,
+     "why": "Tests validate and cover effects linear theory misses.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Predicting ship motion in a random sea",
+    "model": "A random sea is described by a spectrum of wave energy over frequency. A vessel's RAO tells how much it moves for each wave frequency. Multiplying the wave spectrum by the squared RAO gives the motion spectrum, and its area gives the size of motions, so designers can check limits.",
+    "points": [
+     {
+      "k": [
+       "spectrum",
+       "energy",
+       "frequency"
+      ],
+      "ask": "How do you describe a random sea?"
+     },
+     {
+      "k": [
+       "rao",
+       "response",
+       "operator"
+      ],
+      "ask": "How does the ship respond to each wave?"
+     },
+     {
+      "k": [
+       "multiply",
+       "square",
+       "squared"
+      ],
+      "ask": "How do you combine them?"
+     },
+     {
+      "k": [
+       "resonance",
+       "natural",
+       "period",
+       "damping"
+      ],
+      "ask": "What does a designer try to avoid?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Offshore structural response",
+   "icon": "📳",
+   "hook": "A platform leg shakes more under a small repeated force than under a much larger steady force. How can a small load be so dangerous?",
+   "explain": [
+    "Structures respond to loads that change in time. The simplest model is a single-degree-of-freedom oscillator with mass m, stiffness k and damping ratio ζ. Its natural angular frequency is ω_n = √(k/m) and the natural period is T_n = 2π√(m/k). Offshore, m includes added mass of the surrounding water.",
+    "When a sinusoidal force of frequency ω acts, the response is the static deflection F/k multiplied by the dynamic amplification factor D = 1 ÷ √[(1 − r²)² + (2ζr)²], with r = ω/ω_n. If r is small, D ≈ 1 (quasi-static). At r = 1, D = 1/(2ζ), which for a lightly damped steel structure (ζ ≈ 0.02 to 0.05) is 10 to 25. For r well above 1, D falls below 1 and inertia dominates.",
+    "For fixed jackets the first natural period is typically 2 to 4 s, shorter than most storm waves (8 to 15 s), so the response is nearly quasi-static. But for deepwater compliant and floating structures, natural periods can be near wave periods or at low frequencies near wind and slow-drift forcing, and dynamics govern. Engineers compute natural frequencies and mode shapes, run time-domain analysis, and check stresses and fatigue."
+   ],
+   "example": {
+    "q": "A platform has m = 2 × 10⁶ kg (including added mass) and horizontal stiffness k = 8 × 10⁶ N/m. Find ω_n and T_n.",
+    "steps": [
+     "ω_n = √(k/m) = √(8×10⁶ ÷ 2×10⁶) = √4 = 2 rad/s.",
+     "T_n = 2π ÷ ω_n = 2π ÷ 2.",
+     "= 3.14 s."
+    ],
+    "a": "ω_n = 2 rad/s, T_n ≈ 3.14 s"
+   },
+   "analogies": {
+    "home": "Pushing a child on a swing in time with its swing builds a big motion from tiny pushes.",
+    "music": "A wine glass can shatter when a singer hits exactly its natural pitch.",
+    "city": "Walkers on a footbridge falling into step can make it sway, a famous resonance problem.",
+    "sport": "A diving board bounces most when you jump in rhythm with its natural bounce."
+   },
+   "mnemonic": "ω_n = √(k/m). At resonance D = 1/2ζ: damping saves the day.",
+   "terms": [
+    [
+     "Natural frequency",
+     "The frequency at which a structure oscillates freely."
+    ],
+    [
+     "Damping ratio",
+     "ζ; the fraction of critical damping."
+    ],
+    [
+     "Dynamic amplification factor",
+     "Ratio of dynamic to static response."
+    ],
+    [
+     "Added mass",
+     "Extra effective mass from surrounding water."
+    ]
+   ],
+   "misc": {
+    "wrong": "Only the size of a load matters for safety.",
+    "right": "How the load changes in time matters too. A small load at the natural frequency can create a response much greater than a large steady one."
+   },
+   "limits": "A single-degree-of-freedom model ignores higher modes and nonlinear effects such as changing mooring stiffness. It is a first check, not a final design.",
+   "trip": {
+    "wiki": "Resonance",
+    "prompt": "Look at the amplification curve. How does damping change the peak?"
+   },
+   "sources": [
+    "Resonance",
+    "Damping ratio",
+    "Structural dynamics"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What happens to the natural frequency if stiffness doubles while mass stays the same?",
+     "o": [
+      "It increases by √2",
+      "It doubles, since frequency is proportional to stiffness",
+      "It halves",
+      "It stays the same"
+     ],
+     "a": 0,
+     "why": "ω_n ∝ √k.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "At resonance, the dynamic amplification factor is...",
+     "o": [
+      "1/(2ζ)",
+      "2ζ, the damping ratio multiplied by two",
+      "1",
+      "ζ²"
+     ],
+     "a": 0,
+     "why": "With r = 1 the first term vanishes, leaving D = 1/(2ζ).",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A jacket has a first natural period of 3 s and storm waves have periods of 12 s. What is the dynamic behaviour?",
+     "o": [
+      "Mostly quasi-static",
+      "Strong resonance with large amplification",
+      "No response",
+      "Always unstable"
+     ],
+     "a": 0,
+     "why": "r = T_n/T_wave is small, so D ≈ 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A platform's natural period increases when it becomes heavier (more marine growth, added mass). What may this do to the response?",
+     "o": [
+      "Move the natural period closer to wave periods",
+      "Eliminate waves",
+      "Increase stiffness",
+      "Cut loads"
+     ],
+     "a": 0,
+     "why": "Increasing m raises T_n and may approach energetic wave periods.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is damping valuable in offshore structures?",
+     "o": [
+      "It limits resonant amplification",
+      "It lowers the weight of the structure",
+      "It raises natural frequency",
+      "It removes the need for design"
+     ],
+     "a": 0,
+     "why": "More damping cuts the resonant peak.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A structure has k = 8×10⁶ N/m and m = 2×10⁶ kg. Find its natural period T_n = 2π√(m/k) in seconds (2 decimal places).",
+     "a": 3.14,
+     "tol": 0.02,
+     "unit": "s",
+     "why": "√(2/8) = 0.5; 2π × 0.5 = 3.14 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A structure has damping ratio ζ = 0.05 and is excited at its natural frequency. What is the dynamic amplification factor?",
+     "a": 10,
+     "tol": 0.1,
+     "unit": "",
+     "why": "D = 1/(2 × 0.05) = 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With ζ = 0.05 and r = 0.5, find D = 1/√[(1−r²)² + (2ζr)²] (2 decimal places).",
+     "a": 1.33,
+     "tol": 0.01,
+     "unit": "",
+     "why": "(1 − 0.25)² = 0.5625; (2×0.05×0.5)² = 0.0025; √0.565 = 0.7517; D = 1.33.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each symbol to its meaning.",
+     "pairs": [
+      [
+       "ω_n",
+       "Natural angular frequency"
+      ],
+      [
+       "ζ",
+       "Damping ratio"
+      ],
+      [
+       "r",
+       "Frequency ratio ω/ω_n"
+      ],
+      [
+       "D",
+       "Dynamic amplification factor"
+      ]
+     ],
+     "why": "Core symbols of the SDOF model.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a structure with a natural period close to the wave period can fail even when the static wave load is well below its design strength.",
+     "rubric": [
+      [
+       "resonance",
+       "resonant",
+       "amplif",
+       "magnif"
+      ],
+      [
+       "dynamic",
+       "oscillat",
+       "vibrat",
+       "sway",
+       "shake"
+      ],
+      [
+       "fatigue",
+       "stress",
+       "load",
+       "force",
+       "damping"
+      ]
+     ],
+     "min": 2,
+     "model": "Near resonance the structure's response is amplified by a factor up to 1/(2ζ), which can be 10 or more, so dynamic stresses far exceed the static ones. Repeated large cycles can also cause fatigue.",
+     "why": "Dynamic amplification multiplies static response when forcing is near the natural frequency.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If r is much greater than 1 (force frequency far above natural frequency), the response is...",
+     "o": [
+      "Smaller than the static deflection",
+      "Much larger than the static deflection, amplified by resonance",
+      "Equal to resonance",
+      "Infinite"
+     ],
+     "a": 0,
+     "why": "D < 1 at r > √2; inertia prevents the structure from following fast forcing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can storm-induced scour around a jacket pile reduce safety?",
+     "o": [
+      "It reduces support stiffness and lowers the natural frequency",
+      "It increases stiffness",
+      "It lowers waves",
+      "It adds mass"
+     ],
+     "a": 0,
+     "why": "Less soil support lowers stiffness and may move the natural period toward wave periods.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer wants to avoid resonance for a tall flare boom. Which change helps?",
+     "o": [
+      "Increase stiffness to raise natural frequency above excitation",
+      "Remove all bracing to make the structure lighter and softer",
+      "Add heavy top weight",
+      "Reduce damping so the structure responds less at resonance"
+     ],
+     "a": 0,
+     "why": "Higher stiffness raises ω_n and can move it away from excitation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why shaking loads matter",
+    "model": "A structure has a natural frequency set by its stiffness and mass. If a repeating load matches that frequency, the response builds up, up to one over twice the damping ratio times the static response. So small repeating loads can be dangerous unless damping is high or the frequencies are kept apart.",
+    "points": [
+     {
+      "k": [
+       "natural",
+       "frequency",
+       "stiffness",
+       "mass"
+      ],
+      "ask": "What sets a structure's natural frequency?"
+     },
+     {
+      "k": [
+       "resonance",
+       "match",
+       "same"
+      ],
+      "ask": "What happens when the load matches it?"
+     },
+     {
+      "k": [
+       "damping",
+       "ratio"
+      ],
+      "ask": "What limits the build-up?"
+     },
+     {
+      "k": [
+       "fatigue",
+       "repeat",
+       "cycles"
+      ],
+      "ask": "Why is repeated loading a long-term worry?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Mooring dynamics",
+   "icon": "🪝",
+   "hook": "A mooring line looks strong enough for the average wave force, but it snaps in a storm. What did the static calculation miss?",
+   "explain": [
+    "A moored floating platform behaves like a mass on a very soft spring. The surge natural period is T = 2π√((M + M_a)/K), where M_a is added mass and K is the mooring stiffness (force per metre of offset). Because K is small, T is typically 1 to 3 minutes, far longer than wave periods (5 to 20 s). Waves therefore do not excite it directly in first-order motion, but wave groups and second-order effects do.",
+    "Slow-drift forces arise from the second-order interaction of waves of nearby frequencies, with a period equal to the group period. They can excite the surge natural period, which is lightly damped (mooring line drag and hull viscous drag provide most of the damping), producing large slow offsets. Mean loads from wind and current set the average offset: x = F/K.",
+    "Dynamic line tension includes the effects of line mass, drag and the motion of the fairlead. If a line goes slack and then suddenly becomes taut, a snap load can occur, much higher than the static tension, and cause fatigue or fracture. Fatigue of chain and wire depends on tension range, and corrosion and wear reduce capacity. Design codes require checks for intact and one-line-broken cases with safety factors."
+   ],
+   "example": {
+    "q": "A platform with M + M_a = 8 × 10⁷ kg is held by moorings of stiffness K = 2 × 10⁵ N/m. Find the surge natural period.",
+    "steps": [
+     "T = 2π√(M/K) = 2π√(8×10⁷ ÷ 2×10⁵).",
+     "8×10⁷ ÷ 2×10⁵ = 400; √400 = 20.",
+     "T = 2π × 20 = 125.7 s."
+    ],
+    "a": "About 126 s (2.1 minutes)"
+   },
+   "analogies": {
+    "sport": "A skier on a long soft bungee swings slowly, like a platform on soft moorings.",
+    "home": "A heavy ball hung on a very long rubber band bobs very slowly.",
+    "farm": "A tethered horse that bolts and reaches the end of the rope gets a sudden jerk. That is a snap load.",
+    "music": "Two close notes together make a slow beat, like wave groups causing slow-drift."
+   },
+   "mnemonic": "Slow spring, slow period; waves in groups push slow drift; slack then snap, take care.",
+   "terms": [
+    [
+     "Slow-drift force",
+     "A low-frequency second-order wave force on a floater."
+    ],
+    [
+     "Snap load",
+     "Sudden high tension when a slack line becomes taut."
+    ],
+    [
+     "Mooring stiffness",
+     "Force needed per metre of offset, K."
+    ],
+    [
+     "Offset",
+     "Horizontal displacement of a moored vessel from its mean position."
+    ]
+   ],
+   "misc": {
+    "wrong": "Moorings only need to resist the average wave force.",
+    "right": "Wind, current and slow-drift forces, snap loads and fatigue all matter, and the line must survive the extreme dynamic tension, not the average."
+   },
+   "limits": "Line dynamics are computed with coupled time-domain software. Hand formulas give only first estimates, and soil, marine growth and line elasticity change results.",
+   "trip": {
+    "wiki": "Mooring (watercraft)",
+    "prompt": "Find a diagram of a spread mooring and see how lines are arranged around a floating platform."
+   },
+   "sources": [
+    "Offshore engineering",
+    "Mooring",
+    "Fatigue (material)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why is the surge natural period of a moored platform much longer than wave periods?",
+     "o": [
+      "The mooring stiffness is low compared with the mass",
+      "Platforms are very light compared with their mooring stiffness",
+      "Waves are slow",
+      "Mass is zero"
+     ],
+     "a": 0,
+     "why": "T = 2π√(M/K); small K and large M give long T.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a snap load?",
+     "o": [
+      "A sudden tension when a slack line pulls tight",
+      "A broken wave crest that hits the hull suddenly",
+      "A type of anchor",
+      "A chemical"
+     ],
+     "a": 0,
+     "why": "The line stops moving the platform abruptly, giving a spike in force.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What excites the large slow surge motions of a moored floater?",
+     "o": [
+      "Second-order slow-drift wave forces",
+      "First-order wave forces at the wave frequency",
+      "Tides alone",
+      "Marine growth"
+     ],
+     "a": 0,
+     "why": "Wave groups generate low-frequency forces near the natural period.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A mooring chain has lost 15% of its diameter to corrosion and wear. What happens to its capacity?",
+     "o": [
+      "It falls by roughly 28%",
+      "Nothing, since corrosion only affects the surface",
+      "It rises",
+      "It falls by 15%, in line with the diameter"
+     ],
+     "a": 0,
+     "why": "Capacity scales with cross-section area (diameter²): 0.85² = 0.72, a drop of about 28%.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An operator learns that one of eight lines has parted. What is the first priority?",
+     "o": [
+      "Check the remaining lines and the platform offset against limits, and report",
+      "Ignore it",
+      "Add cargo",
+      "Remove an anchor"
+     ],
+     "a": 0,
+     "why": "The other lines now carry more load, so the one-line-broken case must be checked.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "M + M_a = 8×10⁷ kg and K = 2×10⁵ N/m. Find the surge natural period T = 2π√((M+M_a)/K) in seconds (nearest second).",
+     "a": 126,
+     "tol": 1,
+     "unit": "s",
+     "why": "√400 = 20; 2π × 20 = 125.7 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A steady wind and current force of 1.5 MN acts on a platform with mooring stiffness 200 kN/m. What is the mean offset in metres?",
+     "a": 7.5,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "x = F/K = 1500 kN ÷ 200 kN/m = 7.5 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two wave components have periods 10 s and 12 s. The group period is 1/(1/10 − 1/12). Find it in seconds.",
+     "a": 60,
+     "tol": 0.5,
+     "unit": "s",
+     "why": "1/10 − 1/12 = 1/60 per second; group period = 60 s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each effect to its source.",
+     "pairs": [
+      [
+       "Mean offset",
+       "Wind and current"
+      ],
+      [
+       "Slow drift",
+       "Second-order wave forces"
+      ],
+      [
+       "Snap load",
+       "Slack line becoming taut"
+      ],
+      [
+       "Line wear",
+       "Chain contact with the sea bed"
+      ]
+     ],
+     "why": "Different mechanisms load a mooring system.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a mooring analysis check the one-line-broken case?",
+     "rubric": [
+      [
+       "fail",
+       "break",
+       "parted",
+       "broken",
+       "snap"
+      ],
+      [
+       "other",
+       "remaining",
+       "load",
+       "share",
+       "tension"
+      ],
+      [
+       "drift",
+       "offset",
+       "safe",
+       "redundan",
+       "collision",
+       "riser"
+      ]
+     ],
+     "min": 2,
+     "model": "If one line fails the others take more load and the platform may move farther. The design must still hold the platform inside its limits so risers and neighbouring structures are not damaged.",
+     "why": "Redundancy requirements keep the system safe after a single failure.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Adding drag-increasing studs or clump weights to a mooring changes which property?",
+     "o": [
+      "Damping and stiffness",
+      "The density of the water around the line",
+      "Gravity",
+      "The tidal range"
+     ],
+     "a": 0,
+     "why": "They modify line weight and drag, thereby changing the response.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A line shows slack-snap cycles in a swell. Which action reduces the risk?",
+     "o": [
+      "Increase pretension or change line arrangement",
+      "Reduce pretension so the line has more slack to absorb motion",
+      "Ignore",
+      "Remove damping"
+     ],
+     "a": 0,
+     "why": "Higher pretension keeps lines taut and avoids slack-snap.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer finds that surge damping is lower than assumed. What is the effect?",
+     "o": [
+      "Slow-drift offsets are larger",
+      "Offsets disappear because less energy enters the system",
+      "Natural period shortens",
+      "Wave height drops"
+     ],
+     "a": 0,
+     "why": "Resonant response varies inversely with damping.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why moored platforms drift slowly and lines can snap",
+    "model": "A moored platform acts like a heavy mass on a soft spring, so it moves very slowly, with a period of a minute or two. Waves come in groups that create slow forces which can push it to large offsets. If a slack line suddenly goes tight, the jerk can be far larger than the average force.",
+    "points": [
+     {
+      "k": [
+       "spring",
+       "stiffness",
+       "soft",
+       "mass"
+      ],
+      "ask": "How does a moored platform behave?"
+     },
+     {
+      "k": [
+       "slow",
+       "minute",
+       "long period",
+       "long"
+      ],
+      "ask": "How fast does it move?"
+     },
+     {
+      "k": [
+       "group",
+       "second-order",
+       "slow drift"
+      ],
+      "ask": "What forces push it slowly?"
+     },
+     {
+      "k": [
+       "snap",
+       "slack",
+       "jerk",
+       "tight"
+      ],
+      "ask": "What goes wrong in a line?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Riser analysis",
+   "icon": "🧵",
+   "hook": "A riser is a long slim pipe hanging from a floating platform to the sea bed. Why does it need tension, and why does it sometimes hum in the current?",
+   "explain": [
+    "A riser connects a subsea well or pipeline to a surface facility. Types include top-tensioned risers (TTRs), steel catenary risers (SCRs), flexible risers and hybrid risers. A TTR stands almost vertical and needs top tension, applied by tensioner systems, so it does not buckle under its own weight. The effective tension is T_e = T_wall + p_e A_e − p_i A_i; if T_e becomes negative, even a pipe with positive wall tension can buckle.",
+    "Floater motions drive the top of a riser and currents push along its length. Current past a cylinder sheds vortices at a frequency f_s = St × U ÷ D, where St ≈ 0.2 for a wide range of flows. If f_s is near a natural frequency of the riser, lock-in occurs and vortex-induced vibration (VIV) can build large cross-flow motion and fatigue damage. A tensioned string has natural frequencies f_n = (n/2L)√(T/m), with m including added mass.",
+    "Strakes (helical fins) or fairings break up the vortices and reduce VIV, though they raise drag. In an SCR the most critical region is the touchdown point where the pipe meets the sea bed: motion there makes cyclic bending and fatigue. Riser analysis therefore checks strength (stress), buckling, interference with other risers, VIV fatigue, wave-frequency fatigue, and extreme offset cases."
+   ],
+   "example": {
+    "q": "Current U = 1 m/s flows past a riser of D = 0.4 m with St = 0.2. Find the vortex shedding frequency.",
+    "steps": [
+     "f_s = St × U ÷ D.",
+     "= 0.2 × 1 ÷ 0.4.",
+     "= 0.5 Hz."
+    ],
+    "a": "0.5 Hz"
+   },
+   "analogies": {
+    "music": "Wind across a guitar string or telephone wire makes it hum. The wire's note is set by tension, as for a riser.",
+    "home": "A flag flutters as wind sheds vortices off its edge.",
+    "sport": "A fishing line whistles in the wind; a heavier line has a lower note.",
+    "city": "A tall chimney or thin radio mast can sway in a steady breeze."
+   },
+   "mnemonic": "f = St U / D. Tension tunes the string; strakes spoil the vortices.",
+   "terms": [
+    [
+     "Top-tensioned riser",
+     "A near-vertical riser held up by tensioners at the surface."
+    ],
+    [
+     "Steel catenary riser",
+     "A hanging steel pipe whose curve rises from the sea bed to a floater."
+    ],
+    [
+     "VIV",
+     "Vortex-induced vibration of a cylinder in flow."
+    ],
+    [
+     "Touchdown point",
+     "Where the riser first contacts the sea bed."
+    ]
+   ],
+   "misc": {
+    "wrong": "A riser only has to be strong enough for the internal fluid pressure.",
+    "right": "Top tension, buckling, bending at the touchdown point, current-driven VIV and fatigue often govern design."
+   },
+   "limits": "VIV prediction is uncertain, with differences between programs and tests. Designers use margins and often monitor risers in service.",
+   "trip": {
+    "wiki": "Vortex-induced vibration",
+    "prompt": "Find a picture of a strake-covered riser. Why are the fins helical?"
+   },
+   "sources": [
+    "Vortex-induced vibration",
+    "Riser (drilling)",
+    "Steel catenary riser"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the main purpose of top tension in a TTR?",
+     "o": [
+      "To keep the riser from buckling and to control its shape",
+      "To heat the fluid and so prevent hydrate formation",
+      "To reduce the salt content of the produced water",
+      "To lift the sea bed"
+     ],
+     "a": 0,
+     "why": "Tension stabilises a long slender pipe.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "VIV is most dangerous when...",
+     "o": [
+      "Shedding frequency matches a natural frequency",
+      "The pipe wall is warm and the fluid inside expands",
+      "The sea is calm",
+      "The riser is short"
+     ],
+     "a": 0,
+     "why": "Lock-in near resonance gives large amplitudes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do helical strakes do?",
+     "o": [
+      "Break up vortex shedding",
+      "Increase the lift force to steady the pipe",
+      "Raise tension",
+      "Cool fluid"
+     ],
+     "a": 0,
+     "why": "They disorganise the vortices along the riser.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the touchdown point of an SCR a fatigue hot spot?",
+     "o": [
+      "Platform motions make the pipe repeatedly bend there",
+      "It is the hottest place along the riser, so steel softens",
+      "It is above the water",
+      "It has no load"
+     ],
+     "a": 0,
+     "why": "The pipe lifts and lowers against the sea bed, creating cycles of bending.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A current gets stronger. What happens to the vortex shedding frequency?",
+     "o": [
+      "It increases in proportion",
+      "It decreases as the wake gets wider",
+      "It stays constant",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "f_s = St U/D increases with U.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "U = 1 m/s, D = 0.4 m, St = 0.2. Find the shedding frequency in Hz.",
+     "a": 0.5,
+     "tol": 0.01,
+     "unit": "Hz",
+     "why": "0.2 × 1 ÷ 0.4 = 0.5 Hz.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A tensioned string has T = 500 kN, m = 250 kg/m (with added mass), and L = 100 m. Find the first natural frequency f₁ = (1/2L)√(T/m) in Hz (2 decimal places).",
+     "a": 0.22,
+     "tol": 0.01,
+     "unit": "Hz",
+     "why": "√(500 000 ÷ 250) = √2000 = 44.72; ÷200 = 0.2236 Hz.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A riser of 800 m has submerged weight 1200 N/m. A top tension of 1.2 times the total submerged weight is required. Find the top tension in MN (2 decimal places).",
+     "a": 1.15,
+     "tol": 0.01,
+     "unit": "MN",
+     "why": "1200 × 800 = 960 000 N; × 1.2 = 1.152 MN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each riser type to its feature.",
+     "pairs": [
+      [
+       "TTR",
+       "Near-vertical with tensioners"
+      ],
+      [
+       "SCR",
+       "Free-hanging catenary shape"
+      ],
+      [
+       "Flexible riser",
+       "Layered pipe that bends easily"
+      ],
+      [
+       "Strake",
+       "Helical fin to cut VIV"
+      ]
+     ],
+     "why": "Different types suit different floaters and depths.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A new current profile shows a 1.5 m/s jet at 200 m depth. Why might the riser's VIV fatigue life fall?",
+     "rubric": [
+      [
+       "frequency",
+       "shedding",
+       "faster",
+       "higher"
+      ],
+      [
+       "resonance",
+       "lock",
+       "natural",
+       "match",
+       "mode"
+      ],
+      [
+       "fatigue",
+       "cycles",
+       "damage",
+       "stress",
+       "life"
+      ]
+     ],
+     "min": 2,
+     "model": "Stronger current raises the shedding frequency, which may lock in to a riser mode and cause large, repeated cross-flow motion. More stress cycles at larger amplitude consume the fatigue life faster.",
+     "why": "VIV fatigue is very sensitive to current speed and mode matching.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Strakes reduce VIV but raise drag. What other effect must the designer check?",
+     "o": [
+      "Larger riser offset and interference with neighbours",
+      "Lower weight, since strakes are made of light plastic",
+      "Smaller current",
+      "More buoyancy"
+     ],
+     "a": 0,
+     "why": "Higher drag increases deflection in current.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A riser shows unexpected tension loss at the top. What is the safest response?",
+     "o": [
+      "Check tensioner status, reduce operations and investigate",
+      "Ignore",
+      "Increase flow",
+      "Remove strakes"
+     ],
+     "a": 0,
+     "why": "Loss of tension risks buckling or collapse.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fatigue life of 8 years is calculated for a riser with a design life of 20 years. With a safety factor of 10, what is the required calculated life?",
+     "o": [
+      "200 years",
+      "20 years, the same as the design life",
+      "2 years",
+      "10 years"
+     ],
+     "a": 0,
+     "why": "Required calculated life = 10 × 20 = 200 years; so the design is inadequate.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why risers are tensioned and why they vibrate in current",
+    "model": "A riser is a long slim pipe that would buckle under its own weight, so it is pulled by tension. Current sheds vortices at a rate proportional to speed over diameter. If that rate matches a natural frequency of the riser it vibrates strongly, causing fatigue, so strakes are added.",
+    "points": [
+     {
+      "k": [
+       "tension",
+       "pull",
+       "buckle"
+      ],
+      "ask": "Why does a riser need tension?"
+     },
+     {
+      "k": [
+       "vortex",
+       "vortices",
+       "shedding",
+       "current"
+      ],
+      "ask": "What does current do to it?"
+     },
+     {
+      "k": [
+       "frequency",
+       "natural",
+       "match",
+       "resonance",
+       "lock"
+      ],
+      "ask": "When does it vibrate strongly?"
+     },
+     {
+      "k": [
+       "strake",
+       "fairing",
+       "fin"
+      ],
+      "ask": "How can engineers reduce that?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Pipeline stability",
+   "icon": "🧱",
+   "hook": "A pipeline lies unburied on the sea bed. In a storm the water rushes past at a metre per second. Why does it not simply slide away?",
+   "explain": [
+    "An unburied pipe on the sea bed feels three hydrodynamic forces per metre: drag F_D = ½ρ C_D D U², lift F_L = ½ρ C_L D U² (upward, because flow speeds up over the pipe) and inertia from accelerating water. The submerged weight per metre W_s, reduced by lift, presses the pipe on the soil, and friction resists sliding: F_f = μ(W_s − F_L).",
+    "The simplest on-bottom stability check requires μ(W_s − F_L) ≥ γ(F_D + F_I), where γ is a safety factor, often 1.1 or more depending on the code. The submerged weight is steel weight plus coatings plus contents minus buoyancy. If the pipe is too light, engineers add concrete weight coating, burial in a trench, rock dumping or mattresses.",
+    "The velocity that matters is the water speed near the bed from waves and currents together. Long-period waves in shallow water give strong bed velocity. A pipe also needs to resist upheaval buckling, scour that creates free spans and lateral buckling from thermal expansion. Stability therefore connects hydrodynamics, soil mechanics and structural design."
+   ],
+   "example": {
+    "q": "A 0.5 m diameter pipe is in a steady near-bed current of 1 m/s. Use C_D = 1.0, C_L = 0.9, ρ = 1025 kg/m³ and ignore inertia. W_s = 1000 N/m, μ = 0.5. Find F_D, F_L and the safety factor against sliding.",
+    "steps": [
+     "F_D = 0.5 × 1025 × 1.0 × 0.5 × 1² = 256.25 N/m.",
+     "F_L = 0.5 × 1025 × 0.9 × 0.5 × 1² = 230.6 N/m.",
+     "Friction = 0.5 × (1000 − 230.6) = 384.7 N/m; factor = 384.7 ÷ 256.25 = 1.50."
+    ],
+    "a": "F_D ≈ 256 N/m, F_L ≈ 231 N/m, factor ≈ 1.50"
+   },
+   "analogies": {
+    "home": "A heavy bin stays put in a breeze, an empty one slides. Weight and friction decide.",
+    "sport": "A curling stone slides easily on ice because friction is low.",
+    "farm": "A heavy sack on a wet floor is hard to push but not impossible.",
+    "city": "Lorries on a motorway bridge feel upward wind lift, like a pipe in a current."
+   },
+   "mnemonic": "Weight less lift, times friction, beats drag. Add weight, bury, or rock-dump.",
+   "terms": [
+    [
+     "Submerged weight",
+     "Weight per metre minus buoyancy."
+    ],
+    [
+     "Lift force",
+     "Upward force from flow over the pipe."
+    ],
+    [
+     "Friction coefficient",
+     "μ; ratio of friction to the normal force."
+    ],
+    [
+     "Scour",
+     "Removal of sea bed sediment by flowing water."
+    ]
+   ],
+   "misc": {
+    "wrong": "A pipe full of oil is automatically stable.",
+    "right": "Contents may be lighter than water (gas) and can make a pipe nearly buoyant. Stability must be checked for the empty, flooded and operating cases."
+   },
+   "limits": "Hydrodynamic coefficients vary with roughness, embedment and flow regime. Real codes use time-domain or dynamic methods that allow some movement.",
+   "trip": {
+    "wiki": "Submarine pipeline",
+    "prompt": "Find images of rock dumping or concrete mattresses used to protect pipelines."
+   },
+   "sources": [
+    "Submarine pipeline",
+    "Scour (river and tidal)",
+    "Drag (physics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What force can reduce the pressing of a pipe on the sea bed?",
+     "o": [
+      "Hydrodynamic lift",
+      "Drag along the flow direction",
+      "Gravity",
+      "Soil weight"
+     ],
+     "a": 0,
+     "why": "Lift acts upward and reduces the normal force.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If current speed doubles, drag force on the pipe becomes...",
+     "o": [
+      "Four times",
+      "Twice as much, in proportion to speed",
+      "Half",
+      "Unchanged"
+     ],
+     "a": 0,
+     "why": "F_D ∝ U².",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A gas pipeline is unstable in its empty (installation) condition but stable in operation. What does that show?",
+     "o": [
+      "Stability must be checked for each condition",
+      "Gas is heavy",
+      "Operating always governs",
+      "Installation is not important"
+     ],
+     "a": 0,
+     "why": "Different contents change submerged weight.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which measure improves stability without adding weight?",
+     "o": [
+      "Burying the pipe in a trench",
+      "Using thinner steel to lower the pipe weight",
+      "Using lighter coating",
+      "Removing friction"
+     ],
+     "a": 0,
+     "why": "Burial shields the pipe from flow and adds soil resistance.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Scour under a pipe creates free spans. What is the main hazard?",
+     "o": [
+      "VIV fatigue and overstress",
+      "More friction because the pipe sinks into the scour hole",
+      "Lower drag",
+      "More buoyancy"
+     ],
+     "a": 0,
+     "why": "Unsupported spans can vibrate in current and bend excessively.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Take ρ = 1025 kg/m³, C_D = 1.0, D = 0.5 m, U = 1 m/s. Find drag force per metre in newtons.",
+     "a": 256,
+     "tol": 1,
+     "unit": "N/m",
+     "why": "0.5 × 1025 × 1.0 × 0.5 × 1 = 256.25 N/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Same pipe with C_L = 0.9. Find lift force per metre in newtons.",
+     "a": 231,
+     "tol": 1,
+     "unit": "N/m",
+     "why": "0.5 × 1025 × 0.9 × 0.5 = 230.6 N/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "W_s = 1000 N/m, F_L = 230.6 N/m, μ = 0.5, F_D = 256.25 N/m. Find the factor of safety against sliding, friction ÷ drag (2 decimal places).",
+     "a": 1.5,
+     "tol": 0.02,
+     "unit": "",
+     "why": "0.5 × 769.4 = 384.7; ÷ 256.25 = 1.50.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each remedy to how it helps.",
+     "pairs": [
+      [
+       "Concrete coating",
+       "Adds submerged weight"
+      ],
+      [
+       "Trenching",
+       "Shields pipe from flow"
+      ],
+      [
+       "Rock dump",
+       "Covers and holds the pipe"
+      ],
+      [
+       "Mattress",
+       "Protects from impact and flow"
+      ]
+     ],
+     "why": "Each increases stability or protection.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a larger-diameter pipe is generally harder to keep stable on the sea bed than a small one of the same weight per metre.",
+     "rubric": [
+      [
+       "area",
+       "diameter",
+       "larger",
+       "bigger",
+       "more exposed",
+       "projected"
+      ],
+      [
+       "drag",
+       "lift",
+       "force",
+       "flow",
+       "hydrodynamic"
+      ],
+      [
+       "weight",
+       "buoyan",
+       "light",
+       "friction"
+      ]
+     ],
+     "min": 2,
+     "model": "Drag and lift are proportional to diameter, so a larger pipe gets larger flow forces. Its buoyancy also rises with volume, so the submerged weight for the same steel is smaller, reducing friction.",
+     "why": "Forces scale with D, while submerged weight falls as displaced volume grows.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A storm will bring 1.5 times the design bed current. By what factor does drag increase?",
+     "o": [
+      "2.25",
+      "1.5, in direct proportion to the speed",
+      "3.4",
+      "1.0"
+     ],
+     "a": 0,
+     "why": "1.5² = 2.25.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rock dump placed to protect a pipeline will change the sea bed habitat. What should the project do?",
+     "o": [
+      "Assess and minimise environmental impact before placement",
+      "Ignore habitat",
+      "Use more rock everywhere",
+      "Put rubbish instead"
+     ],
+     "a": 0,
+     "why": "Environmental assessments help protect habitat.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can allowing small controlled pipe movement be acceptable in some modern designs?",
+     "o": [
+      "Less weight coating is needed if displacements stay within limits",
+      "Movement is always safe",
+      "Pipes cannot move",
+      "It lowers pressure"
+     ],
+     "a": 0,
+     "why": "Dynamic stability design accepts limited movement if stress limits are met.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Will a sea-bed pipeline stay put in a storm?",
+    "model": "Water flow pushes sideways with drag and lifts the pipe with lift. The pipe's weight in water, less the lift, times the friction with the soil must be bigger than the drag, with a safety margin. If not, engineers add weight, bury it or cover it with rock.",
+    "points": [
+     {
+      "k": [
+       "drag",
+       "push",
+       "sideways",
+       "flow"
+      ],
+      "ask": "What pushes the pipe sideways?"
+     },
+     {
+      "k": [
+       "lift",
+       "up",
+       "upward"
+      ],
+      "ask": "What else does the flow do?"
+     },
+     {
+      "k": [
+       "weight",
+       "friction",
+       "soil"
+      ],
+      "ask": "What resists it?"
+     },
+     {
+      "k": [
+       "bury",
+       "trench",
+       "rock",
+       "concrete",
+       "coating",
+       "mattress"
+      ],
+      "ask": "How do you make it more stable?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Pipe-soil interaction",
+   "icon": "🪱",
+   "hook": "A hot pipeline wants to get longer, but the sea bed grips it. What happens to a pipe that cannot expand?",
+   "explain": [
+    "Steel expands when heated: ΔL = α L ΔT, where α ≈ 12 × 10⁻⁶ per °C. A 1000 m pipe heated by 80 °C would grow by 0.96 m if it were free. Soil friction restrains this, and if the pipe cannot move, a compressive axial force builds up: F = E A α ΔT, where E ≈ 207 GPa for steel and A is the steel cross-section area. This is the fully restrained force.",
+    "Soil also resists lateral and vertical movement. The axial friction is often modelled as Coulomb friction μ N, or in clay as a fraction of undrained shear strength. Lateral resistance includes friction plus passive soil resistance, which depends on how deep the pipe is embedded. Penetration depends on pipe weight, soil strength and wave-induced motions during installation.",
+    "If compressive force exceeds the capacity of the pipe to resist buckling, it can buckle upward (upheaval) in a buried line or sideways (lateral buckling) on the surface. Engineers either prevent it by burial or rock cover, or control it by designing planned buckle sites with snake-lay or buoyancy sections. Repeated heating and cooling cycles can also make a pipeline walk along the sea bed (pipeline walking), which stresses end connections."
+   ],
+   "example": {
+    "q": "A steel pipe has D = 0.4 m, t = 0.02 m and is fully restrained. ΔT = 80 °C, E = 207 GPa and α = 12×10⁻⁶ /°C. Find the axial force.",
+    "steps": [
+     "A ≈ π(D − t)t = π × 0.38 × 0.02 = 0.02388 m².",
+     "σ = E α ΔT = 207×10⁹ × 12×10⁻⁶ × 80 = 198.7 MPa.",
+     "F = σ A = 198.7×10⁶ × 0.02388 = 4.74 MN."
+    ],
+    "a": "About 4.7 MN (compressive)"
+   },
+   "analogies": {
+    "home": "A long railway line in summer heat tries to expand and can buckle sideways if not allowed to move.",
+    "city": "Bridges have expansion joints so that heat does not build up force.",
+    "sport": "Pushing both ends of a thin ruler towards each other makes it bow out.",
+    "farm": "A fence wire strained tight can snap when it cools."
+   },
+   "mnemonic": "ΔL = α L ΔT free; F = E A α ΔT if held. Compress, then buckle.",
+   "terms": [
+    [
+     "Thermal expansion",
+     "Length change due to temperature change."
+    ],
+    [
+     "Fully restrained force",
+     "Axial force when expansion is completely prevented."
+    ],
+    [
+     "Lateral buckling",
+     "Sideways bowing of a compressed pipeline."
+    ],
+    [
+     "Pipeline walking",
+     "Gradual movement of a pipeline over many heating cycles."
+    ]
+   ],
+   "misc": {
+    "wrong": "Soil only supports a pipeline; it does not affect its stresses.",
+    "right": "Soil friction determines how much expansion is restrained, so it controls axial force, buckling and walking."
+   },
+   "limits": "Soil resistance changes with embedment, rate, cycles and remoulding. Models are calibrated by tests and uncertainty is large, so ranges of soil values are used.",
+   "trip": {
+    "wiki": "Thermal expansion",
+    "prompt": "Find the formula for linear expansion and work out how much a 1 km steel line grows for 50 °C."
+   },
+   "sources": [
+    "Thermal expansion",
+    "Buckling",
+    "Pipeline transport"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a restrained pipe do when it is heated?",
+     "o": [
+      "Builds up compressive force",
+      "Becomes shorter and loses tension",
+      "Builds tension",
+      "Floats"
+     ],
+     "a": 0,
+     "why": "Prevented expansion produces compression.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A planned buckle site is used to...",
+     "o": [
+      "Control where the pipeline buckles",
+      "Prevent heating of the pipeline contents",
+      "Reduce pressure",
+      "Stop corrosion"
+     ],
+     "a": 0,
+     "why": "Triggering buckles in chosen places keeps stresses acceptable.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does pipeline walking mean?",
+     "o": [
+      "Gradual movement along the sea bed after repeated heating cycles",
+      "A diver inspecting",
+      "A robot moving",
+      "A pig run"
+     ],
+     "a": 0,
+     "why": "Thermal cycles and slope or tension can cause creeping movement.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A pipe is buried 1 m deep. How does this help against buckling?",
+     "o": [
+      "Soil cover adds weight and resistance",
+      "It lowers the temperature of the steel",
+      "It adds buoyancy",
+      "It reduces stress"
+     ],
+     "a": 0,
+     "why": "Cover resists upward and lateral movement.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A softer clay sea bed gives lower friction. What happens to the axial force in a hot pipe?",
+     "o": [
+      "Pipe slides more and force near the ends is lower, but expansion at ends is larger",
+      "Force doubles",
+      "Pipe shrinks",
+      "No effect"
+     ],
+     "a": 0,
+     "why": "Lower friction lets the ends move, relieving force but increasing end displacement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A 1000 m steel pipe is heated by 80 °C. α = 12×10⁻⁶ /°C. How much would it expand if free, in metres?",
+     "a": 0.96,
+     "tol": 0.01,
+     "unit": "m",
+     "why": "ΔL = 12×10⁻⁶ × 1000 × 80 = 0.96 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the thermal stress E α ΔT in MPa if fully restrained with E = 207 GPa, α = 12×10⁻⁶ /°C, ΔT = 80 °C.",
+     "a": 198.7,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "207 000 MPa × 12×10⁻⁶ × 80 = 198.7 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Steel area A = 0.02388 m² and the stress is 198.7 MPa. Find the axial force in MN (2 decimal places).",
+     "a": 4.74,
+     "tol": 0.02,
+     "unit": "MN",
+     "why": "198.7 × 0.02388 = 4.745 MN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "α",
+       "Thermal expansion coefficient"
+      ],
+      [
+       "E",
+       "Young's modulus"
+      ],
+      [
+       "μ",
+       "Friction coefficient"
+      ],
+      [
+       "ΔT",
+       "Temperature change"
+      ]
+     ],
+     "why": "Symbols used in the expansion calculation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A pipe carrying hot oil is shut down for repairs and cools. Explain what happens to the axial force and why shutdown cycles matter for fatigue.",
+     "rubric": [
+      [
+       "cool",
+       "contract",
+       "shorten",
+       "shrink"
+      ],
+      [
+       "force",
+       "compress",
+       "tension",
+       "release",
+       "reduce",
+       "stress"
+      ],
+      [
+       "cycle",
+       "repeat",
+       "fatigue",
+       "walk",
+       "buckle"
+      ]
+     ],
+     "min": 2,
+     "model": "On cooling the steel tries to contract, so the compressive force falls and the pipe may go into tension if restrained. Repeated heating and cooling cycles cause repeated stress ranges and movement at buckles, which can cause fatigue and pipeline walking.",
+     "why": "Thermal cycles create cyclic stress at critical locations.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A buckle starts forming at a rock-dumped section in a hot pipeline. What does it show?",
+     "o": [
+      "Expansion force exceeded the resistance to movement",
+      "Rock cools the pipe wall so it contracts and kinks",
+      "The pipe is too cold",
+      "The soil is too light"
+     ],
+     "a": 0,
+     "why": "Rock increases lateral resistance, so force can build until the pipe buckles at weaker sections.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A flexible link (spool) at the end of a pipeline is used because...",
+     "o": [
+      "The end moves with thermal expansion and the spool absorbs it",
+      "Spools are cheaper",
+      "The end never moves",
+      "It stops pressure"
+     ],
+     "a": 0,
+     "why": "Ends of hot pipelines move, so a flexible connection avoids overstressing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A trenching vessel disturbs sediment and the plume smothers a nearby reef. What is a better practice?",
+     "o": [
+      "Plan timing and routing to limit plume near sensitive areas and monitor turbidity",
+      "Trench at random",
+      "Ignore the reef",
+      "Add more sediment"
+     ],
+     "a": 0,
+     "why": "Environmental controls reduce harm during construction.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a hot pipeline on the sea bed can buckle",
+    "model": "Heating makes steel expand. The sea bed grips the pipe, so it cannot grow freely and builds up squeezing force. When the force is large enough the pipe bows sideways or up, which is buckling. Engineers bury it, add rock, or design planned buckles.",
+    "points": [
+     {
+      "k": [
+       "heat",
+       "expand",
+       "expansion",
+       "hot"
+      ],
+      "ask": "What does heat do to the pipe?"
+     },
+     {
+      "k": [
+       "soil",
+       "friction",
+       "grip",
+       "restrain"
+      ],
+      "ask": "What stops it moving?"
+     },
+     {
+      "k": [
+       "force",
+       "compress",
+       "squeez"
+      ],
+      "ask": "What builds up?"
+     },
+     {
+      "k": [
+       "buckle",
+       "bow",
+       "bury",
+       "rock",
+       "control"
+      ],
+      "ask": "What happens, and what can be done?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Subsea flow assurance",
+   "icon": "🧊",
+   "hook": "A well is producing well, then flow stops and does not restart. Hours later, a solid plug is found in the line. What turns a flowing mixture into a blockage?",
+   "explain": [
+    "Flow assurance means keeping oil, gas and water flowing from reservoir to host for the field's whole life. Threats include hydrates, wax (paraffin), asphaltenes, scale, corrosion, erosion, emulsions and slugging. Each has a physical cause: temperature falling in cold deep water, pressure, composition or flow rate.",
+    "Hydrates are ice-like crystals in which water cages trap gas molecules such as methane. They form at high pressure and low temperature when free water and gas are both present, so a cold, shut-in deepwater line is ideal for them. They can block a line in hours. Wax crystallises when the fluid falls below the wax appearance temperature, thickening the oil and building deposits. Scale (such as barium sulphate) comes from mixing incompatible waters. Corrosion by CO₂ or H₂S with water attacks steel, and sand causes erosion.",
+    "Control options: keep the fluid warm (insulation, heated pipes), keep it out of the hydrate region (depressurise, remove water), inject inhibitors (methanol or mono-ethylene glycol MEG lower the hydrate temperature), pig regularly for wax, and design for safe restart. Terrain slugging and riser slugging cause pulses of liquid and gas that overload separators and cause vibration. Safety matter: never repressurise one side of a suspected hydrate plug, because the plug can become a high-speed projectile or trapped pressure can rupture the line, so depressurise from both sides slowly."
+   ],
+   "example": {
+    "q": "Fluid enters a flowline at 80 °C. The sea is 4 °C. Heat loss makes the temperature difference decay as e^(−x/L₀) with L₀ = 20 km. Find the temperature after 20 km.",
+    "steps": [
+     "Initial difference = 80 − 4 = 76 °C.",
+     "After x = L₀ the difference is 76 × e⁻¹ = 76 × 0.3679 = 27.96 °C.",
+     "T = 4 + 27.96 = 31.96 °C."
+    ],
+    "a": "About 32 °C"
+   },
+   "analogies": {
+    "home": "A cold glass of water gets wet on the outside as vapour condenses; a cold gas line makes ice-like crystals with water.",
+    "farm": "Butter turns solid in cold weather, like wax thickening oil.",
+    "sport": "Slush in a drink can block a straw, like hydrate slush in a line.",
+    "city": "Fat in a kitchen drain cools and blocks it, like wax in a pipeline."
+   },
+   "mnemonic": "Hydrate needs Gas + Water + Cold + High pressure. Break one leg of the table.",
+   "terms": [
+    [
+     "Hydrate",
+     "Ice-like solid of gas and water that forms at high pressure and low temperature."
+    ],
+    [
+     "Wax appearance temperature",
+     "Temperature at which wax crystals start to form."
+    ],
+    [
+     "MEG",
+     "Mono-ethylene glycol; an inhibitor that lowers hydrate formation temperature."
+    ],
+    [
+     "Slugging",
+     "Surges of liquid and gas in a multiphase pipeline."
+    ]
+   ],
+   "misc": {
+    "wrong": "Hydrates are just ice and melt at 0 °C.",
+    "right": "Hydrates can exist well above 0 °C at high pressure, for example above 10 °C at typical deepwater pressures, because gas molecules stabilise the water cages."
+   },
+   "limits": "Flow assurance relies on fluid samples and models with uncertainty. Chemical injection has costs and environmental impacts, so it is minimised and treated.",
+   "trip": {
+    "wiki": "Clathrate hydrate",
+    "prompt": "Find the phase diagram. Which side of the curve is the safe side for a pipeline?"
+   },
+   "sources": [
+    "Clathrate hydrate",
+    "Flow assurance",
+    "Slug flow"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which set of conditions favours hydrate formation?",
+     "o": [
+      "High pressure, low temperature, gas and water present",
+      "Low pressure, high temperature, and dry gas only",
+      "High temperature only",
+      "Oil only"
+     ],
+     "a": 0,
+     "why": "Hydrates need gas, water, cold and pressure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a shutdown increase hydrate risk?",
+     "o": [
+      "The fluid cools toward sea temperature while pressure stays high",
+      "The pipe warms",
+      "Water disappears",
+      "Gas escapes"
+     ],
+     "a": 0,
+     "why": "Without flow the warm fluid loses heat to cold water.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How does MEG help?",
+     "o": [
+      "It lowers the temperature at which hydrates form",
+      "It heats the pipes to melt hydrates already formed",
+      "It adds gas",
+      "It removes oil"
+     ],
+     "a": 0,
+     "why": "Inhibitors shift the hydrate curve so hydrates need lower temperature.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Crew suspect a hydrate plug in a line. What is the correct safe action?",
+     "o": [
+      "Depressurise slowly from both sides of the plug",
+      "Pump up pressure on one side to push the plug out",
+      "Hammer the pipe",
+      "Heat one side only"
+     ],
+     "a": 0,
+     "why": "Pressure on one side can launch a plug like a projectile; equal slow depressurisation avoids this.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Wax deposits form on the pipe wall mainly because...",
+     "o": [
+      "The wall is colder than the wax appearance temperature",
+      "The oil is too hot, so the wax boils out of solution",
+      "Water is too salty",
+      "Gas is lighter"
+     ],
+     "a": 0,
+     "why": "Wax crystallises on cold walls.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Fluid at 80 °C enters a flowline in 4 °C water. The temperature difference decays as e^(−x/20) with x in km. What is the fluid temperature after 20 km in °C (nearest degree)?",
+     "a": 32,
+     "tol": 0.5,
+     "unit": "°C",
+     "why": "4 + 76 × e⁻¹ = 4 + 27.96 = 31.96 °C.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A well produces 100 t/day of water. To make the water-MEG liquid 40% MEG by mass, how many tonnes of MEG per day must be added (1 decimal place)?",
+     "a": 66.7,
+     "tol": 0.2,
+     "unit": "t/day",
+     "why": "x/(x + 100) = 0.4 gives x = 0.4 × 100 ÷ 0.6 = 66.7 t/day.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Pressure in a line is 15 MPa. Express this in bar (1 MPa = 10 bar).",
+     "a": 150,
+     "tol": 0.5,
+     "unit": "bar",
+     "why": "15 × 10 = 150 bar.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each threat to its main cause.",
+     "pairs": [
+      [
+       "Hydrate",
+       "Gas and water at cold, high pressure"
+      ],
+      [
+       "Wax",
+       "Cooling below the wax appearance temperature"
+      ],
+      [
+       "Scale",
+       "Mixing incompatible waters"
+      ],
+      [
+       "Erosion",
+       "Sand carried at high velocity"
+      ]
+     ],
+     "why": "Each flow assurance threat has its own physical cause.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how slugging can damage topside equipment and what operators can do about it.",
+     "rubric": [
+      [
+       "liquid",
+       "slug",
+       "surge",
+       "pulse"
+      ],
+      [
+       "separator",
+       "overload",
+       "flood",
+       "vibration",
+       "pressure",
+       "force"
+      ],
+      [
+       "choke",
+       "control",
+       "reduce",
+       "slug catcher",
+       "gas lift",
+       "increase flow",
+       "manage"
+      ]
+     ],
+     "min": 2,
+     "model": "A liquid slug arriving as a pulse can overfill separators, cause pressure surges and vibration, and force shutdowns. Operators can manage with choking, a slug catcher, adjusting flow rate or gas lift, and designing the riser to reduce accumulation.",
+     "why": "Slugging is intermittent flow that stresses equipment and process control.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A line is to be restarted after a long shutdown during which it cooled into the hydrate region. Which strategy is most sensible?",
+     "o": [
+      "Remediate and inject inhibitor before restart, with a controlled start",
+      "Open fully at once",
+      "Stop all chemicals",
+      "Cool further"
+     ],
+     "a": 0,
+     "why": "Restart must avoid forming or moving plugs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A methanol spill occurs on the deck. What is a priority?",
+     "o": [
+      "Contain it to prevent discharge to the sea and avoid ignition",
+      "Wash it overboard",
+      "Ignore",
+      "Light a flare"
+     ],
+     "a": 0,
+     "why": "Methanol is flammable and toxic, so containment protects people and the sea.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is insulation sometimes preferred to chemical inhibition?",
+     "o": [
+      "It reduces chemical use and gives cooldown time",
+      "It cools the fluid, so less inhibitor is needed",
+      "It is free",
+      "It prevents all failures"
+     ],
+     "a": 0,
+     "why": "Insulation keeps temperature above hydrate or wax limits for a time.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a deep-sea pipeline can plug",
+    "model": "Cold water cools the fluid. If water, gas, high pressure and low temperature all occur together, ice-like hydrates form and can block the pipe. Engineers keep the fluid warm, remove water, or add chemicals like MEG. If a plug forms, never pressurise from one side.",
+    "points": [
+     {
+      "k": [
+       "cold",
+       "cool",
+       "temperature",
+       "low"
+      ],
+      "ask": "What does cold water do?"
+     },
+     {
+      "k": [
+       "gas",
+       "water",
+       "pressure",
+       "hydrate"
+      ],
+      "ask": "What is needed for a hydrate to form?"
+     },
+     {
+      "k": [
+       "insulation",
+       "inhibitor",
+       "meg",
+       "methanol",
+       "warm"
+      ],
+      "ask": "How do engineers prevent it?"
+     },
+     {
+      "k": [
+       "depressurise",
+       "both sides",
+       "projectile",
+       "safe",
+       "slow"
+      ],
+      "ask": "What is the safe way to remove a plug?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Offshore fatigue and reliability",
+   "icon": "🔩",
+   "hook": "A steel joint survives the biggest storm without a crack, but fails after years of ordinary waves. How can small loads break strong steel?",
+   "explain": [
+    "Fatigue is damage from repeated stress cycles. Even when stress is far below yield, microscopic cracks start at defects, welds or sharp corners, where stress is concentrated, and grow a little with every cycle. Eventually the remaining section cannot carry the load and the member fractures. Seawater and corrosion shorten fatigue life (corrosion fatigue).",
+    "The S-N curve gives the number of cycles to failure N for a constant stress range S: N = a S^(−m), with m ≈ 3 for many welded joints. Doubling the stress range cuts life by 2³ = 8 times. For mixed loads, Miner's rule adds damage: D = Σ nᵢ/Nᵢ, where nᵢ is applied cycles at stress range i. Failure is predicted when D reaches 1. Design requires D ≤ 1/DFF, with a design fatigue factor DFF (e.g. 3 to 10), higher for joints that are critical and hard to inspect.",
+    "Reliability engineering treats loads and strengths as uncertain. A once-in-T-years event has annual probability 1/T, so the probability of at least one in n years is 1 − (1 − 1/T)ⁿ. A '100-year' wave has about a 22% chance of occurring in a 25-year life. Inspection (ROVs, divers, sensors), maintenance and structural health monitoring let operators detect cracks early, repair them and decide on life extension. Safety and the ocean both depend on avoiding failures."
+   ],
+   "example": {
+    "q": "A joint sees n₁ = 2×10⁶ cycles at a stress range with N₁ = 1×10⁷, and n₂ = 5×10⁵ cycles at a range with N₂ = 1×10⁶. Find Miner's damage D.",
+    "steps": [
+     "D₁ = n₁/N₁ = 2×10⁶ ÷ 1×10⁷ = 0.2.",
+     "D₂ = n₂/N₂ = 5×10⁵ ÷ 1×10⁶ = 0.5.",
+     "D = 0.2 + 0.5 = 0.7."
+    ],
+    "a": "D = 0.7 (70% of life used)"
+   },
+   "analogies": {
+    "home": "Bending a paperclip back and forth many times snaps it, even though one bend does nothing.",
+    "sport": "A runner can handle one hard sprint, but a thousand repeated pounding steps may cause a stress fracture.",
+    "city": "A bridge cable endures traffic loads every day; the cumulative cycles matter more than any one lorry.",
+    "farm": "A fence wire that is flexed by wind year after year will snap at the same twist."
+   },
+   "mnemonic": "Small loads, many times, make cracks grow. Double the stress, eight times less life when m = 3.",
+   "terms": [
+    [
+     "Fatigue",
+     "Damage from repeated cycles of stress."
+    ],
+    [
+     "S-N curve",
+     "Plot of stress range against cycles to failure."
+    ],
+    [
+     "Miner's rule",
+     "Damage D = Σ n/N; failure predicted when D reaches 1."
+    ],
+    [
+     "Stress concentration",
+     "Local increase of stress at geometric changes or weld toes."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a structure survives the largest storm it will last for ever.",
+    "right": "Fatigue accumulates from the many ordinary loads over decades, so survival of one extreme does not guarantee a long life."
+   },
+   "limits": "Miner's rule ignores load sequence effects, S-N data have large scatter, and crack growth models add detail. Probabilistic methods give failure chances, not certainties.",
+   "trip": {
+    "wiki": "Fatigue (material)",
+    "prompt": "Find a photo of a fatigue fracture surface. Can you spot the beach marks?"
+   },
+   "sources": [
+    "Fatigue (material)",
+    "Miner's rule",
+    "Structural integrity and failure"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What causes fatigue failure?",
+     "o": [
+      "Repeated cycles of stress that grow cracks",
+      "A single large overload only, never repeated loading",
+      "Freezing",
+      "Constant stress"
+     ],
+     "a": 0,
+     "why": "Cycles grow microscopic cracks until fracture.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "With m = 3, if the stress range doubles, fatigue life becomes...",
+     "o": [
+      "One eighth",
+      "Half",
+      "One quarter",
+      "Double"
+     ],
+     "a": 0,
+     "why": "N ∝ S⁻³, so doubling S reduces N by 2³ = 8.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do welded joints often fail first in fatigue?",
+     "o": [
+      "Stress concentrates at weld toes and defects",
+      "Weld metal is always weaker steel than the plate",
+      "Welds are hot",
+      "Welds are painted"
+     ],
+     "a": 0,
+     "why": "Geometry and tiny flaws raise local stress.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer applies a design fatigue factor of 10 to a joint that is hard to inspect. What does this do?",
+     "o": [
+      "Requires calculated life ten times the service life",
+      "Lowers cost by allowing a thinner and lighter joint",
+      "Ignores fatigue",
+      "Doubles the load"
+     ],
+     "a": 0,
+     "why": "DFF gives margin for uncertainty and difficult inspection.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A crack of 20 mm is found in a node of an old platform. What is the best response?",
+     "o": [
+      "Assess it, repair or reduce loads, and monitor",
+      "Ignore it",
+      "Paint over",
+      "Increase loading"
+     ],
+     "a": 0,
+     "why": "Cracks grow, so act early under an engineering assessment.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A joint sees 2×10⁶ cycles at N₁ = 1×10⁷ and 5×10⁵ cycles at N₂ = 1×10⁶. Find Miner's damage D (1 decimal place).",
+     "a": 0.7,
+     "tol": 0.01,
+     "unit": "",
+     "why": "0.2 + 0.5 = 0.7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A '100-year' storm has annual probability 0.01. Find the probability of at least one occurrence in 25 years, as a decimal to 3 places. Use 1 − 0.99²⁵.",
+     "a": 0.222,
+     "tol": 0.003,
+     "unit": "",
+     "why": "0.99²⁵ = 0.7778; 1 − 0.7778 = 0.222.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For m = 3, N = 5×10⁶ at stress range 40 MPa. What is N at 80 MPa?",
+     "a": 625000,
+     "tol": 1000,
+     "unit": "cycles",
+     "why": "N falls by 2³ = 8: 5×10⁶ ÷ 8 = 625 000.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of fatigue failure.",
+     "items": [
+      "Stress concentration at a weld toe",
+      "Crack initiates",
+      "Crack grows with each cycle",
+      "Remaining section fractures"
+     ],
+     "why": "Cracks start at stress concentrations, grow, then cause final fracture.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does the sea environment make fatigue worse than in dry air, and how can this be reduced?",
+     "rubric": [
+      [
+       "corrosion",
+       "salt",
+       "seawater",
+       "rust",
+       "environment"
+      ],
+      [
+       "crack",
+       "faster",
+       "shorter",
+       "reduce",
+       "life",
+       "pit"
+      ],
+      [
+       "coat",
+       "cathodic",
+       "anode",
+       "protect",
+       "inspect",
+       "improve",
+       "grind",
+       "weld"
+      ]
+     ],
+     "min": 2,
+     "model": "Seawater and corrosion create pits and speed crack growth, shortening fatigue life. Cathodic protection and coatings, weld improvement such as grinding, and regular inspection help.",
+     "why": "Corrosion fatigue lowers S-N curves in seawater without protection.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A platform is planned for life extension from 25 to 40 years. What is the key question?",
+     "o": [
+      "Has fatigue damage left enough life, and what do inspections show?",
+      "Can it be painted?",
+      "Is it taller?",
+      "Has it moved?"
+     ],
+     "a": 0,
+     "why": "Life extension requires evidence of remaining fatigue life and condition.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A sensor shows more wave cycles than assumed in design. What follows?",
+     "o": [
+      "Fatigue damage accumulates faster than planned",
+      "Fatigue damage falls because stress ranges drop",
+      "Stress disappears",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "More cycles mean greater n in Miner's sum.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A probabilistic analysis gives failure probability 10⁻⁴ per year. Why does acceptable risk depend on consequence?",
+     "o": [
+      "Higher consequence like pollution or loss of life requires lower probability",
+      "All risks are equal",
+      "Probability is meaningless",
+      "Risk is only cost"
+     ],
+     "a": 0,
+     "why": "Safety targets are stricter when consequences are severe.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why repeated small loads can break strong steel",
+    "model": "Each wave puts a small stress on the steel. Over millions of waves, tiny cracks start at weld corners and grow a little each time until the joint breaks. Doubling the stress range cuts life by about eight. Engineers add safety factors, inspect and repair.",
+    "points": [
+     {
+      "k": [
+       "repeat",
+       "cycle",
+       "many",
+       "wave"
+      ],
+      "ask": "What kind of load causes fatigue?"
+     },
+     {
+      "k": [
+       "crack",
+       "weld",
+       "corner",
+       "stress concentration"
+      ],
+      "ask": "Where and how does damage start?"
+     },
+     {
+      "k": [
+       "eight",
+       "cube",
+       "power",
+       "double",
+       "s-n"
+      ],
+      "ask": "How does stress size change the life?"
+     },
+     {
+      "k": [
+       "inspect",
+       "factor",
+       "safety",
+       "repair",
+       "monitor"
+      ],
+      "ask": "How do engineers manage the risk?"
+     }
+    ]
+   }
+  }
+ ]
+}

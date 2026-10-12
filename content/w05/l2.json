@@ -1,0 +1,2797 @@
+{
+ "world": 5,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Oceanography fundamentals",
+   "icon": "🌍",
+   "hook": "The ocean looks blue and flat from a beach. What is hiding below the surface, and how would you measure it?",
+   "explain": [
+    "Oceans cover about 71% of Earth's surface. The average depth is roughly 3.7 km, and the deepest place, Challenger Deep in the Mariana Trench, is nearly 11 km down. Oceanography is the science that studies all this.",
+    "Sea water is salty because rivers and rocks add dissolved salts, and when water evaporates the salt stays behind. Typical sea water has about 35 grams of salt in every kilogram of water. Salty water is denser than fresh water.",
+    "Conditions change with depth. Sunlight reaches only the top 200 m or so, the sunlit zone. Below that it is dark and cold. Pressure grows by about 1 bar for every 10 m of depth, so engineers must build deep-sea equipment very strong."
+   ],
+   "example": {
+    "q": "A scientist takes 4 kg of sea water with 35 g of salt per kg. How much salt is in the sample?",
+    "steps": [
+     "Salt per kg = 35 g.",
+     "Multiply by the mass: 35 × 4 = 140.",
+     "Add the unit."
+    ],
+    "a": "140 g of salt"
+   },
+   "analogies": {
+    "home": "Stirring salt into a glass of water is like what happens naturally in the sea, only on a gigantic scale.",
+    "sport": "Diving deep is like going down a very long slide where the push on your body gets bigger each metre.",
+    "nature": "Plants grow only where light reaches, so most sea plants live near the surface.",
+    "tech": "Sonar works like a bat's call: send a sound, listen for the echo, and work out the depth."
+   },
+   "mnemonic": "Sun, Twilight, Midnight: light gets less and pressure gets more as you go down.",
+   "terms": [
+    [
+     "Salinity",
+     "How much dissolved salt is in the water."
+    ],
+    [
+     "Trench",
+     "A very deep, narrow valley in the sea floor."
+    ],
+    [
+     "Sunlit zone",
+     "The top layer of the ocean where light can reach."
+    ],
+    [
+     "Sonar",
+     "Using sound echoes to measure depth or find objects."
+    ]
+   ],
+   "misc": {
+    "wrong": "Deep water is just like shallow water, only deeper.",
+    "right": "Deep water is darker, colder and under far greater pressure, which changes both life and engineering."
+   },
+   "limits": "Salinity is not the same everywhere: it is lower near big river mouths and melting ice, and higher in hot dry seas. Depth figures are measured values that are refined over time.",
+   "trip": {
+    "wiki": "Oceanography",
+    "prompt": "Find the ocean zones diagram and note how deep each layer starts."
+   },
+   "sources": [
+    "Oceanography",
+    "Seawater",
+    "Challenger Deep"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "About what fraction of Earth's surface is covered by ocean?",
+     "o": [
+      "About 71%",
+      "About 10%",
+      "About 30%",
+      "About 99%"
+     ],
+     "a": 0,
+     "why": "Oceans cover roughly 71% of the planet's surface.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is sea water salty?",
+     "o": [
+      "Rivers and rocks add salts and evaporation leaves salt behind",
+      "Fish make the salt and release it into the water",
+      "Ships pour salt in when they pass through the sea, bit by bit",
+      "Rain is salty because it picks up salt from the clouds"
+     ],
+     "a": 0,
+     "why": "Dissolved salts are carried to the sea and stay when water evaporates.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to pressure as you go deeper?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "It turns to zero"
+     ],
+     "a": 0,
+     "why": "There is more water above, so pressure grows with depth.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do deep-sea cameras and robots need very strong, sealed cases?",
+     "o": [
+      "The pressure is huge and could crush weak cases",
+      "Fish like to bite them and could chew through them",
+      "Water that deep is too warm and would melt weak cases",
+      "Light is too bright down there and would damage them"
+     ],
+     "a": 0,
+     "why": "Pressure at depth is very high, so weak or hollow parts can be crushed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Plants cannot grow at 1000 m depth in the open ocean. Which is the best reason?",
+     "o": [
+      "Sunlight does not reach that deep",
+      "It is too salty at that depth for any plant roots",
+      "There is no liquid water, only ice, at that depth",
+      "Fish eat them all before they can grow at all"
+     ],
+     "a": 0,
+     "why": "Plants need light to make food, and light fades out below about 200 m.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Sea water holds 35 g of salt per kg. How many grams of salt are in 6 kg of sea water?",
+     "a": 210,
+     "tol": 0.5,
+     "unit": "g",
+     "why": "35 × 6 = 210 g.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Assume pressure from the water rises by about 1 bar for every 10 m of depth. How many bar of extra pressure act on a robot at 60 m depth?",
+     "a": 6,
+     "tol": 0.2,
+     "unit": "bar",
+     "why": "60 ÷ 10 = 6 bar from the water alone.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the layers in order from the surface downwards.",
+     "items": [
+      "Sunlit zone",
+      "Twilight zone",
+      "Midnight zone",
+      "Sea floor"
+     ],
+     "why": "Light fades with depth: sunlit, twilight (dim), midnight (dark), then the bottom.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each word to its meaning.",
+     "pairs": [
+      [
+       "Salinity",
+       "Amount of dissolved salt"
+      ],
+      [
+       "Trench",
+       "Deep valley in the sea floor"
+      ],
+      [
+       "Sonar",
+       "Measures using sound echoes"
+      ]
+     ],
+     "why": "Each is a basic oceanography word.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A ship sends a sound pulse down and hears the echo 2 seconds later. Explain how this tells the sailors the depth.",
+     "rubric": [
+      [
+       "echo",
+       "bounce",
+       "reflect",
+       "sonar"
+      ],
+      [
+       "time",
+       "seconds",
+       "how long"
+      ],
+      [
+       "speed",
+       "distance",
+       "half",
+       "there and back",
+       "down and back"
+      ]
+     ],
+     "min": 2,
+     "model": "Sound travels down, bounces off the sea floor and comes back. Knowing the speed of sound in water and the time, you work out the distance. You halve it because the sound went down and back.",
+     "why": "Depth = speed × time ÷ 2, because the echo travels to the bottom and returns.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Near the mouth of a large river the sea is less salty than far out. Why?",
+     "o": [
+      "Fresh river water mixes in and dilutes the salt",
+      "Fish remove salt from the water as they swim and breathe",
+      "The sun removes salt from the water near the shore",
+      "Rivers are saltier than the sea so they add more salt"
+     ],
+     "a": 0,
+     "why": "Fresh water lowers the amount of salt per kilogram.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does warm fresh river water often float on top of cold salty sea water?",
+     "o": [
+      "It is less dense",
+      "It is heavier",
+      "It is darker",
+      "It is faster"
+     ],
+     "a": 0,
+     "why": "Fresh and warmer water is less dense, so it sits above denser salty water.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it important for engineers to know the depth and conditions of the sea before building something?",
+     "rubric": [
+      [
+       "pressure",
+       "strong",
+       "load",
+       "force",
+       "wave",
+       "current"
+      ],
+      [
+       "safe",
+       "fail",
+       "break",
+       "design",
+       "damage",
+       "collapse"
+      ],
+      [
+       "know",
+       "measure",
+       "survey",
+       "data",
+       "plan"
+      ]
+     ],
+     "min": 2,
+     "model": "Depth, pressure, waves and currents decide how strong a structure must be. Measuring them first helps engineers design something safe that will not fail or harm the sea.",
+     "why": "Design loads come from the environment, so surveys keep people and the ocean safe.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What is special about the deep ocean",
+    "model": "The ocean is salty, dark and cold below the top layer, and the deeper you go the greater the pressure. Light reaches only about 200 m. Machines must be strong to go down there.",
+    "points": [
+     {
+      "k": [
+       "salt",
+       "salty",
+       "salinity"
+      ],
+      "ask": "What is in the water?"
+     },
+     {
+      "k": [
+       "pressure",
+       "squeeze",
+       "push"
+      ],
+      "ask": "What happens as you go deeper?"
+     },
+     {
+      "k": [
+       "light",
+       "dark",
+       "sun"
+      ],
+      "ask": "Can sunlight get all the way down?"
+     },
+     {
+      "k": [
+       "strong",
+       "machine",
+       "robot",
+       "engineer"
+      ],
+      "ask": "What does that mean for machines?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Buoyancy and hydrostatics",
+   "icon": "⚖️",
+   "hook": "Why does a steel ship float but a steel nail sinks? Predict, then find out what really decides it.",
+   "explain": [
+    "Hydrostatics is the study of water that is not moving. In still water, pressure depends on depth: p = ρ × g × h, where ρ (rho) is the density of the water, g = 9.81 m/s² and h is the depth. In this course sea water has density 1025 kg/m³.",
+    "Archimedes' principle says that the upward buoyant force on an object equals the weight of the water it pushes aside: F = ρ × g × V, where V is the volume under water. A floating ship pushes aside exactly its own weight of water.",
+    "So a nail sinks because its small volume displaces less water weight than its own weight. A ship has a huge hollow hull, so it displaces a huge volume of water and the buoyant force equals its weight. Weight acts down and buoyancy acts up. If they are equal, it floats."
+   ],
+   "example": {
+    "q": "A boat displaces 2 m³ of sea water (ρ = 1025 kg/m³, g = 9.81 m/s²). What is the buoyant force?",
+    "steps": [
+     "Use F = ρ × g × V.",
+     "Calculate 1025 × 9.81 = 10 055.25 N/m³.",
+     "Multiply by 2: 20 110.5 N."
+    ],
+    "a": "About 20 100 N (20.1 kN)"
+   },
+   "analogies": {
+    "home": "Push a beach ball into a bath. The deeper you push, the more water it moves and the harder it pushes back.",
+    "sea": "A loaded cargo ship sits lower than an empty one. It needs to push aside more water to hold the extra weight.",
+    "sport": "A swimmer who takes a deep breath floats better because the lungs add volume without adding much weight.",
+    "nature": "A seal's blubber is light and helps it stay near the surface when it rests."
+   },
+   "mnemonic": "Float means weight down = push up. The push is the weight of the water moved.",
+   "terms": [
+    [
+     "Density",
+     "Mass per unit volume, in kg/m³."
+    ],
+    [
+     "Displacement",
+     "The water pushed aside by a floating object."
+    ],
+    [
+     "Buoyant force",
+     "The upward force from the fluid on an object."
+    ],
+    [
+     "Hydrostatic pressure",
+     "Pressure in still water, p = ρgh."
+    ]
+   ],
+   "misc": {
+    "wrong": "Heavy things always sink.",
+    "right": "An object floats if its average density is less than the water's, or if it pushes aside its own weight of water. A heavy steel ship does this by being hollow."
+   },
+   "limits": "We treat the sea as still with constant density. In real seas, waves, temperature and salinity change things a little. We also use gauge pressure, ignoring the air above.",
+   "trip": {
+    "wiki": "Archimedes' principle",
+    "prompt": "Find the simple diagram of a floating object. Spot the two forces that balance."
+   },
+   "sources": [
+    "Archimedes' principle",
+    "Buoyancy",
+    "Hydrostatics"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does Archimedes' principle say?",
+     "o": [
+      "Buoyant force equals the weight of water displaced",
+      "Buoyant force equals the volume of the ship",
+      "Water pressure is the same at all depths",
+      "Heavy things always sink"
+     ],
+     "a": 0,
+     "why": "Buoyancy is the weight of the displaced fluid.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A ship floats at rest. How does its weight compare with the buoyant force?",
+     "o": [
+      "They are equal",
+      "Weight is greater",
+      "Buoyancy is greater",
+      "Buoyancy is zero"
+     ],
+     "a": 0,
+     "why": "At rest and floating, the forces balance.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If a ship sails from the sea into a fresh-water river, what happens to how deep it sits?",
+     "o": [
+      "It sits lower",
+      "It sits higher",
+      "It stays exactly the same",
+      "It floats away"
+     ],
+     "a": 0,
+     "why": "Fresh water is less dense (about 1000 kg/m³), so the ship must displace more volume to get the same buoyancy.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which has the larger pressure from the water: a point at 5 m or a point at 15 m?",
+     "o": [
+      "15 m",
+      "5 m",
+      "Both the same",
+      "Neither has any"
+     ],
+     "a": 0,
+     "why": "p = ρgh grows with depth.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A cargo ship loads more containers. What happens?",
+     "o": [
+      "It sinks lower until it displaces more water",
+      "It rises higher because it is heavier",
+      "Nothing changes because buoyancy stays the same",
+      "It displaces less water because it is carrying more"
+     ],
+     "a": 0,
+     "why": "Extra weight needs extra buoyancy, so it must displace more water.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³ and g = 9.81 m/s². A buoy displaces 0.5 m³ of sea water. What is the buoyant force in newtons (to the nearest whole number)?",
+     "a": 5028,
+     "tol": 5,
+     "unit": "N",
+     "why": "F = 1025 × 9.81 × 0.5 = 5027.6 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³ and g = 9.81 m/s². What is the hydrostatic (gauge) pressure at 20 m depth in kilopascals?",
+     "a": 201,
+     "tol": 1,
+     "unit": "kPa",
+     "why": "p = 1025 × 9.81 × 20 = 201 105 Pa ≈ 201 kPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A floating boat has a mass of 800 kg. Using ρ = 1025 kg/m³, what volume of sea water does it displace, in m³ (2 decimal places)?",
+     "a": 0.78,
+     "tol": 0.01,
+     "unit": "m³",
+     "why": "A floating boat displaces its own mass of water: 800 ÷ 1025 = 0.7805 m³.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its unit.",
+     "pairs": [
+      [
+       "Density",
+       "kg/m³"
+      ],
+      [
+       "Pressure",
+       "Pa"
+      ],
+      [
+       "Force",
+       "N"
+      ],
+      [
+       "Volume",
+       "m³"
+      ]
+     ],
+     "why": "These are SI units.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a steel nail sinks but a steel ship floats.",
+     "rubric": [
+      [
+       "hollow",
+       "air",
+       "shape",
+       "spread",
+       "large volume",
+       "big volume"
+      ],
+      [
+       "displace",
+       "push aside",
+       "pushes aside",
+       "water moved"
+      ],
+      [
+       "weight",
+       "density",
+       "buoyan"
+      ]
+     ],
+     "min": 2,
+     "model": "The ship's hollow shape lets it push aside a huge volume of water, whose weight equals the ship's weight, so buoyancy balances weight. The nail is solid and small, so it displaces far less water than its own weight.",
+     "why": "Floating depends on average density and displaced volume, not on the material alone.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A diver doubles her depth. How does the water pressure from depth change?",
+     "o": [
+      "The gauge pressure doubles",
+      "It stays the same",
+      "It halves",
+      "It becomes four times bigger"
+     ],
+     "a": 0,
+     "why": "p = ρgh is proportional to depth.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A boat with a small hole fills with water and sinks. Which explanation is best?",
+     "o": [
+      "Water replaces air, raising weight and lowering displacement above the surface",
+      "Buoyancy turns off whenever there is a hole in the hull",
+      "The sea pulls harder on a boat once it is damaged",
+      "The boat becomes steel and so heavier than water"
+     ],
+     "a": 0,
+     "why": "The boat's average density rises above that of water as air is lost.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a ship carrying heavy cargo have a load line mark painted on the hull?",
+     "rubric": [
+      [
+       "safe",
+       "danger",
+       "sink",
+       "overload"
+      ],
+      [
+       "too low",
+       "too deep",
+       "limit",
+       "maximum",
+       "line"
+      ],
+      [
+       "water",
+       "sea",
+       "density",
+       "freeboard"
+      ]
+     ],
+     "min": 2,
+     "model": "The load line shows the deepest the ship may sit in different waters. Loading beyond it leaves too little height above the water and the ship may be swamped or become unsafe.",
+     "why": "Load lines protect ships from overloading and set safe limits for fresh and salt water.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why ships float",
+    "model": "Water pushes up on a ship with a force equal to the weight of the water the ship moves aside. A ship is hollow so it moves aside a lot of water, and the push matches its weight, so it floats.",
+    "points": [
+     {
+      "k": [
+       "push",
+       "upward",
+       "up",
+       "buoyan"
+      ],
+      "ask": "What does the water do?"
+     },
+     {
+      "k": [
+       "weight",
+       "displace",
+       "moves aside",
+       "pushes aside"
+      ],
+      "ask": "How big is the push?"
+     },
+     {
+      "k": [
+       "hollow",
+       "air",
+       "shape"
+      ],
+      "ask": "So why can a heavy ship float?"
+     },
+     {
+      "k": [
+       "sink",
+       "nail",
+       "solid",
+       "small"
+      ],
+      "ask": "Why does a nail sink then?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Ship geometry",
+   "icon": "📐",
+   "hook": "How would you describe the size and shape of a ship using only a few numbers?",
+   "explain": [
+    "Naval architects describe a hull with a few main dimensions. Length (L) is how long, beam (B) is the greatest width, depth (D) is the height from keel to deck, and draught (T) is how far the hull sits below the waterline. Freeboard is the part of the side above the water: freeboard = depth − draught.",
+    "Hulls are not boxes. The block coefficient C_B = V ÷ (L × B × T) compares the real underwater volume V with the box that would just hold it. A fat tanker may have C_B near 0.8; a slim fast ferry maybe 0.5.",
+    "Displacement is the weight of water the hull pushes aside, which equals the ship's weight when floating. Mass displaced = V × ρ. Ship plans use curves and sections, called the lines plan, to draw the curved shape."
+   ],
+   "example": {
+    "q": "A barge is 40 m long, 10 m wide and has a draught of 2 m. Its C_B is 0.9. What is its underwater volume?",
+    "steps": [
+     "V = C_B × L × B × T.",
+     "L × B × T = 40 × 10 × 2 = 800 m³.",
+     "Multiply by 0.9: 720 m³."
+    ],
+    "a": "720 m³"
+   },
+   "analogies": {
+    "home": "A shoebox is a box with C_B = 1. A rounded bowl of the same size holds less, like a ship with a smaller C_B.",
+    "city": "A road map's contour lines are like a lines plan: lines that show a curved shape on a flat page.",
+    "farm": "A tractor's width decides which gate it can pass, as beam decides which lock or dock a ship can use.",
+    "sea": "A deeply loaded ship has a bigger draught, like a sailor who carries a heavy bag and stands deeper in mud."
+   },
+   "mnemonic": "L B D T: Long, Broad, Deep, Tucked-into-water. Freeboard is the dry height left.",
+   "terms": [
+    [
+     "Draught",
+     "How deep the hull sits below the waterline."
+    ],
+    [
+     "Beam",
+     "The greatest width of the ship."
+    ],
+    [
+     "Freeboard",
+     "Height of the side above the water."
+    ],
+    [
+     "Block coefficient",
+     "Underwater volume divided by L × B × T."
+    ]
+   ],
+   "misc": {
+    "wrong": "Draught is the same as the ship's total height.",
+    "right": "Draught is only the part below the water. Depth is the height of the hull from keel to deck."
+   },
+   "limits": "Different standards measure length in different ways, such as overall length or length between perpendiculars. Always say which one you use.",
+   "trip": {
+    "wiki": "Block coefficient",
+    "prompt": "Look for a table of ship types and notice which have high and low values."
+   },
+   "sources": [
+    "Block coefficient",
+    "Draft (hull)",
+    "Freeboard (nautical)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is draught?",
+     "o": [
+      "How far the hull sits below the waterline",
+      "The total length of the ship from bow to stern",
+      "The width of the ship at its widest part",
+      "The height of the mast above the deck"
+     ],
+     "a": 0,
+     "why": "Draught is measured vertically from the waterline to the keel.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is freeboard?",
+     "o": [
+      "Height of the ship's side above the water",
+      "The depth of the keel below the water",
+      "The space inside the ship used for cargo",
+      "The width of the ship at the waterline"
+     ],
+     "a": 0,
+     "why": "Freeboard = depth − draught.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A ship loads cargo. What happens to its freeboard?",
+     "o": [
+      "It decreases",
+      "It increases",
+      "It stays the same",
+      "It becomes zero at once"
+     ],
+     "a": 0,
+     "why": "Loading raises the draught, so the freeboard gets smaller.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A block coefficient of 1.0 would describe a hull that is shaped like...",
+     "o": [
+      "A perfect box",
+      "A pointed needle",
+      "A cone",
+      "A sphere"
+     ],
+     "a": 0,
+     "why": "Volume equals L × B × T only for a box.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which ship probably has the lower block coefficient?",
+     "o": [
+      "A fast, slim ferry",
+      "A wide, slow oil tanker",
+      "A flat barge",
+      "A box-like pontoon"
+     ],
+     "a": 0,
+     "why": "Fast ships are slim and pointed to cut through water easily.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A ship has depth 12 m and draught 8 m. What is its freeboard in metres?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "Freeboard = 12 − 8 = 4 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A hull has L = 100 m, B = 20 m, T = 5 m and C_B = 0.75. What is its underwater volume in m³?",
+     "a": 7500,
+     "tol": 1,
+     "unit": "m³",
+     "why": "100 × 20 × 5 = 10 000; × 0.75 = 7500 m³.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using ρ = 1025 kg/m³, what is the mass of sea water displaced by an underwater volume of 900 m³, in tonnes (1 tonne = 1000 kg)?",
+     "a": 922.5,
+     "tol": 0.5,
+     "unit": "t",
+     "why": "900 × 1025 = 922 500 kg = 922.5 t.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each symbol to its meaning.",
+     "pairs": [
+      [
+       "L",
+       "Length"
+      ],
+      [
+       "B",
+       "Beam (greatest width)"
+      ],
+      [
+       "T",
+       "Draught"
+      ],
+      [
+       "D",
+       "Depth to deck"
+      ]
+     ],
+     "why": "These are the main hull dimensions.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A harbour entrance is only 6 m deep at low tide. Why does the captain need to know the ship's draught?",
+     "rubric": [
+      [
+       "draught",
+       "draft",
+       "depth below",
+       "sits"
+      ],
+      [
+       "ground",
+       "aground",
+       "hit the bottom",
+       "touch the bottom",
+       "stuck",
+       "scrape"
+      ],
+      [
+       "deeper",
+       "less than",
+       "enough water",
+       "clearance",
+       "6"
+      ]
+     ],
+     "min": 2,
+     "model": "The draught is how far the hull goes below the water. If it is bigger than the water depth the ship will run aground, so the captain needs a draught smaller than 6 m with a safety margin.",
+     "why": "Draught must be less than the water depth, plus a safe clearance.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two ships have the same L, B and T. One has C_B = 0.5 and the other 0.8. Which displaces more water?",
+     "o": [
+      "The one with 0.8",
+      "The one with 0.5",
+      "Equal",
+      "Cannot be a floating ship"
+     ],
+     "a": 0,
+     "why": "V = C_B × L × B × T, so the bigger C_B gives more volume.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a naval architect care about freeboard in rough seas?",
+     "o": [
+      "It keeps waves from washing over the deck",
+      "It makes the ship quieter inside during a storm",
+      "It helps the ship float when it is very heavy",
+      "It makes the paint last longer when waves splash"
+     ],
+     "a": 0,
+     "why": "Enough freeboard helps keep water out and the crew safe.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "When a ship moves from sea water to fresh water, which dimension changes?",
+     "o": [
+      "Draught increases",
+      "Length increases because fresh water stretches steel",
+      "Beam decreases because the sides squeeze in slightly",
+      "Depth increases because the hull sinks into the sea bed"
+     ],
+     "a": 0,
+     "why": "To get the same buoyancy in lighter water the ship sinks lower.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Describing a ship with numbers",
+    "model": "A ship has a length, a beam (width) and a draught, which is how deep it sits in the water. Freeboard is the dry part above the water. The block coefficient says how full its shape is compared with a box.",
+    "points": [
+     {
+      "k": [
+       "length",
+       "beam",
+       "width",
+       "long"
+      ],
+      "ask": "What numbers describe its size?"
+     },
+     {
+      "k": [
+       "draught",
+       "draft",
+       "deep",
+       "below"
+      ],
+      "ask": "How do you measure how deep it sits?"
+     },
+     {
+      "k": [
+       "freeboard",
+       "above",
+       "dry"
+      ],
+      "ask": "What is the bit above the water called?"
+     },
+     {
+      "k": [
+       "box",
+       "coefficient",
+       "shape",
+       "fine",
+       "full"
+      ],
+      "ask": "How do you describe how full the shape is?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Ship stability",
+   "icon": "🛟",
+   "hook": "Why does a ship rock back upright after a wave, while a badly loaded one can roll over?",
+   "explain": [
+    "Every ship has a centre of gravity G, where its weight seems to act, and a centre of buoyancy B, the centre of the displaced water, where buoyancy seems to act. When the ship heels (tilts), B moves sideways because the underwater shape changes.",
+    "The metacentre M is the point where the vertical line through the new B crosses the ship's centreline for small tilts. The distance GM is the metacentric height. If M is above G, GM is positive and the ship tends to come back upright: it is stable. GM = KM − KG, where K is the keel.",
+    "The righting lever GZ ≈ GM × sin θ for small angles θ. A bigger GM gives a bigger righting force but a quicker, snappier roll. Putting heavy cargo high raises G and cuts GM. Loose liquid in a tank slops to one side (free surface effect), making the ship less stable. Crews must load and secure cargo carefully."
+   ],
+   "example": {
+    "q": "KM = 8.0 m and KG = 6.5 m. Find GM. Is the ship stable?",
+    "steps": [
+     "GM = KM − KG.",
+     "8.0 − 6.5 = 1.5 m.",
+     "GM is positive, so M is above G."
+    ],
+    "a": "GM = 1.5 m; yes, stable"
+   },
+   "analogies": {
+    "home": "A tall stack of books topples easily; a low, wide stack stays up, like a ship with a low G.",
+    "sport": "A cyclist keeps weight low and over the wheels to stay balanced.",
+    "sea": "A tall-sided ferry full of cars on the top deck may tip more easily than one with cars on the bottom.",
+    "farm": "A tractor with a full load of hay piled high can tip on a slope, like a top-heavy ship."
+   },
+   "mnemonic": "G low, GM go: keep the weight low and the ship will not roll.",
+   "terms": [
+    [
+     "Centre of gravity (G)",
+     "The point where the whole weight seems to act."
+    ],
+    [
+     "Centre of buoyancy (B)",
+     "The centre of the displaced water."
+    ],
+    [
+     "Metacentric height (GM)",
+     "Distance between G and M; a measure of initial stability."
+    ],
+    [
+     "Free surface effect",
+     "Loose liquid sloshing, which reduces stability."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger GM is always better.",
+    "right": "Too large a GM makes a ship roll quickly and stiffly, which is uncomfortable and can strain cargo. Designers want enough GM but not too much."
+   },
+   "limits": "GM only works for small tilts. At large angles we use the full GZ curve. Real ships must also pass rules for damage and wind.",
+   "trip": {
+    "wiki": "Metacentric height",
+    "prompt": "Find the diagram with G, B and M and see how B moves when the ship heels."
+   },
+   "sources": [
+    "Metacentric height",
+    "Ship stability",
+    "Free surface effect"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the metacentric height GM tell us?",
+     "o": [
+      "How stable the ship is for small tilts",
+      "How fast the ship can go with its engines",
+      "How deep the sea is under the keel",
+      "How big the cargo hold is inside the hull"
+     ],
+     "a": 0,
+     "why": "A positive GM means the ship tends to return upright.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If M is below G, the ship is...",
+     "o": [
+      "Unstable",
+      "Stable",
+      "Floating perfectly",
+      "Faster"
+     ],
+     "a": 0,
+     "why": "A negative GM means the ship will not right itself.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A crew moves heavy containers from the bottom hold to the top deck. What happens to G?",
+     "o": [
+      "It rises, lowering GM",
+      "It falls, raising GM, because the weight is higher up",
+      "No change, because the total weight is the same",
+      "It disappears when the load goes above the waterline"
+     ],
+     "a": 0,
+     "why": "Higher weight raises the centre of gravity and reduces stability.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A tank is half full of liquid. Why is that worse for stability than a full tank?",
+     "o": [
+      "The liquid slops to one side as the ship tilts",
+      "It makes the ship lighter, so it floats higher",
+      "The liquid freezes into a block and cannot move",
+      "It increases buoyancy because there is more air inside"
+     ],
+     "a": 0,
+     "why": "Moving liquid shifts weight toward the low side, acting like a higher G (free surface effect).",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do ships carry heavy ballast low in the hull?",
+     "o": [
+      "To lower G and improve stability",
+      "To make them go faster through the waves",
+      "To raise the freeboard above the water",
+      "To cool the engines using cold sea water"
+     ],
+     "a": 0,
+     "why": "Ballast lowers the centre of gravity.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "KM = 9.2 m and KG = 7.4 m. What is GM in metres?",
+     "a": 1.8,
+     "tol": 0.02,
+     "unit": "m",
+     "why": "GM = 9.2 − 7.4 = 1.8 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For small angles GZ ≈ GM × sin θ. If GM = 1.5 m and θ = 10° (sin 10° = 0.1736), what is GZ in metres, to 2 decimal places?",
+     "a": 0.26,
+     "tol": 0.01,
+     "unit": "m",
+     "why": "1.5 × 0.1736 = 0.2604 m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these steps in order for a stable ship pushed over by a wave.",
+     "items": [
+      "Wave tilts the ship",
+      "B moves toward the low side",
+      "A righting force forms",
+      "Ship returns upright"
+     ],
+     "why": "Tilt shifts the centre of buoyancy, which creates a turning force that rights the ship.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each letter to its meaning.",
+     "pairs": [
+      [
+       "G",
+       "Centre of gravity"
+      ],
+      [
+       "B",
+       "Centre of buoyancy"
+      ],
+      [
+       "M",
+       "Metacentre"
+      ],
+      [
+       "K",
+       "Keel"
+      ]
+     ],
+     "why": "These are the standard stability points.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A ferry has cars parked on its top deck, and passengers all rush to one side. Explain why this is dangerous.",
+     "rubric": [
+      [
+       "weight",
+       "heavy",
+       "load",
+       "mass"
+      ],
+      [
+       "tilt",
+       "heel",
+       "lean",
+       "tip",
+       "roll"
+      ],
+      [
+       "high",
+       "gravity",
+       "g rises",
+       "stability",
+       "gm",
+       "capsize",
+       "unstable"
+      ]
+     ],
+     "min": 2,
+     "model": "Heavy cars high up raise the centre of gravity and reduce GM. Passengers rushing to one side move weight sideways and make the ship heel. A ship with low stability might tip too far and capsize.",
+     "why": "High weight and moving weight both reduce stability.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A ship with a very large GM rolls quickly. Which is a likely effect?",
+     "o": [
+      "Passengers and cargo feel strong jerks",
+      "The ship becomes unstable and tips over right away",
+      "The ship floats higher in the water as it rolls",
+      "The ship has no buoyancy left when it rolls fast"
+     ],
+     "a": 0,
+     "why": "Large GM gives a stiff ship with short roll periods.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do sailors secure cargo with lashings?",
+     "o": [
+      "Moving cargo can shift G and cause a dangerous tilt",
+      "It looks neat when the ship arrives in port",
+      "It lowers the water temperature around the hull",
+      "It increases buoyancy by trapping air in the boxes"
+     ],
+     "a": 0,
+     "why": "A cargo shift moves weight sideways and can create a list.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a ship's GM is slightly negative, what is a safe action?",
+     "o": [
+      "Lower weight, e.g. fill low ballast tanks, and avoid sharp turns",
+      "Add cargo on the top deck",
+      "Sail faster",
+      "Empty the double bottom"
+     ],
+     "a": 0,
+     "why": "Lowering G restores positive GM, and avoiding heeling forces keeps it safe.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a ship rights itself",
+    "model": "A ship has a centre of gravity G where its weight acts and a centre of buoyancy B where the push of the water acts. When it tilts, B moves toward the low side and pushes the ship back up, if G is low enough. Putting weight high makes it less stable.",
+    "points": [
+     {
+      "k": [
+       "gravity",
+       "weight",
+       "g"
+      ],
+      "ask": "Where does the weight act?"
+     },
+     {
+      "k": [
+       "buoyan",
+       "push",
+       "water"
+      ],
+      "ask": "What pushes back?"
+     },
+     {
+      "k": [
+       "low",
+       "high",
+       "load",
+       "cargo"
+      ],
+      "ask": "How does the loading matter?"
+     },
+     {
+      "k": [
+       "tilt",
+       "heel",
+       "upright",
+       "right"
+      ],
+      "ask": "What happens when it tilts?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Wave properties",
+   "icon": "🌊",
+   "hook": "Two waves cross the sea. One is long and slow, the other short and choppy. What numbers would you use to tell them apart?",
+   "explain": [
+    "A wave has height H (crest to trough), wavelength λ (distance between two crests) and period T (time for two crests to pass a point). Frequency f = 1 ÷ T. Amplitude is half the height.",
+    "The speed of the wave shape is c = λ ÷ T. For deep-water waves, gravity sets the relation: λ = g T² ÷ (2π), about 1.56 T² metres when T is in seconds. So longer-period waves are longer and faster.",
+    "Water particles in deep water move in circles, not along with the wave. The motion fades with depth and is small below about half a wavelength. Wind makes waves larger when it blows harder, for longer, and over a longer distance (the fetch). Swell is waves that have travelled far from where they began."
+   ],
+   "example": {
+    "q": "Waves have wavelength 60 m and period 6 s. What is their speed?",
+    "steps": [
+     "c = λ ÷ T.",
+     "60 ÷ 6 = 10.",
+     "Unit: m/s."
+    ],
+    "a": "10 m/s"
+   },
+   "analogies": {
+    "sport": "In a stadium wave, the shape moves round the ground but each fan only stands and sits.",
+    "music": "Frequency is like pitch. A short-period wave is a high note, a long one a low note.",
+    "home": "Flick one end of a skipping rope and a bump runs along it while the rope itself stays in place.",
+    "sea": "A cork rides up and down on a swell and ends close to where it started."
+   },
+   "mnemonic": "Wave speed: wavelength over time, c = λ/T. Height is crest to trough.",
+   "terms": [
+    [
+     "Wavelength",
+     "Distance between two crests."
+    ],
+    [
+     "Period",
+     "Time for one full wave to pass a point."
+    ],
+    [
+     "Fetch",
+     "The distance wind blows over water."
+    ],
+    [
+     "Swell",
+     "Smooth waves that have travelled out of the storm that made them."
+    ]
+   ],
+   "misc": {
+    "wrong": "The water travels along with the wave.",
+    "right": "The wave shape travels, but each bit of water mostly moves in a small circle."
+   },
+   "limits": "The deep-water formula only works when the water is deeper than about half a wavelength. In shallow water waves slow down and the formula changes. Real seas are mixtures of many waves.",
+   "trip": {
+    "wiki": "Wind wave",
+    "prompt": "Look for the diagram of the circular motion of water in a wave. How does it change with depth?"
+   },
+   "sources": [
+    "Wind wave",
+    "Wavelength",
+    "Swell (ocean)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is wavelength?",
+     "o": [
+      "Distance between two crests",
+      "The height of a wave from trough to crest",
+      "The time one wave takes to pass a point",
+      "The depth of the water below the wave"
+     ],
+     "a": 0,
+     "why": "Wavelength is crest-to-crest distance.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the period of a wave?",
+     "o": [
+      "Time for one wavelength to pass a point",
+      "The distance between two crests of the wave",
+      "The height of the wave above still water",
+      "The speed at which the wave moves forward"
+     ],
+     "a": 0,
+     "why": "Period is measured in seconds.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If period doubles in deep water, the wavelength...",
+     "o": [
+      "Increases by four times",
+      "Doubles",
+      "Halves",
+      "Stays the same"
+     ],
+     "a": 0,
+     "why": "λ = g T²/2π is proportional to T².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A buoy bobs in a wave. In deep water, what path does it follow?",
+     "o": [
+      "Roughly a circle",
+      "A straight line toward land",
+      "A zigzag",
+      "It stays still"
+     ],
+     "a": 0,
+     "why": "Water particles move in near-circular orbits.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which makes the biggest waves?",
+     "o": [
+      "Strong wind, long time, long fetch",
+      "Gentle wind for a minute over a small pond",
+      "No wind at all over a wide open sea",
+      "Short fetch and calm air for many hours"
+     ],
+     "a": 0,
+     "why": "Wave growth depends on wind speed, duration and fetch.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Waves have wavelength 60 m and period 6 s. What is their speed in m/s?",
+     "a": 10,
+     "tol": 0.1,
+     "unit": "m/s",
+     "why": "c = λ/T = 60/6 = 10 m/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use g = 9.81 m/s². A deep-water wave has period 8 s. Find its wavelength from λ = gT²/(2π), in metres to the nearest metre.",
+     "a": 100,
+     "tol": 1,
+     "unit": "m",
+     "why": "9.81 × 64 ÷ 6.283 = 99.9 m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wave crest passes a pier every 5 s. What is its frequency in hertz?",
+     "a": 0.2,
+     "tol": 0.005,
+     "unit": "Hz",
+     "why": "f = 1/T = 1/5 = 0.2 Hz.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the term to its meaning.",
+     "pairs": [
+      [
+       "Crest",
+       "Highest point of a wave"
+      ],
+      [
+       "Trough",
+       "Lowest point of a wave"
+      ],
+      [
+       "Fetch",
+       "Distance wind blows over water"
+      ],
+      [
+       "Swell",
+       "Waves that travelled from far away"
+      ]
+     ],
+     "why": "These are the key wave words.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Swell from a storm 2000 km away reaches a calm beach. Explain how waves can arrive where there is no wind.",
+     "rubric": [
+      [
+       "travel",
+       "travelled",
+       "move",
+       "carry",
+       "spread"
+      ],
+      [
+       "storm",
+       "wind",
+       "far away",
+       "distant"
+      ],
+      [
+       "energy",
+       "keep going",
+       "long wavelength",
+       "lose little",
+       "fade slowly"
+      ]
+     ],
+     "min": 2,
+     "model": "A storm makes waves, and long waves carry their energy a long way across the ocean with little loss. They arrive as smooth swell even where it is calm.",
+     "why": "Wave energy travels; long waves lose little energy so they cross whole oceans.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A wave in deep water has twice the height. What is the effect on its speed?",
+     "o": [
+      "No change in speed",
+      "Speed doubles because the wave is taller",
+      "Speed halves because the wave is taller",
+      "Speed is zero because the wave is taller"
+     ],
+     "a": 0,
+     "why": "In deep water, speed depends on period or wavelength, not height.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A ship's captain sees waves with a long period. What does this suggest about the wave's source?",
+     "o": [
+      "It probably came from a distant storm",
+      "A local breeze made it a few minutes ago",
+      "A ship wake caused it as it passed by",
+      "It is a tide coming in from the coast"
+     ],
+     "a": 0,
+     "why": "Long-period swell comes from far-off storms.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are waves dangerous for small boats near a rocky shore?",
+     "rubric": [
+      [
+       "break",
+       "breaking",
+       "crash",
+       "rock",
+       "shore"
+      ],
+      [
+       "shallow",
+       "slow",
+       "steeper",
+       "taller",
+       "bigger"
+      ],
+      [
+       "capsize",
+       "overturn",
+       "flip",
+       "damage",
+       "danger"
+      ]
+     ],
+     "min": 2,
+     "model": "Waves slow and rise in shallow water near shore, becoming steeper and breaking. A small boat can be flipped or pushed onto rocks.",
+     "why": "Shoaling makes waves taller and steeper, and breaking waves carry strong force.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to describe a wave",
+    "model": "A wave has a height, a wavelength between crests and a period, the time between crests. Speed is wavelength divided by period. Wind makes waves, and they can travel far as swell.",
+    "points": [
+     {
+      "k": [
+       "height",
+       "crest",
+       "trough"
+      ],
+      "ask": "How do you measure how big a wave is?"
+     },
+     {
+      "k": [
+       "wavelength",
+       "distance",
+       "between"
+      ],
+      "ask": "What is wavelength?"
+     },
+     {
+      "k": [
+       "period",
+       "time",
+       "seconds"
+      ],
+      "ask": "What is period?"
+     },
+     {
+      "k": [
+       "speed",
+       "divide",
+       "divided",
+       "per"
+      ],
+      "ask": "How do you find its speed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Ocean currents and tides",
+   "icon": "🌙",
+   "hook": "Twice a day the sea rises and falls on the same beach. Who is pulling the sea?",
+   "explain": [
+    "Tides are the rise and fall of sea level caused mainly by the Moon's gravity, with a smaller pull from the Sun. Most places have about two high tides and two low tides each lunar day of about 24 h 50 min, so high tides are roughly 12 h 25 min apart. The tidal range is the height difference between high and low water.",
+    "When the Sun, Earth and Moon line up (new and full Moon) the pulls add together and we get large spring tides. At the half Moons the pulls partly cancel and we get small neap tides. The word spring has nothing to do with the season.",
+    "Currents are streams of water in the sea. Surface currents are driven by wind and by Earth's rotation, like the Gulf Stream. Tidal currents flow in and out as the tide rises and falls. Deep currents are driven by differences in density. Engineers must know both when they plan routes, moorings and structures."
+   ],
+   "example": {
+    "q": "High water is 4.2 m and the next low water is 0.8 m. What is the tidal range?",
+    "steps": [
+     "Range = high − low.",
+     "4.2 − 0.8 = 3.4."
+    ],
+    "a": "3.4 m"
+   },
+   "analogies": {
+    "home": "Tilting a tray of water makes water slosh to one end, something like the Moon making a bulge of water.",
+    "sport": "In a tug of war the strongest pull wins, like the Moon's pull stronger than the Sun's on our tides.",
+    "city": "The tide coming in and out of a harbour is like a daily commuter flow.",
+    "nature": "A river carries a leaf along; an ocean current carries floating seeds across the sea."
+   },
+   "mnemonic": "Moon makes the Tide; New and Full are Spring-y big, half Moons give the Neap.",
+   "terms": [
+    [
+     "Tidal range",
+     "Difference in height between high and low water."
+    ],
+    [
+     "Spring tide",
+     "A large tide at new or full Moon."
+    ],
+    [
+     "Neap tide",
+     "A small tide at the half Moon."
+    ],
+    [
+     "Current",
+     "A steady flow of water."
+    ]
+   ],
+   "misc": {
+    "wrong": "Tides are caused by the Sun heating the sea.",
+    "right": "Tides are caused mostly by the Moon's gravity (and the Sun's gravity to a lesser degree), not by heat."
+   },
+   "limits": "Tide size and timing depend a lot on local coast shape. Some places, such as parts of the Gulf of Mexico, have only one tide a day. Predictions are tables made from local records.",
+   "trip": {
+    "wiki": "Tide",
+    "prompt": "Find the diagram of spring and neap tides and see where the Sun and Moon sit."
+   },
+   "sources": [
+    "Tide",
+    "Ocean current",
+    "Gulf Stream"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What mainly causes tides?",
+     "o": [
+      "Gravity of the Moon and Sun",
+      "Wind blowing across the sea all day long",
+      "Fish moving together in big groups",
+      "Ships pushing water as they pass by"
+     ],
+     "a": 0,
+     "why": "The Moon's gravity (mostly) pulls the ocean.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "When do spring tides happen?",
+     "o": [
+      "At new and full Moon",
+      "In spring only, when the weather is warmer",
+      "At the half Moon, when the Moon is straight up",
+      "Only at night, when the Sun is behind the Earth"
+     ],
+     "a": 0,
+     "why": "When Sun and Moon pull in line, tides are largest.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A harbour has water 6 m deep at high tide and 2 m at low tide. A ship needs 4 m. When can it safely leave?",
+     "o": [
+      "Around high water",
+      "Only at low water",
+      "Any time",
+      "Never"
+     ],
+     "a": 0,
+     "why": "Only near high tide is there enough depth for the draught, plus a safety margin.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which current is driven by differences in density?",
+     "o": [
+      "Deep ocean currents",
+      "Wind-driven surface currents",
+      "Waves",
+      "A river"
+     ],
+     "a": 0,
+     "why": "Cold salty water sinks and drives deep flows.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A ship moves against a strong tidal current. What happens to its speed over the ground?",
+     "o": [
+      "It is reduced",
+      "It increases",
+      "It is unchanged",
+      "It becomes zero always"
+     ],
+     "a": 0,
+     "why": "The water moves backward relative to the ground, so ground speed is lower.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "High water is 5.6 m and low water is 1.1 m. What is the tidal range in metres?",
+     "a": 4.5,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "5.6 − 1.1 = 4.5 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A current flows at 0.5 m/s. How far does a drifting buoy move in 1 hour (3600 s), in metres?",
+     "a": 1800,
+     "tol": 5,
+     "unit": "m",
+     "why": "Distance = speed × time = 0.5 × 3600 = 1800 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the tide stages in one cycle, starting at low water.",
+     "items": [
+      "Low water",
+      "Flood tide (rising)",
+      "High water",
+      "Ebb tide (falling)"
+     ],
+     "why": "The tide rises (flood) to high water, then falls (ebb).",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each word to its meaning.",
+     "pairs": [
+      [
+       "Flood",
+       "Rising tide"
+      ],
+      [
+       "Ebb",
+       "Falling tide"
+      ],
+      [
+       "Spring tide",
+       "Large range"
+      ],
+      [
+       "Neap tide",
+       "Small range"
+      ]
+     ],
+     "why": "Standard tide terms.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why should a beach walker check the tide table before walking around a headland?",
+     "rubric": [
+      [
+       "tide",
+       "water",
+       "high",
+       "rising",
+       "sea comes in"
+      ],
+      [
+       "cut off",
+       "trapped",
+       "stuck",
+       "blocked",
+       "no way back",
+       "stranded"
+      ],
+      [
+       "safe",
+       "danger",
+       "time",
+       "plan",
+       "check"
+      ]
+     ],
+     "min": 2,
+     "model": "A rising tide can cover the beach and cut off the way back. Checking the table lets you know when high water arrives so you leave in plenty of time.",
+     "why": "Tides can trap people; planning around them is safe action.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are tides on average about 50 minutes later each day?",
+     "o": [
+      "The Moon moves around the Earth, so a lunar day is about 24 h 50 min",
+      "The sea is lazy and slows down each day",
+      "Tides follow the Sun exactly and so never change",
+      "Clocks run slowly near the sea so tides seem later"
+     ],
+     "a": 0,
+     "why": "The Moon orbits in the same direction as Earth spins, so each place faces it about 50 min later each day.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A narrow bay has a very large tidal range. Why do engineers care?",
+     "o": [
+      "Strong currents and large water-level change affect moorings and structures",
+      "Waves vanish completely in narrow bays",
+      "Fish disappear and the bay loses all its life",
+      "Pressure is zero at the bottom of such a bay"
+     ],
+     "a": 0,
+     "why": "Large ranges produce strong tidal flow and big changes in water depth.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Do ocean currents like the Gulf Stream affect climate?",
+     "o": [
+      "Yes, they carry heat from one place to another",
+      "No, they only move fish from place to place",
+      "Only in winter, when the wind is strong",
+      "Only deep underwater, so the air is never affected"
+     ],
+     "a": 0,
+     "why": "Currents move warm or cold water and change nearby coastal climate.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why tides happen",
+    "model": "The Moon's gravity pulls on the ocean, and the Sun pulls a bit too, so the sea rises and falls about twice a day. When the Sun and Moon line up the tides are bigger. Currents are separate flows of water driven by wind or density.",
+    "points": [
+     {
+      "k": [
+       "moon",
+       "gravity",
+       "pull"
+      ],
+      "ask": "What pulls the sea?"
+     },
+     {
+      "k": [
+       "twice",
+       "two",
+       "day",
+       "high",
+       "low"
+      ],
+      "ask": "How often does it happen?"
+     },
+     {
+      "k": [
+       "sun",
+       "line",
+       "spring",
+       "full",
+       "new"
+      ],
+      "ask": "When are tides biggest?"
+     },
+     {
+      "k": [
+       "current",
+       "wind",
+       "flow"
+      ],
+      "ask": "Is a current the same as a tide?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Marine structures",
+   "icon": "🏗️",
+   "hook": "How can a wall or a pier stand for years in a place where waves hit it again and again?",
+   "explain": [
+    "Marine structures stand in or beside the sea. Examples are breakwaters, seawalls, jetties, piers, quays, lighthouses and bridges. They protect coasts, shelter harbours or let ships load.",
+    "The sea attacks structures in several ways. Waves push and make the structure shake, currents push, wind pushes, and salt water causes corrosion in steel and damage in concrete. Repeated small loads cause fatigue, tiny cracks that grow with each wave.",
+    "Engineers design for these loads. Rubble-mound breakwaters use heaps of rock or concrete blocks that break up waves. Piled jetties stand on steel or concrete piles driven into the sea bed. Deck level must be above the highest tide plus the wave crest plus a safety margin."
+   ],
+   "example": {
+    "q": "Highest tide is 3.0 m above datum, wave crest adds 2.0 m, and a 1.0 m safety margin is needed. Where should the deck be?",
+    "steps": [
+     "Add the three heights.",
+     "3.0 + 2.0 + 1.0 = 6.0 m."
+    ],
+    "a": "6.0 m above datum"
+   },
+   "analogies": {
+    "home": "Wearing away rocks at the shoreline is like water slowly eroding a sandcastle.",
+    "farm": "A breakwater is like a thick hedge that slows the wind and protects crops behind it.",
+    "city": "A quay is like a platform at a station where ships stop.",
+    "sport": "A goalkeeper's wall must be solid to stop many shots, as a seawall must stop many waves."
+   },
+   "mnemonic": "Wave, current, wind, salt: four attackers, and engineers add a margin.",
+   "terms": [
+    [
+     "Breakwater",
+     "A barrier that reduces wave energy in a harbour."
+    ],
+    [
+     "Jetty",
+     "A structure that sticks out into the water for boats."
+    ],
+    [
+     "Pile",
+     "A long post driven into the sea bed to support a structure."
+    ],
+    [
+     "Corrosion",
+     "Slow damage to metal from chemical reaction, e.g. rust."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger, harder wall always stops waves best.",
+    "right": "Smooth hard walls can reflect waves and make strong scouring in front. Rough, sloping rock structures absorb wave energy better."
+   },
+   "limits": "Design waves come from statistics, such as a once-in-100-years storm. Climate change can change those numbers, so designs may be updated.",
+   "trip": {
+    "wiki": "Breakwater (structure)",
+    "prompt": "Look at a rubble-mound breakwater photo. How might gaps between the rocks help?"
+   },
+   "sources": [
+    "Breakwater (structure)",
+    "Jetty",
+    "Seawall"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a breakwater do?",
+     "o": [
+      "Reduces waves reaching a harbour",
+      "Makes electricity from the waves for the town",
+      "Catches fish as they swim into the harbour",
+      "Raises the tide inside the harbour"
+     ],
+     "a": 0,
+     "why": "It breaks up and absorbs wave energy.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a pile?",
+     "o": [
+      "A long post driven into the sea bed",
+      "A heap of sand piled on the beach",
+      "A sail that catches the wind on a boat",
+      "A type of wave that breaks near a pier"
+     ],
+     "a": 0,
+     "why": "Piles carry the load of a pier or jetty into the ground.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why are steel parts in the sea painted or protected?",
+     "o": [
+      "To slow corrosion from salt water",
+      "To make them heavier",
+      "To help them float",
+      "To warm the water"
+     ],
+     "a": 0,
+     "why": "Salt water speeds up corrosion; coatings and anodes slow it.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pier is hit by tens of thousands of small waves every year. Which failure is most linked to this?",
+     "o": [
+      "Fatigue cracking",
+      "Melting when the sun heats the steel",
+      "Evaporation of the steel into the air",
+      "Freezing of the metal in the cold water"
+     ],
+     "a": 0,
+     "why": "Repeated loading makes tiny cracks grow, even if each load is small.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do some seawalls have curved or stepped faces?",
+     "o": [
+      "To redirect or absorb wave energy",
+      "To look pretty for people walking along them",
+      "To make fish happy and bring more of them",
+      "To increase corrosion so the stone wears evenly"
+     ],
+     "a": 0,
+     "why": "Shape controls how waves break or are turned back.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Highest tide is 2.5 m above datum, a wave crest adds 1.5 m, and the safety margin is 0.8 m. What deck level in metres is needed?",
+     "a": 4.8,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "2.5 + 1.5 + 0.8 = 4.8 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rock breakwater is 100 m long with a cross-section of 20 m². How many cubic metres of rock does it hold?",
+     "a": 2000,
+     "tol": 1,
+     "unit": "m³",
+     "why": "Volume = area × length = 20 × 100 = 2000 m³.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each structure to its main job.",
+     "pairs": [
+      [
+       "Breakwater",
+       "Shelters a harbour from waves"
+      ],
+      [
+       "Quay",
+       "Lets ships tie up"
+      ],
+      [
+       "Lighthouse",
+       "Guides ships by light"
+      ],
+      [
+       "Seawall",
+       "Protects the coast from flooding"
+      ]
+     ],
+     "why": "Each has a different purpose.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these in a sensible order for building a jetty.",
+     "items": [
+      "Survey the sea bed",
+      "Design for waves and tides",
+      "Drive the piles",
+      "Build the deck on top"
+     ],
+     "why": "Know the site, design, then build from the bottom up.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a harbour wall need regular inspections even if it looks fine?",
+     "rubric": [
+      [
+       "crack",
+       "damage",
+       "wear",
+       "corrosion",
+       "rust",
+       "erosion",
+       "fatigue"
+      ],
+      [
+       "inspect",
+       "check",
+       "repair",
+       "fix",
+       "maintain"
+      ],
+      [
+       "safe",
+       "fail",
+       "collapse",
+       "storm",
+       "waves",
+       "early",
+       "before"
+      ]
+     ],
+     "min": 2,
+     "model": "Waves, salt and currents slowly cause cracks, corrosion and erosion that may be hidden. Regular checks find problems early so they can be repaired before a storm makes the wall fail.",
+     "why": "Hidden slow damage can lead to sudden failure in a storm, so early detection is safe action.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A new breakwater is built and a beach nearby loses sand. What is a good explanation?",
+     "o": [
+      "It changed the way waves and currents move sand",
+      "Sand evaporates into the air in the sun",
+      "The beach is angry at the new building",
+      "Fish eat the sand from the sea bed at night"
+     ],
+     "a": 0,
+     "why": "Structures change coastal sediment movement, sometimes causing erosion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are marine plans checked for harm to sea life?",
+     "o": [
+      "Building can disturb habitats and water quality",
+      "To waste time before the work can start",
+      "Habitats help engineers by building the wall for them",
+      "Sea animals do not matter to a building plan"
+     ],
+     "a": 0,
+     "why": "Environmental assessment helps reduce harm to ocean life.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer adds a safety margin to the deck height. Why?",
+     "o": [
+      "Real waves and tides may be higher than predicted",
+      "To spend more money than the project needs",
+      "To avoid using steel in the deck",
+      "Margins make the waves smaller when they arrive"
+     ],
+     "a": 0,
+     "why": "Natural conditions vary, so margins allow for uncertainty.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How sea structures survive",
+    "model": "Structures like breakwaters and jetties are hit by waves, currents, wind and salt water. Engineers design them strong enough, protect steel from corrosion, and check them often because repeated waves cause tiny cracks.",
+    "points": [
+     {
+      "k": [
+       "wave",
+       "current",
+       "wind",
+       "load"
+      ],
+      "ask": "What pushes on them?"
+     },
+     {
+      "k": [
+       "salt",
+       "corrosion",
+       "rust"
+      ],
+      "ask": "What does salt water do to steel?"
+     },
+     {
+      "k": [
+       "crack",
+       "fatigue",
+       "repeated",
+       "again"
+      ],
+      "ask": "What do many small waves do over time?"
+     },
+     {
+      "k": [
+       "check",
+       "inspect",
+       "repair",
+       "maintain"
+      ],
+      "ask": "How do engineers keep them safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Offshore equipment",
+   "icon": "🏭",
+   "hook": "An offshore platform has a drilling tower, a flare, a crane and a huge steel frame. Why does each one need to be there?",
+   "explain": [
+    "The main steel frame that stands in the sea is the jacket. It supports the topsides, the decks on top that hold the equipment, living quarters and helideck. A derrick holds the drill string, which is lengths of pipe that drill into the sea bed.",
+    "Safety equipment is vital. The blowout preventer (BOP) is a stack of strong valves that can close a well fast if pressure rises dangerously. A flare burns off gas that cannot be used safely. Cranes lift supplies from supply boats, and each has a safe working load (SWL) that must never be exceeded.",
+    "Steel in the sea is protected from corrosion by paint and by sacrificial anodes, blocks of metal like zinc or aluminium that corrode instead of the steel. Lifeboats, alarms and strict permits keep the crew safe."
+   ],
+   "example": {
+    "q": "A crane lifts a 2000 kg container. What is its weight in newtons (g = 9.81 m/s²)?",
+    "steps": [
+     "Weight W = m × g.",
+     "2000 × 9.81 = 19 620 N."
+    ],
+    "a": "19 620 N, about 19.6 kN"
+   },
+   "analogies": {
+    "home": "A sacrificial anode is like a decoy: the plate that rusts first protects the pipe, like a fuse that blows first.",
+    "city": "Topsides are like a small factory on top of a bridge.",
+    "farm": "A crane is like a tractor loader, always with a limit to what it can lift.",
+    "tech": "A blowout preventer is like a huge emergency stop button for a well."
+   },
+   "mnemonic": "Jacket holds, topsides work, BOP stops, anode sacrifices.",
+   "terms": [
+    [
+     "Jacket",
+     "A steel frame fixed to the sea bed that supports a platform."
+    ],
+    [
+     "Topsides",
+     "The decks and equipment above the waves."
+    ],
+    [
+     "Blowout preventer",
+     "Strong valves that seal a well in an emergency."
+    ],
+    [
+     "Sacrificial anode",
+     "A metal block that corrodes instead of the steel it protects."
+    ]
+   ],
+   "misc": {
+    "wrong": "A crane can lift anything if the hook is strong enough.",
+    "right": "A crane has a safe working load that depends on its reach, angle and the sea state. Overloading can tip or break it."
+   },
+   "limits": "Not all platforms use jackets. Floating platforms use hulls and moorings instead. Exact equipment depends on whether the field produces oil, gas or wind power.",
+   "trip": {
+    "wiki": "Oil platform",
+    "prompt": "Find a labelled picture of a platform. Spot the derrick, flare, crane and jacket."
+   },
+   "sources": [
+    "Oil platform",
+    "Blowout preventer",
+    "Galvanic anode"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the jacket of an offshore platform?",
+     "o": [
+      "A steel frame fixed to the sea bed",
+      "A life vest that workers wear in a storm",
+      "A sail fitted to the top of the platform",
+      "A cargo ship that carries supplies to it"
+     ],
+     "a": 0,
+     "why": "The jacket supports the topsides above the waves.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the job of a blowout preventer?",
+     "o": [
+      "Seal the well in an emergency",
+      "Pump fish",
+      "Light the deck",
+      "Hold the crane"
+     ],
+     "a": 0,
+     "why": "It closes valves to stop uncontrolled flow.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why are anodes made of zinc or aluminium attached to steel in the sea?",
+     "o": [
+      "They corrode first and protect the steel",
+      "They make steel float on the surface",
+      "They make a noise that scares fish away",
+      "They cool the water around the steel parts"
+     ],
+     "a": 0,
+     "why": "They are more reactive than steel so they corrode instead.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A crane has a safe working load of 10 t. A crew wants to lift 12 t. What is the right action?",
+     "o": [
+      "Do not lift; split the load or use a bigger crane",
+      "Lift it quickly",
+      "Lift it in rough weather",
+      "Ignore the limit"
+     ],
+     "a": 0,
+     "why": "Exceeding SWL risks collapse.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is waste gas burned in a flare instead of just released?",
+     "o": [
+      "Burning is safer than letting flammable gas build up",
+      "It makes the sea warmer for the fish nearby",
+      "It helps fish by lighting up the water at night",
+      "Gas is useless and has to be got rid of anyway"
+     ],
+     "a": 0,
+     "why": "Gas can explode if it collects; flaring removes it safely, though it still releases carbon dioxide.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A crane lifts a 2000 kg container. Use g = 9.81 m/s². What is the weight in newtons?",
+     "a": 19620,
+     "tol": 20,
+     "unit": "N",
+     "why": "2000 × 9.81 = 19 620 N.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A drill string is made of 30 lengths of pipe, each 9.5 m long. How long is the string in metres?",
+     "a": 285,
+     "tol": 0.5,
+     "unit": "m",
+     "why": "30 × 9.5 = 285 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each item to its job.",
+     "pairs": [
+      [
+       "Derrick",
+       "Holds the drill string"
+      ],
+      [
+       "Flare",
+       "Burns off excess gas"
+      ],
+      [
+       "Helideck",
+       "Landing place for helicopters"
+      ],
+      [
+       "Lifeboat",
+       "Escape in emergencies"
+      ]
+     ],
+     "why": "Each part has a clear task.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the parts from the sea bed upwards.",
+     "items": [
+      "Sea bed",
+      "Piles",
+      "Jacket",
+      "Topsides"
+     ],
+     "why": "Piles hold the jacket, which holds the topsides.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why offshore crews must follow strict rules (permits) before hot work like welding.",
+     "rubric": [
+      [
+       "fire",
+       "explosion",
+       "spark",
+       "gas",
+       "flammable"
+      ],
+      [
+       "permit",
+       "check",
+       "rule",
+       "procedure",
+       "safe"
+      ],
+      [
+       "escape",
+       "far",
+       "sea",
+       "no way",
+       "remote",
+       "hard to rescue",
+       "isolated"
+      ]
+     ],
+     "min": 2,
+     "model": "Sparks can ignite flammable gas and cause fire or explosion. On a remote platform escape is hard, so permits and gas checks make sure the work is safe before starting.",
+     "why": "Remote locations and flammable material make careful procedures essential.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A sacrificial anode is almost used up. What should the inspection team do?",
+     "o": [
+      "Replace it before the steel loses protection",
+      "Ignore it",
+      "Paint it",
+      "Add a heavier crane"
+     ],
+     "a": 0,
+     "why": "When the anode is gone, the steel begins to corrode.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the crane's safe working load lower in rough seas when lifting from a supply boat?",
+     "o": [
+      "Boat motion adds dynamic loads",
+      "Water is heavier in rough seas than in calm seas",
+      "Gravity changes when the sea is rough",
+      "Cranes get tired when the boat moves a lot"
+     ],
+     "a": 0,
+     "why": "A moving boat can jerk the load and add extra force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best response to an oil spill on the deck near drains?",
+     "o": [
+      "Contain and clean it so it does not reach the sea",
+      "Hose it into the sea",
+      "Cover with a mat only",
+      "Ignore it"
+     ],
+     "a": 0,
+     "why": "Containment protects the ocean.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Main parts of an offshore platform",
+    "model": "The jacket is a steel frame on the sea bed that holds up the topsides, where the equipment sits. A derrick drills, cranes lift, a flare burns spare gas, and a blowout preventer seals the well in an emergency. Anodes protect steel from corrosion.",
+    "points": [
+     {
+      "k": [
+       "jacket",
+       "frame",
+       "legs"
+      ],
+      "ask": "What holds up the platform?"
+     },
+     {
+      "k": [
+       "topsides",
+       "deck",
+       "equipment"
+      ],
+      "ask": "Where is the equipment?"
+     },
+     {
+      "k": [
+       "blowout",
+       "bop",
+       "valve",
+       "seal",
+       "emergency"
+      ],
+      "ask": "What stops an emergency from the well?"
+     },
+     {
+      "k": [
+       "anode",
+       "corrosion",
+       "rust",
+       "paint"
+      ],
+      "ask": "How is steel protected?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Subsea production systems",
+   "icon": "🤖",
+   "hook": "Some oil and gas wells are 1500 m below the surface, where people cannot work. How do they get the oil to the top?",
+   "explain": [
+    "A subsea production system puts the equipment on the sea floor instead of on a platform. Each well has a wellhead and a Christmas tree, a block of valves that controls the flow. Pipes called flowlines carry the oil and gas from the trees to a manifold, which gathers the flows of several wells.",
+    "From the manifold, a flowline and a riser (a pipe rising to the surface) bring the fluids to a host platform or a floating vessel. An umbilical, a bundle of tubes and cables, carries electricity, hydraulic fluid and chemicals down from the surface to operate valves.",
+    "Everything must be built for high pressure and cold water. At 1500 m, p = ρgh ≈ 15 MPa. Cold water can cause hydrates (ice-like solids of gas and water) that block pipes, so chemicals such as methanol are injected and pipes are insulated. ROVs, robot submarines, do the underwater work."
+   ],
+   "example": {
+    "q": "Find the water pressure at 1500 m (ρ = 1025 kg/m³, g = 9.81 m/s²) in MPa.",
+    "steps": [
+     "p = ρ × g × h.",
+     "1025 × 9.81 × 1500 = 15 082 875 Pa.",
+     "Divide by 1 000 000: 15.08 MPa."
+    ],
+    "a": "About 15.1 MPa"
+   },
+   "analogies": {
+    "home": "The Christmas tree is like the tap and valves on a water supply, controlling the flow.",
+    "city": "A manifold is like a junction where several roads join into one.",
+    "tech": "An ROV is a drone for the deep, steered from the ship with a cable.",
+    "farm": "An umbilical is like the cables and hoses of a milking machine, bringing power and fluids to the equipment."
+   },
+   "mnemonic": "Well, tree, manifold, flowline, riser: up it goes. The umbilical sends orders down.",
+   "terms": [
+    [
+     "Christmas tree",
+     "A set of valves on top of a well controlling the flow."
+    ],
+    [
+     "Manifold",
+     "A unit that gathers flows from several wells."
+    ],
+    [
+     "Umbilical",
+     "A bundle of tubes and cables for control and chemicals."
+    ],
+    [
+     "Hydrate",
+     "An ice-like solid made of gas and water that can block pipes."
+    ]
+   ],
+   "misc": {
+    "wrong": "Subsea equipment can be fixed easily if it breaks.",
+    "right": "Repairs need ROVs or special ships, which are expensive and weather-dependent, so equipment is designed to be very reliable."
+   },
+   "limits": "Details differ between fields. Some use many wells connected to far-away hosts, called tiebacks. Decisions depend on cost, depth and distance.",
+   "trip": {
+    "wiki": "Subsea production system",
+    "prompt": "Look at a layout diagram. Follow the path from a well to the surface."
+   },
+   "sources": [
+    "Subsea (technology)",
+    "Christmas tree (oil well)",
+    "Remotely operated underwater vehicle"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a manifold?",
+     "o": [
+      "A unit that gathers flow from several wells",
+      "A kind of ship that carries cargo to the rigs",
+      "A tide table that lists high and low water",
+      "A crane that lifts parts from a supply boat"
+     ],
+     "a": 0,
+     "why": "It joins flowlines from several wells into one.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a riser do?",
+     "o": [
+      "Carries fluids up to the surface",
+      "Holds the anchor",
+      "Measures tides",
+      "Floats the ship"
+     ],
+     "a": 0,
+     "why": "A riser connects the seabed system to the surface.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is carried in an umbilical?",
+     "o": [
+      "Power, hydraulic fluid and chemicals",
+      "Oil only",
+      "Fish",
+      "Sand"
+     ],
+     "a": 0,
+     "why": "It controls the subsea valves and delivers chemicals.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are hydrates a problem in subsea pipes?",
+     "o": [
+      "Ice-like solids can block the flow",
+      "They make the oil hot enough to burn the pipe",
+      "They sink the ship that lays the pipes",
+      "They stop rust and so the pipe becomes too strong"
+     ],
+     "a": 0,
+     "why": "Cold, high-pressure conditions let gas and water form solid blockages.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A subsea pipe is stopped for several days in cold water. Which action best prevents hydrates?",
+     "o": [
+      "Inject methanol and keep the pipe insulated",
+      "Add more water to the pipe to wash it out",
+      "Switch off all chemicals to save money",
+      "Cool it faster so the pipe settles"
+     ],
+     "a": 0,
+     "why": "Methanol changes hydrate conditions and insulation keeps the fluid warm.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³ and g = 9.81 m/s². What is the water pressure at 1500 m depth, in MPa (1 decimal place)?",
+     "a": 15.1,
+     "tol": 0.1,
+     "unit": "MPa",
+     "why": "1025 × 9.81 × 1500 = 15.08 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Oil flows through a 12 km flowline at 2 m/s. How many minutes does it take to travel the whole line?",
+     "a": 100,
+     "tol": 1,
+     "unit": "min",
+     "why": "12 000 ÷ 2 = 6000 s = 100 min.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the path of oil from the reservoir to the surface.",
+     "items": [
+      "Well",
+      "Christmas tree",
+      "Manifold",
+      "Riser"
+     ],
+     "why": "Fluid leaves the well through the tree to the manifold, then up the riser.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each part to its role.",
+     "pairs": [
+      [
+       "Christmas tree",
+       "Valves on the well"
+      ],
+      [
+       "Flowline",
+       "Pipe along the sea bed"
+      ],
+      [
+       "Umbilical",
+       "Control lines and chemicals"
+      ],
+      [
+       "ROV",
+       "Underwater robot"
+      ]
+     ],
+     "why": "Each part has its own job.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do engineers use robots (ROVs) rather than divers for subsea work in very deep water?",
+     "rubric": [
+      [
+       "pressure",
+       "deep",
+       "depth",
+       "crush"
+      ],
+      [
+       "danger",
+       "dangerous",
+       "safe",
+       "risk",
+       "cannot survive",
+       "people"
+      ],
+      [
+       "robot",
+       "rov",
+       "remote",
+       "control",
+       "cable"
+      ]
+     ],
+     "min": 2,
+     "model": "At great depth the pressure and cold are too dangerous for divers. A robot controlled from a ship can work there safely.",
+     "why": "Great depth is beyond safe human diving, so ROVs are used.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A control valve on the Christmas tree is designed to close if the umbilical loses hydraulic pressure. What is this called?",
+     "o": [
+      "Fail-safe design",
+      "Luck",
+      "Anode",
+      "Hydrate"
+     ],
+     "a": 0,
+     "why": "Fail-safe means the valve goes to the safe (closed) position on failure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A subsea leak is found. Why is it vital to stop and report it quickly?",
+     "o": [
+      "Oil can harm sea life over a wide area",
+      "Oil is tasty to fish and brings them in",
+      "It heats the ocean for miles around the leak",
+      "Leaks fix themselves, but only after some days"
+     ],
+     "a": 0,
+     "why": "Early action limits environmental damage.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do operators prefer subsea systems for deep water fields?",
+     "o": [
+      "A fixed platform would be too expensive at that depth",
+      "Subsea is always cheaper at every depth",
+      "Platforms are illegal in deep water",
+      "Fish prefer it, so catches would get larger"
+     ],
+     "a": 0,
+     "why": "At great depth, fixed platforms become impractical, so subsea tiebacks are used.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How oil gets from a deep well to the surface",
+    "model": "Oil flows from the well through a Christmas tree of valves, then along flowlines to a manifold that collects flows. A riser carries it up to a platform or ship. An umbilical sends power and chemicals down, and robots do repairs.",
+    "points": [
+     {
+      "k": [
+       "well",
+       "tree",
+       "valve"
+      ],
+      "ask": "Where does it start?"
+     },
+     {
+      "k": [
+       "manifold",
+       "flowline",
+       "pipe",
+       "collect"
+      ],
+      "ask": "How do flows join?"
+     },
+     {
+      "k": [
+       "riser",
+       "surface",
+       "up"
+      ],
+      "ask": "How does it get up?"
+     },
+     {
+      "k": [
+       "umbilical",
+       "robot",
+       "rov",
+       "control",
+       "chemical"
+      ],
+      "ask": "How do people control it?"
+     }
+    ]
+   }
+  }
+ ]
+}

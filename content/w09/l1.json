@@ -1,0 +1,2420 @@
+{
+ "world": 9,
+ "level": 1,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Counting and number recognition",
+   "icon": "🔢",
+   "hook": "How many fingers do you have on one hand? How can you be sure you did not miss one?",
+   "explain": [
+    "Counting tells us how many things there are. We say the numbers in order: 1, 2, 3, 4, 5.",
+    "Touch each thing one time as you say a number. The last number you say tells how many there are.",
+    "A number is a symbol. The symbol 3 means three apples, three drums or three friends. Counting works the same way for everything."
+   ],
+   "example": {
+    "q": "Count the mangoes: 🥭🥭🥭🥭",
+    "steps": [
+     "Touch the first mango and say 1.",
+     "Touch each next mango and say 2, then 3, then 4.",
+     "Stop. The last number you said is the answer."
+    ],
+    "a": "4 mangoes"
+   },
+   "analogies": {
+    "home": "Count the spoons when you set the table. One spoon for each person.",
+    "farm": "Count the hens as they walk into the coop. Touch each one once in your head.",
+    "sport": "Count the goals in a game. Each goal adds one more.",
+    "nature": "Count the petals on a flower. Start at one petal and go round."
+   },
+   "mnemonic": "Touch and say, touch and say. The last number is the way!",
+   "terms": [
+    [
+     "Number",
+     "A word and a symbol that tell how many."
+    ],
+    [
+     "Count",
+     "Say numbers in order for each thing."
+    ],
+    [
+     "Digit",
+     "One of the ten number symbols: 0 to 9."
+    ]
+   ],
+   "misc": {
+    "wrong": "Counting the same thing twice gives a bigger number.",
+    "right": "Touch each thing only one time. Then the last number is right."
+   },
+   "trip": {
+    "wiki": "Counting",
+    "prompt": "Look for pictures of people counting in different ways, such as with fingers."
+   },
+   "sources": [
+    "Counting",
+    "Number"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "You count 5 stones. You say 1, 2, 3, 4, 5. How many stones are there?",
+     "o": [
+      "4",
+      "5",
+      "1",
+      "6"
+     ],
+     "a": 1,
+     "why": "The last number you say tells how many. It is 5.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What comes after 6 when we count?",
+     "o": [
+      "7",
+      "5",
+      "8",
+      "9"
+     ],
+     "a": 0,
+     "why": "We count 6, then 7.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What comes just before 10?",
+     "o": [
+      "8",
+      "11",
+      "1",
+      "9"
+     ],
+     "a": 3,
+     "why": "The number before 10 is 9.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which symbol means three?",
+     "o": [
+      "2",
+      "5",
+      "3",
+      "8"
+     ],
+     "a": 2,
+     "why": "The symbol 3 means three things.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Mia counts 4 balls but touches one ball two times. Her answer is 5. What went wrong?",
+     "o": [
+      "There were 5 balls",
+      "She counted one ball two times",
+      "She forgot to say numbers in order",
+      "Balls cannot be counted"
+     ],
+     "a": 1,
+     "why": "Touch each thing one time only. If you count one twice, the answer is too big.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You have 8 beads in a row. You start at the other end. How many beads do you count now?",
+     "o": [
+      "8",
+      "7",
+      "9",
+      "Not sure"
+     ],
+     "a": 0,
+     "why": "The number of beads does not change when you count from the other end.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "How many legs does a hen have? Write a number.",
+     "a": 2,
+     "tol": 0,
+     "why": "A hen has 2 legs.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Count: ⭐⭐⭐⭐⭐⭐⭐. How many stars?",
+     "a": 7,
+     "tol": 0,
+     "why": "Touch each star and count to 7.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the numbers in counting order.",
+     "items": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "why": "We count 2, 3, 4, 5.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Kofi has 6 pencils in a cup. He takes the pencils out and puts them in a row. How many pencils now?",
+     "o": [
+      "5",
+      "7",
+      "12",
+      "6"
+     ],
+     "a": 3,
+     "why": "Moving things does not change how many there are.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Ana counts 3 cups. Her friend counts the same cups and says 4. What should they do?",
+     "o": [
+      "Pick the bigger number",
+      "Pick the smaller number",
+      "Count again, touching each cup one time",
+      "Stop counting"
+     ],
+     "a": 2,
+     "why": "Counting again with care finds the right answer.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we say numbers in the same order every time?",
+     "o": [
+      "Because numbers are shy",
+      "So everyone gets the same answer",
+      "Because it is a song only",
+      "There is no reason"
+     ],
+     "a": 1,
+     "why": "A fixed order lets us all agree on how many.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You count 10 shells in a bowl. Then you count them again and get 10. What does this tell you?",
+     "o": [
+      "Your count is probably right",
+      "The shells are magic",
+      "You must count a third time",
+      "Ten is a small number"
+     ],
+     "a": 0,
+     "why": "Getting the same answer twice is a good check.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to count things",
+    "model": "Counting means saying numbers in order. You touch each thing one time. The last number you say tells how many. Like counting three apples: 1, 2, 3.",
+    "points": [
+     {
+      "k": [
+       "touch",
+       "point",
+       "each"
+      ],
+      "ask": "How do I know I do not skip one?"
+     },
+     {
+      "k": [
+       "order",
+       "1, 2",
+       "one two"
+      ],
+      "ask": "What do I say first, second and third?"
+     },
+     {
+      "k": [
+       "last",
+       "how many"
+      ],
+      "ask": "Which number do I pick at the end?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Comparing numbers and quantities",
+   "icon": "⚖️",
+   "hook": "You have a big pile of sweets and your friend has a small pile. How can you tell who has more without counting?",
+   "explain": [
+    "We compare numbers to see which is more, less or the same. More means a bigger number. Less means a smaller number.",
+    "We can match things one to one. Put one sweet next to one sweet. The pile with sweets left over has more.",
+    "On a number line, numbers further right are bigger. 8 is bigger than 5 because it comes later when we count."
+   ],
+   "example": {
+    "q": "Sam has 6 marbles. Lina has 4 marbles. Who has more?",
+    "steps": [
+     "Count Sam: 6 marbles.",
+     "Count Lina: 4 marbles.",
+     "Count up from 4: 5, 6. So 6 comes after 4."
+    ],
+    "a": "Sam has more. 6 is bigger than 4."
+   },
+   "analogies": {
+    "home": "Two plates of rice. The plate with more rice has the bigger pile.",
+    "farm": "Two baskets of eggs. Pair each egg and see which basket has extras.",
+    "sport": "The team with more goals wins the game.",
+    "sea": "Two boats with fish. The boat with more fish has the bigger number."
+   },
+   "mnemonic": "Right on the line is bigger, left is less. The crocodile eats the bigger one: > !",
+   "terms": [
+    [
+     "More",
+     "A bigger number of things."
+    ],
+    [
+     "Less",
+     "A smaller number of things."
+    ],
+    [
+     "Same",
+     "Equal. The numbers match."
+    ],
+    [
+     "Greater than >",
+     "A sign that points to the smaller number."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger pile always means a bigger number.",
+    "right": "A spread-out small group can look big. Count or match them to be sure."
+   },
+   "trip": {
+    "wiki": "Number line",
+    "prompt": "Look at the number line picture. Which way are the bigger numbers?"
+   },
+   "sources": [
+    "Number line",
+    "Inequality (mathematics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which number is the biggest?",
+     "o": [
+      "3",
+      "6",
+      "5",
+      "9"
+     ],
+     "a": 3,
+     "why": "9 comes later than 3, 5 and 6 when we count.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which number is the smallest?",
+     "o": [
+      "4",
+      "7",
+      "2",
+      "5"
+     ],
+     "a": 2,
+     "why": "2 comes first when we count.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Tom has 5 apples. Zara has 8 apples. Who has fewer?",
+     "o": [
+      "Zara",
+      "Tom",
+      "They have the same",
+      "Nobody"
+     ],
+     "a": 1,
+     "why": "5 is smaller than 8, so Tom has fewer.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which sign makes this true? 7 __ 3",
+     "o": [
+      ">",
+      "<",
+      "=",
+      "+"
+     ],
+     "a": 0,
+     "why": "7 is bigger than 3. The sign opens to the bigger number: 7 > 3.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true?",
+     "o": [
+      "4 < 3",
+      "4 > 6",
+      "4 < 2",
+      "4 = 4"
+     ],
+     "a": 3,
+     "why": "4 and 4 are the same number.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Row A has 9 seeds close together. Row B has 6 seeds spread far apart. Which row has more seeds?",
+     "o": [
+      "Row B",
+      "They are the same",
+      "Row A",
+      "You cannot tell"
+     ],
+     "a": 2,
+     "why": "Spread out does not mean more. 9 is bigger than 6.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put the numbers from smallest to biggest.",
+     "items": [
+      "2",
+      "4",
+      "7",
+      "9"
+     ],
+     "why": "We count 2, 4, 7, 9. Smaller numbers come first.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Which number is one more than 8? Write it.",
+     "a": 9,
+     "tol": 0,
+     "why": "One more than 8 is 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Which number is one less than 5? Write it.",
+     "a": 4,
+     "tol": 0,
+     "why": "One less than 5 is 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Pair each cup with one plate. 2 plates have no cup. What does this show?",
+     "o": [
+      "There are more cups",
+      "There are more plates than cups",
+      "They are the same",
+      "The cups are small"
+     ],
+     "a": 1,
+     "why": "Plates with no partner are left over, so plates are more.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Ben says: \"10 is smaller than 7 because 7 is a big digit.\" What is wrong?",
+     "o": [
+      "We compare how many, not how the digit looks",
+      "Ben is right",
+      "Digits cannot be compared",
+      "7 is always the biggest"
+     ],
+     "a": 0,
+     "why": "10 is more than 7. The size of a number is how many it stands for.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child has 5 big stones. Another child has 7 tiny stones. Who has more stones?",
+     "o": [
+      "The child with 5 big stones",
+      "They are the same",
+      "Big ones count double",
+      "The child with 7 tiny stones"
+     ],
+     "a": 3,
+     "why": "We compare how many stones, not how big they are.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is matching one to one a good way to compare?",
+     "o": [
+      "It is faster than anything",
+      "It gives smaller numbers",
+      "It works even before we can count",
+      "It changes the groups"
+     ],
+     "a": 2,
+     "why": "If every item has a partner and some are left over, that group has more.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Which number is bigger",
+    "model": "Bigger means more. 8 is bigger than 5 because 8 things is more than 5 things. You can line up the things in pairs to see. The group with extras is bigger.",
+    "points": [
+     {
+      "k": [
+       "more",
+       "bigger",
+       "greater"
+      ],
+      "ask": "What does bigger mean for numbers?"
+     },
+     {
+      "k": [
+       "pair",
+       "match",
+       "line up",
+       "one to one"
+      ],
+      "ask": "How can I check without counting?"
+     },
+     {
+      "k": [
+       "example",
+       "apple",
+       "sweet",
+       "like"
+      ],
+      "ask": "Can you show me with an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Addition",
+   "icon": "➕",
+   "hook": "You have 3 oranges. A friend gives you 2 more. How many oranges do you have now?",
+   "explain": [
+    "Adding means putting groups together to find the total. The sign + means add. The sign = means is the same as.",
+    "3 + 2 = 5 means three and two make five. You can count on: start at 3, then count 4, 5.",
+    "You can add in any order. 2 + 3 is the same as 3 + 2. Adding zero changes nothing."
+   ],
+   "example": {
+    "q": "There are 4 birds on a roof. 3 more birds come. How many birds now?",
+    "steps": [
+     "Start with 4 birds.",
+     "Count on 3 more: 5, 6, 7.",
+     "Check with fingers: hold up 4, then 3 more."
+    ],
+    "a": "7 birds"
+   },
+   "analogies": {
+    "home": "3 spoons in the drawer and 2 more on the table. Put them together: 5 spoons.",
+    "farm": "4 cows in the field and 1 more walks in. Now there are 5.",
+    "music": "Clap 2 times, then clap 3 times. You clapped 5 times.",
+    "city": "2 buses are at the stop. 4 more come. Now 6 buses."
+   },
+   "mnemonic": "Put together, count on. The plus sign shows two groups join!",
+   "terms": [
+    [
+     "Add",
+     "Put groups together."
+    ],
+    [
+     "Plus +",
+     "The sign for adding."
+    ],
+    [
+     "Total",
+     "How many there are after adding."
+    ],
+    [
+     "Equals =",
+     "The same as."
+    ]
+   ],
+   "misc": {
+    "wrong": "Adding always means you must count from 1 each time.",
+    "right": "You can start at the bigger number and count on. It is faster."
+   },
+   "trip": {
+    "wiki": "Addition",
+    "prompt": "Look for pictures that show adding groups together."
+   },
+   "sources": [
+    "Addition"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is 2 + 2?",
+     "o": [
+      "3",
+      "4",
+      "5",
+      "22"
+     ],
+     "a": 1,
+     "why": "2 and 2 make 4.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is 5 + 1?",
+     "o": [
+      "6",
+      "4",
+      "5",
+      "7"
+     ],
+     "a": 0,
+     "why": "One more than 5 is 6.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is 0 + 7?",
+     "o": [
+      "0",
+      "8",
+      "70",
+      "7"
+     ],
+     "a": 3,
+     "why": "Adding zero changes nothing.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which sign means add?",
+     "o": [
+      "−",
+      "=",
+      "+",
+      "×"
+     ],
+     "a": 2,
+     "why": "The plus sign means add.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Zoe has 3 stickers and gets 4 more. Which sum fits?",
+     "o": [
+      "3 − 4",
+      "3 + 4",
+      "4 − 3",
+      "3 = 4"
+     ],
+     "a": 1,
+     "why": "Getting more means adding: 3 + 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which one is the same as 4 + 3?",
+     "o": [
+      "3 + 4",
+      "4 − 3",
+      "3 − 4",
+      "4 + 4"
+     ],
+     "a": 0,
+     "why": "We can add in any order. The total stays 7.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "There are 6 ducks in a pond. 3 more swim in. How many ducks now?",
+     "a": 9,
+     "tol": 0,
+     "why": "6 + 3 = 9. Count on from 6: 7, 8, 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is 5 + 5?",
+     "a": 10,
+     "tol": 0,
+     "why": "Two hands of 5 fingers make 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Ali says 4 + 4 = 7. How can you check?",
+     "o": [
+      "Ali is right",
+      "Take away 4",
+      "Count to 4 only",
+      "Hold up 4 fingers on each hand and count all"
+     ],
+     "a": 3,
+     "why": "4 and 4 make 8, so Ali made a mistake. Counting all the fingers shows 8.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each sum to its total.",
+     "pairs": [
+      [
+       "1 + 1",
+       "2"
+      ],
+      [
+       "2 + 3",
+       "5"
+      ],
+      [
+       "4 + 4",
+       "8"
+      ],
+      [
+       "5 + 4",
+       "9"
+      ]
+     ],
+     "why": "Add the two groups to find each total.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You want 3 + 8. Which way is quicker?",
+     "o": [
+      "Start at 3 and count on 8",
+      "Count both from 1",
+      "Start at 8 and count on 3",
+      "Guess"
+     ],
+     "a": 2,
+     "why": "Start with the bigger number and count on the smaller one. It is fewer steps and the answer is the same.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Sara adds 5 + 2 and gets 3. What did she probably do?",
+     "o": [
+      "She added right",
+      "She took away instead of adding",
+      "She counted on",
+      "She used zero"
+     ],
+     "a": 1,
+     "why": "5 − 2 = 3. The plus sign means put together, so the answer should be bigger than 5.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If you add some to a group, can the total be smaller than the start?",
+     "o": [
+      "No, adding makes it bigger or the same",
+      "Yes, always",
+      "Yes, sometimes",
+      "Only with big numbers"
+     ],
+     "a": 0,
+     "why": "Adding puts more in. Adding zero keeps it the same.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What adding means",
+    "model": "Adding means putting groups together to find how many in all. If you have 2 apples and get 3 more, you now have 5. You can count on from the first number.",
+    "points": [
+     {
+      "k": [
+       "together",
+       "join",
+       "put",
+       "more",
+       "combine"
+      ],
+      "ask": "What do we do to the groups?"
+     },
+     {
+      "k": [
+       "total",
+       "how many",
+       "all",
+       "sum"
+      ],
+      "ask": "What do we find out?"
+     },
+     {
+      "k": [
+       "example",
+       "apple",
+       "sweet",
+       "like",
+       "imagine"
+      ],
+      "ask": "Can you give me a picture example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Subtraction",
+   "icon": "➖",
+   "hook": "There are 5 cakes on a plate. You eat 2. How many are left?",
+   "explain": [
+    "Subtracting means taking away. The sign − means take away. What is left is the answer.",
+    "5 − 2 = 3. You can count back: start at 5, then 4, 3. Or you can cross out 2 things and count what is left.",
+    "Subtracting is the opposite of adding. If 3 + 2 = 5, then 5 − 2 = 3. They fit together like a pair."
+   ],
+   "example": {
+    "q": "A basket has 8 eggs. Mama uses 3 eggs. How many are left?",
+    "steps": [
+     "Start with 8 eggs.",
+     "Take away 3. Count back: 7, 6, 5.",
+     "Check: 5 + 3 = 8, so it fits."
+    ],
+    "a": "5 eggs"
+   },
+   "analogies": {
+    "home": "You have 6 biscuits. You share 2 with a friend. 4 are left with you.",
+    "farm": "10 chicks in the yard. 4 run into the barn. 6 are still in the yard.",
+    "sport": "A team has 9 balls. 3 roll away. 6 balls are left.",
+    "sea": "7 fish in a net. 2 swim out. 5 fish stay in."
+   },
+   "mnemonic": "Take away, count back. Minus makes a smaller stack!",
+   "terms": [
+    [
+     "Subtract",
+     "Take away from a group."
+    ],
+    [
+     "Minus −",
+     "The sign for taking away."
+    ],
+    [
+     "Difference",
+     "What is left, or how far apart two numbers are."
+    ]
+   ],
+   "misc": {
+    "wrong": "Taking away always needs the answer to be bigger.",
+    "right": "Taking away makes the number smaller. The answer is less than where you started."
+   },
+   "trip": {
+    "wiki": "Subtraction",
+    "prompt": "Look for pictures that show taking away from a group."
+   },
+   "sources": [
+    "Subtraction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is 4 − 1?",
+     "o": [
+      "5",
+      "4",
+      "2",
+      "3"
+     ],
+     "a": 3,
+     "why": "Take away 1 from 4 and 3 is left.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is 7 − 0?",
+     "o": [
+      "0",
+      "6",
+      "7",
+      "8"
+     ],
+     "a": 2,
+     "why": "Taking away nothing leaves the same number.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which sign means take away?",
+     "o": [
+      "+",
+      "−",
+      "=",
+      ">"
+     ],
+     "a": 1,
+     "why": "The minus sign means take away.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Lola has 9 grapes and eats 4. Which sum fits?",
+     "o": [
+      "9 − 4",
+      "9 + 4",
+      "4 − 9",
+      "9 = 4"
+     ],
+     "a": 0,
+     "why": "Eating means taking away: 9 − 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "3 + 4 = 7. Which fact goes with it?",
+     "o": [
+      "7 + 4 = 3",
+      "3 − 4 = 7",
+      "4 − 7 = 3",
+      "7 − 4 = 3"
+     ],
+     "a": 3,
+     "why": "Taking 4 away from 7 gives back the 3.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Is 6 − 2 bigger or smaller than 6?",
+     "o": [
+      "Bigger",
+      "The same",
+      "Smaller",
+      "Cannot tell"
+     ],
+     "a": 2,
+     "why": "Taking something away makes less.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "There are 10 kites in the sky. 6 land. How many are still flying?",
+     "a": 4,
+     "tol": 0,
+     "why": "10 − 6 = 4. Count back 6 from 10: 9, 8, 7, 6, 5, 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is 8 − 8?",
+     "a": 0,
+     "tol": 0,
+     "why": "Take away all 8 and nothing is left.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Omar says 5 − 2 = 7. How can you see he is wrong?",
+     "o": [
+      "7 is an odd number",
+      "Taking away should make a smaller number than 5",
+      "Minus is the same as plus",
+      "Omar is right"
+     ],
+     "a": 1,
+     "why": "5 − 2 = 3. The answer 7 is bigger than 5, which cannot happen when you take away.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Count back from 6 by ones. Put the numbers in order.",
+     "items": [
+      "6",
+      "5",
+      "4",
+      "3",
+      "2"
+     ],
+     "why": "Counting back goes 6, 5, 4, 3, 2.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You know 4 + 5 = 9. How does that help with 9 − 5?",
+     "o": [
+      "9 − 5 gives back 4",
+      "9 − 5 gives 14",
+      "It does not help",
+      "9 − 5 gives 5"
+     ],
+     "a": 0,
+     "why": "Subtracting undoes adding, so 9 − 5 = 4.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child has 5 sweets and says 5 − 7 = 2. What is the problem?",
+     "o": [
+      "The child is right",
+      "Minus makes bigger numbers",
+      "7 is not a number",
+      "You cannot take 7 away from only 5"
+     ],
+     "a": 3,
+     "why": "You cannot take away more than you have. The answer cannot be 2.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How is subtracting like adding?",
+     "o": [
+      "It is the same",
+      "It makes numbers bigger",
+      "It undoes adding",
+      "They are not related"
+     ],
+     "a": 2,
+     "why": "Adding puts things in, subtracting takes them out.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What taking away means",
+    "model": "Subtracting means taking some away from a group. What is left is the answer. If you have 6 sweets and eat 2, 4 are left.",
+    "points": [
+     {
+      "k": [
+       "take",
+       "away",
+       "remove",
+       "minus",
+       "less"
+      ],
+      "ask": "What do we do to the group?"
+     },
+     {
+      "k": [
+       "left",
+       "remaining",
+       "answer"
+      ],
+      "ask": "What do we find out at the end?"
+     },
+     {
+      "k": [
+       "example",
+       "sweet",
+       "apple",
+       "like",
+       "imagine"
+      ],
+      "ask": "Can you show me with something I can picture?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Multiplication concepts",
+   "icon": "✖️",
+   "hook": "A hen has 2 legs. How many legs do 3 hens have? Is there a quick way to find out?",
+   "explain": [
+    "Multiplying means making equal groups. Three groups of 2 is 2 + 2 + 2 = 6. We write this as 3 × 2 = 6.",
+    "Equal groups is the big idea. Each group must have the same number. 3 plates with 4 apples each is 3 groups of 4.",
+    "Multiplying is a quick way of adding the same number again and again. Skip counting helps: 2, 4, 6 or 5, 10, 15."
+   ],
+   "example": {
+    "q": "There are 4 bags. Each bag has 3 oranges. How many oranges in all?",
+    "steps": [
+     "Make 4 equal groups of 3.",
+     "Add the groups: 3 + 3 + 3 + 3.",
+     "Count on by 3s: 3, 6, 9, 12."
+    ],
+    "a": "12 oranges"
+   },
+   "analogies": {
+    "home": "Egg boxes with 2 rows of 3 eggs. 2 groups of 3 is 6 eggs.",
+    "farm": "5 cows. Each cow has 4 legs. 5 groups of 4 is 20 legs.",
+    "music": "3 drums, each with 2 sticks. That is 6 sticks.",
+    "city": "4 cars, each with 4 wheels. That is 16 wheels."
+   },
+   "mnemonic": "Groups that are the same make multiplying a game. Skip count and win!",
+   "terms": [
+    [
+     "Group",
+     "A set of things."
+    ],
+    [
+     "Equal groups",
+     "Groups with the same number in each."
+    ],
+    [
+     "Times ×",
+     "The sign for equal groups."
+    ],
+    [
+     "Skip counting",
+     "Counting in jumps like 2, 4, 6."
+    ]
+   ],
+   "misc": {
+    "wrong": "Any groups can be multiplied.",
+    "right": "The groups must be equal. Unequal groups need adding, not times."
+   },
+   "trip": {
+    "wiki": "Multiplication",
+    "prompt": "Look for pictures of dots in rows and groups."
+   },
+   "sources": [
+    "Multiplication"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is 2 + 2 + 2 as a times fact?",
+     "o": [
+      "2 × 2",
+      "3 × 2",
+      "6 × 2",
+      "2 + 3"
+     ],
+     "a": 1,
+     "why": "There are three groups of 2, so 3 × 2.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which are equal groups?",
+     "o": [
+      "3 plates with 4 grapes each",
+      "A plate with 2, one with 5 and one with 1",
+      "4 grapes and 1 plate",
+      "A mix of apples and plates"
+     ],
+     "a": 0,
+     "why": "Each plate has the same number, so the groups are equal.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Count in 2s: 2, 4, 6, __. What comes next?",
+     "o": [
+      "7",
+      "9",
+      "10",
+      "8"
+     ],
+     "a": 3,
+     "why": "We add 2 each time: 6 + 2 = 8.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Count in 5s: 5, 10, 15, __. What comes next?",
+     "o": [
+      "16",
+      "25",
+      "20",
+      "18"
+     ],
+     "a": 2,
+     "why": "Add 5: 15 + 5 = 20.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A spider has 8 legs. Which sum is for 2 spiders?",
+     "o": [
+      "8 − 8",
+      "8 + 8",
+      "2 + 2",
+      "8 + 2"
+     ],
+     "a": 1,
+     "why": "Two equal groups of 8 is 8 + 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Does 2 groups of 3 give the same as 3 groups of 2?",
+     "o": [
+      "Yes, both make 6",
+      "No, one makes 5",
+      "No, one makes 9",
+      "Only if you add"
+     ],
+     "a": 0,
+     "why": "3 + 3 = 6 and 2 + 2 + 2 = 6. The order does not change the answer.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "There are 3 boxes with 5 pencils in each box. How many pencils in all?",
+     "a": 15,
+     "tol": 0,
+     "why": "3 groups of 5: 5 + 5 + 5 = 15.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is 4 × 2?",
+     "a": 8,
+     "tol": 0,
+     "why": "Four groups of 2: 2, 4, 6, 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Nia has 2 bags with 3 shells and 1 bag with 5 shells. Can she write 3 × 3?",
+     "o": [
+      "Yes, always",
+      "Yes, 3 bags make 3 × 3",
+      "Only if she counts twice",
+      "No, the groups are not all equal"
+     ],
+     "a": 3,
+     "why": "3 × 3 needs three bags of 3. One bag has 5 so the groups are not equal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the picture to the times fact.",
+     "pairs": [
+      [
+       "2 groups of 5",
+       "2 × 5"
+      ],
+      [
+       "3 groups of 3",
+       "3 × 3"
+      ],
+      [
+       "4 groups of 2",
+       "4 × 2"
+      ],
+      [
+       "5 groups of 1",
+       "5 × 1"
+      ]
+     ],
+     "why": "The first number tells how many groups. The second tells how many in each group.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is 5 × 0 equal to 0?",
+     "o": [
+      "Because 5 is odd",
+      "Because 0 is big",
+      "Five groups with nothing in them hold nothing",
+      "It is a rule with no reason"
+     ],
+     "a": 2,
+     "why": "Zero in every group means zero in all.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Mei counts 3 groups of 4 by adding 4 + 4 + 4 and gets 12. Her friend skip counts 4, 8, 12. What can you say?",
+     "o": [
+      "One must be wrong",
+      "Both ways give 12",
+      "Only adding works",
+      "Only skip counting works"
+     ],
+     "a": 1,
+     "why": "Skip counting is a quick way to do repeated adding.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How is multiplying linked to adding?",
+     "o": [
+      "It is adding the same number again and again",
+      "It is the opposite of adding",
+      "It is taking away",
+      "They are not linked"
+     ],
+     "a": 0,
+     "why": "3 × 4 means 4 + 4 + 4.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What multiplying means",
+    "model": "Multiplying means making equal groups. If there are 3 plates with 2 biscuits each, you have 3 groups of 2. That is 2 + 2 + 2 = 6 biscuits.",
+    "points": [
+     {
+      "k": [
+       "group",
+       "plate",
+       "bag",
+       "set"
+      ],
+      "ask": "What is a group?"
+     },
+     {
+      "k": [
+       "equal",
+       "same"
+      ],
+      "ask": "Do the groups have to be the same?"
+     },
+     {
+      "k": [
+       "add",
+       "together",
+       "total",
+       "in all"
+      ],
+      "ask": "How do I find how many in all?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Division and sharing",
+   "icon": "🍰",
+   "hook": "You have 8 sweets and want to share them fairly with 2 friends. How many does each one get?",
+   "explain": [
+    "Dividing means sharing into equal groups. The sign ÷ means divide. Fair sharing means everyone gets the same.",
+    "12 ÷ 3 = 4 means 12 things shared into 3 groups gives 4 in each group. You can deal them out one by one like cards.",
+    "Dividing is the opposite of multiplying. If 3 × 4 = 12, then 12 ÷ 3 = 4. Sometimes there are some left over."
+   ],
+   "example": {
+    "q": "Share 10 biscuits fairly between 2 children. How many does each child get?",
+    "steps": [
+     "Deal out the biscuits one at a time: one to each child.",
+     "Keep going until all 10 are gone.",
+     "Each child has 5. Check: 5 + 5 = 10."
+    ],
+    "a": "5 biscuits each"
+   },
+   "analogies": {
+    "home": "Share a bowl of 12 dates between 4 people. Each gets 3.",
+    "farm": "Put 15 apples into 3 baskets. Each basket has 5.",
+    "sport": "Split 10 players into 2 teams. Each team has 5.",
+    "sea": "Put 8 fish into 4 buckets. Each bucket holds 2."
+   },
+   "mnemonic": "Deal like cards, one for you, one for me. Same for all is fair sharing!",
+   "terms": [
+    [
+     "Divide",
+     "Share into equal groups."
+    ],
+    [
+     "Share",
+     "Give each group the same amount."
+    ],
+    [
+     "Left over",
+     "What is left when things cannot be shared equally."
+    ]
+   ],
+   "misc": {
+    "wrong": "Dividing means each person gets a different amount.",
+    "right": "Dividing means the groups are equal. Each one gets the same."
+   },
+   "trip": {
+    "wiki": "Division (mathematics)",
+    "prompt": "Look for pictures showing things shared into equal groups."
+   },
+   "sources": [
+    "Division (mathematics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is 6 ÷ 2?",
+     "o": [
+      "4",
+      "8",
+      "2",
+      "3"
+     ],
+     "a": 3,
+     "why": "Share 6 into 2 equal groups: 3 each.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which sign means divide?",
+     "o": [
+      "+",
+      "×",
+      "÷",
+      "−"
+     ],
+     "a": 2,
+     "why": "The sign ÷ means share into equal groups.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does fair sharing mean?",
+     "o": [
+      "The oldest gets most",
+      "Everyone gets the same",
+      "The youngest gets most",
+      "Nobody gets any"
+     ],
+     "a": 1,
+     "why": "Dividing makes equal groups.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Share 9 sweets between 3 children. Which sum is it?",
+     "o": [
+      "9 ÷ 3",
+      "9 × 3",
+      "9 + 3",
+      "3 − 9"
+     ],
+     "a": 0,
+     "why": "Sharing into equal groups is dividing.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You know 2 × 5 = 10. Which fact goes with it?",
+     "o": [
+      "10 ÷ 5 = 10",
+      "2 ÷ 10 = 5",
+      "10 + 2 = 5",
+      "10 ÷ 2 = 5"
+     ],
+     "a": 3,
+     "why": "Dividing undoes multiplying.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Share 7 sweets between 2 children. What happens?",
+     "o": [
+      "Each gets 4",
+      "Each gets 3 and none left",
+      "Each gets 3 and 1 is left over",
+      "Each gets 7"
+     ],
+     "a": 2,
+     "why": "3 + 3 = 6 and 1 is left over.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Share 12 mangoes into 4 equal bags. How many in each bag?",
+     "a": 3,
+     "tol": 0,
+     "why": "12 ÷ 4 = 3. Check: 4 × 3 = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Share 20 stickers between 5 children. How many for each child?",
+     "a": 4,
+     "tol": 0,
+     "why": "20 ÷ 5 = 4 because 5 × 4 = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Pia says 8 ÷ 2 = 16. How can you see it is wrong?",
+     "o": [
+      "Division always gives 16",
+      "Sharing makes the groups smaller than 8",
+      "Pia is right",
+      "2 is too small"
+     ],
+     "a": 1,
+     "why": "8 shared into 2 groups gives 4 each. The answer cannot be more than 8.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Dealing out 6 cards to 2 players. Put the steps in order.",
+     "items": [
+      "Count the cards",
+      "Give one card to each player",
+      "Keep dealing one at a time",
+      "Count each pile to check"
+     ],
+     "why": "We start with the total, deal evenly, then check.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can 6 be shared equally between 2 but 7 cannot?",
+     "o": [
+      "7 leaves one over after two equal groups",
+      "7 is too big",
+      "2 only shares even numbers like 8",
+      "It can, there is no problem"
+     ],
+     "a": 0,
+     "why": "Two groups of 3 use 6. The seventh is left over.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How is dividing like taking away?",
+     "o": [
+      "It is never like taking away",
+      "It is like adding",
+      "It makes numbers bigger",
+      "You can keep taking away the same amount"
+     ],
+     "a": 3,
+     "why": "Take 2 away from 6 again and again: you can do it 3 times, so 6 ÷ 2 = 3.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child says: \"12 ÷ 3 and 12 ÷ 4 give the same answer.\" What do you say?",
+     "o": [
+      "Yes",
+      "Maybe",
+      "No, 12 ÷ 3 = 4 and 12 ÷ 4 = 3",
+      "They both give 12"
+     ],
+     "a": 2,
+     "why": "More groups means fewer in each group.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What sharing equally means",
+    "model": "Dividing means sharing into equal groups so everyone gets the same. If you share 8 sweets between 4 children, each child gets 2.",
+    "points": [
+     {
+      "k": [
+       "share",
+       "equal",
+       "same",
+       "fair"
+      ],
+      "ask": "What does fair sharing mean?"
+     },
+     {
+      "k": [
+       "deal",
+       "one at a time",
+       "groups"
+      ],
+      "ask": "How do I do the sharing?"
+     },
+     {
+      "k": [
+       "example",
+       "sweet",
+       "apple",
+       "like",
+       "imagine"
+      ],
+      "ask": "Can you show me with sweets?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Shapes and patterns",
+   "icon": "🔷",
+   "hook": "Look around the room. What shapes can you find? What makes a circle different from a square?",
+   "explain": [
+    "Shapes have names. A circle is round with no corners. A triangle has 3 sides and 3 corners. A square has 4 equal sides and 4 corners. A rectangle has 4 sides and 4 corners too.",
+    "A pattern is something that repeats. Red, blue, red, blue is a pattern. The part that repeats is called the unit.",
+    "To find what comes next in a pattern, find the part that repeats. Then carry on the same way."
+   ],
+   "example": {
+    "q": "What comes next? 🔴🔵🔴🔵🔴 __",
+    "steps": [
+     "Look at the colours: red, blue, red, blue, red.",
+     "The unit that repeats is red then blue.",
+     "After red comes blue."
+    ],
+    "a": "🔵 blue"
+   },
+   "analogies": {
+    "home": "A plate is a circle. A window is often a rectangle. A tile can be a square.",
+    "city": "A road sign can be a triangle. A wheel is a circle.",
+    "music": "A drum beat can be a pattern: loud, soft, loud, soft.",
+    "nature": "A sunflower seed head makes a pattern of spirals."
+   },
+   "mnemonic": "Circle round, triangle three, square has four sides: one, two, three, four!",
+   "terms": [
+    [
+     "Side",
+     "A straight edge of a shape."
+    ],
+    [
+     "Corner",
+     "Where two sides meet."
+    ],
+    [
+     "Pattern",
+     "Something that repeats in a way you can predict."
+    ],
+    [
+     "Unit",
+     "The part of a pattern that repeats."
+    ]
+   ],
+   "misc": {
+    "wrong": "A square and a rectangle can never have anything in common.",
+    "right": "A square is a special rectangle. It has 4 corners and its sides are all equal."
+   },
+   "trip": {
+    "wiki": "Shape",
+    "prompt": "Look for shapes in buildings from different countries."
+   },
+   "sources": [
+    "Shape",
+    "Pattern"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many sides does a triangle have?",
+     "o": [
+      "4",
+      "3",
+      "2",
+      "5"
+     ],
+     "a": 1,
+     "why": "Tri means three. A triangle has 3 sides.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which shape has no corners?",
+     "o": [
+      "Circle",
+      "Square",
+      "Triangle",
+      "Rectangle"
+     ],
+     "a": 0,
+     "why": "A circle is round, so it has no corners.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many corners does a square have?",
+     "o": [
+      "3",
+      "5",
+      "0",
+      "4"
+     ],
+     "a": 3,
+     "why": "A square has 4 sides and 4 corners.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A door is usually which shape?",
+     "o": [
+      "Circle",
+      "Triangle",
+      "Rectangle",
+      "Star"
+     ],
+     "a": 2,
+     "why": "Most doors are long with 4 corners, so rectangles.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the next shape? ⬛⚪⬛⚪⬛ __",
+     "o": [
+      "⬛ square",
+      "⚪ circle",
+      "▲ triangle",
+      "⭐ star"
+     ],
+     "a": 1,
+     "why": "Square and circle take turns. After a square comes a circle.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which pattern repeats the unit \"clap, stamp\"?",
+     "o": [
+      "clap, stamp, clap, stamp",
+      "clap, clap, stamp, stamp",
+      "stamp, stamp, clap",
+      "clap, stamp, stamp, clap"
+     ],
+     "a": 0,
+     "why": "The unit clap, stamp comes round again and again.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the odd one out? Square, rectangle, triangle, circle",
+     "o": [
+      "Always the circle",
+      "Always the triangle",
+      "Always the square",
+      "It depends on what you look for"
+     ],
+     "a": 3,
+     "why": "A circle has no corners. A triangle has 3 sides while the others have 4 or none. Different rules give different odd ones.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "How many sides do 2 triangles have in all?",
+     "a": 6,
+     "tol": 0,
+     "why": "Each triangle has 3 sides. 3 + 3 = 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the shape to what it has.",
+     "pairs": [
+      [
+       "Triangle",
+       "3 sides"
+      ],
+      [
+       "Square",
+       "4 equal sides"
+      ],
+      [
+       "Circle",
+       "No corners"
+      ],
+      [
+       "Rectangle",
+       "4 corners and 2 long sides"
+      ]
+     ],
+     "why": "Each shape has its own sides and corners.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps for carrying on a pattern in order.",
+     "items": [
+      "Look at the pattern",
+      "Find the part that repeats",
+      "Say that part again",
+      "Write the next one"
+     ],
+     "why": "First look, then find the repeating unit, then carry on with it.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is a square also a rectangle?",
+     "o": [
+      "No, never",
+      "Only if it is big",
+      "Yes, it has 4 corners and straight sides",
+      "Only if it is red"
+     ],
+     "a": 2,
+     "why": "A square is a rectangle that also has all sides equal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pattern goes: 2, 4, 6, 8. What comes next?",
+     "o": [
+      "9",
+      "10",
+      "12",
+      "7"
+     ],
+     "a": 1,
+     "why": "The pattern adds 2 each time. 8 + 2 = 10.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child says a triangle can have 4 sides. What do you say?",
+     "o": [
+      "No, if it has 4 sides it is not a triangle",
+      "Yes if it is big",
+      "Yes if it is blue",
+      "Yes if it is round"
+     ],
+     "a": 0,
+     "why": "Three sides is what makes a triangle.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Shapes and patterns",
+    "model": "A shape has a name from its sides and corners. A triangle has 3 sides. A pattern is something that repeats, like red, blue, red, blue. To carry on a pattern, find the part that repeats.",
+    "points": [
+     {
+      "k": [
+       "side",
+       "corner",
+       "edge"
+      ],
+      "ask": "What makes a shape different from another shape?"
+     },
+     {
+      "k": [
+       "repeat",
+       "again",
+       "same"
+      ],
+      "ask": "What is a pattern?"
+     },
+     {
+      "k": [
+       "example",
+       "red",
+       "blue",
+       "circle",
+       "triangle"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Measurement and time",
+   "icon": "📏",
+   "hook": "Is your pencil longer than your hand? How could you find out without a ruler?",
+   "explain": [
+    "We measure to find out how long, how heavy or how much. Length is how long something is. We can use a ruler, or hands and feet.",
+    "Always start at the zero. Line the object up with the start of the ruler. Then read where it ends.",
+    "Time is measured with clocks. There are 60 minutes in 1 hour and 24 hours in 1 day. 7 days make a week. The short hand shows hours and the long hand shows minutes."
+   ],
+   "example": {
+    "q": "A pencil starts at 0 on a ruler and ends at 12 on the centimetre side. How long is it?",
+    "steps": [
+     "Line the pencil up with 0.",
+     "Look where the pencil ends.",
+     "Read the number: 12. The unit is centimetres."
+    ],
+    "a": "12 centimetres"
+   },
+   "analogies": {
+    "home": "Measure a table with your hand spans. Say 6 spans long.",
+    "farm": "Weigh a bag of rice. It is 5 kilograms.",
+    "sport": "A race on a track. The clock shows who is first.",
+    "music": "A song is 3 minutes long. Count the minutes on the clock."
+   },
+   "mnemonic": "Start at zero, then look. Read the number from the book of the ruler!",
+   "terms": [
+    [
+     "Length",
+     "How long something is."
+    ],
+    [
+     "Centimetre",
+     "A small unit of length, written cm."
+    ],
+    [
+     "Hour",
+     "60 minutes."
+    ],
+    [
+     "Day",
+     "24 hours."
+    ]
+   ],
+   "misc": {
+    "wrong": "You can start measuring from any mark on the ruler.",
+    "right": "Start at zero. Otherwise the answer will be wrong."
+   },
+   "trip": {
+    "wiki": "Ruler",
+    "prompt": "Look for the marks on a ruler. What do the small lines mean?"
+   },
+   "sources": [
+    "Length",
+    "Time"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which tool measures length?",
+     "o": [
+      "Clock",
+      "Cup",
+      "Spoon",
+      "Ruler"
+     ],
+     "a": 3,
+     "why": "A ruler is made to measure how long something is.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which tool tells the time?",
+     "o": [
+      "Ruler",
+      "Scale",
+      "Clock",
+      "Jug"
+     ],
+     "a": 2,
+     "why": "A clock shows hours and minutes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many days are in a week?",
+     "o": [
+      "5",
+      "7",
+      "10",
+      "12"
+     ],
+     "a": 1,
+     "why": "A week has 7 days.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many hours are in a day?",
+     "o": [
+      "24",
+      "12",
+      "60",
+      "7"
+     ],
+     "a": 0,
+     "why": "One whole day and night is 24 hours.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A rope is 3 hand spans long when Ana measures. When her taller dad measures, he gets 2. Why?",
+     "o": [
+      "The rope changed",
+      "Ana is wrong",
+      "Dad counted wrong",
+      "His hand spans are longer"
+     ],
+     "a": 3,
+     "why": "Hand spans are different sizes. Standard units like cm give the same answer for everyone.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pencil starts at 2 on the ruler and ends at 9. Is it 9 long?",
+     "o": [
+      "Yes, 9 long",
+      "No, it is 11 long",
+      "No, it is 7 long",
+      "No, it is 2 long"
+     ],
+     "a": 2,
+     "why": "The pencil does not start at 0. 9 − 2 = 7.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the longest time?",
+     "o": [
+      "1 minute",
+      "1 hour",
+      "10 minutes",
+      "30 minutes"
+     ],
+     "a": 1,
+     "why": "1 hour is 60 minutes.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "How many minutes are in 1 hour?",
+     "a": 60,
+     "tol": 0,
+     "why": "There are 60 minutes in 1 hour.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A pencil is 15 cm and a crayon is 9 cm. How many cm longer is the pencil?",
+     "a": 6,
+     "tol": 0,
+     "why": "15 − 9 = 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from the shortest time to the longest.",
+     "items": [
+      "1 minute",
+      "1 hour",
+      "1 day",
+      "1 week"
+     ],
+     "why": "A minute is shorter than an hour. A day is 24 hours and a week is 7 days.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do people all over the world use the same units, like centimetres?",
+     "o": [
+      "So that everyone measures the same way",
+      "Because rulers are cheap",
+      "Because hands are all the same",
+      "No reason"
+     ],
+     "a": 0,
+     "why": "Standard units mean a measurement means the same thing everywhere.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "School starts at 8 and ends at 1 (5 hours later). Which tool helps you see how long the day is?",
+     "o": [
+      "Ruler",
+      "Scale",
+      "Cup",
+      "Clock"
+     ],
+     "a": 3,
+     "why": "A clock measures time.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You measure a book as 20 cm. Then you measure a longer book as 15 cm. What might be wrong?",
+     "o": [
+      "Nothing",
+      "Books shrink",
+      "The longer book was not lined up at zero",
+      "Centimetres change"
+     ],
+     "a": 2,
+     "why": "Wrong starting points give wrong answers. Check the 0.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to measure length",
+    "model": "To measure length, put the start of the object at 0 on the ruler. Then read the number where the object ends. For example, a pencil that ends at 12 is 12 centimetres long.",
+    "points": [
+     {
+      "k": [
+       "zero",
+       "0",
+       "start"
+      ],
+      "ask": "Where do I begin on the ruler?"
+     },
+     {
+      "k": [
+       "read",
+       "end",
+       "number",
+       "look"
+      ],
+      "ask": "Then what do I do?"
+     },
+     {
+      "k": [
+       "centimetre",
+       "cm",
+       "unit"
+      ],
+      "ask": "What do I say after the number?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Introduction to charts and data",
+   "icon": "📊",
+   "hook": "Your class likes different fruits. How could you show which fruit is the favourite so everyone can see?",
+   "explain": [
+    "Data is information we collect. We can ask questions and count the answers. A tally marks each answer with a line: ||||.",
+    "A chart shows data as a picture. In a picture chart, each little picture stands for one thing. In a bar chart, taller bars mean bigger numbers.",
+    "Reading a chart means finding the biggest, the smallest and how many. We can then answer questions like which is most popular."
+   ],
+   "example": {
+    "q": "In a class, 5 children like mangoes, 3 like bananas and 2 like oranges. Which fruit is most popular?",
+    "steps": [
+     "Make a tally: mangoes 5, bananas 3, oranges 2.",
+     "Compare the numbers: 5 is the biggest.",
+     "Mangoes have the tallest bar."
+    ],
+    "a": "Mangoes"
+   },
+   "analogies": {
+    "home": "Tally how many red, green and blue cups are in the kitchen.",
+    "farm": "Count the cows, hens and goats. Draw a picture chart.",
+    "sport": "Tally goals scored by each player. The tallest bar scored most.",
+    "nature": "Count birds that visit a tree each day this week."
+   },
+   "mnemonic": "Four lines and a slash make five. Counting data makes charts come alive!",
+   "terms": [
+    [
+     "Data",
+     "Information we collect."
+    ],
+    [
+     "Tally",
+     "Marks used to count as we go."
+    ],
+    [
+     "Chart",
+     "A picture that shows data."
+    ],
+    [
+     "Bar",
+     "A block on a chart, taller means more."
+    ]
+   ],
+   "misc": {
+    "wrong": "The tallest bar means the best thing.",
+    "right": "The tallest bar means the most. It tells how many, not what is best."
+   },
+   "trip": {
+    "wiki": "Bar chart",
+    "prompt": "Look at the bar charts. Find the tallest and the shortest bar."
+   },
+   "sources": [
+    "Bar chart",
+    "Tally marks"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is data?",
+     "o": [
+      "A kind of fruit",
+      "Information we collect",
+      "A shape",
+      "A game"
+     ],
+     "a": 1,
+     "why": "Data is the facts we gather by counting or asking.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A bar chart has a tall bar for cats and a short bar for fish. Which pet has more?",
+     "o": [
+      "Cats",
+      "Fish",
+      "They are the same",
+      "Cannot tell"
+     ],
+     "a": 0,
+     "why": "The taller bar means more.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Tally marks: |||| |. How many is that?",
+     "o": [
+      "5",
+      "7",
+      "4",
+      "6"
+     ],
+     "a": 3,
+     "why": "Four lines plus a slash is 5, plus 1 more makes 6.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A picture chart uses one 🍎 for 1 child. Mango has 🥭🥭🥭 and apple has 🍎🍎. Which is more?",
+     "o": [
+      "Apple",
+      "They are the same",
+      "Mango",
+      "Cannot tell"
+     ],
+     "a": 2,
+     "why": "3 pictures is more than 2 pictures.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we make charts?",
+     "o": [
+      "To make data hidden",
+      "To see and compare data quickly",
+      "To change the numbers",
+      "To draw only"
+     ],
+     "a": 1,
+     "why": "A chart shows the facts so we can answer questions at a glance.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A chart says 5 children like red, 5 like blue and 2 like green. Which is true?",
+     "o": [
+      "Red and blue are tied",
+      "Green is the most",
+      "Red is the most",
+      "Blue is the least"
+     ],
+     "a": 0,
+     "why": "5 and 5 are the same. Green has 2, the fewest.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Pets: 4 dogs, 3 cats, 2 birds. How many pets in all?",
+     "a": 9,
+     "tol": 0,
+     "why": "4 + 3 + 2 = 9.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Bar chart: red 7, blue 4. How many more like red than blue?",
+     "a": 3,
+     "tol": 0,
+     "why": "7 − 4 = 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the word to its meaning.",
+     "pairs": [
+      [
+       "Tally",
+       "Marks to count as you go"
+      ],
+      [
+       "Data",
+       "Facts we collect"
+      ],
+      [
+       "Bar chart",
+       "A picture with bars"
+      ],
+      [
+       "Tallest bar",
+       "The biggest number"
+      ]
+     ],
+     "why": "These words are used when we make and read charts.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Two friends make a chart of the same class. Ana has 6 for football and Ben has 7. Why might they differ?",
+     "o": [
+      "Football changed",
+      "Charts are random",
+      "Numbers are always different",
+      "One of them counted wrongly or missed a child"
+     ],
+     "a": 3,
+     "why": "When counts differ we check by counting again.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A bar chart shows 8 for tea and 4 for juice. Does this mean tea is better?",
+     "o": [
+      "Yes, tea is better",
+      "Yes, juice is bad",
+      "No, only that more people chose it",
+      "It means nothing about people"
+     ],
+     "a": 2,
+     "why": "A chart shows how many, not what is better.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What can go wrong if you forget to count one child?",
+     "o": [
+      "Nothing",
+      "The chart will show a wrong number",
+      "The bars will be taller",
+      "The chart will be hidden"
+     ],
+     "a": 1,
+     "why": "Missing data makes the picture wrong.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do bars on a chart start at zero?",
+     "o": [
+      "So the heights compare fairly",
+      "To look nice",
+      "So the bars can be small",
+      "No reason"
+     ],
+     "a": 0,
+     "why": "If bars do not start at zero, a small gap can look huge.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading a bar chart",
+    "model": "A bar chart shows how many of each thing. A taller bar means more. To read it, find the bar you want and look at its number. For example, if the mango bar is tallest, mango is most popular.",
+    "points": [
+     {
+      "k": [
+       "bar",
+       "tall",
+       "height"
+      ],
+      "ask": "What do the bars show?"
+     },
+     {
+      "k": [
+       "more",
+       "most",
+       "biggest",
+       "compare"
+      ],
+      "ask": "How do I tell which is most?"
+     },
+     {
+      "k": [
+       "example",
+       "fruit",
+       "mango",
+       "pet"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  }
+ ]
+}

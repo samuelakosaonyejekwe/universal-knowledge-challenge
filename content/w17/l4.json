@@ -1,0 +1,2862 @@
+{
+ "world": 17,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Argument analysis",
+   "icon": "🏗️",
+   "hook": "A friend says, \"We should ban phones at school because they distract students.\" What exactly is the claim, and what is the reason?",
+   "explain": [
+    "An argument is a set of statements in which some (premises) are offered as reasons to accept another (the conclusion). To analyse an argument, first find the conclusion, then the premises, then ask two questions: do the premises support the conclusion, and are the premises true?",
+    "Indicator words help: \"therefore\", \"so\", \"thus\" often signal a conclusion; \"because\", \"since\", \"given that\" signal premises. Arguments often hide an assumption, a missing premise that must be true for the reasoning to work. In \"We should ban phones because they distract\", the hidden premise is that distraction at school is harmful enough to justify a ban.",
+    "A deductive argument aims at certainty; an inductive one at probability. Strong inductive arguments make the conclusion likely; cogent ones are strong with true premises. To evaluate, look for weak links, missing premises, and counter-evidence. Standardising the argument (writing premises numbered then the conclusion) makes this easier."
+   ],
+   "example": {
+    "q": "\"Our town needs a new library because many children have no books at home, and libraries lend books free.\" Standardise it.",
+    "steps": [
+     "Conclusion: Our town needs a new library.",
+     "P1: Many children have no books at home.",
+     "P2: Libraries lend books free.",
+     "Hidden premise: a new library would reach those children."
+    ],
+    "a": "C: the town needs a library; P1 and P2 support it, with a hidden premise about reaching the children."
+   },
+   "analogies": {
+    "city": "A council says \"Build the road because traffic is heavy\". The hidden premise is that a road reduces traffic.",
+    "home": "\"Take an umbrella; the sky is dark.\" Hidden premise: dark skies mean rain.",
+    "tech": "\"Update the app since it has bugs.\" Hidden premise: the update fixes them."
+   },
+   "mnemonic": "Find the Conclusion, number the Premises, hunt the Hidden gap.",
+   "terms": [
+    [
+     "Argument",
+     "Premises offered as reasons for a conclusion."
+    ],
+    [
+     "Premise",
+     "A reason given in support."
+    ],
+    [
+     "Conclusion",
+     "The claim the premises support."
+    ],
+    [
+     "Assumption",
+     "An unstated premise needed for the argument to work."
+    ]
+   ],
+   "misc": {
+    "wrong": "An argument is a quarrel.",
+    "right": "In logic, an argument is a set of reasons for a conclusion, not a fight."
+   },
+   "limits": "Ordinary language is loose, so there may be several fair ways to read what an argument means.",
+   "trip": {
+    "wiki": "Argument",
+    "prompt": "Find how the page defines premises, conclusion and the kinds of argument."
+   },
+   "sources": [
+    "Argument",
+    "Premise",
+    "Logical consequence"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which word usually marks a conclusion?",
+     "o": [
+      "Therefore",
+      "Because",
+      "Since",
+      "Given that"
+     ],
+     "a": 0,
+     "why": "\"Therefore\" introduces the conclusion.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "\"The shop is closed, so I cannot buy milk.\" What is the conclusion?",
+     "o": [
+      "I cannot buy milk",
+      "The shop is closed",
+      "Milk is good",
+      "Shops close"
+     ],
+     "a": 0,
+     "why": "The \"so\" signals the conclusion.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a hidden assumption?",
+     "o": [
+      "An unstated premise the argument needs",
+      "A conclusion that turns out to be false",
+      "An insult hidden inside an argument",
+      "A premise that is stated twice in a row"
+     ],
+     "a": 0,
+     "why": "It is a missing but needed step.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "\"We should ban phones because they distract.\" Which hidden premise helps?",
+     "o": [
+      "Distraction in class harms learning",
+      "Phones are expensive for many families to buy",
+      "Students like to use their phones a lot",
+      "Teachers have phones of their own as well"
+     ],
+     "a": 0,
+     "why": "It links distraction to the need to ban.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Premises are true but do not support the conclusion. What is the problem?",
+     "o": [
+      "The argument is weak",
+      "The premises are false",
+      "The argument is deductive",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Support and truth are separate questions.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a better evaluation question?",
+     "o": [
+      "Do the premises give good reason to accept the conclusion?",
+      "Which speaker is the loudest in the room?",
+      "Is the argument long and full of details?",
+      "Is the conclusion popular with most people?"
+     ],
+     "a": 0,
+     "why": "Support is the key test.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"Because\" in an argument usually introduces...",
+     "o": [
+      "A premise",
+      "A conclusion",
+      "A question",
+      "An insult"
+     ],
+     "a": 0,
+     "why": "It signals a reason.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each part to its role.",
+     "pairs": [
+      [
+       "Premise",
+       "A reason offered"
+      ],
+      [
+       "Conclusion",
+       "The claim supported"
+      ],
+      [
+       "Assumption",
+       "An unstated needed premise"
+      ]
+     ],
+     "why": "These are the parts to find.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps of argument analysis in order.",
+     "items": [
+      "Find the conclusion",
+      "List the premises",
+      "Spot hidden assumptions",
+      "Judge support and truth"
+     ],
+     "why": "Structure before judging.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is it useful to find the hidden assumption of an argument?",
+     "rubric": [
+      [
+       "hidden",
+       "assumption",
+       "unstated",
+       "missing",
+       "premise"
+      ],
+      [
+       "weak",
+       "check",
+       "test",
+       "false",
+       "needs",
+       "depends",
+       "questionable",
+       "challenge",
+       "evaluate",
+       "true"
+      ]
+     ],
+     "min": 2,
+     "model": "The argument depends on it, so if the assumption is false or doubtful, the argument fails; finding it lets us test it.",
+     "why": "The argument is only as strong as its assumptions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "\"Most successful people wake early, so waking early makes you successful.\" What is the weak link?",
+     "o": [
+      "It assumes the early waking causes success",
+      "The premise is really a joke told by the speaker",
+      "The conclusion is actually just another premise",
+      "The argument is deductive and so must be certain"
+     ],
+     "a": 0,
+     "why": "Correlation does not show cause.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between an argument being valid or strong and having true premises.",
+     "rubric": [
+      [
+       "valid",
+       "strong",
+       "support",
+       "follow",
+       "logic",
+       "reasoning"
+      ],
+      [
+       "true",
+       "premises",
+       "facts",
+       "real",
+       "correct",
+       "accurate"
+      ]
+     ],
+     "min": 2,
+     "model": "Validity or strength is about whether the premises would support the conclusion if true; having true premises is a separate matter. Both are needed for a good argument.",
+     "why": "Two separate requirements.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A speaker restates the same claim in different words as \"support\". What is this called?",
+     "o": [
+      "Circular reasoning",
+      "Deduction, because the claim follows from itself",
+      "Induction, because it generalises from examples",
+      "Abduction, because it picks the best explanation"
+     ],
+     "a": 0,
+     "why": "The conclusion is used as its own premise.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Argument analysis",
+    "model": "An argument has premises that give reasons for a conclusion. To analyse it, find the conclusion, list the premises, spot hidden assumptions, and judge whether the premises support the conclusion and are true.",
+    "points": [
+     {
+      "k": [
+       "conclusion",
+       "claim"
+      ],
+      "ask": "What do I find first?"
+     },
+     {
+      "k": [
+       "premise",
+       "reason"
+      ],
+      "ask": "What supports it?"
+     },
+     {
+      "k": [
+       "assumption",
+       "hidden",
+       "missing"
+      ],
+      "ask": "What may be unstated?"
+     },
+     {
+      "k": [
+       "support",
+       "true",
+       "judge"
+      ],
+      "ask": "How do I judge it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Formal logic fundamentals",
+   "icon": "∧",
+   "hook": "If \"it is raining\" and \"it is cold\" are both true, what about \"it is raining or it is cold\"? What about \"it is raining and it is warm\"?",
+   "explain": [
+    "Formal logic studies the form of arguments using precise symbols. A proposition is a statement that is either true or false. We combine propositions with connectives: not (¬), and (∧), or (∨), if-then (→).",
+    "Truth tables list every combination of truth values. \"P ∧ Q\" is true only when both P and Q are true. \"P ∨ Q\" (inclusive or) is true when at least one is true. \"¬P\" flips the value. \"P → Q\" is false only when P is true and Q is false; otherwise it is true. For example, the promise \"if you pass, I will buy you a book\" is broken only if you pass and get no book.",
+    "Two statements are logically equivalent if they have the same truth table. An important equivalence is P → Q ≡ ¬Q → ¬P (the contrapositive). The converse, Q → P, is not equivalent. Necessary and sufficient conditions: in P → Q, P is sufficient for Q, and Q is necessary for P. De Morgan's laws: ¬(P ∧ Q) ≡ ¬P ∨ ¬Q and ¬(P ∨ Q) ≡ ¬P ∧ ¬Q."
+   ],
+   "example": {
+    "q": "Is \"if P then Q\" true when P is false and Q is true?",
+    "steps": [
+     "Recall: the conditional is false only when P is true and Q is false.",
+     "Here P is false, so it is not that case.",
+     "So it is true."
+    ],
+    "a": "True"
+   },
+   "analogies": {
+    "home": "\"If the gate is open, the dog is out.\" The promise is broken only if the gate is open and the dog is not out.",
+    "tech": "A login needs the right username AND the right password.",
+    "city": "A shop accepts cash OR card."
+   },
+   "mnemonic": "AND needs both, OR needs one, IF-THEN breaks on true-then-false.",
+   "terms": [
+    [
+     "Proposition",
+     "A statement that is either true or false."
+    ],
+    [
+     "Conjunction (∧)",
+     "True only when both parts are true."
+    ],
+    [
+     "Conditional (→)",
+     "False only when the first is true and the second false."
+    ],
+    [
+     "Contrapositive",
+     "¬Q → ¬P, logically equivalent to P → Q."
+    ]
+   ],
+   "misc": {
+    "wrong": "\"If P then Q\" and \"if Q then P\" mean the same.",
+    "right": "They do not. The converse can be false when the original is true."
+   },
+   "limits": "Formal logic captures only some everyday meanings; \"if\" in ordinary talk often means more than the logical conditional.",
+   "trip": {
+    "wiki": "Propositional calculus",
+    "prompt": "Find the truth tables for the connectives."
+   },
+   "sources": [
+    "Propositional calculus",
+    "Truth table",
+    "De Morgan's laws"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "P is true and Q is false. What is P ∧ Q?",
+     "o": [
+      "False",
+      "True",
+      "Unknown",
+      "Both"
+     ],
+     "a": 0,
+     "why": "A conjunction needs both parts true.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "P is true and Q is false. What is P ∨ Q?",
+     "o": [
+      "True",
+      "False",
+      "Unknown",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "One true part is enough for inclusive or.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "When is P → Q false?",
+     "o": [
+      "P true and Q false",
+      "P false and Q true",
+      "Both false",
+      "Both true"
+     ],
+     "a": 0,
+     "why": "That is the only failing case.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is equivalent to \"if it is a square, it has four sides\"?",
+     "o": [
+      "If it does not have four sides, it is not a square",
+      "If it has four sides, then it must be a square",
+      "If it is not a square, then it has no four sides",
+      "It is a square, and so it has four sides"
+     ],
+     "a": 0,
+     "why": "This is the contrapositive.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "P is false. What is P → Q?",
+     "o": [
+      "True, whatever Q is",
+      "False, since a false P always makes it false",
+      "Always equal to whatever Q happens to be",
+      "Unknown until we find out what Q is"
+     ],
+     "a": 0,
+     "why": "A conditional with a false antecedent is true.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the negation of \"It is raining and it is cold\"?",
+     "o": [
+      "It is not raining or it is not cold",
+      "It is not raining and it is not cold",
+      "It is raining or it is cold",
+      "It is cold"
+     ],
+     "a": 0,
+     "why": "De Morgan: ¬(P ∧ Q) ≡ ¬P ∨ ¬Q.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"Being a dog is sufficient for being an animal.\" What does this mean?",
+     "o": [
+      "If it is a dog, it is an animal",
+      "If it is an animal, it is a dog",
+      "Dogs are necessary for animals",
+      "Animals are not dogs"
+     ],
+     "a": 0,
+     "why": "Sufficient: P is enough for Q.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A truth table for two propositions P and Q has how many rows?",
+     "a": 4,
+     "tol": 0,
+     "unit": "rows",
+     "why": "There are 2 × 2 = 4 combinations of truth values.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A truth table for three propositions has how many rows?",
+     "a": 8,
+     "tol": 0,
+     "unit": "rows",
+     "why": "2 × 2 × 2 = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why \"If it is a bird it has feathers\" does not mean \"If it has feathers it is a bird\".",
+     "rubric": [
+      [
+       "converse",
+       "reverse",
+       "flip",
+       "opposite",
+       "not the same",
+       "different"
+      ],
+      [
+       "other",
+       "animals",
+       "feathers",
+       "not only",
+       "also",
+       "pillow",
+       "dinosaur",
+       "example",
+       "counter",
+       "fail"
+      ]
+     ],
+     "min": 2,
+     "model": "The converse does not follow, since other things like a feather pillow or a feathered dinosaur have feathers but are not birds, so a conditional and its converse are different statements.",
+     "why": "The converse is a different statement.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which statement is equivalent to ¬(P ∨ Q)?",
+     "o": [
+      "¬P ∧ ¬Q",
+      "¬P ∨ ¬Q",
+      "P ∧ Q",
+      "P ∨ Q"
+     ],
+     "a": 0,
+     "why": "De Morgan: neither P nor Q.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "\"If you study, you will pass.\" You did not pass. What follows and why?",
+     "rubric": [
+      [
+       "not",
+       "did not",
+       "didn't",
+       "no"
+      ],
+      [
+       "study",
+       "studied",
+       "studying"
+      ],
+      [
+       "contrapositive",
+       "modus tollens",
+       "follow",
+       "must"
+      ]
+     ],
+     "min": 2,
+     "model": "By the contrapositive (modus tollens), you did not study, if the statement is true.",
+     "why": "If P then Q and not Q give not P.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"Only if you have a ticket can you enter.\" Which is correct?",
+     "o": [
+      "Entering implies having a ticket",
+      "Having a ticket implies entering",
+      "Both are the same",
+      "Neither follows"
+     ],
+     "a": 0,
+     "why": "\"Only if\" marks a necessary condition.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Formal logic basics",
+    "model": "Propositions are true or false statements. We join them with not, and, or, and if-then. And needs both true. Or needs at least one. If-then fails only when the first is true and the second is false. The contrapositive is equivalent; the converse is not.",
+    "points": [
+     {
+      "k": [
+       "true",
+       "false",
+       "proposition"
+      ],
+      "ask": "What is a proposition?"
+     },
+     {
+      "k": [
+       "and",
+       "or",
+       "not",
+       "if"
+      ],
+      "ask": "How do we join them?"
+     },
+     {
+      "k": [
+       "contrapositive",
+       "equivalent"
+      ],
+      "ask": "Which forms are equivalent?"
+     },
+     {
+      "k": [
+       "converse",
+       "not the same",
+       "different"
+      ],
+      "ask": "Is the converse the same?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Probability and uncertainty",
+   "icon": "🎲",
+   "hook": "A fair six-sided die is rolled. What is the chance of a 5? What if you roll twice and want two 5s?",
+   "explain": [
+    "Probability measures how likely an event is on a scale from 0 (impossible) to 1 (certain). When all outcomes are equally likely, probability = number of favourable outcomes ÷ total number of outcomes. A fair die: P(5) = 1/6 ≈ 0.167.",
+    "Rules: the probabilities of all outcomes add to 1, so P(not A) = 1 − P(A). For independent events (one does not affect the other), P(A and B) = P(A) × P(B). So two 5s in two rolls: 1/6 × 1/6 = 1/36. For mutually exclusive events, P(A or B) = P(A) + P(B): a 5 or a 6 is 1/6 + 1/6 = 1/3.",
+    "Past results do not change the chance of independent events: after five heads in a row, a fair coin still has a 1/2 chance of heads next. Believing otherwise is the gambler's fallacy. Probabilities describe long-run frequencies or degrees of belief, and real-life uncertainty is often about incomplete information, not just chance."
+   ],
+   "example": {
+    "q": "A bag has 3 red and 5 blue marbles. You draw one without looking. What is P(red)? After replacing it, what is P(two reds in a row)?",
+    "steps": [
+     "Total marbles: 8.",
+     "P(red) = 3/8.",
+     "With replacement the draws are independent.",
+     "P(two reds) = 3/8 × 3/8 = 9/64."
+    ],
+    "a": "P(red) = 3/8 and P(two reds) = 9/64 ≈ 0.14"
+   },
+   "analogies": {
+    "sport": "A basketball player makes 70% of free throws; over many throws the share approaches 0.7.",
+    "nature": "A forecast of 30% rain means that on days with such conditions, it rains about 3 days in 10.",
+    "home": "Drawing a random sock from a drawer with 4 black and 6 white socks gives P(black) = 4/10."
+   },
+   "mnemonic": "Probability: favourable over total; chances multiply for AND, add for OR.",
+   "terms": [
+    [
+     "Probability",
+     "A number from 0 to 1 measuring how likely an event is."
+    ],
+    [
+     "Independent events",
+     "Events where one does not affect the other."
+    ],
+    [
+     "Mutually exclusive",
+     "Events that cannot both happen."
+    ],
+    [
+     "Complement",
+     "The event \"not A\", with probability 1 − P(A)."
+    ]
+   ],
+   "misc": {
+    "wrong": "After many tails, heads is \"due\".",
+    "right": "Each fair toss is independent. The coin has no memory."
+   },
+   "limits": "Probability has several interpretations (frequency, belief), and real events seldom have perfectly known odds.",
+   "trip": {
+    "wiki": "Probability",
+    "prompt": "See how the page defines probability and the ideas of independence."
+   },
+   "sources": [
+    "Probability",
+    "Independence (probability theory)",
+    "Gambler's fallacy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is P(rolling an even number) with a fair die?",
+     "o": [
+      "1/2",
+      "1/6",
+      "1/3",
+      "2/3"
+     ],
+     "a": 0,
+     "why": "Even: 2, 4, 6, which is 3 of 6 outcomes.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A fair coin is tossed twice. What is the probability of two heads? Give a decimal.",
+     "a": 0.25,
+     "tol": 0.001,
+     "why": "1/2 × 1/2 = 1/4 = 0.25.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bag has 4 green and 6 yellow balls. What is P(green)? Give a decimal.",
+     "a": 0.4,
+     "tol": 0.001,
+     "why": "4/10 = 0.4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "After five heads in a row, what is P(heads) on a fair coin?",
+     "o": [
+      "1/2",
+      "Less than 1/2",
+      "More than 1/2",
+      "0"
+     ],
+     "a": 0,
+     "why": "Tosses are independent.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "P(rain) = 0.3. What is P(no rain)?",
+     "o": [
+      "0.7",
+      "0.3",
+      "0.6",
+      "1.3"
+     ],
+     "a": 0,
+     "why": "1 − 0.3 = 0.7.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does a probability of 0 mean?",
+     "o": [
+      "The event is impossible",
+      "The event is certain",
+      "The event is likely",
+      "The event is half likely"
+     ],
+     "a": 0,
+     "why": "0 means impossible.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Two dice are rolled. What is P(both show 6)? Give your answer as a decimal rounded to three places.",
+     "a": 0.028,
+     "tol": 0.001,
+     "why": "1/36 ≈ 0.0278, which rounds to 0.028.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You roll a die once. What is P(a 5 or a 6)?",
+     "o": [
+      "1/3",
+      "1/6",
+      "1/36",
+      "1/2"
+     ],
+     "a": 0,
+     "why": "These are exclusive: 1/6 + 1/6 = 1/3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the event to its probability for a fair die.",
+     "pairs": [
+      [
+       "Rolling a 3",
+       "1/6"
+      ],
+      [
+       "Rolling a number below 3",
+       "1/3"
+      ],
+      [
+       "Rolling a number from 1 to 6",
+       "1"
+      ]
+     ],
+     "why": "Count favourable outcomes out of 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a coin that came up heads five times is not more likely to come up tails next.",
+     "rubric": [
+      [
+       "independent",
+       "no memory",
+       "does not remember",
+       "each toss",
+       "separate",
+       "not affect"
+      ],
+      [
+       "same",
+       "half",
+       "50",
+       "1/2",
+       "equal",
+       "still",
+       "chance"
+      ]
+     ],
+     "min": 2,
+     "model": "Each toss is independent and the coin has no memory, so the chance of tails stays one half whatever happened before.",
+     "why": "Past tosses do not change a fair coin.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which situation is NOT independent?",
+     "o": [
+      "Drawing two cards from a deck without putting the first back",
+      "Rolling a fair die twice in a row",
+      "Tossing a fair coin twice in a row",
+      "Spinning a fair spinner two times"
+     ],
+     "a": 0,
+     "why": "Removing a card changes the next draw.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the probability of \"A or B\" not always P(A) + P(B)?",
+     "rubric": [
+      [
+       "overlap",
+       "both",
+       "together",
+       "double",
+       "count",
+       "twice",
+       "not exclusive",
+       "can happen"
+      ],
+      [
+       "subtract",
+       "minus",
+       "too high",
+       "over",
+       "exceed",
+       "more than",
+       "remove"
+      ]
+     ],
+     "min": 2,
+     "model": "If A and B can both happen, adding counts the overlap twice, so you must subtract P(A and B).",
+     "why": "Addition rule needs exclusive events or a correction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A test is \"95% accurate\". Why might that alone not tell you the chance a positive result is correct?",
+     "o": [
+      "It depends on how common the condition is",
+      "Accuracy is always 100% for real tests",
+      "Tests never make a mistake in practice",
+      "Rare conditions do not matter for the result"
+     ],
+     "a": 0,
+     "why": "Base rates matter, as Bayes' rule shows later.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Probability basics",
+    "model": "Probability measures how likely something is from 0 to 1. With equal outcomes it is favourable divided by total. For independent events multiply; for exclusive events add; and P(not A) is 1 minus P(A). Past tosses do not change a fair coin.",
+    "points": [
+     {
+      "k": [
+       "favourable",
+       "total",
+       "divide",
+       "fraction",
+       "count"
+      ],
+      "ask": "How do I calculate it?"
+     },
+     {
+      "k": [
+       "multiply",
+       "independent",
+       "and"
+      ],
+      "ask": "How do I combine two events?"
+     },
+     {
+      "k": [
+       "add",
+       "or",
+       "exclusive"
+      ],
+      "ask": "What about either event?"
+     },
+     {
+      "k": [
+       "1 minus",
+       "complement",
+       "not"
+      ],
+      "ask": "What about the event not happening?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Cognitive biases",
+   "icon": "🧠",
+   "hook": "A friend says flying is more dangerous than driving because plane crashes are in the news. Is the news a good guide to risk?",
+   "explain": [
+    "Cognitive biases are systematic tendencies to think in ways that depart from careful reasoning. They come from mental shortcuts (heuristics) that are fast and often useful but sometimes mislead.",
+    "Some well-studied ones: confirmation bias (seeking and favouring information that supports what we already believe); availability heuristic (judging how common something is by how easily examples come to mind, so vivid news makes rare events seem common); anchoring (being swayed by a first number); hindsight bias (\"I knew it all along\"); the sunk-cost fallacy (continuing because of past investment); overconfidence (being more sure than our accuracy justifies); and framing effects (choices change with wording).",
+    "Knowing about biases does not make us immune. Helpful habits include seeking disconfirming evidence, considering base rates, getting an outside view, slowing down for important choices, and using checklists. Researchers also debate how irrational people really are, since shortcuts often work well in the environments we live in."
+   ],
+   "example": {
+    "q": "A shop shows \"Was 100, now 60\". Customers think 60 is a bargain. Which bias?",
+    "steps": [
+     "The first number 100 sets a reference point.",
+     "It changes how we judge 60.",
+     "This is anchoring."
+    ],
+    "a": "Anchoring"
+   },
+   "analogies": {
+    "city": "After seeing news of a rare event, people overestimate how often it happens.",
+    "sport": "A fan remembers the wins of his team and forgets the losses.",
+    "tech": "You keep a failing app project going because you already spent months on it."
+   },
+   "mnemonic": "Biases are shortcuts that can trip: check them with a slow second look.",
+   "terms": [
+    [
+     "Heuristic",
+     "A quick mental shortcut for judgment."
+    ],
+    [
+     "Confirmation bias",
+     "Favouring information that supports existing beliefs."
+    ],
+    [
+     "Availability heuristic",
+     "Judging likelihood by how easily examples come to mind."
+    ],
+    [
+     "Sunk-cost fallacy",
+     "Continuing because of past cost that cannot be recovered."
+    ]
+   ],
+   "misc": {
+    "wrong": "Only unintelligent people have biases.",
+    "right": "Everyone has them, including experts. Being clever does not remove them, although awareness and good habits can reduce their effects."
+   },
+   "limits": "Researchers debate how much human judgment is biased versus well adapted to real environments.",
+   "trip": {
+    "wiki": "List of cognitive biases",
+    "prompt": "Choose three biases and find an example of each."
+   },
+   "sources": [
+    "Cognitive bias",
+    "Confirmation bias",
+    "Availability heuristic"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Reading only news that agrees with your views is...",
+     "o": [
+      "Confirmation bias",
+      "Anchoring on the first thing you read",
+      "Framing, by how the news is worded",
+      "Hindsight bias, after the facts are known"
+     ],
+     "a": 0,
+     "why": "We favour information that supports us.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "After a vivid news story on shark attacks, Ola fears swimming. Which bias?",
+     "o": [
+      "Availability heuristic",
+      "Sunk cost, since she has paid for a swim lesson",
+      "Anchoring on a number she heard first",
+      "Hindsight, since she looks back on events"
+     ],
+     "a": 0,
+     "why": "Vivid examples come to mind easily.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You keep watching a boring film because you paid for the ticket. Which fallacy?",
+     "o": [
+      "Sunk cost",
+      "Anchoring",
+      "Confirmation",
+      "Availability"
+     ],
+     "a": 0,
+     "why": "The ticket cost is gone either way.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "After the match, Femi says \"I knew they would lose.\" Which bias is likely?",
+     "o": [
+      "Hindsight bias",
+      "Anchoring on a first guess about the score",
+      "Sunk cost, from the money spent on tickets",
+      "Framing, from the way it was reported"
+     ],
+     "a": 0,
+     "why": "We feel outcomes were predictable after the fact.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"Of 100 patients, 90 survive\" vs \"10 die.\" Why do people react differently?",
+     "o": [
+      "Framing effect",
+      "Sunk cost, from money already spent",
+      "Base rate neglect, from ignoring how common it is",
+      "Hindsight, from looking back at the results"
+     ],
+     "a": 0,
+     "why": "Equal facts can feel different.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A first price of 500 makes a price of 300 look cheap. What is the bias?",
+     "o": [
+      "Anchoring",
+      "Availability",
+      "Overconfidence",
+      "Hindsight"
+     ],
+     "a": 0,
+     "why": "The first number sets the reference.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which habit helps reduce confirmation bias?",
+     "o": [
+      "Looking for evidence that could prove you wrong",
+      "Asking only friends who already agree with you",
+      "Reading just one source that you like",
+      "Avoiding data that might be confusing"
+     ],
+     "a": 0,
+     "why": "Seeking disconfirming evidence tests ideas.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each bias to what it does.",
+     "pairs": [
+      [
+       "Confirmation bias",
+       "Favours supporting information"
+      ],
+      [
+       "Availability heuristic",
+       "Judges by easily recalled examples"
+      ],
+      [
+       "Overconfidence",
+       "More sure than accuracy warrants"
+      ]
+     ],
+     "why": "These are common biases.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps in order for checking your thinking on an important decision.",
+     "items": [
+      "Notice you are about to decide",
+      "Ask which bias might apply",
+      "Look for evidence against your first view",
+      "Decide and review later"
+     ],
+     "why": "Pause, name bias, test, decide.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why might knowing about biases not be enough to avoid them?",
+     "rubric": [
+      [
+       "automatic",
+       "unconscious",
+       "fast",
+       "quick",
+       "habit",
+       "not aware",
+       "without noticing",
+       "everyone"
+      ],
+      [
+       "slow",
+       "check",
+       "process",
+       "habit",
+       "tools",
+       "checklist",
+       "design",
+       "outside",
+       "others",
+       "practice",
+       "still",
+       "even"
+      ]
+     ],
+     "min": 2,
+     "model": "Biases work automatically and unnoticed, so we need habits and tools such as checklists, outside views and delay to counter them, not just awareness.",
+     "why": "Awareness helps only a little.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A study tests whether a new teaching method works. The researcher expects it to work and notices only the good results. Which bias?",
+     "o": [
+      "Confirmation bias",
+      "Hindsight bias, after the study is over",
+      "Framing, from how the results are worded",
+      "Availability, from remembering vivid cases"
+     ],
+     "a": 0,
+     "why": "Selective attention to supporting data.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a quick heuristic be useful even though it sometimes errs?",
+     "rubric": [
+      [
+       "fast",
+       "quick",
+       "speed",
+       "time",
+       "effort",
+       "save"
+      ],
+      [
+       "usually",
+       "often",
+       "mostly",
+       "works",
+       "good enough",
+       "right",
+       "accurate",
+       "environment",
+       "sometimes"
+      ]
+     ],
+     "min": 2,
+     "model": "Heuristics are fast and need little effort, and they are often right enough in familiar situations even though they sometimes mislead.",
+     "why": "Shortcuts trade accuracy for speed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best protection against overconfidence in your forecasts?",
+     "o": [
+      "Keep records of predictions and check how often you were right",
+      "Feel more and more sure about each forecast",
+      "Ignore the evidence that you have seen",
+      "Ask only yourself what you think will happen"
+     ],
+     "a": 0,
+     "why": "Feedback on accuracy calibrates confidence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Cognitive biases",
+    "model": "Biases are systematic tendencies from mental shortcuts. Examples are confirmation bias, availability, anchoring, hindsight, sunk cost and overconfidence. We cannot switch them off, but slowing down, seeking opposing evidence and checking records helps.",
+    "points": [
+     {
+      "k": [
+       "shortcut",
+       "heuristic",
+       "quick",
+       "fast"
+      ],
+      "ask": "Where do biases come from?"
+     },
+     {
+      "k": [
+       "confirmation",
+       "availability",
+       "anchoring",
+       "sunk",
+       "hindsight"
+      ],
+      "ask": "Can you name one?"
+     },
+     {
+      "k": [
+       "evidence",
+       "against",
+       "check",
+       "slow",
+       "others"
+      ],
+      "ask": "How can I reduce them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Decision trees",
+   "icon": "🌳",
+   "hook": "You can take a safe prize of 50 coins, or flip a fair coin: heads gives 120 coins, tails gives 0. Which should you choose?",
+   "explain": [
+    "A decision tree is a diagram that maps choices and what can happen after each. Square nodes are decisions, circles are chance events, and ends show outcomes with payoffs. Branches from a chance node carry probabilities that add up to 1.",
+    "To compare options, work backwards (right to left) and compute the expected value (EV): multiply each outcome's value by its probability and add. The coin gamble has EV = 0.5 × 120 + 0.5 × 0 = 60 coins, while the safe option is 50. Pure EV favours the gamble.",
+    "But EV is not the whole story. People differ in how much they dislike risk. If 50 coins covers an essential need, taking the sure thing may be wise. Costs, time, and probabilities that are only estimates also matter, so test how the decision changes when the numbers change (sensitivity analysis)."
+   ],
+   "example": {
+    "q": "Option A: launch a stall for 200 coins cost, a 60% chance of earning 500 and 40% of earning 100 (before cost). Option B: do nothing (0). What is the EV of A (net)?",
+    "steps": [
+     "EV of earnings: 0.6 × 500 + 0.4 × 100 = 300 + 40 = 340.",
+     "Net: 340 − 200 = 140.",
+     "B is 0."
+    ],
+    "a": "Net EV of A is 140 coins, more than B."
+   },
+   "analogies": {
+    "farm": "Plant a risky crop that earns a lot in good rain or little in drought, or a steady crop.",
+    "sport": "A team decides whether to attack or defend depending on the chance of scoring.",
+    "city": "Choose a route: a fast road that is sometimes jammed or a slower steady one."
+   },
+   "mnemonic": "Branch, weigh by chance, add up: expected value wins the cup, but check the risk.",
+   "terms": [
+    [
+     "Decision tree",
+     "A diagram of choices, chances and outcomes."
+    ],
+    [
+     "Expected value",
+     "The probability-weighted average of the outcomes."
+    ],
+    [
+     "Payoff",
+     "The value of an outcome."
+    ],
+    [
+     "Risk aversion",
+     "Preferring a sure outcome to a gamble of equal or higher expected value."
+    ]
+   ],
+   "misc": {
+    "wrong": "The best option is always the one with the highest expected value.",
+    "right": "Expected value ignores risk attitude, one-off stakes and uncertain probabilities."
+   },
+   "limits": "Real probabilities and payoffs are estimates, and many decisions have values that are not just money.",
+   "trip": {
+    "wiki": "Decision tree",
+    "prompt": "See how decision trees are drawn and used."
+   },
+   "sources": [
+    "Decision tree",
+    "Expected value"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In a decision tree, what do circles usually show?",
+     "o": [
+      "Chance events",
+      "Decisions",
+      "Final outcomes only",
+      "Costs only"
+     ],
+     "a": 0,
+     "why": "Squares are decisions and circles are chances.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A gamble gives 100 coins with probability 0.3 and 0 otherwise. What is its expected value?",
+     "a": 30,
+     "tol": 0.01,
+     "unit": "coins",
+     "why": "0.3 × 100 + 0.7 × 0 = 30.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Option A: 70% chance of 200 coins, 30% chance of 0. What is its expected value?",
+     "o": [
+      "140 coins",
+      "200 coins",
+      "70 coins",
+      "100 coins"
+     ],
+     "a": 0,
+     "why": "0.7 × 200 + 0.3 × 0 = 140.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Probabilities from one chance node must...",
+     "o": [
+      "Add up to 1",
+      "Be equal",
+      "Add to 100 coins",
+      "Be negative"
+     ],
+     "a": 0,
+     "why": "One of the outcomes must occur.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why might someone pick a sure 50 over a gamble worth 60 in expectation?",
+     "o": [
+      "They dislike risk or need the money for sure",
+      "The maths must be wrong in the problem",
+      "Gambles are always against the law",
+      "The number 50 is larger than the number 60"
+     ],
+     "a": 0,
+     "why": "Risk attitude and stakes matter.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How do you evaluate a decision tree?",
+     "o": [
+      "Work backwards from the outcomes",
+      "Pick the longest path through the tree",
+      "Ignore the probabilities on each branch",
+      "Always choose the first branch you see"
+     ],
+     "a": 0,
+     "why": "Roll back values from the right.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A farmer can plant crop X (profit 400 in good rain, 100 in drought) with P(good rain) = 0.6. What is the EV of X?",
+     "a": 280,
+     "tol": 0.01,
+     "unit": "coins",
+     "why": "0.6 × 400 + 0.4 × 100 = 240 + 40 = 280.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the symbol to its meaning.",
+     "pairs": [
+      [
+       "Square node",
+       "Decision"
+      ],
+      [
+       "Circle node",
+       "Chance event"
+      ],
+      [
+       "Branch end",
+       "Outcome with payoff"
+      ]
+     ],
+     "why": "Standard decision-tree notation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps in order for using a decision tree.",
+     "items": [
+      "List the decisions and chances",
+      "Estimate probabilities and payoffs",
+      "Work backwards computing expected values",
+      "Choose and test sensitivity"
+     ],
+     "why": "Structure, estimate, compute, test.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the expected value is not always the best guide to a decision.",
+     "rubric": [
+      [
+       "risk",
+       "sure",
+       "safe",
+       "once",
+       "one-off",
+       "afraid",
+       "averse",
+       "lose"
+      ],
+      [
+       "probab",
+       "estimate",
+       "uncertain",
+       "values",
+       "need",
+       "not money",
+       "depends",
+       "matter",
+       "average",
+       "afford"
+      ]
+     ],
+     "min": 2,
+     "model": "Expected value is an average over many repeats and ignores risk and stakes. For a one-off choice, or when losses are serious, a sure option can be wiser, and probabilities are only estimates.",
+     "why": "The average hides risk.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A tree shows A with EV 50 and B with EV 52, but the probabilities are rough guesses. What is wise?",
+     "o": [
+      "Test how the answer changes if probabilities change",
+      "Always pick B, because 52 is bigger than 50",
+      "Always pick A, because it feels safer",
+      "Ignore the tree, since the numbers are guesses"
+     ],
+     "a": 0,
+     "why": "Sensitivity analysis shows how robust the choice is.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why work backwards in a decision tree?",
+     "rubric": [
+      [
+       "end",
+       "last",
+       "outcome",
+       "later",
+       "final",
+       "back",
+       "right"
+      ],
+      [
+       "depends",
+       "later choices",
+       "best choice",
+       "known",
+       "first",
+       "compute",
+       "value",
+       "decide"
+      ]
+     ],
+     "min": 2,
+     "model": "Later choices and outcomes determine what earlier options are worth, so we compute values from the end and move backwards.",
+     "why": "Earlier decisions depend on later ones.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A gamble has EV 60 but a 50% chance of ending with 0. Which person would reasonably decline it?",
+     "o": [
+      "Someone who needs a guaranteed 50 for rent",
+      "Someone with large savings in the bank",
+      "Someone who plays the gamble 1000 times",
+      "Someone who simply loves doing maths"
+     ],
+     "a": 0,
+     "why": "The consequence of ending with 0 matters.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Decision trees",
+    "model": "A decision tree maps choices, chance events and outcomes. Give each chance branch a probability, work backwards, and compute expected value by multiplying outcomes by probabilities and adding. Also think about risk and test how the answer changes with the numbers.",
+    "points": [
+     {
+      "k": [
+       "branch",
+       "choice",
+       "decision",
+       "chance"
+      ],
+      "ask": "What does the tree show?"
+     },
+     {
+      "k": [
+       "probab",
+       "expected value",
+       "multiply"
+      ],
+      "ask": "How do I score each option?"
+     },
+     {
+      "k": [
+       "risk",
+       "sure",
+       "safe"
+      ],
+      "ask": "Is the highest average always best?"
+     },
+     {
+      "k": [
+       "backwards",
+       "end"
+      ],
+      "ask": "Which way do I work?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Strategic planning",
+   "icon": "🗺️",
+   "hook": "A school wants every pupil to read well in three years. What would you do first, next and later?",
+   "explain": [
+    "Strategic planning is deciding where you want to go and how to get there, given limited resources. A common sequence: define a vision and clear goals; analyse the situation; generate options; choose; plan actions with owners, dates and resources; carry out; and review.",
+    "A SWOT analysis lists internal strengths and weaknesses and external opportunities and threats. Good goals are SMART: specific, measurable, achievable, relevant and time-bound. Scenario planning asks \"what if?\" for several possible futures so the plan still works if things change.",
+    "Strategy involves trade-offs: you cannot do everything, so you decide what not to do. Plans also need feedback loops, measures that show progress, so you can adapt. A plan that is never reviewed becomes outdated, and a plan that changes every week is no plan."
+   ],
+   "example": {
+    "q": "A community garden wants to supply vegetables to 50 families in a year. Make a SWOT and a goal.",
+    "steps": [
+     "Strengths: many volunteers. Weaknesses: little money.",
+     "Opportunities: free seeds from a local group. Threats: drought.",
+     "Goal: by December, harvest 20 kg per family per year (measurable and time-bound)."
+    ],
+    "a": "SWOT identifies strengths, weaknesses, opportunities and threats; the SMART goal is measurable and time-bound."
+   },
+   "analogies": {
+    "farm": "A farm plans crops by season, with a backup if the rains fail.",
+    "city": "A city plans a new bus line using population growth forecasts.",
+    "sport": "A club builds a squad over several seasons, not only the next match."
+   },
+   "mnemonic": "SWOT the scene, SMART the goal, scenario for rain, review again.",
+   "terms": [
+    [
+     "Strategy",
+     "A plan of choices to reach long-term goals."
+    ],
+    [
+     "SWOT",
+     "Strengths, weaknesses, opportunities, threats."
+    ],
+    [
+     "SMART goal",
+     "Specific, measurable, achievable, relevant, time-bound."
+    ],
+    [
+     "Scenario planning",
+     "Planning for several possible futures."
+    ]
+   ],
+   "misc": {
+    "wrong": "A good plan covers every detail from the start.",
+    "right": "Plans should be clear on goals and flexible in details, since conditions change."
+   },
+   "limits": "Strategy tools simplify; real organisations face uncertainty, politics and unknowns that tools cannot capture.",
+   "trip": {
+    "wiki": "Strategic planning",
+    "prompt": "Look for how the page describes steps and tools like SWOT."
+   },
+   "sources": [
+    "Strategic planning",
+    "SWOT analysis",
+    "SMART criteria"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the S in SWOT stand for?",
+     "o": [
+      "Strengths",
+      "Strategy, as in a plan for the future",
+      "Speed, as in how fast we can act",
+      "Success, as in the goal we want to reach"
+     ],
+     "a": 0,
+     "why": "Strengths, Weaknesses, Opportunities, Threats.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which goal is SMART?",
+     "o": [
+      "Raise reading test scores by 10 points by June",
+      "Be better at reading some day",
+      "Read more books than before",
+      "Try hard to improve in reading"
+     ],
+     "a": 0,
+     "why": "It is specific, measurable and time-bound.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A SWOT item about local drought is a...",
+     "o": [
+      "Threat",
+      "Strength",
+      "Weakness",
+      "Opportunity"
+     ],
+     "a": 0,
+     "why": "It is external and harmful.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do scenario plans help?",
+     "o": [
+      "They prepare for several possible futures",
+      "They predict exactly one future with certainty",
+      "They let us avoid planning completely",
+      "They remove all risk from the project"
+     ],
+     "a": 0,
+     "why": "They test robustness.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does \"strategy means deciding what not to do\" mean?",
+     "o": [
+      "Resources are limited so we must choose",
+      "We should do nothing and wait",
+      "All tasks are equally important to do",
+      "Planning itself is a bad idea"
+     ],
+     "a": 0,
+     "why": "Trade-offs are central.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why include measures of progress in a plan?",
+     "o": [
+      "They show if the plan is working so we can adapt",
+      "They make the reports longer and more detailed",
+      "They replace the original goal of the plan",
+      "They hide problems from the managers"
+     ],
+     "a": 0,
+     "why": "Feedback allows adjustment.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A project needs 120 hours and 4 people work 6 hours a day each. How many days will it take?",
+     "a": 5,
+     "tol": 0,
+     "unit": "days",
+     "why": "4 × 6 = 24 hours per day, and 120 ÷ 24 = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each SWOT item to its type.",
+     "pairs": [
+      [
+       "Skilled volunteers",
+       "Strength"
+      ],
+      [
+       "Not enough money",
+       "Weakness"
+      ],
+      [
+       "A new grant is offered",
+       "Opportunity"
+      ],
+      [
+       "A competitor opens nearby",
+       "Threat"
+      ]
+     ],
+     "why": "Internal factors are strengths and weaknesses; external are opportunities and threats.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the strategic planning steps in order.",
+     "items": [
+      "Set goals",
+      "Analyse the situation",
+      "Choose a plan",
+      "Act and review progress"
+     ],
+     "why": "Plans begin with goals and end with review.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why should a strategic plan be reviewed regularly?",
+     "rubric": [
+      [
+       "change",
+       "changes",
+       "new",
+       "conditions",
+       "situation",
+       "circumstances",
+       "world"
+      ],
+      [
+       "adapt",
+       "adjust",
+       "update",
+       "review",
+       "work",
+       "working",
+       "progress",
+       "revise",
+       "outdated"
+      ]
+     ],
+     "min": 2,
+     "model": "Conditions change and some actions fail, so reviewing lets us adjust the plan and keep it working.",
+     "why": "Feedback keeps a plan useful.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A plan only works if prices do not change. What would improve it?",
+     "o": [
+      "Add scenarios for price changes",
+      "Assume that prices will stay fixed for ever",
+      "Hide the assumption from the readers",
+      "Cancel everything and begin again"
+     ],
+     "a": 0,
+     "why": "Stress-test key assumptions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between a goal and a strategy.",
+     "rubric": [
+      [
+       "goal",
+       "aim",
+       "end",
+       "where",
+       "destination",
+       "outcome"
+      ],
+      [
+       "strategy",
+       "plan",
+       "how",
+       "way",
+       "route",
+       "method",
+       "steps"
+      ]
+     ],
+     "min": 2,
+     "model": "A goal is what you want to achieve, while a strategy is the plan of choices for how to get there.",
+     "why": "Ends versus means.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a team that chases every opportunity do worse?",
+     "o": [
+      "Focus is lost and resources are spread thin",
+      "Opportunities are always a bad thing to have",
+      "Teams cannot work on more than one thing",
+      "More options always make every result worse"
+     ],
+     "a": 0,
+     "why": "Strategy needs priorities.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Strategic planning",
+    "model": "Strategic planning sets goals, analyses the situation (for example with SWOT), chooses options and plans actions with measures of progress. Goals should be SMART. Scenario planning prepares for different futures, and regular review keeps the plan useful.",
+    "points": [
+     {
+      "k": [
+       "goal",
+       "vision"
+      ],
+      "ask": "Where do I begin?"
+     },
+     {
+      "k": [
+       "swot",
+       "strength",
+       "weakness",
+       "opportunit",
+       "threat",
+       "analy"
+      ],
+      "ask": "How do I understand my situation?"
+     },
+     {
+      "k": [
+       "smart",
+       "measur",
+       "time"
+      ],
+      "ask": "What makes a good goal?"
+     },
+     {
+      "k": [
+       "review",
+       "adapt",
+       "scenario",
+       "change"
+      ],
+      "ask": "What if things change?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Systems thinking",
+   "icon": "🔄",
+   "hook": "Why does a thermostat keep a room at a steady temperature? What happens if a system has a delay?",
+   "explain": [
+    "Systems thinking looks at how parts connect and interact to produce behaviour of the whole. Instead of asking only \"what caused this event?\" it asks what structure keeps producing this pattern.",
+    "Key ideas: elements, connections and purpose. Feedback loops are central. A balancing (negative) loop pushes a system back towards a target, like a thermostat. A reinforcing (positive) loop amplifies change, like compound interest or a snowball. Delays between action and effect can cause overshoot and oscillation: if a shower takes a while to warm, you may turn the tap too far and swing between cold and hot.",
+    "Systems have unintended consequences: fixing one part may shift the problem elsewhere. Stocks (amounts that accumulate, like water in a bath) change through flows (inflow and outflow). To change a system, look for leverage points where small changes have big effects, and try small experiments before large changes."
+   ],
+   "example": {
+    "q": "A bathtub has 100 litres. Inflow is 15 litres per minute and outflow is 10 litres per minute. How much water after 6 minutes?",
+    "steps": [
+     "Net flow: 15 − 10 = +5 litres per minute.",
+     "Change in 6 min: 6 × 5 = 30 litres.",
+     "Stock: 100 + 30 = 130 litres."
+    ],
+    "a": "130 litres"
+   },
+   "analogies": {
+    "home": "A thermostat switches heating on and off to hold a set temperature (balancing loop).",
+    "nature": "More rabbits lead to more foxes, which lead to fewer rabbits (balancing loops with delay).",
+    "city": "More roads can bring more cars, which fill the roads again (a reinforcing loop)."
+   },
+   "mnemonic": "Stocks fill, flows pour, loops steer, delays shake, leverage points are where you make the change.",
+   "terms": [
+    [
+     "System",
+     "Parts connected so that they work together as a whole."
+    ],
+    [
+     "Feedback loop",
+     "A chain in which an output affects its own input."
+    ],
+    [
+     "Stock and flow",
+     "An accumulated amount and the rates that change it."
+    ],
+    [
+     "Leverage point",
+     "A place where a small change causes a large effect."
+    ]
+   ],
+   "misc": {
+    "wrong": "In a complex system, one cause leads to one effect.",
+    "right": "Effects often have several causes, loops and delays, so results can be surprising."
+   },
+   "limits": "Models of systems are simplifications; real systems cross boundaries and can behave unpredictably.",
+   "trip": {
+    "wiki": "Systems thinking",
+    "prompt": "Find examples of feedback loops on the page."
+   },
+   "sources": [
+    "Systems thinking",
+    "Feedback",
+    "Stock and flow"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A thermostat is an example of...",
+     "o": [
+      "A balancing loop",
+      "A reinforcing loop",
+      "A stock",
+      "A delay only"
+     ],
+     "a": 0,
+     "why": "It pushes temperature back to the target.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Compound interest on savings is an example of...",
+     "o": [
+      "A reinforcing loop",
+      "A balancing loop that pulls back to a target",
+      "A delay between an action and its effect",
+      "A leverage point where small push has large effect"
+     ],
+     "a": 0,
+     "why": "Growth feeds more growth.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A tank has 200 litres, inflow 8 litres/min and outflow 12 litres/min. How many litres after 10 minutes?",
+     "a": 160,
+     "tol": 0,
+     "unit": "litres",
+     "why": "Net flow is −4 per minute, so 10 min gives −40 and 200 − 40 = 160.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can delays cause overshoot?",
+     "o": [
+      "We keep acting before we see the effect",
+      "Delays remove the feedback from the system",
+      "Delays stop all change from happening",
+      "Delays make every system more stable"
+     ],
+     "a": 0,
+     "why": "Corrections pile up before results show.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a stock in systems thinking?",
+     "o": [
+      "An amount that accumulates",
+      "A rate of change over time",
+      "A goal that the system is aiming for",
+      "A type of shop that sells goods"
+     ],
+     "a": 0,
+     "why": "Stocks are levels like water or population.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A city builds a wider road and traffic soon returns. What does this suggest?",
+     "o": [
+      "The fix triggered a response that undid the benefit",
+      "New roads can never be built in cities",
+      "Traffic is fixed and cannot ever change",
+      "The road was still too narrow after all"
+     ],
+     "a": 0,
+     "why": "Unintended consequences are common.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why make small experiments in a complex system?",
+     "o": [
+      "To learn about responses with low risk",
+      "To slow down progress on purpose",
+      "Because it is always easy to change things",
+      "To avoid the need for thinking"
+     ],
+     "a": 0,
+     "why": "Small tests reveal feedback.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to an example.",
+     "pairs": [
+      [
+       "Balancing loop",
+       "Thermostat"
+      ],
+      [
+       "Reinforcing loop",
+       "Compound interest"
+      ],
+      [
+       "Stock",
+       "Water in a bath"
+      ]
+     ],
+     "why": "Each is a core system idea.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the systems analysis steps in order.",
+     "items": [
+      "Define the system and its purpose",
+      "Identify stocks and flows",
+      "Find feedback loops and delays",
+      "Look for leverage points"
+     ],
+     "why": "Boundaries first, leverage last.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a quick fix can make a problem worse in a system.",
+     "rubric": [
+      [
+       "side",
+       "unintended",
+       "other part",
+       "elsewhere",
+       "shift",
+       "response",
+       "feedback",
+       "delay",
+       "loop"
+      ],
+      [
+       "worse",
+       "back",
+       "return",
+       "later",
+       "consequence",
+       "problem",
+       "undo",
+       "push",
+       "cause"
+      ]
+     ],
+     "min": 2,
+     "model": "The fix may trigger feedback or shift the problem elsewhere, so the benefit is undone or new problems appear later.",
+     "why": "Systems respond to interventions.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is a likely sign of a reinforcing loop?",
+     "o": [
+      "Growth that speeds up on itself",
+      "Steady return to a fixed target level",
+      "No change at all over a long time",
+      "A single event that never repeats"
+     ],
+     "a": 0,
+     "why": "A reinforcing loop amplifies.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a balancing loop keeps a room at a set temperature.",
+     "rubric": [
+      [
+       "sensor",
+       "thermostat",
+       "measure",
+       "target",
+       "set",
+       "compare"
+      ],
+      [
+       "heat",
+       "heating",
+       "on",
+       "off",
+       "switch",
+       "cool",
+       "return",
+       "back",
+       "correct"
+      ]
+     ],
+     "min": 2,
+     "model": "The thermostat measures the temperature and compares it to the target, turning heating on when it is too cold and off when it is warm enough, pushing the temperature back to the target.",
+     "why": "A balancing loop corrects deviation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it useful to ask for the structure behind repeated events?",
+     "o": [
+      "Structure produces the pattern, so fixing events alone may not help",
+      "Events never repeat in any system",
+      "Structure is not relevant to what happens",
+      "Only the events themselves ever matter"
+     ],
+     "a": 0,
+     "why": "Look for underlying causes.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Systems thinking",
+    "model": "Systems thinking studies how parts connect. Stocks change through flows. Balancing loops steer towards a target and reinforcing loops amplify change. Delays cause overshoot. Fixes can have unintended effects, so look for leverage points and test small changes.",
+    "points": [
+     {
+      "k": [
+       "part",
+       "connect",
+       "whole",
+       "interact"
+      ],
+      "ask": "What is a system?"
+     },
+     {
+      "k": [
+       "balancing",
+       "reinforcing",
+       "loop",
+       "feedback"
+      ],
+      "ask": "What is feedback?"
+     },
+     {
+      "k": [
+       "delay",
+       "overshoot",
+       "stock",
+       "flow"
+      ],
+      "ask": "What else matters?"
+     },
+     {
+      "k": [
+       "unintended",
+       "side effect",
+       "leverage"
+      ],
+      "ask": "Why can fixes backfire?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Metacognition",
+   "icon": "🪞",
+   "hook": "You re-read your notes five times and feel ready, but you fail the quiz. Why did your feeling of knowing mislead you?",
+   "explain": [
+    "Metacognition is thinking about your own thinking: knowing what you know, judging how well you are learning, and choosing how to study. It includes monitoring (checking your understanding) and control (changing your strategy).",
+    "Our feelings about learning are often wrong. Re-reading feels easy because the text looks familiar, which creates an illusion of knowing. Studies show that retrieval practice (testing yourself), spacing (spreading study over days) and interleaving (mixing different problem types) usually give stronger long-term learning than re-reading or cramming, even though they feel harder. Difficulties that help learning are called desirable difficulties.",
+    "Memory also has limits that metacognition must respect. We forget quickly without review (the forgetting curve). Memories are reconstructed, so false memories can form, and confidence is only a weak guide to accuracy: people can be very sure and wrong. Brain-training games improve performance on the trained tasks, but evidence for broad gains in general intelligence is weak."
+   ],
+   "example": {
+    "q": "You must learn 20 vocabulary words. Compare two plans: (A) read the list 5 times tonight; (B) test yourself on 20 words on three separate days. Which is better and why?",
+    "steps": [
+     "Plan A makes words feel familiar (illusion of knowing).",
+     "Plan B forces recall and spaces it out.",
+     "So B builds stronger, longer-lasting memory."
+    ],
+    "a": "Plan B, because retrieval and spacing strengthen memory more than re-reading."
+   },
+   "analogies": {
+    "sport": "An athlete records her times to know honestly how she is improving, not just how she feels.",
+    "music": "A pianist mixes scales, pieces and sight-reading (interleaving) instead of one for an hour.",
+    "home": "Cover a recipe and try to say the steps before checking, instead of just looking at it."
+   },
+   "mnemonic": "Test, space, mix, then check: knowing what you know, with no wreck.",
+   "terms": [
+    [
+     "Metacognition",
+     "Awareness and control of your own thinking and learning."
+    ],
+    [
+     "Retrieval practice",
+     "Learning by recalling information from memory."
+    ],
+    [
+     "Interleaving",
+     "Mixing different topics or problem types in practice."
+    ],
+    [
+     "Illusion of knowing",
+     "Feeling you know something because it looks familiar."
+    ]
+   ],
+   "misc": {
+    "wrong": "If I feel confident, I have learned it.",
+    "right": "Confidence and accuracy are only loosely linked. Test yourself to find out."
+   },
+   "limits": "Study techniques work on average. Individual results vary, and \"learning styles\" matching has not been supported by good evidence.",
+   "trip": {
+    "wiki": "Metacognition",
+    "prompt": "See how the page links metacognition to learning strategies."
+   },
+   "sources": [
+    "Metacognition",
+    "Testing effect",
+    "Spacing effect"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is metacognition?",
+     "o": [
+      "Thinking about your own thinking",
+      "A kind of memory loss in old age",
+      "A method of reading very fast",
+      "A type of school test"
+     ],
+     "a": 0,
+     "why": "It means monitoring and controlling your learning.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which method usually gives the strongest long-term memory?",
+     "o": [
+      "Testing yourself over several days",
+      "Re-reading the notes once more",
+      "Highlighting the key lines only",
+      "Cramming everything the night before"
+     ],
+     "a": 0,
+     "why": "Retrieval and spacing help most.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does re-reading create an illusion of knowing?",
+     "o": [
+      "The text feels familiar, which feels like understanding",
+      "It makes the text look different each time",
+      "The text is too hard to read twice",
+      "It forces your mind to use retrieval"
+     ],
+     "a": 0,
+     "why": "Familiarity is not recall.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is interleaving?",
+     "o": [
+      "Mixing different topics or types in practice",
+      "Studying one topic for hours without a change",
+      "Skipping practice on hard topics",
+      "Reading each topic aloud to a friend"
+     ],
+     "a": 0,
+     "why": "It helps you choose the right method.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A witness is 100% sure of a detail that a video shows is wrong. What does this show?",
+     "o": [
+      "Confidence is not a guarantee of accuracy",
+      "Videos always lie about what happened",
+      "Witnesses never remember anything",
+      "Confidence is always a sign of being right"
+     ],
+     "a": 0,
+     "why": "Memories can be wrong yet feel certain.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is true about false memories?",
+     "o": [
+      "People can remember events that did not happen",
+      "Only liars ever have false memories",
+      "They never occur in real life",
+      "They are always easy to spot"
+     ],
+     "a": 0,
+     "why": "Memory is reconstructive.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Do brain-training games raise general intelligence?",
+     "o": [
+      "There is little good evidence that they do beyond the trained tasks",
+      "Yes, strongly, for almost all people",
+      "Yes, for everyone who plays them",
+      "They can replace the sleep you need"
+     ],
+     "a": 0,
+     "why": "Gains often do not transfer broadly.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "You plan to review a topic after 1 day, 3 days and 7 days from the first study day. On which day number is the last review if the first study is day 0?",
+     "a": 7,
+     "tol": 0,
+     "why": "The last review is 7 days after day 0, which is day 7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each technique to what it does.",
+     "pairs": [
+      [
+       "Retrieval practice",
+       "Recall from memory"
+      ],
+      [
+       "Spacing",
+       "Spread study over time"
+      ],
+      [
+       "Interleaving",
+       "Mix topics"
+      ]
+     ],
+     "why": "Each is a desirable difficulty.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a study method that feels harder can lead to better learning.",
+     "rubric": [
+      [
+       "effort",
+       "harder",
+       "difficult",
+       "struggle",
+       "difficulty",
+       "work"
+      ],
+      [
+       "memory",
+       "stronger",
+       "retrieve",
+       "recall",
+       "remember",
+       "last",
+       "learning",
+       "longer",
+       "deeper"
+      ]
+     ],
+     "min": 2,
+     "model": "The extra effort of recalling or switching topics strengthens memory pathways, so learning lasts longer, although it feels less smooth than re-reading.",
+     "why": "Desirable difficulties help.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student scores well on a practice test the day after cramming but forgets most a month later. What does this show?",
+     "o": [
+      "Cramming gives short-term performance but weak long-term memory",
+      "Tests are useless for measuring memory",
+      "Memory never fades with time",
+      "The test was simply too easy that day"
+     ],
+     "a": 0,
+     "why": "Spacing builds durability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why should you not rely only on how confident you feel to decide if you have learned something?",
+     "rubric": [
+      [
+       "confiden",
+       "feel",
+       "feeling",
+       "sure"
+      ],
+      [
+       "wrong",
+       "accurate",
+       "accuracy",
+       "test",
+       "check",
+       "illusion",
+       "mislead",
+       "familiar",
+       "not reliable",
+       "recall"
+      ]
+     ],
+     "min": 2,
+     "model": "Feeling confident can come from familiarity rather than real recall, so you should test yourself to check accuracy.",
+     "why": "Calibrate confidence against evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A game claims to \"boost your intelligence\" in 10 minutes a day. What is the best response?",
+     "o": [
+      "Look for independent evidence of wide gains beyond the game",
+      "Believe it at once and start playing",
+      "Trust the maker, who knows best",
+      "Play it even more each day"
+     ],
+     "a": 0,
+     "why": "Transfer to general ability is not well supported.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Metacognition",
+    "model": "Metacognition means knowing and controlling your own learning. Feelings of knowing can mislead, so test yourself, spread study over days and mix topics. Memories fade and can be false, and confidence does not guarantee accuracy.",
+    "points": [
+     {
+      "k": [
+       "think about",
+       "own thinking",
+       "aware",
+       "monitor"
+      ],
+      "ask": "What is metacognition?"
+     },
+     {
+      "k": [
+       "test",
+       "recall",
+       "retriev",
+       "quiz"
+      ],
+      "ask": "How should I study?"
+     },
+     {
+      "k": [
+       "space",
+       "days",
+       "mix",
+       "interleav"
+      ],
+      "ask": "How should I schedule it?"
+     },
+     {
+      "k": [
+       "confiden",
+       "sure",
+       "wrong",
+       "false memor",
+       "forget"
+      ],
+      "ask": "Can my memory be wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Game theory fundamentals",
+   "icon": "🤝",
+   "hook": "Two suspects are questioned separately. Each can stay silent or blame the other. What would you do, and what would you want the other person to do?",
+   "explain": [
+    "Game theory studies strategic choices when the outcome for each player depends on everyone's choices. A game has players, strategies and payoffs. We often show a two-player game in a payoff matrix.",
+    "The prisoner's dilemma is the classic example. If both stay silent, each gets a light sentence (say 1 year). If both blame the other, each gets 3 years. If one blames and the other is silent, the blamer goes free (0) and the silent one gets 5. Whatever the other does, blaming is better for you (a dominant strategy), so both blame and get 3 years each, worse than the 1 year each from both staying silent. Individual rationality can produce a collectively worse result.",
+    "A Nash equilibrium is a set of strategies where nobody can gain by changing their own strategy alone. In the dilemma, (blame, blame) is the equilibrium. In repeated games, cooperation can arise: strategies like tit-for-tat (start cooperating, then copy the other player's last move) reward cooperation and punish betrayal. Not all games are zero-sum; many have gains from cooperation."
+   ],
+   "example": {
+    "q": "In a payoff matrix, you choose Cooperate or Defect. If both Cooperate: 3 each. Both Defect: 1 each. You Defect, they Cooperate: 5 for you, 0 for them. Is Defect dominant?",
+    "steps": [
+     "If they Cooperate: Defect gives 5, Cooperate gives 3. So Defect is better.",
+     "If they Defect: Defect gives 1, Cooperate gives 0. So Defect is better.",
+     "Defect is better in both cases."
+    ],
+    "a": "Yes, Defect is a dominant strategy, yet both Defecting gives 1 each, less than 3 each."
+   },
+   "analogies": {
+    "sport": "Two teams both skip a costly rule, hoping for an edge, and end up worse off.",
+    "farm": "Neighbouring farmers share a well: each over-uses it, then the well runs dry.",
+    "city": "Two shops cut prices to win customers and both lose profit."
+   },
+   "mnemonic": "Best for me whatever you do, yet worse for both of us too: the dilemma.",
+   "terms": [
+    [
+     "Payoff matrix",
+     "A table showing each player's outcome for each strategy pair."
+    ],
+    [
+     "Dominant strategy",
+     "A strategy that is best whatever others do."
+    ],
+    [
+     "Nash equilibrium",
+     "A situation where no one gains by changing alone."
+    ],
+    [
+     "Zero-sum game",
+     "A game in which one player's gain equals another's loss."
+    ]
+   ],
+   "misc": {
+    "wrong": "Rational players always end up with the best result for everyone.",
+    "right": "In the prisoner's dilemma, rational individual choices produce a worse result for both than cooperation."
+   },
+   "limits": "Real people often cooperate more than the simple model predicts, and many real situations have communication, trust and repeated contact that change the game.",
+   "trip": {
+    "wiki": "Prisoner's dilemma",
+    "prompt": "Look at the payoff table and the idea of iterated games."
+   },
+   "sources": [
+    "Game theory",
+    "Prisoner's dilemma",
+    "Nash equilibrium"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a dominant strategy?",
+     "o": [
+      "One that is best whatever the others do",
+      "One that is the most popular among players",
+      "One that always wins the whole game",
+      "One that is kept hidden from others"
+     ],
+     "a": 0,
+     "why": "It beats the alternatives in every case.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In the standard prisoner's dilemma, what do rational individuals choose?",
+     "o": [
+      "Defect (blame)",
+      "Cooperate (silence)",
+      "Random",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Defect is dominant.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is mutual defection worse than mutual cooperation?",
+     "o": [
+      "Both get a lower payoff",
+      "One of them gets a much higher payoff",
+      "Both of them go free in the end",
+      "The two results are exactly the same"
+     ],
+     "a": 0,
+     "why": "Each is worse off than with cooperation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a Nash equilibrium?",
+     "o": [
+      "No player can gain by changing alone",
+      "Everyone ends up equally rich",
+      "The outcome with the highest total payoff",
+      "A fair draw between the two players"
+     ],
+     "a": 0,
+     "why": "It is a stable combination of strategies.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is tit-for-tat?",
+     "o": [
+      "Cooperate first, then copy the opponent's last move",
+      "Always defect from the very first round",
+      "Always cooperate whatever the opponent does",
+      "Choose each move completely at random"
+     ],
+     "a": 0,
+     "why": "It rewards cooperation and punishes betrayal.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why might cooperation succeed in a repeated game?",
+     "o": [
+      "Future rounds make betrayal costly",
+      "Players forget what happened before",
+      "There are no payoffs in later rounds",
+      "The rules force everyone to cooperate"
+     ],
+     "a": 0,
+     "why": "The shadow of the future matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Two players each have 3 strategies. How many strategy pairs are in the payoff matrix?",
+     "a": 9,
+     "tol": 0,
+     "unit": "pairs",
+     "why": "3 × 3 = 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Zero-sum",
+       "One's gain is the other's loss"
+      ],
+      [
+       "Dominant strategy",
+       "Best whatever the other does"
+      ],
+      [
+       "Payoff",
+       "The value of an outcome to a player"
+      ]
+     ],
+     "why": "Core game theory terms.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps of analysing a simple game in order.",
+     "items": [
+      "List the players and strategies",
+      "Write the payoffs in a matrix",
+      "Check for dominant strategies",
+      "Find the equilibrium"
+     ],
+     "why": "Set up before solving.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why two farmers sharing a water source may overuse it even though both would do better by conserving.",
+     "rubric": [
+      [
+       "each",
+       "both",
+       "individual",
+       "own",
+       "self",
+       "own interest",
+       "benefit"
+      ],
+      [
+       "others",
+       "other",
+       "worse",
+       "run out",
+       "dry",
+       "together",
+       "cooperat",
+       "conserv",
+       "share",
+       "dilemma",
+       "loses",
+       "all"
+      ]
+     ],
+     "min": 2,
+     "model": "Each farmer gains by using more whatever the other does, but if both overuse the source runs dry and both lose, which is a prisoner's dilemma.",
+     "why": "Individual incentives conflict with the group.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In a payoff matrix, strategy A gives you 4 or 2 and strategy B gives you 3 or 1 against the opponent's two choices (same order). Which is dominant?",
+     "o": [
+      "A",
+      "B",
+      "Neither",
+      "Both"
+     ],
+     "a": 0,
+     "why": "A is higher in each column (4 > 3 and 2 > 1).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can communities or rules help avoid a prisoner's dilemma outcome?",
+     "rubric": [
+      [
+       "rule",
+       "law",
+       "agree",
+       "agreement",
+       "contract",
+       "punish",
+       "reward",
+       "trust",
+       "repeat",
+       "reputation",
+       "communicat",
+       "norm",
+       "enforce",
+       "incentive"
+      ],
+      [
+       "change",
+       "payoff",
+       "cooperat",
+       "better",
+       "together",
+       "benefit",
+       "cost",
+       "defect"
+      ]
+     ],
+     "min": 2,
+     "model": "Agreements, rules, repeated contact and reputation can change the payoffs so that cooperation pays more than defecting.",
+     "why": "Changing incentives changes the game.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a zero-sum game?",
+     "o": [
+      "A single match with one winner and one loser",
+      "Two farms sharing one harvest road",
+      "Trade that helps both sides to gain",
+      "A team project where all work together"
+     ],
+     "a": 0,
+     "why": "One side's gain is the other's loss.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Game theory basics",
+    "model": "Game theory studies strategic choices where outcomes depend on what everyone chooses. In the prisoner's dilemma, defecting is dominant, but both defecting is worse than both cooperating. A Nash equilibrium is a combination where no one gains by changing alone. Repeated play and rules can support cooperation.",
+    "points": [
+     {
+      "k": [
+       "players",
+       "strateg",
+       "payoff",
+       "matrix"
+      ],
+      "ask": "What are the parts of a game?"
+     },
+     {
+      "k": [
+       "dominant",
+       "best whatever"
+      ],
+      "ask": "What is a dominant strategy?"
+     },
+     {
+      "k": [
+       "equilibrium",
+       "nash",
+       "no one gains"
+      ],
+      "ask": "What is a stable outcome?"
+     },
+     {
+      "k": [
+       "cooperat",
+       "repeat",
+       "rules",
+       "trust"
+      ],
+      "ask": "How can cooperation happen?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,1760 @@
+{
+ "world": 10,
+ "lang": "ru",
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Reading and writing fundamentals",
+   "icon": "✏️",
+   "hook": "Russian handwriting looks different from print. Which letter looks like an English m?",
+   "explain": [
+    "In school, Russian children learn printed and cursive letters. In cursive the letter т looks like a small m, and д can look like a small g. Words are read from left to right, and each letter has a capital and a small form.",
+    "Russian spelling follows rules. After ж, ш, ч and щ write и, never ы: жизнь, шить. To spell an unstressed vowel, find a related word where it is stressed: вода (water) and воды (VO-dy) show that the first letter is о. Days and months do not have a capital letter: понедельник, май."
+   ],
+   "mnemonic": "To check a weak vowel, make it strong: вода, воды, so write о.",
+   "items": [
+    [
+     "school",
+     "школа",
+     "SHKO-la"
+    ],
+    [
+     "notebook",
+     "тетрадь",
+     "tye-TRAT"
+    ],
+    [
+     "lesson",
+     "урок",
+     "oo-ROK"
+    ],
+    [
+     "letter (of the alphabet)",
+     "буква",
+     "BOOK-va"
+    ],
+    [
+     "word",
+     "слово",
+     "SLO-va"
+    ],
+    [
+     "page",
+     "страница",
+     "stra-NEE-tsa"
+    ],
+    [
+     "pupil",
+     "ученик",
+     "oo-chye-NEEK"
+    ],
+    [
+     "teacher",
+     "учитель",
+     "oo-CHEE-tyel"
+    ]
+   ],
+   "sentences": [
+    [
+     "The pupil writes a word.",
+     [
+      "Ученик",
+      "пишет",
+      "слово."
+     ]
+    ],
+    [
+     "I read at the lesson.",
+     [
+      "Я",
+      "читаю",
+      "на",
+      "уроке."
+     ]
+    ],
+    [
+     "The teacher writes on the board.",
+     [
+      "Учитель",
+      "пишет",
+      "на",
+      "доске."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which spelling is correct?",
+     "o": [
+      "жизнь",
+      "жызнь",
+      "жизнъ",
+      "жисна"
+     ],
+     "a": 0,
+     "why": "After ж one writes и, not ы.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How can you check the unstressed vowel in вода?",
+     "o": [
+      "Add the letter ь",
+      "Look at a related word with stress, such as воды",
+      "Write it in capitals",
+      "Say it very quietly"
+     ],
+     "a": 1,
+     "why": "A strong form shows the real vowel: вОды has о.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is written with a small first letter in Russian?",
+     "o": [
+      "Россия (Russia)",
+      "суббота (Saturday)",
+      "Москва (Moscow)",
+      "Анна (Anna)"
+     ],
+     "a": 1,
+     "why": "Days of the week and months are not capitalised, while names of countries and people are.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Russian say и not ы after ш?",
+     "o": [
+      "Because ш is a vowel",
+      "Because и is a new letter",
+      "It is a spelling rule: ы is not written after ж, ш, ч and щ",
+      "Because ы is only for questions"
+     ],
+     "a": 2,
+     "why": "These letters are always followed by и in spelling, even if sounds seem similar.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The soft sign in тетрадь does not have its own sound. What does it show?",
+     "o": [
+      "That the word is plural",
+      "That the word is a question",
+      "That the vowel is long",
+      "The final д is soft (palatal)"
+     ],
+     "a": 3,
+     "why": "Ь marks softness of the consonant before it.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Spelling in Russian",
+    "model": "Russian spelling follows rules. After ж, ш, ч and щ write и. For unstressed vowels, find a related word where the vowel is stressed, like вода and воды. Days and months are written with small letters.",
+    "points": [
+     {
+      "k": [
+       "rule",
+       "spelling"
+      ],
+      "ask": "Is there a rule for spelling?"
+     },
+     {
+      "k": [
+       "stress",
+       "related",
+       "check",
+       "вода"
+      ],
+      "ask": "How do I check a weak vowel?"
+     },
+     {
+      "k": [
+       "small",
+       "capital",
+       "month",
+       "day"
+      ],
+      "ask": "Are days written with capitals?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian orthography",
+    "prompt": "Find one spelling rule and make your own example word."
+   },
+   "sources": [
+    "Russian orthography",
+    "Cyrillic script"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Basic sentence construction",
+   "icon": "🧱",
+   "hook": "In Russian \"Мама любит Аню\" and \"Аню любит мама\" mean the same. How do we know who loves whom?",
+   "explain": [
+    "A simple Russian sentence has a subject and a verb: Мама читает. Word order is flexible because endings tell the role. In Мама любит Аню, мама is the subject and Аню (with -у) is the object.",
+    "Join ideas with и (and), а (and, but in contrast), но (but) and потому что (because). A comma goes before а, но and потому что. In the present, a dash can replace \"is\": Москва — столица России."
+   ],
+   "mnemonic": "Endings are labels on the words: -у marks the object, no matter where it stands.",
+   "items": [
+    [
+     "and",
+     "и",
+     "ee"
+    ],
+    [
+     "but",
+     "но",
+     "no"
+    ],
+    [
+     "because",
+     "потому что",
+     "pa-ta-MOO shto"
+    ],
+    [
+     "also, too",
+     "тоже",
+     "TO-zhe"
+    ],
+    [
+     "very",
+     "очень",
+     "O-chen"
+    ],
+    [
+     "here",
+     "здесь",
+     "zdyes"
+    ],
+    [
+     "there",
+     "там",
+     "tam"
+    ],
+    [
+     "now",
+     "сейчас",
+     "syay-CHAS"
+    ]
+   ],
+   "sentences": [
+    [
+     "I live here.",
+     [
+      "Я",
+      "живу",
+      "здесь."
+     ]
+    ],
+    [
+     "Mum is at home, and dad is at work.",
+     [
+      "Мама",
+      "дома,",
+      "а",
+      "папа",
+      "на",
+      "работе."
+     ]
+    ],
+    [
+     "I like tea but do not like coffee.",
+     [
+      "Я",
+      "люблю",
+      "чай,",
+      "но",
+      "не",
+      "люблю",
+      "кофе."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "In Аню любит мама, who loves?",
+     "o": [
+      "Аня",
+      "Мама",
+      "Both",
+      "Nobody"
+     ],
+     "a": 1,
+     "why": "Мама is in the subject form and Аню is the object.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Where does не go to make a verb negative?",
+     "o": [
+      "After the verb: Я знаю не",
+      "At the end of the sentence",
+      "Before the verb: Я не знаю",
+      "It is not needed"
+     ],
+     "a": 2,
+     "why": "Не stands directly before the word it negates.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can Russian change word order more freely than English?",
+     "o": [
+      "Russian has no verbs",
+      "Russian words have no meaning",
+      "Case endings show each word's role",
+      "Russian has articles"
+     ],
+     "a": 2,
+     "why": "Because endings show roles, word order can show emphasis instead.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which conjunction fits: Я люблю чай, ___ не люблю кофе?",
+     "o": [
+      "потому что",
+      "и",
+      "тоже",
+      "но"
+     ],
+     "a": 3,
+     "why": "Но introduces a contrast with what was said before.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In Москва — столица России, what does the dash replace?",
+     "o": [
+      "The present tense of \"to be\"",
+      "The word \"capital\"",
+      "A comma",
+      "A question"
+     ],
+     "a": 0,
+     "why": "Russian omits \"is\" in the present and may use a dash.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Building simple sentences in Russian",
+    "model": "A Russian sentence has a subject and a verb. Word order is flexible because the endings show who does what. Join ideas with и, а, но and потому что and put a comma before а, но and потому что.",
+    "points": [
+     {
+      "k": [
+       "subject",
+       "verb"
+      ],
+      "ask": "What do I need in a sentence?"
+     },
+     {
+      "k": [
+       "ending",
+       "order",
+       "flexible"
+      ],
+      "ask": "Can I move the words?"
+     },
+     {
+      "k": [
+       "и",
+       "но",
+       "because",
+       "and",
+       "but"
+      ],
+      "ask": "How do I join ideas?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian grammar",
+    "prompt": "Find a sentence with different word order and explain what changes."
+   },
+   "sources": [
+    "Russian grammar",
+    "Word order"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Common verbs",
+   "icon": "🏃",
+   "hook": "English has one verb \"go\". Russian has more. Which would you use to walk, and which to travel by bus?",
+   "explain": [
+    "Useful verbs: делать (to do), хотеть (to want), мочь (to be able), знать (to know), жить (to live), любить (to love). Some are irregular. Хотеть: я хочу, ты хочешь, он хочет, мы хотим, они хотят.",
+    "Russian splits \"to go\". Идти means to go on foot, and ехать means to go by vehicle. Я иду в школу means \"I am walking to school\", Я еду в школу на автобусе means \"I am going to school by bus\". After хочу or люблю use the infinitive: Я хочу пить."
+   ],
+   "mnemonic": "Foot = идти, wheels = ехать.",
+   "items": [
+    [
+     "to go (on foot)",
+     "идти",
+     "eet-TEE"
+    ],
+    [
+     "to go (by vehicle)",
+     "ехать",
+     "YE-khat"
+    ],
+    [
+     "to do, make",
+     "делать",
+     "DYE-lat"
+    ],
+    [
+     "to want",
+     "хотеть",
+     "kha-TYET"
+    ],
+    [
+     "to be able",
+     "мочь",
+     "mocht"
+    ],
+    [
+     "to know",
+     "знать",
+     "znat"
+    ],
+    [
+     "to live",
+     "жить",
+     "zheet"
+    ],
+    [
+     "to love, like",
+     "любить",
+     "lyoo-BEET"
+    ]
+   ],
+   "sentences": [
+    [
+     "I want to drink.",
+     [
+      "Я",
+      "хочу",
+      "пить."
+     ]
+    ],
+    [
+     "He knows the answer.",
+     [
+      "Он",
+      "знает",
+      "ответ."
+     ]
+    ],
+    [
+     "We live in the city.",
+     [
+      "Мы",
+      "живём",
+      "в",
+      "городе."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which verb fits \"I go to school by bus\"?",
+     "o": [
+      "Я иду в школу",
+      "Я делаю в школу",
+      "Я еду в школу",
+      "Я живу в школу"
+     ],
+     "a": 2,
+     "why": "Ехать is used for travel by vehicle.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the correct form of хотеть?",
+     "o": [
+      "ты хотишь",
+      "ты хотеть",
+      "ты хотят",
+      "ты хочешь"
+     ],
+     "a": 3,
+     "why": "Хотеть is irregular: хочу, хочешь, хочет.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does Russian use two verbs for \"to go\"?",
+     "o": [
+      "It shows who the speaker is",
+      "One is for the past",
+      "One is for questions",
+      "It shows how you move: on foot or by vehicle"
+     ],
+     "a": 3,
+     "why": "Verbs of motion encode manner and direction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which sentence is correct?",
+     "o": [
+      "Я люблю читать",
+      "Я люблю читаю",
+      "Я люблю читаешь",
+      "Я любить читать"
+     ],
+     "a": 0,
+     "why": "After люблю the second verb is an infinitive.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is \"они хотят\" not \"они хочут\"?",
+     "o": [
+      "Because хотеть is a noun",
+      "It is an irregular verb with changed endings",
+      "It is a typing error",
+      "All verbs use -ут"
+     ],
+     "a": 1,
+     "why": "Хотеть mixes two conjugation types.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Common verbs in Russian",
+    "model": "Russian has irregular verbs like хотеть: хочу, хочешь, хочет. There are two verbs for going: идти for walking and ехать for vehicles. After хочу use an infinitive.",
+    "points": [
+     {
+      "k": [
+       "хочу",
+       "хотеть",
+       "want"
+      ],
+      "ask": "What are the forms of хотеть?"
+     },
+     {
+      "k": [
+       "идти",
+       "ехать",
+       "go",
+       "foot",
+       "vehicle"
+      ],
+      "ask": "How do I say go?"
+     },
+     {
+      "k": [
+       "infinitive",
+       "after"
+      ],
+      "ask": "What follows хочу?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian verbs",
+    "prompt": "Find the verbs of motion table and mark идти and ехать."
+   },
+   "sources": [
+    "Russian verbs",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Nouns, pronouns and modifiers",
+   "icon": "🧑",
+   "hook": "The Russian word \"it\" does not exist for things. How would you say \"it\" about a table?",
+   "explain": [
+    "Pronouns: я, ты, он, она, оно, мы, вы, они. Nouns also use он, она, оно according to gender: стол — он, книга — она, окно — оно. Do not think of \"it\" as a Russian word for objects.",
+    "Adjectives, \"my\" and \"this\" must match the noun: большая комната (feminine), большой дом (masculine), большое окно (neuter). Plural adjectives are the same for all genders: большие дома."
+   ],
+   "mnemonic": "Every table is a \"he\", every book is a \"she\".",
+   "items": [
+    [
+     "I",
+     "я",
+     "ya"
+    ],
+    [
+     "you (one friend)",
+     "ты",
+     "ty"
+    ],
+    [
+     "he",
+     "он",
+     "on"
+    ],
+    [
+     "she",
+     "она",
+     "a-NA"
+    ],
+    [
+     "we",
+     "мы",
+     "my"
+    ],
+    [
+     "they",
+     "они",
+     "a-NEE"
+    ],
+    [
+     "big",
+     "большой",
+     "bal-SHOY"
+    ],
+    [
+     "small",
+     "маленький",
+     "MA-lyen-kiy"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is a big house.",
+     [
+      "Это",
+      "большой",
+      "дом."
+     ]
+    ],
+    [
+     "She is my friend.",
+     [
+      "Она",
+      "моя",
+      "подруга."
+     ]
+    ],
+    [
+     "We love our small town.",
+     [
+      "Мы",
+      "любим",
+      "наш",
+      "маленький",
+      "город."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which pronoun do you use for книга?",
+     "o": [
+      "он",
+      "оно",
+      "они",
+      "она"
+     ],
+     "a": 3,
+     "why": "Книга is feminine, so она.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is correct?",
+     "o": [
+      "большая комната",
+      "большой комната",
+      "большое комната",
+      "большие комната"
+     ],
+     "a": 0,
+     "why": "Комната is feminine, so the adjective ends in -ая.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is a table called он in Russian?",
+     "o": [
+      "Стол is a masculine noun",
+      "Because tables are men",
+      "Because он means \"it\" always",
+      "It is a joke"
+     ],
+     "a": 0,
+     "why": "Pronouns follow the grammatical gender of the noun.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is вы both polite and plural?",
+     "o": [
+      "Because вы is a noun",
+      "Russian uses the plural form to show respect",
+      "It is a mistake",
+      "It is only for groups"
+     ],
+     "a": 1,
+     "why": "Вы works as one polite \"you\" or as many people.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In the plural, what happens to gender in adjectives?",
+     "o": [
+      "Three forms remain",
+      "Adjectives disappear",
+      "The form is the same for all genders",
+      "Masculine only"
+     ],
+     "a": 2,
+     "why": "Plural adjectives take one ending, like -ие.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Pronouns and adjectives in Russian",
+    "model": "Use я, ты, он, она, оно, мы, вы, они. Он, она and оно are also used for things according to gender. Adjectives agree with their noun: большой дом, большая комната.",
+    "points": [
+     {
+      "k": [
+       "я",
+       "ты",
+       "он",
+       "она",
+       "pronoun"
+      ],
+      "ask": "What are the pronouns?"
+     },
+     {
+      "k": [
+       "gender",
+       "thing",
+       "table",
+       "он"
+      ],
+      "ask": "What do I call a thing?"
+     },
+     {
+      "k": [
+       "adjective",
+       "agree",
+       "ending"
+      ],
+      "ask": "Do adjectives change?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian pronouns",
+    "prompt": "Find the table of personal pronouns and say them in a row."
+   },
+   "sources": [
+    "Russian grammar",
+    "Russian pronouns"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Questions and responses",
+   "icon": "❓",
+   "hook": "If someone asks \"Ты любишь чай?\", can you answer with only one word?",
+   "explain": [
+    "Question words: кто (who), что (what), где (where), когда (when), почему (why), как (how), сколько (how many), куда (where to). Где asks about place and куда asks about direction: Где ты? and Куда ты идёшь?",
+    "A yes/no question has the same words as a statement and rising voice on the key word. Answer with Да, люблю (yes, I love) by repeating the verb, or Нет, не люблю. Russian uses double negatives: Я ничего не знаю is correct."
+   ],
+   "mnemonic": "Где = at a place, куда = to a place.",
+   "items": [
+    [
+     "who",
+     "кто",
+     "kto"
+    ],
+    [
+     "what",
+     "что",
+     "shto"
+    ],
+    [
+     "where",
+     "где",
+     "gdye"
+    ],
+    [
+     "when",
+     "когда",
+     "kag-DA"
+    ],
+    [
+     "why",
+     "почему",
+     "pa-che-MOO"
+    ],
+    [
+     "how",
+     "как",
+     "kak"
+    ],
+    [
+     "how much, how many",
+     "сколько",
+     "SKOL-ka"
+    ],
+    [
+     "where to",
+     "куда",
+     "koo-DA"
+    ]
+   ],
+   "sentences": [
+    [
+     "Where do you live?",
+     [
+      "Где",
+      "ты",
+      "живёшь?"
+     ]
+    ],
+    [
+     "What is that?",
+     [
+      "Что",
+      "это",
+      "такое?"
+     ]
+    ],
+    [
+     "Why are you not sleeping?",
+     [
+      "Почему",
+      "ты",
+      "не",
+      "спишь?"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which word asks about direction?",
+     "o": [
+      "куда",
+      "где",
+      "кто",
+      "как"
+     ],
+     "a": 0,
+     "why": "Куда means \"to where\".",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How do you answer Ты любишь чай? with a full yes?",
+     "o": [
+      "Да, чай",
+      "Да, люблю",
+      "Да, любишь",
+      "Нет, люблю"
+     ],
+     "a": 1,
+     "why": "Russians often repeat the verb in the first person.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"Я ничего не знаю\" not wrong, although it has two negatives?",
+     "o": [
+      "Russian has no negative",
+      "Russian requires the negative word with не",
+      "It means the opposite",
+      "It is slang"
+     ],
+     "a": 1,
+     "why": "Double negation is standard grammar in Russian.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do you say Где ты? but Куда ты идёшь?",
+     "o": [
+      "They are the same",
+      "Где is plural",
+      "Куда asks about the goal of movement",
+      "Куда is a noun"
+     ],
+     "a": 2,
+     "why": "Where is it? vs where are you going?",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A yes/no question needs which spoken signal in Russian?",
+     "o": [
+      "A new alphabet",
+      "A silent word",
+      "Adding an article",
+      "Rising intonation on the key word"
+     ],
+     "a": 3,
+     "why": "Intonation marks the question when no question word is used.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Asking questions in Russian",
+    "model": "Use кто, что, где, когда, почему, как, сколько and куда. Где asks about place and куда about direction. A yes/no question has rising voice.",
+    "points": [
+     {
+      "k": [
+       "кто",
+       "что",
+       "где",
+       "question word"
+      ],
+      "ask": "What are question words?"
+     },
+     {
+      "k": [
+       "где",
+       "куда",
+       "place",
+       "direction"
+      ],
+      "ask": "Where and where to?"
+     },
+     {
+      "k": [
+       "intonation",
+       "rising",
+       "voice",
+       "yes"
+      ],
+      "ask": "How do I ask a yes/no question?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian grammar",
+    "prompt": "Find the question words in a list and make a question with each."
+   },
+   "sources": [
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Describing people and places",
+   "icon": "🏙️",
+   "hook": "Would you say \"в улице\" or \"на улице\"? Russians choose carefully.",
+   "explain": [
+    "To describe a person say: Мой брат высокий. Words like добрый (kind), весёлый (cheerful), красивый (beautiful), новый (new), старый (old) change their ending: моя сестра высокая.",
+    "For places we use в for inside spaces: в городе, в деревне. We use на for open places and events: на улице, на работе. Вот is a short word for \"here is\"."
+   ],
+   "mnemonic": "В is inside the box, на is on the surface.",
+   "items": [
+    [
+     "tall",
+     "высокий",
+     "vy-SO-kiy"
+    ],
+    [
+     "kind",
+     "добрый",
+     "DOB-ry"
+    ],
+    [
+     "cheerful",
+     "весёлый",
+     "vye-SYO-ly"
+    ],
+    [
+     "beautiful",
+     "красивый",
+     "kra-SEE-vy"
+    ],
+    [
+     "new",
+     "новый",
+     "NO-vy"
+    ],
+    [
+     "old",
+     "старый",
+     "STA-ry"
+    ],
+    [
+     "city",
+     "город",
+     "GO-rad"
+    ],
+    [
+     "village",
+     "деревня",
+     "dye-RYEV-nya"
+    ]
+   ],
+   "sentences": [
+    [
+     "My brother is tall.",
+     [
+      "Мой",
+      "брат",
+      "высокий."
+     ]
+    ],
+    [
+     "Our city is very beautiful.",
+     [
+      "Наш",
+      "город",
+      "очень",
+      "красивый."
+     ]
+    ],
+    [
+     "In the village it is quiet and calm.",
+     [
+      "В",
+      "деревне",
+      "тихо",
+      "и",
+      "спокойно."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you say \"My sister is tall\"?",
+     "o": [
+      "Моя сестра высокий",
+      "Моя сестра высокая",
+      "Мой сестра высокая",
+      "Моя сестра высокое"
+     ],
+     "a": 1,
+     "why": "The adjective takes the feminine ending to match сестра.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which preposition goes with улица (street)?",
+     "o": [
+      "в",
+      "из",
+      "на",
+      "без"
+     ],
+     "a": 2,
+     "why": "Russians say на улице.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do we say в городе but на работе?",
+     "o": [
+      "Работа is a person",
+      "Город is plural",
+      "Prepositions в and на follow usage; на is used for open spaces and activities",
+      "There is no reason at all"
+     ],
+     "a": 2,
+     "why": "The choice follows convention with patterns.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After в, the noun город changes to городе. What is this form called?",
+     "o": [
+      "The dative",
+      "The nominative",
+      "The genitive",
+      "The prepositional case"
+     ],
+     "a": 3,
+     "why": "The prepositional case is used after в and на for location.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the adjective in в красивом городе different from красивый город?",
+     "o": [
+      "It agrees with the noun in case as well as gender",
+      "It changes tense",
+      "It is plural",
+      "It becomes a noun"
+     ],
+     "a": 0,
+     "why": "Adjectives change with the case of the noun.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Describing people and places in Russian",
+    "model": "Adjectives match the noun: мой брат высокий, моя сестра высокая. Use в for places inside and на for open spaces or activities: в городе, на улице.",
+    "points": [
+     {
+      "k": [
+       "adjective",
+       "match",
+       "agree",
+       "gender"
+      ],
+      "ask": "Do descriptions change?"
+     },
+     {
+      "k": [
+       "в",
+       "на",
+       "place"
+      ],
+      "ask": "How do I say where?"
+     },
+     {
+      "k": [
+       "example",
+       "город",
+       "улица"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian grammar",
+    "prompt": "Find examples with в and на and sort them into two groups."
+   },
+   "sources": [
+    "Russian grammar",
+    "Russian cases"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Time, dates and daily routines",
+   "icon": "⏰",
+   "hook": "In Russia the school week starts on Monday. Can you say what day it is today?",
+   "explain": [
+    "Time words: утро (morning), день (day), вечер (evening), неделя (week), месяц (month), год (year). Days: понедельник, вторник, среда, четверг, пятница, суббота, воскресенье. They are written with small letters.",
+    "To say a day use в plus the accusative: в понедельник (on Monday). For clock times say в семь часов (at seven o'clock). Ask Который час? or Сколько времени? to find the time."
+   ],
+   "mnemonic": "Понедельник starts the week; \"на неделе\" counts seven days.",
+   "items": [
+    [
+     "day",
+     "день",
+     "dyen"
+    ],
+    [
+     "week",
+     "неделя",
+     "nye-DYE-lya"
+    ],
+    [
+     "month",
+     "месяц",
+     "MYE-syats"
+    ],
+    [
+     "year",
+     "год",
+     "got"
+    ],
+    [
+     "morning",
+     "утро",
+     "OO-tra"
+    ],
+    [
+     "evening",
+     "вечер",
+     "VYE-cher"
+    ],
+    [
+     "Monday",
+     "понедельник",
+     "pa-nye-DYEL-neek"
+    ],
+    [
+     "Sunday",
+     "воскресенье",
+     "vas-kre-SYEN-ye"
+    ]
+   ],
+   "sentences": [
+    [
+     "Today it is Monday.",
+     [
+      "Сегодня",
+      "у",
+      "нас",
+      "понедельник."
+     ]
+    ],
+    [
+     "I get up at seven o'clock.",
+     [
+      "Я",
+      "встаю",
+      "в",
+      "семь",
+      "часов."
+     ]
+    ],
+    [
+     "The lesson begins in the morning.",
+     [
+      "Урок",
+      "начинается",
+      "утром."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you say \"on Monday\"?",
+     "o": [
+      "на понедельник",
+      "у понедельник",
+      "в понедельник",
+      "с понедельник"
+     ],
+     "a": 2,
+     "why": "Days use в with the accusative.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How do you ask the time?",
+     "o": [
+      "Какой день?",
+      "Кто час?",
+      "Где время?",
+      "Который час?"
+     ],
+     "a": 3,
+     "why": "Который час? and Сколько времени? both ask the time.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which day follows вторник?",
+     "o": [
+      "четверг",
+      "пятница",
+      "суббота",
+      "среда"
+     ],
+     "a": 3,
+     "why": "The order is вторник, среда, четверг.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it \"в семь часов\" with часов?",
+     "o": [
+      "After seven the noun часы takes a plural genitive form",
+      "Часов is a verb",
+      "Seven is feminine",
+      "It means seven years"
+     ],
+     "a": 0,
+     "why": "After numbers from five the noun uses the genitive plural.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is NOT a normal way to write a day name in Russian?",
+     "o": [
+      "понедельник in small letters",
+      "Понедельник with a capital letter in the middle of a sentence",
+      "в субботу",
+      "по средам"
+     ],
+     "a": 1,
+     "why": "Days are written with small letters except at sentence start.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Time and days in Russian",
+    "model": "Days are written with small letters: понедельник, вторник, среда. To say on a day use в: в понедельник. Say clock time with в and часов: в семь часов.",
+    "points": [
+     {
+      "k": [
+       "понедельник",
+       "вторник",
+       "среда",
+       "days"
+      ],
+      "ask": "What are the days?"
+     },
+     {
+      "k": [
+       "в",
+       "on",
+       "at"
+      ],
+      "ask": "How do I say on Monday?"
+     },
+     {
+      "k": [
+       "час",
+       "time",
+       "o'clock"
+      ],
+      "ask": "How do I say the time?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian calendar",
+    "prompt": "Find the names of months and list the first three."
+   },
+   "sources": [
+    "Russian language",
+    "Names of days of the week"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Food and shopping",
+   "icon": "🛒",
+   "hook": "How do you politely ask a shopkeeper for one apple?",
+   "explain": [
+    "Food and shop words: хлеб (bread), суп (soup), яблоко (apple), сыр (cheese), магазин (shop), цена (price), рубль (rouble). Ask Сколько это стоит? (How much is this?).",
+    "To ask for something politely say Дайте, пожалуйста, ... After numbers the word рубль changes: один рубль, два рубля, пять рублей. In Russian culture bread and salt (хлеб-соль) are a traditional sign of welcome for guests."
+   ],
+   "mnemonic": "Дайте, пожалуйста: the magic words in a shop.",
+   "items": [
+    [
+     "bread",
+     "хлеб",
+     "khlyep"
+    ],
+    [
+     "soup",
+     "суп",
+     "soop"
+    ],
+    [
+     "apple",
+     "яблоко",
+     "YAB-la-ka"
+    ],
+    [
+     "cheese",
+     "сыр",
+     "syr"
+    ],
+    [
+     "shop",
+     "магазин",
+     "ma-ga-ZEEN"
+    ],
+    [
+     "price",
+     "цена",
+     "tse-NA"
+    ],
+    [
+     "rouble",
+     "рубль",
+     "roobl"
+    ],
+    [
+     "How much is it?",
+     "Сколько стоит?",
+     "SKOL-ka STO-eet"
+    ]
+   ],
+   "sentences": [
+    [
+     "I want bread and cheese.",
+     [
+      "Я",
+      "хочу",
+      "хлеб",
+      "и",
+      "сыр."
+     ]
+    ],
+    [
+     "How much does this cost?",
+     [
+      "Сколько",
+      "это",
+      "стоит?"
+     ]
+    ],
+    [
+     "Please give me one apple.",
+     [
+      "Дайте,",
+      "пожалуйста,",
+      "одно",
+      "яблоко."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase is polite for asking in a shop?",
+     "o": [
+      "Дай хлеб",
+      "Хлеб мне",
+      "Я не хлеб",
+      "Дайте, пожалуйста, хлеб"
+     ],
+     "a": 3,
+     "why": "Дайте and пожалуйста are polite.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which form is correct?",
+     "o": [
+      "пять рублей",
+      "пять рубль",
+      "пять рубля",
+      "пять рублями"
+     ],
+     "a": 0,
+     "why": "After five and more use the genitive plural рублей.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is it два рубля but пять рублей?",
+     "o": [
+      "The form depends on the number",
+      "Рубль is two words",
+      "It is a spelling error",
+      "Five is feminine"
+     ],
+     "a": 0,
+     "why": "Numbers 2 to 4 take genitive singular and 5 or more take genitive plural.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which question is a polite way to ask a price?",
+     "o": [
+      "Цена?",
+      "Скажите, пожалуйста, сколько это стоит?",
+      "Дай цену",
+      "Что рубль?"
+     ],
+     "a": 1,
+     "why": "Скажите, пожалуйста is polite.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a word like яблоко end in -о?",
+     "o": [
+      "It is feminine",
+      "It is plural",
+      "It is a neuter noun",
+      "It is masculine"
+     ],
+     "a": 2,
+     "why": "Nouns ending in -о are usually neuter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Shopping in Russian",
+    "model": "Ask politely with Дайте, пожалуйста. Ask the price with Сколько это стоит? Rubles change after numbers: один рубль, два рубля, пять рублей.",
+    "points": [
+     {
+      "k": [
+       "дайте",
+       "пожалуйста",
+       "please"
+      ],
+      "ask": "How do I ask politely?"
+     },
+     {
+      "k": [
+       "сколько",
+       "стоит",
+       "price",
+       "how much"
+      ],
+      "ask": "How do I ask the price?"
+     },
+     {
+      "k": [
+       "рубль",
+       "рубля",
+       "рублей",
+       "number"
+      ],
+      "ask": "Does rouble change?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian cuisine",
+    "prompt": "Find a traditional dish and note its Russian name."
+   },
+   "sources": [
+    "Russian cuisine",
+    "Russian ruble"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Everyday conversations",
+   "icon": "💬",
+   "hook": "You meet a new friend. Which questions can you ask to get to know them?",
+   "explain": [
+    "Useful questions are Откуда ты? (Where are you from?) and Что нового? (What is new?). To answer say Я из Нигерии, Я из Ганы or Я из Бразилии. The word из takes the genitive: Нигерия becomes из Нигерии.",
+    "Say goodbye with Увидимся! (See you!) and wish Хорошего дня! (Have a good day!). The reply is И вам тоже! (To you too!). With friends you can say Давай встретимся (Let us meet), which is informal."
+   ],
+   "mnemonic": "Из means \"from\", and the country ends in -и: из Ганы, из Нигерии.",
+   "items": [
+    [
+     "Where are you from?",
+     "Откуда ты?",
+     "at-KOO-da ty"
+    ],
+    [
+     "I am from Nigeria.",
+     "Я из Нигерии.",
+     "ya eez nee-GYE-ree-ee"
+    ],
+    [
+     "Do you speak English?",
+     "Вы говорите по-английски?",
+     "vy ga-va-REE-tye pa-an-GLEE-skee"
+    ],
+    [
+     "Let us meet.",
+     "Давай встретимся.",
+     "da-VAY VSTRYE-teem-sya"
+    ],
+    [
+     "See you!",
+     "Увидимся!",
+     "oo-VEE-deem-sya"
+    ],
+    [
+     "Have a nice day!",
+     "Хорошего дня!",
+     "kha-RO-shye-va dnya"
+    ],
+    [
+     "You too!",
+     "Вам тоже!",
+     "vam TO-zhe"
+    ],
+    [
+     "What is new?",
+     "Что нового?",
+     "shto NO-va-va"
+    ]
+   ],
+   "sentences": [
+    [
+     "I am from Ghana.",
+     [
+      "Я",
+      "из",
+      "Ганы."
+     ]
+    ],
+    [
+     "Let us meet tomorrow.",
+     [
+      "Давай",
+      "встретимся",
+      "завтра."
+     ]
+    ],
+    [
+     "See you on Monday.",
+     [
+      "Увидимся",
+      "в",
+      "понедельник."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is a polite reply to Хорошего дня?",
+     "o": [
+      "И вам тоже!",
+      "Увидимся в понедельник",
+      "Я из Ганы",
+      "Нет, спасибо не"
+     ],
+     "a": 0,
+     "why": "И вам тоже is the polite reply.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which form is correct for \"I am from Brazil\" (Бразилия)?",
+     "o": [
+      "Я из Бразилия",
+      "Я из Бразилии",
+      "Я из Бразилию",
+      "Я из Бразилией"
+     ],
+     "a": 1,
+     "why": "Из is followed by the genitive.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which sentence is informal?",
+     "o": [
+      "Давайте встретимся завтра",
+      "Давай встретимся завтра",
+      "Хотели бы вы встретиться завтра?",
+      "Позвольте встретиться"
+     ],
+     "a": 1,
+     "why": "Давай is the informal singular form.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Russian say Я из Ганы and not Я из Гана?",
+     "o": [
+      "Гана is a verb",
+      "It is plural",
+      "Из requires the genitive case",
+      "Из always drops letters"
+     ],
+     "a": 2,
+     "why": "The genitive ending -ы replaces -а in Гана.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does the reflexive ending -ся in увидимся suggest?",
+     "o": [
+      "A past tense",
+      "A question",
+      "A negation",
+      "The action is mutual: we see each other"
+     ],
+     "a": 3,
+     "why": "The -ся form can express reciprocal action.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Conversation in Russian",
+    "model": "Ask Откуда ты? and answer Я из Ганы. Say Увидимся! for see you and Хорошего дня! for have a good day. The reply is И вам тоже!",
+    "points": [
+     {
+      "k": [
+       "откуда",
+       "from",
+       "where"
+      ],
+      "ask": "How do I ask where someone is from?"
+     },
+     {
+      "k": [
+       "я из",
+       "genitive",
+       "country"
+      ],
+      "ask": "How do I say where I am from?"
+     },
+     {
+      "k": [
+       "увидимся",
+       "see you",
+       "goodbye"
+      ],
+      "ask": "How do I say see you?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian language",
+    "prompt": "Find a short dialogue and read it aloud with a friend."
+   },
+   "sources": [
+    "Russian language",
+    "Russian grammar"
+   ]
+  }
+ ]
+}

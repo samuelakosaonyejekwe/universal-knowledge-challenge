@@ -1,0 +1,2886 @@
+{
+ "world": 19,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Urban planning",
+   "icon": "🏙️",
+   "hook": "Kestrel Bay can add 30,000 homes by spreading outward or by building up near its stations. Which is better, and by what measure?",
+   "explain": [
+    "Urban planning shapes how land is used so that a city can function: where people live, work, shop, learn and move. Its main tools are plans, zoning codes, density limits, design standards and the timing of infrastructure. Powers are shared differently between national, regional and local governments around the world.",
+    "Density is people (or homes) per unit of land. Floor area ratio (FAR) is total building floor area divided by plot area. Higher density can shorten trips, lower the cost per home of pipes and roads, and make public transport viable. It can also raise concerns about congestion, light and local character. Low density protects space but increases travel and infrastructure cost per household.",
+    "Mixed-use zoning combines homes, shops and workplaces so more daily needs are within walking distance. Transit-oriented development concentrates growth near stations. Planners judge such ideas against stated criteria: access to services, cost to the city, housing supply, environmental impact and public acceptance. Evidence and context matter; there is no single ideal form."
+   ],
+   "example": {
+    "q": "A 2,000 m² plot has a permitted FAR of 3.0. What is the maximum total floor area, and how many 75 m² flats fit if 20% of floor area is used for corridors and services?",
+    "steps": [
+     "Maximum floor area = 3.0 × 2,000 = 6,000 m².",
+     "Usable area = 80% of 6,000 = 4,800 m².",
+     "Flats = 4,800 ÷ 75 = 64."
+    ],
+    "a": "6,000 m² of floor area; 64 flats."
+   },
+   "analogies": {
+    "home": "Packing a suitcase tightly lets you carry more but makes it harder to find things. Density has similar trade-offs.",
+    "farm": "Planting rows closer gives a bigger harvest per hectare but needs more water and care per plant.",
+    "sea": "A port that packs more berths into a harbour moves more cargo but needs better traffic control.",
+    "tech": "Compact data centres are efficient but need strong cooling and planning."
+   },
+   "mnemonic": "Where, how much, what mix, how connected: Location, Density, Mix, Links.",
+   "terms": [
+    [
+     "Floor area ratio",
+     "Total floor area divided by plot area."
+    ],
+    [
+     "Mixed-use",
+     "Zoning that allows homes, shops and workplaces together."
+    ],
+    [
+     "Transit-oriented development",
+     "Growth concentrated near public transport stops."
+    ],
+    [
+     "Urban sprawl",
+     "Low-density growth spreading outward from a city."
+    ]
+   ],
+   "misc": {
+    "wrong": "There is one perfect city form that every place should copy.",
+    "right": "Good form depends on geography, culture, climate, budget and goals; planners compare options with criteria."
+   },
+   "limits": "Research on density's effects is context-dependent, and planners disagree about how dense is best.",
+   "trip": {
+    "wiki": "Floor area ratio",
+    "prompt": "Find how floor area ratio is used in zoning and give one example calculation."
+   },
+   "sources": [
+    "Urban planning",
+    "Floor area ratio",
+    "Transit-oriented development"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does floor area ratio measure?",
+     "o": [
+      "Total floor area divided by plot area",
+      "The number of residents served by each bus",
+      "Total property tax collected per square metre",
+      "The height of a building compared with its neighbours"
+     ],
+     "a": 0,
+     "why": "FAR compares total building floor space with plot size.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a typical benefit of mixed-use zoning?",
+     "o": [
+      "More daily needs within walking distance",
+      "Longer commutes for most workers",
+      "Fewer shops and services nearby",
+      "Homes kept far away from jobs and shops"
+     ],
+     "a": 0,
+     "why": "Mixing uses shortens everyday trips.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A district adds homes far from transit and services. What is a likely cost to the city?",
+     "o": [
+      "Higher cost per household for roads, pipes and services",
+      "Shorter average travel distance for all",
+      "Cheaper bus service for every route",
+      "No extra cost, since services come free"
+     ],
+     "a": 0,
+     "why": "Spread-out areas need more infrastructure per household.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Residents worry that a tall building will block light. Which response best reflects good planning?",
+     "o": [
+      "Model shadow effects and weigh them against housing and transport benefits",
+      "Ignore the concern because light is not a planning matter",
+      "Ban every tall building in the city automatically",
+      "Approve it at once without studying any effects"
+     ],
+     "a": 0,
+     "why": "Evidence-based impact assessment lets planners weigh the trade-off.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about density is most accurate?",
+     "o": [
+      "Its effects depend on design, services and context",
+      "Higher density is always better for every city",
+      "Lower density is always better for every city",
+      "Density has no effects on services or travel"
+     ],
+     "a": 0,
+     "why": "Evidence shows effects vary with context.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A 5,000 m² plot has an allowed FAR of 2.4. What is the maximum total floor area in m²?",
+     "a": 12000,
+     "tol": 0,
+     "unit": "m²",
+     "why": "2.4 × 5,000 = 12,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Kestrel Bay has 45,000 residents on 18 km² of urban land. What is the density in people per km²?",
+     "a": 2500,
+     "tol": 0,
+     "unit": "people/km²",
+     "why": "45,000 ÷ 18 = 2,500.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each tool to its purpose.",
+     "pairs": [
+      [
+       "Zoning code",
+       "Sets allowed uses on land"
+      ],
+      [
+       "Density limit",
+       "Caps homes or floor area per plot"
+      ],
+      [
+       "Design standard",
+       "Shapes how buildings look and function"
+      ],
+      [
+       "Infrastructure phasing",
+       "Times pipes and roads with growth"
+      ]
+     ],
+     "why": "Planners use rules, limits, standards and timing together.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give one argument for and one against concentrating new homes near train stations.",
+     "rubric": [
+      [
+       "transport",
+       "transit",
+       "walk",
+       "car",
+       "shorter",
+       "access",
+       "use",
+       "station",
+       "emission"
+      ],
+      [
+       "cost",
+       "crowd",
+       "local",
+       "character",
+       "congestion",
+       "height",
+       "afford",
+       "price",
+       "displac",
+       "noise",
+       "light"
+      ]
+     ],
+     "min": 2,
+     "model": "For: more people can use public transport and walk, which cuts car trips and makes services viable. Against: higher density may bring crowding, shading, higher land prices or changes to local character, so impacts need managing.",
+     "why": "A balanced answer names a benefit and a cost.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which indicator best measures whether a plan improves access?",
+     "o": [
+      "Share of residents within a 15-minute walk of key services",
+      "The number of plan drawings produced each year",
+      "The height of the tallest building in the plan",
+      "The number of public meetings that were held"
+     ],
+     "a": 0,
+     "why": "Access is measured by how easily people can reach services.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two reasonable plans exist: Plan P spreads growth with large lots, Plan Q concentrates growth near stations. Which approach is most defensible?",
+     "o": [
+      "Score both against stated criteria with evidence and consult residents",
+      "Choose the plan that the loudest group of residents supports most",
+      "Choose the plan with the lower first-year cost only, ignoring later costs",
+      "Choose the plan that the mayor sketched first, as it is the leader's"
+     ],
+     "a": 0,
+     "why": "Stated criteria and evidence give a non-partisan basis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a plan that raises housing supply still fail to deliver affordability for lower-income households?",
+     "rubric": [
+      [
+       "price",
+       "cost",
+       "expensive",
+       "luxury",
+       "market",
+       "rent",
+       "afford"
+      ],
+      [
+       "type",
+       "mix",
+       "subsid",
+       "income",
+       "supply",
+       "target",
+       "low",
+       "small",
+       "public",
+       "inclusion"
+      ]
+     ],
+     "min": 2,
+     "model": "If new homes are priced at the high end of the market and no affordable units or subsidies are included, lower-income households may still be unable to pay, so the mix of home types and support tools matters.",
+     "why": "Supply helps but needs the right mix and tools.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why should plans include phasing of infrastructure?",
+     "o": [
+      "Services should arrive when homes are occupied",
+      "Roads should be built and then left to wait ten years",
+      "Homes can safely stay empty for many years first",
+      "Phasing of infrastructure is not allowed by law"
+     ],
+     "a": 0,
+     "why": "Timing avoids gaps where residents lack services.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Urban planning",
+    "model": "Urban planning decides how land is used for homes, jobs, shops and roads. Tools include zoning and density limits. Planners compare designs such as dense or spread-out growth using criteria like access, cost and environment, because no single form suits every city.",
+    "points": [
+     {
+      "k": [
+       "land",
+       "zoning",
+       "homes",
+       "jobs",
+       "use"
+      ],
+      "ask": "What does planning decide?"
+     },
+     {
+      "k": [
+       "density",
+       "floor area",
+       "dense",
+       "spread"
+      ],
+      "ask": "What is density?"
+     },
+     {
+      "k": [
+       "access",
+       "cost",
+       "environment",
+       "criteria",
+       "compare"
+      ],
+      "ask": "How do planners choose between designs?"
+     },
+     {
+      "k": [
+       "context",
+       "depends",
+       "differ",
+       "no single"
+      ],
+      "ask": "Is there one best city form?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Public procurement",
+   "icon": "📑",
+   "hook": "A city needs 12 electric buses. Bidder A is cheapest. Bidder B costs 8% more but promises lower running costs. How should the city decide, and how can it prevent favouritism?",
+   "explain": [
+    "Public procurement is how governments buy goods, services and works using public money. Because the amounts are large, rules aim to deliver value for money, fair competition and honesty. Typical principles are transparency, equal treatment of bidders, non-discrimination and accountability.",
+    "Procedures often require open tendering above a set threshold, published criteria and weights set before bids arrive, and a record of the evaluation. Choosing only the lowest price can backfire if quality is poor or running costs are high. Many systems therefore use best-value or lowest life-cycle cost, which includes purchase price, operating costs and disposal.",
+    "Procurement is a corruption risk. Red flags include tailor-made specifications, repeated winners who bid in rotation, unusually similar bids (possible bid rigging), unexplained contract changes and undeclared conflicts of interest. Safeguards include open data on contracts, independent evaluators, declaring interests, audits and complaint channels. Legal details differ between countries."
+   ],
+   "example": {
+    "q": "Criteria: price 60%, quality 40%. Bid A scores price 80, quality 70. Bid B scores price 70, quality 90. Which wins?",
+    "steps": [
+     "A: 0.6 × 80 + 0.4 × 70 = 48 + 28 = 76.",
+     "B: 0.6 × 70 + 0.4 × 90 = 42 + 36 = 78.",
+     "B scores higher."
+    ],
+    "a": "Bid B (78 to 76)."
+   },
+   "analogies": {
+    "home": "Buying a cheap printer that eats expensive ink can cost more than a pricier one with cheap ink.",
+    "farm": "A farmer comparing tractors looks at fuel use and repairs, not only the sticker price.",
+    "sport": "A club picking a stadium builder checks quality and track record, not just the lowest quote.",
+    "city": "Publishing the scoring rules before bids is like a referee announcing the rules before kick-off."
+   },
+   "mnemonic": "Open, Equal, Scored, Recorded: O-E-S-R.",
+   "terms": [
+    [
+     "Tender",
+     "A formal invitation to bid for a contract."
+    ],
+    [
+     "Life-cycle cost",
+     "Total cost over an asset's life: buying, running, disposing."
+    ],
+    [
+     "Bid rigging",
+     "Competitors secretly agree on bids."
+    ],
+    [
+     "Conflict of interest",
+     "When personal interests could affect an official duty."
+    ]
+   ],
+   "misc": {
+    "wrong": "The cheapest bid is always the best value.",
+    "right": "Value for money considers quality, risk and life-cycle cost as well as price."
+   },
+   "limits": "Thresholds, rules and balance between price and quality vary by country, and too many rules can slow purchasing.",
+   "trip": {
+    "wiki": "Government procurement",
+    "prompt": "Find the main stages of a public tender and the purpose of each."
+   },
+   "sources": [
+    "Government procurement",
+    "Bid rigging",
+    "Conflict of interest"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the purpose of publishing evaluation criteria before bids arrive?",
+     "o": [
+      "It makes the process fair and transparent",
+      "It helps bidders copy each other's offers",
+      "It hides how the winners are chosen from the public",
+      "It makes the tenders much shorter and faster"
+     ],
+     "a": 0,
+     "why": "Known criteria prevent changing the rules to favour someone.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a red flag for bid rigging?",
+     "o": [
+      "Several bids are almost identical and winners seem to take turns",
+      "Bids vary widely in price from firm to firm",
+      "A bidder asks a clarifying question before the deadline",
+      "Bids are opened in public on the stated date"
+     ],
+     "a": 0,
+     "why": "Similar bids and rotation suggest coordination.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A councillor owns shares in a bidding firm. What should happen?",
+     "o": [
+      "Declare the interest and step out of the decision",
+      "Say nothing and stay in the meeting",
+      "Vote for the firm to help it win",
+      "Hide the shares so no one finds out about them"
+     ],
+     "a": 0,
+     "why": "Conflicts of interest must be declared and managed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Bus X costs 400,000 luns and costs 60,000 a year to run for 10 years. Bus Y costs 480,000 and costs 40,000 a year for 10 years. On life-cycle cost, which is better?",
+     "o": [
+      "Bus Y",
+      "Bus X",
+      "They are equal",
+      "Cannot be compared"
+     ],
+     "a": 0,
+     "why": "X = 400,000 + 600,000 = 1,000,000. Y = 480,000 + 400,000 = 880,000. Y is cheaper overall.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does procurement matter for the whole economy?",
+     "o": [
+      "Governments buy large amounts, so rules affect competition and costs",
+      "It sets the exchange rates between currencies",
+      "It decides the results of national elections",
+      "It chooses the school curriculum for all children"
+     ],
+     "a": 0,
+     "why": "Public purchasing is a large share of spending in many economies.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Criteria: price 70%, quality 30%. A bid scores 60 on price and 90 on quality. What is its weighted score?",
+     "a": 69,
+     "tol": 0.1,
+     "why": "0.7 × 60 + 0.3 × 90 = 42 + 27 = 69.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A contract is 5,000,000 luns. A change order adds 1,250,000 luns. By what percentage did the cost grow?",
+     "a": 25,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "1,250,000 ÷ 5,000,000 = 0.25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the stages of a competitive tender in order.",
+     "items": [
+      "Publish the need and criteria",
+      "Receive bids by the deadline",
+      "Evaluate bids using the published criteria",
+      "Award and publish the contract",
+      "Monitor delivery"
+     ],
+     "why": "Criteria come before bids; monitoring follows award.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the lowest bid can end up costing the city more.",
+     "rubric": [
+      [
+       "quality",
+       "poor",
+       "fail",
+       "break",
+       "repair",
+       "maintenance",
+       "running",
+       "operating",
+       "life"
+      ],
+      [
+       "cost",
+       "later",
+       "extra",
+       "change",
+       "delay",
+       "more",
+       "replace",
+       "extra payments",
+       "claims"
+      ]
+     ],
+     "min": 2,
+     "model": "A very low bid may have poor quality, hidden extras or high running costs, leading to repairs, delays or change orders that cost more than a better-priced bid, so life-cycle cost should be compared.",
+     "why": "Value for money is about total cost and quality.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which safeguard best deters corruption in procurement?",
+     "o": [
+      "Open publication of contracts with independent audits",
+      "Keeping all contracts secret from the public",
+      "Allowing single-source awards as the default choice",
+      "Letting evaluators work alone and in private"
+     ],
+     "a": 0,
+     "why": "Transparency and independent checks reduce opportunities.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In an emergency, a city needs generators within 48 hours and skips the open tender. Which safeguard is most appropriate?",
+     "o": [
+      "Use a limited process, document reasons and review it afterward",
+      "Do it in secret so that rivals cannot object",
+      "Avoid keeping any record, to save time and effort",
+      "Pick a friend's firm because it can deliver fastest"
+     ],
+     "a": 0,
+     "why": "Emergency exceptions should be limited, documented and reviewed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A small local firm bids slightly higher than a distant large firm. Should the city give local firms a preference? Give one consideration on each side.",
+     "rubric": [
+      [
+       "local",
+       "jobs",
+       "economy",
+       "community",
+       "small"
+      ],
+      [
+       "cost",
+       "competition",
+       "value",
+       "fair",
+       "equal",
+       "price",
+       "efficien",
+       "rules",
+       "trade"
+      ]
+     ],
+     "min": 2,
+     "model": "A preference can keep spending and jobs local, but it can reduce competition and raise costs, and some rules limit discrimination, so the city should weigh value for money and legal rules and publish the criteria.",
+     "why": "A balanced answer weighs benefits and costs; the question is contested.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use independent evaluators?",
+     "o": [
+      "To reduce bias and favouritism",
+      "To lengthen the process",
+      "To increase costs deliberately",
+      "To avoid records"
+     ],
+     "a": 0,
+     "why": "Independence supports fair assessment.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Public procurement",
+    "model": "Procurement is how governments buy things with public money. Fair rules include open tenders, published criteria and declared interests. The best bid is the one with the best value, including running costs, not always the cheapest. Transparency and audits help prevent corruption.",
+    "points": [
+     {
+      "k": [
+       "buy",
+       "purchase",
+       "contract",
+       "tender",
+       "bid"
+      ],
+      "ask": "What is procurement?"
+     },
+     {
+      "k": [
+       "fair",
+       "open",
+       "equal",
+       "transparen",
+       "criteria"
+      ],
+      "ask": "What makes it fair?"
+     },
+     {
+      "k": [
+       "value",
+       "life",
+       "quality",
+       "running",
+       "cost"
+      ],
+      "ask": "Is cheapest always best?"
+     },
+     {
+      "k": [
+       "corrupt",
+       "conflict",
+       "audit",
+       "rig",
+       "favour"
+      ],
+      "ask": "What are the risks?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Municipal budgeting",
+   "icon": "📘",
+   "hook": "Kestrel Bay's departments request 140 million luns but revenue is 120 million. Who gets cut, and how can the process stay fair and open?",
+   "explain": [
+    "A municipal budget turns plans into numbers. It usually has an operating budget (running services, paid mostly from recurring revenue) and a capital budget (long-lived assets, often financed partly by borrowing). Many cities pass a balanced operating budget by law; rules on borrowing differ by country.",
+    "Budget formats vary. Line-item budgets list inputs like wages. Performance-based budgets link money to results, such as response times. Participatory budgeting lets residents help decide how part of the money is spent. Whichever format is used, a good process publishes proposals, shows assumptions and explains changes.",
+    "Resilience measures matter. Reserves (savings) cover shocks, and are often described in months of spending. The debt service ratio, which is debt payments as a share of revenue, shows how much revenue is already committed. Leaders compare options on criteria such as fiscal sustainability, access to services and evidence of effectiveness, not on preferences alone."
+   ],
+   "example": {
+    "q": "Reserves are 18 million luns and monthly operating spending is 6 million. How many months of spending are covered? If debt payments are 9 million of 120 million revenue, what is the debt service ratio?",
+    "steps": [
+     "Months = 18 ÷ 6 = 3.",
+     "Ratio = 9 ÷ 120 = 0.075.",
+     "7.5% of revenue is committed to debt payments."
+    ],
+    "a": "3 months of reserves; debt service ratio 7.5%."
+   },
+   "analogies": {
+    "home": "A household keeps an emergency fund and avoids spending more than it can repay each month.",
+    "farm": "A farmer saves part of a good harvest to survive a drought.",
+    "sport": "A club spends wages from regular income and saves for injuries.",
+    "tech": "Teams reserve capacity so a traffic spike does not crash the system."
+   },
+   "mnemonic": "Plan, Publish, Prioritise, Protect (reserves), Post-check.",
+   "terms": [
+    [
+     "Operating budget",
+     "Money for running services each year."
+    ],
+    [
+     "Capital budget",
+     "Money for building or buying long-lasting assets."
+    ],
+    [
+     "Reserves",
+     "Savings set aside for shocks."
+    ],
+    [
+     "Debt service ratio",
+     "Debt payments as a share of revenue."
+    ]
+   ],
+   "misc": {
+    "wrong": "A budget surplus always means the city is well run.",
+    "right": "A surplus could reflect underspending on needed services or deferred maintenance; results must be checked."
+   },
+   "limits": "Budget rules, borrowing limits and reserve targets differ across countries, and experts disagree on the best reserve level.",
+   "trip": {
+    "wiki": "Participatory budgeting",
+    "prompt": "Find an example city and what share of its budget residents decided."
+   },
+   "sources": [
+    "Participatory budgeting",
+    "Government budget",
+    "Public finance"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is part of a capital budget?",
+     "o": [
+      "Building a new water treatment plant",
+      "Paying monthly salaries to city staff",
+      "Buying printer paper for the council offices",
+      "Paying the electricity bills for city buildings"
+     ],
+     "a": 0,
+     "why": "Capital budgets fund long-lived assets.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the main purpose of reserves?",
+     "o": [
+      "To cover shocks and shortfalls",
+      "To avoid having to plan ahead at all",
+      "To pay for waste in the everyday budget",
+      "To hide spending from the public auditors"
+     ],
+     "a": 0,
+     "why": "Reserves protect services during emergencies or revenue drops.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does a performance-based budget add?",
+     "o": [
+      "A link between funding and measured results",
+      "A ban on all kinds of spending by the city",
+      "Only a list of the salaries paid to staff",
+      "A secret account that no one can inspect"
+     ],
+     "a": 0,
+     "why": "It ties resources to outputs and outcomes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A city has a surplus because it delayed all road repairs. What is the concern?",
+     "o": [
+      "Costs are being pushed to the future and may grow",
+      "Surpluses are always bad and must be avoided",
+      "Roads repair themselves if they are left alone long enough",
+      "The surplus is illegal under all budget rules"
+     ],
+     "a": 0,
+     "why": "Deferred maintenance can raise later costs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which makes a budget process more transparent?",
+     "o": [
+      "Publishing proposals, assumptions and reasons for changes",
+      "Passing the budget late at night with few present",
+      "Keeping all drafts secret until the vote is over",
+      "Using unexplained codes for the spending lines"
+     ],
+     "a": 0,
+     "why": "Open information lets people understand and challenge choices.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Reserves are 24 million luns and monthly operating spending is 8 million luns. How many months of spending do reserves cover?",
+     "a": 3,
+     "tol": 0,
+     "unit": "months",
+     "why": "24 ÷ 8 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Revenue is 150 million luns and debt payments are 12 million luns. What is the debt service ratio as a percentage?",
+     "a": 8,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "12 ÷ 150 = 0.08 = 8%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Departments request 140 million luns but revenue is 120 million. By what percentage do requests exceed revenue (to one decimal place)?",
+     "a": 16.7,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "20 ÷ 120 = 0.1667 = 16.7%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these budget-cycle steps in order.",
+     "items": [
+      "Forecast revenue",
+      "Departments submit requests",
+      "Council reviews and consults",
+      "Budget is adopted and published",
+      "Results are reported and audited"
+     ],
+     "why": "The cycle moves from estimates to decision to accountability.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Requests exceed revenue by 20 million luns. Describe a fair, non-partisan way to decide what to cut or delay.",
+     "rubric": [
+      [
+       "criteria",
+       "priorit",
+       "score",
+       "evidence",
+       "data",
+       "rank",
+       "rule"
+      ],
+      [
+       "need",
+       "access",
+       "safety",
+       "cost",
+       "result",
+       "effective",
+       "consult",
+       "legal",
+       "sustain",
+       "impact",
+       "residents"
+      ]
+     ],
+     "min": 2,
+     "model": "State criteria in advance such as safety, legal duties, access, effectiveness and cost, score each request using evidence, consult residents, and publish the reasons for what was funded or delayed.",
+     "why": "Transparent criteria and evidence make the choice defensible.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A council funds a popular festival by using reserves for recurring salaries. What is the fiscal-sustainability concern?",
+     "o": [
+      "Reserves are one-time while salaries recur",
+      "Festivals are illegal in a public budget under law",
+      "Salaries should never be paid by a city council",
+      "Reserves can never be used for any purpose"
+     ],
+     "a": 0,
+     "why": "Using one-time money for recurring costs creates a future gap.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Participatory budgeting lets residents decide part of the budget. Give one strength and one limitation.",
+     "rubric": [
+      [
+       "engage",
+       "trust",
+       "local",
+       "voice",
+       "legitim",
+       "knowledge",
+       "participat",
+       "transparen"
+      ],
+      [
+       "small",
+       "time",
+       "represent",
+       "skill",
+       "limited",
+       "few",
+       "bias",
+       "complex",
+       "strateg",
+       "attend"
+      ]
+     ],
+     "min": 2,
+     "model": "It builds trust and uses local knowledge, but it usually covers only a small share of the budget and the people who take part may not represent everyone, so extra outreach is needed.",
+     "why": "Balanced assessment of a contested tool.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why compare budgets per resident across years?",
+     "o": [
+      "It adjusts for population changes",
+      "It hides the effects of inflation on prices",
+      "It shows what the weather was like each year",
+      "It removes all the debt from the accounts"
+     ],
+     "a": 0,
+     "why": "Per-capita figures make comparisons fairer.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Municipal budgeting",
+    "model": "A municipal budget turns plans into money decisions, with an operating part for running services and a capital part for lasting assets. Good budgets are published, keep reserves, and choose priorities using clear criteria and evidence.",
+    "points": [
+     {
+      "k": [
+       "operating",
+       "capital",
+       "running",
+       "build"
+      ],
+      "ask": "What are the two main parts?"
+     },
+     {
+      "k": [
+       "reserve",
+       "saving",
+       "shock",
+       "emergency"
+      ],
+      "ask": "Why keep savings?"
+     },
+     {
+      "k": [
+       "criteria",
+       "priorit",
+       "evidence",
+       "consult"
+      ],
+      "ask": "How are priorities chosen?"
+     },
+     {
+      "k": [
+       "publish",
+       "transparen",
+       "open",
+       "public"
+      ],
+      "ask": "Why make it public?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Public infrastructure management",
+   "icon": "🛠️",
+   "hook": "Resurfacing a road now costs 100,000 luns per km. Wait ten years and it needs a full rebuild at 600,000. Why do cities still put repairs off?",
+   "explain": [
+    "Infrastructure management, often called asset management, treats roads, pipes, bridges and buildings as assets with a life cycle: plan, build or buy, operate, maintain, renew and dispose. The aim is to deliver the required service at the lowest sensible life-cycle cost and acceptable risk.",
+    "Maintenance is cheaper if done on time. Small repairs prevent faster decay, a pattern often described by condition curves. Deferred maintenance creates a backlog, which is a hidden liability: the work is owed but not yet paid. Cities keep asset registers and condition scores, and rank work by risk (likelihood and consequence of failure) and by benefit per luns spent.",
+    "Management also covers funding rules, such as setting aside money for renewal, and data such as leak reports and bridge inspections. Fairness matters: neglected neighbourhoods may suffer more failures. Climate and technology change requirements, so plans are reviewed regularly."
+   ],
+   "example": {
+    "q": "A city has 25 km of road. Resurfacing on time costs 100,000 luns per km. Waiting causes reconstruction at 600,000 luns per km. What does acting on time save across the 25 km?",
+    "steps": [
+     "Timely: 25 × 100,000 = 2,500,000.",
+     "Delayed: 25 × 600,000 = 15,000,000.",
+     "Saving = 15,000,000 − 2,500,000 = 12,500,000."
+    ],
+    "a": "12,500,000 luns."
+   },
+   "analogies": {
+    "home": "Oiling a squeaky door hinge is cheap; replacing the whole door is not.",
+    "farm": "Fixing a small fence gap protects the herd; waiting until animals escape costs far more.",
+    "sea": "Repainting a ship's hull on schedule prevents rust that would need major repairs.",
+    "tech": "Updating software regularly avoids a costly system rebuild after failure."
+   },
+   "mnemonic": "Know, Rank, Fix early, Renew: the asset cycle.",
+   "terms": [
+    [
+     "Asset management",
+     "Managing assets over their whole life to give required service at lowest sensible cost."
+    ],
+    [
+     "Deferred maintenance",
+     "Repairs postponed, building up future cost."
+    ],
+    [
+     "Condition score",
+     "A rating of how good or poor an asset is."
+    ],
+    [
+     "Risk",
+     "Likelihood of failure times its consequence."
+    ]
+   ],
+   "misc": {
+    "wrong": "Postponing maintenance saves money.",
+    "right": "It usually moves cost to the future, often at a higher price, and can raise safety risks."
+   },
+   "limits": "Decay rates and costs differ by climate, materials and use, so the numbers here are illustrative.",
+   "trip": {
+    "wiki": "Asset management",
+    "prompt": "Find how organisations rank infrastructure work by risk and consequence."
+   },
+   "sources": [
+    "Infrastructure asset management",
+    "Deferred maintenance",
+    "Infrastructure"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is deferred maintenance?",
+     "o": [
+      "Repairs postponed that build up future cost",
+      "Repairs that are done early to save money later",
+      "A new building put up in place of an old one",
+      "A type of tax charged on old buildings"
+     ],
+     "a": 0,
+     "why": "It is work owed but not yet done.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why rank projects by both likelihood and consequence of failure?",
+     "o": [
+      "A rare failure of a critical asset can matter more than a common minor one",
+      "Likelihood alone is enough to rank every project",
+      "Consequence of failure is irrelevant when ranking projects",
+      "It makes the project lists longer and more complete"
+     ],
+     "a": 0,
+     "why": "Risk combines probability and impact.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pipe network has frequent bursts in an older district. What should managers do first?",
+     "o": [
+      "Use condition and failure data to target replacement",
+      "Ignore the area until the bursts stop on their own",
+      "Replace the whole network citywide at once",
+      "Raise the water fee in that district only, as a penalty"
+     ],
+     "a": 0,
+     "why": "Data-guided targeting uses limited money best.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is life-cycle cost?",
+     "o": [
+      "Total cost of owning an asset over its life",
+      "Only the cost of constructing the asset at first",
+      "Only the cost of repairing the asset when it breaks",
+      "The cost of the land the asset sits on"
+     ],
+     "a": 0,
+     "why": "It includes build, operate, maintain and dispose.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why might neglected neighbourhoods need explicit attention in asset plans?",
+     "o": [
+      "They may suffer more failures and have fewer voices",
+      "They always have the newest pipes and roads in the city",
+      "They never use the services the city provides",
+      "They pay no tax to the city at all"
+     ],
+     "a": 0,
+     "why": "Equity requires checking who bears risks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Resurfacing costs 100,000 luns per km on time or 600,000 per km if delayed. For 40 km, how many luns are saved by acting on time?",
+     "a": 20000000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "40 × (600,000 − 100,000) = 20,000,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bridge costs 24,000,000 luns and is expected to last 60 years. What is the straight-line cost per year in luns?",
+     "a": 400000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "24,000,000 ÷ 60 = 400,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the asset life-cycle stages in order.",
+     "items": [
+      "Plan",
+      "Build or buy",
+      "Operate and maintain",
+      "Renew",
+      "Dispose"
+     ],
+     "why": "Assets are planned, built, used and maintained, renewed, then disposed.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A city must choose between fixing three bridges. Which criteria could rank them fairly?",
+     "rubric": [
+      [
+       "condition",
+       "risk",
+       "failure",
+       "safe",
+       "inspect"
+      ],
+      [
+       "use",
+       "traffic",
+       "people",
+       "cost",
+       "consequence",
+       "critical",
+       "access",
+       "benefit"
+      ]
+     ],
+     "min": 2,
+     "model": "Use the bridges' condition and risk of failure, how many people depend on them, the consequences of closure and the cost of repair, then rank by benefit per luns and explain the ranking.",
+     "why": "Clear criteria and data justify prioritisation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the maintenance backlog is growing each year, what does it indicate?",
+     "o": [
+      "Renewal spending is below what is needed",
+      "The assets are steadily getting better each year",
+      "Taxes are always too low in the city",
+      "It indicates nothing useful about the assets at all"
+     ],
+     "a": 0,
+     "why": "Backlog growth means underinvestment relative to need.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city has 10 million luns for repairs. Option 1 resurfaces many busy roads cheaply. Option 2 rebuilds one failing bridge. How should leaders decide?",
+     "o": [
+      "Compare risk reduction and benefit per luns using condition data",
+      "Choose the option closest to the mayor's own street",
+      "Always choose the bigger project because it helps more",
+      "Always choose the cheaper project whatever the risk"
+     ],
+     "a": 0,
+     "why": "Risk-based comparison supports a defensible decision.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a city be tempted to defer maintenance, and what does that do to future budgets?",
+     "rubric": [
+      [
+       "election",
+       "short",
+       "now",
+       "pressure",
+       "visible",
+       "popular",
+       "cut",
+       "save",
+       "new",
+       "ribbon"
+      ],
+      [
+       "later",
+       "future",
+       "backlog",
+       "higher",
+       "grow",
+       "cost more",
+       "rebuild",
+       "debt"
+      ]
+     ],
+     "min": 2,
+     "model": "Deferring saves money now and new projects are more visible, but the work becomes larger and costlier later, creating a backlog that future budgets must pay.",
+     "why": "Short-term incentives can create long-term costs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which data improves asset decisions most?",
+     "o": [
+      "Regular condition inspections and failure records",
+      "Rumours that are passed around among residents",
+      "Advertising from firms that sell repair materials",
+      "Guesses made by officials with no inspection"
+     ],
+     "a": 0,
+     "why": "Good data supports good decisions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Managing public infrastructure",
+    "model": "Infrastructure management looks after roads, pipes and buildings over their whole life. Doing maintenance on time is usually cheaper than rebuilding later. Managers use condition data and risk to decide what to fix first.",
+    "points": [
+     {
+      "k": [
+       "maintenance",
+       "repair",
+       "maintain",
+       "upkeep"
+      ],
+      "ask": "Why maintain things?"
+     },
+     {
+      "k": [
+       "early",
+       "on time",
+       "cheaper",
+       "later",
+       "backlog"
+      ],
+      "ask": "What if repairs are delayed?"
+     },
+     {
+      "k": [
+       "data",
+       "condition",
+       "inspect",
+       "risk"
+      ],
+      "ask": "How is work ranked?"
+     },
+     {
+      "k": [
+       "life",
+       "whole",
+       "total",
+       "cycle"
+      ],
+      "ask": "What costs count?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Transport systems",
+   "icon": "🚆",
+   "hook": "A bus rapid transit line costs a fraction of a metro per kilometre, but a metro carries more. Which should Kestrel Bay build?",
+   "explain": [
+    "A transport system is a network of modes: walking, cycling, buses, trams, trains, cars and freight. Planners aim for access to jobs and services, safety, reliability, affordability and low environmental impact, within a budget. The 'modal share' is the percentage of trips made by each mode.",
+    "Modes differ in capacity and cost. Bus rapid transit (BRT) uses dedicated lanes and stations and costs much less per kilometre than metro or rail, while a metro can carry far more passengers per hour at high cost. Choices depend on demand, geography and funding. A comparison metric is cost per passenger trip over the asset's life.",
+    "Roads fill up when demand exceeds capacity. Adding lanes can attract more traffic, called induced demand, so congestion may return. Tools to manage demand include road pricing, parking policy, bus priority and better walking and cycling routes. Congestion pricing is debated: supporters cite less traffic and revenue; critics cite fairness and effects on lower-income drivers, so designs often include discounts or reinvest revenue in transport alternatives."
+   ],
+   "example": {
+    "q": "A BRT line is 12 km at 15 million luns/km. A metro on the same corridor is 12 km at 120 million luns/km. What is the difference in capital cost?",
+    "steps": [
+     "BRT: 12 × 15 = 180 million.",
+     "Metro: 12 × 120 = 1,440 million.",
+     "Difference = 1,440 − 180 = 1,260 million."
+    ],
+    "a": "1,260 million luns."
+   },
+   "analogies": {
+    "home": "A family decides between a bike, a van and a bus pass based on trips, cost and number of people.",
+    "sea": "A harbour uses ferries for short crossings and big ships for long hauls.",
+    "sport": "A stadium needs entrances sized to the crowd, not to the average day.",
+    "nature": "A river with a wider channel carries more water, but only to a point before flooding."
+   },
+   "mnemonic": "Mode, Money, Demand, Reach: choose the mode that fits the demand.",
+   "terms": [
+    [
+     "Modal share",
+     "The percentage of trips made by each mode."
+    ],
+    [
+     "Induced demand",
+     "Extra traffic caused by new road capacity."
+    ],
+    [
+     "Bus rapid transit",
+     "Bus service with dedicated lanes and stations."
+    ],
+    [
+     "Congestion pricing",
+     "A charge for using roads at busy times."
+    ]
+   ],
+   "misc": {
+    "wrong": "Building more road lanes always ends congestion.",
+    "right": "Extra capacity can attract more traffic, so demand management and alternatives matter."
+   },
+   "limits": "Effects of pricing and new roads vary by city, and transport economists disagree on how large induced demand is in each case.",
+   "trip": {
+    "wiki": "Bus rapid transit",
+    "prompt": "Find a city that built BRT and note its reported cost and passenger numbers."
+   },
+   "sources": [
+    "Bus rapid transit",
+    "Induced demand",
+    "Congestion pricing"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is modal share?",
+     "o": [
+      "The percentage of trips made by each mode",
+      "The width of a road measured in metres",
+      "The price of a single ticket on each route",
+      "The average age of the buses in the fleet"
+     ],
+     "a": 0,
+     "why": "It shows how people travel.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is induced demand?",
+     "o": [
+      "Extra traffic that appears after road capacity increases",
+      "A tax charged on every litre of petrol",
+      "A cut in bus fares meant to attract riders",
+      "The timing pattern of traffic lights at junctions"
+     ],
+     "a": 0,
+     "why": "New capacity can attract more users.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor most favours a metro over BRT?",
+     "o": [
+      "Very high passenger demand along a dense corridor",
+      "Low passenger demand along a quiet corridor",
+      "A very small budget for building new lines",
+      "Few riders spread across a wide area"
+     ],
+     "a": 0,
+     "why": "High demand makes the high capacity worth the cost.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A city introduces a charge for driving into the centre at peak times. Which result is expected if the charge works as intended?",
+     "o": [
+      "Less peak traffic and more use of other modes",
+      "More peak traffic, as drivers pay to enter",
+      "No change at all in how people travel",
+      "Higher bus fares, applied automatically by the scheme"
+     ],
+     "a": 0,
+     "why": "Pricing reduces demand at busy times.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A BRT line and a metro both serve a corridor with 8,000 riders per hour at peak. The BRT can carry about 10,000 per hour. What does this suggest?",
+     "o": [
+      "BRT could meet current demand at a lower capital cost, but future growth should be checked",
+      "Only a metro can ever work on this corridor",
+      "BRT cannot carry passengers at this volume at all",
+      "Demand does not matter when choosing between modes"
+     ],
+     "a": 0,
+     "why": "Match capacity to present and forecast demand; the cheaper mode may suffice.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Critics of congestion pricing often raise which concern?",
+     "o": [
+      "Fairness for lower-income drivers",
+      "That it makes the roads wider and busier",
+      "That it reduces air quality in the centre",
+      "That it changes the map of the city's streets"
+     ],
+     "a": 0,
+     "why": "Distributional effects are a main debate; designs may include discounts or reinvestment.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A line costs 600 million luns and carries 40,000 passengers a day. Over a 30-year life with 300 operating days a year, what is the capital cost per passenger trip in luns? (Ignore operating costs.)",
+     "a": 1.67,
+     "tol": 0.02,
+     "unit": "luns",
+     "why": "Trips = 40,000 × 300 × 30 = 360,000,000. 600,000,000 ÷ 360,000,000 = 1.67.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In a city, 100,000 daily trips are made: 30% by bus. How many bus trips is that?",
+     "a": 30000,
+     "tol": 0,
+     "unit": "trips",
+     "why": "0.30 × 100,000 = 30,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the tool to its purpose.",
+     "pairs": [
+      [
+       "Bus lanes",
+       "Make buses faster and more reliable"
+      ],
+      [
+       "Parking charges",
+       "Manage demand for road space"
+      ],
+      [
+       "Protected cycle lanes",
+       "Make cycling safer"
+      ],
+      [
+       "Pedestrian crossings",
+       "Allow safe walking across roads"
+      ]
+     ],
+     "why": "Each tool targets a different part of the system.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A city wants to cut congestion. Explain why adding lanes alone may not work, and name one alternative.",
+     "rubric": [
+      [
+       "induced",
+       "more traffic",
+       "fill",
+       "attract",
+       "demand",
+       "return",
+       "new drivers"
+      ],
+      [
+       "price",
+       "charge",
+       "bus",
+       "transit",
+       "cycle",
+       "walk",
+       "parking",
+       "priority",
+       "alternative"
+      ]
+     ],
+     "min": 2,
+     "model": "New lanes can attract extra traffic so congestion returns; managing demand with pricing, bus priority or better walking and cycling options can move more people with the same space.",
+     "why": "Induced demand explains why capacity alone may fail.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two proposals cut average commute time by the same amount: one costs 200 million luns and serves 50,000 riders; the other costs 500 million and serves 90,000. Which comparison is most useful?",
+     "o": [
+      "Cost per rider plus access and fairness criteria",
+      "Total cost only, with no other information",
+      "Ridership only, with no cost shown",
+      "The mayor's own preference between the two plans"
+     ],
+     "a": 0,
+     "why": "Combine efficiency measures with other stated criteria.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How could a city design congestion pricing to address fairness concerns?",
+     "rubric": [
+      [
+       "discount",
+       "exempt",
+       "low income",
+       "reinvest",
+       "revenue",
+       "concession"
+      ],
+      [
+       "bus",
+       "transit",
+       "alternative",
+       "service",
+       "improve",
+       "cap",
+       "carpool",
+       "disab"
+      ]
+     ],
+     "min": 2,
+     "model": "It could offer discounts or exemptions for low-income residents and people with disabilities and reinvest revenue in buses and safe cycling and walking, so people have real alternatives.",
+     "why": "Design choices can reduce unfair effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best evidence that a new bus lane works?",
+     "o": [
+      "Faster, more reliable journey times and higher ridership",
+      "More paint on the road surface along the lane",
+      "The number of signs put up beside it",
+      "The number of meetings held about the lane"
+     ],
+     "a": 0,
+     "why": "Outcome data show the lane's effect.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Transport systems",
+    "model": "A transport system mixes walking, cycling, buses, trains and cars. Each mode has different cost and capacity, so planners match modes to demand. Adding road lanes can attract more traffic, so cities also manage demand and offer good alternatives.",
+    "points": [
+     {
+      "k": [
+       "mode",
+       "bus",
+       "train",
+       "walk",
+       "cycle",
+       "car"
+      ],
+      "ask": "What makes up a transport system?"
+     },
+     {
+      "k": [
+       "cost",
+       "capacity",
+       "demand",
+       "passengers"
+      ],
+      "ask": "How do planners pick a mode?"
+     },
+     {
+      "k": [
+       "induced",
+       "more traffic",
+       "congestion",
+       "lanes"
+      ],
+      "ask": "Do more lanes fix traffic?"
+     },
+     {
+      "k": [
+       "price",
+       "charge",
+       "parking",
+       "alternative",
+       "fair"
+      ],
+      "ask": "What else can a city do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Environmental regulation",
+   "icon": "🌿",
+   "hook": "A factory can cut a tonne of pollution for 40 luns, but the fine for polluting is only 25 luns per tonne. What will a rational firm do, and how should the rule be changed?",
+   "explain": [
+    "Environmental regulation sets rules to reduce harm to air, water, land and health. Local governments often handle noise, waste, local air quality, water protection and land-use permits, while national or regional authorities set many standards. The split differs by country.",
+    "Regulators use several tools. Command-and-control sets standards or bans. Market-based tools put a price on pollution through taxes or tradable permits under a cap. Information tools require reporting. Subsidies can support clean options. The polluter-pays principle holds that those who cause pollution should bear the cost of dealing with it. The precautionary principle supports acting to prevent serious harm even when evidence is not final.",
+    "Good rules are enforceable and proportionate. Penalties must be higher than the cost of compliance or the rule will be ignored. Monitoring, inspections and public data are needed. Regulators weigh costs to business and households against health and environmental benefits, and disagreements about the right balance are normal in democratic societies."
+   ],
+   "example": {
+    "q": "A firm can cut pollution at 40 luns per tonne. The fine is 25 luns per tonne. For 1,000 tonnes, compare the cost of cutting with the fine. What is the problem?",
+    "steps": [
+     "Cutting: 1,000 × 40 = 40,000 luns.",
+     "Fine: 1,000 × 25 = 25,000 luns.",
+     "Paying the fine is cheaper, so the rule gives no incentive to cut."
+    ],
+    "a": "Fine is too low; it should exceed 40 luns/tonne."
+   },
+   "analogies": {
+    "home": "A parking fine cheaper than a parking space means people ignore the rule.",
+    "farm": "Rules on fertiliser run-off protect the stream that all farms downstream depend on.",
+    "sea": "Rules on ship discharges protect fish stocks for all fleets.",
+    "nature": "A wetland filters water for free; protecting it can cost less than building a plant."
+   },
+   "mnemonic": "Set, Price, Inspect, Report: S-P-I-R.",
+   "terms": [
+    [
+     "Command-and-control",
+     "Regulation by setting standards or bans."
+    ],
+    [
+     "Tradable permit",
+     "A right to emit a set amount, which can be bought and sold under a cap."
+    ],
+    [
+     "Polluter pays",
+     "Those who cause pollution bear the cost of managing it."
+    ],
+    [
+     "Precautionary principle",
+     "Act to prevent serious harm even when evidence is incomplete."
+    ]
+   ],
+   "misc": {
+    "wrong": "Environmental rules always destroy jobs.",
+    "right": "Costs and benefits vary; well-designed rules can protect health and sometimes create jobs, but some firms and workers bear real costs."
+   },
+   "limits": "Economists and communities disagree about the best tool and stringency; evidence on costs and benefits varies with context.",
+   "trip": {
+    "wiki": "Environmental law",
+    "prompt": "Find the difference between a carbon tax and a cap-and-trade system."
+   },
+   "sources": [
+    "Environmental law",
+    "Polluter pays principle",
+    "Emissions trading"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which tool puts a price on pollution?",
+     "o": [
+      "A pollution tax",
+      "A noise sign",
+      "A park bench",
+      "A school timetable"
+     ],
+     "a": 0,
+     "why": "Taxes and tradable permits create a price.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the polluter-pays principle say?",
+     "o": [
+      "Those who cause pollution bear the cost of managing it",
+      "Residents always pay the whole cost, whoever pollutes",
+      "Nobody pays, because pollution is nobody's fault",
+      "Governments pay for all of the pollution that happens"
+     ],
+     "a": 0,
+     "why": "It assigns responsibility to the source.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fine is lower than the cost of complying. What is likely to happen?",
+     "o": [
+      "Firms may pay the fine and keep polluting",
+      "Pollution stops at once, as firms follow the rules",
+      "Firms will always comply, whatever the fine",
+      "Inspectors become unnecessary, since fines are low"
+     ],
+     "a": 0,
+     "why": "Incentives must make compliance cheaper than violation.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is monitoring needed?",
+     "o": [
+      "Rules are only effective if breaches are detected",
+      "It is only decoration added to the reports",
+      "Firms enjoy having inspectors visit them often",
+      "Pollution is invisible, so it cannot be measured"
+     ],
+     "a": 0,
+     "why": "Detection and enforcement make rules credible.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A river shows early signs of contamination but studies are incomplete. Which principle supports a cautious interim limit?",
+     "o": [
+      "Precautionary principle",
+      "Polluter pays",
+      "Open tendering",
+      "Zoning"
+     ],
+     "a": 0,
+     "why": "It supports acting before certainty when harm could be serious.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A firm emits 5,000 tonnes. The permit allows 4,200 tonnes. The fine is 60 luns per excess tonne. What is the total fine in luns?",
+     "a": 48000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "Excess = 800 tonnes. 800 × 60 = 48,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A cap allows 100,000 tonnes in total and is cut by 4% per year for one year. What is the new cap in tonnes?",
+     "a": 96000,
+     "tol": 0,
+     "unit": "tonnes",
+     "why": "4% of 100,000 = 4,000. 100,000 − 4,000 = 96,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the tool to the type.",
+     "pairs": [
+      [
+       "Emission standard",
+       "Command-and-control"
+      ],
+      [
+       "Pollution tax",
+       "Market-based price"
+      ],
+      [
+       "Public emissions report",
+       "Information tool"
+      ],
+      [
+       "Grant for clean equipment",
+       "Subsidy"
+      ]
+     ],
+     "why": "Regulators combine tools of different types.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A factory says new rules will cost jobs. Describe how a regulator should respond using evidence.",
+     "rubric": [
+      [
+       "evidence",
+       "data",
+       "study",
+       "assess",
+       "analy",
+       "compare",
+       "impact",
+       "estimate"
+      ],
+      [
+       "cost",
+       "benefit",
+       "health",
+       "job",
+       "phase",
+       "support",
+       "transition",
+       "trade-off",
+       "consult"
+      ]
+     ],
+     "min": 2,
+     "model": "The regulator should assess the costs and benefits with data, including health benefits and job effects, consult the firm and workers, consider phasing in the rules or transition support, and publish the reasoning.",
+     "why": "A balanced evidence-based response weighs both sides.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cap-and-trade system lets firms buy and sell permits under a fixed total. What guarantees the environmental outcome?",
+     "o": [
+      "The total cap on emissions",
+      "The number of permits traded",
+      "The size of the firms",
+      "The price of fuel"
+     ],
+     "a": 0,
+     "why": "The cap fixes total emissions; trading finds cheaper cuts.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city must reduce river pollution. Option 1: strict standards on each factory. Option 2: a tradable permit scheme. Which statement is the most reasonable?",
+     "o": [
+      "Both can work; compare cost, certainty of outcome, enforceability and fairness",
+      "Only standards can work, since trading is never allowed",
+      "Only trading can work, since standards never help",
+      "Neither can work, so the city should not try"
+     ],
+     "a": 0,
+     "why": "Multiple defensible tools exist; criteria decide.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can pollution rules affect poorer communities differently, and what can regulators do?",
+     "rubric": [
+      [
+       "near",
+       "live",
+       "exposed",
+       "industrial",
+       "burden",
+       "poor",
+       "low income",
+       "health"
+      ],
+      [
+       "monitor",
+       "enforce",
+       "consult",
+       "siting",
+       "equity",
+       "fair",
+       "data",
+       "protect",
+       "standard"
+      ]
+     ],
+     "min": 2,
+     "model": "Polluting sites are often near lower-income areas, so those residents may face more exposure. Regulators can monitor locally, enforce standards, consult residents and consider fairness when siting facilities.",
+     "why": "Environmental justice is an equity criterion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which publication best supports accountability?",
+     "o": [
+      "Public emissions data from monitors",
+      "Secret reports",
+      "Only annual averages with no detail",
+      "Advertising slogans"
+     ],
+     "a": 0,
+     "why": "Open data lets the public verify performance.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Environmental regulation",
+    "model": "Environmental regulation sets rules to reduce harm to air, water and land. Tools include standards, taxes, tradable permits and reporting. Rules work only if penalties are stronger than the cost of complying and if they are monitored and enforced.",
+    "points": [
+     {
+      "k": [
+       "rule",
+       "standard",
+       "limit",
+       "law"
+      ],
+      "ask": "What does regulation do?"
+     },
+     {
+      "k": [
+       "tax",
+       "price",
+       "permit",
+       "market",
+       "trade"
+      ],
+      "ask": "What other tools exist?"
+     },
+     {
+      "k": [
+       "fine",
+       "penalty",
+       "enforce",
+       "monitor",
+       "inspect"
+      ],
+      "ask": "What makes rules work?"
+     },
+     {
+      "k": [
+       "cost",
+       "benefit",
+       "balance",
+       "jobs",
+       "health"
+      ],
+      "ask": "Why is it debated?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Housing policy",
+   "icon": "🏘️",
+   "hook": "Rents in Kestrel Bay rose 18% in two years. Should the city cap rents, build more, or give vouchers? What evidence would settle it?",
+   "explain": [
+    "Housing policy aims to make sure people can find safe, stable homes they can afford. It uses supply-side tools (zoning that allows more homes, faster permits, public or non-profit building) and demand-side tools (rent vouchers, subsidies). Others regulate renting, such as notice periods or rent caps. A common affordability measure is housing cost burden: households spending more than about 30% of income on housing are often described as cost-burdened, though thresholds vary.",
+    "Each tool has trade-offs. More supply tends to ease prices over time but takes years. Vouchers help quickly but can raise rents if supply is limited. Rent controls can protect sitting tenants but may reduce new supply or maintenance, depending on design; evidence is mixed and context-specific. Inclusionary zoning requires or encourages a share of new homes to be affordable, which can add affordable units without direct public spending but may affect project viability.",
+    "Good housing policy mixes tools, tracks results and protects the most vulnerable. Homelessness, overcrowding and poor-quality housing are separate problems that need targeted responses. Leaders judge policies against stated criteria: effect on affordability, supply, fairness, cost to the budget and speed."
+   ],
+   "example": {
+    "q": "A household earns 2,000 luns a month and pays 760 luns on housing. Is it cost-burdened by the 30% rule?",
+    "steps": [
+     "Share = 760 ÷ 2,000 = 0.38.",
+     "That is 38%.",
+     "38% is above 30%."
+    ],
+    "a": "Yes, it is cost-burdened (38%)."
+   },
+   "analogies": {
+    "home": "If a family has too few chairs, giving each person money for chairs may just raise chair prices unless more chairs are made.",
+    "farm": "If grain is scarce, price controls alone leave the shelves empty unless more is grown.",
+    "city": "Fast permits are like opening more checkout lanes when queues are long.",
+    "tech": "Capacity limits mean demand spikes slow everyone down until capacity grows."
+   },
+   "mnemonic": "Supply, Support, Safeguards, Services: S-S-S-S.",
+   "terms": [
+    [
+     "Cost burden",
+     "Spending a high share of income on housing."
+    ],
+    [
+     "Inclusionary zoning",
+     "Rules requiring or encouraging affordable units in new building."
+    ],
+    [
+     "Housing voucher",
+     "A subsidy a household uses to pay rent."
+    ],
+    [
+     "Rent control",
+     "Rules that limit rent increases or levels."
+    ]
+   ],
+   "misc": {
+    "wrong": "There is one policy that solves every housing problem.",
+    "right": "Problems differ by place and group, and strong results usually come from a mix of tools."
+   },
+   "limits": "Economists disagree on rent control and other tools, and results depend on design and local markets.",
+   "trip": {
+    "wiki": "Inclusionary zoning",
+    "prompt": "Find one place that uses inclusionary zoning and what share of units it targets."
+   },
+   "sources": [
+    "Housing policy",
+    "Inclusionary zoning",
+    "Rent regulation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does housing cost burden measure?",
+     "o": [
+      "The share of income spent on housing",
+      "The size of a home in square metres",
+      "The age of the building in years",
+      "The distance from home to the workplace"
+     ],
+     "a": 0,
+     "why": "It is housing cost divided by income.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A voucher programme is introduced in a market with very few vacant homes. What is a risk?",
+     "o": [
+      "Rents may rise, offsetting some of the benefit",
+      "Rents always fall, since people have more money",
+      "Supply increases at once, as vouchers add homes",
+      "Nothing changes for anyone in the market"
+     ],
+     "a": 0,
+     "why": "Demand support without supply can push up prices.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a supply-side tool?",
+     "o": [
+      "Allowing more homes through zoning",
+      "A rent voucher paid to tenants",
+      "A rent cap set by the city",
+      "A cash grant paid to tenants each month"
+     ],
+     "a": 0,
+     "why": "Zoning changes what can be built.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is inclusionary zoning?",
+     "o": [
+      "Rules that encourage or require some affordable units in new projects",
+      "A ban on building any new housing in the city",
+      "A tax on all the land that is left empty",
+      "A bus route plan for new housing areas"
+     ],
+     "a": 0,
+     "why": "It uses development to deliver affordable homes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A city wants to help homeless people now and also lower rents over ten years. What is the best structure?",
+     "o": [
+      "Combine targeted support now with policies that increase supply over time",
+      "Do only one of these things and stop there",
+      "Wait ten years and then decide what to do",
+      "Rely on rumours about what has worked elsewhere"
+     ],
+     "a": 0,
+     "why": "Different time horizons need different tools.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is evidence on rent control described as mixed?",
+     "o": [
+      "Results depend on design and local conditions",
+      "It is always perfect when it is introduced",
+      "It is always harmful whatever the design",
+      "No one has ever studied it, so nothing is known"
+     ],
+     "a": 0,
+     "why": "Different designs and markets give different outcomes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A development of 800 homes must make 15% affordable. How many affordable homes is that?",
+     "a": 120,
+     "tol": 0,
+     "unit": "homes",
+     "why": "0.15 × 800 = 120.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Rents rise from 500 luns to 590 luns a month. What is the percentage increase?",
+     "a": 18,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "90 ÷ 500 = 0.18 = 18%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these households from lowest to highest housing cost burden.",
+     "items": [
+      "Income 3,000; housing 600 (20%)",
+      "Income 2,000; housing 560 (28%)",
+      "Income 1,500; housing 600 (40%)",
+      "Income 1,000; housing 650 (65%)"
+     ],
+     "why": "20% < 28% < 40% < 65%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Compare one benefit and one risk of rent caps, using stated criteria such as affordability and supply.",
+     "rubric": [
+      [
+       "tenant",
+       "protect",
+       "afford",
+       "stable",
+       "predict",
+       "displac",
+       "sitting"
+      ],
+      [
+       "supply",
+       "fewer",
+       "build",
+       "quality",
+       "maintenance",
+       "black market",
+       "new",
+       "invest",
+       "reduce"
+      ]
+     ],
+     "min": 2,
+     "model": "A cap can protect current tenants from sudden rises and improve stability, but depending on design it may discourage new building or maintenance, so supply and quality must be monitored.",
+     "why": "A balanced answer for a contested policy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which approach best fits an evidence-based, non-partisan housing strategy?",
+     "o": [
+      "Set goals, test a mix of tools in pilots, measure results and adjust",
+      "Adopt whichever slogan is the most popular this year",
+      "Copy another country exactly, without checking the results",
+      "Avoid collecting data, so no one can criticise the plan"
+     ],
+     "a": 0,
+     "why": "Pilots and evaluation reduce reliance on ideology.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A neighbourhood is being redeveloped and long-term residents fear displacement. Suggest two protections.",
+     "rubric": [
+      [
+       "right to return",
+       "relocat",
+       "notice",
+       "compensat",
+       "tenant",
+       "lease",
+       "protect"
+      ],
+      [
+       "affordable",
+       "percent",
+       "share",
+       "consult",
+       "phasing",
+       "support",
+       "stay",
+       "mix"
+      ]
+     ],
+     "min": 2,
+     "model": "Give early notice and consultation, provide relocation help or a right to return, and require a share of affordable units so existing residents can stay.",
+     "why": "Policies can reduce displacement risk.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A city lists 5,000 households on a waiting list but builds 200 affordable homes a year. What does this suggest?",
+     "o": [
+      "Current supply of affordable homes is far below need",
+      "Housing is solved, as the list is so long",
+      "The list is irrelevant to housing planning",
+      "Waiting lists are known to lower rents"
+     ],
+     "a": 0,
+     "why": "At that rate waiting times will be very long.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Housing policy",
+    "model": "Housing policy helps people find homes they can afford. Cities can allow more homes to be built, give subsidies or vouchers, or regulate renting. Each tool has trade-offs, so cities use a mix, measure the results and adjust.",
+    "points": [
+     {
+      "k": [
+       "afford",
+       "cost",
+       "income",
+       "rent"
+      ],
+      "ask": "What problem is being solved?"
+     },
+     {
+      "k": [
+       "supply",
+       "build",
+       "zoning",
+       "more homes"
+      ],
+      "ask": "How can supply help?"
+     },
+     {
+      "k": [
+       "voucher",
+       "subsid",
+       "support",
+       "demand"
+      ],
+      "ask": "What about helping people pay?"
+     },
+     {
+      "k": [
+       "trade-off",
+       "evidence",
+       "mix",
+       "measure"
+      ],
+      "ask": "Is there one perfect fix?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Disaster preparedness",
+   "icon": "🌊",
+   "hook": "A '1-in-100-year' flood sounds rare. What is the chance that Kestrel Bay sees at least one in the next 30 years?",
+   "explain": [
+    "Disaster management is often described in four phases: mitigation (reduce the risk, for example by building flood walls), preparedness (plans, drills, supplies, warning systems), response (rescue and relief) and recovery (rebuilding and restoring services). Cities usually do local planning and first response, with national and regional agencies supporting.",
+    "Risk is often thought of as hazard (how likely and strong the event is) combined with exposure (who and what is in harm's way) and vulnerability (how easily they are harmed). Reducing any of these lowers risk. A '1-in-100-year' event has a 1% chance in any given year; this does not mean it happens once every century. Over n years the chance of at least one is 1 − 0.99ⁿ.",
+    "Preparedness depends on clear communication, tested plans, backup systems and fair attention to people who may find it harder to act, such as people with disabilities, the elderly, people who speak other languages or lack transport. Plans are tested by exercises and updated using lessons from real events. Budget choices compare prevention cost with expected losses and consider equity."
+   ],
+   "example": {
+    "q": "What is the chance of at least one 1-in-100-year flood in 30 years?",
+    "steps": [
+     "Chance of none in a year = 0.99.",
+     "Chance of none in 30 years = 0.99³⁰ ≈ 0.740.",
+     "Chance of at least one = 1 − 0.740 = 0.260."
+    ],
+    "a": "About 26%."
+   },
+   "analogies": {
+    "home": "Smoke alarms, an exit plan and a first-aid kit each reduce harm at different stages.",
+    "farm": "A farmer builds channels before the rainy season and keeps feed in reserve.",
+    "sea": "Harbours use warning flags, lifeboats and drills before a storm arrives.",
+    "sport": "Teams practise set plays so they work under pressure."
+   },
+   "mnemonic": "Mitigate, Prepare, Respond, Recover: M-P-R-R.",
+   "terms": [
+    [
+     "Mitigation",
+     "Actions that reduce the risk of a hazard causing harm."
+    ],
+    [
+     "Preparedness",
+     "Planning and readiness before an event."
+    ],
+    [
+     "Vulnerability",
+     "How easily people or assets are harmed."
+    ],
+    [
+     "Return period",
+     "Average time between events of a certain size."
+    ]
+   ],
+   "misc": {
+    "wrong": "A 100-year flood happens exactly once every hundred years.",
+    "right": "It has a 1% chance each year; it could happen in consecutive years or not for centuries."
+   },
+   "limits": "Return periods are estimates based on limited records and changing climates, so they carry uncertainty.",
+   "trip": {
+    "wiki": "Emergency management",
+    "prompt": "Find the four phases of emergency management and an example action for each."
+   },
+   "sources": [
+    "Emergency management",
+    "Disaster risk reduction",
+    "Return period"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a mitigation action?",
+     "o": [
+      "Building a flood wall",
+      "Handing out blankets after a flood",
+      "Searching rubble",
+      "Counting damage"
+     ],
+     "a": 0,
+     "why": "Mitigation reduces risk before an event.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A district has a hospital, many elderly residents and one bridge exit. Which factor is most relevant to vulnerability?",
+     "o": [
+      "Limited evacuation options for people who need help",
+      "The name of the district on the map",
+      "The colour of the buildings in the district",
+      "The number of parks in the district"
+     ],
+     "a": 0,
+     "why": "Vulnerability depends on how easily people can protect themselves.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does '1-in-100-year flood' mean?",
+     "o": [
+      "A 1% chance in any given year",
+      "It happens exactly every 100 years",
+      "It can never happen twice",
+      "It happens each century"
+     ],
+     "a": 0,
+     "why": "The return period is an average probability, not a schedule.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which action best improves preparedness?",
+     "o": [
+      "Running exercises and fixing problems found",
+      "Filing the plan away without anyone reading it",
+      "Keeping the plan secret from the staff",
+      "Not telling the staff what the plan says"
+     ],
+     "a": 0,
+     "why": "Plans must be tested and updated.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why include translated and accessible warnings?",
+     "o": [
+      "People who cannot understand or access a warning cannot act on it",
+      "It is only decoration added to the alerts",
+      "Warnings are optional, so most people can skip them",
+      "Only visitors to the city need those warnings"
+     ],
+     "a": 0,
+     "why": "Fair preparedness reaches everyone.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A 1-in-50-year flood has a 2% chance each year. What is the probability, as a percentage, of no such flood in the next 2 years? (0.98 × 0.98, rounded to 1 decimal place)",
+     "a": 96,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "0.98² = 0.9604 = 96.0%.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using the 1-in-100-year flood example, what is the percentage chance of at least one in 30 years (round to the nearest whole number)?",
+     "a": 26,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "1 − 0.99³⁰ ≈ 1 − 0.740 = 0.26.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the four phases in the usual order.",
+     "items": [
+      "Mitigation",
+      "Preparedness",
+      "Response",
+      "Recovery"
+     ],
+     "why": "The cycle runs from reducing risk to rebuilding.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A flood wall costs 90 million luns and would avoid expected losses of 6 million luns a year. Describe how a city could decide whether to build it.",
+     "rubric": [
+      [
+       "compare",
+       "cost",
+       "benefit",
+       "ratio",
+       "expected",
+       "annual",
+       "losses"
+      ],
+      [
+       "life",
+       "years",
+       "lifespan",
+       "discount",
+       "maintenance",
+       "equity",
+       "vulnerable",
+       "alternative",
+       "evidence",
+       "risk"
+      ]
+     ],
+     "min": 2,
+     "model": "Compare the wall's life-cycle cost with the expected losses it avoids over its life (for example 6 million a year over many decades), check maintenance, risk estimates and alternatives, and consider who is protected and how fairly.",
+     "why": "Cost-benefit analysis plus equity and uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which indicator best shows readiness?",
+     "o": [
+      "Exercise results showing plans work in practice",
+      "The number of binders printed for the plan",
+      "The number of speeches the mayor has given",
+      "The number of posters put up in the city"
+     ],
+     "a": 0,
+     "why": "Tested performance is stronger evidence than documents.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city has money for either raising a seawall (benefits a wealthy waterfront) or early-warning sirens and shelters (benefits a poorer low-lying district). Which approach is most defensible?",
+     "o": [
+      "Compare risk reduction, people protected, cost and fairness using evidence",
+      "Fund the waterfront because the land there is worth more",
+      "Fund only whichever option costs the least",
+      "Choose between the options randomly, by drawing lots"
+     ],
+     "a": 0,
+     "why": "Use stated criteria, including fair protection.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are communication plans a core part of preparedness?",
+     "rubric": [
+      [
+       "warn",
+       "alert",
+       "message",
+       "inform",
+       "tell",
+       "information"
+      ],
+      [
+       "time",
+       "clear",
+       "language",
+       "trust",
+       "evacuat",
+       "act",
+       "everyone",
+       "channel",
+       "phone",
+       "radio",
+       "sirens"
+      ]
+     ],
+     "min": 2,
+     "model": "People can only act if warnings are timely, clear and reach them in languages and channels they use, and if they trust the source.",
+     "why": "Effective communication enables action.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After a disaster the city rebuilds exactly as before. What is a missed opportunity?",
+     "o": [
+      "Building back safer to reduce future risk",
+      "Painting the new buildings in the same colours",
+      "Hiring workers to do the rebuilding job",
+      "Writing a report that nobody ever reads"
+     ],
+     "a": 0,
+     "why": "Recovery is a chance to reduce future vulnerability.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Disaster preparedness",
+    "model": "Disaster management has four phases: mitigation, preparedness, response and recovery. Risk depends on how likely the hazard is, who is exposed and how vulnerable they are. Cities test plans, warn everyone clearly and treat vulnerable people fairly.",
+    "points": [
+     {
+      "k": [
+       "mitigat",
+       "prepar",
+       "respond",
+       "recover",
+       "phase"
+      ],
+      "ask": "What are the phases?"
+     },
+     {
+      "k": [
+       "risk",
+       "hazard",
+       "exposure",
+       "vulnerab"
+      ],
+      "ask": "How is risk understood?"
+     },
+     {
+      "k": [
+       "warn",
+       "communicat",
+       "alert",
+       "clear"
+      ],
+      "ask": "Why does communication matter?"
+     },
+     {
+      "k": [
+       "fair",
+       "vulnerable",
+       "elderly",
+       "disab",
+       "language",
+       "everyone"
+      ],
+      "ask": "Who needs extra attention?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Public policy evaluation",
+   "icon": "🔍",
+   "hook": "Crime fell in a district after a new programme began. Did the programme cause the fall, or would it have happened anyway?",
+   "explain": [
+    "Policy evaluation asks whether a policy was carried out as planned and whether it achieved its goals. It distinguishes inputs (money and staff), outputs (what was delivered, such as 500 workshops), outcomes (changes for people, such as more employment) and impacts (long-term effects attributable to the policy).",
+    "The hard question is causation. A before-and-after comparison can mislead because other things change. Evaluators use a counterfactual: what would have happened without the policy. A comparison group helps. A difference-in-differences estimate subtracts the change in a similar untreated group from the change in the treated group. Randomised pilots are the strongest design where feasible, but not always possible or ethical.",
+    "Evaluation also asks about cost-effectiveness (cost per unit of outcome), equity (who benefited), unintended effects and how reliable the data are. Indicators should be defined before the policy starts. Results should be published, whether good or bad, and used to improve or end policies. Politicians and the public often disagree about goals, so evaluation is most useful when criteria are agreed in advance."
+   ],
+   "example": {
+    "q": "In a treated district, burglaries fell from 120 to 90. In a similar comparison district, burglaries fell from 110 to 98. What is the difference-in-differences estimate?",
+    "steps": [
+     "Treated change = 90 − 120 = −30.",
+     "Comparison change = 98 − 110 = −12.",
+     "Difference = −30 − (−12) = −18."
+    ],
+    "a": "18 fewer burglaries than expected."
+   },
+   "analogies": {
+    "home": "If you tried a new study routine and your marks rose, you would also check whether the test was easier.",
+    "farm": "A farmer tests a new fertiliser on one field and compares it with a similar field without it.",
+    "sport": "A coach compares a team that used a new drill with a similar team that did not.",
+    "tech": "A/B tests show two groups different versions and compare results."
+   },
+   "mnemonic": "Goal, Indicator, Baseline, Comparison, Cost: G-I-B-C-C.",
+   "terms": [
+    [
+     "Counterfactual",
+     "What would have happened without the policy."
+    ],
+    [
+     "Outcome",
+     "A change in people's lives or conditions caused by a policy."
+    ],
+    [
+     "Difference-in-differences",
+     "Comparing before-and-after change in a treated group with the change in a comparison group."
+    ],
+    [
+     "Cost-effectiveness",
+     "Cost per unit of outcome achieved."
+    ]
+   ],
+   "misc": {
+    "wrong": "If things improve after a policy, the policy worked.",
+    "right": "Other factors may explain the change; evaluation compares against a counterfactual."
+   },
+   "limits": "Comparison groups are never perfect, and effects may differ between places, so findings need replication and humility.",
+   "trip": {
+    "wiki": "Policy analysis",
+    "prompt": "Find what the page says about evaluating whether a policy worked."
+   },
+   "sources": [
+    "Policy analysis",
+    "Program evaluation",
+    "Difference in differences"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is an outcome in policy evaluation?",
+     "o": [
+      "A change in people's conditions caused by the policy",
+      "The money spent on running the policy",
+      "The number of meetings held about it",
+      "A list of the staff who ran it"
+     ],
+     "a": 0,
+     "why": "Outcomes measure real-world change.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a before-and-after comparison weak evidence on its own?",
+     "o": [
+      "Other factors may have changed at the same time",
+      "Time never passes between the two measurements",
+      "Data are never collected in either period",
+      "It is always correct, so it needs no other evidence"
+     ],
+     "a": 0,
+     "why": "Causation needs a counterfactual.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an output, not an outcome?",
+     "o": [
+      "500 training sessions delivered",
+      "Higher employment rate among residents of the district",
+      "Lower accident rate on the city's streets",
+      "Higher average incomes for local households"
+     ],
+     "a": 0,
+     "why": "Outputs are what was delivered; outcomes are the changes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why define indicators before starting a policy?",
+     "o": [
+      "To avoid choosing favourable measures afterward",
+      "To delay the start of the policy by some months",
+      "To hide the results of the policy later on",
+      "To increase the costs of the policy for the city"
+     ],
+     "a": 0,
+     "why": "Pre-set indicators reduce bias.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pilot programme is run in randomly chosen schools and not in others. What does this help with?",
+     "o": [
+      "Estimating the policy's effect more credibly",
+      "Making the policy cheaper to run for the city",
+      "Avoiding the need to collect any data",
+      "Increasing the bias in the results on purpose"
+     ],
+     "a": 0,
+     "why": "Random assignment makes groups comparable.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A treated area's accidents fell from 80 to 62. A comparison area's fell from 75 to 69. What is the difference-in-differences estimate (negative means a bigger fall in the treated area)?",
+     "a": -12,
+     "tol": 0,
+     "why": "Treated −18, comparison −6; −18 − (−6) = −12.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A programme costing 2,400,000 luns prevents 160 incidents. What is the cost per incident prevented in luns?",
+     "a": 15000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "2,400,000 ÷ 160 = 15,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the term to its meaning.",
+     "pairs": [
+      [
+       "Input",
+       "Resources used"
+      ],
+      [
+       "Output",
+       "What was delivered"
+      ],
+      [
+       "Outcome",
+       "Change for people"
+      ],
+      [
+       "Counterfactual",
+       "What would have happened anyway"
+      ]
+     ],
+     "why": "These distinctions structure evaluations.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Crime fell by 10% in a district after a new patrol scheme. Describe two checks before concluding that the scheme caused the fall.",
+     "rubric": [
+      [
+       "compare",
+       "similar",
+       "control",
+       "other district",
+       "comparison",
+       "counterfactual"
+      ],
+      [
+       "trend",
+       "other factor",
+       "before",
+       "longer",
+       "data",
+       "reporting",
+       "time",
+       "changed",
+       "economy"
+      ]
+     ],
+     "min": 2,
+     "model": "Compare with similar districts that did not get the scheme and check earlier trends, other changes such as the economy or reporting practices, and whether the fall persists over a longer period.",
+     "why": "Causal claims need comparison and checks for alternative explanations.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why should evaluation results be published even if they are unfavourable?",
+     "o": [
+      "Transparency allows learning and accountability",
+      "They embarrass staff, so they should be buried",
+      "They end all policies once they are published",
+      "They are always wrong when they are unfavourable"
+     ],
+     "a": 0,
+     "why": "Learning from failures improves future policies.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Programme A costs 3,000 luns per outcome and helps a few people with severe needs. Programme B costs 1,000 luns per outcome but helps those who need it least. How should leaders judge?",
+     "o": [
+      "Weigh cost-effectiveness with equity and need using stated criteria",
+      "Choose B because it is cheaper per outcome, whoever it helps",
+      "Choose A because it is the bigger programme overall",
+      "Choose neither programme, and spend nothing at all"
+     ],
+     "a": 0,
+     "why": "Cost-effectiveness is one criterion among several.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can measuring a single indicator cause problems, and what is the remedy?",
+     "rubric": [
+      [
+       "gaming",
+       "target",
+       "manipulat",
+       "narrow",
+       "distort",
+       "ignore",
+       "only one",
+       "focus"
+      ],
+      [
+       "several",
+       "balanced",
+       "mix",
+       "indicators",
+       "quality",
+       "outcome",
+       "audit",
+       "check",
+       "review",
+       "qualitative"
+      ]
+     ],
+     "min": 2,
+     "model": "If staff are judged on one number, they may focus on it and ignore other goals or game the figure. Using several indicators, checking quality and auditing data reduces this.",
+     "why": "Balanced measurement reduces gaming.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which makes an evaluation most credible to people with different political views?",
+     "o": [
+      "Agreed criteria, open data and independent review",
+      "Secret methods that only the authors understand",
+      "Selecting only the good results to show the public",
+      "Using only anecdotes from supporters of the policy"
+     ],
+     "a": 0,
+     "why": "Transparent methods build trust across groups.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Evaluating public policy",
+    "model": "Policy evaluation checks whether a policy was delivered and whether it caused the intended change. Evaluators compare with what would have happened without the policy, for example using a similar comparison group. They also look at cost, fairness and unintended effects.",
+    "points": [
+     {
+      "k": [
+       "goal",
+       "outcome",
+       "result",
+       "change"
+      ],
+      "ask": "What does evaluation look for?"
+     },
+     {
+      "k": [
+       "compare",
+       "comparison",
+       "group",
+       "counterfactual",
+       "without"
+      ],
+      "ask": "How do we know the policy caused it?"
+     },
+     {
+      "k": [
+       "cost",
+       "effective",
+       "per"
+      ],
+      "ask": "Does cost matter?"
+     },
+     {
+      "k": [
+       "publish",
+       "open",
+       "fair",
+       "equity",
+       "learn"
+      ],
+      "ask": "What should happen with results?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2864 @@
+{
+ "world": 6,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Reactor physics",
+   "icon": "⚖️",
+   "hook": "A reactor must keep a steady number of fissions for years. What does it mean for neutrons to be in balance?",
+   "explain": [
+    "Reactor physics follows the neutron population. In each generation, some neutrons cause fission, some are absorbed without fission, and some leak out of the core. The multiplication factor k is the number of neutrons in one generation divided by the number in the one before.",
+    "If k is less than 1, each generation is smaller and the chain reaction dies away (subcritical). If k equals 1, the population is steady (critical), which is the normal state for a power reactor. If k is greater than 1, the population grows (supercritical), which operators allow only briefly and slowly when raising power.",
+    "Control is possible mainly because a small fraction of fission neutrons, less than one percent, are delayed: they come from fission products a few seconds after the fission. These delayed neutrons slow down changes in the chain reaction so that control rods and automatic systems have time to respond.",
+    "Reactors are also designed with negative feedback: if power or temperature rises, physical effects such as lower moderation or more neutron absorption reduce the reaction rate, which helps stabilise the reactor."
+   ],
+   "example": {
+    "q": "A generation has 1000 neutrons. If k = 0.9, how many neutrons are in the third generation after it?",
+    "steps": [
+     "Next generation: 1000 × 0.9 = 900.",
+     "Then 900 × 0.9 = 810.",
+     "Then 810 × 0.9 = 729."
+    ],
+    "a": "729 neutrons"
+   },
+   "analogies": {
+    "farm": "A herd where births and deaths balance stays the same size; if births exceed deaths it grows.",
+    "city": "A bank account with deposits equal to withdrawals stays constant.",
+    "sport": "A rally that continues at the same pace, as long as each shot is returned.",
+    "tech": "A thermostat with feedback keeps temperature steady."
+   },
+   "mnemonic": "k below one: dies; k at one: steady; k above one: grows.",
+   "terms": [
+    [
+     "Multiplication factor (k)",
+     "Neutrons in one generation divided by the previous generation."
+    ],
+    [
+     "Critical",
+     "The chain reaction is exactly self-sustaining (k = 1)."
+    ],
+    [
+     "Delayed neutrons",
+     "Neutrons released seconds after fission, making control easier."
+    ],
+    [
+     "Negative feedback",
+     "A change that tends to reduce the cause of the change."
+    ]
+   ],
+   "misc": {
+    "wrong": "'Critical' means the reactor is in danger.",
+    "right": "In reactor physics, critical simply means the chain reaction is steady. A power reactor operates normally while critical."
+   },
+   "limits": "This is a simplified, conceptual view. Real design uses detailed computer calculations and many safety margins.",
+   "trip": {
+    "wiki": "Nuclear reactor physics",
+    "prompt": "Find the description of the neutron life cycle and list the ways a neutron can be lost."
+   },
+   "sources": [
+    "Nuclear reactor physics",
+    "Neutron multiplication factor",
+    "Delayed neutron"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does k = 1 mean?",
+     "o": [
+      "The neutron population is steady",
+      "The reactor has been switched off",
+      "The neutron population doubles each cycle",
+      "The fuel has been used up"
+     ],
+     "a": 0,
+     "why": "k = 1 means each generation has the same number of neutrons.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If k < 1, what happens to the chain reaction?",
+     "o": [
+      "It dies away",
+      "It grows",
+      "It stays steady",
+      "It becomes fusion"
+     ],
+     "a": 0,
+     "why": "Each generation is smaller.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A generation has 2000 neutrons and k = 0.95. How many neutrons are in the next generation?",
+     "a": 1900,
+     "tol": 0.5,
+     "why": "2000 × 0.95 = 1900.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A generation has 500 neutrons and k = 1.02. How many are in the next generation?",
+     "a": 510,
+     "tol": 0.5,
+     "why": "500 × 1.02 = 510.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "One generation has 1000 neutrons and the next generation has 1020 neutrons. What is the multiplication factor k?",
+     "a": 1.02,
+     "tol": 0.005,
+     "why": "k = 1020 ÷ 1000 = 1.02.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do delayed neutrons make control easier?",
+     "o": [
+      "They slow the rate of change so the response has time",
+      "They make the reactor run hotter and hotter",
+      "They stop fission from taking place",
+      "They carry an electric charge that can be steered"
+     ],
+     "a": 0,
+     "why": "Changes happen on a timescale of seconds, not microseconds.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Inserting control rods does what to k?",
+     "o": [
+      "Lowers it",
+      "Raises it",
+      "Leaves it",
+      "Makes it negative"
+     ],
+     "a": 0,
+     "why": "They absorb neutrons.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each value of k to the state.",
+     "pairs": [
+      [
+       "k < 1",
+       "Subcritical"
+      ],
+      [
+       "k = 1",
+       "Critical"
+      ],
+      [
+       "k > 1",
+       "Supercritical"
+      ]
+     ],
+     "why": "The names describe the trend of the neutron population.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain what negative feedback means for reactor stability, with one example.",
+     "rubric": [
+      [
+       "power",
+       "temperature",
+       "heat",
+       "rise",
+       "increase"
+      ],
+      [
+       "reduce",
+       "lower",
+       "decrease",
+       "fall",
+       "slow",
+       "self-limit",
+       "stabilis"
+      ],
+      [
+       "moderat",
+       "absorb",
+       "density",
+       "boil",
+       "void",
+       "doppler",
+       "example"
+      ]
+     ],
+     "min": 2,
+     "model": "Negative feedback means that if power or temperature rises, a physical effect reduces the reaction rate. For example, hotter water is less dense and moderates neutrons less, so fission drops.",
+     "why": "It makes the reactor self-stabilising.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A reactor operator raises power slowly by letting k rise slightly above 1 and then returns it to 1. Why return it to 1?",
+     "o": [
+      "To hold the new power steady",
+      "To shut the reactor down completely",
+      "To breed more fuel in the core",
+      "To lower the neutron population to zero"
+     ],
+     "a": 0,
+     "why": "k = 1 holds the power constant.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If all fission neutrons were prompt (none delayed), why would control be much harder?",
+     "o": [
+      "The population could change extremely fast compared with mechanical rods",
+      "The control rods would be far stronger than they need to be today",
+      "There would be no neutrons at all left to start any fission",
+      "The reactor would run colder, which would make it harder to restart"
+     ],
+     "a": 0,
+     "why": "Prompt neutron lifetimes are tiny, so changes would be too fast for mechanical response.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "List three fates of a neutron in a reactor core and say which ones keep the chain reaction going.",
+     "rubric": [
+      [
+       "fission",
+       "causes fission"
+      ],
+      [
+       "absorb",
+       "captur"
+      ],
+      [
+       "leak",
+       "escape",
+       "leave"
+      ],
+      [
+       "keep",
+       "sustain",
+       "continue",
+       "maintain"
+      ]
+     ],
+     "min": 3,
+     "model": "A neutron can cause fission (which keeps the chain going), be absorbed without fission (lost), or leak out of the core (lost). Only fission sustains the chain reaction.",
+     "why": "k depends on the balance of production and losses.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it unhelpful to describe 'critical' as 'dangerous'?",
+     "o": [
+      "It is the normal steady operating state of a reactor",
+      "It is the state in which the core has already begun to melt",
+      "It is the name for a reactor that has been switched off",
+      "It is a special kind of fuel used in older plants"
+     ],
+     "a": 0,
+     "why": "Language differs between everyday use and physics.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The multiplication factor",
+    "model": "The multiplication factor k compares the neutrons in one generation with the previous one. If k is less than 1 the reaction dies away, if it is exactly 1 it is steady, and if it is greater than 1 it grows. Power reactors run at k = 1, and control rods and negative feedback keep it there.",
+    "points": [
+     {
+      "k": [
+       "k",
+       "multiplication",
+       "ratio",
+       "generation"
+      ],
+      "ask": "What is k?"
+     },
+     {
+      "k": [
+       "less than 1",
+       "dies",
+       "subcritical"
+      ],
+      "ask": "What if k is below one?"
+     },
+     {
+      "k": [
+       "steady",
+       "critical",
+       "one",
+       "1"
+      ],
+      "ask": "What is the normal state?"
+     },
+     {
+      "k": [
+       "control rod",
+       "feedback",
+       "delayed"
+      ],
+      "ask": "How is it kept there?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Nuclear reaction cross-sections",
+   "icon": "🎯",
+   "hook": "A neutron is fired at a thin foil. How can we measure how likely it is to hit a nucleus we cannot see?",
+   "explain": [
+    "The cross-section σ measures how likely a particular reaction is between a neutron and a nucleus. Think of it as an effective target area: a larger area means a higher chance of interaction. It is measured in barns, where 1 barn = 10⁻²⁸ m².",
+    "Different reactions have different cross-sections: scattering, capture and fission. The cross-section also depends strongly on the neutron's energy. For fission in uranium-235, the cross-section for slow (thermal) neutrons is much larger than for fast neutrons. That is why moderators are used.",
+    "In a material with N nuclei per cubic metre, the macroscopic cross-section is Σ = N × σ, measured per metre. The average distance a neutron travels before an interaction, the mean free path, is 1 ÷ Σ.",
+    "The reaction rate per unit volume is Σ × φ, where φ is the neutron flux (how many neutrons pass per square metre per second). This is how engineers link the neutron population to power."
+   ],
+   "example": {
+    "q": "A material has N = 4 × 10²⁸ nuclei per m³ and σ = 0.5 barn (0.5 × 10⁻²⁸ m²). What is the mean free path?",
+    "steps": [
+     "Σ = N × σ = 4 × 10²⁸ × 0.5 × 10⁻²⁸ = 2 per metre.",
+     "Mean free path = 1 ÷ Σ = 1 ÷ 2.",
+     "= 0.5 m."
+    ],
+    "a": "0.5 m"
+   },
+   "analogies": {
+    "sport": "A bigger goal is easier to hit: the cross-section is the size of the goal.",
+    "city": "A wider doorway is easier to walk through.",
+    "nature": "A big target is easier for a rain drop to fall on.",
+    "tech": "A radar sees a big aircraft more easily than a small one."
+   },
+   "mnemonic": "Bigger barn, bigger chance. Σ = Nσ, path = 1/Σ.",
+   "terms": [
+    [
+     "Cross-section (σ)",
+     "Effective target area for a reaction, in barns."
+    ],
+    [
+     "Barn",
+     "10⁻²⁸ square metres."
+    ],
+    [
+     "Macroscopic cross-section (Σ)",
+     "N × σ, the interaction probability per metre of travel."
+    ],
+    [
+     "Mean free path",
+     "Average distance between interactions, 1 ÷ Σ."
+    ],
+    [
+     "Neutron flux (φ)",
+     "Neutrons crossing unit area per second."
+    ]
+   ],
+   "misc": {
+    "wrong": "The cross-section is the physical size of the nucleus.",
+    "right": "It is an effective area describing probability, and it varies with neutron energy and reaction type."
+   },
+   "limits": "Real cross-sections have sharp resonances and are taken from measured data tables.",
+   "trip": {
+    "wiki": "Neutron cross section",
+    "prompt": "Find the graph of cross-section against neutron energy and spot the resonances."
+   },
+   "sources": [
+    "Neutron cross section",
+    "Barn (unit)",
+    "Mean free path"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a barn?",
+     "o": [
+      "10⁻²⁸ m², a unit of cross-section",
+      "A unit of length for very small things",
+      "A unit of absorbed dose in tissue",
+      "A type of research reactor"
+     ],
+     "a": 0,
+     "why": "The barn is a unit of area.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A larger cross-section means...",
+     "o": [
+      "A reaction is more likely",
+      "A reaction is less likely",
+      "The nucleus is hotter",
+      "The neutron is charged"
+     ],
+     "a": 0,
+     "why": "Cross-section is a measure of reaction probability.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A material has N = 2 × 10²⁸ nuclei per m³ and σ = 1 barn. What is Σ in m⁻¹? (1 barn = 10⁻²⁸ m²)",
+     "a": 2,
+     "tol": 0.01,
+     "unit": "m⁻¹",
+     "why": "Σ = 2 × 10²⁸ × 10⁻²⁸ = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "If Σ = 4 per metre, what is the mean free path in metres?",
+     "a": 0.25,
+     "tol": 0.005,
+     "unit": "m",
+     "why": "1 ÷ 4 = 0.25 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A neutron flux of 10¹⁸ per m² per s meets a material with Σ = 5 per m. What is the reaction rate per m³ per second, in units of 10¹⁸? (Rate = Σ × φ)",
+     "a": 5,
+     "tol": 0.01,
+     "why": "5 × 10¹⁸ = 5 × 10¹⁸ reactions per m³ per second.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a moderator useful for fission in uranium-235?",
+     "o": [
+      "Slow neutrons have a much larger fission cross-section",
+      "Fast neutrons carry no energy at all, so only slow ones work",
+      "It adds extra protons to each uranium nucleus in the fuel",
+      "It stops every neutron capture in the core from occurring"
+     ],
+     "a": 0,
+     "why": "Thermal neutrons are more likely to cause fission.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each symbol to its meaning.",
+     "pairs": [
+      [
+       "Lower-case sigma, σ",
+       "Microscopic cross-section"
+      ],
+      [
+       "Capital sigma, Σ",
+       "Macroscopic cross-section"
+      ],
+      [
+       "Phi, φ",
+       "Neutron flux"
+      ],
+      [
+       "One over Σ",
+       "Mean free path"
+      ]
+     ],
+     "why": "Each has a distinct role in reaction calculations.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A control material has a very large neutron-capture cross-section. Explain why that makes it useful in control rods.",
+     "rubric": [
+      [
+       "capture",
+       "absorb"
+      ],
+      [
+       "likely",
+       "probab",
+       "large",
+       "high",
+       "easily",
+       "many"
+      ],
+      [
+       "neutron"
+      ]
+     ],
+     "min": 2,
+     "model": "A large capture cross-section means neutrons are very likely to be absorbed, so a rod of this material removes many neutrons and lowers the chain reaction rate.",
+     "why": "Cross-section is the probability measure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A material's density is doubled with the same σ. What happens to the mean free path?",
+     "o": [
+      "It halves",
+      "It doubles",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "N doubles, so Σ doubles and 1/Σ halves.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which nucleus is the most likely to capture a neutron, if the number of nuclei per cubic metre is the same?",
+     "o": [
+      "One with a capture cross-section of 1000 barns",
+      "One with a capture cross-section of 10 barns",
+      "One with a capture cross-section of 1 barn only",
+      "One with a capture cross-section of 0.1 barn"
+     ],
+     "a": 0,
+     "why": "A larger cross-section means a higher probability of the reaction.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are both σ and N needed to predict how far a neutron travels?",
+     "o": [
+      "Interaction depends on target area and how many targets there are",
+      "Only the size of the nucleus matters, not the number of nuclei",
+      "Only the temperature of the fuel decides it",
+      "The neutron chooses which nucleus to hit"
+     ],
+     "a": 0,
+     "why": "Σ = Nσ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can the same nucleus act as a good absorber of slow neutrons and a poor one of fast neutrons?",
+     "rubric": [
+      [
+       "energy",
+       "speed",
+       "slow",
+       "fast"
+      ],
+      [
+       "cross-section",
+       "probab",
+       "likely",
+       "resonance",
+       "time near",
+       "chance"
+      ]
+     ],
+     "min": 2,
+     "model": "Cross-sections depend on neutron energy. A slow neutron spends longer near a nucleus and many nuclei have much larger capture cross-sections at low energies, so the same nucleus can absorb slow neutrons far more readily.",
+     "why": "Energy dependence is a central feature of cross-sections.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer wants neutrons to travel farther in a material before interacting. What should the material have?",
+     "o": [
+      "A lower Σ",
+      "A higher Σ",
+      "A higher density only",
+      "A larger σ and N"
+     ],
+     "a": 0,
+     "why": "Mean free path rises as Σ falls.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Cross-sections",
+    "model": "A cross-section is the effective target area a nucleus presents to a neutron for a given reaction. A bigger cross-section means a higher chance of reaction. Multiply it by the number of nuclei per cubic metre to get the chance per metre, and the mean free path is the inverse. Cross-sections change with neutron energy.",
+    "points": [
+     {
+      "k": [
+       "target",
+       "area",
+       "probability",
+       "chance"
+      ],
+      "ask": "What is a cross-section?"
+     },
+     {
+      "k": [
+       "barn",
+       "10",
+       "-28"
+      ],
+      "ask": "What is the unit?"
+     },
+     {
+      "k": [
+       "nuclei",
+       "density",
+       "per cubic",
+       "n"
+      ],
+      "ask": "How do many nuclei matter?"
+     },
+     {
+      "k": [
+       "energy",
+       "slow",
+       "fast",
+       "mean free path"
+      ],
+      "ask": "Does neutron speed matter?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Reactor thermal hydraulics",
+   "icon": "🌊",
+   "hook": "Pumps push water through a core. How much flow is needed to carry away a given amount of power?",
+   "explain": [
+    "Thermal hydraulics is the study of heat transfer and fluid flow. In a reactor, heat made in the fuel passes through the fuel pellet, the cladding, and into the coolant by conduction and convection. The coolant carries it away.",
+    "For steady flow, the heat carried is P = ṁ × c × ΔT, where ṁ is the mass flow rate (kg/s), c is the specific heat capacity and ΔT is the rise in coolant temperature across the core. For a given power, more flow means a smaller temperature rise.",
+    "Engineers must keep the fuel and cladding below limits. A key concern is boiling: if too much of the surface is covered by vapour, heat transfer drops sharply and cladding temperature can climb quickly. This is why designs keep a safety margin from this boiling limit.",
+    "Natural circulation lets hot, less dense fluid rise and cooler, denser fluid sink, moving heat even with no pump. Some designs rely on this to provide passive safety."
+   ],
+   "example": {
+    "q": "Coolant flows at 200 kg/s and warms by 30 °C passing through the core. Use c = 4200 J/kg°C. What power does it carry away?",
+    "steps": [
+     "P = ṁ c ΔT.",
+     "P = 200 × 4200 × 30.",
+     "200 × 30 = 6000; 6000 × 4200 = 25 200 000 W = 25.2 MW."
+    ],
+    "a": "25.2 MW"
+   },
+   "analogies": {
+    "home": "A central-heating system: a pump moves hot water to radiators.",
+    "city": "A river carrying away warm water from a factory.",
+    "sport": "A runner with a fan blowing cool air over them.",
+    "nature": "Sea breezes caused by warm air rising."
+   },
+   "mnemonic": "Power = flow × heat capacity × temperature rise.",
+   "terms": [
+    [
+     "Mass flow rate (ṁ)",
+     "Kilograms of fluid per second."
+    ],
+    [
+     "Conduction",
+     "Heat passing through a solid."
+    ],
+    [
+     "Convection",
+     "Heat carried by moving fluid."
+    ],
+    [
+     "Boiling crisis",
+     "A sharp fall in heat transfer when vapour blankets a surface."
+    ],
+    [
+     "Natural circulation",
+     "Flow driven by density differences."
+    ]
+   ],
+   "misc": {
+    "wrong": "More coolant flow always means higher temperatures somewhere.",
+    "right": "For a fixed power, more flow gives a smaller temperature rise in the coolant, which usually helps."
+   },
+   "limits": "Real flows are three-dimensional and need detailed computer models; this is a one-line energy balance.",
+   "trip": {
+    "wiki": "Thermal hydraulics",
+    "prompt": "Find the description of the boiling regimes and where heat transfer is best."
+   },
+   "sources": [
+    "Thermal hydraulics",
+    "Convection",
+    "Nuclear reactor safety system"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A coolant has flow 100 kg/s, c = 4200 J/kg°C and warms by 20 °C. What power does it carry in MW?",
+     "a": 8.4,
+     "tol": 0.05,
+     "unit": "MW",
+     "why": "100 × 4200 × 20 = 8 400 000 W = 8.4 MW.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A core produces 21 MW and the coolant (c = 4200) warms by 25 °C. What mass flow rate in kg/s is needed?",
+     "a": 200,
+     "tol": 1,
+     "unit": "kg/s",
+     "why": "ṁ = P ÷ (c ΔT) = 21 000 000 ÷ (4200 × 25) = 200 kg/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "For the same power, if flow is doubled, the coolant temperature rise...",
+     "o": [
+      "Halves",
+      "Doubles",
+      "Stays the same",
+      "Becomes zero"
+     ],
+     "a": 0,
+     "why": "P = ṁ c ΔT, so ΔT is inversely proportional to ṁ.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which describes convection?",
+     "o": [
+      "Heat carried by moving fluid",
+      "Heat passing through a solid wall",
+      "Heat travelling as light rays",
+      "Heat released by radioactive decay"
+     ],
+     "a": 0,
+     "why": "Convection requires a moving fluid.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the boiling crisis a concern?",
+     "o": [
+      "Vapour reduces heat transfer so cladding can overheat",
+      "It cools the fuel too much and so wastes energy",
+      "It stops all the neutrons in the core",
+      "It improves the flow of coolant past the fuel"
+     ],
+     "a": 0,
+     "why": "A vapour film insulates the surface.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each process to its example.",
+     "pairs": [
+      [
+       "Conduction",
+       "Heat through the fuel pellet"
+      ],
+      [
+       "Convection",
+       "Coolant carrying heat out"
+      ],
+      [
+       "Natural circulation",
+       "Flow with no pump driven by density"
+      ]
+     ],
+     "why": "Heat moves in different ways in a reactor.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why engineers keep a margin below the limit where heat transfer sharply degrades.",
+     "rubric": [
+      [
+       "margin",
+       "safe",
+       "below",
+       "away",
+       "buffer",
+       "uncertain"
+      ],
+      [
+       "sharp",
+       "sudden",
+       "rapid",
+       "overheat",
+       "cladding",
+       "damage",
+       "temperature"
+      ]
+     ],
+     "min": 2,
+     "model": "Beyond the limit, heat transfer drops suddenly and cladding temperatures can rise quickly. Because models, measurements and operating conditions are uncertain, designs keep a margin so the limit is never approached in normal operation or expected transients.",
+     "why": "Margins protect against uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pump fails but the core still has hot and cold regions connected by pipes. What might still move the water?",
+     "o": [
+      "Natural circulation",
+      "A magnetic field around the pipes",
+      "The neutrons moving in the core",
+      "Sound waves from the pump house"
+     ],
+     "a": 0,
+     "why": "Hot fluid rises, cold sinks.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Coolant enters the core at 290 °C and leaves at 325 °C. What is the temperature rise in °C?",
+     "a": 35,
+     "tol": 0,
+     "unit": "°C",
+     "why": "325 − 290 = 35.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Pressurised water reactors keep the water under high pressure. What does this achieve?",
+     "o": [
+      "It prevents bulk boiling at high temperature",
+      "It cools the water well below room temperature",
+      "It slows the neutrons down in the core",
+      "It absorbs gamma rays from the fuel"
+     ],
+     "a": 0,
+     "why": "Higher pressure raises the boiling point.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is a stuck-open relief valve on a pressurised system a safety concern?",
+     "o": [
+      "Pressure falls, coolant can boil and heat transfer drops",
+      "Pressure rises dangerously and bursts the vessel wall at once",
+      "Neutrons escape from the reactor through the open valve",
+      "The water becomes much more radioactive within seconds"
+     ],
+     "a": 0,
+     "why": "Pressure loss lowers the boiling point and can cause voiding.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Using P = ṁ c ΔT, explain why losing coolant flow is serious even if the power stays the same for a moment.",
+     "rubric": [
+      [
+       "flow",
+       "mass flow",
+       "pump"
+      ],
+      [
+       "temperature",
+       "rise",
+       "heat up",
+       "hotter"
+      ],
+      [
+       "power",
+       "heat",
+       "removed",
+       "not carried",
+       "carried away"
+      ]
+     ],
+     "min": 2,
+     "model": "If flow falls while heat production is the same, the coolant temperature rise must grow and the heat is no longer carried away fast enough, so the fuel and cladding heat up.",
+     "why": "Heat balance must be maintained.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which design choice uses physics to improve safety without needing power?",
+     "o": [
+      "Natural circulation cooling",
+      "Bigger pumps that need more electricity",
+      "Removing sensors from the control room",
+      "Raising the power level of the reactor"
+     ],
+     "a": 0,
+     "why": "Density-driven flow works without pumps.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Carrying heat out of a core",
+    "model": "Heat from the fuel passes through the cladding into the coolant. The power carried is flow times heat capacity times temperature rise, so for a given power more flow means less temperature rise. Engineers keep a margin from boiling problems and use natural circulation as a backup.",
+    "points": [
+     {
+      "k": [
+       "flow",
+       "pump",
+       "coolant"
+      ],
+      "ask": "What carries the heat?"
+     },
+     {
+      "k": [
+       "p =",
+       "mcδt",
+       "temperature rise",
+       "heat capacity",
+       "formula"
+      ],
+      "ask": "What is the relationship?"
+     },
+     {
+      "k": [
+       "boiling",
+       "vapour",
+       "margin"
+      ],
+      "ask": "What limits do we watch?"
+     },
+     {
+      "k": [
+       "natural",
+       "density",
+       "rise",
+       "passive"
+      ],
+      "ask": "What if pumps stop?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Nuclear materials",
+   "icon": "🔩",
+   "hook": "Inside a reactor, metals face heat, pressure, corrosion and a constant shower of neutrons. What would you build with?",
+   "explain": [
+    "Materials in a reactor are chosen for several properties at once: strength at high temperature, resistance to corrosion, how strongly they absorb neutrons, and how well they withstand radiation damage.",
+    "Fuel cladding is often a zirconium alloy because zirconium absorbs few neutrons, so it wastes few of them, while being strong enough and corrosion resistant in hot water. The reactor pressure vessel is made of thick steel to contain high pressure.",
+    "Radiation damages materials. Fast neutrons knock atoms out of place in a metal and, over many years, can make steel more brittle (radiation embrittlement). Engineers include test samples in reactors and monitor them to check the vessel stays tough.",
+    "Other materials have specific jobs: boron and cadmium to absorb neutrons, graphite or water as moderators, and concrete for shielding. Zirconium can react with steam at very high temperatures to make hydrogen, which designers and safety systems must account for."
+   ],
+   "example": {
+    "q": "Why choose a zirconium alloy rather than ordinary steel for cladding inside the core?",
+    "steps": [
+     "Cladding sits where neutrons are plentiful.",
+     "Zirconium absorbs far fewer neutrons than steel.",
+     "So fewer neutrons are wasted and the chain reaction is more efficient."
+    ],
+    "a": "It absorbs few neutrons while remaining strong and corrosion resistant"
+   },
+   "analogies": {
+    "home": "A kettle needs a material that handles heat and water without rusting.",
+    "city": "A bridge uses materials checked regularly for fatigue.",
+    "sea": "A ship's hull must resist salt water and stress for decades.",
+    "sport": "A helmet must absorb impacts and be tested for wear."
+   },
+   "mnemonic": "Strong, hot-proof, neutron-clear and tough over time.",
+   "terms": [
+    [
+     "Cladding",
+     "The metal tube that encloses fuel pellets."
+    ],
+    [
+     "Embrittlement",
+     "Loss of toughness, making a material more likely to crack."
+    ],
+    [
+     "Corrosion",
+     "Chemical attack on a surface."
+    ],
+    [
+     "Neutron absorber",
+     "A material that readily captures neutrons."
+    ]
+   ],
+   "misc": {
+    "wrong": "Any strong metal will do inside a reactor.",
+    "right": "Neutron absorption and radiation damage matter as much as strength."
+   },
+   "limits": "Material choices vary by reactor type, and research continues on new alloys and ceramics.",
+   "trip": {
+    "wiki": "Nuclear material",
+    "prompt": "Find the section on materials in nuclear reactors and list two requirements."
+   },
+   "sources": [
+    "Nuclear material",
+    "Zircaloy",
+    "Radiation damage"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why is zirconium alloy used for fuel cladding?",
+     "o": [
+      "It absorbs few neutrons and resists corrosion",
+      "It absorbs many neutrons, which helps the chain reaction",
+      "It is a moderator only, not a structural metal",
+      "It is magnetic, so it holds the pellets in place"
+     ],
+     "a": 0,
+     "why": "Low absorption keeps neutrons for fission.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is radiation embrittlement?",
+     "o": [
+      "Loss of toughness due to radiation damage",
+      "A gain of strength from the radiation",
+      "Melting of the metal in the core",
+      "A change of colour on the surface of the metal"
+     ],
+     "a": 0,
+     "why": "Neutron damage makes some metals more brittle.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is best for a control rod?",
+     "o": [
+      "A material with a large neutron-capture cross-section, such as boron",
+      "A material with a very small neutron-capture cross-section, such as lead",
+      "A good moderator, such as ordinary water",
+      "A fissile fuel, such as uranium-235"
+     ],
+     "a": 0,
+     "why": "Control rods must absorb neutrons.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are small test samples placed inside some reactors?",
+     "o": [
+      "To monitor how the vessel material changes with radiation",
+      "To generate extra heat for the plant",
+      "To absorb gamma rays from the core",
+      "To light up the core so it can be seen"
+     ],
+     "a": 0,
+     "why": "Surveillance samples track radiation damage.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each material to its role.",
+     "pairs": [
+      [
+       "Zirconium alloy",
+       "Fuel cladding"
+      ],
+      [
+       "Boron",
+       "Neutron absorber"
+      ],
+      [
+       "Graphite",
+       "Moderator"
+      ],
+      [
+       "Concrete",
+       "Shielding"
+      ]
+     ],
+     "why": "Each is chosen for specific properties.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A vessel is monitored with 4 test sample sets. One set is removed every 10 years for testing. After how many years will the 4th set be removed?",
+     "a": 40,
+     "tol": 0,
+     "unit": "years",
+     "why": "4 × 10 = 40.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A designer finds a cladding alloy with excellent strength but high neutron absorption. What is the trade-off?",
+     "o": [
+      "Strength is gained, but more neutrons are wasted",
+      "There is no trade-off, since strength is all that matters",
+      "More heat is made, but the water is cooled less",
+      "Neutrons are slowed, but the fuel is heated more"
+     ],
+     "a": 0,
+     "why": "Neutron economy affects efficiency.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give two properties a reactor cladding material needs and explain why one of them matters.",
+     "rubric": [
+      [
+       "corrosion",
+       "resist"
+      ],
+      [
+       "neutron",
+       "absorb",
+       "transparent"
+      ],
+      [
+       "strength",
+       "strong",
+       "heat",
+       "temperature",
+       "pressure"
+      ],
+      [
+       "why",
+       "because",
+       "so that",
+       "matter"
+      ]
+     ],
+     "min": 2,
+     "model": "Cladding needs low neutron absorption and resistance to corrosion in hot water. Low absorption matters because neutrons absorbed by cladding cannot cause fission, which makes the reactor less efficient.",
+     "why": "Material choice balances several properties.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "At very high temperature zirconium can react with steam. Which design response is sensible?",
+     "o": [
+      "Provide cooling that prevents the temperature reaching that level and manage any hydrogen",
+      "Ignore the reaction entirely, because it only happens in a model",
+      "Remove all of the steam from the plant before it ever starts",
+      "Increase the amount of fuel in the core to make up for the loss"
+     ],
+     "a": 0,
+     "why": "Safety systems aim to avoid this and handle the consequences.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the layers from the inside out for a fuel rod.",
+     "items": [
+      "Fuel pellet",
+      "Gap",
+      "Cladding",
+      "Coolant"
+     ],
+     "why": "The pellet sits in the tube, separated by a small gap, and coolant flows outside.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is a reactor vessel's toughness checked over its lifetime?",
+     "o": [
+      "Neutron damage can reduce toughness",
+      "The vessel gets lighter and less strong over time",
+      "It becomes a moderator and slows the neutrons",
+      "It slowly melts at normal operating temperature"
+     ],
+     "a": 0,
+     "why": "Ageing management is a part of safety.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is neutron economy (not wasting neutrons) a design issue for materials near the core?",
+     "rubric": [
+      [
+       "absorb",
+       "waste",
+       "lost",
+       "captured"
+      ],
+      [
+       "fission",
+       "chain",
+       "reaction",
+       "efficien",
+       "fuel"
+      ]
+     ],
+     "min": 2,
+     "model": "Neutrons absorbed by structural materials are not available to sustain fission, so low-absorption materials improve efficiency and let the fuel be used more effectively.",
+     "why": "Structure choice affects fuel use.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A plant owner wants to extend a reactor's life by a decade. Which evidence matters most for materials?",
+     "o": [
+      "Surveillance data and inspections of ageing components",
+      "The colour and finish of the plant buildings",
+      "The number of visitors who tour the site",
+      "Nothing, since ageing stops after the first decade"
+     ],
+     "a": 0,
+     "why": "Safety decisions use measured evidence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Choosing reactor materials",
+    "model": "Reactor materials must be strong at high temperature, resist corrosion, handle radiation damage and, near the core, absorb few neutrons. Zirconium alloys are used for cladding, thick steel for the pressure vessel, boron for control rods and concrete for shielding.",
+    "points": [
+     {
+      "k": [
+       "strong",
+       "heat",
+       "pressure",
+       "corrosion"
+      ],
+      "ask": "What must they withstand?"
+     },
+     {
+      "k": [
+       "neutron",
+       "absorb"
+      ],
+      "ask": "Why does absorption matter?"
+     },
+     {
+      "k": [
+       "radiation damage",
+       "brittle",
+       "embrittle"
+      ],
+      "ask": "What does radiation do over time?"
+     },
+     {
+      "k": [
+       "zirconium",
+       "steel",
+       "boron",
+       "concrete",
+       "example"
+      ],
+      "ask": "Can you give examples?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Radiation dosimetry",
+   "icon": "📏",
+   "hook": "Two people each absorb the same energy from radiation, but one is hit by alpha particles and the other by gamma rays. Are the risks equal?",
+   "explain": [
+    "Absorbed dose is the energy deposited per kilogram of tissue, measured in grays: 1 Gy = 1 J/kg. It tells us how much energy was absorbed, not how harmful it is.",
+    "Equivalent dose in sieverts (Sv) multiplies the absorbed dose by a radiation weighting factor wR to account for the biological effect of the type of radiation. wR is 1 for gamma rays, X-rays and beta particles, and 20 for alpha particles.",
+    "Effective dose adds up the equivalent doses to different organs, each weighted by a tissue weighting factor wT, to estimate the overall risk to the whole body. For example, wT is 0.12 for the lung and 0.04 for the thyroid.",
+    "Everyone receives natural background radiation, on average about 2.4 mSv per year worldwide, with large variation. Typical international guidance sets a public limit of 1 mSv per year above background and a worker limit averaging 20 mSv per year over five years."
+   ],
+   "example": {
+    "q": "A tissue absorbs 5 mGy of alpha radiation (wR = 20). What is the equivalent dose?",
+    "steps": [
+     "H = wR × D.",
+     "H = 20 × 5 mGy.",
+     "H = 100 mSv."
+    ],
+    "a": "100 mSv"
+   },
+   "analogies": {
+    "sport": "A football and a bowling ball moving at the same speed have different impacts; energy alone does not tell the effect.",
+    "home": "Same calories from different foods do not have the same nutrition.",
+    "city": "Two noises with the same loudness can be more annoying if sharp.",
+    "nature": "Equal sunlight energy does different harm to different skin."
+   },
+   "mnemonic": "Gray = energy per kilogram; Sievert = Gray × weighting for harm.",
+   "terms": [
+    [
+     "Absorbed dose",
+     "Energy per kilogram, in grays."
+    ],
+    [
+     "Equivalent dose",
+     "Absorbed dose × radiation weighting factor, in sieverts."
+    ],
+    [
+     "Effective dose",
+     "Sum of tissue-weighted equivalent doses for the whole body."
+    ],
+    [
+     "Weighting factor",
+     "A number reflecting biological effect."
+    ]
+   ],
+   "misc": {
+    "wrong": "A sievert and a gray are the same thing with different names.",
+    "right": "Both are joules per kilogram, but the sievert includes weighting for the effect of the radiation type and tissue."
+   },
+   "limits": "Dose limits and risk estimates, such as from the linear no-threshold model for low doses, are based on assumptions that scientists continue to debate.",
+   "trip": {
+    "wiki": "Sievert",
+    "prompt": "Find the table of typical doses (such as a chest X-ray and a flight) and compare them."
+   },
+   "sources": [
+    "Sievert",
+    "Gray (unit)",
+    "Effective dose (radiation)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does one gray equal?",
+     "o": [
+      "1 joule per kilogram",
+      "1 joule of energy in total",
+      "1 watt of power",
+      "1 newton of force"
+     ],
+     "a": 0,
+     "why": "Absorbed dose is energy per mass.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A tissue of mass 2 kg absorbs 0.01 J of energy. What is the absorbed dose in mGy?",
+     "a": 5,
+     "tol": 0.05,
+     "unit": "mGy",
+     "why": "0.01 ÷ 2 = 0.005 Gy = 5 mGy.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A tissue absorbs 3 mGy of alpha radiation (wR = 20). What is the equivalent dose in mSv?",
+     "a": 60,
+     "tol": 0.5,
+     "unit": "mSv",
+     "why": "20 × 3 = 60 mSv.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A person's thyroid receives an equivalent dose of 25 mSv. With wT = 0.04, what is its contribution to the effective dose in mSv?",
+     "a": 1,
+     "tol": 0.01,
+     "unit": "mSv",
+     "why": "25 × 0.04 = 1 mSv.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A worker records 6 mSv in a year. Over five years she may average 20 mSv per year. What is the total allowed over five years (mSv)?",
+     "a": 100,
+     "tol": 0,
+     "unit": "mSv",
+     "why": "20 × 5 = 100 mSv.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is wR larger for alpha particles than for gamma rays?",
+     "o": [
+      "Alpha deposits energy densely and does more biological damage per gray",
+      "Alpha is much faster than gamma, so it always does more damage",
+      "Gamma carries a large electric charge, so it is stopped at once",
+      "Gamma is far heavier than alpha, so it stops in the skin"
+     ],
+     "a": 0,
+     "why": "Dense ionisation causes more damage.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which quantity is measured in sieverts?",
+     "o": [
+      "Equivalent or effective dose",
+      "Activity of a radioactive source",
+      "Mass of the tissue in the body",
+      "Neutron flux in the core"
+     ],
+     "a": 0,
+     "why": "The sievert is the unit of dose that includes biological weighting.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A friend compares two people who both absorbed 10 mGy, one from gamma and one from alpha particles. Explain which has the larger equivalent dose and why.",
+     "rubric": [
+      [
+       "alpha"
+      ],
+      [
+       "larger",
+       "bigger",
+       "higher",
+       "more",
+       "20"
+      ],
+      [
+       "weight",
+       "wr",
+       "damage",
+       "ionis",
+       "dense",
+       "biolog"
+      ]
+     ],
+     "min": 3,
+     "model": "The person exposed to alpha has the larger equivalent dose because alpha has a weighting factor of 20 versus 1 for gamma, since alpha deposits energy densely and causes more biological damage per gray.",
+     "why": "Equivalent dose accounts for radiation type.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A 1 mSv chest scan dose compared with 2.4 mSv per year of average natural background is about...",
+     "o": [
+      "Under half a year of natural background",
+      "About ten years of natural background",
+      "No dose at all, since it is too small to count",
+      "The same as a worker's whole yearly limit"
+     ],
+     "a": 0,
+     "why": "1 ÷ 2.4 ≈ 0.42 of a year.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A medical team decides a scan is worth the dose. Which principle are they using?",
+     "o": [
+      "Justification: benefit should outweigh risk",
+      "No justification is needed for a medical scan",
+      "The maximum dose should always be given",
+      "Never scan, because every dose is harmful"
+     ],
+     "a": 0,
+     "why": "Justification and optimisation are core protection principles.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is effective dose used to compare unlike exposures, such as a thyroid dose versus a whole-body dose?",
+     "o": [
+      "It weights each organ's sensitivity to make exposures comparable",
+      "It ignores which organs were exposed, so that all doses look equal",
+      "It is just another way to measure the activity in becquerels",
+      "It is always smaller than the absorbed dose for every organ"
+     ],
+     "a": 0,
+     "why": "Tissue weighting adjusts for sensitivity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why scientists disagree about the risks of very low doses and why careful policy still tries to keep them low.",
+     "rubric": [
+      [
+       "uncertain",
+       "debate",
+       "disagree",
+       "hard to measure",
+       "small effect",
+       "not known"
+      ],
+      [
+       "precaution",
+       "alara",
+       "low as",
+       "linear",
+       "cautious",
+       "keep low",
+       "safe side"
+      ]
+     ],
+     "min": 2,
+     "model": "Effects at very low doses are small and hard to separate from other causes, so the evidence is uncertain. Many protection systems therefore assume a small risk remains and apply the ALARA principle to keep doses as low as reasonably achievable.",
+     "why": "Policy handles uncertainty cautiously.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is fair?",
+     "o": [
+      "Doses vary by place and activity, and context is needed to judge a number",
+      "A single number alone always tells you the exact risk to a person",
+      "Natural radiation is zero in most places on the Earth",
+      "All doses are identical whatever the place or the activity"
+     ],
+     "a": 0,
+     "why": "Comparisons require context.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Gray and sievert",
+    "model": "The gray measures energy absorbed per kilogram. The sievert multiplies that by a weighting factor for the type of radiation and, for effective dose, the sensitivity of the tissue, so it reflects biological risk. For example, 1 gray of gamma is 1 sievert, but 1 gray of alpha is 20 sieverts of equivalent dose.",
+    "points": [
+     {
+      "k": [
+       "gray",
+       "energy",
+       "kilogram",
+       "joule"
+      ],
+      "ask": "What does a gray measure?"
+     },
+     {
+      "k": [
+       "sievert",
+       "weight",
+       "biological",
+       "effect"
+      ],
+      "ask": "And a sievert?"
+     },
+     {
+      "k": [
+       "alpha",
+       "20",
+       "gamma",
+       "1"
+      ],
+      "ask": "Do all radiations count the same?"
+     },
+     {
+      "k": [
+       "background",
+       "limit",
+       "alara",
+       "example"
+      ],
+      "ask": "What numbers should I compare with?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Reactor instrumentation",
+   "icon": "🎛️",
+   "hook": "A control room has hundreds of readings. What if one sensor gives a wrong value? How can operators trust the picture?",
+   "explain": [
+    "Instrumentation and control (I&C) systems measure the state of the plant and act on it. Key measurements include neutron flux (power level), coolant temperature and pressure, water level, flow rate and radiation levels.",
+    "Neutron detectors placed in or near the core measure the neutron flux, which is proportional to fission power. Thermocouples and resistance thermometers measure temperature. Pressure and level sensors monitor the coolant system.",
+    "To avoid relying on a single sensor, safety measurements are redundant: several sensors measure the same quantity. A voting scheme such as two-out-of-three decides if action is needed: if any two of three sensors read a trip value, the system triggers. This protects against both a failed sensor missing a real problem and a faulty sensor causing a false alarm.",
+    "Automatic protection systems can insert control rods rapidly (a scram or trip) without waiting for an operator. Diverse systems based on different principles guard against a common fault affecting all of them. Control rooms are designed using human-factors research so operators can see clearly what is happening."
+   ],
+   "example": {
+    "q": "Three level sensors read: normal, low, low. With 2-out-of-3 voting, does the system trip?",
+    "steps": [
+     "Count sensors showing the trip condition: 2.",
+     "Rule: 2 or more out of 3.",
+     "Two meet the rule, so yes."
+    ],
+    "a": "Yes, it trips"
+   },
+   "analogies": {
+    "sport": "Three referees: a decision needs two to agree.",
+    "home": "Three smoke alarms: you act if two sound.",
+    "city": "Three traffic cameras confirming an accident.",
+    "tech": "Spacecraft computers often vote on results."
+   },
+   "mnemonic": "Measure, vote, act: redundancy, diversity, independence.",
+   "terms": [
+    [
+     "Redundancy",
+     "Having more than one component do the same job."
+    ],
+    [
+     "Diversity",
+     "Using different technologies for the same function."
+    ],
+    [
+     "Scram (trip)",
+     "Rapid shutdown by inserting control rods."
+    ],
+    [
+     "Neutron flux detector",
+     "A device that measures neutron levels, linked to power."
+    ]
+   ],
+   "misc": {
+    "wrong": "Adding more identical sensors always makes a system safer.",
+    "right": "Identical sensors can fail together from a common cause. Diversity and independence reduce that risk."
+   },
+   "limits": "More complex systems may also add new ways to fail, so designers balance simplicity and redundancy.",
+   "trip": {
+    "wiki": "Instrumentation and control engineering",
+    "prompt": "Find an example of redundancy or voting in a safety system."
+   },
+   "sources": [
+    "Instrumentation and control engineering",
+    "Scram",
+    "Redundancy (engineering)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a neutron flux detector indicate?",
+     "o": [
+      "Reactor power level",
+      "The colour of the cooling water",
+      "The price of the fuel",
+      "The weather outside the plant"
+     ],
+     "a": 0,
+     "why": "Neutron flux is proportional to fission rate.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a scram?",
+     "o": [
+      "Rapid reactor shutdown",
+      "A slow and gentle start-up of the reactor",
+      "A special kind of fuel pellet",
+      "Part of the cooling tower"
+     ],
+     "a": 0,
+     "why": "Control rods are inserted quickly.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "With 2-out-of-3 voting, if only one sensor reads a trip value, what happens?",
+     "o": [
+      "No trip",
+      "Trip",
+      "Plant destroyed",
+      "All sensors reset"
+     ],
+     "a": 0,
+     "why": "Two must agree.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A safety system uses 4 sensors and trips when at least 2 agree. 3 read a trip value. Does it trip? Answer 1 for yes, 0 for no.",
+     "a": 1,
+     "tol": 0,
+     "why": "3 ≥ 2, so it trips.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why use sensors of different types for the same measurement?",
+     "o": [
+      "A common cause is less likely to fail them all",
+      "To raise the cost of the system on purpose",
+      "To confuse operators and test their training",
+      "Because one type is never accurate"
+     ],
+     "a": 0,
+     "why": "Diversity protects against common-cause failure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each measurement to a typical sensor.",
+     "pairs": [
+      [
+       "Temperature",
+       "Thermocouple"
+      ],
+      [
+       "Power level",
+       "Neutron detector"
+      ],
+      [
+       "Pressure",
+       "Pressure transducer"
+      ],
+      [
+       "Radiation level",
+       "Radiation monitor"
+      ]
+     ],
+     "why": "Each parameter needs a suitable instrument.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how 2-out-of-3 voting protects against both a missed trip and a false trip.",
+     "rubric": [
+      [
+       "one sensor",
+       "single sensor",
+       "one fails",
+       "one faulty",
+       "one wrong"
+      ],
+      [
+       "two",
+       "2",
+       "agree",
+       "majority"
+      ],
+      [
+       "miss",
+       "false",
+       "spurious",
+       "unnecessary",
+       "still trips"
+      ]
+     ],
+     "min": 2,
+     "model": "If one sensor fails, the other two still agree and cause a trip when needed. If one sensor wrongly reads a trip value, it cannot trip alone because two must agree, so false shutdowns are avoided.",
+     "why": "Voting balances safety and availability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the automatic protection sequence.",
+     "items": [
+      "Sensors measure",
+      "Logic compares to limits",
+      "Trip signal is sent",
+      "Control rods insert"
+     ],
+     "why": "Measurement, decision, signal, action.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A control room panel uses the same colour for warnings and normal states. Why is this a problem?",
+     "o": [
+      "Operators could misread the plant state",
+      "It saves energy in the control room",
+      "It makes the panel clearer for the operators",
+      "It has no effect on how operators read it"
+     ],
+     "a": 0,
+     "why": "Human-factors design supports clear decisions.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A software update is applied to all three redundant channels at the same time and has a hidden bug. What risk does this show?",
+     "o": [
+      "Common-cause failure",
+      "Improved diversity between the channels",
+      "Lower cost for the whole system",
+      "No risk, as three copies are always safe"
+     ],
+     "a": 0,
+     "why": "Identical software can fail simultaneously.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do safety systems usually act automatically, at least at first?",
+     "o": [
+      "Some events develop faster than humans can respond",
+      "Operators are not needed at all in a modern plant",
+      "Automation never fails, so no human check is ever required",
+      "It saves the plant money on the wages of its staff"
+     ],
+     "a": 0,
+     "why": "Automatic action covers fast events, with humans overseeing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What is the difference between redundancy and diversity? Give one example of each.",
+     "rubric": [
+      [
+       "redundan",
+       "multiple",
+       "copies",
+       "duplicate",
+       "several identical"
+      ],
+      [
+       "diver",
+       "different",
+       "technolog",
+       "principle"
+      ],
+      [
+       "example",
+       "sensor",
+       "pump",
+       "software",
+       "channel"
+      ]
+     ],
+     "min": 2,
+     "model": "Redundancy means having several copies of a component, like three identical sensors. Diversity means using different designs or principles for the same job, like a temperature sensor and a pressure sensor both signalling a problem.",
+     "why": "Both are used together.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Operators are encouraged to report near-misses in I&C. How does this help?",
+     "o": [
+      "It reveals weaknesses before they cause harm",
+      "It lets managers blame the staff involved",
+      "It hides faults so the plant looks safe",
+      "It slows the plant down in daily use"
+     ],
+     "a": 0,
+     "why": "Learning culture improves safety.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Instrumentation and trips",
+    "model": "Sensors measure power, temperature, pressure, level and radiation. Safety measurements use several sensors and a voting rule such as two-out-of-three, so one failure does not cause a miss or a false trip. If limits are crossed, an automatic scram inserts the control rods.",
+    "points": [
+     {
+      "k": [
+       "sensor",
+       "measure",
+       "detector"
+      ],
+      "ask": "What do they measure?"
+     },
+     {
+      "k": [
+       "vote",
+       "two out of three",
+       "2-out-of-3",
+       "redundan"
+      ],
+      "ask": "Why more than one?"
+     },
+     {
+      "k": [
+       "scram",
+       "trip",
+       "control rod",
+       "shutdown"
+      ],
+      "ask": "What happens at a limit?"
+     },
+     {
+      "k": [
+       "diverse",
+       "different",
+       "common"
+      ],
+      "ask": "Why use different types?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Reactor safety systems",
+   "icon": "🚨",
+   "hook": "Imagine the worst day for a reactor: the grid fails and a pipe breaks. Which systems should keep people safe?",
+   "explain": [
+    "Reactor safety rests on three basic functions: control the reactivity (the chain reaction), cool the fuel, and contain radioactive material. Each function has several systems to carry it out.",
+    "Reactivity control: control rods inserted by a scram, and in some designs a second, independent way such as injecting a neutron absorber into the coolant. Cooling: pumps, emergency core cooling systems with their own water supply, backup power generators and heat removal after shutdown. Containment: fuel cladding, the primary coolant boundary, and the containment building with filters and sprays in some designs.",
+    "Safety systems follow the principles of redundancy, diversity, independence and, wherever possible, passive operation, which needs no power or operator action. Engineers analyse design-basis accidents, such as a coolant pipe break or a loss of power, to show the plant stays within safety limits.",
+    "Lessons from accidents have driven improvements. Following the 2011 Fukushima Daiichi accident, which began with an earthquake and tsunami and the loss of power and cooling, many plants added extra backup power, flood protection and portable equipment, and ran new safety reviews."
+   ],
+   "example": {
+    "q": "A plant loses grid power. Name the systems that keep the fuel cooled.",
+    "steps": [
+     "The reactor trips and control rods insert.",
+     "Emergency diesel generators or batteries supply power to pumps.",
+     "Passive systems may also provide cooling with no power at all."
+    ],
+    "a": "Backup generators, batteries and passive cooling systems"
+   },
+   "analogies": {
+    "home": "A house with a smoke alarm, sprinkler, fire door and escape plan.",
+    "city": "A hospital's backup generator takes over when the grid fails.",
+    "sea": "A ship's lifeboats, bulkheads and alarms.",
+    "sport": "A climber with a rope, a partner and a helmet."
+   },
+   "mnemonic": "Control, Cool, Contain: the three Cs.",
+   "terms": [
+    [
+     "Emergency core cooling",
+     "Systems that supply water to the core after a loss of coolant."
+    ],
+    [
+     "Passive safety",
+     "Operation without power or operator action."
+    ],
+    [
+     "Design-basis accident",
+     "An accident the plant is designed to withstand."
+    ],
+    [
+     "Common-cause failure",
+     "One cause disabling several components."
+    ]
+   ],
+   "misc": {
+    "wrong": "Safety systems only switch the reactor off.",
+    "right": "Switching off is just the first step. Cooling and containment must continue afterwards."
+   },
+   "limits": "Beyond-design-basis events are rarer and harder to analyse. Plants use probabilistic assessment and extra measures to address them.",
+   "trip": {
+    "wiki": "Nuclear safety and security",
+    "prompt": "Find the safety functions and list a system for each."
+   },
+   "sources": [
+    "Nuclear safety and security",
+    "Emergency core cooling system",
+    "Fukushima nuclear accident"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which are the three basic safety functions of a reactor?",
+     "o": [
+      "Control reactivity, cool the fuel, contain radioactivity",
+      "Boil the water, spin the turbine and generate power for the grid",
+      "Mine the ore, enrich the uranium and ship the fuel",
+      "Make heat, make light and make sound in the core"
+     ],
+     "a": 0,
+     "why": "Control, cool, contain.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does passive safety mean?",
+     "o": [
+      "It works without power or operator action",
+      "It is slow and takes a long time to act",
+      "It is always shown on a screen in the control room",
+      "It needs extra pumps to work properly"
+     ],
+     "a": 0,
+     "why": "Gravity, natural circulation or stored energy drives it.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why must cooling continue after a scram?",
+     "o": [
+      "Decay heat continues",
+      "The chain reaction restarts",
+      "Rods overheat",
+      "Water is cold"
+     ],
+     "a": 0,
+     "why": "Radioactive fission products still produce heat.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A plant has 4 independent emergency cooling trains and needs at least 2 to work in an accident. If 1 is out for maintenance, how many remaining could fail while still leaving 2?",
+     "a": 1,
+     "tol": 0,
+     "why": "3 remain; 3 − 2 = 1 may fail.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each system to its safety function.",
+     "pairs": [
+      [
+       "Control rods",
+       "Control reactivity"
+      ],
+      [
+       "Emergency core cooling",
+       "Cool the fuel"
+      ],
+      [
+       "Containment building",
+       "Contain radioactivity"
+      ]
+     ],
+     "why": "Each system supports a function.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order a typical response to a loss of coolant accident.",
+     "items": [
+      "Sensors detect low pressure or level",
+      "Reactor trips",
+      "Emergency cooling injects water",
+      "Containment holds radioactive material"
+     ],
+     "why": "Detection, shutdown, cooling, containment.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why safety systems are made independent of each other.",
+     "rubric": [
+      [
+       "independent",
+       "separate"
+      ],
+      [
+       "one cause",
+       "common",
+       "single cause",
+       "same time",
+       "all fail",
+       "together",
+       "fail"
+      ],
+      [
+       "backup",
+       "still",
+       "another",
+       "remain"
+      ]
+     ],
+     "min": 2,
+     "model": "If systems share parts or depend on each other, one cause could disable them all. Independent systems mean that if one fails, the others can still do their job.",
+     "why": "Independence limits common-cause failure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After Fukushima, many plants added...",
+     "o": [
+      "More backup power, flood protection and portable equipment",
+      "More fuel stored in a heap beside every reactor",
+      "Fewer inspections, to save the operators' time",
+      "Taller chimneys at the top of the main building"
+     ],
+     "a": 0,
+     "why": "Lessons learned led to extra layers.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A plant is built on the coast. Which is a sensible design response to flood risk?",
+     "o": [
+      "Site important backup equipment above the expected flood level",
+      "Ignore floods completely, since they are very rare in practice",
+      "Remove the outer walls so that any water can flow straight through",
+      "Place all of the pumps together in the same low spot by the sea"
+     ],
+     "a": 0,
+     "why": "Hazard analysis informs layout.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A designer replaces a pump-driven cooling system with a gravity-fed tank. What benefit might result?",
+     "o": [
+      "It works even with total loss of power",
+      "It is much stronger than any pump",
+      "It makes extra neutrons for the core",
+      "It raises the power of the reactor"
+     ],
+     "a": 0,
+     "why": "Passive systems do not need electricity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do engineers analyse events beyond the design basis even though they are very unlikely?",
+     "o": [
+      "To find weaknesses and add margin",
+      "To scare the public about the plant",
+      "Because it is easy and costs nothing to do",
+      "To lower the power of the reactor"
+     ],
+     "a": 0,
+     "why": "Extra margin protects against surprises.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A claim says 'the reactor was safe because the control rods were inserted'. Explain why that is incomplete.",
+     "rubric": [
+      [
+       "decay heat",
+       "heat continues",
+       "cooling"
+      ],
+      [
+       "still",
+       "after",
+       "continue",
+       "need"
+      ],
+      [
+       "contain",
+       "barrier"
+      ]
+     ],
+     "min": 2,
+     "model": "Inserting rods stops the chain reaction, but decay heat continues, so cooling must still work, and containment must keep radioactive material in. Safety needs all three functions.",
+     "why": "Shutdown alone is not enough.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which attitude supports safety culture most?",
+     "o": [
+      "Questioning assumptions and reporting concerns without blame",
+      "Assuming that nothing can ever go wrong in a well-built plant",
+      "Hiding small errors so that the record always looks clean",
+      "Relying on one very strong barrier and nothing more"
+     ],
+     "a": 0,
+     "why": "A questioning attitude is part of safety culture.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reactor safety systems",
+    "model": "Safety rests on three functions: control the reactivity, cool the fuel, and contain radioactive material. Each has several redundant, independent and diverse systems, and passive designs that need no power. After a shutdown the fuel still makes decay heat, so cooling must continue.",
+    "points": [
+     {
+      "k": [
+       "control",
+       "cool",
+       "contain"
+      ],
+      "ask": "What are the main safety functions?"
+     },
+     {
+      "k": [
+       "control rod",
+       "scram",
+       "shutdown"
+      ],
+      "ask": "How is the reaction stopped?"
+     },
+     {
+      "k": [
+       "decay heat",
+       "cooling",
+       "emergency",
+       "backup"
+      ],
+      "ask": "Is stopping enough?"
+     },
+     {
+      "k": [
+       "redundan",
+       "independent",
+       "passive",
+       "diverse"
+      ],
+      "ask": "How are the systems made reliable?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Nuclear fuel lifecycle",
+   "icon": "♻️",
+   "hook": "Uranium starts in the ground and ends up in a reactor. What journey does it take, and what happens afterwards?",
+   "explain": [
+    "The front end of the fuel cycle prepares fuel. Uranium is mined and milled into a concentrate, converted to a form suitable for processing, and for most reactor types its fissile uranium-235 fraction is raised above the natural level (called enrichment). It is then fabricated into ceramic pellets inside metal fuel rods and assembled for loading.",
+    "In the reactor, fuel is used for several years. Fission uses up some uranium-235 and also converts some uranium-238 into plutonium, which can itself fission and supply part of the energy. Fission products build up and absorb neutrons, so after a time fuel is removed even though most of the uranium is still there.",
+    "The back end deals with used fuel. It is first cooled in pools, then stored. Some countries reprocess it, chemically separating uranium and plutonium for reuse in new fuel, which reduces the volume of high-level waste. Others dispose of it directly in a repository (an open or once-through cycle). Both approaches are debated.",
+    "Each stage has environmental, safety, security and economic issues, from mine tailings to transport safety, so regulation covers the whole cycle."
+   ],
+   "example": {
+    "q": "Order the front-end steps: fabrication, mining, enrichment, conversion.",
+    "steps": [
+     "Uranium must be mined first.",
+     "Then it is converted, enriched and finally fabricated into fuel."
+    ],
+    "a": "Mining, conversion, enrichment, fabrication"
+   },
+   "analogies": {
+    "farm": "Grain: grown, harvested, milled, baked, eaten, and leftovers composted.",
+    "city": "A recycling plant that sorts and reuses materials.",
+    "sea": "A fishing fleet: catch, process, pack, sell.",
+    "home": "Cooking: ingredients, preparation, cooking, leftovers."
+   },
+   "mnemonic": "Mine, mill, convert, enrich, fabricate, burn, cool, then recycle or store.",
+   "terms": [
+    [
+     "Enrichment",
+     "Raising the fraction of uranium-235 above natural levels for most reactor fuel."
+    ],
+    [
+     "Fabrication",
+     "Making fuel pellets, rods and assemblies."
+    ],
+    [
+     "Reprocessing",
+     "Chemical separation of used fuel to recover uranium and plutonium."
+    ],
+    [
+     "Once-through cycle",
+     "Used fuel is stored and disposed of without reprocessing."
+    ],
+    [
+     "Back end",
+     "Everything from removing fuel to final disposal."
+    ]
+   ],
+   "misc": {
+    "wrong": "Used fuel is just useless waste with no energy left.",
+    "right": "Used fuel still contains usable uranium and plutonium, which is why some countries reprocess it, though costs and security make this debated."
+   },
+   "limits": "Different countries choose different strategies, and views differ on economics, security and waste policy.",
+   "trip": {
+    "wiki": "Nuclear fuel cycle",
+    "prompt": "Find the diagram of the fuel cycle and trace both the open and closed routes."
+   },
+   "sources": [
+    "Nuclear fuel cycle",
+    "Nuclear reprocessing",
+    "Uranium mining"
+   ],
+   "questions": [
+    {
+     "t": "order",
+     "q": "Order the front end of the fuel cycle.",
+     "items": [
+      "Mining and milling",
+      "Conversion",
+      "Enrichment",
+      "Fuel fabrication"
+     ],
+     "why": "Ore is processed into fuel step by step.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is reprocessing?",
+     "o": [
+      "Chemically separating used fuel to recover uranium and plutonium",
+      "Mining more uranium ore from the ground and then crushing it",
+      "Burning the waste in a furnace until it disappears",
+      "Cooling a reactor after it has been shut down"
+     ],
+     "a": 0,
+     "why": "It allows recycling of useful material.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a once-through cycle?",
+     "o": [
+      "Used fuel is disposed of without reprocessing",
+      "Used fuel is stored in a pool and later pushed into the reactor again",
+      "Fuel is never stored anywhere and is simply left in the core",
+      "Fuel is burnt in a furnace like coal"
+     ],
+     "a": 0,
+     "why": "Fuel is used once, then stored and disposed of.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is fuel removed even though much uranium remains?",
+     "o": [
+      "Fission products absorb neutrons and fuel performance falls",
+      "It melts inside the core after the first few months of use",
+      "It runs out of electrons to give to the coolant",
+      "It becomes lighter and floats away in the water"
+     ],
+     "a": 0,
+     "why": "Accumulated fission products make the fuel less effective.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A reactor loads 90 tonnes of fuel and replaces one third each year. How many tonnes are replaced per year?",
+     "a": 30,
+     "tol": 0,
+     "unit": "tonnes",
+     "why": "90 ÷ 3 = 30.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A fuel assembly stays in the core for 4 years before removal and then cools in a pool for 5 years. How many years since loading until it leaves the pool?",
+     "a": 9,
+     "tol": 0,
+     "unit": "years",
+     "why": "4 + 5 = 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each stage to its purpose.",
+     "pairs": [
+      [
+       "Fabrication",
+       "Make pellets and fuel rods"
+      ],
+      [
+       "Reactor use",
+       "Release energy"
+      ],
+      [
+       "Pool storage",
+       "Cool and shield used fuel"
+      ],
+      [
+       "Repository",
+       "Long-term disposal"
+      ]
+     ],
+     "why": "Each stage has its role.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give one argument for and one against reprocessing used fuel.",
+     "rubric": [
+      [
+       "recover",
+       "reuse",
+       "recycl",
+       "less waste",
+       "volume",
+       "resource",
+       "uranium",
+       "plutonium"
+      ],
+      [
+       "cost",
+       "expensive",
+       "security",
+       "proliferation",
+       "separated",
+       "transport",
+       "complex"
+      ]
+     ],
+     "min": 2,
+     "model": "For: it recovers uranium and plutonium for reuse and reduces the volume of high-level waste. Against: it is costly and complex, and separated plutonium needs strict security.",
+     "why": "A balanced answer weighs trade-offs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A country with little uranium of its own considers reprocessing. Which factor might favour it?",
+     "o": [
+      "Making more use of imported uranium",
+      "It removes all radioactivity from the fuel",
+      "It makes wind power cheaper to build",
+      "It means that more uranium has to be mined"
+     ],
+     "a": 0,
+     "why": "Recycling stretches fuel supply.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the whole fuel cycle regulated and not just the power plant?",
+     "o": [
+      "Mining, transport, storage and disposal all have safety and security issues",
+      "Only the reactors matter for safety and security, so the rest is left alone",
+      "The aim is to slow down the whole nuclear industry on purpose",
+      "The aim is to raise costs for the operators"
+     ],
+     "a": 0,
+     "why": "Each stage has risks.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does the choice between open and closed cycles involve ethics as well as engineering?",
+     "o": [
+      "It affects waste burden, security and costs for future generations",
+      "It is only a technical choice with no ethical side to it",
+      "Ethics is irrelevant to any engineering choice made today",
+      "It changes the laws of physics that govern the fuel"
+     ],
+     "a": 0,
+     "why": "Policy choices have long-term consequences.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Describe one environmental or social impact at the front end of the fuel cycle and how it might be managed.",
+     "rubric": [
+      [
+       "mining",
+       "mine",
+       "tailings",
+       "water",
+       "dust",
+       "land",
+       "community",
+       "workers",
+       "indigenous"
+      ],
+      [
+       "manage",
+       "regulat",
+       "monitor",
+       "restore",
+       "clean",
+       "protect",
+       "consult",
+       "rehabilit"
+      ]
+     ],
+     "min": 2,
+     "model": "Uranium mining can leave tailings and affect water, land and local communities. Impacts are managed through regulation, monitoring, protection of workers, restoration of sites and consultation with the people affected.",
+     "why": "All parts of the cycle matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a fair statement?",
+     "o": [
+      "No fuel cycle route is free of trade-offs",
+      "One route is perfect and has no drawbacks at all",
+      "Waste is only produced when fuel is reprocessed",
+      "Mining uranium has no effect on the land"
+     ],
+     "a": 0,
+     "why": "Each route has costs and benefits.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The nuclear fuel lifecycle",
+    "model": "Uranium is mined, processed into fuel and used in a reactor for several years. The used fuel is cooled in pools, then stored. Some countries reprocess it to recover material, and others dispose of it directly. Every stage is regulated for safety and security.",
+    "points": [
+     {
+      "k": [
+       "mine",
+       "mill",
+       "enrich",
+       "fabricat"
+      ],
+      "ask": "How is the fuel made?"
+     },
+     {
+      "k": [
+       "reactor",
+       "years",
+       "burn",
+       "energy"
+      ],
+      "ask": "What happens in the reactor?"
+     },
+     {
+      "k": [
+       "pool",
+       "cool",
+       "store"
+      ],
+      "ask": "What about used fuel?"
+     },
+     {
+      "k": [
+       "reprocess",
+       "recycle",
+       "dispos",
+       "repository"
+      ],
+      "ask": "What are the options at the end?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Nuclear regulation and safeguards",
+   "icon": "⚖️",
+   "hook": "Who checks the people who run nuclear plants, and how does the world make sure nuclear material is only used peacefully?",
+   "explain": [
+    "National regulators license and inspect nuclear facilities. A good regulator is independent of the companies it oversees and of the bodies that promote nuclear power. It reviews designs, inspects construction and operation, can require changes or stop operations, and enforces the law.",
+    "International cooperation helps share good practice. The International Atomic Energy Agency (IAEA), founded in 1957, promotes safe and peaceful uses and provides safety standards and peer reviews. Countries are also bound by conventions on nuclear safety and on the management of radioactive waste.",
+    "Safeguards are measures to verify that nuclear material is not diverted from peaceful use. They include material accounting, inspections, seals and surveillance cameras. They are linked to the Treaty on the Non-Proliferation of Nuclear Weapons, which entered into force in 1970. Alongside this, security protects facilities and materials against theft and sabotage.",
+    "Professional ethics matter too. Engineers and operators must put safety first, be honest in reporting, respect the law and the public's right to information, and speak up about concerns. Societies debate nuclear energy openly, and decisions should rest on evidence and public participation."
+   ],
+   "example": {
+    "q": "A company reports a small safety issue to the regulator immediately, even though it is embarrassing. Which value is this showing?",
+    "steps": [
+     "Reporting early helps the regulator and other plants learn.",
+     "It puts safety above reputation.",
+     "This is open, honest safety culture and professional ethics."
+    ],
+    "a": "Honest reporting and a strong safety culture"
+   },
+   "analogies": {
+    "sport": "Referees are independent of the teams so decisions are fair.",
+    "city": "Building inspectors approve plans and check the work.",
+    "farm": "Food inspectors check farms and markets.",
+    "tech": "Auditors independently check accounts."
+   },
+   "mnemonic": "Independent regulators, international standards, inspections, honesty.",
+   "terms": [
+    [
+     "Regulator",
+     "An independent authority that licenses and inspects."
+    ],
+    [
+     "IAEA",
+     "The International Atomic Energy Agency."
+    ],
+    [
+     "Safeguards",
+     "Verification that nuclear material stays in peaceful use."
+    ],
+    [
+     "Nuclear security",
+     "Protection against theft and sabotage."
+    ],
+    [
+     "Safety culture",
+     "Putting safety first in values and habits."
+    ]
+   ],
+   "misc": {
+    "wrong": "Safeguards and safety are the same thing.",
+    "right": "Safety protects people from accidents and radiation. Safeguards verify that nuclear material is used only for peaceful purposes. Security guards against theft and sabotage."
+   },
+   "limits": "Rules differ among countries, and opinions differ on how strict and how transparent regulation should be.",
+   "trip": {
+    "wiki": "International Atomic Energy Agency",
+    "prompt": "Find the IAEA's main roles and decide which are about safety, security or safeguards."
+   },
+   "sources": [
+    "International Atomic Energy Agency",
+    "Nuclear safeguards",
+    "Nuclear regulatory agency"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why should a nuclear regulator be independent?",
+     "o": [
+      "So decisions are not influenced by commercial or political pressure",
+      "To save money on the staff that the regulator employs",
+      "So that it never needs to inspect any plant at all",
+      "So that it can avoid following the laws of the country"
+     ],
+     "a": 0,
+     "why": "Independence supports fair judgement.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do safeguards aim to verify?",
+     "o": [
+      "That nuclear material is not diverted from peaceful use",
+      "That the reactors are kept cold and idle at all times",
+      "That the fuel is always sold at a low price",
+      "That the staff at the plant are happy in their work"
+     ],
+     "a": 0,
+     "why": "Safeguards are about peaceful use.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its main aim.",
+     "pairs": [
+      [
+       "Safety",
+       "Protect people from accidents and radiation"
+      ],
+      [
+       "Security",
+       "Protect against theft and sabotage"
+      ],
+      [
+       "Safeguards",
+       "Verify peaceful use of material"
+      ]
+     ],
+     "why": "The three are related but different.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "The IAEA was founded in 1957 and the Treaty on the Non-Proliferation of Nuclear Weapons entered into force in 1970. How many years after the IAEA's founding was that?",
+     "a": 13,
+     "tol": 0,
+     "unit": "years",
+     "why": "1970 − 1957 = 13.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an example of a safeguards measure?",
+     "o": [
+      "Material accounting with inspections and seals",
+      "Painting the reactor building a new colour",
+      "Raising electricity prices for homes",
+      "Changing the coolant in the main loop"
+     ],
+     "a": 0,
+     "why": "Accounting and verification are core tools.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A regulator finds a serious fault during an inspection. What is an appropriate power for it to have?",
+     "o": [
+      "Requiring repairs or suspending operation",
+      "Nothing at all, apart from giving advice",
+      "The power to hide the fault from the public",
+      "The power to award a prize to the operator"
+     ],
+     "a": 0,
+     "why": "Enforcement powers are essential.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is public participation important in decisions about nuclear facilities?",
+     "rubric": [
+      [
+       "trust",
+       "legitim",
+       "confidence",
+       "accept"
+      ],
+      [
+       "affected",
+       "communit",
+       "local",
+       "right",
+       "democra",
+       "concern",
+       "inform"
+      ]
+     ],
+     "min": 2,
+     "model": "People living near facilities and future generations are affected, so involving them builds trust, brings in local knowledge and respects their right to information and a say in decisions.",
+     "why": "Legitimacy depends on participation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order a typical licensing path.",
+     "items": [
+      "Application and design review",
+      "Construction inspections",
+      "Operating licence",
+      "Regular inspections during operation"
+     ],
+     "why": "Oversight continues throughout the plant's life.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A young engineer sees a colleague skip a required check. What is the most professional response?",
+     "o": [
+      "Raise the concern through proper channels",
+      "Say nothing, since it is not their job",
+      "Cover it up so the colleague is not in trouble",
+      "Skip the checks too, to save time"
+     ],
+     "a": 0,
+     "why": "Safety culture means speaking up.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do countries share operating experience and accept peer reviews?",
+     "o": [
+      "Mistakes anywhere can teach everyone and so raise safety worldwide",
+      "To compete with each other over who has the best safety scores",
+      "To hide problems from the public and other regulators",
+      "To lower the standards used in each country"
+     ],
+     "a": 0,
+     "why": "Nuclear safety is a shared concern.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is 'regulatory capture' (a regulator becoming too close to industry) a worry?",
+     "o": [
+      "It can weaken oversight and public trust",
+      "It increases competition between the operators",
+      "It improves the regulator's independence",
+      "It lowers costs for everyone involved"
+     ],
+     "a": 0,
+     "why": "Independence protects public interest.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Present two different viewpoints on how much nuclear energy a country should use, and say what evidence would help decide.",
+     "rubric": [
+      [
+       "climate",
+       "low carbon",
+       "reliable",
+       "energy security",
+       "electricity"
+      ],
+      [
+       "waste",
+       "accident",
+       "cost",
+       "risk",
+       "renewable",
+       "security"
+      ],
+      [
+       "evidence",
+       "data",
+       "cost",
+       "compare",
+       "assess",
+       "study",
+       "analysis"
+      ]
+     ],
+     "min": 2,
+     "model": "Supporters stress low-carbon, reliable electricity and energy security. Critics stress waste, accident risk, high costs and alternatives such as renewables. Evidence on costs, emissions, safety records, waste plans and reliability, combined with public discussion, can help decide.",
+     "why": "Fair answers show both sides.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A statement says 'safety rules are enough, so we do not need an open culture'. What is wrong with it?",
+     "o": [
+      "Rules alone cannot catch what people do not report",
+      "Rules are useless and should be dropped altogether",
+      "Openness is against the law in most nuclear plants",
+      "A strong open culture would only raise the risk of accidents"
+     ],
+     "a": 0,
+     "why": "Culture and rules work together.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Nuclear regulation and safeguards",
+    "model": "Independent regulators license and inspect nuclear facilities. The IAEA helps with international standards, and safeguards such as accounting and inspections verify that nuclear material stays in peaceful use. Safety, security and safeguards are different, and honest reporting and public participation matter.",
+    "points": [
+     {
+      "k": [
+       "regulator",
+       "independent",
+       "inspect",
+       "licens"
+      ],
+      "ask": "Who checks the operators?"
+     },
+     {
+      "k": [
+       "iaea",
+       "international",
+       "standard"
+      ],
+      "ask": "What about between countries?"
+     },
+     {
+      "k": [
+       "safeguard",
+       "peaceful",
+       "account",
+       "inspection"
+      ],
+      "ask": "How is peaceful use verified?"
+     },
+     {
+      "k": [
+       "ethic",
+       "honest",
+       "culture",
+       "public",
+       "participation"
+      ],
+      "ask": "What role do people and values play?"
+     }
+    ]
+   }
+  }
+ ]
+}

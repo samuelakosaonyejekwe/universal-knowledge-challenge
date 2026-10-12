@@ -1,0 +1,2851 @@
+{
+ "world": 19,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Local government",
+   "icon": "🏛️",
+   "hook": "Who decides where a new bus stop goes in your town, the president or someone closer to home?",
+   "explain": [
+    "Many countries have more than one level of government. A national government makes rules for the whole country. A local government looks after a town, city or district.",
+    "Local governments handle things close to daily life, like streets, rubbish collection, parks and libraries. People can reach their local leaders more easily than national ones.",
+    "Governments are organised differently around the world. Some countries call the local level a municipality, a council, a county or a commune. Some places elect a mayor, others have a council that picks a leader. In this world we imagine a city called Brightwater so we can learn the ideas without taking sides."
+   ],
+   "example": {
+    "q": "Brightwater needs a new footbridge over a stream in one neighbourhood. Which level of government is the best fit to plan it?",
+    "steps": [
+     "The bridge is in one neighbourhood.",
+     "Local people know how it will be used.",
+     "A local government handles local streets and paths."
+    ],
+    "a": "The local government."
+   },
+   "analogies": {
+    "home": "A family decides the house rules, while the neighbourhood decides street rules. Local government is the street-level decision maker.",
+    "sport": "A club has its own captain, while the national league sets the big rules. Local government is like the club level.",
+    "city": "Your city office is like a school office for the whole city: it runs shared services.",
+    "farm": "A village council is like a farm co-operative, where neighbours organise shared water and roads."
+   },
+   "mnemonic": "Near people, near problems: local government solves local things.",
+   "terms": [
+    [
+     "Local government",
+     "The level of government that serves a town, city or district."
+    ],
+    [
+     "Municipality",
+     "A town or city with its own local government."
+    ],
+    [
+     "Service",
+     "Something the government provides, like waste collection."
+    ],
+    [
+     "Elected",
+     "Chosen by votes."
+    ]
+   ],
+   "misc": {
+    "wrong": "Every country organises local government in the same way.",
+    "right": "Structures differ. Titles, powers and ways of choosing leaders vary between countries."
+   },
+   "limits": "The split of powers between national and local government is different in every country, so the examples here are simplified.",
+   "trip": {
+    "wiki": "Local government",
+    "prompt": "Find two countries on the page that name their local governments differently."
+   },
+   "sources": [
+    "Local government",
+    "Municipality"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which job usually belongs to local government?",
+     "o": [
+      "Collecting household rubbish",
+      "Printing the national currency",
+      "Signing treaties with other countries",
+      "Running the national army"
+     ],
+     "a": 0,
+     "why": "Rubbish collection is a local service in most places.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can local government be useful?",
+     "o": [
+      "It is close to the people it serves",
+      "It replaces the need for any national government",
+      "It can overrule the national constitution",
+      "It makes national laws for every region"
+     ],
+     "a": 0,
+     "why": "Being near people helps leaders understand local needs.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about local government is correct?",
+     "o": [
+      "Structures and names differ between countries",
+      "All countries have mayors called the same thing",
+      "No country has local government",
+      "Local government is always bigger than national government"
+     ],
+     "a": 0,
+     "why": "Countries organise local government in different ways.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pothole is on a small street in Brightwater. Who is the best first contact?",
+     "o": [
+      "The city's roads office",
+      "The national tax agency",
+      "The country's foreign ministry",
+      "The central bank"
+     ],
+     "a": 0,
+     "why": "Local roads are usually looked after locally.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a reason a town might prefer local decisions on parks?",
+     "o": [
+      "Local people know which parks are used and how",
+      "National leaders can see every park from the capital",
+      "Parks need no planning because they are all alike",
+      "Parks are the only service local people care about"
+     ],
+     "a": 0,
+     "why": "Local knowledge helps match services to needs.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Brightwater has 40,000 homes and the city office collects rubbish from each home once a week. How many home collections are done in 4 weeks?",
+     "a": 160000,
+     "tol": 0,
+     "unit": "collections",
+     "why": "40,000 × 4 = 160,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the service to the level that usually runs it in many places.",
+     "pairs": [
+      [
+       "Neighbourhood library",
+       "Run by the city in many places"
+      ],
+      [
+       "Passports",
+       "Issued nationally in many places"
+      ],
+      [
+       "Street lights",
+       "Usually a city job"
+      ],
+      [
+       "Printing national banknotes",
+       "Done by a central bank or national mint"
+      ]
+     ],
+     "why": "Local services are close to daily life, while some services are national. Details vary by country.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give one reason why local government matters to people's daily lives.",
+     "rubric": [
+      [
+       "street",
+       "road",
+       "rubbish",
+       "waste",
+       "park",
+       "library",
+       "water",
+       "school",
+       "bus",
+       "service"
+      ],
+      [
+       "close",
+       "near",
+       "local",
+       "daily",
+       "everyday",
+       "neighbour"
+      ]
+     ],
+     "min": 1,
+     "model": "Local government runs services like roads, rubbish collection and parks, which people use every day, and it is close enough to hear local needs.",
+     "why": "Local services touch daily life and local leaders can be reached more easily.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A visitor says, 'Our country calls it a commune, not a city council.' What is the best response?",
+     "o": [
+      "Names differ but the idea of local government is similar",
+      "Only places that say 'city council' have real local government",
+      "A commune is a national office with no local role",
+      "Every country should rename its local bodies to match"
+     ],
+     "a": 0,
+     "why": "Different countries use different names for similar roles.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might it be a problem if all decisions were made only by a national government?",
+     "o": [
+      "It may not understand each town's different needs",
+      "Local officials would have too much power over it",
+      "It would be unable to raise any national taxes",
+      "Voters would lose the right to vote nationally"
+     ],
+     "a": 0,
+     "why": "Local needs differ, so some decisions work better closer to the people.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Brightwater leaders want a new playground but the money comes partly from the national government. Which is the fairest way to decide where it goes?",
+     "o": [
+      "Use evidence about where many children live and ask residents",
+      "Build it near the home of the most senior local official, who asked first",
+      "Build it wherever land is cheapest, whatever the local need is",
+      "Give it to whichever group submits a request before the others"
+     ],
+     "a": 0,
+     "why": "Evidence and consultation make the choice fair and defensible.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Some people think local government should decide more things. Others think the national government should. Give one argument for either side.",
+     "rubric": [
+      [
+       "local",
+       "knows",
+       "close",
+       "near",
+       "needs",
+       "different"
+      ],
+      [
+       "national",
+       "same",
+       "equal",
+       "standard",
+       "fair",
+       "scale",
+       "cheaper",
+       "everywhere"
+      ]
+     ],
+     "min": 1,
+     "model": "For local: local leaders know local needs. For national: the same standards can be kept everywhere and big projects can share costs.",
+     "why": "There are reasonable arguments on both sides, so we judge by evidence and criteria.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it useful to learn how local government works even if your country organises it differently?",
+     "o": [
+      "The basic ideas of services, budgets and accountability apply widely",
+      "Every country runs its local government in exactly the same way, with the same offices",
+      "Local government only matters in countries that elect a mayor",
+      "Knowing one country's system means you already know every other one exactly"
+     ],
+     "a": 0,
+     "why": "Core ideas carry across systems even when details differ.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What local government is",
+    "model": "Local government looks after a town or city. It runs things like streets, rubbish collection and parks. People can reach local leaders easily. Different countries organise it differently.",
+    "points": [
+     {
+      "k": [
+       "town",
+       "city",
+       "local",
+       "district"
+      ],
+      "ask": "What does local government cover?"
+     },
+     {
+      "k": [
+       "street",
+       "rubbish",
+       "park",
+       "library",
+       "service"
+      ],
+      "ask": "What does it actually do?"
+     },
+     {
+      "k": [
+       "differ",
+       "different",
+       "country",
+       "countries"
+      ],
+      "ask": "Is it the same everywhere?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Mayor and city council responsibilities",
+   "icon": "🧑‍⚖️",
+   "hook": "If a city had a leader but no one to check their choices, what could go wrong?",
+   "explain": [
+    "In many cities there is a mayor and a council. The council is a group of elected people who make local rules and agree the budget. The mayor often leads the city and makes sure plans are carried out.",
+    "Power is often shared on purpose so no one person decides everything. This is called checks and balances. The council can question the mayor, and the mayor can propose plans.",
+    "Systems differ. Some cities have a strong elected mayor. Some have a city manager hired by the council. Some places have a council that picks one of its own members as leader. None of these is perfect, so we judge by how fair, clear and accountable they are."
+   ],
+   "example": {
+    "q": "Brightwater's council has 9 members. A rule needs more than half the votes to pass. How many votes are needed?",
+    "steps": [
+     "Half of 9 is 4.5.",
+     "More than half means at least 5.",
+     "So 5 votes."
+    ],
+    "a": "5 votes."
+   },
+   "analogies": {
+    "home": "In a family, parents and children may talk before big decisions. A council is like a family meeting for the city.",
+    "sport": "A team has a captain and a coach who both have roles, and the referee checks the rules.",
+    "music": "An orchestra has a conductor, but every player must do their part."
+   },
+   "mnemonic": "Mayor leads, council decides, people check.",
+   "terms": [
+    [
+     "Mayor",
+     "The head of a city in many places."
+    ],
+    [
+     "Council",
+     "A group of people who make local decisions."
+    ],
+    [
+     "Checks and balances",
+     "Sharing power so each part can check the others."
+    ],
+    [
+     "Accountable",
+     "Having to explain and answer for your decisions."
+    ]
+   ],
+   "misc": {
+    "wrong": "The mayor can do anything they want.",
+    "right": "Mayors work within laws and often need council approval."
+   },
+   "limits": "Powers of mayors and councils differ between countries and even between cities in the same country.",
+   "trip": {
+    "wiki": "Mayor",
+    "prompt": "Find two different ways a mayor can be chosen or can work in different places."
+   },
+   "sources": [
+    "Mayor",
+    "City council"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a city council usually do?",
+     "o": [
+      "Makes local rules and agrees the budget",
+      "Commands the national army and sets foreign policy",
+      "Writes national laws for the whole country",
+      "Appoints judges to the national supreme court"
+     ],
+     "a": 0,
+     "why": "Councils make local decisions and approve spending.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the idea of checks and balances?",
+     "o": [
+      "Power is shared so each part can check the others",
+      "All power is given to one leader to act quickly",
+      "Decisions are made in secret to avoid arguments",
+      "Each part of government copies what the others do"
+     ],
+     "a": 0,
+     "why": "Sharing power helps prevent misuse.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A mayor proposes a plan but the council votes it down. What does this show?",
+     "o": [
+      "The council can check the mayor",
+      "The mayor has lost all authority forever",
+      "The plan broke a national law",
+      "The council has taken over the mayor's job"
+     ],
+     "a": 0,
+     "why": "This is an example of checks and balances.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A council has 11 members. A plan passes if more than half vote yes. What is the smallest number of yes votes needed?",
+     "a": 6,
+     "tol": 0,
+     "unit": "votes",
+     "why": "Half of 11 is 5.5, so more than half is at least 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a reason mayors must explain decisions to the public?",
+     "o": [
+      "People can judge whether leaders are fair and honest",
+      "Explaining decisions removes the need for elections",
+      "Residents are legally required to agree with every plan",
+      "It ensures that every proposal will be approved"
+     ],
+     "a": 0,
+     "why": "Explaining decisions is part of accountability.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In some cities a city manager is hired by the council. What is true about this system?",
+     "o": [
+      "It is one of several valid ways to organise a city",
+      "It is the only legitimate way to organise a city",
+      "It means the council has no authority over the manager",
+      "It is used only where residents cannot vote"
+     ],
+     "a": 0,
+     "why": "Systems vary and each has trade-offs.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for a typical new rule.",
+     "items": [
+      "A problem is noticed",
+      "A plan is proposed",
+      "The council discusses and votes",
+      "The city office carries it out"
+     ],
+     "why": "Problems come first, then a plan, discussion and vote, and finally action.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the role to its job.",
+     "pairs": [
+      [
+       "Mayor",
+       "Leads the city and carries out plans"
+      ],
+      [
+       "Council member",
+       "Votes on local rules"
+      ],
+      [
+       "Voter",
+       "Chooses leaders in elections"
+      ],
+      [
+       "City clerk",
+       "Keeps official records"
+      ]
+     ],
+     "why": "Each role has a different job in running a city.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is it risky for one person to have all the power in a city?",
+     "rubric": [
+      [
+       "mistake",
+       "wrong",
+       "unfair",
+       "abuse",
+       "misuse",
+       "corrupt",
+       "favour",
+       "selfish",
+       "bias"
+      ],
+      [
+       "check",
+       "balance",
+       "share",
+       "others",
+       "council",
+       "accountab",
+       "stop"
+      ]
+     ],
+     "min": 1,
+     "model": "One person could make mistakes or misuse power with nobody able to check or stop them. Sharing power lets others question decisions.",
+     "why": "Shared power and accountability reduce the risk of misuse.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A resident asks why the council chose a new bus route. What should happen?",
+     "o": [
+      "Officials explain their reasons using evidence",
+      "Officials tell the resident the route is not their business",
+      "They decide the route again without checking evidence",
+      "They explain only to people who agree with them"
+     ],
+     "a": 0,
+     "why": "Explaining reasons is part of transparency.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two cities organise leadership differently: one with a directly elected mayor and one with a council-appointed manager. Which statement is most reasonable?",
+     "o": [
+      "Each can work well if it is transparent and accountable",
+      "Only the directly elected mayor system can ever be fair",
+      "Only the council-appointed manager system can ever be fair",
+      "Neither can be fair because they are organised differently"
+     ],
+     "a": 0,
+     "why": "What matters is how the system holds leaders to account, not just its shape.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A mayor wants to act quickly in an emergency without waiting for council approval. Give one reason this might help and one risk.",
+     "rubric": [
+      [
+       "fast",
+       "quick",
+       "speed",
+       "urgent",
+       "emergency",
+       "save"
+      ],
+      [
+       "risk",
+       "abuse",
+       "check",
+       "power",
+       "accountab",
+       "mistake",
+       "no one"
+      ]
+     ],
+     "min": 2,
+     "model": "Quick action can save lives in an emergency, but without checks the power could be misused or mistakes may not be caught, so emergency powers should be limited and reviewed.",
+     "why": "A balanced answer shows both benefits and risks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do councils often publish meeting records?",
+     "o": [
+      "So residents can see how decisions were made",
+      "To make it harder for residents to find information",
+      "To replace the need for public meetings",
+      "So that votes can be taken without discussion"
+     ],
+     "a": 0,
+     "why": "Published records support transparency.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a mayor and council do",
+    "model": "The council is a group that makes local rules and agrees the budget. The mayor leads the city and carries out plans. Power is shared so leaders can be checked. Different cities and countries do this in different ways.",
+    "points": [
+     {
+      "k": [
+       "council",
+       "vote",
+       "rules",
+       "budget"
+      ],
+      "ask": "What does the council do?"
+     },
+     {
+      "k": [
+       "mayor",
+       "lead",
+       "leader",
+       "carry out"
+      ],
+      "ask": "What does the mayor do?"
+     },
+     {
+      "k": [
+       "check",
+       "share",
+       "balance",
+       "accountab"
+      ],
+      "ask": "Why share power?"
+     },
+     {
+      "k": [
+       "differ",
+       "different",
+       "country",
+       "countries"
+      ],
+      "ask": "Is it the same everywhere?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Municipal services",
+   "icon": "🚰",
+   "hook": "You turn on a tap, flick a switch and put out the bin. Who made all of that work?",
+   "explain": [
+    "Municipal services are the things a city provides for its people. Examples are clean water, rubbish collection, street lighting, libraries, parks and fire protection.",
+    "Some services are used by everyone, like street lights. Some are used by people who need them, like a clinic. Cities must decide how much to spend on each one.",
+    "Services are paid for by taxes, fees or both. A fee is a charge for using a service, like a swimming-pool ticket. Good services are reliable, fair and easy to reach."
+   ],
+   "example": {
+    "q": "Brightwater collects rubbish from 12,000 homes using 8 trucks that each serve the same number of homes. How many homes does each truck serve?",
+    "steps": [
+     "Total homes: 12,000.",
+     "Trucks: 8.",
+     "12,000 ÷ 8 = 1,500."
+    ],
+    "a": "1,500 homes per truck."
+   },
+   "analogies": {
+    "home": "A house needs water, light and a clean kitchen. A city needs those on a bigger scale.",
+    "city": "Behind every tap and street lamp is a team that keeps it working.",
+    "tech": "Services are like apps that run in the background so you can do other things."
+   },
+   "mnemonic": "Water, waste, light, learning: keep them running right.",
+   "terms": [
+    [
+     "Municipal service",
+     "A service a city provides, like water or waste collection."
+    ],
+    [
+     "Fee",
+     "A charge for using a service."
+    ],
+    [
+     "Reliable",
+     "Working properly when people need it."
+    ],
+    [
+     "Access",
+     "Being able to reach and use a service."
+    ]
+   ],
+   "misc": {
+    "wrong": "City services are free because nobody pays.",
+    "right": "Services cost money. They are paid for by taxes, fees or both."
+   },
+   "trip": {
+    "wiki": "Public utility",
+    "prompt": "Find three services on the page that most cities provide."
+   },
+   "sources": [
+    "Public utility",
+    "Municipal services"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a municipal service?",
+     "o": [
+      "Street lighting",
+      "Weather forecasting by satellite",
+      "Printing passports",
+      "Global shipping"
+     ],
+     "a": 0,
+     "why": "Street lights are usually provided by the city.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a fee?",
+     "o": [
+      "A charge for using a service",
+      "A tax paid by every resident",
+      "A penalty for breaking a rule",
+      "A loan the city repays later"
+     ],
+     "a": 0,
+     "why": "Fees are charged to people who use a service.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A bus route runs only every 2 hours in one neighbourhood. Which criterion is most affected?",
+     "o": [
+      "Access to services",
+      "Level of city taxes",
+      "Number of public parks",
+      "Library opening hours"
+     ],
+     "a": 0,
+     "why": "Long waits make it hard to reach services and jobs.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A city spends 600,000 luns a year on street lighting for 20,000 lamps. How much is that per lamp per year, in luns?",
+     "a": 30,
+     "tol": 0,
+     "unit": "luns",
+     "why": "600,000 ÷ 20,000 = 30.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A swimming pool charges 4 luns per visit. It has 250 visits in a week. How many luns does it collect in fees?",
+     "a": 1000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "250 × 4 = 1,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a city lower fees for children to use the pool?",
+     "o": [
+      "To help more people have access",
+      "To cut the pool's running costs",
+      "To raise more money from each child",
+      "To replace taxes as the pool's funding"
+     ],
+     "a": 0,
+     "why": "Lower fees can widen access, though the city must still cover costs.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from source to your tap.",
+     "items": [
+      "Water is collected from a river or well",
+      "Water is cleaned at a plant",
+      "Water travels through pipes",
+      "It comes out of your tap"
+     ],
+     "why": "Water is collected, cleaned and delivered.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the service to what it gives.",
+     "pairs": [
+      [
+       "Fire service",
+       "Rescue and fire safety"
+      ],
+      [
+       "Library",
+       "Books and learning"
+      ],
+      [
+       "Waste collection",
+       "Clean streets"
+      ],
+      [
+       "Water supply",
+       "Safe drinking water"
+      ]
+     ],
+     "why": "Each service meets a different need.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A city must choose between repairing old water pipes and building a new sports hall. Give one criterion that could help decide.",
+     "rubric": [
+      [
+       "safe",
+       "health",
+       "risk",
+       "need",
+       "urgent",
+       "leak",
+       "waste",
+       "everyone",
+       "most people"
+      ],
+      [
+       "cost",
+       "cheap",
+       "afford",
+       "budget",
+       "evidence",
+       "benefit",
+       "access"
+      ]
+     ],
+     "min": 1,
+     "model": "Compare how many people are affected, how urgent and safe each is, and the cost. Broken water pipes affect health and water loss, so they may be more urgent.",
+     "why": "Criteria such as need, urgency, cost and benefit support a fair choice.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best sign of a reliable service?",
+     "o": [
+      "It works when people need it",
+      "It costs the least to run",
+      "It looks modern and new",
+      "It is run by the largest company"
+     ],
+     "a": 0,
+     "why": "Reliability means working when needed.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city finds that a service is cheap in one district but poor in another. What does a fair review ask?",
+     "o": [
+      "Which people have worse access and why",
+      "Which district pays the highest taxes",
+      "Which district complains most often",
+      "Which district is the cheapest to serve"
+     ],
+     "a": 0,
+     "why": "Fairness means checking access and need across groups.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why should a city measure how well its services work, not only how much it spends?",
+     "rubric": [
+      [
+       "result",
+       "outcome",
+       "work",
+       "quality",
+       "reliab",
+       "good",
+       "effective"
+      ],
+      [
+       "spend",
+       "money",
+       "cost",
+       "waste",
+       "value"
+      ]
+     ],
+     "min": 1,
+     "model": "Spending more does not always mean better service. Measuring results shows whether people are really helped and whether money is used well.",
+     "why": "Outcomes and value for money matter as well as spending.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a fair way to pay for a street-light service that everyone uses?",
+     "o": [
+      "Through taxes shared across residents",
+      "Only from residents of the nearest street",
+      "Only from visitors who pass through town",
+      "Only from shops close to each light"
+     ],
+     "a": 0,
+     "why": "Shared services are usually funded by shared taxes.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "City services",
+    "model": "City services are the things a city provides, like water, rubbish collection, street lights and libraries. They cost money and are paid for by taxes or fees. A good service is reliable and easy for everyone to reach.",
+    "points": [
+     {
+      "k": [
+       "water",
+       "rubbish",
+       "waste",
+       "light",
+       "library",
+       "fire"
+      ],
+      "ask": "What are some services?"
+     },
+     {
+      "k": [
+       "tax",
+       "fee",
+       "pay",
+       "money"
+      ],
+      "ask": "How are they paid for?"
+     },
+     {
+      "k": [
+       "reliab",
+       "fair",
+       "everyone",
+       "access"
+      ],
+      "ask": "What makes a service good?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Public budgeting fundamentals",
+   "icon": "💰",
+   "hook": "If your town has 1,000 luns and everyone wants a different thing, how do you decide?",
+   "explain": [
+    "A budget is a plan for money: how much comes in and how much goes out. Money coming in is revenue. Money going out is spending, also called expenditure.",
+    "A balanced budget means spending is equal to revenue. A deficit means spending is more than revenue. A surplus means spending is less. A deficit must be covered by savings or borrowing.",
+    "Budgets show choices. Spending more on one thing leaves less for another. That is an opportunity cost. A good budget is public, so people can see where money goes. Cities in different countries have different rules about borrowing."
+   ],
+   "example": {
+    "q": "Brightwater expects revenue of 900,000 luns and plans to spend 850,000 luns. What is the result?",
+    "steps": [
+     "Compare revenue and spending.",
+     "900,000 − 850,000 = 50,000.",
+     "Revenue is bigger, so it is a surplus."
+    ],
+    "a": "A surplus of 50,000 luns."
+   },
+   "analogies": {
+    "home": "A family budget lists income and bills. If bills are larger than income, something must change.",
+    "farm": "A farmer must save enough seed to plant next year, as well as sell some for money now.",
+    "sport": "A team has limited training time. More time on defence means less on attack."
+   },
+   "mnemonic": "In minus out: plus is a surplus, minus is a deficit.",
+   "terms": [
+    [
+     "Revenue",
+     "Money coming in."
+    ],
+    [
+     "Expenditure",
+     "Money spent."
+    ],
+    [
+     "Deficit",
+     "Spending is more than revenue."
+    ],
+    [
+     "Opportunity cost",
+     "What you give up when you choose something else."
+    ]
+   ],
+   "misc": {
+    "wrong": "A government can spend as much as it likes because it can print money.",
+    "right": "Cities cannot print money. They have to live within revenue, savings or allowed borrowing."
+   },
+   "limits": "Rules about city budgets, borrowing and national support vary a lot between countries.",
+   "trip": {
+    "wiki": "Government budget",
+    "prompt": "Find the difference between revenue and expenditure on the page."
+   },
+   "sources": [
+    "Government budget",
+    "Opportunity cost"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is revenue?",
+     "o": [
+      "Money coming in",
+      "Money going out",
+      "A list of past debts",
+      "Money set aside for savings"
+     ],
+     "a": 0,
+     "why": "Revenue is the money a city receives.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A city has revenue of 500,000 luns and spends 540,000 luns. What is the deficit in luns?",
+     "a": 40000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "540,000 − 500,000 = 40,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city plans to spend 30% of a 2,000,000 lun budget on education. How many luns is that?",
+     "a": 600000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "30% of 2,000,000 = 0.30 × 2,000,000 = 600,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does opportunity cost mean?",
+     "o": [
+      "What you give up when you choose something else",
+      "The price printed on a ticket or product label",
+      "The interest that must be paid on a loan",
+      "The total money a city has already spent this year"
+     ],
+     "a": 0,
+     "why": "Spending on one thing means not spending on another.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which describes a surplus?",
+     "o": [
+      "Spending is less than revenue",
+      "Spending is more than revenue",
+      "Spending exactly matches revenue",
+      "Revenue is lower than last year"
+     ],
+     "a": 0,
+     "why": "A surplus means money is left over.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why should a budget be public?",
+     "o": [
+      "People can see and question how money is used",
+      "To make budget details harder for residents to compare",
+      "So that only officials are allowed to question the spending",
+      "To remove the need for any audit of how money is used"
+     ],
+     "a": 0,
+     "why": "Public budgets support transparency.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for making a city budget.",
+     "items": [
+      "Estimate revenue",
+      "List needs and requests",
+      "Decide priorities",
+      "Publish and review the budget"
+     ],
+     "why": "Know the money first, then needs, then choose and share.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the word to its meaning.",
+     "pairs": [
+      [
+       "Revenue",
+       "Money in"
+      ],
+      [
+       "Expenditure",
+       "Money out"
+      ],
+      [
+       "Deficit",
+       "Spending above revenue"
+      ],
+      [
+       "Surplus",
+       "Revenue above spending"
+      ]
+     ],
+     "why": "These words describe the money flow.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A city has a deficit. Give one way it could fix it and one downside.",
+     "rubric": [
+      [
+       "cut",
+       "reduce",
+       "save",
+       "less",
+       "raise",
+       "tax",
+       "fee",
+       "borrow",
+       "income",
+       "revenue",
+       "delay"
+      ],
+      [
+       "but",
+       "downside",
+       "risk",
+       "fewer",
+       "cost",
+       "unfair",
+       "debt",
+       "interest",
+       "hurt"
+      ]
+     ],
+     "min": 2,
+     "model": "It could cut spending, but services may get worse. It could raise taxes or fees, but that costs residents. It could borrow, but debt must be repaid with interest.",
+     "why": "Each option has a cost, so leaders weigh trade-offs.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which budget choice shows an opportunity cost?",
+     "o": [
+      "Spending on a new road so there is less to spend on parks",
+      "Collecting a tax only from residents who can afford it",
+      "Publishing the budget so that residents can read it",
+      "Receiving a one-off grant from the national government for a project"
+     ],
+     "a": 0,
+     "why": "Money used on the road cannot be used on parks.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Brightwater has a small surplus. Which option best fits fiscal sustainability?",
+     "o": [
+      "Save part for repairs and emergencies",
+      "Spend all of it at once on a single event",
+      "Spend it on whatever is requested first",
+      "Give it to one neighbourhood only"
+     ],
+     "a": 0,
+     "why": "Reserves help with future needs and shocks.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Two councillors disagree. One wants more parks and one wants more buses. How can the council decide in a fair, non-partisan way?",
+     "rubric": [
+      [
+       "evidence",
+       "data",
+       "survey",
+       "count",
+       "study",
+       "numbers"
+      ],
+      [
+       "need",
+       "access",
+       "cost",
+       "benefit",
+       "residents",
+       "criteria",
+       "consult",
+       "ask"
+      ]
+     ],
+     "min": 2,
+     "model": "They can use stated criteria such as how many people benefit, cost and access, gather evidence like surveys and use counts, and consult residents before choosing.",
+     "why": "Clear criteria and evidence make a choice defensible whichever option is picked.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A city spends 10 luns per resident on parks and 40 luns per resident on roads. What does this tell us?",
+     "o": [
+      "Roads receive four times as much per resident",
+      "Parks receive four times as much per resident",
+      "Parks and roads receive equal funding per resident",
+      "Roads receive ten times as much per resident"
+     ],
+     "a": 0,
+     "why": "40 ÷ 10 = 4.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a public budget is",
+    "model": "A budget is a plan for money coming in and going out. If spending is more than revenue there is a deficit. Spending on one thing means less for another. A good budget is public so people can check it.",
+    "points": [
+     {
+      "k": [
+       "revenue",
+       "income",
+       "money in",
+       "coming in"
+      ],
+      "ask": "What is revenue?"
+     },
+     {
+      "k": [
+       "spend",
+       "expenditure",
+       "money out",
+       "going out"
+      ],
+      "ask": "What is spending?"
+     },
+     {
+      "k": [
+       "deficit",
+       "surplus",
+       "balance"
+      ],
+      "ask": "What happens if they don't match?"
+     },
+     {
+      "k": [
+       "public",
+       "transparen",
+       "see",
+       "check"
+      ],
+      "ask": "Why make it public?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Taxes and public revenue",
+   "icon": "🧾",
+   "hook": "Where does a city get the money to pay for roads and libraries?",
+   "explain": [
+    "Cities get money from several sources. Local taxes, such as a tax on property, are one source. Fees for services, grants from national government, and fines are others.",
+    "A tax is a required payment used for shared services. A fair tax system follows ideas such as: people should know the rules, the rules should be applied equally, and the tax should not be too hard to collect.",
+    "People disagree about how best to tax. Some prefer a flat rate where everyone pays the same percentage. Others prefer a progressive rate where higher earners pay a higher percentage. Both can be argued using fairness and economic criteria."
+   ],
+   "example": {
+    "q": "A property tax is 2% of the home's value. A home is valued at 50,000 luns. How much is the tax?",
+    "steps": [
+     "2% = 0.02.",
+     "0.02 × 50,000 = 1,000.",
+     "So the tax is 1,000 luns."
+    ],
+    "a": "1,000 luns."
+   },
+   "analogies": {
+    "home": "A family may all put money in a jar to pay for shared food and the electricity bill.",
+    "city": "A bus ticket is a fee, while a property tax helps pay for roads for everyone.",
+    "nature": "A river fed by many streams is like city revenue fed by several sources."
+   },
+   "mnemonic": "Many streams make a river: taxes, fees, grants and fines.",
+   "terms": [
+    [
+     "Tax",
+     "A required payment that funds shared services."
+    ],
+    [
+     "Property tax",
+     "A tax based on the value of land or buildings."
+    ],
+    [
+     "Grant",
+     "Money given by another level of government."
+    ],
+    [
+     "Progressive",
+     "A rate that is higher for people with more income."
+    ]
+   ],
+   "misc": {
+    "wrong": "Taxes are a punishment.",
+    "right": "Taxes are how communities fund shared services. A fine is a punishment; a tax is not."
+   },
+   "limits": "Which taxes cities can collect, and at what rates, depends on each country's laws.",
+   "trip": {
+    "wiki": "Tax",
+    "prompt": "Find the difference between direct and indirect taxes."
+   },
+   "sources": [
+    "Tax",
+    "Property tax"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a source of city revenue?",
+     "o": [
+      "Property tax",
+      "Staff wages",
+      "Road repairs",
+      "Park maintenance"
+     ],
+     "a": 0,
+     "why": "Many cities collect property taxes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A tax rate is 3% on a market stall's yearly sales of 20,000 luns. How many luns of tax is that?",
+     "a": 600,
+     "tol": 0,
+     "unit": "luns",
+     "why": "0.03 × 20,000 = 600.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city gets 400,000 luns from property tax, 150,000 from fees and 250,000 from grants. What percentage of the total comes from grants?",
+     "a": 31.25,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "Total = 800,000. 250,000 ÷ 800,000 = 0.3125 = 31.25%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the difference between a tax and a fine?",
+     "o": [
+      "A tax funds services; a fine punishes breaking a rule",
+      "A tax punishes breaking a rule; a fine funds services",
+      "Both are voluntary payments made by residents",
+      "A tax is paid once and a fine every year"
+     ],
+     "a": 0,
+     "why": "Fines are penalties, taxes are contributions to shared costs.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A flat tax means...",
+     "o": [
+      "Everyone pays the same percentage",
+      "Everyone pays the same amount of luns",
+      "Only the rich pay",
+      "Nobody pays"
+     ],
+     "a": 0,
+     "why": "A flat tax uses one rate for all.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a city want several sources of revenue?",
+     "o": [
+      "If one falls, others still provide money",
+      "It guarantees that income never changes",
+      "It means taxes can stay hidden from residents",
+      "It lets the city skip budgeting each year"
+     ],
+     "a": 0,
+     "why": "Diverse revenue reduces risk.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from the money coming in to a service being delivered.",
+     "items": [
+      "Residents pay taxes and fees",
+      "The city collects the money",
+      "The council approves the budget",
+      "The service is delivered"
+     ],
+     "why": "Money is collected, budgeted and then spent on services.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each source to an example.",
+     "pairs": [
+      [
+       "Tax",
+       "Property tax"
+      ],
+      [
+       "Fee",
+       "Pool ticket"
+      ],
+      [
+       "Grant",
+       "Money from national government"
+      ],
+      [
+       "Fine",
+       "Parking penalty"
+      ]
+     ],
+     "why": "These are different kinds of public revenue.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give one argument for a flat tax and one for a progressive tax. Both are reasonable views.",
+     "rubric": [
+      [
+       "simple",
+       "easy",
+       "same",
+       "equal",
+       "clear",
+       "flat"
+      ],
+      [
+       "afford",
+       "ability",
+       "richer",
+       "higher",
+       "more income",
+       "progressive",
+       "fair"
+      ]
+     ],
+     "min": 2,
+     "model": "A flat tax is simple and easy to understand. A progressive tax asks more from those with more income, which some see as fairer because they can afford it more easily.",
+     "why": "Both views use fairness and efficiency criteria; the key shows balance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fee of 5 luns is charged for a bus ride. Who pays?",
+     "o": [
+      "The people who use the bus",
+      "Every resident through taxes",
+      "Only residents who live nearby",
+      "Only the city council members"
+     ],
+     "a": 0,
+     "why": "Fees are paid by users.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city raises the tax on a product by 10% and finds that people buy less of it. What is a sensible conclusion?",
+     "o": [
+      "Taxes can change behaviour, so effects should be tested",
+      "Taxes cannot change what people choose to buy, so no testing is needed",
+      "The higher tax must have raised more money than before",
+      "Nothing can be learned from a single change in one price"
+     ],
+     "a": 0,
+     "why": "Evidence is needed to see how taxes change what people do.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A city proposes a new tax to pay for a school building. What question should voters ask?",
+     "rubric": [
+      [
+       "who",
+       "benefit",
+       "pay",
+       "cost",
+       "fair",
+       "need"
+      ],
+      [
+       "money",
+       "budget",
+       "tax",
+       "rate",
+       "service"
+      ]
+     ],
+     "min": 1,
+     "model": "Voters can ask who benefits, who pays, how much it costs and what services might be reduced to make up the difference.",
+     "why": "Fair evaluation considers benefits, costs and who bears them.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What makes a tax system more trustworthy?",
+     "o": [
+      "Clear rules and equal application",
+      "Special rates for people with connections",
+      "Rates kept secret from taxpayers",
+      "Rules changed without warning"
+     ],
+     "a": 0,
+     "why": "Clarity and equal treatment build trust.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Where city money comes from",
+    "model": "Cities get money from taxes, fees, grants and fines. A tax pays for shared services like roads. A fee is paid by people who use a service. Different places tax in different ways.",
+    "points": [
+     {
+      "k": [
+       "tax"
+      ],
+      "ask": "What is a tax?"
+     },
+     {
+      "k": [
+       "fee",
+       "ticket",
+       "use"
+      ],
+      "ask": "What is a fee?"
+     },
+     {
+      "k": [
+       "grant",
+       "national",
+       "government"
+      ],
+      "ask": "Does money ever come from elsewhere?"
+     },
+     {
+      "k": [
+       "fair",
+       "rule",
+       "everyone",
+       "equal"
+      ],
+      "ask": "What makes taxes fair?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Public transport",
+   "icon": "🚇",
+   "hook": "If 40 people ride one bus instead of driving 40 cars, what changes on the road?",
+   "explain": [
+    "Public transport means buses, trams, trains and ferries that anyone can use for a fare. It moves many people using less road space and often less fuel per person.",
+    "Cities choose where routes go and how often vehicles run. More frequent service helps people plan trips, but it costs more. Cheap fares help low-income riders, but fares then cover less of the cost.",
+    "A transport plan balances cost, coverage and speed. Coverage means how many people live near a stop. Good plans check evidence such as ridership counts and travel times, and listen to riders."
+   ],
+   "example": {
+    "q": "A tram carries 120 riders. If each rider would otherwise take a car with 1 person, how many cars are replaced?",
+    "steps": [
+     "Each rider alone would use 1 car.",
+     "120 riders → 120 cars.",
+     "So 120 cars are replaced."
+    ],
+    "a": "120 cars."
+   },
+   "analogies": {
+    "home": "Carpooling to school is like public transport on a small scale: many people share one ride.",
+    "sea": "A ferry takes many people across water in one trip.",
+    "tech": "A single big server serves many users; a bus serves many riders."
+   },
+   "mnemonic": "Many riders, one vehicle: fewer cars, fewer jams.",
+   "terms": [
+    [
+     "Fare",
+     "The price of a ride."
+    ],
+    [
+     "Coverage",
+     "How many people live near a service."
+    ],
+    [
+     "Frequency",
+     "How often a vehicle comes."
+    ],
+    [
+     "Ridership",
+     "The number of passengers."
+    ]
+   ],
+   "misc": {
+    "wrong": "Public transport only helps people who ride it.",
+    "right": "It can also reduce traffic and pollution for people who drive."
+   },
+   "limits": "Which kind of transport works best depends on city shape, population and money, so there is no single best answer.",
+   "trip": {
+    "wiki": "Public transport",
+    "prompt": "Find two cities with different kinds of public transport."
+   },
+   "sources": [
+    "Public transport",
+    "Tram"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a form of public transport?",
+     "o": [
+      "A city bus",
+      "A private bicycle",
+      "A family car",
+      "A scooter that you own"
+     ],
+     "a": 0,
+     "why": "Public transport is shared and open to riders for a fare.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A bus costs 120 luns to run for an hour and carries 30 riders. What is the cost per rider for that hour, in luns?",
+     "a": 4,
+     "tol": 0,
+     "unit": "luns",
+     "why": "120 ÷ 30 = 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A route has 2,000 daily riders paying 3 luns each. How much fare money is collected per day, in luns?",
+     "a": 6000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "2,000 × 3 = 6,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A route has few riders and runs every 90 minutes. What is the most likely reason fewer people ride?",
+     "o": [
+      "Long waits make it hard to rely on",
+      "Stops are placed too close together",
+      "Fares are set too low to attract riders",
+      "Riders prefer buses that run less often"
+     ],
+     "a": 0,
+     "why": "Low frequency lowers usefulness.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a city keep fares low?",
+     "o": [
+      "To help more people reach jobs and services",
+      "To raise the largest income from each rider",
+      "To discourage people from using the buses at all",
+      "To avoid the need to plan bus routes carefully"
+     ],
+     "a": 0,
+     "why": "Lower fares can improve access, though they reduce fare income.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a trade-off in running more frequent buses?",
+     "o": [
+      "Better service but higher cost",
+      "Higher cost but no better service",
+      "Lower cost and shorter waits",
+      "Fewer riders but lower fares"
+     ],
+     "a": 0,
+     "why": "Frequency improves convenience but costs money.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for planning a new bus route.",
+     "items": [
+      "Find where people live and travel",
+      "Draft route options",
+      "Ask residents for feedback",
+      "Start the route and check ridership"
+     ],
+     "why": "Evidence, options, consultation, then testing.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the measure to what it tells you.",
+     "pairs": [
+      [
+       "Ridership",
+       "How many people ride"
+      ],
+      [
+       "Frequency",
+       "How often vehicles come"
+      ],
+      [
+       "Coverage",
+       "How many live near stops"
+      ],
+      [
+       "Fare",
+       "Price of a trip"
+      ]
+     ],
+     "why": "Each measure gives different information.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain one way public transport can help people who never ride it.",
+     "rubric": [
+      [
+       "traffic",
+       "jam",
+       "congestion",
+       "road",
+       "fewer cars"
+      ],
+      [
+       "pollution",
+       "air",
+       "clean",
+       "noise",
+       "fuel",
+       "safe"
+      ]
+     ],
+     "min": 1,
+     "model": "If many people ride, there are fewer cars, so roads are less crowded and the air can be cleaner for everyone.",
+     "why": "Public transport can reduce congestion and pollution for all.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is best supported by evidence?",
+     "o": [
+      "Ridership counts show which routes are most used",
+      "One councillor says a route feels busy to her",
+      "A single rider's complaint about one late bus",
+      "A guess that most people would rather drive their cars"
+     ],
+     "a": 0,
+     "why": "Counts give reliable evidence for decisions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A route serves a wealthy neighbourhood with high ridership. Another route serves a poorer area with lower ridership but few other options. What is the fairest way to decide on funding?",
+     "o": [
+      "Weigh ridership and access to jobs and services using stated criteria",
+      "Fund only the wealthy route, because it carries the most riders every day",
+      "Fund only the poorer route, because it has fewer riders and costs less",
+      "Split the money in equal parts, without looking at any of the evidence"
+     ],
+     "a": 0,
+     "why": "Use criteria like need and access, as well as use.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A city plans to make buses free. Give one benefit and one cost to think about.",
+     "rubric": [
+      [
+       "access",
+       "afford",
+       "more riders",
+       "poor",
+       "low income",
+       "cheaper",
+       "traffic",
+       "benefit"
+      ],
+      [
+       "cost",
+       "money",
+       "revenue",
+       "funding",
+       "tax",
+       "pay",
+       "service",
+       "crowd",
+       "budget"
+      ]
+     ],
+     "min": 2,
+     "model": "Free buses could raise access and ridership, but the city loses fare income, so it must find other money or cut something else, and buses may become crowded.",
+     "why": "Both benefits and costs need to be weighed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tram line costs 6,000,000 luns and serves 15,000 riders per day. What is the cost per daily rider?",
+     "o": [
+      "400 luns",
+      "40 luns",
+      "4,000 luns",
+      "90 luns"
+     ],
+     "a": 0,
+     "why": "6,000,000 ÷ 15,000 = 400.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why cities have public transport",
+    "model": "Public transport lets many people share one vehicle, which uses less road space and fuel. Cities choose routes and how often buses come. A good plan uses evidence like how many people ride and listens to riders.",
+    "points": [
+     {
+      "k": [
+       "share",
+       "many",
+       "bus",
+       "tram",
+       "train"
+      ],
+      "ask": "What is public transport?"
+     },
+     {
+      "k": [
+       "traffic",
+       "space",
+       "fuel",
+       "pollution",
+       "fewer cars"
+      ],
+      "ask": "Why is it useful?"
+     },
+     {
+      "k": [
+       "cost",
+       "money",
+       "fare"
+      ],
+      "ask": "What does it cost?"
+     },
+     {
+      "k": [
+       "evidence",
+       "ridership",
+       "ask",
+       "listen",
+       "count"
+      ],
+      "ask": "How do planners choose routes?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Housing and neighbourhoods",
+   "icon": "🏠",
+   "hook": "Why do some families have trouble finding a home they can afford, even in a busy city?",
+   "explain": [
+    "Housing means places to live. Affordable housing is housing that people on lower incomes can pay for. A common rule of thumb is that housing should cost no more than about one third of a household's income, though different places use different measures.",
+    "Cities influence housing through rules called zoning, which say what can be built where. They also may build homes, give subsidies, or allow more types of buildings. A subsidy is money to help pay for something.",
+    "A neighbourhood needs more than homes. It needs schools, shops, transport and parks nearby. Planners try to mix homes of different sizes so families of all kinds can live close to services."
+   ],
+   "example": {
+    "q": "A family earns 900 luns a month. Rent is 360 luns. What fraction of income is rent?",
+    "steps": [
+     "Rent ÷ income = 360 ÷ 900.",
+     "360 ÷ 900 = 0.4.",
+     "That is 40%."
+    ],
+    "a": "40% (more than a third)."
+   },
+   "analogies": {
+    "home": "A home needs rooms for everyone. A neighbourhood needs homes for everyone.",
+    "city": "A good neighbourhood has a baker, bus stop and school within a short walk.",
+    "nature": "A forest has big trees and small plants. A mixed neighbourhood has different kinds of homes."
+   },
+   "mnemonic": "Homes, Help, Hubs: houses, services and transport together.",
+   "terms": [
+    [
+     "Affordable housing",
+     "Housing people on lower incomes can pay for."
+    ],
+    [
+     "Zoning",
+     "Rules for what can be built where."
+    ],
+    [
+     "Subsidy",
+     "Money given to help pay for something."
+    ],
+    [
+     "Density",
+     "How many people or homes in an area."
+    ]
+   ],
+   "misc": {
+    "wrong": "Only building more luxury homes solves housing problems.",
+    "right": "Different types and prices of homes are needed, and cities use several tools."
+   },
+   "limits": "People disagree about the best tools for housing, such as rent rules, subsidies or building more, so evidence is important.",
+   "trip": {
+    "wiki": "Affordable housing",
+    "prompt": "Find two ways cities help people afford homes."
+   },
+   "sources": [
+    "Affordable housing",
+    "Zoning"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is zoning?",
+     "o": [
+      "Rules about what can be built where",
+      "A tax charged on every building sold",
+      "A plan for where buses should run",
+      "A list of local services and their prices"
+     ],
+     "a": 0,
+     "why": "Zoning controls land use.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A family earns 1,200 luns a month and pays 300 luns in rent. What percentage of income is rent?",
+     "a": 25,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "300 ÷ 1,200 = 0.25 = 25%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city plans 500 new homes. 20% will be affordable homes. How many affordable homes is that?",
+     "a": 100,
+     "tol": 0,
+     "unit": "homes",
+     "why": "0.20 × 500 = 100.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a subsidy?",
+     "o": [
+      "Money given to help pay for something",
+      "A fine charged for breaking planning rules",
+      "A tax paid by people who own property",
+      "A limit on how high buildings can be"
+     ],
+     "a": 0,
+     "why": "Subsidies lower the cost for the buyer or renter.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a neighbourhood need services near homes?",
+     "o": [
+      "People can reach school, shops and transport easily",
+      "So that buses are not needed anywhere in the whole city",
+      "So all homes in the city can be built to the same size",
+      "So the city can charge higher taxes on the shops there"
+     ],
+     "a": 0,
+     "why": "Nearby services improve access.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A city allows small apartments near a train station. What is a likely benefit?",
+     "o": [
+      "More people can live close to transport",
+      "Fewer people will be able to reach their jobs and shops",
+      "Rents everywhere in the city will fall all the way to zero",
+      "The train line will have to close down within a year"
+     ],
+     "a": 0,
+     "why": "Homes near transit give people better access.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the shares of income spent on rent from lowest to highest.",
+     "items": [
+      "20%",
+      "28%",
+      "35%",
+      "50%"
+     ],
+     "why": "20% < 28% < 35% < 50%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the tool to what it does.",
+     "pairs": [
+      [
+       "Zoning",
+       "Sets what may be built where"
+      ],
+      [
+       "Subsidy",
+       "Helps pay housing costs"
+      ],
+      [
+       "Public housing",
+       "Homes owned by the government"
+      ],
+      [
+       "Building permit",
+       "Official permission to build"
+      ]
+     ],
+     "why": "Cities have several tools.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A city wants more affordable homes. Name one tool and explain how it helps.",
+     "rubric": [
+      [
+       "zoning",
+       "subsid",
+       "build",
+       "public housing",
+       "permit",
+       "rule",
+       "land",
+       "grant",
+       "rent"
+      ],
+      [
+       "cheaper",
+       "afford",
+       "more homes",
+       "lower",
+       "help",
+       "pay",
+       "supply",
+       "income"
+      ]
+     ],
+     "min": 2,
+     "model": "A subsidy lowers the cost for families, or allowing more homes by changing zoning increases supply, which can make homes more affordable.",
+     "why": "Each tool works through cost or supply.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it better to mix home types and prices in a neighbourhood?",
+     "o": [
+      "People of different incomes can live near services",
+      "Every home can follow the same design and sell at the same price",
+      "Shops are guaranteed more customers in every year",
+      "The city can avoid providing any public transport at all"
+     ],
+     "a": 0,
+     "why": "Mixed housing supports access and inclusion.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Some residents oppose a new apartment building. Others support it. What is the fairest approach?",
+     "o": [
+      "Hold consultation and weigh impacts using stated criteria",
+      "Approve the building at once without hearing from any residents",
+      "Listen only to the residents who support the new building",
+      "Listen only to the residents who live closest to the site"
+     ],
+     "a": 0,
+     "why": "Consultation and criteria give a fair, transparent process.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A city must pick between subsidising rents and building more homes. Give one point in favour of each.",
+     "rubric": [
+      [
+       "subsid",
+       "rent",
+       "quick",
+       "help now",
+       "immediate"
+      ],
+      [
+       "build",
+       "supply",
+       "long",
+       "more homes",
+       "lasting",
+       "permanent"
+      ]
+     ],
+     "min": 2,
+     "model": "Rent subsidies help families quickly. Building more homes increases supply and can keep rents down over a longer time.",
+     "why": "Each tool has different speed, cost and lasting effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which indicator best shows a housing affordability problem?",
+     "o": [
+      "Many households spend over half their income on housing",
+      "Most households spend little of their income on housing",
+      "Public parks are busy at weekends and holidays",
+      "Many residents use buses to reach their workplaces"
+     ],
+     "a": 0,
+     "why": "Housing cost share shows pressure on income.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Housing and neighbourhoods",
+    "model": "Housing is where people live. Affordable housing is homes that people with lower incomes can pay for. Cities use zoning, subsidies and public housing. A good neighbourhood also has services close by.",
+    "points": [
+     {
+      "k": [
+       "home",
+       "house",
+       "live"
+      ],
+      "ask": "What is housing?"
+     },
+     {
+      "k": [
+       "afford",
+       "cost",
+       "pay",
+       "income"
+      ],
+      "ask": "What does affordable mean?"
+     },
+     {
+      "k": [
+       "zoning",
+       "subsid",
+       "build",
+       "rule"
+      ],
+      "ask": "How can a city help?"
+     },
+     {
+      "k": [
+       "school",
+       "shop",
+       "transport",
+       "service",
+       "near"
+      ],
+      "ask": "What else does a neighbourhood need?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Waste and environmental management",
+   "icon": "♻️",
+   "hook": "Where does the rubbish go after the truck drives away?",
+   "explain": [
+    "Cities produce a lot of waste. Managing it means collecting it, sorting it, reusing or recycling what we can, and safely disposing of the rest. The waste hierarchy says: reduce first, then reuse, then recycle, then dispose.",
+    "Waste has costs. Landfills take up land and can pollute if poorly managed. Burning waste can make energy but needs controls to keep air clean. Recycling saves materials but needs sorting and markets for the products.",
+    "Cities also care for water, air and green space. They may set rules on dumping, charge fees for waste, or run education campaigns. Good policies use evidence, such as how much waste is produced and how much is recycled."
+   ],
+   "example": {
+    "q": "A city produces 200 tonnes of waste a day and recycles 50 tonnes. What percentage is recycled?",
+    "steps": [
+     "50 ÷ 200 = 0.25.",
+     "0.25 × 100 = 25.",
+     "So 25% is recycled."
+    ],
+    "a": "25%."
+   },
+   "analogies": {
+    "home": "At home, using a bag again is better than throwing it away and buying another.",
+    "farm": "Farmers turn plant waste into compost to feed the soil.",
+    "nature": "In a forest, fallen leaves rot and feed new plants, with nothing wasted."
+   },
+   "mnemonic": "Reduce, Reuse, Recycle, then Remove.",
+   "terms": [
+    [
+     "Waste hierarchy",
+     "The order of best choices: reduce, reuse, recycle, dispose."
+    ],
+    [
+     "Landfill",
+     "A site where waste is buried."
+    ],
+    [
+     "Compost",
+     "Rotted plant matter used to feed soil."
+    ],
+    [
+     "Pollution",
+     "Harmful material in air, water or soil."
+    ]
+   ],
+   "misc": {
+    "wrong": "Recycling alone solves the waste problem.",
+    "right": "Reducing and reusing come first because they avoid creating waste."
+   },
+   "limits": "The best way to treat waste depends on local costs, space and technology, and experts weigh them differently.",
+   "trip": {
+    "wiki": "Waste hierarchy",
+    "prompt": "Find the order of the waste hierarchy and one example for each step."
+   },
+   "sources": [
+    "Waste management",
+    "Waste hierarchy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "According to the waste hierarchy, what comes first?",
+     "o": [
+      "Reduce",
+      "Dispose",
+      "Burn",
+      "Bury"
+     ],
+     "a": 0,
+     "why": "Avoiding waste is best.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A city collects 300 tonnes of waste a day and recycles 20% of it. How many tonnes are recycled?",
+     "a": 60,
+     "tol": 0,
+     "unit": "tonnes",
+     "why": "0.20 × 300 = 60.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A landfill costs 25 luns to bury one tonne. How much does it cost to bury 120 tonnes, in luns?",
+     "a": 3000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "25 × 120 = 3,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an example of reuse?",
+     "o": [
+      "Refilling a water bottle",
+      "Sending it to a landfill site",
+      "Melting a bottle to make a new one",
+      "Burning it to make heat"
+     ],
+     "a": 0,
+     "why": "Reuse means using the item again as it is.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can poorly managed landfills be a problem?",
+     "o": [
+      "They can pollute soil and water",
+      "They always improve nearby soil",
+      "They reduce the need for any recycling",
+      "They stop all waste from decomposing"
+     ],
+     "a": 0,
+     "why": "Liquids from waste can leak and pollute.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A city charges a fee per bag of rubbish but not for recycling. What might happen?",
+     "o": [
+      "People may recycle more",
+      "People will make more rubbish",
+      "Fewer people will separate recycling",
+      "Rubbish collection will become free"
+     ],
+     "a": 0,
+     "why": "A price signal can encourage less waste.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put the waste hierarchy in order from best to last choice.",
+     "items": [
+      "Reduce",
+      "Reuse",
+      "Recycle",
+      "Dispose"
+     ],
+     "why": "Avoid first, then reuse, then recycle, finally dispose.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the action to the step.",
+     "pairs": [
+      [
+       "Buy less packaging",
+       "Reduce"
+      ],
+      [
+       "Repair a chair",
+       "Reuse"
+      ],
+      [
+       "Sort paper into a bin",
+       "Recycle"
+      ],
+      [
+       "Bury non-recyclable waste",
+       "Dispose"
+      ]
+     ],
+     "why": "The steps run from preventing waste to dealing with leftovers.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is reducing waste usually better than recycling it?",
+     "rubric": [
+      [
+       "avoid",
+       "prevent",
+       "less",
+       "not made",
+       "no waste",
+       "never made",
+       "reduce"
+      ],
+      [
+       "energy",
+       "cost",
+       "save",
+       "resource",
+       "material",
+       "money",
+       "effort"
+      ]
+     ],
+     "min": 1,
+     "model": "Reducing avoids creating waste at all, so no energy or money is needed to collect, sort or process it.",
+     "why": "Prevention is cheaper and uses fewer resources.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which data would best show if a recycling plan works?",
+     "o": [
+      "Tonnes recycled each month",
+      "Number of recycling trucks owned",
+      "Length of the collection routes",
+      "Number of bins placed on streets"
+     ],
+     "a": 0,
+     "why": "Measuring results shows whether the plan works.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city can choose a new landfill or a recycling plant. Which approach is fairest?",
+     "o": [
+      "Compare cost, health, land use and community impact with evidence",
+      "Choose the option with the lowest cost in the first year only",
+      "Choose whatever the loudest group at the meeting asks for",
+      "Choose the option that is the easiest to start straight away"
+     ],
+     "a": 0,
+     "why": "Use criteria and evidence rather than convenience.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A neighbourhood next to a planned waste site worries about smells and traffic. What should the city do?",
+     "rubric": [
+      [
+       "listen",
+       "consult",
+       "meet",
+       "talk",
+       "hear",
+       "ask"
+      ],
+      [
+       "monitor",
+       "control",
+       "reduce",
+       "fair",
+       "share",
+       "other",
+       "compensat",
+       "test",
+       "evidence",
+       "study"
+      ]
+     ],
+     "min": 2,
+     "model": "The city should consult residents, publish studies, set controls on smell and traffic, and check that burdens are shared fairly rather than always landing on the same area.",
+     "why": "Consultation and fair sharing of burdens matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Compost made from food scraps helps a city because...",
+     "o": [
+      "It reduces rubbish and improves soil",
+      "It reduces rubbish but makes soil less fertile",
+      "It increases the amount sent to landfill",
+      "It reduces rubbish but pollutes rivers"
+     ],
+     "a": 0,
+     "why": "Food waste can become useful soil feed.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Managing a city's waste",
+    "model": "Cities collect, sort and treat waste. Best is to reduce waste first, then reuse, then recycle, then dispose of what is left. Landfills and burning have costs, so cities weigh them.",
+    "points": [
+     {
+      "k": [
+       "reduce",
+       "less",
+       "avoid"
+      ],
+      "ask": "What is the best way to deal with waste?"
+     },
+     {
+      "k": [
+       "reuse",
+       "recycl"
+      ],
+      "ask": "What comes next?"
+     },
+     {
+      "k": [
+       "landfill",
+       "bury",
+       "burn",
+       "dispose"
+      ],
+      "ask": "What about what is left?"
+     },
+     {
+      "k": [
+       "cost",
+       "pollut",
+       "land",
+       "air"
+      ],
+      "ask": "Why is it a problem?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Citizen participation",
+   "icon": "🗳️",
+   "hook": "If you could change one thing in your city, how would you make sure leaders heard you?",
+   "explain": [
+    "Citizen participation means people take part in decisions that affect them. Voting is one way. Others are attending public meetings, answering surveys, signing petitions and joining community groups.",
+    "Participation works best when information is shared, people have enough time, and leaders explain how input was used. Transparency means information is open and easy to find.",
+    "Not everyone has the same chance to take part. Some people lack time, internet or confidence, or speak another language. Good cities use different methods, such as meetings, online forms and visits to neighbourhoods. Systems differ between countries, but the idea is the same."
+   ],
+   "example": {
+    "q": "A city survey gets 1,500 replies. 900 prefer a new library, 600 prefer a sports hall. What percentage prefer the library?",
+    "steps": [
+     "900 ÷ 1,500 = 0.6.",
+     "0.6 × 100 = 60.",
+     "60% prefer the library."
+    ],
+    "a": "60%."
+   },
+   "analogies": {
+    "home": "A family meeting lets everyone share ideas before choosing a holiday.",
+    "sport": "A coach who asks players about the plan may find better tactics.",
+    "music": "A choir sounds better when every voice is heard."
+   },
+   "mnemonic": "Inform, Invite, Include, Respond.",
+   "terms": [
+    [
+     "Participation",
+     "Taking part in decisions."
+    ],
+    [
+     "Petition",
+     "A request signed by many people."
+    ],
+    [
+     "Consultation",
+     "Asking people for their views before deciding."
+    ],
+    [
+     "Transparency",
+     "Sharing information openly."
+    ]
+   ],
+   "misc": {
+    "wrong": "Citizen input means whoever shouts loudest gets their way.",
+    "right": "Good participation hears many voices and uses clear criteria and evidence."
+   },
+   "limits": "A survey only shows the views of those who answer, so results can be biased if some groups are missing.",
+   "trip": {
+    "wiki": "Participatory budgeting",
+    "prompt": "Find where residents vote on how to spend part of a city's budget."
+   },
+   "sources": [
+    "Participatory budgeting",
+    "Civic engagement"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a way to take part in local decisions?",
+     "o": [
+      "Attending a public meeting",
+      "Skipping meetings and election days",
+      "Waiting for officials to decide alone",
+      "Leaving every survey blank"
+     ],
+     "a": 0,
+     "why": "Public meetings are one form of participation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a petition?",
+     "o": [
+      "A request signed by many people",
+      "A decision made by the mayor alone",
+      "A rule that limits building heights",
+      "A fee charged to speak at meetings"
+     ],
+     "a": 0,
+     "why": "Petitions show how many people support a request.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A city has 80,000 residents. 12,000 answer a survey. What percentage answered?",
+     "a": 15,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "12,000 ÷ 80,000 = 0.15 = 15%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A petition needs 2% of 50,000 residents to be considered. How many signatures are needed?",
+     "a": 1000,
+     "tol": 0,
+     "unit": "signatures",
+     "why": "0.02 × 50,000 = 1,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why should the city publish notices early?",
+     "o": [
+      "People need time to learn and respond",
+      "To stop residents from changing the plan",
+      "To give officials time to decide alone",
+      "To let planners finish before anyone responds"
+     ],
+     "a": 0,
+     "why": "Early notice supports real participation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A survey was only posted online. Who might be missed?",
+     "o": [
+      "People without internet",
+      "People who use social media daily",
+      "People who check email often",
+      "People who read the city website"
+     ],
+     "a": 0,
+     "why": "Using one method can exclude groups.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for good consultation.",
+     "items": [
+      "Share clear information",
+      "Gather views from many groups",
+      "Weigh views with the stated criteria",
+      "Explain the decision and how input was used"
+     ],
+     "why": "Information, input, weighing, then feedback.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the method to the situation.",
+     "pairs": [
+      [
+       "Survey",
+       "Collect many views quickly"
+      ],
+      [
+       "Public meeting",
+       "Discuss face to face"
+      ],
+      [
+       "Petition",
+       "Show support for a request"
+      ],
+      [
+       "Neighbourhood visit",
+       "Reach people who cannot attend"
+      ]
+     ],
+     "why": "Different methods reach different people.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why should leaders explain how they used public input?",
+     "rubric": [
+      [
+       "trust",
+       "honest",
+       "transparen",
+       "open",
+       "believe"
+      ],
+      [
+       "listen",
+       "heard",
+       "feedback",
+       "accountab",
+       "explain",
+       "reason"
+      ]
+     ],
+     "min": 1,
+     "model": "Explaining how input was used shows people they were heard and builds trust, and lets residents check the decision.",
+     "why": "Feedback supports transparency and trust.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If 70% of survey responses come from one neighbourhood, what is a sensible step?",
+     "o": [
+      "Seek views from other neighbourhoods before deciding",
+      "Treat that neighbourhood's view as the whole city's view",
+      "Ignore the survey since it cannot be perfect",
+      "Throw away responses from the largest neighbourhood"
+     ],
+     "a": 0,
+     "why": "Balanced input leads to fairer decisions.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two groups give opposite advice on a new park. Which response is most defensible?",
+     "o": [
+      "Apply stated criteria like need, cost and access, and explain the result",
+      "Choose the group that has more posts on social media this week, whatever they argue",
+      "Choose the group whose leader knows the mayor personally and is a long-time friend",
+      "Delay any decision until both groups stop disagreeing with each other for good"
+     ],
+     "a": 0,
+     "why": "Transparent criteria reduce bias.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What can a city do so people who work long hours or speak another language can take part?",
+     "rubric": [
+      [
+       "translat",
+       "language",
+       "interpret",
+       "multi"
+      ],
+      [
+       "online",
+       "evening",
+       "weekend",
+       "flexible",
+       "visit",
+       "phone",
+       "different times",
+       "neighbourhood",
+       "outreach"
+      ]
+     ],
+     "min": 1,
+     "model": "Offer translated material, evening or weekend meetings, online and paper options, and visit neighbourhoods so more people can take part.",
+     "why": "Multiple methods widen participation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is participation the same in every country?",
+     "o": [
+      "No, forms and rights differ, but the idea of people having a voice is shared",
+      "Yes, every country uses the same rights and the same ways of taking part, everywhere",
+      "No, since no country anywhere lets residents have any say at all in local decisions",
+      "No, only elected officials and civil servants may ever take part in local choices"
+     ],
+     "a": 0,
+     "why": "Systems differ across the world.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How citizens take part",
+    "model": "Citizens can take part by voting, going to meetings, answering surveys and signing petitions. Good participation shares information early and explains how input was used. Cities should reach people who find it harder to take part.",
+    "points": [
+     {
+      "k": [
+       "vote",
+       "meeting",
+       "survey",
+       "petition"
+      ],
+      "ask": "How can people take part?"
+     },
+     {
+      "k": [
+       "information",
+       "early",
+       "notice",
+       "open",
+       "transparen"
+      ],
+      "ask": "What do cities need to share?"
+     },
+     {
+      "k": [
+       "everyone",
+       "different",
+       "language",
+       "include",
+       "reach"
+      ],
+      "ask": "Who might be missed?"
+     },
+     {
+      "k": [
+       "explain",
+       "feedback",
+       "use",
+       "respond"
+      ],
+      "ask": "What should leaders do afterwards?"
+     }
+    ]
+   }
+  }
+ ]
+}

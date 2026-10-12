@@ -1,0 +1,2762 @@
+{
+ "world": 4,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Computational aerodynamics",
+   "icon": "💻",
+   "hook": "Wind tunnels are expensive and slow, yet designers now test hundreds of wing shapes before building a single model. How can a computer predict the flow around a wing, and how do we know it is right?",
+   "explain": [
+    "Aerodynamics is governed by the Navier-Stokes equations: conservation of mass, momentum and energy for a viscous fluid. They have no general closed-form solution, so computational fluid dynamics (CFD) divides the flow into small cells (a mesh) and solves discrete equations, for example with the finite-volume method. Faster approximate methods exist too: thin airfoil theory gives C_L = 2π(α − α₀) for a thin airfoil at small angle of attack, and panel methods solve potential flow around a surface.",
+    "Turbulence cannot be fully resolved at practical Reynolds numbers, so industry mostly uses Reynolds-averaged Navier-Stokes (RANS) with a turbulence model, while large-eddy simulation (LES) resolves large eddies and models small ones. Near walls, the first cell height is chosen for a target y⁺ = y u_τ ÷ ν. Explicit time-stepping must obey the Courant-Friedrichs-Lewy (CFL) condition: CFL = (|u| + a)Δt ÷ Δx ≤ 1 for stability.",
+    "Credibility rests on verification (are we solving the equations correctly? grid convergence, order of accuracy) and validation (are we solving the right equations? comparison with experiments). For a scheme of order p, halving the cell size reduces discretisation error by about 2^p. Differences between turbulence models are often the dominant uncertainty at stall and with separation."
+   ],
+   "example": {
+    "q": "A first-order-in-time explicit solver has Δx = 0.01 m and the largest signal speed |u| + a = 440 m/s. What is the largest stable time step for CFL = 1?",
+    "steps": [
+     "CFL = (|u| + a)Δt ÷ Δx ≤ 1.",
+     "Δt ≤ Δx ÷ (|u| + a).",
+     "Δt ≤ 0.01 ÷ 440 = 2.27×10⁻⁵ s."
+    ],
+    "a": "About 22.7 microseconds"
+   },
+   "analogies": {
+    "city": "Traffic simulations track thousands of cars with small time steps; a step that is too large lets cars jump through each other.",
+    "sea": "A weather and ocean model divides the sea into grid boxes and steps forward in time.",
+    "tech": "Rendering an animation frame by frame: too coarse a mesh or step gives a wrong picture.",
+    "music": "Sampling sound: if the sampling rate is too low, the waveform is misrepresented."
+   },
+   "mnemonic": "Mesh it, model turbulence, step within CFL, then verify and validate.",
+   "terms": [
+    [
+     "RANS",
+     "Reynolds-averaged Navier-Stokes, time-averaged equations with a turbulence model."
+    ],
+    [
+     "y⁺",
+     "Non-dimensional distance from the wall used to size the first mesh cell."
+    ],
+    [
+     "CFL number",
+     "Ratio of the distance a signal travels in one time step to the cell size."
+    ],
+    [
+     "Verification",
+     "Checking the equations are solved correctly."
+    ],
+    [
+     "Validation",
+     "Checking the model predicts reality."
+    ]
+   ],
+   "misc": {
+    "wrong": "A colourful CFD picture is proof that the answer is correct.",
+    "right": "CFD results must be verified (mesh and numerical convergence) and validated against experiment. A converged solution can still be wrong if the model is inadequate."
+   },
+   "limits": "RANS models struggle with strongly separated and unsteady flows, and LES or direct simulation at flight Reynolds numbers is very costly. Thin airfoil theory is valid only for small angles and thin sections.",
+   "trip": {
+    "wiki": "Computational fluid dynamics",
+    "prompt": "Find the section on verification and validation. What is the difference?"
+   },
+   "sources": [
+    "Computational fluid dynamics",
+    "Navier–Stokes equations",
+    "Thin-airfoil theory"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which statement best distinguishes verification from validation?",
+     "o": [
+      "Verification checks the equations are solved correctly; validation checks the model matches reality",
+      "They are the same thing, only named differently by two groups",
+      "Verification uses experiments, while validation only uses computational meshes",
+      "Validation is done before any code exists, verification after the first flight"
+     ],
+     "a": 0,
+     "why": "Verification is about solving the equations right; validation is about solving the right equations.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A solution changes noticeably when the mesh is refined. What does this indicate?",
+     "o": [
+      "It is not yet grid-converged",
+      "The solution is already perfect and needs no further checking",
+      "Turbulence is completely absent from the flow",
+      "The CFL number is exactly zero in the solver"
+     ],
+     "a": 0,
+     "why": "A converged answer should change little with refinement.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do turbulence models do in RANS?",
+     "o": [
+      "Represent the effect of turbulent fluctuations on the mean flow",
+      "Remove viscosity from the equations entirely so the flow is inviscid",
+      "Skip the mesh and solve the flow at a single point",
+      "Force the whole flow to stay laminar at all speeds"
+     ],
+     "a": 0,
+     "why": "Averaging creates extra stress terms that must be modelled.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a time step above the CFL limit make an explicit solver blow up?",
+     "o": [
+      "Information travels further than one cell per step, which the scheme cannot represent",
+      "The air runs out of the cells near the wall in each step",
+      "The mesh is too fine, so the cells hold no air at all",
+      "The time becomes negative inside the loop of the solver"
+     ],
+     "a": 0,
+     "why": "The numerical domain of dependence must include the physical one.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which method is cheapest and works for thin airfoils at small angles?",
+     "o": [
+      "Thin airfoil theory",
+      "Direct numerical simulation",
+      "Wind-tunnel testing",
+      "LES"
+     ],
+     "a": 0,
+     "why": "Analytical thin airfoil theory is cheap but limited.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Thin airfoil theory gives C_L = 2π(α − α₀). For a symmetric airfoil (α₀ = 0) at α = 5° (0.08727 rad), what is C_L to 2 decimals?",
+     "a": 0.55,
+     "tol": 0.01,
+     "why": "2π × 0.08727 = 0.5483.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "First cell height for y⁺ = 1: y = y⁺ν/u_τ. With ν = 1.46×10⁻⁵ m²/s and u_τ = 2 m/s, what is y in micrometres?",
+     "a": 7.3,
+     "tol": 0.1,
+     "unit": "μm",
+     "why": "y = 1 × 1.46×10⁻⁵ ÷ 2 = 7.3×10⁻⁶ m = 7.3 μm.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A second-order scheme has a discretisation error of 4×10⁻³ on a mesh. When the cell size is halved, what is the expected error in units of 10⁻³?",
+     "a": 1,
+     "tol": 0.1,
+     "unit": "×10⁻³",
+     "why": "Error ∝ h², so halving h divides it by 4: 4×10⁻³ ÷ 4 = 1×10⁻³.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these CFD steps in order.",
+     "items": [
+      "Define geometry and boundary conditions",
+      "Generate the mesh",
+      "Solve the discretised equations",
+      "Check convergence and validate"
+     ],
+     "why": "A CFD study moves from set-up through meshing and solving to checking.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A CFD result for a wing near stall disagrees with wind-tunnel data. List two possible sources of the error.",
+     "rubric": [
+      [
+       "turbulence model",
+       "model",
+       "rans"
+      ],
+      [
+       "mesh",
+       "grid",
+       "resolution",
+       "discretisation"
+      ],
+      [
+       "separat",
+       "unsteady",
+       "boundary condition",
+       "transition",
+       "experiment",
+       "tunnel",
+       "wall",
+       "uncertainty"
+      ]
+     ],
+     "min": 2,
+     "model": "The turbulence model may be inadequate for separated flow and the mesh may be too coarse. Boundary conditions, transition modelling, or the tunnel itself (walls, model deflection) can also contribute.",
+     "why": "Errors come from both modelling and numerical sources, and from the experiment.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A team halves the mesh size and the answer barely changes, but a wind tunnel gives a 10% different drag. Which conclusion is best?",
+     "o": [
+      "The numerics are probably converged, so the difference may come from the model or experiment",
+      "The CFD code is wrong in every case, because the tunnel disagrees with it",
+      "The tunnel is always right, so the simulation should be thrown away",
+      "Mesh refinement is useless, so a finer mesh would not have helped"
+     ],
+     "a": 0,
+     "why": "Grid convergence only verifies the numerics; validation differences point to modelling or experimental uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the CFL limit sometimes avoided with implicit schemes?",
+     "o": [
+      "Implicit schemes can be stable at larger time steps, at a higher cost per step",
+      "Implicit schemes do not use time, so the limit has no meaning for them",
+      "Implicit schemes never converge, so they ignore the limit",
+      "Implicit schemes skip the mesh and solve the flow directly"
+     ],
+     "a": 0,
+     "why": "Implicit methods solve coupled equations each step and are less restricted by CFL.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it not enough for the designer to trust a single CFD run?",
+     "rubric": [
+      [
+       "uncertainty",
+       "error",
+       "verif",
+       "validat",
+       "converge",
+       "convergence"
+      ],
+      [
+       "mesh",
+       "model",
+       "grid",
+       "turbulence",
+       "experiment",
+       "test",
+       "data"
+      ]
+     ],
+     "min": 2,
+     "model": "Any single run has numerical error and model error. Designers check mesh convergence, compare against experiments and quantify uncertainty before trusting it.",
+     "why": "Credibility requires verification, validation and uncertainty quantification.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How CFD predicts airflow and how we trust it",
+    "model": "CFD breaks the air into many small cells and solves the flow equations in each. Turbulence has to be modelled, and the time step must be small enough for the numerical scheme to be stable. To trust the result engineers refine the mesh to see it converge and compare with experiments.",
+    "points": [
+     {
+      "k": [
+       "cell",
+       "mesh",
+       "grid",
+       "divide"
+      ],
+      "ask": "How does the computer represent the air?"
+     },
+     {
+      "k": [
+       "turbulence",
+       "model",
+       "rans"
+      ],
+      "ask": "What about turbulence?"
+     },
+     {
+      "k": [
+       "converge",
+       "refine",
+       "verif",
+       "validat",
+       "experiment",
+       "compare"
+      ],
+      "ask": "How do we know it is right?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Aircraft aeroelasticity",
+   "icon": "〰️",
+   "hook": "In 1940 a long suspension bridge twisted itself apart in a moderate wind, and aircraft wings can do something related. Why can airflow and a flexible structure together become unstable?",
+   "explain": [
+    "Aeroelasticity studies the interaction of aerodynamic, elastic and inertial forces. Static aeroelasticity includes divergence: lift acting ahead of the elastic axis twists the wing nose-up, increasing the angle of attack, which increases lift and twist. For a simple typical section, the twist grows without limit when the dynamic pressure reaches q_D = K_θ ÷ (e S C_Lα), where K_θ is the torsional stiffness, e the distance of the aerodynamic centre ahead of the elastic axis, S the area and C_Lα the lift curve slope.",
+    "Dynamic aeroelasticity includes flutter, a self-excited oscillation in which energy is extracted from the airflow each cycle. Flutter typically couples bending and torsion modes, and it appears above a critical speed that depends on stiffness, mass distribution and the separation of modal frequencies. Flutter can destroy a wing within seconds, so aircraft must show a safe margin (commonly 15% on speed) beyond the flight envelope.",
+    "Designers raise flutter speed by increasing stiffness, adding mass balance (moving the centre of mass forward), and tuning frequency separation. Control surfaces can also flutter and are mass-balanced. Testing includes ground vibration tests and flight flutter tests that approach the boundary carefully with measured damping."
+   ],
+   "example": {
+    "q": "A wing section has K_θ = 2.0×10⁵ N·m/rad, e = 0.2 m, S = 10 m², C_Lα = 5 per rad. Find the divergence speed at sea level (ρ = 1.225 kg/m³).",
+    "steps": [
+     "q_D = K_θ ÷ (e S C_Lα) = 2.0×10⁵ ÷ (0.2 × 10 × 5) = 20 000 Pa.",
+     "v = √(2 q_D ÷ ρ) = √(40 000 ÷ 1.225).",
+     "v = √32 653 ≈ 180.7 m/s."
+    ],
+    "a": "About 181 m/s"
+   },
+   "analogies": {
+    "music": "A violin string excited by a bow gains energy each cycle, a self-excited oscillation like flutter.",
+    "sea": "A flag flaps in a steady wind because the flow and cloth drive each other.",
+    "sport": "Pushing a swing at the right moment adds energy each cycle.",
+    "city": "The Tacoma Narrows Bridge failed from aeroelastic effects in 1940."
+   },
+   "mnemonic": "Divergence: twist feeds lift feeds twist. Flutter: modes couple and the air feeds the oscillation.",
+   "terms": [
+    [
+     "Divergence",
+     "Static instability where twist and aerodynamic load grow each other."
+    ],
+    [
+     "Flutter",
+     "Self-excited oscillation extracting energy from the airflow."
+    ],
+    [
+     "Elastic axis",
+     "The line through a wing along which a load causes bending but no twist."
+    ],
+    [
+     "Mass balancing",
+     "Moving mass forward of the hinge or elastic axis to raise flutter speed."
+    ],
+    [
+     "Modal frequency",
+     "The natural frequency of a vibration mode."
+    ]
+   ],
+   "misc": {
+    "wrong": "Flutter happens because of turbulence shaking the wing.",
+    "right": "Flutter is a self-excited instability at a critical speed. It would occur in smooth air once speed exceeds that critical value."
+   },
+   "limits": "The typical-section model is a two-degree-of-freedom simplification. Real wings need finite element and unsteady aerodynamic models, and certification includes tests.",
+   "trip": {
+    "wiki": "Aeroelasticity",
+    "prompt": "Find the Collar triangle. Which three types of force does it connect?"
+   },
+   "sources": [
+    "Aeroelasticity",
+    "Flutter (aeroelasticity)",
+    "Tacoma Narrows Bridge (1940)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the Collar triangle illustrate?",
+     "o": [
+      "Aeroelasticity as the interaction of aerodynamic, elastic and inertial forces",
+      "Engine cycles as the interaction of heat, work and pressure",
+      "Orbital transfers as the interaction of burns and gravity",
+      "Weather forecasting as the interaction of fronts and winds"
+     ],
+     "a": 0,
+     "why": "Collar's triangle shows the three kinds of force and the phenomena at their interactions.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What makes divergence a static instability?",
+     "o": [
+      "It does not involve oscillation; the twist just grows",
+      "It is an oscillation, so it is a dynamic instability",
+      "It occurs only in engines, never on wings",
+      "It needs turbulence in the air to start"
+     ],
+     "a": 0,
+     "why": "Divergence is a monotonic growth of twist, unlike flutter.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How does moving the wing's mass forward (mass balancing) help?",
+     "o": [
+      "It reduces coupling between bending and torsion and raises flutter speed",
+      "It reduces lift on the wing, so the wing flutters less",
+      "It adds drag, which damps the motion of the wing",
+      "It changes the density of the air that flows over the wing"
+     ],
+     "a": 0,
+     "why": "Mass balancing moves the centre of gravity toward the elastic axis, reducing inertial coupling.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are swept-back flexible wings prone to a changing effective angle of attack when they bend?",
+     "o": [
+      "Bending a swept wing upward reduces the local angle of attack of the tips (washout), changing load",
+      "Sweep removes lift from the wing so it cannot bend upward",
+      "Sweep doubles the air density near the wing tips and so changes the load",
+      "Bending a swept wing makes the air around it stop flowing"
+     ],
+     "a": 0,
+     "why": "Bending-torsion coupling in swept wings changes the local incidence, which can help or hinder.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the flight envelope need a margin below the predicted flutter speed?",
+     "o": [
+      "Analyses and tests have uncertainty and flutter can be abrupt and catastrophic",
+      "Flutter is harmless, so the margin is just a formality",
+      "To make aircraft slower for no good engineering reason",
+      "Flutter only occurs below about 100 m/s and so can be ignored"
+     ],
+     "a": 0,
+     "why": "Margins cover model error, damage and variation in mass.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A wing section has K_θ = 2.0×10⁵ N·m/rad, e = 0.2 m, S = 10 m², C_Lα = 5 per rad. What is the divergence dynamic pressure q_D in pascals?",
+     "a": 20000,
+     "tol": 50,
+     "unit": "Pa",
+     "why": "q_D = 2.0×10⁵ ÷ (0.2 × 10 × 5) = 20 000 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For q_D = 20 000 Pa and ρ = 1.225 kg/m³, what is the divergence speed in m/s?",
+     "a": 180.7,
+     "tol": 0.5,
+     "unit": "m/s",
+     "why": "v = √(2 × 20 000 ÷ 1.225) = √32 653 = 180.7 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A structural mode has stiffness k = 4×10⁶ N/m and mass m = 1000 kg. What is its natural frequency f = (1/2π)√(k/m) in hertz?",
+     "a": 10.07,
+     "tol": 0.05,
+     "unit": "Hz",
+     "why": "√4000 = 63.25 rad/s; ÷ 2π = 10.07 Hz.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each phenomenon to its type.",
+     "pairs": [
+      [
+       "Divergence",
+       "Static aeroelastic instability"
+      ],
+      [
+       "Flutter",
+       "Dynamic aeroelastic instability"
+      ],
+      [
+       "Control reversal",
+       "Loss of control effectiveness due to flexibility"
+      ],
+      [
+       "Buffeting",
+       "Forced vibration from unsteady flow"
+      ]
+     ],
+     "why": "Aeroelastic phenomena are classified as static or dynamic.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why flutter is called a self-excited oscillation.",
+     "rubric": [
+      [
+       "energy",
+       "extract",
+       "feeds",
+       "absorbs",
+       "takes"
+      ],
+      [
+       "airflow",
+       "air",
+       "aerodynamic"
+      ],
+      [
+       "each cycle",
+       "cycle",
+       "own motion",
+       "motion",
+       "coupl",
+       "no external",
+       "without external",
+       "itself",
+       "grows"
+      ]
+     ],
+     "min": 2,
+     "model": "Flutter needs no external periodic force. The wing's own motion changes the aerodynamic loads in such a way that energy is taken from the airflow during each cycle, so the oscillation grows if damping is less than that energy input.",
+     "why": "Self-excitation means the oscillation sustains itself via the airflow.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A wing's torsional stiffness is doubled with other parameters fixed. By what factor does the divergence speed change?",
+     "o": [
+      "√2 (about 1.41)",
+      "2√2 (about 2.83)",
+      "1/√2 (about 0.71)",
+      "4 times larger"
+     ],
+     "a": 0,
+     "why": "q_D ∝ K_θ and v ∝ √q.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pilot flying a certified aircraft at the maximum design speed notices a growing vibration. What is the best response?",
+     "o": [
+      "Reduce speed immediately",
+      "Increase speed",
+      "Ignore it",
+      "Pull the nose up sharply"
+     ],
+     "a": 0,
+     "why": "Reducing speed moves away from the flutter boundary. (Educational statement, not pilot training.)",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do designers put flutter margin on equivalent airspeed rather than altitude?",
+     "rubric": [
+      [
+       "dynamic pressure",
+       "q",
+       "equivalent airspeed",
+       "eas",
+       "½ρv",
+       "density"
+      ],
+      [
+       "aerodynamic",
+       "force",
+       "load",
+       "depends",
+       "scales",
+       "same"
+      ]
+     ],
+     "min": 1,
+     "model": "Aerodynamic forces scale with dynamic pressure q = ½ρv², which is what equivalent airspeed represents. Flutter depends on q relative to structural stiffness, so margins are defined in terms of q or equivalent airspeed.",
+     "why": "Flutter boundaries are functions of dynamic pressure and Mach number.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Divergence and flutter",
+    "model": "A flexible wing twists under load, and the twist changes the load. In divergence the twist keeps growing with no oscillation above a critical dynamic pressure. In flutter, bending and twisting couple and the airflow feeds energy into the oscillation. Designers keep a safety margin and raise stiffness or mass balance.",
+    "points": [
+     {
+      "k": [
+       "twist",
+       "flexible",
+       "bend"
+      ],
+      "ask": "What makes a wing flexible loads change?"
+     },
+     {
+      "k": [
+       "divergence",
+       "static",
+       "critical",
+       "grow"
+      ],
+      "ask": "What is divergence?"
+     },
+     {
+      "k": [
+       "flutter",
+       "oscillat",
+       "energy",
+       "air"
+      ],
+      "ask": "What is flutter?"
+     },
+     {
+      "k": [
+       "margin",
+       "stiff",
+       "mass balance",
+       "design"
+      ],
+      "ask": "How do designers prevent them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Transonic and supersonic flight",
+   "icon": "🛩️",
+   "hook": "Aircraft designers narrow the fuselage near the wing (the 'Coke bottle') and sweep the wing back. How do these odd shapes reduce drag near the speed of sound?",
+   "explain": [
+    "Near Mach 1 local flow over the wing exceeds the speed of sound while the aircraft is still subsonic. The drag-divergence Mach number is where wave drag rises sharply. Sweep reduces the effective Mach number normal to the leading edge: M_eff = M cos Λ. Supercritical airfoils are flat on top to delay and weaken shocks. The area rule says wave drag depends on how the cross-sectional area of the whole aircraft varies along its length, so the fuselage is narrowed where the wing adds area.",
+    "In supersonic flow, disturbances propagate within a Mach cone with half-angle μ = arcsin(1/M). Linear (Ackeret) theory gives C_L = 4α ÷ √(M² − 1) and wave drag coefficient C_D,w = 4α² ÷ √(M² − 1) for a thin flat plate at small α. Across a normal shock at M₁ = 2, stagnation pressure falls to 72% of its upstream value (p₀₂/p₀₁ ≈ 0.721), so shocks cost efficiency; oblique shocks cost less, which is why supersonic inlets use ramps.",
+    "Supersonic flight has other consequences: sonic booms from the shock waves reaching the ground, aerodynamic heating (the total temperature rises as T₀ = T(1 + 0.2M²)), and the need for engines that slow the air to subsonic speed before the compressor. Concorde cruised near Mach 2 and needed a long runway and high fuel use."
+   ],
+   "example": {
+    "q": "A swept wing with Λ = 35° flies at M = 0.85. Find the effective Mach number normal to the leading edge.",
+    "steps": [
+     "M_eff = M cos Λ.",
+     "cos 35° = 0.8192.",
+     "M_eff = 0.85 × 0.8192 = 0.696."
+    ],
+    "a": "About 0.70"
+   },
+   "analogies": {
+    "sea": "A fast motorboat's wake forms a V whose angle narrows as the boat speeds up, like the Mach cone.",
+    "sport": "A whip cracking creates a small shock wave.",
+    "city": "Squeezing a crowd through a gap: the narrowest section controls the flow, like the area rule.",
+    "tech": "Supersonic inlets use ramps to slow flow through a series of weak shocks."
+   },
+   "mnemonic": "Sweep it back, smooth the area, slow with oblique shocks.",
+   "terms": [
+    [
+     "Drag-divergence Mach number",
+     "The Mach number where wave drag rises rapidly."
+    ],
+    [
+     "Area rule",
+     "Wave drag follows the smoothness of the total cross-section area distribution."
+    ],
+    [
+     "Mach angle",
+     "μ = arcsin(1/M), the half-angle of the Mach cone."
+    ],
+    [
+     "Supercritical airfoil",
+     "Airfoil with a flat top that weakens shocks."
+    ],
+    [
+     "Sonic boom",
+     "Pressure signature from shock waves reaching the ground."
+    ]
+   ],
+   "misc": {
+    "wrong": "A sonic boom happens only at the moment an aircraft breaks the sound barrier.",
+    "right": "A supersonic aircraft continuously carries its shock waves with it, so the boom sweeps along the whole ground track while flight remains supersonic."
+   },
+   "limits": "Ackeret theory applies to thin, low-angle shapes away from Mach 1. Transonic flow is nonlinear and needs CFD or wind-tunnel data.",
+   "trip": {
+    "wiki": "Area rule",
+    "prompt": "Find the picture of an aircraft with a 'waisted' fuselage. Where is the narrowest part?"
+   },
+   "sources": [
+    "Area rule",
+    "Supercritical airfoil",
+    "Sonic boom"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why are wings swept for high subsonic flight?",
+     "o": [
+      "They lower the Mach number normal to the leading edge and delay wave drag",
+      "They increase lift at low speed and so are good for landing",
+      "They reduce the weight of the wing to nearly zero",
+      "They create more shock waves to carry the load"
+     ],
+     "a": 0,
+     "why": "Only the velocity component normal to the leading edge governs compressibility effects.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does the area rule recommend?",
+     "o": [
+      "Smooth variation of total cross-sectional area along the length",
+      "Make the fuselage widest where the wing joins the body",
+      "Use only one wing so the area stays small",
+      "Add a second tail to balance the area"
+     ],
+     "a": 0,
+     "why": "Narrowing the fuselage where the wing adds area gives a smoother area distribution.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A normal shock at M₁ = 2 is replaced by several weaker oblique shocks in an inlet. What is the benefit?",
+     "o": [
+      "Less total pressure loss",
+      "More drag, because several shocks stack up in the inlet",
+      "Less thrust, because the engine receives less air",
+      "No change, since the shocks make no difference to the pressure"
+     ],
+     "a": 0,
+     "why": "Oblique shocks are closer to isentropic compression than a single normal shock.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The Mach cone half-angle gets smaller as the Mach number increases. Why?",
+     "o": [
+      "μ = arcsin(1/M), so a larger M gives a smaller angle",
+      "μ is fixed by the shape of the aircraft and does not change",
+      "Sound speeds up as the aircraft goes faster, narrowing the cone",
+      "The aircraft shrinks as it goes faster, so the cone narrows"
+     ],
+     "a": 0,
+     "why": "At higher speed the body outruns the waves more, making a narrower cone.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why did Concorde need to manage high skin temperatures at Mach 2?",
+     "o": [
+      "Air brought to rest near the surface heats to the stagnation temperature",
+      "The Sun was hotter at that altitude and heated the skin directly",
+      "The engines overheated the wings from the inside",
+      "Gravity was higher at that altitude and added friction"
+     ],
+     "a": 0,
+     "why": "T₀ = T(1 + 0.2M²) is about 1.8T at Mach 2.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A swept wing with Λ = 35° flies at M = 0.85 (cos 35° = 0.8192). What is the effective Mach number normal to the leading edge, to 2 decimals?",
+     "a": 0.7,
+     "tol": 0.01,
+     "why": "0.85 × 0.8192 = 0.696 ≈ 0.70.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At M = 2, what is the Mach cone half-angle in degrees?",
+     "a": 30,
+     "tol": 0.2,
+     "unit": "°",
+     "why": "μ = arcsin(1/2) = 30°.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Ackeret theory: C_L = 4α/√(M² − 1). For α = 2° (0.03491 rad) at M = 2, what is C_L to 3 decimals?",
+     "a": 0.081,
+     "tol": 0.002,
+     "why": "√3 = 1.732; 4 × 0.03491 ÷ 1.732 = 0.0806.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these flow states in order of increasing Mach number.",
+     "items": [
+      "Subsonic cruise M 0.6",
+      "Transonic M 0.9",
+      "Supersonic M 2",
+      "Hypersonic M 6"
+     ],
+     "why": "These regimes run from M < 0.8, to 0.8–1.2, to above 1.2 and above 5.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a supersonic aircraft's inlet must slow the air to subsonic speed before the compressor.",
+     "rubric": [
+      [
+       "compressor",
+       "engine",
+       "fan"
+      ],
+      [
+       "subsonic",
+       "slow",
+       "decelerate",
+       "below mach 1",
+       "shock"
+      ],
+      [
+       "supersonic",
+       "damage",
+       "stall",
+       "cannot",
+       "efficient",
+       "unstable",
+       "choke"
+      ]
+     ],
+     "min": 2,
+     "model": "Compressor blades are designed for subsonic relative flow. Supersonic air entering would cause strong shocks, loss and instability, so the inlet slows the flow, through a series of shocks and diffusion, to subsonic speed before it reaches the compressor.",
+     "why": "Engines need subsonic flow at the compressor face.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fighter doubles its Mach number from 1.5 to 3 at fixed α. How does the Ackeret lift coefficient change? (√(M²−1): 1.118 and 2.828)",
+     "o": [
+      "It falls by about 60%",
+      "It doubles, because the Mach number has doubled",
+      "It rises by about 60%, as the flow is faster",
+      "It stays about the same at the two Mach numbers"
+     ],
+     "a": 0,
+     "why": "C_L ∝ 1/√(M²−1): 1/2.828 versus 1/1.118 gives a ratio of 0.395, a drop of about 60%.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a supercritical airfoil reduce wave drag?",
+     "o": [
+      "A flatter top weakens the shock and delays drag rise",
+      "It removes the shock entirely at all speeds above M 0.5",
+      "It increases the thickness only and nothing else",
+      "It adds a second small wing above the main one"
+     ],
+     "a": 0,
+     "why": "Flatter upper surface avoids the strong suction peak that creates a strong shock.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the sonic boom 'carpet' follow an aircraft along its ground track?",
+     "rubric": [
+      [
+       "shock",
+       "wave",
+       "cone",
+       "mach"
+      ],
+      [
+       "continuous",
+       "whole",
+       "along",
+       "every point",
+       "carried",
+       "moves with",
+       "trailing",
+       "while",
+       "as long as"
+      ],
+      [
+       "ground",
+       "track",
+       "reach",
+       "hear"
+      ]
+     ],
+     "min": 2,
+     "model": "The aircraft continuously carries its Mach cone with it, so the shock waves sweep the ground along the whole track while flight stays supersonic. Everyone along the path hears a boom as the cone passes, not only at the moment of reaching Mach 1.",
+     "why": "A boom is a travelling pressure signature, not a one-off event.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why wings are swept and bodies are waisted",
+    "model": "Near the speed of sound shocks form and cause wave drag. Sweeping the wing reduces the Mach number the wing section feels, delaying the drag rise. The area rule smooths the total cross-section along the aircraft so the shocks are weaker.",
+    "points": [
+     {
+      "k": [
+       "shock",
+       "wave drag",
+       "drag"
+      ],
+      "ask": "What causes the extra drag near Mach 1?"
+     },
+     {
+      "k": [
+       "sweep",
+       "swept",
+       "normal",
+       "component"
+      ],
+      "ask": "How does sweep help?"
+     },
+     {
+      "k": [
+       "area",
+       "cross-section",
+       "smooth",
+       "waist",
+       "narrow"
+      ],
+      "ask": "What is the area rule?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Aircraft design optimisation",
+   "icon": "🧩",
+   "hook": "A longer, thinner wing saves fuel but weighs more and may flutter. No single design is best in every way. How do engineers choose?",
+   "explain": [
+    "Aircraft design balances conflicting requirements: aerodynamics, structure, propulsion, cost, noise and safety. Conceptual design uses sizing equations. Induced drag of a finite wing is C_Di = C_L² ÷ (π AR e), where AR is aspect ratio (b²/S) and e the span efficiency factor (about 0.8 to 0.95). Increasing AR cuts induced drag but increases structural mass.",
+    "The Breguet range equation for a jet in cruise is R = (V ÷ (g · TSFC)) (L/D) ln(W₀ ÷ W₁), where TSFC is thrust-specific fuel consumption (kg/(N·s)), W₀ the initial weight and W₁ the final weight. It shows why higher L/D, lower TSFC and a lower structural mass fraction are valuable, and the logarithm shows diminishing returns with more fuel.",
+    "Optimisation formalises the search: choose design variables (span, sweep, thickness, ...), an objective (fuel burn, cost) and constraints (stall speed, structural strength, flutter). Gradient-based methods with adjoint CFD can handle many variables. Multidisciplinary optimisation (MDO) couples aerodynamics, structures and propulsion, and when objectives conflict the result is a Pareto front of non-dominated designs."
+   ],
+   "example": {
+    "q": "A jet cruises at V = 250 m/s with L/D = 18, TSFC = 1.7×10⁻⁵ kg/(N·s), and W₀/W₁ = 1.25. Find the Breguet range (g = 9.81 m/s²).",
+    "steps": [
+     "V (L/D) = 250 × 18 = 4500.",
+     "g · TSFC = 9.81 × 1.7×10⁻⁵ = 1.668×10⁻⁴.",
+     "R = 4500 ÷ 1.668×10⁻⁴ × ln 1.25 = 2.698×10⁷ × 0.2231 = 6.02×10⁶ m."
+    ],
+    "a": "About 6020 km"
+   },
+   "analogies": {
+    "city": "City planners balance housing, traffic and green space; improving one can hurt another.",
+    "home": "Choosing a car trades off cost, space and fuel use.",
+    "sport": "A decathlete trains for many events, not just one.",
+    "tech": "Phone designers trade battery size against weight."
+   },
+   "mnemonic": "Many variables, one objective, strict constraints, and a Pareto front when goals conflict.",
+   "terms": [
+    [
+     "Aspect ratio",
+     "Span squared divided by wing area, b²/S."
+    ],
+    [
+     "Span efficiency factor",
+     "e, how close the lift distribution is to elliptical."
+    ],
+    [
+     "Breguet range equation",
+     "Cruise range from L/D, TSFC and weight fraction."
+    ],
+    [
+     "Pareto front",
+     "Set of designs where no objective can improve without another worsening."
+    ],
+    [
+     "MDO",
+     "Multidisciplinary design optimisation."
+    ]
+   ],
+   "misc": {
+    "wrong": "The optimum design is the one with the lowest drag.",
+    "right": "The optimum depends on the objective and constraints. Lowest drag might need a heavy, flexible wing that burns more fuel overall."
+   },
+   "limits": "Closed-form sizing equations are approximate and used early in design. Optimisation results depend on the model fidelity and on the chosen constraints.",
+   "trip": {
+    "wiki": "Aircraft design process",
+    "prompt": "Find the phases of design. What is decided in conceptual design?"
+   },
+   "sources": [
+    "Aircraft design process",
+    "Lift-induced drag",
+    "Multidisciplinary design optimization"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the main benefit of a higher aspect ratio wing?",
+     "o": [
+      "Lower induced drag",
+      "Lower structural weight",
+      "Lower stall speed in all cases",
+      "Higher wave drag"
+     ],
+     "a": 0,
+     "why": "C_Di = C_L²/(π AR e) falls as AR increases.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a higher aspect ratio not be increased without limit?",
+     "o": [
+      "Structural weight, flutter and airport size constraints grow",
+      "Gravity changes for long thin wings, so lift is lost",
+      "Induced drag rises as the wing gets longer and thinner",
+      "Lift disappears entirely once the ratio is large"
+     ],
+     "a": 0,
+     "why": "Long thin wings are heavier, more flexible and harder to handle on the ground.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a Pareto front show?",
+     "o": [
+      "Designs where improving one objective means worsening another",
+      "The cheapest design out of all the candidates only",
+      "A design that failed all the tests and was dropped",
+      "Random data points scattered with no pattern"
+     ],
+     "a": 0,
+     "why": "Points on the front are non-dominated.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In the Breguet equation, which change increases range most directly?",
+     "o": [
+      "Higher L/D",
+      "Higher TSFC",
+      "Lower cruise L/D",
+      "Lower fuel fraction"
+     ],
+     "a": 0,
+     "why": "Range is proportional to L/D and inversely to TSFC.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A constraint in optimisation is",
+     "o": [
+      "A requirement the design must satisfy, such as a stall speed limit",
+      "The quantity that the optimiser is trying to minimise",
+      "A free variable that the optimiser can change at will",
+      "An error in the calculation that must be removed"
+     ],
+     "a": 0,
+     "why": "Objective is minimised or maximised; constraints must be met.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Induced drag coefficient C_Di = C_L²/(π AR e). With C_L = 0.8, AR = 8, e = 0.9, what is C_Di to 4 decimals?",
+     "a": 0.0283,
+     "tol": 0.0003,
+     "why": "0.64 ÷ (π × 8 × 0.9) = 0.64 ÷ 22.62 = 0.02829.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Breguet range: V = 250 m/s, L/D = 18, TSFC = 1.7×10⁻⁵ kg/(N·s), W₀/W₁ = 1.25, g = 9.81 m/s². What is the range in km?",
+     "a": 6021,
+     "tol": 30,
+     "unit": "km",
+     "why": "R = (4500 ÷ 1.6677×10⁻⁴) × ln 1.25 = 2.698×10⁷ × 0.22314 = 6.02×10⁶ m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wing has span 36 m and area 162 m². What is its aspect ratio b²/S?",
+     "a": 8,
+     "tol": 0.05,
+     "why": "36² ÷ 162 = 1296 ÷ 162 = 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these steps of an optimisation study in order.",
+     "items": [
+      "Define variables, objective and constraints",
+      "Evaluate designs with analysis tools",
+      "Update the design using an optimiser",
+      "Check the result against higher-fidelity analysis"
+     ],
+     "why": "The loop is set up, analysed, updated and then verified.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why increasing the wing aspect ratio reduces fuel burn but eventually stops being worthwhile.",
+     "rubric": [
+      [
+       "induced drag",
+       "lower drag",
+       "drag"
+      ],
+      [
+       "weight",
+       "structur",
+       "heavier",
+       "mass",
+       "flutter",
+       "bending"
+      ],
+      [
+       "diminish",
+       "limit",
+       "trade",
+       "balance",
+       "eventually",
+       "optimum",
+       "more than"
+      ]
+     ],
+     "min": 2,
+     "model": "A higher aspect ratio reduces induced drag, which lowers fuel burn. But the wing gets heavier to carry the bending loads and may need stiffening for flutter, and the benefit shrinks since C_Di ∝ 1/AR. Eventually extra weight outweighs the drag savings, so there is an optimum.",
+     "why": "Design optima arise from competing trends.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If AR is doubled at the same C_L and e, induced drag coefficient",
+     "o": [
+      "Halves",
+      "Doubles",
+      "Quadruples",
+      "Stays the same"
+     ],
+     "a": 0,
+     "why": "C_Di ∝ 1/AR.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A design is optimised for one cruise condition only. What risk does this create?",
+     "o": [
+      "Poor off-design performance",
+      "Perfect performance everywhere",
+      "Reduced cost always",
+      "No risk"
+     ],
+     "a": 0,
+     "why": "Optimising a single point may degrade other conditions; multi-point optimisation avoids this.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do designers use adjoint methods for aerodynamic shape optimisation?",
+     "rubric": [
+      [
+       "gradient",
+       "sensitivit",
+       "derivative"
+      ],
+      [
+       "many variables",
+       "cost",
+       "cheap",
+       "efficient",
+       "one solution",
+       "single",
+       "independent of number"
+      ],
+      [
+       "shape",
+       "design",
+       "parameters",
+       "variables"
+      ]
+     ],
+     "min": 2,
+     "model": "The adjoint method gives the gradient of an objective with respect to a very large number of shape variables at a cost close to one extra flow solution, which makes optimisation with hundreds of variables practical.",
+     "why": "Gradient cost is nearly independent of the number of design variables.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Trade-offs in aircraft design",
+    "model": "A design is a balance of competing needs. A longer wing lowers induced drag but costs weight and may flutter. Engineers state an objective such as fuel burn, list constraints, and search for the best compromise, often finding a Pareto set of options.",
+    "points": [
+     {
+      "k": [
+       "trade",
+       "compromise",
+       "balance",
+       "competing",
+       "conflict"
+      ],
+      "ask": "Why is there no single best design?"
+     },
+     {
+      "k": [
+       "objective",
+       "minimise",
+       "minimize",
+       "constraint"
+      ],
+      "ask": "How is the search set up?"
+     },
+     {
+      "k": [
+       "pareto",
+       "front",
+       "non-dominated"
+      ],
+      "ask": "What if goals conflict?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Flight control systems",
+   "icon": "🎛️",
+   "hook": "A fly-by-wire jet can be flown by a pilot's gentle nudges, while computers move the surfaces hundreds of times a second. What is the computer doing in that loop?",
+   "explain": [
+    "A feedback control system measures the output, compares it with the command and drives an actuator to reduce the error. A PID controller combines proportional (present error), integral (accumulated error) and derivative (rate of change of error) terms. A first-order system with time constant τ reaches 63% of a step in τ and 95% in about 3τ. A second-order system is described by natural frequency ω_n and damping ratio ζ; the overshoot is M_p = exp(−πζ/√(1−ζ²)) and the settling time to 2% is about 4/(ζω_n).",
+    "Aircraft are augmented because natural damping is often too low: stability augmentation systems feed rate gyros to control surfaces (pitch and yaw dampers), and control augmentation shapes how the aircraft responds to pilot inputs. Fly-by-wire replaces mechanical links with electrical signals and computers, adding envelope protection that limits angle of attack or load factor, and enabling relaxed static stability.",
+    "Stability of the loop is assessed with margins: gain margin and phase margin tell how much additional gain or delay the loop can tolerate before it goes unstable. Sensor noise, actuator rate limits and delays reduce margins. Safety is achieved by redundancy, monitoring, and a certification process whose aim is a very low probability of catastrophic failure per flight hour (the order of 10⁻⁹)."
+   ],
+   "example": {
+    "q": "A pitch loop has ω_n = 4 rad/s and ζ = 0.5. Find the percent overshoot and 2% settling time.",
+    "steps": [
+     "M_p = exp(−π × 0.5 ÷ √(1 − 0.25)) = exp(−1.814) = 0.163, so 16.3%.",
+     "Settling time ≈ 4 ÷ (ζ ω_n) = 4 ÷ (0.5 × 4).",
+     "= 2 s."
+    ],
+    "a": "Overshoot ≈ 16%; settling time ≈ 2 s"
+   },
+   "analogies": {
+    "home": "A thermostat adds heat when the room is colder than set.",
+    "sport": "A cyclist steers continually to hold a straight line.",
+    "sea": "A ship's autopilot corrects heading errors continuously.",
+    "tech": "A car cruise control raises throttle when speed drops."
+   },
+   "mnemonic": "PID: Present, Past (integral), Predicted (derivative).",
+   "terms": [
+    [
+     "PID controller",
+     "Controller using proportional, integral and derivative terms."
+    ],
+    [
+     "Damping ratio",
+     "ζ, measure of how quickly oscillations die out."
+    ],
+    [
+     "Phase margin",
+     "Extra phase lag a loop can tolerate before instability."
+    ],
+    [
+     "Fly-by-wire",
+     "Control by electrical signals through computers."
+    ],
+    [
+     "Envelope protection",
+     "Limits that keep an aircraft within safe flight conditions."
+    ]
+   ],
+   "misc": {
+    "wrong": "A higher feedback gain always gives better control.",
+    "right": "High gain improves tracking but can reduce margins and amplify noise and delays, leading to oscillation or instability."
+   },
+   "limits": "Linear second-order formulas are only approximate for real nonlinear aircraft. Actual flight control law design uses gain scheduling, robust methods, and extensive testing.",
+   "trip": {
+    "wiki": "Fly-by-wire",
+    "prompt": "Find the part on flight control laws. What does envelope protection do?"
+   },
+   "sources": [
+    "Fly-by-wire",
+    "PID controller",
+    "Control theory"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the integral term of a PID controller address?",
+     "o": [
+      "Steady-state error that persists over time",
+      "Fast noise only, by smoothing out quick changes",
+      "Sensor failure, by switching to a backup",
+      "Nothing, because it only adds a delay"
+     ],
+     "a": 0,
+     "why": "Integral action accumulates error and drives it to zero.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pitch damper feeds back which signal?",
+     "o": [
+      "Pitch rate from a gyro",
+      "Fuel level from the tank gauges",
+      "Cabin temperature from the air system",
+      "Altitude only, from the pressure sensor"
+     ],
+     "a": 0,
+     "why": "Rate feedback adds damping to the short-period mode.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a high-gain loop become unstable with actuator delay?",
+     "o": [
+      "Delay adds phase lag, reducing margins",
+      "Delay removes noise, so gain can be raised safely",
+      "Gain reduces the lag, so more gain is always better",
+      "It never becomes unstable, whatever the delay"
+     ],
+     "a": 0,
+     "why": "Extra phase lag at the crossover frequency can push the loop to instability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is envelope protection?",
+     "o": [
+      "Software limits keeping the aircraft within safe angle of attack, load factor and so on",
+      "A paper wrapper around the flight manual",
+      "A weather forecast for the route",
+      "A checklist carried out by the pilot only"
+     ],
+     "a": 0,
+     "why": "Fly-by-wire laws limit the commanded state.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A relaxed-stability aircraft must have",
+     "o": [
+      "Reliable active control",
+      "No computer on board, to avoid failures",
+      "A very large tail to stay steady",
+      "No sensors, so there is nothing to fail"
+     ],
+     "a": 0,
+     "why": "Because its natural stability is low or negative, the computer provides artificial stability.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A second-order loop has ζ = 0.5 and ω_n = 4 rad/s. What is the 2% settling time ≈ 4/(ζω_n) in seconds?",
+     "a": 2,
+     "tol": 0.05,
+     "unit": "s",
+     "why": "4 ÷ (0.5 × 4) = 2 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For ζ = 0.5 use M_p = exp(−πζ/√(1−ζ²)). What is the percentage overshoot?",
+     "a": 16.3,
+     "tol": 0.3,
+     "unit": "%",
+     "why": "exp(−1.814) = 0.163.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A first-order actuator has time constant τ = 0.5 s. About how long to reach 95% of a step (≈ 3τ)?",
+     "a": 1.5,
+     "tol": 0.05,
+     "unit": "s",
+     "why": "3 × 0.5 = 1.5 s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for one cycle of a feedback loop.",
+     "items": [
+      "Sensor measures the output",
+      "Controller computes the error",
+      "Actuator moves the surface",
+      "Aircraft response changes"
+     ],
+     "why": "Measure, compare, act, respond.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why aircraft that are naturally unstable can still be flown safely.",
+     "rubric": [
+      [
+       "computer",
+       "control system",
+       "fly-by-wire",
+       "feedback",
+       "active"
+      ],
+      [
+       "quick",
+       "fast",
+       "rapid",
+       "continuous",
+       "hundreds of times",
+       "times per second",
+       "correct"
+      ],
+      [
+       "sensor",
+       "measure",
+       "redundan",
+       "reliable",
+       "backup"
+      ]
+     ],
+     "min": 2,
+     "model": "A fast feedback loop senses motion and moves control surfaces to cancel growing departures before the pilot notices. The system is made safe with redundant sensors, computers and actuators with monitoring.",
+     "why": "Active control provides artificial stability.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If the damping ratio of the short-period mode is raised from 0.3 to 0.7, what changes in the response to a pitch step?",
+     "o": [
+      "Less overshoot and quicker settling of oscillations",
+      "More overshoot, because the oscillation is damped less",
+      "No oscillation ever at any damping ratio",
+      "A higher natural frequency only, with no other change"
+     ],
+     "a": 0,
+     "why": "Higher ζ gives lower overshoot.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does catastrophic-failure probability need to be about 10⁻⁹ per flight hour for critical functions?",
+     "o": [
+      "Millions of flight hours accumulate across fleets, so rare faults would occur often otherwise",
+      "Aircraft fly only once, so a rare failure never matters",
+      "Pilots like small numbers, so the target is written that way",
+      "The law is arbitrary and the number was chosen at random"
+     ],
+     "a": 0,
+     "why": "Fleet exposure is huge, so rates must be extremely low.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a proportional-only altitude hold loop leave a steady error when there is a constant disturbance?",
+     "rubric": [
+      [
+       "proportional",
+       "error",
+       "gain"
+      ],
+      [
+       "constant",
+       "steady",
+       "disturbance",
+       "force",
+       "weight",
+       "trim"
+      ],
+      [
+       "integral",
+       "zero",
+       "remain",
+       "persist",
+       "nonzero",
+       "non-zero"
+      ]
+     ],
+     "min": 2,
+     "model": "A proportional controller produces a command only when there is an error, so to balance a constant disturbance it needs a nonzero error to generate the compensating command. An integral term accumulates the error and removes it.",
+     "why": "Type-0 systems have steady-state error to constant disturbance.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Feedback control of an aircraft",
+    "model": "A feedback loop measures what the aircraft is doing, compares it with what the pilot or autopilot wants, and moves a control surface to reduce the difference. Rate feedback adds damping and the controller must have enough margin to stay stable despite delays.",
+    "points": [
+     {
+      "k": [
+       "measure",
+       "sensor",
+       "compare",
+       "error"
+      ],
+      "ask": "What does the loop measure and compare?"
+     },
+     {
+      "k": [
+       "actuator",
+       "surface",
+       "move",
+       "command"
+      ],
+      "ask": "What does it do about the error?"
+     },
+     {
+      "k": [
+       "damping",
+       "rate",
+       "stable",
+       "margin",
+       "delay"
+      ],
+      "ask": "What keeps it stable?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Rotorcraft performance and stability",
+   "icon": "🚁",
+   "hook": "A helicopter needs the most power when hovering and at high speed, but less at a moderate cruise. Where do these power demands come from?",
+   "explain": [
+    "Rotor power has parts: induced power (to produce thrust), profile power (to drag the blades through the air) and parasite power (to overcome the fuselage drag), plus a small climb term. Parasite power is P_p = ½ρV³f, where f is the equivalent flat-plate area. Induced power falls with forward speed while parasite power rises as V³, so the total power curve has a minimum at a moderate speed: that speed gives best endurance; best range occurs at a higher speed where a tangent line from the origin touches the curve.",
+    "Rotor design uses non-dimensional coefficients: thrust coefficient C_T = T ÷ (ρ A (ΩR)²) and solidity σ = N_b c ÷ (π R) (blade area over disk area). The ratio C_T/σ measures blade loading and relates to stall margin. Hover ceiling falls with altitude and temperature because density falls, so more pitch is needed for the same thrust.",
+    "Stability: helicopters in hover are dynamically unstable in a slow oscillation, so pilots or stability augmentation systems hold attitude. Lateral and longitudinal modes couple through the rotor. Ground resonance can occur when blade lag motion couples with fuselage motion on the landing gear. Rotorcraft handling is governed by rotor flapping, hub design and cyclic control power."
+   ],
+   "example": {
+    "q": "A helicopter has equivalent flat-plate area f = 1.2 m² and flies at V = 60 m/s at sea level (ρ = 1.225 kg/m³). Find the parasite power.",
+    "steps": [
+     "P_p = ½ ρ V³ f.",
+     "V³ = 216 000.",
+     "P_p = 0.5 × 1.225 × 216 000 × 1.2 = 158 760 W ≈ 159 kW."
+    ],
+    "a": "About 159 kW"
+   },
+   "analogies": {
+    "sport": "A cyclist uses most power at a standstill start (hover) and at high speed (drag), with an easier mid-range.",
+    "city": "A bus uses fuel to start and fuel to fight wind at high speed.",
+    "sea": "A planing boat has a hump of resistance and then eases at cruise.",
+    "tech": "Electric drones draw high current in hover and at top speed."
+   },
+   "mnemonic": "Induced down, parasite up, profile in between; sweet spot in the middle.",
+   "terms": [
+    [
+     "Induced power",
+     "Power to produce thrust by accelerating air."
+    ],
+    [
+     "Profile power",
+     "Power to turn the blades against air drag."
+    ],
+    [
+     "Parasite power",
+     "Power to overcome fuselage drag, ½ρV³f."
+    ],
+    [
+     "Solidity",
+     "Blade area divided by disk area."
+    ],
+    [
+     "Ground resonance",
+     "Destructive vibration from blade-lag and fuselage coupling on the ground."
+    ]
+   ],
+   "misc": {
+    "wrong": "A helicopter needs the least power in hover because it is not moving.",
+    "right": "Hover needs a high induced power. At moderate forward speed, power demand falls because the rotor meets more air and parasite drag is still small."
+   },
+   "limits": "The simple power breakdown is idealised. Real power depends on interference, compressibility and blade design. Educational only, not pilot training.",
+   "trip": {
+    "wiki": "Helicopter",
+    "prompt": "Find the section on power and performance. What affects the helicopter's ceiling?"
+   },
+   "sources": [
+    "Helicopter",
+    "Rotor (helicopter)",
+    "Ground resonance"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which power component grows most quickly with forward speed?",
+     "o": [
+      "Parasite power",
+      "Induced power",
+      "Profile power in hover",
+      "Climb power"
+     ],
+     "a": 0,
+     "why": "P_p ∝ V³.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "At which point on the power curve does best endurance occur?",
+     "o": [
+      "Minimum power",
+      "Tangent from the origin",
+      "Maximum speed",
+      "Hover"
+     ],
+     "a": 0,
+     "why": "Endurance is maximised by minimum fuel flow, which follows minimum power.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A helicopter on a hot, high day cannot hover at its maximum weight. Why?",
+     "o": [
+      "Lower air density requires more power for the same thrust",
+      "Gravity is greater on a hot, high day",
+      "The rotor is heavier when it is warm",
+      "The wind always stops on a hot day"
+     ],
+     "a": 0,
+     "why": "Induced velocity and power rise as density falls.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the main benefit of larger solidity?",
+     "o": [
+      "More stall margin at a given thrust",
+      "Lower weight of the whole rotor",
+      "Lower profile power in forward flight",
+      "A higher ground effect in the hover"
+     ],
+     "a": 0,
+     "why": "Greater blade area means lower blade loading C_T/σ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What makes ground resonance dangerous?",
+     "o": [
+      "Blade-lag motion couples with fuselage motion and grows",
+      "Wind noise shakes the cabin",
+      "Cabin heat softens the blades",
+      "Fuel leaks into the engine bay"
+     ],
+     "a": 0,
+     "why": "It is a self-excited instability involving the rotor and landing gear.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A helicopter has equivalent flat-plate area f = 1.2 m² and flies at 60 m/s at sea level (ρ = 1.225 kg/m³). What is the parasite power P = ½ρV³f in kilowatts?",
+     "a": 158.8,
+     "tol": 0.5,
+     "unit": "kW",
+     "why": "0.5 × 1.225 × 216 000 × 1.2 = 158 760 W.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Thrust coefficient C_T = T/(ρA(ΩR)²) for T = 19 620 N, ρ = 1.225 kg/m³, A = 113.1 m², ΩR = 200 m/s. Give C_T in units of 10⁻³.",
+     "a": 3.54,
+     "tol": 0.05,
+     "unit": "×10⁻³",
+     "why": "ρA(ΩR)² = 1.225 × 113.1 × 40 000 = 5.542×10⁶; 19 620 ÷ 5.542×10⁶ = 3.54×10⁻³.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rotor has 4 blades of chord 0.4 m and radius 6 m. What is the solidity σ = N_b c/(πR) to 3 decimals?",
+     "a": 0.085,
+     "tol": 0.002,
+     "why": "1.6 ÷ (π × 6) = 1.6 ÷ 18.85 = 0.0849.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these speeds in order of increasing helicopter parasite power at the same altitude: 30, 45, 60, 75 m/s.",
+     "items": [
+      "30 m/s",
+      "45 m/s",
+      "60 m/s",
+      "75 m/s"
+     ],
+     "why": "Parasite power ∝ V³ so it increases with speed.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does induced power fall as a helicopter picks up forward speed from hover?",
+     "rubric": [
+      [
+       "more air",
+       "mass flow",
+       "greater mass",
+       "larger mass",
+       "undisturbed"
+      ],
+      [
+       "induced",
+       "downwash",
+       "velocity",
+       "less acceleration",
+       "smaller"
+      ],
+      [
+       "thrust",
+       "same",
+       "momentum"
+      ]
+     ],
+     "min": 2,
+     "model": "In forward flight the rotor processes a larger mass of air per second, so the same thrust needs a smaller change in air velocity. Induced velocity and induced power drop (translational lift).",
+     "why": "Thrust ≈ mass flow × induced velocity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If speed doubles, parasite power increases by a factor of",
+     "o": [
+      "8",
+      "2",
+      "4",
+      "16"
+     ],
+     "a": 0,
+     "why": "P_p ∝ V³.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the best-range speed exceed the best-endurance speed?",
+     "o": [
+      "Range needs the most distance per unit energy, found where a line from the origin is tangent to the power curve",
+      "Endurance ignores power and depends on speed only",
+      "Range needs less speed, since distance is short",
+      "They are equal at every weight and altitude"
+     ],
+     "a": 0,
+     "why": "Range = distance/fuel = V/power, maximised at the tangent point.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are helicopters often dynamically unstable in hover?",
+     "rubric": [
+      [
+       "oscillat",
+       "unstable",
+       "pitch",
+       "tilt",
+       "disk",
+       "divergen"
+      ],
+      [
+       "speed",
+       "velocity",
+       "drift",
+       "rotor",
+       "coupling",
+       "attitude"
+      ]
+     ],
+     "min": 1,
+     "model": "A tilted rotor disk makes a horizontal force and the helicopter drifts. The speed change affects rotor flapping which tilts the disk further, giving a slowly growing pitch oscillation. Pilots or stability augmentation keep it under control.",
+     "why": "The hover phugoid-like mode is unstable.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The power curve of a helicopter",
+    "model": "A helicopter needs power for three jobs: induced power to make thrust, profile power to spin the blades, and parasite power to push the fuselage through the air. Induced power drops as speed rises while parasite power grows like speed cubed, so the total is lowest at a moderate speed.",
+    "points": [
+     {
+      "k": [
+       "induced",
+       "thrust",
+       "downwash"
+      ],
+      "ask": "What is induced power?"
+     },
+     {
+      "k": [
+       "parasite",
+       "fuselage",
+       "drag",
+       "cube",
+       "cubed"
+      ],
+      "ask": "What is parasite power?"
+     },
+     {
+      "k": [
+       "minimum",
+       "moderate",
+       "middle",
+       "lowest",
+       "curve"
+      ],
+      "ask": "Why is there a best speed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Spacecraft attitude control",
+   "icon": "🧭",
+   "hook": "In space there is no air to push against and no ground to hold on to. How does a satellite turn to point its camera at one spot?",
+   "explain": [
+    "Attitude is the orientation of a spacecraft relative to a reference frame. Rotational motion obeys τ = I α for rotation about a principal axis, and angular momentum H = I ω is conserved if there are no external torques. Attitude can be described by Euler angles, direction cosine matrices or quaternions, which avoid the singularities of Euler angles.",
+    "Sensors determine attitude: Sun sensors, star trackers (most accurate), horizon sensors, magnetometers and gyros. Actuators change it: reaction wheels and control moment gyros exchange angular momentum with the body without using propellant, while thrusters and magnetic torquers apply external torques. A wheel with inertia I_w spinning at ω_w has H = I_w ω_w, and the spacecraft rotates the opposite way: ω_s = −I_w ω_w ÷ I_s.",
+    "External disturbance torques (gravity gradient, solar radiation pressure, aerodynamic drag in low orbit, magnetic) slowly build up angular momentum in the wheels until they saturate. A momentum dump uses thrusters or magnetorquers to remove it. A rest-to-rest slew with constant torque τ and accelerate/decelerate halves takes t = 2√(θ I ÷ τ). Spin stabilisation and gravity-gradient booms are passive options."
+   ],
+   "example": {
+    "q": "A spacecraft (I = 120 kg·m²) uses a torque of 0.6 N·m to slew by 0.9 rad, accelerating for half the time and decelerating for the rest. How long does it take?",
+    "steps": [
+     "α = τ ÷ I = 0.6 ÷ 120 = 0.005 rad/s².",
+     "Each half covers θ/2 = 0.45 rad = ½ α (t/2)², so (t/2)² = 0.9 ÷ 0.005 = 180.",
+     "t/2 = 13.42 s, so t = 26.8 s."
+    ],
+    "a": "About 26.8 s"
+   },
+   "analogies": {
+    "sport": "A diver tucks and spins faster by changing body shape, conserving angular momentum.",
+    "home": "Sit on a swivel chair holding a spinning bicycle wheel and tilt it: the chair turns the other way.",
+    "sea": "A boat with a heavy flywheel can resist rolling.",
+    "tech": "A camera gimbal motor counters shaking."
+   },
+   "mnemonic": "Spin the wheel one way, the spacecraft turns the other; dump the momentum when wheels saturate.",
+   "terms": [
+    [
+     "Attitude",
+     "Orientation of a spacecraft relative to a reference frame."
+    ],
+    [
+     "Reaction wheel",
+     "A spinning wheel exchanging angular momentum with the body."
+    ],
+    [
+     "Star tracker",
+     "An optical sensor matching star patterns to determine attitude."
+    ],
+    [
+     "Momentum dump",
+     "Removing built-up wheel momentum with external torque."
+    ],
+    [
+     "Quaternion",
+     "A four-parameter attitude representation without singularities."
+    ]
+   ],
+   "misc": {
+    "wrong": "A satellite turns by pushing against space.",
+    "right": "Space has no air to push against. Satellites turn by changing internal angular momentum (wheels) or by applying external torque with thrusters or magnetic fields."
+   },
+   "limits": "Rigid-body, single-axis formulas are simplifications. Real spacecraft have flexible appendages, fuel slosh and cross-axis coupling.",
+   "trip": {
+    "wiki": "Reaction wheel",
+    "prompt": "Find the description of momentum saturation. What is done about it?"
+   },
+   "sources": [
+    "Reaction wheel",
+    "Attitude control",
+    "Star tracker"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which sensor usually gives the most accurate attitude?",
+     "o": [
+      "Star tracker",
+      "Sun sensor",
+      "Magnetometer",
+      "Horizon sensor"
+     ],
+     "a": 0,
+     "why": "Star trackers match known star patterns, giving arcsecond-level accuracy.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A reaction wheel spins up clockwise. The spacecraft body",
+     "o": [
+      "Rotates counter-clockwise",
+      "Rotates clockwise, the same way as the wheel",
+      "Does not move, because the total spin is zero",
+      "Moves forward along its orbit"
+     ],
+     "a": 0,
+     "why": "Total angular momentum stays constant, so the body turns the opposite way.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why must momentum be dumped periodically?",
+     "o": [
+      "Disturbance torques build up momentum until wheels saturate",
+      "Wheels get tired and wear out after some time",
+      "Fuel is lost slowly from the tanks",
+      "Gravity changes with orbit height"
+     ],
+     "a": 0,
+     "why": "Wheels cannot absorb unlimited angular momentum.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are quaternions preferred over Euler angles for large rotations?",
+     "o": [
+      "They avoid singularities (gimbal lock)",
+      "They are simpler to read and understand at a glance",
+      "They use fewer numbers than any other method",
+      "They remove noise from the gyro signals"
+     ],
+     "a": 0,
+     "why": "Euler angles become degenerate at some orientations.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A satellite spinning about its axis keeps pointing in the same direction because",
+     "o": [
+      "Angular momentum is conserved",
+      "Gravity points it in the same direction all the time",
+      "Air in space holds it steady",
+      "Magnets in the body hold it only"
+     ],
+     "a": 0,
+     "why": "With no external torque the spin axis stays fixed in inertial space.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A reaction wheel has I_w = 0.02 kg·m² and spins at 300 rad/s. What is its angular momentum in N·m·s?",
+     "a": 6,
+     "tol": 0.05,
+     "unit": "N·m·s",
+     "why": "H = 0.02 × 300 = 6 N·m·s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The spacecraft (I_s = 120 kg·m²) is initially at rest. What body rate results from spinning the wheel (H = 6 N·m·s) up from rest? (answer in rad/s, magnitude)",
+     "a": 0.05,
+     "tol": 0.002,
+     "unit": "rad/s",
+     "why": "ω_s = 6 ÷ 120 = 0.05 rad/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Spacecraft inertia 120 kg·m², torque 0.6 N·m, slew angle 0.9 rad with accelerate-then-decelerate. What is the slew time t = 2√(θI/τ) in seconds?",
+     "a": 26.8,
+     "tol": 0.3,
+     "unit": "s",
+     "why": "θI/τ = 0.9 × 120 ÷ 0.6 = 180; √180 = 13.42; ×2 = 26.8 s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order of a typical attitude control loop.",
+     "items": [
+      "Sensors estimate attitude",
+      "Controller compares it with the target",
+      "Actuators apply torque",
+      "Spacecraft rotates"
+     ],
+     "why": "Estimate, compare, command, respond.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a satellite with reaction wheels does not need propellant for routine pointing, and what limits this.",
+     "rubric": [
+      [
+       "angular momentum",
+       "momentum",
+       "wheel",
+       "internal",
+       "exchange"
+      ],
+      [
+       "electric",
+       "solar",
+       "power",
+       "no propellant",
+       "no fuel",
+       "electrical"
+      ],
+      [
+       "saturat",
+       "limit",
+       "disturbance",
+       "dump",
+       "build up"
+      ]
+     ],
+     "min": 2,
+     "model": "Reaction wheels exchange angular momentum between the wheel and the body using electric power, so no propellant is spent. The limit is wheel saturation: disturbance torques add momentum, so it must be dumped using thrusters or magnetorquers.",
+     "why": "Internal torques change attitude but not total momentum.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If a spacecraft's inertia is doubled with the same torque, the time to slew the same angle changes by a factor of about",
+     "o": [
+      "1.41",
+      "2.0",
+      "0.71",
+      "4.0"
+     ],
+     "a": 0,
+     "why": "t ∝ √I.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In low Earth orbit, which disturbance torque falls fastest with altitude?",
+     "o": [
+      "Aerodynamic torque",
+      "Gravity gradient",
+      "Solar radiation pressure",
+      "All fall equally"
+     ],
+     "a": 0,
+     "why": "Air density drops very quickly with height.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do many large spacecraft use control moment gyros instead of reaction wheels?",
+     "rubric": [
+      [
+       "torque",
+       "large",
+       "higher",
+       "more",
+       "big"
+      ],
+      [
+       "gimbal",
+       "gyro",
+       "momentum",
+       "angular"
+      ],
+      [
+       "efficient",
+       "power",
+       "less power",
+       "heavy",
+       "station",
+       "mass"
+      ]
+     ],
+     "min": 2,
+     "model": "Control moment gyros tilt a spinning rotor to produce much larger torques than reaction wheels for the same mass and power, which suits large, heavy spacecraft such as space stations.",
+     "why": "CMGs amplify torque by gimballing a high-momentum rotor.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a spacecraft turns in empty space",
+    "model": "With nothing to push against, a spacecraft changes orientation by exchanging angular momentum. A reaction wheel spinning up makes the body turn the other way. Sensors such as star trackers tell it where it points, and when wheels fill up, thrusters or magnetic coils dump the momentum.",
+    "points": [
+     {
+      "k": [
+       "angular momentum",
+       "wheel",
+       "spin",
+       "exchange"
+      ],
+      "ask": "How can it turn without pushing on anything?"
+     },
+     {
+      "k": [
+       "sensor",
+       "star",
+       "tracker",
+       "measure"
+      ],
+      "ask": "How does it know where it is pointing?"
+     },
+     {
+      "k": [
+       "dump",
+       "saturat",
+       "thruster",
+       "magnet"
+      ],
+      "ask": "What happens when the wheels are full?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Spacecraft thermal and power systems",
+   "icon": "☀️",
+   "hook": "A satellite in sunlight can be too hot and in Earth's shadow too cold, and it can only lose heat by radiating it. How is its temperature kept within limits?",
+   "explain": [
+    "In vacuum, heat leaves only by radiation, following the Stefan-Boltzmann law: P = ε σ A T⁴, with σ = 5.67×10⁻⁸ W/(m²·K⁴). A simple sphere in sunlight absorbs α S π r² (solar constant S = 1361 W/m² at 1 AU) and radiates ε σ T⁴ 4π r². If α = ε, the equilibrium temperature is T = (S ÷ (4σ))^¼ ≈ 278 K. Real spacecraft choose coatings: the ratio α/ε sets temperature. Thermal control uses multi-layer insulation, radiators, heaters, heat pipes and louvres.",
+    "Power usually comes from solar arrays, with power P = η S A cos θ where θ is the angle between the Sun and the array normal. Cells have efficiency about 30% for multi-junction types and degrade over time from radiation. Batteries carry the spacecraft through eclipse. The capacity must account for depth of discharge: C = P t ÷ DoD. Solar flux falls with distance as 1/d², so outer-planet missions use radioisotope thermoelectric generators instead.",
+    "Power and thermal design are coupled: all electrical power ends up as heat that must be radiated. The design is sized for hot and cold cases, such as peak sun with maximum dissipation versus eclipse with minimum dissipation. Missions to Venus and Mercury face hot extremes, and those to Jupiter and beyond face low light."
+   ],
+   "example": {
+    "q": "A satellite needs 2 kW during a 35-minute eclipse. A battery can use only 30% of its capacity (DoD = 0.3). What battery capacity is needed in kWh?",
+    "steps": [
+     "Energy needed = 2 kW × (35/60) h = 1.167 kWh.",
+     "Capacity = energy ÷ DoD.",
+     "= 1.167 ÷ 0.3 = 3.89 kWh."
+    ],
+    "a": "About 3.9 kWh"
+   },
+   "analogies": {
+    "home": "A hot cup of tea in a vacuum flask loses heat slowly, like multi-layer insulation.",
+    "sea": "A light-coloured boat deck stays cooler in the Sun than a dark one.",
+    "nature": "A lizard basks in sunlight to warm up and seeks shade to cool off.",
+    "tech": "A phone gets warm when power is used and must dissipate the heat."
+   },
+   "mnemonic": "Absorb with α, emit with ε; in vacuum only radiation, so T⁴ rules.",
+   "terms": [
+    [
+     "Stefan-Boltzmann law",
+     "Radiated power = εσAT⁴."
+    ],
+    [
+     "Solar constant",
+     "About 1361 W/m² at 1 AU."
+    ],
+    [
+     "Absorptivity and emissivity",
+     "α fraction of sunlight absorbed; ε radiating efficiency."
+    ],
+    [
+     "Depth of discharge",
+     "Fraction of battery capacity used in a cycle."
+    ],
+    [
+     "RTG",
+     "Radioisotope thermoelectric generator."
+    ]
+   ],
+   "misc": {
+    "wrong": "Space is cold, so spacecraft always need heating.",
+    "right": "A vacuum has no convection, so heat leaves only by radiation. Spacecraft in sunlight can overheat and need radiators."
+   },
+   "limits": "The sphere model ignores Earth's infrared and albedo, internal dissipation and view factors. Real thermal analysis uses detailed models and tests.",
+   "trip": {
+    "wiki": "Spacecraft thermal control",
+    "prompt": "Find the section on passive thermal control. What is multi-layer insulation made of?"
+   },
+   "sources": [
+    "Spacecraft thermal control",
+    "Solar cell",
+    "Stefan–Boltzmann law"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How does a spacecraft in vacuum lose heat?",
+     "o": [
+      "By radiation only",
+      "By convection",
+      "By conduction to air",
+      "By evaporation of the vacuum"
+     ],
+     "a": 0,
+     "why": "There is no air, so radiation is the only external heat path.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A surface with high α/ε ratio in sunlight will be",
+     "o": [
+      "Hotter",
+      "Cooler",
+      "Unchanged",
+      "Transparent"
+     ],
+     "a": 0,
+     "why": "It absorbs more than it radiates.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do outer-planet probes often use RTGs rather than solar panels?",
+     "o": [
+      "Sunlight is weak far from the Sun",
+      "Solar cells do not work at all in space",
+      "Panels are too cheap to be worth using",
+      "RTGs are lighter than the Sun and so easy to carry"
+     ],
+     "a": 0,
+     "why": "Solar flux falls as 1/d².",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must battery capacity exceed the energy used in eclipse?",
+     "o": [
+      "To limit depth of discharge and extend battery life",
+      "Because batteries cannot hold any charge",
+      "To warm the satellite during the eclipse",
+      "Only for decoration inside the spacecraft"
+     ],
+     "a": 0,
+     "why": "Deep discharges wear batteries out faster.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a spacecraft's temperature (in kelvin) doubles at fixed ε and area, the radiated power rises by a factor of",
+     "o": [
+      "16",
+      "32",
+      "8",
+      "4"
+     ],
+     "a": 0,
+     "why": "P ∝ T⁴, and 2⁴ = 16.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For α = ε the sphere's temperature is T = (S/(4σ))^¼ with S = 1361 W/m² and σ = 5.67×10⁻⁸. What is T in kelvin?",
+     "a": 278,
+     "tol": 1.5,
+     "unit": "K",
+     "why": "1361 ÷ 2.268×10⁻⁷ = 6.0×10⁹; the fourth root is 278.3 K.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A solar array of 10 m² has efficiency 0.30 facing the Sun directly (S = 1361 W/m²). What power does it make in watts?",
+     "a": 4083,
+     "tol": 5,
+     "unit": "W",
+     "why": "P = 0.30 × 1361 × 10 = 4083 W.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A satellite needs 2000 W for 35 minutes. With DoD = 0.3, what battery capacity is needed in kWh (2 decimals)?",
+     "a": 3.89,
+     "tol": 0.05,
+     "unit": "kWh",
+     "why": "2 kW × 0.5833 h = 1.167 kWh; ÷ 0.3 = 3.89 kWh.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these solar flux values in order at increasing distance from the Sun: Earth, Mars, Jupiter.",
+     "items": [
+      "Earth",
+      "Mars",
+      "Jupiter"
+     ],
+     "why": "Flux falls as 1/d², so it is highest at Earth and lowest at Jupiter.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do spacecraft need radiators even though space is very cold?",
+     "rubric": [
+      [
+       "vacuum",
+       "no air",
+       "no convection",
+       "radiation",
+       "radiate",
+       "only"
+      ],
+      [
+       "heat",
+       "waste",
+       "dissipat",
+       "electrical",
+       "power"
+      ],
+      [
+       "radiator",
+       "reject",
+       "reject heat",
+       "get rid",
+       "cool",
+       "remove"
+      ]
+     ],
+     "min": 2,
+     "model": "In vacuum there is no convection or conduction to the environment, so the only way to get rid of waste heat from electronics and absorbed sunlight is to radiate it. Radiators provide the surface area to do this.",
+     "why": "The cold background does not cool a spacecraft quickly without a radiating surface.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The solar flux at Mars (1.52 AU) compared to Earth is about",
+     "o": [
+      "0.43 times",
+      "0.66 times",
+      "2.3 times more",
+      "The same amount as at Earth"
+     ],
+     "a": 0,
+     "why": "1 ÷ 1.52² = 0.433.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A spacecraft is tilted so the array normal is 60° from the Sun. The array power compared with facing the Sun is",
+     "o": [
+      "Half",
+      "The same",
+      "Double",
+      "Zero"
+     ],
+     "a": 0,
+     "why": "cos 60° = 0.5.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a spacecraft's thermal design checked for both a hot case and a cold case?",
+     "rubric": [
+      [
+       "hot",
+       "maximum",
+       "peak",
+       "sun",
+       "overheat"
+      ],
+      [
+       "cold",
+       "minimum",
+       "eclipse",
+       "freeze",
+       "low"
+      ],
+      [
+       "limit",
+       "range",
+       "survive",
+       "equipment",
+       "component",
+       "electronics"
+      ]
+     ],
+     "min": 2,
+     "model": "In sunlight with maximum power dissipation temperatures peak and could overheat equipment. In eclipse with minimum dissipation temperatures fall and could drop below limits. The design must keep components within allowed ranges in both extremes.",
+     "why": "Worst cases bound the design.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Keeping a spacecraft cool, warm and powered",
+    "model": "In vacuum, heat can only leave by radiation, so radiators and coatings set the temperature. Power comes from solar arrays, which produce less when angled away from the Sun or farther from it, and batteries cover eclipses. All electrical power ends up as heat that must be radiated.",
+    "points": [
+     {
+      "k": [
+       "radiat",
+       "vacuum",
+       "no air"
+      ],
+      "ask": "How does heat leave a spacecraft?"
+     },
+     {
+      "k": [
+       "solar",
+       "array",
+       "panel",
+       "sun"
+      ],
+      "ask": "Where does power come from?"
+     },
+     {
+      "k": [
+       "battery",
+       "eclipse",
+       "shadow"
+      ],
+      "ask": "What about when in shadow?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Launch vehicle engineering",
+   "icon": "🛰️",
+   "hook": "Why do nearly all orbital rockets have two or three stages when a single big stage would seem simpler?",
+   "explain": [
+    "A launch vehicle must supply roughly 9 to 9.5 km/s of Δv to reach low Earth orbit, including losses to gravity and drag. The rocket equation Δv = v_e ln(m₀/m_f) shows that a single stage with an achievable structural fraction (about 0.08 to 0.12) and chemical propellants would barely reach orbit with no payload. Staging allows each stage to shed its dead mass. For a stage with structural coefficient ε = m_s/(m_s + m_p) and payload ratio λ, Δv = v_e ln((1 + λ)/(ε + λ)).",
+    "Lift-off requires thrust-to-weight above 1, typically 1.2 to 1.5 for orbital launchers. The vehicle experiences maximum dynamic pressure q = ½ρv² (max-Q) about a minute into flight, at an altitude near the tropopause region, where aerodynamic loads peak. Engine cycles include gas-generator and staged-combustion, differing in efficiency and complexity. Vehicle structure is a thin-walled tank structure with the tanks pressurised to carry compressive loads, and mass margin is vital.",
+    "Engineering also covers trajectory (a gravity turn, then circularisation), guidance and control (thrust vector control, gimballed engines), pogo oscillation, propellant slosh, ground operations and safety, and reusability: recovering a stage saves hardware cost but needs reserve propellant for landing. Launch sites near the equator gain Earth-rotation speed (up to about 0.46 km/s)."
+   ],
+   "example": {
+    "q": "A stage has Isp = 300 s (v_e = 2943 m/s), structural coefficient ε = 0.10 and payload ratio λ = 0.05. Find its Δv.",
+    "steps": [
+     "(1 + λ)/(ε + λ) = 1.05 ÷ 0.15 = 7.",
+     "ln 7 = 1.9459.",
+     "Δv = 2943 × 1.9459 ≈ 5727 m/s."
+    ],
+    "a": "About 5.7 km/s"
+   },
+   "analogies": {
+    "sport": "A relay race hands the baton on, shedding tired runners.",
+    "sea": "A ship drops its boosters, like cargo barges released near port.",
+    "city": "A rocket-assisted taxi drops its empty containers.",
+    "tech": "A multi-stage firework shell releases the next charge when the first burns out."
+   },
+   "mnemonic": "Shed dead weight, keep thrust above weight, cross max-Q, turn sideways.",
+   "terms": [
+    [
+     "Structural coefficient",
+     "ε = structure mass divided by structure plus propellant mass."
+    ],
+    [
+     "Payload ratio",
+     "λ = payload mass over stage mass."
+    ],
+    [
+     "Max-Q",
+     "The time of peak dynamic pressure during ascent."
+    ],
+    [
+     "Thrust vector control",
+     "Steering by tilting the engine thrust."
+    ],
+    [
+     "Pogo oscillation",
+     "A longitudinal vibration from coupling of the engine and structure."
+    ]
+   ],
+   "misc": {
+    "wrong": "Rockets get lighter, so a single stage with enough fuel would be just as good.",
+    "right": "The structure and engines are dead weight carried to orbit in a single stage. Staging discards them, which greatly improves the mass ratio of later stages."
+   },
+   "limits": "The ideal rocket equation ignores gravity and drag; the Δv needed to orbit includes these losses. Real design requires detailed trajectory simulation. This game is educational and does not replace engineering practice.",
+   "trip": {
+    "wiki": "Multistage rocket",
+    "prompt": "Find the discussion of the benefits of staging. What is the cost?"
+   },
+   "sources": [
+    "Multistage rocket",
+    "Max Q",
+    "Thrust vectoring"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why is thrust-to-weight at lift-off typically above 1?",
+     "o": [
+      "Thrust must exceed weight for the vehicle to accelerate upward",
+      "So the rocket stays on the pad until the engines are tested",
+      "So the engine can use less thrust during the flight",
+      "Gravity is absent at the launch site"
+     ],
+     "a": 0,
+     "why": "A resultant upward force is required.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What happens at max-Q?",
+     "o": [
+      "Aerodynamic loading is greatest",
+      "Engines cut out",
+      "The stage separates automatically",
+      "The rocket reaches orbit"
+     ],
+     "a": 0,
+     "why": "Dynamic pressure q = ½ρv² peaks when rising speed beats falling density.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How does thrust vector control steer a rocket?",
+     "o": [
+      "By tilting the engine nozzle to change the thrust direction",
+      "By using small wings on the sides of the rocket",
+      "By changing the position of the Sun",
+      "By pushing off the air only, like a swimmer"
+     ],
+     "a": 0,
+     "why": "Gimbaling produces a side force and torque about the centre of mass.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do launch sites near the equator have an advantage for eastward launches?",
+     "o": [
+      "Earth's rotation gives extra eastward speed",
+      "Gravity is lower in space, so a launch is easier",
+      "Rockets burn less fuel in warm air",
+      "The air is thinner at the equator and so drag is lower"
+     ],
+     "a": 0,
+     "why": "The surface speed is up to about 0.46 km/s at the equator.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a benefit and a cost of reusing a rocket stage?",
+     "o": [
+      "Saves hardware cost but needs reserve propellant that reduces payload",
+      "No benefit, only extra weight and extra cost",
+      "No cost at all, as the stage is simply collected",
+      "It always increases the payload that can be carried"
+     ],
+     "a": 0,
+     "why": "Landing needs propellant and hardware, reducing payload.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A stage has ε = 0.10 and λ = 0.05, so (1+λ)/(ε+λ) = 7 (ln 7 = 1.9459), with v_e = 2943 m/s. What is Δv in m/s?",
+     "a": 5727,
+     "tol": 10,
+     "unit": "m/s",
+     "why": "2943 × 1.9459 ≈ 5727 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A launcher has mass 500 000 kg and needs T/W = 1.3 at lift-off. Use g = 9.81 m/s². What thrust is needed in meganewtons?",
+     "a": 6.38,
+     "tol": 0.02,
+     "unit": "MN",
+     "why": "1.3 × 500 000 × 9.81 = 6.3765×10⁶ N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At 11 km altitude ρ = 0.3639 kg/m³. What dynamic pressure q = ½ρv² results at v = 300 m/s, in pascals?",
+     "a": 16376,
+     "tol": 30,
+     "unit": "Pa",
+     "why": "0.5 × 0.3639 × 90 000 = 16 375.5 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these ascent events in order.",
+     "items": [
+      "Lift-off",
+      "Max-Q",
+      "First-stage separation",
+      "Second-stage burn to orbital speed"
+     ],
+     "why": "Max-Q occurs early in the first-stage burn, then separation, then upper stage burn.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why splitting the Δv between stages is better than one large stage.",
+     "rubric": [
+      [
+       "dead",
+       "empty",
+       "structure",
+       "tank",
+       "engine",
+       "dry mass"
+      ],
+      [
+       "discard",
+       "drop",
+       "shed",
+       "jettison",
+       "separate"
+      ],
+      [
+       "mass ratio",
+       "lighter",
+       "less mass",
+       "carry",
+       "better",
+       "payload"
+      ]
+     ],
+     "min": 2,
+     "model": "After a stage burns out its empty tanks and engines are useless weight. Dropping them means the later stages accelerate a much smaller mass, so the overall mass ratio is more favourable and a given payload needs less total propellant.",
+     "why": "Staging improves the effective mass ratio.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "For identical stages, splitting a needed Δv equally between two stages gives each stage a Δv of",
+     "o": [
+      "Half the total",
+      "The whole total",
+      "Double",
+      "Zero"
+     ],
+     "a": 0,
+     "why": "With identical stages the optimum split is equal.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If ε rises from 0.08 to 0.12 for a given λ and v_e, the Δv of a stage",
+     "o": [
+      "Falls",
+      "Rises",
+      "Stays the same",
+      "Becomes infinite"
+     ],
+     "a": 0,
+     "why": "More structure means a worse mass ratio.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a rocket throttle down or limit thrust around max-Q on some vehicles?",
+     "rubric": [
+      [
+       "aerodynamic",
+       "load",
+       "loads",
+       "pressure",
+       "structur",
+       "dynamic pressure",
+       "q"
+      ],
+      [
+       "reduce",
+       "limit",
+       "lower",
+       "throttle",
+       "avoid",
+       "stress",
+       "protect"
+      ]
+     ],
+     "min": 2,
+     "model": "Around max-Q the aerodynamic loading on the structure is greatest. Reducing thrust slows the acceleration, lowering the dynamic pressure and loads so the vehicle can be built lighter.",
+     "why": "Throttling bucket reduces peak structural loads.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why rockets use stages",
+    "model": "After fuel is used, the empty tank and engines are dead weight. A stage drops them so the rest of the rocket accelerates a lighter mass. Engineers also check lift-off thrust-to-weight above 1, loads at max-Q, and steering by tilting the engines.",
+    "points": [
+     {
+      "k": [
+       "dead",
+       "empty",
+       "tank",
+       "structure",
+       "weight"
+      ],
+      "ask": "What is wasted in a single stage?"
+     },
+     {
+      "k": [
+       "drop",
+       "shed",
+       "discard",
+       "separate",
+       "lighter"
+      ],
+      "ask": "What does staging do?"
+     },
+     {
+      "k": [
+       "thrust",
+       "weight",
+       "max-q",
+       "steer",
+       "gimbal",
+       "tilt"
+      ],
+      "ask": "What else do engineers check?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2705 @@
+{
+ "world": 9,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Whole-number arithmetic",
+   "icon": "🧮",
+   "hook": "A shop has 347 red pens and 285 blue pens. Can you work out the total in your head, or at least say roughly how many without a calculator?",
+   "explain": [
+    "Whole-number arithmetic uses four operations: add, subtract, multiply and divide. Place value is the key. In 347, the 3 means 3 hundreds, the 4 means 4 tens and the 7 means 7 ones.",
+    "When we add or subtract in columns we work from the ones, then tens, then hundreds. If a column is too big we carry. If we need more in a column we borrow (exchange) from the next column. Multiplying is repeated adding, and dividing is sharing equally or repeated taking away.",
+    "Estimating helps check answers. 347 + 285 is about 350 + 285, so a bit more than 600. If your answer is 932 you know to look again. When a sum has several operations, work out × and ÷ before + and −."
+   ],
+   "example": {
+    "q": "Work out 347 + 285.",
+    "steps": [
+     "Estimate first: 350 + 290 is about 640.",
+     "Ones: 7 + 5 = 12. Write 2 and carry 1 ten.",
+     "Tens: 4 + 8 + 1 = 13. Write 3 and carry 1 hundred.",
+     "Hundreds: 3 + 2 + 1 = 6. The answer is 632, close to the estimate."
+    ],
+    "a": "632"
+   },
+   "analogies": {
+    "home": "Adding up the cost of rice 347 and oil 285 at the market gives a bill of 632.",
+    "farm": "A farmer has 6 rows with 14 plants each. 6 × 14 = 84 plants.",
+    "sport": "96 players are put into teams of 8. 96 ÷ 8 = 12 teams.",
+    "city": "A bus has 52 seats. 3 buses carry 3 × 52 = 156 people."
+   },
+   "mnemonic": "Ones, tens, hundreds, step by step. Estimate first and your checks will be kept.",
+   "terms": [
+    [
+     "Place value",
+     "The value of a digit because of its position."
+    ],
+    [
+     "Estimate",
+     "A sensible rough answer."
+    ],
+    [
+     "Carry",
+     "Moving extra tens (or hundreds) to the next column."
+    ],
+    [
+     "Order of operations",
+     "The rule for which part of a sum to do first."
+    ]
+   ],
+   "misc": {
+    "wrong": "In 2 + 3 × 4 you do the sums from left to right, so the answer is 20.",
+    "right": "Multiplication comes before addition, so 3 × 4 = 12 first and then 2 + 12 = 14."
+   },
+   "limits": "These methods are for whole numbers. Fractions, decimals and negative numbers need extra rules.",
+   "trip": {
+    "wiki": "Arithmetic",
+    "prompt": "Find a picture of an early counting tool and see how it showed place value."
+   },
+   "sources": [
+    "Arithmetic",
+    "Place value"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In the number 4 506, what does the 5 stand for?",
+     "o": [
+      "5 tens",
+      "5 hundreds",
+      "5 ones",
+      "5 thousands"
+     ],
+     "a": 1,
+     "why": "The digits are 4 thousands, 5 hundreds, 0 tens and 6 ones.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best estimate for 298 + 403?",
+     "o": [
+      "700",
+      "500",
+      "800",
+      "600"
+     ],
+     "a": 0,
+     "why": "About 300 + 400 = 700.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is 2 + 3 × 4?",
+     "o": [
+      "20",
+      "24",
+      "9",
+      "14"
+     ],
+     "a": 3,
+     "why": "Multiply first: 3 × 4 = 12, then 2 + 12 = 14.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we check by estimating?",
+     "o": [
+      "It always gives the exact answer",
+      "It makes the sum shorter",
+      "It helps us spot big mistakes",
+      "It is not needed"
+     ],
+     "a": 2,
+     "why": "A rough answer shows if an exact answer is far off.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Mina works out 500 − 178 and gets 478. How can you tell it is wrong without redoing it?",
+     "o": [
+      "500 is odd",
+      "The answer is nearly 500, but we took away almost 200",
+      "Subtraction cannot be checked",
+      "478 is bigger than 178"
+     ],
+     "a": 1,
+     "why": "Taking away about 180 from 500 leaves about 320, not 478.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which operation undoes multiplying by 7?",
+     "o": [
+      "Dividing by 7",
+      "Adding 7",
+      "Subtracting 7",
+      "Multiplying by 7"
+     ],
+     "a": 0,
+     "why": "Division is the inverse of multiplication.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Work out 500 − 178.",
+     "a": 322,
+     "tol": 0,
+     "why": "500 − 178 = 322. Check: 322 + 178 = 500.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A school buys 6 boxes of 14 pencils. How many pencils?",
+     "a": 84,
+     "tol": 0,
+     "why": "6 × 14 = 60 + 24 = 84.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why 4 × 25 = 100 helps you find 8 × 25.",
+     "rubric": [
+      [
+       "double",
+       "twice",
+       "2 times",
+       "two times",
+       "8 is 2"
+      ],
+      [
+       "200",
+       "100"
+      ],
+      [
+       "half",
+       "halve",
+       "4 + 4",
+       "4 and 4",
+       "more groups"
+      ]
+     ],
+     "min": 2,
+     "model": "8 × 25 is double 4 × 25 because 8 is double 4. Double 100 is 200.",
+     "why": "Doubling one number doubles the product. 4 × 25 = 100, so 8 × 25 = 200.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A shop sells pens in packs of 8. Dev needs 70 pens. How many packs must he buy so he has enough?",
+     "o": [
+      "8 packs",
+      "10 packs",
+      "7 packs",
+      "9 packs"
+     ],
+     "a": 3,
+     "why": "70 ÷ 8 = 8 remainder 6. 8 packs give 64, not enough, so he needs 9.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Sam says 7 × 6 = 36 and so 7 × 7 = 43. What is the clear mistake?",
+     "o": [
+      "7 × 7 is smaller than 7 × 6",
+      "7 × 7 = 36 + 6",
+      "One more group of 7 adds 7, so 7 × 7 = 49",
+      "There is no mistake"
+     ],
+     "a": 2,
+     "why": "7 × 7 = 7 × 6 + 7 = 42 + 7 = 49. Sam also had 7 × 6 wrong, it is 42.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do we do multiplication before addition in 5 + 2 × 3?",
+     "rubric": [
+      [
+       "group",
+       "repeated",
+       "shortcut",
+       "times means",
+       "2 × 3 means",
+       "multiply is"
+      ],
+      [
+       "agree",
+       "rule",
+       "convention",
+       "everyone",
+       "same answer"
+      ],
+      [
+       "6",
+       "11"
+      ]
+     ],
+     "min": 2,
+     "model": "Multiplication is repeated addition, so 2 × 3 is a single chunk of 6. Everyone agrees on this rule so we all get 5 + 6 = 11.",
+     "why": "The rule is a shared agreement and fits with 2 × 3 meaning 3 + 3.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An estimate for 49 × 21 is 50 × 20. What do we expect about the exact answer?",
+     "o": [
+      "It is close to 100",
+      "It is close to 1 000",
+      "It is close to 10 000",
+      "It is exactly 1 000"
+     ],
+     "a": 1,
+     "why": "50 × 20 = 1 000 so 49 × 21 is near it. The exact answer is 1 029.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Adding with carrying",
+    "model": "Add numbers column by column from the right. If a column makes 10 or more, write the ones digit and carry the ten to the next column. For example 47 + 35: 7 + 5 = 12, write 2 and carry 1, then 4 + 3 + 1 = 8 so the answer is 82.",
+    "points": [
+     {
+      "k": [
+       "column",
+       "ones",
+       "right",
+       "place"
+      ],
+      "ask": "Where do I start adding?"
+     },
+     {
+      "k": [
+       "carry",
+       "exchange",
+       "extra ten",
+       "10"
+      ],
+      "ask": "What if a column adds up to more than 9?"
+     },
+     {
+      "k": [
+       "estimate",
+       "check",
+       "round"
+      ],
+      "ask": "How can I check the answer is sensible?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Fractions and decimals",
+   "icon": "🍕",
+   "hook": "A pizza is cut into 4 equal slices and you eat 3. How could you write that as a fraction and as a decimal?",
+   "explain": [
+    "A fraction describes part of a whole made of equal parts. In 3/4 the bottom number (denominator) says how many equal parts, and the top number (numerator) says how many we have. A fraction is also a division: 3/4 means 3 ÷ 4.",
+    "Equivalent fractions name the same amount: 1/2 = 2/4 = 5/10. A decimal uses place value to the right of the point. 0.5 means 5 tenths, which is 5/10 = 1/2. 0.75 is 75/100 = 3/4.",
+    "To add fractions with the same denominator add the numerators: 1/4 + 2/4 = 3/4. With different denominators first change them to the same one: 1/2 + 1/4 = 2/4 + 1/4 = 3/4. To compare decimals line up the places: 0.7 is bigger than 0.07."
+   ],
+   "example": {
+    "q": "Find 2/5 of 20 and write 3/4 as a decimal.",
+    "steps": [
+     "2/5 of 20: divide 20 by 5 to get one fifth, 4.",
+     "Take 2 of them: 2 × 4 = 8.",
+     "3/4 means 3 ÷ 4. 3 ÷ 4 = 0.75."
+    ],
+    "a": "8 and 0.75"
+   },
+   "analogies": {
+    "home": "Share a chapati in 4 equal parts. 3 parts is 3/4 or 0.75 of it.",
+    "farm": "A field has 10 equal strips. 7 are planted: 7/10 or 0.7.",
+    "sport": "A game has 2 halves. After the first half, 1/2 of the time has gone.",
+    "music": "A whole note lasts 4 beats. A half note is 1/2 of that, 2 beats."
+   },
+   "mnemonic": "Denominator is down below, it names the parts. Numerator is up on top, it counts the parts.",
+   "terms": [
+    [
+     "Numerator",
+     "The top number: how many parts we have."
+    ],
+    [
+     "Denominator",
+     "The bottom number: how many equal parts make the whole."
+    ],
+    [
+     "Equivalent fractions",
+     "Different fractions with the same value."
+    ],
+    [
+     "Decimal point",
+     "The dot separating whole numbers from parts."
+    ]
+   ],
+   "misc": {
+    "wrong": "1/3 is bigger than 1/2 because 3 is bigger than 2.",
+    "right": "The bigger the denominator, the smaller each part. 1/2 is bigger than 1/3."
+   },
+   "trip": {
+    "wiki": "Fraction (mathematics)",
+    "prompt": "Look at the pictures of fractions and find one that matches 3/4."
+   },
+   "sources": [
+    "Fraction (mathematics)",
+    "Decimal"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which fraction is the same as 1/2?",
+     "o": [
+      "2/4",
+      "1/4",
+      "2/3",
+      "1/3"
+     ],
+     "a": 0,
+     "why": "Doubling top and bottom keeps the value: 1/2 = 2/4.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the biggest?",
+     "o": [
+      "1/3",
+      "1/4",
+      "1/8",
+      "1/2"
+     ],
+     "a": 3,
+     "why": "With the same top number, the smaller denominator gives bigger parts.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which decimal is the same as 3/10?",
+     "o": [
+      "0.03",
+      "3.0",
+      "0.3",
+      "0.13"
+     ],
+     "a": 2,
+     "why": "Tenths are the first place after the point.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is bigger, 0.7 or 0.07?",
+     "o": [
+      "0.07",
+      "0.7",
+      "They are the same",
+      "Cannot tell"
+     ],
+     "a": 1,
+     "why": "0.7 is 7 tenths and 0.07 is 7 hundredths.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is 1/4 + 2/4?",
+     "o": [
+      "3/4",
+      "3/8",
+      "2/4",
+      "3/16"
+     ],
+     "a": 0,
+     "why": "Same denominator: add the tops and keep the bottom.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Zuri says 1/4 + 1/4 = 2/8. What is her mistake?",
+     "o": [
+      "She should multiply",
+      "Nothing, she is right",
+      "She should subtract",
+      "She added the denominators too"
+     ],
+     "a": 3,
+     "why": "The size of the parts stays quarters. 1/4 + 1/4 = 2/4 = 1/2.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "What is 2/5 of 20?",
+     "a": 8,
+     "tol": 0,
+     "why": "20 ÷ 5 = 4 then 4 × 2 = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Write 3/4 as a decimal.",
+     "a": 0.75,
+     "tol": 0.001,
+     "why": "3 ÷ 4 = 0.75.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why 3/6 and 1/2 are equal.",
+     "rubric": [
+      [
+       "same",
+       "equal",
+       "equivalent",
+       "half"
+      ],
+      [
+       "divide",
+       "÷",
+       "3",
+       "multiply",
+       "double",
+       "simplify",
+       "both"
+      ],
+      [
+       "parts",
+       "part",
+       "whole",
+       "shaded",
+       "slice"
+      ]
+     ],
+     "min": 2,
+     "model": "Divide the top and bottom of 3/6 by 3 to get 1/2. Both show the same share of the whole.",
+     "why": "Equivalent fractions come from multiplying or dividing top and bottom by the same number.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order from smallest to biggest.",
+     "items": [
+      "0.05",
+      "0.2",
+      "0.5",
+      "0.75"
+     ],
+     "why": "Compare tenths first: 0.05 has 0 tenths, 0.2 has 2, 0.5 has 5, 0.75 has 7.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which statement is correct?",
+     "o": [
+      "2/3 is always bigger than 1/2 of anything",
+      "Fractions do not depend on the whole",
+      "2/3 of a small pizza can be smaller than 1/2 of a big pizza",
+      "1/2 is always smaller than 2/3 of anything"
+     ],
+     "a": 2,
+     "why": "Fractions are parts of a whole, so the size of the whole matters when different wholes are compared.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Mia says 0.30 is bigger than 0.3 because it has more digits. Is she right? Explain.",
+     "rubric": [
+      [
+       "no",
+       "not",
+       "wrong",
+       "same",
+       "equal"
+      ],
+      [
+       "zero",
+       "0",
+       "tenths",
+       "30 hundredths",
+       "3 tenths",
+       "place"
+      ],
+      [
+       "equal",
+       "same",
+       "value"
+      ]
+     ],
+     "min": 2,
+     "model": "She is wrong. 0.30 and 0.3 are equal because 3 tenths is 30 hundredths. A zero at the end of a decimal does not change its value.",
+     "why": "Extra zeros at the end of a decimal add nothing. Compare place by place.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is 1/2 + 1/4?",
+     "o": [
+      "2/6",
+      "3/4",
+      "1/6",
+      "2/4"
+     ],
+     "a": 1,
+     "why": "Write 1/2 as 2/4. Then 2/4 + 1/4 = 3/4.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a fraction means",
+    "model": "A fraction is part of a whole that is cut into equal parts. The bottom number tells how many equal parts. The top number tells how many we take. If a cake is cut into 8 equal slices and you eat 3, you ate 3/8.",
+    "points": [
+     {
+      "k": [
+       "equal",
+       "same size"
+      ],
+      "ask": "Do the parts need to be the same size?"
+     },
+     {
+      "k": [
+       "top",
+       "numerator",
+       "bottom",
+       "denominator"
+      ],
+      "ask": "What do the two numbers mean?"
+     },
+     {
+      "k": [
+       "example",
+       "pizza",
+       "cake",
+       "slice",
+       "like"
+      ],
+      "ask": "Can you show it with a pizza or cake?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Percentages and ratios",
+   "icon": "💯",
+   "hook": "A shop says \"25% off\". Another says \"one quarter off\". Which one is the better deal?",
+   "explain": [
+    "Percent means \"per hundred\". 25% means 25 out of 100, which is 25/100 = 1/4 = 0.25. So 25% off and a quarter off are the same.",
+    "To find a percentage of a number you can use easy steps. 10% is one tenth, so divide by 10. 50% is a half. 25% is a quarter. For 20% of 80: 10% is 8, so 20% is 16.",
+    "A ratio compares amounts. A ratio of 2 : 3 means for every 2 of one thing there are 3 of the other. To share 20 in the ratio 2 : 3, there are 2 + 3 = 5 parts, each part is 20 ÷ 5 = 4, so the shares are 8 and 12."
+   ],
+   "example": {
+    "q": "A bag costs 50. It is 20% off. What is the new price?",
+    "steps": [
+     "Find 10% of 50: 50 ÷ 10 = 5.",
+     "20% is two lots of 10%: 5 × 2 = 10.",
+     "Take off the discount: 50 − 10 = 40."
+    ],
+    "a": "40"
+   },
+   "analogies": {
+    "home": "A recipe uses 2 cups of rice to 3 cups of water, a ratio of 2 : 3. For 4 cups rice use 6 cups water.",
+    "farm": "A farmer has 100 trees and 40 are mango trees. 40% are mango.",
+    "sport": "A player scores 18 of 20 free throws. 18/20 = 90%.",
+    "city": "A shop has 30% off a 200 coat, taking 60 off."
+   },
+   "mnemonic": "Percent means out of one hundred. 10% is a tenth, 50% is half, 25% a quarter.",
+   "terms": [
+    [
+     "Percent",
+     "Out of 100."
+    ],
+    [
+     "Ratio",
+     "A way to compare amounts, written like 2 : 3."
+    ],
+    [
+     "Discount",
+     "An amount taken off a price."
+    ],
+    [
+     "Proportion",
+     "A part compared with the whole."
+    ]
+   ],
+   "misc": {
+    "wrong": "A ratio of 1 : 3 means one third of the whole.",
+    "right": "1 : 3 means 1 part to 3 parts, which is 4 parts altogether. So one quarter is the first part."
+   },
+   "trip": {
+    "wiki": "Percentage",
+    "prompt": "Find a place on the page where percentages are used in the real world."
+   },
+   "sources": [
+    "Percentage",
+    "Ratio"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is the same as 50%?",
+     "o": [
+      "1/2",
+      "1/5",
+      "5/10 of 10",
+      "1/50"
+     ],
+     "a": 0,
+     "why": "50 out of 100 is half.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the same as 25%?",
+     "o": [
+      "1/25",
+      "1/2",
+      "2/5",
+      "1/4"
+     ],
+     "a": 3,
+     "why": "25/100 = 1/4.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is 10% of 90?",
+     "o": [
+      "10",
+      "90",
+      "9",
+      "0.9"
+     ],
+     "a": 2,
+     "why": "10% is one tenth. 90 ÷ 10 = 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The ratio of boys to girls is 1 : 2. What fraction of the group are boys?",
+     "o": [
+      "1/2",
+      "1/3",
+      "2/3",
+      "1/1"
+     ],
+     "a": 1,
+     "why": "There are 1 + 2 = 3 parts, and boys are 1 of them.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a better score on a test?",
+     "o": [
+      "18 out of 20",
+      "7 out of 10",
+      "14 out of 20",
+      "60%"
+     ],
+     "a": 0,
+     "why": "18/20 = 90%, higher than 70%, 70% and 60%.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A price rises by 10% and then falls by 10%. Compared with the start the price is...",
+     "o": [
+      "The same",
+      "Slightly higher",
+      "Double",
+      "Slightly lower"
+     ],
+     "a": 3,
+     "why": "After +10% it is 1.1 times. Then 90% of that is 0.99 times, a bit less than the start.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "What is 25% of 80?",
+     "a": 20,
+     "tol": 0,
+     "why": "A quarter of 80 is 20.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Share 20 in the ratio 2 : 3. How many is the larger share?",
+     "a": 12,
+     "tol": 0,
+     "why": "5 parts, each 4. The larger share is 3 × 4 = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A coat costs 200 and has 30% off. Give the sale price.",
+     "a": 140,
+     "tol": 0,
+     "why": "10% is 20, so 30% is 60. 200 − 60 = 140.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain how you can find 15% of 60 using 10% and 5%.",
+     "rubric": [
+      [
+       "10%",
+       "ten percent",
+       "tenth",
+       "6"
+      ],
+      [
+       "5%",
+       "five percent",
+       "half of",
+       "3"
+      ],
+      [
+       "add",
+       "plus",
+       "together",
+       "9",
+       "+"
+      ]
+     ],
+     "min": 2,
+     "model": "10% of 60 is 6. 5% is half of that, 3. Add them: 6 + 3 = 9.",
+     "why": "Break 15% into 10% + 5%. 6 + 3 = 9.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two shops: Shop A has 20% off 50. Shop B has 10 off 50. Which is cheaper?",
+     "o": [
+      "Shop A",
+      "Shop B",
+      "They cost the same",
+      "Cannot tell"
+     ],
+     "a": 2,
+     "why": "20% of 50 is 10, so both take off 10.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A drink mix uses squash and water in the ratio 1 : 4. Maya says there is 1/4 squash. Is she right? Explain.",
+     "rubric": [
+      [
+       "no",
+       "not",
+       "wrong",
+       "incorrect"
+      ],
+      [
+       "5",
+       "five",
+       "1 + 4",
+       "total",
+       "whole",
+       "altogether"
+      ],
+      [
+       "1/5",
+       "one fifth",
+       "fifth"
+      ]
+     ],
+     "min": 2,
+     "model": "No. There are 1 + 4 = 5 parts in all, so squash is 1/5 of the drink, not 1/4.",
+     "why": "A ratio compares parts to parts. The fraction compares one part to the whole.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A team won 12 of 20 games. Another won 15 of 30. Which won the greater percentage?",
+     "o": [
+      "The second team (50%)",
+      "The first team (60%)",
+      "They are equal",
+      "Cannot be compared"
+     ],
+     "a": 1,
+     "why": "12/20 = 60% and 15/30 = 50%.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What percent means",
+    "model": "Percent means out of 100. So 40% means 40 out of 100. To find 10% of a number, divide it by 10. To find 50%, halve it. For example, 10% of 70 is 7.",
+    "points": [
+     {
+      "k": [
+       "100",
+       "hundred",
+       "out of"
+      ],
+      "ask": "What does percent mean?"
+     },
+     {
+      "k": [
+       "divide",
+       "10",
+       "tenth",
+       "half"
+      ],
+      "ask": "How do I find a percent of a number?"
+     },
+     {
+      "k": [
+       "example",
+       "price",
+       "shop",
+       "score",
+       "discount"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Negative numbers",
+   "icon": "🌡️",
+   "hook": "It is 3 degrees below zero in the morning. By afternoon it is 5 degrees warmer. What is the temperature now?",
+   "explain": [
+    "Negative numbers are less than zero. We see them in temperatures below freezing, in money owed (debt) and in floors below ground. They sit to the left of zero on the number line.",
+    "The further left a number is, the smaller it is. So −5 is less than −2, and −2 is less than 1. A number and its opposite are the same distance from zero: 4 and −4.",
+    "To add, move right on the number line. To subtract, move left. −3 + 5: start at −3, go 5 right, and land on 2. −2 − 3: start at −2, go 3 left to −5."
+   ],
+   "example": {
+    "q": "The temperature is −3 degrees and rises by 5 degrees. What is it now?",
+    "steps": [
+     "Draw a number line. Start at −3.",
+     "Rising means moving right. Count 5 steps: −2, −1, 0, 1, 2.",
+     "End at 2."
+    ],
+    "a": "2 degrees"
+   },
+   "analogies": {
+    "home": "A freezer is at −18 degrees. The fridge is at +4.",
+    "city": "In a lift, floor −1 is the level under the ground floor.",
+    "sea": "A submarine at −50 metres is 50 metres below the sea surface.",
+    "tech": "A phone account at −5 means you owe 5."
+   },
+   "mnemonic": "Negatives live left of zero. Left is lower, right is higher, up the line is a hero.",
+   "terms": [
+    [
+     "Negative number",
+     "A number less than zero."
+    ],
+    [
+     "Number line",
+     "A line on which numbers are placed in order."
+    ],
+    [
+     "Opposite",
+     "A number the same distance from zero on the other side."
+    ],
+    [
+     "Integer",
+     "A whole number, positive, negative or zero."
+    ]
+   ],
+   "misc": {
+    "wrong": "−8 is bigger than −2 because 8 is bigger than 2.",
+    "right": "On the number line −8 is further left than −2, so it is smaller. −8 < −2."
+   },
+   "trip": {
+    "wiki": "Negative number",
+    "prompt": "Find an example of negative numbers in daily life on the page."
+   },
+   "sources": [
+    "Negative number",
+    "Number line"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is the smallest?",
+     "o": [
+      "−7",
+      "−2",
+      "0",
+      "3"
+     ],
+     "a": 0,
+     "why": "−7 is furthest left on the number line.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is bigger, −4 or −9?",
+     "o": [
+      "−9",
+      "They are equal",
+      "Cannot tell",
+      "−4"
+     ],
+     "a": 3,
+     "why": "−4 is nearer to zero, so it is bigger.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is 2 − 5?",
+     "o": [
+      "3",
+      "−7",
+      "−3",
+      "7"
+     ],
+     "a": 2,
+     "why": "Start at 2, go 5 left to −3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is −3 + 3?",
+     "o": [
+      "6",
+      "0",
+      "−6",
+      "3"
+     ],
+     "a": 1,
+     "why": "Opposites add to zero.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which temperature is the coldest?",
+     "o": [
+      "−12",
+      "−2",
+      "0",
+      "5"
+     ],
+     "a": 0,
+     "why": "−12 is furthest below zero.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Ana says −6 + 2 = −8. What did she do wrong?",
+     "o": [
+      "She should have added 6",
+      "She is right",
+      "She forgot zero",
+      "She moved left instead of right"
+     ],
+     "a": 3,
+     "why": "Adding 2 moves right: −6 to −4.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "What is −4 + 7?",
+     "a": 3,
+     "tol": 0,
+     "why": "Start at −4 and go 7 right to land on 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How far apart are −3 and 4 on the number line?",
+     "a": 7,
+     "tol": 0,
+     "why": "3 steps to zero and 4 more: 3 + 4 = 7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order from smallest to largest.",
+     "items": [
+      "−5",
+      "−2",
+      "0",
+      "3"
+     ],
+     "why": "Further left means smaller.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A lift goes down from floor 2 to floor −3. Explain how many floors it went down.",
+     "rubric": [
+      [
+       "5",
+       "five"
+      ],
+      [
+       "2",
+       "−3",
+       "zero",
+       "0",
+       "ground"
+      ],
+      [
+       "floor",
+       "level",
+       "steps",
+       "count",
+       "distance"
+      ]
+     ],
+     "min": 2,
+     "model": "It goes from 2 to 0, which is 2 floors, then from 0 to −3, which is 3 floors. In total 5 floors.",
+     "why": "The distance between 2 and −3 is 2 + 3 = 5.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A diver is at −8 metres and rises 3 metres. Where is she now?",
+     "o": [
+      "−11 metres",
+      "5 metres",
+      "−5 metres",
+      "−3 metres"
+     ],
+     "a": 2,
+     "why": "Rising moves to the right: −8 + 3 = −5.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is subtracting a number from a smaller number allowed to give a negative answer?",
+     "rubric": [
+      [
+       "below zero",
+       "less than zero",
+       "negative",
+       "left"
+      ],
+      [
+       "smaller",
+       "less",
+       "not enough",
+       "more than"
+      ],
+      [
+       "debt",
+       "owe",
+       "temperature",
+       "number line"
+      ]
+     ],
+     "min": 2,
+     "model": "If you take away more than you have, you go below zero. For example 3 − 5 = −2, like owing 2.",
+     "why": "Negative numbers extend the number line so that taking away more than you have has an answer.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a bank account is −20 and 30 is paid in, what is the balance?",
+     "o": [
+      "−10",
+      "10",
+      "50",
+      "−50"
+     ],
+     "a": 1,
+     "why": "−20 + 30 = 10.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What negative numbers are",
+    "model": "Negative numbers are numbers less than zero. On a number line they are to the left of zero. For example, −3 degrees means 3 degrees below freezing. −5 is smaller than −2.",
+    "points": [
+     {
+      "k": [
+       "less than zero",
+       "below zero",
+       "left",
+       "under"
+      ],
+      "ask": "Where are negative numbers?"
+     },
+     {
+      "k": [
+       "number line",
+       "line"
+      ],
+      "ask": "How can I picture them?"
+     },
+     {
+      "k": [
+       "example",
+       "temperature",
+       "debt",
+       "floor",
+       "lift",
+       "owe"
+      ],
+      "ask": "Where do we meet them in life?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Basic algebra",
+   "icon": "🔤",
+   "hook": "A pattern of matchsticks makes squares: 1 square needs 4 sticks, 2 squares in a row need 7, 3 squares need 10. How many for 10 squares without drawing them?",
+   "explain": [
+    "Algebra uses letters to stand for numbers. A letter like n can stand for any number in a pattern. 3n means 3 × n. An expression is a number sentence with letters, such as 3n + 1.",
+    "The matchstick pattern goes 4, 7, 10. It goes up by 3 each time, so the rule is 3 × n + 1, where n is the number of squares. For 10 squares: 3 × 10 + 1 = 31.",
+    "To substitute means to put a number in place of a letter. If x = 3, then 2x + 4 = 2 × 3 + 4 = 10. We can also simplify by collecting like terms: 2a + 3a = 5a, but 2a + 3b cannot be combined."
+   ],
+   "example": {
+    "q": "A rule is 3n + 1. Find the value when n = 4 and say what the 3 does.",
+    "steps": [
+     "Replace n by 4: 3 × 4 + 1.",
+     "Multiply first: 12. Then add 1: 13.",
+     "The 3 means the pattern grows by 3 each time n goes up by 1."
+    ],
+    "a": "13"
+   },
+   "analogies": {
+    "home": "Each table seats 4 people, so n tables seat 4n people.",
+    "farm": "Each cow has 4 legs, so n cows have 4n legs.",
+    "sport": "Each team has 11 players, so n teams have 11n players.",
+    "city": "A taxi costs 2 to start and 3 per kilometre: 3k + 2."
+   },
+   "mnemonic": "A letter is a box that holds a number. Put the number in and work it out!",
+   "terms": [
+    [
+     "Variable",
+     "A letter that stands for a number."
+    ],
+    [
+     "Expression",
+     "Numbers, letters and operations, without an equals sign."
+    ],
+    [
+     "Substitute",
+     "Replace a letter with a number."
+    ],
+    [
+     "Like terms",
+     "Terms with the same letter part, such as 2a and 3a."
+    ]
+   ],
+   "misc": {
+    "wrong": "3n means 3 and n written side by side, so n = 4 gives 34.",
+    "right": "3n means 3 × n. When n = 4, 3n = 12."
+   },
+   "trip": {
+    "wiki": "Algebra",
+    "prompt": "Find a picture on the page that shows a letter standing for a number."
+   },
+   "sources": [
+    "Algebra",
+    "Variable (mathematics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does 5x mean?",
+     "o": [
+      "5 × x",
+      "5 + x",
+      "x − 5",
+      "50 + x"
+     ],
+     "a": 0,
+     "why": "A number next to a letter means multiply.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If x = 4, what is x + 6?",
+     "o": [
+      "46",
+      "24",
+      "2",
+      "10"
+     ],
+     "a": 3,
+     "why": "4 + 6 = 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Simplify 2a + 3a.",
+     "o": [
+      "6a",
+      "5a²",
+      "5a",
+      "a"
+     ],
+     "a": 2,
+     "why": "2 of something plus 3 of the same thing is 5 of it.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which can NOT be simplified to one term?",
+     "o": [
+      "2a + 3a",
+      "2a + 3b",
+      "5a − a",
+      "a + a"
+     ],
+     "a": 1,
+     "why": "a and b are different letters, so they cannot combine.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pattern is 5, 8, 11, 14. Which rule fits (n = 1, 2, 3, 4)?",
+     "o": [
+      "3n + 2",
+      "3n + 5",
+      "2n + 3",
+      "n + 4"
+     ],
+     "a": 0,
+     "why": "For n = 1: 3 + 2 = 5. For n = 2: 6 + 2 = 8. It fits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Tom says 2n and n + 2 are the same. He tries n = 3: 2n = 6 and n + 2 = 5. What does this show?",
+     "o": [
+      "They are the same",
+      "n must be 2",
+      "Tom made an error",
+      "They are not the same"
+     ],
+     "a": 3,
+     "why": "One example where the answers differ is enough to show two expressions are different.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find 3n + 1 when n = 10.",
+     "a": 31,
+     "tol": 0,
+     "why": "3 × 10 = 30, plus 1 is 31.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find 2x + 4 when x = 3.",
+     "a": 10,
+     "tol": 0,
+     "why": "2 × 3 = 6 and 6 + 4 = 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the situation to its expression.",
+     "pairs": [
+      [
+       "n tables seat 4 people each",
+       "4n"
+      ],
+      [
+       "n cows, plus 2 more",
+       "n + 2"
+      ],
+      [
+       "n sweets shared by 5",
+       "n ÷ 5"
+      ],
+      [
+       "5 less than n",
+       "n − 5"
+      ]
+     ],
+     "why": "Each phrase becomes a letter expression.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain in your own words what a variable is.",
+     "rubric": [
+      [
+       "letter",
+       "symbol"
+      ],
+      [
+       "number",
+       "value",
+       "amount"
+      ],
+      [
+       "change",
+       "any",
+       "different",
+       "unknown",
+       "stand",
+       "represent"
+      ]
+     ],
+     "min": 2,
+     "model": "A variable is a letter that stands for a number, which can change or be unknown.",
+     "why": "Variables let us write rules that work for many numbers.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is 3n + 1 always an odd number when n is even?",
+     "o": [
+      "No",
+      "Only when n = 2",
+      "Yes",
+      "Never"
+     ],
+     "a": 2,
+     "why": "If n is even, 3n is even, and even + 1 is odd.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A friend says \"a + a = a²\". Test with a = 3 and explain.",
+     "rubric": [
+      [
+       "6",
+       "2a",
+       "twice",
+       "double"
+      ],
+      [
+       "9",
+       "squared",
+       "square"
+      ],
+      [
+       "different",
+       "not",
+       "wrong",
+       "no",
+       "not equal"
+      ]
+     ],
+     "min": 2,
+     "model": "a + a = 3 + 3 = 6, but a² = 9. They are different, because a + a = 2a, not a².",
+     "why": "Testing with numbers helps catch mistakes in algebra.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is algebra useful?",
+     "o": [
+      "It removes numbers",
+      "It lets us write one rule for many cases",
+      "It makes sums harder",
+      "It is only for experts"
+     ],
+     "a": 1,
+     "why": "A rule like 3n + 1 works for every n.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a letter in algebra means",
+    "model": "In algebra a letter stands for a number we do not know yet or one that can change. For example n can be the number of tables, and 4n is the number of seats. If n is 3, there are 12 seats.",
+    "points": [
+     {
+      "k": [
+       "letter",
+       "symbol"
+      ],
+      "ask": "What is the letter for?"
+     },
+     {
+      "k": [
+       "number",
+       "value",
+       "stand",
+       "represent"
+      ],
+      "ask": "What does it stand for?"
+     },
+     {
+      "k": [
+       "example",
+       "table",
+       "seat",
+       "cow",
+       "4n"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Equations and inequalities",
+   "icon": "⚖️",
+   "hook": "A balance scale has a 7 g weight and a mystery weight on the left, and a 15 g weight on the right. It is perfectly level. How heavy is the mystery weight?",
+   "explain": [
+    "An equation says two things are equal, like x + 7 = 15. To solve it we find the value of x that makes it true. The balance idea is: whatever you do to one side, do the same to the other.",
+    "Solve x + 7 = 15 by taking 7 from both sides: x = 8. Solve 3x = 18 by dividing both sides by 3: x = 6. For two steps, like 2x + 1 = 11, undo the adding first (x = 5 after 2x = 10), then the multiplying.",
+    "An inequality compares with <, >, ≤ or ≥. x > 4 means x can be any number larger than 4. We solve it in the same way, and the answer is a set of numbers. Always check by putting the answer back into the original."
+   ],
+   "example": {
+    "q": "Solve 2x + 1 = 11.",
+    "steps": [
+     "Take 1 from both sides: 2x = 10.",
+     "Divide both sides by 2: x = 5.",
+     "Check: 2 × 5 + 1 = 11. It works."
+    ],
+    "a": "x = 5"
+   },
+   "analogies": {
+    "home": "A bill is 15 and you have paid 7. The rest, x, makes x + 7 = 15.",
+    "farm": "3 equal baskets hold 18 eggs. Each basket holds x, so 3x = 18.",
+    "sport": "A runner needs more than 4 laps. Laps x > 4.",
+    "tech": "A phone has 11% battery after being charged by 2% a minute from 1%: 2x + 1 = 11."
+   },
+   "mnemonic": "Do the same to both sides and the scale stays level.",
+   "terms": [
+    [
+     "Equation",
+     "A statement that two expressions are equal."
+    ],
+    [
+     "Solve",
+     "Find the value that makes it true."
+    ],
+    [
+     "Inequality",
+     "A statement using <, >, ≤ or ≥."
+    ],
+    [
+     "Inverse operation",
+     "An operation that undoes another."
+    ]
+   ],
+   "misc": {
+    "wrong": "In an equation you can add to one side only.",
+    "right": "Whatever you do to one side you must do to the other, or the balance breaks."
+   },
+   "trip": {
+    "wiki": "Equation",
+    "prompt": "Find the picture of a balance and see how it models solving equations."
+   },
+   "sources": [
+    "Equation",
+    "Inequality (mathematics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Solve x + 7 = 15.",
+     "o": [
+      "x = 8",
+      "x = 22",
+      "x = 7",
+      "x = 15"
+     ],
+     "a": 0,
+     "why": "Take 7 from both sides: x = 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Solve 3x = 18.",
+     "o": [
+      "x = 15",
+      "x = 21",
+      "x = 54",
+      "x = 6"
+     ],
+     "a": 3,
+     "why": "Divide both sides by 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which operation undoes adding 5?",
+     "o": [
+      "Adding 5",
+      "Multiplying by 5",
+      "Subtracting 5",
+      "Dividing by 5"
+     ],
+     "a": 2,
+     "why": "Inverse operations undo each other.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which number makes x − 4 = 10 true?",
+     "o": [
+      "6",
+      "14",
+      "40",
+      "10"
+     ],
+     "a": 1,
+     "why": "Add 4 to both sides: x = 14.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is a solution to x > 4?",
+     "o": [
+      "7",
+      "4",
+      "3",
+      "−4"
+     ],
+     "a": 0,
+     "why": "7 is greater than 4. 4 is not greater than itself.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Ravi solves x + 3 = 10 and writes x = 13. What is his mistake?",
+     "o": [
+      "He did it right",
+      "He should multiply",
+      "He needs to divide by 3",
+      "He added 3 instead of subtracting"
+     ],
+     "a": 3,
+     "why": "To undo + 3 you subtract 3: x = 7.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Solve 2x + 1 = 11.",
+     "a": 5,
+     "tol": 0,
+     "why": "2x = 10, so x = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Solve 5x − 3 = 22.",
+     "a": 5,
+     "tol": 0,
+     "why": "Add 3: 5x = 25. Divide by 5: x = 5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why checking the answer in the original equation is a good idea.",
+     "rubric": [
+      [
+       "check",
+       "test",
+       "put back",
+       "substitute",
+       "plug"
+      ],
+      [
+       "original",
+       "equation",
+       "start",
+       "first"
+      ],
+      [
+       "mistake",
+       "error",
+       "wrong",
+       "correct",
+       "true",
+       "works",
+       "both sides"
+      ]
+     ],
+     "min": 2,
+     "model": "Substituting the answer back shows whether both sides are equal. If they are not, you have made a mistake.",
+     "why": "A check catches slips in the solving steps.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How many whole numbers greater than 0 satisfy x < 5?",
+     "o": [
+      "5",
+      "3",
+      "4",
+      "Infinitely many"
+     ],
+     "a": 2,
+     "why": "The numbers are 1, 2, 3, 4.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Solve 4x = 2. Which statement is right?",
+     "o": [
+      "x = 2",
+      "x = 0.5",
+      "x = 8",
+      "x = 6"
+     ],
+     "a": 1,
+     "why": "Divide both sides by 4: 2 ÷ 4 = 0.5.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does an equation like x + 7 = 15 have just one solution, while x + 7 > 15 has many?",
+     "rubric": [
+      [
+       "equal",
+       "exactly",
+       "one",
+       "only",
+       "single"
+      ],
+      [
+       "more",
+       "greater",
+       "many",
+       "all",
+       "any",
+       "bigger",
+       "range"
+      ],
+      [
+       "number",
+       "value",
+       "x"
+      ]
+     ],
+     "min": 2,
+     "model": "An equation says both sides are exactly equal, which only fits x = 8. An inequality allows any x above 8, so there are many answers.",
+     "why": "Equations pin down one value. Inequalities describe a range.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The width w of a rectangle is x and its length is x + 3. The perimeter is 26. Which equation shows this?",
+     "o": [
+      "2x + 2(x + 3) = 26",
+      "x + x + 3 = 26",
+      "x(x + 3) = 26",
+      "2x + 3 = 26"
+     ],
+     "a": 0,
+     "why": "Perimeter is 2 widths plus 2 lengths. Solving gives 4x + 6 = 26, x = 5.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to solve an equation",
+    "model": "An equation is like a balance. To find the unknown, do the same thing to both sides until the letter is alone. For example for x + 3 = 10, subtract 3 from both sides to get x = 7.",
+    "points": [
+     {
+      "k": [
+       "balance",
+       "both sides",
+       "same"
+      ],
+      "ask": "What can I do to an equation?"
+     },
+     {
+      "k": [
+       "undo",
+       "inverse",
+       "opposite"
+      ],
+      "ask": "How do I get the letter alone?"
+     },
+     {
+      "k": [
+       "check",
+       "substitute",
+       "test"
+      ],
+      "ask": "How do I know the answer is right?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Geometry and angles",
+   "icon": "📐",
+   "hook": "Why do the three corners of any triangle always add up to the same amount, even if the triangle looks very different?",
+   "explain": [
+    "An angle measures a turn. We measure it in degrees. A full turn is 360°, half a turn (a straight line) is 180° and a quarter turn (a right angle) is 90°. Angles smaller than 90° are acute, and bigger than 90° but less than 180° are obtuse.",
+    "Rules help us find missing angles. Angles on a straight line add to 180°. Angles around a point add to 360°. The angles inside any triangle add to 180°, and inside any four-sided shape (quadrilateral) to 360°.",
+    "Why does a triangle add to 180°? If you tear the three corners off a paper triangle and put them side by side they make a straight line. This is a good check but not yet a proof; a proof uses parallel lines."
+   ],
+   "example": {
+    "q": "Two angles in a triangle are 50° and 60°. Find the third.",
+    "steps": [
+     "The three angles add to 180°.",
+     "50 + 60 = 110.",
+     "180 − 110 = 70."
+    ],
+    "a": "70°"
+   },
+   "analogies": {
+    "home": "A door opens from closed to a right angle: 90°.",
+    "sport": "A gymnast spins a full turn: 360°.",
+    "city": "A road turns a corner at a right angle, 90°.",
+    "sea": "A ship turns half a circle to go back, 180°."
+   },
+   "mnemonic": "Straight is one-eighty, around is three-sixty, a corner is ninety and a triangle is one-eighty too.",
+   "terms": [
+    [
+     "Degree",
+     "A unit for measuring angles, °."
+    ],
+    [
+     "Right angle",
+     "An angle of 90°."
+    ],
+    [
+     "Acute angle",
+     "Less than 90°."
+    ],
+    [
+     "Obtuse angle",
+     "More than 90° and less than 180°."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger triangle has angles that add up to more than 180°.",
+    "right": "The size of the sides does not change the angle sum. Every flat triangle adds to 180°."
+   },
+   "limits": "These rules are for flat surfaces. On a sphere, such as the Earth, the angles of a triangle add to more than 180°.",
+   "trip": {
+    "wiki": "Angle",
+    "prompt": "Find the types of angle and match them to the pictures."
+   },
+   "sources": [
+    "Angle",
+    "Triangle"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many degrees is a right angle?",
+     "o": [
+      "45°",
+      "180°",
+      "100°",
+      "90°"
+     ],
+     "a": 3,
+     "why": "A right angle is a quarter turn: 90°.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many degrees are on a straight line?",
+     "o": [
+      "90°",
+      "360°",
+      "180°",
+      "100°"
+     ],
+     "a": 2,
+     "why": "A straight line is half a turn.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "An angle of 120° is...",
+     "o": [
+      "Acute",
+      "Obtuse",
+      "A right angle",
+      "Reflex"
+     ],
+     "a": 1,
+     "why": "It is between 90° and 180°.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Angles on a straight line are 65° and x. What is x?",
+     "o": [
+      "115°",
+      "25°",
+      "295°",
+      "125°"
+     ],
+     "a": 0,
+     "why": "180 − 65 = 115.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which cannot be the angles of a triangle?",
+     "o": [
+      "90°, 45°, 45°",
+      "60°, 60°, 60°",
+      "30°, 50°, 100°",
+      "100°, 60°, 40°"
+     ],
+     "a": 3,
+     "why": "100 + 60 + 40 = 200, not 180.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A 4-sided shape has angles 90°, 90°, 90° and x. What is x?",
+     "o": [
+      "180°",
+      "45°",
+      "90°",
+      "270°"
+     ],
+     "a": 2,
+     "why": "360 − 270 = 90.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two angles in a triangle are 50° and 60°. What is the third angle in degrees?",
+     "a": 70,
+     "tol": 0,
+     "why": "180 − 50 − 60 = 70.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Four angles around a point are 90°, 100°, 80° and x. Find x in degrees.",
+     "a": 90,
+     "tol": 0,
+     "why": "360 − (90 + 100 + 80) = 90.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the angles of a triangle always add to 180° using the torn-corner idea.",
+     "rubric": [
+      [
+       "tear",
+       "rip",
+       "cut",
+       "corners",
+       "put together",
+       "side by side"
+      ],
+      [
+       "straight",
+       "line",
+       "180",
+       "half turn"
+      ],
+      [
+       "all triangles",
+       "any triangle",
+       "every",
+       "always",
+       "same"
+      ]
+     ],
+     "min": 2,
+     "model": "If you tear off the three corners and place them side by side with their points together, they make a straight line, which is 180°. This works for any triangle.",
+     "why": "The corners fit together into a straight line, so they sum to 180°.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In an isosceles triangle two angles are equal and the third is 40°. What are the equal angles?",
+     "o": [
+      "40° each",
+      "70° each",
+      "140° each",
+      "50° each"
+     ],
+     "a": 1,
+     "why": "180 − 40 = 140, split in two: 70° each.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Maya measures a triangle and gets 85°, 60° and 45°. What is likely?",
+     "o": [
+      "She made a measuring error",
+      "The triangle is special",
+      "Triangles can add to 190°",
+      "Her ruler is wrong"
+     ],
+     "a": 0,
+     "why": "85 + 60 + 45 = 190. A flat triangle adds to 180°, so a small measuring error is likely.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must a triangle have at most one angle of 90° or more?",
+     "rubric": [
+      [
+       "180",
+       "sum",
+       "add",
+       "total"
+      ],
+      [
+       "two",
+       "more than one",
+       "second",
+       "another"
+      ],
+      [
+       "too big",
+       "exceed",
+       "more than",
+       "over",
+       "no room",
+       "nothing left"
+      ]
+     ],
+     "min": 2,
+     "model": "The angles add to 180°. Two angles of 90° or more would already reach 180° or more, leaving nothing for the third angle.",
+     "why": "The 180° total limits how many large angles fit.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A clock shows 3 o'clock. What is the angle between the hands?",
+     "o": [
+      "30°",
+      "60°",
+      "180°",
+      "90°"
+     ],
+     "a": 3,
+     "why": "The hands point at 12 and 3, a quarter of a full turn.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Finding a missing angle in a triangle",
+    "model": "The three angles in a triangle always add up to 180 degrees. If you know two angles, add them and subtract from 180. For example, if two angles are 50 and 60, then 180 − 110 gives 70 degrees.",
+    "points": [
+     {
+      "k": [
+       "180"
+      ],
+      "ask": "What do the angles of a triangle add up to?"
+     },
+     {
+      "k": [
+       "add",
+       "subtract",
+       "take away",
+       "minus"
+      ],
+      "ask": "What do I do with the two angles I know?"
+     },
+     {
+      "k": [
+       "example",
+       "50",
+       "60",
+       "70"
+      ],
+      "ask": "Can you do an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Area, perimeter and volume",
+   "icon": "📦",
+   "hook": "You want to cover a floor with tiles and put a fence round a garden. Do these need the same measurement?",
+   "explain": [
+    "Perimeter is the distance around the outside of a shape. Area is the amount of flat space inside. Volume is the amount of space inside a 3D shape. They use different units: cm or m for perimeter, cm² or m² for area, cm³ or m³ for volume.",
+    "For a rectangle, area = length × width and perimeter = 2 × (length + width). A rectangle 8 cm by 5 cm has area 40 cm² and perimeter 26 cm. A triangle has area = ½ × base × height.",
+    "A cuboid has volume = length × width × height. A box 4 cm by 3 cm by 2 cm holds 24 cubes of 1 cm. Two shapes can have the same perimeter and different areas."
+   ],
+   "example": {
+    "q": "A rectangle is 8 cm long and 5 cm wide. Find its area and perimeter.",
+    "steps": [
+     "Area = 8 × 5 = 40 square centimetres.",
+     "Perimeter = 8 + 5 + 8 + 5 = 26 cm.",
+     "Different units: cm² for area, cm for perimeter."
+    ],
+    "a": "Area 40 cm², perimeter 26 cm"
+   },
+   "analogies": {
+    "home": "Floor tiles cover an area. A skirting board goes round the perimeter.",
+    "farm": "Fencing a field is perimeter. Planting seeds in it relates to area.",
+    "sport": "A running track measures perimeter. Grass in the middle is area.",
+    "city": "A water tank holds volume. A park sign shows area."
+   },
+   "mnemonic": "Perimeter goes around the edge, area fills the floor, volume fills the room.",
+   "terms": [
+    [
+     "Perimeter",
+     "Distance around a shape."
+    ],
+    [
+     "Area",
+     "Amount of flat space inside a shape, in square units."
+    ],
+    [
+     "Volume",
+     "Amount of space inside a 3D shape, in cubic units."
+    ],
+    [
+     "Cuboid",
+     "A box shape with 6 rectangular faces."
+    ]
+   ],
+   "misc": {
+    "wrong": "If two rectangles have the same perimeter they have the same area.",
+    "right": "A 5 by 5 square has perimeter 20 and area 25. A 1 by 9 rectangle also has perimeter 20 but area 9."
+   },
+   "trip": {
+    "wiki": "Area",
+    "prompt": "Find the formulas for different shapes and check the rectangle one."
+   },
+   "sources": [
+    "Area",
+    "Perimeter",
+    "Volume"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does area measure?",
+     "o": [
+      "Distance round the edge",
+      "Space inside a box",
+      "Flat space inside a shape",
+      "Weight"
+     ],
+     "a": 2,
+     "why": "Area is measured in square units.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which unit is used for volume?",
+     "o": [
+      "cm",
+      "cm³",
+      "cm²",
+      "kg"
+     ],
+     "a": 1,
+     "why": "Volume uses cubic units.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the perimeter of a square with side 6 cm?",
+     "o": [
+      "24 cm",
+      "36 cm",
+      "12 cm",
+      "6 cm"
+     ],
+     "a": 0,
+     "why": "4 × 6 = 24.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Area of a rectangle 7 cm by 3 cm?",
+     "o": [
+      "10 cm²",
+      "20 cm²",
+      "21 cm",
+      "21 cm²"
+     ],
+     "a": 3,
+     "why": "7 × 3 = 21, with square units.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You double the side of a square. What happens to its area?",
+     "o": [
+      "It doubles",
+      "It stays the same",
+      "It becomes 4 times bigger",
+      "It becomes 8 times bigger"
+     ],
+     "a": 2,
+     "why": "Side 3: area 9. Side 6: area 36. 36 ÷ 9 = 4.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which needs perimeter?",
+     "o": [
+      "Painting a wall",
+      "Putting a fence round a garden",
+      "Filling a pool with water",
+      "Covering a floor with carpet"
+     ],
+     "a": 1,
+     "why": "A fence goes along the edge.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the area of a triangle with base 10 cm and height 4 cm in cm².",
+     "a": 20,
+     "tol": 0,
+     "why": "½ × 10 × 4 = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the volume of a box 4 cm by 3 cm by 2 cm in cm³.",
+     "a": 24,
+     "tol": 0,
+     "why": "4 × 3 × 2 = 24.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a 1 by 9 rectangle and a 5 by 5 square have the same perimeter but different areas.",
+     "rubric": [
+      [
+       "20",
+       "same perimeter",
+       "both"
+      ],
+      [
+       "9",
+       "25",
+       "area",
+       "different",
+       "inside",
+       "fills"
+      ],
+      [
+       "shape",
+       "long",
+       "thin",
+       "square",
+       "fatter",
+       "more room",
+       "compact"
+      ]
+     ],
+     "min": 2,
+     "model": "Both have perimeter 20. The square has area 25 but the long thin rectangle has area 9, so it encloses less space.",
+     "why": "A squarer shape encloses more area for the same perimeter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rectangular room has area 30 m² and is 6 m long. How wide is it?",
+     "o": [
+      "5 m",
+      "24 m",
+      "180 m",
+      "36 m"
+     ],
+     "a": 0,
+     "why": "width = area ÷ length = 30 ÷ 6 = 5.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A garden is 10 m by 4 m. Hana says the fence needs 40 m because she multiplied. What is the mistake?",
+     "o": [
+      "She is right",
+      "It needs 14 m",
+      "It needs 20 m",
+      "Fence needs the perimeter, 28 m, not the area"
+     ],
+     "a": 3,
+     "why": "Area is 40 m². The fence is 2 × (10 + 4) = 28 m.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A box is filled with 1 cm cubes: 4 along, 3 across and 2 high. Explain why the volume is 4 × 3 × 2.",
+     "rubric": [
+      [
+       "layer",
+       "row",
+       "floor",
+       "bottom"
+      ],
+      [
+       "12",
+       "4 × 3",
+       "3 × 4"
+      ],
+      [
+       "2",
+       "twice",
+       "two layers",
+       "height",
+       "high",
+       "times"
+      ]
+     ],
+     "min": 2,
+     "model": "One layer has 4 × 3 = 12 cubes. There are 2 layers, so 12 × 2 = 24 cubes.",
+     "why": "Volume = cubes in one layer × number of layers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is true?",
+     "o": [
+      "Area uses the same unit as perimeter",
+      "Area is measured in cm",
+      "Area is measured in square units because it counts squares",
+      "Volume uses square units"
+     ],
+     "a": 2,
+     "why": "We count unit squares that cover the shape.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Area and perimeter",
+    "model": "Perimeter is the distance around the edge of a shape. Area is the space inside. For a rectangle, area is length times width. For example a 5 by 3 rectangle has area 15 square units and perimeter 16.",
+    "points": [
+     {
+      "k": [
+       "around",
+       "edge",
+       "outside",
+       "fence"
+      ],
+      "ask": "What is perimeter?"
+     },
+     {
+      "k": [
+       "inside",
+       "space",
+       "cover",
+       "square"
+      ],
+      "ask": "What is area?"
+     },
+     {
+      "k": [
+       "times",
+       "multiply",
+       "length",
+       "width"
+      ],
+      "ask": "How do I find the area of a rectangle?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Mean, median, mode and simple probability",
+   "icon": "🎲",
+   "hook": "A bag holds 3 red and 2 blue counters. Without looking you pick one. How likely is red, and how could you describe the typical number in a data set?",
+   "explain": [
+    "The mean, median and mode are three ways to describe the middle of data. The mean is the total divided by the number of values. The median is the middle value when the data are in order. The mode is the most frequent value. The range is the biggest minus the smallest and shows the spread.",
+    "For 3, 5, 5, 8, 9 the total is 30, so the mean is 30 ÷ 5 = 6. The median is the middle one, 5. The mode is 5. The range is 9 − 3 = 6.",
+    "Probability tells how likely an event is, from 0 (impossible) to 1 (certain). Probability = favourable outcomes ÷ total equally likely outcomes. For 3 red among 5 counters, P(red) = 3/5. A fair die has P(even) = 3/6 = 1/2."
+   ],
+   "example": {
+    "q": "Find the mean and median of 2, 4, 4, 6, 9.",
+    "steps": [
+     "Mean: total 2 + 4 + 4 + 6 + 9 = 25. Divide by 5: 5.",
+     "Median: the data are in order. The middle (third) is 4.",
+     "Mode: 4 appears twice, so the mode is 4."
+    ],
+    "a": "Mean 5, median 4, mode 4"
+   },
+   "analogies": {
+    "home": "Mean of 4 bills: 20, 30, 25, 25 is 100 ÷ 4 = 25.",
+    "farm": "A hen laid 3, 5, 5, 8, 9 eggs in 5 weeks, median 5.",
+    "sport": "A player scored 2, 0, 3 goals in 3 games, mean 5 ÷ 3.",
+    "city": "The most common bus delay is the mode."
+   },
+   "mnemonic": "Mean is fair share, median is the middle chair, mode is most, range is the stretch.",
+   "terms": [
+    [
+     "Mean",
+     "Total divided by the number of values."
+    ],
+    [
+     "Median",
+     "The middle value when sorted."
+    ],
+    [
+     "Mode",
+     "The most common value."
+    ],
+    [
+     "Probability",
+     "A number from 0 to 1 showing how likely an event is."
+    ]
+   ],
+   "misc": {
+    "wrong": "The median is the middle of the list as it was written.",
+    "right": "You must put data in order first. The median is the middle of the sorted list."
+   },
+   "trip": {
+    "wiki": "Mean",
+    "prompt": "Find an example of when the median is better than the mean."
+   },
+   "sources": [
+    "Mean",
+    "Median",
+    "Probability"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the mode of 2, 3, 3, 5, 7?",
+     "o": [
+      "5",
+      "3",
+      "2",
+      "7"
+     ],
+     "a": 1,
+     "why": "3 appears most often.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the median of 1, 3, 5, 7, 9?",
+     "o": [
+      "5",
+      "3",
+      "9",
+      "25"
+     ],
+     "a": 0,
+     "why": "The middle value of five sorted numbers.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fair coin is flipped. What is P(heads)?",
+     "o": [
+      "1",
+      "0",
+      "1/4",
+      "1/2"
+     ],
+     "a": 3,
+     "why": "Two equally likely outcomes, one is heads.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which probability means impossible?",
+     "o": [
+      "1",
+      "1/2",
+      "0",
+      "−1"
+     ],
+     "a": 2,
+     "why": "Probability 0 is impossible, 1 is certain.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which value is best to show a typical house price when one is a huge palace?",
+     "o": [
+      "Mean",
+      "Median",
+      "Range",
+      "Biggest value"
+     ],
+     "a": 1,
+     "why": "The median is not pulled up by the extreme value.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In a class all tests are 5, 5, 5, 5, 5. What is the range?",
+     "o": [
+      "0",
+      "5",
+      "25",
+      "1"
+     ],
+     "a": 0,
+     "why": "Biggest − smallest = 5 − 5 = 0.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Find the mean of 3, 5, 5, 8, 9.",
+     "a": 6,
+     "tol": 0,
+     "why": "30 ÷ 5 = 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bag has 3 red and 2 blue counters. Give P(red) as a decimal.",
+     "a": 0.6,
+     "tol": 0.001,
+     "why": "3/5 = 0.6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A data set is 2, 3, 4, 100. Explain why the mean is not a good typical value.",
+     "rubric": [
+      [
+       "100",
+       "outlier",
+       "extreme",
+       "large",
+       "big",
+       "huge"
+      ],
+      [
+       "pull",
+       "drag",
+       "raise",
+       "higher",
+       "skew",
+       "distort",
+       "mislead",
+       "up"
+      ],
+      [
+       "median",
+       "3.5",
+       "most",
+       "typical"
+      ]
+     ],
+     "min": 2,
+     "model": "The mean is 27.25, pulled up by the 100, so it is much more than most values. The median 3.5 is a better typical value.",
+     "why": "Extreme values affect the mean but not the median.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fair die is rolled once. What is P(a number greater than 4)?",
+     "o": [
+      "1/6",
+      "2",
+      "4/6",
+      "1/3"
+     ],
+     "a": 3,
+     "why": "5 and 6 are greater than 4. That is 2 out of 6 = 1/3.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The mean of 4 numbers is 10. Three of them are 8, 9 and 11. What is the fourth?",
+     "o": [
+      "10",
+      "14",
+      "12",
+      "9"
+     ],
+     "a": 2,
+     "why": "Total must be 40. 8 + 9 + 11 = 28, and 40 − 28 = 12.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Zoe tossed a fair coin 5 times and got heads each time. She says tails is \"due\". Explain what is wrong.",
+     "rubric": [
+      [
+       "independent",
+       "no memory",
+       "does not remember",
+       "not affected",
+       "each toss",
+       "still",
+       "same"
+      ],
+      [
+       "1/2",
+       "half",
+       "50",
+       "equal",
+       "chance"
+      ],
+      [
+       "fair",
+       "luck",
+       "random",
+       "coin"
+      ]
+     ],
+     "min": 2,
+     "model": "Coin tosses are independent. The coin has no memory, so the next toss still has a 1/2 chance of tails.",
+     "why": "Past results do not change the probability of fair independent events.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A spinner has 4 equal sections: 1 red, 1 blue, 2 green. Which colour is most likely?",
+     "o": [
+      "Red",
+      "Green",
+      "Blue",
+      "All the same"
+     ],
+     "a": 1,
+     "why": "Green covers 2 of the 4 sections.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Mean, median and mode",
+    "model": "The mean is the total divided by how many values. The median is the middle value after sorting. The mode is the most common value. For 2, 4, 4, 6, 9 the mean is 5, the median is 4 and the mode is 4.",
+    "points": [
+     {
+      "k": [
+       "mean",
+       "total",
+       "divide",
+       "average"
+      ],
+      "ask": "How do I find the mean?"
+     },
+     {
+      "k": [
+       "median",
+       "middle",
+       "sorted",
+       "order"
+      ],
+      "ask": "What is the median?"
+     },
+     {
+      "k": [
+       "mode",
+       "most",
+       "common",
+       "often"
+      ],
+      "ask": "What is the mode?"
+     }
+    ]
+   }
+  }
+ ]
+}

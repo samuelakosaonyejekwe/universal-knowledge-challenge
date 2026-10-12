@@ -1,0 +1,2860 @@
+{
+ "world": 17,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced logic and reasoning",
+   "icon": "∀",
+   "hook": "\"Everyone loves someone\" and \"Someone is loved by everyone\" look similar. Are they the same claim?",
+   "explain": [
+    "Predicate (first-order) logic extends propositional logic with variables, predicates and quantifiers. ∀x P(x) says P holds for all x in the domain; ∃x P(x) says it holds for at least one. Negation swaps quantifiers: ¬∀x P(x) ≡ ∃x ¬P(x), and ¬∃x P(x) ≡ ∀x ¬P(x). Order matters: ∀x ∃y Loves(x,y) (\"everyone loves someone\") does not entail ∃y ∀x Loves(x,y) (\"there is someone whom everyone loves\"), but the second entails the first.",
+    "A formal system has syntax (formulas), semantics (interpretations that assign truth) and proof rules. Soundness means whatever is provable is semantically valid; completeness means whatever is semantically valid is provable. Gödel's completeness theorem (1929) shows that first-order logic is complete. His incompleteness theorems (1931) show that any consistent, effectively axiomatised system strong enough for basic arithmetic contains true statements it cannot prove, and cannot prove its own consistency. Church and Turing showed that validity in first-order logic is undecidable: no algorithm decides it for all formulas.",
+    "Proof techniques: direct proof, contrapositive, contradiction (reductio ad absurdum), induction and counterexample. A single counterexample refutes a universal claim; no number of examples proves one. Induction proves a statement for all natural numbers by proving a base case and the step from n to n + 1. Example: 1 + 2 + … + n = n(n+1)/2 holds for n = 1 and, if true for n, adding n + 1 gives (n+1)(n+2)/2."
+   ],
+   "example": {
+    "q": "Show that √2 is irrational by contradiction (outline).",
+    "steps": [
+     "Suppose √2 = a/b in lowest terms, so a² = 2b².",
+     "Then a² is even, so a is even; write a = 2c, giving 4c² = 2b², so b² = 2c².",
+     "Then b is even too, contradicting lowest terms."
+    ],
+    "a": "The assumption leads to a contradiction, so √2 is irrational."
+   },
+   "analogies": {
+    "tech": "A database query \"for all users there exists an order\" differs from \"there exists an order for all users\".",
+    "city": "\"Every road leads to some junction\" versus \"some junction is reached by every road\".",
+    "home": "\"Each key opens some lock\" versus \"some lock is opened by every key\"."
+   },
+   "mnemonic": "For all is a net, there exists is a hook; swap their order and change the book.",
+   "terms": [
+    [
+     "Quantifier",
+     "A symbol (∀ or ∃) saying how many members of the domain satisfy a predicate."
+    ],
+    [
+     "Soundness",
+     "Every provable statement is valid."
+    ],
+    [
+     "Completeness",
+     "Every valid statement is provable."
+    ],
+    [
+     "Reductio ad absurdum",
+     "Proof by showing that denial leads to contradiction."
+    ]
+   ],
+   "misc": {
+    "wrong": "Gödel proved that mathematics is inconsistent or that nothing can be known.",
+    "right": "Gödel showed limits of formal systems: some true arithmetic statements are unprovable within a given consistent system. It does not make mathematics unreliable."
+   },
+   "limits": "Philosophers debate what the incompleteness theorems imply about minds and machines; claims that they prove human minds exceed computers are contested.",
+   "trip": {
+    "wiki": "Gödel's incompleteness theorems",
+    "prompt": "Read about what the first theorem states and what it does not."
+   },
+   "sources": [
+    "First-order logic",
+    "Gödel's incompleteness theorems",
+    "Mathematical induction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is ¬∀x P(x) equivalent to?",
+     "o": [
+      "∃x ¬P(x)",
+      "∀x ¬P(x)",
+      "∃x P(x)",
+      "¬∃x ¬P(x)"
+     ],
+     "a": 0,
+     "why": "Not everything is P means something is not P.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is stronger?",
+     "o": [
+      "There is someone whom everyone loves",
+      "Everyone loves someone, though perhaps not the same person",
+      "The two statements are logically equivalent",
+      "Neither statement implies the other in any direction"
+     ],
+     "a": 0,
+     "why": "∃∀ implies ∀∃, not conversely.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does the soundness of a proof system guarantee?",
+     "o": [
+      "Provable statements are valid",
+      "Valid statements are provable",
+      "All statements are decidable",
+      "Axioms are infinite"
+     ],
+     "a": 0,
+     "why": "Proof does not derive falsehoods.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the first incompleteness theorem say, informally?",
+     "o": [
+      "Consistent strong systems have true unprovable statements",
+      "Mathematics as a whole is shown to be false",
+      "All proofs that mathematicians write contain errors",
+      "Logic itself can never be put into formal rules"
+     ],
+     "a": 0,
+     "why": "It limits what formal systems can prove.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which refutes \"all swans are white\"?",
+     "o": [
+      "One black swan",
+      "A million white swans",
+      "A white swan",
+      "A grey duck"
+     ],
+     "a": 0,
+     "why": "A counterexample suffices.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Mathematical induction proves a statement for all n by...",
+     "o": [
+      "Proving a base case and the step from n to n+1",
+      "Testing the statement on the first 100 values of n",
+      "Using probability to show it is likely true",
+      "Searching until a counterexample is found"
+     ],
+     "a": 0,
+     "why": "The step propagates truth.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "How many different truth functions (distinct columns of output) are possible for two propositions P and Q?",
+     "a": 16,
+     "tol": 0,
+     "why": "A function assigns T or F to 4 rows, so 2^4 = 16.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using the formula n(n+1)/2, what is 1 + 2 + … + 10?",
+     "a": 55,
+     "tol": 0,
+     "why": "10 × 11 ÷ 2 = 55.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Syntax",
+       "Rules for forming formulas"
+      ],
+      [
+       "Semantics",
+       "Meaning and truth in interpretations"
+      ],
+      [
+       "Decidable",
+       "An algorithm settles every case"
+      ]
+     ],
+     "why": "Core ideas of formal logic.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why ∀x ∃y Loves(x,y) does not entail ∃y ∀x Loves(x,y).",
+     "rubric": [
+      [
+       "everyone",
+       "each",
+       "all",
+       "every"
+      ],
+      [
+       "different",
+       "same",
+       "one person",
+       "different people",
+       "a single",
+       "not necessarily",
+       "differ",
+       "may",
+       "could"
+      ]
+     ],
+     "min": 2,
+     "model": "The first allows each person to love a different person, while the second requires a single person loved by everyone, so it is a stronger claim.",
+     "why": "Quantifier order changes the meaning.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Church and Turing's result on first-order logic shows that...",
+     "o": [
+      "No algorithm decides validity for all formulas",
+      "Logic is shown to be inconsistent",
+      "Every formula is in fact valid",
+      "Proofs of any kind are impossible"
+     ],
+     "a": 0,
+     "why": "Validity is undecidable (semi-decidable).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A friend argues \"I checked 1000 cases, so the conjecture is proven.\" Respond.",
+     "rubric": [
+      [
+       "counterexample",
+       "exception",
+       "fail",
+       "may",
+       "could",
+       "might",
+       "not proof",
+       "insufficient",
+       "still"
+      ],
+      [
+       "proof",
+       "general",
+       "all",
+       "infinite",
+       "prove",
+       "case",
+       "beyond",
+       "next",
+       "larger",
+       "induction"
+      ]
+     ],
+     "min": 2,
+     "model": "Checking cases is not a proof, since a counterexample might lie beyond the cases tested. A proof must cover all cases, for instance by induction or contradiction.",
+     "why": "Examples do not prove universals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which proof technique shows that a statement leads to impossibility?",
+     "o": [
+      "Contradiction",
+      "Induction on n only",
+      "Anecdote",
+      "Averaging"
+     ],
+     "a": 0,
+     "why": "Assume the negation and derive a contradiction.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Predicate logic and proof",
+    "model": "Predicate logic adds quantifiers: for all and there exists. Negating swaps them, and order matters. Soundness means provable implies valid; completeness means valid implies provable. Gödel showed limits of formal systems. Proof methods include contradiction and induction, and one counterexample refutes a universal claim.",
+    "points": [
+     {
+      "k": [
+       "quantif",
+       "for all",
+       "exists"
+      ],
+      "ask": "What do quantifiers do?"
+     },
+     {
+      "k": [
+       "order",
+       "swap",
+       "negat"
+      ],
+      "ask": "What happens when I change order or negate?"
+     },
+     {
+      "k": [
+       "sound",
+       "complete",
+       "gödel",
+       "godel",
+       "incomplete"
+      ],
+      "ask": "What are the limits of formal systems?"
+     },
+     {
+      "k": [
+       "counterexample",
+       "induction",
+       "contradiction"
+      ],
+      "ask": "How can I prove or refute?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Epistemological theories",
+   "icon": "📚",
+   "hook": "You read a fact in a textbook, recall a childhood event and check a thermometer. Which of these gives knowledge, and what justifies each?",
+   "explain": [
+    "Contemporary epistemology asks what justifies belief and how it relates to truth. Internalists hold that justification depends on factors accessible to the believer (such as evidence they can reflect upon); externalists allow factors the believer need not access, such as the reliability of the process producing the belief. A thermometer-like reliable process may yield knowledge even if the believer cannot explain why.",
+    "Further views. Contextualism says the standards for \"knows\" vary with the conversational context: in a casual chat \"I know the bank is open\" may be fine, but with high stakes we demand more. Virtue epistemology treats knowledge as success from intellectual virtue (competence). Bayesian epistemology models belief as degrees of credence updated by conditionalisation. Social epistemology studies testimony, expert authority and group knowledge: most of what we know comes from others, so trust and reliability of sources are central, and so are problems such as echo chambers and epistemic injustice.",
+    "Puzzles: the lottery paradox (for a 1000-ticket lottery you can be 99.9% sure each ticket loses, yet certain that some ticket wins, so full belief in each cannot all be rational), the regress of justification, and scepticism. Memory is a source with limits: reconstruction means false memories can feel vivid, and confidence is only weakly related to accuracy, which matters for eyewitness testimony. Responsible believers calibrate confidence to evidence and remain open to revision."
+   ],
+   "example": {
+    "q": "In a 1000-ticket fair lottery, what is the probability that a given ticket loses, and why is the lottery paradox puzzling?",
+    "steps": [
+     "One ticket wins, so P(loses) = 999/1000 = 0.999.",
+     "For each ticket, it seems rational to believe it will lose.",
+     "But then you believe all tickets lose, contradicting your belief that one wins."
+    ],
+    "a": "0.999; high probability alone does not seem enough for outright belief or knowledge."
+   },
+   "analogies": {
+    "city": "You trust a map made by surveyors you will never meet (testimony).",
+    "tech": "A search engine ranks sources; relying on it is reliance on others' reliability.",
+    "nature": "A bird navigates by reliable magnetic sense without being able to explain it (an externalist analogy)."
+   },
+   "mnemonic": "Inside the head, or out in the world: where does justification lie?",
+   "terms": [
+    [
+     "Internalism",
+     "Justification depends on factors accessible to the believer."
+    ],
+    [
+     "Externalism",
+     "Justification can depend on factors outside the believer's awareness, such as reliability."
+    ],
+    [
+     "Contextualism",
+     "The standards for knowledge claims vary with context."
+    ],
+    [
+     "Credence",
+     "A degree of belief between 0 and 1."
+    ]
+   ],
+   "misc": {
+    "wrong": "Knowledge is just whatever is true and sincerely believed.",
+    "right": "Most accounts require something more: justification, reliability, or competence that links belief to truth."
+   },
+   "limits": "The theories compete and each faces counterexamples; there is no consensus analysis of knowledge or justification.",
+   "trip": {
+    "wiki": "Internalism and externalism",
+    "prompt": "Find the main arguments for and against each view."
+   },
+   "sources": [
+    "Internalism and externalism",
+    "Contextualism",
+    "Social epistemology"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "An externalist about justification would say a belief can be justified if...",
+     "o": [
+      "It comes from a reliable process",
+      "The believer can recite a full proof of it",
+      "It is popular among a large number of people",
+      "It is very old and has been believed a long time"
+     ],
+     "a": 0,
+     "why": "Reliability may suffice even without access.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Internalism emphasises...",
+     "o": [
+      "Factors accessible to the believer",
+      "Factors outside the believer's awareness",
+      "The social status of the believer",
+      "Chance events that the believer cannot see"
+     ],
+     "a": 0,
+     "why": "Justification is tied to reflection.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Contextualism holds that...",
+     "o": [
+      "Standards for \"knows\" vary with context",
+      "Knowledge is impossible in every context",
+      "Truth changes whenever people change their opinion",
+      "Belief is irrelevant to whether someone knows"
+     ],
+     "a": 0,
+     "why": "Higher stakes raise standards.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "In a fair 500-ticket lottery with one winner, what is the probability that a given ticket loses? Give a decimal.",
+     "a": 0.998,
+     "tol": 0.0005,
+     "why": "499 ÷ 500 = 0.998.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The lottery paradox suggests that...",
+     "o": [
+      "High probability may not suffice for outright belief or knowledge",
+      "Lotteries are unfair to those who buy tickets",
+      "Probabilities are meaningless when applied to belief",
+      "Evidence is worthless when the odds are very large"
+     ],
+     "a": 0,
+     "why": "Believing every ticket loses conflicts with knowing one wins.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Social epistemology highlights that...",
+     "o": [
+      "Much knowledge depends on trusting others",
+      "Individuals can know everything on their own",
+      "Testimony from others is useless as a source",
+      "Knowledge is private to each individual mind"
+     ],
+     "a": 0,
+     "why": "We depend on testimony.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a witness's confidence an imperfect guide to accuracy?",
+     "o": [
+      "Memory is reconstructive and confidence can persist when memory is wrong",
+      "Witnesses always lie when they are under pressure",
+      "Confidence is an exact measure of accuracy",
+      "Memory is a perfect recording of what happened"
+     ],
+     "a": 0,
+     "why": "Vivid does not mean accurate.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each theory to its core claim.",
+     "pairs": [
+      [
+       "Virtue epistemology",
+       "Knowledge is success from intellectual competence"
+      ],
+      [
+       "Bayesian epistemology",
+       "Belief comes in degrees updated by evidence"
+      ],
+      [
+       "Reliabilism",
+       "Justification comes from reliable processes"
+      ]
+     ],
+     "why": "Different accounts of knowledge.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the epistemic steps in order for relying on a testimonial source.",
+     "items": [
+      "Identify the source and its competence",
+      "Check for independent corroboration",
+      "Weigh conflicts of interest",
+      "Set your credence accordingly"
+     ],
+     "why": "Source, corroboration, bias, credence.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why an echo chamber can reduce knowledge even if each member reports honestly.",
+     "rubric": [
+      [
+       "same",
+       "similar",
+       "agree",
+       "repeat",
+       "echo",
+       "view",
+       "one"
+      ],
+      [
+       "independent",
+       "diversity",
+       "different",
+       "corroborat",
+       "evidence",
+       "illusion",
+       "confidence",
+       "amplif",
+       "not separate",
+       "limited"
+      ]
+     ],
+     "min": 2,
+     "model": "Members repeat the same views, so agreement looks like independent confirmation when it is not, which inflates confidence and shields beliefs from challenge.",
+     "why": "Dependence undermines corroboration.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A person has a reliable perceptual system but no idea why. Internalists would say...",
+     "o": [
+      "Her belief may lack justification because she cannot access reasons",
+      "She definitely knows, because her perception works well",
+      "She has no belief, since she cannot give reasons",
+      "Reliability is irrelevant to every philosopher"
+     ],
+     "a": 0,
+     "why": "Access matters for internalists.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the lottery paradox challenge the idea that knowledge is just high probability?",
+     "rubric": [
+      [
+       "each",
+       "every",
+       "all",
+       "ticket"
+      ],
+      [
+       "lose",
+       "one wins",
+       "contradict",
+       "inconsistent",
+       "probab",
+       "high",
+       "know",
+       "cannot know",
+       "not enough"
+      ]
+     ],
+     "min": 2,
+     "model": "If high probability sufficed for knowing, we would know of each ticket that it loses, and so know that all lose, yet we know one wins, which is contradictory.",
+     "why": "Probability and knowledge differ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best response to widely shared claims without independent sources?",
+     "o": [
+      "Seek independent evidence and calibrate confidence",
+      "Believe them because so many people hold them",
+      "Reject them all without checking any",
+      "Share them widely to see what people say"
+     ],
+     "a": 0,
+     "why": "Popularity is not corroboration.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Epistemological theories",
+    "model": "Internalists tie justification to what a believer can access; externalists allow reliable processes. Contextualism says standards vary with context. Virtue and Bayesian accounts, social epistemology and the lottery paradox show that knowledge is more than high probability. Memory is fallible and confidence is not accuracy.",
+    "points": [
+     {
+      "k": [
+       "internal",
+       "extern",
+       "reliab"
+      ],
+      "ask": "What is the internalism-externalism debate?"
+     },
+     {
+      "k": [
+       "context",
+       "stakes"
+      ],
+      "ask": "Do standards for knowing change?"
+     },
+     {
+      "k": [
+       "lottery",
+       "probab",
+       "not enough"
+      ],
+      "ask": "Is high probability knowledge?"
+     },
+     {
+      "k": [
+       "memory",
+       "confiden",
+       "testimony",
+       "trust"
+      ],
+      "ask": "How reliable are memory and testimony?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Advanced scientific inference",
+   "icon": "🔭",
+   "hook": "A theory predicts something, and the experiment disagrees. Is the theory dead, or could something else be wrong?",
+   "explain": [
+    "Philosophers disagree about how science works. Popper held that scientific theories must be falsifiable: bold conjectures that risk refutation, with science progressing by eliminating errors. Kuhn argued that \"normal science\" works within a paradigm until anomalies accumulate and cause a revolution. Lakatos described research programmes with a hard core protected by auxiliary hypotheses. The Duhem–Quine thesis points out that tests involve bundles of hypotheses (the theory plus assumptions about instruments), so a failed prediction does not by logic alone tell which part is wrong. Underdetermination: different theories can fit the same data.",
+    "Statistical inference. Frequentist methods ask how often a procedure would err in repeated use (p-values, confidence intervals). Bayesian methods update probability of hypotheses given data. The likelihood ratio compares how well two hypotheses predict the data: with 8 heads in 10 tosses, the likelihood under p = 0.5 is 45/1024 ≈ 0.0439 and under p = 0.8 is 45 × 0.8⁸ × 0.2² ≈ 0.302, a ratio of about 6.9 favouring p = 0.8. A 95% confidence interval for a mean with known standard deviation σ and sample size n is approximately mean ± 1.96 σ/√n.",
+    "Good practice and its pitfalls: statistical power (probability of detecting a real effect) matters, since low-powered studies produce unreliable positive results; p-hacking and flexible analysis inflate false positives; pre-registration and replication improve reliability. Inference to the best explanation guides theory choice by virtues such as accuracy, scope, simplicity and consistency, but there is no algorithm for weighing them. Correlation analysis needs causal models, and models themselves are idealisations: \"all models are wrong, but some are useful\" (a saying attributed to the statistician George Box)."
+   ],
+   "example": {
+    "q": "A sample of n = 25 has σ = 10 known and mean 50. What is the approximate 95% confidence interval?",
+    "steps": [
+     "Standard error = σ/√n = 10/5 = 2.",
+     "Margin = 1.96 × 2 = 3.92.",
+     "Interval: 50 ± 3.92, which is 46.08 to 53.92."
+    ],
+    "a": "About 46.1 to 53.9"
+   },
+   "analogies": {
+    "nature": "Astronomers found Neptune after anomalies in Uranus's orbit: they blamed an unseen planet, not Newton's law, an auxiliary hypothesis choice.",
+    "tech": "A failing test in software could be a bug in the code or in the test; the bundle of assumptions matters.",
+    "sport": "A new training method fails in a trial; was it the method, the measurement or the sample?"
+   },
+   "mnemonic": "Test the bundle, not just the bolt: the theory travels with its assumptions.",
+   "terms": [
+    [
+     "Falsifiability",
+     "The property that a theory could in principle be shown false by observation."
+    ],
+    [
+     "Paradigm",
+     "A framework of shared assumptions and methods in a scientific field (Kuhn)."
+    ],
+    [
+     "Underdetermination",
+     "Different theories can fit the same evidence."
+    ],
+    [
+     "Statistical power",
+     "The probability of detecting a real effect of a given size."
+    ]
+   ],
+   "misc": {
+    "wrong": "A failed prediction automatically refutes a theory.",
+    "right": "Predictions depend on auxiliary assumptions, so scientists must decide where to place the blame (Duhem–Quine)."
+   },
+   "limits": "Philosophers of science still debate whether science progresses by falsification, paradigms, research programmes or something else, and Bayesian and frequentist statisticians disagree on foundations.",
+   "trip": {
+    "wiki": "Philosophy of science",
+    "prompt": "Compare Popper's and Kuhn's accounts."
+   },
+   "sources": [
+    "Falsifiability",
+    "Duhem–Quine thesis",
+    "Statistical power"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Popper's criterion for scientific theories is...",
+     "o": [
+      "Falsifiability",
+      "Popularity among scientists",
+      "Beauty and elegance of the theory",
+      "Certainty that the theory is true"
+     ],
+     "a": 0,
+     "why": "A theory must risk refutation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does Kuhn call the framework of shared assumptions in normal science?",
+     "o": [
+      "A paradigm",
+      "A hypothesis",
+      "A control",
+      "A prior"
+     ],
+     "a": 0,
+     "why": "Anomalies can trigger a paradigm shift.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The Duhem–Quine thesis says that...",
+     "o": [
+      "Tests involve bundles of hypotheses, so refutation is not clean",
+      "Theories can never be tested by anyone",
+      "Experiments are meaningless in science",
+      "All theories turn out to be true in the end"
+     ],
+     "a": 0,
+     "why": "Auxiliary assumptions share the blame.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Heads in 10 tosses: 8. Compute the likelihood ratio for p = 0.8 versus p = 0.5 (likelihood at 0.8 ≈ 0.302; at 0.5 = 45/1024). Give the ratio to one decimal.",
+     "a": 6.9,
+     "tol": 0.15,
+     "why": "0.302 ÷ 0.0439 ≈ 6.9.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A sample with n = 100, σ = 20 and mean 70. What is the margin of error for an approximate 95% interval (1.96 × σ/√n)?",
+     "a": 3.92,
+     "tol": 0.02,
+     "why": "σ/√n = 2, and 1.96 × 2 = 3.92.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Low statistical power means...",
+     "o": [
+      "Real effects are often missed and positive findings are less reliable",
+      "Results are always true when a test is run",
+      "Samples are too large to be useful",
+      "p-values are exact in every case"
+     ],
+     "a": 0,
+     "why": "Low power also inflates effect size estimates of significant results.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Underdetermination implies that...",
+     "o": [
+      "Several theories may fit the same data",
+      "Data is useless for choosing between theories",
+      "There is only one theory that can fit",
+      "Experiments are impossible in such cases"
+     ],
+     "a": 0,
+     "why": "Evidence may not pick a single theory.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which practice reduces p-hacking?",
+     "o": [
+      "Pre-registering analyses",
+      "Trying many analyses and reporting the best",
+      "Dropping inconvenient data",
+      "Waiting for significance"
+     ],
+     "a": 0,
+     "why": "Pre-registration fixes the plan in advance.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each thinker or idea to its claim.",
+     "pairs": [
+      [
+       "Popper",
+       "Science advances by trying to refute bold conjectures"
+      ],
+      [
+       "Kuhn",
+       "Normal science is punctuated by paradigm shifts"
+      ],
+      [
+       "Lakatos",
+       "Research programmes with a protected hard core"
+      ]
+     ],
+     "why": "Three accounts of scientific change.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a failed prediction does not by itself tell scientists which part of a theory is wrong.",
+     "rubric": [
+      [
+       "auxiliary",
+       "assumption",
+       "assumptions",
+       "bundle",
+       "instrument",
+       "conditions",
+       "other",
+       "several",
+       "background"
+      ],
+      [
+       "blame",
+       "which",
+       "tell",
+       "logic",
+       "cannot",
+       "part",
+       "hypothes",
+       "also",
+       "could",
+       "measurement",
+       "wrong"
+      ]
+     ],
+     "min": 2,
+     "model": "The prediction depends on the theory together with auxiliary assumptions about instruments and conditions, so the failure may lie in any of them (Duhem–Quine).",
+     "why": "The test applies to the whole bundle.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A study with low power finds a significant effect. What should you expect on replication?",
+     "o": [
+      "A smaller effect, or none, is quite possible",
+      "Exactly the same effect, down to the last detail",
+      "A larger effect than the first study found",
+      "A certain success on every attempt"
+     ],
+     "a": 0,
+     "why": "Winner's curse and false positives.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare a frequentist confidence interval with a Bayesian credible interval in interpretation.",
+     "rubric": [
+      [
+       "frequentist",
+       "confidence",
+       "procedure",
+       "repeated",
+       "long run",
+       "repeat",
+       "long-run"
+      ],
+      [
+       "bayesian",
+       "credible",
+       "probability",
+       "hypothesis",
+       "belief",
+       "given the data",
+       "posterior"
+      ]
+     ],
+     "min": 2,
+     "model": "A frequentist 95% confidence interval comes from a procedure that captures the true value in 95% of repeated samples, while a Bayesian credible interval states the posterior probability that the parameter lies in the interval given the data and prior.",
+     "why": "Different meaning of probability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Neptune was predicted from anomalies in Uranus's orbit. What does this show about auxiliary assumptions?",
+     "o": [
+      "Scientists can revise an auxiliary hypothesis and keep the theory",
+      "Newton's theory was simply refuted by the data",
+      "Anomalies are always errors and can be ignored",
+      "Observations are useless in testing theories"
+     ],
+     "a": 0,
+     "why": "Sometimes the correct response to an anomaly is a new auxiliary hypothesis.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced scientific inference",
+    "model": "Popper stressed falsifiability, Kuhn paradigms, Lakatos research programmes. Duhem–Quine says tests involve bundles of assumptions, and data may underdetermine theory. Use likelihood ratios, intervals, power, pre-registration and replication to reduce errors.",
+    "points": [
+     {
+      "k": [
+       "falsif",
+       "popper",
+       "refute"
+      ],
+      "ask": "What is falsifiability?"
+     },
+     {
+      "k": [
+       "paradigm",
+       "kuhn",
+       "revolution"
+      ],
+      "ask": "How does science change?"
+     },
+     {
+      "k": [
+       "auxiliary",
+       "assumption",
+       "bundle",
+       "duhem"
+      ],
+      "ask": "Why is refutation not clean?"
+     },
+     {
+      "k": [
+       "power",
+       "replicat",
+       "p-hack",
+       "pre-regist"
+      ],
+      "ask": "How do we make results reliable?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Decision theory",
+   "icon": "⚖️",
+   "hook": "Would you prefer a sure 36 coins or a coin flip for 100 or 0? Does your answer match the one with the higher expected value?",
+   "explain": [
+    "Decision theory studies rational choice under uncertainty. Expected value (EV) is the probability-weighted average payoff. Expected utility theory (von Neumann and Morgenstern) says that if preferences satisfy certain axioms (completeness, transitivity, continuity, independence), then a decision maker acts as if maximising the expected value of a utility function u. If u is concave (like u(x) = √x), the person is risk averse.",
+    "Example: a gamble gives 100 with probability 0.5 and 0 otherwise. EV = 50. With u(x) = √x, expected utility = 0.5 × 10 + 0.5 × 0 = 5, equal to the utility of the certain amount 25 (since √25 = 5). The certainty equivalent is 25, so a sure 36 (utility 6) is preferred to the gamble. The St Petersburg paradox (a game with infinite expected payoff that nobody would pay much for) motivated diminishing marginal utility.",
+    "Descriptive findings contradict the axioms. In the Allais paradox people prefer a sure thing in one framing and a risky option in a logically equivalent one, violating independence. Prospect theory (Kahneman and Tversky) describes reference dependence, loss aversion (losses loom larger than equal gains, roughly by a factor of two) and probability weighting. Value of information: the expected value of perfect information (EVPI) is the gain from knowing the state before choosing. Normative theory tells us how to choose well given our values, but cannot say what to value; interpersonal comparisons and moral uncertainty remain debated."
+   ],
+   "example": {
+    "q": "State 1 (p = 0.5): A pays 100, B pays 40. State 2 (p = 0.5): A pays 0, B pays 40. Compute the expected value of perfect information.",
+    "steps": [
+     "Without information: EV(A) = 50, EV(B) = 40, so choose A with 50.",
+     "With perfect information: in state 1 pick A (100), in state 2 pick B (40): 0.5 × 100 + 0.5 × 40 = 70.",
+     "EVPI = 70 − 50 = 20."
+    ],
+    "a": "20"
+   },
+   "analogies": {
+    "farm": "A farmer values a guaranteed modest crop more than a gamble with a higher average because a failed season could be ruinous.",
+    "sport": "A team chooses a safe draw instead of a risky attack when the cost of defeat is high.",
+    "tech": "A company pays for a pilot study to learn about demand before launching."
+   },
+   "mnemonic": "Utility bends, gain and loss are not mirror images, and information has a price.",
+   "terms": [
+    [
+     "Expected utility",
+     "The probability-weighted average of utilities of outcomes."
+    ],
+    [
+     "Certainty equivalent",
+     "The sure amount valued the same as a gamble."
+    ],
+    [
+     "Loss aversion",
+     "Losses weigh more heavily than equal-sized gains."
+    ],
+    [
+     "EVPI",
+     "Expected value of perfect information."
+    ]
+   ],
+   "misc": {
+    "wrong": "A rational person must always maximise expected money.",
+    "right": "Utility can be concave in money, so risk aversion can be rational, and money is not the only value."
+   },
+   "limits": "Whether the axioms of expected utility are requirements of rationality or only descriptive simplifications is debated, as is how to treat unknown probabilities.",
+   "trip": {
+    "wiki": "Expected utility hypothesis",
+    "prompt": "Find the St Petersburg paradox and how it was resolved."
+   },
+   "sources": [
+    "Expected utility hypothesis",
+    "Prospect theory",
+    "Allais paradox"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "If u(x) = √x, what does concavity imply?",
+     "o": [
+      "Risk aversion",
+      "Risk seeking",
+      "Indifference to risk",
+      "No preferences"
+     ],
+     "a": 0,
+     "why": "Concave utility favours sure amounts.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "With u(x) = √x, what is the expected utility of a gamble paying 100 or 0 with equal chances?",
+     "a": 5,
+     "tol": 0,
+     "why": "0.5 × 10 + 0.5 × 0 = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the certainty equivalent (in coins) of that gamble with u(x) = √x?",
+     "a": 25,
+     "tol": 0,
+     "unit": "coins",
+     "why": "√c = 5 gives c = 25.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which does loss aversion describe?",
+     "o": [
+      "Losses hurt more than equal gains please",
+      "Gains hurt more than losses of the same size",
+      "Losses are ignored when we decide",
+      "Gains and losses feel exactly equal in size"
+     ],
+     "a": 0,
+     "why": "It is central to prospect theory.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The St Petersburg paradox motivated...",
+     "o": [
+      "Diminishing marginal utility",
+      "Bayes' theorem for updating beliefs",
+      "The Nash equilibrium of a game",
+      "The idea of loss aversion in choice"
+     ],
+     "a": 0,
+     "why": "A finite price despite infinite EV.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which axiom is violated by the Allais paradox choices?",
+     "o": [
+      "Independence",
+      "Completeness",
+      "Transitivity of identity",
+      "Continuity of time"
+     ],
+     "a": 0,
+     "why": "The pattern conflicts with the independence axiom.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Without information the best option has EV 60. With perfect information the expected payoff would be 85. What is the EVPI?",
+     "a": 25,
+     "tol": 0,
+     "why": "85 − 60 = 25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why would a firm not pay more than the EVPI for any information?",
+     "o": [
+      "Information cannot be worth more than perfect information",
+      "Information is always free to obtain",
+      "Information is always worth less than half the EVPI",
+      "The EVPI is a negative number"
+     ],
+     "a": 0,
+     "why": "Perfect information is the upper bound.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its meaning.",
+     "pairs": [
+      [
+       "Certainty equivalent",
+       "Sure amount equal in value to a gamble"
+      ],
+      [
+       "Reference dependence",
+       "Outcomes judged as gains or losses relative to a point"
+      ],
+      [
+       "Independence axiom",
+       "Common outcomes should not change preferences"
+      ]
+     ],
+     "why": "Key concepts.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why risk aversion can be rational even when a gamble has a higher expected value.",
+     "rubric": [
+      [
+       "utility",
+       "value",
+       "worth",
+       "diminishing",
+       "concave",
+       "marginal"
+      ],
+      [
+       "ruin",
+       "lose",
+       "loss",
+       "survive",
+       "one-off",
+       "need",
+       "essential",
+       "sure",
+       "safe",
+       "risk",
+       "matter",
+       "bankrupt"
+      ]
+     ],
+     "min": 2,
+     "model": "The extra money from a win may add less utility than the loss costs, especially if a loss threatens essentials, so a sure outcome can have higher expected utility than the gamble.",
+     "why": "Utility is not linear in money.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Option A: 80 sure. Option B: 50% chance of 200, 50% of 0. With u(x) = √x which gives higher expected utility?",
+     "o": [
+      "A, since √80 ≈ 8.94 beats 0.5 × √200 ≈ 7.07",
+      "B, since its expected value is higher in money",
+      "They are equal, since both have the same expected value",
+      "The comparison cannot be computed from this"
+     ],
+     "a": 0,
+     "why": "EU(A) = 8.94; EU(B) = 0.5 × 14.14 = 7.07.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can framing the same options as gains or as losses change choices, and what does this imply for rational choice theory?",
+     "rubric": [
+      [
+       "frame",
+       "framing",
+       "wording",
+       "reference",
+       "gains",
+       "losses",
+       "present"
+      ],
+      [
+       "same",
+       "equivalent",
+       "should not",
+       "inconsistent",
+       "descriptive",
+       "violate",
+       "axiom",
+       "invariance",
+       "irrational",
+       "normative"
+      ]
+     ],
+     "min": 2,
+     "model": "People respond differently to equivalent descriptions, violating the principle that equivalent options should be treated the same, so actual choice departs from the normative theory.",
+     "why": "Framing violates invariance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A decision maker has unknown probabilities. Which is true?",
+     "o": [
+      "Expected utility needs probabilities, so other rules such as maximin may be considered",
+      "Expected value always applies, however unclear the odds",
+      "No decision is possible without probabilities",
+      "The probabilities are always known in real life"
+     ],
+     "a": 0,
+     "why": "Ellsberg-type ambiguity complicates things.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Decision theory",
+    "model": "Expected utility theory says rational agents maximise expected utility. Concave utility explains risk aversion; the certainty equivalent measures it. Prospect theory describes loss aversion and framing. The expected value of perfect information bounds what information is worth.",
+    "points": [
+     {
+      "k": [
+       "utility",
+       "expected",
+       "probab"
+      ],
+      "ask": "What do rational agents maximise?"
+     },
+     {
+      "k": [
+       "concave",
+       "risk averse",
+       "certainty equivalent"
+      ],
+      "ask": "Why can people prefer a sure thing?"
+     },
+     {
+      "k": [
+       "loss aversion",
+       "framing",
+       "prospect",
+       "allais"
+      ],
+      "ask": "How do real people differ?"
+     },
+     {
+      "k": [
+       "information",
+       "evpi",
+       "perfect"
+      ],
+      "ask": "What is information worth?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Advanced game theory",
+   "icon": "🎭",
+   "hook": "In matching pennies, one player wants to match and the other wants to mismatch. Is there any stable pure strategy?",
+   "explain": [
+    "Beyond dominant strategies, games can have Nash equilibria in mixed strategies, where players randomise. In matching pennies there is no pure equilibrium, since whoever is being outguessed wants to switch. The unique equilibrium has each player choose heads with probability 1/2, making the opponent indifferent. Nash proved that every finite game has at least one equilibrium in mixed strategies.",
+    "Coordination games have multiple equilibria. In Battle of the Sexes the payoffs are (2,1) if both choose Opera, (1,2) if both choose Fight, and 0 otherwise. Besides two pure equilibria there is a mixed one where the row player chooses Opera with probability 2/3 (making the column player indifferent: p × 1 = (1 − p) × 2 gives p = 2/3). The stag hunt contrasts a risk-dominant safe option with a payoff-dominant cooperative option.",
+    "Dynamic games use extensive form and backward induction. In the ultimatum game with a pot of 10 divided in whole units, backward induction predicts the proposer offers the minimum positive amount and the responder accepts; experiments show people often reject low offers, so models include fairness. Subgame-perfect equilibrium refines Nash by requiring optimal play in every subgame, removing non-credible threats. In repeated games, cooperation can be sustained: with grim trigger in a prisoner's dilemma with payoffs T = 5, R = 3, P = 1, S = 0, cooperation holds if the discount factor δ ≥ (T − R)/(T − P) = 0.5. The folk theorem says many outcomes can be equilibria in infinitely repeated games. Evolutionary game theory replaces rationality with selection: an evolutionarily stable strategy resists invasion."
+   ],
+   "example": {
+    "q": "Derive the discount factor threshold for grim-trigger cooperation with T = 5, R = 3, P = 1.",
+    "steps": [
+     "Cooperating forever: 3/(1 − δ).",
+     "Defecting now then mutual defection: 5 + δ × 1/(1 − δ).",
+     "Cooperate if 3 ≥ 5(1 − δ) + δ = 5 − 4δ, which gives δ ≥ 0.5."
+    ],
+    "a": "δ ≥ 0.5"
+   },
+   "analogies": {
+    "sport": "A penalty taker and goalkeeper mix their choices of corner so as not to be predictable.",
+    "city": "Two firms deciding on a standard (like a plug type) face a coordination game.",
+    "nature": "Animals contesting a resource can follow stable mixes of aggressive and peaceful behaviour (evolutionarily stable strategies)."
+   },
+   "mnemonic": "Mix to be unreadable, chain to be credible, wait to be kind.",
+   "terms": [
+    [
+     "Mixed strategy",
+     "A strategy that randomises over actions with set probabilities."
+    ],
+    [
+     "Backward induction",
+     "Solving a sequential game from the last move backwards."
+    ],
+    [
+     "Subgame-perfect equilibrium",
+     "An equilibrium that is a Nash equilibrium in every subgame."
+    ],
+    [
+     "ESS",
+     "A strategy that cannot be invaded by a rare mutant strategy."
+    ]
+   ],
+   "misc": {
+    "wrong": "Nash equilibria are always the best outcomes for the players.",
+    "right": "Equilibria can be bad for all, as in the prisoner's dilemma, and a game can have several."
+   },
+   "limits": "Real behaviour often departs from equilibrium predictions, and the models assume known payoffs and common knowledge of rationality, which are strong assumptions.",
+   "trip": {
+    "wiki": "Nash equilibrium",
+    "prompt": "Find examples of mixed-strategy equilibria."
+   },
+   "sources": [
+    "Nash equilibrium",
+    "Subgame perfect equilibrium",
+    "Evolutionarily stable strategy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In matching pennies, the mixed-strategy equilibrium is...",
+     "o": [
+      "Each plays heads with probability 1/2",
+      "Both players always play heads",
+      "No equilibrium exists in this game",
+      "The matcher always plays tails"
+     ],
+     "a": 0,
+     "why": "Randomising at 1/2 makes the opponent indifferent.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "In Battle of the Sexes with payoffs (2,1) at (Opera,Opera), (1,2) at (Fight,Fight) and 0 otherwise, the row player picks Opera with probability p so that the column player is indifferent. What is p? Give a decimal to two places.",
+     "a": 0.67,
+     "tol": 0.01,
+     "why": "Column payoff of Opera: p × 1; of Fight: (1 − p) × 2. Equal at p = 2/3 ≈ 0.67.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For a prisoner's dilemma with T = 5, R = 3, P = 1, S = 0, what is the minimum discount factor for grim-trigger cooperation, (T − R)/(T − P)?",
+     "a": 0.5,
+     "tol": 0,
+     "why": "(5 − 3) ÷ (5 − 1) = 0.5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does backward induction require?",
+     "o": [
+      "Solving from the last move back to the first",
+      "Randomising each move at the start of the game",
+      "Ignoring the later moves of the game",
+      "Making sure that all payoffs are equal"
+     ],
+     "a": 0,
+     "why": "Each earlier move anticipates later play.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A threat that would hurt the threatener to carry out is...",
+     "o": [
+      "Non-credible, and removed by subgame perfection",
+      "Always effective, since it scares the other player",
+      "A mixed strategy used by the threatener",
+      "A dominant strategy for the threatener"
+     ],
+     "a": 0,
+     "why": "Subgame-perfect play excludes it.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Nash proved that every finite game has...",
+     "o": [
+      "At least one equilibrium in mixed strategies",
+      "A dominant strategy for every player",
+      "A pure strategy equilibrium without any mixing",
+      "A single unique equilibrium, and only one"
+     ],
+     "a": 0,
+     "why": "Existence is guaranteed with mixing.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In the ultimatum game, why do real responders often reject low offers?",
+     "o": [
+      "Fairness concerns matter beyond money",
+      "They misread the rules of the game",
+      "They actually want to receive less money",
+      "Their choices are random and have no pattern"
+     ],
+     "a": 0,
+     "why": "Payoffs include more than money.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The folk theorem implies that in infinitely repeated games...",
+     "o": [
+      "Many outcomes, including cooperation, can be equilibria",
+      "Only defection is possible as an outcome",
+      "There is no equilibrium at all",
+      "Players cannot ever punish each other"
+     ],
+     "a": 0,
+     "why": "Patience supports cooperation.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Zero-sum game",
+       "One player's gain is the other's loss"
+      ],
+      [
+       "Coordination game",
+       "Players gain by choosing matching actions"
+      ],
+      [
+       "Mixed strategy",
+       "Randomising between actions"
+      ]
+     ],
+     "why": "Game types.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a penalty taker should randomise rather than always shoot to the same corner.",
+     "rubric": [
+      [
+       "predict",
+       "predictable",
+       "guess",
+       "anticipate",
+       "know",
+       "read",
+       "exploit"
+      ],
+      [
+       "random",
+       "mix",
+       "vary",
+       "unpredictable",
+       "goalkeeper",
+       "keeper",
+       "dive",
+       "save",
+       "equilibrium"
+      ]
+     ],
+     "min": 2,
+     "model": "If the taker is predictable the goalkeeper can exploit it by diving that way, so mixing makes it impossible to anticipate and is the equilibrium logic in a zero-sum game.",
+     "why": "Predictability is exploitable.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In a one-shot ultimatum game with pot 10 and whole-unit offers, backward induction (self-interested players) predicts the offer is...",
+     "o": [
+      "1",
+      "5",
+      "0",
+      "10"
+     ],
+     "a": 0,
+     "why": "The responder accepts any positive amount, so the proposer offers the minimum positive.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might cooperation emerge in a repeated prisoner's dilemma but not in a one-shot version?",
+     "rubric": [
+      [
+       "future",
+       "repeat",
+       "repeated",
+       "again",
+       "next",
+       "long-term",
+       "retaliat",
+       "punish",
+       "reputation",
+       "shadow"
+      ],
+      [
+       "cooperat",
+       "defect",
+       "betray",
+       "gain",
+       "cost",
+       "trust",
+       "pays",
+       "worth",
+       "tit-for-tat",
+       "trigger"
+      ]
+     ],
+     "min": 2,
+     "model": "In repeated play, defecting can be punished in future rounds and cooperation rewarded, so if players value the future enough, cooperating pays more than the one-time gain from defecting.",
+     "why": "Future consequences change incentives.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An evolutionarily stable strategy is one that...",
+     "o": [
+      "Cannot be invaded by a rare alternative",
+      "Is always the best outcome for the whole group",
+      "Uses only mixed strategies and never pure ones",
+      "Always wins against every other strategy"
+     ],
+     "a": 0,
+     "why": "Mutants do worse than the incumbent strategy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced game theory",
+    "model": "Mixed-strategy equilibria arise when no pure strategy is stable, as in matching pennies. Sequential games are solved by backward induction, and subgame perfection removes non-credible threats. Repeated games allow cooperation if players value the future enough, as the folk theorem states.",
+    "points": [
+     {
+      "k": [
+       "mixed",
+       "random",
+       "probab"
+      ],
+      "ask": "What is a mixed strategy?"
+     },
+     {
+      "k": [
+       "backward",
+       "sequential",
+       "subgame",
+       "credible"
+      ],
+      "ask": "How do I solve sequential games?"
+     },
+     {
+      "k": [
+       "repeat",
+       "future",
+       "discount",
+       "cooperat",
+       "folk"
+      ],
+      "ask": "How can cooperation be sustained?"
+     },
+     {
+      "k": [
+       "evolution",
+       "ess",
+       "invade"
+      ],
+      "ask": "What is an ESS?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Complex systems analysis",
+   "icon": "🌀",
+   "hook": "A tiny change in the starting value of a simple equation can produce completely different outcomes later. How can a simple rule produce such complex behaviour?",
+   "explain": [
+    "A complex system has many interacting components whose collective behaviour cannot be easily read off from the parts. Key features: emergence (system-level patterns not present in any component), nonlinearity (effects not proportional to causes), feedback and adaptation, and sensitivity to initial conditions. Examples include ecosystems, economies, the climate, the brain and the internet.",
+    "Simple rules can give complex behaviour. The logistic map x(n+1) = r x(n) (1 − x(n)) shows this. For r = 2.5 the value settles at x = 1 − 1/r = 0.6; for r = 3.2 it oscillates between two values; for r near 3.9 it behaves chaotically, with sensitive dependence: nearby starts diverge exponentially. Chaos is deterministic yet hard to predict long term. With r = 3.2 and x0 = 0.5: x1 = 3.2 × 0.25 = 0.8 and x2 = 3.2 × 0.8 × 0.2 = 0.512.",
+    "Networks matter: in a complete network of n nodes there are n(n − 1)/2 links, so connections grow faster than nodes. Many networks have hubs (heavy-tailed degree distributions), which makes them robust to random failure but vulnerable to targeted attack on hubs. Tipping points and hysteresis can make changes abrupt and hard to reverse. Reinforcing growth at a rate g per period doubles in about ln 2 / ln(1 + g) periods (roughly 70/g%). Because prediction is limited, analysts use models for understanding scenarios and robustness, not exact forecasts, and watch for early warning signals such as critical slowing down."
+   ],
+   "example": {
+    "q": "Use the logistic map with r = 3.2 and x0 = 0.5 to find x2.",
+    "steps": [
+     "x1 = 3.2 × 0.5 × 0.5 = 0.8.",
+     "x2 = 3.2 × 0.8 × (1 − 0.8) = 3.2 × 0.8 × 0.2.",
+     "x2 = 0.512."
+    ],
+    "a": "0.512"
+   },
+   "analogies": {
+    "nature": "Flocks of birds move in coordinated patterns from simple local rules without a leader (emergence).",
+    "city": "Traffic jams emerge from many drivers' small braking decisions.",
+    "tech": "Social networks spread information along hubs and links, so a few accounts have outsized reach."
+   },
+   "mnemonic": "Simple rules, many links, loops that bend: order and chaos can blend.",
+   "terms": [
+    [
+     "Emergence",
+     "System-level behaviour not found in individual parts."
+    ],
+    [
+     "Chaos",
+     "Deterministic dynamics with sensitive dependence on initial conditions."
+    ],
+    [
+     "Tipping point",
+     "A threshold beyond which the system shifts to a new state."
+    ],
+    [
+     "Hub",
+     "A node with many connections in a network."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a system is deterministic, long-term prediction is always possible.",
+    "right": "Chaotic systems are deterministic but tiny uncertainties grow exponentially, limiting prediction."
+   },
+   "limits": "Complexity science mixes rigorous mathematics with loose analogies, so claims should be checked for evidence and not just metaphor.",
+   "trip": {
+    "wiki": "Complex system",
+    "prompt": "Look for emergence and examples from nature and society."
+   },
+   "sources": [
+    "Complex system",
+    "Logistic map",
+    "Tipping point"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Emergence means...",
+     "o": [
+      "Collective patterns not present in the parts",
+      "Parts of a system disappearing over time",
+      "Random noise in the data",
+      "A single cause behind each pattern"
+     ],
+     "a": 0,
+     "why": "The whole shows new behaviour.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "For the logistic map with r = 2.5, what value is a fixed point (1 − 1/r)? Give a decimal.",
+     "a": 0.6,
+     "tol": 0.001,
+     "why": "1 − 1/2.5 = 1 − 0.4 = 0.6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Logistic map r = 3.2, x0 = 0.5. What is x2?",
+     "a": 0.512,
+     "tol": 0.001,
+     "why": "x1 = 0.8; x2 = 3.2 × 0.8 × 0.2 = 0.512.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How many links are in a complete network of 10 nodes?",
+     "o": [
+      "45",
+      "90",
+      "100",
+      "20"
+     ],
+     "a": 0,
+     "why": "Each pair is linked once: 10 × 9 ÷ 2 = 45.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A quantity grows 2% per period. About how many periods to double? Compute ln 2 / ln 1.02 and give the nearest whole number.",
+     "a": 35,
+     "tol": 1,
+     "unit": "periods",
+     "why": "0.6931 ÷ 0.0198 ≈ 35.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why are hub-dominated networks vulnerable?",
+     "o": [
+      "Removing hubs can fragment the network",
+      "Hubs never fail in any network",
+      "A random failure of any node is fatal",
+      "These networks have no links at all"
+     ],
+     "a": 0,
+     "why": "Targeted attacks matter.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Sensitive dependence on initial conditions means...",
+     "o": [
+      "Small differences grow rapidly",
+      "Nothing changes when conditions are altered",
+      "Systems behave in a totally random way",
+      "Models give exact predictions for ever"
+     ],
+     "a": 0,
+     "why": "This limits long-term prediction.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is chaos not the same as randomness?",
+     "o": [
+      "The rules are deterministic",
+      "It has no rules to follow",
+      "It is spread uniformly over all outcomes",
+      "It happens very slowly over time"
+     ],
+     "a": 0,
+     "why": "Chaotic systems follow exact rules.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to an example.",
+     "pairs": [
+      [
+       "Emergence",
+       "Flocking from simple local rules"
+      ],
+      [
+       "Tipping point",
+       "A lake shifting to an algae-dominated state"
+      ],
+      [
+       "Hub",
+       "An airport with many routes"
+      ]
+     ],
+     "why": "Complex-system ideas.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why do analysts use scenarios rather than point forecasts for complex systems?",
+     "rubric": [
+      [
+       "predict",
+       "forecast",
+       "uncertain",
+       "chaos",
+       "sensitive",
+       "limit",
+       "unpredict"
+      ],
+      [
+       "scenario",
+       "range",
+       "robust",
+       "possible",
+       "understand",
+       "explore",
+       "several",
+       "different",
+       "futures",
+       "plan"
+      ]
+     ],
+     "min": 2,
+     "model": "Small uncertainties grow in complex systems so exact long-term prediction is not possible, but scenarios explore a range of futures and help find robust strategies.",
+     "why": "Models guide understanding, not exact prediction.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A system shows slowing recovery from small disturbances. What might this signal?",
+     "o": [
+      "An approaching tipping point (critical slowing down)",
+      "A stable state with firm resilience",
+      "Randomness only, with no special cause",
+      "Nothing of any importance at all"
+     ],
+     "a": 0,
+     "why": "It is a proposed early warning signal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why adding nodes to a network can increase complexity faster than linearly.",
+     "rubric": [
+      [
+       "link",
+       "links",
+       "connection",
+       "connections",
+       "pairs",
+       "edges",
+       "interact"
+      ],
+      [
+       "square",
+       "quadratic",
+       "n(n",
+       "faster",
+       "grow",
+       "many more",
+       "combination",
+       "possible",
+       "increase"
+      ]
+     ],
+     "min": 2,
+     "model": "The number of possible links grows about with the square of the number of nodes, so each new node can interact with all the others and the interactions multiply.",
+     "why": "Connections scale as n squared.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a good use of a model of a complex system?",
+     "o": [
+      "Exploring how outcomes change under assumptions and shocks",
+      "Predicting exact future values for the system",
+      "Proving that the model itself is true",
+      "Avoiding the need to collect any data"
+     ],
+     "a": 0,
+     "why": "Models support understanding and stress tests.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex systems",
+    "model": "Complex systems show emergence, nonlinearity, feedback and sensitivity to starting conditions. Simple rules like the logistic map can give chaos. Networks have hubs and growing numbers of links. Tipping points and limits to prediction mean we use scenarios and look for early warnings.",
+    "points": [
+     {
+      "k": [
+       "emergen",
+       "collective",
+       "whole"
+      ],
+      "ask": "What is emergence?"
+     },
+     {
+      "k": [
+       "chaos",
+       "sensitive",
+       "initial"
+      ],
+      "ask": "Why can prediction fail?"
+     },
+     {
+      "k": [
+       "network",
+       "hub",
+       "link"
+      ],
+      "ask": "How do networks matter?"
+     },
+     {
+      "k": [
+       "tipping",
+       "scenario",
+       "early warning"
+      ],
+      "ask": "How do we plan?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Strategic forecasting",
+   "icon": "🔮",
+   "hook": "Forecasters say there is a 70% chance of an event. It does not happen. Were they wrong?",
+   "explain": [
+    "Strategic forecasting estimates future events to support decisions. A single probabilistic forecast cannot be judged right or wrong from one outcome; we assess forecasters over many predictions. Calibration means that of the events given 70%, about 70% happen. Resolution (or discrimination) means forecasts differ meaningfully from the base rate. A good forecaster is both calibrated and sharp.",
+    "The Brier score measures accuracy: the mean of (forecast − outcome)², where the outcome is 1 or 0. Lower is better; always saying 50% gives 0.25. For forecasts 0.9 (event occurred) and 0.3 (did not occur): (0.1² + 0.3²) ÷ 2 = (0.01 + 0.09) ÷ 2 = 0.05. Research by Philip Tetlock found that average experts were often only modestly better than simple benchmarks over long horizons, while some \"superforecasters\" achieved better accuracy through habits: start from base rates (the outside view, reference-class forecasting), break problems into parts (Fermi estimates), update in small steps on evidence, consider several perspectives, and keep score.",
+    "Methods include scenario planning (several coherent futures instead of one prediction), trend extrapolation with caution about regime changes, structured expert judgment (such as the Delphi method), prediction markets and aggregation (averaging independent forecasts usually beats most individuals). Limits: some systems are inherently unpredictable, rare events resist estimation, forecasts can change behaviour (self-fulfilling or self-defeating), and overconfidence and hindsight bias distort learning. Honest uncertainty ranges and clear definitions of what counts as the event improve usefulness."
+   ],
+   "example": {
+    "q": "Forecasts: 0.8 (event occurred), 0.6 (did not occur), 0.2 (did not occur), 0.9 (occurred). Compute the Brier score.",
+    "steps": [
+     "Squared errors: (0.8 − 1)² = 0.04; (0.6 − 0)² = 0.36; (0.2 − 0)² = 0.04; (0.9 − 1)² = 0.01.",
+     "Sum: 0.45.",
+     "Mean: 0.45 ÷ 4 = 0.1125."
+    ],
+    "a": "0.1125"
+   },
+   "analogies": {
+    "farm": "A farmer starts from the base rate of rainy seasons before adjusting for this year's signs.",
+    "sport": "A coach compares a team to all similar teams in the past rather than only its own story.",
+    "city": "A city council plans for three scenarios of population growth rather than one."
+   },
+   "mnemonic": "Start with the base, break it down, nudge with proof, keep score for the truth.",
+   "terms": [
+    [
+     "Calibration",
+     "Agreement between stated probabilities and actual frequencies."
+    ],
+    [
+     "Brier score",
+     "Mean squared error of probability forecasts; lower is better."
+    ],
+    [
+     "Reference class",
+     "A set of similar past cases used to set a base rate."
+    ],
+    [
+     "Scenario",
+     "A coherent story about how the future might unfold."
+    ]
+   ],
+   "misc": {
+    "wrong": "A forecaster who gave 70% to an event that did not happen was wrong.",
+    "right": "One outcome cannot judge a probability. Accuracy is judged over many forecasts by calibration and score."
+   },
+   "limits": "Evidence on the accuracy of experts and of superforecasters comes from particular tournaments, and what holds for geopolitics or years ahead may not hold elsewhere.",
+   "trip": {
+    "wiki": "Superforecasting",
+    "prompt": "Find the habits associated with accurate forecasting."
+   },
+   "sources": [
+    "Superforecasting",
+    "Brier score",
+    "Reference class forecasting"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Forecasts 0.9 (occurred) and 0.3 (did not occur). What is the Brier score?",
+     "a": 0.05,
+     "tol": 0.001,
+     "why": "(0.01 + 0.09) ÷ 2 = 0.05.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A forecaster always says 50% for events that each either happen or do not. What is the Brier score?",
+     "a": 0.25,
+     "tol": 0,
+     "why": "Each squared error is 0.5² = 0.25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A forecaster who is well calibrated at 70% will see...",
+     "o": [
+      "About 70% of those events happen",
+      "All of those events happen without fail",
+      "About 30% of those events happen",
+      "None of those events happen at all"
+     ],
+     "a": 0,
+     "why": "That is the definition of calibration.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the outside view?",
+     "o": [
+      "Starting from base rates of similar cases",
+      "Focusing on the unique details of this case only",
+      "Ignoring all history of similar cases",
+      "Making a plain guess without any data"
+     ],
+     "a": 0,
+     "why": "Reference classes anchor estimates.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is averaging many independent forecasts often effective?",
+     "o": [
+      "Errors partly cancel",
+      "It removes all uncertainty",
+      "It makes forecasts more extreme",
+      "It needs no data"
+     ],
+     "a": 0,
+     "why": "Aggregation reduces noise.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bank publishes a forecast that people then act on, changing the outcome. This is...",
+     "o": [
+      "Reflexivity (self-defeating or fulfilling prophecy)",
+      "Calibration of the forecaster's probabilities",
+      "Regression to the mean in the results",
+      "Survivorship bias among the forecasts"
+     ],
+     "a": 0,
+     "why": "Forecasts can alter behaviour.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A forecaster gave 80% to each of 50 independent events. If calibrated, about how many should occur?",
+     "o": [
+      "40",
+      "50",
+      "30",
+      "20"
+     ],
+     "a": 0,
+     "why": "0.8 × 50 = 40.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to its description.",
+     "pairs": [
+      [
+       "Delphi method",
+       "Structured rounds of anonymous expert estimates"
+      ],
+      [
+       "Scenario planning",
+       "Several coherent futures"
+      ],
+      [
+       "Fermi estimate",
+       "Break a quantity into rough parts"
+      ]
+     ],
+     "why": "Forecasting tools.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps in order for a good forecast.",
+     "items": [
+      "Define the event precisely",
+      "Find the base rate from a reference class",
+      "Adjust for specific evidence in small steps",
+      "Record and score the forecast"
+     ],
+     "why": "Define, anchor, adjust, score.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does scoring forecasts over time help forecasters improve?",
+     "rubric": [
+      [
+       "feedback",
+       "score",
+       "record",
+       "track",
+       "measure",
+       "learn",
+       "check",
+       "review"
+      ],
+      [
+       "overconfiden",
+       "calibrat",
+       "bias",
+       "improve",
+       "honest",
+       "hindsight",
+       "better",
+       "mistake",
+       "error",
+       "accuracy"
+      ]
+     ],
+     "min": 2,
+     "model": "Keeping score gives feedback that reveals overconfidence and miscalibration and prevents hindsight bias from rewriting what we predicted, so we can improve.",
+     "why": "Feedback closes the learning loop.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"There is a good chance\" a poor forecast?",
+     "o": [
+      "It is vague and cannot be scored or compared",
+      "It is too precise to be believable",
+      "It is always wrong when events happen",
+      "It uses numbers in an unclear way"
+     ],
+     "a": 0,
+     "why": "Words mean different probabilities to different people.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why starting from a base rate helps avoid overconfidence about a specific project's success.",
+     "rubric": [
+      [
+       "base rate",
+       "reference class",
+       "similar",
+       "past",
+       "history",
+       "outside view",
+       "typical",
+       "others"
+      ],
+      [
+       "most",
+       "often",
+       "usually",
+       "fail",
+       "overrun",
+       "optimis",
+       "unique",
+       "special",
+       "planning",
+       "average",
+       "delay"
+      ]
+     ],
+     "min": 2,
+     "model": "Similar past projects show how often plans succeed or overrun, which counters the tendency to think our case is special and be overly optimistic.",
+     "why": "The outside view tempers optimism.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a limit of forecasting?",
+     "o": [
+      "Some systems are inherently unpredictable beyond a horizon",
+      "Everything is predictable if there is enough data",
+      "Probabilities are not useful for forecasting",
+      "Models can never be tested against reality"
+     ],
+     "a": 0,
+     "why": "Chaos and rare events limit forecasts.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Strategic forecasting",
+    "model": "Forecasting is judged over many forecasts by calibration and score, not one outcome. Start from base rates, break problems into parts, update gradually, aggregate perspectives and keep score. Use scenarios for deep uncertainty. Some events are unpredictable, and forecasts can change behaviour.",
+    "points": [
+     {
+      "k": [
+       "base rate",
+       "reference",
+       "outside view"
+      ],
+      "ask": "Where do I start?"
+     },
+     {
+      "k": [
+       "calibrat",
+       "brier",
+       "score"
+      ],
+      "ask": "How are forecasts judged?"
+     },
+     {
+      "k": [
+       "update",
+       "evidence",
+       "aggregate",
+       "small"
+      ],
+      "ask": "How do I improve?"
+     },
+     {
+      "k": [
+       "scenario",
+       "uncertain",
+       "limit"
+      ],
+      "ask": "What are the limits?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Rational belief revision",
+   "icon": "🔄",
+   "hook": "New evidence contradicts something you firmly believe. How should you change your mind, and by how much?",
+   "explain": [
+    "Rational belief revision concerns how to update beliefs when evidence arrives. In the Bayesian account, beliefs are probabilities that should satisfy the probability axioms (coherence), and on learning evidence E for certain, you update by conditionalisation: P_new(H) = P(H | E). The justification for coherence includes Dutch book arguments: an agent with incoherent betting prices can be led to accept a set of bets that guarantees a loss. For example, pricing a 1-unit bet on A at 0.6 and on not-A at 0.6 (sum 1.2) means paying 1.2 for bets that together return exactly 1, a sure loss of 0.2.",
+    "Example of conditionalisation: P(H) = 0.3, P(E | H) = 0.8, P(E | not H) = 0.2. P(E) = 0.8 × 0.3 + 0.2 × 0.7 = 0.24 + 0.14 = 0.38. So P(H | E) = 0.24 ÷ 0.38 ≈ 0.632. If evidence is uncertain, Jeffrey conditionalisation generalises the rule. The AGM theory of belief revision (Alchourrón, Gärdenfors, Makinson) treats qualitative revision of belief sets with postulates such as minimal change and consistency. Calibration and avoiding extreme credences (0 or 1) keep you open to learning.",
+    "Disagreement among rational people: Aumann's agreement theorem says that ideally rational agents with common priors and common knowledge of their posteriors cannot agree to disagree; real disagreement involves different priors, private evidence, or limits of rationality, and the epistemology of peer disagreement debates whether to conciliate or hold firm. Practical habits: keep track of why you believe, set conditions that would change your mind in advance, change confidence in proportion to evidence strength, watch for motivated reasoning and backfire effects, and distinguish updating from social conformity. Memory limits matter here too: we misremember what we once believed (hindsight bias), so writing down predictions helps honest revision."
+   ],
+   "example": {
+    "q": "P(H) = 0.3, P(E | H) = 0.8, P(E | not H) = 0.2. Find P(H | E).",
+    "steps": [
+     "P(E) = 0.8 × 0.3 + 0.2 × 0.7 = 0.38.",
+     "P(H and E) = 0.24.",
+     "P(H | E) = 0.24 ÷ 0.38 ≈ 0.632."
+    ],
+    "a": "About 0.632"
+   },
+   "analogies": {
+    "sport": "A scout updates a rating after each match by an amount that matches how informative the match is.",
+    "tech": "A model updates its estimate of a user's preference with each click.",
+    "nature": "A scientist revises a hypothesis about a species' range after new field records."
+   },
+   "mnemonic": "Weigh by the proof, shift by the ratio, record what you thought so you know.",
+   "terms": [
+    [
+     "Conditionalisation",
+     "Updating the probability of a hypothesis to its probability given the evidence."
+    ],
+    [
+     "Coherence",
+     "Having degrees of belief that obey the probability axioms."
+    ],
+    [
+     "Dutch book",
+     "A set of bets guaranteeing a loss for an incoherent agent."
+    ],
+    [
+     "AGM theory",
+     "A formal theory of qualitative belief revision."
+    ]
+   ],
+   "misc": {
+    "wrong": "Changing your mind shows weakness.",
+    "right": "Updating in proportion to evidence is rational; refusing to update is the failure."
+   },
+   "limits": "Bayesian updating needs well-defined priors and likelihoods, which are difficult to specify, and the theory of disagreement and of revision with new concepts remains open.",
+   "trip": {
+    "wiki": "Belief revision",
+    "prompt": "Find the postulates and compare them with Bayesian conditionalisation."
+   },
+   "sources": [
+    "Belief revision",
+    "Dutch book",
+    "Aumann's agreement theorem"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "P(H) = 0.3, P(E | H) = 0.8, P(E | not H) = 0.2. What is P(H | E)? Give a decimal to three places.",
+     "a": 0.632,
+     "tol": 0.002,
+     "why": "0.24 ÷ 0.38 ≈ 0.632.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Bets on A and on not-A each cost 0.6 and pay 1 if they win. What is the guaranteed loss from buying both?",
+     "a": 0.2,
+     "tol": 0.001,
+     "why": "You pay 1.2 and receive exactly 1, losing 0.2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a Dutch book argument for coherence?",
+     "o": [
+      "Incoherent betting prices guarantee a loss",
+      "Coherent betting prices guarantee a loss",
+      "Bets never matter in a theory of belief",
+      "Probabilities are optional for rational people"
+     ],
+     "a": 0,
+     "why": "It shows a pragmatic cost of incoherence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why avoid assigning credence exactly 1 to an empirical claim?",
+     "o": [
+      "Conditionalisation can never reduce it",
+      "It makes the arithmetic much harder to do",
+      "It is rude toward people who disagree",
+      "It invites other people to place bets"
+     ],
+     "a": 0,
+     "why": "No evidence could change a 0 or 1 prior.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Aumann's agreement theorem assumes...",
+     "o": [
+      "Common priors and common knowledge of posteriors",
+      "Different priors held by each person",
+      "Private beliefs kept from the other person",
+      "That there is no evidence at all"
+     ],
+     "a": 0,
+     "why": "Under these idealisations agents cannot agree to disagree.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a good habit for honest revision?",
+     "o": [
+      "Record predictions and conditions for changing your mind in advance",
+      "Rely only on memory of what you believed before",
+      "Avoid new evidence that could change things",
+      "Hold your beliefs fixed whatever happens"
+     ],
+     "a": 0,
+     "why": "Records counter hindsight bias.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Jeffrey conditionalisation is used when...",
+     "o": [
+      "The evidence itself is uncertain",
+      "The evidence is perfectly certain",
+      "There is no evidence to consider",
+      "The priors are all zero"
+     ],
+     "a": 0,
+     "why": "It generalises ordinary conditionalisation.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Peer disagreement raises the question of...",
+     "o": [
+      "Whether to conciliate or to hold firm with equally informed peers",
+      "Whether peers exist at all in real life",
+      "Whether evidence is required for belief",
+      "Whether to bet on the outcome or not"
+     ],
+     "a": 0,
+     "why": "It is debated.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each idea to its role.",
+     "pairs": [
+      [
+       "Conditionalisation",
+       "Update to P(H | E)"
+      ],
+      [
+       "Coherence",
+       "Obey the probability axioms"
+      ],
+      [
+       "Motivated reasoning",
+       "Favouring conclusions we want"
+      ]
+     ],
+     "why": "Belief revision ideas.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why people who are equally rational may still disagree even after seeing the same evidence.",
+     "rubric": [
+      [
+       "prior",
+       "priors",
+       "starting",
+       "background",
+       "assumption",
+       "weigh",
+       "differ"
+      ],
+      [
+       "evidence",
+       "interpret",
+       "private",
+       "values",
+       "not common",
+       "information",
+       "limits",
+       "trust",
+       "source",
+       "different"
+      ]
+     ],
+     "min": 2,
+     "model": "They may start with different priors, trust sources differently or hold private information, so the same evidence updates them to different posteriors; and humans are only imperfectly rational.",
+     "why": "Disagreement has many sources.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You were 90% sure of a claim, and then a reliable study with likelihood ratio 1/9 against it arrives. What are the new odds?",
+     "o": [
+      "1 to 1",
+      "9 to 1",
+      "81 to 1",
+      "1 to 9"
+     ],
+     "a": 0,
+     "why": "Prior odds 9:1 times 1/9 gives 1:1.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is writing down a prediction and your reasoning useful when revising beliefs?",
+     "rubric": [
+      [
+       "memory",
+       "remember",
+       "recall",
+       "hindsight",
+       "forget",
+       "misremember",
+       "bias",
+       "record"
+      ],
+      [
+       "honest",
+       "accurate",
+       "compare",
+       "evidence",
+       "revise",
+       "learn",
+       "check",
+       "track",
+       "actually",
+       "before"
+      ]
+     ],
+     "min": 2,
+     "model": "Memory is reconstructive and hindsight bias makes us believe we knew it all along, so a written record lets us compare what we thought with what happened and update honestly.",
+     "why": "Records protect against hindsight.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which behaviour reflects rational updating?",
+     "o": [
+      "Shifting belief in proportion to the strength of evidence",
+      "Refusing to change belief whatever happens",
+      "Flipping belief with every new headline",
+      "Matching whatever the majority believes"
+     ],
+     "a": 0,
+     "why": "Updating should track evidential strength.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Rational belief revision",
+    "model": "Rational updating follows probability: conditionalise on evidence, keep credences coherent and avoid certainty about empirical claims. Dutch book arguments support coherence. Disagreement stems from differing priors, information and limits. Record predictions to resist hindsight.",
+    "points": [
+     {
+      "k": [
+       "bayes",
+       "conditionalis",
+       "probab",
+       "update",
+       "prior"
+      ],
+      "ask": "How do I update?"
+     },
+     {
+      "k": [
+       "coheren",
+       "dutch",
+       "axiom"
+      ],
+      "ask": "Why should beliefs be coherent?"
+     },
+     {
+      "k": [
+       "disagree",
+       "prior",
+       "peer"
+      ],
+      "ask": "Why do rational people disagree?"
+     },
+     {
+      "k": [
+       "record",
+       "hindsight",
+       "memory"
+      ],
+      "ask": "How do I stay honest?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated knowledge and strategy challenge",
+   "icon": "🏁",
+   "hook": "You need to master a hard subject in six months, make good decisions along the way and judge conflicting claims. How do you integrate everything you have learned about thinking?",
+   "explain": [
+    "This capstone integrates the strands of the world. Reasoning: deduce carefully, generalise cautiously, choose the best explanation, and check arguments for validity, soundness and fallacies. Evidence: ask about sources, design, base rates, confounders and replication. Uncertainty: express beliefs as probabilities, update them by Bayes' rule, and weigh risk. Decisions and strategy: define goals and constraints, compare options by expected utility, plan for scenarios, and use game-theoretic thinking when others respond.",
+    "Learning itself is an application. Evidence-based techniques: retrieval practice (testing yourself), spaced practice (spreading sessions, with intervals that grow), interleaving (mixing problem types), elaboration and self-explanation, and teaching others. Memory palaces (the method of loci) use familiar places as hooks and work well for ordered lists, but they do not help understanding by themselves. Limits matter: forgetting is fast without review (the forgetting curve of Ebbinghaus); memories are reconstructed, so false memories can feel vivid; the misinformation effect shows that later suggestion can alter recall; and confidence is only loosely linked to accuracy. Practising a brain-training game improves that game, but good evidence for broad transfer to general intelligence is lacking.",
+    "Metacognition ties it together: monitor your understanding with tests rather than feelings of familiarity, set review schedules, reflect on mistakes, and calibrate confidence through feedback. Intellectual humility, charity toward opposing views, and willingness to revise are habits as important as technique. Knowledge is collective: we rely on institutions, testimony and expert communities, so evaluating sources and understanding expert disagreement are core skills. A wise thinker also knows when not to compute: some decisions turn on values, not calculations."
+   ],
+   "example": {
+    "q": "A test is 95% sensitive with 10% false positives for a condition with 2% prevalence. A student tests positive. What is the chance they have it, and what would you do next?",
+    "steps": [
+     "Per 1000: 20 have it, 19 test positive; 980 do not, 98 test positive.",
+     "Positives: 117, of which 19 true: 19 ÷ 117 ≈ 0.162.",
+     "Next step: a more specific confirmatory test, since P is only about 16%."
+    ],
+    "a": "About 16%; do a confirmatory test rather than assuming the condition."
+   },
+   "analogies": {
+    "farm": "A farmer uses records over years (base rates), experiments with plots (fair tests) and several scenarios for the weather.",
+    "music": "A musician practises with spacing and mixing, tests herself in performance and learns from mistakes.",
+    "city": "A planner combines data, models, stakeholder views and review points for a transport scheme."
+   },
+   "mnemonic": "Reason, check, quantify, decide, learn, and stay ready to turn.",
+   "terms": [
+    [
+     "Calibration",
+     "Matching confidence to the frequency of being right."
+    ],
+    [
+     "Spaced practice",
+     "Spreading learning sessions over time."
+    ],
+    [
+     "Retrieval practice",
+     "Strengthening memory by recalling information."
+    ],
+    [
+     "Intellectual humility",
+     "Recognising the limits of your knowledge and being open to revision."
+    ]
+   ],
+   "misc": {
+    "wrong": "Knowing many thinking tools makes one immune to error.",
+    "right": "Everyone remains biased and fallible. Tools help only when used deliberately, with feedback."
+   },
+   "limits": "The evidence for learning techniques is strong on average but varies across tasks and learners, and the effects of general \"thinking skills\" training on unrelated tasks are modest and debated.",
+   "trip": {
+    "wiki": "Spaced repetition",
+    "prompt": "Find evidence about spacing and retrieval practice and note the limits."
+   },
+   "sources": [
+    "Spaced repetition",
+    "Testing effect",
+    "Method of loci"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Prevalence 2%, sensitivity 95%, false positive rate 10%. What is P(condition | positive)? Give a decimal to two places.",
+     "a": 0.16,
+     "tol": 0.01,
+     "why": "Per 1000: 19 true positives, 98 false positives; 19 ÷ 117 ≈ 0.16.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which study plan is best supported by evidence for durable learning?",
+     "o": [
+      "Spaced retrieval practice with mixed problems",
+      "One long night of re-reading the material",
+      "Highlighting the main lines of the text only",
+      "Copying the notes out once and stopping"
+     ],
+     "a": 0,
+     "why": "These techniques yield stronger long-term retention.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A method of loci (memory palace) is mainly useful for...",
+     "o": [
+      "Remembering ordered items by linking them to places",
+      "Understanding long proofs in mathematics",
+      "Replacing the need for regular practice",
+      "Improving general intelligence in all areas"
+     ],
+     "a": 0,
+     "why": "It aids recall of lists and sequences.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about brain-training games is best supported?",
+     "o": [
+      "They improve the trained tasks, with weak evidence of wide transfer",
+      "They raise general intelligence strongly in all users",
+      "They prevent all forgetting in later life",
+      "They can replace the sleep that people need"
+     ],
+     "a": 0,
+     "why": "Far transfer is not well supported.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The misinformation effect shows that...",
+     "o": [
+      "Later suggestions can alter memory for an event",
+      "Memory works like a perfect recording of events",
+      "Witnesses are always right about what they saw",
+      "Suggestion helps the accuracy of memory"
+     ],
+     "a": 0,
+     "why": "Memories are reconstructed.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which relation holds between confidence and accuracy of memory?",
+     "o": [
+      "Weak and imperfect",
+      "Perfect, with confidence matching accuracy",
+      "Always negative, so the surer the less right",
+      "There is no relation of any kind"
+     ],
+     "a": 0,
+     "why": "People can be confident and wrong.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two studies disagree. Which factor is least relevant to weighing them?",
+     "o": [
+      "The title's font",
+      "Sample size",
+      "Design quality",
+      "Independence of funding"
+     ],
+     "a": 0,
+     "why": "Quality markers matter more than presentation.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A decision depends mainly on values, not data. What follows?",
+     "o": [
+      "Computation helps but cannot settle the value question",
+      "Compute the answer exactly with a formula",
+      "Ignore values and look only at the data",
+      "Flip a coin to settle the matter"
+     ],
+     "a": 0,
+     "why": "Normative questions need judgment.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each learning technique to what it does.",
+     "pairs": [
+      [
+       "Interleaving",
+       "Mixes problem types to build discrimination"
+      ],
+      [
+       "Spacing",
+       "Spreads study to slow forgetting"
+      ],
+      [
+       "Retrieval practice",
+       "Strengthens memory by recalling it"
+      ]
+     ],
+     "why": "Evidence-based techniques.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how you would use Bayesian reasoning, base rates and replication to judge a dramatic new health claim.",
+     "rubric": [
+      [
+       "base rate",
+       "prior",
+       "prevalence",
+       "how common",
+       "before"
+      ],
+      [
+       "evidence",
+       "study",
+       "sample",
+       "design",
+       "confound",
+       "bias",
+       "funding"
+      ],
+      [
+       "replicat",
+       "repeat",
+       "independent",
+       "confirm",
+       "other studies",
+       "update"
+      ]
+     ],
+     "min": 2,
+     "model": "I would start from the prior plausibility and base rate, check the design, sample and possible confounders, and update in proportion to the evidence, giving more weight to independently replicated results.",
+     "why": "Integration of Bayes, design and replication.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student studies by re-reading and feels very confident but scores poorly. Which diagnosis is best?",
+     "o": [
+      "An illusion of knowing from familiarity; use retrieval practice and feedback",
+      "Bad luck only, since the effort was fine",
+      "The tests are always unfair to students",
+      "Confidence is an accurate guide to learning"
+     ],
+     "a": 0,
+     "why": "Feelings of fluency mislead.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Describe how intellectual humility and a strong reasoning toolkit work together.",
+     "rubric": [
+      [
+       "humil",
+       "open",
+       "revise",
+       "fallible",
+       "limits",
+       "wrong",
+       "update"
+      ],
+      [
+       "tools",
+       "toolkit",
+       "logic",
+       "evidence",
+       "reason",
+       "calibrat",
+       "methods",
+       "check",
+       "skills",
+       "probab"
+      ]
+     ],
+     "min": 2,
+     "model": "Tools such as logic, evidence evaluation and probability improve judgment, while humility keeps us willing to revise and prevents overconfidence in our own conclusions.",
+     "why": "Skill plus humility.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which sequence reflects a good integrated approach to a hard decision?",
+     "o": [
+      "Clarify goals, gather and weigh evidence, quantify uncertainty, compare options, decide, review",
+      "Pick an option quickly and then find reasons for it",
+      "Wait for full agreement from all, and nothing more",
+      "Copy the advice of the loudest advisor"
+     ],
+     "a": 0,
+     "why": "It integrates the strands of the world.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Integrated thinking and learning",
+    "model": "Integrate reasoning, evidence, probability, decisions and strategy. Learn with spaced retrieval and mixed practice, remember that forgetting, false memory and overconfidence are real, and brain games do not reliably raise general intelligence. Stay humble and review.",
+    "points": [
+     {
+      "k": [
+       "reason",
+       "logic",
+       "evidence",
+       "bayes",
+       "probab"
+      ],
+      "ask": "How do I think well?"
+     },
+     {
+      "k": [
+       "retriev",
+       "spac",
+       "interleav",
+       "test"
+      ],
+      "ask": "How do I learn well?"
+     },
+     {
+      "k": [
+       "forget",
+       "false memor",
+       "confiden",
+       "limit"
+      ],
+      "ask": "What are the limits of memory?"
+     },
+     {
+      "k": [
+       "humil",
+       "review",
+       "revise",
+       "feedback"
+      ],
+      "ask": "What keeps me improving?"
+     }
+    ]
+   }
+  }
+ ]
+}

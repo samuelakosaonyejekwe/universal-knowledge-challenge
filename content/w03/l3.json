@@ -1,0 +1,2756 @@
+{
+ "world": 3,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Engineering statics",
+   "icon": "🏗️",
+   "hook": "A 4 m plank rests on two supports and a heavy box sits near one end. Which support carries more, and how can you calculate it?",
+   "explain": [
+    "Statics studies structures that are not accelerating. For such a body two conditions hold: the forces add up to zero (ΣF = 0), and the moments about any point add up to zero (ΣM = 0). Engineers start by drawing a free-body diagram, which shows the body alone with every force on it.",
+    "Forces are split into components. A force F at angle θ above the horizontal has horizontal component F cos θ and vertical component F sin θ. A 100 N force at 30° gives 86.6 N horizontally and 50 N vertically.",
+    "For a simply supported beam, take moments about one support to find the other reaction. A 4 m beam with a 10 kN load 1 m from support A gives RB × 4 = 10 × 1, so RB = 2.5 kN, and RA = 10 − 2.5 = 7.5 kN.",
+    "Friction opposes sliding and has a maximum value F = μ N, where N is the normal force and μ the coefficient of friction. Safety link: low-angle cables carry very large tensions. Two cables at 30° to the horizontal supporting a weight W each carry T = W, because 2T sin 30° = W."
+   ],
+   "example": {
+    "q": "A 4 m beam is supported at A (left end) and B (right end). A 10 kN load acts 1 m from A. Find the reaction at B.",
+    "steps": [
+     "Take moments about A: clockwise load moment = 10 × 1 = 10 kN m.",
+     "Reaction at B acts 4 m from A: RB × 4 = 10.",
+     "RB = 2.5 kN. Then RA = 10 − 2.5 = 7.5 kN."
+    ],
+    "a": "RB = 2.5 kN (and RA = 7.5 kN)"
+   },
+   "analogies": {
+    "home": "A shelf bracket carries the books by balancing forces and turning effects.",
+    "city": "A footbridge sits on two piers. A crowd near one end makes that pier carry more.",
+    "farm": "A farmer carries a pole with a bucket at each end. Moving closer to one bucket shifts the load.",
+    "sea": "A crane on a ship must keep the load's moment balanced to stop the ship leaning."
+   },
+   "mnemonic": "Sum of forces zero, sum of moments zero, draw the free body first.",
+   "terms": [
+    [
+     "Free-body diagram",
+     "A sketch of one body with all forces on it."
+    ],
+    [
+     "Reaction",
+     "A support's force on a structure."
+    ],
+    [
+     "Component",
+     "The part of a force along one chosen direction."
+    ],
+    [
+     "Coefficient of friction (μ)",
+     "Ratio of maximum friction force to normal force."
+    ]
+   ],
+   "misc": {
+    "wrong": "A support always takes half the load.",
+    "right": "Supports share the load according to where it acts. A load nearer one support puts more force on that support."
+   },
+   "limits": "Statics treats bodies as rigid. Real structures deform slightly, which can matter for slender or very flexible parts.",
+   "trip": {
+    "wiki": "Statics",
+    "prompt": "Find a free-body diagram example. Name each force and the direction it acts."
+   },
+   "sources": [
+    "Statics",
+    "Free body diagram",
+    "Friction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What two conditions must hold for a body in static equilibrium?",
+     "o": [
+      "Forces sum to zero and moments sum to zero",
+      "Constant speed and a net force that is not zero in any direction",
+      "Mass equals weight",
+      "Moments equal forces"
+     ],
+     "a": 0,
+     "why": "Both translation and rotation must be prevented, so ΣF = 0 and ΣM = 0.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A 200 N force acts at 30° above the horizontal. What is its vertical component in newtons?",
+     "a": 100,
+     "tol": 0.5,
+     "unit": "N",
+     "why": "F sin θ = 200 × sin 30° = 200 × 0.5 = 100 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 6 m beam is simply supported at A and B. A 12 kN load acts 2 m from A. What is the reaction at B in kN?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "kN",
+     "why": "RB × 6 = 12 × 2 gives RB = 4 kN, and RA = 8 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 50 kg box lies on a floor with μ = 0.4. Use g = 9.8 m/s². What is the maximum friction force before it slides, in newtons?",
+     "a": 196,
+     "tol": 0.5,
+     "unit": "N",
+     "why": "N = 50 × 9.8 = 490 N. F = μ N = 0.4 × 490 = 196 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The load on a beam moves closer to support A. What happens to the reaction at A?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "Taking moments about B, the reaction at A grows as the load moves toward A.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A sign weighing 1000 N hangs from two cables, each at 30° to the horizontal. What is the tension in each cable?",
+     "o": [
+      "1000 N",
+      "500 N",
+      "2000 N",
+      "866 N"
+     ],
+     "a": 0,
+     "why": "2T sin 30° = 1000 and sin 30° = 0.5, so T = 1000 N.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A technician replaces two 30° cables with two nearly horizontal cables, each at 5°, for the same sign. What happens to tension?",
+     "o": [
+      "It gets much larger",
+      "It gets smaller, because the cables are flatter",
+      "It stays at exactly 1000 N",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "sin 5° is about 0.087, so T ≈ 1000 ÷ (2 × 0.087) ≈ 5700 N. Flat cables are dangerous.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we begin a statics problem with a free-body diagram?",
+     "o": [
+      "It shows every force that acts on the body",
+      "It shows the colour and finish of each part in the drawing",
+      "It changes the answer",
+      "It replaces calculation"
+     ],
+     "a": 0,
+     "why": "A complete diagram prevents missing or double-counting forces.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A box on a slope does not slide. Describe the forces on it and explain why it stays at rest.",
+     "rubric": [
+      [
+       "weight",
+       "gravity"
+      ],
+      [
+       "friction"
+      ],
+      [
+       "normal",
+       "reaction",
+       "support"
+      ],
+      [
+       "balance",
+       "balanced",
+       "equal",
+       "cancel",
+       "zero"
+      ]
+     ],
+     "min": 3,
+     "model": "Gravity pulls the box down, the slope pushes back with a normal force, and friction acts up the slope. The friction equals the slope component of the weight, so the forces balance and the box stays at rest.",
+     "why": "Equilibrium means the forces cancel.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Free-body diagram",
+       "Shows all forces on one body"
+      ],
+      [
+       "Reaction",
+       "Support force on a structure"
+      ],
+      [
+       "Component",
+       "Part of a force in one direction"
+      ],
+      [
+       "Static equilibrium",
+       "No acceleration, no rotation"
+      ]
+     ],
+     "why": "These are the working words of statics.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A ladder leans on a smooth wall with its foot on rough ground. What stops the foot sliding away?",
+     "o": [
+      "Friction at the ground",
+      "The wall's friction",
+      "The ladder's weight only",
+      "Nothing needed"
+     ],
+     "a": 0,
+     "why": "The wall pushes horizontally, so friction at the foot balances that push.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A beam is designed with a reaction calculated as 7.5 kN, but the support is rated at 8 kN. Is this acceptable?",
+     "o": [
+      "Not unless a safety factor is applied, since 8 is barely above 7.5",
+      "Yes, any margin above the load is enough, since 8 kN is more than 7.5 kN",
+      "Yes, because the beam is steel",
+      "No, supports must be 20 kN"
+     ],
+     "a": 0,
+     "why": "Real loads vary, so engineers apply safety factors above the calculated load.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which assumption in a statics model may fail for a long, thin, flexible rod?",
+     "o": [
+      "That it is rigid and does not deform",
+      "That it has mass",
+      "That forces exist at all",
+      "That gravity acts on it"
+     ],
+     "a": 0,
+     "why": "Large bending of slender members changes the geometry and loads.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to find the forces on supports of a beam",
+    "model": "A beam that is not moving has forces that add to zero and turning effects that add to zero. To find a support reaction, take moments about the other support. For a 4 m beam with a 10 kN load 1 m from one end, the far support carries 2.5 kN and the near one 7.5 kN.",
+    "points": [
+     {
+      "k": [
+       "force",
+       "sum",
+       "zero",
+       "balance"
+      ],
+      "ask": "What do the forces add up to?"
+     },
+     {
+      "k": [
+       "moment",
+       "turning",
+       "torque"
+      ],
+      "ask": "What else must balance?"
+     },
+     {
+      "k": [
+       "support",
+       "reaction"
+      ],
+      "ask": "What are we trying to find?"
+     },
+     {
+      "k": [
+       "example",
+       "beam",
+       "load",
+       "bridge"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Engineering dynamics",
+   "icon": "🚀",
+   "hook": "A lift starts moving upward. The cable tension must be bigger than the weight. By how much, and what does that mean for the cable size?",
+   "explain": [
+    "Dynamics links force to motion. Newton's second law says the resultant force equals mass × acceleration: ΣF = m a. If a 200 kg lift accelerates upward at 1.0 m/s², the cable must give the weight plus m a: T = m(g + a) = 200 × (9.8 + 1.0) = 2160 N.",
+    "Kinetic energy is E = ½ m v². Doubling speed makes the energy four times larger, which is why crash forces grow so quickly with speed. Momentum is p = m v, and impulse is force × time = change in momentum.",
+    "Circular motion needs a force toward the centre: centripetal acceleration is a = v² ÷ r. A car at 10 m/s on a bend of radius 25 m needs a = 100 ÷ 25 = 4 m/s², and friction between tyres and road provides the force.",
+    "Design decisions follow. Cables, lifts and rotating machines are sized for the dynamic load, not just the weight. Failure causes include overload from sudden starts, and tyres slipping when speed is too high for the bend."
+   ],
+   "example": {
+    "q": "A 1000 kg car has a net force of 2000 N. What is its acceleration, and how much kinetic energy does it have at 20 m/s?",
+    "steps": [
+     "a = F ÷ m = 2000 ÷ 1000 = 2 m/s².",
+     "E = ½ m v² = 0.5 × 1000 × 20².",
+     "E = 0.5 × 1000 × 400 = 200 000 J."
+    ],
+    "a": "2 m/s²; 200 000 J (200 kJ)"
+   },
+   "analogies": {
+    "home": "A lift jerking up makes your knees bend, because the floor pushes harder.",
+    "city": "A bus taking a bend quickly pushes standing passengers sideways, as they tend to continue straight.",
+    "farm": "A tractor pulling a plough must exceed the resisting force to accelerate.",
+    "sport": "A hammer thrower swings the hammer in a circle; the athlete pulls inward to keep it turning."
+   },
+   "mnemonic": "Dynamic load = m(g + a). Kinetic energy has a square.",
+   "terms": [
+    [
+     "Resultant force",
+     "The net force on a body, equal to m a."
+    ],
+    [
+     "Kinetic energy",
+     "Energy of motion, ½ m v²."
+    ],
+    [
+     "Momentum",
+     "Mass times velocity."
+    ],
+    [
+     "Centripetal acceleration",
+     "The inward acceleration of circular motion, v² ÷ r."
+    ]
+   ],
+   "misc": {
+    "wrong": "Centrifugal force pulls a car outward on a bend.",
+    "right": "In an Earth-based frame the car needs an inward force. The outward feeling is the body's tendency to carry on in a straight line."
+   },
+   "limits": "These formulas treat objects as point masses and ignore air resistance unless stated.",
+   "trip": {
+    "wiki": "Dynamics (mechanics)",
+    "prompt": "Find an example of centripetal force. What provides the inward force in your example?"
+   },
+   "sources": [
+    "Dynamics (mechanics)",
+    "Kinetic energy",
+    "Centripetal force"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which equation links resultant force and motion?",
+     "o": [
+      "ΣF = m a",
+      "ΣF = m v",
+      "ΣF = m ÷ a",
+      "ΣF = a ÷ m"
+     ],
+     "a": 0,
+     "why": "Newton's second law.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A 200 kg lift accelerates upward at 1.0 m/s². Use g = 9.8 m/s². What is the cable tension in newtons?",
+     "a": 2160,
+     "tol": 2,
+     "unit": "N",
+     "why": "T = m(g + a) = 200 × 10.8 = 2160 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A car of 800 kg travels at 15 m/s. What is its kinetic energy in kilojoules?",
+     "a": 90,
+     "tol": 0.5,
+     "unit": "kJ",
+     "why": "½ × 800 × 15² = 400 × 225 = 90 000 J = 90 kJ.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A car goes round a bend of radius 40 m at 20 m/s. What is its centripetal acceleration in m/s²?",
+     "a": 10,
+     "tol": 0.05,
+     "unit": "m/s²",
+     "why": "a = v² ÷ r = 400 ÷ 40 = 10 m/s².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A car doubles its speed. By what factor does its kinetic energy change?",
+     "o": [
+      "4",
+      "2",
+      "8",
+      "1"
+     ],
+     "a": 0,
+     "why": "E = ½ m v², so doubling v multiplies E by 2² = 4.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A lorry takes a bend too fast on a wet road. What is the most likely failure?",
+     "o": [
+      "Tyres lose grip and it skids outward",
+      "The engine gets lighter and quicker",
+      "The road speeds up under the wheels",
+      "The lorry gains extra grip from the water"
+     ],
+     "a": 0,
+     "why": "Friction cannot supply the inward force needed at that speed, so the tyres slip.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lift cable is sized only for the static weight of a full lift. What is wrong?",
+     "o": [
+      "It ignores the extra force when accelerating",
+      "Cables do not carry weight, so the size is not important",
+      "Lifts never accelerate",
+      "Nothing is wrong"
+     ],
+     "a": 0,
+     "why": "Dynamic loads can exceed static loads, so safety factors and dynamic checks are needed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A passenger in a car on a left bend feels thrown to the right. Which explanation is accurate?",
+     "o": [
+      "The body tends to move straight on while the car turns left",
+      "A real outward force pushes the person to the right, as in a spinning wheel",
+      "Gravity turns sideways",
+      "The seat repels the person"
+     ],
+     "a": 0,
+     "why": "Inertia: the body keeps going straight until the door or seat applies an inward force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do crash barriers and car crumple zones lengthen the time of impact?",
+     "rubric": [
+      [
+       "time",
+       "longer",
+       "longer time",
+       "slower",
+       "gradual"
+      ],
+      [
+       "force",
+       "smaller",
+       "less",
+       "reduce"
+      ],
+      [
+       "momentum",
+       "impulse",
+       "change",
+       "velocity"
+      ],
+      [
+       "same"
+      ]
+     ],
+     "min": 2,
+     "model": "The change in momentum is fixed, and impulse = force × time. Taking longer to stop reduces the average force on people and the structure.",
+     "why": "F = change in momentum ÷ time, so more time means less force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its expression.",
+     "pairs": [
+      [
+       "Kinetic energy",
+       "½ m v²"
+      ],
+      [
+       "Momentum",
+       "m v"
+      ],
+      [
+       "Centripetal acceleration",
+       "v² ÷ r"
+      ],
+      [
+       "Impulse",
+       "Force × time"
+      ]
+     ],
+     "why": "These are the core dynamics relations.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A 1500 kg car brakes uniformly from 20 m/s to rest in 5 s. What is the average braking force?",
+     "o": [
+      "6000 N",
+      "300 N",
+      "7500 N",
+      "30 000 N"
+     ],
+     "a": 0,
+     "why": "a = 20 ÷ 5 = 4 m/s². F = 1500 × 4 = 6000 N.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The same car stops at the same rate from 40 m/s. How does the braking distance compare?",
+     "o": [
+      "Four times as long",
+      "Twice as long",
+      "The same distance",
+      "Half as long"
+     ],
+     "a": 0,
+     "why": "Distance = v² ÷ (2a) so doubling speed gives four times the distance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rotating wheel has a small unbalanced mass. What does this cause at high speed?",
+     "o": [
+      "Vibration from the rotating force",
+      "Nothing happens at any speed",
+      "Less friction in the bearings",
+      "More energy output from the engine"
+     ],
+     "a": 0,
+     "why": "The unbalanced mass needs a centripetal force, which grows with speed squared and shakes the bearings.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why the cable of a lift has to be stronger than the lift's weight",
+    "model": "When a lift starts to speed up, the cable has to pull with the weight plus an extra force equal to mass times acceleration. For a 200 kg lift accelerating at 1 m/s², the tension rises from 1960 N to 2160 N. Engineers size cables for this and add a safety factor.",
+    "points": [
+     {
+      "k": [
+       "accelerat",
+       "speed up",
+       "start"
+      ],
+      "ask": "What happens when the lift starts?"
+     },
+     {
+      "k": [
+       "weight",
+       "gravity"
+      ],
+      "ask": "What is the basic force the cable carries?"
+     },
+     {
+      "k": [
+       "extra",
+       "m a",
+       "mass times",
+       "add"
+      ],
+      "ask": "What extra force is needed?"
+     },
+     {
+      "k": [
+       "safety",
+       "factor",
+       "stronger",
+       "margin"
+      ],
+      "ask": "So how do engineers allow for this?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Stress and strain",
+   "icon": "🧪",
+   "hook": "Two steel rods carry the same load, but one is twice as thick. Does the thick rod only carry twice the load, or more?",
+   "explain": [
+    "Stress is force per unit area: σ = F ÷ A, measured in pascals (Pa), where 1 Pa = 1 N/m². Because the numbers are big, engineers use megapascals: 1 MPa = 1 000 000 Pa = 1 N/mm². A force of 50 kN on a cross-section of 500 mm² gives 50 000 ÷ 500 = 100 MPa.",
+    "Strain is the stretch compared with the original length: ε = ΔL ÷ L. It has no unit. For many materials, small loads give stress proportional to strain, and the constant is Young's modulus E = σ ÷ ε. Steel has E about 200 GPa.",
+    "Beyond the yield stress the material deforms permanently (plastic deformation). Beyond the ultimate stress it breaks. Engineers keep working stress well below yield by using a safety factor n = yield stress ÷ working stress.",
+    "Because stress depends on area, doubling a rod's diameter increases its area by four times and cuts the stress to a quarter. Failure often starts at small holes and sharp corners, where stress is concentrated."
+   ],
+   "example": {
+    "q": "A steel rod of cross-section 500 mm² carries 50 kN of tension. Its length is 2 m and E = 200 GPa. Find the stress and the stretch.",
+    "steps": [
+     "σ = F ÷ A = 50 000 N ÷ 500 mm² = 100 N/mm² = 100 MPa.",
+     "ε = σ ÷ E = 100 × 10⁶ ÷ 200 × 10⁹ = 0.0005.",
+     "ΔL = ε × L = 0.0005 × 2 m = 0.001 m = 1 mm."
+    ],
+    "a": "100 MPa; stretch 1 mm"
+   },
+   "analogies": {
+    "home": "A high-heeled shoe presses a floor harder than a flat shoe, because the same force acts on a smaller area.",
+    "city": "Bridge cables are thick because more area means lower stress.",
+    "farm": "A rope pulled by an ox stretches more if it is long and thin.",
+    "sport": "A climbing rope stretches a little on a fall, which softens the shock."
+   },
+   "mnemonic": "Stress is force over area. Strain is stretch over length.",
+   "terms": [
+    [
+     "Stress",
+     "Force per unit area, in pascals."
+    ],
+    [
+     "Strain",
+     "Change in length divided by original length."
+    ],
+    [
+     "Young's modulus",
+     "Stress divided by strain in the elastic range."
+    ],
+    [
+     "Safety factor",
+     "Failure stress divided by working stress."
+    ]
+   ],
+   "misc": {
+    "wrong": "A thicker rod is only proportionally stronger.",
+    "right": "Strength depends on area, so doubling the diameter makes the rod four times stronger in tension."
+   },
+   "limits": "Hooke's law fails past the elastic limit, and real parts have stress concentrations that raise local stress.",
+   "trip": {
+    "wiki": "Stress–strain curve",
+    "prompt": "Find the yield point on a stress-strain curve. What happens after it?"
+   },
+   "sources": [
+    "Stress (mechanics)",
+    "Deformation (physics)",
+    "Young's modulus"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the unit of stress?",
+     "o": [
+      "Pascal (N/m²)",
+      "Newton (N)",
+      "Joule (J)",
+      "Metre (m)"
+     ],
+     "a": 0,
+     "why": "Stress is force divided by area.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A 20 kN tensile force acts on a bar with cross-section 400 mm². What is the stress in MPa?",
+     "a": 50,
+     "tol": 0.1,
+     "unit": "MPa",
+     "why": "20 000 N ÷ 400 mm² = 50 N/mm² = 50 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 3 m bar stretches by 1.5 mm. What is the strain? Give your answer as a decimal.",
+     "a": 0.0005,
+     "tol": 0.00001,
+     "why": "ε = 1.5 mm ÷ 3000 mm = 0.0005.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The yield stress of a steel is 250 MPa and the working stress is 100 MPa. What is the safety factor against yield?",
+     "a": 2.5,
+     "tol": 0.02,
+     "why": "n = 250 ÷ 100 = 2.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A rod's diameter is doubled. What happens to the stress for the same tension?",
+     "o": [
+      "It falls to one quarter",
+      "It halves, since the area is doubled",
+      "It doubles",
+      "It does not change"
+     ],
+     "a": 0,
+     "why": "Area scales with diameter squared, so area is 4 times larger and stress is one quarter.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Below the elastic limit, when the load is removed the rod does what?",
+     "o": [
+      "Returns to its original length",
+      "Stays permanently longer",
+      "Breaks",
+      "Shrinks below its original length"
+     ],
+     "a": 0,
+     "why": "Elastic deformation is reversible.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A steel plate has a sharp square corner cut in it, and cracks appear at the corner. Why?",
+     "o": [
+      "Stress concentrates at sharp corners",
+      "Corners carry no stress at all",
+      "Corners are always colder than the rest",
+      "The plate has no area at the corner"
+     ],
+     "a": 0,
+     "why": "Stress is much higher at sharp changes of shape, so designers round the corners.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two bars have the same stress, but one is made of rubber and one of steel. Which has the greater strain?",
+     "o": [
+      "Rubber, because its E is much lower",
+      "Steel, because it is the stiffer material",
+      "They are equal",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "Strain = stress ÷ E, so a low modulus gives a large strain.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A hook is loaded just past its yield stress and does not return to its shape. Explain what has happened and why it is dangerous.",
+     "rubric": [
+      [
+       "permanent",
+       "plastic",
+       "stays",
+       "remains"
+      ],
+      [
+       "yield",
+       "beyond"
+      ],
+      [
+       "deform",
+       "bent",
+       "stretch",
+       "shape"
+      ],
+      [
+       "weaken",
+       "fail",
+       "break",
+       "unsafe",
+       "strength",
+       "warning"
+      ]
+     ],
+     "min": 2,
+     "model": "Past the yield stress the material deforms plastically, so it does not recover its shape. The part is already damaged and may be weakened, and further loading may bring it to fracture.",
+     "why": "Engineers keep working stress below yield with a safety factor.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its symbol or unit.",
+     "pairs": [
+      [
+       "Stress",
+       "σ, pascals"
+      ],
+      [
+       "Strain",
+       "ε, no unit"
+      ],
+      [
+       "Young's modulus",
+       "E, GPa for steel"
+      ],
+      [
+       "Safety factor",
+       "n, no unit"
+      ]
+     ],
+     "why": "These are the core strength-of-materials quantities.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which rod is safer for a 100 kN tension if the steel yield stress is 250 MPa and a safety factor of 2 is required?",
+     "o": [
+      "A rod with area at least 800 mm²",
+      "A rod with area 200 mm² in high-grade steel",
+      "A rod with area 400 mm², just reaching yield",
+      "A rod with area 100 mm²"
+     ],
+     "a": 0,
+     "why": "Allowed stress = 250 ÷ 2 = 125 MPa, so A = 100 000 ÷ 125 = 800 mm².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are steel cables for lifts made of many thin wires twisted together?",
+     "o": [
+      "If one wire breaks, the rest still carry the load and the cable is flexible",
+      "Thin wires are always much stronger in total than one thick wire of the same size",
+      "They are cheaper to ignore and easier to coil on a drum",
+      "Because twisted wires cannot rust"
+     ],
+     "a": 0,
+     "why": "Redundancy and flexibility, together with the ability to inspect broken wires, add safety.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bar is heated while held rigidly at both ends. What happens to the stress in it?",
+     "o": [
+      "Compressive stress builds up",
+      "Tensile stress builds up and then vanishes",
+      "Stress is always zero",
+      "The bar shrinks"
+     ],
+     "a": 0,
+     "why": "It tries to expand but cannot, so it is squeezed. This is why rails and bridges have expansion gaps.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What stress and strain are",
+    "model": "Stress is the force on each unit of area, so a thin rod has more stress than a thick rod for the same pull. Strain is how much it stretches compared with its original length. For example, a 3 m bar that stretches by 1.5 mm has a strain of 0.0005.",
+    "points": [
+     {
+      "k": [
+       "force",
+       "area",
+       "pascal"
+      ],
+      "ask": "How is stress worked out?"
+     },
+     {
+      "k": [
+       "stretch",
+       "length",
+       "change"
+      ],
+      "ask": "What is strain?"
+     },
+     {
+      "k": [
+       "thin",
+       "thick",
+       "area"
+      ],
+      "ask": "Why does a thick rod handle more?"
+     },
+     {
+      "k": [
+       "example",
+       "bar",
+       "rod",
+       "rope",
+       "cable"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Beams and bending",
+   "icon": "🌉",
+   "hook": "A plank across a stream bends less when it is laid on its edge than when it is laid flat. Why does turning it make such a difference?",
+   "explain": [
+    "A beam carries loads across a span by bending. The top fibres are squeezed in compression and the bottom fibres stretched in tension (for a load pressing down) while the middle layer, the neutral axis, has no stress.",
+    "The bending moment is the turning effect inside the beam. For a simply supported beam of length L with a central point load F, the maximum moment is at the centre: M = F L ÷ 4. For F = 4 kN and L = 3 m, M = 3 kN m.",
+    "The bending stress is σ = M ÷ Z, where Z is the section modulus. For a rectangle of width b and depth h, Z = b h² ÷ 6. A 50 mm wide, 100 mm deep section has Z = 0.05 × 0.1² ÷ 6 = 8.33 × 10⁻⁵ m³, so σ = 3000 ÷ 8.33 × 10⁻⁵ = 36 MPa.",
+    "Depth matters most: doubling the depth makes the beam four times stronger and eight times stiffer. That is why floor joists stand on edge, and why I-beams put most material at the top and bottom, where stress is greatest."
+   ],
+   "example": {
+    "q": "A 3 m beam carries a 4 kN central load. Its section is 50 mm wide and 100 mm deep. Find the maximum bending stress.",
+    "steps": [
+     "M = F L ÷ 4 = 4000 × 3 ÷ 4 = 3000 N m.",
+     "Z = b h² ÷ 6 = 0.05 × 0.01 ÷ 6 = 8.33 × 10⁻⁵ m³.",
+     "σ = M ÷ Z = 3000 ÷ 8.33 × 10⁻⁵ = 3.6 × 10⁷ Pa = 36 MPa."
+    ],
+    "a": "36 MPa"
+   },
+   "analogies": {
+    "home": "A ruler held flat bends easily; held on its edge it hardly bends.",
+    "city": "Steel I-beams support floors in buildings.",
+    "farm": "A barn roof beam is deep and narrow to resist bending from the roof's weight.",
+    "sea": "A ship hull acts as a giant beam supported by waves."
+   },
+   "mnemonic": "Deep beams stand on edge. Stress is M over Z.",
+   "terms": [
+    [
+     "Bending moment",
+     "The turning effect inside a beam from loads."
+    ],
+    [
+     "Neutral axis",
+     "The layer of a bent beam with no stress."
+    ],
+    [
+     "Section modulus (Z)",
+     "A property of a cross-section: stress = moment ÷ Z."
+    ],
+    [
+     "Span",
+     "The distance between supports."
+    ]
+   ],
+   "misc": {
+    "wrong": "A beam's strength depends only on its cross-section area.",
+    "right": "The shape matters. A deep beam is much stronger in bending than a flat one with the same area."
+   },
+   "limits": "Simple beam theory assumes small deflections and uniform materials, and ignores shear and local buckling.",
+   "trip": {
+    "wiki": "Bending",
+    "prompt": "Find a picture of a bent beam showing tension and compression. Which side is stretched?"
+   },
+   "sources": [
+    "Bending",
+    "Beam (structure)",
+    "Second moment of area"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "For a downward load on a simply supported beam, which part is in tension?",
+     "o": [
+      "The bottom",
+      "The top",
+      "The neutral axis",
+      "The supports only"
+     ],
+     "a": 0,
+     "why": "The beam sags, so the lower fibres are stretched and the upper ones squeezed.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A simply supported beam of span 2 m carries a central load of 6 kN. What is the maximum bending moment in kN m?",
+     "a": 3,
+     "tol": 0.02,
+     "unit": "kN m",
+     "why": "M = F L ÷ 4 = 6 × 2 ÷ 4 = 3 kN m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rectangular section is 60 mm wide and 120 mm deep. What is Z = b h² ÷ 6 in cm³?",
+     "a": 144,
+     "tol": 0.5,
+     "unit": "cm³",
+     "why": "6 cm × 12² cm² ÷ 6 = 6 × 144 ÷ 6 = 144 cm³.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The bending moment is 3 kN m and Z = 150 cm³. What is the bending stress in MPa? (1 kN m = 10⁶ N mm, 1 cm³ = 1000 mm³)",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "MPa",
+     "why": "σ = 3 × 10⁶ N mm ÷ 150 000 mm³ = 20 N/mm² = 20 MPa.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A 50 × 100 mm plank is turned from flat to on edge (100 mm deep). The stress for the same load does what?",
+     "o": [
+      "Falls to half",
+      "Doubles",
+      "Stays the same",
+      "Falls to a quarter"
+     ],
+     "a": 0,
+     "why": "Z is proportional to depth squared times width. Flat Z ∝ 100 × 50² and on edge Z ∝ 50 × 100², so Z doubles and stress halves.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is an I-beam efficient?",
+     "o": [
+      "Most material is far from the neutral axis where stress is highest",
+      "It has a thick, heavy web that carries most of the bending stress in the beam",
+      "Its round shape spreads the bending stress evenly over the section",
+      "It has no web, which removes most of the weight"
+     ],
+     "a": 0,
+     "why": "Flanges carry bending stress, so material there is used best.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A beam's depth is doubled, width unchanged. By how much is the bending strength (Z) multiplied?",
+     "o": [
+      "4",
+      "2",
+      "8",
+      "16"
+     ],
+     "a": 0,
+     "why": "Z ∝ h², so doubling h gives 4 times Z.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A builder lays a floor joist flat instead of on edge. Explain what will happen and why.",
+     "rubric": [
+      [
+       "bend",
+       "sag",
+       "deflect",
+       "bounce"
+      ],
+      [
+       "more",
+       "greater",
+       "bigger",
+       "higher",
+       "weaker"
+      ],
+      [
+       "depth",
+       "shallow",
+       "thin",
+       "edge",
+       "section",
+       "stiff"
+      ]
+     ],
+     "min": 2,
+     "model": "The joist will sag far more and the bending stress will be higher, because bending resistance depends strongly on the depth of the section. On edge it is deeper, so it is much stiffer and stronger.",
+     "why": "Z ∝ depth squared and stiffness ∝ depth cubed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each part to its role in bending.",
+     "pairs": [
+      [
+       "Top fibres",
+       "Compression (for a sagging beam)"
+      ],
+      [
+       "Bottom fibres",
+       "Tension (for a sagging beam)"
+      ],
+      [
+       "Neutral axis",
+       "No bending stress"
+      ],
+      [
+       "Flange",
+       "Carries most of the bending stress"
+      ]
+     ],
+     "why": "The distribution of stress across the depth explains beam shapes.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A diving board is fixed at one end and a diver stands on the free end. Which surface of the board is in tension?",
+     "o": [
+      "The top surface",
+      "The bottom surface",
+      "Neither surface",
+      "Both surfaces equally"
+     ],
+     "a": 0,
+     "why": "A cantilever with a downward end load hogs: the top stretches and the bottom is squeezed, so cracks start on top near the fixed end.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A shelf of 1 m span sags visibly although it is not close to breaking. What is the best fix?",
+     "o": [
+      "Increase its depth or add a support",
+      "Paint it so it looks straighter",
+      "Use fewer books on it",
+      "Reduce its depth to save material"
+     ],
+     "a": 0,
+     "why": "Stiffness rises sharply with depth, and supports shorten the span.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A concrete beam is reinforced with steel bars near the bottom. Why there?",
+     "o": [
+      "Concrete is weak in tension and the bottom is stretched",
+      "Steel is cheaper to buy and easier to place at the bottom of the mould",
+      "The bottom is in compression",
+      "It looks neat"
+     ],
+     "a": 0,
+     "why": "Concrete is strong in compression but weak in tension, so steel carries the tension.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the span of a beam doubles with the same central load, how does the maximum moment change?",
+     "o": [
+      "It doubles",
+      "It halves",
+      "It quadruples",
+      "It stays the same"
+     ],
+     "a": 0,
+     "why": "M = F L ÷ 4 is proportional to L, so doubling L doubles M.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a plank is stronger on its edge",
+    "model": "When a beam bends, its top is squeezed and its bottom is stretched. The deeper the beam, the further the material is from the middle, so the beam resists bending much better. Doubling the depth makes it four times as strong, so a plank on its edge sags far less than a plank laid flat.",
+    "points": [
+     {
+      "k": [
+       "bend",
+       "sag"
+      ],
+      "ask": "What happens when a beam bends?"
+     },
+     {
+      "k": [
+       "top",
+       "bottom",
+       "squeeze",
+       "stretch",
+       "compress",
+       "tension"
+      ],
+      "ask": "Which parts are squeezed and stretched?"
+     },
+     {
+      "k": [
+       "depth",
+       "deeper",
+       "tall",
+       "edge"
+      ],
+      "ask": "Why does the depth matter?"
+     },
+     {
+      "k": [
+       "example",
+       "plank",
+       "ruler",
+       "joist",
+       "i-beam"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Shaft torsion",
+   "icon": "🌀",
+   "hook": "A drive shaft in a lorry carries the engine's turning effect to the wheels. How thick must it be, and why are some shafts hollow?",
+   "explain": [
+    "A shaft that transmits torque is twisted. This twisting is called torsion. The shear stress in a solid round shaft of diameter d under torque T is τ = 16 T ÷ (π d³), and it is highest at the outside surface and zero at the centre.",
+    "For a 20 mm solid shaft carrying 100 N m: τ = 16 × 100 ÷ (π × 0.02³) = 1600 ÷ 2.513 × 10⁻⁵ = 63.7 MPa. Because d is cubed, doubling the diameter cuts the shear stress to one eighth.",
+    "Power links torque and speed: P = T ω, where ω = 2π n ÷ 60 is the angular speed in rad/s and n is in revolutions per minute. A 5 kW motor at 1500 rpm gives ω = 157 rad/s, so T = 5000 ÷ 157 = 31.8 N m.",
+    "Hollow shafts save weight because the centre carries little stress. Shafts fail by twisting off (a shear fracture) or by fatigue cracks starting at keyways and sharp steps, so designers add rounded fillets and a safety factor."
+   ],
+   "example": {
+    "q": "A motor delivers 5 kW at 1500 rpm. What torque does it deliver?",
+    "steps": [
+     "ω = 2π × 1500 ÷ 60 = 157.1 rad/s.",
+     "T = P ÷ ω.",
+     "T = 5000 ÷ 157.1 = 31.8 N m."
+    ],
+    "a": "About 31.8 N m"
+   },
+   "analogies": {
+    "home": "Wringing out a wet cloth twists it, which is torsion.",
+    "city": "The drive shaft of a bus carries engine power to the rear axle.",
+    "farm": "A tractor's power take-off shaft turns a baler or pump.",
+    "sea": "A ship's propeller shaft carries huge torque to the propeller."
+   },
+   "mnemonic": "Power = torque × angular speed. Shear is biggest at the surface.",
+   "terms": [
+    [
+     "Torsion",
+     "Twisting of a member by torque."
+    ],
+    [
+     "Shear stress",
+     "Stress along a surface, from sliding layers."
+    ],
+    [
+     "Angular speed (ω)",
+     "Rotation rate in radians per second."
+    ],
+    [
+     "Polar moment of area (J)",
+     "Property of a round section: J = π d⁴ ÷ 32."
+    ]
+   ],
+   "misc": {
+    "wrong": "Doubling a shaft's diameter doubles its torque capacity.",
+    "right": "Torque capacity goes with d³, so doubling the diameter gives eight times the capacity."
+   },
+   "limits": "The formula assumes circular sections and a steady torque. Real shafts also bend and vibrate.",
+   "trip": {
+    "wiki": "Torsion (mechanics)",
+    "prompt": "Find an image of a twisted shaft. Where is the stress greatest?"
+   },
+   "sources": [
+    "Torsion (mechanics)",
+    "Drive shaft",
+    "Power (physics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Where is the shear stress highest in a solid round shaft under torque?",
+     "o": [
+      "At the outer surface",
+      "At the centre",
+      "Halfway in",
+      "It is equal everywhere"
+     ],
+     "a": 0,
+     "why": "Stress grows with radius, being zero at the centre.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A shaft turns at 100 rad/s while carrying 40 N m. What power does it transmit in watts?",
+     "a": 4000,
+     "tol": 1,
+     "unit": "W",
+     "why": "P = T ω = 40 × 100 = 4000 W.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A motor delivers 2 kW at 100 rad/s. What is the torque in N m?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "N m",
+     "why": "T = 2000 ÷ 100 = 20 N m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Convert 600 rpm to rad/s. Use π = 3.14 and round to one decimal place.",
+     "a": 62.8,
+     "tol": 0.2,
+     "unit": "rad/s",
+     "why": "ω = 2π × 600 ÷ 60 = 62.8 rad/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A shaft's diameter is doubled. The shear stress for the same torque changes by what factor?",
+     "o": [
+      "One eighth",
+      "One half",
+      "One quarter",
+      "Unchanged"
+     ],
+     "a": 0,
+     "why": "τ ∝ 1 ÷ d³ and 2³ = 8.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A motor of fixed power is geared so that its shaft turns at half the speed. What happens to the shaft torque (ignoring losses)?",
+     "o": [
+      "It doubles",
+      "It halves",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "P = T ω is constant, so halving ω doubles T.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a hollow shaft sometimes better than a solid one?",
+     "o": [
+      "It saves weight with only a small loss of torque capacity",
+      "It is stronger than a solid shaft of the same outside size in every way",
+      "It never fails in torsion because the hollow centre absorbs shock",
+      "It has no stress in its hollow centre or elsewhere"
+     ],
+     "a": 0,
+     "why": "The centre material carries little stress, so removing it saves weight efficiently.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A shaft cracks at the sharp corner where a thin section meets a thick one. Which design change helps most?",
+     "o": [
+      "Add a smooth rounded fillet",
+      "Make the corner sharper still",
+      "Remove all the lubrication",
+      "Increase the shaft speed"
+     ],
+     "a": 0,
+     "why": "Fillets reduce stress concentration.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why power transmitted by a shaft depends on both torque and speed.",
+     "rubric": [
+      [
+       "power"
+      ],
+      [
+       "torque",
+       "turning"
+      ],
+      [
+       "speed",
+       "rpm",
+       "angular",
+       "rotation",
+       "revolution"
+      ],
+      [
+       "rate",
+       "per second",
+       "work",
+       "multiply",
+       "times",
+       "×"
+      ]
+     ],
+     "min": 3,
+     "model": "Power is the rate of doing work. Work done per turn is proportional to the torque, and the number of turns per second is the speed, so power = torque × angular speed.",
+     "why": "P = T ω.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its unit.",
+     "pairs": [
+      [
+       "Torque",
+       "N m"
+      ],
+      [
+       "Angular speed",
+       "rad/s"
+      ],
+      [
+       "Power",
+       "W"
+      ],
+      [
+       "Shear stress",
+       "Pa"
+      ]
+     ],
+     "why": "Units follow from the formulas.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A solid shaft of 20 mm diameter carries 100 N m, giving shear stress of about 64 MPa. The same shaft carries 200 N m. What is the stress?",
+     "o": [
+      "About 127 MPa",
+      "About 64 MPa",
+      "About 32 MPa",
+      "About 255 MPa"
+     ],
+     "a": 0,
+     "why": "Stress is proportional to torque, so it doubles.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A drive shaft of a machine suddenly jams but the motor keeps pushing. What is the most dangerous outcome?",
+     "o": [
+      "Torque spikes and the shaft may twist off",
+      "The shaft cools down and the motor runs faster than before",
+      "The motor stops forever",
+      "The shaft grows longer"
+     ],
+     "a": 0,
+     "why": "Overload torque can exceed the shear strength, so shear pins or clutches protect the drive.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a shear pin or slip clutch in a drive do?",
+     "o": [
+      "It fails first to protect expensive parts",
+      "It strengthens the shaft along its length",
+      "It increases the torque supplied",
+      "It adds speed to the machine"
+     ],
+     "a": 0,
+     "why": "A deliberate weak link limits torque, making failure cheap and safe.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a shaft transmits power",
+    "model": "A shaft carries power by turning. Power equals torque times angular speed. A motor that delivers 5 kW at 1500 rpm gives about 32 N m of torque. The shaft is twisted, so engineers check the shear stress, which grows steeply as the diameter shrinks.",
+    "points": [
+     {
+      "k": [
+       "torque",
+       "twist",
+       "turn"
+      ],
+      "ask": "What does the shaft carry?"
+     },
+     {
+      "k": [
+       "speed",
+       "rpm",
+       "angular"
+      ],
+      "ask": "What else decides the power?"
+     },
+     {
+      "k": [
+       "diameter",
+       "thick",
+       "size",
+       "stress"
+      ],
+      "ask": "Why does the diameter matter?"
+     },
+     {
+      "k": [
+       "example",
+       "motor",
+       "car",
+       "drive"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Thermodynamics",
+   "icon": "🔥",
+   "hook": "A car engine burns fuel but only some of that energy moves the car. Where does the rest go, and can an engine ever be perfectly efficient?",
+   "explain": [
+    "Thermodynamics studies heat, work and energy. The first law says energy is conserved: the heat put into a system equals the work it does plus the change in its internal energy. Heat needed to warm a mass is Q = m c ΔT, where c is the specific heat capacity. Water has c = 4180 J/(kg K), so warming 2 kg of water by 30 K needs 2 × 4180 × 30 = 250 800 J.",
+    "Temperature in kelvin is T(K) = T(°C) + 273. So 27 °C = 300 K. Engineers must use kelvin in gas laws and efficiency limits.",
+    "A heat engine takes heat Qin from a hot source, turns part into work W and rejects the rest Qout to a cold sink. Efficiency is η = W ÷ Qin. If 1000 J goes in and 300 J of work comes out, η = 30%.",
+    "The second law says no engine can turn all heat into work. The best possible (Carnot) efficiency is 1 − Tc ÷ Th in kelvin. For Th = 600 K and Tc = 300 K this is 50%. Real engines are always lower. Safety link: boilers and pressure vessels must have pressure relief valves, because heated gas builds pressure."
+   ],
+   "example": {
+    "q": "A heat engine takes in 1000 J and produces 300 J of work. What is its efficiency, and how much heat is rejected?",
+    "steps": [
+     "η = W ÷ Qin = 300 ÷ 1000 = 0.30.",
+     "Rejected heat = Qin − W = 1000 − 300.",
+     "= 700 J."
+    ],
+    "a": "30%; 700 J rejected"
+   },
+   "analogies": {
+    "home": "A kettle uses an electrical element to heat water: Q = m c ΔT tells how much energy is needed.",
+    "city": "A power station burns fuel to make steam and turn turbines. Cooling towers reject the unused heat.",
+    "farm": "A tractor engine turns about a third of the fuel energy into work; the rest leaves as exhaust and cooling heat.",
+    "sea": "A ship's engine has a hot cylinder and cool seawater to carry away waste heat."
+   },
+   "mnemonic": "Energy is conserved. Heat can't be fully turned to work. Use kelvin.",
+   "terms": [
+    [
+     "First law",
+     "Energy is conserved: heat in = work out + change in internal energy."
+    ],
+    [
+     "Specific heat capacity",
+     "Energy to warm 1 kg by 1 K."
+    ],
+    [
+     "Heat engine",
+     "A device that converts heat into work."
+    ],
+    [
+     "Carnot efficiency",
+     "The upper limit 1 − Tc ÷ Th."
+    ]
+   ],
+   "misc": {
+    "wrong": "A perfect engine could turn all fuel energy into motion.",
+    "right": "The second law forbids it. Some heat must be rejected to a colder place."
+   },
+   "limits": "Carnot efficiency is an ideal limit. Real engines also lose energy to friction, incomplete combustion and heat leaks.",
+   "trip": {
+    "wiki": "Heat engine",
+    "prompt": "Find a diagram of a heat engine. Mark where heat goes in, work comes out and heat is rejected."
+   },
+   "sources": [
+    "Thermodynamics",
+    "Heat engine",
+    "Specific heat capacity"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which law states that energy is conserved?",
+     "o": [
+      "The first law of thermodynamics",
+      "The second law of thermodynamics",
+      "Hooke's law",
+      "Newton's third law of motion"
+     ],
+     "a": 0,
+     "why": "The first law is energy conservation including heat.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How much energy is needed to warm 2 kg of water by 30 K? Use c = 4180 J/(kg K).",
+     "a": 250800,
+     "tol": 100,
+     "unit": "J",
+     "why": "Q = m c ΔT = 2 × 4180 × 30 = 250 800 J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Convert 27 °C to kelvin. Use T(K) = T(°C) + 273.",
+     "a": 300,
+     "tol": 0.5,
+     "unit": "K",
+     "why": "27 + 273 = 300 K.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A Carnot engine works between 600 K and 300 K. What is the maximum efficiency in percent?",
+     "a": 50,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "η = 1 − 300 ÷ 600 = 0.5 = 50%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An engine takes in 2000 J of heat and produces 500 J of work. How much heat does it reject?",
+     "o": [
+      "1500 J",
+      "500 J",
+      "2500 J",
+      "0 J"
+     ],
+     "a": 0,
+     "why": "By energy conservation, rejected heat = 2000 − 500 = 1500 J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An inventor claims an engine of 100% efficiency running without a cold sink. What is wrong?",
+     "o": [
+      "It breaks the second law",
+      "It breaks Hooke's law",
+      "It needs more mass",
+      "It needs no fuel and is fine"
+     ],
+     "a": 0,
+     "why": "The second law forbids converting all heat into work.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must a sealed boiler have a pressure relief valve?",
+     "o": [
+      "Heated gas builds pressure that could burst the vessel",
+      "To let outside air into the boiler so that it burns more fuel",
+      "To increase pressure further so the steam is hotter and stronger",
+      "To cool the floor under the boiler with leaking hot water"
+     ],
+     "a": 0,
+     "why": "Safety valves release steam before pressure exceeds the vessel's strength.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Raising the hot temperature of an engine while keeping the cold sink the same does what to Carnot efficiency?",
+     "o": [
+      "Increases it",
+      "Decreases it",
+      "Has no effect",
+      "Makes it exceed 100%"
+     ],
+     "a": 0,
+     "why": "η = 1 − Tc ÷ Th rises as Th rises.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do car engines need a radiator or cooling system?",
+     "rubric": [
+      [
+       "waste heat",
+       "heat",
+       "hot",
+       "temperature"
+      ],
+      [
+       "reject",
+       "remove",
+       "carry away",
+       "lose",
+       "escape",
+       "cool"
+      ],
+      [
+       "second law",
+       "not all",
+       "cannot convert",
+       "unused"
+      ],
+      [
+       "damage",
+       "melt",
+       "overheat",
+       "fail"
+      ]
+     ],
+     "min": 2,
+     "model": "Only part of the fuel energy becomes work. The rest is waste heat that must be carried away, or the engine overheats and parts warp, seize or melt.",
+     "why": "The second law forces waste heat, which must be rejected.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Specific heat capacity",
+       "Energy to warm 1 kg by 1 K"
+      ],
+      [
+       "Heat engine",
+       "Converts heat into work"
+      ],
+      [
+       "Kelvin",
+       "Absolute temperature unit"
+      ],
+      [
+       "Efficiency",
+       "Work out ÷ heat in"
+      ]
+     ],
+     "why": "These are core thermodynamics ideas.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A real engine runs between 900 K and 300 K. Its Carnot limit is about 67%. A designer reports 80%. What is the right conclusion?",
+     "o": [
+      "The claim breaks the second law, so there is an error",
+      "The design is brilliant and efficient",
+      "Only the units are wrong",
+      "The engine simply needs more fuel to reach 80%"
+     ],
+     "a": 0,
+     "why": "No engine can beat the Carnot efficiency between the same temperatures.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A greenhouse stores heat in water barrels. Why water?",
+     "o": [
+      "It has a high specific heat capacity, so it stores much heat per kg",
+      "It has a very low specific heat capacity, so it warms quickly and stays warm",
+      "It is dense metal",
+      "It has zero heat capacity"
+     ],
+     "a": 0,
+     "why": "Water holds a lot of energy per kilogram per kelvin.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A refrigerator moves heat from cold food to the warmer kitchen. Does this break the second law?",
+     "o": [
+      "No, because it uses external work",
+      "Yes, it always breaks the law",
+      "Only in summer, when kitchens are warm",
+      "No, it works without any input of work"
+     ],
+     "a": 0,
+     "why": "Heat flows from cold to hot only when work is supplied, as the compressor does.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why no engine is perfectly efficient",
+    "model": "An engine takes heat from something hot and turns part of it into work. The rest has to be thrown away to something colder. This is the second law of thermodynamics. For example, an engine running between 600 K and 300 K can be at most 50% efficient.",
+    "points": [
+     {
+      "k": [
+       "heat",
+       "hot",
+       "fuel"
+      ],
+      "ask": "What does the engine start with?"
+     },
+     {
+      "k": [
+       "work",
+       "useful",
+       "motion"
+      ],
+      "ask": "What does it turn some of that into?"
+     },
+     {
+      "k": [
+       "waste",
+       "reject",
+       "cold",
+       "cool"
+      ],
+      "ask": "What happens to the rest?"
+     },
+     {
+      "k": [
+       "efficiency",
+       "percent",
+       "limit",
+       "example",
+       "carnot"
+      ],
+      "ask": "Is there a limit?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Fluid mechanics",
+   "icon": "💧",
+   "hook": "A small push on a small piston can lift a car on a larger one. Where does the extra force come from, and what is given up in return?",
+   "explain": [
+    "A fluid is a liquid or gas. Pressure is force per area: p = F ÷ A, in pascals. In a still liquid, pressure grows with depth: p = ρ g h. At a depth of 10 m in water (ρ = 1000 kg/m³, g = 9.8 m/s²) the extra pressure is 98 000 Pa, about one atmosphere.",
+    "In a hydraulic system, pressure is transmitted equally through the fluid. A 200 N force on a piston of area 0.001 m² gives p = 200 000 Pa. On a piston of area 0.01 m² this produces 200 000 × 0.01 = 2000 N. The force is multiplied tenfold, but the small piston moves ten times further.",
+    "For flowing fluid, mass is conserved. The flow rate Q = A v is the same everywhere in a pipe, so a pipe that narrows from 0.02 m² to 0.01 m² doubles the speed: 2 m/s becomes 4 m/s. This is the continuity equation.",
+    "Buoyancy: a submerged object feels an upward force equal to the weight of the displaced fluid, F = ρ g V. Safety link: hydraulic hoses under high pressure can burst or inject fluid, so pressure ratings, relief valves and inspection are important."
+   ],
+   "example": {
+    "q": "A hydraulic jack has a small piston of area 0.001 m² and a large piston of area 0.01 m². A force of 200 N is applied to the small piston. What force does the large piston produce?",
+    "steps": [
+     "Pressure = 200 ÷ 0.001 = 200 000 Pa.",
+     "The same pressure acts on the large piston.",
+     "Force = 200 000 × 0.01 = 2000 N."
+    ],
+    "a": "2000 N"
+   },
+   "analogies": {
+    "home": "A tap with a narrow outlet makes water squirt faster, as the same flow squeezes through a smaller area.",
+    "city": "A water tower gives pressure by height, because pressure grows with depth.",
+    "farm": "A hydraulic loader on a tractor lifts heavy loads with a small pump.",
+    "sea": "A submarine feels greater pressure the deeper it goes."
+   },
+   "mnemonic": "Pressure equal everywhere in a still fluid. A v the same along a pipe.",
+   "terms": [
+    [
+     "Pressure",
+     "Force per unit area, in pascals."
+    ],
+    [
+     "Hydrostatic pressure",
+     "Pressure from the weight of fluid, ρ g h."
+    ],
+    [
+     "Continuity",
+     "Flow rate A v is constant in a pipe."
+    ],
+    [
+     "Buoyancy",
+     "Upward force equal to the weight of displaced fluid."
+    ]
+   ],
+   "misc": {
+    "wrong": "A hydraulic jack gives free extra work.",
+    "right": "Force is multiplied but distance shrinks by the same factor. Work out equals work in, ignoring losses."
+   },
+   "limits": "Real fluids have viscosity and compressibility, which these simple equations ignore.",
+   "trip": {
+    "wiki": "Pascal's law",
+    "prompt": "Find a diagram of a hydraulic press. Which piston moves farther?"
+   },
+   "sources": [
+    "Fluid mechanics",
+    "Pascal's law",
+    "Buoyancy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the unit of pressure?",
+     "o": [
+      "Pascal",
+      "Newton",
+      "Watt",
+      "Joule"
+     ],
+     "a": 0,
+     "why": "1 Pa = 1 N/m².",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "What is the pressure in water at 10 m depth due to the water alone? Use ρ = 1000 kg/m³ and g = 9.8 m/s². Answer in pascals.",
+     "a": 98000,
+     "tol": 100,
+     "unit": "Pa",
+     "why": "p = ρ g h = 1000 × 9.8 × 10 = 98 000 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Water flows at 2 m/s in a pipe of area 0.02 m² that narrows to 0.01 m². What is the speed in the narrow part in m/s?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "A1 v1 = A2 v2, so v2 = 0.02 × 2 ÷ 0.01 = 4 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A hydraulic press has pistons of area 0.002 m² and 0.05 m². A 100 N force acts on the small piston. What force results on the large piston in newtons?",
+     "a": 2500,
+     "tol": 5,
+     "unit": "N",
+     "why": "The area ratio is 25, so the force is 100 × 25 = 2500 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A diver goes from 5 m to 20 m depth. What happens to the water pressure on her?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "p = ρ g h grows with depth.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A hydraulic jack multiplies force by 10. What is the trade-off?",
+     "o": [
+      "The input piston moves 10 times as far",
+      "The jack makes extra energy that the input does not supply",
+      "The load is lighter",
+      "Nothing is lost"
+     ],
+     "a": 0,
+     "why": "Work is conserved, so force × distance stays the same.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A steel ship floats although steel is denser than water. Why?",
+     "o": [
+      "Its hollow hull displaces enough water to give a buoyant force equal to its weight",
+      "Steel hulls are painted with a special coating that makes them lighter than the water around them",
+      "Water pushes sideways on the hull and holds the ship up by suction",
+      "Ships do not weigh anything at sea because the water carries them"
+     ],
+     "a": 0,
+     "why": "Buoyant force equals the weight of displaced water, and a hollow hull displaces a large volume.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A high-pressure hydraulic hose develops a tiny pinhole leak. What is the main hazard?",
+     "o": [
+      "A fine jet can penetrate skin",
+      "The jet is only wet and harmless",
+      "The oil becomes colder",
+      "Nothing, small leaks are never a hazard"
+     ],
+     "a": 0,
+     "why": "High-pressure fluid jets cause serious injury, so leaks must not be checked by hand.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a dam wall is much thicker at the bottom than at the top.",
+     "rubric": [
+      [
+       "pressure"
+      ],
+      [
+       "depth",
+       "deeper",
+       "bottom",
+       "height",
+       "lower"
+      ],
+      [
+       "increase",
+       "greater",
+       "more",
+       "higher",
+       "grows"
+      ],
+      [
+       "force",
+       "load",
+       "push"
+      ]
+     ],
+     "min": 3,
+     "model": "Water pressure increases with depth (p = ρ g h), so the force on the wall is greater near the bottom. A thicker base resists this larger load.",
+     "why": "The load on the wall rises with depth.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each law or idea to its use.",
+     "pairs": [
+      [
+       "Pascal's law",
+       "Hydraulic jack"
+      ],
+      [
+       "Continuity",
+       "Pipe narrowing speeds the flow"
+      ],
+      [
+       "Hydrostatic pressure",
+       "Dam wall design"
+      ],
+      [
+       "Buoyancy",
+       "Floating ships"
+      ]
+     ],
+     "why": "Each idea explains a different fluid effect.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The large piston of a jack must rise 1 cm. The pistons' area ratio is 10. How far must the small piston move?",
+     "o": [
+      "10 cm",
+      "1 cm",
+      "0.1 cm",
+      "100 cm"
+     ],
+     "a": 0,
+     "why": "Volumes of fluid moved are equal, so the small piston moves ten times as far.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Air gets into a hydraulic brake line. Why do the brakes feel spongy?",
+     "o": [
+      "Air is compressible so pedal movement squeezes air, not pushing fluid",
+      "Air is incompressible, so the pedal moves freely without squeezing any fluid at all",
+      "Air adds pressure",
+      "Air makes the fluid heavier"
+     ],
+     "a": 0,
+     "why": "Liquids transmit pressure well; trapped air compresses and wastes pedal travel, which is a safety risk.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A river narrows between rocky banks. What happens to the flow speed in the narrow part?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "It stops"
+     ],
+     "a": 0,
+     "why": "Continuity: smaller area means higher speed for the same flow rate.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a hydraulic jack multiplies force",
+    "model": "In a hydraulic jack, a small push on a small piston makes pressure in the oil. The same pressure acts on a large piston, so it produces a big force. For example, 200 N on a piston of 0.001 m² gives 2000 N on a piston of 0.01 m². The trade-off is that the small piston must move much farther.",
+    "points": [
+     {
+      "k": [
+       "pressure",
+       "force",
+       "area"
+      ],
+      "ask": "What does the small push create?"
+     },
+     {
+      "k": [
+       "equal",
+       "same",
+       "transmit"
+      ],
+      "ask": "What happens to that pressure in the oil?"
+     },
+     {
+      "k": [
+       "large",
+       "bigger",
+       "multiply"
+      ],
+      "ask": "What does the large piston do with it?"
+     },
+     {
+      "k": [
+       "farther",
+       "distance",
+       "trade",
+       "move"
+      ],
+      "ask": "What is given up in return?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Heat transfer",
+   "icon": "♨️",
+   "hook": "Why does a metal spoon feel colder than a wooden one on a cold morning, though both are at the same temperature?",
+   "explain": [
+    "Heat flows from hot to cold in three ways. Conduction passes heat through a solid by vibrating atoms. Convection moves heat by a moving fluid, such as warm air rising. Radiation carries heat as infrared waves and needs no medium.",
+    "Conduction through a wall follows q = k A ΔT ÷ L, where k is the thermal conductivity in W/(m K), A the area, ΔT the temperature difference and L the thickness. For k = 0.8 W/(m K), A = 10 m², ΔT = 20 K and L = 0.2 m, q = 0.8 × 10 × 20 ÷ 0.2 = 800 W. Doubling the thickness halves the heat flow.",
+    "Convection from a surface is q = h A ΔT, where h is the heat transfer coefficient. For h = 10 W/(m² K), A = 2 m² and ΔT = 15 K, q = 300 W. Fans raise h, which is why they cool.",
+    "Design decisions follow. Insulation uses materials of low k, often trapping still air. Heat sinks on electronics use metals of high k and large area. Dark rough surfaces radiate and absorb more than shiny ones. Overheated parts fail, so cooling is a basic part of safe design."
+   ],
+   "example": {
+    "q": "A wall has k = 0.8 W/(m K), area 10 m² and thickness 0.2 m. The temperature difference across it is 20 K. How much heat flows through it?",
+    "steps": [
+     "q = k A ΔT ÷ L.",
+     "= 0.8 × 10 × 20 ÷ 0.2.",
+     "= 160 ÷ 0.2 = 800 W."
+    ],
+    "a": "800 W"
+   },
+   "analogies": {
+    "home": "A thermos flask has a vacuum gap to stop conduction and convection, and a shiny wall to reduce radiation.",
+    "city": "Radiators in a building warm the air, which then circulates by convection.",
+    "farm": "A greenhouse traps heat from the sun, as glass lets sunlight in but slows heat leaving.",
+    "sea": "Sea breezes are convection currents driven by land and sea temperature differences."
+   },
+   "mnemonic": "Conduction through, convection carried, radiation rays.",
+   "terms": [
+    [
+     "Conduction",
+     "Heat transfer through a solid by touching atoms."
+    ],
+    [
+     "Convection",
+     "Heat carried by a moving fluid."
+    ],
+    [
+     "Radiation",
+     "Heat transferred by electromagnetic waves."
+    ],
+    [
+     "Thermal conductivity (k)",
+     "How well a material conducts heat, in W/(m K)."
+    ]
+   ],
+   "misc": {
+    "wrong": "Metal feels colder because it is colder.",
+    "right": "Metal conducts heat away from your hand faster, so it feels cooler even at the same temperature."
+   },
+   "limits": "Real walls have layers and surface films, and radiation depends strongly on temperature, so these formulas are simplified.",
+   "trip": {
+    "wiki": "Heat transfer",
+    "prompt": "Find the three modes of heat transfer in a diagram. Which is acting in a kettle?"
+   },
+   "sources": [
+    "Heat transfer",
+    "Thermal conduction",
+    "Convection"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which mode of heat transfer can occur through a vacuum?",
+     "o": [
+      "Radiation",
+      "Conduction",
+      "Convection",
+      "All three"
+     ],
+     "a": 0,
+     "why": "Radiation does not need a medium.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A wall has k = 0.5 W/(m K), area 8 m², thickness 0.25 m and a temperature difference of 10 K. What is the heat flow in watts?",
+     "a": 160,
+     "tol": 0.5,
+     "unit": "W",
+     "why": "q = 0.5 × 8 × 10 ÷ 0.25 = 160 W.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Convection from a hot panel: h = 10 W/(m² K), A = 2 m², ΔT = 15 K. What is the heat transfer in watts?",
+     "a": 300,
+     "tol": 0.5,
+     "unit": "W",
+     "why": "q = h A ΔT = 10 × 2 × 15 = 300 W.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The wall thickness in the first example (800 W through 0.2 m) is doubled to 0.4 m with the same ΔT. What is the new heat flow in watts?",
+     "a": 400,
+     "tol": 1,
+     "unit": "W",
+     "why": "Heat flow is inversely proportional to thickness, so it halves to 400 W.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a fan cool a hot electronic component?",
+     "o": [
+      "It raises the convection heat transfer coefficient",
+      "It lowers the thermal conductivity of the component so heat cannot leave",
+      "It adds heat",
+      "It stops radiation"
+     ],
+     "a": 0,
+     "why": "Moving air increases h and removes more heat.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A house roof is painted white in a hot country. What is the aim?",
+     "o": [
+      "Reflect sunlight and absorb less radiation",
+      "Absorb more heat to warm the house",
+      "Increase conduction through the roof",
+      "Increase the weight of the roof"
+     ],
+     "a": 0,
+     "why": "Light surfaces reflect more solar radiation.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A heat sink for a computer chip is made of copper or aluminium with many thin fins. Why?",
+     "o": [
+      "High conductivity moves heat out and fins add surface area",
+      "Fins block air flow around the chip, which keeps it warm and gives steady running",
+      "Copper is an insulator",
+      "Fins reduce area"
+     ],
+     "a": 0,
+     "why": "Heat must conduct to the fins and then convect away, so area and conductivity both matter.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does double glazing reduce heat loss?",
+     "o": [
+      "The trapped gas layer has a low conductivity and restricts convection",
+      "The trapped gas layer has a high conductivity and passes heat quickly through the gap",
+      "Glass is thicker than brick",
+      "It increases radiation"
+     ],
+     "a": 0,
+     "why": "A still gas layer is a poor conductor.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A chip overheats inside a sealed box. Suggest two design changes and explain how each helps.",
+     "rubric": [
+      [
+       "heat sink",
+       "fins",
+       "fin"
+      ],
+      [
+       "fan",
+       "airflow",
+       "ventilation",
+       "vent",
+       "convection"
+      ],
+      [
+       "conductive",
+       "copper",
+       "aluminium",
+       "thermal paste",
+       "paste"
+      ],
+      [
+       "lower power",
+       "less power",
+       "reduce power"
+      ]
+     ],
+     "min": 2,
+     "model": "Fit a heat sink with fins to conduct heat away and increase surface area, and add a fan or vents so moving air removes the heat by convection. Thermal paste helps conduction from the chip to the sink.",
+     "why": "Heat must be moved from the chip to the surroundings by conduction then convection.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each mode to an example.",
+     "pairs": [
+      [
+       "Conduction",
+       "Spoon heating in hot soup"
+      ],
+      [
+       "Convection",
+       "Warm air rising over a heater"
+      ],
+      [
+       "Radiation",
+       "Warmth from the Sun"
+      ],
+      [
+       "Insulation",
+       "Reduces heat flow with low k"
+      ]
+     ],
+     "why": "Each example shows one dominant mode.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A furnace wall is made of two layers. Adding a layer of low-k insulation on the outside does what?",
+     "o": [
+      "Lowers heat loss and the outside surface temperature",
+      "Raises the outside surface temperature while heat loss goes up",
+      "Stops conduction completely",
+      "Adds radiation"
+     ],
+     "a": 0,
+     "why": "More thermal resistance reduces the heat flow, so the outside is cooler and safer to touch.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a stainless pan handle often a thin, hollow design or fitted with plastic?",
+     "o": [
+      "To limit conduction so it does not burn the hand",
+      "To increase conduction so heat reaches the cook's hand quickly",
+      "To make it heavier",
+      "To look nice only"
+     ],
+     "a": 0,
+     "why": "Reducing the cross-section area or using low-k material lowers heat flow to the hand.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The Sun's heat reaches Earth across space. Which mode makes this possible?",
+     "o": [
+      "Radiation",
+      "Conduction",
+      "Convection",
+      "None of them"
+     ],
+     "a": 0,
+     "why": "Space is nearly a vacuum, so only radiation can cross it.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The three ways heat moves",
+    "model": "Heat moves by conduction, convection and radiation. Conduction goes through a solid, like a hot spoon. Convection is carried by moving air or water, like warm air rising. Radiation travels as invisible waves, like warmth from the Sun. Insulation works by cutting down one or more of these.",
+    "points": [
+     {
+      "k": [
+       "conduct",
+       "solid",
+       "touch"
+      ],
+      "ask": "What is conduction?"
+     },
+     {
+      "k": [
+       "convect",
+       "moving",
+       "air",
+       "water",
+       "fluid"
+      ],
+      "ask": "What is convection?"
+     },
+     {
+      "k": [
+       "radiat",
+       "wave",
+       "sun",
+       "infrared"
+      ],
+      "ask": "What is radiation?"
+     },
+     {
+      "k": [
+       "insulat",
+       "example",
+       "wall",
+       "flask"
+      ],
+      "ask": "How do we slow heat down?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Machine design fundamentals",
+   "icon": "🛠️",
+   "hook": "How do engineers decide how thick to make a bolt, so that it is not wastefully big but also never breaks in use?",
+   "explain": [
+    "Machine design turns a need into a safe, workable machine. Engineers follow steps: state the requirements, think of concepts, choose materials and shapes, analyse the loads, build and test a prototype, then improve. Each step can send you back to an earlier one.",
+    "Analysis begins by finding every load, then identifying the failure modes: yielding, fracture, fatigue (cracks from repeated loading), wear, buckling, corrosion or overheating. A design must be safe against each one.",
+    "The safety factor is n = strength ÷ working stress. Higher factors are used when the loads are uncertain or failure would be dangerous, such as in lifting equipment. Bolt in shear: two bolts of 10 mm diameter share a 12 kN shear load. Area of each is π × 0.005² = 78.5 mm², stress τ = 6000 ÷ 78.5 = 76.4 MPa. If the shear strength is 300 MPa, n = 300 ÷ 76.4 = 3.9.",
+    "Design involves trade-offs between weight, cost, strength, manufacture, maintenance and environmental impact. Engineers also consider ethics: a design that is cheap but unsafe is not acceptable, and standards and codes exist to protect users."
+   ],
+   "example": {
+    "q": "A load of 12 kN in shear is shared equally by two 10 mm bolts. Their shear strength is 300 MPa. Find the safety factor.",
+    "steps": [
+     "Load per bolt = 6000 N. Area = π × 5² = 78.5 mm².",
+     "Shear stress = 6000 ÷ 78.5 = 76.4 MPa.",
+     "n = 300 ÷ 76.4 = 3.9."
+    ],
+    "a": "Safety factor about 3.9"
+   },
+   "analogies": {
+    "home": "A chair is designed to carry far more than a person's weight so that it does not break if someone leans on it.",
+    "city": "A lift is built with many times the required strength and with backup brakes.",
+    "farm": "A tractor hitch is overbuilt as the load can jerk suddenly.",
+    "sport": "A climbing rope has a large safety factor because failure is life-threatening."
+   },
+   "mnemonic": "Need, concept, analyse, test, improve, with a safety factor.",
+   "terms": [
+    [
+     "Failure mode",
+     "A way a part can stop doing its job, such as yielding or fatigue."
+    ],
+    [
+     "Safety factor",
+     "Strength divided by working stress."
+    ],
+    [
+     "Fatigue",
+     "Cracking caused by repeated loading."
+    ],
+    [
+     "Prototype",
+     "A trial version used for testing."
+    ]
+   ],
+   "misc": {
+    "wrong": "If it works once, the design is safe.",
+    "right": "Parts can fail after many repeats (fatigue), in unexpected loads or when they wear, so designs are analysed and tested over their life."
+   },
+   "limits": "Safety factors are partly judgement. They must be agreed with codes, standards and experience.",
+   "trip": {
+    "wiki": "Machine element",
+    "prompt": "Find a list of machine elements. Pick one and name how it might fail."
+   },
+   "sources": [
+    "Machine element",
+    "Factor of safety",
+    "Engineering design process"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a safety factor tell you?",
+     "o": [
+      "How many times stronger the part is than the working load requires",
+      "The total cost of making the part, including materials and labour",
+      "The colour code that tells the workshop which steel is used",
+      "The weight of the finished part and nothing else"
+     ],
+     "a": 0,
+     "why": "It is strength divided by working stress.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A part has a yield stress of 400 MPa and the working stress is 160 MPa. What is the safety factor?",
+     "a": 2.5,
+     "tol": 0.02,
+     "why": "n = 400 ÷ 160 = 2.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A single 8 mm diameter bolt carries a shear force of 5 kN. Use π = 3.14. What is the shear stress in MPa, rounded to one decimal place?",
+     "a": 99.5,
+     "tol": 0.6,
+     "unit": "MPa",
+     "why": "A = π × 4² = 50.24 mm². τ = 5000 ÷ 50.24 = 99.5 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bolt's shear strength is 300 MPa, and a safety factor of 4 is required. What is the allowable shear stress in MPa?",
+     "a": 75,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "Allowable = 300 ÷ 4 = 75 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A cyclic load far below the yield stress still breaks a shaft after months. Which failure mode is this?",
+     "o": [
+      "Fatigue",
+      "Buckling",
+      "Corrosion only",
+      "Fracture on the first load"
+     ],
+     "a": 0,
+     "why": "Repeated loading starts cracks that grow until the part breaks.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why use a larger safety factor for a passenger lift than for a toy?",
+     "o": [
+      "Failure could injure people and the loads are uncertain",
+      "Toys are heavy and need extra margin to survive being dropped by children",
+      "Lifts are cheap",
+      "There is no reason"
+     ],
+     "a": 0,
+     "why": "Consequences of failure and uncertainty set the factor.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "During testing a prototype's shaft cracks at a sharp step. What is the sensible next step?",
+     "o": [
+      "Go back and redesign with a rounded fillet",
+      "Ignore it, since one crack is not a problem",
+      "Sell it as it is",
+      "Use thinner material at the step"
+     ],
+     "a": 0,
+     "why": "Design is iterative: find the cause then change the design.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A designer reduces a part's thickness to save money without checking the stress. What is the main risk?",
+     "o": [
+      "The working stress may exceed the allowed value",
+      "The part becomes safer as it gets thinner",
+      "The part becomes denser as it gets thinner",
+      "Nothing changes at all in the part"
+     ],
+     "a": 0,
+     "why": "Thinner sections raise the stress.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A new machine part is cheaper but a test shows a safety factor of 1.1 for a load that may vary. Should it be approved? Give reasons.",
+     "rubric": [
+      [
+       "no",
+       "not",
+       "reject",
+       "redesign",
+       "unsafe"
+      ],
+      [
+       "uncertain",
+       "vary",
+       "varies",
+       "unexpected",
+       "overload"
+      ],
+      [
+       "low",
+       "small",
+       "too close",
+       "margin"
+      ],
+      [
+       "fail",
+       "break",
+       "danger",
+       "injur",
+       "safety"
+      ]
+     ],
+     "min": 2,
+     "model": "No. A factor of 1.1 leaves almost no margin, and since the load varies and is uncertain the part could easily fail. Cost saving must not outweigh safety, so it should be redesigned.",
+     "why": "Safety factors must cover uncertainty and the consequences of failure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each failure mode to its cause.",
+     "pairs": [
+      [
+       "Yielding",
+       "Stress above yield stress"
+      ],
+      [
+       "Fatigue",
+       "Repeated loading"
+      ],
+      [
+       "Wear",
+       "Rubbing surfaces"
+      ],
+      [
+       "Corrosion",
+       "Chemical attack"
+      ]
+     ],
+     "why": "Each mode needs a different safeguard.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A pair of bolts is replaced by one bolt of the same diameter. What happens to the shear stress for the same load?",
+     "o": [
+      "It doubles",
+      "It halves",
+      "It stays the same",
+      "It drops to zero"
+     ],
+     "a": 0,
+     "why": "The area carrying the load is halved, so the stress doubles.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lifting hook is overloaded in testing to 2 times its rating and is then reused. Why is that unsafe?",
+     "o": [
+      "It may have been permanently deformed or cracked",
+      "It becomes lighter and easier to lift after being overloaded in a test",
+      "It becomes stronger",
+      "It cools"
+     ],
+     "a": 0,
+     "why": "Overload can cause plastic damage that is not visible, so tested parts are inspected or discarded.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A design codes committee sets a minimum factor of 5 for lifting equipment. Which reason best supports this?",
+     "o": [
+      "Loads are uncertain and the consequences of failure are severe",
+      "Steel is cheap and plentiful, so extra material costs the company very little",
+      "Machines enjoy margins",
+      "It increases speed"
+     ],
+     "a": 0,
+     "why": "Codes encode experience and ethics to protect people.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a safety factor is and why we use one",
+    "model": "A safety factor is how many times stronger a part is than it needs to be. If a bolt's strength is 300 MPa and the working stress is 75 MPa, the factor is 4. We use one because loads are uncertain and parts can wear or crack. If failure could hurt people the factor is bigger.",
+    "points": [
+     {
+      "k": [
+       "strength",
+       "strong",
+       "stronger"
+      ],
+      "ask": "What is being compared?"
+     },
+     {
+      "k": [
+       "working",
+       "load",
+       "stress",
+       "needs"
+      ],
+      "ask": "What is it compared with?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "unknown",
+       "unexpected",
+       "wear",
+       "crack",
+       "fatigue"
+      ],
+      "ask": "Why not just make it exactly strong enough?"
+     },
+     {
+      "k": [
+       "people",
+       "safe",
+       "danger",
+       "lift",
+       "injur",
+       "example"
+      ],
+      "ask": "When is the factor bigger?"
+     }
+    ]
+   }
+  }
+ ]
+}

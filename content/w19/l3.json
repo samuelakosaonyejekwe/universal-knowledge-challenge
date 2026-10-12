@@ -1,0 +1,2878 @@
+{
+ "world": 19,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Municipal planning",
+   "icon": "🗺️",
+   "hook": "A city of 100,000 people expects 20,000 more in ten years. What should it start planning today, and who should be asked?",
+   "explain": [
+    "Municipal planning is how a city decides in advance where homes, jobs, roads, parks and services should go. A plan usually looks 10 to 30 years ahead and is updated as things change.",
+    "Planners start with evidence: population forecasts, maps, traffic counts and what residents say. They write goals, such as access to services, safe streets, affordable housing and care for the environment. Then they compare options against those goals instead of picking whatever sounds nice.",
+    "Land-use planning and zoning turn goals into rules: where homes, shops, factories and parks may go. Plans have trade-offs. More housing near the centre may mean taller buildings. Protecting green space may mean less land for building. Different countries share planning power between national, regional and local governments in different ways."
+   ],
+   "example": {
+    "q": "Port Alder has 100,000 people and expects 20,000 more. Each household has 4 people. How many new homes are needed?",
+    "steps": [
+     "New people: 20,000.",
+     "People per home: 4.",
+     "20,000 ÷ 4 = 5,000 homes."
+    ],
+    "a": "About 5,000 new homes."
+   },
+   "analogies": {
+    "home": "Before building an extension, a family decides which rooms they need, what they can afford and where the pipes go. A city plan does the same on a large scale.",
+    "farm": "A farmer plans which field is for crops, which for animals and where the water goes, so the land supports the whole farm for years.",
+    "sea": "A port plans docks, warehouses and roads for ships that have not arrived yet.",
+    "tech": "Like a software roadmap, a city plan sets priorities, tests them against evidence and is updated as users' needs change."
+   },
+   "mnemonic": "Forecast, Goals, Options, Choose, Review: F-G-O-C-R.",
+   "terms": [
+    [
+     "Land-use plan",
+     "A map and rules showing what each area is for."
+    ],
+    [
+     "Zoning",
+     "Legal rules that limit what can be built where."
+    ],
+    [
+     "Forecast",
+     "An evidence-based estimate of what will happen."
+    ],
+    [
+     "Trade-off",
+     "Gaining something by accepting a cost elsewhere."
+    ]
+   ],
+   "misc": {
+    "wrong": "A good plan is fixed and should never change.",
+    "right": "Plans should be reviewed as population, costs and technology change."
+   },
+   "limits": "Forecasts can be wrong, and experts disagree on how dense or spread out cities should be. Planning powers also differ between countries.",
+   "trip": {
+    "wiki": "Urban planning",
+    "prompt": "Find one planned city and one city that grew organically, and compare their street layouts."
+   },
+   "sources": [
+    "Urban planning",
+    "Zoning",
+    "Land-use planning"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the main purpose of a municipal plan?",
+     "o": [
+      "To decide in advance where homes, services and infrastructure should go",
+      "To set tax rates and wages for every worker in the whole city, each year",
+      "To list all the current members of the city council and their duties",
+      "To record the history of buildings that already exist in the city centre"
+     ],
+     "a": 0,
+     "why": "Plans guide land use and services so growth is organised.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is evidence a planner would use?",
+     "o": [
+      "Population forecasts and traffic counts",
+      "Opinion polls on which party the planners support",
+      "Photographs of the most famous buildings in the city",
+      "Stories about the city that residents repeat to each other"
+     ],
+     "a": 0,
+     "why": "Planning decisions should rest on data.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A city with 150,000 people plans for 20% growth. How many people will it plan for in total?",
+     "a": 180000,
+     "tol": 0,
+     "unit": "people",
+     "why": "20% of 150,000 = 30,000. 150,000 + 30,000 = 180,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A new district will house 12,000 people at 4 people per home. How many homes is that?",
+     "a": 3000,
+     "tol": 0,
+     "unit": "homes",
+     "why": "12,000 ÷ 4 = 3,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a fair way to compare two planning options?",
+     "o": [
+      "Score both against stated goals such as access, cost and environment",
+      "Choose the option with the most attractive drawings and the clearest maps on display",
+      "Choose whichever option was the first one proposed in the meeting",
+      "Choose the option that looks the largest on the map"
+     ],
+     "a": 0,
+     "why": "Stated criteria make choices transparent and defensible.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these planning steps in order.",
+     "items": [
+      "Gather evidence and forecasts",
+      "Set goals with residents",
+      "Compare options",
+      "Adopt and publish the plan",
+      "Review and update"
+     ],
+     "why": "Evidence and goals come before options, and plans are reviewed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the planning tool to its purpose.",
+     "pairs": [
+      [
+       "Zoning",
+       "Controls what can be built where"
+      ],
+      [
+       "Population forecast",
+       "Estimates future demand"
+      ],
+      [
+       "Traffic count",
+       "Measures road use"
+      ],
+      [
+       "Public hearing",
+       "Collects residents' views"
+      ]
+     ],
+     "why": "Each tool supplies evidence or rules for planning.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A plan puts a factory next to a school. What principle does that most obviously break?",
+     "o": [
+      "Compatible land use that protects health",
+      "Cheapest land should always be used first for any purpose",
+      "Land use rules matter only for housing, not for factories",
+      "Larger buildings should always be placed near each other"
+     ],
+     "a": 0,
+     "why": "Planning separates incompatible uses to protect health and safety.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give one trade-off in deciding whether to build new homes on a green field at the edge of the city.",
+     "rubric": [
+      [
+       "home",
+       "housing",
+       "building",
+       "development",
+       "jobs"
+      ],
+      [
+       "green",
+       "nature",
+       "farmland",
+       "environment",
+       "loss",
+       "trees",
+       "wildlife",
+       "traffic",
+       "sprawl",
+       "longer",
+       "commute"
+      ]
+     ],
+     "min": 2,
+     "model": "New homes help meet housing need, but building on green fields can lose farmland or nature and may mean longer commutes and costly new roads and pipes.",
+     "why": "A trade-off names both a benefit and a cost.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do plans need to be reviewed every few years?",
+     "o": [
+      "Populations, costs and technologies change",
+      "Old plans should be replaced to keep consultants employed",
+      "Printed plans lose their legal force after a fixed time",
+      "A plan can only be changed after a complete failure"
+     ],
+     "a": 0,
+     "why": "Conditions change, so plans should be updated.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A forecast says population will grow 10%, but a newer study says 25%. What is the most responsible response?",
+     "o": [
+      "Test the plan under both scenarios and update as data arrive",
+      "Keep the old forecast, since changing a plan costs too much time and money",
+      "Adopt the higher number and plan only for the fastest growth",
+      "Wait until the actual population has been counted before making any plan"
+     ],
+     "a": 0,
+     "why": "Scenario planning handles uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Two defensible plans exist: one concentrates growth near the centre, the other spreads it out. How should leaders choose without relying on ideology?",
+     "rubric": [
+      [
+       "criteria",
+       "goals",
+       "evidence",
+       "data",
+       "score",
+       "compare"
+      ],
+      [
+       "cost",
+       "access",
+       "environment",
+       "afford",
+       "residents",
+       "consult",
+       "travel",
+       "service"
+      ]
+     ],
+     "min": 2,
+     "model": "Leaders can state goals such as cost, access to services, travel time and environmental impact, collect evidence for each option, consult residents, and score both options against the criteria.",
+     "why": "Stated criteria and evidence give a non-partisan basis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do planners say many small decisions can add up to a big effect?",
+     "o": [
+      "Each rule and permit shapes the long-term pattern of the city",
+      "Small decisions are always cancelled out by the large projects built later",
+      "Only decisions made by the national government ever shape a city",
+      "Each decision is separate and has no link to any of the others in the city"
+     ],
+     "a": 0,
+     "why": "Cumulative decisions shape the city over decades.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What municipal planning is",
+    "model": "Planning means deciding ahead where homes, jobs, roads and parks go, using evidence such as population forecasts. Planners set goals, compare options and update the plan. Rules like zoning put the plan into action.",
+    "points": [
+     {
+      "k": [
+       "ahead",
+       "future",
+       "forecast",
+       "years"
+      ],
+      "ask": "Why plan ahead?"
+     },
+     {
+      "k": [
+       "evidence",
+       "data",
+       "count",
+       "survey",
+       "forecast"
+      ],
+      "ask": "What do planners base choices on?"
+     },
+     {
+      "k": [
+       "zoning",
+       "rules",
+       "land use"
+      ],
+      "ask": "How does the plan become real?"
+     },
+     {
+      "k": [
+       "trade-off",
+       "cost",
+       "choose",
+       "compare"
+      ],
+      "ask": "Are there downsides to choices?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Public finance",
+   "icon": "📊",
+   "hook": "A city can raise taxes, cut services or borrow. Which is best, and what would you need to know before deciding?",
+   "explain": [
+    "Public finance is how governments raise, hold and spend money. A city's main aim is fiscal sustainability: it can keep providing services over time without relying on one-off money or unmanageable debt.",
+    "Revenue comes from taxes, fees, grants and sometimes borrowing. Spending is split between operating costs (wages, repairs, running services) and capital costs (building things that last). A common rule is to pay for ongoing services from ongoing revenue, and to borrow, if at all, only for capital projects that will serve people for many years.",
+    "A useful measure is spending per resident. It lets us compare cities of different sizes. Another is the share of the budget going to each service. Numbers alone do not say whether spending is good, so cities also track results, such as how many people use a service and how well it works."
+   ],
+   "example": {
+    "q": "Port Alder spends 54,000,000 luns a year and has 180,000 residents. What is spending per resident?",
+    "steps": [
+     "Total spending: 54,000,000.",
+     "Residents: 180,000.",
+     "54,000,000 ÷ 180,000 = 300."
+    ],
+    "a": "300 luns per resident."
+   },
+   "analogies": {
+    "home": "A family covers monthly bills from monthly income, but may take a loan for a house that lasts decades.",
+    "farm": "A farmer pays daily costs from the harvest and borrows only for a tractor that will work for years.",
+    "sport": "A club pays coaches from ticket sales but may save for a new stadium over years.",
+    "tech": "A company funds its servers from regular subscriptions and builds a new data centre with a long-term loan."
+   },
+   "mnemonic": "Daily bills from daily income; big builds can be borrowed.",
+   "terms": [
+    [
+     "Fiscal sustainability",
+     "Being able to keep paying for services over the long term."
+    ],
+    [
+     "Operating cost",
+     "Regular cost of running services."
+    ],
+    [
+     "Capital cost",
+     "One-time cost of building something lasting."
+    ],
+    [
+     "Per capita",
+     "Per person; total divided by population."
+    ]
+   ],
+   "misc": {
+    "wrong": "A city should never borrow.",
+    "right": "Borrowing can be sensible for long-lasting assets if repayments are affordable. Borrowing to pay everyday bills is risky."
+   },
+   "limits": "Rules on city borrowing and taxes differ greatly between countries, so examples here are illustrative.",
+   "trip": {
+    "wiki": "Public finance",
+    "prompt": "Find the difference between a budget deficit and public debt."
+   },
+   "sources": [
+    "Public finance",
+    "Fiscal sustainability"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a capital cost?",
+     "o": [
+      "Building a new bridge",
+      "Paying the monthly wages of teachers and nurses",
+      "Buying paper and printer ink for the town hall",
+      "Paying yearly electricity bills for public offices"
+     ],
+     "a": 0,
+     "why": "Capital costs build long-lasting assets.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A city spends 90,000,000 luns and has 300,000 residents. What is spending per resident in luns?",
+     "a": 300,
+     "tol": 0,
+     "unit": "luns",
+     "why": "90,000,000 ÷ 300,000 = 300.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A city's budget is 80,000,000 luns. Education gets 28%. How many luns go to education?",
+     "o": [
+      "22,400,000 luns",
+      "2,240,000 luns",
+      "28,000,000 luns",
+      "57,600,000 luns"
+     ],
+     "a": 0,
+     "why": "0.28 × 80,000,000 = 22,400,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city has revenue of 120,000,000 luns and spending of 132,000,000 luns. The deficit is what percentage of revenue?",
+     "a": 10,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "Deficit = 12,000,000. 12,000,000 ÷ 120,000,000 = 0.10 = 10%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which spending is better suited to borrowing?",
+     "o": [
+      "A water treatment plant that lasts 40 years",
+      "Monthly salaries of the city's teachers and clerks",
+      "Daily supplies for cleaning streets and offices",
+      "Routine costs like electricity bills for city buildings"
+     ],
+     "a": 0,
+     "why": "Long-lasting assets can be paid for over time; recurring costs should come from recurring revenue.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does fiscal sustainability mean?",
+     "o": [
+      "Keeping services affordable over the long term",
+      "Raising spending each year as fast as costs rise",
+      "Setting taxes at the lowest possible rate every year",
+      "Spending the full budget every year before it ends"
+     ],
+     "a": 0,
+     "why": "It means the city can afford its commitments over time.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Rank these from most to least sustainable way to handle a recurring deficit.",
+     "items": [
+      "Match steady costs to steady revenue permanently",
+      "Use savings for a short time while fixing the gap",
+      "Borrow once to cover a single year",
+      "Borrow every year to pay wages"
+     ],
+     "why": "Sustainable balance comes from matching steady revenue and costs. Savings can bridge briefly. Borrowing for wages adds growing debt.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the term to its meaning.",
+     "pairs": [
+      [
+       "Per capita",
+       "Per person"
+      ],
+      [
+       "Capital cost",
+       "Building lasting assets"
+      ],
+      [
+       "Operating cost",
+       "Running services"
+      ],
+      [
+       "Grant",
+       "Money from another level of government"
+      ]
+     ],
+     "why": "These are core public finance terms.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A city plans to cover next year's wages from a one-time land sale. Explain the risk.",
+     "rubric": [
+      [
+       "one-time",
+       "once",
+       "not repeat",
+       "temporary",
+       "run out",
+       "gone",
+       "single"
+      ],
+      [
+       "wages",
+       "salar",
+       "recurring",
+       "next year",
+       "again",
+       "every year",
+       "deficit",
+       "service"
+      ]
+     ],
+     "min": 2,
+     "model": "A land sale happens once, but wages recur every year. Next year the city will have a gap and may have to cut services or raise taxes.",
+     "why": "Match recurring costs with recurring revenue.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "City A spends 400 luns per resident and City B spends 250. What can we safely conclude?",
+     "o": [
+      "Only that A spends more per person; quality needs more evidence",
+      "That A provides better services than B, since it spends more on each person",
+      "That B is run more efficiently, because it spends less per person",
+      "That A is wasting money, since its figure is the higher of the two"
+     ],
+     "a": 0,
+     "why": "Per-person spending does not alone show quality or efficiency.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city faces a deficit. Option 1 cuts library hours. Option 2 raises fees. Option 3 delays a road repair. Which approach follows stated criteria best?",
+     "o": [
+      "Compare each option's effect on access, safety and long-term cost using evidence",
+      "Choose the option that saves the most money this year, whatever the effects later",
+      "Choose the option that the fewest residents are likely to notice",
+      "Choose the option that is the quickest to put into effect, since delay costs more"
+     ],
+     "a": 0,
+     "why": "Criteria-based analysis supports a defensible, non-partisan choice.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can delaying road repairs cost more in the long run?",
+     "rubric": [
+      [
+       "worse",
+       "damage",
+       "deteriorat",
+       "bigger",
+       "grow",
+       "costly",
+       "expensive",
+       "more"
+      ],
+      [
+       "repair",
+       "rebuild",
+       "maintenance",
+       "cost",
+       "road"
+      ]
+     ],
+     "min": 2,
+     "model": "Small damage grows if not fixed, and later the road may need a full rebuild which costs much more than timely repairs.",
+     "why": "Deferred maintenance often raises later costs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which gives the clearest picture of fiscal health?",
+     "o": [
+      "Revenue, spending, reserves and debt together",
+      "Revenue and spending in the most recent year only",
+      "The size of the city's reserves and nothing else",
+      "The amount of debt the city owes and nothing else"
+     ],
+     "a": 0,
+     "why": "Several measures are needed.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Public finance",
+    "model": "Public finance is how a government raises and spends money. A sustainable city matches regular costs with regular income and borrows only for long-lasting projects. Per-person numbers help compare cities.",
+    "points": [
+     {
+      "k": [
+       "raise",
+       "revenue",
+       "tax",
+       "income"
+      ],
+      "ask": "Where does the money come from?"
+     },
+     {
+      "k": [
+       "spend",
+       "service",
+       "cost"
+      ],
+      "ask": "Where does it go?"
+     },
+     {
+      "k": [
+       "sustain",
+       "long",
+       "future",
+       "afford"
+      ],
+      "ask": "What makes it sustainable?"
+     },
+     {
+      "k": [
+       "borrow",
+       "loan",
+       "debt"
+      ],
+      "ask": "When is borrowing sensible?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Infrastructure development",
+   "icon": "🌉",
+   "hook": "A bridge costs 40 million luns to build and 1 million a year to maintain. How should a city decide whether it is worth it?",
+   "explain": [
+    "Infrastructure is the basic physical systems a city depends on: roads, bridges, water pipes, power lines, public buildings and digital networks. It lets people and businesses work and live safely.",
+    "Cities choose projects using cost-benefit analysis. They compare all the costs (building, maintenance, harm to people or nature) with all the benefits (time saved, safety, health, jobs), often turning them into money so they can be compared. A project with benefits larger than costs has a benefit-cost ratio above 1.",
+    "Maintenance matters as much as new building. A project must also be fair to different groups and must be financed. Financing can come from taxes, loans, grants or partnerships with private firms, called public-private partnerships, where risks and rewards are shared by contract."
+   ],
+   "example": {
+    "q": "A bridge costs 30 million luns in total over its life and brings benefits worth 45 million luns. What is the benefit-cost ratio?",
+    "steps": [
+     "Benefits: 45 million.",
+     "Costs: 30 million.",
+     "45 ÷ 30 = 1.5."
+    ],
+    "a": "1.5, so benefits exceed costs."
+   },
+   "analogies": {
+    "home": "A family weighs the cost of a new roof against years of dry rooms and avoided repairs.",
+    "city": "A new metro line costs a lot but saves millions of hours of travel time.",
+    "sea": "Building a harbour wall costs money but protects ships and homes for decades.",
+    "tech": "Network cables are the unseen infrastructure that make every online service work."
+   },
+   "mnemonic": "Count all costs, count all benefits, compare, then maintain.",
+   "terms": [
+    [
+     "Infrastructure",
+     "Basic systems like roads, water and power."
+    ],
+    [
+     "Cost-benefit analysis",
+     "Comparing the total costs and benefits of a project."
+    ],
+    [
+     "Benefit-cost ratio",
+     "Benefits divided by costs."
+    ],
+    [
+     "Public-private partnership",
+     "A contract in which a firm and government share a project."
+    ]
+   ],
+   "misc": {
+    "wrong": "A project with a positive benefit-cost ratio should always be built.",
+    "right": "It also needs funding, fair effects on people and checks on risks and alternatives."
+   },
+   "limits": "Some benefits, like safety or beauty, are hard to put a price on, and experts disagree on how to value them.",
+   "trip": {
+    "wiki": "Infrastructure",
+    "prompt": "Find three kinds of infrastructure mentioned on the page and one risk if they are not maintained."
+   },
+   "sources": [
+    "Infrastructure",
+    "Cost–benefit analysis",
+    "Public–private partnership"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is infrastructure?",
+     "o": [
+      "Water pipes",
+      "A local festival that takes place once a year",
+      "A popular rumour about the city's government",
+      "The friendly service offered at a market stall"
+     ],
+     "a": 0,
+     "why": "Pipes are physical systems that support city life.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A project costs 20 million luns and has benefits of 30 million luns. What is the benefit-cost ratio?",
+     "a": 1.5,
+     "tol": 0.01,
+     "why": "30 ÷ 20 = 1.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bridge costs 40 million luns to build. It costs 1 million luns a year to maintain over 30 years. What is the total cost in million luns (ignore interest)?",
+     "a": 70,
+     "tol": 0,
+     "unit": "million luns",
+     "why": "40 + 30 × 1 = 70.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Option A costs 50 million and gives benefits of 60 million. Option B costs 30 million and gives benefits of 48 million. What is the net benefit (benefits minus costs) of the better option in million luns?",
+     "o": [
+      "18 million luns",
+      "10 million luns",
+      "12 million luns",
+      "78 million luns"
+     ],
+     "a": 0,
+     "why": "A: 10. B: 18. B is better on net benefit: 18.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why include maintenance in a cost-benefit analysis?",
+     "o": [
+      "The project costs money for its whole life",
+      "Maintenance spending is paid by a different budget entirely",
+      "Upkeep costs are always small enough to ignore",
+      "Maintenance counts as a benefit because it employs workers"
+     ],
+     "a": 0,
+     "why": "Life-cycle costs include upkeep.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a public-private partnership?",
+     "o": [
+      "A contract where government and a firm share a project's costs and risks",
+      "A tax paid by firms every year to fund new government buildings",
+      "A gift of money from firms to cities, given without any conditions",
+      "A law that bans governments from working with private firms on projects"
+     ],
+     "a": 0,
+     "why": "They share work, risk and reward under a contract.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for choosing an infrastructure project.",
+     "items": [
+      "Identify the need",
+      "List options",
+      "Estimate costs and benefits",
+      "Consult and decide",
+      "Build and maintain"
+     ],
+     "why": "Need, options, analysis, decision, delivery.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each cost or benefit to its type.",
+     "pairs": [
+      [
+       "Time saved by commuters",
+       "Benefit: travel"
+      ],
+      [
+       "Building materials",
+       "Cost: construction"
+      ],
+      [
+       "Fewer accidents",
+       "Benefit: safety"
+      ],
+      [
+       "Noise for nearby homes",
+       "Cost: harm to neighbours"
+      ]
+     ],
+     "why": "Both sides must be counted, including harms to neighbours.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a project with a benefit-cost ratio above 1 might still not be built right away.",
+     "rubric": [
+      [
+       "fund",
+       "money",
+       "afford",
+       "finance",
+       "budget",
+       "cost"
+      ],
+      [
+       "fair",
+       "alternative",
+       "better",
+       "risk",
+       "priorit",
+       "other project",
+       "harm",
+       "unfair"
+      ]
+     ],
+     "min": 2,
+     "model": "The city may not have funding to build it now, there may be better projects, the benefits may fall unfairly on some groups, or risks may be high.",
+     "why": "Positive ratios are necessary but not enough.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cost-benefit study ignores a noisy road's effect on homes. What is the problem?",
+     "o": [
+      "Costs are understated",
+      "Benefits are understated, so the project looks worse than it is",
+      "Costs are overstated, since noise lowers every other cost",
+      "Nothing is wrong, as noise is hard to measure in numbers"
+     ],
+     "a": 0,
+     "why": "Ignored harms make the project look better than it is.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A cost-benefit study is paid for by the group that wants the project. What safeguard is most useful?",
+     "o": [
+      "Independent review and published assumptions",
+      "Let the same group review its own study and keep the figures private",
+      "Ask the group to remove costs that look too large",
+      "Use only the benefits and leave out uncertain costs"
+     ],
+     "a": 0,
+     "why": "Transparency and independence reduce bias.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a public-private partnership be risky for a city?",
+     "rubric": [
+      [
+       "contract",
+       "long",
+       "years",
+       "locked",
+       "fixed"
+      ],
+      [
+       "cost",
+       "risk",
+       "pay",
+       "profit",
+       "fee",
+       "toll",
+       "price",
+       "public",
+       "control"
+      ]
+     ],
+     "min": 2,
+     "model": "Contracts can lock the city into long-term payments or fees, and if risks are badly shared the public may carry costs while profits go to the firm, so contracts must be transparent and well designed.",
+     "why": "PPPs can work but depend on contract design and oversight.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two bridges: Bridge A has a ratio of 1.2 and serves a wealthy area; Bridge B has a ratio of 1.1 and links a poorly served area to jobs. What should leaders do?",
+     "o": [
+      "Weigh ratio together with access and fairness criteria",
+      "Always pick the higher ratio because it is the larger number",
+      "Always pick the area with the lower income",
+      "Choose the bridge that is cheaper to build, whatever the ratios"
+     ],
+     "a": 0,
+     "why": "Ratios are one input among several stated criteria.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Choosing infrastructure projects",
+    "model": "Infrastructure is roads, water, power and other basic systems. Cities compare all costs and benefits, including upkeep, to see if a project is worth it. They also check funding, fairness and risks.",
+    "points": [
+     {
+      "k": [
+       "road",
+       "bridge",
+       "water",
+       "power",
+       "pipe"
+      ],
+      "ask": "What is infrastructure?"
+     },
+     {
+      "k": [
+       "cost",
+       "benefit",
+       "compare",
+       "ratio"
+      ],
+      "ask": "How do you decide if it is worth it?"
+     },
+     {
+      "k": [
+       "maintain",
+       "upkeep",
+       "repair"
+      ],
+      "ask": "Is building the only cost?"
+     },
+     {
+      "k": [
+       "fair",
+       "fund",
+       "risk",
+       "afford"
+      ],
+      "ask": "What else should be checked?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Education services",
+   "icon": "📚",
+   "hook": "If a city can fund one extra thing for schools, should it be more teachers, smaller classes, new buildings or free meals? How would you decide?",
+   "explain": [
+    "Cities and regions often help provide education. Depending on the country, local governments may run schools, build and repair them, pay staff, or help with transport and meals. In other countries, national or regional governments carry most of this work.",
+    "Education services are judged by access (can every child reach a school?), quality (do students learn?), and equity (do children from different backgrounds get a fair chance?). Costs include teachers, buildings, books and technology.",
+    "Evidence matters. Class size, teacher training, early learning and attendance all affect results, but effects differ by context. A good policy tests ideas, measures results and adjusts, rather than assuming one fix works everywhere."
+   ],
+   "example": {
+    "q": "A district has 3,600 pupils and 120 teachers. How many pupils per teacher?",
+    "steps": [
+     "Pupils: 3,600.",
+     "Teachers: 120.",
+     "3,600 ÷ 120 = 30."
+    ],
+    "a": "30 pupils per teacher."
+   },
+   "analogies": {
+    "home": "A family chooses whether to spend on books, a quiet desk or a tutor, depending on what helps most.",
+    "farm": "A farmer invests in good seed and soil so the harvest lasts many seasons, like investing in children's learning.",
+    "sport": "A club with good coaches and facilities develops more players.",
+    "music": "A music class needs instruments and teachers; without them the best pupil cannot learn."
+   },
+   "mnemonic": "A-Q-E: Access, Quality, Equity.",
+   "terms": [
+    [
+     "Access",
+     "Whether every child can reach and enter a school."
+    ],
+    [
+     "Equity",
+     "Giving people what they need to have a fair chance."
+    ],
+    [
+     "Pupil-teacher ratio",
+     "Number of pupils for each teacher."
+    ],
+    [
+     "Attendance",
+     "How often pupils come to school."
+    ]
+   ],
+   "misc": {
+    "wrong": "Spending more on education always raises results.",
+    "right": "How money is spent matters, and results depend on teaching quality, support and context."
+   },
+   "limits": "Research on class size, testing and funding gives mixed results and varies by country.",
+   "trip": {
+    "wiki": "Education",
+    "prompt": "Find two different ways countries organise who runs schools."
+   },
+   "sources": [
+    "Education",
+    "Public education"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which measures access to education?",
+     "o": [
+      "Whether children can reach a school",
+      "The quality of the uniforms children wear",
+      "The number of sports teams the school has",
+      "How modern the school's buildings look"
+     ],
+     "a": 0,
+     "why": "Access means children can get to and enter school.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A school has 540 pupils and 18 classes of equal size. How many pupils are in each class?",
+     "a": 30,
+     "tol": 0,
+     "unit": "pupils",
+     "why": "540 ÷ 18 = 30.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city spends 21,600,000 luns on its 18,000 pupils. What is the spending per pupil in luns?",
+     "a": 1200,
+     "tol": 0,
+     "unit": "luns",
+     "why": "21,600,000 ÷ 18,000 = 1,200.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Attendance rose from 80% to 92% in a school with 500 pupils. How many more pupils attend on an average day?",
+     "o": [
+      "60 pupils",
+      "12 pupils",
+      "600 pupils",
+      "460 pupils"
+     ],
+     "a": 0,
+     "why": "12% of 500 = 60.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Many pupils miss school because the nearest school is 12 km away with no transport. Which fix targets the cause?",
+     "o": [
+      "Provide school transport or a nearer school",
+      "Build a larger sports field to attract more pupils",
+      "Give more homework to pupils who already attend",
+      "Change the school colours to make it more welcoming"
+     ],
+     "a": 0,
+     "why": "The barrier is distance, so address access.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does equity mean in education?",
+     "o": [
+      "Giving each child what they need to have a fair chance",
+      "Giving every child exactly the same resources whatever their needs",
+      "Giving the most support to children whose families can pay",
+      "Treating all differences between children as irrelevant"
+     ],
+     "a": 0,
+     "why": "Equity adjusts support to need, unlike treating everyone identically.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order these from the earliest stage of a typical school pathway to the later one.",
+     "items": [
+      "Early childhood learning",
+      "Primary school",
+      "Secondary school",
+      "Vocational or higher education"
+     ],
+     "why": "These stages follow children's development, although names and ages differ by country.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the problem to a sensible response.",
+     "pairs": [
+      [
+       "Children arrive hungry",
+       "School meal programme"
+      ],
+      [
+       "Classrooms are crowded",
+       "Build or add classrooms"
+      ],
+      [
+       "Teachers lack training",
+       "Professional development"
+      ],
+      [
+       "Pupils live far away",
+       "School transport"
+      ]
+     ],
+     "why": "Match the response to the cause.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A council wants to know whether free school meals improve learning. What evidence could it collect?",
+     "rubric": [
+      [
+       "attendance",
+       "test",
+       "results",
+       "scores",
+       "grades",
+       "learning",
+       "concentrat"
+      ],
+      [
+       "before",
+       "after",
+       "compare",
+       "survey",
+       "records",
+       "data",
+       "other school",
+       "group"
+      ]
+     ],
+     "min": 2,
+     "model": "It could compare attendance and test results before and after the meal programme, or against similar schools without it, and survey teachers and families.",
+     "why": "Evidence should compare outcomes with a sensible baseline.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A school with fewer pupils per teacher has better results than another. What should we be careful about?",
+     "o": [
+      "Other factors may explain the difference",
+      "It proves that fewer pupils per teacher always raises results",
+      "It shows that teachers have no real effect on pupils' results",
+      "It shows that the other school must have worse teachers"
+     ],
+     "a": 0,
+     "why": "Correlation is not proof of cause.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A district can fund either smaller classes (cost 4 million luns) or early-reading support (cost 2 million) for the same group. What is the best next step?",
+     "o": [
+      "Compare expected benefit per luns using the best available evidence",
+      "Choose the cheaper option, because it uses up less of the money available",
+      "Choose the more expensive option, because it must be the better one",
+      "Choose the option that more parents say they prefer, without looking at results"
+     ],
+     "a": 0,
+     "why": "Compare outcomes relative to cost with evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might equal funding per pupil still leave some children at a disadvantage?",
+     "rubric": [
+      [
+       "need",
+       "different",
+       "disabil",
+       "language",
+       "poor",
+       "disadvant",
+       "start",
+       "extra"
+      ],
+      [
+       "support",
+       "equity",
+       "fair",
+       "help",
+       "cost",
+       "more"
+      ]
+     ],
+     "min": 2,
+     "model": "Children start with different needs, such as language, disability or hunger, so equal money may not give equal chances. Equity may mean extra support where needs are greater.",
+     "why": "Equity differs from equality.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If test scores are the only measure of a school, what is missed?",
+     "o": [
+      "Wellbeing, skills and equity of opportunity",
+      "Nothing important, since test scores cover all that schools do",
+      "Only the size and condition of the school buildings",
+      "Only how long teachers have worked at the school"
+     ],
+     "a": 0,
+     "why": "Single measures give a partial picture.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Education services",
+    "model": "Cities and governments provide schools, teachers, buildings and support. Good education is judged by access, quality and equity. Leaders compare options with evidence, since the same spending can help more or less depending on how it is used.",
+    "points": [
+     {
+      "k": [
+       "school",
+       "teacher",
+       "learn"
+      ],
+      "ask": "What do education services provide?"
+     },
+     {
+      "k": [
+       "access",
+       "reach",
+       "distance"
+      ],
+      "ask": "What is access?"
+     },
+     {
+      "k": [
+       "equity",
+       "fair",
+       "need",
+       "different"
+      ],
+      "ask": "What is equity?"
+     },
+     {
+      "k": [
+       "evidence",
+       "measure",
+       "result",
+       "compare"
+      ],
+      "ask": "How do leaders know if it works?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Healthcare services",
+   "icon": "🏥",
+   "hook": "A town has one clinic and a growing population. Should it add a second clinic, more nurses or a mobile health van? What evidence would you want?",
+   "explain": [
+    "Healthcare services include clinics, hospitals, emergency care, vaccination, and public health work such as clean water and health education. In some countries local governments run clinics; in others, regional or national bodies or private providers do. Funding methods also differ.",
+    "Cities often focus on primary care and public health, because preventing illness and treating problems early can cost less and help more people. Planners look at distance to a clinic, waiting times, and whether services are affordable and available in the languages people speak.",
+    "Decisions use data such as the number of people per clinic, travel time and common health needs. Because resources are limited, health planners compare options by expected benefit and cost, and they also care about fairness, so that poorer or remote groups are not left out. This lesson uses fictional cases and gives no personal medical advice."
+   ],
+   "example": {
+    "q": "A fictional town of 24,000 people has 3 clinics. How many people per clinic, and how many if a 4th clinic opens?",
+    "steps": [
+     "24,000 ÷ 3 = 8,000.",
+     "24,000 ÷ 4 = 6,000.",
+     "The fourth clinic cuts the load by 2,000 people per clinic."
+    ],
+    "a": "8,000, then 6,000 people per clinic."
+   },
+   "analogies": {
+    "home": "A first-aid kit at home deals with small problems quickly so they do not become big ones.",
+    "farm": "A farmer vaccinates the herd and checks the water so a disease does not spread.",
+    "city": "Clean water pipes and rubbish collection protect public health quietly every day.",
+    "nature": "A garden is healthier when you remove weeds early rather than waiting for them to take over."
+   },
+   "mnemonic": "Prevent, Reach, Treat: stop illness early, reach everyone, treat well.",
+   "terms": [
+    [
+     "Primary care",
+     "First-contact healthcare, such as local clinics."
+    ],
+    [
+     "Public health",
+     "Actions that protect the health of a whole population."
+    ],
+    [
+     "Vaccination",
+     "Giving a vaccine to build protection against a disease."
+    ],
+    [
+     "Waiting time",
+     "How long a person waits to be seen."
+    ]
+   ],
+   "misc": {
+    "wrong": "Healthcare is only about hospitals.",
+    "right": "Prevention, clean water and primary care are major parts of keeping people healthy."
+   },
+   "limits": "Countries fund and organise health care in many different ways, and experts disagree about the best mix of public and private provision.",
+   "trip": {
+    "wiki": "Primary care",
+    "prompt": "Find two different ways countries organise or pay for health care."
+   },
+   "sources": [
+    "Primary care",
+    "Public health",
+    "Health system"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a public health action?",
+     "o": [
+      "Providing clean drinking water",
+      "Buying a private car for a family",
+      "Repainting the walls of a local clinic",
+      "Opening a shop that sells snacks in the market"
+     ],
+     "a": 0,
+     "why": "Clean water protects the whole population from disease.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A fictional district has 45,000 people and 5 clinics sharing the population equally. How many people does each clinic serve?",
+     "a": 9000,
+     "tol": 0,
+     "unit": "people",
+     "why": "45,000 ÷ 5 = 9,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A vaccination drive aims to reach 80% of 12,500 children. How many children is that?",
+     "o": [
+      "10,000 children",
+      "1,000 children",
+      "8,000 children",
+      "12,420 children"
+     ],
+     "a": 0,
+     "why": "0.80 × 12,500 = 10,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A mobile health van costs 300,000 luns a year and sees 6,000 visits. What is the cost per visit in luns?",
+     "a": 50,
+     "tol": 0,
+     "unit": "luns",
+     "why": "300,000 ÷ 6,000 = 50.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do planners value primary care?",
+     "o": [
+      "Early care can prevent bigger problems and reaches more people",
+      "It is the most expensive way to deliver care to people",
+      "It replaces the need for any hospital anywhere in the country",
+      "Its main benefit is that it reduces the number of nurses a country needs"
+     ],
+     "a": 0,
+     "why": "Early treatment and prevention are effective and often cheaper.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A village is 25 km from the clinic and has few vehicles. Which option best improves access?",
+     "o": [
+      "A mobile clinic or a local health post",
+      "Print a larger sign directing people to the clinic",
+      "Require villagers to complete extra forms before treatment",
+      "Raise the clinic's fee to pay for new equipment"
+     ],
+     "a": 0,
+     "why": "Bring care closer to people.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from most preventive to most treatment-focused.",
+     "items": [
+      "Clean water and sanitation",
+      "Vaccination campaigns",
+      "Clinic check-ups",
+      "Hospital surgery"
+     ],
+     "why": "Prevention comes before illness; surgery treats serious problems after they develop.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each measure to what it tells planners.",
+     "pairs": [
+      [
+       "Travel time to clinic",
+       "Access"
+      ],
+      [
+       "Waiting time",
+       "Convenience and capacity"
+      ],
+      [
+       "Vaccination rate",
+       "Protection in the population"
+      ],
+      [
+       "Cost per visit",
+       "Efficiency"
+      ]
+     ],
+     "why": "Different indicators show different dimensions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A clinic has long waits. Name two possible causes planners could check.",
+     "rubric": [
+      [
+       "staff",
+       "nurse",
+       "doctor",
+       "few",
+       "shortage"
+      ],
+      [
+       "demand",
+       "patients",
+       "population",
+       "appointment",
+       "system",
+       "booking",
+       "opening",
+       "hours",
+       "space",
+       "supply"
+      ]
+     ],
+     "min": 2,
+     "model": "There may be too few staff or opening hours for the number of patients, or a poor appointment system, or demand may have grown. Planners would check the data before choosing a fix.",
+     "why": "Diagnose the cause with data before acting.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fee at the clinic doubles and fewer poor families attend. What does this suggest?",
+     "o": [
+      "Cost may be a barrier to access",
+      "The clinic has become better so fewer people need it",
+      "Families are healthier now and no longer need care",
+      "Fees have no effect on whether people use health care"
+     ],
+     "a": 0,
+     "why": "Price can reduce use, especially among poorer people.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city must choose between a new hospital wing (benefits few but severe cases) and more local clinics (benefits many with milder needs). Which is the most defensible approach?",
+     "o": [
+      "Use stated criteria such as number helped, severity, cost and fairness",
+      "Pick the option with the most modern-looking buildings, since that shows progress",
+      "Pick the option that is politically more popular this year",
+      "Pick the cheaper option, whatever its effects on people's health may be"
+     ],
+     "a": 0,
+     "why": "Both options have merit; criteria and evidence decide.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do planners track health measures for different neighbourhoods separately, not only the city average?",
+     "rubric": [
+      [
+       "average",
+       "hide",
+       "mask",
+       "overall"
+      ],
+      [
+       "differ",
+       "gap",
+       "poor",
+       "unequal",
+       "some",
+       "neighbourhood",
+       "group",
+       "fair",
+       "inequal"
+      ]
+     ],
+     "min": 2,
+     "model": "An average can hide gaps: one neighbourhood may have much worse access or health than another. Separate figures show where help is needed.",
+     "why": "Disaggregated data reveals inequality.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about health systems is accurate?",
+     "o": [
+      "Countries organise and pay for health care in different ways",
+      "All countries organise and pay for health care in the same way",
+      "Health care everywhere is delivered only by private providers",
+      "Local governments are barred from health care in every country"
+     ],
+     "a": 0,
+     "why": "Systems vary widely.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Healthcare services in a city",
+    "model": "Healthcare includes clinics, hospitals, emergency care and public health like clean water. Planners look at access, waiting times, cost and fairness. Preventing illness early often helps more people for less.",
+    "points": [
+     {
+      "k": [
+       "clinic",
+       "hospital",
+       "care",
+       "vaccin"
+      ],
+      "ask": "What does healthcare include?"
+     },
+     {
+      "k": [
+       "prevent",
+       "early",
+       "clean water",
+       "public health"
+      ],
+      "ask": "Why is prevention important?"
+     },
+     {
+      "k": [
+       "access",
+       "distance",
+       "cost",
+       "wait"
+      ],
+      "ask": "What can stop people getting care?"
+     },
+     {
+      "k": [
+       "fair",
+       "different",
+       "country",
+       "countries"
+      ],
+      "ask": "Is it the same everywhere?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Public safety",
+   "icon": "🚒",
+   "hook": "Is a city safer with more patrols, better street lighting, faster ambulances or youth programmes? How could you tell?",
+   "explain": [
+    "Public safety means protecting people from harm: crime, fires, accidents, disasters and unsafe conditions. Services include police, fire and rescue, ambulance services, emergency communications and road safety measures. Who provides them varies by country: some are national, some regional, some local.",
+    "Safety is not only about enforcement. Design and prevention help too: good lighting, safe crossings, fire-safety rules and youth and community programmes. Cities measure response times, incident counts and how safe residents feel.",
+    "Public safety must respect rights and fairness. Rules must apply equally, police and officials must be accountable, and policies should be tested with evidence. People hold different views about the best balance, so leaders explain their reasons and measure what works."
+   ],
+   "example": {
+    "q": "A fire station should reach 90% of calls within 8 minutes. Of 400 calls, 352 were reached within 8 minutes. Did it meet the target?",
+    "steps": [
+     "352 ÷ 400 = 0.88.",
+     "That is 88%.",
+     "88% is below 90%."
+    ],
+    "a": "No, 88% is below the 90% target."
+   },
+   "analogies": {
+    "home": "Smoke alarms, locked doors and a plan for emergencies all work together at home.",
+    "sport": "A team defends with players, tactics and training, not only with one strong tackle.",
+    "city": "Lit crossings, clear signs and fast ambulances each remove a different risk.",
+    "sea": "A harbour uses lighthouses, lifeboats and rules to keep ships safe."
+   },
+   "mnemonic": "Prevent, Prepare, Respond, Review.",
+   "terms": [
+    [
+     "Response time",
+     "How long it takes help to arrive."
+    ],
+    [
+     "Prevention",
+     "Actions that stop harm before it happens."
+    ],
+    [
+     "Accountability",
+     "Being answerable for your actions and decisions."
+    ],
+    [
+     "Emergency services",
+     "Fire, ambulance and police services that respond to urgent need."
+    ]
+   ],
+   "misc": {
+    "wrong": "Public safety just means more police.",
+    "right": "Safety comes from prevention, design, emergency services and community support, as well as law enforcement."
+   },
+   "limits": "Research on what reduces crime is complex and debated, and results differ across places and times.",
+   "trip": {
+    "wiki": "Public security",
+    "prompt": "Find two non-police ways cities can make people safer."
+   },
+   "sources": [
+    "Public security",
+    "Emergency service"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a preventive public safety measure?",
+     "o": [
+      "Fixing broken street lights",
+      "Waiting until accidents happen and then investigating them",
+      "Writing detailed reports after each incident has ended",
+      "Hiring extra staff only after a crime wave has begun"
+     ],
+     "a": 0,
+     "why": "Lighting reduces risk before harm happens.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "An ambulance service aims for response within 10 minutes. Out of 250 calls, 220 met this target. What percentage met it?",
+     "a": 88,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "220 ÷ 250 = 0.88 = 88%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Traffic accidents at a junction fell from 40 a year to 28 after a new crossing. By what percentage did they fall?",
+     "a": 30,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "Fall = 12. 12 ÷ 40 = 0.30 = 30%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A city has 6 fire stations for 240,000 people. If stations serve equal populations, how many people does each serve?",
+     "o": [
+      "40,000 people",
+      "1,440,000 people",
+      "24,000 people",
+      "4,000 people"
+     ],
+     "a": 0,
+     "why": "240,000 ÷ 6 = 40,000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is response time important for emergencies?",
+     "o": [
+      "Faster help can reduce harm",
+      "It measures how many staff the service employs",
+      "It shows how much the service costs per resident",
+      "It matters only for the service's annual report"
+     ],
+     "a": 0,
+     "why": "Quick help limits injury and damage.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does accountability matter for safety services?",
+     "o": [
+      "Their powers are strong, so the public needs to be able to check them",
+      "They matter only because they help to keep the city's budget lower",
+      "Accountability makes emergency services slower and less safe to use",
+      "Public checks are only needed after something has already gone wrong"
+     ],
+     "a": 0,
+     "why": "Strong powers need oversight.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for handling an emergency call.",
+     "items": [
+      "A person calls the emergency number",
+      "The call-taker records the location",
+      "A crew is sent",
+      "The crew reaches and helps",
+      "The service reviews the response"
+     ],
+     "why": "Call, location, dispatch, response, review.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the measure to the risk.",
+     "pairs": [
+      [
+       "Smoke alarms",
+       "Fire"
+      ],
+      [
+       "Pedestrian crossings",
+       "Traffic injury"
+      ],
+      [
+       "Flood barriers",
+       "Floods"
+      ],
+      [
+       "Street lighting",
+       "Night-time harm"
+      ]
+     ],
+     "why": "Each measure addresses a particular risk.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A city wants to know if a new street-lighting scheme improved safety. What evidence would help?",
+     "rubric": [
+      [
+       "incident",
+       "crime",
+       "accident",
+       "report",
+       "count",
+       "number"
+      ],
+      [
+       "before",
+       "after",
+       "compare",
+       "similar",
+       "survey",
+       "residents",
+       "feel"
+      ]
+     ],
+     "min": 2,
+     "model": "Compare the number of incidents before and after the scheme, and with similar streets without new lights, and ask residents how safe they feel.",
+     "why": "A good evaluation compares results with a baseline and includes different measures.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Crime in a district fell the year after a new programme started. What should we conclude?",
+     "o": [
+      "It is consistent with the programme working, but other causes should be checked",
+      "The programme definitely worked, because crime fell the year after it began",
+      "The programme definitely failed, because crime had been falling already",
+      "Nothing can ever be concluded about any programme from any numbers"
+     ],
+     "a": 0,
+     "why": "Before-and-after changes need comparison to rule out other causes.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city has funds for either 10 more patrol officers or a youth centre. Experts disagree on the best choice. What is the most defensible approach?",
+     "o": [
+      "Choose criteria like harm reduced and cost, review evidence, trial and measure",
+      "Choose whichever option is getting more attention on social media this week",
+      "Choose whichever option the mayor's close supporters prefer",
+      "Delay the decision until the experts finally agree with one another"
+     ],
+     "a": 0,
+     "why": "Evidence and clear criteria beat ideology.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it important that safety services treat all neighbourhoods fairly?",
+     "rubric": [
+      [
+       "trust",
+       "cooperat",
+       "confidence",
+       "legit"
+      ],
+      [
+       "equal",
+       "fair",
+       "same",
+       "right",
+       "all",
+       "discriminat",
+       "bias"
+      ]
+     ],
+     "min": 1,
+     "model": "Fair treatment protects everyone's rights and builds trust, which helps people report problems and cooperate with services.",
+     "why": "Fairness supports both rights and effectiveness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why publish public safety statistics?",
+     "o": [
+      "So residents can judge performance and hold services to account",
+      "To alarm residents about the amount of crime in their own district",
+      "To fill pages of reports that nobody is expected to read",
+      "To make any comparison between districts and years impossible"
+     ],
+     "a": 0,
+     "why": "Transparency supports accountability.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Public safety",
+    "model": "Public safety protects people from harm through prevention, emergency services and fair rules. Cities measure things like response time and accidents, and check if new ideas really work. Services must be fair and accountable.",
+    "points": [
+     {
+      "k": [
+       "prevent",
+       "lighting",
+       "crossing",
+       "rule"
+      ],
+      "ask": "How can cities prevent harm?"
+     },
+     {
+      "k": [
+       "fire",
+       "ambulance",
+       "police",
+       "emergency",
+       "response"
+      ],
+      "ask": "Who responds when something happens?"
+     },
+     {
+      "k": [
+       "measure",
+       "time",
+       "count",
+       "evidence"
+      ],
+      "ask": "How do we know it works?"
+     },
+     {
+      "k": [
+       "fair",
+       "accountab",
+       "right",
+       "trust"
+      ],
+      "ask": "What should services respect?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Water and energy supply",
+   "icon": "💧",
+   "hook": "Imagine your city loses water for a week or power for a day. What would stop working first, and how could planning have reduced the harm?",
+   "explain": [
+    "Cities rely on networks to bring water and energy to homes and businesses. Water systems collect, clean, store and deliver water, and then collect and treat wastewater. Energy systems generate, transmit and distribute electricity, and some supply gas or heat.",
+    "Planners balance reliability (supply when needed), affordability, safety and environmental impact. Leaks, ageing pipes and peak demand are common problems. Reducing demand through efficiency and cutting leaks can be cheaper than building new capacity.",
+    "Different places use different energy sources and ownership models: public, private or mixed. People hold different views on the best energy mix, so leaders compare options with stated criteria such as cost, reliability, emissions and local resources."
+   ],
+   "example": {
+    "q": "A city supplies 10,000 cubic metres of water a day, and 2,000 cubic metres leak out. What percentage is lost?",
+    "steps": [
+     "Lost: 2,000.",
+     "Total: 10,000.",
+     "2,000 ÷ 10,000 = 0.20 = 20%."
+    ],
+    "a": "20% is lost to leaks."
+   },
+   "analogies": {
+    "home": "A dripping tap wastes water slowly; fixing it is cheaper than buying more water.",
+    "farm": "A farm irrigation channel with a crack loses water before it reaches the crops.",
+    "city": "Substations and pipes are like the veins and arteries of a city.",
+    "nature": "A river and its tributaries bring water, but droughts reduce flow and require careful sharing."
+   },
+   "mnemonic": "Collect, Clean, Carry, Count: and fix the leaks.",
+   "terms": [
+    [
+     "Water network",
+     "Pipes, pumps and plants that deliver water."
+    ],
+    [
+     "Peak demand",
+     "The time when most people use a service."
+    ],
+    [
+     "Non-revenue water",
+     "Water that is produced but not paid for, such as leaks."
+    ],
+    [
+     "Energy mix",
+     "The combination of energy sources used."
+    ]
+   ],
+   "misc": {
+    "wrong": "The solution to shortages is always to build more supply.",
+    "right": "Reducing waste and leaks and managing demand can be cheaper and faster."
+   },
+   "limits": "Experts disagree about the best energy mix, and what works depends on local geography, climate and costs.",
+   "trip": {
+    "wiki": "Water supply network",
+    "prompt": "Find the steps water goes through from source to tap."
+   },
+   "sources": [
+    "Water supply network",
+    "Electric power distribution"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is peak demand?",
+     "o": [
+      "The time when most people use a service",
+      "The time when the fewest people use a service",
+      "The time of day when a service is cheapest to supply",
+      "The highest price a user is willing to pay"
+     ],
+     "a": 0,
+     "why": "Systems must cope with the busiest times.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A town supplies 8,000 cubic metres of water a day, with 1,600 lost to leaks. What percentage is lost?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "1,600 ÷ 8,000 = 0.2 = 20%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Repairing leaks costs 3,000,000 luns and saves 1,200 cubic metres per day. At 2 luns per cubic metre, how many luns are saved in a 365-day year?",
+     "a": 876000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "1,200 × 365 = 438,000 cubic metres. × 2 = 876,000 luns.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A district uses 24,000 kWh of electricity per day for 6,000 homes. What is the use per home per day in kWh?",
+     "o": [
+      "4 kWh",
+      "40 kWh",
+      "0.25 kWh",
+      "18,000 kWh"
+     ],
+     "a": 0,
+     "why": "24,000 ÷ 6,000 = 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which action reduces demand?",
+     "o": [
+      "Fixing leaks and using efficient appliances",
+      "Building more power lines to carry the extra load",
+      "Adding more generators for use at peak times",
+      "Leaving leaking pipes in place until they burst"
+     ],
+     "a": 0,
+     "why": "Efficiency reduces the amount needed.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a water network also need wastewater treatment?",
+     "o": [
+      "To protect health and rivers from untreated waste",
+      "To make the water supply saltier and easier to store",
+      "To raise revenue by charging for treated waste",
+      "To reduce the amount of water used in homes"
+     ],
+     "a": 0,
+     "why": "Untreated wastewater can spread disease and pollute.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from source to tap.",
+     "items": [
+      "Collect water from a river or well",
+      "Treat and clean it",
+      "Store it in a reservoir or tank",
+      "Deliver through pipes",
+      "Water comes out of the tap"
+     ],
+     "why": "Water is sourced, treated, stored and delivered.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the issue to a sensible response.",
+     "pairs": [
+      [
+       "Leaking pipes",
+       "Repair and replace pipes"
+      ],
+      [
+       "Peak electricity demand",
+       "Encourage use at other times"
+      ],
+      [
+       "Drought",
+       "Water-saving rules and storage"
+      ],
+      [
+       "Power cuts",
+       "Backup supply and maintenance"
+      ]
+     ],
+     "why": "Each issue calls for a targeted response.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why fixing leaks may be a better first step than building a new reservoir.",
+     "rubric": [
+      [
+       "cheaper",
+       "cost",
+       "less",
+       "faster",
+       "quick",
+       "afford"
+      ],
+      [
+       "waste",
+       "lost",
+       "leak",
+       "same water",
+       "save",
+       "already",
+       "supply"
+      ]
+     ],
+     "min": 2,
+     "model": "Fixing leaks saves water that is already produced and is usually cheaper and quicker than building a new reservoir, which needs land, money and years.",
+     "why": "Efficiency can be the cheapest source of supply.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a fair criterion for choosing an energy source?",
+     "o": [
+      "Cost, reliability, emissions and local resources",
+      "Cost, reliability, emissions and which is most popular online",
+      "Which source the largest firm prefers",
+      "Which source has been used for the longest time"
+     ],
+     "a": 0,
+     "why": "Stated criteria help compare options.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city must choose between two energy plans. Plan X is cheaper but less reliable. Plan Y is costlier but more reliable. What is the most responsible way to decide?",
+     "o": [
+      "Estimate the cost of outages and compare it with the extra cost",
+      "Always choose the cheaper plan, since power cuts are rare events anyway",
+      "Always choose the more reliable plan, because cost is a secondary matter",
+      "Choose the plan with the shorter name and simpler wording"
+     ],
+     "a": 0,
+     "why": "Compare total costs including outage harm.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why should water prices consider both cost recovery and affordability for poorer households?",
+     "rubric": [
+      [
+       "cost",
+       "pay",
+       "recover",
+       "fund",
+       "maintain",
+       "run",
+       "sustain"
+      ],
+      [
+       "afford",
+       "poor",
+       "low income",
+       "basic",
+       "need",
+       "access",
+       "fair"
+      ]
+     ],
+     "min": 2,
+     "model": "Prices must raise enough money to keep the system working, but if they are too high some households cannot afford basic water, so cities may use tiered prices or support for low-income homes.",
+     "why": "Sustainability and access both matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does it mean if 30% of a city's treated water is lost before reaching customers?",
+     "o": [
+      "Large savings may be possible by fixing the network",
+      "Customers get free water, so revenue must increase",
+      "Demand is too low for the network to work properly",
+      "The loss is normal and cannot be reduced by repairs"
+     ],
+     "a": 0,
+     "why": "High loss signals an opportunity to save money and water.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Water and energy supply",
+    "model": "Cities bring water and energy to people through networks of pipes, plants and wires. Planners balance reliability, cost, safety and the environment. Fixing leaks and saving energy can be cheaper than building new supply.",
+    "points": [
+     {
+      "k": [
+       "pipe",
+       "plant",
+       "wire",
+       "network",
+       "grid"
+      ],
+      "ask": "How does water or power reach homes?"
+     },
+     {
+      "k": [
+       "reliab",
+       "cost",
+       "afford",
+       "safe",
+       "environment"
+      ],
+      "ask": "What do planners balance?"
+     },
+     {
+      "k": [
+       "leak",
+       "save",
+       "efficien",
+       "demand"
+      ],
+      "ask": "How can we use less?"
+     },
+     {
+      "k": [
+       "differ",
+       "mix",
+       "source",
+       "choose"
+      ],
+      "ask": "Is there only one right energy source?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Community consultation",
+   "icon": "🗣️",
+   "hook": "A city wants to build a new bus depot near your home. What would a fair consultation look like?",
+   "explain": [
+    "Community consultation is a planned process in which a city asks residents and groups for their views before deciding. It lets people share local knowledge, raise concerns and suggest options. It does not mean the majority always wins; leaders still decide using laws, evidence and criteria, and explain how input shaped the result.",
+    "Good consultation starts early, gives clear and honest information, and uses several ways to reach people: meetings, surveys, online forms, visits and translated materials. It identifies stakeholders, meaning anyone affected or interested, including groups who are often missed such as young people, older people, people with disabilities and people who speak other languages.",
+    "Weak consultation is a box-ticking exercise held after the decision, with unclear information. Strong consultation reports back, 'You said, we did', so people see what changed and why. Legal requirements for consultation differ between countries and places."
+   ],
+   "example": {
+    "q": "A survey was sent to 5,000 households and 800 replied. Of those, 560 supported the bus depot. What is the response rate, and the support among respondents?",
+    "steps": [
+     "Response rate: 800 ÷ 5,000 = 16%.",
+     "Support: 560 ÷ 800 = 70%.",
+     "Only 16% replied, so the results may not represent everyone."
+    ],
+    "a": "16% response rate; 70% support among respondents."
+   },
+   "analogies": {
+    "home": "Before moving the furniture in a shared room, a family asks everyone what they need.",
+    "sport": "A coach who asks players about a game plan finds problems the coach missed.",
+    "tech": "Software teams test with real users so features fit real needs.",
+    "music": "A conductor who listens to the whole orchestra spots mistakes early."
+   },
+   "mnemonic": "Early, Honest, Wide, Reported: E-H-W-R.",
+   "terms": [
+    [
+     "Stakeholder",
+     "A person or group affected by or interested in a decision."
+    ],
+    [
+     "Consultation",
+     "Asking for views before deciding."
+    ],
+    [
+     "Response rate",
+     "Share of people asked who replied."
+    ],
+    [
+     "Representative",
+     "Reflecting the make-up of the whole population."
+    ]
+   ],
+   "misc": {
+    "wrong": "Consultation means the majority view must be followed.",
+    "right": "Consultation informs a decision. Leaders weigh views against law, evidence, cost and fairness and explain their choice."
+   },
+   "limits": "Surveys and meetings often over-represent people with time and strong opinions, so results need care.",
+   "trip": {
+    "wiki": "Public consultation",
+    "prompt": "Find two methods of public consultation and one limitation of each."
+   },
+   "sources": [
+    "Public consultation",
+    "Stakeholder (corporate)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a stakeholder in a city decision?",
+     "o": [
+      "Anyone affected by or interested in it",
+      "Only the elected officials who vote on the decision",
+      "Only the staff who write the plan",
+      "Only the people who live next to the project"
+     ],
+     "a": 0,
+     "why": "Stakeholders include all those affected.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A city sends a survey to 2,500 households and 500 reply. What is the response rate?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "500 ÷ 2,500 = 0.20 = 20%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In a survey of 400 respondents, 260 favour a new cycle lane. What percentage favour it?",
+     "a": 65,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "260 ÷ 400 = 0.65 = 65%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which consultation is strongest?",
+     "o": [
+      "Early, with clear information, several methods and feedback after",
+      "Late, once the decision is nearly made, with a single public meeting",
+      "Through a single online form, with no reports afterwards",
+      "By telling a few leaders and letting them inform the rest"
+     ],
+     "a": 0,
+     "why": "Early, clear, varied and reported consultation is best practice.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why use several methods to reach people?",
+     "o": [
+      "Different groups find different methods easier",
+      "It is always cheaper than using one method",
+      "The law requires every city to use exactly three methods",
+      "Using more methods lets planners avoid hearing from critics"
+     ],
+     "a": 0,
+     "why": "One method can exclude groups.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A survey of 50 people who attended a meeting says 90% oppose a plan. What is the main caution?",
+     "o": [
+      "Attendees may not represent all residents",
+      "The result is reliable because a clear majority attended",
+      "The sample of 50 is too small to give any result at all",
+      "Surveys of meeting attendees are accurate when over 80%"
+     ],
+     "a": 0,
+     "why": "Self-selected samples can be biased.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for a strong consultation.",
+     "items": [
+      "Identify stakeholders",
+      "Share clear information",
+      "Collect views by several methods",
+      "Analyse and decide using criteria",
+      "Report back what changed and why"
+     ],
+     "why": "The cycle ends with feedback.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the method to a strength.",
+     "pairs": [
+      [
+       "Public meeting",
+       "Face-to-face discussion"
+      ],
+      [
+       "Online survey",
+       "Many responses quickly"
+      ],
+      [
+       "Door-to-door visit",
+       "Reaches people who do not attend meetings"
+      ],
+      [
+       "Focus group",
+       "In-depth views from a small group"
+      ]
+     ],
+     "why": "Each method has strengths and limits.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why should a city publish a 'You said, we did' report after consultation?",
+     "rubric": [
+      [
+       "trust",
+       "transparen",
+       "open",
+       "honest",
+       "credib"
+      ],
+      [
+       "heard",
+       "listen",
+       "explain",
+       "reason",
+       "feedback",
+       "show",
+       "accountab",
+       "changed"
+      ]
+     ],
+     "min": 1,
+     "model": "It shows residents how their views were used or why they could not be, which builds trust and accountability.",
+     "why": "Feedback closes the loop.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Residents disagree strongly about a plan. What should leaders do?",
+     "o": [
+      "Weigh views against law, evidence and stated criteria and explain the decision",
+      "Follow whichever group is the loudest or the best organised",
+      "Cancel the plan, since strong disagreement shows that it must be flawed",
+      "Hold a vote among council members only, without giving any reasons"
+     ],
+     "a": 0,
+     "why": "Transparent criteria support legitimate decisions.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A consultation received many identical emails from an organised campaign and a few diverse responses. How should the city treat them?",
+     "o": [
+      "Count all views but report how many were unique and weigh arguments, not volume alone",
+      "Ignore the identical emails entirely, since they came from an organised campaign",
+      "Count each email as exactly one view and report only the overall total",
+      "Discard the diverse responses, because there are too few of them to matter"
+     ],
+     "a": 0,
+     "why": "Arguments and evidence matter as well as numbers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can a city make sure people who are often missed, such as shift workers or people who speak other languages, can take part?",
+     "rubric": [
+      [
+       "translat",
+       "language",
+       "interpret"
+      ],
+      [
+       "time",
+       "evening",
+       "weekend",
+       "online",
+       "visit",
+       "outreach",
+       "community group",
+       "flexible",
+       "phone",
+       "paper"
+      ]
+     ],
+     "min": 2,
+     "model": "Offer translated materials and interpreters, hold meetings at different times, give online and paper options, and work with community groups and visit places where people already are.",
+     "why": "Inclusion requires removing practical barriers.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is formal consultation required in the same way in every country?",
+     "o": [
+      "No, laws on consultation vary",
+      "Yes, every country has identical legal duties to consult",
+      "Consultation is banned in most countries",
+      "Consultation is required only in capital cities"
+     ],
+     "a": 0,
+     "why": "Legal duties differ between places.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Community consultation",
+    "model": "Consultation means asking residents for their views before a decision. It works best when it starts early, gives honest information, uses several methods and reports back. Leaders still decide using law, evidence and fair criteria.",
+    "points": [
+     {
+      "k": [
+       "ask",
+       "views",
+       "opinion",
+       "listen"
+      ],
+      "ask": "What is consultation?"
+     },
+     {
+      "k": [
+       "early",
+       "before",
+       "information",
+       "clear"
+      ],
+      "ask": "When and how should it happen?"
+     },
+     {
+      "k": [
+       "everyone",
+       "different",
+       "language",
+       "missed",
+       "include"
+      ],
+      "ask": "Who might be left out?"
+     },
+     {
+      "k": [
+       "report",
+       "explain",
+       "feedback",
+       "decide",
+       "criteria"
+      ],
+      "ask": "What happens afterwards?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Economic development",
+   "icon": "🏭",
+   "hook": "Two options: help a big factory open in town, or support 200 small shops. Which creates more lasting prosperity, and what would you measure?",
+   "explain": [
+    "Economic development means improving a place's jobs, incomes and opportunities over time. Cities can help by providing good infrastructure and skills training, keeping rules clear and fair, supporting small businesses and attracting investment. They also regulate businesses to protect safety, workers and the environment.",
+    "Cities sometimes give incentives, such as lower taxes or free land, to attract firms. These have costs. A city should ask: how many jobs will be created, what do they pay, how long will they last, and what would have happened without the incentive?",
+    "Development should be sustainable and inclusive. Growth that leaves out many people or damages the environment can cause harm later. Common measures are employment rate, median income, number of businesses and how widely benefits are shared. Economists and leaders disagree on how best to grow, so evidence matters."
+   ],
+   "example": {
+    "q": "A city gives a firm incentives worth 6 million luns to create 150 jobs. What is the cost per job?",
+    "steps": [
+     "Total incentive: 6,000,000.",
+     "Jobs: 150.",
+     "6,000,000 ÷ 150 = 40,000."
+    ],
+    "a": "40,000 luns per job."
+   },
+   "analogies": {
+    "home": "A family improves income by training for better jobs and keeping the home in good order.",
+    "farm": "A farm grows more when it has good roads to market, good seed and a variety of crops.",
+    "sea": "A port grows when channels are deep, workers are trained and ships find fair rules.",
+    "tech": "A tech hub grows when there are skilled people, fast internet and places to meet."
+   },
+   "mnemonic": "Skills, Services, Small firms, Stability, Sharing.",
+   "terms": [
+    [
+     "Economic development",
+     "Raising jobs, incomes and opportunities over time."
+    ],
+    [
+     "Incentive",
+     "A benefit offered to encourage an action, such as a tax break."
+    ],
+    [
+     "Employment rate",
+     "Share of working-age people who have jobs."
+    ],
+    [
+     "Inclusive growth",
+     "Growth whose benefits reach many groups."
+    ]
+   ],
+   "misc": {
+    "wrong": "Any new job is good for a city regardless of cost or quality.",
+    "right": "Cities should look at job quality, cost and what would happen without the incentive."
+   },
+   "limits": "Economists disagree about the effectiveness of incentives and the right balance between regulation and growth, so cities use evidence.",
+   "trip": {
+    "wiki": "Economic development",
+    "prompt": "Find three tools that cities or governments use to support economic development."
+   },
+   "sources": [
+    "Economic development",
+    "Employment"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is an incentive in economic development?",
+     "o": [
+      "A benefit offered to encourage a firm or action",
+      "A fine charged to firms that break city rules",
+      "A map showing where firms may build",
+      "A fee paid by customers to use public transport"
+     ],
+     "a": 0,
+     "why": "Incentives encourage actions such as hiring or investing.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A city has 60,000 working-age people and 54,000 have jobs. What is the employment rate?",
+     "o": [
+      "90%",
+      "10%",
+      "54%",
+      "111%"
+     ],
+     "a": 0,
+     "why": "54,000 ÷ 60,000 = 0.9 = 90%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A training programme costs 2,400,000 luns and helps 800 people find jobs. What is the cost per person placed in luns?",
+     "a": 3000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "2,400,000 ÷ 800 = 3,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An incentive of 9 million luns brings 300 jobs paying 12,000 luns a year each. How many years of total wages does it take for wages to equal the incentive?",
+     "a": 2.5,
+     "tol": 0.01,
+     "unit": "years",
+     "why": "Annual wages = 3,600,000. 9,000,000 ÷ 3,600,000 = 2.5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an inclusive growth indicator?",
+     "o": [
+      "Whether incomes rise across many groups",
+      "The number of new advertisements on city streets",
+      "The height of the tallest building in the city",
+      "Total income earned by the richest few residents"
+     ],
+     "a": 0,
+     "why": "Inclusive growth looks at who benefits.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a city regulate businesses?",
+     "o": [
+      "To protect safety, workers and the environment",
+      "To stop firms from operating anywhere in the city",
+      "To keep prices high so that firms can earn more",
+      "To protect existing firms from new competitors"
+     ],
+     "a": 0,
+     "why": "Regulation protects the public while allowing business.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for a skills programme that is checked by evidence.",
+     "items": [
+      "Identify the skills employers need",
+      "Design training with employers",
+      "Run the programme",
+      "Measure how many graduates get jobs"
+     ],
+     "why": "Evidence on needs comes first, and results are measured at the end.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the tool to its goal.",
+     "pairs": [
+      [
+       "Skills training",
+       "Prepare workers for jobs"
+      ],
+      [
+       "Small business support",
+       "Help local firms start and grow"
+      ],
+      [
+       "Clear permit rules",
+       "Reduce delays and uncertainty"
+      ],
+      [
+       "Incentives",
+       "Encourage firms to invest"
+      ]
+     ],
+     "why": "Different tools serve different goals.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A firm says it would not come without a big tax break. What questions should the city ask before agreeing?",
+     "rubric": [
+      [
+       "job",
+       "pay",
+       "wage",
+       "quality",
+       "how many"
+      ],
+      [
+       "would have",
+       "without",
+       "cost",
+       "benefit",
+       "last",
+       "cancel",
+       "clawback",
+       "evidence",
+       "local"
+      ]
+     ],
+     "min": 2,
+     "model": "The city should ask how many good jobs will be created, how long they will last, whether the firm would have come anyway, what the break costs and what protections exist if the firm leaves.",
+     "why": "Evaluate the value and risks of incentives.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A city relies on one big employer. What is the main risk?",
+     "o": [
+      "If it leaves or shrinks, many people lose jobs",
+      "Too many firms compete and lower prices for residents",
+      "The employer must pay taxes that are too low",
+      "The employer will probably expand and run out of workers"
+     ],
+     "a": 0,
+     "why": "Diversification reduces risk.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Plan A attracts one large factory (500 jobs). Plan B supports 100 small firms (400 jobs in total, more spread out). Which statement is the most defensible?",
+     "o": [
+      "Compare job quality, cost, risk and who benefits using evidence",
+      "Plan A is always better, because a single factory creates the most jobs",
+      "Plan B is always better, because small firms never fail or close down",
+      "Choose whichever plan the most recent opinion poll happens to favour"
+     ],
+     "a": 0,
+     "why": "Both can be reasonable; evidence and criteria decide.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might economic growth not reduce inequality by itself?",
+     "rubric": [
+      [
+       "benefit",
+       "gain",
+       "reach",
+       "some",
+       "few",
+       "unequal",
+       "wealthy",
+       "uneven",
+       "share"
+      ],
+      [
+       "policy",
+       "skills",
+       "wage",
+       "job",
+       "access",
+       "education",
+       "support",
+       "tax",
+       "opportunit"
+      ]
+     ],
+     "min": 2,
+     "model": "Growth can benefit some groups more than others. Without access to skills, good jobs and services, many people may not share in it, so policies on education, wages and access matter.",
+     "why": "Who benefits depends on policies and opportunity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which long-term measure best shows development rather than one-off activity?",
+     "o": [
+      "Steady growth in good jobs and median income",
+      "One big festival that draws visitors for a weekend",
+      "A short-term sales boom during a holiday week",
+      "A temporary road closure for a public event"
+     ],
+     "a": 0,
+     "why": "Lasting improvement matters more than short bursts.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Economic development",
+    "model": "Economic development means more jobs, better incomes and opportunities over time. Cities support it with skills, infrastructure, fair rules and help for small firms. Incentives have costs, so cities check the value and who benefits.",
+    "points": [
+     {
+      "k": [
+       "job",
+       "income",
+       "work",
+       "employ"
+      ],
+      "ask": "What is the goal?"
+     },
+     {
+      "k": [
+       "skills",
+       "training",
+       "infrastructure",
+       "small",
+       "business",
+       "rules"
+      ],
+      "ask": "What can a city do?"
+     },
+     {
+      "k": [
+       "incentive",
+       "tax break",
+       "cost"
+      ],
+      "ask": "Are incentives free?"
+     },
+     {
+      "k": [
+       "everyone",
+       "share",
+       "inclusive",
+       "benefit",
+       "fair"
+      ],
+      "ask": "Who should benefit?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2669 @@
+{
+ "world": 9,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced algebra",
+   "icon": "🧮",
+   "hook": "The equation x² + 1 = 0 has no real solution. Why would mathematicians invent a new kind of number just to solve it, and what can that number do?",
+   "explain": [
+    "Polynomials are sums of powers of x with coefficients, like p(x) = x³ − 6x² + 11x − 6. The factor theorem says (x − a) is a factor of p(x) exactly when p(a) = 0. The remainder theorem says that dividing p(x) by (x − a) leaves remainder p(a). Here p(2) = 8 − 24 + 22 − 6 = 0, so (x − 2) is a factor; in fact p(x) = (x − 1)(x − 2)(x − 3).",
+    "For a quadratic ax² + bx + c = 0 the roots add to −b/a and multiply to c/a. For x² − 5x + 6 the roots 2 and 3 add to 5 and multiply to 6. Inequalities with modulus, such as |x − 3| < 2, mean x is within 2 of 3, so 1 < x < 5.",
+    "Complex numbers add i, defined by i² = −1, so that x² + 1 = 0 has solutions ±i. A complex number a + bi is added and multiplied like algebra with i² = −1: (2 + 3i)(1 − i) = 2 − 2i + 3i − 3i² = 5 + i. The modulus is |a + bi| = √(a² + b²), so |3 + 4i| = 5."
+   ],
+   "example": {
+    "q": "Find the remainder when p(x) = x³ + 2x − 5 is divided by (x − 2).",
+    "steps": [
+     "By the remainder theorem the remainder is p(2).",
+     "p(2) = 8 + 4 − 5.",
+     "p(2) = 7. So the remainder is 7.",
+     "Check: p(x) = (x − 2)(x² + 2x + 6) + 7."
+    ],
+    "a": "7"
+   },
+   "analogies": {
+    "tech": "Complex numbers describe alternating current and signals in electrical engineering.",
+    "music": "Sound waves are combined using complex numbers to describe their phase.",
+    "city": "Engineers factorise polynomials to find when a bridge model has zero stress.",
+    "sea": "Polynomial models fit the shape of a wave over time."
+   },
+   "mnemonic": "If p of a is zero, then x minus a is a factor. The remainder is p of a.",
+   "terms": [
+    [
+     "Polynomial",
+     "A sum of terms of the form coefficient × xⁿ with n a whole number."
+    ],
+    [
+     "Factor theorem",
+     "(x − a) is a factor of p(x) exactly when p(a) = 0."
+    ],
+    [
+     "Imaginary unit i",
+     "The number with i² = −1."
+    ],
+    [
+     "Modulus",
+     "The size of a number: |a + bi| = √(a² + b²)."
+    ]
+   ],
+   "misc": {
+    "wrong": "Imaginary numbers are not real, so they are useless in applied work.",
+    "right": "Complex numbers are used routinely in physics, signals and engineering; \"imaginary\" is just a historical name."
+   },
+   "trip": {
+    "wiki": "Complex number",
+    "prompt": "Find the Argand diagram and plot 3 + 4i."
+   },
+   "sources": [
+    "Polynomial",
+    "Complex number",
+    "Polynomial remainder theorem"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "If p(3) = 0 for a polynomial p(x), which is a factor?",
+     "o": [
+      "(x + 3)",
+      "(x − 3)",
+      "(x − 0)",
+      "3x"
+     ],
+     "a": 1,
+     "why": "The factor theorem links p(a) = 0 with the factor (x − a).",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is i²?",
+     "o": [
+      "−1",
+      "1",
+      "i",
+      "−i"
+     ],
+     "a": 0,
+     "why": "This is the definition of i.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "For x² − 5x + 6 = 0, what is the sum of the roots?",
+     "o": [
+      "6",
+      "−5",
+      "−6",
+      "5"
+     ],
+     "a": 3,
+     "why": "Sum = −b/a = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which describes |x − 3| < 2?",
+     "o": [
+      "x < −1 or x > 5",
+      "x < 1",
+      "1 < x < 5",
+      "x > 5"
+     ],
+     "a": 2,
+     "why": "x is less than 2 units from 3.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Dara claims (3 + 2i)² = 9 + 4i² = 5. What is the mistake?",
+     "o": [
+      "She is correct",
+      "She missed the middle term 12i",
+      "i² = 1",
+      "She should add 9 and 4"
+     ],
+     "a": 1,
+     "why": "(3 + 2i)² = 9 + 12i + 4i² = 5 + 12i.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is (x − 1)(x − 2)(x − 3) a cubic with roots 1, 2 and 3?",
+     "o": [
+      "Each bracket is zero at one of those values",
+      "Because it has three brackets only",
+      "Because the sum is 3",
+      "Because the product is 6"
+     ],
+     "a": 0,
+     "why": "A product is zero when any factor is zero.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find the remainder when x³ + 2x − 5 is divided by (x − 2).",
+     "a": 7,
+     "tol": 0,
+     "why": "p(2) = 8 + 4 − 5 = 7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the real part of (2 + 3i)(1 − i).",
+     "a": 5,
+     "tol": 0,
+     "why": "2 − 2i + 3i + 3 = 5 + i, so the real part is 5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find |3 + 4i|.",
+     "a": 5,
+     "tol": 0,
+     "why": "√(9 + 16) = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the factor theorem helps you solve a cubic equation once you find one root.",
+     "rubric": [
+      [
+       "factor",
+       "bracket",
+       "divide",
+       "division"
+      ],
+      [
+       "quadratic",
+       "reduce",
+       "lower",
+       "smaller",
+       "simpler"
+      ],
+      [
+       "root",
+       "zero",
+       "solve"
+      ]
+     ],
+     "min": 2,
+     "model": "Once p(a) = 0, (x − a) is a factor. Divide it out to leave a quadratic, which can be solved by factorising or the formula.",
+     "why": "Finding one root reduces the problem to a quadratic.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Does x² + 1 = 0 have solutions?",
+     "o": [
+      "No solutions at all",
+      "Two real solutions",
+      "One real solution",
+      "Two complex solutions, i and −i, and no real ones"
+     ],
+     "a": 3,
+     "why": "Real squares are never negative, but i² = −1 and (−i)² = −1.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A cubic with real coefficients has one root 2 + i. Explain why 2 − i must be another root.",
+     "rubric": [
+      [
+       "conjugate",
+       "complex pair",
+       "pairs"
+      ],
+      [
+       "real coefficient",
+       "real coefficients",
+       "coefficients are real"
+      ],
+      [
+       "imaginary",
+       "i parts",
+       "cancel",
+       "come in"
+      ]
+     ],
+     "min": 2,
+     "model": "For polynomials with real coefficients, non-real roots come in conjugate pairs, because taking conjugates of the equation leaves it unchanged.",
+     "why": "Complex roots of real polynomials appear in conjugate pairs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If x² + bx + 9 = 0 has exactly one repeated root, what is b?",
+     "o": [
+      "3",
+      "9",
+      "6 or −6",
+      "0"
+     ],
+     "a": 2,
+     "why": "Discriminant b² − 36 = 0 gives b = ±6.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What the factor theorem says",
+    "model": "If plugging a number a into a polynomial gives zero, then (x − a) is a factor. You can then divide it out to leave a simpler polynomial. For example if p(2) = 0 then (x − 2) divides p(x) exactly.",
+    "points": [
+     {
+      "k": [
+       "zero",
+       "= 0",
+       "root"
+      ],
+      "ask": "What must happen when I substitute a?"
+     },
+     {
+      "k": [
+       "factor",
+       "bracket",
+       "divide"
+      ],
+      "ask": "What does that tell me?"
+     },
+     {
+      "k": [
+       "simpler",
+       "lower",
+       "quadratic",
+       "solve"
+      ],
+      "ask": "Why is that useful?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Trigonometric functions and identities",
+   "icon": "🌊",
+   "hook": "A Ferris wheel turns steadily. Your height above the ground repeats every full turn. What function can describe that, and why do mathematicians use radians instead of degrees?",
+   "explain": [
+    "On the unit circle (radius 1) an angle θ measured from the positive x-axis gives the point (cos θ, sin θ). So sin θ and cos θ are defined for every angle, not just those in right triangles. A radian is the angle for which the arc length equals the radius, so 180° = π radians and 360° = 2π. Radians make calculus formulas simple.",
+    "Graphs of sin and cos are waves with amplitude 1 and period 2π. The graph of y = A sin(bx) has amplitude A and period 2π ÷ b, so sin 2x has period π. Pythagoras on the unit circle gives the identity sin²θ + cos²θ = 1, and tan θ = sin θ ÷ cos θ.",
+    "The compound-angle and double-angle formulas are: sin(A + B) = sin A cos B + cos A sin B, sin 2θ = 2 sin θ cos θ and cos 2θ = cos²θ − sin²θ = 1 − 2 sin²θ. If sin θ = 3/5 for acute θ, then cos θ = 4/5, so sin 2θ = 24/25. Equations such as sin x = 1/2 have many solutions: 30° and 150° in one turn, and more by adding 360°."
+   ],
+   "example": {
+    "q": "If sin θ = 3/5 and θ is acute, find cos θ and sin 2θ.",
+    "steps": [
+     "Use sin²θ + cos²θ = 1: cos²θ = 1 − 9/25 = 16/25.",
+     "θ is acute so cos θ = 4/5.",
+     "sin 2θ = 2 × 3/5 × 4/5 = 24/25."
+    ],
+    "a": "cos θ = 4/5 and sin 2θ = 24/25"
+   },
+   "analogies": {
+    "sea": "Tides rise and fall in a roughly periodic wave through the day.",
+    "music": "A pure note is a sine wave: amplitude is loudness and frequency is pitch.",
+    "city": "Daylight hours across the year follow a wave pattern.",
+    "tech": "Alternating current voltage is a sine wave with fixed frequency."
+   },
+   "mnemonic": "Cos is across and sin is up on the unit circle. Square them, add them, and you always get one.",
+   "terms": [
+    [
+     "Radian",
+     "The angle for which the arc length equals the radius; 180° = π radians."
+    ],
+    [
+     "Period",
+     "The length of one full cycle of a repeating graph."
+    ],
+    [
+     "Amplitude",
+     "The height of a wave from its middle line to its peak."
+    ],
+    [
+     "Identity",
+     "An equation true for every value of the variable."
+    ]
+   ],
+   "misc": {
+    "wrong": "sin(A + B) = sin A + sin B.",
+    "right": "Test with A = B = 90°: sin 180° = 0 but sin 90° + sin 90° = 2. The correct formula has cross terms."
+   },
+   "trip": {
+    "wiki": "Unit circle",
+    "prompt": "Follow a point round the circle and see how its height traces a sine wave."
+   },
+   "sources": [
+    "Unit circle",
+    "Trigonometric functions",
+    "Radian"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many radians are in 180°?",
+     "o": [
+      "2π",
+      "π",
+      "π/2",
+      "1"
+     ],
+     "a": 1,
+     "why": "A half turn is π radians.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the period of y = sin x?",
+     "o": [
+      "2π",
+      "π",
+      "1",
+      "4π"
+     ],
+     "a": 0,
+     "why": "The graph repeats every full turn.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which identity is correct?",
+     "o": [
+      "sin θ + cos θ = 1",
+      "sin²θ − cos²θ = 1",
+      "sin θ cos θ = 1",
+      "sin²θ + cos²θ = 1"
+     ],
+     "a": 3,
+     "why": "It comes from Pythagoras on the unit circle.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the period of y = sin 2x?",
+     "o": [
+      "2π",
+      "4π",
+      "π",
+      "1"
+     ],
+     "a": 2,
+     "why": "The wave runs twice as fast so the period is 2π ÷ 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Solve sin x = 1/2 for 0° ≤ x < 360°.",
+     "o": [
+      "30° only",
+      "30° and 150°",
+      "60° and 120°",
+      "30° and 330°"
+     ],
+     "a": 1,
+     "why": "Sine is positive in the first and second quadrants, and sin 150° = sin 30°.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A student says sin(2θ) = 2 sin θ. Which value shows this is false?",
+     "o": [
+      "θ = 30°",
+      "θ = 0°",
+      "No value does",
+      "θ = 180°"
+     ],
+     "a": 0,
+     "why": "sin 60° ≈ 0.866 but 2 sin 30° = 1. At θ = 0 both sides are 0.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "If sin θ = 3/5 for acute θ, find sin 2θ as a decimal.",
+     "a": 0.96,
+     "tol": 0.001,
+     "why": "2 × 0.6 × 0.8 = 0.96.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find cos 2θ when sin θ = 3/5, using cos 2θ = 1 − 2 sin²θ.",
+     "a": 0.28,
+     "tol": 0.001,
+     "why": "1 − 2 × 0.36 = 0.28 = 7/25.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Convert 90° to radians. Give the answer as a decimal rounded to 2 decimal places (π ≈ 3.1416).",
+     "a": 1.57,
+     "tol": 0.005,
+     "why": "90° is π/2 = 1.5708.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the graph of the sine function can model the height of a point on a rotating wheel.",
+     "rubric": [
+      [
+       "circle",
+       "rotate",
+       "turn",
+       "wheel",
+       "round"
+      ],
+      [
+       "repeat",
+       "period",
+       "cycle",
+       "periodic",
+       "again"
+      ],
+      [
+       "height",
+       "up",
+       "vertical",
+       "y",
+       "sin"
+      ]
+     ],
+     "min": 2,
+     "model": "The point moves round a circle at steady speed so its height repeats every full turn. The height is the sine of the angle turned, giving a wave.",
+     "why": "Circular motion projected onto a line gives a sine wave.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is sin x = 2 solvable for real x?",
+     "o": [
+      "Yes, x = 90°",
+      "Yes, x = 60°",
+      "Only in radians",
+      "No, sine never exceeds 1"
+     ],
+     "a": 3,
+     "why": "On the unit circle, the y-coordinate is at most 1.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Prove that tan θ cos θ = sin θ using the definition of tan.",
+     "rubric": [
+      [
+       "sin θ ÷ cos θ",
+       "sin/cos",
+       "sinθ/cosθ",
+       "sin θ over cos θ",
+       "sin over cos"
+      ],
+      [
+       "cancel",
+       "cos θ cancels",
+       "divides out",
+       "multiply"
+      ],
+      [
+       "sin θ",
+       "sin"
+      ]
+     ],
+     "min": 2,
+     "model": "tan θ = sin θ ÷ cos θ, so tan θ × cos θ = (sin θ ÷ cos θ) × cos θ. The cos θ cancels, leaving sin θ.",
+     "why": "Substituting the definition then cancelling proves the identity (where cos θ ≠ 0).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A wave is y = 3 sin x + 1. What are its maximum and minimum values?",
+     "o": [
+      "3 and −3",
+      "4 and −3",
+      "4 and −2",
+      "3 and 1"
+     ],
+     "a": 2,
+     "why": "sin x ranges from −1 to 1, so y from −3 + 1 = −2 to 3 + 1 = 4.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a radian is",
+    "model": "A radian is another way to measure angle. One radian is the angle where the arc along the circle is as long as the radius. A half turn is π radians and a full turn is 2π radians. Radians make formulas in calculus simple.",
+    "points": [
+     {
+      "k": [
+       "arc",
+       "radius",
+       "length"
+      ],
+      "ask": "How is a radian defined?"
+     },
+     {
+      "k": [
+       "π",
+       "pi",
+       "180",
+       "half turn"
+      ],
+      "ask": "How does it compare to degrees?"
+     },
+     {
+      "k": [
+       "calculus",
+       "simple",
+       "formulas",
+       "why"
+      ],
+      "ask": "Why do mathematicians prefer it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Exponential and logarithmic functions",
+   "icon": "📉",
+   "hook": "A savings account grows by 5% each year. Why does it grow faster in later years than in earlier years, and how long until it doubles?",
+   "explain": [
+    "An exponential function has the variable in the exponent: y = a × bˣ. If b > 1 it is growth, and if 0 < b < 1 it is decay. Growth of 5% a year means b = 1.05. After n years 1000 becomes 1000 × 1.05ⁿ, which is about 1 628.89 after 10 years. The growth in each year is proportional to the current amount, so it speeds up.",
+    "A logarithm is the inverse of an exponential: log_b y = x means bˣ = y. So log₂ 8 = 3 because 2³ = 8, and log₁₀ 1000 = 3. The laws are log a + log b = log(ab), log a − log b = log(a/b) and log(aⁿ) = n log a. These turn multiplication into addition and powers into multiplication.",
+    "To solve 2ˣ = 50 take logs of both sides: x log 2 = log 50, so x = log 50 ÷ log 2 ≈ 5.64. The number e ≈ 2.718 is the natural base for which the growth rate at each point equals the value, and ln means log base e. Many natural processes such as radioactive decay (half-life) are exponential."
+   ],
+   "example": {
+    "q": "A sum of 1 000 grows at 5% per year. Find the value after 10 years, to the nearest cent.",
+    "steps": [
+     "Growth factor per year is 1.05.",
+     "Value = 1000 × 1.05¹⁰.",
+     "1.05¹⁰ ≈ 1.628895.",
+     "1000 × 1.628895 ≈ 1 628.89."
+    ],
+    "a": "About 1 628.89"
+   },
+   "analogies": {
+    "farm": "A bacteria population in milk doubles every hour: 1, 2, 4, 8.",
+    "sea": "Light fades exponentially with depth in the ocean.",
+    "music": "Each octave doubles the frequency, so pitch is a logarithmic scale.",
+    "city": "A viral rumour spreads exponentially at first."
+   },
+   "mnemonic": "Exponent asks how many times to multiply; log asks how many times for this result.",
+   "terms": [
+    [
+     "Exponential function",
+     "A function where the variable is in the exponent, such as 2ˣ."
+    ],
+    [
+     "Logarithm",
+     "The exponent needed to reach a number: log_b y = x means bˣ = y."
+    ],
+    [
+     "Half-life",
+     "The time for a quantity to fall to half."
+    ],
+    [
+     "e",
+     "About 2.718, the base of natural logarithms."
+    ]
+   ],
+   "misc": {
+    "wrong": "log(a + b) = log a + log b.",
+    "right": "Logs turn multiplication into addition: log(ab) = log a + log b. There is no simple rule for log(a + b)."
+   },
+   "limits": "Real growth cannot stay exponential for ever: resources run out and growth levels off, as in the logistic model.",
+   "trip": {
+    "wiki": "Exponential growth",
+    "prompt": "Find the examples and note one where growth cannot continue for ever."
+   },
+   "sources": [
+    "Exponential growth",
+    "Logarithm",
+    "Half-life"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is log₂ 8?",
+     "o": [
+      "4",
+      "3",
+      "2",
+      "16"
+     ],
+     "a": 1,
+     "why": "2³ = 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is log₁₀ 1000?",
+     "o": [
+      "3",
+      "2",
+      "10",
+      "100"
+     ],
+     "a": 0,
+     "why": "10³ = 1000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which function shows exponential decay?",
+     "o": [
+      "y = 100 × 2ˣ",
+      "y = 100 + 5x",
+      "y = 100x²",
+      "y = 100 × 0.5ˣ"
+     ],
+     "a": 3,
+     "why": "The base 0.5 is between 0 and 1.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is equal to log 4 + log 5 (same base)?",
+     "o": [
+      "log 9",
+      "log 1",
+      "log 20",
+      "log 45"
+     ],
+     "a": 2,
+     "why": "Adding logs multiplies the numbers.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which value of x solves 3ˣ = 81?",
+     "o": [
+      "27",
+      "4",
+      "3",
+      "81/3"
+     ],
+     "a": 1,
+     "why": "3⁴ = 81.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does 5% growth give more money in year 10 than in year 1, even though the rate is the same?",
+     "o": [
+      "The 5% is applied to a larger amount each year",
+      "The rate increases",
+      "Money is added at random",
+      "Logs make it larger"
+     ],
+     "a": 0,
+     "why": "Growth is proportional to the current size (compound interest).",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find 1000 × 1.05¹⁰ to 2 decimal places (1.05¹⁰ ≈ 1.628895).",
+     "a": 1628.89,
+     "tol": 0.01,
+     "why": "1000 × 1.628895 = 1628.895, which rounds to 1628.89 or 1628.90.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Solve 2ˣ = 50. Give x to 2 decimal places (log 50 ≈ 1.69897, log 2 ≈ 0.30103).",
+     "a": 5.64,
+     "tol": 0.01,
+     "why": "x = 1.69897 ÷ 0.30103 ≈ 5.644.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 80 g sample has a half-life of 3 days. How many grams remain after 9 days?",
+     "a": 10,
+     "tol": 0,
+     "why": "9 days is 3 half-lives: 80 → 40 → 20 → 10.",
+     "d": 2,
+     "k": "apply",
+     "unit": "g"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a straight line on a graph of log(y) against x shows exponential growth.",
+     "rubric": [
+      [
+       "log",
+       "logarithm"
+      ],
+      [
+       "linear",
+       "straight",
+       "constant gradient",
+       "same slope"
+      ],
+      [
+       "multiply",
+       "ratio",
+       "constant factor",
+       "same factor",
+       "exponential",
+       "proportional"
+      ]
+     ],
+     "min": 2,
+     "model": "If y = a × bˣ then log y = log a + x log b, which is a straight line in x. A constant gradient means y is multiplied by the same factor for each step in x.",
+     "why": "Taking logs turns an exponential relationship into a linear one.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A rumour is told to 2 people, who each tell 2 new people, and so on. After 10 rounds how many hear it in round 10 alone?",
+     "o": [
+      "20",
+      "100",
+      "512",
+      "1 024"
+     ],
+     "a": 3,
+     "why": "Round n has 2ⁿ new people: 2¹⁰ = 1024.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Zara says log(10 + 100) = log 10 + log 100 = 3. Explain what is wrong.",
+     "rubric": [
+      [
+       "add",
+       "sum",
+       "+",
+       "110"
+      ],
+      [
+       "multiply",
+       "product",
+       "1000",
+       "log(ab)",
+       "times"
+      ],
+      [
+       "not",
+       "wrong",
+       "no",
+       "incorrect",
+       "different"
+      ]
+     ],
+     "min": 2,
+     "model": "The law is log a + log b = log(a × b). log 10 + log 100 = log 1000 = 3, but log(10 + 100) = log 110, which is about 2.04.",
+     "why": "Logs turn products into sums, not sums into sums.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A population grows 10% per year. About how long to double (use ln 2 ≈ 0.693 and ln 1.1 ≈ 0.0953)?",
+     "o": [
+      "10 years",
+      "5 years",
+      "About 7.3 years",
+      "20 years"
+     ],
+     "a": 2,
+     "why": "n = ln 2 ÷ ln 1.1 ≈ 7.27.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a logarithm is",
+    "model": "A logarithm answers the question: what power do I raise the base to get this number? For example log base 2 of 8 is 3 because 2 to the power 3 is 8. It is the opposite of an exponent.",
+    "points": [
+     {
+      "k": [
+       "power",
+       "exponent",
+       "index"
+      ],
+      "ask": "What does a logarithm find?"
+     },
+     {
+      "k": [
+       "opposite",
+       "inverse",
+       "undo"
+      ],
+      "ask": "How is it related to exponents?"
+     },
+     {
+      "k": [
+       "example",
+       "2",
+       "8",
+       "3",
+       "1000"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Vectors and matrices",
+   "icon": "🧭",
+   "hook": "A plane flies at 200 km/h but the wind blows at 50 km/h from the side. How do you combine the two to find where the plane actually goes?",
+   "explain": [
+    "A vector has both magnitude (size) and direction. We write it as a column, such as a = (3, 4). The magnitude is |a| = √(3² + 4²) = 5. Vectors add component by component: (3, 4) + (1, −2) = (4, 2). Multiplying by a scalar scales the vector: 3a = (9, 12).",
+    "The dot product of (a₁, a₂) and (b₁, b₂) is a₁b₁ + a₂b₂. For (2, 3) and (4, −1) it is 8 − 3 = 5. Also a · b = |a||b|cos θ, where θ is the angle between them, so vectors are perpendicular exactly when the dot product is 0: (1, 2) · (2, −1) = 0.",
+    "A matrix is a rectangular array of numbers. We multiply row by column: for A = [[1, 2], [3, 4]] and B = [[0, 1], [1, 0]], AB = [[2, 1], [4, 3]]. Matrix multiplication is not commutative: BA = [[3, 4], [1, 2]] is different. The determinant of [[a, b], [c, d]] is ad − bc, and a matrix has an inverse only if its determinant is not zero. A 2 × 2 matrix can transform the plane by rotating, stretching or reflecting."
+   ],
+   "example": {
+    "q": "Find the angle between a = (1, 0) and b = (1, 1).",
+    "steps": [
+     "Dot product a · b = 1 × 1 + 0 × 1 = 1.",
+     "|a| = 1 and |b| = √2.",
+     "cos θ = 1 ÷ (1 × √2) = 1/√2, so θ = 45°."
+    ],
+    "a": "45°"
+   },
+   "analogies": {
+    "sea": "A boat heading across a river current moves along the sum of two vectors.",
+    "sport": "A football kick has a speed and a direction, so it is a vector.",
+    "tech": "Computer graphics use matrices to rotate and scale images.",
+    "city": "GPS positions are coordinate vectors, and a route is a sum of displacement vectors."
+   },
+   "mnemonic": "Vector: how far and which way. Dot product zero means a right angle.",
+   "terms": [
+    [
+     "Vector",
+     "A quantity with magnitude and direction."
+    ],
+    [
+     "Scalar",
+     "A single number that scales a vector."
+    ],
+    [
+     "Dot product",
+     "a₁b₁ + a₂b₂, linked to the angle between vectors."
+    ],
+    [
+     "Determinant",
+     "For [[a, b], [c, d]] it is ad − bc."
+    ]
+   ],
+   "misc": {
+    "wrong": "Matrix multiplication works like number multiplication, so AB = BA.",
+    "right": "The order matters: AB and BA are usually different matrices."
+   },
+   "trip": {
+    "wiki": "Matrix (mathematics)",
+    "prompt": "Find the pictures of a matrix rotating or stretching a shape."
+   },
+   "sources": [
+    "Euclidean vector",
+    "Matrix (mathematics)",
+    "Dot product"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the magnitude of the vector (3, 4)?",
+     "o": [
+      "7",
+      "5",
+      "12",
+      "25"
+     ],
+     "a": 1,
+     "why": "√(9 + 16) = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is (3, 4) + (1, −2)?",
+     "o": [
+      "(4, 2)",
+      "(2, 6)",
+      "(3, −8)",
+      "(4, 6)"
+     ],
+     "a": 0,
+     "why": "Add components.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two non-zero vectors are perpendicular. Their dot product is...",
+     "o": [
+      "1",
+      "−1",
+      "Their magnitudes multiplied",
+      "0"
+     ],
+     "a": 3,
+     "why": "a · b = |a||b|cos 90° = 0.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true about matrices A and B?",
+     "o": [
+      "AB always equals BA",
+      "AB is always zero",
+      "AB and BA can be different",
+      "AB is never defined"
+     ],
+     "a": 2,
+     "why": "Matrix multiplication is not commutative.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "When does a 2 × 2 matrix have no inverse?",
+     "o": [
+      "When it has a 0 entry",
+      "When its determinant is 0",
+      "When it has negative entries",
+      "Never"
+     ],
+     "a": 1,
+     "why": "An inverse needs a non-zero determinant.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Femi says (1, 2) + (3, 4) = (4, 6) so vectors add like (1 + 2, 3 + 4) = (3, 7). Which is right?",
+     "o": [
+      "(4, 6)",
+      "(3, 7)",
+      "(2, 6)",
+      "(4, 8)"
+     ],
+     "a": 0,
+     "why": "Add matching components: x with x, y with y.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find the dot product of (2, 3) and (4, −1).",
+     "a": 5,
+     "tol": 0,
+     "why": "2 × 4 + 3 × (−1) = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the determinant of [[1, 2], [3, 4]].",
+     "a": -2,
+     "tol": 0,
+     "why": "1 × 4 − 2 × 3 = −2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the top-left entry of AB for A = [[1, 2], [3, 4]] and B = [[0, 1], [1, 0]].",
+     "a": 2,
+     "tol": 0,
+     "why": "Row 1 of A times column 1 of B: 1 × 0 + 2 × 1 = 2.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a plane flying at 200 km/h north in a 50 km/h east wind has a resultant velocity larger than 200 km/h but not 250 km/h.",
+     "rubric": [
+      [
+       "vector",
+       "add",
+       "direction",
+       "components",
+       "perpendicular",
+       "right angle",
+       "sum"
+      ],
+      [
+       "pythagoras",
+       "square root",
+       "√",
+       "206",
+       "204",
+       "hypotenuse",
+       "magnitude"
+      ],
+      [
+       "not",
+       "different directions",
+       "angle",
+       "sideways",
+       "east",
+       "north"
+      ]
+     ],
+     "min": 2,
+     "model": "Velocity is a vector. The two velocities are at right angles, so the speed is √(200² + 50²) ≈ 206 km/h, only slightly bigger than 200 and well below 250.",
+     "why": "Perpendicular vectors combine by Pythagoras, not by simple addition.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Matrix M = [[2, 1], [5, 3]] has determinant 1. What is M⁻¹?",
+     "o": [
+      "[[3, 1], [5, 2]]",
+      "[[2, −1], [−5, 3]]",
+      "[[1/2, 1], [1/5, 1/3]]",
+      "[[3, −1], [−5, 2]]"
+     ],
+     "a": 3,
+     "why": "Swap the diagonal, change the signs of the other entries, and divide by the determinant (1).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the dot product of two perpendicular vectors is zero, using cos 90°.",
+     "rubric": [
+      [
+       "cos 90",
+       "cos(90)",
+       "cosine of 90",
+       "cos 90°"
+      ],
+      [
+       "0",
+       "zero"
+      ],
+      [
+       "a · b",
+       "|a||b|",
+       "magnitude",
+       "product"
+      ]
+     ],
+     "min": 2,
+     "model": "a · b = |a||b|cos θ. For perpendicular vectors θ = 90° and cos 90° = 0, so the product is 0.",
+     "why": "The cosine of the angle controls the dot product.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A force (3, 0) and a force (0, 4) act on a body. The resultant force has size...",
+     "o": [
+      "7",
+      "12",
+      "5",
+      "1"
+     ],
+     "a": 2,
+     "why": "√(9 + 16) = 5.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Adding vectors",
+    "model": "A vector has a size and a direction. To add two vectors, add their matching components: the x parts together and the y parts together. For (3, 4) + (1, −2) you get (4, 2). You can also place them head to tail.",
+    "points": [
+     {
+      "k": [
+       "size",
+       "magnitude",
+       "direction",
+       "length"
+      ],
+      "ask": "What is special about a vector?"
+     },
+     {
+      "k": [
+       "component",
+       "x",
+       "y",
+       "matching",
+       "parts"
+      ],
+      "ask": "How do I add them?"
+     },
+     {
+      "k": [
+       "head",
+       "tail",
+       "arrow",
+       "draw",
+       "diagram"
+      ],
+      "ask": "Can I draw it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Limits and continuity",
+   "icon": "♾️",
+   "hook": "The expression (x² − 4)/(x − 2) is undefined when x = 2, yet its graph seems to head to a clear value there. What value, and what does it mean to \"approach\" a value?",
+   "explain": [
+    "A limit describes what value a function approaches as the input approaches a point. We write lim (x→a) f(x) = L. The limit does not depend on what happens at x = a itself, only near it. For f(x) = (x² − 4)/(x − 2), cancelling the factor (x − 2) for x ≠ 2 gives x + 2, so the limit as x→2 is 4, though f(2) is undefined.",
+    "The limit exists when the left-hand and right-hand limits agree. If f(x) = x + 1 for x < 2 and 5 for x ≥ 2, the left limit at 2 is 3 and the right limit is 5, so there is a jump and no limit. Limits at infinity ask what happens for huge x: 1/x → 0, and (2x + 1)/x = 2 + 1/x → 2.",
+    "A function is continuous at a if the limit exists and equals f(a). Roughly, you can draw the graph without lifting the pen. Types of discontinuity are a removable hole, a jump and an infinite break (like 1/x at 0). Continuity is essential for calculus; the important limit lim (x→0) sin x / x = 1 (x in radians) leads to the derivative of sine."
+   ],
+   "example": {
+    "q": "Find lim (x→3) (x² − 9)/(x − 3).",
+    "steps": [
+     "Direct substitution gives 0/0, which is undefined, so we simplify first.",
+     "Factorise: (x − 3)(x + 3)/(x − 3) = x + 3 for x ≠ 3.",
+     "As x→3, x + 3 → 6."
+    ],
+    "a": "6"
+   },
+   "analogies": {
+    "sport": "A sprinter's speed at an instant is the limit of average speed over shorter and shorter times.",
+    "tech": "A digital zoom approaches the true value as the sampling gets finer.",
+    "nature": "A cooling cup of tea approaches room temperature but never quite reaches it.",
+    "city": "A car's speedometer shows the limit of distance over time for tiny time intervals."
+   },
+   "mnemonic": "A limit asks where you are heading, not where you are standing.",
+   "terms": [
+    [
+     "Limit",
+     "The value a function approaches as the input approaches a point."
+    ],
+    [
+     "One-sided limit",
+     "The limit from the left or from the right only."
+    ],
+    [
+     "Continuous",
+     "The graph has no break: limit equals the value at the point."
+    ],
+    [
+     "Removable discontinuity",
+     "A single missing point (a hole) that could be filled."
+    ]
+   ],
+   "misc": {
+    "wrong": "The limit at a point must equal the function value there.",
+    "right": "The limit ignores the value at the point itself. They agree only when the function is continuous."
+   },
+   "trip": {
+    "wiki": "Limit of a function",
+    "prompt": "Find the picture of a function with a hole and see how the limit is read from the graph."
+   },
+   "sources": [
+    "Limit of a function",
+    "Continuous function"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Find lim (x→1) (3x + 1).",
+     "o": [
+      "3",
+      "4",
+      "1",
+      "Does not exist"
+     ],
+     "a": 1,
+     "why": "The function is continuous, so substitute.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is lim (x→∞) 1/x?",
+     "o": [
+      "0",
+      "1",
+      "∞",
+      "Does not exist"
+     ],
+     "a": 0,
+     "why": "As x grows, 1/x becomes tiny.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which function is NOT continuous at x = 0?",
+     "o": [
+      "f(x) = x²",
+      "f(x) = 3x + 1",
+      "f(x) = |x|",
+      "f(x) = 1/x"
+     ],
+     "a": 3,
+     "why": "1/x is undefined at 0 and has an infinite break.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "For f(x) = (x² − 4)/(x − 2), what is f(2)?",
+     "o": [
+      "4",
+      "0",
+      "Undefined",
+      "2"
+     ],
+     "a": 2,
+     "why": "The denominator is 0 at x = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Sam says the limit of (x² − 4)/(x − 2) at x = 2 does not exist because f(2) is undefined. What is wrong?",
+     "o": [
+      "Nothing",
+      "The limit depends on nearby values, not on f(2)",
+      "The limit must be 0",
+      "Limits need f(2) defined"
+     ],
+     "a": 1,
+     "why": "Near 2 the function equals x + 2, approaching 4.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A function equals 3 as x approaches 2 from the left and 5 as x approaches 2 from the right. What can you say about the limit at 2?",
+     "o": [
+      "It does not exist",
+      "It is 3",
+      "It is 4",
+      "It is 5"
+     ],
+     "a": 0,
+     "why": "Both one-sided limits must agree for the limit to exist.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find lim (x→3) (x² − 9)/(x − 3).",
+     "a": 6,
+     "tol": 0,
+     "why": "Cancel to get x + 3 which approaches 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find lim (x→∞) (2x + 1)/x.",
+     "a": 2,
+     "tol": 0,
+     "why": "2 + 1/x → 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find lim (x→∞) (x² + 3x)/x².",
+     "a": 1,
+     "tol": 0,
+     "why": "1 + 3/x → 1.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain in words why 0.999... = 1 is a statement about a limit.",
+     "rubric": [
+      [
+       "limit",
+       "approach",
+       "get closer",
+       "gets closer",
+       "tends"
+      ],
+      [
+       "9",
+       "nines",
+       "0.9",
+       "0.99",
+       "digits",
+       "decimal"
+      ],
+      [
+       "1",
+       "one",
+       "no gap",
+       "difference",
+       "smaller than any"
+      ]
+     ],
+     "min": 2,
+     "model": "The numbers 0.9, 0.99, 0.999, ... get as close to 1 as we like, and the difference 1 − 0.99...9 shrinks to 0. The limit of this sequence is 1, and that is what 0.999... means.",
+     "why": "Infinite decimals are defined as limits of the finite approximations.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is sin x / x not defined at x = 0, yet its limit is 1?",
+     "o": [
+      "The limit equals the value at 0",
+      "sin 0 is 1",
+      "Limits are always 1",
+      "The limit looks only at values near 0"
+     ],
+     "a": 3,
+     "why": "At 0 the quotient is 0/0, but for x near 0 the values are close to 1.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Describe what it means for a function to be continuous in terms of limits.",
+     "rubric": [
+      [
+       "limit",
+       "approach"
+      ],
+      [
+       "equal",
+       "same",
+       "value",
+       "f(a)"
+      ],
+      [
+       "exist",
+       "defined",
+       "at the point",
+       "both sides"
+      ]
+     ],
+     "min": 2,
+     "model": "f is continuous at a if the limit of f(x) as x approaches a exists and equals f(a): the function is defined there and has no jump or hole.",
+     "why": "Continuity needs three things: f(a) defined, the limit exists and they are equal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "f(x) = x for x ≠ 1 and f(1) = 5. Is f continuous at 1?",
+     "o": [
+      "Yes",
+      "No, the limit does not exist",
+      "No, the limit is 1 but f(1) = 5",
+      "Yes, f(1) exists"
+     ],
+     "a": 2,
+     "why": "The limit as x→1 is 1, which differs from f(1).",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a limit means",
+    "model": "A limit is the value a function gets close to as the input gets close to some number. It does not matter what the function does exactly at that number. For example (x² − 4)/(x − 2) is undefined at 2 but approaches 4.",
+    "points": [
+     {
+      "k": [
+       "approach",
+       "close",
+       "near",
+       "tend"
+      ],
+      "ask": "What does it mean for the function to approach a value?"
+     },
+     {
+      "k": [
+       "exactly",
+       "at the point",
+       "does not matter",
+       "ignore"
+      ],
+      "ask": "Does the value at the point matter?"
+     },
+     {
+      "k": [
+       "example",
+       "x + 2",
+       "4",
+       "hole"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Differential calculus",
+   "icon": "⛰️",
+   "hook": "How can a car's speedometer tell you the speed at one exact instant, when speed seems to need a stretch of time to measure?",
+   "explain": [
+    "The derivative measures the instantaneous rate of change. It is the gradient of the tangent to the curve. It is defined as a limit: f'(x) = lim (h→0) [f(x + h) − f(x)] / h. For f(x) = x² this gives (2xh + h²)/h = 2x + h → 2x.",
+    "Rules save work. The power rule says d/dx xⁿ = n xⁿ⁻¹, so d/dx (3x² + 2x) = 6x + 2. Also d/dx sin x = cos x and d/dx eˣ = eˣ. The chain rule handles functions inside functions: d/dx (3x + 1)² = 2(3x + 1) × 3 = 6(3x + 1). The product rule is (uv)' = u'v + uv'.",
+    "Where f'(x) = 0 the curve has a stationary point (maximum, minimum or inflection). For y = x² − 4x, y' = 2x − 4 = 0 gives x = 2 and y = −4, a minimum. Optimisation uses this: with perimeter 20 a rectangle x by (10 − x) has area x(10 − x), maximised when 10 − 2x = 0, so x = 5 and the area is 25."
+   ],
+   "example": {
+    "q": "Find the minimum value of y = x² − 4x.",
+    "steps": [
+     "Differentiate: dy/dx = 2x − 4.",
+     "Set it to zero: 2x − 4 = 0 so x = 2.",
+     "Check it is a minimum: the second derivative is 2 > 0.",
+     "Value: y = 4 − 8 = −4."
+    ],
+    "a": "Minimum value −4 at x = 2"
+   },
+   "analogies": {
+    "sport": "A runner's speed is the derivative of her distance with respect to time.",
+    "city": "A factory chooses the production level where profit has a maximum, where its derivative is zero.",
+    "nature": "The rate a population grows is the derivative of its size.",
+    "tech": "A phone battery's discharge rate is the derivative of its charge."
+   },
+   "mnemonic": "Bring the power down and take one off. Set it to zero to find the top or the bottom.",
+   "terms": [
+    [
+     "Derivative",
+     "The instantaneous rate of change; the gradient of the tangent."
+    ],
+    [
+     "Tangent",
+     "A line that just touches a curve at a point."
+    ],
+    [
+     "Stationary point",
+     "A point where the derivative is zero."
+    ],
+    [
+     "Chain rule",
+     "A rule for differentiating a function of a function."
+    ]
+   ],
+   "misc": {
+    "wrong": "The derivative is the average speed over an interval.",
+    "right": "It is the instantaneous rate: the limit of average rates over shrinking intervals."
+   },
+   "trip": {
+    "wiki": "Derivative",
+    "prompt": "Find the animation of a secant line becoming a tangent line."
+   },
+   "sources": [
+    "Derivative",
+    "Differentiation rules",
+    "Mathematical optimization"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is d/dx of x³?",
+     "o": [
+      "x²",
+      "3x²",
+      "3x",
+      "x⁴/4"
+     ],
+     "a": 1,
+     "why": "Power rule.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does the derivative of a function at a point give?",
+     "o": [
+      "The gradient of the tangent there",
+      "The area under the curve",
+      "The y-intercept",
+      "The average value"
+     ],
+     "a": 0,
+     "why": "The derivative is the instantaneous rate of change.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is d/dx (3x² + 2x)?",
+     "o": [
+      "3x + 2",
+      "6x² + 2",
+      "6x",
+      "6x + 2"
+     ],
+     "a": 3,
+     "why": "Differentiate each term.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "At a minimum point of a smooth curve, the derivative is...",
+     "o": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Undefined"
+     ],
+     "a": 2,
+     "why": "The tangent is horizontal.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is d/dx sin x?",
+     "o": [
+      "−cos x",
+      "cos x",
+      "sin x",
+      "−sin x"
+     ],
+     "a": 1,
+     "why": "This is a standard derivative with x in radians.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Ali says the derivative of 5 is 5. What is the correct statement?",
+     "o": [
+      "The derivative of a constant is 0",
+      "Ali is right",
+      "It is 1",
+      "It is undefined"
+     ],
+     "a": 0,
+     "why": "A constant has gradient zero everywhere.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find the gradient of y = x² at x = 1.",
+     "a": 2,
+     "tol": 0,
+     "why": "dy/dx = 2x = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the derivative of (3x + 1)² at x = 1 using the chain rule.",
+     "a": 24,
+     "tol": 0,
+     "why": "6(3x + 1) = 6 × 4 = 24.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rectangle has perimeter 20. What is the maximum area?",
+     "a": 25,
+     "tol": 0,
+     "why": "Area x(10 − x) has maximum at x = 5, area 25.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the derivative is defined as a limit instead of just dividing by zero.",
+     "rubric": [
+      [
+       "zero",
+       "0",
+       "undefined",
+       "divide"
+      ],
+      [
+       "limit",
+       "approach",
+       "shrinking",
+       "smaller and smaller",
+       "tends"
+      ],
+      [
+       "tangent",
+       "instantaneous",
+       "one point",
+       "gradient",
+       "secant"
+      ]
+     ],
+     "min": 2,
+     "model": "The gradient between two points needs a gap h, and with h = 0 the quotient is 0/0. Taking the limit as h approaches 0 gives the gradient of the tangent at the single point.",
+     "why": "The limit gives a meaning to rate of change at an instant.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A particle's position is s = t² + 3t. What is its velocity at t = 2?",
+     "o": [
+      "10",
+      "4",
+      "2",
+      "7"
+     ],
+     "a": 3,
+     "why": "v = ds/dt = 2t + 3 = 7.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "For y = x³, the derivative at x = 0 is 0 but x = 0 is not a maximum or minimum. Explain.",
+     "rubric": [
+      [
+       "inflection",
+       "flat",
+       "levels",
+       "horizontal",
+       "stationary",
+       "still"
+      ],
+      [
+       "increas",
+       "rises",
+       "both sides",
+       "same direction",
+       "sign"
+      ],
+      [
+       "change",
+       "not",
+       "turn",
+       "does not"
+      ]
+     ],
+     "min": 2,
+     "model": "The curve is flat at 0 but increases on both sides, so it does not turn around. It is a stationary point of inflection, not an extremum.",
+     "why": "Zero derivative is necessary for an extremum, but not sufficient.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If f'(x) > 0 on an interval, then f is...",
+     "o": [
+      "Decreasing",
+      "Constant",
+      "Increasing",
+      "Zero"
+     ],
+     "a": 2,
+     "why": "A positive gradient means f rises as x increases.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a derivative is",
+    "model": "The derivative tells you how fast something is changing at an exact moment. On a graph it is the slope of the tangent line at that point. For x² the derivative is 2x, so at x = 3 the slope is 6.",
+    "points": [
+     {
+      "k": [
+       "rate",
+       "how fast",
+       "change",
+       "speed"
+      ],
+      "ask": "What does the derivative measure?"
+     },
+     {
+      "k": [
+       "slope",
+       "gradient",
+       "tangent",
+       "steep"
+      ],
+      "ask": "How do I see it on a graph?"
+     },
+     {
+      "k": [
+       "x²",
+       "2x",
+       "power",
+       "example"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Integral calculus",
+   "icon": "∫",
+   "hook": "You know a car's speed at every moment. How can you work out how far it travelled? Is there a link between that and the area under the speed graph?",
+   "explain": [
+    "Integration is the reverse of differentiation and also a way to find area. An indefinite integral gives an antiderivative: ∫ x² dx = x³/3 + C, where C is a constant, because many functions have the same derivative. The power rule is ∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C for n ≠ −1.",
+    "A definite integral ∫ from a to b of f(x) dx gives the signed area between the curve and the x-axis. The fundamental theorem of calculus says it equals F(b) − F(a) where F is any antiderivative. For example ∫ from 0 to 3 of 2x dx = [x²] from 0 to 3 = 9 − 0 = 9, which is the area of a triangle with base 3 and height 6, namely 9.",
+    "Useful results: ∫ cos x dx = sin x + C, ∫ eˣ dx = eˣ + C and ∫ 1/x dx = ln|x| + C. Substitution reverses the chain rule: to find the integral from 0 to 1 of 2x(x² + 1) dx let u = x² + 1, so du = 2x dx and the integral is [u²/2] from u = 1 to u = 2 = (4 − 1)/2 = 1.5. If velocity is v = 2t, the displacement from t = 0 to 5 is ∫ 2t dt = 25."
+   ],
+   "example": {
+    "q": "Find the area under y = x² from x = 1 to x = 2.",
+    "steps": [
+     "Antiderivative of x² is x³/3.",
+     "Evaluate at the limits: 2³/3 − 1³/3.",
+     "= 8/3 − 1/3 = 7/3.",
+     "7/3 ≈ 2.33."
+    ],
+    "a": "7/3"
+   },
+   "analogies": {
+    "sport": "The total distance run is the area under the speed-time graph.",
+    "farm": "Water filling a tank: the volume is the integral of the flow rate.",
+    "city": "Total electricity used is the integral of power over time.",
+    "nature": "The total rain over a storm is the integral of the rainfall rate."
+   },
+   "mnemonic": "Integrate: add one to the power and divide by the new power. Upper minus lower, area is the answer.",
+   "terms": [
+    [
+     "Integral",
+     "The reverse of differentiation; also the area under a curve."
+    ],
+    [
+     "Antiderivative",
+     "A function whose derivative is the given function."
+    ],
+    [
+     "Definite integral",
+     "An integral between limits that gives a number."
+    ],
+    [
+     "Constant of integration",
+     "The + C in an indefinite integral."
+    ]
+   ],
+   "misc": {
+    "wrong": "The integral always gives a positive area.",
+    "right": "Area below the axis counts as negative in a definite integral, so signed area can be zero."
+   },
+   "trip": {
+    "wiki": "Fundamental theorem of calculus",
+    "prompt": "Find the diagram connecting area under a curve to antiderivatives."
+   },
+   "sources": [
+    "Integral",
+    "Fundamental theorem of calculus",
+    "Antiderivative"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is ∫ x² dx?",
+     "o": [
+      "2x + C",
+      "x³/3 + C",
+      "x³ + C",
+      "x²/2 + C"
+     ],
+     "a": 1,
+     "why": "Add 1 to the power and divide by the new power.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If F'(x) = f(x), then ∫ from a to b of f(x) dx equals...",
+     "o": [
+      "F(b) − F(a)",
+      "F(a) − F(b)",
+      "F(b) + F(a)",
+      "F′(b) − F′(a)"
+     ],
+     "a": 0,
+     "why": "This is the fundamental theorem of calculus.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is + C needed in an indefinite integral?",
+     "o": [
+      "To make the answer longer",
+      "Because areas are positive",
+      "It is an error term",
+      "Many functions differ by a constant and have the same derivative"
+     ],
+     "a": 3,
+     "why": "x² + 1 and x² + 5 both have derivative 2x.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is ∫ cos x dx?",
+     "o": [
+      "−sin x + C",
+      "cos x + C",
+      "sin x + C",
+      "−cos x + C"
+     ],
+     "a": 2,
+     "why": "The derivative of sin x is cos x.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A car's velocity-time graph is above the axis from 0 to 10 s. What does the area under it give?",
+     "o": [
+      "Acceleration",
+      "Distance travelled",
+      "Speed at 10 s",
+      "Mass"
+     ],
+     "a": 1,
+     "why": "Velocity × time is distance.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Lina says ∫ from −1 to 1 of x dx = 2 because it is the area under y = x. What is wrong?",
+     "o": [
+      "Area below the axis counts as negative and cancels",
+      "The area is exactly 2",
+      "The limits are wrong",
+      "The function is not continuous"
+     ],
+     "a": 0,
+     "why": "The integral is [x²/2] from −1 to 1 = 0.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find ∫ from 0 to 3 of 2x dx.",
+     "a": 9,
+     "tol": 0,
+     "why": "[x²] from 0 to 3 = 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find ∫ from 1 to 2 of x² dx as a decimal to 2 decimal places.",
+     "a": 2.33,
+     "tol": 0.01,
+     "why": "7/3 ≈ 2.333.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A body has velocity v = 2t m/s. What is its displacement from t = 0 to t = 5 s in metres?",
+     "a": 25,
+     "tol": 0,
+     "why": "[t²] from 0 to 5 = 25.",
+     "d": 2,
+     "k": "apply",
+     "unit": "m"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the area under a curve can be found by an antiderivative.",
+     "rubric": [
+      [
+       "derivative",
+       "differentiat",
+       "rate"
+      ],
+      [
+       "area",
+       "accumulate",
+       "accumulation",
+       "sum",
+       "add up"
+      ],
+      [
+       "reverse",
+       "opposite",
+       "inverse",
+       "undo",
+       "fundamental theorem",
+       "thin strips",
+       "rectangles"
+      ]
+     ],
+     "min": 2,
+     "model": "The rate of change of the area under a curve up to x equals the height of the curve at x. So the area function is an antiderivative of the curve: integration undoes differentiation.",
+     "why": "This is the key idea of the fundamental theorem of calculus.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Evaluate ∫ from 0 to 1 of 2x(x² + 1) dx.",
+     "o": [
+      "2",
+      "0.5",
+      "3",
+      "1.5"
+     ],
+     "a": 3,
+     "why": "Let u = x² + 1: ∫ from 1 to 2 of u du = (4 − 1)/2 = 1.5.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "The average value of f(x) = x² on [0, 3] is (1/3)∫ from 0 to 3 of x² dx. Calculate it and explain.",
+     "rubric": [
+      [
+       "3",
+       "three"
+      ],
+      [
+       "9",
+       "27",
+       "x³/3"
+      ],
+      [
+       "divide",
+       "width",
+       "length",
+       "interval",
+       "average",
+       "mean"
+      ]
+     ],
+     "min": 2,
+     "model": "∫ from 0 to 3 of x² dx = 27/3 = 9. Dividing by the interval width 3 gives an average value of 3.",
+     "why": "The mean value is the area divided by the width.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The speed of a runner is 4 m/s for 10 s and then 6 m/s for 5 s. What is the total distance?",
+     "o": [
+      "50 m",
+      "10 m",
+      "70 m",
+      "100 m"
+     ],
+     "a": 2,
+     "why": "4 × 10 + 6 × 5 = 70 m, the total area under the graph.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Integration as area",
+    "model": "Integration adds up many thin slices to find the total area under a curve. It is also the reverse of differentiation. To integrate x² you add one to the power and divide by it: x³/3. For a definite integral you plug in the top limit and subtract the bottom.",
+    "points": [
+     {
+      "k": [
+       "area",
+       "under",
+       "curve",
+       "sum",
+       "add up"
+      ],
+      "ask": "What does integration find?"
+     },
+     {
+      "k": [
+       "reverse",
+       "opposite",
+       "inverse",
+       "differentiat"
+      ],
+      "ask": "How is it linked to derivatives?"
+     },
+     {
+      "k": [
+       "limit",
+       "upper",
+       "lower",
+       "subtract",
+       "top",
+       "bottom"
+      ],
+      "ask": "How do I get a number?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Probability distributions",
+   "icon": "🎲",
+   "hook": "You guess every answer on a 5-question true/false quiz. How likely is it to get exactly 2 right, and how can one formula cover all such \"repeat trial\" situations?",
+   "explain": [
+    "A random variable assigns a number to each outcome of a random process. A probability distribution lists the possible values and their probabilities. The expected value E(X) is the long-run average: for a fair die E(X) = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 3.5.",
+    "The binomial distribution counts successes in n independent trials, each with success probability p. P(X = k) = C(n, k) pᵏ (1 − p)ⁿ⁻ᵏ, with mean np and variance np(1 − p). For 5 guesses with p = 0.5, P(X = 2) = 10 × (1/2)⁵ = 10/32 = 0.3125. For n = 10 and p = 0.3 the mean is 3 and the variance is 2.1.",
+    "The normal distribution is a continuous bell-shaped curve fully described by its mean μ and standard deviation σ. A z-score z = (x − μ)/σ tells how many standard deviations a value is from the mean: a mark of 70 when μ = 60 and σ = 5 gives z = 2. About 68%, 95% and 99.7% of values lie within 1, 2 and 3 standard deviations. For continuous distributions probability is area under the curve."
+   ],
+   "example": {
+    "q": "A fair coin is tossed 3 times. Find P(X = 0 heads) and P(at least one head).",
+    "steps": [
+     "There are 2³ = 8 equally likely outcomes.",
+     "P(0 heads) = (1/2)³ = 1/8 = 0.125.",
+     "P(at least one head) = 1 − P(none) = 1 − 0.125."
+    ],
+    "a": "0.125 and 0.875"
+   },
+   "analogies": {
+    "sport": "Number of goals in a match: a basketball player's free throws follow a binomial model with p equal to her success rate.",
+    "farm": "The number of seeds out of 20 that sprout is binomial if each sprouts with the same chance.",
+    "city": "Heights of adults in a city are roughly normal.",
+    "tech": "Number of defective chips in a batch of 100 can be modelled as binomial."
+   },
+   "mnemonic": "Binomial: count the successes in n trials. Normal: a bell, centred at the mean, width set by sigma.",
+   "terms": [
+    [
+     "Random variable",
+     "A numerical outcome of a random process."
+    ],
+    [
+     "Expected value",
+     "The long-run average value."
+    ],
+    [
+     "Binomial distribution",
+     "The count of successes in n independent trials with probability p."
+    ],
+    [
+     "z-score",
+     "The number of standard deviations from the mean."
+    ]
+   ],
+   "misc": {
+    "wrong": "The expected value is the value you expect to see on any single trial.",
+    "right": "E(X) = 3.5 for a die but you can never roll 3.5. It is a long-run average."
+   },
+   "trip": {
+    "wiki": "Binomial distribution",
+    "prompt": "Find the bar chart of the binomial distribution and see how it changes with p."
+   },
+   "sources": [
+    "Binomial distribution",
+    "Normal distribution",
+    "Expected value"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "For a fair die, E(X) is...",
+     "o": [
+      "3",
+      "3.5",
+      "4",
+      "6"
+     ],
+     "a": 1,
+     "why": "(1 + 2 + 3 + 4 + 5 + 6) ÷ 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which situation is binomial?",
+     "o": [
+      "Number of heads in 10 tosses of a fair coin",
+      "Height of a random adult",
+      "Time waiting for a bus",
+      "Number of cards drawn until an ace appears"
+     ],
+     "a": 0,
+     "why": "Fixed n, independent trials, constant p, counting successes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The mean of a binomial with n = 10, p = 0.3 is...",
+     "o": [
+      "0.3",
+      "7",
+      "10",
+      "3"
+     ],
+     "a": 3,
+     "why": "np = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A z-score of 2 means a value is...",
+     "o": [
+      "2 units above the mean",
+      "2% above the mean",
+      "2 standard deviations above the mean",
+      "twice the mean"
+     ],
+     "a": 2,
+     "why": "z = (x − μ)/σ.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "About what fraction of a normal distribution lies within 2 standard deviations of the mean?",
+     "o": [
+      "68%",
+      "95%",
+      "50%",
+      "99.7%"
+     ],
+     "a": 1,
+     "why": "The 68-95-99.7 rule.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A student says \"the expected number of children is 2.4, so the family next door has 2.4 children.\" What is wrong?",
+     "o": [
+      "Expected value is an average, not a value for one family",
+      "Nothing",
+      "Children cannot be counted",
+      "The expected value must be an integer"
+     ],
+     "a": 0,
+     "why": "The expected value is a long-run mean.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "For n = 3 fair coin tosses, find P(no heads).",
+     "a": 0.125,
+     "tol": 0.0001,
+     "why": "(1/2)³ = 0.125.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For n = 5 and p = 0.5, find P(X = 2) as a decimal.",
+     "a": 0.3125,
+     "tol": 0.0001,
+     "why": "C(5, 2) = 10 and 10/32 = 0.3125.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A mark is 70 with μ = 60 and σ = 5. Find the z-score.",
+     "a": 2,
+     "tol": 0,
+     "why": "(70 − 60)/5 = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why P(at least one head in 3 tosses) is best found as 1 − P(no heads).",
+     "rubric": [
+      [
+       "complement",
+       "opposite",
+       "1 −",
+       "not"
+      ],
+      [
+       "one outcome",
+       "single",
+       "easier",
+       "simpler",
+       "fewer",
+       "all tails",
+       "no heads"
+      ],
+      [
+       "many",
+       "several",
+       "1 head",
+       "2 heads",
+       "3 heads",
+       "cases",
+       "lists"
+      ]
+     ],
+     "min": 2,
+     "model": "At least one head includes 1, 2 or 3 heads, which is three cases to add. The complement (no heads) is a single case with probability 1/8, so 1 − 1/8 = 7/8.",
+     "why": "Using the complement avoids adding many cases.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A game costs 1 to play. You win 10 with probability 0.1 and nothing otherwise (the 1 stake is kept by the host either way). What is your expected net gain?",
+     "o": [
+      "1",
+      "−1",
+      "9",
+      "0"
+     ],
+     "a": 3,
+     "why": "E(win) = 0.1 × 10 = 1, minus the 1 stake = 0.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A normal distribution has mean 100 and standard deviation 15. Explain what percentage you expect between 85 and 115.",
+     "rubric": [
+      [
+       "68",
+       "sixty-eight"
+      ],
+      [
+       "one standard deviation",
+       "1 standard deviation",
+       "1 sd",
+       "1 sigma",
+       "within 1"
+      ],
+      [
+       "mean",
+       "100",
+       "15"
+      ]
+     ],
+     "min": 2,
+     "model": "85 and 115 are 1 standard deviation (15) below and above the mean 100. About 68% of values lie within 1 standard deviation.",
+     "why": "Use the empirical rule.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is P(X = exact value) equal to 0 for a continuous random variable such as height?",
+     "o": [
+      "Heights are impossible",
+      "Heights cannot be measured",
+      "Probability is area under the curve, and a single point has zero width",
+      "The normal curve is zero"
+     ],
+     "a": 2,
+     "why": "Only intervals have positive area.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What the binomial distribution counts",
+    "model": "The binomial distribution counts how many successes you get in a fixed number of independent tries, when each try has the same chance of success. For example the number of heads in 5 coin tosses. You need the number of tries n and the chance p.",
+    "points": [
+     {
+      "k": [
+       "success",
+       "count",
+       "heads",
+       "how many"
+      ],
+      "ask": "What does it count?"
+     },
+     {
+      "k": [
+       "independent",
+       "same chance",
+       "fixed",
+       "each try"
+      ],
+      "ask": "What conditions are needed?"
+     },
+     {
+      "k": [
+       "n",
+       "p",
+       "tries",
+       "probability"
+      ],
+      "ask": "What numbers do I need?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Statistical inference and regression",
+   "icon": "🔍",
+   "hook": "A poll of 100 voters says 40% support a plan. How confident can you be that the whole population is near 40%? And does a trend line through some data prove one thing causes another?",
+   "explain": [
+    "Statistical inference uses a sample to say something about a population. A sample statistic such as a mean varies from sample to sample. The standard error of a sample mean is σ/√n, so with σ = 10 and n = 25 it is 10/5 = 2. Larger samples give smaller standard error. For a proportion p̂ the standard error is √(p̂(1 − p̂)/n): for p̂ = 0.4 and n = 100 it is about 0.049.",
+    "A 95% confidence interval for a mean is roughly x̄ ± 1.96 × SE. If x̄ = 50 and SE = 2, the interval is 46.08 to 53.92. It means that the method produces intervals that capture the true value in 95% of repeated samples, not that there is a 95% chance this particular interval contains it. A hypothesis test asks whether data are consistent with a claim; the p-value is the probability of data at least this extreme if the claim (null hypothesis) were true.",
+    "Regression fits a line y = a + bx to paired data by least squares, minimising the sum of squared residuals (observed minus predicted). The correlation r (between −1 and 1) measures the strength of linear association, and r² is the share of variation explained. Correlation does not prove causation: a hidden factor may drive both variables."
+   ],
+   "example": {
+    "q": "Data (1, 2), (2, 3), (3, 5), (4, 6). Find the least-squares line and predict y at x = 5.",
+    "steps": [
+     "Means: x̄ = 2.5 and ȳ = 4.",
+     "Slope b = Σ(x − x̄)(y − ȳ) ÷ Σ(x − x̄)² = 7 ÷ 5 = 1.4.",
+     "Intercept a = ȳ − b x̄ = 4 − 1.4 × 2.5 = 0.5.",
+     "Prediction at x = 5: 0.5 + 1.4 × 5 = 7.5."
+    ],
+    "a": "y = 0.5 + 1.4x and y(5) = 7.5"
+   },
+   "analogies": {
+    "city": "Polls survey a few thousand voters to estimate the opinion of millions.",
+    "farm": "Testing a sample of 30 plants to estimate the yield of a whole field.",
+    "sport": "Fitting a line to training hours and race times, while knowing other factors matter.",
+    "tech": "A company A/B tests two web page designs using a sample of visitors."
+   },
+   "mnemonic": "Sample to population, with an error bar. A line through points is not a proof of cause.",
+   "terms": [
+    [
+     "Standard error",
+     "The standard deviation of a sample statistic, such as σ/√n for a mean."
+    ],
+    [
+     "Confidence interval",
+     "A range built to capture the true value with a stated long-run success rate."
+    ],
+    [
+     "p-value",
+     "The probability of results at least this extreme if the null hypothesis is true."
+    ],
+    [
+     "Residual",
+     "Observed value minus the value predicted by the model."
+    ]
+   ],
+   "misc": {
+    "wrong": "A 95% confidence interval means there is a 95% chance the true value is in this particular interval.",
+    "right": "The 95% refers to the method over many samples. Any one interval either contains the true value or not."
+   },
+   "limits": "Regression lines should not be used far outside the range of the data (extrapolation), and a small p-value does not measure how large or important an effect is.",
+   "trip": {
+    "wiki": "Confidence interval",
+    "prompt": "Find the explanation of how many intervals from repeated samples capture the true mean."
+   },
+   "sources": [
+    "Statistical inference",
+    "Confidence interval",
+    "Simple linear regression"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which change makes the standard error of a mean smaller?",
+     "o": [
+      "A smaller sample",
+      "A larger sample",
+      "A larger standard deviation",
+      "Removing the mean"
+     ],
+     "a": 1,
+     "why": "SE = σ/√n.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two variables have r = 0.95. What can we say?",
+     "o": [
+      "They have a strong positive linear association",
+      "One causes the other",
+      "There is no relationship",
+      "The slope is 0.95"
+     ],
+     "a": 0,
+     "why": "Correlation shows association, not cause.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Ice cream sales and drowning numbers are positively correlated across months. The best explanation is...",
+     "o": [
+      "Ice cream causes drowning",
+      "Drowning causes ice cream sales",
+      "Pure chance only",
+      "A hidden factor such as hot weather"
+     ],
+     "a": 3,
+     "why": "Both increase in summer: a confounding variable.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A residual is...",
+     "o": [
+      "Predicted minus the mean",
+      "The slope of the line",
+      "Observed value minus predicted value",
+      "The correlation"
+     ],
+     "a": 2,
+     "why": "Residuals measure how far points fall from the line.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A small p-value (such as 0.01) suggests...",
+     "o": [
+      "The null hypothesis is proved false",
+      "The data are unlikely if the null hypothesis were true",
+      "The effect is large",
+      "The sample is large"
+     ],
+     "a": 1,
+     "why": "It is evidence against the null, not proof, and says nothing about effect size.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Aisha predicts a child's height at age 40 using a line fitted to ages 5 to 12. Why is this unreliable?",
+     "o": [
+      "It extrapolates far beyond the data range",
+      "Lines cannot be fitted",
+      "Heights are not numbers",
+      "The slope is zero"
+     ],
+     "a": 0,
+     "why": "The trend may not continue outside the observed range.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "σ = 10 and n = 25. Find the standard error of the sample mean.",
+     "a": 2,
+     "tol": 0,
+     "why": "10 ÷ √25 = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "x̄ = 50 and SE = 2. Find the upper end of the 95% interval x̄ ± 1.96 SE (to 2 d.p.).",
+     "a": 53.92,
+     "tol": 0.01,
+     "why": "50 + 3.92 = 53.92.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using y = 0.5 + 1.4x, predict y when x = 5.",
+     "a": 7.5,
+     "tol": 0,
+     "why": "0.5 + 7 = 7.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a bigger sample gives a narrower confidence interval.",
+     "rubric": [
+      [
+       "standard error",
+       "se",
+       "1/√n",
+       "square root",
+       "σ/√n"
+      ],
+      [
+       "smaller",
+       "decrease",
+       "reduce",
+       "shrink",
+       "narrow"
+      ],
+      [
+       "sample",
+       "n",
+       "more data",
+       "larger"
+      ]
+     ],
+     "min": 2,
+     "model": "The standard error is σ/√n, so a larger sample size n makes it smaller and the interval x̄ ± 1.96 SE narrower: more data means a more precise estimate.",
+     "why": "Precision grows with the square root of sample size.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A poll finds 40% (SE about 4.9 points). Which statement is the best interpretation of the 95% interval of about 30% to 50%?",
+     "o": [
+      "There is a 95% chance this interval holds the truth, so the truth is definitely in it",
+      "95% of voters are between 30% and 50%",
+      "The poll is 95% accurate for every voter",
+      "The method captures the true proportion in about 95% of repeated polls"
+     ],
+     "a": 3,
+     "why": "Confidence refers to the long-run behaviour of the method.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A study finds a correlation between hours of sleep and exam scores. Explain two reasons why this does not prove sleep causes better scores.",
+     "rubric": [
+      [
+       "confound",
+       "hidden",
+       "third",
+       "other factor",
+       "lurking",
+       "common cause"
+      ],
+      [
+       "reverse",
+       "direction",
+       "other way",
+       "opposite"
+      ],
+      [
+       "experiment",
+       "random",
+       "control",
+       "trial",
+       "chance"
+      ]
+     ],
+     "min": 2,
+     "model": "A third factor such as general health or motivation could affect both, and the direction could be reversed. Only a well-designed randomised experiment can support a causal claim.",
+     "why": "Correlation shows association; cause needs experiments or other evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You test 20 unrelated things and one gives p = 0.04. What should you suspect?",
+     "o": [
+      "That one is certainly real",
+      "All 20 are real",
+      "It could be a chance finding from multiple testing",
+      "p-values never mislead"
+     ],
+     "a": 2,
+     "why": "With 20 tests at 5%, about one false positive is expected.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a confidence interval tells you",
+    "model": "A confidence interval is a range of values that is likely to include the true population value, built from a sample. A 95% interval comes from a method that works 95% of the time over many samples. A bigger sample gives a narrower interval.",
+    "points": [
+     {
+      "k": [
+       "range",
+       "interval",
+       "between"
+      ],
+      "ask": "What is a confidence interval?"
+     },
+     {
+      "k": [
+       "sample",
+       "population",
+       "estimate"
+      ],
+      "ask": "What is it based on?"
+     },
+     {
+      "k": [
+       "95",
+       "method",
+       "many",
+       "repeated",
+       "narrower",
+       "bigger"
+      ],
+      "ask": "What does the 95% mean?"
+     }
+    ]
+   }
+  }
+ ]
+}

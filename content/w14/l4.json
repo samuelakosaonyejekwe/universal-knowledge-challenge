@@ -1,0 +1,2954 @@
+{
+ "world": 14,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Intermediate music theory",
+   "icon": "🧭",
+   "hook": "Why does A minor use exactly the same notes as C major, yet sounds so different?",
+   "explain": [
+    "Every major key has a relative minor that shares its key signature. The relative minor starts on the sixth note of the major scale, three semitones below the major tonic: C major and A minor, G major and E minor, F major and D minor. Same notes, but a different home note, so a different centre of gravity.",
+    "The circle of fifths arranges keys a perfect fifth apart. Going clockwise adds one sharp each step (C, G, D, A, E, B, F♯) and going anticlockwise adds one flat (C, F, B♭, E♭, A♭, D♭). Minor scales come in forms: natural (A B C D E F G), harmonic (raises the 7th: G♯) and melodic (raises 6th and 7th going up). Raising the 7th gives a leading note that pulls to the tonic.",
+    "Modes are scales built on other degrees of the major scale. Dorian (D to D on white keys) is minor with a raised 6th; Mixolydian (G to G) is major with a flat 7th. Compound metres such as 6/8, 9/8 and 12/8 divide the beat into three, and transposition moves a whole piece by one interval."
+   ],
+   "example": {
+    "q": "Find the relative minor of E♭ major.",
+    "steps": [
+     "The relative minor starts on the sixth note of the major scale.",
+     "E♭ major: E♭ F G A♭ B♭ C. The sixth note is C.",
+     "So the relative minor is C minor."
+    ],
+    "a": "C minor"
+   },
+   "analogies": {
+    "home": "Same furniture rearranged around a different centre gives a different room.",
+    "city": "The same streets seen from a different square feel like a new neighbourhood.",
+    "music": "A and C share all their white keys but each pulls the ear to a different home note.",
+    "nature": "Same hills, different peak chosen as the summit."
+   },
+   "mnemonic": "Relative minor: drop three semitones, same signature.",
+   "terms": [
+    [
+     "Relative minor",
+     "The minor key that shares a key signature with a major key, starting on its 6th degree."
+    ],
+    [
+     "Circle of fifths",
+     "A diagram of keys arranged a perfect fifth apart."
+    ],
+    [
+     "Harmonic minor",
+     "A minor scale with a raised 7th degree."
+    ],
+    [
+     "Mode",
+     "A scale built on another note of the major scale, such as Dorian."
+    ]
+   ],
+   "misc": {
+    "wrong": "A major key and its relative minor use different notes.",
+    "right": "They share exactly the same notes and key signature; only the tonic differs."
+   },
+   "trip": {
+    "wiki": "Circle of fifths",
+    "prompt": "Find the key with four sharps and name its relative minor."
+   },
+   "sources": [
+    "Circle of fifths",
+    "Relative key",
+    "Musical mode"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the relative minor of C major?",
+     "o": [
+      "E minor",
+      "A minor",
+      "D minor",
+      "C minor"
+     ],
+     "a": 1,
+     "why": "A is the sixth note of C major.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the relative minor of G major?",
+     "o": [
+      "E minor",
+      "A minor",
+      "D minor",
+      "B minor"
+     ],
+     "a": 0,
+     "why": "E is the sixth note of G major.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How many flats does F major have?",
+     "o": [
+      "Two",
+      "None",
+      "Three",
+      "One"
+     ],
+     "a": 3,
+     "why": "F major has B♭.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which key has three sharps?",
+     "o": [
+      "E major",
+      "D major",
+      "A major",
+      "B major"
+     ],
+     "a": 2,
+     "why": "Sharps by key: G 1, D 2, A 3, E 4, B 5.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which note is raised in the harmonic minor scale?",
+     "o": [
+      "The 3rd",
+      "The 7th",
+      "The 5th",
+      "The 1st"
+     ],
+     "a": 1,
+     "why": "The raised seventh gives a leading note.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Listen. Which mode is this (D to D on white keys)?",
+     "o": [
+      "Dorian",
+      "Major",
+      "Mixolydian",
+      "Harmonic minor"
+     ],
+     "a": 0,
+     "why": "D E F G A B C D is Dorian.",
+     "d": 3,
+     "k": "apply",
+     "au": {
+      "notes": [
+       62,
+       64,
+       65,
+       67,
+       69,
+       71,
+       72,
+       74
+      ],
+      "dur": 0.4
+     }
+    },
+    {
+     "t": "match",
+     "q": "Match the key to its signature.",
+     "pairs": [
+      [
+       "G major",
+       "1 sharp"
+      ],
+      [
+       "D major",
+       "2 sharps"
+      ],
+      [
+       "F major",
+       "1 flat"
+      ],
+      [
+       "B♭ major",
+       "2 flats"
+      ]
+     ],
+     "why": "Follow the circle of fifths in each direction.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A tune in C is transposed up a perfect fifth (7 semitones). The tonic is MIDI 60. What is the new tonic MIDI note?",
+     "a": 67,
+     "tol": 0,
+     "why": "60 + 7 = 67, which is G.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these keys in circle-of-fifths order going clockwise from C.",
+     "items": [
+      "C",
+      "G",
+      "D",
+      "A",
+      "E"
+     ],
+     "why": "Each step is a perfect fifth higher and adds one sharp.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why do A minor and C major sound different although they share the same notes?",
+     "rubric": [
+      [
+       "tonic",
+       "home",
+       "centre",
+       "center",
+       "starts",
+       "resolve"
+      ],
+      [
+       "different",
+       "pull",
+       "gravity",
+       "emphasis",
+       "chords",
+       "harmony"
+      ]
+     ],
+     "min": 2,
+     "model": "The ear hears a different note as home. The tonic, chords and cadences point to A or C, so the same notes gain different roles.",
+     "why": "Tonic defines the key.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A piece has three flats and ends on a C chord that sounds like home. Which key is it likely in?",
+     "o": [
+      "E♭ major",
+      "B♭ major",
+      "A♭ major",
+      "C minor"
+     ],
+     "a": 3,
+     "why": "Three flats fit E♭ major and C minor; a C tonic suggests C minor.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the raised seventh used in minor keys?",
+     "rubric": [
+      [
+       "leading",
+       "lead",
+       "pull",
+       "tension",
+       "semitone"
+      ],
+      [
+       "tonic",
+       "home",
+       "resolve",
+       "cadence",
+       "dominant",
+       "major v"
+      ]
+     ],
+     "min": 2,
+     "model": "It creates a leading note a semitone below the tonic, which pulls strongly to it and allows a major dominant chord for a stronger cadence.",
+     "why": "Leading note increases pull.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "6/8 is described as compound because",
+     "o": [
+      "It has six bars in every line",
+      "It is always played very fast",
+      "Each beat divides into three",
+      "It needs exactly six instruments to play"
+     ],
+     "a": 2,
+     "why": "Compound metres divide the beat in three.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Keys and the circle of fifths",
+    "model": "Every major key has a relative minor with the same notes, starting on the sixth degree. The circle of fifths shows keys a fifth apart; each step clockwise adds a sharp. Minor scales often raise the seventh to make a leading note.",
+    "points": [
+     {
+      "k": [
+       "relative",
+       "sixth",
+       "same notes",
+       "a minor"
+      ],
+      "ask": "What is a relative minor?"
+     },
+     {
+      "k": [
+       "circle",
+       "fifth",
+       "sharp",
+       "flat"
+      ],
+      "ask": "How are keys arranged?"
+     },
+     {
+      "k": [
+       "tonic",
+       "home"
+      ],
+      "ask": "What makes the two sound different?"
+     },
+     {
+      "k": [
+       "harmonic",
+       "raised",
+       "seventh",
+       "leading"
+      ],
+      "ask": "How do minor scales change?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Harmony and counterpoint",
+   "icon": "🎼",
+   "hook": "How can two melodies sound together without turning into a clash, as in a Bach fugue?",
+   "explain": [
+    "Harmony is built from chords that move in a logical way. Triads can be inverted: root position puts the root in the bass (C E G), first inversion puts the third in the bass (E G C) and second inversion the fifth (G C E). Adding the seventh above the root gives a seventh chord such as G7 (G B D F), whose tension wants to resolve to C.",
+    "Counterpoint is the art of combining independent melodic lines. The word comes from the Latin punctus contra punctum, note against note. The main principle is good voice leading: lines move smoothly, mostly by step, and prefer contrary motion (one up, one down) so each stays independent. In traditional counterpoint parallel perfect fifths and octaves are avoided because they make two voices sound like one.",
+    "Johann Sebastian Bach (1685–1750) is famous for counterpoint, especially fugues, in which a subject is introduced in one voice and imitated by others. Counterpoint also appears in many traditions, from medieval chant to jazz ensembles and polyphonic singing in Georgia and Central Africa."
+   ],
+   "example": {
+    "q": "Spell G7 and say which interval the 7th makes with the root.",
+    "steps": [
+     "G major triad is G B D.",
+     "Add the note a minor seventh above G, which is F.",
+     "From G to F is 10 semitones: a minor seventh."
+    ],
+    "a": "G B D F; a minor seventh (10 semitones)"
+   },
+   "analogies": {
+    "home": "Two people singing different songs that fit: a round.",
+    "city": "Traffic lanes: separate paths that travel together without collision.",
+    "sport": "Players move independently but form one play.",
+    "music": "A fugue is a conversation in which each voice repeats what the first said."
+   },
+   "mnemonic": "Smooth lines, opposite directions, no parallel fifths.",
+   "terms": [
+    [
+     "Inversion",
+     "A chord with a note other than the root in the bass."
+    ],
+    [
+     "Seventh chord",
+     "A chord with a seventh above the root added to a triad."
+    ],
+    [
+     "Counterpoint",
+     "Combining independent melodic lines."
+    ],
+    [
+     "Fugue",
+     "A piece in which a theme is imitated in several voices."
+    ]
+   ],
+   "misc": {
+    "wrong": "Counterpoint is just playing two melodies at once at random.",
+    "right": "It follows careful rules of how lines move and which intervals fall on strong beats so lines stay independent and pleasing."
+   },
+   "limits": "The rules of counterpoint describe 16th–18th century European practice; other musical cultures use different principles of combining lines.",
+   "trip": {
+    "wiki": "Counterpoint",
+    "prompt": "Find an example of a fugue and identify where the subject enters."
+   },
+   "sources": [
+    "Counterpoint",
+    "Fugue",
+    "Inversion (music)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which notes make a first-inversion C major chord?",
+     "o": [
+      "C E G with C in the bass",
+      "E G C with E in the bass",
+      "G C E with G in the bass",
+      "C F A with C in the bass"
+     ],
+     "a": 1,
+     "why": "First inversion has the third in the bass.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       [
+        64,
+        67,
+        72
+       ]
+      ],
+      "dur": 1
+     }
+    },
+    {
+     "t": "mc",
+     "q": "What notes make G7?",
+     "o": [
+      "G B D F",
+      "G B D E",
+      "G A D F",
+      "G B E F"
+     ],
+     "a": 0,
+     "why": "A G major triad plus F.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       [
+        55,
+        59,
+        62,
+        65
+       ]
+      ],
+      "dur": 1.2
+     }
+    },
+    {
+     "t": "mc",
+     "q": "What is counterpoint?",
+     "o": [
+      "Playing a single melody very loudly",
+      "A name for a type of drum",
+      "A word for a slow tempo",
+      "Combining independent melodic lines"
+     ],
+     "a": 3,
+     "why": "Counterpoint means voices with independent melodies.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which motion do teachers recommend for keeping voices independent?",
+     "o": [
+      "Parallel fifths",
+      "Same direction always",
+      "Contrary motion",
+      "No motion at all"
+     ],
+     "a": 2,
+     "why": "Contrary motion keeps lines distinct.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are parallel perfect fifths avoided?",
+     "o": [
+      "They are always too loud to blend",
+      "The two voices seem to merge into one",
+      "They need a fifth instrument to work",
+      "They only happen when pianos play"
+     ],
+     "a": 1,
+     "why": "Parallel perfect intervals reduce independence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which composer is especially linked with fugues?",
+     "o": [
+      "Johann Sebastian Bach",
+      "Pyotr Ilyich Tchaikovsky",
+      "Giuseppe Verdi",
+      "Claude Debussy"
+     ],
+     "a": 0,
+     "why": "Bach wrote many fugues, including The Art of Fugue and the Well-Tempered Clavier.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the chord to its notes.",
+     "pairs": [
+      [
+       "C root position",
+       "C E G"
+      ],
+      [
+       "C first inversion",
+       "E G C"
+      ],
+      [
+       "C second inversion",
+       "G C E"
+      ],
+      [
+       "G7",
+       "G B D F"
+      ]
+     ],
+     "why": "Inversions change which note is lowest.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order of how a fugue begins.",
+     "items": [
+      "Subject enters in first voice",
+      "Second voice enters with the subject",
+      "Third voice enters",
+      "Voices continue developing"
+     ],
+     "why": "Voices enter one after another imitating the subject.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a dominant seventh chord wants to resolve.",
+     "rubric": [
+      [
+       "tension",
+       "unstable",
+       "dissonan",
+       "clash",
+       "tritone"
+      ],
+      [
+       "resolve",
+       "tonic",
+       "home",
+       "i chord",
+       "c",
+       "move to"
+      ]
+     ],
+     "min": 2,
+     "model": "The seventh and third form a tritone, a tense interval. It pulls to the tonic where the notes move to stable positions.",
+     "why": "Dissonance resolves to consonance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A melody moves up while the bass moves down. What is this motion?",
+     "o": [
+      "Parallel motion",
+      "Oblique motion",
+      "Static motion",
+      "Contrary motion"
+     ],
+     "a": 3,
+     "why": "Opposite directions are contrary motion.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In G7, the notes B and F form which interval?",
+     "o": [
+      "A perfect fifth",
+      "An octave",
+      "A tritone",
+      "A major third"
+     ],
+     "a": 2,
+     "why": "B to F is six semitones.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is independence of lines valued in counterpoint but sometimes less in homophonic music?",
+     "rubric": [
+      [
+       "melody",
+       "tune",
+       "top",
+       "accompan"
+      ],
+      [
+       "independent",
+       "own",
+       "separate",
+       "chord",
+       "chords",
+       "support"
+      ]
+     ],
+     "min": 1,
+     "model": "Counterpoint treats each line as its own melody. Homophonic music has one main melody with chords supporting it.",
+     "why": "Different textures have different aims.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Georgian polyphonic singing shows that",
+     "o": [
+      "Only European music ever uses several lines at once",
+      "Polyphony exists beyond European classical music",
+      "Polyphony cannot happen without instruments",
+      "Choirs are not able to sing in parts"
+     ],
+     "a": 1,
+     "why": "Many traditions have polyphony.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Harmony and counterpoint",
+    "model": "Chords can be turned into inversions, and a seventh can be added to make tension, as in G7. Counterpoint combines independent melodies that move smoothly, often in opposite directions. Bach's fugues are famous examples.",
+    "points": [
+     {
+      "k": [
+       "inversion",
+       "bass",
+       "root",
+       "third"
+      ],
+      "ask": "What is an inversion?"
+     },
+     {
+      "k": [
+       "seventh",
+       "tension",
+       "resolve"
+      ],
+      "ask": "What does a seventh chord add?"
+     },
+     {
+      "k": [
+       "independent",
+       "melodies",
+       "lines",
+       "voices"
+      ],
+      "ask": "What is counterpoint?"
+     },
+     {
+      "k": [
+       "bach",
+       "fugue",
+       "contrary",
+       "smooth"
+      ],
+      "ask": "Can you give an example or a rule?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Musical arrangement",
+   "icon": "🎛️",
+   "hook": "The same song can be a quiet guitar tune, a full orchestral piece or a dance remix. What changes?",
+   "explain": [
+    "Arranging is deciding how an existing piece is presented: which instruments play which parts, in what range and texture, and how the music builds. The arranger keeps the song's melody and harmony but chooses the setting, tempo, feel and structure.",
+    "Key tools are instrumentation (who plays), texture (how many lines and how dense), register (high or low), dynamics and form (intro, verse, chorus, bridge, outro). A typical rhythm section of drums, bass and chords gives pulse and harmony, with melody instruments or voices on top. Contrast between sections stops a repeated chorus from feeling flat.",
+    "Practical rules: give each instrument its own space in range, avoid everyone playing at once all the time, check the instruments' ranges (you cannot ask a flute for a bass line), and transposing instruments such as B♭ trumpet need parts written in their own key. Arrangers work in every genre, from big band charts to film scores and electronic production."
+   ],
+   "example": {
+    "q": "A verse has voice and guitar. How might you make the final chorus feel bigger?",
+    "steps": [
+     "Add instruments (bass, drums, backing vocals).",
+     "Raise the register or add a counter-melody.",
+     "Increase dynamics for contrast."
+    ],
+    "a": "Add instruments, widen the texture and raise dynamics"
+   },
+   "analogies": {
+    "home": "Cooking the same recipe with different spices.",
+    "city": "The same story told as a film, a play or a comic.",
+    "sport": "The same team playing a defensive or attacking formation.",
+    "tech": "The same code compiled for different devices."
+   },
+   "mnemonic": "Same song, new clothes: who, where, how much.",
+   "terms": [
+    [
+     "Arrangement",
+     "A version of a piece with chosen instruments, texture and structure."
+    ],
+    [
+     "Texture",
+     "How many layers there are and how they relate."
+    ],
+    [
+     "Register",
+     "How high or low a part sits."
+    ],
+    [
+     "Rhythm section",
+     "Instruments such as drums and bass that provide pulse and harmony."
+    ]
+   ],
+   "misc": {
+    "wrong": "More instruments always make a better arrangement.",
+    "right": "Space is important. Often the strongest arrangements leave room for each part to be heard."
+   },
+   "trip": {
+    "wiki": "Arrangement (music)",
+    "prompt": "Find a description of a big band or orchestral arrangement."
+   },
+   "sources": [
+    "Musical arrangement",
+    "Texture (music)",
+    "Rhythm section"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is an arrangement?",
+     "o": [
+      "A version with chosen instruments and structure",
+      "A brand new melody for the piece",
+      "A loud finish at the very end",
+      "A way of tuning the instruments"
+     ],
+     "a": 0,
+     "why": "Arrangers adapt existing music.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which group usually forms a rhythm section?",
+     "o": [
+      "Flute and oboe",
+      "Violin and viola",
+      "Trumpet and tuba",
+      "Drums and bass"
+     ],
+     "a": 3,
+     "why": "Drums, bass and often guitar or keys.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does texture describe?",
+     "o": [
+      "Only the key the piece is in",
+      "The speed the piece is played at",
+      "How many layers and how dense the music is",
+      "Only how loud the music gets"
+     ],
+     "a": 2,
+     "why": "Texture is the layering of lines.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why avoid putting every instrument in the same register?",
+     "o": [
+      "They make the music a lot quieter",
+      "The parts blur together",
+      "They change the key of the music",
+      "They stop the beat from being heard"
+     ],
+     "a": 1,
+     "why": "Each part needs space.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A B♭ trumpet is a transposing instrument. What does that mean?",
+     "o": [
+      "Its written notes sound different from the concert pitch",
+      "It has no valves to press down",
+      "It is always badly out of tune",
+      "It can only ever play one note"
+     ],
+     "a": 0,
+     "why": "Written C on a B♭ trumpet sounds B♭.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The final chorus needs more energy. What could you do?",
+     "o": [
+      "Take out the drums completely",
+      "Slow the tempo down to half speed",
+      "Delete the melody from the chorus",
+      "Add layers and raise the register"
+     ],
+     "a": 3,
+     "why": "Build-ups use more layers and range.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the section to its role.",
+     "pairs": [
+      [
+       "Intro",
+       "Sets mood before the song"
+      ],
+      [
+       "Verse",
+       "Tells the story or develops"
+      ],
+      [
+       "Chorus",
+       "Main repeated hook"
+      ],
+      [
+       "Bridge",
+       "Contrast before the return"
+      ]
+     ],
+     "why": "Common song-form roles.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the sections of a common pop arrangement in order.",
+     "items": [
+      "Intro",
+      "Verse",
+      "Chorus",
+      "Bridge",
+      "Final chorus"
+     ],
+     "why": "This is a common pattern.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why would an arranger change the instruments but keep the melody and chords?",
+     "rubric": [
+      [
+       "same",
+       "recogni",
+       "keep",
+       "familiar",
+       "song",
+       "melody"
+      ],
+      [
+       "new",
+       "different",
+       "mood",
+       "style",
+       "setting",
+       "colour",
+       "texture",
+       "fresh"
+      ]
+     ],
+     "min": 2,
+     "model": "The song stays recognisable while a new setting changes the mood, style and colour.",
+     "why": "Arranging reinterprets.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A flute is asked to play a note well below its lowest note. What is the problem?",
+     "o": [
+      "Flutes cannot play any notes at all",
+      "The tempo is much too fast to play",
+      "It is outside the instrument's range",
+      "There is no rhythm written for it"
+     ],
+     "a": 2,
+     "why": "Arrangers must respect ranges.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why leave rests and gaps in an arrangement?",
+     "o": [
+      "They make the song shorter overall",
+      "They give space and contrast",
+      "They are simply mistakes in the score",
+      "They stop harmony from forming"
+     ],
+     "a": 1,
+     "why": "Space helps clarity and impact.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How could an acoustic ballad be rearranged as a dance track?",
+     "rubric": [
+      [
+       "beat",
+       "drum",
+       "rhythm",
+       "pulse",
+       "tempo",
+       "faster"
+      ],
+      [
+       "synth",
+       "electronic",
+       "bass",
+       "loop",
+       "sampl",
+       "instrument"
+      ]
+     ],
+     "min": 2,
+     "model": "Raise the tempo, add a steady four-on-the-floor drum pattern, bass and synthesisers and loop repeating parts.",
+     "why": "Pulse and instruments define dance style.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why check an instrument's range when arranging?",
+     "o": [
+      "To write parts that can be played",
+      "To make every part sound louder",
+      "To quietly change the key",
+      "To take the melody out"
+     ],
+     "a": 0,
+     "why": "Playability matters.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Arranging music",
+    "model": "Arranging means choosing who plays what, how dense the music is and how it builds. You keep the melody and chords but change the setting. Good arrangements use contrast, respect instrument ranges and leave space.",
+    "points": [
+     {
+      "k": [
+       "instrument",
+       "who plays",
+       "setting"
+      ],
+      "ask": "What do arrangers choose?"
+     },
+     {
+      "k": [
+       "texture",
+       "layers",
+       "dense",
+       "register"
+      ],
+      "ask": "What else do they control?"
+     },
+     {
+      "k": [
+       "contrast",
+       "build",
+       "chorus",
+       "verse"
+      ],
+      "ask": "How do they keep it interesting?"
+     },
+     {
+      "k": [
+       "range",
+       "space",
+       "balance"
+      ],
+      "ask": "What should they be careful about?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Improvisation",
+   "icon": "🎷",
+   "hook": "A player invents music on the spot, in front of an audience. How can that work without a plan?",
+   "explain": [
+    "Improvisation is composing in the moment. It is not random: improvisers know the scales, chords and style, and use their ears. Many traditions have it: jazz, blues, Indian classical music, Arabic taqsim, flamenco, and Baroque keyboard players who ornamented a bass line.",
+    "A good starting tool is the pentatonic scale. C major pentatonic is C D E G A, and A minor pentatonic is A C D E G; they sound good over many chords. The blues scale adds a \"blue note\", the flattened fifth (A C D E♭ E G in A). Other techniques: play chord tones on strong beats, repeat and vary a short motif, use call and response (answer a phrase with another) and leave space.",
+    "Beginners can try three steps: listen, copy a simple riff, then change one thing at a time (rhythm, order, octave). Mistakes become part of the music when they are repeated or resolved. Practise over a backing track or a drone, and record yourself to hear what works."
+   ],
+   "example": {
+    "q": "Which notes can you use for an A minor pentatonic solo?",
+    "steps": [
+     "The scale has five notes.",
+     "Starting on A: A C D E G.",
+     "These work over A minor and many related chords."
+    ],
+    "a": "A C D E G"
+   },
+   "analogies": {
+    "home": "A conversation is improvised but uses words and grammar you know.",
+    "sport": "A footballer reads the game and uses learned skills in new ways.",
+    "nature": "Birds vary a familiar song each morning.",
+    "city": "Street musicians respond to the crowd."
+   },
+   "mnemonic": "Listen, play a little, repeat, vary, leave space.",
+   "terms": [
+    [
+     "Improvisation",
+     "Making up music while playing."
+    ],
+    [
+     "Pentatonic scale",
+     "A five-note scale."
+    ],
+    [
+     "Blue note",
+     "A flattened note, such as the flat fifth, that gives a blues sound."
+    ],
+    [
+     "Call and response",
+     "A phrase answered by another phrase."
+    ]
+   ],
+   "misc": {
+    "wrong": "Improvisers just play anything.",
+    "right": "They draw on scales, harmony, rhythm and listening, and make musical choices as they go."
+   },
+   "trip": {
+    "wiki": "Musical improvisation",
+    "prompt": "Find examples of improvisation from different traditions."
+   },
+   "sources": [
+    "Musical improvisation",
+    "Pentatonic scale",
+    "Blues scale"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which notes are in the C major pentatonic scale?",
+     "o": [
+      "C D E F G",
+      "C E G B D",
+      "C D F G B",
+      "C D E G A"
+     ],
+     "a": 3,
+     "why": "It drops the 4th and 7th of C major.",
+     "d": 2,
+     "k": "recall",
+     "au": {
+      "notes": [
+       60,
+       62,
+       64,
+       67,
+       69
+      ],
+      "dur": 0.4
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Which notes are in the A minor pentatonic scale?",
+     "o": [
+      "A B C D E",
+      "A C E G B",
+      "A C D E G",
+      "A B D E G"
+     ],
+     "a": 2,
+     "why": "It is the relative minor of C pentatonic.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which note adds the \"blue\" sound to the A blues scale?",
+     "o": [
+      "G♯ (leading tone)",
+      "E♭ (flat fifth)",
+      "B (second step)",
+      "F♯ (major sixth)"
+     ],
+     "a": 1,
+     "why": "The flat fifth is the added blue note.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is call and response?",
+     "o": [
+      "One phrase answered by another",
+      "Playing very loud and then very quiet",
+      "Using one single note for a whole song",
+      "Copying notes from a page of notation"
+     ],
+     "a": 0,
+     "why": "It is a conversational technique.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Where is it safest to land chord tones when improvising?",
+     "o": [
+      "Never",
+      "Only in the last bar",
+      "On random notes",
+      "On strong beats"
+     ],
+     "a": 3,
+     "why": "Chord tones sound stable on strong beats.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A note in your solo sounds wrong. A good response is to",
+     "o": [
+      "Stop playing and wait for the end",
+      "Play much louder to cover it up",
+      "Repeat it or resolve it to a nearby note",
+      "Leave the stage straight away"
+     ],
+     "a": 2,
+     "why": "Repeating or resolving makes it purposeful.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the tradition to its improvised form.",
+     "pairs": [
+      [
+       "Arabic music",
+       "Taqsim"
+      ],
+      [
+       "Indian classical music",
+       "Raga alap"
+      ],
+      [
+       "Jazz",
+       "Solo over chord changes"
+      ]
+     ],
+     "why": "These traditions all feature improvisation or free elaboration.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the practice steps in order.",
+     "items": [
+      "Listen to the style",
+      "Copy a simple riff",
+      "Change one thing",
+      "Record and review"
+     ],
+     "why": "Listen, copy, vary and review.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why do pentatonic scales help beginner improvisers?",
+     "rubric": [
+      [
+       "five",
+       "5",
+       "few",
+       "fewer",
+       "simple"
+      ],
+      [
+       "clash",
+       "avoid",
+       "sound good",
+       "wrong",
+       "safe",
+       "work",
+       "fit"
+      ],
+      [
+       "chord",
+       "chords",
+       "over",
+       "many"
+      ]
+     ],
+     "min": 2,
+     "model": "With only five notes, there are few clashes, so most notes sound acceptable over many chords.",
+     "why": "Pentatonic scales avoid the tense semitone clashes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "How many notes does a pentatonic scale have?",
+     "a": 5,
+     "tol": 0,
+     "why": "Penta means five.",
+     "d": 1,
+     "k": "recall",
+     "unit": "notes"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says improvisers do not practise. What is the best correction?",
+     "o": [
+      "They are right, it is all made up",
+      "They practise scales, patterns and listening so choices come naturally",
+      "They only practise playing very loudly",
+      "They memorise random notes at the last minute"
+     ],
+     "a": 1,
+     "why": "Fluency comes from preparation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is leaving space important in an improvised solo?",
+     "rubric": [
+      [
+       "space",
+       "rest",
+       "silence",
+       "pause",
+       "breath"
+      ],
+      [
+       "phrase",
+       "listener",
+       "shape",
+       "contrast",
+       "clear",
+       "sentence",
+       "audience"
+      ]
+     ],
+     "min": 1,
+     "model": "Pauses act like punctuation, shaping phrases, giving listeners time to absorb and making the notes stand out.",
+     "why": "Silence is musical.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true about improvisation across cultures?",
+     "o": [
+      "Many traditions have it, with different rules",
+      "Only jazz has any improvisation in it",
+      "It never uses scales of any kind",
+      "It is only ever done on solo piano"
+     ],
+     "a": 0,
+     "why": "Raga, taqsim, makam, flamenco and jazz all use it.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Improvising",
+    "model": "Improvising means making up music as you play, using skills you have practised. Start with a pentatonic scale, repeat and vary a short idea, use call and response and leave space. Listening is the most important skill.",
+    "points": [
+     {
+      "k": [
+       "scale",
+       "pentatonic",
+       "notes"
+      ],
+      "ask": "What notes should I use?"
+     },
+     {
+      "k": [
+       "repeat",
+       "vary",
+       "motif",
+       "idea"
+      ],
+      "ask": "How do I develop an idea?"
+     },
+     {
+      "k": [
+       "call",
+       "response",
+       "answer"
+      ],
+      "ask": "How can I respond to others?"
+     },
+     {
+      "k": [
+       "listen",
+       "space",
+       "rest"
+      ],
+      "ask": "What else matters?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Ensemble performance",
+   "icon": "🎻",
+   "hook": "Why do orchestras need a conductor, but a jazz trio does not?",
+   "explain": [
+    "Ensemble performance means making music as a team. The key skills are listening, matching tuning and timing, balancing volumes and following shared cues. Before playing, instruments are tuned to a common pitch, often an A at 440 Hz in many Western orchestras.",
+    "A conductor beats time, cues entries and shapes dynamics and style; small groups such as a string quartet use eye contact and breathing for cues. Every player needs to know their role: melody, accompaniment or rhythm. Balance means the melody is heard over the accompaniment; if you cannot hear the others, you may be too loud.",
+    "Group traditions are found worldwide: West African drum ensembles, gamelan orchestras in Indonesia, Japanese taiko drumming, mariachi bands in Mexico and brass bands in many countries. Rehearsal methods include practising parts alone, then slowly together, marking tricky spots and recording the group."
+   ],
+   "example": {
+    "q": "In a quartet, the violin has the tune and the others accompany. How should the accompanists balance?",
+    "steps": [
+     "Identify the role: accompaniment.",
+     "Play softer than the melody.",
+     "Listen to hear the tune clearly."
+    ],
+    "a": "Play softer so the melody is heard"
+   },
+   "analogies": {
+    "home": "A family meal where everyone passes dishes at the right time.",
+    "sport": "A relay team passes the baton cleanly.",
+    "city": "A traffic system keeps many vehicles moving in order.",
+    "sea": "Rowers in a boat need to stroke in time."
+   },
+   "mnemonic": "Tune, time, balance, watch, listen.",
+   "terms": [
+    [
+     "Ensemble",
+     "A group of musicians playing together."
+    ],
+    [
+     "Conductor",
+     "A person who leads an ensemble by gestures."
+    ],
+    [
+     "Balance",
+     "The relative loudness of the parts."
+    ],
+    [
+     "Cue",
+     "A signal for entering."
+    ]
+   ],
+   "misc": {
+    "wrong": "In a group, each player should aim to be heard the most.",
+    "right": "Ensemble playing needs blend. Players adjust volume and style to the group."
+   },
+   "trip": {
+    "wiki": "Musical ensemble",
+    "prompt": "Find two different ensembles from different continents."
+   },
+   "sources": [
+    "Musical ensemble",
+    "Conducting",
+    "Gamelan"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a conductor do?",
+     "o": [
+      "Plays every instrument on the stage",
+      "Tunes all of the instruments by ear",
+      "Writes the lyrics for the singers",
+      "Leads timing, cues and shaping"
+     ],
+     "a": 3,
+     "why": "Conductors guide performance.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why do ensembles tune to a common pitch?",
+     "o": [
+      "So that they can play faster together",
+      "So that the group sounds much louder",
+      "So instruments sound in tune together",
+      "So that they can change key easily"
+     ],
+     "a": 2,
+     "why": "A shared reference avoids clashes.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which ensemble is from Indonesia?",
+     "o": [
+      "Mariachi",
+      "Gamelan",
+      "Taiko",
+      "String quartet"
+     ],
+     "a": 1,
+     "why": "Gamelan is a traditional ensemble of Java and Bali.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a Japanese drum ensemble tradition?",
+     "o": [
+      "Taiko",
+      "Mariachi",
+      "Gamelan",
+      "Brass band"
+     ],
+     "a": 0,
+     "why": "Taiko means drum, and the ensemble is a modern art form.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "You cannot hear the other players. What does this usually mean?",
+     "o": [
+      "You may be playing too quietly",
+      "The tempo has probably gone wrong",
+      "The key has probably gone wrong",
+      "You may be too loud"
+     ],
+     "a": 3,
+     "why": "Balance requires hearing all.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How do small groups without a conductor start together?",
+     "o": [
+      "Guessing when to start and hoping",
+      "Always counting aloud to the group",
+      "Eye contact and breathing cues",
+      "Waiting for total silence to fall"
+     ],
+     "a": 2,
+     "why": "Cues are visual and physical.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the ensemble to the country.",
+     "pairs": [
+      [
+       "Mariachi",
+       "Mexico"
+      ],
+      [
+       "Gamelan",
+       "Indonesia"
+      ],
+      [
+       "Taiko",
+       "Japan"
+      ],
+      [
+       "Brass band",
+       "United Kingdom"
+      ]
+     ],
+     "why": "Group traditions grow in many places.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put a rehearsal plan in order.",
+     "items": [
+      "Practise your part alone",
+      "Tune together",
+      "Play slowly together",
+      "Perform"
+     ],
+     "why": "Prepare, tune, rehearse slowly, perform.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does a melody player need the accompaniment to be quieter?",
+     "rubric": [
+      [
+       "melody",
+       "tune",
+       "main"
+      ],
+      [
+       "heard",
+       "hear",
+       "clear",
+       "audible",
+       "stand out",
+       "balance"
+      ],
+      [
+       "listener",
+       "audience",
+       "follow"
+      ]
+     ],
+     "min": 2,
+     "model": "The melody carries the main musical idea, so it must be heard clearly by the listener above the supporting parts.",
+     "why": "Balance gives clarity.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "At 440 Hz, which note is commonly used as the tuning reference?",
+     "o": [
+      "C",
+      "A",
+      "G",
+      "E"
+     ],
+     "a": 1,
+     "why": "Concert A is commonly 440 Hz.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might a rhythm section watch each other closely?",
+     "o": [
+      "To stay locked together on the beat",
+      "To avoid having to listen at all",
+      "To speed up at random moments",
+      "To swap instruments in the middle"
+     ],
+     "a": 0,
+     "why": "Drum and bass need tight time.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A group keeps speeding up in the loud sections. How might they fix it?",
+     "rubric": [
+      [
+       "metronome",
+       "click",
+       "steady",
+       "count",
+       "pulse"
+      ],
+      [
+       "listen",
+       "drummer",
+       "conductor",
+       "watch",
+       "slow",
+       "relax"
+      ]
+     ],
+     "min": 1,
+     "model": "Rehearse with a metronome, listen to the pulse and watch the conductor or drummer, staying relaxed in loud sections.",
+     "why": "Excitement can push tempo.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is blend valued in a choir?",
+     "o": [
+      "Everyone must stay completely silent",
+      "Everyone must sing as loudly as possible",
+      "No one should be allowed to breathe",
+      "No single voice should stick out unless intended"
+     ],
+     "a": 3,
+     "why": "Blend unifies the sound.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Playing in an ensemble",
+    "model": "In an ensemble, players tune together, keep the same beat, balance their volume and follow cues. A conductor or eye contact helps start together. The most important skill is listening to the others.",
+    "points": [
+     {
+      "k": [
+       "tune",
+       "pitch"
+      ],
+      "ask": "What do you do before you start?"
+     },
+     {
+      "k": [
+       "beat",
+       "time",
+       "together",
+       "tempo"
+      ],
+      "ask": "How do you stay together?"
+     },
+     {
+      "k": [
+       "balance",
+       "volume",
+       "quiet",
+       "loud"
+      ],
+      "ask": "How loud should you be?"
+     },
+     {
+      "k": [
+       "listen",
+       "watch",
+       "cue",
+       "conductor"
+      ],
+      "ask": "What do you focus on?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Pop, rock and rock-and-roll",
+   "icon": "🎸",
+   "hook": "How did a mix of blues, gospel and country in the American South in the early 1950s change popular music around the world?",
+   "explain": [
+    "Pop is short for popular music: music made for a wide audience, usually with short songs, strong melodies, clear hooks and a verse-chorus form. It changes with technology and fashion, from radio and records to streaming and social media. Pop today is global: Afrobeats from Nigeria and Ghana, K-pop from South Korea and Latin pop all reach worldwide audiences.",
+    "Rock and roll emerged in the United States in the early 1950s, drawing on rhythm and blues, gospel, blues and country. Artists such as Chuck Berry, Little Richard, Fats Domino and Elvis Presley made it famous. Sister Rosetta Tharpe, a gospel singer and guitarist, was a major influence. Its sound used electric guitar, bass, drums and a strong backbeat on beats 2 and 4.",
+    "Rock grew from rock and roll in the 1960s. Bands such as the Beatles from Liverpool and the Rolling Stones led the British Invasion, and rock developed styles from folk rock and psychedelic rock to hard rock and punk. Rock typically features distorted electric guitars, a powerful rhythm section and a focus on live performance. Both pop and rock have always borrowed from Black American music and from many other traditions."
+   ],
+   "example": {
+    "q": "In 4/4, a snare drum hits on beats 2 and 4. What is this called?",
+    "steps": [
+     "Count 1 2 3 4.",
+     "The accents land on 2 and 4.",
+     "This pattern is the backbeat."
+    ],
+    "a": "The backbeat"
+   },
+   "analogies": {
+    "home": "A recipe from different family traditions mixed into a new dish.",
+    "city": "Radio spread songs across a city overnight.",
+    "sport": "Fans singing together at stadiums.",
+    "tech": "Streaming moves songs worldwide instantly."
+   },
+   "mnemonic": "Rock and roll: blues + gospel + country + a backbeat.",
+   "terms": [
+    [
+     "Pop",
+     "Popular music made for wide audiences, often with hooks and verse-chorus form."
+    ],
+    [
+     "Rock and roll",
+     "A 1950s American style from rhythm and blues, gospel and country."
+    ],
+    [
+     "Backbeat",
+     "A strong accent on beats 2 and 4."
+    ],
+    [
+     "Hook",
+     "A catchy musical phrase that grabs attention."
+    ]
+   ],
+   "misc": {
+    "wrong": "Rock and roll appeared from nowhere with one artist.",
+    "right": "It grew from many earlier traditions, especially African American music, and was shaped by many artists."
+   },
+   "limits": "Historians debate which recording counts as the first rock and roll song, and genre boundaries often overlap.",
+   "trip": {
+    "wiki": "Rock and roll",
+    "prompt": "Find three influences on early rock and roll and one artist for each."
+   },
+   "sources": [
+    "Pop music",
+    "Rock and roll",
+    "Rock music"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In which country did rock and roll emerge?",
+     "o": [
+      "Brazil, in South America",
+      "India, in Asia",
+      "United States",
+      "Japan, in Asia"
+     ],
+     "a": 2,
+     "why": "It developed in the early 1950s in the US.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A drummer hits the snare on beats 2 and 4 of every 4/4 bar. Which feature of rock and roll is this?",
+     "o": [
+      "A polyrhythm",
+      "The backbeat",
+      "A fugue subject",
+      "A drone"
+     ],
+     "a": 1,
+     "why": "Snare accents on beats 2 and 4 make the backbeat.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which earlier styles fed into rock and roll?",
+     "o": [
+      "Rhythm and blues, gospel and country",
+      "Only opera and nothing else",
+      "Only classical music of Europe",
+      "Only reggae from Jamaica"
+     ],
+     "a": 0,
+     "why": "These traditions blended.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which gospel singer and guitarist influenced early rock and roll?",
+     "o": [
+      "Maria Callas, the opera singer",
+      "Ravi Shankar, the sitar player",
+      "Bob Marley, the reggae singer",
+      "Sister Rosetta Tharpe"
+     ],
+     "a": 3,
+     "why": "Her electric guitar style influenced later players.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which British band from Liverpool was part of the British Invasion?",
+     "o": [
+      "ABBA, from Sweden",
+      "Queen, from London",
+      "The Beatles",
+      "The Eagles, from California"
+     ],
+     "a": 2,
+     "why": "The Beatles came from Liverpool.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A producer wants listeners to remember a song after one hearing. Which feature should she stress?",
+     "o": [
+      "A very long, slow intro",
+      "A short, catchy hook",
+      "No melody at all",
+      "A tempo that keeps changing"
+     ],
+     "a": 1,
+     "why": "Hooks are central to pop because they stick in memory.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the artist to the style they are known for.",
+     "pairs": [
+      [
+       "Chuck Berry",
+       "Rock and roll"
+      ],
+      [
+       "Aretha Franklin",
+       "Soul"
+      ],
+      [
+       "Bob Marley",
+       "Reggae"
+      ],
+      [
+       "Dolly Parton",
+       "Country"
+      ]
+     ],
+     "why": "Artists linked to styles.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Afrobeats comes mainly from which region?",
+     "o": [
+      "West Africa (Nigeria and Ghana)",
+      "Scandinavia in northern Europe",
+      "Central Asia, near Mongolia",
+      "South America, near Brazil"
+     ],
+     "a": 0,
+     "why": "Afrobeats developed in Nigeria and Ghana and is now global.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why can pop music from different countries reach a worldwide audience today?",
+     "rubric": [
+      [
+       "stream",
+       "internet",
+       "online",
+       "social media",
+       "radio",
+       "technology"
+      ],
+      [
+       "share",
+       "global",
+       "everywhere",
+       "instant",
+       "spread",
+       "access"
+      ],
+      [
+       "catchy",
+       "hook",
+       "simple",
+       "melod",
+       "dance"
+      ]
+     ],
+     "min": 2,
+     "model": "Streaming and social media spread songs instantly, and catchy hooks and danceable beats cross language barriers.",
+     "why": "Technology plus accessible songs.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in the usual order of development.",
+     "items": [
+      "Blues and gospel",
+      "Rock and roll in the 1950s",
+      "British Invasion in the 1960s",
+      "Streaming era"
+     ],
+     "why": "The timeline runs from roots to modern distribution.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is it misleading to credit a single person with inventing rock and roll?",
+     "o": [
+      "It was invented by one person in a day",
+      "It was not music at all",
+      "It has no history behind it",
+      "It grew out of many artists and traditions"
+     ],
+     "a": 3,
+     "why": "Musical styles evolve collectively.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why was the electric guitar so important in rock?",
+     "rubric": [
+      [
+       "loud",
+       "volume",
+       "amplif",
+       "distort",
+       "sustain",
+       "power"
+      ],
+      [
+       "band",
+       "drum",
+       "stage",
+       "play",
+       "solo",
+       "riff"
+      ]
+     ],
+     "min": 1,
+     "model": "Amplification gave guitars volume and distortion and sustain, so they could carry riffs and solos over drums in a band.",
+     "why": "Technology shaped the sound.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why did pop adapt so quickly to new technology?",
+     "o": [
+      "It dislikes any kind of change",
+      "It stays away from the radio",
+      "It aims at wide audiences, so it follows how people listen",
+      "It avoids recording whenever it can"
+     ],
+     "a": 2,
+     "why": "Popularity requires reaching listeners.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Pop and rock and roll",
+    "model": "Pop means popular music with catchy hooks and verse-chorus form. Rock and roll grew in the 1950s United States from rhythm and blues, gospel and country, with electric guitar and a strong backbeat. Rock developed from it in the 1960s.",
+    "points": [
+     {
+      "k": [
+       "pop",
+       "popular",
+       "hook",
+       "verse",
+       "chorus"
+      ],
+      "ask": "What is pop?"
+     },
+     {
+      "k": [
+       "1950s",
+       "united states",
+       "america",
+       "usa"
+      ],
+      "ask": "When and where did rock and roll start?"
+     },
+     {
+      "k": [
+       "blues",
+       "gospel",
+       "country",
+       "rhythm and blues"
+      ],
+      "ask": "What did it come from?"
+     },
+     {
+      "k": [
+       "backbeat",
+       "guitar",
+       "drum",
+       "electric"
+      ],
+      "ask": "What does it sound like?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Country, reggae and R&B",
+   "icon": "🤠",
+   "hook": "A guitar chopping on the offbeat in Kingston, a fiddle in Tennessee and a voice in Detroit: what do these have in common?",
+   "explain": [
+    "Country music grew from folk, blues and gospel traditions in the southern United States. Typical instruments are acoustic guitar, fiddle, banjo and pedal steel guitar; songs tell stories about daily life. Nashville became a centre, and artists such as Hank Williams, Johnny Cash, Loretta Lynn and Dolly Parton shaped the genre.",
+    "Reggae developed in Jamaica in the late 1960s from ska and rocksteady, with influence from Jamaican mento and American rhythm and blues. Its sound has a prominent bass line, rhythm guitar or keys chopping on the offbeat, and a slow-to-medium tempo with a drum accent often falling on the third beat (one drop). Bob Marley and the Wailers brought reggae to the world, and its messages often concern justice, community and hope.",
+    "Rhythm and blues (R&B) is a term for African American popular music that began in the 1940s, combining blues, gospel and jazz with a strong beat. Motown, founded in Detroit in 1959 by Berry Gordy, and Stax in Memphis made soul music famous; Aretha Franklin was known as the Queen of Soul. Modern R&B is smoother and uses electronic production and melismatic singing, where one syllable runs over several notes."
+   ],
+   "example": {
+    "q": "A reggae band plays chords only on the \"ands\" of a 4/4 bar. What is this called?",
+    "steps": [
+     "Count: 1 and 2 and 3 and 4 and.",
+     "The chords land on the \"ands\".",
+     "This is an offbeat rhythm guitar part."
+    ],
+    "a": "The offbeat, or skank"
+   },
+   "analogies": {
+    "home": "Telling stories at the dinner table: country songs do this.",
+    "city": "A busy street with a bass beat from a shop: reggae.",
+    "farm": "Fiddles and guitars at a rural dance.",
+    "sport": "Crowds sing with a call and response to gospel-style songs."
+   },
+   "mnemonic": "Country tells, reggae chops, R&B grooves.",
+   "terms": [
+    [
+     "Country music",
+     "A style from the southern US with story songs and guitar, fiddle and banjo."
+    ],
+    [
+     "Reggae",
+     "A Jamaican genre with offbeat guitar and prominent bass."
+    ],
+    [
+     "R&B",
+     "Rhythm and blues, a style of African American popular music."
+    ],
+    [
+     "Melisma",
+     "Singing several notes on one syllable."
+    ]
+   ],
+   "misc": {
+    "wrong": "Reggae is only one Bob Marley style.",
+    "right": "Reggae is a broad Jamaican tradition with many artists and styles, from roots to dancehall."
+   },
+   "trip": {
+    "wiki": "Reggae",
+    "prompt": "Find the section on musical characteristics and identify the instruments."
+   },
+   "sources": [
+    "Country music",
+    "Reggae",
+    "Rhythm and blues"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A band from the Caribbean plays offbeat guitar chops over a deep bass at a relaxed tempo. Which genre fits best?",
+     "o": [
+      "Polka",
+      "Reggae",
+      "Bebop",
+      "Flamenco"
+     ],
+     "a": 1,
+     "why": "Offbeat chops and a prominent bass are reggae hallmarks, and reggae developed in Jamaica.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which instrument is typical of country music?",
+     "o": [
+      "Fiddle",
+      "Sitar, from India",
+      "Tuba, from a brass band",
+      "Harp, from an orchestra"
+     ],
+     "a": 0,
+     "why": "Fiddle, banjo and acoustic guitar are typical.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In reggae, where is the guitar chop usually played?",
+     "o": [
+      "On beat one only",
+      "Nowhere",
+      "Only at the end",
+      "On the offbeat"
+     ],
+     "a": 3,
+     "why": "Offbeat chops define the style.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which label founded in Detroit in 1959 became famous for soul and R&B?",
+     "o": [
+      "Stax",
+      "Blue Note",
+      "Motown",
+      "Decca"
+     ],
+     "a": 2,
+     "why": "Berry Gordy founded Motown in 1959.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Aretha Franklin was known as the",
+     "o": [
+      "King of Rock",
+      "Queen of Soul",
+      "Queen of Reggae",
+      "Queen of Opera"
+     ],
+     "a": 1,
+     "why": "She was called the Queen of Soul.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which city is most associated with country music?",
+     "o": [
+      "Nashville",
+      "Boston, in Massachusetts",
+      "Seattle, in Washington",
+      "Chicago, in Illinois"
+     ],
+     "a": 0,
+     "why": "Nashville is known as Music City.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the genre to its typical feature.",
+     "pairs": [
+      [
+       "Country",
+       "Story songs with fiddle or steel guitar"
+      ],
+      [
+       "Reggae",
+       "Offbeat guitar chops and heavy bass"
+      ],
+      [
+       "R&B",
+       "Soulful singing with melisma"
+      ],
+      [
+       "Rock and roll",
+       "Backbeat and electric guitar"
+      ]
+     ],
+     "why": "These are typical elements.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these Jamaican styles in order of development.",
+     "items": [
+      "Mento",
+      "Ska",
+      "Rocksteady",
+      "Reggae"
+     ],
+     "why": "Each led into the next in time.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do you think reggae and country both often tell stories about everyday life?",
+     "rubric": [
+      [
+       "story",
+       "stories",
+       "tell",
+       "narrat"
+      ],
+      [
+       "life",
+       "everyday",
+       "people",
+       "community",
+       "struggle",
+       "daily",
+       "real"
+      ]
+     ],
+     "min": 2,
+     "model": "Both grew from communities and use songs to tell stories about the people's own lives and feelings.",
+     "why": "Folk-based genres express communities.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A song has one syllable sung over five different notes. What is this called?",
+     "o": [
+      "Staccato",
+      "Syncopation",
+      "Fugue",
+      "Melisma"
+     ],
+     "a": 3,
+     "why": "Melismatic singing is common in R&B and gospel.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Reggae guitar plays on the offbeat while the bass plays the main pulse. What does this create?",
+     "o": [
+      "Total silence between the beats",
+      "A fast marching rhythm",
+      "A contrast of rhythm that gives lift and space",
+      "A strict fugue for four voices"
+     ],
+     "a": 2,
+     "why": "Offbeat chops with deep bass produce reggae's sway.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How are gospel and R&B connected?",
+     "rubric": [
+      [
+       "gospel",
+       "church",
+       "sacred",
+       "spiritual"
+      ],
+      [
+       "singing",
+       "voice",
+       "melisma",
+       "call",
+       "response",
+       "vocal",
+       "soul"
+      ]
+     ],
+     "min": 1,
+     "model": "Many R&B and soul singers began in church choirs and brought gospel vocal styles, call and response and melisma into popular music.",
+     "why": "Vocal styles crossed from church to pop.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it fair to say reggae spread beyond Jamaica?",
+     "o": [
+      "Reggae has always stayed only in its home area",
+      "Artists and recordings reached audiences worldwide",
+      "Reggae faded away and vanished",
+      "Reggae is made without any instruments"
+     ],
+     "a": 1,
+     "why": "Reggae has global influence.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Country, reggae and R&B",
+    "model": "Country music is storytelling with guitar, fiddle and banjo from the southern United States. Reggae is a Jamaican style with offbeat guitar chops and heavy bass. R&B combines blues, gospel and jazz with strong beats and soulful singing.",
+    "points": [
+     {
+      "k": [
+       "story",
+       "guitar",
+       "fiddle",
+       "banjo",
+       "nashville"
+      ],
+      "ask": "What is country like?"
+     },
+     {
+      "k": [
+       "jamaica",
+       "offbeat",
+       "bass",
+       "bob marley"
+      ],
+      "ask": "What is reggae?"
+     },
+     {
+      "k": [
+       "blues",
+       "gospel",
+       "soul",
+       "rhythm and blues"
+      ],
+      "ask": "What is R&B?"
+     },
+     {
+      "k": [
+       "connect",
+       "roots",
+       "together",
+       "share",
+       "blend"
+      ],
+      "ask": "How are these styles connected?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Jazz, blues and improvisational traditions",
+   "icon": "🎺",
+   "hook": "Jazz and blues both grew from the African American experience, yet jazz players change a tune every time they play it. How?",
+   "explain": [
+    "The blues arose in the Deep South of the United States in the late 19th century from African American work songs, spirituals and field hollers. The 12-bar blues uses three chords (I, IV, V) and lyrics that often form an AAB pattern: a line, a repeat, and an answer. Blue notes, flattened third, fifth or seventh, give it its sound.",
+    "Jazz began in New Orleans in the early 20th century, blending blues, ragtime, brass band and African rhythmic traditions. Louis Armstrong brought virtuoso trumpet and scat singing; the swing era of the 1930s featured big bands led by Duke Ellington and Count Basie; bebop in the 1940s with Charlie Parker and Dizzy Gillespie had fast tempos and complex harmony; Miles Davis's album Kind of Blue (1959) popularised modal jazz. Ella Fitzgerald was famous for scat singing.",
+    "Improvisation is central: players take turns soloing over a repeating chord pattern. Other improvisational traditions include Indian raga (the player explores a set of notes and rules), Arabic taqsim and Turkish makam, where musicians improvise within melodic modes, and flamenco. Each tradition has its own rules, which improvisers know deeply."
+   ],
+   "example": {
+    "q": "A 12-bar blues in C uses I, IV, V. Name the three chords.",
+    "steps": [
+     "C major scale: C D E F G.",
+     "I is C, IV is F, V is G.",
+     "The blues often uses dominant sevenths: C7, F7, G7."
+    ],
+    "a": "C, F and G"
+   },
+   "analogies": {
+    "home": "A family recipe cooked a little differently each time.",
+    "city": "New Orleans parade bands marching and improvising.",
+    "sport": "A basketball player reading the game.",
+    "music": "A conversation where each musician answers the other."
+   },
+   "mnemonic": "Blues: AAB, three chords, blue notes. Jazz: swing and solo.",
+   "terms": [
+    [
+     "Blue note",
+     "A flattened third, fifth or seventh used in blues."
+    ],
+    [
+     "Swing",
+     "A jazz rhythmic feel where eighth notes are played unevenly."
+    ],
+    [
+     "Scat",
+     "Singing improvised syllables instead of words."
+    ],
+    [
+     "Raga",
+     "An Indian melodic framework used for improvisation."
+    ]
+   ],
+   "misc": {
+    "wrong": "Jazz is all improvised.",
+    "right": "Jazz uses composed heads, arrangements and improvised solos together."
+   },
+   "limits": "The boundaries between blues, jazz and other styles are fluid, and historians differ about the exact origins.",
+   "trip": {
+    "wiki": "Jazz",
+    "prompt": "Find the timeline of jazz styles and identify one artist for each."
+   },
+   "sources": [
+    "Jazz",
+    "Blues",
+    "Raga"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Where did jazz begin?",
+     "o": [
+      "New Orleans",
+      "London, in England",
+      "Berlin, in Germany",
+      "Mumbai, in India"
+     ],
+     "a": 0,
+     "why": "Jazz grew in New Orleans in the early 1900s.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many bars does the classic blues form have?",
+     "o": [
+      "8",
+      "16",
+      "32",
+      "12"
+     ],
+     "a": 3,
+     "why": "The 12-bar blues is the standard form.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which chords does the 12-bar blues use?",
+     "o": [
+      "ii, iii and vi",
+      "I, ii and iii",
+      "I, IV and V",
+      "Only I"
+     ],
+     "a": 2,
+     "why": "These three chords form the pattern.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Who is known as a scat singer?",
+     "o": [
+      "Maria Callas, an opera singer",
+      "Ella Fitzgerald",
+      "Elvis Presley, a rock singer",
+      "Luciano Pavarotti, a tenor"
+     ],
+     "a": 1,
+     "why": "Ella Fitzgerald was famous for scat singing.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A 1940s small group plays very fast tempos, complex chord changes and rapid solos. Which style is it?",
+     "o": [
+      "Bebop",
+      "Swing big band",
+      "Ragtime",
+      "Delta blues"
+     ],
+     "a": 0,
+     "why": "Bebop, led by Charlie Parker and Dizzy Gillespie, had fast tempos and complex harmony.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which musician led the 1959 album Kind of Blue?",
+     "o": [
+      "Duke Ellington",
+      "Charlie Parker",
+      "Louis Armstrong",
+      "Miles Davis"
+     ],
+     "a": 3,
+     "why": "Miles Davis recorded Kind of Blue in 1959.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the improvisational tradition to its place.",
+     "pairs": [
+      [
+       "Raga",
+       "India"
+      ],
+      [
+       "Taqsim",
+       "Arab world"
+      ],
+      [
+       "Makam",
+       "Turkey"
+      ],
+      [
+       "Jazz",
+       "United States"
+      ]
+     ],
+     "why": "Each is a distinct tradition.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these jazz eras in time order.",
+     "items": [
+      "New Orleans jazz",
+      "Swing era",
+      "Bebop",
+      "Modal jazz"
+     ],
+     "why": "Roughly early 1900s, 1930s, 1940s and late 1950s.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a jazz musician repeat a tune but play it differently each time?",
+     "rubric": [
+      [
+       "improvis",
+       "solo",
+       "spontan",
+       "make up"
+      ],
+      [
+       "chord",
+       "changes",
+       "progression",
+       "structure",
+       "framework"
+      ],
+      [
+       "creative",
+       "express",
+       "listen",
+       "respond",
+       "mood"
+      ]
+     ],
+     "min": 2,
+     "model": "The chord structure stays the same, which gives a framework, and the player improvises new melodies, responding to the moment and the other musicians.",
+     "why": "Improvisation over a fixed framework.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A singer sings a line, repeats it, then sings a different line. What is this lyric pattern?",
+     "o": [
+      "ABA",
+      "ABC",
+      "AAB",
+      "AAA"
+     ],
+     "a": 2,
+     "why": "Many blues verses follow AAB.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do raga and jazz both count as improvisation despite sounding different?",
+     "o": [
+      "Neither of them follows any rules",
+      "Both improvise within a tradition's rules",
+      "Both are written out note for note",
+      "Both of them use only drums"
+     ],
+     "a": 1,
+     "why": "Improvisation uses knowledge of tradition.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are blue notes important in blues?",
+     "rubric": [
+      [
+       "flat",
+       "lowered",
+       "bend",
+       "between"
+      ],
+      [
+       "expressive",
+       "emotion",
+       "feel",
+       "sound",
+       "character",
+       "sad",
+       "mood",
+       "colour",
+       "color"
+      ]
+     ],
+     "min": 2,
+     "model": "Blue notes are flattened or bent notes, often between the usual scale pitches, and they give blues its expressive, emotional character.",
+     "why": "Pitch inflections carry emotion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why did jazz spread worldwide?",
+     "o": [
+      "Recordings and radio carried it and musicians adapted it locally",
+      "It was never put on a record",
+      "It stayed within one single city",
+      "It was forbidden for players to travel"
+     ],
+     "a": 0,
+     "why": "Recordings and travel spread jazz.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Blues, jazz and improvisation",
+    "model": "The blues uses a 12-bar form with chords I, IV and V and blue notes. Jazz grew in New Orleans and features swing rhythm and improvised solos. Other traditions like Indian raga and Arabic taqsim also improvise within their own rules.",
+    "points": [
+     {
+      "k": [
+       "12",
+       "bar",
+       "three chords",
+       "blue note"
+      ],
+      "ask": "What is the blues?"
+     },
+     {
+      "k": [
+       "new orleans",
+       "swing",
+       "solo",
+       "improvis"
+      ],
+      "ask": "What is jazz?"
+     },
+     {
+      "k": [
+       "raga",
+       "taqsim",
+       "makam",
+       "india",
+       "arab",
+       "turk"
+      ],
+      "ask": "What other traditions improvise?"
+     },
+     {
+      "k": [
+       "rules",
+       "framework",
+       "tradition"
+      ],
+      "ask": "Is improvisation free of rules?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Classical music and opera",
+   "icon": "🎭",
+   "hook": "A singer fills an opera house with no microphone while an orchestra plays loudly. How is that possible?",
+   "explain": [
+    "Western classical music is often divided into periods. Baroque (about 1600–1750) includes Bach, Handel and Vivaldi; the Classical period (about 1750–1820) includes Haydn, Mozart and Beethoven; the Romantic period (about 1820–1900) includes Chopin, Tchaikovsky and Brahms. The Classical period favoured clear forms such as the sonata and the symphony; Romantic composers stressed emotion and bigger orchestras.",
+    "Opera is drama set to music: sung words, an orchestra, scenery and acting. It began in Italy around 1600; Monteverdi's L'Orfeo (1607) is an early landmark. Key parts are the overture, recitative (speech-like singing that moves the story along), arias (solo songs expressing emotion), ensembles and chorus. Voice types are soprano, mezzo-soprano, tenor, baritone and bass.",
+    "Famous operas include Mozart's The Magic Flute (1791), Verdi's La traviata (1853) and Puccini's La bohème (1896). Opera singers train to project without amplification by using breath support and resonance in the head and chest. Many cultures have sung drama too, such as Chinese opera (for example, Beijing opera), which combines singing, speech, acrobatics and costume."
+   ],
+   "example": {
+    "q": "A composer born in 1770 wrote symphonies in the early 1800s. Which period is this?",
+    "steps": [
+     "Check date range: Classical to about 1820.",
+     "Romantic starts after about 1820.",
+     "Beethoven (born 1770) bridges Classical and Romantic."
+    ],
+    "a": "Classical, moving into Romantic"
+   },
+   "analogies": {
+    "home": "A family play where everyone sings the lines.",
+    "city": "A grand theatre where thousands watch the same story.",
+    "sport": "A stadium with a chorus of fans.",
+    "nature": "A bird's song projected across a valley."
+   },
+   "mnemonic": "Baroque, Classical, Romantic: Bach, Mozart, Chopin.",
+   "terms": [
+    [
+     "Symphony",
+     "A large work for orchestra, usually in several movements."
+    ],
+    [
+     "Aria",
+     "A solo song in an opera expressing emotion."
+    ],
+    [
+     "Recitative",
+     "Speech-like singing that advances the story."
+    ],
+    [
+     "Libretto",
+     "The text of an opera."
+    ]
+   ],
+   "misc": {
+    "wrong": "Classical music means all old music.",
+    "right": "Classical with a capital C is one period (about 1750–1820). Classical music broadly means the Western art-music tradition."
+   },
+   "limits": "Period dates are approximate, and composers do not fit neatly into labels. Many cultures have their own classical traditions.",
+   "trip": {
+    "wiki": "Opera",
+    "prompt": "Find the glossary of voice types and match each to a role in an opera."
+   },
+   "sources": [
+    "Classical music",
+    "Opera",
+    "Symphony"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which period includes Mozart?",
+     "o": [
+      "Renaissance",
+      "Romantic",
+      "Baroque",
+      "Classical"
+     ],
+     "a": 3,
+     "why": "Mozart lived 1756–1791.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A harpsichord piece written in 1730 by Johann Sebastian Bach belongs to which period?",
+     "o": [
+      "Classical",
+      "Romantic",
+      "Baroque",
+      "Modern"
+     ],
+     "a": 2,
+     "why": "Bach lived 1685–1750, within the Baroque era (about 1600–1750).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is an aria?",
+     "o": [
+      "A kind of large drum",
+      "A solo song in an opera",
+      "A spoken speech with no music",
+      "A type of folk dance"
+     ],
+     "a": 1,
+     "why": "Arias express emotion.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a libretto?",
+     "o": [
+      "The text of an opera",
+      "The score for orchestra",
+      "A kind of costume",
+      "A theatre"
+     ],
+     "a": 0,
+     "why": "The libretto contains the words.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which opera is by Mozart?",
+     "o": [
+      "The Barber of Seville",
+      "Madama Butterfly",
+      "The Flying Dutchman",
+      "The Magic Flute"
+     ],
+     "a": 3,
+     "why": "The Magic Flute premiered in 1791.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which composer wrote La traviata?",
+     "o": [
+      "Giacomo Puccini",
+      "Wolfgang Mozart",
+      "Giuseppe Verdi",
+      "Claudio Monteverdi"
+     ],
+     "a": 2,
+     "why": "Verdi composed La traviata in 1853.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does recitative exist in opera?",
+     "o": [
+      "It shows off the very highest notes",
+      "It moves the story along quickly",
+      "It takes the place of the orchestra",
+      "It is a lively dance for the chorus"
+     ],
+     "a": 1,
+     "why": "Recitative carries dialogue.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the voice type to a typical range or role.",
+     "pairs": [
+      [
+       "Soprano",
+       "Highest voice"
+      ],
+      [
+       "Tenor",
+       "High male voice"
+      ],
+      [
+       "Baritone",
+       "Middle male voice"
+      ],
+      [
+       "Bass",
+       "Lowest male voice"
+      ]
+     ],
+     "why": "Voice types are defined by range.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these periods in order.",
+     "items": [
+      "Baroque",
+      "Classical",
+      "Romantic"
+     ],
+     "why": "Baroque came first, then Classical and Romantic.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "How can an opera singer be heard over a full orchestra without a microphone?",
+     "rubric": [
+      [
+       "breath",
+       "support",
+       "air"
+      ],
+      [
+       "resonan",
+       "project",
+       "head",
+       "chest",
+       "technique",
+       "training"
+      ],
+      [
+       "hall",
+       "acoustic",
+       "design",
+       "orchestra pit",
+       "pit"
+      ]
+     ],
+     "min": 2,
+     "model": "Singers train breath support and resonance to project, and opera houses are built with good acoustics and an orchestra pit.",
+     "why": "Technique and acoustics.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is Beethoven linked to both Classical and Romantic periods?",
+     "o": [
+      "His work started in Classical forms and expanded expression",
+      "He was born in the year 1500",
+      "He never wrote any symphonies at all",
+      "He only ever wrote operas"
+     ],
+     "a": 0,
+     "why": "His career bridges styles.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare an aria and a recitative in function.",
+     "rubric": [
+      [
+       "aria",
+       "emotion",
+       "feeling",
+       "solo",
+       "melod"
+      ],
+      [
+       "recitative",
+       "story",
+       "plot",
+       "dialogue",
+       "speech",
+       "action",
+       "narrat"
+      ]
+     ],
+     "min": 2,
+     "model": "An aria pauses the action to express emotion in a melodic solo, while a recitative moves the story forward in speech-like singing.",
+     "why": "They have different dramatic roles.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Beijing opera an example that opera is not only European?",
+     "o": [
+      "It is an Italian art form from Venice",
+      "It has no singers in it at all",
+      "It is a kind of long symphony",
+      "It combines singing, speech, acrobatics and costume in a Chinese tradition"
+     ],
+     "a": 3,
+     "why": "Many cultures combine music and drama.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Classical music and opera",
+    "model": "Western classical music has periods: Baroque, Classical and Romantic. Opera is drama told in song with orchestra, using recitative for the story and arias for emotion. Opera singers project without microphones through trained breath and resonance.",
+    "points": [
+     {
+      "k": [
+       "baroque",
+       "classical",
+       "romantic",
+       "bach",
+       "mozart"
+      ],
+      "ask": "What are the periods?"
+     },
+     {
+      "k": [
+       "opera",
+       "sung",
+       "drama",
+       "orchestra"
+      ],
+      "ask": "What is opera?"
+     },
+     {
+      "k": [
+       "aria",
+       "recitative",
+       "solo",
+       "story"
+      ],
+      "ask": "What are its parts?"
+     },
+     {
+      "k": [
+       "breath",
+       "resonance",
+       "project",
+       "training"
+      ],
+      "ask": "How do singers manage without microphones?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2889 @@
+{
+ "world": 14,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced musical analysis",
+   "icon": "🔬",
+   "hook": "A C major triad and an F minor triad look unrelated on the page, yet a single formula turns one into the other. What kind of analysis reveals this?",
+   "explain": [
+    "Analysis asks how a piece works. Tonal analysis uses Roman numerals and cadence types to show harmonic function: perfect authentic (V–I with both chords in root position and tonic on top), imperfect authentic, half (ending on V), deceptive (V–vi) and plagal (IV–I). Schenkerian analysis goes deeper: it proposes that tonal pieces elaborate a background structure, the Ursatz, consisting of a descending melodic line (the Urlinie) over a bass arpeggiation I–V–I. Formal analysis labels themes, keys and sections, as in sonata form.",
+    "Post-tonal analysis often uses pitch-class set theory. Pitch classes are numbered mod 12 (C = 0, C♯ = 1, … B = 11). Transposition T_n adds n mod 12, and inversion I_n sends x to (n − x) mod 12. The major and minor triads share the prime form [0 3 7], and the interval vector counts the interval classes in a set: a triad has vector ⟨001110⟩, while the whole-tone scale has ⟨060603⟩. Example: inverting {0, 4, 7} (C E G) with I_0 gives {0, 8, 5}, which is {F, A♭, C}, an F minor triad.",
+    "Neo-Riemannian theory describes smooth voice-leading between triads with transformations: P (parallel) swaps C major ↔ C minor, L (leading-tone exchange) swaps C major ↔ E minor, and R (relative) swaps C major ↔ A minor. Each moves only one note, by a semitone or a whole tone. Analysis should be tied to listening: a method is useful when it explains what a listener or performer can hear, and different methods illuminate different pieces. Ethnomusicological and popular-music analysis often need other tools, because not every music is organised by tonal hierarchy."
+   ],
+   "example": {
+    "q": "Apply I_0 (x → −x mod 12) to {0, 4, 7} and name the result.",
+    "steps": [
+     "Compute: 0 → 0; 4 → −4 ≡ 8; 7 → −7 ≡ 5.",
+     "The set is {0, 5, 8}.",
+     "Pitch classes 5, 8, 0 are F, A♭, C."
+    ],
+    "a": "{0, 5, 8}: an F minor triad"
+   },
+   "analogies": {
+    "home": "Analysis is like reading a floor plan, not just seeing the building.",
+    "city": "A transit map simplifies a city to show connections; Schenkerian reduction does the same for a piece.",
+    "tech": "Reverse-engineering code to find its structure.",
+    "nature": "A botanist classifies leaves by pattern rather than only by appearance."
+   },
+   "mnemonic": "Number the notes mod 12; invert with n minus x.",
+   "terms": [
+    [
+     "Pitch class",
+     "All pitches an octave (or more) apart, numbered 0 to 11."
+    ],
+    [
+     "Prime form",
+     "The most compact ordering of a pitch-class set, started from 0."
+    ],
+    [
+     "Interval vector",
+     "A count of the six interval classes in a set."
+    ],
+    [
+     "Urlinie",
+     "In Schenkerian theory, the fundamental melodic descent."
+    ]
+   ],
+   "misc": {
+    "wrong": "There is one correct analysis of a piece.",
+    "right": "Different methods answer different questions. Good analysis argues from musical evidence."
+   },
+   "limits": "Schenkerian theory is contested, especially when applied outside the Western tonal canon, and pitch-class set theory is criticised for ignoring context.",
+   "trip": {
+    "wiki": "Pitch class",
+    "prompt": "Open the page on set theory and compute the interval vector of {0, 4, 7}."
+   },
+   "sources": [
+    "Pitch class",
+    "Schenkerian analysis",
+    "Neo-Riemannian theory"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which cadence is V–vi?",
+     "o": [
+      "Perfect authentic",
+      "Deceptive",
+      "Plagal",
+      "Half"
+     ],
+     "a": 1,
+     "why": "The listener expects I but hears vi.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which cadence is IV–I?",
+     "o": [
+      "Plagal",
+      "Half",
+      "Deceptive",
+      "Imperfect authentic"
+     ],
+     "a": 0,
+     "why": "The \"amen\" cadence.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In pitch-class integers, what number is E?",
+     "o": [
+      "3",
+      "5",
+      "7",
+      "4"
+     ],
+     "a": 3,
+     "why": "C = 0, D = 2, E = 4.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which neo-Riemannian transformation maps C major to C minor?",
+     "o": [
+      "R (relative)",
+      "L (leading-tone exchange)",
+      "P (parallel)",
+      "T (transposition)"
+     ],
+     "a": 2,
+     "why": "P changes the third by a semitone.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which transformation maps C major to A minor?",
+     "o": [
+      "P (parallel)",
+      "R (relative)",
+      "L (leading-tone)",
+      "I (inversion)"
+     ],
+     "a": 1,
+     "why": "The fifth G moves up a whole tone to A.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which triad does L map C major to?",
+     "o": [
+      "E minor",
+      "A minor",
+      "C minor",
+      "F minor"
+     ],
+     "a": 0,
+     "why": "C moves down to B, giving E G B.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the pitch class of D♭ after transposing by T_7 (D♭ = 1)? Give the pitch-class integer.",
+     "a": 8,
+     "tol": 0,
+     "why": "1 + 7 = 8, which is A♭ (G♯).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the term to its idea.",
+     "pairs": [
+      [
+       "Urlinie",
+       "Fundamental melodic line"
+      ],
+      [
+       "Prime form",
+       "Compact normal ordering of a set"
+      ],
+      [
+       "Interval vector",
+       "Count of interval classes"
+      ],
+      [
+       "P transformation",
+       "Parallel major–minor swap"
+      ]
+     ],
+     "why": "These belong to different analytical systems.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps of a basic Roman numeral analysis in order.",
+     "items": [
+      "Identify the key",
+      "Label each chord with a numeral",
+      "Mark cadences",
+      "Interpret form and function"
+     ],
+     "why": "Key first, then chords, then structure.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why might an analyst use more than one analytical method on a single piece?",
+     "rubric": [
+      [
+       "different",
+       "varied",
+       "multiple",
+       "several",
+       "complement"
+      ],
+      [
+       "question",
+       "aspect",
+       "insight",
+       "reveal",
+       "illuminate",
+       "shows",
+       "feature"
+      ],
+      [
+       "piece",
+       "music",
+       "style",
+       "context",
+       "listener"
+      ]
+     ],
+     "min": 2,
+     "model": "Different methods answer different questions and reveal different features, so combining them gives a fuller account tied to the music.",
+     "why": "Methods are tools.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does R move only one note when mapping C major to A minor?",
+     "o": [
+      "The two triads share all three notes",
+      "The two triads share no notes at all",
+      "A minor is not a triad but a scale",
+      "The triads share two common tones, C and E"
+     ],
+     "a": 3,
+     "why": "C E G → C E A: only G changes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give one limitation of applying Schenkerian analysis to non-Western or modal music.",
+     "rubric": [
+      [
+       "tonal",
+       "hierarchy",
+       "tonic",
+       "functional",
+       "western",
+       "western tonal"
+      ],
+      [
+       "assum",
+       "different",
+       "not",
+       "organis",
+       "other",
+       "framework",
+       "culture"
+      ]
+     ],
+     "min": 1,
+     "model": "It assumes a tonal hierarchy built on tonic-dominant structure, which may not organise modal, non-Western or post-tonal music.",
+     "why": "A method carries assumptions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does the interval vector ⟨001110⟩ tell you about a major triad?",
+     "o": [
+      "It has six semitones and no other intervals",
+      "It contains no thirds, only fourths and sixths",
+      "It has one minor third, one major third and one perfect fifth interval class",
+      "It contains only perfect fifths and nothing else"
+     ],
+     "a": 2,
+     "why": "ic3 = 1, ic4 = 1, ic5 = 1.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Analysing music",
+    "model": "Analysis explains how music works. Roman numerals and cadences show tonal function, Schenkerian analysis finds a deeper structure, and set theory numbers pitch classes mod 12. Neo-Riemannian transformations connect triads with smooth voice leading.",
+    "points": [
+     {
+      "k": [
+       "roman",
+       "cadence",
+       "function",
+       "tonal"
+      ],
+      "ask": "How do you analyse tonal harmony?"
+     },
+     {
+      "k": [
+       "schenker",
+       "urlinie",
+       "background",
+       "structure"
+      ],
+      "ask": "What is Schenkerian analysis?"
+     },
+     {
+      "k": [
+       "pitch class",
+       "mod 12",
+       "set",
+       "prime form"
+      ],
+      "ask": "What is set theory?"
+     },
+     {
+      "k": [
+       "p",
+       "l",
+       "r",
+       "neo-riemannian",
+       "transformation"
+      ],
+      "ask": "How can triads be linked?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Professional composition",
+   "icon": "🎬",
+   "hook": "A film editor changes a scene by two seconds. Why does the composer's tempo suddenly need to change too?",
+   "explain": [
+    "Professional composers work to briefs: the client, audience, length, budget, deadline, delivery format and revision limits shape every choice. A typical workflow is brief and references, sketch or mock-up, approval, full production, revisions and delivery. Clear communication and version control matter as much as inspiration.",
+    "Scoring to picture requires timing. Film runs at fixed frame rates (24 frames per second is common for cinema). A spotting session decides where music starts and stops. Composers choose a tempo so that important hits land on frames: at 120 beats per minute one beat lasts 0.5 s, which is 12 frames at 24 fps. A click track keeps live players in sync. Mock-ups using sample libraries let directors hear the idea before an orchestra is booked.",
+    "Rights are part of the profession. Copyright usually protects the composition and, separately, a particular recording; permission or a licence is needed to use someone else's music, and work-for-hire or assignment contracts decide who owns the result. Collaboration includes orchestrators, copyists, performers and mixers; fair credit, clear parts and respectful rehearsal management build careers. Specifics of law and contracts differ by country, so professionals read agreements carefully and take advice."
+   ],
+   "example": {
+    "q": "A cue must last exactly 30 s at 120 bpm in 4/4. How many bars is that?",
+    "steps": [
+     "At 120 bpm a beat is 0.5 s.",
+     "A 4/4 bar has 4 beats = 2 s.",
+     "30 ÷ 2 = 15 bars."
+    ],
+    "a": "15 bars"
+   },
+   "analogies": {
+    "home": "Cooking to a menu and a serving time for guests.",
+    "city": "An architect works to a client brief, budget and planning rules.",
+    "sport": "A coach plans to fixed game times.",
+    "tech": "A developer ships to a deadline with version control."
+   },
+   "mnemonic": "Brief, sketch, approve, produce, deliver.",
+   "terms": [
+    [
+     "Spotting",
+     "Deciding where music enters and exits a film or game."
+    ],
+    [
+     "Click track",
+     "A metronome signal that keeps live performers in time."
+    ],
+    [
+     "Mock-up",
+     "A computer-made demo of a score using sample libraries."
+    ],
+    [
+     "Licence",
+     "Permission to use a piece of music under agreed terms."
+    ]
+   ],
+   "misc": {
+    "wrong": "Professional composers only write when inspired.",
+    "right": "They work to briefs, deadlines and feedback, using method to produce music reliably."
+   },
+   "limits": "Copyright and contract rules differ across countries, so this summary is general and not legal advice.",
+   "trip": {
+    "wiki": "Film score",
+    "prompt": "Read about the film-scoring process and list three stages."
+   },
+   "sources": [
+    "Film score",
+    "Copyright",
+    "Click track"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "At 120 bpm, how many seconds does one beat last?",
+     "a": 0.5,
+     "tol": 0.001,
+     "why": "60 ÷ 120 = 0.5 s.",
+     "d": 1,
+     "k": "apply",
+     "unit": "s"
+    },
+    {
+     "t": "num",
+     "q": "At 24 frames per second and 120 bpm, how many frames are in one beat?",
+     "a": 12,
+     "tol": 0,
+     "why": "0.5 s × 24 = 12 frames.",
+     "d": 2,
+     "k": "apply",
+     "unit": "frames"
+    },
+    {
+     "t": "num",
+     "q": "A cue lasts 45 s in 4/4 at 120 bpm. How many bars?",
+     "a": 22.5,
+     "tol": 0.01,
+     "why": "Each bar is 2 s, so 45 ÷ 2 = 22.5.",
+     "d": 3,
+     "k": "apply",
+     "unit": "bars"
+    },
+    {
+     "t": "mc",
+     "q": "What is spotting?",
+     "o": [
+      "Tuning an orchestra before a recording",
+      "Deciding where music starts and stops in a film",
+      "Marking each cymbal hit in a score",
+      "Recording vocals for a film trailer"
+     ],
+     "a": 1,
+     "why": "It is a planning session with the director.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a click track used for?",
+     "o": [
+      "Keeping live performers in time with the picture or tempo",
+      "Adding reverb to a recorded track",
+      "Writing lyrics to a melody line",
+      "Tuning the guitars for a session"
+     ],
+     "a": 0,
+     "why": "It gives each player a reference.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why make a mock-up before recording?",
+     "o": [
+      "So the composer can avoid writing any music",
+      "So that the contract can be replaced",
+      "So that the orchestra can be tuned in advance",
+      "So the client can hear and approve the idea cheaply"
+     ],
+     "a": 3,
+     "why": "Mock-ups reduce costly changes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a composition copyright different from a recording copyright?",
+     "o": [
+      "They are the same right in every respect",
+      "Only one of the two kinds really exists",
+      "One protects the music itself and the other a specific recording",
+      "Both of them apply only to song lyrics"
+     ],
+     "a": 2,
+     "why": "Using a recording can need permission from both rights holders.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A director asks for more revisions than the contract allows. What is the professional step?",
+     "o": [
+      "Refuse to speak to the director again",
+      "Discuss and agree terms in writing",
+      "Ignore the contract and carry on",
+      "Delete the project from the computer"
+     ],
+     "a": 1,
+     "why": "Clear agreement avoids disputes.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put a typical commission workflow in order.",
+     "items": [
+      "Receive the brief",
+      "Make a mock-up",
+      "Get approval and produce",
+      "Deliver final files"
+     ],
+     "why": "The workflow moves from brief to delivery.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is version control important in a collaborative music project?",
+     "rubric": [
+      [
+       "version",
+       "track",
+       "history",
+       "save",
+       "backup"
+      ],
+      [
+       "confusion",
+       "mistake",
+       "overwrite",
+       "lost",
+       "wrong",
+       "latest",
+       "collaborat"
+      ]
+     ],
+     "min": 1,
+     "model": "It tracks which files and edits are current, preventing overwrites and confusion between collaborators and clients.",
+     "why": "Clear files prevent costly errors.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A scene is shortened by 2 s. What is the simplest musical response?",
+     "o": [
+      "Adjust bars, tempo or ending to fit the new length",
+      "Ignore the change and hope it fits",
+      "Add a brand new film scene instead",
+      "Raise the key by a semitone"
+     ],
+     "a": 0,
+     "why": "Cues must fit the picture.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must a composer respect budget and deadline as creative constraints?",
+     "rubric": [
+      [
+       "budget",
+       "money",
+       "cost",
+       "resources",
+       "players"
+      ],
+      [
+       "deadline",
+       "time",
+       "schedule",
+       "deliver",
+       "constraint",
+       "scope",
+       "reliab"
+      ]
+     ],
+     "min": 2,
+     "model": "Limits on money, time and performers decide what can be done, and a professional delivers reliably by choosing ideas that fit.",
+     "why": "Constraints shape the work.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a composer credit collaborators properly?",
+     "o": [
+      "It is never needed in a professional job",
+      "It shortens the film for the studio",
+      "It changes the tempo of the cues",
+      "It is fair and builds trust and future work"
+     ],
+     "a": 3,
+     "why": "Fair credit supports a healthy profession.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Working as a composer",
+    "model": "Professional composers work to briefs, deadlines and feedback. For film they time music to the picture, using frames and tempo, and often send mock-ups for approval. They also handle rights and contracts and credit collaborators.",
+    "points": [
+     {
+      "k": [
+       "brief",
+       "deadline",
+       "client"
+      ],
+      "ask": "What do composers work to?"
+     },
+     {
+      "k": [
+       "picture",
+       "frame",
+       "tempo",
+       "sync",
+       "click"
+      ],
+      "ask": "How do they fit film?"
+     },
+     {
+      "k": [
+       "mock",
+       "demo",
+       "approve"
+      ],
+      "ask": "How do clients hear ideas early?"
+     },
+     {
+      "k": [
+       "copyright",
+       "licence",
+       "contract",
+       "credit"
+      ],
+      "ask": "What about rights?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Advanced orchestration",
+   "icon": "🎼",
+   "hook": "Why does a low chord in an orchestra sound muddy if its notes are close together, while the same chord spread wide sounds rich?",
+   "explain": [
+    "Orchestration at an advanced level begins with the harmonic series. A vibrating string or air column produces a fundamental f and overtones at 2f, 3f, 4f, and so on. For C2 the first eight harmonics are C2, C3, G3, C4, E4, G4, B♭4 (slightly flat of equal temperament) and C5. Orchestral spacing imitates this: wide intervals low (octaves, fifths) and closer intervals higher, so low notes do not beat against each other.",
+    "Timbre and balance depend on register, dynamic and combination. Instruments blend when they share a similar spectrum or sit in similar registers; they contrast when spectra differ. Extended techniques extend colour: col legno, sul ponticello and harmonics on strings; flutter-tonguing and multiphonics on winds; mutes on brass; and divisi (splitting a section). Hector Berlioz's Treatise on Instrumentation (1844) and Rimsky-Korsakov's Principles of Orchestration (published after his death) are classic texts.",
+    "Practical judgement includes writing idiomatically for each instrument, planning breathing and bow changes, checking balance in rehearsal and adjusting. Orchestration also includes electronic and hybrid ensembles, big band writing and world ensembles such as gamelan, where tuning and timbre belong to the ensemble. The core task remains: decide which sound does what, and make each layer audible."
+   ],
+   "example": {
+    "q": "The fundamental is 110 Hz (A2). What are the frequencies of harmonics 2, 3 and 5?",
+    "steps": [
+     "Harmonic n has frequency n × f.",
+     "2 × 110 = 220; 3 × 110 = 330; 5 × 110 = 550.",
+     "These are A3, E4 and about C♯5."
+    ],
+    "a": "220 Hz, 330 Hz and 550 Hz"
+   },
+   "analogies": {
+    "home": "Furniture spaced too tightly in a room looks cramped; spread it out.",
+    "city": "Tall buildings need wide foundations; low sounds need wide spacing.",
+    "nature": "A tree has thick roots and thin branches, like thick low spacing and fine high spacing.",
+    "tech": "Audio engineers cut clashing low frequencies to clear the mix."
+   },
+   "mnemonic": "Wide at the bottom, close at the top.",
+   "terms": [
+    [
+     "Harmonic series",
+     "The sequence of frequencies f, 2f, 3f, 4f and so on."
+    ],
+    [
+     "Divisi",
+     "Dividing a section so players play different notes."
+    ],
+    [
+     "Sul ponticello",
+     "Bowing near the bridge for a glassy sound."
+    ],
+    [
+     "Col legno",
+     "Playing with the wood of the bow."
+    ]
+   ],
+   "misc": {
+    "wrong": "The harmonic series is exactly the same as equal-tempered pitches.",
+    "right": "Harmonics like the 7th and 11th differ noticeably from equal-tempered notes."
+   },
+   "trip": {
+    "wiki": "Harmonic series (music)",
+    "prompt": "Find the table of harmonics and compare the 7th harmonic with the nearest piano note."
+   },
+   "sources": [
+    "Harmonic series (music)",
+    "Orchestration",
+    "Extended technique"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "The fundamental is 110 Hz. What is the frequency of its 5th harmonic?",
+     "a": 550,
+     "tol": 0.5,
+     "why": "5 × 110 = 550 Hz.",
+     "d": 2,
+     "k": "apply",
+     "unit": "Hz"
+    },
+    {
+     "t": "num",
+     "q": "A string vibrates at 196 Hz. What is the frequency of its 3rd harmonic?",
+     "a": 588,
+     "tol": 0.5,
+     "why": "3 × 196 = 588 Hz.",
+     "d": 2,
+     "k": "apply",
+     "unit": "Hz"
+    },
+    {
+     "t": "mc",
+     "q": "Which interval separates harmonics 2 and 3 of a fundamental?",
+     "o": [
+      "An octave",
+      "A major third",
+      "A perfect fifth",
+      "A perfect fourth"
+     ],
+     "a": 2,
+     "why": "The ratio 3:2 is a perfect fifth.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       48,
+       55
+      ],
+      "dur": 0.8
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Which interval separates harmonics 1 and 2?",
+     "o": [
+      "A perfect fifth",
+      "An octave",
+      "A major third",
+      "A fourth"
+     ],
+     "a": 1,
+     "why": "The ratio 2:1 is an octave.",
+     "d": 1,
+     "k": "apply",
+     "au": {
+      "notes": [
+       36,
+       48
+      ],
+      "dur": 0.8
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Why are chords spaced widely in the low register?",
+     "o": [
+      "Close low notes beat and sound muddy",
+      "Low notes cannot sound at all when close",
+      "Wide chords are always much quieter",
+      "It saves paper when writing the score"
+     ],
+     "a": 0,
+     "why": "Overtones of close low notes clash.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does divisi mean?",
+     "o": [
+      "Playing very softly for a whole passage",
+      "Playing with a mute on every instrument",
+      "A sudden change of tempo for the section",
+      "Splitting a section into separate parts"
+     ],
+     "a": 3,
+     "why": "It lets a section play chords.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which technique has the bow played near the bridge?",
+     "o": [
+      "Col legno, with the wood of the bow",
+      "Pizzicato, plucking the strings",
+      "Sul ponticello",
+      "Tremolo with the bow near the fingerboard"
+     ],
+     "a": 2,
+     "why": "It gives a glassy, edgy sound.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the treatise or composer to a contribution.",
+     "pairs": [
+      [
+       "Berlioz",
+       "Treatise on Instrumentation (1844)"
+      ],
+      [
+       "Rimsky-Korsakov",
+       "Principles of Orchestration"
+      ],
+      [
+       "Ravel",
+       "Orchestration of Boléro"
+      ],
+      [
+       "Mahler",
+       "Large symphonic orchestra writing"
+      ]
+     ],
+     "why": "These are landmarks in orchestration.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the first four harmonics of C2 in order.",
+     "items": [
+      "C2",
+      "C3",
+      "G3",
+      "C4"
+     ],
+     "why": "The series is f, 2f, 3f and 4f.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why do orchestrators check balance in rehearsal instead of relying only on the score?",
+     "rubric": [
+      [
+       "hear",
+       "listen",
+       "acoustic",
+       "room",
+       "hall"
+      ],
+      [
+       "balance",
+       "cover",
+       "blend",
+       "dynamics",
+       "adjust",
+       "player",
+       "instrument",
+       "fix"
+      ]
+     ],
+     "min": 1,
+     "model": "Real instruments, rooms and players change balance, so listening in rehearsal lets the orchestrator adjust dynamics or doubling.",
+     "why": "Written balance is not heard balance.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is the 7th harmonic hard to match on a piano?",
+     "o": [
+      "It is noticeably sharp compared with the piano note",
+      "It is noticeably flat compared with the equal-tempered B♭",
+      "It is exactly the same as the piano note",
+      "It is silent on a piano at all times"
+     ],
+     "a": 1,
+     "why": "Natural sevenths differ from equal-tempered pitches.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a composer ask horns to double clarinets in a quiet passage?",
+     "rubric": [
+      [
+       "blend",
+       "merge",
+       "soft",
+       "warm",
+       "colour",
+       "color",
+       "smooth"
+      ],
+      [
+       "timbre",
+       "tone",
+       "texture",
+       "sound",
+       "mix",
+       "combined"
+      ]
+     ],
+     "min": 1,
+     "model": "Horns and clarinets have similar warmth, so doubling blends their timbres into a new smooth colour.",
+     "why": "Doubling creates blend.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why study traditional ensembles like gamelan when learning orchestration?",
+     "o": [
+      "They show that timbre and tuning can be central to composition",
+      "They use no instruments of any kind",
+      "They follow Western rules exactly",
+      "They are not true ensembles at all"
+     ],
+     "a": 0,
+     "why": "Orchestration principles vary in world ensembles.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced orchestration",
+    "model": "Orchestration uses the harmonic series, which shows why low chords are spaced widely and high chords closely. Composers also use extended techniques and divisi for colour. They check balance and playability by listening in rehearsal.",
+    "points": [
+     {
+      "k": [
+       "harmonic",
+       "overtone",
+       "series",
+       "f",
+       "2f"
+      ],
+      "ask": "What is the harmonic series?"
+     },
+     {
+      "k": [
+       "wide",
+       "low",
+       "space",
+       "muddy",
+       "close"
+      ],
+      "ask": "Why space chords widely low?"
+     },
+     {
+      "k": [
+       "divisi",
+       "sul ponticello",
+       "col legno",
+       "extended"
+      ],
+      "ask": "What colours can strings add?"
+     },
+     {
+      "k": [
+       "rehearsal",
+       "balance",
+       "listen",
+       "adjust"
+      ],
+      "ask": "How do you check the result?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Complex rhythmic systems",
+   "icon": "🥁",
+   "hook": "A bell pattern from West Africa, a 16-beat cycle from India and a 7/8 dance from the Balkans: can one idea describe all of them?",
+   "explain": [
+    "Many traditions organise time with cycles and additive groupings rather than just bars. Hindustani music uses tala: Teental has 16 beats (4+4+4+4), Jhaptal 10 (2+3+2+3), Rupak 7 (3+2+2) and Ektal 12 beats. Each has marked claps and waves, and the cycle returns to sam, the first beat. Carnatic music has its own talas and uses konnakol, spoken rhythmic syllables. Balkan dances use additive metres, such as the Bulgarian rachenitsa in 7/8 grouped 2+2+3, and Turkish aksak patterns such as 9/8 grouped 2+2+2+3.",
+    "Cuban and West African music rely on timelines. Son clave is a five-stroke pattern across two bars (3-2 or 2-3). A standard West African bell pattern in 12 pulses is x . x . x x . x . x . x. The Euclidean rhythm E(k, n) spreads k onsets as evenly as possible over n pulses; E(3,8) gives the tresillo x . . x . . x . and E(5,12) gives the standard bell pattern. Polyrhythm layers cycles of different lengths: 3 against 2 coincide every 6 subdivisions, and 4 against 3 coincide every 12.",
+    "Western composers explored these ideas too. Hemiola is a 3-against-2 feeling inside a bar. Steve Reich's Clapping Music (1972) has two performers clapping a 12-pulse pattern with 8 claps and 4 rests; one performer shifts by one pulse after every 12 bars, and after 12 shifts the parts line up again. Stravinsky's The Rite of Spring (1913) uses irregular accents, and Messiaen studied Indian rhythm. Performers learn these systems best by clapping and counting, then by playing against a steady pulse."
+   ],
+   "example": {
+    "q": "Two cycles of 3 and 4 pulses start together. When do they next coincide?",
+    "steps": [
+     "The first repeats every 3 pulses, the second every 4.",
+     "Find the least common multiple of 3 and 4.",
+     "LCM = 12."
+    ],
+    "a": "After 12 pulses"
+   },
+   "analogies": {
+    "home": "Two clocks ticking at different rates meet at one tick again.",
+    "city": "Two bus lines with different intervals arrive together at fixed times.",
+    "sport": "Two runners on different-length laps pass the start together at the common multiple.",
+    "nature": "Cicadas with prime-number life cycles meet rarely."
+   },
+   "mnemonic": "Count the cycle, group the pulses, find the common multiple.",
+   "terms": [
+    [
+     "Tala",
+     "A repeating rhythmic cycle in Indian classical music."
+    ],
+    [
+     "Additive metre",
+     "A metre built from unequal groups, such as 2+2+3."
+    ],
+    [
+     "Hemiola",
+     "A 3-against-2 rhythmic feeling."
+    ],
+    [
+     "Euclidean rhythm",
+     "A pattern spreading k onsets as evenly as possible over n pulses."
+    ]
+   ],
+   "misc": {
+    "wrong": "Irregular metres are random.",
+    "right": "They are organised cycles with clear groupings that dancers and musicians know."
+   },
+   "trip": {
+    "wiki": "Tala (music)",
+    "prompt": "Find the structure of Teental and count the claps and waves."
+   },
+   "sources": [
+    "Tala (music)",
+    "Clave (rhythm)",
+    "Aksak"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many beats are in Teental?",
+     "o": [
+      "12",
+      "10",
+      "8",
+      "16"
+     ],
+     "a": 3,
+     "why": "Teental is 4+4+4+4 = 16 beats.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Jhaptal is grouped 2+3+2+3. How many beats is that?",
+     "o": [
+      "7",
+      "12",
+      "10",
+      "16"
+     ],
+     "a": 2,
+     "why": "2+3+2+3 = 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two polyrhythm cycles of 3 and 4 pulses start together. After how many pulses do they next coincide?",
+     "a": 12,
+     "tol": 0,
+     "why": "LCM(3, 4) = 12.",
+     "d": 2,
+     "k": "apply",
+     "unit": "pulses"
+    },
+    {
+     "t": "num",
+     "q": "Cycles of 3 and 2 pulses start together. After how many pulses do they coincide?",
+     "a": 6,
+     "tol": 0,
+     "why": "LCM(3, 2) = 6.",
+     "d": 2,
+     "k": "apply",
+     "unit": "pulses"
+    },
+    {
+     "t": "mc",
+     "q": "How is the Bulgarian rachenitsa in 7/8 typically grouped?",
+     "o": [
+      "3+4",
+      "2+2+3",
+      "4+3 only",
+      "7 single beats"
+     ],
+     "a": 1,
+     "why": "Grouping defines the dance feel.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a hemiola?",
+     "o": [
+      "A 3-against-2 feeling",
+      "A key change in the middle of a piece",
+      "A kind of large frame drum",
+      "A very fast trill between two notes"
+     ],
+     "a": 0,
+     "why": "It shifts perceived groupings.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does E(3,8) produce?",
+     "o": [
+      "A steady march pattern in four",
+      "An even eight-beat pulse with no gaps",
+      "A waltz pattern in three",
+      "The tresillo, x . . x . . x ."
+     ],
+     "a": 3,
+     "why": "Three onsets spread over eight pulses.",
+     "d": 3,
+     "k": "apply",
+     "au": {
+      "rhythm": [
+       1.5,
+       1.5,
+       1
+      ]
+     }
+    },
+    {
+     "t": "match",
+     "q": "Match the tala or metre to its structure.",
+     "pairs": [
+      [
+       "Teental",
+       "4+4+4+4"
+      ],
+      [
+       "Rupak",
+       "3+2+2"
+      ],
+      [
+       "Aksak 9/8",
+       "2+2+2+3"
+      ],
+      [
+       "Rachenitsa",
+       "2+2+3"
+      ]
+     ],
+     "why": "These are common groupings.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from the fewest pulses to the most.",
+     "items": [
+      "Rupak (7)",
+      "Jhaptal (10)",
+      "Ektal (12)",
+      "Teental (16)"
+     ],
+     "why": "7 < 10 < 12 < 16.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is clapping and counting an effective way to learn complex rhythms?",
+     "rubric": [
+      [
+       "body",
+       "clap",
+       "physical",
+       "feel",
+       "hands"
+      ],
+      [
+       "count",
+       "pulse",
+       "steady",
+       "cycle",
+       "internalis",
+       "internaliz",
+       "subdivis",
+       "understand"
+      ]
+     ],
+     "min": 1,
+     "model": "Doing the rhythm with the body while counting the pulse connects the pattern to a steady grid and helps you internalise it.",
+     "why": "Embodied learning supports timing.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In Clapping Music, how many shifts are needed for the pattern to return to unison?",
+     "o": [
+      "6",
+      "8",
+      "12",
+      "24"
+     ],
+     "a": 2,
+     "why": "The pattern has 12 pulses and shifts by one each time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can 3-against-2 feel stable even though the layers conflict?",
+     "rubric": [
+      [
+       "common",
+       "coincide",
+       "meet",
+       "pulse",
+       "grid",
+       "lcm",
+       "six",
+       "6"
+      ],
+      [
+       "cycle",
+       "repeat",
+       "predict",
+       "pattern",
+       "sync",
+       "shared"
+      ]
+     ],
+     "min": 1,
+     "model": "The layers share a common pulse and coincide at regular points, so the pattern is predictable and a listener can lock in.",
+     "why": "Shared grid provides stability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do additive metres suit certain dances?",
+     "o": [
+      "They are meant to avoid the beat",
+      "The groupings match the dancers' step patterns",
+      "They are chosen at random each time",
+      "They require no rhythm at all"
+     ],
+     "a": 1,
+     "why": "Metre follows step groupings.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex rhythm systems",
+    "model": "Many traditions use cycles, such as the Indian tala with sixteen beats in Teental, or additive metres like 2+2+3. Polyrhythm layers cycles of different lengths that coincide at the common multiple. Learn them by clapping and counting.",
+    "points": [
+     {
+      "k": [
+       "cycle",
+       "tala",
+       "teental",
+       "beats"
+      ],
+      "ask": "What is a tala?"
+     },
+     {
+      "k": [
+       "additive",
+       "2+2+3",
+       "group",
+       "7/8"
+      ],
+      "ask": "What is an additive metre?"
+     },
+     {
+      "k": [
+       "polyrhythm",
+       "3 against 2",
+       "common multiple",
+       "lcm"
+      ],
+      "ask": "What happens when cycles overlap?"
+     },
+     {
+      "k": [
+       "clap",
+       "count",
+       "body"
+      ],
+      "ask": "How do you learn them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Advanced performance interpretation",
+   "icon": "🎼",
+   "hook": "Two recordings of the same Bach suite differ in pitch by almost a semitone. Which one is \"right\"?",
+   "explain": [
+    "Performance interpretation is an informed argument. Historically informed performance (HIP) uses evidence about instruments, tuning, ornamentation and style to approach a repertoire. Baroque ensembles often play at about A = 415 Hz (roughly a semitone below modern A = 440) with gut strings and lighter bows. Evidence is incomplete, and HIP is a modern interpretation too, so scholars debate \"authenticity\".",
+    "Tuning is an acoustic and cultural choice. A pure fifth 3:2 is 1200 × log₂(1.5) ≈ 701.96 cents, about 1.96 cents wider than the equal-tempered fifth (700). A pure major third 5:4 is ≈ 386.31 cents, about 13.69 cents narrower than the equal-tempered third (400). Stacking twelve pure fifths overshoots seven octaves by the Pythagorean comma (≈ 23.46 cents), so keyboard temperaments such as meantone and well temperaments distribute the error, while equal temperament spreads it evenly.",
+    "Other aspects: text–music relations in songs and opera (declamation, word-painting), rhythmic flexibility (rubato, notes inégales in French Baroque), and microtiming in groove music, where tiny delays shape feel. Performers also negotiate edition choice, the hall's acoustics and the audience. Interpretation in jazz and Indian classical music is shaped by oral traditions, where the performer co-creates the work. A strong interpretation can be justified with evidence, internal consistency and artistic conviction."
+   ],
+   "example": {
+    "q": "By how many cents does an equal-tempered fifth (700) differ from a pure fifth (701.96)?",
+    "steps": [
+     "Pure fifth = 1200 × log₂(3/2) ≈ 701.96 cents.",
+     "Equal-tempered fifth = 700 cents.",
+     "Difference ≈ 1.96 cents; the equal fifth is slightly narrow."
+    ],
+    "a": "About 2 cents narrow"
+   },
+   "analogies": {
+    "home": "Restoring an old house: authentic materials or modern comfort?",
+    "city": "A historic building reused for a new purpose.",
+    "tech": "Running old software in an emulator for authenticity.",
+    "sport": "Using older equipment in a historical re-enactment."
+   },
+   "mnemonic": "Evidence, ears, argument.",
+   "terms": [
+    [
+     "HIP",
+     "Historically informed performance, using period evidence and instruments."
+    ],
+    [
+     "Temperament",
+     "A system of adjusting tuning so that all keys are usable."
+    ],
+    [
+     "Pythagorean comma",
+     "The gap, about 23.46 cents, left by twelve pure fifths versus seven octaves."
+    ],
+    [
+     "Notes inégales",
+     "Unequal rendering of written equal notes in French Baroque style."
+    ]
+   ],
+   "misc": {
+    "wrong": "Historically informed performances are the exact sound of the past.",
+    "right": "They are modern reconstructions based on partial evidence and judgement."
+   },
+   "limits": "Scholars disagree about how much evidence survives and how it should shape modern performance.",
+   "trip": {
+    "wiki": "Historically informed performance",
+    "prompt": "Read the section on pitch standards and list two controversies."
+   },
+   "sources": [
+    "Historically informed performance",
+    "Musical temperament",
+    "Pythagorean comma"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using cents = 1200 × log₂(ratio) and log₂(1.5) ≈ 0.585, what is a pure perfect fifth (3:2) in cents, to the nearest whole number?",
+     "a": 702,
+     "tol": 1,
+     "why": "1200 × 0.585 ≈ 702.",
+     "d": 3,
+     "k": "apply",
+     "unit": "cents"
+    },
+    {
+     "t": "num",
+     "q": "The equal-tempered major third is 400 cents and a pure 5:4 third is about 386 cents. By about how many cents is the equal third wider?",
+     "a": 14,
+     "tol": 1,
+     "why": "400 − 386.3 ≈ 13.7, about 14.",
+     "d": 3,
+     "k": "apply",
+     "unit": "cents"
+    },
+    {
+     "t": "mc",
+     "q": "What is a typical Baroque pitch standard used in HIP?",
+     "o": [
+      "About A = 415 Hz",
+      "About A = 440 Hz, the modern standard",
+      "About A = 600 Hz, much higher",
+      "About A = 220 Hz, an octave lower"
+     ],
+     "a": 0,
+     "why": "It is roughly a semitone below modern pitch.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What are notes inégales?",
+     "o": [
+      "Notes that are slightly out of tune",
+      "Silent notes in a written piece",
+      "Notes taken from a twelve-tone row",
+      "Written equal notes played unequally in French Baroque style"
+     ],
+     "a": 3,
+     "why": "A style convention.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a temperament?",
+     "o": [
+      "A kind of tempo marking in a score",
+      "A change of mood within a piece",
+      "A tuning system adjusting intervals so all keys are usable",
+      "A singing exercise for a choir"
+     ],
+     "a": 2,
+     "why": "Temperaments distribute tuning errors.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do many scholars say HIP is a modern interpretation?",
+     "o": [
+      "It copies exactly what happened in the past",
+      "Evidence is partial and choices are made today",
+      "It uses no instruments from the period",
+      "It completely ignores all the history"
+     ],
+     "a": 1,
+     "why": "Reconstruction involves judgement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A conductor chooses a lower pitch standard for a Baroque programme. Why?",
+     "o": [
+      "To match period instruments and evidence",
+      "To make the music sound much louder",
+      "To avoid having to practise as much",
+      "To make the concert a little shorter"
+     ],
+     "a": 0,
+     "why": "Pitch affects timbre and tuning.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the interval to its approximate size in cents.",
+     "pairs": [
+      [
+       "Equal-tempered fifth",
+       "700"
+      ],
+      [
+       "Pure fifth 3:2",
+       "702"
+      ],
+      [
+       "Pure major third 5:4",
+       "386"
+      ],
+      [
+       "Equal-tempered major third",
+       "400"
+      ]
+     ],
+     "why": "Compare equal and pure sizes.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these intervals in order of size in cents, smallest first.",
+     "items": [
+      "Pure major third (386)",
+      "Equal-tempered major third (400)",
+      "Equal-tempered fifth (700)",
+      "Pure fifth (702)"
+     ],
+     "why": "386 < 400 < 700 < 702.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why can two very different interpretations of the same piece both be convincing?",
+     "rubric": [
+      [
+       "evidence",
+       "score",
+       "style",
+       "history",
+       "informed",
+       "grounded"
+      ],
+      [
+       "conviction",
+       "coheren",
+       "consisten",
+       "argument",
+       "expressive",
+       "justified",
+       "choice",
+       "persuasive"
+      ]
+     ],
+     "min": 2,
+     "model": "Each can be grounded in evidence from the score and style and be coherent and persuasive, since the score leaves many choices open.",
+     "why": "Interpretation is argued, not simply correct.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is the Pythagorean comma a problem for keyboards?",
+     "o": [
+      "It makes keyboards sound louder",
+      "It changes the key signature on its own",
+      "It adds extra keys to every octave",
+      "Twelve pure fifths do not return exactly to the starting pitch"
+     ],
+     "a": 3,
+     "why": "The mismatch needs a temperament.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How might a jazz or Indian classical performer's interpretation differ from a classical performer's in relation to the score?",
+     "rubric": [
+      [
+       "improvis",
+       "oral",
+       "tradition",
+       "compose",
+       "co-creat",
+       "spontan"
+      ],
+      [
+       "score",
+       "written",
+       "notation",
+       "framework",
+       "raga",
+       "chart",
+       "lead sheet"
+      ]
+     ],
+     "min": 1,
+     "model": "They often work from a framework such as a chart or raga and shape the music in performance, so the performer co-creates the piece rather than only realising written details.",
+     "why": "Different relationships to notation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a historian be cautious about a single treatise as evidence?",
+     "o": [
+      "Treatises are always completely false",
+      "Treatises never mention music at all",
+      "It reflects one author's time, place and views",
+      "All treatises agree with each other"
+     ],
+     "a": 2,
+     "why": "Sources need critical reading.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Interpretation and tuning",
+    "model": "Interpretation is an informed argument based on evidence, style and musical conviction. Historically informed performance uses period pitch and instruments. Tuning systems differ: pure intervals do not fit exactly into equal temperament, so keyboards use temperaments.",
+    "points": [
+     {
+      "k": [
+       "evidence",
+       "style",
+       "informed",
+       "argument"
+      ],
+      "ask": "What shapes an interpretation?"
+     },
+     {
+      "k": [
+       "415",
+       "period",
+       "instrument",
+       "pitch",
+       "hip"
+      ],
+      "ask": "What does HIP involve?"
+     },
+     {
+      "k": [
+       "temperament",
+       "equal",
+       "pure",
+       "cents",
+       "comma"
+      ],
+      "ask": "Why are there tuning systems?"
+     },
+     {
+      "k": [
+       "valid",
+       "several",
+       "different",
+       "convincing"
+      ],
+      "ask": "Can several interpretations be valid?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Music technology and production",
+   "icon": "💻",
+   "hook": "Electronic sound can be built from nothing but numbers. What does a synthesiser actually compute?",
+   "explain": [
+    "Synthesis methods build sound from simple parts. Subtractive synthesis starts with a rich waveform (sawtooth, square) and filters it. Additive synthesis sums sine waves at harmonic frequencies. Frequency modulation (FM), developed by John Chowning and published in 1973, uses one oscillator to vary the frequency of another and produces rich spectra cheaply. Wavetable, granular and sampling methods use recorded or stored waveforms.",
+    "Digital audio rests on sampling. Aliasing occurs when frequencies above the Nyquist limit (half the sample rate) fold back into the audible range, so converters use anti-aliasing filters. Latency is the delay between input and output: a buffer of 256 samples at 48 kHz lasts 256 ÷ 48,000 ≈ 5.33 ms, and smaller buffers lower latency but increase the processing load. The Fourier transform analyses a signal into frequency components, and the FFT computes it efficiently.",
+    "MIDI, standardised in 1983, transmits note and control messages (note on/off, velocity, controllers). Production also involves loudness: streaming services often normalise playback loudness using LUFS measurements, so extreme compression gains little. Spatial audio (binaural, Ambisonics) places sounds in 3D. Ethical questions follow: sampling needs clearance of both composition and recording rights, and generative AI raises issues of consent, credit and training data. Technology does not replace musical judgement; it widens the choices."
+   ],
+   "example": {
+    "q": "A buffer of 128 samples at 44.1 kHz: what is the latency to the nearest 0.1 ms?",
+    "steps": [
+     "Latency = samples ÷ sample rate.",
+     "128 ÷ 44,100 ≈ 0.0029 s.",
+     "That is about 2.9 ms."
+    ],
+    "a": "About 2.9 ms"
+   },
+   "analogies": {
+    "home": "Cooking from basic ingredients: salt, oil and heat make countless dishes.",
+    "city": "A traffic light system computes timing signals.",
+    "tech": "Pixels on a screen are numbers; samples in audio are numbers.",
+    "music": "A filter is like shaping a block of stone by taking away material."
+   },
+   "mnemonic": "Make, sample, filter, mix.",
+   "terms": [
+    [
+     "Subtractive synthesis",
+     "Building a sound by filtering a harmonically rich waveform."
+    ],
+    [
+     "FM synthesis",
+     "Creating spectra by modulating one oscillator's frequency with another."
+    ],
+    [
+     "Aliasing",
+     "Distortion from frequencies above the Nyquist limit folding back."
+    ],
+    [
+     "Latency",
+     "The delay between an action and its sound."
+    ]
+   ],
+   "misc": {
+    "wrong": "Digital audio is a perfect copy with no limits.",
+    "right": "Digital audio has limits set by sample rate, bit depth and processing, and can create artefacts such as aliasing."
+   },
+   "trip": {
+    "wiki": "Frequency modulation synthesis",
+    "prompt": "Read how modulation index changes the spectrum."
+   },
+   "sources": [
+    "Synthesizer",
+    "Frequency modulation synthesis",
+    "MIDI"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A buffer of 256 samples at 48 kHz gives how much latency in milliseconds (to 2 decimal places)?",
+     "a": 5.33,
+     "tol": 0.02,
+     "why": "256 ÷ 48,000 ≈ 0.00533 s = 5.33 ms.",
+     "d": 3,
+     "k": "apply",
+     "unit": "ms"
+    },
+    {
+     "t": "num",
+     "q": "A signal is sampled at 48 kHz. Above what frequency, in kHz, will aliasing occur without filtering?",
+     "a": 24,
+     "tol": 0,
+     "why": "The Nyquist limit is half the sample rate.",
+     "d": 2,
+     "k": "apply",
+     "unit": "kHz"
+    },
+    {
+     "t": "mc",
+     "q": "Which synthesis method starts with a rich waveform and filters it?",
+     "o": [
+      "Additive, building up sine waves",
+      "Subtractive",
+      "FM, using one wave to modulate another",
+      "Granular, using tiny grains of sound"
+     ],
+     "a": 1,
+     "why": "Filtering removes harmonics.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Who published FM synthesis in 1973?",
+     "o": [
+      "John Chowning",
+      "Karlheinz Stockhausen",
+      "Max Mathews",
+      "Wendy Carlos"
+     ],
+     "a": 0,
+     "why": "Chowning developed FM at Stanford.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the FFT do?",
+     "o": [
+      "Records audio into a file for editing",
+      "Lowers the latency of the system",
+      "Tunes a guitar to the correct pitch",
+      "Computes a signal's frequency components efficiently"
+     ],
+     "a": 3,
+     "why": "It is a fast Fourier transform.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do producers use anti-aliasing filters?",
+     "o": [
+      "To make the audio sound louder overall",
+      "To add reverb to the sampled signal",
+      "To remove frequencies above the Nyquist limit before sampling",
+      "To change the key of the recording"
+     ],
+     "a": 2,
+     "why": "Otherwise high frequencies fold into the audible range.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is MIDI?",
+     "o": [
+      "A type of microphone",
+      "A protocol sending note and control data",
+      "An audio file format that stores sound waves",
+      "A kind of speaker"
+     ],
+     "a": 1,
+     "why": "It sends events, not sound.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the synthesis type to its principle.",
+     "pairs": [
+      [
+       "Additive",
+       "Sum of sine waves"
+      ],
+      [
+       "Subtractive",
+       "Filtering rich waveforms"
+      ],
+      [
+       "FM",
+       "One oscillator modulates another"
+      ],
+      [
+       "Granular",
+       "Many tiny sound grains"
+      ]
+     ],
+     "why": "Each builds timbre differently.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these in the order of a simple subtractive synth signal path.",
+     "items": [
+      "Oscillator",
+      "Filter",
+      "Amplifier",
+      "Output"
+     ],
+     "why": "Oscillator makes the tone, filter shapes it, amplifier sets level.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is clearing both composition and recording rights important when sampling?",
+     "rubric": [
+      [
+       "composition",
+       "song",
+       "writer",
+       "publisher"
+      ],
+      [
+       "recording",
+       "master",
+       "label",
+       "performer",
+       "rights",
+       "permission",
+       "owner"
+      ]
+     ],
+     "min": 2,
+     "model": "A sample uses a specific recording and also the underlying composition, which can have different owners who must give permission.",
+     "why": "Two rights layers apply.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does lowering buffer size lower latency but risk glitches?",
+     "o": [
+      "Less time to finish processing each block",
+      "More samples are used in each block",
+      "The sample rate falls as buffers shrink",
+      "The microphone is likely to break"
+     ],
+     "a": 0,
+     "why": "Small buffers leave little processing margin.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What ethical questions arise when generative AI is used to imitate a living artist's voice?",
+     "rubric": [
+      [
+       "consent",
+       "permission",
+       "agree",
+       "authoriz"
+      ],
+      [
+       "credit",
+       "pay",
+       "compens",
+       "rights",
+       "identity",
+       "train",
+       "data",
+       "deceive",
+       "misleading"
+      ]
+     ],
+     "min": 1,
+     "model": "Questions include consent, credit and compensation, the use of training data and the risk of misleading audiences.",
+     "why": "Technology needs ethical frameworks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might extreme loudness give little advantage on streaming platforms?",
+     "o": [
+      "Streams are not able to play loud music",
+      "Compression is banned by the platforms",
+      "Only quiet music is allowed to be streamed",
+      "Playback is often normalised to a target loudness"
+     ],
+     "a": 3,
+     "why": "Normalisation turns loud masters down.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Music technology",
+    "model": "Synthesisers build sound by methods such as subtractive and FM synthesis. Digital audio is sampled, so the Nyquist limit and latency matter. MIDI carries note data. Producers must also consider rights and ethics when sampling or using AI.",
+    "points": [
+     {
+      "k": [
+       "subtractive",
+       "additive",
+       "fm",
+       "synthesis",
+       "filter"
+      ],
+      "ask": "How do synths make sound?"
+     },
+     {
+      "k": [
+       "nyquist",
+       "sample rate",
+       "alias",
+       "latency",
+       "buffer"
+      ],
+      "ask": "What limits digital audio?"
+     },
+     {
+      "k": [
+       "midi",
+       "note",
+       "data",
+       "control"
+      ],
+      "ask": "What is MIDI?"
+     },
+     {
+      "k": [
+       "rights",
+       "permission",
+       "ethic",
+       "consent",
+       "credit"
+      ],
+      "ask": "What ethical issues arise?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Ethnomusicology and comparative musical traditions",
+   "icon": "🌐",
+   "hook": "If you recorded music in a village you had never visited, who would own the recording, and who should decide how it is used?",
+   "explain": [
+    "Ethnomusicology studies music in its cultural context. Fieldwork methods include participant observation, interviews, recording and learning to perform, sometimes called bi-musicality, an idea associated with Mantle Hood. Researchers distinguish an emic view (the insiders' own concepts) from an etic view (the analyst's outside categories). Good work asks how music is learned, who performs, what it means and how it changes.",
+    "Comparison needs tools and humility. The Hornbostel–Sachs system (1914) classifies instruments by how they make sound: idiophones (the body vibrates, e.g. xylophone), membranophones (a membrane, e.g. drum), chordophones (strings), aerophones (air, e.g. flute) and, later, electrophones. Tuning varies: Javanese gamelan uses two tuning systems, slendro (five tones) and pelog (seven tones), with different ensembles tuned individually. Arabic and Turkish music use intervals smaller than a semitone. Studies with the Tsimane people of Bolivia suggested that preferences for consonance are not universal, so some preferences once thought natural are shaped by culture.",
+    "Ethics are central. Recordings made in the past under colonial conditions raise issues of consent and ownership. Today researchers seek informed consent, collaboration, fair credit, benefit-sharing and sometimes the return (repatriation) of recordings to communities. Music changes through migration, media and globalisation, and cultures adapt rather than simply \"lose\" tradition. Concepts like \"world music\" can group very different musics under a commercial label and risk stereotypes, so naming specific traditions and people is better."
+   ],
+   "example": {
+    "q": "Classify the Indian tabla, the Javanese saron, the West African kora and the Turkish ney by Hornbostel–Sachs.",
+    "steps": [
+     "Tabla: skin drum, membranophone.",
+     "Saron: metal bars, idiophone.",
+     "Kora: strings, chordophone; ney: end-blown flute, aerophone."
+    ],
+    "a": "Tabla membranophone; saron idiophone; kora chordophone; ney aerophone"
+   },
+   "analogies": {
+    "home": "Visiting another family's home: you learn their customs and ask before taking photos.",
+    "city": "Neighbourhood festivals show local identities.",
+    "farm": "Harvest songs vary by crop and community.",
+    "nature": "A biologist studies a species in its habitat rather than a zoo."
+   },
+   "mnemonic": "Listen, learn, ask, share back.",
+   "terms": [
+    [
+     "Emic",
+     "The insiders' own concepts and meanings."
+    ],
+    [
+     "Etic",
+     "The outside analyst's categories."
+    ],
+    [
+     "Idiophone",
+     "An instrument whose body vibrates, such as a xylophone."
+    ],
+    [
+     "Repatriation",
+     "Returning recordings or objects to the community of origin."
+    ]
+   ],
+   "misc": {
+    "wrong": "Music is a universal language that means the same everywhere.",
+    "right": "Music is universal as an activity, but its forms and meanings are shaped by cultures."
+   },
+   "limits": "Claims about universals in music are debated, and findings from studies of a few communities cannot be generalised without care.",
+   "trip": {
+    "wiki": "Ethnomusicology",
+    "prompt": "Read about fieldwork and note two ethical principles."
+   },
+   "sources": [
+    "Ethnomusicology",
+    "Hornbostel–Sachs",
+    "Gamelan"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is an idiophone?",
+     "o": [
+      "An instrument with strings stretched on it",
+      "An instrument covered with a skin",
+      "An instrument whose body vibrates",
+      "An instrument fitted with a keyboard"
+     ],
+     "a": 2,
+     "why": "Xylophones and bells are idiophones.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which Hornbostel–Sachs group does a drum belong to?",
+     "o": [
+      "Chordophone",
+      "Membranophone",
+      "Aerophone",
+      "Idiophone"
+     ],
+     "a": 1,
+     "why": "A stretched membrane vibrates.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which group does a flute belong to?",
+     "o": [
+      "Aerophone",
+      "Chordophone",
+      "Membranophone",
+      "Idiophone"
+     ],
+     "a": 0,
+     "why": "Vibrating air produces sound.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which group does a kora belong to?",
+     "o": [
+      "Aerophone",
+      "Idiophone",
+      "Membranophone",
+      "Chordophone"
+     ],
+     "a": 3,
+     "why": "Strings produce sound.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does emic mean?",
+     "o": [
+      "An outsider's comparison of cultures",
+      "A rhythmic pattern used in dance",
+      "The insiders' own concepts",
+      "A scale of five notes"
+     ],
+     "a": 2,
+     "why": "Emic views come from within the culture.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Slendro and pelog are",
+     "o": [
+      "Indian rhythmic cycles called talas",
+      "Javanese gamelan tuning systems",
+      "Arabic modes called maqams",
+      "African drum types from Ghana"
+     ],
+     "a": 1,
+     "why": "Slendro has five tones and pelog seven.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A researcher wants to publish a community's sacred songs. What should come first?",
+     "o": [
+      "Informed consent and agreement from the community",
+      "Immediate release of all the songs",
+      "Selling the recording to a label",
+      "Removing the singers' names from it"
+     ],
+     "a": 0,
+     "why": "Consent and collaboration are ethical foundations.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the instrument to its Hornbostel–Sachs class.",
+     "pairs": [
+      [
+       "Xylophone",
+       "Idiophone"
+      ],
+      [
+       "Tabla",
+       "Membranophone"
+      ],
+      [
+       "Sitar",
+       "Chordophone"
+      ],
+      [
+       "Shakuhachi",
+       "Aerophone"
+      ]
+     ],
+     "why": "Classification by sound production.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put a sound ethical fieldwork sequence in order.",
+     "items": [
+      "Build relationships",
+      "Seek informed consent",
+      "Record and learn together",
+      "Share results back with the community"
+     ],
+     "why": "Respect and reciprocity come throughout.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is \"world music\" a problematic label?",
+     "rubric": [
+      [
+       "group",
+       "lump",
+       "label",
+       "umbrella",
+       "single",
+       "one category"
+      ],
+      [
+       "different",
+       "diverse",
+       "stereotype",
+       "commercial",
+       "market",
+       "other",
+       "outsider",
+       "misleading"
+      ]
+     ],
+     "min": 2,
+     "model": "It lumps many different traditions into one category defined from an outsider's or commercial viewpoint, which hides diversity and can reinforce stereotypes.",
+     "why": "Specific names respect specific traditions.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is the claim \"music is a universal language\" misleading?",
+     "o": [
+      "Music has no meaning in any culture",
+      "All cultures share exactly the same scales",
+      "Music is never able to cross cultures",
+      "Meanings, scales and uses of music vary across cultures"
+     ],
+     "a": 3,
+     "why": "Universal as practice, not as identical meaning.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a community want recordings made decades ago returned to them?",
+     "rubric": [
+      [
+       "heritage",
+       "culture",
+       "ancestor",
+       "identity",
+       "history",
+       "tradition",
+       "revit"
+      ],
+      [
+       "access",
+       "control",
+       "own",
+       "return",
+       "teach",
+       "learn",
+       "consent",
+       "repatriat"
+      ]
+     ],
+     "min": 1,
+     "model": "Recordings can hold their heritage and teach new generations, and returning them respects the community's ownership and control.",
+     "why": "Repatriation supports cultural continuity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tradition changes by adopting new instruments. How should an ethnomusicologist view this?",
+     "o": [
+      "As a loss of authenticity for the culture",
+      "As an error that should be corrected",
+      "As a normal part of living tradition and cultural choice",
+      "As something that is no longer music"
+     ],
+     "a": 2,
+     "why": "Cultures adapt by their own decisions.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Ethnomusicology",
+    "model": "Ethnomusicology studies music in culture through fieldwork and learning to perform. Instruments can be classified as idiophones, membranophones, chordophones and aerophones. Researchers must gain consent, share results and avoid stereotypes such as the label world music.",
+    "points": [
+     {
+      "k": [
+       "fieldwork",
+       "observ",
+       "interview",
+       "culture",
+       "context"
+      ],
+      "ask": "What do ethnomusicologists do?"
+     },
+     {
+      "k": [
+       "idiophone",
+       "membranophone",
+       "chordophone",
+       "aerophone"
+      ],
+      "ask": "How are instruments classified?"
+     },
+     {
+      "k": [
+       "consent",
+       "ethic",
+       "repatriat",
+       "share",
+       "credit"
+      ],
+      "ask": "What ethics apply?"
+     },
+     {
+      "k": [
+       "stereotype",
+       "diverse",
+       "specific",
+       "label"
+      ],
+      "ask": "Why be careful with the label world music?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Advanced improvisation and ensemble leadership",
+   "icon": "🧑‍🎤",
+   "hook": "A bandleader without a baton or a score guides a group of improvisers in real time. What is she actually doing?",
+   "explain": [
+    "Leading an improvising ensemble means shaping the music while it happens. Practical tools: count-offs to set tempo, eye contact and gesture for cues, a clear plan for form and solos (who plays when, how many choruses, how to return), and a repertoire of agreed signals such as stop-time, trading fours, or vamp till cue. Leaders listen first, then support or redirect through dynamics, density and example.",
+    "Conducting patterns also communicate: in 4/4 the baton moves down, left, right, up; in 3/4 down, right, up; in 2/4 down, up. Traditions of directed improvisation include Lawrence \"Butch\" Morris's conduction, and John Zorn's game piece Cobra; in Indian classical music a jugalbandi is a duet where two artists, often of different traditions, respond to each other. Free improvisation, as in Ornette Coleman's 1960 album Free Jazz, loosens fixed chord structures but still depends on listening and shared language.",
+    "Leadership is also social. Good leaders create a safe rehearsal space, give clear and specific feedback, share the spotlight, and adjust to the abilities of the players. Decision-making in real time involves tempo, texture, energy and form, and a leader must handle mistakes by turning them into material. Leadership styles vary across cultures, from the master–disciple relationship in Indian music to collective decision-making in some ensembles."
+   ],
+   "example": {
+    "q": "A leader wants to start a 4/4 tune at 90 bpm. How long should the count-off take?",
+    "steps": [
+     "One beat lasts 60 ÷ 90 = 0.667 s.",
+     "A full bar count-off is 4 beats.",
+     "4 × 0.667 ≈ 2.67 s."
+    ],
+    "a": "About 2.7 s"
+   },
+   "analogies": {
+    "home": "A parent guiding a family conversation without scripting it.",
+    "sport": "A team captain adjusts tactics mid-game.",
+    "city": "A traffic officer directs flow in real time.",
+    "farm": "A group leader sets the rhythm for field work songs."
+   },
+   "mnemonic": "Listen, signal, shape, share.",
+   "terms": [
+    [
+     "Count-off",
+     "Spoken or clicked beats to set tempo before starting."
+    ],
+    [
+     "Trading fours",
+     "Players alternate four-bar solos."
+    ],
+    [
+     "Conduction",
+     "A system of gestures for conducting improvisation, associated with Butch Morris."
+    ],
+    [
+     "Jugalbandi",
+     "An Indian classical duet in which two artists respond to each other."
+    ]
+   ],
+   "misc": {
+    "wrong": "Leaders control everything the group plays.",
+    "right": "Good leaders shape the framework and trust players to respond creatively."
+   },
+   "trip": {
+    "wiki": "Free jazz",
+    "prompt": "Read about how free improvisation is organised without fixed chord progressions."
+   },
+   "sources": [
+    "Free jazz",
+    "Conduction (music)",
+    "Jugalbandi"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A tune is at 90 bpm in 4/4. How many seconds does a four-beat count-off take, to 1 decimal place?",
+     "a": 2.7,
+     "tol": 0.05,
+     "why": "4 × 60 ÷ 90 ≈ 2.67 s.",
+     "d": 2,
+     "k": "apply",
+     "unit": "s"
+    },
+    {
+     "t": "num",
+     "q": "Trading fours in 4/4 at 120 bpm: how many seconds is one four-bar solo?",
+     "a": 8,
+     "tol": 0.05,
+     "why": "4 bars × 4 beats × 0.5 s = 8 s.",
+     "d": 2,
+     "k": "apply",
+     "unit": "s"
+    },
+    {
+     "t": "mc",
+     "q": "What is trading fours?",
+     "o": [
+      "Four players solo at the same time",
+      "Players alternate four-bar solos",
+      "Playing only four notes in a solo",
+      "Changing the chord every four beats"
+     ],
+     "a": 1,
+     "why": "It is a call-and-response solo format.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How does the conducting pattern for 3/4 move?",
+     "o": [
+      "Down, right, up",
+      "Down, left, right, up",
+      "Down, up",
+      "Left, right"
+     ],
+     "a": 0,
+     "why": "The three-beat pattern.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How does the conducting pattern for 4/4 move?",
+     "o": [
+      "Down, right, up in a three pattern",
+      "Down, up in a two pattern",
+      "Right, left, up and down again",
+      "Down, left, right, up"
+     ],
+     "a": 3,
+     "why": "The four-beat pattern.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which album by Ornette Coleman in 1960 shows collective improvisation?",
+     "o": [
+      "Kind of Blue",
+      "Bitches Brew",
+      "Free Jazz",
+      "Giant Steps"
+     ],
+     "a": 2,
+     "why": "Free Jazz features a double quartet.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A soloist loses the form. What is the best ensemble response?",
+     "o": [
+      "Stop the band and end the song for good",
+      "Support with clear cues and return to a known point",
+      "Play louder to drown out the soloist",
+      "Switch to another song at random"
+     ],
+     "a": 1,
+     "why": "Good ensembles recover together.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the term to what it describes.",
+     "pairs": [
+      [
+       "Jugalbandi",
+       "Duet of two artists responding"
+      ],
+      [
+       "Conduction",
+       "Gesture system for directing improvisation"
+      ],
+      [
+       "Count-off",
+       "Beats that set tempo"
+      ],
+      [
+       "Vamp",
+       "Repeating section until cued"
+      ]
+     ],
+     "why": "Each is a leadership or structuring tool.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these leadership steps in order for a rehearsal.",
+     "items": [
+      "Set a clear goal",
+      "Count off and play",
+      "Listen and give specific feedback",
+      "Repeat with a change"
+     ],
+     "why": "Goals, playing, feedback, iteration.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is listening the leader's most important skill in an improvising ensemble?",
+     "rubric": [
+      [
+       "listen",
+       "hear",
+       "ear"
+      ],
+      [
+       "respond",
+       "react",
+       "decide",
+       "shape",
+       "balance",
+       "adjust",
+       "support"
+      ],
+      [
+       "real time",
+       "moment",
+       "spontan",
+       "group",
+       "players"
+      ]
+     ],
+     "min": 2,
+     "model": "Leaders must hear what the group is doing in the moment to decide how to support, redirect or balance it.",
+     "why": "Real-time decisions depend on hearing.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A mistake occurs in a performance. What does an expert leader often do?",
+     "o": [
+      "Treat it as material, repeat or develop it",
+      "Stop the song and blame the player",
+      "Ignore the audience and carry on",
+      "End the song on the spot"
+     ],
+     "a": 0,
+     "why": "Mistakes can become motifs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can a leader balance structure and freedom?",
+     "rubric": [
+      [
+       "framework",
+       "form",
+       "structure",
+       "plan",
+       "agreed",
+       "signal",
+       "cue"
+      ],
+      [
+       "freedom",
+       "trust",
+       "improvis",
+       "space",
+       "creativ",
+       "choice",
+       "players"
+      ]
+     ],
+     "min": 2,
+     "model": "Agree a framework such as form and cues, then give players space to improvise within it and trust their choices.",
+     "why": "Constraints can free creativity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a leader share the spotlight with players?",
+     "o": [
+      "It lowers the tempo of the music",
+      "It lets the band avoid practising",
+      "It removes the need for cues",
+      "It builds trust and ownership and a richer sound"
+     ],
+     "a": 3,
+     "why": "Shared ownership improves ensembles.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Leading an ensemble",
+    "model": "Leading an improvising ensemble means setting tempo with a count-off, giving clear cues and a plan for form, and listening closely to respond in real time. Good leaders give specific feedback, share the spotlight and turn mistakes into material.",
+    "points": [
+     {
+      "k": [
+       "count",
+       "tempo",
+       "cue",
+       "signal"
+      ],
+      "ask": "How do you start together?"
+     },
+     {
+      "k": [
+       "form",
+       "plan",
+       "solo",
+       "structure"
+      ],
+      "ask": "What do you agree in advance?"
+     },
+     {
+      "k": [
+       "listen",
+       "respond",
+       "real time"
+      ],
+      "ask": "What skill matters most?"
+     },
+     {
+      "k": [
+       "feedback",
+       "trust",
+       "share",
+       "mistake"
+      ],
+      "ask": "How do you lead people well?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Original composition and performance project",
+   "icon": "🏁",
+   "hook": "You have eight weeks to create and perform a ten-minute original work. What will decide whether it succeeds?",
+   "explain": [
+    "A major project begins with a clear concept and constraints: purpose, audience, length, forces (who plays), venue, resources and deadline. Write a one-sentence statement of intent, gather references, and test small ideas early. Plan backwards from the performance date: composing, drafting parts, rehearsals, technical rehearsal, performance, and reflection. Include time buffers for the unexpected.",
+    "Calculate timings. A piece of 64 bars of 4/4 at 120 bpm lasts 64 × 4 × 0.5 = 128 s, about 2 min 8 s. Ten minutes at that tempo needs about 300 bars. Prepare clean, playable parts with rehearsal marks and page turns that work for players. Rehearsal time is limited, so prioritise difficult passages and give clear, respectful instructions. Document decisions and keep backups.",
+    "Evaluation uses criteria agreed beforehand: musical coherence and originality, craft in notation and orchestration, quality of performance, communication with the audience, use of technology and teamwork. Reflect with evidence, such as recordings, feedback and a log, and write programme notes that explain the idea in plain language. Credit collaborators and sources, respect copyright for any borrowed material, and consider accessibility for audiences and performers. Presenting work in public is part of musical life everywhere, from concert halls to village celebrations."
+   ],
+   "example": {
+    "q": "A piece has 96 bars of 3/4 at 90 bpm. How long does it last?",
+    "steps": [
+     "Beats = 96 × 3 = 288.",
+     "One beat = 60 ÷ 90 = 0.667 s.",
+     "288 × 0.667 = 192 s."
+    ],
+    "a": "192 s (3 min 12 s)"
+   },
+   "analogies": {
+    "home": "Planning a family celebration: guests, food, schedule, back-up.",
+    "city": "Planning a festival: stages, timing, safety.",
+    "sport": "A training plan builds to a match day.",
+    "tech": "A software project has milestones and testing."
+   },
+   "mnemonic": "Concept, plan backwards, rehearse, perform, reflect.",
+   "terms": [
+    [
+     "Concept",
+     "The central idea or intention of a work."
+    ],
+    [
+     "Forces",
+     "The instruments and voices a work is written for."
+    ],
+    [
+     "Programme notes",
+     "Text explaining a work to the audience."
+    ],
+    [
+     "Buffer",
+     "Spare time built into a schedule."
+    ]
+   ],
+   "misc": {
+    "wrong": "A project succeeds only if it is perfect on the night.",
+    "right": "Success includes planning, learning, communication and honest reflection, not only flawless execution."
+   },
+   "trip": {
+    "wiki": "Programme notes",
+    "prompt": "Look at an example and note how it explains a piece to an audience."
+   },
+   "sources": [
+    "Musical composition",
+    "Programme notes",
+    "Project management"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A piece has 64 bars of 4/4 at 120 bpm. How many seconds long is it?",
+     "a": 128,
+     "tol": 0.5,
+     "why": "64 × 4 × 0.5 = 128 s.",
+     "d": 2,
+     "k": "apply",
+     "unit": "s"
+    },
+    {
+     "t": "num",
+     "q": "A piece has 96 bars of 3/4 at 90 bpm. How many seconds long is it (to the nearest second)?",
+     "a": 192,
+     "tol": 1,
+     "why": "288 beats × 60/90 = 192 s.",
+     "d": 3,
+     "k": "apply",
+     "unit": "s"
+    },
+    {
+     "t": "mc",
+     "q": "You need ten minutes (600 s) of music in 4/4 at 120 bpm. About how many bars is that?",
+     "o": [
+      "150",
+      "600",
+      "300",
+      "1,200"
+     ],
+     "a": 2,
+     "why": "Each bar is 2 s, so 600 ÷ 2 = 300.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What are forces in a score?",
+     "o": [
+      "The loud passages in the score",
+      "The instruments and voices it is written for",
+      "The tempo marking of the piece",
+      "The key the piece is written in"
+     ],
+     "a": 1,
+     "why": "The forces define the ensemble.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why plan the schedule backwards from the performance date?",
+     "o": [
+      "To make sure each stage fits before the deadline",
+      "To avoid holding any rehearsals",
+      "To make the piece a lot shorter",
+      "To change the key of the piece"
+     ],
+     "a": 0,
+     "why": "Backward planning reveals the time available.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why build buffers into a schedule?",
+     "o": [
+      "So that time is wasted on purpose",
+      "So that deadlines can be avoided",
+      "So that the piece becomes longer",
+      "Unexpected problems always arise"
+     ],
+     "a": 3,
+     "why": "Buffers absorb delays.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What should programme notes do?",
+     "o": [
+      "Hide the meaning of the music",
+      "List every single note in the piece",
+      "Explain the work to the audience in clear language",
+      "Replace the performance itself"
+     ],
+     "a": 2,
+     "why": "They help listeners engage.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the project stage to its purpose.",
+     "pairs": [
+      [
+       "Concept",
+       "Define the central idea"
+      ],
+      [
+       "Parts preparation",
+       "Make playable materials"
+      ],
+      [
+       "Rehearsal",
+       "Refine and coordinate"
+      ],
+      [
+       "Reflection",
+       "Evaluate with evidence"
+      ]
+     ],
+     "why": "A project moves through stages.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these project stages in order.",
+     "items": [
+      "Define concept and constraints",
+      "Compose and draft parts",
+      "Rehearse",
+      "Perform and reflect"
+     ],
+     "why": "Planning leads to performance and review.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Name two ways to evaluate a project honestly.",
+     "rubric": [
+      [
+       "record",
+       "recording",
+       "audio",
+       "video"
+      ],
+      [
+       "feedback",
+       "audience",
+       "peer",
+       "performer",
+       "log",
+       "criteria",
+       "rubric",
+       "reflect"
+      ]
+     ],
+     "min": 2,
+     "model": "Use a recording to hear the result and gather feedback from performers and listeners, judging against criteria you set in advance.",
+     "why": "Evidence and criteria make reflection reliable.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why involve performers early when composing for them?",
+     "o": [
+      "They can write the whole piece for you",
+      "They can advise on playability and improve the music",
+      "It removes the need for any rehearsal",
+      "It lets you avoid all deadlines"
+     ],
+     "a": 1,
+     "why": "Early feedback prevents problems.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it important to credit sources and collaborators?",
+     "rubric": [
+      [
+       "fair",
+       "honest",
+       "respect",
+       "ethic",
+       "credit",
+       "trust"
+      ],
+      [
+       "copyright",
+       "permission",
+       "legal",
+       "ownership",
+       "rights",
+       "reputation"
+      ]
+     ],
+     "min": 1,
+     "model": "Crediting is fair and honest, respects others' rights and builds trust and a good reputation.",
+     "why": "Credit is ethical and practical.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rehearsal runs short. What is the best use of the remaining time?",
+     "o": [
+      "Work on the most difficult passages first",
+      "Replay the easy opening again and again",
+      "Skip the rehearsal altogether",
+      "Change the tempo to double speed"
+     ],
+     "a": 0,
+     "why": "Prioritise by difficulty.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Planning an original project",
+    "model": "Start with a clear concept and constraints. Plan backwards from the performance date with buffers. Prepare clean parts, rehearse the hard passages, and write programme notes. Afterwards reflect with evidence and credit everyone involved.",
+    "points": [
+     {
+      "k": [
+       "concept",
+       "idea",
+       "constraint",
+       "audience"
+      ],
+      "ask": "How do you start?"
+     },
+     {
+      "k": [
+       "plan",
+       "schedule",
+       "backwards",
+       "buffer",
+       "deadline"
+      ],
+      "ask": "How do you manage time?"
+     },
+     {
+      "k": [
+       "parts",
+       "rehearsal",
+       "performers",
+       "playable"
+      ],
+      "ask": "How do you prepare performers?"
+     },
+     {
+      "k": [
+       "reflect",
+       "evaluate",
+       "feedback",
+       "credit"
+      ],
+      "ask": "What happens after the performance?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,1876 @@
+{
+ "world": 10,
+ "lang": "es",
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Reading and writing fundamentals",
+   "icon": "✏️",
+   "hook": "Why does \"teléfono\" have an accent but \"mesa\" does not?",
+   "explain": [
+    "Spanish stress has simple rules. Words that end in a vowel, n or s are stressed on the next-to-last syllable: me-sa, ha-blan, ca-sas. Words that end in other consonants are stressed on the last syllable: ha-blar, ciu-dad. A written accent (tilde) marks any word that breaks these rules: te-LÉ-fo-no, can-CIÓN.",
+    "Accents also separate words that sound alike: él (he) and el (the), sí (yes) and si (if), tú (you) and tu (your). Spelling is regular: b and v sound alike, h is silent, and c and g change before e and i."
+   ],
+   "mnemonic": "Break the rule, wear the tilde.",
+   "items": [
+    [
+     "telephone",
+     "teléfono",
+     ""
+    ],
+    [
+     "song",
+     "canción",
+     ""
+    ],
+    [
+     "city",
+     "ciudad",
+     ""
+    ],
+    [
+     "he",
+     "él",
+     ""
+    ],
+    [
+     "yes",
+     "sí",
+     ""
+    ],
+    [
+     "you (informal)",
+     "tú",
+     ""
+    ],
+    [
+     "your",
+     "tu",
+     ""
+    ],
+    [
+     "to write",
+     "escribir",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "He has a telephone.",
+     [
+      "Él",
+      "tiene",
+      "un",
+      "teléfono."
+     ]
+    ],
+    [
+     "I like this song.",
+     [
+      "Me",
+      "gusta",
+      "esta",
+      "canción."
+     ]
+    ],
+    [
+     "Yes, I live in the city.",
+     [
+      "Sí,",
+      "vivo",
+      "en",
+      "la",
+      "ciudad."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Where is the stress in \"casas\"?",
+     "o": [
+      "On the first syllable: CA-sas",
+      "On the last syllable",
+      "It has no stress",
+      "On the letter s"
+     ],
+     "a": 0,
+     "why": "Words ending in s are stressed on the next-to-last syllable.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the difference between \"tú\" and \"tu\"?",
+     "o": [
+      "Tú means you; tu means your",
+      "They mean the same",
+      "Tu is a verb",
+      "Tú is plural"
+     ],
+     "a": 0,
+     "why": "The tilde distinguishes the pronoun from the possessive.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does \"canción\" need a written accent?",
+     "o": [
+      "It ends in n but is stressed on the last syllable",
+      "It is a plural word",
+      "It is a question",
+      "It has a silent letter"
+     ],
+     "a": 0,
+     "why": "Words ending in n are normally stressed on the second-to-last syllable, so the exception must be marked.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which word is stressed on the last syllable without any written accent?",
+     "o": [
+      "ciudad",
+      "mesa",
+      "examen",
+      "casas"
+     ],
+     "a": 0,
+     "why": "Ciudad ends in d, so by rule the stress is on the last syllable.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the accent in \"sí\" important?",
+     "rubric": [
+      [
+       "yes",
+       "affirm"
+      ],
+      [
+       "si",
+       "if",
+       "different",
+       "distinguish",
+       "meaning",
+       "differentiate"
+      ]
+     ],
+     "min": 1,
+     "model": "The accent separates sí (yes) from si (if), which are different words.",
+     "why": "Diacritic accents mark different words.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Spanish stress and accent marks",
+    "model": "Look at the last letter. If it is a vowel, n or s, stress the next-to-last syllable. Otherwise stress the last. If a word does not follow this, it has a written accent.",
+    "points": [
+     {
+      "k": [
+       "vowel",
+       "n",
+       "s",
+       "next",
+       "last"
+      ],
+      "ask": "What is the rule?"
+     },
+     {
+      "k": [
+       "accent",
+       "tilde",
+       "written"
+      ],
+      "ask": "What shows an exception?"
+     },
+     {
+      "k": [
+       "example",
+       "teléfono",
+       "canción",
+       "ciudad"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish orthography",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish orthography",
+    "Diacritic"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Basic sentence construction",
+   "icon": "🧱",
+   "hook": "\"Yo tengo un perro\" and \"Tengo un perro\" both work. Why can Spanish drop the subject?",
+   "explain": [
+    "A basic Spanish sentence follows subject, verb, object: \"María lee un libro.\" The verb ending shows the person, so the subject pronoun can be dropped: \"Leo un libro.\"",
+    "To make a negative sentence put no before the verb: \"No leo mucho.\" Adjectives usually come after the noun and agree with it: \"una casa grande\". The order is flexible for emphasis: \"Come pan Juan\" is possible, but the standard order is clearest."
+   ],
+   "mnemonic": "Put no before the verb: no hablo, no como.",
+   "items": [
+    [
+     "I have a dog",
+     "Tengo un perro",
+     ""
+    ],
+    [
+     "I do not speak English",
+     "No hablo inglés",
+     ""
+    ],
+    [
+     "María reads a book",
+     "María lee un libro",
+     ""
+    ],
+    [
+     "a big house",
+     "una casa grande",
+     ""
+    ],
+    [
+     "a small cat",
+     "un gato pequeño",
+     ""
+    ],
+    [
+     "I like music",
+     "Me gusta la música",
+     ""
+    ],
+    [
+     "We live here",
+     "Vivimos aquí",
+     ""
+    ],
+    [
+     "They work a lot",
+     "Trabajan mucho",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "María reads a book.",
+     [
+      "María",
+      "lee",
+      "un",
+      "libro."
+     ]
+    ],
+    [
+     "I do not speak English.",
+     [
+      "No",
+      "hablo",
+      "inglés."
+     ]
+    ],
+    [
+     "They live in a big house.",
+     [
+      "Viven",
+      "en",
+      "una",
+      "casa",
+      "grande."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you make \"Hablo inglés\" negative?",
+     "o": [
+      "No hablo inglés.",
+      "Hablo no inglés.",
+      "No yo hablo inglés.",
+      "Hablo inglés no."
+     ],
+     "a": 0,
+     "why": "Put no directly before the verb.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Where does the adjective usually go?",
+     "o": [
+      "After the noun",
+      "Before the noun always",
+      "At the end of the sentence",
+      "Before the verb"
+     ],
+     "a": 0,
+     "why": "Descriptive adjectives normally follow the noun in Spanish.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"Hablo español\" complete without \"yo\"?",
+     "o": [
+      "The ending -o shows the speaker",
+      "Spanish does not use pronouns",
+      "The verb is plural",
+      "Yo is forbidden"
+     ],
+     "a": 0,
+     "why": "Verb endings show the person.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which sentence is correct?",
+     "o": [
+      "No tengo hermanos.",
+      "Tengo no hermanos.",
+      "No yo tengo hermanos.",
+      "Tengo hermanos no."
+     ],
+     "a": 0,
+     "why": "No goes before the verb. Unlike English, no helper verb is needed.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is \"Yo soy\" sometimes said with the pronoun?",
+     "rubric": [
+      [
+       "emphasis",
+       "emphasise",
+       "contrast",
+       "clarify",
+       "stress"
+      ],
+      [
+       "yo",
+       "subject",
+       "pronoun",
+       "who",
+       "person"
+      ]
+     ],
+     "min": 1,
+     "model": "The pronoun is added for emphasis or contrast, such as \"Yo soy Ana, no ella.\"",
+     "why": "Subject pronouns mark emphasis.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Building a simple Spanish sentence",
+    "model": "Put the doer, then the verb, then the object. You can leave out yo or tú because the verb ending shows who. Put no before the verb for a negative. Adjectives usually go after the noun.",
+    "points": [
+     {
+      "k": [
+       "subject",
+       "verb",
+       "object",
+       "order"
+      ],
+      "ask": "What is the order?"
+     },
+     {
+      "k": [
+       "drop",
+       "leave",
+       "ending"
+      ],
+      "ask": "Can I leave out the subject?"
+     },
+     {
+      "k": [
+       "no",
+       "negative",
+       "before"
+      ],
+      "ask": "How do I say no?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish grammar",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish grammar",
+    "Subject–verb–object"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Common verbs",
+   "icon": "🔧",
+   "hook": "\"Soy\", \"eres\", \"es\": why does the verb \"ser\" look so different from \"hablar\"?",
+   "explain": [
+    "Regular verbs follow patterns. For -ar verbs: hablo, hablas, habla, hablamos, habláis, hablan. For -er: como, comes, come, comemos, coméis, comen. For -ir: vivo, vives, vive, vivimos, vivís, viven.",
+    "Very common verbs are irregular: ser (soy, eres, es, somos, sois, son), ir (voy, vas, va, vamos, vais, van), tener (tengo, tienes, tiene, tenemos, tenéis, tienen). Stem-changing verbs like querer (quiero, quieres, quiere, queremos, queréis, quieren) change e to ie in the stem except for nosotros and vosotros."
+   ],
+   "mnemonic": "Boot verbs: the change stays in the boot, not at nosotros and vosotros.",
+   "items": [
+    [
+     "I speak",
+     "hablo",
+     ""
+    ],
+    [
+     "you eat",
+     "comes",
+     ""
+    ],
+    [
+     "she lives",
+     "vive",
+     ""
+    ],
+    [
+     "we are",
+     "somos",
+     ""
+    ],
+    [
+     "I go",
+     "voy",
+     ""
+    ],
+    [
+     "I have",
+     "tengo",
+     ""
+    ],
+    [
+     "I want",
+     "quiero",
+     ""
+    ],
+    [
+     "they have",
+     "tienen",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "We speak Spanish at home.",
+     [
+      "Hablamos",
+      "español",
+      "en",
+      "casa."
+     ]
+    ],
+    [
+     "She has a brother.",
+     [
+      "Ella",
+      "tiene",
+      "un",
+      "hermano."
+     ]
+    ],
+    [
+     "I want to eat.",
+     [
+      "Yo",
+      "quiero",
+      "comer."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is \"tú\" + \"hablar\" in the present?",
+     "o": [
+      "hablas",
+      "habla",
+      "hablo",
+      "hablan"
+     ],
+     "a": 0,
+     "why": "For tú, -ar verbs end in -as.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which form means \"we go\"?",
+     "o": [
+      "vamos",
+      "vais",
+      "van",
+      "voy"
+     ],
+     "a": 0,
+     "why": "Ir: voy, vas, va, vamos, vais, van.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is a stem-changing verb?",
+     "o": [
+      "querer",
+      "hablar",
+      "vivir",
+      "comer"
+     ],
+     "a": 0,
+     "why": "Querer changes e to ie: quiero.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it \"nosotros queremos\" and not \"queriemos\"?",
+     "o": [
+      "The stem change does not occur in nosotros and vosotros forms",
+      "Querer is regular",
+      "It is a spelling error",
+      "There is no nosotros"
+     ],
+     "a": 0,
+     "why": "The stress falls on the ending in those forms, so no diphthong forms.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can you work out the verb form for \"ellos\" of \"comer\"?",
+     "rubric": [
+      [
+       "stem",
+       "root",
+       "remove",
+       "drop",
+       "infinitive",
+       "er"
+      ],
+      [
+       "en",
+       "ending",
+       "add",
+       "comen"
+      ]
+     ],
+     "min": 1,
+     "model": "Take off -er and add -en: comen.",
+     "why": "Regular conjugation.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Present-tense verbs in Spanish",
+    "model": "Take off the ending -ar, -er or -ir and add the ending for the person. Some verbs, like ser and ir, are irregular, so you must remember them. Boot verbs change the stem except for nosotros and vosotros.",
+    "points": [
+     {
+      "k": [
+       "ending",
+       "stem",
+       "remove",
+       "add"
+      ],
+      "ask": "How do I make a regular verb?"
+     },
+     {
+      "k": [
+       "irregular",
+       "ser",
+       "ir",
+       "tener"
+      ],
+      "ask": "Which verbs are irregular?"
+     },
+     {
+      "k": [
+       "stem",
+       "boot",
+       "ie",
+       "change"
+      ],
+      "ask": "What is a stem change?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish verbs",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish verbs",
+    "Spanish irregular verbs"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Nouns, pronouns and modifiers",
+   "icon": "🧑‍🤝‍🧑",
+   "hook": "Why is it \"el problema\" and \"la mano\" even though they break the -o/-a pattern?",
+   "explain": [
+    "Nouns have gender, and articles and adjectives must agree. Most nouns in -o are masculine and in -a are feminine, but there are exceptions: el día, el mapa, el problema, la mano. Nouns ending in -ción, -dad are feminine: la canción, la ciudad.",
+    "Pronouns: yo, tú, él/ella/usted, nosotros/nosotras, vosotros/vosotras, ellos/ellas/ustedes. Possessives: mi, tu, su, nuestro. Adjectives agree in gender and number: \"los niños altos\", \"las niñas altas\". Plurals add -s after a vowel and -es after a consonant: ciudad, ciudades."
+   ],
+   "mnemonic": "-ción and -dad are always feminine: la canción, la ciudad.",
+   "items": [
+    [
+     "the day",
+     "el día",
+     ""
+    ],
+    [
+     "the hand",
+     "la mano",
+     ""
+    ],
+    [
+     "the problem",
+     "el problema",
+     ""
+    ],
+    [
+     "the city",
+     "la ciudad",
+     ""
+    ],
+    [
+     "tall girls",
+     "niñas altas",
+     ""
+    ],
+    [
+     "my friends",
+     "mis amigos",
+     ""
+    ],
+    [
+     "our house",
+     "nuestra casa",
+     ""
+    ],
+    [
+     "the cities",
+     "las ciudades",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "The tall girls sing.",
+     [
+      "Las",
+      "niñas",
+      "altas",
+      "cantan."
+     ]
+    ],
+    [
+     "My friends live here.",
+     [
+      "Mis",
+      "amigos",
+      "viven",
+      "aquí."
+     ]
+    ],
+    [
+     "Our house is big.",
+     [
+      "Nuestra",
+      "casa",
+      "es",
+      "grande."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is the plural of \"ciudad\"?",
+     "o": [
+      "ciudades",
+      "ciudads",
+      "ciudadas",
+      "ciudadeses"
+     ],
+     "a": 0,
+     "why": "Nouns ending in a consonant add -es.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which article goes with \"problema\"?",
+     "o": [
+      "el",
+      "la",
+      "las",
+      "una"
+     ],
+     "a": 0,
+     "why": "Problema is masculine despite ending in -a.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Choose the correct phrase.",
+     "o": [
+      "las casas blancas",
+      "los casas blancos",
+      "las casas blanco",
+      "la casas blancas"
+     ],
+     "a": 0,
+     "why": "Article and adjective agree with the noun in gender and number.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which pronoun is formal \"you\" for one person?",
+     "o": [
+      "usted",
+      "tú",
+      "vosotros",
+      "él"
+     ],
+     "a": 0,
+     "why": "Usted is the formal singular you.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do adjectives change form in Spanish?",
+     "rubric": [
+      [
+       "agree",
+       "match",
+       "gender",
+       "number"
+      ],
+      [
+       "noun",
+       "masculine",
+       "feminine",
+       "plural",
+       "singular"
+      ]
+     ],
+     "min": 1,
+     "model": "They agree with the noun they describe in gender and number.",
+     "why": "Concord.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Nouns, pronouns and adjectives",
+    "model": "Spanish nouns are masculine or feminine. Articles and adjectives must match them. Add s or es for plural. Nouns ending in -ción and -dad are feminine.",
+    "points": [
+     {
+      "k": [
+       "gender",
+       "masculine",
+       "feminine"
+      ],
+      "ask": "What gender can nouns have?"
+     },
+     {
+      "k": [
+       "agree",
+       "match"
+      ],
+      "ask": "What must match?"
+     },
+     {
+      "k": [
+       "s",
+       "es",
+       "plural"
+      ],
+      "ask": "How do I make a plural?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish nouns",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish nouns",
+    "Spanish pronouns"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Questions and responses",
+   "icon": "❓",
+   "hook": "In English you say \"Do you speak Spanish?\" What helper word is missing in Spanish?",
+   "explain": [
+    "Spanish needs no helper verb: \"¿Hablas español?\" To ask yes/no questions, raise your voice or put the verb first. Question words have accents: ¿qué?, ¿quién?, ¿dónde?, ¿cuándo?, ¿cómo?, ¿por qué? Questions start with ¿ and end with ?",
+    "To answer, use \"sí\" or \"no\": \"Sí, hablo español.\" For \"why\" use \"porque\" (because): \"¿Por qué estudias? Porque me gusta.\" Remember: por qué (two words, why) and porque (one word, because)."
+   ],
+   "mnemonic": "¿Por qué? Porque. Two words ask, one word answers.",
+   "items": [
+    [
+     "What?",
+     "¿Qué?",
+     ""
+    ],
+    [
+     "Who?",
+     "¿Quién?",
+     ""
+    ],
+    [
+     "Where?",
+     "¿Dónde?",
+     ""
+    ],
+    [
+     "When?",
+     "¿Cuándo?",
+     ""
+    ],
+    [
+     "How?",
+     "¿Cómo?",
+     ""
+    ],
+    [
+     "Why?",
+     "¿Por qué?",
+     ""
+    ],
+    [
+     "because",
+     "porque",
+     ""
+    ],
+    [
+     "How much?",
+     "¿Cuánto?",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "Do you speak Spanish?",
+     [
+      "¿Tú",
+      "hablas",
+      "español?"
+     ]
+    ],
+    [
+     "Where do you live now?",
+     [
+      "¿Dónde",
+      "vives",
+      "ahora?"
+     ]
+    ],
+    [
+     "I study because I like it.",
+     [
+      "Estudio",
+      "porque",
+      "me",
+      "gusta."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is the correct way to ask \"Why are you tired?\"",
+     "o": [
+      "¿Por qué estás cansado?",
+      "¿Porque estás cansado?",
+      "¿Por que estás cansado?",
+      "¿Porqué estás cansado?"
+     ],
+     "a": 0,
+     "why": "In a direct question, why is por qué.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How do you answer a \"why\" question?",
+     "o": [
+      "Porque...",
+      "Por qué...",
+      "Porqué...",
+      "Por que..."
+     ],
+     "a": 0,
+     "why": "The answer uses the single word porque.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is different in the punctuation of Spanish questions?",
+     "o": [
+      "They start with ¿ and end with ?",
+      "They only end with ?",
+      "They start with ?",
+      "They use no mark"
+     ],
+     "a": 0,
+     "why": "The opening mark shows the start of the question.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"¿Cómo te llamas?\" literally asks...",
+     "o": [
+      "How do you call yourself?",
+      "What time is it?",
+      "Where are you?",
+      "Who is she?"
+     ],
+     "a": 0,
+     "why": "It uses a reflexive verb: llamarse.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How do you make a yes/no question in Spanish without a helper verb?",
+     "rubric": [
+      [
+       "intonation",
+       "voice",
+       "raise",
+       "rising",
+       "tone"
+      ],
+      [
+       "order",
+       "verb first",
+       "invert",
+       "same words",
+       "statement"
+      ]
+     ],
+     "min": 1,
+     "model": "You can use the same words as a statement and raise your voice, or put the verb before the subject.",
+     "why": "Questions use intonation or inversion.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Asking and answering in Spanish",
+    "model": "Start a question with ¿ and a question word like qué or dónde. You do not need do. Yes or no questions can just rise at the end. Answer with sí or no.",
+    "points": [
+     {
+      "k": [
+       "¿",
+       "qué",
+       "dónde",
+       "question word"
+      ],
+      "ask": "How do I begin?"
+     },
+     {
+      "k": [
+       "no helper",
+       "without",
+       "do",
+       "rise",
+       "intonation"
+      ],
+      "ask": "Do I need a helper word?"
+     },
+     {
+      "k": [
+       "sí",
+       "no",
+       "porque",
+       "answer"
+      ],
+      "ask": "How do I answer?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish interrogatives",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish language",
+    "Interrogative word"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Describing people and places",
+   "icon": "🏞️",
+   "hook": "Spanish has two verbs for \"to be\". When do you use \"ser\" and when \"estar\"?",
+   "explain": [
+    "Ser is for identity and lasting traits: \"Soy alta.\" \"Es de Colombia.\" \"La casa es grande.\" Estar is for location and states that can change: \"Estoy cansada.\" \"La casa está en la calle Sol.\" Compare: \"Es aburrido\" (he is boring) and \"Está aburrido\" (he is bored).",
+    "To describe a place, use hay (there is/there are): \"Hay un parque cerca.\" Adjectives agree: \"una ciudad bonita\", \"unos edificios altos\". Comparisons use más ... que: \"Mi hermano es más alto que yo.\""
+   ],
+   "mnemonic": "DOCTOR for ser, PLACE for estar.",
+   "items": [
+    [
+     "she is tall",
+     "Ella es alta",
+     ""
+    ],
+    [
+     "He is from Mexico",
+     "Es de México",
+     ""
+    ],
+    [
+     "I am tired",
+     "Estoy cansado",
+     ""
+    ],
+    [
+     "The park is near",
+     "El parque está cerca",
+     ""
+    ],
+    [
+     "There is a river",
+     "Hay un río",
+     ""
+    ],
+    [
+     "a pretty city",
+     "una ciudad bonita",
+     ""
+    ],
+    [
+     "taller than",
+     "más alto que",
+     ""
+    ],
+    [
+     "very big",
+     "muy grande",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "She is tall and friendly.",
+     [
+      "Ella",
+      "es",
+      "alta",
+      "y",
+      "simpática."
+     ]
+    ],
+    [
+     "The park is near the school.",
+     [
+      "El",
+      "parque",
+      "está",
+      "cerca",
+      "de",
+      "la",
+      "escuela."
+     ]
+    ],
+    [
+     "There is a river in the city.",
+     [
+      "Hay",
+      "un",
+      "río",
+      "en",
+      "la",
+      "ciudad."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which verb is used for location?",
+     "o": [
+      "estar",
+      "ser",
+      "hay only",
+      "tener"
+     ],
+     "a": 0,
+     "why": "Estar says where something is.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Complete: \"Mi madre ___ doctora.\"",
+     "o": [
+      "es",
+      "está",
+      "hay",
+      "tiene"
+     ],
+     "a": 0,
+     "why": "Profession is a lasting identity, so use ser.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is the difference between \"Es aburrido\" and \"Está aburrido\"?",
+     "o": [
+      "Es: he is a boring person; está: he feels bored",
+      "They mean the same",
+      "Es is plural",
+      "Está is a question"
+     ],
+     "a": 0,
+     "why": "Ser gives a trait; estar gives a state.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is correct for \"The party is at my house\"?",
+     "o": [
+      "La fiesta es en mi casa.",
+      "La fiesta está en mi casa.",
+      "La fiesta hay en mi casa.",
+      "La fiesta tiene en mi casa."
+     ],
+     "a": 0,
+     "why": "Events use ser for location: la fiesta es en mi casa; things use estar.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is \"La sopa está fría\" better than \"La sopa es fría\" when the soup has cooled?",
+     "rubric": [
+      [
+       "temporary",
+       "state",
+       "condition",
+       "changed",
+       "now",
+       "changes"
+      ],
+      [
+       "estar",
+       "not permanent",
+       "not lasting",
+       "current"
+      ]
+     ],
+     "min": 1,
+     "model": "Estar describes a temporary state or condition, such as soup that has cooled down.",
+     "why": "Estar for states.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Ser, estar and describing",
+    "model": "Use ser for who or what something is and for lasting traits. Use estar for where something is and for feelings that change. Use hay to say there is or there are.",
+    "points": [
+     {
+      "k": [
+       "ser",
+       "identity",
+       "trait",
+       "lasting"
+      ],
+      "ask": "When do I use ser?"
+     },
+     {
+      "k": [
+       "estar",
+       "location",
+       "state",
+       "feel"
+      ],
+      "ask": "When do I use estar?"
+     },
+     {
+      "k": [
+       "hay",
+       "there is",
+       "there are"
+      ],
+      "ask": "How do I say there is?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish verbs ser and estar",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Ser and estar",
+    "Spanish grammar"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Time, dates and daily routines",
+   "icon": "⏰",
+   "hook": "In Spain lunch is at 2 pm and dinner at 9 pm. How do you tell the time in Spanish?",
+   "explain": [
+    "Time uses ser: \"Es la una.\" \"Son las dos.\" \"Son las tres y media.\" \"Son las cuatro menos cuarto.\" The question is \"¿Qué hora es?\" Days are lowercase: lunes, martes, miércoles, jueves, viernes, sábado, domingo. Months are also lowercase: enero, febrero, marzo.",
+    "The date is \"el 5 de mayo\". Daily routines use reflexive verbs: me levanto (I get up), me ducho (I shower), me acuesto (I go to bed). Habits use adverbs: siempre, a menudo, nunca. Meal times differ among countries: in Spain lunch is later than in many Latin American countries."
+   ],
+   "mnemonic": "Es la una, son las dos: one is singular, the rest plural.",
+   "items": [
+    [
+     "It is one o'clock",
+     "Es la una",
+     ""
+    ],
+    [
+     "It is two o'clock",
+     "Son las dos",
+     ""
+    ],
+    [
+     "Monday",
+     "lunes",
+     ""
+    ],
+    [
+     "Sunday",
+     "domingo",
+     ""
+    ],
+    [
+     "May",
+     "mayo",
+     ""
+    ],
+    [
+     "I get up",
+     "me levanto",
+     ""
+    ],
+    [
+     "I go to bed",
+     "me acuesto",
+     ""
+    ],
+    [
+     "always",
+     "siempre",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "It is half past three.",
+     [
+      "Son",
+      "las",
+      "tres",
+      "y",
+      "media."
+     ]
+    ],
+    [
+     "I get up at seven.",
+     [
+      "Me",
+      "levanto",
+      "a",
+      "las",
+      "siete."
+     ]
+    ],
+    [
+     "Today is Friday.",
+     [
+      "Hoy",
+      "es",
+      "viernes."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you say \"It is 5 o'clock\"?",
+     "o": [
+      "Son las cinco.",
+      "Es las cinco.",
+      "Es la cinco.",
+      "Son la cinco."
+     ],
+     "a": 0,
+     "why": "Use son las for hours after one.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Are days of the week capitalised in Spanish?",
+     "o": [
+      "No, they are lowercase",
+      "Yes, always",
+      "Only Monday",
+      "Only Sunday"
+     ],
+     "a": 0,
+     "why": "Days and months are written in lowercase.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does \"Son las nueve menos cuarto\" mean?",
+     "o": [
+      "8:45",
+      "9:15",
+      "9:45",
+      "8:15"
+     ],
+     "a": 0,
+     "why": "Menos cuarto means a quarter to the hour.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do many Latin American countries eat lunch earlier than in Spain?",
+     "o": [
+      "Meal times vary by region and culture",
+      "Latin America has no lunch",
+      "Spanish law says so",
+      "The language requires it"
+     ],
+     "a": 0,
+     "why": "Customs differ by country, not by language.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What do reflexive verbs like \"me levanto\" show?",
+     "rubric": [
+      [
+       "myself",
+       "oneself",
+       "reflexive",
+       "self",
+       "own"
+      ],
+      [
+       "action",
+       "subject",
+       "same person",
+       "does to"
+      ]
+     ],
+     "min": 1,
+     "model": "The subject does the action to itself, like getting oneself up.",
+     "why": "Reflexive verbs in routines.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Time, dates and routines",
+    "model": "Use es la una for one o'clock and son las plus the number for others. Days and months are lowercase. Say el 5 de mayo for dates. Daily routines use reflexive verbs like me levanto.",
+    "points": [
+     {
+      "k": [
+       "es la",
+       "son las",
+       "hour",
+       "time"
+      ],
+      "ask": "How do I tell the time?"
+     },
+     {
+      "k": [
+       "lowercase",
+       "small",
+       "day",
+       "month"
+      ],
+      "ask": "How do I write days?"
+     },
+     {
+      "k": [
+       "reflexive",
+       "me levanto",
+       "routine"
+      ],
+      "ask": "How do I tell my routine?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish language",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish language",
+    "Reflexive verb"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Food and shopping",
+   "icon": "🛒",
+   "hook": "At a Spanish-language market, how do you ask the price and say what you would like?",
+   "explain": [
+    "To ask a price say \"¿Cuánto cuesta?\" or \"¿Cuánto es?\" To order say \"Quiero...\" or more politely \"Quisiera...\" or \"Me gustaría...\" Add \"por favor\". Say \"La cuenta, por favor\" in a restaurant.",
+    "Foods have gender: el pan, la leche, el queso, la manzana, el arroz. Food words vary by country: in Spain \"patata\", in Latin America \"papa\"; \"aguacate\" in Mexico, \"palta\" in Chile and Peru. Quantities: un kilo de, una botella de, un poco de."
+   ],
+   "mnemonic": "Quisiera = I would like: the polite choice.",
+   "items": [
+    [
+     "bread",
+     "el pan",
+     ""
+    ],
+    [
+     "milk",
+     "la leche",
+     ""
+    ],
+    [
+     "cheese",
+     "el queso",
+     ""
+    ],
+    [
+     "apple",
+     "la manzana",
+     ""
+    ],
+    [
+     "rice",
+     "el arroz",
+     ""
+    ],
+    [
+     "How much does it cost?",
+     "¿Cuánto cuesta?",
+     ""
+    ],
+    [
+     "I would like...",
+     "Quisiera",
+     ""
+    ],
+    [
+     "the bill",
+     "la cuenta",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "How much is the bread?",
+     [
+      "¿Cuánto",
+      "cuesta",
+      "el",
+      "pan?"
+     ]
+    ],
+    [
+     "I would like a kilo of rice.",
+     [
+      "Quisiera",
+      "un",
+      "kilo",
+      "de",
+      "arroz."
+     ]
+    ],
+    [
+     "The bill, please.",
+     [
+      "La",
+      "cuenta,",
+      "por",
+      "favor."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is the politest way to order?",
+     "o": [
+      "Quisiera un café, por favor.",
+      "Dame café.",
+      "Café ya.",
+      "Quiero café ahora."
+     ],
+     "a": 0,
+     "why": "Quisiera is a polite conditional-style form.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is \"papa\" in Spain?",
+     "o": [
+      "patata",
+      "tomate",
+      "maíz",
+      "plátano"
+     ],
+     "a": 0,
+     "why": "In Spain it is patata; in Latin America, papa.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is feminine?",
+     "o": [
+      "la leche",
+      "el pan",
+      "el queso",
+      "el arroz"
+     ],
+     "a": 0,
+     "why": "Leche is feminine.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"Un poco de azúcar\" means...",
+     "o": [
+      "a little sugar",
+      "much sugar",
+      "no sugar",
+      "sugar again"
+     ],
+     "a": 0,
+     "why": "Un poco de means a little of.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might the same fruit have different names in Spain and Latin America or between Latin American countries?",
+     "rubric": [
+      [
+       "region",
+       "country",
+       "dialect",
+       "variety",
+       "variation",
+       "different places"
+      ],
+      [
+       "history",
+       "indigenous",
+       "vocabulary",
+       "words",
+       "influence",
+       "local",
+       "languages"
+      ]
+     ],
+     "min": 1,
+     "model": "Spanish has regional vocabulary shaped by local history and by indigenous languages, so words differ across places.",
+     "why": "Lexical variation.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Buying food in Spanish",
+    "model": "Ask the price with ¿Cuánto cuesta? To order politely use quisiera and please. Food names have gender, so learn the article too. Some food words change from country to country.",
+    "points": [
+     {
+      "k": [
+       "cuánto",
+       "price",
+       "cost"
+      ],
+      "ask": "How do I ask the price?"
+     },
+     {
+      "k": [
+       "quisiera",
+       "quiero",
+       "polite",
+       "por favor"
+      ],
+      "ask": "How do I order?"
+     },
+     {
+      "k": [
+       "country",
+       "region",
+       "different",
+       "vary"
+      ],
+      "ask": "Are food words the same everywhere?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish language",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish language",
+    "Latin American Spanish"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Everyday conversations",
+   "icon": "💬",
+   "hook": "How do you speak politely to your teacher and casually to your friend in Spanish?",
+   "explain": [
+    "Spanish has informal tú and formal usted. With a friend: \"¿Cómo estás?\" With a teacher or an older stranger: \"¿Cómo está usted?\" In many parts of Latin America ustedes is used for all plural \"you\", while Spain also has informal vosotros.",
+    "Useful phrases: \"Perdón\", \"Con permiso\" (excuse me when passing), \"Lo siento\" (I am sorry), \"¿Me puede ayudar?\", \"Hasta luego\". In Argentina and some other regions vos is used instead of tú: \"vos tenés\"."
+   ],
+   "mnemonic": "Tú for friends, usted for respect.",
+   "items": [
+    [
+     "How are you? (informal)",
+     "¿Cómo estás?",
+     ""
+    ],
+    [
+     "How are you? (formal)",
+     "¿Cómo está usted?",
+     ""
+    ],
+    [
+     "Excuse me (passing)",
+     "Con permiso",
+     ""
+    ],
+    [
+     "I am sorry",
+     "Lo siento",
+     ""
+    ],
+    [
+     "Can you help me?",
+     "¿Me puede ayudar?",
+     ""
+    ],
+    [
+     "See you later",
+     "Hasta luego",
+     ""
+    ],
+    [
+     "See you tomorrow",
+     "Hasta mañana",
+     ""
+    ],
+    [
+     "It does not matter",
+     "No importa",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "How are you, sir?",
+     [
+      "¿Cómo",
+      "está",
+      "usted,",
+      "señor?"
+     ]
+    ],
+    [
+     "Excuse me, can you help me?",
+     [
+      "Con",
+      "permiso,",
+      "¿me",
+      "puede",
+      "ayudar?"
+     ]
+    ],
+    [
+     "See you tomorrow, friend.",
+     [
+      "Hasta",
+      "mañana,",
+      "amigo."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which form do you use with a teacher?",
+     "o": [
+      "usted",
+      "tú",
+      "vos only",
+      "vosotros"
+     ],
+     "a": 0,
+     "why": "Usted shows respect.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase do you say when you pass between people?",
+     "o": [
+      "Con permiso",
+      "Lo siento",
+      "Hasta luego",
+      "No importa"
+     ],
+     "a": 0,
+     "why": "Con permiso is used to pass politely.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which pronoun is used for informal plural \"you\" in Spain?",
+     "o": [
+      "vosotros",
+      "ustedes",
+      "vos",
+      "tú"
+     ],
+     "a": 0,
+     "why": "Vosotros is used in Spain; in Latin America ustedes is used.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Where is \"vos\" widely used instead of tú?",
+     "o": [
+      "Argentina and parts of Central America",
+      "Only in Spain",
+      "Only in the US",
+      "Nowhere"
+     ],
+     "a": 0,
+     "why": "Voseo is common in Argentina, Uruguay and Central America.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does Spanish distinguish tú and usted?",
+     "rubric": [
+      [
+       "respect",
+       "polite",
+       "formal",
+       "distance",
+       "status"
+      ],
+      [
+       "friend",
+       "familiar",
+       "informal",
+       "age",
+       "relationship",
+       "social"
+      ]
+     ],
+     "min": 1,
+     "model": "It marks the relationship: familiar and informal with friends, respectful and formal with strangers or elders.",
+     "why": "T/V distinction.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Talking politely in Spanish",
+    "model": "Use tú with friends and usted with teachers, elders and strangers. Say con permiso to pass, lo siento to apologise and hasta luego to say goodbye. Some regions use vos or ustedes.",
+    "points": [
+     {
+      "k": [
+       "tú",
+       "usted"
+      ],
+      "ask": "Which words mean you?"
+     },
+     {
+      "k": [
+       "formal",
+       "respect",
+       "friend",
+       "informal"
+      ],
+      "ask": "When do I use each?"
+     },
+     {
+      "k": [
+       "region",
+       "vos",
+       "ustedes",
+       "vosotros"
+      ],
+      "ask": "Is it the same everywhere?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "T–V distinction",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "T–V distinction",
+    "Voseo",
+    "Spanish language"
+   ]
+  }
+ ]
+}

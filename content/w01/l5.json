@@ -1,0 +1,2927 @@
+{
+ "world": 1,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Classical mechanics and Lagrangian methods",
+   "icon": "🧮",
+   "hook": "Newton's laws need every force on every part of a system. Is there a way to get the equation of motion from energy alone, without ever drawing a force?",
+   "explain": [
+    "The Lagrangian approach describes a system with generalised coordinates q (angles, lengths, any convenient variables). The Lagrangian is L = T − V, kinetic energy minus potential energy. The equation of motion follows from the Euler–Lagrange equation: d/dt(∂L/∂q̇) = ∂L/∂q. For a single particle with L = ½mẋ² − V(x) it gives mẍ = −dV/dx, which is Newton's second law.",
+    "The advantage is that constraints (a bead on a wire, a pendulum bob on a rod) need not be treated as forces; the choice of q already respects them. For a simple pendulum, L = ½ m l² θ̇² + m g l cos θ gives θ̈ = −(g ÷ l) sin θ, and for small angles θ̈ ≈ −(g ÷ l)θ, simple harmonic motion with ω = √(g ÷ l). For a spring, L = ½mẋ² − ½kx² gives ω = √(k ÷ m).",
+    "The generalised momentum is p = ∂L/∂q̇. If L does not depend on a coordinate q (a cyclic coordinate), its momentum is conserved. This is a special case of Noether's theorem: every continuous symmetry corresponds to a conserved quantity. Time-translation symmetry gives energy conservation, space translation gives momentum, and rotation gives angular momentum. The Hamiltonian H = Σpq̇ − L equals T + V for many systems and leads to Hamilton's equations, the basis of phase-space methods."
+   ],
+   "example": {
+    "q": "A mass m on a spring of stiffness k has L = ½mẋ² − ½kx². Derive the equation of motion and the angular frequency.",
+    "steps": [
+     "∂L/∂ẋ = mẋ, so d/dt(∂L/∂ẋ) = mẍ.",
+     "∂L/∂x = −kx.",
+     "Euler–Lagrange: mẍ = −kx, so ẍ = −(k ÷ m)x, which is SHM with ω = √(k ÷ m)."
+    ],
+    "a": "mẍ = −kx and ω = √(k ÷ m)"
+   },
+   "analogies": {
+    "sport": "A diver describes a flip by one angle, not by dozens of forces on every body part.",
+    "tech": "Robotics engineers use generalised coordinates such as joint angles to write the equations for robot arms.",
+    "sea": "A ship's rolling can be captured by one angle instead of every force on the hull.",
+    "nature": "A pendulum in a grandfather clock is naturally described by its swing angle."
+   },
+   "mnemonic": "L = T − V: write the energies, turn the Euler–Lagrange crank, out comes the motion.",
+   "terms": [
+    [
+     "Generalised coordinate",
+     "Any independent variable that fixes the configuration of a system."
+    ],
+    [
+     "Lagrangian",
+     "L = T − V, kinetic energy minus potential energy."
+    ],
+    [
+     "Cyclic coordinate",
+     "A coordinate absent from L, whose conjugate momentum is conserved."
+    ],
+    [
+     "Noether's theorem",
+     "Each continuous symmetry of the action corresponds to a conservation law."
+    ]
+   ],
+   "misc": {
+    "wrong": "Lagrangian mechanics is a different physics from Newton's.",
+    "right": "It is the same physics in a more general formulation. It gives the same equations of motion for ordinary systems and extends naturally to fields and relativity."
+   },
+   "limits": "The basic Euler–Lagrange form assumes forces derivable from a potential (or generalised potential). Dissipative forces such as friction need extra terms.",
+   "trip": {
+    "wiki": "Lagrangian mechanics",
+    "prompt": "Find the worked example of a simple pendulum and compare its equation with the Newtonian one."
+   },
+   "sources": [
+    "Lagrangian mechanics",
+    "Noether's theorem",
+    "Hamiltonian mechanics"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the Lagrangian of a mechanical system with kinetic energy T and potential energy V?",
+     "o": [
+      "L = T − V",
+      "L = T + V",
+      "L = T × V",
+      "L = V − T²"
+     ],
+     "a": 0,
+     "why": "By definition the Lagrangian is kinetic minus potential energy.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A system's Lagrangian does not depend on the coordinate φ. What is conserved?",
+     "o": [
+      "The momentum conjugate to φ, ∂L/∂φ̇",
+      "The potential energy of the system, ∂L/∂φ",
+      "The coordinate φ itself stays fixed",
+      "Nothing in particular is conserved"
+     ],
+     "a": 0,
+     "why": "If ∂L/∂φ = 0, the Euler–Lagrange equation gives d/dt(∂L/∂φ̇) = 0.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A 2 kg mass is attached to a spring of stiffness 200 N/m. Find the angular frequency ω = √(k ÷ m) in rad/s.",
+     "a": 10,
+     "tol": 0.05,
+     "unit": "rad/s",
+     "why": "ω = √(200 ÷ 2) = √100 = 10 rad/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two masses of 3 kg and 1 kg hang over a frictionless light pulley (Atwood machine). Find the acceleration a = (m₁ − m₂)g ÷ (m₁ + m₂) in m/s² using g = 9.8 m/s².",
+     "a": 4.9,
+     "tol": 0.05,
+     "unit": "m/s²",
+     "why": "a = (3 − 1) × 9.8 ÷ 4 = 4.9 m/s².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A solid sphere rolls without slipping down a 30° slope. Use a = (5/7) g sin θ with g = 9.8 m/s². What is its acceleration?",
+     "o": [
+      "3.5 m/s²",
+      "4.9 m/s²",
+      "7.0 m/s²",
+      "2.45 m/s²"
+     ],
+     "a": 0,
+     "why": "a = (5/7) × 9.8 × 0.5 = 3.5 m/s². This is less than the 4.9 m/s² of a frictionless slide because some energy goes into rotation.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "According to Noether's theorem, time-translation symmetry (the laws do not change with time) implies conservation of...",
+     "o": [
+      "Energy",
+      "Linear momentum",
+      "Angular momentum",
+      "Charge"
+     ],
+     "a": 0,
+     "why": "Time-translation symmetry corresponds to energy conservation; space translation to momentum; rotation to angular momentum.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a Lagrangian method convenient for a bead sliding on a rotating wire hoop?",
+     "o": [
+      "Constraints are built into the choice of coordinate, so no constraint force needs solving",
+      "It ignores gravity so the equations get simpler",
+      "It avoids using energy at all in the working",
+      "It only works for motion in a perfect circle"
+     ],
+     "a": 0,
+     "why": "Choosing an angle along the hoop as q automatically respects the constraint and removes unknown constraint forces from the equations.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each symmetry to its conserved quantity (Noether).",
+     "pairs": [
+      [
+       "Time translation",
+       "Energy"
+      ],
+      [
+       "Spatial translation",
+       "Linear momentum"
+      ],
+      [
+       "Rotation",
+       "Angular momentum"
+      ]
+     ],
+     "why": "These are the standard Noether pairings.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Starting from L = ½ m l² θ̇² + m g l cos θ, outline how you obtain the pendulum equation and what approximation gives simple harmonic motion.",
+     "rubric": [
+      [
+       "euler",
+       "lagrange",
+       "∂l",
+       "derivative",
+       "d/dt"
+      ],
+      [
+       "−(g",
+       "-(g",
+       "g/l",
+       "g ÷ l",
+       "sin"
+      ],
+      [
+       "small angle",
+       "small angles",
+       "sin θ ≈ θ",
+       "sin θ = θ",
+       "sinθ ≈ θ",
+       "approximat"
+      ]
+     ],
+     "min": 2,
+     "model": "Apply the Euler–Lagrange equation: d/dt(m l² θ̇) = −m g l sin θ, so θ̈ = −(g ÷ l) sin θ. For small angles sin θ ≈ θ, giving θ̈ = −(g ÷ l)θ, simple harmonic motion with ω = √(g ÷ l).",
+     "why": "Euler–Lagrange gives the nonlinear equation; the small-angle approximation linearises it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "For L = ½mẋ² − V(x), what does the Euler–Lagrange equation reproduce?",
+     "o": [
+      "mẍ = −dV/dx (Newton's second law)",
+      "ẋ = constant, since the force is always zero",
+      "V = T at every instant of the motion",
+      "p = 0 for any system with a potential"
+     ],
+     "a": 0,
+     "why": "d/dt(mẋ) = −dV/dx is Newton's second law with force −dV/dx.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says: 'Because L = T − V and the Hamiltonian is T + V, they cannot describe the same physics.' What is the best reply?",
+     "o": [
+      "They are related by a Legendre transform and give equivalent equations of motion",
+      "She is right, since T − V and T + V are different quantities",
+      "H is always zero for any mechanical system",
+      "L describes only light, so it cannot describe motion"
+     ],
+     "a": 0,
+     "why": "H = Σpq̇ − L is a Legendre transform of L and gives the same dynamics in a different form (phase space).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a rolling sphere reach the bottom of a slope later than a block sliding without friction?",
+     "rubric": [
+      [
+       "rotat"
+      ],
+      [
+       "kinetic",
+       "energy"
+      ],
+      [
+       "share",
+       "split",
+       "some of",
+       "less",
+       "translational",
+       "forward"
+      ]
+     ],
+     "min": 3,
+     "model": "The sphere's gravitational potential energy is shared between translational and rotational kinetic energy, so less goes into forward motion. It therefore accelerates more slowly than a block that slides without friction.",
+     "why": "Rotation takes a share of the energy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A particle moves in a potential V that depends on x only. Which quantity is conserved if L has no explicit time dependence?",
+     "o": [
+      "Energy",
+      "Momentum",
+      "Position",
+      "Kinetic energy alone"
+     ],
+     "a": 0,
+     "why": "No explicit time dependence means time-translation symmetry, hence conservation of energy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What the Lagrangian method is and why it is useful",
+    "model": "Instead of adding forces, we write the kinetic energy T and potential energy V, form L = T − V, and apply the Euler–Lagrange equation. It gives the same motion as Newton but works for any convenient coordinates and builds in constraints. For a spring it gives mẍ = −kx. A symmetry such as no dependence on time or position gives a conserved quantity.",
+    "points": [
+     {
+      "k": [
+       "kinetic",
+       "potential",
+       "t − v",
+       "t - v",
+       "energies",
+       "energy"
+      ],
+      "ask": "What do you start with instead of forces?"
+     },
+     {
+      "k": [
+       "euler",
+       "lagrange",
+       "equation"
+      ],
+      "ask": "What do you do with L?"
+     },
+     {
+      "k": [
+       "same as newton",
+       "newton",
+       "equivalent",
+       "same motion",
+       "mẍ",
+       "f = ma"
+      ],
+      "ask": "Does it give different physics from Newton's laws?"
+     },
+     {
+      "k": [
+       "constraint",
+       "coordinate",
+       "angle",
+       "symmetry",
+       "conserved",
+       "noether"
+      ],
+      "ask": "What is the advantage?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Electromagnetic theory",
+   "icon": "📡",
+   "hook": "Maxwell added one term to the equations of electricity and magnetism in the 1860s and predicted light before anyone knew light was electromagnetic. What did his term do?",
+   "explain": [
+    "Maxwell's equations (in vacuum, with sources) are: Gauss's law, ∮E·dA = Q ÷ ε₀, electric field lines start and end on charges; Gauss's law for magnetism, ∮B·dA = 0, there are no magnetic monopoles; Faraday's law, ∮E·dl = −dΦ_B/dt, a changing magnetic flux induces an electric field; and the Ampère–Maxwell law, ∮B·dl = μ₀(I + ε₀ dΦ_E/dt), currents and changing electric fields produce magnetic fields.",
+    "Maxwell's displacement-current term ε₀ dΦ_E/dt links the two fields. Together with Faraday's law it allows self-sustaining waves in empty space: a changing E creates B and a changing B creates E. The wave speed is c = 1 ÷ √(μ₀ε₀) ≈ 3.00 × 10⁸ m/s, which matched the measured speed of light. In an electromagnetic wave E and B are perpendicular to each other and to the direction of travel, with E = cB.",
+    "The wave carries energy and momentum. The intensity is I = ½ ε₀ c E₀². Absorbed radiation exerts a pressure P = I ÷ c. The spectrum runs from radio through microwaves, infrared, visible, ultraviolet and X-rays to gamma rays, all the same kind of wave with different frequency f, related by c = fλ. Light also has particle (photon) properties, covered in quantum physics."
+   ],
+   "example": {
+    "q": "A plane wave in vacuum has an electric field amplitude E₀ = 300 V/m. Find the magnetic field amplitude and the intensity. Use ε₀ = 8.85 × 10⁻¹² F/m and c = 3.00 × 10⁸ m/s.",
+    "steps": [
+     "B₀ = E₀ ÷ c = 300 ÷ 3.00 × 10⁸ = 1.0 × 10⁻⁶ T.",
+     "I = ½ ε₀ c E₀² = 0.5 × 8.85 × 10⁻¹² × 3.00 × 10⁸ × 9.0 × 10⁴.",
+     "I ≈ 119.5 W/m²."
+    ],
+    "a": "B₀ = 1.0 μT and I ≈ 120 W/m²"
+   },
+   "analogies": {
+    "tech": "A phone sends radio waves that are changing electric and magnetic fields carrying information.",
+    "sea": "Ripples carry energy across the pond; electromagnetic waves carry energy across space.",
+    "home": "A microwave oven uses radiation at about 2.45 GHz, with a wavelength near 12 cm.",
+    "city": "Radio towers broadcast waves whose wavelength is about the size of antenna structures."
+   },
+   "mnemonic": "Changing E makes B, changing B makes E, and the chase runs at the speed of light.",
+   "terms": [
+    [
+     "Displacement current",
+     "Maxwell's term ε₀ dΦ_E/dt: a changing electric field acting like a current in producing B."
+    ],
+    [
+     "Gauss's law",
+     "The electric flux through a closed surface equals enclosed charge ÷ ε₀."
+    ],
+    [
+     "Intensity",
+     "Power per unit area carried by a wave, in W/m²."
+    ],
+    [
+     "Radiation pressure",
+     "The force per unit area from absorbed or reflected radiation."
+    ]
+   ],
+   "misc": {
+    "wrong": "Electric and magnetic fields in a light wave are independent of each other.",
+    "right": "They are tied together: each changing field generates the other, and they travel in phase with E = cB."
+   },
+   "limits": "Classical Maxwell theory does not explain photons, the photoelectric effect or atomic spectra, which need quantum theory (quantum electrodynamics). Material media modify the equations with ε and μ.",
+   "trip": {
+    "wiki": "Maxwell's equations",
+    "prompt": "Find the four equations in integral form and match each to a physical statement."
+   },
+   "sources": [
+    "Maxwell's equations",
+    "Electromagnetic radiation",
+    "Gauss's law"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "What is the wavelength in metres of a 100 MHz radio wave? Use c = 3.00 × 10⁸ m/s.",
+     "a": 3,
+     "tol": 0.02,
+     "unit": "m",
+     "why": "λ = c ÷ f = 3.00 × 10⁸ ÷ 1.00 × 10⁸ = 3.00 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Sunlight at Earth's distance has an intensity of about 1360 W/m². What is the radiation pressure on a perfectly absorbing surface in μPa? (P = I ÷ c, c = 3.00 × 10⁸ m/s)",
+     "a": 4.5,
+     "tol": 0.1,
+     "unit": "μPa",
+     "why": "P = 1360 ÷ 3.00 × 10⁸ = 4.53 × 10⁻⁶ Pa = 4.5 μPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which of Maxwell's equations says that magnetic monopoles have not been found?",
+     "o": [
+      "∮B·dA = 0",
+      "∮E·dA = Q ÷ ε₀",
+      "∮E·dl = −dΦ_B/dt",
+      "∮B·dl = μ₀I"
+     ],
+     "a": 0,
+     "why": "Gauss's law for magnetism says the net magnetic flux through any closed surface is zero.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What did Maxwell's displacement-current term make possible?",
+     "o": [
+      "Electromagnetic waves travelling in empty space",
+      "Static electric fields around fixed charges",
+      "Electric current flowing through a perfect vacuum",
+      "The discovery of the electron in a tube"
+     ],
+     "a": 0,
+     "why": "With it, a changing E field produces B and a changing B field produces E, so waves can sustain themselves.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In a plane electromagnetic wave in vacuum, how are E, B and the direction of travel oriented?",
+     "o": [
+      "All three are mutually perpendicular",
+      "E and B are parallel to each other and to the direction",
+      "E lies along the direction of travel",
+      "B lies along the direction of travel"
+     ],
+     "a": 0,
+     "why": "Electromagnetic waves are transverse: E and B are perpendicular to each other and to the direction of propagation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If the electric field amplitude of a wave is doubled, by what factor does its intensity change?",
+     "o": [
+      "It quadruples",
+      "It doubles",
+      "It halves",
+      "It does not change"
+     ],
+     "a": 0,
+     "why": "I ∝ E₀², so doubling E₀ multiplies I by four.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A closed surface encloses charges +3 nC and −3 nC. What is the net electric flux through it?",
+     "o": [
+      "Zero",
+      "3 nC ÷ ε₀",
+      "6 nC ÷ ε₀",
+      "Cannot be known"
+     ],
+     "a": 0,
+     "why": "Gauss's law uses the net enclosed charge, which is zero here.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these types of radiation by increasing frequency.",
+     "items": [
+      "Radio waves",
+      "Infrared",
+      "Visible light",
+      "Ultraviolet",
+      "X-rays"
+     ],
+     "why": "Frequency rises as wavelength falls along the spectrum from radio to X-rays.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how Maxwell's equations lead to the prediction that light is an electromagnetic wave.",
+     "rubric": [
+      [
+       "changing electric",
+       "changing e",
+       "changing magnetic",
+       "changing b",
+       "each other",
+       "sustain"
+      ],
+      [
+       "speed",
+       "1/√",
+       "√(μ",
+       "μ₀ε₀",
+       "mu",
+       "epsilon",
+       "constants"
+      ],
+      [
+       "light",
+       "3",
+       "10⁸",
+       "c "
+      ]
+     ],
+     "min": 2,
+     "model": "A changing electric field creates a magnetic field and a changing magnetic field creates an electric field, so a wave can propagate itself. The equations give its speed as 1 ÷ √(μ₀ε₀), which equals the measured speed of light, so light must be such a wave.",
+     "why": "The calculated speed from electrical constants equals c.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A radio antenna emits a 10 MHz signal. The antenna is a half-wavelength dipole. What is its approximate length? Use c = 3.00 × 10⁸ m/s.",
+     "o": [
+      "15 m",
+      "30 m",
+      "3 m",
+      "60 m"
+     ],
+     "a": 0,
+     "why": "λ = 30 m, so half a wavelength is 15 m.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Static charges alone cannot produce electromagnetic waves. What is needed?",
+     "o": [
+      "Accelerating charges",
+      "Charges at rest",
+      "Charges at constant velocity",
+      "Neutral matter"
+     ],
+     "a": 0,
+     "why": "Radiation comes from accelerating charges, which create changing fields that propagate outwards.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a changing magnetic flux induce an electric field even in empty space with no wire?",
+     "rubric": [
+      [
+       "faraday",
+       "law of induction"
+      ],
+      [
+       "field",
+       "circulat",
+       "non-conservative",
+       "curl"
+      ],
+      [
+       "wire",
+       "conductor",
+       "not need",
+       "no need",
+       "independent",
+       "exists without"
+      ]
+     ],
+     "min": 2,
+     "model": "Faraday's law is a statement about the fields themselves: a changing magnetic flux creates a circulating electric field. A conductor merely lets this field drive a current, but the field exists in empty space too, which is why electromagnetic waves can propagate in vacuum.",
+     "why": "The induced E field is a property of space, not of a wire.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A parallel-plate capacitor is charging. There is no real current between the plates, yet a magnetic field exists there. What explains it?",
+     "o": [
+      "The changing electric field acts as Maxwell's displacement current",
+      "Gravity pulling on the charges in the plates",
+      "The plates have turned into permanent magnets",
+      "Air between the plates carries a real current"
+     ],
+     "a": 0,
+     "why": "Without the displacement-current term, Ampère's law would give inconsistent results for this situation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How changing fields make light",
+    "model": "A changing magnetic field makes an electric field, and a changing electric field makes a magnetic field. Together they push each other along through empty space as a wave. Maxwell's equations show this wave travels at 1 ÷ √(μ₀ε₀), which equals the speed of light, so light is an electromagnetic wave.",
+    "points": [
+     {
+      "k": [
+       "changing",
+       "magnetic",
+       "electric"
+      ],
+      "ask": "What makes what in this process?"
+     },
+     {
+      "k": [
+       "wave",
+       "propagate",
+       "travel",
+       "space",
+       "vacuum"
+      ],
+      "ask": "So what happens to the fields together?"
+     },
+     {
+      "k": [
+       "speed",
+       "3",
+       "10⁸",
+       "√",
+       "μ",
+       "constants"
+      ],
+      "ask": "How fast does it travel and how do you know?"
+     },
+     {
+      "k": [
+       "light",
+       "radio",
+       "spectrum",
+       "x-ray"
+      ],
+      "ask": "What does this say about light and radio?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Statistical mechanics and thermodynamics",
+   "icon": "🎲",
+   "hook": "A gas has about 10²³ molecules, yet we describe it with just pressure, volume and temperature. How can so much detail be ignored?",
+   "explain": [
+    "Statistical mechanics derives thermodynamics from the behaviour of many particles. A microstate is a complete specification of every particle; a macrostate is a description by bulk variables such as p, V and T. Many microstates give the same macrostate. Boltzmann's entropy is S = k_B ln W, where W is the number of microstates and k_B = 1.38 × 10⁻²³ J/K. The macrostate with the most microstates is overwhelmingly the most probable, which is the statistical origin of the second law.",
+    "For an ideal gas, temperature measures the mean translational kinetic energy per molecule: ⟨E_k⟩ = (3/2) k_B T. The root-mean-square speed is v_rms = √(3k_B T ÷ m). Molecular speeds follow the Maxwell–Boltzmann distribution. In thermal equilibrium the probability of a state with energy E is proportional to the Boltzmann factor e^(−E/k_B T), so higher-energy states are less likely at low T.",
+    "In thermodynamics the entropy change for heat Q added reversibly at temperature T is ΔS = Q ÷ T. For n moles of ideal gas expanding isothermally from V₁ to V₂, ΔS = nR ln(V₂ ÷ V₁). The Helmholtz free energy F = U − TS is minimised at equilibrium (constant T, V). The third law says S approaches a constant as T approaches 0 K. Heat engines such as the Carnot engine have efficiency 1 − T_c ÷ T_h."
+   ],
+   "example": {
+    "q": "Calculate the root-mean-square speed of nitrogen molecules (m = 4.65 × 10⁻²⁶ kg) at 300 K. Use k_B = 1.38 × 10⁻²³ J/K.",
+    "steps": [
+     "v_rms = √(3k_B T ÷ m).",
+     "3k_B T = 3 × 1.38 × 10⁻²³ × 300 = 1.242 × 10⁻²⁰ J.",
+     "v_rms = √(1.242 × 10⁻²⁰ ÷ 4.65 × 10⁻²⁶) = √(2.67 × 10⁵) ≈ 517 m/s."
+    ],
+    "a": "About 517 m/s"
+   },
+   "analogies": {
+    "sport": "Rolling many dice, a total near the middle is far more likely than all sixes, as common macrostates have more microstates.",
+    "city": "A crowd leaving a stadium spreads out; it is overwhelmingly unlikely to re-gather by chance.",
+    "home": "Milk stirred into coffee mixes and never unmixes by itself.",
+    "music": "A shuffled deck of cards is far more likely to be in a disordered arrangement than in perfect order."
+   },
+   "mnemonic": "Count the ways: S = k ln W; the most ways wins.",
+   "terms": [
+    [
+     "Microstate",
+     "A detailed specification of the state of every particle."
+    ],
+    [
+     "Macrostate",
+     "A bulk description, e.g. fixed p, V, T, shared by many microstates."
+    ],
+    [
+     "Entropy",
+     "S = k_B ln W, a measure of the number of accessible microstates."
+    ],
+    [
+     "Boltzmann factor",
+     "e^(−E/k_B T), the relative probability of a state of energy E."
+    ]
+   ],
+   "misc": {
+    "wrong": "Entropy simply means disorder, and it always increases for every part of a system.",
+    "right": "Entropy counts accessible microstates. It can decrease locally, for instance when water freezes, as long as the total entropy of system plus surroundings does not decrease."
+   },
+   "limits": "Classical statistics assumes distinguishable particles and ignores quantum statistics. At low temperature or high density fermions and bosons (Fermi–Dirac and Bose–Einstein statistics) are needed.",
+   "trip": {
+    "wiki": "Entropy (statistical thermodynamics)",
+    "prompt": "Find the Boltzmann entropy formula and a worked example counting microstates."
+   },
+   "sources": [
+    "Statistical mechanics",
+    "Entropy",
+    "Maxwell–Boltzmann distribution"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "What is the mean translational kinetic energy of a gas molecule at 300 K? Use (3/2) k_B T with k_B = 1.38 × 10⁻²³ J/K. Give your answer in units of 10⁻²¹ J.",
+     "a": 6.21,
+     "tol": 0.05,
+     "unit": "× 10⁻²¹ J",
+     "why": "(3/2) × 1.38 × 10⁻²³ × 300 = 6.21 × 10⁻²¹ J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "One mole of ideal gas expands isothermally to twice its volume. Find the entropy change ΔS = nR ln 2 in J/K, using R = 8.31 J/mol·K and ln 2 = 0.693.",
+     "a": 5.76,
+     "tol": 0.05,
+     "unit": "J/K",
+     "why": "ΔS = 1 × 8.31 × 0.693 = 5.76 J/K.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "1000 J of heat flows reversibly into a reservoir at 250 K. What is the entropy gain of the reservoir?",
+     "o": [
+      "4 J/K",
+      "0.25 J/K",
+      "250 J/K",
+      "1000 J/K"
+     ],
+     "a": 0,
+     "why": "ΔS = Q ÷ T = 1000 ÷ 250 = 4 J/K.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The temperature of a gas increases from 300 K to 1200 K. By what factor does v_rms change?",
+     "o": [
+      "It doubles",
+      "It quadruples",
+      "It increases by √2",
+      "It halves"
+     ],
+     "a": 0,
+     "why": "v_rms ∝ √T and √(1200 ÷ 300) = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a gas of 10²³ molecules never spontaneously collect in one half of its container?",
+     "o": [
+      "That macrostate has vastly fewer microstates than the spread-out one",
+      "Gravity forbids it from ever happening",
+      "Molecules repel each other strongly at that density",
+      "Energy would not be conserved if it happened"
+     ],
+     "a": 0,
+     "why": "The even distribution corresponds to overwhelmingly more microstates, so it is overwhelmingly more probable.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A system has a ground state and an excited state 4.0 × 10⁻²¹ J higher. At 300 K, k_B T = 4.14 × 10⁻²¹ J. Roughly what is the population ratio of excited to ground (non-degenerate)?",
+     "o": [
+      "About 0.38",
+      "About 1.0",
+      "About 0.01",
+      "About 2.7"
+     ],
+     "a": 0,
+     "why": "The ratio is e^(−ΔE/k_BT) = e^(−0.966) ≈ 0.38.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is a correct version of the second law?",
+     "o": [
+      "The total entropy of an isolated system never decreases",
+      "The entropy of every subsystem must always increase",
+      "Entropy is just another name for energy",
+      "Entropy is conserved in every process"
+     ],
+     "a": 0,
+     "why": "Parts of a system may lose entropy if others gain more, but the isolated total cannot decrease.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its statistical definition or relation.",
+     "pairs": [
+      [
+       "Entropy",
+       "S = k_B ln W"
+      ],
+      [
+       "Mean kinetic energy",
+       "(3/2) k_B T"
+      ],
+      [
+       "Relative probability of a state",
+       "e^(−E/k_B T)"
+      ],
+      [
+       "Reversible heat and entropy",
+       "ΔS = Q ÷ T"
+      ]
+     ],
+     "why": "These are core formulas of statistical thermodynamics.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Water freezes into ice, a more ordered state with lower entropy. Explain why this does not violate the second law.",
+     "rubric": [
+      [
+       "surroundings",
+       "environment",
+       "outside"
+      ],
+      [
+       "heat",
+       "latent",
+       "released",
+       "given out",
+       "energy"
+      ],
+      [
+       "total",
+       "overall",
+       "net",
+       "universe"
+      ],
+      [
+       "increase",
+       "increases",
+       "gains",
+       "more"
+      ]
+     ],
+     "min": 3,
+     "model": "Freezing releases latent heat into the surroundings, which increases their entropy by at least as much as the water's entropy decreases. The total entropy of water plus surroundings does not decrease, so the second law holds.",
+     "why": "The second law applies to the total entropy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these systems by increasing entropy at the same temperature, for a fixed mass of water.",
+     "items": [
+      "Ice",
+      "Liquid water",
+      "Steam"
+     ],
+     "why": "More freedom of motion means more accessible microstates: solid < liquid < gas.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student claims: 'Temperature is the speed of the molecules.' What is the best correction?",
+     "o": [
+      "Temperature relates to the mean kinetic energy per molecule, and a gas has a distribution of speeds",
+      "She is right, temperature simply is the speed of each molecule",
+      "Temperature is the number of molecules in the gas",
+      "Temperature is the volume that the gas fills"
+     ],
+     "a": 0,
+     "why": "Molecules move at a wide range of speeds, and ⟨E_k⟩ = (3/2)k_BT defines the average energy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do lighter molecules, such as hydrogen, escape from a planet's atmosphere more easily than heavier ones at the same temperature?",
+     "rubric": [
+      [
+       "speed",
+       "faster",
+       "velocity",
+       "v_rms",
+       "rms"
+      ],
+      [
+       "lighter",
+       "less mass",
+       "small mass",
+       "mass"
+      ],
+      [
+       "escape",
+       "tail",
+       "distribution",
+       "gravity"
+      ]
+     ],
+     "min": 3,
+     "model": "At the same temperature all molecules have the same mean kinetic energy, so lighter ones are faster (v_rms ∝ 1 ÷ √m). More of them have speeds in the high-speed tail of the distribution that exceed escape velocity.",
+     "why": "Mean energy is equal, so speed scales as 1 ÷ √m.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a system has W = 1 accessible microstate, what is its Boltzmann entropy?",
+     "o": [
+      "Zero",
+      "k_B",
+      "Infinite",
+      "Negative"
+     ],
+     "a": 0,
+     "why": "S = k_B ln 1 = 0, which is the idea behind the third law for a perfect crystal at 0 K.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why entropy increases",
+    "model": "A big system can arrange its particles in many ways. Entropy counts those ways: S = k ln W. The spread-out arrangements are far more numerous than the ordered ones, so a system almost always drifts toward them. That is the second law. For example, gas expands to fill a box and never gathers in one corner by itself.",
+    "points": [
+     {
+      "k": [
+       "ways",
+       "microstate",
+       "arrangement",
+       "count"
+      ],
+      "ask": "What does entropy count?"
+     },
+     {
+      "k": [
+       "more",
+       "most",
+       "many",
+       "spread",
+       "disorder",
+       "numerous"
+      ],
+      "ask": "Which arrangements are more numerous?"
+     },
+     {
+      "k": [
+       "probable",
+       "likely",
+       "probability",
+       "overwhelming",
+       "drift"
+      ],
+      "ask": "So why does the system move toward them?"
+     },
+     {
+      "k": [
+       "gas",
+       "box",
+       "mix",
+       "example",
+       "coffee",
+       "expand"
+      ],
+      "ask": "Can you give me an everyday example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Quantum physics fundamentals",
+   "icon": "⚛️",
+   "hook": "Light shining on a metal can knock electrons out, but dim blue light does it while bright red light does not. A wave picture predicts the opposite. What is going on?",
+   "explain": [
+    "The photoelectric effect shows light arrives in packets (photons) of energy E = hf = hc ÷ λ, with Planck's constant h = 6.63 × 10⁻³⁴ J·s. An electron escapes only if the photon energy exceeds the metal's work function φ, and the maximum kinetic energy is E_k = hf − φ. The brightness (number of photons) changes how many electrons come out, not their maximum energy. A handy relation is E(eV) ≈ 1240 ÷ λ(nm).",
+    "Matter also shows wave behaviour: the de Broglie wavelength is λ = h ÷ p. Electrons diffract from crystals, confirming it. The state of a particle is described by a wave function ψ whose squared magnitude |ψ|² gives the probability density. Heisenberg's uncertainty principle sets a limit: Δx Δp ≥ ħ ÷ 2, where ħ = h ÷ 2π = 1.055 × 10⁻³⁴ J·s. This is a feature of waves and not due to clumsy measurement.",
+    "Confined particles have quantised energies. For a particle in a one-dimensional box of width L, E_n = n²h² ÷ (8mL²), n = 1, 2, 3, ... In hydrogen the energy levels are E_n = −13.6 eV ÷ n². A transition between levels emits or absorbs a photon of energy equal to the difference, which explains discrete spectral lines such as the red H-alpha line at 656 nm (n = 3 → 2)."
+   ],
+   "example": {
+    "q": "Light of wavelength 400 nm falls on sodium, which has a work function of 2.3 eV. Find the maximum kinetic energy of the ejected electrons. Use E(eV) = 1240 ÷ λ(nm).",
+    "steps": [
+     "Photon energy = 1240 ÷ 400 = 3.10 eV.",
+     "E_k,max = 3.10 − 2.3.",
+     "= 0.80 eV."
+    ],
+    "a": "About 0.8 eV"
+   },
+   "analogies": {
+    "tech": "A digital camera sensor is a photoelectric device: each photon that exceeds the threshold releases one electron.",
+    "music": "A guitar string can vibrate only in certain notes, like the quantised levels of an atom.",
+    "sport": "A vending machine gives a drink only when the coin value reaches the price, no matter how many small coins pile up; threshold behaviour.",
+    "nature": "Plants absorb particular colours of light, matching energy gaps in chlorophyll."
+   },
+   "mnemonic": "Photons come in packets hf; matter has wavelength h over p; confined waves are quantised.",
+   "terms": [
+    [
+     "Photon",
+     "A quantum of light with energy hf."
+    ],
+    [
+     "Work function",
+     "The minimum energy to remove an electron from a metal."
+    ],
+    [
+     "De Broglie wavelength",
+     "λ = h ÷ p, the wavelength of a particle."
+    ],
+    [
+     "Wave function",
+     "ψ, whose squared magnitude gives probabilities."
+    ]
+   ],
+   "misc": {
+    "wrong": "The uncertainty principle only says our instruments are not good enough.",
+    "right": "It reflects the wave nature of matter: a particle does not have simultaneously precise position and momentum."
+   },
+   "limits": "These are non-relativistic results using simple models. Real atoms have more electrons, spin and relativistic effects; interpretations of what the wave function means are debated even though predictions agree.",
+   "trip": {
+    "wiki": "Photoelectric effect",
+    "prompt": "Find the graph of stopping voltage against frequency and read the threshold frequency."
+   },
+   "sources": [
+    "Quantum mechanics",
+    "Photoelectric effect",
+    "Uncertainty principle"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "What is the energy in eV of a photon of wavelength 500 nm? Use E(eV) = 1240 ÷ λ(nm).",
+     "a": 2.48,
+     "tol": 0.02,
+     "unit": "eV",
+     "why": "1240 ÷ 500 = 2.48 eV.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the de Broglie wavelength of an electron of momentum 5.40 × 10⁻²⁴ kg·m/s, to the nearest 0.001 nm. Use h = 6.63 × 10⁻³⁴ J·s.",
+     "a": 0.123,
+     "tol": 0.002,
+     "unit": "nm",
+     "why": "λ = h ÷ p = 6.63 × 10⁻³⁴ ÷ 5.40 × 10⁻²⁴ = 1.23 × 10⁻¹⁰ m = 0.123 nm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A metal has a work function of 4.0 eV. Which light will eject electrons?",
+     "o": [
+      "Ultraviolet light of 250 nm (4.96 eV)",
+      "Red light of 700 nm (1.77 eV) if it is very bright",
+      "Green light of 530 nm (2.34 eV) at high intensity",
+      "Infrared of 1000 nm (1.24 eV) after long exposure"
+     ],
+     "a": 0,
+     "why": "Only photons with energy above the work function can eject electrons, regardless of the brightness.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A very bright red light does not eject electrons from a metal but a dim blue light does. What does this show?",
+     "o": [
+      "Light energy comes in quanta whose size depends on frequency",
+      "Brightness alone controls how much energy each electron gets",
+      "Red light is not a kind of electromagnetic wave",
+      "Metals reflect all red light and absorb all blue light"
+     ],
+     "a": 0,
+     "why": "Each electron absorbs a single photon, so the photon energy hf must exceed the work function; brightness only changes the number of photons.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A hydrogen atom drops from n = 3 to n = 2. Which is true of the emitted photon? (E_n = −13.6 ÷ n² eV)",
+     "o": [
+      "Its energy is about 1.89 eV, in the red region",
+      "Its energy is 13.6 eV, in the ultraviolet region",
+      "Its energy is 3.4 eV, in the infrared region",
+      "It has no energy because the atom is stable"
+     ],
+     "a": 0,
+     "why": "ΔE = 13.6 × (1/4 − 1/9) = 1.89 eV, so λ = 1240 ÷ 1.89 ≈ 656 nm, the red H-alpha line.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If the width of a box confining a particle is halved, how does the ground-state energy E₁ change?",
+     "o": [
+      "It quadruples",
+      "It doubles",
+      "It halves",
+      "It is unchanged"
+     ],
+     "a": 0,
+     "why": "E₁ ∝ 1 ÷ L², so halving L gives four times the energy.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A proton and an electron have the same kinetic energy. Which has the shorter de Broglie wavelength?",
+     "o": [
+      "The proton",
+      "The electron",
+      "They are equal",
+      "Neither has a wavelength"
+     ],
+     "a": 0,
+     "why": "p = √(2mE), so the heavier proton has more momentum and a shorter wavelength.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each experiment to what it showed.",
+     "pairs": [
+      [
+       "Photoelectric effect",
+       "Light has particle-like quanta"
+      ],
+      [
+       "Electron diffraction",
+       "Matter has wave behaviour"
+      ],
+      [
+       "Atomic line spectra",
+       "Energy levels are discrete"
+      ]
+     ],
+     "why": "Each experiment was a key piece of evidence for quantum theory.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain, using the uncertainty principle, why an electron cannot sit still at the nucleus of an atom.",
+     "rubric": [
+      [
+       "confine",
+       "localis",
+       "small region",
+       "position",
+       "close to"
+      ],
+      [
+       "momentum",
+       "kinetic energy",
+       "speed",
+       "uncertain"
+      ],
+      [
+       "larger",
+       "large",
+       "increase",
+       "greater",
+       "higher",
+       "grows"
+      ]
+     ],
+     "min": 3,
+     "model": "If the electron were confined to a tiny region at the nucleus, its position uncertainty would be tiny, so its momentum uncertainty and kinetic energy would be very large. The atom's size reflects a balance between this confinement energy and the electrical attraction.",
+     "why": "Δx small forces Δp large.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the following photons by increasing energy.",
+     "items": [
+      "Radio photon",
+      "Infrared photon",
+      "Visible photon",
+      "X-ray photon"
+     ],
+     "why": "Photon energy hf rises with frequency along the spectrum.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In the photoelectric effect, doubling the light's intensity at fixed frequency above threshold does what?",
+     "o": [
+      "Doubles the number of electrons emitted per second but not their maximum kinetic energy",
+      "Doubles the maximum kinetic energy of each electron",
+      "Stops the emission of electrons completely",
+      "Halves the number of electrons emitted per second"
+     ],
+     "a": 0,
+     "why": "Intensity sets the photon rate; each photon still has hf.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why don't we notice the wave nature of a thrown baseball?",
+     "rubric": [
+      [
+       "wavelength"
+      ],
+      [
+       "tiny",
+       "small",
+       "very small",
+       "negligible",
+       "10⁻³⁴",
+       "too small"
+      ],
+      [
+       "momentum",
+       "mass",
+       "large",
+       "h"
+      ]
+     ],
+     "min": 2,
+     "model": "A baseball's de Broglie wavelength λ = h ÷ p is about 10⁻³⁴ m or less because its momentum is huge compared with h, so no wave effects can ever be detected.",
+     "why": "Because h is so small, macroscopic objects have negligible wavelengths.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The ground state of a particle in a box has energy greater than zero. What does this imply?",
+     "o": [
+      "Confined quantum particles always have zero-point motion",
+      "The particle is not really confined in the box",
+      "The energy is only a measurement error",
+      "Quantum mechanics fails for particles in a box"
+     ],
+     "a": 0,
+     "why": "A zero-energy state would have a definite position and momentum, violating the uncertainty principle.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why light and matter are both waves and particles",
+    "model": "Light comes in packets called photons with energy E = hf, and a photon can knock out one electron if its energy exceeds the work function. Matter also acts like a wave with wavelength h over momentum. The uncertainty principle then limits how precisely position and momentum can both be known. For example, electrons in atoms have only certain energy levels.",
+    "points": [
+     {
+      "k": [
+       "photon",
+       "packet",
+       "quantum",
+       "hf"
+      ],
+      "ask": "What is a photon?"
+     },
+     {
+      "k": [
+       "work function",
+       "threshold",
+       "knock",
+       "eject",
+       "electron"
+      ],
+      "ask": "What does the photoelectric effect show?"
+     },
+     {
+      "k": [
+       "wavelength",
+       "wave",
+       "h/p",
+       "de broglie",
+       "diffraction"
+      ],
+      "ask": "How does matter behave like a wave?"
+     },
+     {
+      "k": [
+       "uncertainty",
+       "level",
+       "energy level",
+       "discrete",
+       "quantised",
+       "quantized"
+      ],
+      "ask": "What other quantum ideas matter here?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Special relativity",
+   "icon": "🚀",
+   "hook": "Muons made high in the atmosphere live only 2.2 microseconds, which is enough to travel just 660 m, yet they reach the ground. How can this be?",
+   "explain": [
+    "Einstein's 1905 theory rests on two postulates: the laws of physics are the same in all inertial frames, and the speed of light in vacuum, c = 3.00 × 10⁸ m/s, is the same for all inertial observers. From these follow surprising consequences. The Lorentz factor is γ = 1 ÷ √(1 − v²/c²).",
+    "Time dilation: a clock moving relative to an observer runs slow. If the proper time between two events at the same place is Δt₀, the observer in another frame measures Δt = γΔt₀. Length contraction: a length L₀ measured in its rest frame is measured as L = L₀ ÷ γ along the direction of motion. Simultaneity is relative: events simultaneous in one frame are not necessarily so in another. Velocities combine as u = (v + w) ÷ (1 + vw/c²), so nothing is added past c.",
+    "Energy and mass are linked: the rest energy is E₀ = mc², the total energy is E = γmc² and the kinetic energy is (γ − 1)mc². Momentum is p = γmv, and E² = (pc)² + (mc²)². Massless particles such as photons have E = pc. These predictions are confirmed by muon lifetimes, particle accelerators and GPS corrections."
+   ],
+   "example": {
+    "q": "Muons moving at 0.98c have a proper lifetime of 2.2 μs. How long do they live in the Earth frame, and how far do they travel? Use c = 3.00 × 10⁸ m/s.",
+    "steps": [
+     "γ = 1 ÷ √(1 − 0.98²) = 1 ÷ √0.0396 = 5.03.",
+     "Lifetime in the Earth frame = 5.03 × 2.2 μs = 11.1 μs.",
+     "Distance = 0.98 × 3.00 × 10⁸ × 11.1 × 10⁻⁶ ≈ 3.3 × 10³ m."
+    ],
+    "a": "About 11 μs and about 3.3 km"
+   },
+   "analogies": {
+    "tech": "GPS satellites need relativistic corrections or positions would drift by kilometres per day.",
+    "city": "Two observers on a moving train and the platform disagree on which lightning strikes were simultaneous.",
+    "sea": "A radar echo from a ship moving fast would require corrected timings.",
+    "music": "Two musicians playing at the same instant for one listener may not be in time for a listener moving quickly."
+   },
+   "mnemonic": "Light speed is the same for all; time stretches, length shrinks, energy and mass are one.",
+   "terms": [
+    [
+     "Lorentz factor",
+     "γ = 1 ÷ √(1 − v²/c²)."
+    ],
+    [
+     "Proper time",
+     "Time between two events measured in the frame where they happen at the same place."
+    ],
+    [
+     "Length contraction",
+     "A moving object is shorter along its direction of motion."
+    ],
+    [
+     "Rest energy",
+     "E₀ = mc², the energy associated with mass."
+    ]
+   ],
+   "misc": {
+    "wrong": "Relativity says that everything is relative, so there are no absolute facts.",
+    "right": "Some things are invariant: the speed of light and the spacetime interval are the same for all inertial observers."
+   },
+   "limits": "Special relativity covers inertial frames only. Gravity and accelerating frames need general relativity. At everyday speeds γ ≈ 1 and Newtonian mechanics works well.",
+   "trip": {
+    "wiki": "Special relativity",
+    "prompt": "Find the train-and-lightning thought experiment and explain relativity of simultaneity."
+   },
+   "sources": [
+    "Special relativity",
+    "Time dilation",
+    "Mass–energy equivalence"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Find the Lorentz factor γ for a particle moving at 0.8c.",
+     "a": 1.667,
+     "tol": 0.01,
+     "why": "γ = 1 ÷ √(1 − 0.64) = 1 ÷ 0.6 = 1.667.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rod has a rest length of 100 m. At what length is it measured by an observer relative to whom it moves at 0.8c along its length?",
+     "a": 60,
+     "tol": 0.5,
+     "unit": "m",
+     "why": "L = L₀ ÷ γ = 100 ÷ 1.667 = 60 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two spaceships each move at 0.5c towards one another as seen from Earth. What is the speed of one relative to the other?",
+     "o": [
+      "0.8c",
+      "1.0c",
+      "0.5c",
+      "1.5c"
+     ],
+     "a": 0,
+     "why": "u = (0.5 + 0.5)c ÷ (1 + 0.25) = 0.8c.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A traveller flies at 0.6c for 10 years of Earth time. How much time passes for the traveller? (γ = 1.25)",
+     "o": [
+      "8 years",
+      "12.5 years",
+      "10 years",
+      "6 years"
+     ],
+     "a": 0,
+     "why": "The traveller's proper time is Δt ÷ γ = 10 ÷ 1.25 = 8 years.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A particle has a kinetic energy equal to its rest energy. What is its γ?",
+     "o": [
+      "2",
+      "1",
+      "0.5",
+      "√2"
+     ],
+     "a": 0,
+     "why": "KE = (γ − 1)mc² = mc², so γ = 2.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can't a massive particle reach the speed of light?",
+     "o": [
+      "Its energy γmc² would grow without limit",
+      "Its mass would vanish near light speed",
+      "Light itself blocks the particle from catching up",
+      "It would turn into a wave at that speed"
+     ],
+     "a": 0,
+     "why": "As v → c, γ → ∞ so infinite energy would be needed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A photon has zero mass. Which equation gives its energy in terms of its momentum?",
+     "o": [
+      "E = pc",
+      "E = mc²",
+      "E = ½ mv²",
+      "E = p²/2m"
+     ],
+     "a": 0,
+     "why": "From E² = (pc)² + (mc²)² with m = 0.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each effect to its formula.",
+     "pairs": [
+      [
+       "Time dilation",
+       "Δt = γΔt₀"
+      ],
+      [
+       "Length contraction",
+       "L = L₀ ÷ γ"
+      ],
+      [
+       "Rest energy",
+       "E₀ = mc²"
+      ],
+      [
+       "Lorentz factor",
+       "γ = 1 ÷ √(1 − v²/c²)"
+      ]
+     ],
+     "why": "These are the standard relations.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how time dilation lets cosmic-ray muons reach the ground even though their proper lifetime is only 2.2 μs.",
+     "rubric": [
+      [
+       "time dilation",
+       "dilat",
+       "slow",
+       "clock"
+      ],
+      [
+       "lifetime",
+       "live longer",
+       "longer",
+       "γ",
+       "gamma"
+      ],
+      [
+       "fast",
+       "speed",
+       "0.98",
+       "close to c",
+       "light"
+      ],
+      [
+       "length contraction",
+       "contract",
+       "shorter distance",
+       "thinner atmosphere"
+      ]
+     ],
+     "min": 2,
+     "model": "Moving at about 0.98c, the muons' clocks run slow as seen from Earth by a factor γ ≈ 5, so they live about 11 μs in the Earth frame and cover about 3 km. Equivalently, in their frame the atmosphere is length-contracted.",
+     "why": "Both descriptions agree because they are the same event seen from two frames.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these speeds by the Lorentz factor, smallest first.",
+     "items": [
+      "Aircraft at 300 m/s",
+      "Electron at 0.6c",
+      "Proton at 0.9c",
+      "Proton at 0.99c"
+     ],
+     "why": "γ grows as v approaches c: about 1.0, 1.25, 2.29 and 7.09.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says: 'In the twin paradox, each twin sees the other age more slowly, so the situation is symmetric.' What breaks the symmetry?",
+     "o": [
+      "The travelling twin accelerates and changes inertial frames",
+      "The Earth twin is heavier and so ages more",
+      "Time stops on Earth during the journey",
+      "The speed of light changes for the travelling twin"
+     ],
+     "a": 0,
+     "why": "The travelling twin turns around, so her path is not inertial throughout, and she ends up younger.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A rocket's speed is 0.9c relative to Earth, and it fires a probe forward at 0.9c relative to itself. Why is the probe's speed relative to Earth not 1.8c?",
+     "rubric": [
+      [
+       "velocity addition",
+       "addition formula",
+       "relativistic",
+       "1 + vw",
+       "denominator"
+      ],
+      [
+       "less than c",
+       "below c",
+       "cannot exceed",
+       "never exceed",
+       "limit",
+       "speed of light"
+      ],
+      [
+       "0.99",
+       "0.994"
+      ]
+     ],
+     "min": 2,
+     "model": "Velocities add as u = (v + w) ÷ (1 + vw/c²) = 1.8c ÷ 1.81 ≈ 0.994c. The formula keeps every speed below c, consistent with the postulate that c is the same for all observers.",
+     "why": "Simple addition fails at speeds near c.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A 1 g mass is converted entirely into energy. How much energy is released (c = 3.00 × 10⁸ m/s)?",
+     "o": [
+      "9 × 10¹³ J",
+      "9 × 10¹⁶ J",
+      "3 × 10⁵ J",
+      "9 × 10¹⁰ J"
+     ],
+     "a": 0,
+     "why": "E = mc² = 10⁻³ × 9 × 10¹⁶ = 9 × 10¹³ J.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Time dilation in special relativity",
+    "model": "Light moves at the same speed for every observer. Because of this, a moving clock is seen to tick slower by the factor γ = 1 ÷ √(1 − v²/c²). At 0.8c, γ is 1.67, so 6 s on the moving clock matches 10 s for us. For example, fast muons survive long enough to reach the ground.",
+    "points": [
+     {
+      "k": [
+       "speed of light",
+       "same",
+       "constant",
+       "c "
+      ],
+      "ask": "What is the starting assumption?"
+     },
+     {
+      "k": [
+       "moving clock",
+       "slow",
+       "tick",
+       "time",
+       "dilat"
+      ],
+      "ask": "What happens to a moving clock?"
+     },
+     {
+      "k": [
+       "gamma",
+       "γ",
+       "√",
+       "1 -",
+       "1 −",
+       "factor"
+      ],
+      "ask": "How much does it slow?"
+     },
+     {
+      "k": [
+       "muon",
+       "gps",
+       "example",
+       "evidence",
+       "experiment"
+      ],
+      "ask": "What is the evidence?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Nuclear and particle physics",
+   "icon": "☢️",
+   "hook": "Helium-4 weighs less than two protons and two neutrons put together. Where did the missing mass go, and why does it matter for stars and power stations?",
+   "explain": [
+    "The nucleus contains protons and neutrons (nucleons) held together by the strong nuclear force, which is short-ranged and overcomes the electrical repulsion between protons. The mass of a nucleus is less than the sum of its parts; this mass defect Δm corresponds to the binding energy E = Δm c². With 1 u = 931.5 MeV/c², helium-4 has Δm = 0.0304 u, giving a binding energy of about 28.3 MeV. Binding energy per nucleon peaks near iron-56, so fusion of light nuclei and fission of heavy nuclei both release energy.",
+    "Radioactive decay is random but statistical: each nucleus has a constant probability per unit time λ of decaying. The number remaining is N = N₀(½)^(t/T½) = N₀e^(−λt), with λ = ln 2 ÷ T½. Alpha decay emits a helium nucleus, beta decay changes a neutron into a proton (n → p + e⁻ + ν̄ₑ) or the reverse, and gamma emission releases a photon from an excited nucleus. Charge, baryon number and lepton number are conserved. Medical imaging, dating of old objects using carbon-14 (half-life about 5730 years), and power generation all use these ideas, with strict safety rules in practice.",
+    "In the Standard Model, matter is made of quarks and leptons. A proton is uud, a neutron is udd (up quarks have charge +2/3 and down quarks −1/3). Forces are carried by gauge bosons: photons (electromagnetic), W and Z bosons (weak), gluons (strong). The Higgs field gives mass to elementary particles; the Higgs boson was found at CERN in 2012. Gravity is not included in the Standard Model."
+   ],
+   "example": {
+    "q": "A sample has 80 g of a radioactive isotope with a half-life of 5 days. How much remains after 15 days?",
+    "steps": [
+     "15 days is 3 half-lives (15 ÷ 5).",
+     "Each half-life halves the amount: 80 → 40 → 20 → 10.",
+     "10 g remain."
+    ],
+    "a": "10 g"
+   },
+   "analogies": {
+    "nature": "A forest of trees where each tree has the same random chance of falling each year: the number left halves in a fixed time.",
+    "city": "A crowd leaves a stadium; each person leaves at some random time but the fraction who leave in each hour is steady.",
+    "tech": "A smoke detector uses a small amount of americium emitting alpha particles that ionise air.",
+    "sea": "Carbon dating of old wooden boat timbers uses the steady decay of carbon-14 as a clock."
+   },
+   "mnemonic": "Missing mass is binding energy; half-life halves; charge and baryon number always balance.",
+   "terms": [
+    [
+     "Binding energy",
+     "The energy needed to split a nucleus into its separate nucleons."
+    ],
+    [
+     "Half-life",
+     "The time for half of the nuclei in a sample to decay."
+    ],
+    [
+     "Quark",
+     "A fundamental particle that makes up protons and neutrons."
+    ],
+    [
+     "Boson",
+     "A particle that carries a force or has integer spin."
+    ]
+   ],
+   "misc": {
+    "wrong": "After two half-lives all of a radioactive sample has decayed.",
+    "right": "After two half-lives one quarter remains. The amount keeps halving but never reaches zero exactly."
+   },
+   "limits": "Half-life describes large samples; the decay of one nucleus cannot be predicted. The Standard Model leaves out gravity and does not explain dark matter or neutrino masses fully.",
+   "trip": {
+    "wiki": "Nuclear binding energy",
+    "prompt": "Find the binding-energy-per-nucleon curve and mark iron-56 and helium-4."
+   },
+   "sources": [
+    "Nuclear physics",
+    "Radioactive decay",
+    "Standard Model"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "The mass defect of helium-4 is 0.0304 u. Using 1 u = 931.5 MeV/c², find its binding energy in MeV to one decimal place.",
+     "a": 28.3,
+     "tol": 0.1,
+     "unit": "MeV",
+     "why": "0.0304 × 931.5 = 28.3 MeV.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Carbon-14 has a half-life of 5730 years. What fraction of the original C-14 remains in a sample after 11 460 years? Give a decimal.",
+     "a": 0.25,
+     "tol": 0.005,
+     "why": "11 460 years is 2 half-lives, and (½)² = 0.25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Uranium-238 emits an alpha particle (helium-4 nucleus). What is the daughter nucleus?",
+     "o": [
+      "Thorium-234",
+      "Uranium-234",
+      "Protactinium-238",
+      "Thorium-238"
+     ],
+     "a": 0,
+     "why": "Mass number falls by 4 (238 → 234) and atomic number by 2 (92 → 90, thorium).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In beta-minus decay a neutron becomes a proton. Which other particles are emitted?",
+     "o": [
+      "An electron and an antineutrino",
+      "A positron and a neutrino",
+      "An alpha particle and a gamma ray",
+      "A single photon only"
+     ],
+     "a": 0,
+     "why": "n → p + e⁻ + ν̄ₑ conserves charge, baryon number and lepton number.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does fusion of hydrogen release energy while fusion of iron-56 does not?",
+     "o": [
+      "Iron-56 has the highest binding energy per nucleon, so fusing it would absorb energy",
+      "Iron is too cold for fusion to proceed in stars",
+      "Iron has no neutrons in its nucleus",
+      "Hydrogen is a gas, which makes it easier to fuse"
+     ],
+     "a": 0,
+     "why": "Moving towards the peak of the binding-energy curve releases energy; moving away from it requires energy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A proton is made of which quarks?",
+     "o": [
+      "Two up and one down",
+      "Two down and one up",
+      "Three up",
+      "One up and one strange"
+     ],
+     "a": 0,
+     "why": "uud gives charge 2/3 + 2/3 − 1/3 = +1.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A radioactive source has a half-life of 2 hours. A student measures a count rate of 800 per minute at 9:00. What is the expected rate at 15:00? Ignore background.",
+     "o": [
+      "100 per minute",
+      "400 per minute",
+      "200 per minute",
+      "0 per minute"
+     ],
+     "a": 0,
+     "why": "6 hours is 3 half-lives, and 800 × (½)³ = 100.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each force to its carrier.",
+     "pairs": [
+      [
+       "Electromagnetic force",
+       "Photon"
+      ],
+      [
+       "Strong force between quarks",
+       "Gluon"
+      ],
+      [
+       "Weak force",
+       "W and Z bosons"
+      ]
+     ],
+     "why": "These are gauge bosons of the Standard Model.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why alpha, beta and gamma radiation differ in how easily they are stopped.",
+     "rubric": [
+      [
+       "paper",
+       "skin",
+       "sheet of paper"
+      ],
+      [
+       "aluminium",
+       "aluminum",
+       "thin metal",
+       "few millimetres",
+       "few mm"
+      ],
+      [
+       "lead",
+       "concrete",
+       "thick"
+      ]
+     ],
+     "min": 3,
+     "model": "Alpha particles are heavy and doubly charged, ionise strongly and are stopped by paper or skin. Beta particles are light and charged and are stopped by a few millimetres of aluminium. Gamma rays are uncharged photons that ionise weakly and need thick lead or concrete to reduce them.",
+     "why": "Stopping power depends on charge, mass and ionising ability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these by increasing penetrating power.",
+     "items": [
+      "Alpha particles",
+      "Beta particles",
+      "Gamma rays"
+     ],
+     "why": "Alpha is stopped by paper, beta by thin aluminium and gamma needs thick lead.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does the half-life of a sample not depend on how much sample there is?",
+     "o": [
+      "Each nucleus has the same independent probability per unit time of decaying",
+      "Large samples decay faster as they have more nuclei",
+      "Nuclei take turns decaying in a fixed order",
+      "Half-life is set by the temperature of the sample"
+     ],
+     "a": 0,
+     "why": "The decay constant λ is the same for each nucleus, so the fraction decaying in a given time is fixed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student says the missing mass in a nucleus has simply been lost. How would you correct this?",
+     "rubric": [
+      [
+       "energy",
+       "binding"
+      ],
+      [
+       "released",
+       "given out",
+       "emitted",
+       "converted",
+       "mc²",
+       "e = mc"
+      ],
+      [
+       "mass",
+       "defect"
+      ]
+     ],
+     "min": 2,
+     "model": "The mass was converted to binding energy, which was released when the nucleus formed. E = Δm c² means it would have to be supplied again to split the nucleus into separate nucleons.",
+     "why": "Mass and energy are equivalent, and nothing is lost.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In deuterium–tritium fusion, D + T → He-4 + n releases about 17.6 MeV. Roughly how does this compare with the energy from a chemical reaction per atom (a few eV)?",
+     "o": [
+      "About a million times larger",
+      "About the same",
+      "About a hundred times larger",
+      "About a thousand times smaller"
+     ],
+     "a": 0,
+     "why": "MeV versus eV is a factor of about 10⁶, which is why nuclear fuel is so energy-dense.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Binding energy and half-life",
+    "model": "A nucleus weighs a little less than its separate protons and neutrons. The missing mass became the energy that binds it together, E = Δm c². Radioactive nuclei decay at random, but half of a large sample decays in each half-life. For example, 80 g with a 5-day half-life leaves 10 g after 15 days.",
+    "points": [
+     {
+      "k": [
+       "mass",
+       "less",
+       "defect",
+       "missing"
+      ],
+      "ask": "What is odd about a nucleus's mass?"
+     },
+     {
+      "k": [
+       "binding",
+       "energy",
+       "mc²",
+       "e = mc",
+       "released"
+      ],
+      "ask": "Where did the missing mass go?"
+     },
+     {
+      "k": [
+       "half-life",
+       "half",
+       "halves"
+      ],
+      "ask": "What is a half-life?"
+     },
+     {
+      "k": [
+       "random",
+       "probab",
+       "example",
+       "15 days",
+       "10 g",
+       "carbon"
+      ],
+      "ask": "Is decay predictable? Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Stellar astrophysics",
+   "icon": "☀️",
+   "hook": "From the apparent brightness and the colour of a star alone, astronomers can find its distance, size and even age. How?",
+   "explain": [
+    "Stellar distances close to the Sun come from parallax: d (in parsecs) = 1 ÷ p (in arcseconds). For brightness, the flux received is F = L ÷ (4πd²). Magnitudes relate apparent magnitude m, absolute magnitude M (brightness at 10 pc) and distance through m − M = 5 log₁₀(d ÷ 10 pc). A difference of 5 magnitudes is a factor of 100 in brightness.",
+    "A star radiates like a near-blackbody, so L = 4πR²σT⁴ with σ = 5.67 × 10⁻⁸ W·m⁻²·K⁻⁴. For the Sun (R = 6.96 × 10⁸ m, T = 5772 K) this gives L ≈ 3.83 × 10²⁶ W. On the Hertzsprung–Russell diagram, stars on the main sequence follow roughly L ∝ M^3.5, so lifetime scales as t ∝ M ÷ L ∝ M^−2.5. The Sun's main-sequence life is about 10 Gyr.",
+    "Stars are supported by thermal gas pressure against gravity, and the core fuses H to He by the proton–proton chain (in stars like the Sun) or the CNO cycle (in hotter, more massive stars). After the main sequence stars expand to red giants. Low-mass stars end as white dwarfs held up by electron degeneracy pressure, up to the Chandrasekhar limit near 1.4 solar masses. Stars above about 8 solar masses end in core-collapse supernovae, leaving neutron stars (supported by neutron degeneracy pressure, radius about 10–12 km) or black holes. The Schwarzschild radius is R_s = 2GM ÷ c²; for the Sun it is about 2.95 km."
+   ],
+   "example": {
+    "q": "A star has apparent magnitude m = 4 and absolute magnitude M = −1. How far away is it?",
+    "steps": [
+     "m − M = 4 − (−1) = 5.",
+     "5 = 5 log₁₀(d ÷ 10 pc), so log₁₀(d ÷ 10) = 1.",
+     "d ÷ 10 = 10, so d = 100 pc."
+    ],
+    "a": "100 pc"
+   },
+   "analogies": {
+    "city": "A street lamp of known wattage looks fainter at greater distance, so its brightness reveals how far it is.",
+    "sport": "A runner's lap time depends on size, as the lifetime of a star depends on its mass.",
+    "home": "A bigger oven burns through coal faster, as massive stars use fuel faster.",
+    "sea": "Lighthouse beams of known power appear dimmer farther out to sea."
+   },
+   "mnemonic": "L = 4πR²σT⁴ ties size, temperature and brightness; m − M gives distance; heavier stars die younger.",
+   "terms": [
+    [
+     "Parallax",
+     "The apparent shift of a nearby star against distant ones as Earth orbits the Sun."
+    ],
+    [
+     "Parsec",
+     "The distance at which a star has a parallax of 1 arcsecond, about 3.26 light-years."
+    ],
+    [
+     "Absolute magnitude",
+     "The apparent magnitude a star would have at 10 pc."
+    ],
+    [
+     "Degeneracy pressure",
+     "Quantum pressure that resists compression of fermions such as electrons or neutrons."
+    ]
+   ],
+   "misc": {
+    "wrong": "Larger magnitude numbers mean brighter stars.",
+    "right": "The magnitude scale is reversed: smaller (or more negative) magnitudes are brighter."
+   },
+   "limits": "Stars are not perfect blackbodies, and interstellar dust dims and reddens light. Scaling laws such as L ∝ M^3.5 hold only roughly over a limited range of masses.",
+   "trip": {
+    "wiki": "Hertzsprung–Russell diagram",
+    "prompt": "Locate the main sequence, red giants, supergiants and white dwarfs."
+   },
+   "sources": [
+    "Stellar evolution",
+    "Stellar parallax",
+    "Absolute magnitude"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A star has a parallax of 0.050 arcseconds. How far away is it in parsecs?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "pc",
+     "why": "d = 1 ÷ p = 1 ÷ 0.050 = 20 pc.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A star has apparent magnitude 8 and absolute magnitude 3. How far away is it in parsecs? Use m − M = 5 log₁₀(d ÷ 10 pc).",
+     "a": 100,
+     "tol": 1,
+     "unit": "pc",
+     "why": "m − M = 5, so d = 10 × 10¹ = 100 pc.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A star has twice the Sun's radius and the same surface temperature. How does its luminosity compare with the Sun's?",
+     "o": [
+      "4 times",
+      "2 times",
+      "16 times",
+      "8 times"
+     ],
+     "a": 0,
+     "why": "L ∝ R²T⁴, so with the same T the luminosity scales as R² = 4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two stars have the same luminosity, but star B is twice as far away as star A. How do their apparent brightnesses compare?",
+     "o": [
+      "B appears one quarter as bright",
+      "B appears half as bright as A",
+      "B appears equally bright to A",
+      "B appears twice as bright as A"
+     ],
+     "a": 0,
+     "why": "Flux falls as 1 ÷ d².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A 4-solar-mass star has a main-sequence lifetime that is roughly how long, using t ∝ M^−2.5 and the Sun's 10 Gyr?",
+     "o": [
+      "About 0.3 Gyr",
+      "About 2.5 Gyr",
+      "About 40 Gyr",
+      "About 10 Gyr"
+     ],
+     "a": 0,
+     "why": "4^−2.5 = 1/32, so t ≈ 10 ÷ 32 ≈ 0.31 Gyr.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A star is a red supergiant with a surface temperature of 3500 K, far cooler than the Sun, yet more luminous by thousands of times. What does this tell you?",
+     "o": [
+      "It has a vastly larger radius",
+      "It has a much smaller radius than the Sun",
+      "It is much closer to us than the Sun",
+      "It is a white dwarf"
+     ],
+     "a": 0,
+     "why": "With L ∝ R²T⁴, a lower T must be offset by a huge R to give a higher luminosity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What stops a white dwarf collapsing further?",
+     "o": [
+      "Electron degeneracy pressure",
+      "Nuclear fusion in its core",
+      "Neutron degeneracy pressure",
+      "Strong magnetic fields"
+     ],
+     "a": 0,
+     "why": "Quantum pressure from tightly packed electrons supports it below about 1.4 solar masses.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each stellar remnant to what supports it, or what it is.",
+     "pairs": [
+      [
+       "White dwarf",
+       "Electron degeneracy pressure"
+      ],
+      [
+       "Neutron star",
+       "Neutron degeneracy pressure"
+      ],
+      [
+       "Black hole",
+       "No known support; collapse beyond the event horizon"
+      ],
+      [
+       "Main-sequence star",
+       "Thermal pressure from fusion"
+      ]
+     ],
+     "why": "Each is held up by a different mechanism, or none.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the main-sequence lifetime of a massive star is much shorter than that of the Sun, even though it has more fuel.",
+     "rubric": [
+      [
+       "luminosity",
+       "bright",
+       "burn",
+       "rate",
+       "uses"
+      ],
+      [
+       "faster",
+       "quickly",
+       "more rapidly",
+       "steeper",
+       "much more"
+      ],
+      [
+       "mass",
+       "fuel"
+      ]
+     ],
+     "min": 3,
+     "model": "Luminosity rises much faster than mass (roughly L ∝ M^3.5), so a massive star burns its fuel at a much greater rate. Lifetime is roughly fuel divided by rate, t ∝ M ÷ L, so it falls steeply with mass.",
+     "why": "Fuel is proportional to M but luminosity increases as M^3.5.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages in the life of a star like the Sun.",
+     "items": [
+      "Protostar",
+      "Main sequence",
+      "Red giant",
+      "Planetary nebula",
+      "White dwarf"
+     ],
+     "why": "This is the standard evolutionary sequence for a low-mass star.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The Schwarzschild radius of the Sun is about 2.95 km. If the Sun were squeezed inside that radius, what would it become?",
+     "o": [
+      "A black hole",
+      "A neutron star",
+      "A white dwarf",
+      "A red giant"
+     ],
+     "a": 0,
+     "why": "Squeezing a mass inside its Schwarzschild radius forms an event horizon from which light cannot escape.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the parallax method work only for relatively nearby stars?",
+     "rubric": [
+      [
+       "small",
+       "tiny",
+       "too small",
+       "hard to measure",
+       "difficult"
+      ],
+      [
+       "angle",
+       "shift",
+       "arcsecond"
+      ],
+      [
+       "distance",
+       "farther",
+       "far",
+       "distant"
+      ]
+     ],
+     "min": 2,
+     "model": "The parallax angle shrinks in proportion to 1 ÷ distance. For distant stars the shift is far too small to measure accurately, even with space telescopes, so other methods such as standard candles are needed.",
+     "why": "p = 1 ÷ d, so the angle becomes tiny at large d.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a star's core contract and heat up when its hydrogen runs out?",
+     "o": [
+      "Fusion stops providing pressure, so gravity compresses the core and raises its temperature",
+      "The star loses most of its mass instantly",
+      "Gravity switches off in the core",
+      "The cooler surface layers chill the core"
+     ],
+     "a": 0,
+     "why": "Loss of outward pressure lets gravity win; the contraction releases gravitational energy that heats the core until helium or shell hydrogen fusion starts.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a star's size, temperature and brightness are linked",
+    "model": "A hotter star radiates much more energy from each square metre, and a bigger star has more square metres. Together L = 4πR²σT⁴. So a cool star can still be extremely luminous if it is huge, like a red supergiant. For example, doubling the radius at the same temperature makes a star four times brighter.",
+    "points": [
+     {
+      "k": [
+       "temperature",
+       "hotter",
+       "t⁴",
+       "t^4",
+       "fourth"
+      ],
+      "ask": "What does temperature do to the energy emitted?"
+     },
+     {
+      "k": [
+       "radius",
+       "size",
+       "area",
+       "bigger",
+       "r²"
+      ],
+      "ask": "What does size do?"
+     },
+     {
+      "k": [
+       "l =",
+       "4π",
+       "σ",
+       "stefan",
+       "formula",
+       "luminosity"
+      ],
+      "ask": "How do you combine them?"
+     },
+     {
+      "k": [
+       "red",
+       "supergiant",
+       "example",
+       "double",
+       "four times"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Galactic structure and dynamics",
+   "icon": "🌌",
+   "hook": "Stars at the edge of a spiral galaxy orbit about as fast as those nearer the middle. If the visible matter were all there was, they should be slower. What does that suggest?",
+   "explain": [
+    "Our Galaxy, the Milky Way, is a barred spiral with a disc about 100 000 light-years across, a central bulge and a halo of old stars and globular clusters. It contains roughly 10¹¹ to 4 × 10¹¹ stars. The Sun lies about 8 kpc (26 000 light-years) from the centre, in the Orion Arm, and orbits at about 230 km/s, completing one galactic orbit in roughly 220 million years. At the centre is the radio source Sagittarius A*, a black hole of about 4 million solar masses.",
+    "For a circular orbit, gravity supplies the centripetal force, so the mass enclosed within radius r is M(r) = v²r ÷ G. If most of the mass were concentrated in the centre, speeds would fall as v ∝ 1 ÷ √r (Keplerian). Instead, rotation curves of spirals are flat out to large radius, which implies M(r) ∝ r and a massive dark matter halo. Other evidence includes gravitational lensing and the cosmic microwave background.",
+    "Galaxies are classified by shape (Hubble sequence): ellipticals, lenticulars, spirals (barred or not) and irregulars. Galaxies cluster in groups and clusters; the Milky Way belongs to the Local Group with Andromeda (M31), about 2.5 million light-years away and approaching at roughly 110 km/s, and the Triangulum Galaxy. The distribution of galaxies forms filaments and voids. The Tully–Fisher relation links rotation speed to luminosity, making spirals useful distance indicators."
+   ],
+   "example": {
+    "q": "The Sun orbits at 230 km/s at r = 8.2 kpc (2.53 × 10²⁰ m). Estimate the mass inside the Sun's orbit in solar masses. Use G = 6.67 × 10⁻¹¹ N·m²/kg² and M☉ = 1.99 × 10³⁰ kg.",
+    "steps": [
+     "M = v²r ÷ G = (2.3 × 10⁵)² × 2.53 × 10²⁰ ÷ 6.67 × 10⁻¹¹.",
+     "= 5.29 × 10¹⁰ × 2.53 × 10²⁰ ÷ 6.67 × 10⁻¹¹ ≈ 2.0 × 10⁴¹ kg.",
+     "÷ 1.99 × 10³⁰ ≈ 1.0 × 10¹¹ M☉."
+    ],
+    "a": "About 10¹¹ solar masses"
+   },
+   "analogies": {
+    "sport": "Runners on a circular track at different lanes: if the outer ones need to keep the same speed, there must be a stronger pull.",
+    "music": "A record spins with all points keeping step, but galaxies do not rotate rigidly.",
+    "city": "A city viewed from the air has dense centres and thin edges, as the bulge and the disc.",
+    "sea": "A whirlpool has faster flow near the centre, unlike a flat galaxy rotation curve."
+   },
+   "mnemonic": "Flat rotation curves mean hidden mass: M(r) = v²r ÷ G.",
+   "terms": [
+    [
+     "Rotation curve",
+     "A plot of orbital speed against distance from the galactic centre."
+    ],
+    [
+     "Dark matter",
+     "Matter that does not emit light but acts gravitationally."
+    ],
+    [
+     "Kiloparsec (kpc)",
+     "1000 parsecs, about 3260 light-years."
+    ],
+    [
+     "Globular cluster",
+     "A dense ball of old stars in the halo."
+    ]
+   ],
+   "misc": {
+    "wrong": "The Milky Way is the whole universe, or the Sun is at its centre.",
+    "right": "The Milky Way is one galaxy among hundreds of billions, and the Sun lies about 26 000 light-years from its centre."
+   },
+   "limits": "Dark matter is inferred from gravity, and its nature is unknown. Some alternatives modify gravity, such as MOND, but they struggle to explain all observations, including galaxy clusters.",
+   "trip": {
+    "wiki": "Galaxy rotation curve",
+    "prompt": "Find the plot comparing observed rotation speeds with those from visible matter alone."
+   },
+   "sources": [
+    "Milky Way",
+    "Galaxy rotation curve",
+    "Dark matter"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Estimate the Sun's orbital period around the Galaxy in millions of years, given r = 2.53 × 10²⁰ m, v = 2.3 × 10⁵ m/s and 1 year = 3.16 × 10⁷ s. Use T = 2πr ÷ v.",
+     "a": 220,
+     "tol": 10,
+     "unit": "Myr",
+     "why": "T = 2π × 2.53 × 10²⁰ ÷ 2.3 × 10⁵ ≈ 6.9 × 10¹⁵ s ≈ 2.2 × 10⁸ yr = 220 Myr.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A star orbits at r = 5.0 × 10¹⁹ m with v = 2.0 × 10⁵ m/s. Find the enclosed mass in units of 10⁴⁰ kg. Use M = v²r ÷ G, G = 6.67 × 10⁻¹¹.",
+     "a": 3,
+     "tol": 0.1,
+     "unit": "× 10⁴⁰ kg",
+     "why": "M = 4.0 × 10¹⁰ × 5.0 × 10¹⁹ ÷ 6.67 × 10⁻¹¹ ≈ 3.0 × 10⁴⁰ kg.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If all the Galaxy's mass were concentrated in the centre, how would orbital speeds change with radius?",
+     "o": [
+      "They would decline as 1 ÷ √r",
+      "They would increase with r",
+      "They would stay constant at all radii",
+      "They would be zero"
+     ],
+     "a": 0,
+     "why": "For a central mass, v = √(GM ÷ r) as with planets around the Sun.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Observed rotation curves are flat. What does this require?",
+     "o": [
+      "Mass extending far beyond the visible disc",
+      "No dark matter at all in the galaxy",
+      "Mass concentrated entirely at the centre",
+      "Galaxies that are not rotating at all"
+     ],
+     "a": 0,
+     "why": "A flat curve means M(r) ∝ r, so the mass keeps growing with radius, far beyond the visible stars.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which type of galaxy is the Milky Way?",
+     "o": [
+      "A barred spiral",
+      "An elliptical",
+      "An irregular dwarf",
+      "A lenticular"
+     ],
+     "a": 0,
+     "why": "Observations of the Galaxy's central bar and spiral arms classify it as a barred spiral.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The Andromeda Galaxy is about 2.5 million light-years away. What does this mean for the light we see?",
+     "o": [
+      "It left Andromeda about 2.5 million years ago",
+      "It left Andromeda yesterday evening",
+      "It is only a forecast of what is to come",
+      "It left 25 000 years ago"
+     ],
+     "a": 0,
+     "why": "A light-year is a distance, and light takes 2.5 million years to cover 2.5 million light-years.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Gravitational lensing by galaxy clusters shows more mass than the stars and gas account for. Why is this supporting evidence for dark matter?",
+     "o": [
+      "Light bends according to total mass, regardless of whether it shines",
+      "Lenses only bend light that comes from dark objects",
+      "Clusters are made of glass that bends light",
+      "Light is slowed down by dust in the clusters"
+     ],
+     "a": 0,
+     "why": "Gravitational lensing is sensitive to all mass, so a larger lensing mass than visible matter implies unseen mass.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each feature to its description.",
+     "pairs": [
+      [
+       "Galactic bulge",
+       "Dense central region of older stars"
+      ],
+      [
+       "Spiral arms",
+       "Regions of enhanced star formation in the disc"
+      ],
+      [
+       "Halo",
+       "Spherical region with globular clusters and dark matter"
+      ],
+      [
+       "Sagittarius A*",
+       "Supermassive black hole at the centre"
+      ]
+     ],
+     "why": "These are the main components of the Milky Way.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a flat rotation curve is evidence for dark matter.",
+     "rubric": [
+      [
+       "flat",
+       "constant speed",
+       "same speed",
+       "do not fall",
+       "don't fall"
+      ],
+      [
+       "expect",
+       "predict",
+       "keplerian",
+       "decline",
+       "fall off",
+       "visible"
+      ],
+      [
+       "more mass",
+       "extra mass",
+       "unseen",
+       "dark matter",
+       "halo",
+       "invisible",
+       "hidden"
+      ]
+     ],
+     "min": 3,
+     "model": "From the visible matter we would expect orbital speeds to fall off with distance, but the measured speeds stay roughly constant. Since M(r) = v²r ÷ G, the enclosed mass must keep rising with r, which needs unseen dark matter in a halo.",
+     "why": "A mismatch between visible mass and gravitational effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these structures from smallest to largest.",
+     "items": [
+      "Solar System",
+      "Milky Way",
+      "Local Group",
+      "Galaxy cluster",
+      "Cosmic filament"
+     ],
+     "why": "Each is part of the next in this list, roughly.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Andromeda and the Milky Way are approaching and will probably merge in several billion years. Is a collision of individual stars likely?",
+     "o": [
+      "No, stars are so far apart that direct collisions are extremely rare",
+      "Yes, many stars will collide head-on",
+      "Yes, nearly all of them will collide",
+      "No, because galaxies repel each other as they approach"
+     ],
+     "a": 0,
+     "why": "The distances between stars are huge compared with their diameters, so the stars mostly pass by one another although orbits are changed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can astronomers measure the speed of rotation of a galaxy seen edge-on?",
+     "rubric": [
+      [
+       "doppler",
+       "redshift",
+       "blueshift",
+       "shift"
+      ],
+      [
+       "spectral line",
+       "spectrum",
+       "21 cm",
+       "hydrogen",
+       "lines"
+      ],
+      [
+       "one side",
+       "approaching",
+       "receding",
+       "both sides",
+       "different sides"
+      ]
+     ],
+     "min": 2,
+     "model": "They take a spectrum along the disc: one side is approaching and shows a blueshift and the other side is receding and shows a redshift. The Doppler shift of spectral lines, such as the 21 cm hydrogen line, gives the velocity at each radius.",
+     "why": "Doppler shifts map the line-of-sight velocity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A galaxy with twice the rotation speed of another (same Tully–Fisher relation, L ∝ v⁴) is how many times more luminous?",
+     "o": [
+      "16",
+      "2",
+      "4",
+      "8"
+     ],
+     "a": 0,
+     "why": "2⁴ = 16.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why astronomers think galaxies contain dark matter",
+    "model": "Stars far from a galaxy's centre orbit just as fast as nearer ones. Gravity from only the visible matter would make outer stars slower. So there must be extra unseen mass, called dark matter, spread out in a halo. We can also see it bending light from distant galaxies. For example, the Milky Way's mass inside the Sun's orbit is about 10¹¹ Suns.",
+    "points": [
+     {
+      "k": [
+       "orbit",
+       "speed",
+       "rotation",
+       "rotate"
+      ],
+      "ask": "What do we measure for stars in a galaxy?"
+     },
+     {
+      "k": [
+       "flat",
+       "constant",
+       "same speed",
+       "do not slow",
+       "don't slow"
+      ],
+      "ask": "What do we find?"
+     },
+     {
+      "k": [
+       "expect",
+       "visible",
+       "slower",
+       "fall off",
+       "decline"
+      ],
+      "ask": "What would we expect from the visible matter?"
+     },
+     {
+      "k": [
+       "dark matter",
+       "halo",
+       "extra mass",
+       "unseen",
+       "lensing"
+      ],
+      "ask": "What is the explanation?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Exoplanets and astrobiology",
+   "icon": "🪐",
+   "hook": "More than five thousand planets are known around other stars, none of them seen the way we see Jupiter. How do astronomers find them?",
+   "explain": [
+    "An exoplanet is a planet orbiting a star other than the Sun. The first around a Sun-like star, 51 Pegasi b, was found in 1995 by Michel Mayor and Didier Queloz using the radial-velocity method, for which they shared the 2019 Nobel Prize in Physics. Methods include transits (a planet crossing the star's disc dims it), radial velocity (the star wobbles, shifting its spectral lines by the Doppler effect), direct imaging, microlensing and astrometry. Space missions such as Kepler and TESS use transits.",
+    "For a transit, the fractional dip in brightness is (R_p ÷ R_*)². Jupiter transiting the Sun would cause a dip of about 1%, while Earth would cause about 0.008%. Transit timing gives the period, and Kepler's third law, a³ = M T² (a in AU, T in years, M in solar masses), gives the orbital distance. Radial velocity gives a minimum planet mass; the Sun's wobble due to Jupiter is about 12.5 m/s and due to Earth about 0.09 m/s. The planetary equilibrium temperature is T_eq = T_*√(R_* ÷ 2a) × (1 − A)^¼ where A is the albedo.",
+    "The habitable zone is the range of orbital distances where liquid water could exist on a planet's surface, given enough atmosphere. Earth's equilibrium temperature is about 255 K (with albedo 0.3); a greenhouse effect raises its average to about 288 K. Astrobiology studies how life arises and could be detected. Life on Earth survives in extreme places, such as hot springs and deep rocks, so places like Mars, Europa and Enceladus are of interest. To date there is no confirmed detection of life beyond Earth. The Drake equation, N = R_* f_p n_e f_l f_i f_c L, organises the factors we would need to estimate the number of communicating civilisations, but many of its terms are very uncertain."
+   ],
+   "example": {
+    "q": "A planet of radius 6.4 × 10⁶ m (Earth-size) transits a star of radius 6.96 × 10⁸ m (Sun-size). Find the fractional dimming.",
+    "steps": [
+     "Dip = (R_p ÷ R_*)².",
+     "R_p ÷ R_* = 6.4 × 10⁶ ÷ 6.96 × 10⁸ = 9.2 × 10⁻³.",
+     "Dip = (9.2 × 10⁻³)² = 8.5 × 10⁻⁵ ≈ 0.0085%."
+    ],
+    "a": "About 8.5 × 10⁻⁵ (0.0085%)"
+   },
+   "analogies": {
+    "tech": "A satellite camera can detect a tiny dip in light as an insect crosses a distant lamp.",
+    "sea": "A buoy bobbing as a ship passes shows an unseen vessel, as the star's wobble shows an unseen planet.",
+    "city": "A flicker in a street lamp as a bus crosses in front of it is like a planetary transit.",
+    "sport": "A dog walking round its owner makes the owner wobble slightly, like a star pulled by its planet."
+   },
+   "mnemonic": "Dip in the light means a planet in front; wobble in the lines means a planet's pull.",
+   "terms": [
+    [
+     "Transit",
+     "A planet passing in front of its star, causing a slight dimming."
+    ],
+    [
+     "Radial velocity",
+     "The component of a star's velocity along our line of sight."
+    ],
+    [
+     "Habitable zone",
+     "The orbital range where liquid water could exist on a planet's surface."
+    ],
+    [
+     "Biosignature",
+     "A measurable sign of life, such as a combination of atmospheric gases."
+    ]
+   ],
+   "misc": {
+    "wrong": "A planet in the habitable zone must have life.",
+    "right": "The zone only means the temperature range allows liquid water. Atmosphere, magnetic field, composition and many other factors matter, and we do not know whether life exists there."
+   },
+   "limits": "Detection methods are biased towards large planets close to their stars, so the known sample is not a fair census. Habitable-zone limits depend on atmosphere models, and the Drake equation's terms are largely unknown.",
+   "trip": {
+    "wiki": "Methods of detecting exoplanets",
+    "prompt": "Find the transit light curve and radial-velocity curve and see what each reveals."
+   },
+   "sources": [
+    "Exoplanet",
+    "Methods of detecting exoplanets",
+    "Habitable zone"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A star has radius 7.0 × 10⁸ m and a planet has radius 7.0 × 10⁷ m. What is the fractional transit depth? Give a decimal.",
+     "a": 0.01,
+     "tol": 0.0005,
+     "why": "(R_p ÷ R_*)² = (0.1)² = 0.01, i.e. 1%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A planet orbits a star of 0.5 solar masses with a period of 0.5 years. Use a³ = M T² (AU, years, solar masses) to find the orbital distance in AU to one decimal place.",
+     "a": 0.5,
+     "tol": 0.02,
+     "unit": "AU",
+     "why": "a³ = 0.5 × 0.25 = 0.125, so a = 0.5 AU.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The star's spectral lines shift periodically towards blue and then towards red. What does this suggest?",
+     "o": [
+      "An unseen companion is making the star wobble",
+      "The star is exploding as a supernova",
+      "The star is steadily cooling down",
+      "The telescope is out of focus"
+     ],
+     "a": 0,
+     "why": "A periodic Doppler shift indicates the star moves back and forth along our line of sight, as expected from an orbiting planet.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A transit method detection is easier for which planet?",
+     "o": [
+      "A large planet close to a small star",
+      "A small planet far from a large star",
+      "A planet far from the Sun with no star",
+      "A planet that never crosses its star"
+     ],
+     "a": 0,
+     "why": "A large planet blocks more light, and a close orbit gives more frequent transits and a higher probability of crossing.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about the habitable zone is correct?",
+     "o": [
+      "It is the range of orbital distances where liquid water could exist at the surface",
+      "It is the place where life certainly exists",
+      "It is the zone around a star with no radiation",
+      "It is always the same distance from every star"
+     ],
+     "a": 0,
+     "why": "It depends on the star's luminosity and the planet's atmosphere, and guarantees nothing about life.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Earth's equilibrium temperature without any greenhouse effect is about 255 K, but its mean surface temperature is about 288 K. What accounts for the difference?",
+     "o": [
+      "The greenhouse effect of the atmosphere",
+      "The pull of the Moon on the oceans",
+      "Earth's rotation on its axis",
+      "The solar wind of charged particles"
+     ],
+     "a": 0,
+     "why": "Greenhouse gases absorb and re-emit infrared radiation, warming the surface by about 33 K.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is radial velocity alone unable to give the true mass of a planet?",
+     "o": [
+      "It measures only the line-of-sight component, so it gives a minimum mass (m sin i)",
+      "It measures the radius of the planet only",
+      "It needs to know the planet's colour first",
+      "It cannot detect any mass at all"
+     ],
+     "a": 0,
+     "why": "If the orbit is inclined to our line of sight, the measured wobble is reduced, so the true mass is at least the value derived.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each detection method to what it measures.",
+     "pairs": [
+      [
+       "Transit",
+       "Dip in stellar brightness"
+      ],
+      [
+       "Radial velocity",
+       "Doppler shift of stellar lines"
+      ],
+      [
+       "Direct imaging",
+       "Light from the planet itself"
+      ],
+      [
+       "Microlensing",
+       "Brightening from a gravitational lens"
+      ]
+     ],
+     "why": "Each method is sensitive to different kinds of planets.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why would detecting oxygen and methane together in an exoplanet's atmosphere be considered a possible biosignature, and why is it not proof?",
+     "rubric": [
+      [
+       "react",
+       "destroy",
+       "removed",
+       "replenish",
+       "source",
+       "disequilibrium",
+       "out of balance"
+      ],
+      [
+       "life",
+       "biolog",
+       "organism"
+      ],
+      [
+       "abiotic",
+       "non-biological",
+       "other explanation",
+       "geolog",
+       "false positive",
+       "not proof",
+       "not certain"
+      ]
+     ],
+     "min": 3,
+     "model": "Oxygen and methane react with each other, so finding both suggests something is continually replenishing them, as life does on Earth. But non-biological processes might also produce them, so it is evidence to follow up, not proof of life.",
+     "why": "Biosignatures are probabilistic and must rule out abiotic sources.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these planets by approximate transit depth for a Sun-like star, smallest first.",
+     "items": [
+      "Earth-size planet",
+      "Neptune-size planet",
+      "Saturn-size planet",
+      "Jupiter-size planet"
+     ],
+     "why": "Depth scales as (R_p ÷ R_*)², giving about 0.008%, 0.13%, 0.8% and 1% respectively.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Hot Jupiters are over-represented among known exoplanets. What is the best explanation?",
+     "o": [
+      "They are the easiest to detect, a selection bias",
+      "They are the most common planets in the Galaxy",
+      "They form only around stars that have rings",
+      "Small planets cannot exist"
+     ],
+     "a": 0,
+     "why": "Large close-in planets produce larger transit depths and stronger wobbles, so they are found more easily.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "The Drake equation gives N = R_* f_p n_e f_l f_i f_c L. Why can't it yield a reliable estimate yet?",
+     "rubric": [
+      [
+       "uncertain",
+       "unknown",
+       "poorly known",
+       "no data",
+       "guess"
+      ],
+      [
+       "life",
+       "fl",
+       "f_l",
+       "intelligen",
+       "civilisation",
+       "civilization",
+       "communicat"
+      ],
+      [
+       "one example",
+       "only one",
+       "earth only",
+       "sample of one"
+      ]
+     ],
+     "min": 2,
+     "model": "Several terms, such as the fraction of planets where life arises or becomes intelligent, are unknown, and we have only one example, Earth, so any product could span many orders of magnitude.",
+     "why": "Estimates depend on unmeasured probabilities.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A planet orbits very close to a cool red dwarf in its habitable zone. Why is it likely to be tidally locked?",
+     "o": [
+      "Strong gravity of the star over a short orbit slows its rotation until one side always faces the star",
+      "Red dwarfs have no gravity of their own",
+      "Planets close to stars cannot rotate",
+      "The star's light pushes the planet round"
+     ],
+     "a": 0,
+     "why": "The habitable zone of a dim star is close in, where tidal forces are strong and lock the rotation to the orbital period.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How astronomers find planets around other stars",
+    "model": "Planets around other stars are too faint to see easily, so we look for their effects. In the transit method, a planet crossing the star dims it a tiny bit. In the radial-velocity method, the planet's pull makes the star wobble, shifting its spectrum. For example, an Earth-size planet dims a Sun-like star by about 0.008%.",
+    "points": [
+     {
+      "k": [
+       "transit",
+       "dim",
+       "pass in front",
+       "cross",
+       "block"
+      ],
+      "ask": "What happens when a planet crosses its star?"
+     },
+     {
+      "k": [
+       "wobble",
+       "pull",
+       "radial",
+       "doppler",
+       "spectrum",
+       "shift"
+      ],
+      "ask": "What else does a planet do to its star?"
+     },
+     {
+      "k": [
+       "faint",
+       "too dim",
+       "bright star",
+       "hard to see",
+       "glare"
+      ],
+      "ask": "Why not just look for the planet directly?"
+     },
+     {
+      "k": [
+       "example",
+       "0.008",
+       "earth",
+       "jupiter",
+       "kepler",
+       "51 peg"
+      ],
+      "ask": "Can you give an example with numbers or a name?"
+     }
+    ]
+   }
+  }
+ ]
+}

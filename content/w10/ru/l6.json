@@ -1,0 +1,1765 @@
+{
+ "world": 10,
+ "lang": "ru",
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced linguistics and grammar",
+   "icon": "🔬",
+   "hook": "Why can \"Я писал письмо\" and \"Я написал письмо\" both translate as \"I wrote a letter\", yet not mean the same?",
+   "explain": [
+    "Russian is a synthetic, fusional language: endings carry several meanings at once. Verbs have aspect (вид). The imperfective (писать) presents an action as a process, repeated or without a limit, while the perfective (написать) presents it as a completed whole with a result. Я писал письмо says that I was engaged in writing, while Я написал письмо says that the letter is finished.",
+    "Aspect pairs are formed by prefixes (делать – сделать), by suffixes (решать – решить) or by a different root (говорить – сказать). Word order in Russian is guided by information structure: known information (theme) comes first and new information (rheme) at the end, so Книгу купил брат and Брат купил книгу differ in emphasis."
+   ],
+   "mnemonic": "Process or result: the aspect pair is a camera and a photograph.",
+   "items": [
+    [
+     "aspect",
+     "вид",
+     "veet"
+    ],
+    [
+     "perfective aspect",
+     "совершенный вид",
+     "sa-vyer-SHEN-ny veet"
+    ],
+    [
+     "imperfective aspect",
+     "несовершенный вид",
+     "nye-sa-vyer-SHEN-ny veet"
+    ],
+    [
+     "case",
+     "падеж",
+     "pa-DYESH"
+    ],
+    [
+     "declension",
+     "склонение",
+     "skla-NYE-nee-ye"
+    ],
+    [
+     "conjugation",
+     "спряжение",
+     "spree-ZHE-nee-ye"
+    ],
+    [
+     "word formation",
+     "словообразование",
+     "sla-va-ab-ra-ZA-va-nee-ye"
+    ],
+    [
+     "stem",
+     "основа",
+     "as-NO-va"
+    ]
+   ],
+   "sentences": [
+    [
+     "I was reading the book but did not finish it.",
+     [
+      "Я",
+      "читал",
+      "книгу,",
+      "но",
+      "не",
+      "дочитал",
+      "её."
+     ]
+    ],
+    [
+     "The verb has two aspects.",
+     [
+      "Глагол",
+      "имеет",
+      "два",
+      "вида."
+     ]
+    ],
+    [
+     "The case expresses the role of a word.",
+     [
+      "Падеж",
+      "выражает",
+      "роль",
+      "слова."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does Я написал письмо express that Я писал письмо does not?",
+     "o": [
+      "The letter is completed",
+      "The action is repeated",
+      "The action will happen",
+      "The writer is unknown"
+     ],
+     "a": 0,
+     "why": "The perfective presents the action as a completed whole.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair is an aspect pair with different roots?",
+     "o": [
+      "делать – сделать",
+      "говорить – сказать",
+      "читать – прочитать",
+      "писать – написать"
+     ],
+     "a": 1,
+     "why": "Говорить – сказать uses suppletion.",
+     "d": 3,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What do the sentences Книгу купил брат and Брат купил книгу differ in?",
+     "o": [
+      "Who bought the book",
+      "Information structure and emphasis, not basic meaning",
+      "Tense",
+      "Number of books"
+     ],
+     "a": 1,
+     "why": "Case endings fix roles, so order marks emphasis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Russian called fusional?",
+     "o": [
+      "It joins words with spaces",
+      "It has no endings",
+      "One ending expresses several categories such as case, number and gender together",
+      "It uses only prefixes"
+     ],
+     "a": 2,
+     "why": "The ending -ой in большой marks gender, number and case at once.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a prefix change aspect and meaning at the same time?",
+     "o": [
+      "Prefixes never change meaning",
+      "Prefixes only affect spelling",
+      "Aspect depends on word order",
+      "Some prefixes add a result or direction as well as perfectivity"
+     ],
+     "a": 3,
+     "why": "Prefixed perfectives may add nuances, e.g. про- or до-.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Aspect and structure in Russian",
+    "model": "Russian is a fusional language. Verb aspect contrasts process (imperfective) with completed result (perfective). Word order depends on information structure: known first, new last.",
+    "points": [
+     {
+      "k": [
+       "aspect",
+       "perfective",
+       "imperfective"
+      ],
+      "ask": "What is aspect?"
+     },
+     {
+      "k": [
+       "fusional",
+       "ending",
+       "case"
+      ],
+      "ask": "What does fusional mean?"
+     },
+     {
+      "k": [
+       "order",
+       "theme",
+       "rheme",
+       "emphasis"
+      ],
+      "ask": "How does word order work?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Grammatical aspect",
+    "prompt": "Read the Slavic section and find one aspect pair with an example."
+   },
+   "sources": [
+    "Grammatical aspect",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Historical development of the language",
+   "icon": "🏛️",
+   "hook": "Why does Russian have two words, город and град, for \"city\"?",
+   "explain": [
+    "Russian belongs to the East Slavic branch of the Slavic family, within the Indo-European languages. It developed from Old East Slavic (древнерусский язык), the language of Kievan Rus'. The Cyrillic script came with Christianity, and Church Slavonic became the language of the Church and of literature.",
+    "Church Slavonic left many words in Russian, creating pairs such as город and град, ворота and врата, голова and глава, where the Slavonic form often has a more elevated meaning. Peter I introduced a simplified civil script in 1708, and the orthographic reform of 1918 removed letters such as ять (ѣ) and a final hard sign."
+   ],
+   "mnemonic": "Старое слово pair: the Church Slavonic twin sounds more solemn.",
+   "items": [
+    [
+     "Old East Slavic",
+     "древнерусский язык",
+     "dryev-nye-ROOS-ky ya-ZYK"
+    ],
+    [
+     "Church Slavonic",
+     "церковнославянский язык",
+     "tser-kov-no-sla-VYAN-sky"
+    ],
+    [
+     "Cyrillic script",
+     "кириллица",
+     "kee-REEL-lee-tsa"
+    ],
+    [
+     "reform",
+     "реформа",
+     "rye-FOR-ma"
+    ],
+    [
+     "borrowing",
+     "заимствование",
+     "za-eem-STVO-va-nee-ye"
+    ],
+    [
+     "Proto-Slavic",
+     "праславянский",
+     "pra-sla-VYAN-sky"
+    ],
+    [
+     "writing system",
+     "письменность",
+     "PEES-myen-nast"
+    ],
+    [
+     "chronicle",
+     "летопись",
+     "LYE-ta-pees"
+    ]
+   ],
+   "sentences": [
+    [
+     "Russian belongs to the Slavic languages.",
+     [
+      "Русский",
+      "язык",
+      "принадлежит",
+      "к",
+      "славянским",
+      "языкам."
+     ]
+    ],
+    [
+     "The orthographic reform took place in 1918.",
+     [
+      "Орфографическая",
+      "реформа",
+      "произошла",
+      "в",
+      "1918",
+      "году."
+     ]
+    ],
+    [
+     "The chronicle is an important source.",
+     [
+      "Летопись",
+      "—",
+      "важный",
+      "источник."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "To which branch of Slavic does Russian belong?",
+     "o": [
+      "West Slavic",
+      "East Slavic",
+      "South Slavic",
+      "Baltic"
+     ],
+     "a": 1,
+     "why": "Russian, Ukrainian and Belarusian are East Slavic.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What explains pairs such as город and град?",
+     "o": [
+      "Mongol influence",
+      "English borrowing",
+      "Church Slavonic influence on Russian",
+      "A spelling reform of 2000"
+     ],
+     "a": 2,
+     "why": "Slavonic forms entered Russian with Church texts.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do Church Slavonic forms often sound more elevated?",
+     "o": [
+      "They are newer",
+      "They are from slang",
+      "They came through religious and literary language",
+      "They are foreign names"
+     ],
+     "a": 2,
+     "why": "Their stylistic value comes from their original use.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What did the 1918 reform change?",
+     "o": [
+      "It added the Latin alphabet",
+      "It created the Cyrillic alphabet",
+      "It banned punctuation",
+      "It removed several letters and simplified spelling"
+     ],
+     "a": 3,
+     "why": "The reform removed letters like ѣ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the value of a chronicle for linguists?",
+     "o": [
+      "It preserves early written forms of the language",
+      "It describes modern slang",
+      "It is a dictionary",
+      "It has no language"
+     ],
+     "a": 0,
+     "why": "Early texts show earlier stages of the language.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "History of Russian",
+    "model": "Russian is East Slavic and developed from Old East Slavic. Church Slavonic influenced its vocabulary, giving pairs like город and град. Peter I and the 1918 reform simplified the script.",
+    "points": [
+     {
+      "k": [
+       "east",
+       "slavic",
+       "old"
+      ],
+      "ask": "Where does Russian come from?"
+     },
+     {
+      "k": [
+       "church",
+       "slavonic",
+       "град"
+      ],
+      "ask": "What was the role of Church Slavonic?"
+     },
+     {
+      "k": [
+       "1918",
+       "reform",
+       "letters"
+      ],
+      "ask": "What changed in 1918?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "History of the Russian language",
+    "prompt": "Find the periods of development and list three."
+   },
+   "sources": [
+    "History of the Russian language",
+    "Old East Slavic"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Literature and cultural discourse",
+   "icon": "🏺",
+   "hook": "In Soviet times some books were copied by hand and passed between friends. What was this called?",
+   "explain": [
+    "Russian literary history is often divided into periods. The Golden Age (золотой век) of the early 19th century is linked with Pushkin, and the Silver Age (серебряный век) of the early 20th century with poets such as Anna Akhmatova, Alexander Blok and Marina Tsvetaeva. The intelligentsia (интеллигенция) is a social group with a strong cultural role.",
+    "In the Soviet Union, texts that the censors did not allow could circulate in typed or handwritten copies called samizdat (самиздат). Толстые журналы (thick journals) published novels and essays and shaped public debate. Bulgakov's Мастер и Маргарита was written in the 1930s but published only in the 1960s."
+   ],
+   "mnemonic": "Golden for Pushkin, Silver for Akhmatova, samizdat for hand-passed pages.",
+   "items": [
+    [
+     "Golden Age",
+     "золотой век",
+     "za-la-TOY vyek"
+    ],
+    [
+     "Silver Age",
+     "серебряный век",
+     "sye-RYEB-rya-ny vyek"
+    ],
+    [
+     "intelligentsia",
+     "интеллигенция",
+     "een-tye-lee-GYEN-tsee-ya"
+    ],
+    [
+     "samizdat",
+     "самиздат",
+     "sa-meez-DAT"
+    ],
+    [
+     "classic",
+     "классика",
+     "KLAS-see-ka"
+    ],
+    [
+     "canon",
+     "канон",
+     "ka-NON"
+    ],
+    [
+     "thick literary journal",
+     "толстый журнал",
+     "TOL-sty zhoor-NAL"
+    ],
+    [
+     "dialogue of cultures",
+     "диалог культур",
+     "dee-a-LOK kool-TOOR"
+    ]
+   ],
+   "sentences": [
+    [
+     "The Silver Age gave Russian poetry many names.",
+     [
+      "Серебряный",
+      "век",
+      "дал",
+      "русской",
+      "поэзии",
+      "много",
+      "имён."
+     ]
+    ],
+    [
+     "Samizdat circulated forbidden texts.",
+     [
+      "Самиздат",
+      "распространял",
+      "запрещённые",
+      "тексты."
+     ]
+    ],
+    [
+     "Thick journals published novels.",
+     [
+      "Толстые",
+      "журналы",
+      "публиковали",
+      "романы."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Who is a poet of the Silver Age?",
+     "o": [
+      "Alexander Pushkin",
+      "Leo Tolstoy",
+      "Anna Akhmatova",
+      "Ivan Turgenev"
+     ],
+     "a": 2,
+     "why": "Akhmatova belongs to the early 20th century.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What was samizdat?",
+     "o": [
+      "A state newspaper",
+      "A school textbook",
+      "A kind of theatre",
+      "Self-published copies of texts not approved by the censors"
+     ],
+     "a": 3,
+     "why": "Samizdat means self-publishing.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why was literature so important in Russian public life?",
+     "o": [
+      "There was no other art",
+      "Books were free",
+      "Reading was compulsory",
+      "Writers often discussed moral and social questions that were hard to debate openly"
+     ],
+     "a": 3,
+     "why": "Literature served as a forum for ideas.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does the delayed publication of Мастер и Маргарита show?",
+     "o": [
+      "Censorship could delay major works for decades",
+      "The author was unknown",
+      "The book was too short",
+      "It was a translation"
+     ],
+     "a": 0,
+     "why": "The novel appeared long after it was written.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a canon?",
+     "o": [
+      "A kind of poem",
+      "A set of works regarded as the most important",
+      "A dictionary",
+      "A foreign language"
+     ],
+     "a": 1,
+     "why": "The canon is shaped by tradition and criticism.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Russian literature and culture",
+    "model": "Russian literature is divided into the Golden Age and the Silver Age. The intelligentsia played a major cultural role. Samizdat circulated unapproved texts in the Soviet Union.",
+    "points": [
+     {
+      "k": [
+       "golden",
+       "silver",
+       "age"
+      ],
+      "ask": "What are the ages?"
+     },
+     {
+      "k": [
+       "intelligentsia",
+       "cultural",
+       "role"
+      ],
+      "ask": "Who are the intelligentsia?"
+     },
+     {
+      "k": [
+       "samizdat",
+       "censor"
+      ],
+      "ask": "What is samizdat?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Samizdat",
+    "prompt": "Read the first section and note how texts were copied."
+   },
+   "sources": [
+    "Samizdat",
+    "Silver Age of Russian Poetry"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Advanced academic writing",
+   "icon": "📑",
+   "hook": "A Russian scientific article begins with an abstract. Which questions must the abstract answer?",
+   "explain": [
+    "Academic Russian writing follows conventions. A thesis or article opens with an аннотация (abstract), then states the актуальность (relevance of the topic), the цель работы (aim), the объект (object) and предмет (subject) of research, and the научная новизна (novelty). Methods and results follow, and a библиография lists the sources.",
+    "A dash often replaces \"is\": Цель работы — проанализировать данные. Style is impersonal, passive and precise: В работе использованы следующие методы. Hedges mark uncertainty: по-видимому (apparently), возможно (possibly). References use phrases like см. (see) and Ср. (compare)."
+   ],
+   "mnemonic": "Relevance, aim, object, subject, novelty: the five doors of an introduction.",
+   "items": [
+    [
+     "abstract",
+     "аннотация",
+     "an-na-TA-tsee-ya"
+    ],
+    [
+     "relevance (of the topic)",
+     "актуальность",
+     "ak-too-AL-nast"
+    ],
+    [
+     "aim of the work",
+     "цель работы",
+     "tsel ra-BO-ty"
+    ],
+    [
+     "object of research",
+     "объект исследования",
+     "ab-YEKT ees-SLYE-da-va-nee-ya"
+    ],
+    [
+     "subject of research",
+     "предмет исследования",
+     "pryed-MYET"
+    ],
+    [
+     "scientific novelty",
+     "научная новизна",
+     "na-OOCH-na-ya na-vee-ZNA"
+    ],
+    [
+     "reference",
+     "ссылка",
+     "SSYL-ka"
+    ],
+    [
+     "bibliography",
+     "библиография",
+     "beeb-lee-a-GRA-fee-ya"
+    ]
+   ],
+   "sentences": [
+    [
+     "The aim of the work is to analyse the data.",
+     [
+      "Цель",
+      "работы",
+      "—",
+      "проанализировать",
+      "данные."
+     ]
+    ],
+    [
+     "The novelty consists in a new approach.",
+     [
+      "Научная",
+      "новизна",
+      "заключается",
+      "в",
+      "новом",
+      "подходе."
+     ]
+    ],
+    [
+     "The following methods are used in the work.",
+     [
+      "В",
+      "работе",
+      "использованы",
+      "следующие",
+      "методы."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does the dash in Цель работы — проанализировать данные replace?",
+     "o": [
+      "A question mark",
+      "The word \"data\"",
+      "A comma",
+      "The omitted present tense of \"to be\""
+     ],
+     "a": 3,
+     "why": "The dash marks omission of \"is\" before an infinitive or noun.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which section states why the topic matters?",
+     "o": [
+      "актуальность",
+      "библиография",
+      "ссылка",
+      "аннотация"
+     ],
+     "a": 0,
+     "why": "Актуальность justifies the choice of topic.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why distinguish объект from предмет исследования?",
+     "o": [
+      "The object is the broader phenomenon and the subject is the aspect actually studied",
+      "They mean the same",
+      "The object is the author",
+      "The subject is the title"
+     ],
+     "a": 0,
+     "why": "Russian academic convention separates field and focus.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do academic texts use hedges like по-видимому?",
+     "o": [
+      "They are decorative",
+      "They show appropriate caution about conclusions",
+      "They show anger",
+      "They make the text informal"
+     ],
+     "a": 1,
+     "why": "Caution reflects the limits of evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a bibliography necessary?",
+     "o": [
+      "It lengthens the text",
+      "It is optional decoration",
+      "It lets readers verify sources and acknowledges others' work",
+      "It replaces the conclusion"
+     ],
+     "a": 2,
+     "why": "Transparent sourcing is basic scholarly ethics.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced academic writing in Russian",
+    "model": "An academic text states актуальность, цель, объект, предмет and научная новизна, uses an impersonal style and hedging, and lists sources in a bibliography. A dash may replace \"is\".",
+    "points": [
+     {
+      "k": [
+       "актуальность",
+       "цель",
+       "object",
+       "subject"
+      ],
+      "ask": "What does the introduction contain?"
+     },
+     {
+      "k": [
+       "impersonal",
+       "hedge",
+       "по-видимому"
+      ],
+      "ask": "What is the style?"
+     },
+     {
+      "k": [
+       "bibliography",
+       "sources",
+       "reference"
+      ],
+      "ask": "Why list sources?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Abstract (summary)",
+    "prompt": "Read the page on abstracts and write a 3-sentence abstract about a topic you like."
+   },
+   "sources": [
+    "Abstract (summary)",
+    "Academic writing"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Professional translation",
+   "icon": "🛠️",
+   "hook": "A sign says \"Не курить\" with an infinitive. How should a translator render it into English?",
+   "explain": [
+    "Professional translation means producing a text that works in the target culture. Signs in Russian often use the infinitive: Не курить corresponds to \"No smoking\". A literal \"Not to smoke\" would be wrong. This is a translation shift (переводческая трансформация).",
+    "Professionals use a glossary (глоссарий) for consistency, ensure correct collocations (устойчивые сочетания), localise units and dates (локализация) and finish with proofreading (вычитка). Names are transliterated by a stated system, so Достоевский appears as Dostoevsky or Dostoyevsky depending on the system. Pragmatics matters: the text must have the same effect on its reader as the original."
+   ],
+   "mnemonic": "Same effect, different words: translation is rebuilding, not copying.",
+   "items": [
+    [
+     "localisation",
+     "локализация",
+     "la-ka-lee-ZA-tsee-ya"
+    ],
+    [
+     "glossary",
+     "глоссарий",
+     "gla-SSA-ree-y"
+    ],
+    [
+     "collocation",
+     "устойчивое сочетание",
+     "oos-TOY-chee-va-ye sa-che-TA-nee-ye"
+    ],
+    [
+     "translation shift",
+     "переводческая трансформация",
+     "pye-rye-VOT-chyes-ka-ya"
+    ],
+    [
+     "equivalence",
+     "эквивалентность",
+     "e-kvee-va-LYENT-nast"
+    ],
+    [
+     "pragmatics",
+     "прагматика",
+     "prag-MA-tee-ka"
+    ],
+    [
+     "editor",
+     "редактор",
+     "rye-DAK-tar"
+    ],
+    [
+     "proofreading",
+     "вычитка",
+     "VY-cheet-ka"
+    ]
+   ],
+   "sentences": [
+    [
+     "The translator must know the terminology.",
+     [
+      "Переводчик",
+      "должен",
+      "знать",
+      "терминологию."
+     ]
+    ],
+    [
+     "A glossary ensures uniformity.",
+     [
+      "Глоссарий",
+      "обеспечивает",
+      "единообразие."
+     ]
+    ],
+    [
+     "Proofreading removes errors.",
+     [
+      "Вычитка",
+      "устраняет",
+      "ошибки."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How is the Russian sign Не курить best rendered in English?",
+     "o": [
+      "No smoking",
+      "Not to smoke",
+      "Do not to smoke",
+      "Smoke not"
+     ],
+     "a": 0,
+     "why": "Translators match the conventional sign form of the target language.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a professional keep a glossary?",
+     "o": [
+      "To lengthen the text",
+      "To keep terms consistent across a text",
+      "To replace the dictionary",
+      "To avoid reading"
+     ],
+     "a": 1,
+     "why": "Consistency is a mark of quality.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do names like Достоевский have several English spellings?",
+     "o": [
+      "The name changes",
+      "Different transliteration systems exist",
+      "English has no D",
+      "Russian has several alphabets"
+     ],
+     "a": 1,
+     "why": "Transliteration conventions differ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the aim of localisation?",
+     "o": [
+      "To translate word for word",
+      "To shorten the text",
+      "To make a text fit the target culture, including units, dates and conventions",
+      "To change the topic"
+     ],
+     "a": 2,
+     "why": "Localisation goes beyond translating words.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a typical translation shift from Russian to English?",
+     "o": [
+      "Adding spelling errors",
+      "Dropping all verbs",
+      "Replacing numbers with names",
+      "Passive impersonal Russian turned into an active English sentence"
+     ],
+     "a": 3,
+     "why": "English prefers active forms, so shifts are common.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Professional translation",
+    "model": "A professional translator aims for the same effect on the reader. Use glossaries for consistency, convention-appropriate forms like No smoking for Не курить, localisation and proofreading.",
+    "points": [
+     {
+      "k": [
+       "effect",
+       "reader",
+       "target"
+      ],
+      "ask": "What is the aim of translation?"
+     },
+     {
+      "k": [
+       "glossary",
+       "consistency",
+       "terminology"
+      ],
+      "ask": "How do I keep terms consistent?"
+     },
+     {
+      "k": [
+       "не курить",
+       "no smoking",
+       "sign"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Translation",
+    "prompt": "Read about translation shifts and write one Russian-English example."
+   },
+   "sources": [
+    "Translation",
+    "Localization"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Interpretation of complex communication",
+   "icon": "🧭",
+   "hook": "A friend says \"Тут не жарко?\" while looking at the window. What does the friend really want?",
+   "explain": [
+    "Interpreting complex communication means reading beyond the words. Тут не жарко? can be a request to open the window, an example of indirect speech. Implied meaning (подтекст), hints (намёки), irony (ирония), euphemism (эвфемизм) and allegory (иносказание) all need context, intonation and shared knowledge.",
+    "Polysemy (многозначность) means that one word has several senses, and context chooses the right one. Irony is often signalled by intonation: Ну, спасибо тебе большое! after a spilled drink means the opposite of thanks. Euphemisms soften sensitive facts: скончался for \"died\". Non-verbal signals (невербальные сигналы) such as gestures and silence also carry meaning."
+   ],
+   "mnemonic": "The sentence says one thing; the situation says another.",
+   "items": [
+    [
+     "subtext",
+     "подтекст",
+     "pad-TYEKST"
+    ],
+    [
+     "allegory",
+     "иносказание",
+     "ee-na-ska-ZA-nee-ye"
+    ],
+    [
+     "irony",
+     "ирония",
+     "ee-RO-nee-ya"
+    ],
+    [
+     "euphemism",
+     "эвфемизм",
+     "e-fye-MEEZM"
+    ],
+    [
+     "polysemy",
+     "многозначность",
+     "mna-ga-ZNACH-nast"
+    ],
+    [
+     "hint",
+     "намёк",
+     "na-MYOK"
+    ],
+    [
+     "intonation",
+     "интонация",
+     "een-ta-NA-tsee-ya"
+    ],
+    [
+     "non-verbal",
+     "невербальный",
+     "nye-vyer-BAL-ny"
+    ]
+   ],
+   "sentences": [
+    [
+     "The speaker hints at something else.",
+     [
+      "Говорящий",
+      "намекает",
+      "на",
+      "другое."
+     ]
+    ],
+    [
+     "Irony is often expressed by intonation.",
+     [
+      "Ирония",
+      "часто",
+      "выражается",
+      "интонацией."
+     ]
+    ],
+    [
+     "A euphemism softens the meaning.",
+     [
+      "Эвфемизм",
+      "смягчает",
+      "смысл."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "A friend spills tea on your book and you say \"Ну, спасибо тебе большое!\" with falling, sharp intonation. What do you convey?",
+     "o": [
+      "Sincere thanks",
+      "Irony: you are annoyed",
+      "A request for more tea",
+      "A question about price"
+     ],
+     "a": 1,
+     "why": "Intonation turns the words into their opposite.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is скончался in a news report?",
+     "o": [
+      "An insult",
+      "A question",
+      "A euphemism for \"died\"",
+      "A word for a trip"
+     ],
+     "a": 2,
+     "why": "It is a formal, softer way to say died.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does the question Тут не жарко? typically communicate?",
+     "o": [
+      "Only the temperature",
+      "Nothing",
+      "An indirect request, e.g. to open the window",
+      "An insult"
+     ],
+     "a": 2,
+     "why": "Pragmatic meaning exceeds literal meaning.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does an interpreter need cultural knowledge?",
+     "o": [
+      "Words are enough",
+      "Cultures have no effect",
+      "It makes speech longer",
+      "Meaning often depends on shared background, not words"
+     ],
+     "a": 3,
+     "why": "Cultural context decides implied meaning.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How does polysemy create difficulty?",
+     "o": [
+      "One word may have several senses, so context must choose",
+      "Words never change",
+      "All senses are equal",
+      "It only affects spelling"
+     ],
+     "a": 0,
+     "why": "The interpreter selects the sense from context.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Interpreting implied meaning",
+    "model": "Meaning can go beyond words: subtext, hints, irony, euphemism and indirect requests. Use context, intonation and cultural knowledge. Polysemy means that one word has several senses.",
+    "points": [
+     {
+      "k": [
+       "subtext",
+       "hint",
+       "implied"
+      ],
+      "ask": "What is implied meaning?"
+     },
+     {
+      "k": [
+       "irony",
+       "intonation"
+      ],
+      "ask": "How is irony shown?"
+     },
+     {
+      "k": [
+       "context",
+       "culture",
+       "polysemy"
+      ],
+      "ask": "What helps me understand?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Pragmatics",
+    "prompt": "Read about implicature and find an English example of an indirect request."
+   },
+   "sources": [
+    "Pragmatics",
+    "Irony"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Language variation and dialectology",
+   "icon": "🗺️",
+   "hook": "Is there one \"correct\" Russian, or many varieties? Linguists study this question.",
+   "explain": [
+    "Dialectology studies regional varieties (диалекты, говоры). The standard language (литературный язык) is based on educated Moscow speech, with codified rules of spelling and pronunciation. Russian dialects are traditionally divided into northern, southern and transitional groups. Northern speech keeps a clear о in unstressed syllables (оканье), while southern and standard speech use аканье.",
+    "Social varieties also exist. Просторечие is non-standard everyday speech, жаргон is slang used by a group, and professional jargon belongs to a trade. Speakers move between varieties depending on situation. Russian is also spoken in many countries, where it contacts other languages and develops local features."
+   ],
+   "mnemonic": "North says \"o\", south says \"a\", the standard picks \"a\".",
+   "items": [
+    [
+     "dialect",
+     "диалект",
+     "dee-a-LYEKT"
+    ],
+    [
+     "local speech",
+     "говор",
+     "GO-vor"
+    ],
+    [
+     "non-standard vernacular",
+     "просторечие",
+     "pra-sta-RYE-chee-ye"
+    ],
+    [
+     "slang, jargon",
+     "жаргон",
+     "zhar-GON"
+    ],
+    [
+     "standard language",
+     "литературный язык",
+     "lee-tye-ra-TOOR-ny ya-ZYK"
+    ],
+    [
+     "akanye",
+     "аканье",
+     "a-KA-nye"
+    ],
+    [
+     "okanye",
+     "оканье",
+     "o-KA-nye"
+    ],
+    [
+     "dialectology",
+     "диалектология",
+     "dee-a-lyek-ta-LO-gee-ya"
+    ]
+   ],
+   "sentences": [
+    [
+     "The standard language is based on Moscow speech.",
+     [
+      "Литературный",
+      "язык",
+      "основан",
+      "на",
+      "московском",
+      "говоре."
+     ]
+    ],
+    [
+     "Northern dialects keep okanye.",
+     [
+      "Северные",
+      "говоры",
+      "сохраняют",
+      "оканье."
+     ]
+    ],
+    [
+     "Slang is used in a group.",
+     [
+      "Жаргон",
+      "используется",
+      "в",
+      "группе."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is the standard literary Russian traditionally based on?",
+     "o": [
+      "Siberian dialects only",
+      "Church Slavonic",
+      "Educated Moscow speech",
+      "English"
+     ],
+     "a": 2,
+     "why": "Standard pronunciation norms derive from Moscow speech.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What distinguishes okanye?",
+     "o": [
+      "Unstressed о is pronounced as a",
+      "The letter о is silent",
+      "The letter о is a consonant",
+      "Unstressed о is pronounced as о"
+     ],
+     "a": 3,
+     "why": "Okanye is typical of northern dialects.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do speakers switch between varieties?",
+     "o": [
+      "They forget words",
+      "It is a grammar error",
+      "The alphabet changes",
+      "Different situations call for different registers"
+     ],
+     "a": 3,
+     "why": "Style shifting is a normal feature of language.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the difference between жаргон and диалект?",
+     "o": [
+      "Жаргон is tied to a social group and диалект is tied to a place",
+      "They are identical",
+      "Диалект is slang",
+      "Жаргон is a region"
+     ],
+     "a": 0,
+     "why": "Sociolects differ from regional dialects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Russian outside Russia develop local features?",
+     "o": [
+      "It is forbidden to change",
+      "Contact with other languages influences vocabulary and usage",
+      "Languages never change",
+      "Only the alphabet changes"
+     ],
+     "a": 1,
+     "why": "Language contact produces variation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Varieties of Russian",
+    "model": "Dialectology studies regional and social varieties. The standard is based on Moscow speech. Northern dialects keep okanye and southern ones use akanye. Жаргон is group slang.",
+    "points": [
+     {
+      "k": [
+       "dialect",
+       "regional",
+       "variety"
+      ],
+      "ask": "What are varieties?"
+     },
+     {
+      "k": [
+       "standard",
+       "moscow",
+       "literary"
+      ],
+      "ask": "What is the standard based on?"
+     },
+     {
+      "k": [
+       "оканье",
+       "аканье",
+       "north",
+       "south"
+      ],
+      "ask": "How do dialects differ?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian dialects",
+    "prompt": "Find a map of dialect groups and name the three main ones."
+   },
+   "sources": [
+    "Russian dialects",
+    "Dialectology"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Specialised scientific or technical language",
+   "icon": "🧪",
+   "hook": "Scientific Russian packs a lot into long chains of nouns in the genitive. What does \"скорость изменения температуры\" mean?",
+   "explain": [
+    "Scientific and technical Russian uses precise terms and compact structures. A chain of genitives builds a complex idea: скорость изменения температуры means \"the rate of change of temperature\". Many terms come from Greek and Latin, such as алгоритм, молекула and эксперимент, while others are Russian: погрешность (error margin), скорость (speed).",
+    "Formulas and units follow set patterns. Statements are impersonal: Эксперимент подтвердил формулу. Dmitri Mendeleev published the periodic table in 1869, and Yuri Gagarin became the first person in space in 1961. Scientific texts avoid emotion and ambiguity, and numbers are written with a decimal comma: 3,5."
+   ],
+   "mnemonic": "Read a genitive chain from the right: temperature, of change, rate.",
+   "items": [
+    [
+     "equation",
+     "уравнение",
+     "oor-av-NYE-nee-ye"
+    ],
+    [
+     "molecule",
+     "молекула",
+     "ma-LYE-koo-la"
+    ],
+    [
+     "to calculate",
+     "вычислять",
+     "vy-chees-LYAT"
+    ],
+    [
+     "algorithm",
+     "алгоритм",
+     "al-ga-REETM"
+    ],
+    [
+     "experiment",
+     "эксперимент",
+     "eks-pe-ree-MYENT"
+    ],
+    [
+     "error margin",
+     "погрешность",
+     "pa-GRYESH-nast"
+    ],
+    [
+     "formula",
+     "формула",
+     "FOR-moo-la"
+    ],
+    [
+     "speed",
+     "скорость",
+     "SKO-rast"
+    ]
+   ],
+   "sentences": [
+    [
+     "The speed of light is constant.",
+     [
+      "Скорость",
+      "света",
+      "постоянна."
+     ]
+    ],
+    [
+     "The experiment confirmed the formula.",
+     [
+      "Эксперимент",
+      "подтвердил",
+      "формулу."
+     ]
+    ],
+    [
+     "The algorithm calculates the result.",
+     [
+      "Алгоритм",
+      "вычисляет",
+      "результат."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How is 3.5 written in Russian?",
+     "o": [
+      "3.5 only",
+      "3;5",
+      "3:5",
+      "3,5 with a decimal comma"
+     ],
+     "a": 3,
+     "why": "Russian uses a comma as the decimal separator.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does погрешность mean?",
+     "o": [
+      "Error margin",
+      "Speed",
+      "Molecule",
+      "Equation"
+     ],
+     "a": 0,
+     "why": "It is the possible error in a measurement.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are genitive chains typical of scientific Russian?",
+     "o": [
+      "They express relations between concepts compactly",
+      "They are decorative",
+      "Russian has no verbs",
+      "They avoid cases"
+     ],
+     "a": 0,
+     "why": "Genitive noun phrases pack information.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do scientific terms often come from Greek and Latin?",
+     "o": [
+      "They are more modern",
+      "These classical languages supply an international vocabulary",
+      "Russians dislike native words",
+      "Science forbids Russian words"
+     ],
+     "a": 1,
+     "why": "Shared roots help international communication.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must scientific language be unambiguous?",
+     "o": [
+      "Science has no meaning",
+      "Ambiguity is a style",
+      "Results need to be reproduced and understood exactly",
+      "Numbers are enough"
+     ],
+     "a": 2,
+     "why": "Precision supports reproducibility.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Scientific Russian",
+    "model": "Scientific Russian is compact and precise, with genitive chains like скорость изменения температуры. Many terms come from Greek and Latin. It uses an impersonal style and a decimal comma.",
+    "points": [
+     {
+      "k": [
+       "genitive",
+       "chain",
+       "compact"
+      ],
+      "ask": "How are the phrases built?"
+     },
+     {
+      "k": [
+       "greek",
+       "latin",
+       "terms"
+      ],
+      "ask": "Where do terms come from?"
+     },
+     {
+      "k": [
+       "decimal",
+       "comma",
+       "impersonal"
+      ],
+      "ask": "What are the conventions?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Periodic table",
+    "prompt": "Read about Mendeleev and note the year of the table."
+   },
+   "sources": [
+    "Periodic table",
+    "Dmitri Mendeleev"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Integrated proficiency project",
+   "icon": "🎯",
+   "hook": "You must present a small research project in Russian. Which steps bring your whole language knowledge together?",
+   "explain": [
+    "An integrated project combines reading, research, writing and speaking. Choose a topic, collect sources, state the aim and main finding (основной результат), explain the limitations (ограничения) and suggest a recommendation (рекомендация). Justify claims with evidence (доказательства) and acknowledge other views.",
+    "In the final presentation use signposts (Итак, Предлагаю рассмотреть...), a clear structure, accurate cases and aspect, and an appropriate register. Be ready for questions with phrases like Позвольте уточнить... (Let me clarify...). Peer review (рецензирование) improves quality: invite comments and revise."
+   ],
+   "mnemonic": "Topic, evidence, result, limits, recommendation: a project in five steps.",
+   "items": [
+    [
+     "project",
+     "проект",
+     "pra-YEKT"
+    ],
+    [
+     "main result",
+     "основной результат",
+     "as-NOV-noy rye-zool-TAT"
+    ],
+    [
+     "limitations",
+     "ограничения",
+     "a-gra-nee-CHE-nee-ya"
+    ],
+    [
+     "recommendation",
+     "рекомендация",
+     "rye-ka-myen-DA-tsee-ya"
+    ],
+    [
+     "to substantiate",
+     "обосновать",
+     "ab-a-sna-VAT"
+    ],
+    [
+     "evidence",
+     "доказательство",
+     "da-ka-ZA-tyel-stva"
+    ],
+    [
+     "peer review",
+     "рецензирование",
+     "rye-tsen-ZEE-ra-va-nee-ye"
+    ],
+    [
+     "I propose",
+     "предлагаю",
+     "pred-la-GA-yu"
+    ]
+   ],
+   "sentences": [
+    [
+     "The main result is confirmed by the data.",
+     [
+      "Основной",
+      "результат",
+      "подтверждён",
+      "данными."
+     ]
+    ],
+    [
+     "The limitations of the study are described below.",
+     [
+      "Ограничения",
+      "исследования",
+      "описаны",
+      "ниже."
+     ]
+    ],
+    [
+     "I propose to consider another approach.",
+     [
+      "Предлагаю",
+      "рассмотреть",
+      "другой",
+      "подход."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase politely asks to clarify?",
+     "o": [
+      "Позвольте уточнить",
+      "Замолчите",
+      "До свидания",
+      "Это не важно"
+     ],
+     "a": 0,
+     "why": "Позвольте уточнить is a polite formula.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why state the limitations of a study?",
+     "o": [
+      "To hide the result",
+      "To show honestly how far the conclusions can be trusted",
+      "To shorten the project",
+      "To avoid questions"
+     ],
+     "a": 1,
+     "why": "Transparency makes research credible.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does peer review contribute?",
+     "o": [
+      "A longer text",
+      "Independent feedback that improves accuracy and clarity",
+      "A new topic",
+      "Fewer sources"
+     ],
+     "a": 1,
+     "why": "Review catches errors and gaps.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which order best fits a project report?",
+     "o": [
+      "Recommendation, topic, method",
+      "Result only",
+      "Topic, method, result, limitations, recommendation",
+      "Limitations first, topic last"
+     ],
+     "a": 2,
+     "why": "The logical flow helps the reader.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A listener challenges your claim. What is a good response?",
+     "o": [
+      "Ignore the question",
+      "Repeat the claim louder",
+      "Change the topic",
+      "Give evidence and acknowledge valid doubts"
+     ],
+     "a": 3,
+     "why": "Argument rests on evidence and openness.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "An integrated Russian project",
+    "model": "A project combines reading, research, writing and speaking. State the aim, main result, limitations and recommendation, justify claims with evidence and use a suitable register. Invite peer review.",
+    "points": [
+     {
+      "k": [
+       "aim",
+       "result",
+       "limitations",
+       "recommendation"
+      ],
+      "ask": "What does a project contain?"
+     },
+     {
+      "k": [
+       "evidence",
+       "доказательства",
+       "justify"
+      ],
+      "ask": "How do I support claims?"
+     },
+     {
+      "k": [
+       "peer",
+       "review",
+       "feedback"
+      ],
+      "ask": "How do I improve my project?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Research",
+    "prompt": "Read about the research process and list its steps."
+   },
+   "sources": [
+    "Research",
+    "Peer review"
+   ]
+  }
+ ]
+}

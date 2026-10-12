@@ -1,0 +1,2786 @@
+{
+ "world": 7,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced geospatial modelling",
+   "icon": "🧮",
+   "hook": "A planner needs the best site for a wind farm: windy, near a grid line, away from homes and protected habitat. How do you turn many maps into one defensible answer?",
+   "explain": [
+    "Geospatial modelling encodes spatial processes as operations on layers. Map algebra (Tomlin) classifies operations as local (cell by cell), focal (neighbourhood), zonal (within zones) and global (whole surface, such as distance or flow accumulation). Multi-criteria evaluation standardises criteria to a common scale, applies constraints (Boolean exclusion) and weights factors, as in the weighted linear combination S = Σ wᵢxᵢ with Σ wᵢ = 1.",
+    "Cost-distance and least-cost path analysis accumulate friction across a cost surface. With orthogonal moves, each step crosses half of the current and half of the next cell, so the accumulated cost is the sum of mean costs times cell size; diagonal moves multiply by √2. Network models use graph algorithms such as Dijkstra's shortest path.",
+    "Spatial regression addresses autocorrelated residuals: the spatial lag model y = ρWy + Xβ + ε and the spatial error model y = Xβ + u, u = λWu + ε. Geographically weighted regression lets coefficients vary over space. Sampling-based uncertainty analysis (Monte Carlo) perturbs inputs according to their error distributions and re-runs the model to give a distribution of outputs.",
+    "Model integrity requires sensitivity analysis, validation against independent data, and transparency. Weights and thresholds encode value judgments; documenting and testing alternatives is part of the method, not an afterthought."
+   ],
+   "example": {
+    "q": "Two standardised criteria (0–10) for a site are wind = 8 and grid proximity = 5. Weights are 0.6 and 0.4. What is the weighted score?",
+    "steps": [
+     "S = 0.6 × 8 + 0.4 × 5.",
+     "0.6 × 8 = 4.8.",
+     "0.4 × 5 = 2.0.",
+     "S = 6.8."
+    ],
+    "a": "6.8"
+   },
+   "analogies": {
+    "home": "Ranking flats with weights on rent, distance and size is a weighted overlay.",
+    "city": "Emergency routing uses least-cost paths with traffic as friction.",
+    "farm": "Precision agriculture overlays yield, soil and elevation layers.",
+    "tech": "Monte Carlo simulation repeats a model thousands of times with random input errors."
+   },
+   "mnemonic": "Local, focal, zonal, global: four neighbourhoods of map algebra.",
+   "terms": [
+    [
+     "Map algebra",
+     "A framework of local, focal, zonal and global raster operations."
+    ],
+    [
+     "Weighted linear combination",
+     "A score summing standardised criteria multiplied by weights."
+    ],
+    [
+     "Spatial lag model",
+     "A regression with a term for the neighbours' outcomes."
+    ],
+    [
+     "Monte Carlo analysis",
+     "Repeated simulation with randomly varied inputs to estimate output uncertainty."
+    ]
+   ],
+   "misc": {
+    "wrong": "A weighted overlay gives an objective optimum.",
+    "right": "Weights and thresholds are value-laden choices; results should be tested across plausible alternatives."
+   },
+   "limits": "Raster models treat cells as homogeneous, so results depend on cell size and alignment; high precision outputs can disguise large uncertainty.",
+   "trip": {
+    "wiki": "Map algebra",
+    "prompt": "Find an example of a suitability analysis and identify which layers were constraints and which were weighted factors."
+   },
+   "sources": [
+    "Map algebra",
+    "Multiple-criteria decision analysis",
+    "Geographically weighted regression"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which map algebra operation computes a 3×3 mean around each cell?",
+     "o": [
+      "Focal",
+      "Local",
+      "Zonal",
+      "Global"
+     ],
+     "a": 0,
+     "why": "It works on neighbourhoods.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A Boolean constraint layer in a suitability model does what?",
+     "o": [
+      "Excludes areas completely",
+      "Adds extra weight to the best areas",
+      "Smooths the suitability map into gentle bands",
+      "Changes the scale of the map automatically"
+     ],
+     "a": 0,
+     "why": "Constraints are binary.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why use spatial lag or error models?",
+     "o": [
+      "OLS residuals may be spatially autocorrelated",
+      "OLS cannot be run on any map data at all",
+      "Maps are curved, so the errors must be too",
+      "The weights in the model must always be negative"
+     ],
+     "a": 0,
+     "why": "Autocorrelation violates independence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Geographically weighted regression allows what?",
+     "o": [
+      "Coefficients to vary across space",
+      "Constant coefficients across the whole map",
+      "No predictors in the model at all",
+      "Only categorical data to be analysed"
+     ],
+     "a": 0,
+     "why": "It fits local models.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which result suggests that a weighted overlay ranking is robust?",
+     "o": [
+      "Top sites stay in the top set when weights vary",
+      "One site wins only under one single set of weights",
+      "Ranks change at random each time the model runs",
+      "The scores of all the sites come out exactly equal"
+     ],
+     "a": 0,
+     "why": "Stability under alternatives is the test.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a zonal statistic compute?",
+     "o": [
+      "A summary of values within zones such as watersheds",
+      "A neighbourhood mean around each cell only",
+      "A global raster covering the whole study area",
+      "The centroid of each cell in the grid"
+     ],
+     "a": 0,
+     "why": "Zones define the groups.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a smaller cell size give false confidence?",
+     "o": [
+      "Precision may exceed the accuracy of the input data",
+      "Cells are smaller, so the file is bigger",
+      "Maps shrink when the cell size falls",
+      "Data become random at fine cell sizes"
+     ],
+     "a": 0,
+     "why": "Resolution is not accuracy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Three 30 m cells with costs 2, 4 and 3 are crossed in a straight orthogonal line from the centre of the first to the centre of the last. Each step costs the mean of the two adjacent cell costs times 30. What is the total accumulated cost?",
+     "a": 195,
+     "tol": 0.5,
+     "unit": "",
+     "why": "Step 1: (2+4)/2 × 30 = 90. Step 2: (4+3)/2 × 30 = 105. Total = 195.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order a defensible suitability analysis workflow.",
+     "items": [
+      "Define objective and criteria",
+      "Standardise criteria and set constraints",
+      "Weight and combine layers",
+      "Run sensitivity analysis",
+      "Validate and report uncertainty"
+     ],
+     "why": "Decisions and testing are explicit.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why Monte Carlo analysis is useful when DEM elevation errors affect a slope-based model.",
+     "rubric": [
+      [
+       "error",
+       "uncertain",
+       "perturb",
+       "vary",
+       "random",
+       "noise"
+      ],
+      [
+       "repeat",
+       "simulat",
+       "many runs",
+       "iterations",
+       "ensemble"
+      ],
+      [
+       "distribution",
+       "range",
+       "confidence",
+       "spread",
+       "propagat"
+      ]
+     ],
+     "min": 2,
+     "model": "Random errors consistent with the DEM's accuracy are added many times and the model is rerun. The spread of outputs shows how much DEM uncertainty propagates into the slope-based result.",
+     "why": "Uncertainty must be propagated, not ignored.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two analysts use different weights and choose different sites. What is the best response?",
+     "o": [
+      "Report the sensitivity and justify the weights",
+      "Pick one set of weights silently and move on",
+      "Discard the data that disagree",
+      "Average the two results without any comment"
+     ],
+     "a": 0,
+     "why": "Transparency handles subjective choices.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can cost-distance models produce routes that do not match real travel?",
+     "rubric": [
+      [
+       "friction",
+       "cost surface",
+       "assumption",
+       "simplif",
+       "model"
+      ],
+      [
+       "real",
+       "behaviour",
+       "knowledge",
+       "preference",
+       "local",
+       "not capture",
+       "unmapped"
+      ],
+      [
+       "data",
+       "scale",
+       "resolution",
+       "error",
+       "quality"
+      ]
+     ],
+     "min": 2,
+     "model": "The cost surface simplifies reality: friction values are assumed, behaviour and local knowledge are not captured, and data quality and resolution limit accuracy, so routes are only as good as the cost surface.",
+     "why": "Models are abstractions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why check residuals for spatial structure after fitting a regression?",
+     "o": [
+      "Spatial pattern in residuals signals a missed process or dependence",
+      "Residuals are always random, so no check is needed",
+      "Maps are decorative, so patterns do not matter",
+      "It speeds up processing of the regression"
+     ],
+     "a": 0,
+     "why": "Structure shows model misspecification.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced geospatial modelling",
+    "model": "Map algebra builds models from local, focal, zonal and global operations. Weighted overlays and constraints support siting, cost-distance finds routes, spatial regression handles autocorrelation, and Monte Carlo analysis shows uncertainty.",
+    "points": [
+     {
+      "k": [
+       "layer",
+       "raster",
+       "map algebra",
+       "overlay"
+      ],
+      "ask": "How are models built?"
+     },
+     {
+      "k": [
+       "weight",
+       "criteria",
+       "constraint"
+      ],
+      "ask": "How are criteria combined?"
+     },
+     {
+      "k": [
+       "autocorrelation",
+       "spatial regression",
+       "lag"
+      ],
+      "ask": "What is special about spatial data?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "sensitivity",
+       "monte carlo"
+      ],
+      "ask": "How do we test the result?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Earth system interactions",
+   "icon": "🔄",
+   "hook": "Why can warming of the Arctic change monsoon rainfall in the tropics and the Amazon's capacity to store carbon? Which links are strong and which are speculative?",
+   "explain": [
+    "The Earth system is a set of coupled components: atmosphere, hydrosphere, cryosphere, lithosphere and biosphere. Interactions are mediated by fluxes of energy, water and elements. Residence time of a reservoir is τ = stock ÷ flux (at steady state). The carbon cycle has reservoirs of order: atmosphere about 860 PgC, land vegetation about 450 PgC, soils (to 1 m) about 1,500–2,400 PgC, surface ocean about 900 PgC, deep ocean about 38,000 PgC, plus fossil fuels.",
+    "Anthropogenic CO₂ emissions of around 10 PgC a year are partitioned: roughly 45 percent stays in the atmosphere (the airborne fraction), with the rest taken up by land and ocean. One ppm of atmospheric CO₂ corresponds to about 2.13 PgC. Ocean uptake is limited by carbonate chemistry (Revelle factor) and slow mixing, and the land sink depends on CO₂ fertilisation, nutrients, temperature and disturbance.",
+    "Feedbacks may amplify (water vapour, ice albedo, permafrost thaw releasing carbon and methane) or damp (increased outgoing radiation with temperature, Planck response) change. Tipping elements, such as the Greenland ice sheet, Amazon dieback or Atlantic Meridional Overturning Circulation (AMOC) changes, may involve thresholds; their thresholds and timing are uncertain and an active research topic.",
+    "Earth system models couple component models, but processes at small scales are parameterised. Evaluation uses observations, paleoclimate records and emergent constraints. Understanding teleconnections requires attention to both mechanism and evidence strength."
+   ],
+   "example": {
+    "q": "The atmosphere holds 860 PgC. Gross uptake by land photosynthesis is about 120 PgC a year. If we treat this as the outflow flux at steady state, what is the residence time?",
+    "steps": [
+     "τ = stock ÷ flux.",
+     "860 ÷ 120 = 7.17 years."
+    ],
+    "a": "About 7 years (for this flux alone)"
+   },
+   "analogies": {
+    "home": "A bathtub with tap and drain: the water level is stock; flow rates set the time to empty.",
+    "farm": "Soil carbon is a store; tillage can release it, cover crops can add to it.",
+    "sea": "The ocean takes up CO₂ and heat, buffering atmosphere but acidifying.",
+    "nature": "Forests link carbon, water and energy through evapotranspiration."
+   },
+   "mnemonic": "Stock over flux is residence time.",
+   "terms": [
+    [
+     "Residence time",
+     "Average time matter spends in a reservoir: stock ÷ flux."
+    ],
+    [
+     "Airborne fraction",
+     "Share of emitted CO₂ that remains in the atmosphere."
+    ],
+    [
+     "Tipping element",
+     "A component that may shift abruptly past a threshold."
+    ],
+    [
+     "Teleconnection",
+     "A climate link between distant regions."
+    ]
+   ],
+   "misc": {
+    "wrong": "The oceans and forests will absorb whatever we emit.",
+    "right": "Sink strength is limited and may weaken with warming, so the airborne fraction could change."
+   },
+   "limits": "Tipping thresholds and timing, cloud feedbacks and permafrost carbon are uncertain, so projections express ranges and confidence.",
+   "trip": {
+    "wiki": "Earth system science",
+    "prompt": "Draw one feedback loop linking cryosphere, ocean and atmosphere. Label whether it amplifies or damps."
+   },
+   "sources": [
+    "Earth system science",
+    "Carbon cycle",
+    "Tipping points in the climate system"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does residence time equal at steady state?",
+     "o": [
+      "Stock divided by flux",
+      "Flux divided by stock",
+      "Stock times flux",
+      "Stock plus flux"
+     ],
+     "a": 0,
+     "why": "Time = amount ÷ rate.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "About what fraction of emitted CO₂ stays airborne?",
+     "o": [
+      "About 45 percent",
+      "About 20 percent",
+      "About 70 percent",
+      "About 95 percent"
+     ],
+     "a": 0,
+     "why": "Land and ocean take up the rest.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which feedback is positive?",
+     "o": [
+      "Permafrost thaw releasing carbon",
+      "Planck response",
+      "Enhanced outgoing radiation with warming",
+      "Increased sulfate haze cooling"
+     ],
+     "a": 0,
+     "why": "More carbon leads to more warming.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What limits ocean uptake of CO₂?",
+     "o": [
+      "Carbonate chemistry and slow vertical mixing",
+      "The Moon's pull on the surface waters",
+      "Plankton eating CO₂ instantly at the surface",
+      "Removal of salt from the sea water by rivers"
+     ],
+     "a": 0,
+     "why": "Revelle factor and circulation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a teleconnection?",
+     "o": [
+      "A statistical or dynamical link between distant climate anomalies",
+      "A telephone line that carries climate data",
+      "A satellite that links distant weather stations",
+      "A tide that moves between two oceans"
+     ],
+     "a": 0,
+     "why": "ENSO links Pacific to far regions.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why are tipping points hard to forecast?",
+     "o": [
+      "Thresholds and timings involve poorly constrained processes",
+      "They are fictional and never happen in reality",
+      "Data on the climate are perfect, so forecasts are easy",
+      "They have no physical basis in the Earth system"
+     ],
+     "a": 0,
+     "why": "Uncertainty is large.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which reservoir holds the most carbon among these?",
+     "o": [
+      "Deep ocean",
+      "Atmosphere",
+      "Land vegetation",
+      "Surface ocean"
+     ],
+     "a": 0,
+     "why": "About 38,000 PgC.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Annual emissions are 10 PgC and the airborne fraction is 0.45. By how many ppm does atmospheric CO₂ rise (1 ppm = 2.13 PgC)?",
+     "a": 2.1,
+     "tol": 0.1,
+     "unit": "ppm",
+     "why": "10 × 0.45 = 4.5 PgC; 4.5 ÷ 2.13 = 2.11 ppm.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Ocean surface holds 900 PgC and exchanges 90 PgC per year with the atmosphere. What is the residence time in years against this flux?",
+     "a": 10,
+     "tol": 0.1,
+     "unit": "years",
+     "why": "900 ÷ 90 = 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the ice-albedo feedback is amplified in the Arctic.",
+     "rubric": [
+      [
+       "ice",
+       "snow",
+       "sea ice",
+       "melt"
+      ],
+      [
+       "albedo",
+       "reflect",
+       "dark",
+       "absorb",
+       "ocean",
+       "open water"
+      ],
+      [
+       "warm",
+       "amplif",
+       "positive",
+       "more melting",
+       "loop",
+       "feedback"
+      ]
+     ],
+     "min": 2,
+     "model": "Melting sea ice and snow exposes dark ocean or land that absorbs more sunlight than the bright surface it replaced, causing more warming and more melting, a positive feedback that makes Arctic warming faster than average.",
+     "why": "Arctic amplification involves several processes.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A model shows a threshold in the AMOC but observations are short. What should be concluded?",
+     "o": [
+      "Treat as plausible risk with low confidence on timing",
+      "It will certainly collapse before the year 2100",
+      "It is impossible, so it can be ignored",
+      "Models are useless, so no conclusion is possible"
+     ],
+     "a": 0,
+     "why": "Evidence limits determine confidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If forests become carbon sources because of drought and fire, what happens to the airborne fraction?",
+     "o": [
+      "It rises",
+      "It falls",
+      "No change",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "Less uptake leaves more CO₂ in air.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are paleoclimate records useful for testing Earth system models?",
+     "rubric": [
+      [
+       "past",
+       "ancient",
+       "history",
+       "ice age",
+       "paleo",
+       "proxy"
+      ],
+      [
+       "different",
+       "independent",
+       "large change",
+       "test",
+       "evaluat",
+       "validat",
+       "sensitivity"
+      ],
+      [
+       "model",
+       "simulate",
+       "compare",
+       "climate"
+      ]
+     ],
+     "min": 2,
+     "model": "They give independent evidence of how climate responded to large past forcings, so models can be tested on whether they reproduce those changes and what they imply for sensitivity.",
+     "why": "Past climates serve as natural experiments.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Earth system interactions",
+    "model": "Earth's spheres exchange energy, water and carbon. Residence time is stock over flux. Feedbacks amplify or damp change, and tipping elements may involve thresholds. Evidence strength differs among links.",
+    "points": [
+     {
+      "k": [
+       "stock",
+       "flux",
+       "residence"
+      ],
+      "ask": "How is time in a reservoir found?"
+     },
+     {
+      "k": [
+       "carbon",
+       "sink",
+       "airborne",
+       "ocean",
+       "land"
+      ],
+      "ask": "Where does emitted CO₂ go?"
+     },
+     {
+      "k": [
+       "feedback",
+       "amplif",
+       "damp"
+      ],
+      "ask": "What changes the response?"
+     },
+     {
+      "k": [
+       "tipping",
+       "threshold",
+       "uncertain"
+      ],
+      "ask": "What is poorly known?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Climate change projections",
+   "icon": "📉",
+   "hook": "Scenarios, models and observations all disagree a little. How do scientists turn that into a statement like \"likely 2.5 to 4 °C\"?",
+   "explain": [
+    "Climate projections are conditional on scenarios of emissions, land use and policy. CMIP6 used Shared Socioeconomic Pathways (SSP1 to SSP5) combined with radiative forcing levels in 2100, for example SSP1-2.6 (low), SSP2-4.5 (intermediate) and SSP5-8.5 (very high). Scenarios are not predictions; they explore consistent storylines.",
+    "Total uncertainty in projections has three parts (Hawkins and Sutton): internal variability (dominant at short horizons and small regions), model (structural and parametric) uncertainty, and scenario uncertainty (dominant by late century). Multi-model ensembles characterise model spread, but models are not independent samples, so ensemble spread is not a formal probability.",
+    "Global mean warming is approximately proportional to cumulative CO₂ emissions: the transient climate response to cumulative emissions (TCRE) is about 0.45 °C per 1,000 GtCO₂ (AR6 best estimate, likely range 0.27–0.63). This implies a finite carbon budget for a temperature limit, and net-zero CO₂ is needed to stop warming.",
+    "Sea level responds slowly: thermal expansion, glacier melt and ice sheet loss continue for centuries. Regional projections add vertical land motion and ocean dynamics. Downscaling (dynamical or statistical) adds local detail but also bias, so evaluate against observations before using results in impact studies."
+   ],
+   "example": {
+    "q": "Using TCRE = 0.45 °C per 1,000 GtCO₂, how much warming is expected from an additional 800 GtCO₂ of cumulative emissions?",
+    "steps": [
+     "Warming = TCRE × emissions.",
+     "0.45 × 800 ÷ 1,000 = 0.36."
+    ],
+    "a": "About 0.36 °C"
+   },
+   "analogies": {
+    "home": "A bathtub filling: the water level (temperature) depends on how much has flowed in (cumulative emissions), not only the current flow.",
+    "farm": "Crop planners use downscaled projections plus local data to choose varieties.",
+    "city": "Coastal planners add sea-level rise, vertical land motion and storm surge.",
+    "tech": "Ensembles run many model versions to show spread."
+   },
+   "mnemonic": "Cumulative carbon decides the temperature.",
+   "terms": [
+    [
+     "SSP",
+     "Shared Socioeconomic Pathway: a storyline of future society."
+    ],
+    [
+     "TCRE",
+     "Global warming per unit of cumulative CO₂ emissions."
+    ],
+    [
+     "Ensemble",
+     "A set of model runs used to sample uncertainty."
+    ],
+    [
+     "Downscaling",
+     "Deriving local climate information from coarse models."
+    ]
+   ],
+   "misc": {
+    "wrong": "The scenario with the highest emissions is the most likely.",
+    "right": "Scenarios describe possibilities; likelihoods depend on policy, technology and economics and are not assigned by the scenario itself."
+   },
+   "limits": "Ensemble spread underestimates or misrepresents uncertainty because models share assumptions and code; observational constraints are used to refine ranges.",
+   "trip": {
+    "wiki": "Shared Socioeconomic Pathways",
+    "prompt": "Compare projected warming for a low and a very high scenario. When do the curves separate?"
+   },
+   "sources": [
+    "Shared Socioeconomic Pathways",
+    "Coupled Model Intercomparison Project",
+    "Carbon budget"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "By late century which uncertainty typically dominates global temperature projections?",
+     "o": [
+      "Scenario uncertainty",
+      "Internal variability",
+      "Measurement of the Sun",
+      "Instrument noise"
+     ],
+     "a": 0,
+     "why": "Emission choices matter most then.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In the near term for a small region, which uncertainty dominates?",
+     "o": [
+      "Internal variability",
+      "Scenario uncertainty",
+      "Nothing",
+      "Model code only"
+     ],
+     "a": 0,
+     "why": "Natural fluctuations are large locally.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does TCRE imply?",
+     "o": [
+      "Warming is roughly proportional to cumulative CO₂ emissions",
+      "Warming ignores emissions and follows the Sun",
+      "Warming depends only on the current rate of emission",
+      "Temperature falls as soon as emissions begin to fall"
+     ],
+     "a": 0,
+     "why": "It underlies carbon budgets.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is needed to stop CO₂-driven warming?",
+     "o": [
+      "Net-zero CO₂ emissions",
+      "Emissions kept constant at today's level",
+      "Emissions halved, and then kept steady",
+      "Emissions that keep on rising year by year"
+     ],
+     "a": 0,
+     "why": "Cumulative carbon must stop growing.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is ensemble spread not a true probability?",
+     "o": [
+      "Models are not independent and share assumptions",
+      "Ensembles are small, so spread is not reliable",
+      "Models are random number generators",
+      "Scenarios are laws of nature that cannot change"
+     ],
+     "a": 0,
+     "why": "Shared structure biases spread.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does sea level keep rising after temperatures stabilise?",
+     "o": [
+      "Oceans and ice sheets respond slowly",
+      "Water expands instantly and then stops",
+      "Rain stops falling over the ice sheets",
+      "Land falls only, while the water level stays"
+     ],
+     "a": 0,
+     "why": "Thermal inertia lasts centuries.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the main risk of using raw downscaled output?",
+     "o": [
+      "Biases inherited from the driving model",
+      "It has too many pixels to handle on a computer",
+      "It has no coordinates attached to the cells",
+      "It uses SI units which are hard to read"
+     ],
+     "a": 0,
+     "why": "Evaluation and bias correction are needed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Using TCRE = 0.45 °C per 1,000 GtCO₂, what cumulative emissions (GtCO₂) lead to 1.8 °C of warming?",
+     "a": 4000,
+     "tol": 10,
+     "unit": "GtCO₂",
+     "why": "1.8 ÷ 0.45 = 4.0 thousand = 4,000.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A budget of 500 GtCO₂ remains. Emissions are 40 GtCO₂ per year and constant. In how many years is the budget used?",
+     "a": 12.5,
+     "tol": 0.1,
+     "unit": "years",
+     "why": "500 ÷ 40 = 12.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why climate projections are best described as conditional.",
+     "rubric": [
+      [
+       "scenario",
+       "pathway",
+       "emissions",
+       "policy",
+       "assumption"
+      ],
+      [
+       "if",
+       "depends",
+       "conditional",
+       "given",
+       "choice"
+      ],
+      [
+       "not prediction",
+       "not a forecast",
+       "explore",
+       "possible",
+       "range"
+      ]
+     ],
+     "min": 2,
+     "model": "A projection says what would happen if a particular emissions pathway occurs. Because the pathway depends on future human choices, results are conditional possibilities, not forecasts.",
+     "why": "Scenario choice is part of the answer.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A policymaker asks for the single best temperature for 2100. What is the best answer?",
+     "o": [
+      "Give conditional ranges for stated scenarios",
+      "A single number regardless of the scenario chosen",
+      "Refuse to answer any question about the future",
+      "Use last year's weather as the forecast"
+     ],
+     "a": 0,
+     "why": "Communicate uncertainty and conditions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a short observation record limit estimating variability?",
+     "o": [
+      "Few realisations of slow natural cycles",
+      "Instruments fail every few years in the field",
+      "The Sun stops shining for part of the record",
+      "Data are free, so people do not check them"
+     ],
+     "a": 0,
+     "why": "Long cycles are poorly sampled.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might local flood design use more than the multi-model mean?",
+     "o": [
+      "Extremes and tails matter, not only averages",
+      "Means are wrong in every case and never useful",
+      "Averages are illegal in engineering design",
+      "Floods are mean and so need a mean model"
+     ],
+     "a": 0,
+     "why": "Risk depends on the distribution.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Climate change projections",
+    "model": "Projections are conditional on scenarios. Uncertainty comes from internal variability, models and scenarios. Warming is roughly proportional to cumulative CO₂, giving a carbon budget. Local results need downscaling and evaluation.",
+    "points": [
+     {
+      "k": [
+       "scenario",
+       "ssp",
+       "pathway"
+      ],
+      "ask": "What do projections depend on?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "variability",
+       "model"
+      ],
+      "ask": "Where does uncertainty come from?"
+     },
+     {
+      "k": [
+       "cumulative",
+       "budget",
+       "tcre",
+       "net zero"
+      ],
+      "ask": "What decides global warming?"
+     },
+     {
+      "k": [
+       "downscal",
+       "local",
+       "evaluate",
+       "bias"
+      ],
+      "ask": "How do we get local results?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Geographic information science",
+   "icon": "📐",
+   "hook": "Two surveyors measure the same hill. Their coordinates differ by 100 m. Neither made an arithmetic error. What happened?",
+   "explain": [
+    "Geographic information science (GIScience) studies the concepts, representations and methods underlying geographic information. Geodesy provides the frame: an ellipsoid approximates Earth (WGS 84 has semi-major axis a = 6,378,137 m and flattening 1/298.257223563), a datum anchors the ellipsoid to Earth, and different datums can shift coordinates by tens to hundreds of metres.",
+    "Projections are mathematical mappings. For Mercator on a sphere of radius R, x = Rλ and y = R ln tan(π/4 + φ/2); the linear scale factor is k = sec φ, so area scales as sec² φ. At 60° latitude k = 2 and areas are four times too large. UTM divides the world into 60 zones of 6° longitude, with zone number = floor((λ + 180)/6) + 1. Great-circle distance on a sphere uses central angle σ; with R = 6,371 km, one degree is about 111.2 km.",
+    "GIScience also treats data quality (accuracy, precision, resolution, completeness, lineage), uncertainty and fitness for use. Representations include fields and objects. Ontologies define categories; the boundaries of \"forest\" or \"urban\" differ by definition. Volunteered geographic information (such as OpenStreetMap) offers coverage but uneven quality. FAIR principles (Findable, Accessible, Interoperable, Reusable) guide data management, and ethics include privacy of location data and fair representation.",
+    "Time zones follow 15° per hour only nominally; real zones follow political boundaries and daylight saving rules. Coordinated Universal Time (UTC) is the reference."
+   ],
+   "example": {
+    "q": "On a sphere, what is the Mercator linear scale factor at 60° N, and by what factor are areas exaggerated?",
+    "steps": [
+     "k = sec φ = 1 ÷ cos 60° = 1 ÷ 0.5 = 2.",
+     "Area factor = k² = 4."
+    ],
+    "a": "Linear scale 2; area exaggerated 4 times"
+   },
+   "analogies": {
+    "home": "Peeling an orange and flattening the peel tears or stretches it: projection distortion.",
+    "sea": "Sailors use Mercator charts because a straight line is a constant compass bearing.",
+    "tech": "Phone GPS reports WGS 84 coordinates; mapping software transforms them to the local datum or projection.",
+    "city": "Cadastral surveys require exact datums to settle property boundaries."
+   },
+   "mnemonic": "Datum anchors, projection flattens, quality decides use.",
+   "terms": [
+    [
+     "Datum",
+     "A reference framework tying coordinates to Earth."
+    ],
+    [
+     "Ellipsoid",
+     "A mathematical flattened-sphere model of Earth."
+    ],
+    [
+     "Fitness for use",
+     "Whether data quality suits a particular purpose."
+    ],
+    [
+     "FAIR",
+     "Principles for findable, accessible, interoperable, reusable data."
+    ]
+   ],
+   "misc": {
+    "wrong": "Latitude and longitude are exact and the same in every software system.",
+    "right": "Coordinates are only meaningful with a stated datum; the same numbers may point to different places in different datums."
+   },
+   "limits": "Definitions of geographic categories and boundaries are partly conventional, so classification and quality are never fully objective.",
+   "trip": {
+    "wiki": "Geodetic datum",
+    "prompt": "Find the datum used by a national mapping agency and compare it with WGS 84."
+   },
+   "sources": [
+    "Geographic information science",
+    "Geodetic datum",
+    "Map projection"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a datum?",
+     "o": [
+      "A reference frame connecting coordinates to Earth",
+      "A satellite that circles Earth to measure heights",
+      "A map symbol that shows the north direction",
+      "A colour scale used to shade heights"
+     ],
+     "a": 0,
+     "why": "Coordinates need a datum.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which property does Mercator preserve locally?",
+     "o": [
+      "Shape (conformality)",
+      "Area, which is the same everywhere on the map",
+      "Distance everywhere on the map",
+      "Elevation of the land between places"
+     ],
+     "a": 0,
+     "why": "It is a conformal projection.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which UTM zone contains longitude 3° E?",
+     "o": [
+      "31",
+      "30",
+      "32",
+      "1"
+     ],
+     "a": 0,
+     "why": "floor((3+180)/6) + 1 = 31.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does fitness for use mean?",
+     "o": [
+      "Data quality suits the intended purpose",
+      "Data are free to use for any purpose",
+      "Data are recent and have been updated lately",
+      "Data are large in size, with many records"
+     ],
+     "a": 0,
+     "why": "Quality is purpose dependent.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is OpenStreetMap quality uneven?",
+     "o": [
+      "Volunteer coverage varies by place",
+      "It has no coordinates for its features",
+      "It uses no datum for its positions",
+      "It is only global and has no local detail"
+     ],
+     "a": 0,
+     "why": "Contributors map unevenly.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might the same GPS numbers differ on two maps?",
+     "o": [
+      "Different datums or projections",
+      "Clocks differ and shift the numbers in time",
+      "Earth changed shape between the two maps",
+      "Colours differ and shift the numbers on the screen"
+     ],
+     "a": 0,
+     "why": "Datum shifts coordinates.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which F in FAIR means data can be located by humans and machines?",
+     "o": [
+      "Findable",
+      "Fast, which means quick to download",
+      "Flat, which means kept in a simple table",
+      "Free, which means no cost to use"
+     ],
+     "a": 0,
+     "why": "Metadata and identifiers help.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Using R = 6,371 km, what is the great-circle distance in km along the equator from longitude 0° to 90° E?",
+     "a": 10007.5,
+     "tol": 10,
+     "unit": "km",
+     "why": "(90 ÷ 360) × 2π × 6,371 = 0.25 × 40,030 = 10,007.5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "When it is 12:00 UTC, what is the nominal local solar-zone time at 105° E (15° per hour)? Give the hour on a 24-hour clock.",
+     "a": 19,
+     "tol": 0,
+     "unit": "h",
+     "why": "105 ÷ 15 = 7 hours ahead; 12 + 7 = 19:00.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why Greenland appears as large as Africa on a Mercator world map although Africa is about 14 times larger.",
+     "rubric": [
+      [
+       "scale",
+       "stretch",
+       "exaggerat",
+       "distort",
+       "sec",
+       "factor"
+      ],
+      [
+       "latitude",
+       "pole",
+       "high",
+       "north",
+       "away from equator"
+      ],
+      [
+       "area",
+       "size",
+       "larger",
+       "bigger",
+       "square"
+      ]
+     ],
+     "min": 2,
+     "model": "Mercator preserves shape by stretching scale with latitude (k = sec φ), so areas increase as sec² φ. Greenland lies at high latitude, so its area is hugely exaggerated, whereas Africa is mostly near the equator.",
+     "why": "Projection choice shapes perception.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city wants to map population by area for a thematic map. Which projection property should be prioritised?",
+     "o": [
+      "Equal-area",
+      "Conformal",
+      "Mercator",
+      "Azimuthal direction"
+     ],
+     "a": 0,
+     "why": "Area comparisons require equal-area.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two forest maps disagree on area. What is the likely cause?",
+     "o": [
+      "Different definitions and thresholds of forest",
+      "A rotating Earth moves the forests between maps",
+      "A colour error in the legend of one map",
+      "A printing mistake in one of the maps"
+     ],
+     "a": 0,
+     "why": "Ontology matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can precise coordinates of vulnerable sites raise ethical concerns?",
+     "o": [
+      "Exact locations can enable harm or surveillance",
+      "They slow the GIS software when it runs",
+      "They use more data storage space",
+      "They change the datum of the map"
+     ],
+     "a": 0,
+     "why": "Location privacy and protection matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Geographic information science",
+    "model": "GIScience studies how geography is represented. Coordinates need a datum, projections always distort, and data quality must suit the purpose. Definitions and ethics matter too.",
+    "points": [
+     {
+      "k": [
+       "datum",
+       "ellipsoid",
+       "wgs"
+      ],
+      "ask": "What makes coordinates meaningful?"
+     },
+     {
+      "k": [
+       "projection",
+       "distort",
+       "mercator",
+       "area"
+      ],
+      "ask": "Why do projections distort?"
+     },
+     {
+      "k": [
+       "quality",
+       "accuracy",
+       "fitness",
+       "lineage"
+      ],
+      "ask": "What is data quality?"
+     },
+     {
+      "k": [
+       "ethic",
+       "privacy",
+       "fair",
+       "definition"
+      ],
+      "ask": "What else matters?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Spatial statistics",
+   "icon": "🎯",
+   "hook": "Crime, disease and rainfall maps show clusters. How do we prove a cluster is more than the eye's tendency to see patterns?",
+   "explain": [
+    "Spatial statistics model data whose values depend on location. Key objects are points (events), lattices (areal units) and fields (continuous surfaces). Stationarity assumes statistical properties are constant over space; many real processes violate it.",
+    "For areal data, global Moran's I = (N / S₀) × (Σᵢ Σⱼ wᵢⱼ zᵢ zⱼ) ÷ Σ zᵢ², with z = x − x̄ and S₀ = ΣΣ wᵢⱼ. Under no autocorrelation E[I] = −1/(N − 1). Local indicators (LISA, Getis-Ord Gi*) identify hot and cold spots; because many tests are run, multiple-testing corrections are needed.",
+    "For geostatistics, the semivariogram γ(h) = (1 ÷ 2N(h)) Σ [z(xᵢ) − z(xᵢ + h)]² summarises how dissimilarity grows with lag h, described by nugget, sill and range. Ordinary kriging gives the best linear unbiased prediction under assumptions, with weights summing to 1 and a prediction variance. Inverse distance weighting with power p gives weights ∝ 1/dᵖ. For point processes, Ripley's K compares counts within distance r to complete spatial randomness.",
+    "Pitfalls include edge effects, the MAUP, ecological fallacy and treating spatial autocorrelation as independent information (pseudoreplication). Model selection should use spatially aware cross-validation."
+   ],
+   "example": {
+    "q": "Four cells in a line have values 1, 2, 3, 4 with rook adjacency weights (1 for neighbours). Compute Moran's I.",
+    "steps": [
+     "Mean = 2.5; deviations z = −1.5, −0.5, 0.5, 1.5; Σz² = 5.",
+     "Neighbour pairs: (1,2) 0.75; (2,3) −0.25; (3,4) 0.75; sum 1.25. Ordered pairs double it to 2.5.",
+     "S₀ = 6 (three neighbour pairs, each counted twice).",
+     "I = (4 ÷ 6) × (2.5 ÷ 5) = 0.333."
+    ],
+    "a": "I = 0.333 (positive autocorrelation; expectation −1/3)"
+   },
+   "analogies": {
+    "home": "Neighbouring houses have similar prices because they share neighbourhood features.",
+    "city": "Disease surveillance flags clusters beyond expectation.",
+    "farm": "Soil nutrient maps are interpolated by kriging from sampled points.",
+    "tech": "Spatial cross-validation holds out whole regions to test generalisation."
+   },
+   "mnemonic": "Near things alike; variogram shows how fast they stop being alike.",
+   "terms": [
+    [
+     "Moran's I",
+     "Global measure of spatial autocorrelation."
+    ],
+    [
+     "Semivariogram",
+     "Plot of half the mean squared difference against lag distance."
+    ],
+    [
+     "Kriging",
+     "Optimal interpolation using the fitted spatial covariance."
+    ],
+    [
+     "Pseudoreplication",
+     "Treating dependent observations as independent."
+    ]
+   ],
+   "misc": {
+    "wrong": "A significant hot spot proves a cause at that location.",
+    "right": "Hot spots show where values are unusually high; causes require further evidence and may include confounding or reporting bias."
+   },
+   "limits": "Significance depends on the null model, the weights matrix and unit definitions; different choices can change conclusions.",
+   "trip": {
+    "wiki": "Moran's I",
+    "prompt": "Find a Moran scatterplot and identify the four quadrants."
+   },
+   "sources": [
+    "Moran's I",
+    "Variogram",
+    "Kriging"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the expected Moran's I under no autocorrelation for N = 11?",
+     "o": [
+      "−0.1",
+      "+0.1",
+      "+1",
+      "−1"
+     ],
+     "a": 0,
+     "why": "−1/(N−1) = −1/10.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does the nugget in a variogram represent?",
+     "o": [
+      "Variation at very small scales or measurement error",
+      "The range of the variogram at long distance",
+      "The sill of the variogram at its plateau",
+      "The distance at which values stop being related"
+     ],
+     "a": 0,
+     "why": "It is the intercept.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does the range show?",
+     "o": [
+      "Distance beyond which values are effectively uncorrelated",
+      "The mean of the values in the sample",
+      "Variance at zero distance between points",
+      "The size of the sample taken"
+     ],
+     "a": 0,
+     "why": "The variogram levels off at the sill.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why correct for multiple testing in local hot-spot analysis?",
+     "o": [
+      "Many simultaneous tests inflate false positives",
+      "The tests are slow to run on large data",
+      "The maps become too crowded to read",
+      "Hot spots are rare in most datasets"
+     ],
+     "a": 0,
+     "why": "Controlling error rates matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Ordinary kriging weights sum to...",
+     "o": [
+      "1",
+      "0",
+      "10",
+      "The sill"
+     ],
+     "a": 0,
+     "why": "This ensures unbiasedness.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is Ripley's K used for?",
+     "o": [
+      "Testing clustering of points across distances",
+      "Projecting maps from a sphere to a plane",
+      "Compressing images to save storage",
+      "Measuring the height of land"
+     ],
+     "a": 0,
+     "why": "It compares to complete spatial randomness.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why use spatial cross-validation?",
+     "o": [
+      "Random splits leak information between neighbouring points",
+      "It is faster to run than other methods",
+      "It uses fewer data than other methods",
+      "It always removes bias from the model"
+     ],
+     "a": 0,
+     "why": "Dependence inflates accuracy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Values 10 at distance 1 and 20 at distance 2 are interpolated with IDW power 2. What is the estimate?",
+     "a": 12,
+     "tol": 0.05,
+     "unit": "",
+     "why": "Weights 1 and 0.25: (10×1 + 20×0.25) ÷ 1.25 = 15 ÷ 1.25 = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Semivariance for lag h from three pairs with differences 2, 3 and 1: γ = (1 ÷ 2N) Σ d². Compute γ.",
+     "a": 2.333,
+     "tol": 0.01,
+     "unit": "",
+     "why": "Σ d² = 4 + 9 + 1 = 14; 14 ÷ 6 = 2.333.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why ordinary regression standard errors can be too small when residuals are spatially autocorrelated.",
+     "rubric": [
+      [
+       "independen",
+       "not independent",
+       "dependent",
+       "correlated",
+       "autocorrelat"
+      ],
+      [
+       "information",
+       "effective sample",
+       "fewer",
+       "redundant",
+       "pseudoreplic",
+       "duplicat"
+      ],
+      [
+       "standard error",
+       "significance",
+       "p-value",
+       "overconfiden",
+       "too small",
+       "inflate"
+      ]
+     ],
+     "min": 2,
+     "model": "Nearby observations carry overlapping information, so the effective sample size is smaller than N. Ignoring this makes standard errors too small and tests too often significant.",
+     "why": "Dependence reduces effective information.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A cluster appears only with one choice of district boundaries. What is the implication?",
+     "o": [
+      "The result may be an artefact of the MAUP",
+      "The result is certain and can be trusted",
+      "The boundaries are always right, so no check is needed",
+      "The clusters are fake and can be ignored"
+     ],
+     "a": 0,
+     "why": "Test alternative zonings.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use a variogram before kriging?",
+     "o": [
+      "It models the spatial dependence used for weights",
+      "It sorts the data into order of size",
+      "It reduces the number of pixels in the image",
+      "It projects the map onto a flat plane"
+     ],
+     "a": 0,
+     "why": "Kriging weights come from the fitted model.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A positive Moran's I and a high local Gi* in one county suggest what?",
+     "o": [
+      "Spatial clustering with a local hot spot, needing further explanation",
+      "Proof of causation between the variables",
+      "Random noise in the map with no pattern",
+      "A data error that must be removed"
+     ],
+     "a": 0,
+     "why": "Statistics describe pattern, not cause.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Spatial statistics",
+    "model": "Spatial data are dependent. Moran's I tests autocorrelation, variograms describe how similarity decays with distance, kriging uses this to interpolate, and local statistics find hot spots. Dependence must be respected in testing.",
+    "points": [
+     {
+      "k": [
+       "autocorrelation",
+       "moran",
+       "dependent",
+       "nearby"
+      ],
+      "ask": "What is special?"
+     },
+     {
+      "k": [
+       "variogram",
+       "semivariance",
+       "range",
+       "sill",
+       "nugget"
+      ],
+      "ask": "How do we describe it?"
+     },
+     {
+      "k": [
+       "kriging",
+       "interpolat",
+       "idw"
+      ],
+      "ask": "How do we predict?"
+     },
+     {
+      "k": [
+       "hot spot",
+       "multiple",
+       "maup",
+       "pseudo"
+      ],
+      "ask": "What are the traps?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Remote sensing analytics",
+   "icon": "🛰️",
+   "hook": "Two classified land-cover maps each claim 90 percent accuracy. How could one be much better than the other?",
+   "explain": [
+    "Remote sensing analytics turns radiometric signals into validated information. Raw digital numbers are converted to at-sensor radiance, then to top-of-atmosphere reflectance, ρ = π L d² ÷ (E_sun cos θs), where L is radiance, d the Earth-Sun distance in astronomical units, E_sun the mean solar irradiance in the band and θs the solar zenith angle. Atmospheric correction estimates surface reflectance by removing scattering and absorption.",
+    "Classification assigns classes using supervised methods (random forest, support vector machines, deep learning) or unsupervised clustering. Features include spectral bands, indices (NDVI, NDWI), texture, terrain and time-series metrics. Synthetic Aperture Radar (SAR) records backscatter, often in decibels, dB = 10 log₁₀(σ⁰), and works through cloud and darkness; Sentinel-1 (C-band) and Sentinel-2 (10 m optical) are widely used open data sources, alongside Landsat since 1972.",
+    "Accuracy assessment relies on an independent reference sample using a confusion matrix. Overall accuracy = correct ÷ total. User's accuracy (precision) = correct ÷ row total (commission error complement) and producer's accuracy (recall) = correct ÷ column total (omission error complement). Cohen's Kappa = (pₒ − pₑ) ÷ (1 − pₑ). Good practice uses probability sampling, area-adjusted estimates and confidence intervals.",
+    "Time-series methods detect change (breakpoint algorithms such as BFAST, LandTrendr), but clouds, phenology and sensor differences can create false changes. Training and test data must be spatially independent to avoid inflated accuracy."
+   ],
+   "example": {
+    "q": "Confusion matrix (rows = map, columns = reference): class A: 45 correct, 5 reference-B; class B: 10 reference-A, 40 correct. Compute overall accuracy and Kappa.",
+    "steps": [
+     "Total = 100; correct = 85; pₒ = 0.85.",
+     "Map row totals 50 and 50; reference column totals 55 and 45.",
+     "pₑ = (50×55 + 50×45) ÷ 100² = 5,000 ÷ 10,000 = 0.50.",
+     "Kappa = (0.85 − 0.50) ÷ (1 − 0.50) = 0.70."
+    ],
+    "a": "Overall accuracy 85 percent; Kappa = 0.70"
+   },
+   "analogies": {
+    "home": "A camera needs the right exposure; reflectance conversion is correcting for lighting.",
+    "farm": "Crop type maps help forecast yield and manage water.",
+    "city": "SAR detects subsidence of a few millimetres per year with interferometry.",
+    "tech": "Cloud platforms process petabytes of imagery to produce global time series."
+   },
+   "mnemonic": "Calibrate, correct, classify, then check against truth.",
+   "terms": [
+    [
+     "Atmospheric correction",
+     "Removing atmospheric effects to estimate surface reflectance."
+    ],
+    [
+     "Producer's accuracy",
+     "Share of reference samples of a class correctly mapped (recall)."
+    ],
+    [
+     "User's accuracy",
+     "Share of mapped pixels of a class that are correct (precision)."
+    ],
+    [
+     "Backscatter",
+     "Portion of radar signal returned to the sensor."
+    ]
+   ],
+   "misc": {
+    "wrong": "Overall accuracy summarises map quality for all uses.",
+    "right": "Overall accuracy can hide poor performance for small or rare classes; class-wise accuracies and sampling design matter."
+   },
+   "limits": "Accuracy statistics apply to the validation sample and map design; spatial autocorrelation and class imbalance can distort them.",
+   "trip": {
+    "wiki": "Confusion matrix",
+    "prompt": "Open an example confusion matrix and compute user's and producer's accuracy for one class."
+   },
+   "sources": [
+    "Remote sensing",
+    "Synthetic-aperture radar",
+    "Cohen's kappa"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does producer's accuracy measure?",
+     "o": [
+      "How much of the reference class was mapped correctly",
+      "How many pixels in the image are cloudy",
+      "How reliable a mapped class is for a user",
+      "The resolution of the image in metres"
+     ],
+     "a": 0,
+     "why": "It is recall.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does user's accuracy measure?",
+     "o": [
+      "How reliable a mapped class is for a map user",
+      "Sensor noise in the image",
+      "Sampling error in the reference data",
+      "The date on which the image was taken"
+     ],
+     "a": 0,
+     "why": "It is precision.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can SAR image through clouds?",
+     "o": [
+      "Microwaves penetrate cloud",
+      "It uses visible light like a normal camera",
+      "It uses X-rays from the satellite",
+      "It uses sound waves sent down to the ground"
+     ],
+     "a": 0,
+     "why": "Longer wavelengths pass through.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is spatial independence important between training and test data?",
+     "o": [
+      "Neighbouring pixels are correlated and inflate accuracy",
+      "It is faster to process separate areas",
+      "It saves storage space on the computer",
+      "It changes the colours of the training data"
+     ],
+     "a": 0,
+     "why": "Leakage gives optimistic results.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a time-series show false forest loss?",
+     "o": [
+      "Clouds, phenology and sensor differences",
+      "Gravity pulling on the sensor",
+      "Orbit speed alone changing the image",
+      "Map colours being chosen badly"
+     ],
+     "a": 0,
+     "why": "Artefacts mimic change.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which step comes before atmospheric correction in a standard workflow?",
+     "o": [
+      "Radiometric calibration to radiance or reflectance",
+      "Accuracy assessment of the final map",
+      "Classification of the pixels into classes",
+      "Reporting of the results to users"
+     ],
+     "a": 0,
+     "why": "Digital numbers must be calibrated first.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A rare class occupies 1 percent of the area. What can overall accuracy hide?",
+     "o": [
+      "Poor performance on that class",
+      "A high sample size in the reference data",
+      "Spatial dependence between the pixels",
+      "Atmospheric haze over the study area"
+     ],
+     "a": 0,
+     "why": "Imbalance dominates the total.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Compute top-of-atmosphere reflectance ρ = π L d² ÷ (E cos θ) for L = 80, d = 1, E = 1800, θ = 30° (cos 30° = 0.866).",
+     "a": 0.161,
+     "tol": 0.003,
+     "unit": "",
+     "why": "π × 80 = 251.3; 1800 × 0.866 = 1558.8; ratio 0.161.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A confusion matrix has 90 correct of 120 samples. What is overall accuracy as a percentage?",
+     "a": 75,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "90 ÷ 120 = 0.75.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the analyst should report class-wise accuracy and confidence intervals, not only a single overall accuracy.",
+     "rubric": [
+      [
+       "class",
+       "rare",
+       "each",
+       "small",
+       "individual",
+       "per class"
+      ],
+      [
+       "hide",
+       "mask",
+       "average",
+       "overall",
+       "misleading",
+       "unequal"
+      ],
+      [
+       "sample",
+       "uncertain",
+       "interval",
+       "confidence",
+       "error",
+       "precision",
+       "variab"
+      ]
+     ],
+     "min": 2,
+     "model": "A single overall figure can be dominated by large classes and hide poor performance on rare ones. Class-wise accuracy and confidence intervals show where the map is reliable and how uncertain the estimates are.",
+     "why": "Accuracy must be transparent.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two maps have equal overall accuracy but different Kappa. What does Kappa add?",
+     "o": [
+      "Correction for agreement expected by chance",
+      "The resolution of the image in metres",
+      "The colour scale used to draw the map",
+      "The cloud mask applied to each image"
+     ],
+     "a": 0,
+     "why": "Chance agreement depends on class marginals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use area-adjusted accuracy estimates in change detection?",
+     "o": [
+      "Rare change classes need estimates weighted by area",
+      "Pixels are all equal in size, so no change is needed",
+      "Maps are small, so weighting is not required",
+      "Colour matters more than area in the estimate"
+     ],
+     "a": 0,
+     "why": "Pixel counts are biased.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do analysts combine optical and SAR time series for crop mapping in cloudy regions?",
+     "o": [
+      "SAR fills gaps while optical gives spectral information",
+      "SAR gives colour only and optical gives shape",
+      "Optical sees through cloud and SAR does not",
+      "Both are identical, so one is enough"
+     ],
+     "a": 0,
+     "why": "Complementary sensors improve coverage.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Remote sensing analytics",
+    "model": "Raw signals are calibrated and corrected, then classified. Optical and radar sensors complement each other. Map accuracy is assessed with an independent reference sample using user's, producer's and overall accuracy and Kappa.",
+    "points": [
+     {
+      "k": [
+       "calibrat",
+       "correct",
+       "reflectance",
+       "radiance"
+      ],
+      "ask": "What happens before classification?"
+     },
+     {
+      "k": [
+       "classif",
+       "random forest",
+       "supervised",
+       "feature"
+      ],
+      "ask": "How are classes assigned?"
+     },
+     {
+      "k": [
+       "sar",
+       "radar",
+       "cloud",
+       "optical"
+      ],
+      "ask": "What sensors help?"
+     },
+     {
+      "k": [
+       "accuracy",
+       "confusion",
+       "kappa",
+       "reference",
+       "validate"
+      ],
+      "ask": "How is quality checked?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Environmental impact modelling",
+   "icon": "🧪",
+   "hook": "A new dam, mine or farm will change a landscape. How can a model estimate the effect before it exists?",
+   "explain": [
+    "Environmental impact modelling predicts how an action changes physical, chemical and biological conditions. Environmental Impact Assessment (EIA) follows steps: screening, scoping, baseline, impact prediction, mitigation, reporting, decision and monitoring. Predictions should include uncertainty and consider cumulative effects with other projects.",
+    "Mass balance is the backbone: inflow − outflow = change in storage. For a river receiving effluent, mixed concentration C = (Q_e C_e + Q_r C_r) ÷ (Q_e + Q_r). The SCS Curve Number method estimates runoff depth: S = 25,400 ÷ CN − 254 (mm), Ia = 0.2S, Q = (P − Ia)² ÷ (P − Ia + S) for P > Ia. The Universal Soil Loss Equation estimates erosion A = R K LS C P, with rainfall erosivity R, soil erodibility K, slope length and steepness LS, cover C and practices P.",
+    "Habitat and species distribution models relate presence data to environmental predictors; they require attention to sampling bias and extrapolation. Life cycle assessment compares products across stages from extraction to disposal. Integrated assessment couples biophysical and socio-economic models.",
+    "Model evaluation includes sensitivity analysis, calibration/validation on independent data and uncertainty analysis. Ethical practice includes stakeholder participation, particularly for affected communities and Indigenous peoples, and open reporting of assumptions."
+   ],
+   "example": {
+    "q": "An outfall releases 0.5 m³/s with 200 mg/L of a pollutant into a river flowing at 9.5 m³/s with 0 mg/L upstream. What is the fully mixed concentration?",
+    "steps": [
+     "Load from effluent: 0.5 × 200 = 100 (m³/s·mg/L).",
+     "Total flow = 0.5 + 9.5 = 10 m³/s.",
+     "C = 100 ÷ 10 = 10 mg/L."
+    ],
+    "a": "10 mg/L"
+   },
+   "analogies": {
+    "home": "A household water tank: inflow minus outflow gives level change.",
+    "farm": "Terraces and cover crops reduce the C and LS terms in USLE.",
+    "city": "Green roofs lower the curve number of a catchment and cut runoff.",
+    "sea": "Marine outfall models predict dilution in coastal currents."
+   },
+   "mnemonic": "Balance the budget: in, out, change in store.",
+   "terms": [
+    [
+     "EIA",
+     "A structured process for predicting and managing the effects of a project."
+    ],
+    [
+     "Mass balance",
+     "Accounting for inputs, outputs and storage of a quantity."
+    ],
+    [
+     "Curve Number",
+     "An empirical index of runoff potential."
+    ],
+    [
+     "Cumulative effects",
+     "Combined impacts of multiple actions over time."
+    ]
+   ],
+   "misc": {
+    "wrong": "A model with more parameters is always more realistic and reliable.",
+    "right": "Complexity can reduce transparency and increase uncertainty; models should be as simple as the question allows."
+   },
+   "limits": "Empirical equations such as SCS-CN and USLE were developed for particular regions and conditions; applying them elsewhere needs local calibration.",
+   "trip": {
+    "wiki": "Environmental impact assessment",
+    "prompt": "Read a summary of an EIA. Which impacts are quantified and which are described qualitatively?"
+   },
+   "sources": [
+    "Environmental impact assessment",
+    "Universal Soil Loss Equation",
+    "Species distribution modelling"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which EIA step identifies the key issues to study?",
+     "o": [
+      "Scoping",
+      "Monitoring",
+      "Decision",
+      "Reporting"
+     ],
+     "a": 0,
+     "why": "It focuses the assessment.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does mass balance state?",
+     "o": [
+      "Inputs minus outputs equals change in storage",
+      "Inputs equal outputs in every case",
+      "Outputs always exceed inputs in a system",
+      "Storage is constant and never changes"
+     ],
+     "a": 0,
+     "why": "It is conservation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In USLE, what does the C factor represent?",
+     "o": [
+      "Cover and management",
+      "Climate of the area where the soil lies",
+      "Channel width of the stream beside the field",
+      "Cost of the farm work needed"
+     ],
+     "a": 0,
+     "why": "Vegetation lowers erosion.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a higher Curve Number imply?",
+     "o": [
+      "More runoff",
+      "Less runoff",
+      "No rainfall",
+      "Cooler soil"
+     ],
+     "a": 0,
+     "why": "Impervious surfaces have high CN.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are cumulative effects important?",
+     "o": [
+      "Small impacts from many projects can add up to large ones",
+      "They are rare and so can be ignored",
+      "They are a legal idea only, with no data",
+      "They affect only the maps and not the land"
+     ],
+     "a": 0,
+     "why": "Single-project views miss it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a risk in species distribution models?",
+     "o": [
+      "Sampling bias in presence records",
+      "Too few species in the data to be useful",
+      "The colour palettes used for the map",
+      "The latitude of the study area"
+     ],
+     "a": 0,
+     "why": "Records cluster near roads and cities.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why involve affected communities in impact assessment?",
+     "o": [
+      "They hold local knowledge and bear the impacts",
+      "It is decoration that adds nothing to the work",
+      "Models need no data from local people",
+      "It reduces the transparency of the process"
+     ],
+     "a": 0,
+     "why": "Legitimacy and accuracy improve.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Using USLE A = R K LS C P with R = 300, K = 0.03, LS = 2, C = 0.2, P = 1, compute A in t/ha/yr.",
+     "a": 3.6,
+     "tol": 0.05,
+     "unit": "t/ha/yr",
+     "why": "300 × 0.03 = 9; × 2 = 18; × 0.2 = 3.6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "SCS-CN with CN = 80 and P = 100 mm: S = 25,400/CN − 254 = 63.5 mm, Ia = 12.7 mm. Compute runoff Q in mm.",
+     "a": 50.5,
+     "tol": 0.3,
+     "unit": "mm",
+     "why": "Q = 87.3² ÷ (87.3 + 63.5) = 7621.3 ÷ 150.8 = 50.5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A mine outflow raises river concentration of a metal above a safety limit during low flow. Explain using mass balance why low flow is critical.",
+     "rubric": [
+      [
+       "dilution",
+       "dilute",
+       "mix",
+       "mixing"
+      ],
+      [
+       "low flow",
+       "less water",
+       "small discharge",
+       "river flow",
+       "drought",
+       "less volume"
+      ],
+      [
+       "concentration",
+       "higher",
+       "more concentrated",
+       "load",
+       "same mass",
+       "same load"
+      ]
+     ],
+     "min": 2,
+     "model": "The same pollutant load is mixed into less water at low flow, so concentration C = load ÷ flow rises. Low-flow conditions therefore give the worst case for compliance.",
+     "why": "Design for critical conditions.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A project's predicted impact has a wide uncertainty range. What is the best practice?",
+     "o": [
+      "Report ranges, apply precaution, and plan monitoring and adaptive management",
+      "Report one number and hide the range",
+      "Hide the uncertainty from the decision makers",
+      "Delay the decision for ever until all is known"
+     ],
+     "a": 0,
+     "why": "Uncertainty is managed, not ignored.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does paving a catchment raise flood peaks in SCS-CN terms?",
+     "o": [
+      "CN rises, reducing infiltration and increasing runoff",
+      "CN falls, so more water soaks into the ground",
+      "Rain disappears when the ground is paved",
+      "Soil deepens and holds more water"
+     ],
+     "a": 0,
+     "why": "Impervious area raises CN.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can LCA results flip when system boundaries change?",
+     "o": [
+      "Different stages and impacts are included",
+      "The maths changes between the studies",
+      "The units change between the studies",
+      "The climate changes between the studies"
+     ],
+     "a": 0,
+     "why": "Boundary choices matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Environmental impact modelling",
+    "model": "Impact modelling uses mass balance, runoff and erosion equations, and species or life-cycle models inside an EIA process. Results should include uncertainty, cumulative effects and stakeholder input.",
+    "points": [
+     {
+      "k": [
+       "eia",
+       "assessment",
+       "scoping",
+       "baseline"
+      ],
+      "ask": "How is an assessment structured?"
+     },
+     {
+      "k": [
+       "mass balance",
+       "in",
+       "out",
+       "storage",
+       "dilution"
+      ],
+      "ask": "What is the core logic?"
+     },
+     {
+      "k": [
+       "runoff",
+       "erosion",
+       "curve number",
+       "usle"
+      ],
+      "ask": "How are land effects estimated?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "sensitivity",
+       "cumulative",
+       "stakeholder"
+      ],
+      "ask": "How do we keep it honest?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Global migration and urbanisation",
+   "icon": "🧳",
+   "hook": "More than half of humanity lives in cities, and roughly 3 to 4 percent of people live outside their country of birth. Which theories best explain who moves where and why?",
+   "explain": [
+    "Migration theory spans scales. Ravenstein's laws (1885) noted that most migrants move short distances, that migration proceeds in stages, and that each stream produces a counter-stream. Lee's push-pull framework adds intervening obstacles and personal factors. The Harris-Todaro model explains rural-urban migration by expected income differences, accounting for the probability of finding formal work. The new economics of labour migration views migration as a household strategy for diversifying risk, and network theory explains persistence through social ties.",
+    "Gravity models predict flows: Mᵢⱼ = k PᵢPⱼ ÷ dᵅ, often with extensions for wages, borders, language and policy. The net migration rate is (immigrants − emigrants) ÷ population × 1,000. Most international migrants move for work, family or study; refugees and forcibly displaced people are a smaller but critical share. Climate change interacts with migration through hazards, livelihoods and conflict; most climate-related movement is internal and short distance, and causal attribution is difficult.",
+    "Urbanisation transforms settlement. Roughly 57 percent of people lived in cities in the early 2020s, and UN projections indicate about two thirds by 2050, with most growth in Africa and Asia. Zipf's law and rank-size distributions are approximate descriptions of city size distributions; megaregions and urban agglomerations blur city boundaries. Urban growth arises from natural increase, net migration and reclassification of rural areas.",
+    "Policy challenges: housing, informality, services, and governance. Cities in poorer regions often grow with limited industrial employment (urbanisation without industrialisation). Remittances are large flows to origin communities. Migration data differ by definition, so comparison needs care."
+   ],
+   "example": {
+    "q": "Urban population starts at 50 million of a 100 million total. Urban grows 2.5 percent a year and total grows 1 percent a year. After 20 years, what is the urban share? (1.025²⁰ = 1.6386, 1.01²⁰ = 1.2202)",
+    "steps": [
+     "Urban = 50 × 1.6386 = 81.93 million.",
+     "Total = 100 × 1.2202 = 122.02 million.",
+     "Share = 81.93 ÷ 122.02 = 0.671."
+    ],
+    "a": "About 67 percent"
+   },
+   "analogies": {
+    "home": "Family members working in different towns share risk, as in household-strategy theory.",
+    "city": "Migrants often arrive where a relative or friend already lives.",
+    "farm": "Seasonal workers move between harvests.",
+    "tech": "Mobile phone and social media data now trace movement patterns."
+   },
+   "mnemonic": "Push, pull, network and risk: theories stack.",
+   "terms": [
+    [
+     "Harris-Todaro model",
+     "Rural-urban migration driven by expected urban income."
+    ],
+    [
+     "Gravity model",
+     "Flows rise with population sizes and fall with distance."
+    ],
+    [
+     "Urbanisation without industrialisation",
+     "City growth not matched by factory jobs."
+    ],
+    [
+     "Remittances",
+     "Money sent home by migrants."
+    ]
+   ],
+   "misc": {
+    "wrong": "Most climate migrants cross borders to rich countries.",
+    "right": "Evidence suggests most climate-related movement is internal or regional, and people with fewest resources are often least able to move."
+   },
+   "limits": "Migration statistics depend on definitions (birthplace, nationality, duration), and projections rely on uncertain assumptions.",
+   "trip": {
+    "wiki": "Human migration",
+    "prompt": "Compare a gravity model with a network theory. Which factors does each emphasise?"
+   },
+   "sources": [
+    "Human migration",
+    "Gravity model of migration",
+    "Urbanization"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What did Ravenstein observe?",
+     "o": [
+      "Most migrants move short distances",
+      "Most migrants go overseas to new countries",
+      "Nobody ever returns to the place they left",
+      "Distance does not matter for migration at all"
+     ],
+     "a": 0,
+     "why": "He formulated laws of migration.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Harris-Todaro emphasises what?",
+     "o": [
+      "Expected income including probability of finding work",
+      "Distance between the two places only",
+      "Climate in the two places only",
+      "Language spoken in the two places only"
+     ],
+     "a": 0,
+     "why": "It models rural-urban migration.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do migrant networks sustain flows?",
+     "o": [
+      "They reduce costs and risks for new migrants",
+      "They increase the cost and risk for new migrants",
+      "They stop information from reaching them",
+      "They ban moves between places"
+     ],
+     "a": 0,
+     "why": "Social ties help.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is urbanisation without industrialisation?",
+     "o": [
+      "Urban growth with limited manufacturing jobs",
+      "Industry growing in the countryside without cities",
+      "Rural growth with more farms and villages",
+      "Falling cities with fewer people"
+     ],
+     "a": 0,
+     "why": "Informality is common.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a typical feature of climate-related migration?",
+     "o": [
+      "Mostly internal and short distance",
+      "Always international, across borders",
+      "Always permanent, with no return",
+      "Always instant, within a few days"
+     ],
+     "a": 0,
+     "why": "Constraints limit movement.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor is added in gravity models?",
+     "o": [
+      "Language and policy barriers",
+      "The phase of the Moon at the time of travel",
+      "Temperature only, in the two places",
+      "Latitude only, of the two places"
+     ],
+     "a": 0,
+     "why": "Extensions use friction terms.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are migration statistics hard to compare?",
+     "o": [
+      "Definitions of migrant differ",
+      "Maps differ from one country to another",
+      "Rivers differ from one country to another",
+      "Time zones differ from one country to another"
+     ],
+     "a": 0,
+     "why": "Birthplace, nationality and duration vary.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A gravity model Mᵢⱼ = k PᵢPⱼ/d². If distance doubles and both populations are unchanged, by what factor does the predicted flow change?",
+     "a": 0.25,
+     "tol": 0.001,
+     "unit": "×",
+     "why": "Flow ∝ 1/d²; (1/2)² = 1/4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Urban population is 40 million of 100 million total. It grows 3 percent a year while total grows 1 percent. Using 1.03¹⁰ = 1.3439 and 1.01¹⁰ = 1.1046, find the urban share after 10 years as a percentage.",
+     "a": 48.7,
+     "tol": 0.3,
+     "unit": "%",
+     "why": "Urban = 53.76; total = 110.46; share = 48.7%.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a city's reported population can differ widely between sources.",
+     "rubric": [
+      [
+       "boundary",
+       "definition",
+       "administrative",
+       "agglomeration",
+       "metropolitan",
+       "built-up"
+      ],
+      [
+       "city proper",
+       "metro",
+       "urban area",
+       "extent",
+       "region"
+      ],
+      [
+       "census",
+       "estimate",
+       "data",
+       "year",
+       "method",
+       "count"
+      ]
+     ],
+     "min": 2,
+     "model": "Sources use different boundaries (administrative city, built-up urban area or metropolitan region) and different census dates or estimation methods, so reported populations differ.",
+     "why": "Definitions matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A village loses young adults to cities but receives remittances. What mixed outcome may occur?",
+     "o": [
+      "Income support alongside labour loss and ageing",
+      "Only gains, with no loss of any kind",
+      "Only losses, with nothing sent back",
+      "No change at all in the village"
+     ],
+     "a": 0,
+     "why": "Migration has complex effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the 57 percent global urban share hide regional differences?",
+     "o": [
+      "Urban shares range widely by region",
+      "It is uniform, so every region looks the same",
+      "It is wrong, so it should not be used",
+      "It excludes cities from the count"
+     ],
+     "a": 0,
+     "why": "Africa and Asia are urbanising faster.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might policy to restrict urban migration backfire?",
+     "o": [
+      "It ignores underlying economic drivers and can push informality",
+      "It always works as planned and ends migration",
+      "It builds housing for the new migrants",
+      "It always lowers poverty in the countryside"
+     ],
+     "a": 0,
+     "why": "Migration responds to opportunities.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Global migration and urbanisation",
+    "model": "Theories of migration include distance, push-pull, expected income, networks and household risk strategies. Gravity models describe flows. Cities grow through natural increase, migration and reclassification, and definitions affect statistics.",
+    "points": [
+     {
+      "k": [
+       "push",
+       "pull",
+       "ravenstein",
+       "harris",
+       "todaro",
+       "network"
+      ],
+      "ask": "What theories explain migration?"
+     },
+     {
+      "k": [
+       "gravity",
+       "distance",
+       "population",
+       "flow"
+      ],
+      "ask": "How can flows be modelled?"
+     },
+     {
+      "k": [
+       "urban",
+       "city",
+       "growth",
+       "natural increase",
+       "reclass"
+      ],
+      "ask": "How do cities grow?"
+     },
+     {
+      "k": [
+       "definition",
+       "data",
+       "comparison",
+       "uncertain"
+      ],
+      "ask": "What limits the data?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated global geography research mission",
+   "icon": "🚀",
+   "hook": "Design the mission: a coastal region faces more floods, a growing city and shrinking farmland. What question, data, methods and ethics would make your study credible?",
+   "explain": [
+    "An integrated geography research project connects physical processes, human systems and spatial methods. Start with a clear question and conceptual framework, state hypotheses, define the study area and time, identify data and ethics, choose methods and plan validation. Mixed methods combine quantitative models with qualitative evidence such as interviews, which can reveal why patterns arise and ensure local knowledge shapes the work.",
+    "Typical workflow: define the problem with stakeholders; assemble data (satellite, census, hydrological gauges, survey); process and quality-check; analyse (spatial statistics, modelling); validate against independent data; assess uncertainty and sensitivity; interpret across scales; communicate with maps and plain-language summaries. Triangulation uses several lines of evidence to test a conclusion.",
+    "Sample size for estimating a proportion with margin e: n = z² p(1 − p) ÷ e². For 95% confidence (z = 1.96), p = 0.5 and e = 0.05, n = 384.16, so 385. Reproducibility requires documented code, versioned data and metadata; FAIR and open practice help others check and reuse work. Ethics covers consent, privacy (especially location), data sovereignty for Indigenous and local communities, avoiding harm, and fair credit.",
+    "Integrated assessment shows trade-offs: protecting wetlands may reduce flood risk and sequester carbon but limit housing; expanding cities onto farmland affects food supply; sea walls protect some places while shifting erosion elsewhere. Good geographic research states assumptions, limits and who benefits and who bears costs."
+   ],
+   "example": {
+    "q": "How many people must a survey sample to estimate a proportion within ±5 percentage points at 95% confidence, assuming p = 0.5 (z = 1.96)?",
+    "steps": [
+     "n = z² p(1 − p) ÷ e².",
+     "n = (1.96)² × 0.25 ÷ (0.05)².",
+     "= 3.8416 × 0.25 ÷ 0.0025 = 384.16.",
+     "Round up: 385."
+    ],
+    "a": "385 respondents"
+   },
+   "analogies": {
+    "home": "Planning a family move needs several facts: schools, costs, flood risk, jobs.",
+    "city": "A city integrates transport, housing, flood and heat plans.",
+    "farm": "A catchment plan involves farmers, water users and ecology.",
+    "tech": "A project repository with code and data lets others reproduce results."
+   },
+   "mnemonic": "Question, data, method, check, share, care.",
+   "terms": [
+    [
+     "Triangulation",
+     "Using several independent lines of evidence."
+    ],
+    [
+     "Mixed methods",
+     "Combining quantitative and qualitative approaches."
+    ],
+    [
+     "Reproducibility",
+     "Ability to obtain the same results using the same data and methods."
+    ],
+    [
+     "Data sovereignty",
+     "Communities' right to govern data about them."
+    ]
+   ],
+   "misc": {
+    "wrong": "More data and a more complex model always make better research.",
+    "right": "Quality of question, data, validation and transparency matter more than size or complexity."
+   },
+   "limits": "Integrated studies face scale mismatches, data gaps and disagreements about values; findings are always partial and must be communicated with humility.",
+   "trip": {
+    "wiki": "Integrated assessment modelling",
+    "prompt": "Read a coastal adaptation study. Identify the question, data, methods and what was validated."
+   },
+   "sources": [
+    "Geography",
+    "Research design",
+    "Reproducibility"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which step should come first in a research project?",
+     "o": [
+      "Define a clear question",
+      "Choose the colours for the maps",
+      "Print the maps and put them up",
+      "Buy the sensors and set them out"
+     ],
+     "a": 0,
+     "why": "The question drives data and methods.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is triangulation?",
+     "o": [
+      "Testing a conclusion using several independent evidence lines",
+      "Using three different maps of one place",
+      "Drawing triangles on a map to measure",
+      "A GPS method only for finding positions"
+     ],
+     "a": 0,
+     "why": "It increases confidence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is reproducibility important?",
+     "o": [
+      "Others can check and build on the work",
+      "It speeds up funding for the project",
+      "It removes uncertainty from the result",
+      "It replaces peer review of the work"
+     ],
+     "a": 0,
+     "why": "Open methods enable verification.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A study uses only satellite flood extents. Which addition most improves interpretation?",
+     "o": [
+      "Interviews and household surveys on impacts",
+      "More colours on the map to show the extent",
+      "Lower resolution images of the same floods",
+      "Fewer dates in the series of images"
+     ],
+     "a": 0,
+     "why": "Mixed methods reveal impacts and context.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does data sovereignty emphasise?",
+     "o": [
+      "Communities control data about them",
+      "Data are public domain and open to all",
+      "Data have no owner and belong to no one",
+      "Maps are free for anyone to copy"
+     ],
+     "a": 0,
+     "why": "Ethical governance of data.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why report who benefits and who bears costs?",
+     "o": [
+      "Impacts and decisions are often unevenly distributed",
+      "To make the reports longer and fuller",
+      "Because maps need names on them",
+      "To avoid using numbers in the report"
+     ],
+     "a": 0,
+     "why": "Equity is central to evaluation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A sea wall protects one town but erodes the next beach. This illustrates...",
+     "o": [
+      "A trade-off with spatial spillover",
+      "Perfect adaptation with no side effects",
+      "A projection error in the map",
+      "A tide that has risen a little"
+     ],
+     "a": 0,
+     "why": "Interventions can shift risk.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A survey needs a margin of ±3 percentage points at 95% confidence with p = 0.5 (z = 1.96). Using n = z²p(1−p)/e², what is n rounded up?",
+     "a": 1068,
+     "tol": 1,
+     "unit": "respondents",
+     "why": "3.8416 × 0.25 ÷ 0.0009 = 1067.1, rounded up to 1068.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of an integrated geographic study.",
+     "items": [
+      "Define question with stakeholders",
+      "Assemble and quality-check data",
+      "Analyse and model",
+      "Validate and assess uncertainty",
+      "Communicate and share data and code"
+     ],
+     "why": "Each stage supports credibility.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Propose a mixed-methods design to study why some neighbourhoods suffer more from flooding, naming one quantitative and one qualitative method.",
+     "rubric": [
+      [
+       "gis",
+       "map",
+       "spatial",
+       "statistic",
+       "model",
+       "remote sensing",
+       "satellite",
+       "survey",
+       "overlay",
+       "regression",
+       "elevation",
+       "dem"
+      ],
+      [
+       "interview",
+       "focus group",
+       "qualitative",
+       "community",
+       "participat",
+       "local knowledge",
+       "household"
+      ],
+      [
+       "vulnerab",
+       "income",
+       "housing",
+       "exposure",
+       "drain",
+       "infrastructure",
+       "why",
+       "explain"
+      ]
+     ],
+     "min": 2,
+     "model": "Map flood hazard with GIS and satellite data and relate it statistically to income, housing and drainage layers; then use household interviews and community workshops to understand why some residents are more exposed and how they cope.",
+     "why": "Combine where and why.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two analyses give different flood risks for a city. Which response is best?",
+     "o": [
+      "Compare assumptions and data, test sensitivity and report the range",
+      "Pick the lower result and ignore the other",
+      "Pick the higher result to be safe",
+      "Discard both and start with a new city"
+     ],
+     "a": 0,
+     "why": "Understanding the difference improves trust.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must location data about vulnerable people be protected?",
+     "o": [
+      "Precise locations can enable harm or discrimination",
+      "They are boring to look at on a map",
+      "They use up space in the database",
+      "They change the datum of the map"
+     ],
+     "a": 0,
+     "why": "Ethical handling and aggregation protect people.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it valuable to analyse across scales (household, city, basin) in an integrated study?",
+     "rubric": [
+      [
+       "scale",
+       "local",
+       "regional",
+       "basin",
+       "household",
+       "city",
+       "global"
+      ],
+      [
+       "link",
+       "interact",
+       "connect",
+       "affect",
+       "upstream",
+       "downstream",
+       "cascade",
+       "spillover",
+       "pattern"
+      ],
+      [
+       "different",
+       "miss",
+       "hidden",
+       "one scale",
+       "cannot",
+       "depends"
+      ]
+     ],
+     "min": 2,
+     "model": "Processes and decisions at one scale affect others, for example upstream land use influences downstream floods. A single scale can hide these links and misattribute causes.",
+     "why": "Scale links explanation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Planning an integrated geography study",
+    "model": "Begin with a clear question and framework, gather and check data, use suitable models and statistics, validate and quantify uncertainty, and combine numbers with local knowledge. Share open methods and act ethically.",
+    "points": [
+     {
+      "k": [
+       "question",
+       "hypothes",
+       "framework",
+       "objective"
+      ],
+      "ask": "Where do you start?"
+     },
+     {
+      "k": [
+       "data",
+       "method",
+       "model",
+       "statistic",
+       "gis",
+       "remote"
+      ],
+      "ask": "What evidence and tools?"
+     },
+     {
+      "k": [
+       "validat",
+       "uncertain",
+       "triangulat",
+       "reproduc"
+      ],
+      "ask": "How do you make it credible?"
+     },
+     {
+      "k": [
+       "ethic",
+       "community",
+       "privacy",
+       "consent",
+       "share"
+      ],
+      "ask": "How do you act responsibly?"
+     }
+    ]
+   }
+  }
+ ]
+}

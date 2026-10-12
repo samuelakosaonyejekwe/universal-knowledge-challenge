@@ -1,0 +1,2805 @@
+{
+ "world": 3,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Mechanism analysis",
+   "icon": "🦾",
+   "hook": "An engine's piston slides in a straight line while the crank spins. How many independent movements does this linkage allow, and how do we know it will not jam?",
+   "explain": [
+    "A mechanism is a set of rigid links joined so that motion is constrained. The number of independent inputs needed to fix its position is the degrees of freedom (DOF). For a planar mechanism the Grübler (Kutzbach) equation gives F = 3(n − 1) − 2 j₁ − j₂, where n is the number of links (including the fixed frame), j₁ the number of one-DOF joints (revolute or sliding) and j₂ the number of two-DOF joints.",
+    "A four-bar linkage has n = 4 and four revolute joints: F = 3 × 3 − 2 × 4 = 1. A slider-crank also has n = 4 and four one-DOF joints, so F = 1. One input, such as a crank angle, determines every other position. If F came out as 0 the mechanism would be locked, and if more than the number of drivers the mechanism is under-constrained.",
+    "Grashof's rule tells whether a four-bar linkage has a link that can rotate fully: if the shortest plus the longest link is no more than the sum of the other two (s + l ≤ p + q), at least one link can make a full turn. Links of 20, 50, 40 and 45 cm give 20 + 50 = 70 ≤ 40 + 45 = 85, so it is a Grashof linkage.",
+    "In a slider-crank with crank radius r turning at angular speed ω, the crank pin moves at v = ω r and the stroke of the slider is 2r (when the connecting rod is long enough). Design checks include transmission angle (the angle between coupler and follower should stay near 90°), dead-centre positions where force cannot start motion, and clearances that wear and cause backlash."
+   ],
+   "example": {
+    "q": "A slider-crank has a crank radius of 0.05 m turning at 600 rpm. Find the stroke and the crank-pin speed.",
+    "steps": [
+     "Stroke = 2r = 2 × 0.05 = 0.10 m.",
+     "ω = 2π × 600 ÷ 60 = 62.83 rad/s.",
+     "v = ω r = 62.83 × 0.05 = 3.14 m/s."
+    ],
+    "a": "Stroke 0.10 m; pin speed 3.14 m/s"
+   },
+   "analogies": {
+    "home": "A sewing-machine needle bar converts rotation to up-and-down motion, using a crank.",
+    "city": "A windscreen wiper uses a linkage to turn the motor's rotation into a back-and-forth sweep.",
+    "farm": "A hand-operated water pump uses a lever linkage to push a piston.",
+    "sea": "A steam launch's engine uses slider-cranks to turn a propeller shaft."
+   },
+   "mnemonic": "Count the links, subtract the joints: Grübler gives the freedom.",
+   "terms": [
+    [
+     "Degrees of freedom",
+     "Number of independent inputs needed to define a mechanism's position."
+    ],
+    [
+     "Revolute joint",
+     "A pin joint allowing rotation only."
+    ],
+    [
+     "Grashof condition",
+     "s + l ≤ p + q, for a link to rotate fully."
+    ],
+    [
+     "Transmission angle",
+     "Angle between coupler and output link that governs force transfer."
+    ]
+   ],
+   "misc": {
+    "wrong": "Any linkage with four bars is a safe mechanism that moves smoothly.",
+    "right": "Four-bar linkages can have dead-centre positions and poor transmission angles where force transmission is weak or the mechanism jams."
+   },
+   "limits": "Grübler's equation can mislead for special geometries, such as parallel links, where overconstraint hides extra mobility.",
+   "trip": {
+    "wiki": "Four-bar linkage",
+    "prompt": "Find an animation of a four-bar linkage. Identify the frame, crank, coupler and follower."
+   },
+   "sources": [
+    "Four-bar linkage",
+    "Mechanism (engineering)",
+    "Slider-crank linkage"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a one-degree-of-freedom mechanism need to fix all its positions?",
+     "o": [
+      "One input, such as a crank angle",
+      "Two separate inputs, such as two crank angles",
+      "No input, as the links settle by themselves",
+      "Three inputs, one for each moving link"
+     ],
+     "a": 0,
+     "why": "One DOF means a single input fixes the whole configuration.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A planar mechanism has 6 links (including the frame) and 7 revolute joints. Using Grübler's equation, how many degrees of freedom does it have?",
+     "a": 1,
+     "tol": 0.01,
+     "why": "F = 3(6 − 1) − 2 × 7 = 15 − 14 = 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A crank of radius 0.08 m turns at 300 rpm. What is the speed of the crank pin in m/s? Use π = 3.14 and round to two decimals.",
+     "a": 2.51,
+     "tol": 0.03,
+     "unit": "m/s",
+     "why": "ω = 2π × 300 ÷ 60 = 31.4 rad/s, v = 31.4 × 0.08 = 2.51 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A four-bar linkage has links of 30, 80, 60 and 70 mm. Does it satisfy the Grashof condition?",
+     "o": [
+      "Yes, because 30 + 80 = 110 ≤ 60 + 70 = 130",
+      "No, because 30 + 80 is greater than 60 + 70",
+      "No, because a four-bar linkage has four links",
+      "Grashof applies only to linkages with six links"
+     ],
+     "a": 0,
+     "why": "s + l = 110 and p + q = 130, so s + l ≤ p + q.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a slider-crank reach positions where force on the crank is zero, even with a large piston force?",
+     "o": [
+      "At dead centre the force line passes through the crank pivot",
+      "The piston stops working when it reaches its end",
+      "The crank is too heavy to be pushed round",
+      "The piston has no mass at the ends of its stroke"
+     ],
+     "a": 0,
+     "why": "With zero perpendicular distance there is no torque, so engines use flywheels to carry the crank through dead centre.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer finds F = 0 for a proposed mechanism. What does this mean?",
+     "o": [
+      "It cannot move as drawn",
+      "It moves freely with one input",
+      "It is a perfect machine",
+      "It has infinite freedom"
+     ],
+     "a": 0,
+     "why": "Zero DOF means the structure is locked unless parts deform.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why should the transmission angle of a four-bar linkage stay away from 0° and 180°?",
+     "o": [
+      "Force transfer to the follower is poor and it may jam",
+      "It makes the links shorter and lighter in use",
+      "It changes the material of the follower",
+      "It removes all friction from the joints"
+     ],
+     "a": 0,
+     "why": "Near those angles almost all the force acts along the follower rather than turning it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a piston engine needs a flywheel.",
+     "rubric": [
+      [
+       "dead centre",
+       "dead-centre",
+       "top",
+       "bottom",
+       "zero torque",
+       "no torque"
+      ],
+      [
+       "momentum",
+       "inertia",
+       "store",
+       "energy",
+       "smooth"
+      ],
+      [
+       "fluctuat",
+       "uneven",
+       "pulse",
+       "power stroke",
+       "between"
+      ],
+      [
+       "carry",
+       "through",
+       "continue"
+      ]
+     ],
+     "min": 2,
+     "model": "The crank gets no torque at dead centre and the torque varies through the cycle. A flywheel stores kinetic energy and its inertia carries the crank through dead centre and smooths the speed between power strokes.",
+     "why": "The flywheel stores energy and evens out the speed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each mechanism feature to what it describes.",
+     "pairs": [
+      [
+       "Revolute joint",
+       "Pin that allows rotation only"
+      ],
+      [
+       "Grübler equation",
+       "Counts degrees of freedom"
+      ],
+      [
+       "Dead centre",
+       "Zero torque from the force"
+      ],
+      [
+       "Coupler",
+       "Floating link between crank and follower"
+      ]
+     ],
+     "why": "These are the terms of mechanism analysis.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A slider-crank stroke is 0.12 m. What is the crank radius?",
+     "o": [
+      "0.06 m",
+      "0.12 m",
+      "0.24 m",
+      "0.03 m"
+     ],
+     "a": 0,
+     "why": "Stroke = 2r, so r = 0.06 m.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A rack-and-pinion steering and a parallelogram linkage both look overconstrained when counted by Grübler yet still move. What is the likely explanation?",
+     "o": [
+      "Special geometry such as parallel links makes some constraints redundant",
+      "The equation is always wrong for real machines",
+      "They have no joints, so nothing can be counted",
+      "They are not machines, so the equation does not apply to them"
+     ],
+     "a": 0,
+     "why": "Grübler assumes general geometry. Parallel link lengths create redundant constraints.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The clearance in revolute joints of a robot arm increases with wear. What is the most likely effect?",
+     "o": [
+      "Backlash and reduced positioning accuracy",
+      "Higher stiffness and a firmer feel at the tool",
+      "Less noise and smoother movement",
+      "Greater efficiency of the whole joint"
+     ],
+     "a": 0,
+     "why": "Looser joints allow unwanted play, so end-point errors rise.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "For the same input speed, doubling the crank radius of a slider-crank does what to the stroke and pin speed?",
+     "o": [
+      "Doubles both",
+      "Doubles stroke, halves pin speed",
+      "Halves both",
+      "Leaves both unchanged"
+     ],
+     "a": 0,
+     "why": "Stroke = 2r and v = ω r are both proportional to r.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to count the freedom of a linkage",
+    "model": "Count the links including the fixed frame and count the joints. For a flat mechanism, degrees of freedom equal three times the links minus one, minus twice the number of pin joints. A four-bar linkage has four links and four pins, so 3 × 3 − 2 × 4 = 1: one input moves the whole thing.",
+    "points": [
+     {
+      "k": [
+       "link",
+       "bar"
+      ],
+      "ask": "What do I count first?"
+     },
+     {
+      "k": [
+       "joint",
+       "pin",
+       "hinge",
+       "revolute"
+      ],
+      "ask": "What else do I count?"
+     },
+     {
+      "k": [
+       "formula",
+       "grübler",
+       "grubler",
+       "3(n",
+       "three"
+      ],
+      "ask": "How do I combine the numbers?"
+     },
+     {
+      "k": [
+       "one",
+       "1",
+       "example",
+       "four-bar",
+       "slider"
+      ],
+      "ask": "What does the answer mean, with an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Mechanical vibrations",
+   "icon": "〰️",
+   "hook": "A washing machine shakes gently at one speed, violently at another and calmly at a third. Why does the spin speed matter so much?",
+   "explain": [
+    "A simple vibrating system has a mass m on a spring of stiffness k. Without damping it oscillates at the natural frequency ωₙ = √(k ÷ m) in rad/s, so f = ωₙ ÷ 2π in hertz. A 10 kg mass on a 4000 N/m spring has ωₙ = √400 = 20 rad/s and f = 3.18 Hz. The static deflection under weight is δ = m g ÷ k = 10 × 9.8 ÷ 4000 = 0.0245 m.",
+    "Damping removes vibration energy as heat. The damping ratio ζ compares actual damping with the amount that just prevents oscillation. Vehicle suspensions use ζ of about 0.2 to 0.4 as a compromise between comfort and handling.",
+    "If a force repeats at a frequency close to ωₙ, resonance occurs and the amplitude can become very large, limited only by damping. Rotating machines with an unbalance force have a forcing frequency equal to their rotation speed, so a critical speed exists where the machine speed matches a natural frequency.",
+    "Control options: avoid running at the critical speed, change k or m to move ωₙ, balance rotating parts, add damping, or isolate the machine with springs. Isolation works when the forcing frequency is above √2 times ωₙ. Failure causes include fatigue cracks from long exposure to vibration, loosened bolts and noise."
+   ],
+   "example": {
+    "q": "A machine of mass 10 kg rests on mounts of total stiffness 4000 N/m. Find its natural frequency in hertz.",
+    "steps": [
+     "ωₙ = √(k ÷ m) = √(4000 ÷ 10) = √400 = 20 rad/s.",
+     "f = ωₙ ÷ 2π = 20 ÷ 6.283.",
+     "f = 3.18 Hz."
+    ],
+    "a": "About 3.18 Hz"
+   },
+   "analogies": {
+    "home": "A child on a swing: pushing at the swing's natural rhythm makes it go high.",
+    "city": "Footbridges are designed so that walking pace does not match their natural frequency.",
+    "farm": "A tractor seat has a spring and damper to stop bumps shaking the driver.",
+    "music": "A guitar string vibrates at its natural frequency, and the body resonates to amplify it."
+   },
+   "mnemonic": "Stiffer is faster, heavier is slower. Match the frequency and the amplitude grows.",
+   "terms": [
+    [
+     "Natural frequency",
+     "The frequency a system vibrates at when disturbed and left alone."
+    ],
+    [
+     "Resonance",
+     "Large vibration when the forcing frequency matches the natural frequency."
+    ],
+    [
+     "Damping",
+     "Energy loss that reduces vibration."
+    ],
+    [
+     "Isolation",
+     "Mounts that reduce the transmitted vibration."
+    ]
+   ],
+   "misc": {
+    "wrong": "Resonance only matters for bridges and glass.",
+    "right": "Any machine or structure with a natural frequency can resonate if forced near it, including engines, fans and pipes."
+   },
+   "limits": "Real systems have many natural frequencies (modes), nonlinear springs and complicated damping, so simple one-mass models are only a first estimate.",
+   "trip": {
+    "wiki": "Resonance",
+    "prompt": "Find an example of resonance in engineering. How was it avoided or controlled?"
+   },
+   "sources": [
+    "Vibration",
+    "Resonance",
+    "Natural frequency"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the formula for natural frequency of a mass on a spring?",
+     "o": [
+      "ωₙ = √(k ÷ m)",
+      "ωₙ = k ÷ m",
+      "ωₙ = m ÷ k",
+      "ωₙ = √(m ÷ k)"
+     ],
+     "a": 0,
+     "why": "Stiffer springs raise the frequency, heavier masses lower it.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A 1 kg mass is on a spring of stiffness 2500 N/m. What is the natural angular frequency in rad/s?",
+     "a": 50,
+     "tol": 0.1,
+     "unit": "rad/s",
+     "why": "√(2500 ÷ 1) = 50 rad/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A motor runs at 1800 rpm. What is its forcing frequency in hertz?",
+     "a": 30,
+     "tol": 0.1,
+     "unit": "Hz",
+     "why": "1800 ÷ 60 = 30 Hz.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 10 kg machine sits on a spring of stiffness 4000 N/m. Use g = 9.8 m/s². What is the static deflection in millimetres?",
+     "a": 24.5,
+     "tol": 0.2,
+     "unit": "mm",
+     "why": "δ = m g ÷ k = 98 ÷ 4000 = 0.0245 m = 24.5 mm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The mass of a vibrating system is quadrupled while stiffness stays the same. What happens to the natural frequency?",
+     "o": [
+      "It halves",
+      "It doubles",
+      "It quarters",
+      "It stays the same"
+     ],
+     "a": 0,
+     "why": "ωₙ ∝ 1 ÷ √m, and √4 = 2.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fan runs at a speed equal to a natural frequency of its support. What is the most likely result?",
+     "o": [
+      "Large vibration due to resonance",
+      "Silence, because the vibrations cancel each other",
+      "Lower energy use for the fan",
+      "Smaller loads on the support and bolts"
+     ],
+     "a": 0,
+     "why": "Forcing at the natural frequency gives large amplitude.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A machine runs at 30 Hz and sits on mounts with natural frequency 5 Hz. Do the mounts isolate vibration?",
+     "o": [
+      "Yes, because 30 Hz is well above √2 × 5 Hz",
+      "No, because the two frequencies match closely",
+      "No, because mounts can never isolate vibration",
+      "Only if the machine is empty of oil"
+     ],
+     "a": 0,
+     "why": "Isolation works when the forcing frequency is above √2 times the natural frequency.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A machine must run through its critical speed to reach its working speed. What is a sensible practice?",
+     "o": [
+      "Accelerate through it quickly",
+      "Dwell there for hours to check it carefully",
+      "Switch off the damping to save energy",
+      "Add an unbalance to the shaft to test it"
+     ],
+     "a": 0,
+     "why": "Passing quickly stops the amplitude building up.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A pump skid vibrates strongly at its normal speed. Describe two engineering fixes.",
+     "rubric": [
+      [
+       "balance",
+       "unbalance"
+      ],
+      [
+       "stiffen",
+       "stiffer",
+       "stiffness",
+       "mass",
+       "change frequency",
+       "natural frequency"
+      ],
+      [
+       "damp",
+       "damper",
+       "damping",
+       "isolat",
+       "mount",
+       "spring"
+      ],
+      [
+       "speed",
+       "change speed",
+       "avoid"
+      ]
+     ],
+     "min": 2,
+     "model": "Check if the running speed is near a natural frequency and change the stiffness or mass to move it, for example by stiffening the frame. Also balance the rotating parts, add damping or fit isolation mounts.",
+     "why": "Vibration control changes the forcing, the natural frequency or the damping.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Resonance",
+       "Forcing frequency near natural frequency"
+      ],
+      [
+       "Damping",
+       "Removes vibration energy"
+      ],
+      [
+       "Critical speed",
+       "Rotation speed that excites resonance"
+      ],
+      [
+       "Isolation mount",
+       "Reduces transmitted force"
+      ]
+     ],
+     "why": "These are the key vibration ideas.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An engineer adds more damping to a structure. Which effect is expected near resonance?",
+     "o": [
+      "The peak amplitude is lower",
+      "The peak amplitude is higher",
+      "The natural frequency doubles",
+      "The peak disappears for all frequencies"
+     ],
+     "a": 0,
+     "why": "Damping limits the resonant peak.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A soft mount lowers the natural frequency of a machine on it. Why is a very soft mount risky for start-up?",
+     "o": [
+      "The machine passes through resonance and sways heavily",
+      "Soft mounts add a lot of mass to the machine",
+      "Soft mounts raise the natural frequency",
+      "Nothing happens to the machine in start-up"
+     ],
+     "a": 0,
+     "why": "Starting up, the machine goes through the natural frequency, and a large sway can strain pipes or connections.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A long-running machine has a loose bolt after months of vibration. What is the likely mechanism?",
+     "o": [
+      "Repeated cyclic loads loosen the preload and fatigue the joint",
+      "A single one-off overload when the machine was installed",
+      "A drop in temperature that shrinks the bolt",
+      "Gravity slowly pulling the bolt out of the hole"
+     ],
+     "a": 0,
+     "why": "Vibration works fasteners loose, so lock nuts and torque checks are used.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What resonance is and why engineers avoid it",
+    "model": "Every structure has a natural frequency at which it likes to vibrate, which depends on its stiffness and mass. If a machine pushes it at that same frequency, the shaking builds up and becomes large. Engineers move the natural frequency, add damping or avoid that speed.",
+    "points": [
+     {
+      "k": [
+       "natural",
+       "frequency",
+       "vibrate"
+      ],
+      "ask": "What is a natural frequency?"
+     },
+     {
+      "k": [
+       "push",
+       "force",
+       "match",
+       "same",
+       "machine"
+      ],
+      "ask": "What happens when the push matches it?"
+     },
+     {
+      "k": [
+       "large",
+       "big",
+       "build",
+       "amplitude",
+       "damage",
+       "fatigue"
+      ],
+      "ask": "Why is that a problem?"
+     },
+     {
+      "k": [
+       "damp",
+       "stiff",
+       "avoid",
+       "balance",
+       "fix",
+       "example"
+      ],
+      "ask": "What do engineers do about it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Machine elements and transmission systems",
+   "icon": "⚙️",
+   "hook": "A motor runs at 1200 rpm but a conveyor must move at 400 rpm with more torque. What chain of parts could do the job, and what is lost on the way?",
+   "explain": [
+    "Transmission systems move power from a source to a load, changing speed, torque or direction. Belts, chains, gears and shafts are the main elements. In any ideal transmission P = T ω is conserved, so reducing speed by a ratio raises torque by the same ratio. Real drives lose some power as heat, so the output torque is multiplied by the efficiency.",
+    "Belt drives: speed ratio = D₂ ÷ D₁. A 100 mm driver and a 300 mm driven pulley give a ratio of 3, so 1200 rpm becomes 400 rpm. Belts slip and are quiet, cheap and protect from overload. Chains do not slip, so they are used where timing matters. Gears give compact, positive drives. Gear trains multiply ratios: stages of 3 and 4 give 12 overall, and with 90% total efficiency 5 N m input becomes 5 × 12 × 0.9 = 54 N m.",
+    "Bearings carry shaft loads. The basic rating life of a ball bearing is L₁₀ = (C ÷ P)³ million revolutions, where C is the dynamic load rating and P the equivalent load. With C = 20 kN and P = 10 kN, L₁₀ = 2³ = 8 million revolutions. Halving the load multiplies the life by eight.",
+    "Design checks include power rating, alignment, lubrication, guards and heat. Misalignment, over-tension, contamination and lubrication failure are leading causes of early failure. A worm gear can be self-locking, which holds loads in hoists, but it has lower efficiency."
+   ],
+   "example": {
+    "q": "A 5 N m input torque passes through two gear stages with ratios 3 and 4 and total efficiency 90%. What is the output torque?",
+    "steps": [
+     "Overall ratio = 3 × 4 = 12.",
+     "Ideal torque = 5 × 12 = 60 N m.",
+     "Real torque = 60 × 0.9 = 54 N m."
+    ],
+    "a": "54 N m"
+   },
+   "analogies": {
+    "home": "A bicycle chain and sprockets transmit pedal torque to the wheel at a chosen ratio.",
+    "city": "A lift uses a gearbox and ropes to lift the cabin slowly at high force.",
+    "farm": "A tractor uses a gearbox with many ratios to match speed and pulling force.",
+    "tech": "A 3D printer uses a toothed belt for accurate positioning."
+   },
+   "mnemonic": "Speed down, torque up. Belts slide, chains grip, gears lock.",
+   "terms": [
+    [
+     "Gear ratio",
+     "Output speed reduction, equal to driven teeth ÷ driver teeth."
+    ],
+    [
+     "Bearing life L₁₀",
+     "Life that 90% of identical bearings reach or exceed."
+    ],
+    [
+     "Self-locking",
+     "A drive that cannot be back-driven by the load."
+    ],
+    [
+     "Backlash",
+     "Play between meshing teeth."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger gear ratio gives more power.",
+    "right": "Ratio changes the balance of speed and torque. Power out is never above power in."
+   },
+   "limits": "The bearing life formula is statistical, and real life depends on lubrication, contamination and temperature as well.",
+   "trip": {
+    "wiki": "Rolling-element bearing",
+    "prompt": "Find the parts of a ball bearing. Which part carries the load?"
+   },
+   "sources": [
+    "Power transmission",
+    "Belt (mechanical)",
+    "Rolling-element bearing"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A motor runs at 1200 rpm. A belt connects a 100 mm driver pulley to a 300 mm driven pulley. What is the driven speed in rpm?",
+     "a": 400,
+     "tol": 1,
+     "unit": "rpm",
+     "why": "Speed ratio = 300 ÷ 100 = 3, so 1200 ÷ 3 = 400 rpm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A ball bearing has C = 20 kN and carries an equivalent load P = 10 kN. Using L₁₀ = (C ÷ P)³, what is its life in millions of revolutions?",
+     "a": 8,
+     "tol": 0.05,
+     "unit": "million rev",
+     "why": "(20 ÷ 10)³ = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A gearbox has a ratio of 5 and efficiency 92%. The input torque is 20 N m. What is the output torque in N m?",
+     "a": 92,
+     "tol": 0.5,
+     "unit": "N m",
+     "why": "20 × 5 × 0.92 = 92 N m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which drive is best where exact timing between shafts is needed?",
+     "o": [
+      "Toothed gears or timing belt",
+      "Flat belt that can slip a little",
+      "Friction wheel pressed to the shaft",
+      "Rope wound round pulleys"
+     ],
+     "a": 0,
+     "why": "Positive drives do not slip.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The load on a bearing is halved. By what factor does the L₁₀ rated life change?",
+     "o": [
+      "Increases 8 times",
+      "Doubles",
+      "Increases 4 times",
+      "Is unchanged"
+     ],
+     "a": 0,
+     "why": "Life ∝ (1 ÷ P)³ and 2³ = 8.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a belt drive be chosen to protect a machine against jams?",
+     "o": [
+      "The belt slips when the torque is too high",
+      "Belts never slip, so the machine stays safe",
+      "Belts are heavy and absorb the shock",
+      "Belts raise the torque when the machine jams"
+     ],
+     "a": 0,
+     "why": "Controlled slip limits the transmitted torque.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A gearbox runs hot and the oil is black with fine metal. What is the likely cause and best action?",
+     "o": [
+      "Wear or lubrication failure; stop, drain and inspect",
+      "Normal operation; continue, black oil is usual",
+      "Too little speed; run it faster to clear the oil",
+      "Too cold inside; wrap it in insulation"
+     ],
+     "a": 0,
+     "why": "Metal in the oil means wear, and continuing can cause seizure or tooth failure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about a worm drive in a hoist is correct?",
+     "o": [
+      "A self-locking worm helps hold the load but wastes more power",
+      "It cannot hold a load without a brake at all",
+      "It is highly efficient in every case",
+      "It cannot reduce speed, only increase it"
+     ],
+     "a": 0,
+     "why": "High reduction worms have friction that prevents back-driving, at the cost of efficiency.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A chain drive wears out sooner than expected. Give two likely causes and one remedy.",
+     "rubric": [
+      [
+       "lubricat",
+       "oil",
+       "dry"
+      ],
+      [
+       "misalign",
+       "alignment"
+      ],
+      [
+       "tension",
+       "loose",
+       "slack",
+       "tight"
+      ],
+      [
+       "dirt",
+       "contamin",
+       "dust",
+       "abrasive"
+      ],
+      [
+       "overload",
+       "too much load",
+       "shock"
+      ]
+     ],
+     "min": 2,
+     "model": "Typical causes are poor lubrication, misaligned sprockets, wrong tension, dirt or overload. Remedies include regular oiling, aligning the sprockets, adjusting tension and fitting a guard.",
+     "why": "Chains fail by wear of pins and rollers, accelerated by these conditions.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each element to its main feature.",
+     "pairs": [
+      [
+       "Belt",
+       "Quiet and slips under overload"
+      ],
+      [
+       "Chain",
+       "Positive drive, tolerates dirt"
+      ],
+      [
+       "Gear",
+       "Compact and precise ratio"
+      ],
+      [
+       "Bearing",
+       "Supports a shaft with low friction"
+      ]
+     ],
+     "why": "Each element suits different conditions.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A 2-stage reducer has stage ratios of 4 and 5, each stage 95% efficient. What is the overall ratio and efficiency?",
+     "o": [
+      "20 and about 90%",
+      "9 and 95%, as ratios add and efficiency stays the same",
+      "20 and 95%, because efficiency does not compound",
+      "9 and 90%, from adding the ratios"
+     ],
+     "a": 0,
+     "why": "Ratios multiply to 20. Efficiencies multiply: 0.95² = 0.9025.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the output power of a transmission with input torque 100 N m at 100 rad/s and 90% efficiency?",
+     "o": [
+      "9000 W",
+      "10 000 W",
+      "11 111 W",
+      "90 W"
+     ],
+     "a": 0,
+     "why": "Input power = 100 × 100 = 10 000 W, output = 0.9 × 10 000 = 9000 W.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Guards are fitted over belts and chains mainly to do what?",
+     "o": [
+      "Prevent entanglement and contact injuries",
+      "Increase friction in the drive",
+      "Reduce torque in the shaft",
+      "Slow down the drive for safety"
+     ],
+     "a": 0,
+     "why": "Exposed rotating drives can trap clothing, hair and limbs.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a gear or belt drive trades speed for torque",
+    "model": "A transmission passes power from a motor to a load. Power is torque times speed, so if the output turns slower by a ratio, its torque is larger by about the same ratio, less a bit lost as heat. A 100 mm pulley driving a 300 mm pulley gives a ratio of 3: 1200 rpm becomes 400 rpm with nearly three times the torque.",
+    "points": [
+     {
+      "k": [
+       "power",
+       "torque",
+       "speed"
+      ],
+      "ask": "What stays roughly constant?"
+     },
+     {
+      "k": [
+       "ratio",
+       "teeth",
+       "diameter",
+       "size"
+      ],
+      "ask": "How do you find the ratio?"
+     },
+     {
+      "k": [
+       "loss",
+       "heat",
+       "efficien",
+       "friction"
+      ],
+      "ask": "What is lost along the way?"
+     },
+     {
+      "k": [
+       "example",
+       "belt",
+       "gear",
+       "bicycle",
+       "pulley"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Turbomachinery",
+   "icon": "🌀",
+   "hook": "A pump's speed is doubled. Does the flow double, or does something else change much more? Be careful about the power needed.",
+   "explain": [
+    "Turbomachines exchange energy between a rotating blade row and a fluid. Pumps, fans and compressors add energy to the fluid; turbines extract it. The Euler turbomachine equation links the torque on the rotor to the change in the fluid's angular momentum, so the shape of the blades and the rotor speed control the energy transfer.",
+    "The useful hydraulic power of a pump is P = ρ g Q H, with flow Q in m³/s and head H in metres. For water with Q = 0.05 m³/s and H = 20 m, P = 1000 × 9.8 × 0.05 × 20 = 9800 W. If the shaft power is 14 kW, the efficiency is 9.8 ÷ 14 = 70%.",
+    "Affinity laws predict how a pump behaves when speed N changes: Q ∝ N, H ∝ N² and shaft power ∝ N³. Doubling speed doubles the flow, makes the head four times as large and needs eight times the power. A small speed reduction therefore saves much power, which is why variable-speed drives are common.",
+    "Centrifugal pumps can suffer cavitation. If the pressure at the inlet falls below the liquid's vapour pressure, vapour bubbles form and then collapse violently, causing noise, vibration and erosion of the impeller. The net positive suction head (NPSH) available must exceed the pump's NPSH required. Running a pump with a closed discharge valve overheats the fluid, so pumps need protection."
+   ],
+   "example": {
+    "q": "A pump delivers 0.05 m³/s of water against a head of 20 m. What hydraulic power does it give, and what is its efficiency if the shaft power is 14 kW? Use g = 9.8 m/s².",
+    "steps": [
+     "P = ρ g Q H = 1000 × 9.8 × 0.05 × 20 = 9800 W.",
+     "Shaft power = 14 000 W.",
+     "Efficiency = 9800 ÷ 14 000 = 0.70."
+    ],
+    "a": "9.8 kW; 70% efficient"
+   },
+   "analogies": {
+    "home": "A desk fan moves more air when you switch to a higher speed, but it uses more electricity.",
+    "city": "A water supply station pumps water up to a tower to keep pressure in the pipes.",
+    "farm": "An irrigation pump lifts water from a river to fields.",
+    "sea": "A ship's propeller is a type of turbomachine that gives thrust."
+   },
+   "mnemonic": "Flow follows speed, head follows speed squared, power follows speed cubed.",
+   "terms": [
+    [
+     "Head",
+     "Energy per unit weight of fluid, in metres of fluid."
+    ],
+    [
+     "Affinity laws",
+     "Rules for scaling pump flow, head and power with speed."
+    ],
+    [
+     "Cavitation",
+     "Formation and collapse of vapour bubbles in a liquid."
+    ],
+    [
+     "NPSH",
+     "Net positive suction head: margin above vapour pressure at the inlet."
+    ]
+   ],
+   "misc": {
+    "wrong": "A pump twice as fast simply uses twice the power.",
+    "right": "Power rises with speed cubed, so doubling speed needs about eight times the power."
+   },
+   "limits": "Affinity laws hold for the same pump and similar flow, and they ignore changes in efficiency and system resistance.",
+   "trip": {
+    "wiki": "Centrifugal pump",
+    "prompt": "Find a picture of an impeller and volute. Trace the path of the fluid."
+   },
+   "sources": [
+    "Turbomachinery",
+    "Centrifugal pump",
+    "Cavitation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which of these extracts energy from a fluid?",
+     "o": [
+      "A turbine",
+      "A pump",
+      "A fan",
+      "A compressor"
+     ],
+     "a": 0,
+     "why": "Turbines take energy out; the others add energy.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A pump delivers 0.02 m³/s of water against 30 m of head. Use ρ = 1000 kg/m³ and g = 9.8 m/s². What is the hydraulic power in watts?",
+     "a": 5880,
+     "tol": 10,
+     "unit": "W",
+     "why": "P = 1000 × 9.8 × 0.02 × 30 = 5880 W.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pump gives 100 L/s at 1500 rpm. Using the affinity laws, what is the flow in L/s at 1200 rpm?",
+     "a": 80,
+     "tol": 0.5,
+     "unit": "L/s",
+     "why": "Q ∝ N, so 100 × 1200 ÷ 1500 = 80 L/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The same pump gives a head of 30 m at 1500 rpm. What head does it give at 1200 rpm, in metres?",
+     "a": 19.2,
+     "tol": 0.2,
+     "unit": "m",
+     "why": "H ∝ N², so 30 × (1200 ÷ 1500)² = 30 × 0.64 = 19.2 m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A pump's speed is reduced by 20%. By roughly what factor does its shaft power fall?",
+     "o": [
+      "To about half",
+      "To about 80%, in line with the speed",
+      "To about 64%, as the square of the speed",
+      "To about 20%, the same as the speed drop"
+     ],
+     "a": 0,
+     "why": "Power ∝ N³, so 0.8³ = 0.512, about half.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pump makes a rattling gravel-like noise and its impeller is pitted. What is the likely problem?",
+     "o": [
+      "Cavitation",
+      "Too much oil",
+      "Too low a flow of air",
+      "Overcooling"
+     ],
+     "a": 0,
+     "why": "Collapsing vapour bubbles erode surfaces and cause noise.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How can cavitation at a pump inlet be reduced?",
+     "o": [
+      "Raise the inlet pressure or lower the suction lift",
+      "Increase the pump speed to push harder",
+      "Heat the liquid to thin it",
+      "Restrict the inlet with a valve to lower flow"
+     ],
+     "a": 0,
+     "why": "Higher NPSH available keeps pressure above vapour pressure.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it dangerous to run a pump with its discharge valve closed for a long time?",
+     "o": [
+      "The trapped liquid heats up and can boil or damage seals",
+      "It cools the pump by keeping the liquid still",
+      "It raises the flow through the pump",
+      "It lowers the pressure at the discharge to nothing"
+     ],
+     "a": 0,
+     "why": "The energy input is turned into heat in the fluid.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are variable-speed drives used to control the flow in a pumping system instead of throttling a valve?",
+     "rubric": [
+      [
+       "energy",
+       "power",
+       "electricity",
+       "save",
+       "saving",
+       "efficien"
+      ],
+      [
+       "cube",
+       "cubed",
+       "³",
+       "falls quickly",
+       "speed"
+      ],
+      [
+       "throttl",
+       "waste",
+       "lost",
+       "valve"
+      ]
+     ],
+     "min": 2,
+     "model": "Reducing the speed lowers the power needed roughly with the cube of speed, while a throttle valve burns the extra pressure as waste. Variable speed therefore saves a lot of energy for the same flow.",
+     "why": "Power ∝ N³ gives big savings at reduced flow.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each machine to its function.",
+     "pairs": [
+      [
+       "Pump",
+       "Adds energy to a liquid"
+      ],
+      [
+       "Fan",
+       "Moves air at low pressure rise"
+      ],
+      [
+       "Compressor",
+       "Raises gas pressure considerably"
+      ],
+      [
+       "Turbine",
+       "Extracts energy from a fluid"
+      ]
+     ],
+     "why": "These are the main turbomachines.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A pump's efficiency falls from 75% to 60% for the same hydraulic power of 15 kW. By how much does the shaft power rise?",
+     "o": [
+      "From 20 kW to 25 kW",
+      "From 15 kW to 20 kW",
+      "From 25 kW to 30 kW",
+      "It does not change"
+     ],
+     "a": 0,
+     "why": "15 ÷ 0.75 = 20 kW and 15 ÷ 0.60 = 25 kW.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A hydropower turbine is fed from a reservoir 80 m above it. What does this height provide?",
+     "o": [
+      "Head, which sets the pressure energy available",
+      "Nothing useful, since the water falls by itself",
+      "Only noise as the water rushes down the pipe",
+      "Only extra mass of water that has to be carried"
+     ],
+     "a": 0,
+     "why": "Head converts to pressure and speed at the turbine.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A turbine at a dam is shut off quickly and the pipe bangs violently. Which effect is this?",
+     "o": [
+      "Water hammer, from sudden stopping of moving water",
+      "Cavitation only, from bubbles at the blades",
+      "Rust forming quickly inside the pipe",
+      "Condensation of steam on the cold pipe"
+     ],
+     "a": 0,
+     "why": "Stopping flowing water quickly produces large pressure surges, so valves close slowly and surge protection is fitted.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How the affinity laws describe a pump at a new speed",
+    "model": "If you change a pump's speed, the flow changes in proportion to speed, the head goes with speed squared, and the power with speed cubed. So halving the speed halves the flow but cuts the power to one eighth. That is why running pumps slower to match the demand saves a lot of energy.",
+    "points": [
+     {
+      "k": [
+       "flow",
+       "proportional",
+       "speed"
+      ],
+      "ask": "What happens to flow?"
+     },
+     {
+      "k": [
+       "head",
+       "square",
+       "squared",
+       "²"
+      ],
+      "ask": "What about the head?"
+     },
+     {
+      "k": [
+       "power",
+       "cube",
+       "cubed",
+       "³"
+      ],
+      "ask": "And the power?"
+     },
+     {
+      "k": [
+       "save",
+       "energy",
+       "example",
+       "half",
+       "variable"
+      ],
+      "ask": "Why does this matter in practice?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Hydraulic and pneumatic systems",
+   "icon": "🧯",
+   "hook": "An excavator arm lifts tonnes of earth through a thin hose of oil, while a dentist's drill runs on air. Why do designers choose oil for one job and air for another?",
+   "explain": [
+    "Fluid power systems use a pressurised fluid to transmit force. Hydraulic systems use oil, which is almost incompressible, so they give stiff, precise motion and very high force. Pneumatic systems use compressed air, which is clean, fast and cheap but springy, so they are used for lighter, quicker tasks.",
+    "A cylinder produces force F = p A. With oil at 10 MPa on a 50 mm bore (A = π × 0.025² = 1.963 × 10⁻³ m²) the force is 19.6 kN. A pneumatic cylinder of 40 mm bore at 0.6 MPa gauge pressure gives only 754 N. Speed is set by flow: v = Q ÷ A. A flow of 0.0002 m³/s into the 50 mm cylinder moves it at 0.102 m/s. Fluid power is P = p Q = 10 × 10⁶ × 0.0002 = 2000 W.",
+    "Components: a pump or compressor makes the flow, valves direct and limit it, actuators (cylinders and motors) do the work, and accumulators store energy. A pressure relief valve opens at a set pressure to protect the system. Without it, a blocked line would let pressure rise until a hose or cylinder burst.",
+    "Safety is central. Stored pressure can move a load when a line is opened, and a pinhole leak in a high-pressure hose can inject oil into skin. Before maintenance, systems must be depressurised and loads supported mechanically. Heat, contamination and air in the oil are leading causes of failure."
+   ],
+   "example": {
+    "q": "A hydraulic cylinder with a 50 mm bore operates at 10 MPa. What force can it produce? (Use π = 3.14.)",
+    "steps": [
+     "Area = π d² ÷ 4 = 3.14 × 0.05² ÷ 4 = 1.9625 × 10⁻³ m².",
+     "F = p A = 10 × 10⁶ × 1.9625 × 10⁻³.",
+     "F = 19 625 N, about 19.6 kN."
+    ],
+    "a": "About 19.6 kN"
+   },
+   "analogies": {
+    "home": "A bicycle pump compresses air; the air pushes back like a spring.",
+    "city": "Rubbish lorries use hydraulic rams to lift and crush waste.",
+    "farm": "A tractor's front loader lifts bales with hydraulic cylinders.",
+    "sport": "A hydraulic dentist chair moves up and down smoothly with a small pump."
+   },
+   "mnemonic": "Oil is stiff and strong; air is springy and quick.",
+   "terms": [
+    [
+     "Actuator",
+     "A device such as a cylinder or motor that turns fluid power into motion."
+    ],
+    [
+     "Relief valve",
+     "A valve that opens to limit the maximum pressure."
+    ],
+    [
+     "Accumulator",
+     "A vessel that stores pressurised fluid."
+    ],
+    [
+     "Gauge pressure",
+     "Pressure above the surrounding atmosphere."
+    ]
+   ],
+   "misc": {
+    "wrong": "A hydraulic hose with a tiny leak is only a nuisance.",
+    "right": "A pinhole jet at high pressure can penetrate skin and cause serious injury, so leaks must be handled with the system depressurised."
+   },
+   "limits": "Real systems have pressure drops, leakage and temperature effects, so the formulas give ideal values.",
+   "trip": {
+    "wiki": "Hydraulics",
+    "prompt": "Find a diagram of a hydraulic circuit. Identify the pump, valve, cylinder and relief valve."
+   },
+   "sources": [
+    "Hydraulics",
+    "Pneumatics",
+    "Hydraulic cylinder"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why is oil preferred over air for a heavy excavator arm?",
+     "o": [
+      "Oil is almost incompressible, giving stiff, strong motion",
+      "Oil is lighter than air, so the arm is lighter",
+      "Oil is free to use and never wears out",
+      "Air cannot be pressurised enough for any work"
+     ],
+     "a": 0,
+     "why": "Air compresses and acts like a spring, so it is unsuitable for precise heavy loads.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A hydraulic cylinder has a piston area of 0.002 m² and operates at 8 MPa. What force does it produce in kN?",
+     "a": 16,
+     "tol": 0.1,
+     "unit": "kN",
+     "why": "F = p A = 8 × 10⁶ × 0.002 = 16 000 N = 16 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Oil flows at 0.0004 m³/s into a cylinder of area 0.002 m². At what speed does the piston move, in m/s?",
+     "a": 0.2,
+     "tol": 0.005,
+     "unit": "m/s",
+     "why": "v = Q ÷ A = 0.0004 ÷ 0.002 = 0.2 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A hydraulic pump delivers 0.0002 m³/s at 10 MPa. What is the fluid power in watts?",
+     "a": 2000,
+     "tol": 5,
+     "unit": "W",
+     "why": "P = p Q = 10 × 10⁶ × 0.0002 = 2000 W.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the job of a pressure relief valve?",
+     "o": [
+      "To limit the maximum system pressure",
+      "To increase the pressure in the system",
+      "To store oil for the next stroke",
+      "To measure how much oil is flowing"
+     ],
+     "a": 0,
+     "why": "It opens at a set pressure to protect components.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A pneumatic cylinder moves in a jerky way when a heavy load is applied. Why?",
+     "o": [
+      "The air compresses and acts like a spring",
+      "The oil is too thick to flow smoothly",
+      "The load is weightless so it bounces",
+      "The cylinder is far too stiff to move steadily"
+     ],
+     "a": 0,
+     "why": "Compressible air makes motion springy under changing loads.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A technician must replace a hose on an excavator whose arm is raised. What should be done first?",
+     "o": [
+      "Lower or support the arm and relieve the pressure",
+      "Loosen the hose at once to see what is wrong",
+      "Run the engine to clear the oil",
+      "Cut the hose with the system still running"
+     ],
+     "a": 0,
+     "why": "Stored pressure and the raised load can cause sudden movement or fluid injection.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A hydraulic system overheats. Which is a likely cause?",
+     "o": [
+      "A relief valve that keeps opening or fluid leaking inside the valves",
+      "Too little pressure only, which makes oil heat up",
+      "Cold weather that thickens the oil only",
+      "Using a smaller pump than the system needs"
+     ],
+     "a": 0,
+     "why": "Throttling pressure across valves converts power to heat.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give two reasons why factories use pneumatic cylinders for pick-and-place tasks rather than hydraulic ones.",
+     "rubric": [
+      [
+       "clean",
+       "leak",
+       "oil",
+       "contamination"
+      ],
+      [
+       "fast",
+       "quick",
+       "speed"
+      ],
+      [
+       "cheap",
+       "cost",
+       "simple",
+       "low cost"
+      ],
+      [
+       "light",
+       "lighter load"
+      ],
+      [
+       "safe",
+       "no fire",
+       "fire"
+      ]
+     ],
+     "min": 2,
+     "model": "Air is clean, so a leak does not spill oil on products. Pneumatics are fast, simple and cheap for light loads, and compressed air can be supplied by a central system.",
+     "why": "Pneumatics suit light, quick, clean tasks.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each component to its job.",
+     "pairs": [
+      [
+       "Pump",
+       "Creates fluid flow"
+      ],
+      [
+       "Directional valve",
+       "Steers the fluid"
+      ],
+      [
+       "Cylinder",
+       "Provides linear force"
+      ],
+      [
+       "Accumulator",
+       "Stores pressurised fluid"
+      ]
+     ],
+     "why": "Each part has a distinct role in the circuit.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A cylinder has a 50 mm bore piston and a 25 mm rod. On the rod side the effective area is smaller. For the same pressure, the retract force is?",
+     "o": [
+      "Lower than the extend force",
+      "Higher than the extend force, because the rod adds area",
+      "Equal, since the pressure is the same on both sides",
+      "Zero, because the rod blocks the oil"
+     ],
+     "a": 0,
+     "why": "The rod takes up area, so the effective area on the rod side is smaller.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The relief valve is set at 14 MPa but the hose is only rated at 10 MPa. What is wrong?",
+     "o": [
+      "The hose may burst before the valve opens",
+      "Nothing, valves never fail so the hose is safe",
+      "The valve should be set even higher than 14 MPa",
+      "The hose is too long for the pump"
+     ],
+     "a": 0,
+     "why": "All components must be rated above the relief setting.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A crane's load drops slightly when the control is released. Which feature prevents this?",
+     "o": [
+      "A counterbalance or check valve holding the load",
+      "A larger pump that pushes more oil",
+      "Warmer oil that flows more easily",
+      "Weaker seals that let the oil move"
+     ],
+     "a": 0,
+     "why": "Holding valves lock the fluid in the cylinder.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a hydraulic cylinder produces force",
+    "model": "A pump pushes oil into a cylinder, and the oil pressure acts on the piston. The force equals the pressure times the piston area. Oil at 10 MPa on a piston of 0.002 m² gives 20 kN. The piston speed depends on how fast oil flows in.",
+    "points": [
+     {
+      "k": [
+       "pump",
+       "oil",
+       "fluid"
+      ],
+      "ask": "What makes the pressure?"
+     },
+     {
+      "k": [
+       "pressure",
+       "area",
+       "piston"
+      ],
+      "ask": "How does pressure become force?"
+     },
+     {
+      "k": [
+       "speed",
+       "flow"
+      ],
+      "ask": "What decides how fast it moves?"
+     },
+     {
+      "k": [
+       "safety",
+       "relief",
+       "leak",
+       "hose",
+       "example",
+       "excavator"
+      ],
+      "ask": "What must be controlled for safety?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Welding and joining",
+   "icon": "🔥",
+   "hook": "Two steel plates can be joined by bolts, glue, solder or by melting them together. What makes a welded joint strong, and what can silently ruin it?",
+   "explain": [
+    "Joining methods can be mechanical (bolts, rivets), adhesive (glue), or metallurgical (welding, brazing, soldering). Welding melts the edges of the parts, often with filler metal, so they fuse as one. Arc welding uses an electric arc; MIG/MAG feeds a wire electrode with shielding gas; TIG uses a non-consumable tungsten electrode; resistance spot welding joins sheets with current and pressure.",
+    "Brazing uses a filler that melts above 450 °C but below the parent metals; soldering uses a filler melting below 450 °C. Neither melts the parent metal. Both rely on a clean surface and on flux or protective atmosphere.",
+    "Arc heat input is HI = (V × I × 60) ÷ (1000 × v) kJ/mm when travel speed v is in mm/min. For V = 24 V, I = 200 A and v = 300 mm/min, HI = 0.96 kJ/mm; with a process efficiency of 0.8 the heat reaching the work is about 0.77 kJ/mm. Too much heat widens the heat-affected zone (HAZ) and can weaken it, while too little causes lack of fusion. Fillet-weld strength uses the throat: shear stress τ = F ÷ (0.707 × h × L), where h is the leg size and L the length.",
+    "Defects include porosity (gas holes), cracks, undercut and incomplete fusion. Preheating, clean joints, correct shielding and qualified procedures help avoid them. Safety: arcs give intense ultraviolet light, so welders need helmets with filters, fume extraction and fire precautions. Inspection by visual, dye penetrant, magnetic particle, ultrasonic or X-ray methods checks quality."
+   ],
+   "example": {
+    "q": "A fillet weld has a leg size of 6 mm and a length of 100 mm. It carries a shear load of 40 kN. Find the shear stress in the throat.",
+    "steps": [
+     "Throat area = 0.707 × 6 × 100 = 424.2 mm².",
+     "Load = 40 000 N.",
+     "τ = 40 000 ÷ 424.2 = 94.3 MPa."
+    ],
+    "a": "About 94 MPa"
+   },
+   "analogies": {
+    "home": "Soldering a wire joins it with a lower-melting metal, like gluing with a metal.",
+    "city": "Pipelines are welded in sections, then tested by X-ray.",
+    "farm": "A farmer repairs a cracked plough share by arc welding.",
+    "sea": "Ship hulls are made of welded steel plates that must be leak-tight."
+   },
+   "mnemonic": "Heat in, fuse, cool; clean, shield, check.",
+   "terms": [
+    [
+     "Heat-affected zone",
+     "Parent metal near a weld altered by heat but not melted."
+    ],
+    [
+     "Filler metal",
+     "Metal added to fill a joint."
+    ],
+    [
+     "Porosity",
+     "Gas holes in a weld."
+    ],
+    [
+     "Brazing",
+     "Joining with a filler that melts above 450 °C without melting the parent metal."
+    ]
+   ],
+   "misc": {
+    "wrong": "A weld that looks smooth must be strong.",
+    "right": "Internal defects such as lack of fusion or cracks may be invisible, so inspection and qualified procedures are needed."
+   },
+   "limits": "The throat formula is a simplified design check, and real welds have residual stress and distortion from uneven cooling.",
+   "trip": {
+    "wiki": "Welding",
+    "prompt": "Find the main arc welding processes. Which one uses a shielding gas?"
+   },
+   "sources": [
+    "Welding",
+    "Brazing",
+    "Heat-affected zone"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the difference between welding and brazing?",
+     "o": [
+      "Welding melts the parent metal; brazing does not",
+      "Brazing melts the parent metal but welding does not",
+      "Welding uses no heat, only pressure and glue",
+      "They are identical processes with different names"
+     ],
+     "a": 0,
+     "why": "Brazing uses a lower-melting filler and leaves the parent metal solid.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "An arc welder uses 24 V and 200 A with a travel speed of 300 mm/min. Using HI = V I × 60 ÷ (1000 v) with no efficiency factor, what is the heat input in kJ/mm?",
+     "a": 0.96,
+     "tol": 0.01,
+     "unit": "kJ/mm",
+     "why": "24 × 200 × 60 = 288 000; ÷ (1000 × 300) = 0.96 kJ/mm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A fillet weld has leg size 8 mm and length 150 mm. What is its throat area, using 0.707 × leg × length, in mm²?",
+     "a": 848,
+     "tol": 2,
+     "unit": "mm²",
+     "why": "0.707 × 8 × 150 = 848.4 mm².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The weld in the previous question (throat area 848 mm²) carries 60 kN. What is the shear stress in MPa?",
+     "a": 70.8,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "60 000 ÷ 848.4 = 70.7 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is shielding gas used in MIG welding?",
+     "o": [
+      "To protect molten metal from oxygen and nitrogen in the air",
+      "To cool the wire as it feeds through the torch",
+      "To make the arc louder so the welder hears it",
+      "To add colour to the weld so it can be seen"
+     ],
+     "a": 0,
+     "why": "Air contamination causes porosity and brittle welds.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A weld shows porosity. Which cause is most likely?",
+     "o": [
+      "Contaminated surface or shielding gas loss",
+      "Cooling the metal too slowly after welding only",
+      "Overly clean metal that has been ground bright",
+      "Too little current only, giving a cold weld"
+     ],
+     "a": 0,
+     "why": "Gas from dirt, oil, moisture or lost shielding is trapped as the metal freezes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A welder works without a filtered helmet because the job is short. What is the danger?",
+     "o": [
+      "Arc eye and burns from ultraviolet and intense light",
+      "None, the job is short so the risk is small",
+      "Cold hands from the metal after welding",
+      "Noise from the arc only, which is harmless to eyes"
+     ],
+     "a": 0,
+     "why": "Arc light injures the eyes and skin quickly, even in brief exposures.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Thick steel is welded without preheat in cold weather and cracks appear beside the weld. Why?",
+     "o": [
+      "Fast cooling makes the HAZ hard and brittle",
+      "Slow cooling, which softens the steel too much",
+      "Too much preheat, which makes the steel brittle",
+      "The weld is too thin to hold the plates together"
+     ],
+     "a": 0,
+     "why": "Fast cooling in the heat-affected zone can form hard brittle structures, and preheating slows the cooling.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare bolting and welding for joining two structural parts, giving one advantage of each.",
+     "rubric": [
+      [
+       "bolt",
+       "bolted"
+      ],
+      [
+       "disassembl",
+       "remove",
+       "maintenance",
+       "dismantl",
+       "replace",
+       "repair"
+      ],
+      [
+       "weld",
+       "welded"
+      ],
+      [
+       "strong",
+       "permanent",
+       "continuous",
+       "seamless",
+       "leak",
+       "sealed",
+       "lighter"
+      ]
+     ],
+     "min": 2,
+     "model": "Bolted joints can be taken apart for maintenance or replacement and need little skilled heat work on site. Welded joints are continuous, leak-tight and can be lighter and stronger as there are no holes or extra plates.",
+     "why": "Each method suits different needs for strength, sealing and servicing.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each process to its description.",
+     "pairs": [
+      [
+       "TIG",
+       "Non-consumable tungsten electrode"
+      ],
+      [
+       "MIG",
+       "Continuous wire with shielding gas"
+      ],
+      [
+       "Spot welding",
+       "Sheets joined by current and pressure"
+      ],
+      [
+       "Soldering",
+       "Filler below 450 °C"
+      ]
+     ],
+     "why": "These are common joining processes.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Aluminium is welded with the same settings as steel and the plate burns through. Why?",
+     "o": [
+      "Aluminium conducts heat well and melts at a lower temperature, so settings must change",
+      "Aluminium does not conduct heat at all, so the plate stays cold and then collapses",
+      "It has a higher melting point than steel, so the arc overheats it quickly",
+      "It cannot be welded, so the plate must be cut away"
+     ],
+     "a": 0,
+     "why": "Different thermal properties need different procedures.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pressure vessel weld passes visual inspection. Why is radiographic or ultrasonic testing still required?",
+     "o": [
+      "Internal flaws can be invisible but dangerous",
+      "Visual checks are unlawful for pressure vessels",
+      "It makes the weld shinier and stronger",
+      "It costs nothing so it is always worth doing as an extra"
+     ],
+     "a": 0,
+     "why": "Hidden defects can cause sudden failure under pressure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Welding near a container that held petrol, even if empty, is dangerous because of what?",
+     "o": [
+      "Residual vapours can explode",
+      "The container is too cold to weld safely",
+      "Metal does not conduct heat, so it builds up",
+      "Welds are weaker next to empty petrol cans"
+     ],
+     "a": 0,
+     "why": "Vapours or residues ignite from sparks and heat. Containers must be cleaned and tested first.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What makes a good weld",
+    "model": "A good weld fuses the metals into one piece without holes or cracks. It needs clean surfaces, the right heat, shielding from the air and a qualified method. After welding it is inspected, because defects can be hidden inside. The welder must also wear eye and skin protection.",
+    "points": [
+     {
+      "k": [
+       "melt",
+       "fuse",
+       "join"
+      ],
+      "ask": "What happens in a weld?"
+     },
+     {
+      "k": [
+       "clean",
+       "shield",
+       "gas",
+       "air"
+      ],
+      "ask": "What keeps the weld sound?"
+     },
+     {
+      "k": [
+       "defect",
+       "crack",
+       "pore",
+       "hole",
+       "inspect",
+       "test"
+      ],
+      "ask": "What can go wrong and how do we check?"
+     },
+     {
+      "k": [
+       "safety",
+       "helmet",
+       "eye",
+       "uv",
+       "protect",
+       "example"
+      ],
+      "ask": "How does the welder stay safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Machining and CNC fundamentals",
+   "icon": "🛠️",
+   "hook": "A CNC lathe turns a shaft to within a few hundredths of a millimetre. How does it know how fast to spin, how far to move and when the cutter is wearing out?",
+   "explain": [
+    "Machining removes material with a cutting tool. In turning, the workpiece rotates and a tool moves along it; in milling, the tool rotates and the work moves; drilling makes round holes. The key variables are cutting speed v (m/min), feed f (mm per revolution) and depth of cut d (mm).",
+    "Cutting speed relates to spindle speed N (rpm) and diameter D (mm): v = π D N ÷ 1000. For D = 50 mm and N = 800 rpm, v = 125.7 m/min. To get 100 m/min on a 40 mm bar: N = 1000 × 100 ÷ (π × 40) = 796 rpm. The time to turn a length L is t = L ÷ (f × N): for L = 120 mm, f = 0.2 mm/rev and N = 600 rpm, t = 1 minute.",
+    "CNC (computer numerical control) machines follow programmed instructions, often G-code. G00 moves rapidly, G01 moves in a straight line at the set feed, G02/G03 cut arcs, and M03 starts the spindle clockwise. Coordinates define the tool path. Tools wear, so the program includes tool offsets and the operator checks wear.",
+    "Machining faces trade-offs between speed, tool life and surface finish. Too high a speed overheats and ruins the tool. Safety is crucial: guards must be in place, swarf is sharp and hot, long hair and loose clothing and gloves near rotating parts are forbidden, and workpieces must be clamped securely before starting the spindle."
+   ],
+   "example": {
+    "q": "A bar of diameter 40 mm is turned at a cutting speed of 100 m/min. What spindle speed is needed?",
+    "steps": [
+     "v = π D N ÷ 1000, so N = 1000 v ÷ (π D).",
+     "N = 1000 × 100 ÷ (3.1416 × 40).",
+     "N = 100 000 ÷ 125.66 = 796 rpm."
+    ],
+    "a": "About 796 rpm"
+   },
+   "analogies": {
+    "home": "Peeling a potato: the potato turns and the peeler removes a thin layer, like turning.",
+    "city": "A key-cutting machine follows a pattern to cut a matching profile.",
+    "farm": "A blacksmith's file removes metal by hand, while a machine does it faster and more accurately.",
+    "tech": "A 3-axis printer follows coordinates like a CNC mill does."
+   },
+   "mnemonic": "Speed, feed, depth: pick them for the tool and the metal.",
+   "terms": [
+    [
+     "Cutting speed",
+     "Speed of the cutting edge relative to the work, in m/min."
+    ],
+    [
+     "Feed",
+     "Distance the tool advances per revolution."
+    ],
+    [
+     "G-code",
+     "Programming language used by many CNC machines."
+    ],
+    [
+     "Swarf",
+     "Chips of metal produced by cutting."
+    ]
+   ],
+   "misc": {
+    "wrong": "Running the spindle as fast as possible always gives the best result.",
+    "right": "Too high a speed shortens tool life and spoils the surface. Each tool and material has a recommended range."
+   },
+   "limits": "Recommended speeds come from tables and tests, and real conditions such as rigidity and coolant change them.",
+   "trip": {
+    "wiki": "G-code",
+    "prompt": "Find a short example of G-code. Identify one rapid move and one cutting move."
+   },
+   "sources": [
+    "Machining",
+    "CNC",
+    "G-code"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A 50 mm diameter bar turns at 800 rpm. What is the cutting speed in m/min? Use π = 3.14 and round to the nearest whole number.",
+     "a": 126,
+     "tol": 1,
+     "unit": "m/min",
+     "why": "v = 3.14 × 50 × 800 ÷ 1000 = 125.6 ≈ 126 m/min.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A cut of length 120 mm is made at a feed of 0.2 mm/rev and spindle speed of 600 rpm. How long does the cut take, in minutes?",
+     "a": 1,
+     "tol": 0.02,
+     "unit": "min",
+     "why": "Feed rate = 0.2 × 600 = 120 mm/min; 120 ÷ 120 = 1 min.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A turning cut removes material at a cutting speed of 150 m/min with a feed of 0.3 mm/rev and a depth of 2 mm. What is the material removal rate in cm³/min? (MRR = v × f × d, with v in mm/min.)",
+     "a": 90,
+     "tol": 0.5,
+     "unit": "cm³/min",
+     "why": "150 000 mm/min × 0.3 × 2 = 90 000 mm³/min = 90 cm³/min.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In G-code, which command moves the tool in a straight line at the programmed feed?",
+     "o": [
+      "G01",
+      "G00",
+      "M03",
+      "G02"
+     ],
+     "a": 0,
+     "why": "G00 is rapid positioning, G01 linear feed, G02 an arc and M03 spindle on.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A tool wears quickly and turns blue. What is the likely cause?",
+     "o": [
+      "Cutting speed too high",
+      "Too much coolant only, which shocks the tool",
+      "Speed too low, which rubs the tool",
+      "Feed set to zero so the tool only rubs"
+     ],
+     "a": 0,
+     "why": "Excess speed causes overheating that destroys the tool edge.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must the work be clamped before starting the spindle?",
+     "o": [
+      "An unclamped part can be thrown out at high speed",
+      "It saves time when cutting begins",
+      "It reduces noise only, and is not a safety matter",
+      "It cools the work so it does not expand"
+     ],
+     "a": 0,
+     "why": "Cutting forces and rotation can eject loose parts and injure people.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The surface finish on a turned part is rough. Which change usually improves it?",
+     "o": [
+      "Reduce the feed per revolution",
+      "Increase the feed per revolution",
+      "Remove the coolant from the cut",
+      "Use a blunt tool that rubs the surface smooth"
+     ],
+     "a": 0,
+     "why": "Smaller feed leaves finer scallops on the surface.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A programmer forgets a tool offset after changing a worn tool. What will happen?",
+     "o": [
+      "The part dimensions will be wrong",
+      "Nothing, because the machine corrects it by itself",
+      "The machine will be quieter in use",
+      "The tool will be sharper and cut better"
+     ],
+     "a": 0,
+     "why": "Offsets tell the machine the actual tool position.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain two ways a CNC operator can reduce the risk of crashing the tool into the machine or workpiece.",
+     "rubric": [
+      [
+       "simulat",
+       "dry run",
+       "prove",
+       "single block",
+       "verify",
+       "check program"
+      ],
+      [
+       "offset",
+       "zero",
+       "datum",
+       "touch off",
+       "work coordinate"
+      ],
+      [
+       "slow",
+       "reduce rapid",
+       "feed override",
+       "override"
+      ],
+      [
+       "clamp",
+       "fixture",
+       "hold"
+      ],
+      [
+       "guard",
+       "door",
+       "stop",
+       "emergency"
+      ]
+     ],
+     "min": 2,
+     "model": "Simulate or dry-run the program and step through it in single-block mode with the rapid override reduced. Check tool offsets and workpiece zero before cutting, and make sure the work is securely clamped.",
+     "why": "Crashes are prevented by verification and careful set-up.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each CNC code to its meaning.",
+     "pairs": [
+      [
+       "G00",
+       "Rapid move"
+      ],
+      [
+       "G01",
+       "Straight cut at feed"
+      ],
+      [
+       "G02",
+       "Clockwise arc"
+      ],
+      [
+       "M03",
+       "Spindle on, clockwise"
+      ]
+     ],
+     "why": "These are standard codes used on many controllers.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A deep bore rattles and leaves a wavy surface. Which cause is likely?",
+     "o": [
+      "Chatter from a tool overhanging too far",
+      "Too much coolant flooding the cut",
+      "The part is too cold to be machined",
+      "The spindle is switched off while cutting"
+     ],
+     "a": 0,
+     "why": "A long, flexible tool vibrates; shorten it or reduce depth and speed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The diameter of turned parts slowly drifts bigger over the shift. What is the most probable reason?",
+     "o": [
+      "Tool wear",
+      "Perfect cutting",
+      "Cooler air",
+      "Faster speed"
+     ],
+     "a": 0,
+     "why": "A worn edge cuts less, leaving more material, so the part size drifts.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is coolant used when machining many metals?",
+     "o": [
+      "It removes heat, lubricates and flushes chips away",
+      "It adds heat to the cut and the tool",
+      "It increases friction at the tool tip",
+      "It makes chips stick to the work"
+     ],
+     "a": 0,
+     "why": "Cooling and lubrication extend tool life and improve finish.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Cutting speed and spindle speed",
+    "model": "Cutting speed is how fast the cutting edge moves past the metal. It depends on the diameter and the spindle speed. For a 40 mm bar at 100 m/min, the spindle must turn at about 796 rpm. Too fast and the tool burns out, too slow and the job takes longer.",
+    "points": [
+     {
+      "k": [
+       "cutting",
+       "edge",
+       "surface",
+       "speed"
+      ],
+      "ask": "What is cutting speed?"
+     },
+     {
+      "k": [
+       "diameter",
+       "rpm",
+       "spindle",
+       "turn"
+      ],
+      "ask": "What does it depend on?"
+     },
+     {
+      "k": [
+       "formula",
+       "π",
+       "pi",
+       "1000",
+       "×"
+      ],
+      "ask": "How do I work out the rpm?"
+     },
+     {
+      "k": [
+       "tool",
+       "burn",
+       "wear",
+       "life",
+       "fast",
+       "example"
+      ],
+      "ask": "What if I get it wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Computer-aided design",
+   "icon": "💻",
+   "hook": "A designer changes one dimension in a CAD model and every drawing, assembly and mass value updates itself. How is that possible?",
+   "explain": [
+    "Computer-aided design (CAD) builds a digital model of a part or assembly. Parametric CAD stores a model as a sequence of features (sketches, extrudes, holes, fillets) controlled by dimensions and constraints. Changing a dimension updates every feature that depends on it, and the drawings generated from the model.",
+    "Solid models give volume, mass, centre of gravity and moments of inertia. A block of 100 × 60 × 20 mm with a 20 mm through-hole in the 20 mm direction has volume 120 000 − π × 10² × 20 = 113 717 mm³. At the density of steel (7850 kg/m³) its mass is 113 717 × 10⁻⁹ × 7850 = 0.893 kg.",
+    "Assemblies position parts using mates (coincident, concentric, distance). Interference checks find parts that overlap, and tolerance analysis estimates how variation adds up. If three parts are each 20 ± 0.1 mm, the worst-case stack is 60 ± 0.3 mm, while a statistical (root-sum-square) estimate is ± √(3 × 0.1²) = ± 0.173 mm.",
+    "Design decisions: model with intent (use constraints that reflect how the part should change), add fillets where stress would concentrate, and design for manufacture. Neutral formats such as STEP exchange geometry between systems. A model is a representation; it must be checked, for example by prototype tests, because errors in units, constraints or assumptions can cause real failures."
+   ],
+   "example": {
+    "q": "Compute the mass of a steel block 100 × 60 × 20 mm with a 20 mm diameter hole through the 20 mm thickness. Use density 7850 kg/m³ and π = 3.1416.",
+    "steps": [
+     "Block volume = 100 × 60 × 20 = 120 000 mm³.",
+     "Hole volume = π × 10² × 20 = 6283 mm³, so net volume = 113 717 mm³.",
+     "Mass = 113 717 × 10⁻⁹ m³ × 7850 kg/m³ = 0.893 kg."
+    ],
+    "a": "About 0.89 kg"
+   },
+   "analogies": {
+    "home": "A spreadsheet recalculates all results when you change one number, like a parametric model.",
+    "city": "Architects use building models to check clashes between pipes and beams.",
+    "farm": "A farm machine designer tests a digital hitch before cutting steel.",
+    "tech": "A game character is built from linked parts and changes shape when one part moves."
+   },
+   "mnemonic": "Sketch, constrain, feature, assemble, check.",
+   "terms": [
+    [
+     "Parametric model",
+     "A model driven by dimensions and constraints that can be edited."
+    ],
+    [
+     "Constraint",
+     "A rule such as parallel or equal that controls geometry."
+    ],
+    [
+     "Mate",
+     "An assembly relation that positions one part relative to another."
+    ],
+    [
+     "STEP",
+     "A neutral file format for exchanging 3D geometry."
+    ]
+   ],
+   "misc": {
+    "wrong": "If the CAD model looks right, the part will work.",
+    "right": "CAD shows geometry, not strength or manufacturability. Analysis and tests are still needed, and a poorly constrained model can break when edited."
+   },
+   "limits": "Different CAD systems store features differently, so neutral files often lose the feature history.",
+   "trip": {
+    "wiki": "Computer-aided design",
+    "prompt": "Find a feature tree example. Which feature would you change to alter a hole's diameter?"
+   },
+   "sources": [
+    "Computer-aided design",
+    "Parametric design",
+    "STEP-NC"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a parametric CAD model allow?",
+     "o": [
+      "Updating the model by changing dimensions or constraints",
+      "Only drawing plain lines on a flat screen",
+      "Printing the drawing on paper only",
+      "Nothing more than a normal drawing allows"
+     ],
+     "a": 0,
+     "why": "Features are linked to parameters so edits propagate.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A solid cylinder has a diameter of 40 mm and a length of 100 mm. Use π = 3.14. What is its volume in cm³?",
+     "a": 125.6,
+     "tol": 0.5,
+     "unit": "cm³",
+     "why": "V = π r² L = 3.14 × 2² × 10 = 125.6 cm³.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The cylinder above is made of aluminium, density 2700 kg/m³. What is its mass in grams?",
+     "a": 339,
+     "tol": 2,
+     "unit": "g",
+     "why": "Volume 125.6 cm³ × 2.7 g/cm³ = 339 g.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Four parts of 25 ± 0.05 mm are stacked. What is the worst-case total tolerance in mm (± value)?",
+     "a": 0.2,
+     "tol": 0.005,
+     "unit": "mm",
+     "why": "4 × 0.05 = 0.20 mm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does an interference check in an assembly find?",
+     "o": [
+      "Parts that overlap or clash",
+      "The colour of the parts in the assembly",
+      "The price of each part supplied",
+      "The weight of the whole assembly only"
+     ],
+     "a": 0,
+     "why": "Interference detection prevents parts that cannot physically fit.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A designer edits a hole position and the model fails to rebuild. What is a likely reason?",
+     "o": [
+      "Features depend on geometry that no longer exists or constraints conflict",
+      "The hole is too round for the software",
+      "The file is too small to be edited",
+      "CAD software never rebuilds a model"
+     ],
+     "a": 0,
+     "why": "Broken references or over-constraint cause rebuild errors, so good modelling intent matters.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a statistical (root-sum-square) tolerance stack smaller than the worst-case sum?",
+     "o": [
+      "It is unlikely that all parts are at their limits in the same direction",
+      "Statistics always lower tolerances on every drawing",
+      "Parts shrink slightly when they are put together",
+      "The calculation ignores the sizes of the parts completely"
+     ],
+     "a": 0,
+     "why": "Random variations partly cancel, but it assumes the process is controlled.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A design is sent to a supplier in a neutral file format. What risk remains?",
+     "o": [
+      "Feature history and some data may be lost",
+      "The part gets heavier when it is exported",
+      "The format is illegal to send to a supplier",
+      "Nothing at all, since every detail is kept"
+     ],
+     "a": 0,
+     "why": "Neutral formats usually hold geometry but not the design intent.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do designers often add a fillet to an inside corner of a part in CAD?",
+     "rubric": [
+      [
+       "stress",
+       "concentrat"
+      ],
+      [
+       "crack",
+       "fatigue",
+       "fail",
+       "break"
+      ],
+      [
+       "manufactur",
+       "cutter",
+       "tool",
+       "radius",
+       "mould",
+       "cast"
+      ],
+      [
+       "sharp",
+       "corner"
+      ]
+     ],
+     "min": 2,
+     "model": "A sharp inside corner concentrates stress and can start cracks, especially under repeated loads. A fillet spreads the stress, and a rounded corner is easier for a cutter or mould to produce.",
+     "why": "Fillets reduce stress concentration and help manufacture.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each CAD term to its role.",
+     "pairs": [
+      [
+       "Sketch",
+       "2D profile that starts a feature"
+      ],
+      [
+       "Extrude",
+       "Turns a profile into a solid"
+      ],
+      [
+       "Mate",
+       "Positions parts in an assembly"
+      ],
+      [
+       "Interference check",
+       "Finds overlapping parts"
+      ]
+     ],
+     "why": "These are the building blocks of CAD work.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A designer enters a 20 mm dimension in inches mode by mistake. What is the danger?",
+     "o": [
+      "The part is made far too big",
+      "The part is smaller by a hundred times",
+      "The file is deleted",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "20 inches is 508 mm. Unit settings must be checked.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why run a simulation on a CAD model before building a prototype?",
+     "o": [
+      "To find overstress or interference early and cheaply",
+      "To avoid all physical testing later in the project",
+      "To remove the need for any materials",
+      "To make the part lighter automatically without changes"
+     ],
+     "a": 0,
+     "why": "Virtual testing is cheaper but still must be validated.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A part needs a hole to be exactly central after any width change. Which CAD approach helps?",
+     "o": [
+      "Constrain the hole symmetric to the width edges",
+      "Type the number as a fixed value",
+      "Draw the hole by eye in the right place",
+      "Delete the hole and cut it by hand later"
+     ],
+     "a": 0,
+     "why": "A constraint captures design intent, so the hole stays centred as the width changes.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why parametric CAD is useful",
+    "model": "A parametric model remembers how it was built and what dimensions control it. If you change one dimension, all the linked features, drawings and mass values update. This saves time and cuts errors, but only if the model was built with good constraints and the designer still checks the result.",
+    "points": [
+     {
+      "k": [
+       "feature",
+       "dimension",
+       "parameter",
+       "constraint"
+      ],
+      "ask": "What does the model remember?"
+     },
+     {
+      "k": [
+       "update",
+       "change",
+       "edit",
+       "propagate"
+      ],
+      "ask": "What happens when you change a size?"
+     },
+     {
+      "k": [
+       "drawing",
+       "mass",
+       "assembly",
+       "time",
+       "error",
+       "save"
+      ],
+      "ask": "What is the benefit?"
+     },
+     {
+      "k": [
+       "check",
+       "test",
+       "analysis",
+       "limit",
+       "wrong"
+      ],
+      "ask": "Does that mean it must be right?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Manufacturing quality control",
+   "icon": "✅",
+   "hook": "A machine makes shafts of 10 mm diameter, but no two are exactly the same. How can a factory know whether the process is under control before any bad parts are made?",
+   "explain": [
+    "No process makes identical parts. Variation comes from tool wear, temperature, material and operators. Quality control measures and manages that variation. Inspection tools include micrometres, calipers, gauges and coordinate measuring machines (CMMs). A measurement system must itself be checked for repeatability and reproducibility (gauge R&R).",
+    "Statistical process control (SPC) plots sample averages on a control chart. The centre line is the process mean; control limits sit at ±3σ ÷ √n. For a process with mean 50, σ = 0.6 and samples of n = 4, the upper limit is 50 + 3 × 0.6 ÷ 2 = 50.9. A point outside the limits, or a trend, signals a special cause that should be investigated.",
+    "Capability compares the spread with the specification limits. Cp = (USL − LSL) ÷ (6σ). For limits of 10.10 and 9.90 and σ = 0.025, Cp = 0.20 ÷ 0.15 = 1.33. Cpk also considers centring: Cpk = min(USL − μ, μ − LSL) ÷ 3σ. With a mean of 10.03, Cpk = 0.07 ÷ 0.075 = 0.93, which is not capable even though Cp looks fine.",
+    "Quality is also built in by design: tolerances that match the process capability, error-proofing (poka-yoke), clear work instructions and traceability. Safety-critical parts get stricter checks. Rejecting only at the end is expensive and wasteful, so prevention is better than detection."
+   ],
+   "example": {
+    "q": "Specification limits are 10.10 and 9.90 mm. The process mean is 10.03 mm with σ = 0.025 mm. Find Cp and Cpk.",
+    "steps": [
+     "Cp = (10.10 − 9.90) ÷ (6 × 0.025) = 0.20 ÷ 0.15 = 1.33.",
+     "Distance from mean to nearest limit = 10.10 − 10.03 = 0.07 mm.",
+     "Cpk = 0.07 ÷ (3 × 0.025) = 0.07 ÷ 0.075 = 0.93."
+    ],
+    "a": "Cp = 1.33; Cpk = 0.93"
+   },
+   "analogies": {
+    "home": "Checking a cake's temperature as it bakes lets you correct it early.",
+    "city": "A bus company tracks arrival times to find when delays start.",
+    "farm": "Weighing sacks as they are filled shows if the scale is drifting.",
+    "sport": "A coach tracks lap times to spot a trend before the race."
+   },
+   "mnemonic": "Measure, plot, watch for trends, fix the cause.",
+   "terms": [
+    [
+     "Control chart",
+     "A plot of process measurements over time with control limits."
+    ],
+    [
+     "Cp",
+     "Ratio of the specification width to six standard deviations."
+    ],
+    [
+     "Cpk",
+     "Capability index that includes how well the process is centred."
+    ],
+    [
+     "Gauge R&R",
+     "A study of measurement repeatability and reproducibility."
+    ]
+   ],
+   "misc": {
+    "wrong": "If every part passes inspection, the process must be good.",
+    "right": "A process can drift toward the limits while parts still pass. Control charts and capability studies show trends before defects occur."
+   },
+   "limits": "SPC assumes stable measurement and data that are roughly independent and normal. Real data may need other methods.",
+   "trip": {
+    "wiki": "Statistical process control",
+    "prompt": "Find a control chart example. Which points would you investigate?"
+   },
+   "sources": [
+    "Statistical process control",
+    "Process capability",
+    "Coordinate-measuring machine"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a control chart signal when a point falls outside the control limits?",
+     "o": [
+      "A likely special cause worth investigating",
+      "The process is perfect and needs no further attention",
+      "The measurement unit is always wrong when this happens",
+      "The operator must be replaced at once"
+     ],
+     "a": 0,
+     "why": "Out-of-limit points are unlikely from normal variation alone.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A process has a mean of 50, σ = 0.6 and samples of n = 4. What is the upper control limit for the sample mean (mean + 3σ ÷ √n)?",
+     "a": 50.9,
+     "tol": 0.02,
+     "why": "3 × 0.6 ÷ 2 = 0.9, so UCL = 50.9.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Specification limits are 20.20 mm and 19.80 mm and σ = 0.05 mm. What is Cp?",
+     "a": 1.33,
+     "tol": 0.02,
+     "why": "Cp = 0.40 ÷ (6 × 0.05) = 0.40 ÷ 0.30 = 1.33.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Specification limits 10.10 and 9.90 mm, mean 10.03 mm, σ = 0.025 mm. What is Cpk to two decimals?",
+     "a": 0.93,
+     "tol": 0.02,
+     "why": "Cpk = (10.10 − 10.03) ÷ (3 × 0.025) = 0.07 ÷ 0.075 = 0.93.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Cp is 1.4 but Cpk is 0.8. What does that suggest?",
+     "o": [
+      "The spread is fine but the process is off-centre",
+      "The spread is too large for the limits",
+      "The measurement system is perfect",
+      "The limits on the drawing are wrong"
+     ],
+     "a": 0,
+     "why": "Cpk lower than Cp means the mean is shifted toward one limit.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A seven-point run of values all rising, inside the limits, appears on a control chart. What should be done?",
+     "o": [
+      "Investigate for tool wear or drift",
+      "Nothing, they are inside the limits",
+      "Stop the chart",
+      "Widen the limits"
+     ],
+     "a": 0,
+     "why": "Trends show a non-random cause even before limits are crossed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A gauge gives different readings when two operators measure the same part. Which study reveals this?",
+     "o": [
+      "Gauge R&R",
+      "Cp",
+      "Hardness test",
+      "Tensile test"
+     ],
+     "a": 0,
+     "why": "Reproducibility is the variation between operators.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is error-proofing (poka-yoke) better than inspecting at the end?",
+     "o": [
+      "It prevents the defect from being made",
+      "It makes the final inspection take longer",
+      "It hides defects until the customer finds them",
+      "It increases waste in the factory"
+     ],
+     "a": 0,
+     "why": "Prevention is cheaper and safer than detection.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a factory might reduce the tolerance on a critical part only after confirming its process capability.",
+     "rubric": [
+      [
+       "capab",
+       "cpk",
+       "cp"
+      ],
+      [
+       "scrap",
+       "reject",
+       "waste",
+       "cost"
+      ],
+      [
+       "tight",
+       "tighter",
+       "narrow",
+       "smaller tolerance"
+      ],
+      [
+       "process",
+       "cannot",
+       "unable",
+       "spread",
+       "variation"
+      ]
+     ],
+     "min": 2,
+     "model": "If the process spread is larger than the tolerance, a tighter tolerance will lead to many rejected parts and high cost. Capability studies show whether the process can hold the tolerance consistently.",
+     "why": "Tolerances must match what the process can actually produce.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each tool to what it does.",
+     "pairs": [
+      [
+       "Micrometer",
+       "Measures small lengths precisely"
+      ],
+      [
+       "CMM",
+       "Measures 3D coordinates of a part"
+      ],
+      [
+       "Go/no-go gauge",
+       "Quickly checks a size limit"
+      ],
+      [
+       "Control chart",
+       "Tracks a process over time"
+      ]
+     ],
+     "why": "Different tools suit different checks.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A process with Cpk = 1.0 makes about how many defects per million (centred, normal)?",
+     "o": [
+      "About 2700",
+      "About 63",
+      "About 0.002",
+      "About 317 000"
+     ],
+     "a": 0,
+     "why": "Cpk = 1 corresponds to limits at 3σ, giving about 0.27% outside, which is 2700 per million.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An airline part is tested by taking a sample of 5 from each batch of 10 000. A flaw affects 1 in 1000 parts. What is the risk?",
+     "o": [
+      "The sample may miss the flaw, so critical parts need 100% inspection or process control",
+      "Sampling always finds every flaw, so no more checks are needed",
+      "The flaw does not matter because only 1 in 1000 parts has it",
+      "Batches should be cut to a single part each"
+     ],
+     "a": 0,
+     "why": "Small samples can miss rare defects. Safety-critical items need stronger controls.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A supervisor suggests changing the machine setting every time a part is slightly off the target. What does this tend to do?",
+     "o": [
+      "Increase the variation (over-adjustment)",
+      "Reduce the variation to zero over time",
+      "Improve the capability of the process",
+      "Make the control chart perfectly flat"
+     ],
+     "a": 0,
+     "why": "Reacting to common-cause noise adds variation, so adjust only when the chart signals a special cause.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a control chart tells a factory",
+    "model": "A control chart plots measurements of a process over time with limits around the average. If a point lies outside the limits, or the points show a steady trend, something has changed, like a worn tool. The factory can fix it before many bad parts are made.",
+    "points": [
+     {
+      "k": [
+       "plot",
+       "chart",
+       "measure",
+       "sample"
+      ],
+      "ask": "What do you put on the chart?"
+     },
+     {
+      "k": [
+       "limit",
+       "average",
+       "mean",
+       "3σ",
+       "sigma"
+      ],
+      "ask": "What do the lines show?"
+     },
+     {
+      "k": [
+       "outside",
+       "trend",
+       "drift",
+       "change",
+       "signal"
+      ],
+      "ask": "What do you look for?"
+     },
+     {
+      "k": [
+       "tool",
+       "wear",
+       "fix",
+       "before",
+       "example",
+       "prevent"
+      ],
+      "ask": "Why is that useful?"
+     }
+    ]
+   }
+  }
+ ]
+}

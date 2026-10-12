@@ -1,0 +1,1917 @@
+{
+ "world": 10,
+ "lang": "es",
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced grammar",
+   "icon": "🧠",
+   "hook": "\"Quiero que vengas\" uses \"vengas\", not \"vienes\". Why does the verb change after \"quiero que\"?",
+   "explain": [
+    "The present subjunctive is used when the main clause expresses wishes, doubt, emotion, advice or something unreal, and the subject changes: \"Quiero que vengas.\" \"Dudo que sea verdad.\" \"Es importante que estudies.\" For the stem, take the yo form of the present, remove -o, and add the opposite vowel: hablar becomes hable, hables, hable; comer becomes coma, comas, coma.",
+    "Use the indicative for facts and certainty: \"Creo que viene.\" Use the subjunctive after negated belief: \"No creo que venga.\" Irregular subjunctives include sea (ser), vaya (ir), tenga (tener), haya (haber). Remember the weather phrase: \"ojalá\" plus subjunctive means I hope."
+   ],
+   "mnemonic": "WEIRDO: Wishes, Emotions, Impersonal expressions, Recommendations, Doubt, Ojalá.",
+   "items": [
+    [
+     "I want you to come",
+     "Quiero que vengas",
+     ""
+    ],
+    [
+     "I doubt it is true",
+     "Dudo que sea verdad",
+     ""
+    ],
+    [
+     "I hope it rains",
+     "Ojalá llueva",
+     ""
+    ],
+    [
+     "it is important that you study",
+     "Es importante que estudies",
+     ""
+    ],
+    [
+     "I do not think he comes",
+     "No creo que venga",
+     ""
+    ],
+    [
+     "that she speaks",
+     "que ella hable",
+     ""
+    ],
+    [
+     "that we eat",
+     "que comamos",
+     ""
+    ],
+    [
+     "that they go",
+     "que vayan",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I want you to come.",
+     [
+      "Quiero",
+      "que",
+      "vengas."
+     ]
+    ],
+    [
+     "I hope it rains tomorrow.",
+     [
+      "Ojalá",
+      "llueva",
+      "mañana."
+     ]
+    ],
+    [
+     "I do not think he is here.",
+     [
+      "No",
+      "creo",
+      "que",
+      "esté",
+      "aquí."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which sentence needs the subjunctive?",
+     "o": [
+      "Espero que ella venga.",
+      "Sé que ella viene.",
+      "Veo que ella viene.",
+      "Creo que ella viene."
+     ],
+     "a": 0,
+     "why": "Espero que expresses hope and a different subject, so the subjunctive follows.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the subjunctive of \"hablar\" for \"tú\"?",
+     "o": [
+      "hables",
+      "hablas",
+      "hable",
+      "hablarás"
+     ],
+     "a": 0,
+     "why": "Take hablo, remove -o, and add -es for -ar verbs.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"No creo que viene\" considered non-standard?",
+     "o": [
+      "Negated belief usually requires the subjunctive",
+      "Viene is plural",
+      "Creer never takes que",
+      "The tense is wrong"
+     ],
+     "a": 0,
+     "why": "After a negated opinion, standard Spanish uses the subjunctive: no creo que venga.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which choice is correct? \"Es verdad que ___ cansado.\"",
+     "o": [
+      "estoy",
+      "esté",
+      "estar",
+      "estaré"
+     ],
+     "a": 0,
+     "why": "Es verdad que expresses certainty, so the indicative follows.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does Spanish use the subjunctive after \"quiero que\"?",
+     "rubric": [
+      [
+       "wish",
+       "want",
+       "desire",
+       "influence",
+       "expresses"
+      ],
+      [
+       "different subject",
+       "not real",
+       "not yet",
+       "uncertain",
+       "hypothetical",
+       "subjective",
+       "not fact"
+      ]
+     ],
+     "min": 1,
+     "model": "The subjunctive is used for wishes and unreal or uncertain situations, especially when the subject changes.",
+     "why": "Mood expresses attitude.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The Spanish subjunctive",
+    "model": "Use the subjunctive after wishes, doubts, emotions and advice when the subject changes, like quiero que vengas. Use the indicative for facts. Form it from the yo form and change the vowel: hablo becomes hable.",
+    "points": [
+     {
+      "k": [
+       "wish",
+       "doubt",
+       "emotion",
+       "advice",
+       "want"
+      ],
+      "ask": "When do I use it?"
+     },
+     {
+      "k": [
+       "indicative",
+       "fact",
+       "certain"
+      ],
+      "ask": "When do I not use it?"
+     },
+     {
+      "k": [
+       "yo",
+       "vowel",
+       "hable",
+       "form"
+      ],
+      "ask": "How do I make it?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish subjunctive",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish subjunctive",
+    "Subjunctive mood"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Complex sentence patterns",
+   "icon": "🪢",
+   "hook": "How can one sentence say \"If I had more time, I would travel more\"?",
+   "explain": [
+    "Si-clauses express conditions. Real condition: \"Si llueve, me quedo en casa.\" Unlikely or unreal present: \"Si tuviera tiempo, viajaría más\" (imperfect subjunctive + conditional). Impossible past: \"Si hubiera estudiado, habría aprobado\" (pluperfect subjunctive + conditional perfect). Never use the present subjunctive or the conditional right after \"si\".",
+    "Relative clauses: the indicative describes a known person or thing (\"Busco al hombre que vive aquí\"), and the subjunctive describes an unknown or non-existent one (\"Busco un hombre que viva aquí\"). Para and por: para shows purpose or destination, por shows cause, exchange or the route."
+   ],
+   "mnemonic": "Si + imperfect subjunctive → conditional. Never \"si + would\".",
+   "items": [
+    [
+     "If I had time, I would travel.",
+     "Si tuviera tiempo, viajaría",
+     ""
+    ],
+    [
+     "If I had studied, I would have passed.",
+     "Si hubiera estudiado, habría aprobado",
+     ""
+    ],
+    [
+     "I am looking for a man who lives here.",
+     "Busco un hombre que viva aquí",
+     ""
+    ],
+    [
+     "for (purpose)",
+     "para",
+     ""
+    ],
+    [
+     "for (cause)",
+     "por",
+     ""
+    ],
+    [
+     "I would eat",
+     "comería",
+     ""
+    ],
+    [
+     "I would have eaten",
+     "habría comido",
+     ""
+    ],
+    [
+     "even if",
+     "aunque",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "If I had money, I would buy it.",
+     [
+      "Si",
+      "tuviera",
+      "dinero,",
+      "lo",
+      "compraría."
+     ]
+    ],
+    [
+     "If she had known, she would have come.",
+     [
+      "Si",
+      "lo",
+      "hubiera",
+      "sabido,",
+      "habría",
+      "venido."
+     ]
+    ],
+    [
+     "I study to learn.",
+     [
+      "Estudio",
+      "para",
+      "aprender."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which sentence is correct?",
+     "o": [
+      "Si tuviera tiempo, viajaría.",
+      "Si tendría tiempo, viajaría.",
+      "Si tuviera tiempo, viajara.",
+      "Si tuviera tiempo, viajaré."
+     ],
+     "a": 0,
+     "why": "Si + imperfect subjunctive pairs with the conditional.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Complete: \"Lo hice ___ ayudarte.\"",
+     "o": [
+      "para",
+      "por",
+      "de",
+      "en"
+     ],
+     "a": 0,
+     "why": "Para introduces purpose.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"Si sería rico, viajaría\" non-standard?",
+     "o": [
+      "Si is not followed by the conditional",
+      "Viajaría is wrong",
+      "Rico is feminine",
+      "It is a question"
+     ],
+     "a": 0,
+     "why": "Standard Spanish does not use the conditional after si in an unreal condition.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does \"Busco un libro que sea barato\" suggest?",
+     "o": [
+      "The speaker has no specific book in mind",
+      "The book exists and is known",
+      "The book is expensive",
+      "It is past tense"
+     ],
+     "a": 0,
+     "why": "The subjunctive in the relative clause points to an unknown or hypothetical item.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between \"por\" and \"para\" with two short examples.",
+     "rubric": [
+      [
+       "por",
+       "cause",
+       "reason",
+       "exchange",
+       "through",
+       "because"
+      ],
+      [
+       "para",
+       "purpose",
+       "goal",
+       "destination",
+       "in order to",
+       "deadline",
+       "recipient"
+      ]
+     ],
+     "min": 2,
+     "model": "Por expresses cause, exchange or route (gracias por todo); para expresses purpose or destination (estudio para aprender).",
+     "why": "Por vs para.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Conditionals and relative clauses",
+    "model": "For an unreal present, use si plus the imperfect subjunctive and then the conditional. For an unreal past, use the pluperfect subjunctive and conditional perfect. Use the subjunctive after que when the thing described is unknown.",
+    "points": [
+     {
+      "k": [
+       "si",
+       "imperfect subjunctive",
+       "conditional"
+      ],
+      "ask": "How do I imagine the present?"
+     },
+     {
+      "k": [
+       "pluperfect",
+       "hubiera",
+       "habría",
+       "past"
+      ],
+      "ask": "How do I imagine the past?"
+     },
+     {
+      "k": [
+       "unknown",
+       "relative",
+       "que",
+       "subjunctive"
+      ],
+      "ask": "What about relative clauses?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish conditional sentences",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish conditional sentences",
+    "Spanish verbs"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Extended conversations",
+   "icon": "☕",
+   "hook": "How do you politely disagree with a friend in Spanish and keep the conversation friendly?",
+   "explain": [
+    "Extended conversations use discourse markers: \"bueno\", \"pues\", \"a ver\", \"o sea\", \"en fin\". To soften an opinion: \"Me parece que...\", \"Yo diría que...\", \"Tal vez...\". To disagree politely: \"Entiendo lo que dices, pero...\" or \"No estoy del todo de acuerdo.\"",
+    "Show you are listening with backchannels like \"ajá\", \"claro\", \"¿en serio?\", \"ya veo\". To keep the topic going, ask open questions: \"¿Qué opinas?\", \"¿Y tú qué piensas?\" Interruptions are more tolerated in many Spanish-speaking cultures than in some others, as overlapping talk can show interest."
+   ],
+   "mnemonic": "Pues, a ver, bueno: small words that hold a conversation together.",
+   "items": [
+    [
+     "well (to start)",
+     "bueno",
+     ""
+    ],
+    [
+     "let's see",
+     "a ver",
+     ""
+    ],
+    [
+     "I understand what you say, but",
+     "entiendo lo que dices, pero",
+     ""
+    ],
+    [
+     "I do not completely agree",
+     "no estoy del todo de acuerdo",
+     ""
+    ],
+    [
+     "what do you think?",
+     "¿qué opinas?",
+     ""
+    ],
+    [
+     "really?",
+     "¿en serio?",
+     ""
+    ],
+    [
+     "I see",
+     "ya veo",
+     ""
+    ],
+    [
+     "in short",
+     "en fin",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I do not completely agree.",
+     [
+      "No",
+      "estoy",
+      "del",
+      "todo",
+      "de",
+      "acuerdo."
+     ]
+    ],
+    [
+     "What do you think?",
+     [
+      "¿Y",
+      "tú",
+      "qué",
+      "opinas?"
+     ]
+    ],
+    [
+     "I understand, but I see it differently.",
+     [
+      "Entiendo,",
+      "pero",
+      "lo",
+      "veo",
+      "diferente."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase is the most polite way to disagree?",
+     "o": [
+      "No estoy del todo de acuerdo.",
+      "Estás equivocado.",
+      "Qué tontería.",
+      "No."
+     ],
+     "a": 0,
+     "why": "It softens the disagreement.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"O sea\" is used to...",
+     "o": [
+      "clarify or rephrase",
+      "say goodbye",
+      "ask a question",
+      "give an order"
+     ],
+     "a": 0,
+     "why": "It means \"that is\" or \"I mean\".",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do speakers say \"a ver\" before answering?",
+     "o": [
+      "To gain time and think",
+      "To ask for the bill",
+      "To say goodbye",
+      "To correct grammar"
+     ],
+     "a": 0,
+     "why": "It works as a filler marker, like \"let's see\".",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are backchannel words like \"claro\" and \"ajá\" important?",
+     "rubric": [
+      [
+       "listen",
+       "attention",
+       "follow",
+       "interest",
+       "engage",
+       "show"
+      ],
+      [
+       "encourage",
+       "continue",
+       "support",
+       "speaker",
+       "flow",
+       "agree"
+      ]
+     ],
+     "min": 1,
+     "model": "They show that you are listening and encourage the speaker to continue.",
+     "why": "Backchannel cooperation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In Spanish-speaking cultures, overlapping speech is often seen as...",
+     "o": [
+      "a sign of engagement, not necessarily rudeness",
+      "always rude",
+      "illegal",
+      "impossible"
+     ],
+     "a": 0,
+     "why": "Norms vary; overlap can signal interest.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Keeping a Spanish conversation going",
+    "model": "Use small words like bueno and pues to link your turns. Soften opinions with me parece que. Disagree gently by acknowledging the other view first. Show you listen with claro or ajá.",
+    "points": [
+     {
+      "k": [
+       "bueno",
+       "pues",
+       "a ver",
+       "filler",
+       "marker"
+      ],
+      "ask": "Which small words help?"
+     },
+     {
+      "k": [
+       "soften",
+       "me parece",
+       "polite"
+      ],
+      "ask": "How do I give an opinion?"
+     },
+     {
+      "k": [
+       "listen",
+       "claro",
+       "ajá",
+       "backchannel"
+      ],
+      "ask": "How do I show I am listening?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Discourse marker",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Discourse marker",
+    "Spanish language"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Formal and informal registers",
+   "icon": "🎩",
+   "hook": "You write to your best friend and to a company director. Do you use the same Spanish?",
+   "explain": [
+    "Register is the level of formality. Informal Spanish uses tú (or vos), contractions of speech (\"pa'\" for para) and slang. Formal Spanish uses usted, polite verbs and fixed phrases: \"Estimado señor López:\", \"Le agradecería que...\", \"Atentamente\". Emails to friends can begin \"Hola Laura,\" and end \"Un abrazo\".",
+    "The conditional and the imperfect subjunctive soften requests: \"¿Podría ayudarme?\", \"Quisiera preguntar...\". Spain also has the informal plural vosotros (habláis), while Latin America uses ustedes for both. Voseo (vos tenés) is used in Argentina, Uruguay and parts of Central America. Pronoun choice signals relationship and respect."
+   ],
+   "mnemonic": "Tú para amigos, usted para respeto.",
+   "items": [
+    [
+     "Dear Sir (formal)",
+     "Estimado señor",
+     ""
+    ],
+    [
+     "Yours sincerely",
+     "Atentamente",
+     ""
+    ],
+    [
+     "A hug (informal closing)",
+     "Un abrazo",
+     ""
+    ],
+    [
+     "I would appreciate it if...",
+     "Le agradecería que",
+     ""
+    ],
+    [
+     "Could you help me?",
+     "¿Podría ayudarme?",
+     ""
+    ],
+    [
+     "you (formal singular)",
+     "usted",
+     ""
+    ],
+    [
+     "you all (Spain, informal)",
+     "vosotros",
+     ""
+    ],
+    [
+     "you (Argentina)",
+     "vos",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "Dear Mr López, I am writing to you.",
+     [
+      "Estimado",
+      "señor",
+      "López,",
+      "le",
+      "escribo."
+     ]
+    ],
+    [
+     "Could you help me, please?",
+     [
+      "¿Podría",
+      "ayudarme,",
+      "por",
+      "favor?"
+     ]
+    ],
+    [
+     "A hug, see you soon.",
+     [
+      "Un",
+      "abrazo,",
+      "hasta",
+      "pronto."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which closing is the most formal?",
+     "o": [
+      "Atentamente",
+      "Un abrazo",
+      "Chao",
+      "Besos"
+     ],
+     "a": 0,
+     "why": "Atentamente is a standard formal closing.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In Latin America, what is the usual plural \"you\" for friends?",
+     "o": [
+      "ustedes",
+      "vosotros",
+      "vos",
+      "tú"
+     ],
+     "a": 0,
+     "why": "Latin America uses ustedes in formal and informal contexts.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"¿Podría ayudarme?\" more polite than \"¿Puedes ayudarme?\"",
+     "o": [
+      "The conditional and usted are more formal and softer",
+      "It is shorter",
+      "It is a command",
+      "It is slang"
+     ],
+     "a": 0,
+     "why": "The conditional adds distance and politeness.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which verb form is voseo?",
+     "o": [
+      "vos tenés",
+      "tú tienes",
+      "usted tiene",
+      "vosotros tenéis"
+     ],
+     "a": 0,
+     "why": "Voseo uses vos with its own verb forms.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must you choose between tú and usted before writing an email?",
+     "rubric": [
+      [
+       "relationship",
+       "audience",
+       "respect",
+       "formal",
+       "status",
+       "age"
+      ],
+      [
+       "tone",
+       "register",
+       "appropriate",
+       "offend",
+       "polite",
+       "distance"
+      ]
+     ],
+     "min": 1,
+     "model": "The pronoun shows your relationship and respect, so the wrong choice may seem rude or too distant.",
+     "why": "Social deixis.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Formal and informal Spanish",
+    "model": "Use tú with friends and usted with people you respect. Formal letters begin with Estimado and end with Atentamente. For friends use Hola and Un abrazo. Soften requests with the conditional.",
+    "points": [
+     {
+      "k": [
+       "tú",
+       "usted"
+      ],
+      "ask": "How do I address people?"
+     },
+     {
+      "k": [
+       "estimado",
+       "atentamente",
+       "formal"
+      ],
+      "ask": "How do I write formally?"
+     },
+     {
+      "k": [
+       "conditional",
+       "podría",
+       "soften",
+       "polite"
+      ],
+      "ask": "How do I make requests softer?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Register (sociolinguistics)",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Register (sociolinguistics)",
+    "Voseo",
+    "T–V distinction"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Reading articles and literature",
+   "icon": "📰",
+   "hook": "\"El niño que vivía en el espejo\": what does a literary title promise before you read a word?",
+   "explain": [
+    "Articles in Spanish-language newspapers (El País, La Nación, El Universal) use headlines with the present tense and short noun phrases. Check the lead: who, what, when, where and why. Separate facts from opinions in editorials.",
+    "Literature offers narrative voices and figurative language. Gabriel García Márquez (Colombia) is known for magical realism, where fantastic events appear in ordinary settings, as in \"Cien años de soledad\". Isabel Allende (Chile), Jorge Luis Borges (Argentina), Rosalía de Castro (Spain) and Pablo Neruda (Chile) are other major writers. Look for images, symbols and tone."
+   ],
+   "mnemonic": "Magical realism: the ordinary and the marvellous at one table.",
+   "items": [
+    [
+     "newspaper",
+     "el periódico",
+     ""
+    ],
+    [
+     "headline",
+     "el titular",
+     ""
+    ],
+    [
+     "author",
+     "el autor",
+     ""
+    ],
+    [
+     "novel",
+     "la novela",
+     ""
+    ],
+    [
+     "poem",
+     "el poema",
+     ""
+    ],
+    [
+     "magical realism",
+     "realismo mágico",
+     ""
+    ],
+    [
+     "character",
+     "el personaje",
+     ""
+    ],
+    [
+     "narrator",
+     "el narrador",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "The novel is by a Colombian author.",
+     [
+      "La",
+      "novela",
+      "es",
+      "de",
+      "un",
+      "autor",
+      "colombiano."
+     ]
+    ],
+    [
+     "The headline summarises the news.",
+     [
+      "El",
+      "titular",
+      "resume",
+      "la",
+      "noticia."
+     ]
+    ],
+    [
+     "The narrator tells the story.",
+     [
+      "El",
+      "narrador",
+      "cuenta",
+      "la",
+      "historia."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Who wrote \"Cien años de soledad\"?",
+     "o": [
+      "Gabriel García Márquez",
+      "Pablo Neruda",
+      "Jorge Luis Borges",
+      "Octavio Paz"
+     ],
+     "a": 0,
+     "why": "It is a 1967 novel by García Márquez.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is magical realism?",
+     "o": [
+      "Fantastic events in a realistic setting",
+      "A type of newspaper",
+      "A grammar rule",
+      "A poem form"
+     ],
+     "a": 0,
+     "why": "Magical events are narrated as normal.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which statement in an editorial is an opinion?",
+     "o": [
+      "Esta ley es injusta.",
+      "La ley fue aprobada en marzo.",
+      "La ley tiene diez artículos.",
+      "El parlamento votó ayer."
+     ],
+     "a": 0,
+     "why": "Injusta is a judgement.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do headlines often use the present tense for past events?",
+     "rubric": [
+      [
+       "immediate",
+       "vivid",
+       "present",
+       "closer",
+       "dramatic",
+       "near",
+       "now"
+      ],
+      [
+       "short",
+       "space",
+       "brief",
+       "impact",
+       "style",
+       "attention"
+      ]
+     ],
+     "min": 1,
+     "model": "It makes the news feel immediate and is brief and dramatic, which suits a headline.",
+     "why": "Historical present.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Pablo Neruda was a famous poet from...",
+     "o": [
+      "Chile",
+      "Spain",
+      "Mexico",
+      "Peru"
+     ],
+     "a": 0,
+     "why": "He was Chilean and won the Nobel Prize in Literature in 1971.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading newspapers and literature",
+    "model": "In a news article, look for who, what, when and where. Tell fact from opinion. In literature, look at the narrator, images and tone. Magical realism mixes marvellous events with everyday life.",
+    "points": [
+     {
+      "k": [
+       "who",
+       "what",
+       "when",
+       "where",
+       "fact"
+      ],
+      "ask": "What do I look for in news?"
+     },
+     {
+      "k": [
+       "opinion",
+       "editorial",
+       "fact"
+      ],
+      "ask": "How do I tell fact from opinion?"
+     },
+     {
+      "k": [
+       "magical",
+       "narrator",
+       "image",
+       "tone"
+      ],
+      "ask": "What do I look for in stories?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Magical realism",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Magical realism",
+    "Gabriel García Márquez",
+    "Spanish literature"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Essay and correspondence writing",
+   "icon": "📨",
+   "hook": "How do you open and close a formal Spanish letter or email?",
+   "explain": [
+    "An essay (ensayo) has an introduction with a thesis, body paragraphs and a conclusion. Link ideas with: en primer lugar, por otra parte, no obstante, en consecuencia, en conclusión. Support claims with evidence and examples. Keep the register formal.",
+    "Formal letters: \"Estimados señores:\" (Dear Sirs), \"Me dirijo a ustedes para...\", \"Quedo a su disposición\", \"Atentamente\". In Spanish, a colon follows the greeting, not a comma. Use accents carefully and check \"sino/si no\", \"porque/por qué\", \"también/tampoco\"."
+   ],
+   "mnemonic": "Tesis, argumentos, conclusión.",
+   "items": [
+    [
+     "firstly",
+     "en primer lugar",
+     ""
+    ],
+    [
+     "on the other hand",
+     "por otra parte",
+     ""
+    ],
+    [
+     "nevertheless",
+     "no obstante",
+     ""
+    ],
+    [
+     "consequently",
+     "en consecuencia",
+     ""
+    ],
+    [
+     "in conclusion",
+     "en conclusión",
+     ""
+    ],
+    [
+     "I am writing to you",
+     "me dirijo a ustedes",
+     ""
+    ],
+    [
+     "I remain at your disposal",
+     "quedo a su disposición",
+     ""
+    ],
+    [
+     "thesis",
+     "la tesis",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "In conclusion, we must act now.",
+     [
+      "En",
+      "conclusión,",
+      "debemos",
+      "actuar",
+      "ahora."
+     ]
+    ],
+    [
+     "Nevertheless, the plan is useful.",
+     [
+      "No",
+      "obstante,",
+      "el",
+      "plan",
+      "es",
+      "útil."
+     ]
+    ],
+    [
+     "I am writing to ask about the course.",
+     [
+      "Me",
+      "dirijo",
+      "a",
+      "ustedes",
+      "para",
+      "preguntar."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which punctuation follows the greeting in a formal Spanish letter?",
+     "o": [
+      "A colon",
+      "A comma only",
+      "A full stop",
+      "A dash"
+     ],
+     "a": 0,
+     "why": "Estimados señores: uses a colon.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which connector introduces a result?",
+     "o": [
+      "en consecuencia",
+      "no obstante",
+      "por otra parte",
+      "en primer lugar"
+     ],
+     "a": 0,
+     "why": "En consecuencia means as a result.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is the difference between \"sino\" and \"si no\"?",
+     "o": [
+      "Sino means but rather; si no means if not",
+      "They are the same",
+      "Sino is a verb",
+      "Si no is a noun"
+     ],
+     "a": 0,
+     "why": "No es rojo, sino azul versus Si no vienes, me voy.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why should an essay have a clear thesis?",
+     "rubric": [
+      [
+       "argument",
+       "position",
+       "claim",
+       "main idea",
+       "point"
+      ],
+      [
+       "guide",
+       "focus",
+       "direct",
+       "structure",
+       "reader",
+       "organis",
+       "support"
+      ]
+     ],
+     "min": 1,
+     "model": "The thesis gives the main position, focuses the essay, and guides the reader through the argument.",
+     "why": "Argumentative structure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which opening is suitable for a formal complaint?",
+     "o": [
+      "Me dirijo a ustedes para presentar una queja formal.",
+      "¡Hola! ¿Qué tal?",
+      "Oye, escucha.",
+      "Esto es horrible."
+     ],
+     "a": 0,
+     "why": "It states the purpose politely and formally.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Essays and letters in Spanish",
+    "model": "An essay needs a thesis, arguments with evidence and a conclusion. Use linking words like no obstante. A formal letter starts with Estimado and ends with Atentamente. Put a colon after the greeting.",
+    "points": [
+     {
+      "k": [
+       "thesis",
+       "argument",
+       "evidence",
+       "conclusion"
+      ],
+      "ask": "What does an essay need?"
+     },
+     {
+      "k": [
+       "linking",
+       "no obstante",
+       "en consecuencia",
+       "connector"
+      ],
+      "ask": "How do I join ideas?"
+     },
+     {
+      "k": [
+       "estimado",
+       "atentamente",
+       "colon",
+       "letter"
+      ],
+      "ask": "How do I write a formal letter?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Essay",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Essay",
+    "Formal letter"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Translation fundamentals",
+   "icon": "🔁",
+   "hook": "Why is \"Tengo 20 años\" not translated as \"I have 20 years\" in English?",
+   "explain": [
+    "Translation transfers meaning, not words. \"Tengo 20 años\" is \"I am 20 years old.\" Spanish uses tener for age, hunger and thirst: \"tengo hambre\" (I am hungry), \"tengo frío\" (I am cold). English uses be.",
+    "False friends cause errors: \"constipado\" means having a cold, \"carpeta\" means folder, \"sensible\" means sensitive, \"asistir\" means to attend. Adjective position, the personal \"a\" (\"Veo a María\"), and the passive \"se\" (\"Se habla español\") need adaptation. Choose between literal and free translation depending on text type and audience."
+   ],
+   "mnemonic": "Translate the idea, not the dictionary.",
+   "items": [
+    [
+     "I am 20 years old",
+     "Tengo 20 años",
+     ""
+    ],
+    [
+     "I am hungry",
+     "Tengo hambre",
+     ""
+    ],
+    [
+     "I am cold",
+     "Tengo frío",
+     ""
+    ],
+    [
+     "having a cold",
+     "constipado",
+     ""
+    ],
+    [
+     "folder",
+     "carpeta",
+     ""
+    ],
+    [
+     "sensitive",
+     "sensible",
+     ""
+    ],
+    [
+     "to attend",
+     "asistir",
+     ""
+    ],
+    [
+     "Spanish is spoken here",
+     "Se habla español",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I am twenty years old.",
+     [
+      "Tengo",
+      "veinte",
+      "años."
+     ]
+    ],
+    [
+     "I am cold and hungry.",
+     [
+      "Tengo",
+      "frío",
+      "y",
+      "hambre."
+     ]
+    ],
+    [
+     "Spanish is spoken here.",
+     [
+      "Aquí",
+      "se",
+      "habla",
+      "español."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does \"constipado\" mean in Spanish?",
+     "o": [
+      "having a cold",
+      "constipated",
+      "tired",
+      "confused"
+     ],
+     "a": 0,
+     "why": "It is a false friend.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How is \"Se habla español\" best translated?",
+     "o": [
+      "Spanish is spoken",
+      "He speaks Spanish",
+      "Speak Spanish",
+      "One Spanish"
+     ],
+     "a": 0,
+     "why": "The impersonal se often corresponds to the English passive.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"Veo a María\" written with \"a\"?",
+     "o": [
+      "Direct objects that are specific people take the personal a",
+      "A means \"to\" always",
+      "Maria is a place",
+      "It is a mistake"
+     ],
+     "a": 0,
+     "why": "Spanish marks a specific person direct object with a.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a translator avoid word-for-word translation of an idiom?",
+     "rubric": [
+      [
+       "idiom",
+       "figurative",
+       "expression",
+       "meaning"
+      ],
+      [
+       "natural",
+       "sound",
+       "reader",
+       "sense",
+       "equivalent",
+       "unnatural",
+       "literal",
+       "wrong"
+      ]
+     ],
+     "min": 1,
+     "model": "A literal rendering would sound unnatural or wrong, so the translator finds an equivalent expression that keeps the meaning.",
+     "why": "Dynamic equivalence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"Realizar\" in Spanish most often means...",
+     "o": [
+      "to carry out",
+      "to realise (understand)",
+      "to be real",
+      "to relax"
+     ],
+     "a": 0,
+     "why": "Darse cuenta is \"to realise\"; realizar is to carry out or perform.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basics of translating Spanish",
+    "model": "Translate meaning, not words. Spanish uses tener for age and feelings like hunger. Watch for false friends such as constipado. Adapt impersonal se and the personal a for English.",
+    "points": [
+     {
+      "k": [
+       "meaning",
+       "natural",
+       "not word"
+      ],
+      "ask": "What do I translate?"
+     },
+     {
+      "k": [
+       "tener",
+       "age",
+       "hungry",
+       "old"
+      ],
+      "ask": "What is different about age?"
+     },
+     {
+      "k": [
+       "false friend",
+       "constipado",
+       "carpeta"
+      ],
+      "ask": "What traps are there?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Translation",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Translation",
+    "False friend"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Regional varieties and cultural context",
+   "icon": "🌎",
+   "hook": "In Madrid \"coger el autobús\" is normal, but in parts of Latin America \"coger\" is avoided. Why?",
+   "explain": [
+    "Spanish is spoken by hundreds of millions of native speakers in over 20 countries. Varieties differ in pronunciation (seseo vs distinción, aspiration of final s in the Caribbean, voseo in the River Plate), vocabulary (coche, carro, auto; ordenador, computadora) and grammar (vosotros in Spain, ustedes elsewhere).",
+    "In some Latin American countries the verb \"coger\" has a vulgar meaning, so people say \"tomar\" instead. Indigenous languages enrich vocabulary: from Nahuatl \"chocolate\", \"aguacate\", from Quechua \"papa\", \"cóndor\", from Taíno \"huracán\", \"hamaca\". All varieties are valid; the Real Academia Española and the Association of Spanish Language Academies record usage across countries."
+   ],
+   "mnemonic": "One language, many accents: say it in your own place.",
+   "items": [
+    [
+     "car (Spain)",
+     "coche",
+     ""
+    ],
+    [
+     "car (Mexico, parts of Latin America)",
+     "carro",
+     ""
+    ],
+    [
+     "computer (Spain)",
+     "ordenador",
+     ""
+    ],
+    [
+     "computer (Latin America)",
+     "computadora",
+     ""
+    ],
+    [
+     "to take (a bus)",
+     "tomar",
+     ""
+    ],
+    [
+     "hurricane (Taíno origin)",
+     "huracán",
+     ""
+    ],
+    [
+     "hammock (Taíno origin)",
+     "hamaca",
+     ""
+    ],
+    [
+     "potato (Quechua origin)",
+     "papa",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I take the bus every day.",
+     [
+      "Tomo",
+      "el",
+      "autobús",
+      "todos",
+      "los",
+      "días."
+     ]
+    ],
+    [
+     "In Spain they say ordenador.",
+     [
+      "En",
+      "España",
+      "dicen",
+      "ordenador."
+     ]
+    ],
+    [
+     "The word comes from Nahuatl.",
+     [
+      "La",
+      "palabra",
+      "viene",
+      "del",
+      "náhuatl."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which language did \"chocolate\" come into Spanish from?",
+     "o": [
+      "Nahuatl",
+      "Quechua",
+      "Arabic",
+      "Basque"
+     ],
+     "a": 0,
+     "why": "Chocolate comes from Nahuatl, the language of the Aztecs.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is \"voseo\"?",
+     "o": [
+      "Using vos instead of or with tú",
+      "Rolling the r",
+      "Dropping s",
+      "A kind of poem"
+     ],
+     "a": 0,
+     "why": "It is common in Argentina and Central America.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do Spanish-speaking countries have different words for the same thing?",
+     "o": [
+      "Regional history and contact with other languages",
+      "Mistakes",
+      "Spanish has no rules",
+      "Dictionaries disagree"
+     ],
+     "a": 0,
+     "why": "History, geography and indigenous languages created variety.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is no variety of Spanish \"more correct\"?",
+     "rubric": [
+      [
+       "valid",
+       "equal",
+       "all",
+       "community",
+       "native"
+      ],
+      [
+       "standard",
+       "variety",
+       "speakers",
+       "region",
+       "different",
+       "usage"
+      ]
+     ],
+     "min": 1,
+     "model": "Each variety is valid for its community; they differ in usage, and academies record usage from all of them.",
+     "why": "Pluricentric language.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which word from Quechua is used in Spanish?",
+     "o": [
+      "cóndor",
+      "huracán",
+      "chocolate",
+      "tomate"
+     ],
+     "a": 0,
+     "why": "Cóndor is from Quechua; huracán from Taíno; chocolate and tomate from Nahuatl.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Spanish around the world",
+    "model": "Spanish is spoken in more than twenty countries. Pronunciation, words and some grammar differ. Indigenous languages gave Spanish many words. All varieties are valid.",
+    "points": [
+     {
+      "k": [
+       "twenty",
+       "countries",
+       "many",
+       "world"
+      ],
+      "ask": "How widely is Spanish spoken?"
+     },
+     {
+      "k": [
+       "pronunciation",
+       "vocabulary",
+       "grammar",
+       "differ"
+      ],
+      "ask": "What differs?"
+     },
+     {
+      "k": [
+       "valid",
+       "equal",
+       "correct",
+       "all"
+      ],
+      "ask": "Which is right?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Spanish language",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Spanish language",
+    "Latin American Spanish",
+    "Voseo"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Structured debates and presentations",
+   "icon": "🎤",
+   "hook": "How do you convince an audience in Spanish in under five minutes?",
+   "explain": [
+    "A presentation (presentación) opens with a hook, introduces the topic and shows the plan: \"Hoy voy a hablarles de...\", \"En primer lugar...\", \"Para terminar...\". Use short sentences, pauses and eye contact. Check a formal register: \"ustedes\" for the audience.",
+    "In a debate (debate), state your position: \"Estoy a favor de...\" or \"Estoy en contra de...\". Give reasons: \"En primer lugar, ...\". Respond to others: \"Entiendo su punto, sin embargo...\" Avoid personal attacks and stay with the argument. Use the subjunctive to express opinions: \"No creo que sea necesario.\""
+   ],
+   "mnemonic": "Abrir, argumentar, cerrar.",
+   "items": [
+    [
+     "Today I am going to talk to you about",
+     "Hoy voy a hablarles de",
+     ""
+    ],
+    [
+     "I am in favour of",
+     "Estoy a favor de",
+     ""
+    ],
+    [
+     "I am against",
+     "Estoy en contra de",
+     ""
+    ],
+    [
+     "to sum up",
+     "para resumir",
+     ""
+    ],
+    [
+     "I understand your point, however",
+     "entiendo su punto, sin embargo",
+     ""
+    ],
+    [
+     "audience",
+     "el público",
+     ""
+    ],
+    [
+     "argument",
+     "el argumento",
+     ""
+    ],
+    [
+     "thank you for your attention",
+     "gracias por su atención",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "Today I am going to talk about the environment.",
+     [
+      "Hoy",
+      "voy",
+      "a",
+      "hablarles",
+      "del",
+      "medio",
+      "ambiente."
+     ]
+    ],
+    [
+     "I am in favour of the proposal.",
+     [
+      "Estoy",
+      "a",
+      "favor",
+      "de",
+      "la",
+      "propuesta."
+     ]
+    ],
+    [
+     "Thank you for your attention.",
+     [
+      "Gracias",
+      "por",
+      "su",
+      "atención."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase opens a presentation?",
+     "o": [
+      "Hoy voy a hablarles de...",
+      "Para terminar...",
+      "Estoy en contra.",
+      "Adiós."
+     ],
+     "a": 0,
+     "why": "It states the topic to the audience.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a respectful way to counter an argument?",
+     "o": [
+      "Entiendo su punto, sin embargo...",
+      "Eso es absurdo.",
+      "Usted no sabe nada.",
+      "Cállese."
+     ],
+     "a": 0,
+     "why": "It recognises the other person before disagreeing.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "\"No creo que sea necesario\" uses the subjunctive because...",
+     "o": [
+      "it expresses doubt about the idea",
+      "sea is a noun",
+      "it is a command",
+      "it is past"
+     ],
+     "a": 0,
+     "why": "Negated belief takes the subjunctive.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do speakers use signposts like \"en primer lugar\" and \"para terminar\"?",
+     "rubric": [
+      [
+       "guide",
+       "follow",
+       "structure",
+       "organis",
+       "clear",
+       "direct"
+      ],
+      [
+       "audience",
+       "listener",
+       "reader",
+       "sequence",
+       "order",
+       "understand"
+      ]
+     ],
+     "min": 1,
+     "model": "They guide the audience through the structure, so people can follow the argument.",
+     "why": "Discourse organisation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which fallacy is an attack on the person rather than the argument?",
+     "o": [
+      "ad hominem",
+      "generalisation",
+      "appeal to evidence",
+      "analogy"
+     ],
+     "a": 0,
+     "why": "An ad hominem attacks the speaker instead of answering their point.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Presenting and debating in Spanish",
+    "model": "Open with the topic, organise your talk with signposts and close with a summary. In a debate, say whether you are for or against, give reasons and answer others politely. Use the subjunctive to give doubtful opinions.",
+    "points": [
+     {
+      "k": [
+       "open",
+       "topic",
+       "hoy voy a",
+       "start"
+      ],
+      "ask": "How do I begin?"
+     },
+     {
+      "k": [
+       "a favor",
+       "en contra",
+       "reason",
+       "position"
+      ],
+      "ask": "How do I give my position?"
+     },
+     {
+      "k": [
+       "polite",
+       "entiendo",
+       "sin embargo",
+       "respect"
+      ],
+      "ask": "How do I answer others?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Debate",
+    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+   },
+   "sources": [
+    "Debate",
+    "Public speaking"
+   ]
+  }
+ ]
+}

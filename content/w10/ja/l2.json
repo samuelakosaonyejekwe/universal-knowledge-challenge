@@ -1,0 +1,1780 @@
+{
+ "world": 10,
+ "lang": "ja",
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Reading and writing fundamentals",
+   "icon": "✏️",
+   "hook": "Two tiny marks can turn か into が. What other small signs change how kana are read?",
+   "explain": [
+    "Kana can be changed by small marks. Dakuten (濁点, ゛) turns か ka into が ga, さ sa into ざ za, た ta into だ da and は ha into ば ba. Handakuten (゜) turns は into ぱ pa. Small ゃ, ゅ, ょ join with the kana before: きゃ kya, しゅ shu, ちょ cho.",
+    "A small っ (sokuon) doubles the next consonant and makes a short pause: きって (kitte, stamp) and きて (kite, come) are different words. A long vowel in hiragana usually adds あ, い, う, or お: おかあさん, おにいさん. In katakana, a dash ー lengthens the vowel: コーヒー.",
+    "Kanji are written stroke by stroke from top to bottom and from left to right. Beginners use ふりがな (furigana), small kana above or beside a kanji, to show the reading. Practise one small group at a time."
+   ],
+   "mnemonic": "Two dots change the sound; small っ makes a stop.",
+   "items": [
+    [
+     "dakuten (voicing mark)",
+     "濁点",
+     "dakuten"
+    ],
+    [
+     "small tsu (double consonant)",
+     "促音",
+     "sokuon"
+    ],
+    [
+     "contracted sounds (kya, shu...)",
+     "拗音",
+     "yōon"
+    ],
+    [
+     "furigana",
+     "ふりがな",
+     "furigana"
+    ],
+    [
+     "to write",
+     "書く",
+     "kaku"
+    ],
+    [
+     "to read",
+     "読む",
+     "yomu"
+    ],
+    [
+     "stroke order",
+     "筆順",
+     "hitsujun"
+    ],
+    [
+     "kanji",
+     "漢字",
+     "kanji"
+    ]
+   ],
+   "sentences": [
+    [
+     "I write kanji.",
+     [
+      "漢字",
+      "を",
+      "書きます"
+     ]
+    ],
+    [
+     "I read a book.",
+     [
+      "本",
+      "を",
+      "読みます"
+     ]
+    ],
+    [
+     "I add furigana.",
+     [
+      "ふりがな",
+      "を",
+      "つけます"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does ゛ do to か?",
+     "o": [
+      "It makes が",
+      "It makes ぱ",
+      "It makes っ",
+      "It makes き"
+     ],
+     "a": 0,
+     "why": "Dakuten voices the consonant, so か becomes が.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair differs only by a small っ?",
+     "o": [
+      "かさ and かさ",
+      "きって and きて",
+      "ねこ and こね",
+      "あめ and いぬ"
+     ],
+     "a": 1,
+     "why": "きって has a double consonant and きて does not.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "How do you write the long vowel in コーヒー?",
+     "o": [
+      "With あ",
+      "With ゛",
+      "With ー",
+      "With っ"
+     ],
+     "a": 2,
+     "why": "Katakana uses the dash ー.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do children's books add furigana?",
+     "o": [
+      "To make the book longer",
+      "To show the meaning in English",
+      "To show pitch accent",
+      "To show kanji readings"
+     ],
+     "a": 3,
+     "why": "It shows the reading of kanji they do not know yet.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How is the sound \"pa\" written?",
+     "o": [
+      "ぱ",
+      "ば",
+      "は",
+      "わ"
+     ],
+     "a": 0,
+     "why": "A handakuten ゜ on は makes ぱ.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading and writing kana marks",
+    "model": "Dakuten turns sounds into voiced ones, handakuten gives pa-row sounds, small ゃゅょ make contracted sounds and a small っ doubles the consonant. Furigana shows how to read kanji.",
+    "points": [
+     {
+      "k": [
+       "dakuten",
+       "voiced",
+       "゛"
+      ],
+      "ask": "What does dakuten do?"
+     },
+     {
+      "k": [
+       "っ",
+       "double",
+       "small tsu",
+       "pause"
+      ],
+      "ask": "What does small っ do?"
+     },
+     {
+      "k": [
+       "furigana",
+       "reading",
+       "kanji"
+      ],
+      "ask": "What is furigana?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Hiragana",
+    "prompt": "Find the dakuten chart and read three rows aloud."
+   },
+   "sources": [
+    "Hiragana",
+    "Furigana"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Basic sentence construction",
+   "icon": "🧱",
+   "hook": "English says \"I eat rice\". Japanese says \"I rice eat\". Build a sentence from the end.",
+   "explain": [
+    "A basic Japanese sentence is subject–object–verb, and the verb or です comes last. The particle は (read wa) marks the topic: 私は学生です (I am a student). 私 (watashi) is I, 学生 (gakusei) is student, and です is the polite \"to be\".",
+    "To say \"is not\", use じゃありません: 私は医者じゃありません (I am not a doctor). Add か at the end for a question: 田中さんは先生ですか (Is Mr Tanaka a teacher?). Japanese does not use a question mark in traditional writing, but it can be used in modern writing.",
+    "Word order is flexible because particles show roles. Subjects are often left out when clear: 学生です can mean I am a student. This is called omission, and it is natural in Japanese."
+   ],
+   "mnemonic": "Topic は, then the end: です.",
+   "items": [
+    [
+     "I",
+     "私",
+     "watashi"
+    ],
+    [
+     "student",
+     "学生",
+     "gakusei"
+    ],
+    [
+     "teacher",
+     "先生",
+     "sensei"
+    ],
+    [
+     "friend",
+     "友達",
+     "tomodachi"
+    ],
+    [
+     "Japanese person",
+     "日本人",
+     "Nihonjin"
+    ],
+    [
+     "doctor",
+     "医者",
+     "isha"
+    ],
+    [
+     "office worker",
+     "会社員",
+     "kaishain"
+    ],
+    [
+     "school",
+     "学校",
+     "gakkō"
+    ]
+   ],
+   "sentences": [
+    [
+     "I am a student.",
+     [
+      "私",
+      "は",
+      "学生",
+      "です"
+     ]
+    ],
+    [
+     "Mr Tanaka is a teacher.",
+     [
+      "田中",
+      "さん",
+      "は",
+      "先生",
+      "です"
+     ]
+    ],
+    [
+     "I am not a doctor.",
+     [
+      "私",
+      "は",
+      "医者",
+      "じゃ",
+      "ありません"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Where does です go?",
+     "o": [
+      "At the start",
+      "At the end",
+      "After は only",
+      "Before the topic"
+     ],
+     "a": 1,
+     "why": "です comes at the end of the sentence.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How do you ask \"Is she a student?\"",
+     "o": [
+      "彼女は学生です",
+      "か彼女は学生です",
+      "彼女は学生ですか",
+      "彼女か学生です"
+     ],
+     "a": 2,
+     "why": "か at the end makes a question.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does the particle は mark?",
+     "o": [
+      "The object",
+      "The place",
+      "The time",
+      "The topic"
+     ],
+     "a": 3,
+     "why": "は marks the topic of the sentence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can 学生です be a complete sentence?",
+     "o": [
+      "The subject can be omitted",
+      "It is ungrammatical",
+      "It needs a verb",
+      "It is a question"
+     ],
+     "a": 0,
+     "why": "The subject is often omitted when it is clear from context.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the negative of 医者です?",
+     "o": [
+      "医者ですない",
+      "医者じゃありません",
+      "医者ません",
+      "医者はない です"
+     ],
+     "a": 1,
+     "why": "じゃありません is the polite negative.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basic Japanese sentences",
+    "model": "The basic order is subject, object, verb. The topic is marked with は, and です or a verb comes last. Add か to ask a question, and use じゃありません for not.",
+    "points": [
+     {
+      "k": [
+       "verb",
+       "last",
+       "end"
+      ],
+      "ask": "Where does the verb go?"
+     },
+     {
+      "k": [
+       "は",
+       "topic"
+      ],
+      "ask": "What does は do?"
+     },
+     {
+      "k": [
+       "か",
+       "question"
+      ],
+      "ask": "How do I ask a question?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese grammar",
+    "prompt": "Find the section on word order and compare with English."
+   },
+   "sources": [
+    "Japanese grammar",
+    "Japanese language"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Common verbs",
+   "icon": "🚶",
+   "hook": "How do you say \"I go to school\" and \"I bought a book\"? Verbs change their endings, not their pronouns.",
+   "explain": [
+    "Dictionary forms: 行く (iku, go), 来る (kuru, come), 買う (kau, buy), する (suru, do), 会う (au, meet), 住む (sumu, live), 読む (yomu, read), 書く (kaku, write). The polite present form ends in ます: 行きます, 来ます, 買います.",
+    "The polite past ends in ました: 本を買いました (I bought a book). The negative past is ませんでした. A direction takes へ or に: 学校へ行きます (I go to school). A progressive state uses て-form + います: 東京に住んでいます (I live in Tokyo).",
+    "There are three groups of verbs: ru-verbs (食べる → 食べます), u-verbs (行く → 行きます) and irregular verbs する and 来る. Learn the group first, because every other form depends on it."
+   ],
+   "mnemonic": "Group first, then ending: ます, ました, て.",
+   "items": [
+    [
+     "go",
+     "行く",
+     "iku"
+    ],
+    [
+     "come",
+     "来る",
+     "kuru"
+    ],
+    [
+     "buy",
+     "買う",
+     "kau"
+    ],
+    [
+     "do",
+     "する",
+     "suru"
+    ],
+    [
+     "meet",
+     "会う",
+     "au"
+    ],
+    [
+     "live",
+     "住む",
+     "sumu"
+    ],
+    [
+     "read",
+     "読む",
+     "yomu"
+    ],
+    [
+     "write",
+     "書く",
+     "kaku"
+    ]
+   ],
+   "sentences": [
+    [
+     "I go to school.",
+     [
+      "私",
+      "は",
+      "学校",
+      "へ",
+      "行きます"
+     ]
+    ],
+    [
+     "I bought a book.",
+     [
+      "本",
+      "を",
+      "買いました"
+     ]
+    ],
+    [
+     "I live in Tokyo.",
+     [
+      "東京",
+      "に",
+      "住んで",
+      "います"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is the polite past of 買う?",
+     "o": [
+      "買ました",
+      "買うました",
+      "買いました",
+      "買ます"
+     ],
+     "a": 2,
+     "why": "買います becomes 買いました in the past.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which verb is irregular?",
+     "o": [
+      "読む",
+      "買う",
+      "書く",
+      "する"
+     ],
+     "a": 3,
+     "why": "する and 来る are irregular.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does 東京に住んでいます describe?",
+     "o": [
+      "A continuing state: I live in Tokyo",
+      "A future plan",
+      "A past event",
+      "A question"
+     ],
+     "a": 0,
+     "why": "て-form plus います describes a continuing state.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which particle marks the direction in 学校へ行きます?",
+     "o": [
+      "を",
+      "へ",
+      "で",
+      "は"
+     ],
+     "a": 1,
+     "why": "へ (read e) marks direction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must you know a verb's group?",
+     "o": [
+      "Groups are for kanji",
+      "Groups change meaning",
+      "Groups conjugate differently",
+      "Groups are tones"
+     ],
+     "a": 2,
+     "why": "Each group conjugates differently.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Common Japanese verbs",
+    "model": "Polite verbs end in ます. The past is ました. Direction uses へ or に. て-form + います shows a continuing state. Verbs belong to three groups.",
+    "points": [
+     {
+      "k": [
+       "ます",
+       "polite"
+      ],
+      "ask": "What is the polite ending?"
+     },
+     {
+      "k": [
+       "ました",
+       "past"
+      ],
+      "ask": "How do I make the past?"
+     },
+     {
+      "k": [
+       "group",
+       "ru",
+       "u",
+       "irregular"
+      ],
+      "ask": "Which groups exist?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese verb conjugation",
+    "prompt": "Find the three verb groups and give one example for each."
+   },
+   "sources": [
+    "Japanese verb conjugation",
+    "Japanese grammar"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Nouns, pronouns and modifiers",
+   "icon": "🐕",
+   "hook": "What is the difference between 大きい犬 and きれいな花? Japanese adjectives come in two types.",
+   "explain": [
+    "Japanese has two main adjective types. い-adjectives end in い: 大きい (ōkii, big), 小さい (chiisai, small). な-adjectives need な before a noun: きれいな花 (a beautiful flower), 静かな町 (a quiet town). Both go before the noun.",
+    "Pointing words work with nouns: この (this), その (that), あの (that over there): この本 (this book). The particle の links nouns: 私の本 (my book), 友達の犬 (a friend's dog). 何 (nani) means what and 誰 (dare) means who: 誰の本ですか (whose book is it?).",
+    "Japanese nouns have no plural or article, so 犬 can mean a dog, dogs or the dog. Context makes the meaning clear. Pronouns like あなた are often avoided; people use the name instead."
+   ],
+   "mnemonic": "い-adjectives keep い; な-adjectives take な.",
+   "items": [
+    [
+     "my",
+     "私の",
+     "watashi no"
+    ],
+    [
+     "your",
+     "あなたの",
+     "anata no"
+    ],
+    [
+     "this (before a noun)",
+     "この",
+     "kono"
+    ],
+    [
+     "that (before a noun)",
+     "その",
+     "sono"
+    ],
+    [
+     "that over there (before a noun)",
+     "あの",
+     "ano"
+    ],
+    [
+     "big",
+     "大きい",
+     "ōkii"
+    ],
+    [
+     "small",
+     "小さい",
+     "chiisai"
+    ],
+    [
+     "pretty, clean",
+     "きれい",
+     "kirei"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is my book.",
+     [
+      "これ",
+      "は",
+      "私",
+      "の",
+      "本",
+      "です"
+     ]
+    ],
+    [
+     "That big dog belongs to a friend.",
+     [
+      "あの",
+      "大きい",
+      "犬",
+      "は",
+      "友達",
+      "の",
+      "です"
+     ]
+    ],
+    [
+     "It is a beautiful flower.",
+     [
+      "きれいな",
+      "花",
+      "です"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is correct?",
+     "o": [
+      "きれい花",
+      "きれいの花",
+      "きれいい花",
+      "きれいな花"
+     ],
+     "a": 3,
+     "why": "な-adjectives need な before a noun.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does 誰の本ですか ask?",
+     "o": [
+      "Whose book is it?",
+      "What book is it?",
+      "Where is the book?",
+      "Which book?"
+     ],
+     "a": 0,
+     "why": "誰の means whose.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is 犬 not marked as plural?",
+     "o": [
+      "Plural is a tone",
+      "Nouns have no plural form",
+      "Plural is in kanji",
+      "It is impossible to count dogs"
+     ],
+     "a": 1,
+     "why": "Japanese nouns usually have no plural.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair are both い-adjectives?",
+     "o": [
+      "きれい and 静か",
+      "静か and 有名",
+      "大きい and 小さい",
+      "きれい and 大きい"
+     ],
+     "a": 2,
+     "why": "大きい and 小さい both end in い.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A learner says この あの 本. What is the problem?",
+     "o": [
+      "Nothing",
+      "The noun is plural",
+      "This needs た",
+      "Two pointing words clash"
+     ],
+     "a": 3,
+     "why": "Two different pointing words cannot be used together before one noun.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Nouns and modifiers in Japanese",
+    "model": "Adjectives come before nouns: い-adjectives end in い and な-adjectives take な. の links nouns for belonging. Pointing words kono, sono and ano go before nouns.",
+    "points": [
+     {
+      "k": [
+       "い",
+       "な",
+       "adjective"
+      ],
+      "ask": "What are the two adjective types?"
+     },
+     {
+      "k": [
+       "の",
+       "belong",
+       "my"
+      ],
+      "ask": "What does の do?"
+     },
+     {
+      "k": [
+       "kono",
+       "この",
+       "before",
+       "noun"
+      ],
+      "ask": "Where do kono, sono, ano go?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese adjectives",
+    "prompt": "Find the two adjective types and give two examples of each."
+   },
+   "sources": [
+    "Japanese adjectives",
+    "Japanese grammar"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Questions and responses",
+   "icon": "❓",
+   "hook": "Add one tiny word at the end and a statement becomes a question. Which word?",
+   "explain": [
+    "The particle か (ka) at the end makes a polite question: これは何ですか (What is this?). Question words include 何 (nani, what), 誰 (dare, who), どこ (doko, where), いつ (itsu, when), いくら (ikura, how much), なぜ (naze, why) and どれ (dore, which one).",
+    "The question word stays where the answer would be. A natural answer repeats the key words: トイレはどこですか — あちらです. For yes or no, say はい, そうです (yes, that is so) or いいえ, ちがいます (no, it is different). The word いいえ is a softer \"no\" than English.",
+    "In casual speech, か is dropped and the voice goes up: 食べる？ Adding ね at the end seeks agreement (いい天気ですね, nice weather, isn't it), and よ gives information (行きますよ, I'm going, you know)."
+   ],
+   "mnemonic": "End with か, and the question is born.",
+   "items": [
+    [
+     "question particle",
+     "か",
+     "ka"
+    ],
+    [
+     "what",
+     "何",
+     "nani"
+    ],
+    [
+     "who",
+     "誰",
+     "dare"
+    ],
+    [
+     "where",
+     "どこ",
+     "doko"
+    ],
+    [
+     "when",
+     "いつ",
+     "itsu"
+    ],
+    [
+     "how much",
+     "いくら",
+     "ikura"
+    ],
+    [
+     "why",
+     "なぜ",
+     "naze"
+    ],
+    [
+     "which one",
+     "どれ",
+     "dore"
+    ]
+   ],
+   "sentences": [
+    [
+     "What is this?",
+     [
+      "これ",
+      "は",
+      "何",
+      "です",
+      "か"
+     ]
+    ],
+    [
+     "Where is the toilet?",
+     [
+      "トイレ",
+      "は",
+      "どこ",
+      "です",
+      "か"
+     ]
+    ],
+    [
+     "When is your birthday?",
+     [
+      "誕生日",
+      "は",
+      "いつ",
+      "です",
+      "か"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which word makes a polite question?",
+     "o": [
+      "か",
+      "よ",
+      "ね",
+      "を"
+     ],
+     "a": 0,
+     "why": "か at the end of a sentence makes a question.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which question asks about price?",
+     "o": [
+      "どこですか",
+      "いくらですか",
+      "だれですか",
+      "いつですか"
+     ],
+     "a": 1,
+     "why": "いくら asks how much.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does ね add at the end of a sentence?",
+     "o": [
+      "It asks a price",
+      "It makes a question",
+      "It seeks agreement",
+      "It marks the past"
+     ],
+     "a": 2,
+     "why": "ね seeks agreement or confirmation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How would you politely answer no to 学生ですか？",
+     "o": [
+      "はい、そうです",
+      "もういちど",
+      "ありがとう",
+      "いいえ、ちがいます"
+     ],
+     "a": 3,
+     "why": "いいえ with ちがいます is a polite no.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the question word stay in the same place as the answer?",
+     "o": [
+      "No movement is needed",
+      "They move to the front",
+      "They go last only",
+      "They are deleted"
+     ],
+     "a": 0,
+     "why": "Japanese does not move question words to the front.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Questions in Japanese",
+    "model": "Add か to the end of a sentence to ask a polite question. Question words like 何, どこ and いつ stay in place. Ending particles ね and よ add feeling.",
+    "points": [
+     {
+      "k": [
+       "か",
+       "ka",
+       "end"
+      ],
+      "ask": "How do I ask a question?"
+     },
+     {
+      "k": [
+       "何",
+       "どこ",
+       "いつ",
+       "question word"
+      ],
+      "ask": "Which question words are there?"
+     },
+     {
+      "k": [
+       "ね",
+       "よ",
+       "agree",
+       "information"
+      ],
+      "ask": "What do ね and よ do?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese sentence-ending particles",
+    "prompt": "Find the particles ね and よ and compare their uses."
+   },
+   "sources": [
+    "Japanese sentence-ending particles",
+    "Japanese grammar"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Describing people and places",
+   "icon": "🏙️",
+   "hook": "How would you describe your friend, your town and your park? Adjectives help paint the picture.",
+   "explain": [
+    "い-adjectives: 背が高い (se ga takai, tall), 優しい (yasashii, kind), 新しい (atarashii, new), 古い (furui, old), 遠い (tōi, far). な-adjectives: 親切 (shinsetsu, kind), 静か (shizuka, quiet), にぎやか (nigiyaka, lively). Use です to be polite.",
+    "To connect adjectives, an い-adjective changes to くて: 広くてきれいです (wide and beautiful). A な-adjective uses で: 静かで安全です (quiet and safe). To say \"not\", い-adjectives use くないです: 高くないです (not tall or expensive).",
+    "To describe a person's feature, Japanese often says 田中さんは背が高いです (as for Mr Tanaka, height is high). The structure \"topic は feature が adjective\" is very common."
+   ],
+   "mnemonic": "い to くて, な to で: link adjectives.",
+   "items": [
+    [
+     "tall (of a person)",
+     "背が高い",
+     "se ga takai"
+    ],
+    [
+     "kind, gentle",
+     "優しい",
+     "yasashii"
+    ],
+    [
+     "new",
+     "新しい",
+     "atarashii"
+    ],
+    [
+     "old (thing)",
+     "古い",
+     "furui"
+    ],
+    [
+     "far",
+     "遠い",
+     "tōi"
+    ],
+    [
+     "quiet",
+     "静か",
+     "shizuka"
+    ],
+    [
+     "lively",
+     "にぎやか",
+     "nigiyaka"
+    ],
+    [
+     "kind, helpful",
+     "親切",
+     "shinsetsu"
+    ]
+   ],
+   "sentences": [
+    [
+     "Mr Tanaka is tall.",
+     [
+      "田中",
+      "さん",
+      "は",
+      "背",
+      "が",
+      "高い",
+      "です"
+     ]
+    ],
+    [
+     "My town is quiet.",
+     [
+      "私",
+      "の",
+      "町",
+      "は",
+      "静か",
+      "です"
+     ]
+    ],
+    [
+     "This park is wide and beautiful.",
+     [
+      "この",
+      "公園",
+      "は",
+      "広くて",
+      "きれい",
+      "です"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you join 広い and きれい?",
+     "o": [
+      "広いでときれいです",
+      "広くてきれいです",
+      "広くきれいですです",
+      "広いと きれくて"
+     ],
+     "a": 1,
+     "why": "The い of 広い changes to くて.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which word means \"kind\" and is a な-adjective?",
+     "o": [
+      "優しい",
+      "新しい",
+      "親切",
+      "古い"
+     ],
+     "a": 2,
+     "why": "親切 is a な-adjective, so it takes な before a noun.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is the negative of 高いです?",
+     "o": [
+      "高いません",
+      "高じゃありません",
+      "高いではない",
+      "高くないです"
+     ],
+     "a": 3,
+     "why": "い-adjectives use くないです.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does 田中さんは背が高いです literally say?",
+     "o": [
+      "As for Tanaka, height is high",
+      "Tanaka is a tower",
+      "Tanaka is rich",
+      "Tanaka runs"
+     ],
+     "a": 0,
+     "why": "It says as for Mr Tanaka, height is high.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase uses a な-adjective correctly?",
+     "o": [
+      "静かい町",
+      "静かな町",
+      "静かの町",
+      "静か町い"
+     ],
+     "a": 1,
+     "why": "静か takes な before a noun and で when joining.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Describing in Japanese",
+    "model": "い-adjectives change to くて to link, and な-adjectives take で. The negative of い-adjectives is くない. To describe a person, say topic は feature が adjective.",
+    "points": [
+     {
+      "k": [
+       "くて",
+       "link",
+       "join"
+      ],
+      "ask": "How do I link adjectives?"
+     },
+     {
+      "k": [
+       "くない",
+       "negative",
+       "not"
+      ],
+      "ask": "How do I make the negative?"
+     },
+     {
+      "k": [
+       "が",
+       "feature",
+       "height"
+      ],
+      "ask": "How do I describe a feature?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese adjectives",
+    "prompt": "Write three sentences describing a place, using both adjective types."
+   },
+   "sources": [
+    "Japanese adjectives",
+    "Japanese language"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Time, dates and daily routines",
+   "icon": "📅",
+   "hook": "What day is today? In Japanese, the date goes from the biggest unit to the smallest: year, month, day.",
+   "explain": [
+    "Dates are written 年 (year), 月 (month) and 日 (day) in that order: 2026年10月12日. Days of the week are named after the sun, moon and five elements: 月曜日 (getsuyōbi, Monday), 火曜日, 水曜日, 木曜日, 金曜日, 土曜日 and 日曜日 (Sunday). 今日 (kyō) is today, 明日 (ashita) tomorrow and 昨日 (kinō) yesterday.",
+    "Time is shown with 時 (ji): 七時 (shichiji, seven o'clock). The particle に marks a specific time: 七時に起きます (I get up at seven). With words like 今日 and 明日, no に is needed: 明日学校へ行きます. 毎朝 (maiasa) means every morning.",
+    "Daily routine verbs are 起きる (okiru, get up), 寝る (neru, go to sleep), 食べる and 行く. Japanese school days often begin in the morning and many students clean their classroom, a part of the daily routine."
+   ],
+   "mnemonic": "Big to small: year, month, day, hour.",
+   "items": [
+    [
+     "today",
+     "今日",
+     "kyō"
+    ],
+    [
+     "tomorrow",
+     "明日",
+     "ashita"
+    ],
+    [
+     "yesterday",
+     "昨日",
+     "kinō"
+    ],
+    [
+     "Monday",
+     "月曜日",
+     "getsuyōbi"
+    ],
+    [
+     "morning",
+     "朝",
+     "asa"
+    ],
+    [
+     "seven o'clock",
+     "七時",
+     "shichiji"
+    ],
+    [
+     "get up",
+     "起きる",
+     "okiru"
+    ],
+    [
+     "go to sleep",
+     "寝る",
+     "neru"
+    ]
+   ],
+   "sentences": [
+    [
+     "I get up at seven every morning.",
+     [
+      "私",
+      "は",
+      "毎朝",
+      "七時",
+      "に",
+      "起きます"
+     ]
+    ],
+    [
+     "Today is Wednesday.",
+     [
+      "今日",
+      "は",
+      "水曜日",
+      "です"
+     ]
+    ],
+    [
+     "I go to school tomorrow.",
+     [
+      "明日",
+      "学校",
+      "へ",
+      "行きます"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you write 12 October 2026 in Japanese order?",
+     "o": [
+      "12日10月2026年",
+      "10月12日2026年",
+      "2026年10月12日",
+      "2026日10月12年"
+     ],
+     "a": 2,
+     "why": "The order is year, month, day.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which particle marks a clock time?",
+     "o": [
+      "を",
+      "で",
+      "が",
+      "に"
+     ],
+     "a": 3,
+     "why": "に marks a specific time.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which sentence is correct?",
+     "o": [
+      "七時に起きます",
+      "七時を起きます",
+      "七時で起きます",
+      "七時が起きます"
+     ],
+     "a": 0,
+     "why": "Clock times take に.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is there no に in 明日学校へ行きます?",
+     "o": [
+      "It is a mistake",
+      "Relative time words usually need no に",
+      "に is only for places",
+      "に is for objects"
+     ],
+     "a": 1,
+     "why": "Relative time words such as 明日 do not usually need に.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does 月曜日 literally refer to?",
+     "o": [
+      "Fire day",
+      "Sun day",
+      "Moon day",
+      "Earth day"
+     ],
+     "a": 2,
+     "why": "月 is moon, so it is moon day, Monday.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Time in Japanese",
+    "model": "Dates go year, month, day. Days of the week are named after the moon, fire, water, wood, metal, earth and sun. Use に for clock times: 七時に起きます.",
+    "points": [
+     {
+      "k": [
+       "year",
+       "month",
+       "day",
+       "order",
+       "big"
+      ],
+      "ask": "In what order is a date written?"
+     },
+     {
+      "k": [
+       "に",
+       "clock",
+       "time"
+      ],
+      "ask": "Which particle goes with a time?"
+     },
+     {
+      "k": [
+       "moon",
+       "sun",
+       "weekday",
+       "getsuyōbi"
+      ],
+      "ask": "How are weekdays named?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese calendar",
+    "prompt": "Find how the days of the week are named and match each to its element."
+   },
+   "sources": [
+    "Japanese calendar",
+    "Japanese language"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Food and shopping",
+   "icon": "🍙",
+   "hook": "At a shop, how do you ask for the price and ask for a cup of tea politely?",
+   "explain": [
+    "Foods: ご飯 (gohan, rice or meal), パン (pan, bread), 魚 (sakana, fish), お茶 (ocha, tea) and 果物 (kudamono, fruit). In Japanese, お is added to some words to be polite, as in お茶. Use を ください to ask: お茶をください (please give me tea).",
+    "Money is counted in 円 (en, yen). To ask a price, say いくらですか. Adjectives for price are 高い (takai, expensive) and 安い (yasui, cheap). 店 (mise) is shop. Say ちょっと高いですね (it is a bit expensive, isn't it) to react politely.",
+    "Before eating, Japanese people say いただきます, and after eating, ごちそうさまでした. These are not simple translations of \"bon appétit\" but expressions of thanks for the meal. Shops often do not expect tipping."
+   ],
+   "mnemonic": "Ask いくらですか, ask nicely を ください.",
+   "items": [
+    [
+     "rice, meal",
+     "ご飯",
+     "gohan"
+    ],
+    [
+     "bread",
+     "パン",
+     "pan"
+    ],
+    [
+     "fish",
+     "魚",
+     "sakana"
+    ],
+    [
+     "tea",
+     "お茶",
+     "ocha"
+    ],
+    [
+     "fruit",
+     "果物",
+     "kudamono"
+    ],
+    [
+     "shop",
+     "店",
+     "mise"
+    ],
+    [
+     "expensive",
+     "高い",
+     "takai"
+    ],
+    [
+     "cheap",
+     "安い",
+     "yasui"
+    ]
+   ],
+   "sentences": [
+    [
+     "How much is this?",
+     [
+      "これ",
+      "は",
+      "いくら",
+      "です",
+      "か"
+     ]
+    ],
+    [
+     "Tea, please.",
+     [
+      "お茶",
+      "を",
+      "ください"
+     ]
+    ],
+    [
+     "It is a bit expensive, isn't it?",
+     [
+      "ちょっと",
+      "高い",
+      "です",
+      "ね"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase asks for tea politely?",
+     "o": [
+      "お茶です",
+      "お茶をいくら",
+      "お茶ですか",
+      "お茶をください"
+     ],
+     "a": 3,
+     "why": "を ください asks for something politely.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do people say before a meal?",
+     "o": [
+      "いただきます",
+      "さようなら",
+      "すみません",
+      "おはよう"
+     ],
+     "a": 0,
+     "why": "いただきます expresses thanks before eating.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which question asks about price?",
+     "o": [
+      "どこですか",
+      "いくらですか",
+      "だれですか",
+      "いつですか"
+     ],
+     "a": 1,
+     "why": "いくら means how much.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is ごちそうさまでした for?",
+     "o": [
+      "A greeting at night",
+      "A request for the bill",
+      "Thanks after a meal",
+      "An order"
+     ],
+     "a": 2,
+     "why": "It thanks the cook or host after a meal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is お added to お茶?",
+     "o": [
+      "It means \"big\"",
+      "It makes plural",
+      "It marks the past",
+      "It adds politeness"
+     ],
+     "a": 3,
+     "why": "お makes some words more polite or refined.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Food and shopping in Japanese",
+    "model": "Ask the price with いくらですか and ask for things with を ください. 高い means expensive and 安い means cheap. Say いただきます before a meal and ごちそうさまでした after.",
+    "points": [
+     {
+      "k": [
+       "いくら",
+       "price",
+       "how much"
+      ],
+      "ask": "How do I ask the price?"
+     },
+     {
+      "k": [
+       "ください",
+       "please",
+       "request"
+      ],
+      "ask": "How do I ask for something?"
+     },
+     {
+      "k": [
+       "いただきます",
+       "before",
+       "meal"
+      ],
+      "ask": "What do I say before eating?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese cuisine",
+    "prompt": "Find how meals are served and name two traditional dishes."
+   },
+   "sources": [
+    "Japanese cuisine",
+    "Itadakimasu"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Everyday conversations",
+   "icon": "💬",
+   "hook": "You see a friend after a long time. What do you say, and how do you suggest going out together?",
+   "explain": [
+    "A short chat: A says お久しぶりです (ohisashiburi desu, long time no see). B says お元気ですか (ogenki desu ka, how are you?). A says はい、元気です (yes, I am well), then asks あなたは？ or ○○さんは？.",
+    "To suggest, use the -ましょう form: 一緒に行きましょう (let's go together). To react, say いいですね (that sounds good) or ぜひ (by all means). To leave, say またね (see you; casual), 気をつけて (take care) or お疲れ様です (thanks for your hard work).",
+    "In Japanese conversation, people listen and give short signals (あいづち). Agreeing too strongly can sound pushy, so people often soften: ちょっと…, which can mean a polite refusal."
+   ],
+   "mnemonic": "Greet, ask, suggest: お久しぶり, お元気, 行きましょう.",
+   "items": [
+    [
+     "long time no see",
+     "お久しぶりです",
+     "ohisashiburi desu"
+    ],
+    [
+     "How are you?",
+     "お元気ですか",
+     "ogenki desu ka"
+    ],
+    [
+     "I am well.",
+     "元気です",
+     "genki desu"
+    ],
+    [
+     "Let's go together.",
+     "一緒に行きましょう",
+     "issho ni ikimashō"
+    ],
+    [
+     "That sounds good.",
+     "いいですね",
+     "ii desu ne"
+    ],
+    [
+     "Take care.",
+     "気をつけて",
+     "ki o tsukete"
+    ],
+    [
+     "See you (casual)",
+     "またね",
+     "mata ne"
+    ],
+    [
+     "thanks for your hard work",
+     "お疲れ様です",
+     "otsukaresama desu"
+    ]
+   ],
+   "sentences": [
+    [
+     "Long time no see, how are you?",
+     [
+      "お久しぶり",
+      "です",
+      "お",
+      "元気",
+      "です",
+      "か"
+     ]
+    ],
+    [
+     "Let us go together.",
+     [
+      "一緒",
+      "に",
+      "行きましょう"
+     ]
+    ],
+    [
+     "That sounds good.",
+     [
+      "いい",
+      "です",
+      "ね"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which ending suggests \"Let's…\"?",
+     "o": [
+      "行きましょう",
+      "行きます",
+      "行きません",
+      "行きました"
+     ],
+     "a": 0,
+     "why": "-ましょう makes a suggestion.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase is said to someone leaving, wishing safety?",
+     "o": [
+      "いただきます",
+      "気をつけて",
+      "はじめまして",
+      "お久しぶり"
+     ],
+     "a": 1,
+     "why": "気をつけて means take care.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A friend answers 週末ですか？ちょっと… What might this mean?",
+     "o": [
+      "A strong yes",
+      "A price",
+      "A polite refusal",
+      "A joke"
+     ],
+     "a": 2,
+     "why": "ちょっと… often hints at a polite refusal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do speakers use あいづち?",
+     "o": [
+      "To interrupt",
+      "To ask a price",
+      "To end a call",
+      "To show they are listening"
+     ],
+     "a": 3,
+     "why": "They show you are listening and engaged.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair is a suitable opening exchange?",
+     "o": [
+      "お久しぶりです / お元気ですか",
+      "いただきます / ごちそうさま",
+      "またね / はじめまして",
+      "すみません / どうぞ"
+     ],
+     "a": 0,
+     "why": "A greeting and a question about health fit a meeting after a long time.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "A Japanese conversation",
+    "model": "You can greet a friend with お久しぶりです, ask お元気ですか and suggest an outing with 行きましょう. A soft ちょっと… can be a polite no.",
+    "points": [
+     {
+      "k": [
+       "お久しぶり",
+       "long time",
+       "greet"
+      ],
+      "ask": "How do I greet someone I have not seen for a while?"
+     },
+     {
+      "k": [
+       "お元気",
+       "how are you"
+      ],
+      "ask": "How do I ask how they are?"
+     },
+     {
+      "k": [
+       "ましょう",
+       "suggest",
+       "let"
+      ],
+      "ask": "How do I suggest something?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese conversation",
+    "prompt": "Listen to a short dialogue and note two aizuchi."
+   },
+   "sources": [
+    "Aizuchi",
+    "Japanese honorifics"
+   ]
+  }
+ ]
+}

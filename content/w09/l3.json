@@ -1,0 +1,2684 @@
+{
+ "world": 9,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Algebraic expressions and identities",
+   "icon": "🧩",
+   "hook": "Without a calculator, can you work out 51² − 49² quickly? There is a trick that works for any two squares.",
+   "explain": [
+    "An algebraic expression combines numbers, letters and operations. We can expand brackets using the distributive law: a(b + c) = ab + ac. So 3(x + 4) = 3x + 12. We can also factorise, which means writing an expression as a product, reversing expansion: 3x + 12 = 3(x + 4).",
+    "An identity is true for every value of the letters. Three important ones are (a + b)² = a² + 2ab + b², (a − b)² = a² − 2ab + b² and a² − b² = (a − b)(a + b). Notice that (a + b)² is not a² + b²: the middle term 2ab comes from the two cross-products.",
+    "Identities give shortcuts. 51² − 49² = (51 − 49)(51 + 49) = 2 × 100 = 200. To expand (x + 3)(x + 2) multiply each term of the first bracket by each term of the second: x² + 2x + 3x + 6 = x² + 5x + 6."
+   ],
+   "example": {
+    "q": "Expand and simplify (x + 3)(x + 2).",
+    "steps": [
+     "Multiply x by each term in the second bracket: x² + 2x.",
+     "Multiply 3 by each term: 3x + 6.",
+     "Add and collect like terms: x² + 2x + 3x + 6 = x² + 5x + 6.",
+     "Check with x = 1: (4)(3) = 12 and 1 + 5 + 6 = 12."
+    ],
+    "a": "x² + 5x + 6"
+   },
+   "analogies": {
+    "home": "A rectangular floor (x + 3) m by (x + 2) m is split into four patches: x², 2x, 3x and 6.",
+    "farm": "A field is 50 m by 40 m. Split it as (50 + 0)(40 + 0) or use (45 + 5)(45 − 5) = 2025 − 25 = 2000.",
+    "sport": "Mental arithmetic: 19 × 21 = (20 − 1)(20 + 1) = 400 − 1 = 399.",
+    "tech": "A spreadsheet formula can be written two ways, 3(x + 4) or 3x + 12, and both must give the same result."
+   },
+   "mnemonic": "FOIL for the brackets: First, Outside, Inside, Last. But understand it as a box of four areas.",
+   "terms": [
+    [
+     "Expand",
+     "Multiply out brackets."
+    ],
+    [
+     "Factorise",
+     "Write as a product of simpler parts."
+    ],
+    [
+     "Identity",
+     "An equation true for all values of the letters."
+    ],
+    [
+     "Term",
+     "A part of an expression separated by + or −."
+    ]
+   ],
+   "misc": {
+    "wrong": "(a + b)² = a² + b².",
+    "right": "(a + b)² = a² + 2ab + b². Check with a = 1, b = 2: 9 is not 1 + 4."
+   },
+   "trip": {
+    "wiki": "Algebraic identity",
+    "prompt": "Find a geometric picture of (a + b)² as a square split into four pieces."
+   },
+   "sources": [
+    "Distributive property",
+    "Difference of two squares",
+    "Binomial theorem"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Expand 3(x + 4).",
+     "o": [
+      "3x + 4",
+      "3x + 12",
+      "x + 12",
+      "3x + 7"
+     ],
+     "a": 1,
+     "why": "Multiply both terms by 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Simplify 3x + 2 − x + 5.",
+     "o": [
+      "2x + 7",
+      "4x + 7",
+      "2x + 3",
+      "3x + 7"
+     ],
+     "a": 0,
+     "why": "3x − x = 2x and 2 + 5 = 7.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Factorise 6a + 9.",
+     "o": [
+      "6(a + 9)",
+      "9(a + 1)",
+      "3(2a + 9)",
+      "3(2a + 3)"
+     ],
+     "a": 3,
+     "why": "The highest common factor of 6 and 9 is 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the correct expansion of (a + b)²?",
+     "o": [
+      "a² + b²",
+      "a² + ab + b²",
+      "a² + 2ab + b²",
+      "2a + 2b"
+     ],
+     "a": 2,
+     "why": "The two cross products ab and ba make 2ab.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Factorise x² − 9.",
+     "o": [
+      "(x − 3)²",
+      "(x − 3)(x + 3)",
+      "(x − 9)(x + 1)",
+      "(x + 3)²"
+     ],
+     "a": 1,
+     "why": "Difference of two squares: a² − b² = (a − b)(a + b).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Ravi says (x + 5)² = x² + 25. Which value of x shows he is wrong?",
+     "o": [
+      "x = 1",
+      "No value, he is right",
+      "x = 0",
+      "Only x = 5"
+     ],
+     "a": 0,
+     "why": "At x = 1: (6)² = 36 but 1 + 25 = 26. At x = 0 they agree, so one value that fails is needed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Use a² − b² = (a − b)(a + b) to find 51² − 49².",
+     "a": 200,
+     "tol": 0,
+     "why": "(51 − 49)(51 + 49) = 2 × 100 = 200.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the value of x² + 5x + 6 when x = 4.",
+     "a": 42,
+     "tol": 0,
+     "why": "16 + 20 + 6 = 42. Also (4 + 3)(4 + 2) = 42.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why (x + 3)(x + 2) = x² + 5x + 6 using a rectangle of area.",
+     "rubric": [
+      [
+       "rectangle",
+       "area",
+       "box",
+       "grid",
+       "four",
+       "parts",
+       "pieces"
+      ],
+      [
+       "x²",
+       "x by x",
+       "square"
+      ],
+      [
+       "3x",
+       "2x",
+       "6",
+       "add",
+       "sum",
+       "together",
+       "total"
+      ]
+     ],
+     "min": 2,
+     "model": "Draw a rectangle (x + 3) by (x + 2) and split it into four parts: x² , 2x, 3x and 6. The total area is x² + 5x + 6.",
+     "why": "Expanding brackets is adding the areas of the four pieces.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each expression to an equal one.",
+     "pairs": [
+      [
+       "2(x + 5)",
+       "2x + 10"
+      ],
+      [
+       "x² − 25",
+       "(x − 5)(x + 5)"
+      ],
+      [
+       "(x + 1)²",
+       "x² + 2x + 1"
+      ],
+      [
+       "4x + 8",
+       "4(x + 2)"
+      ]
+     ],
+     "why": "Expanding and factorising are opposite processes.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is 2(x + 3) = 2x + 3 an identity?",
+     "o": [
+      "Yes",
+      "Only when x = 0",
+      "Only when x is negative",
+      "No, it is false for most x"
+     ],
+     "a": 3,
+     "why": "The correct expansion is 2x + 6, which differs from 2x + 3 for every x.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Show how to calculate 19 × 21 quickly using algebra.",
+     "rubric": [
+      [
+       "20",
+       "(20 − 1)",
+       "(20 + 1)",
+       "difference of"
+      ],
+      [
+       "400",
+       "square",
+       "20²",
+       "a² − b²"
+      ],
+      [
+       "399",
+       "minus 1",
+       "− 1"
+      ]
+     ],
+     "min": 2,
+     "model": "19 × 21 = (20 − 1)(20 + 1) = 20² − 1² = 400 − 1 = 399.",
+     "why": "The difference of two squares turns a hard product into a simple one.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the best way to test whether two expressions might be equal?",
+     "o": [
+      "One matching value proves equality",
+      "Check only x = 0",
+      "Try several values; a single failure proves they differ",
+      "Compare only the number of terms"
+     ],
+     "a": 2,
+     "why": "Matching values suggest equality but do not prove it. One mismatch disproves it.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Expanding brackets",
+    "model": "To expand a bracket, multiply every term inside by the term outside. For example 3(x + 4) becomes 3 times x plus 3 times 4, which is 3x + 12. With two brackets, every term in the first multiplies every term in the second.",
+    "points": [
+     {
+      "k": [
+       "multiply",
+       "times",
+       "every",
+       "each"
+      ],
+      "ask": "What do I do with the number outside the bracket?"
+     },
+     {
+      "k": [
+       "inside",
+       "all",
+       "both",
+       "every term"
+      ],
+      "ask": "Does it multiply only the first term?"
+     },
+     {
+      "k": [
+       "example",
+       "3x",
+       "12",
+       "x²"
+      ],
+      "ask": "Can you do an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Linear equations and systems",
+   "icon": "⚖️",
+   "hook": "Two phone plans: Plan A costs 5 a month plus 2 per gigabyte. Plan B costs 11 a month plus 1 per gigabyte. When do they cost the same?",
+   "explain": [
+    "A linear equation has the unknown only to the power 1, such as 3x + 5 = 20. To solve it, keep the equation balanced and do the same to both sides. 3x + 5 = 20 gives 3x = 15 and x = 5. If x is on both sides, collect the x terms on one side: 2x − 7 = x + 3 gives x = 10.",
+    "Two unknowns need two equations. Together they form a system of simultaneous equations. For x + y = 10 and x − y = 4, add the equations: 2x = 14, so x = 7, then y = 3. Another method is substitution: write y = 10 − x and put it into the other equation.",
+    "Each linear equation in x and y is a straight line on a graph. The solution is where the lines cross. Sometimes the lines are parallel and there is no solution, or they are the same line and there are infinitely many."
+   ],
+   "example": {
+    "q": "Plan A: 5 + 2g. Plan B: 11 + g. For what g are they equal?",
+    "steps": [
+     "Set the costs equal: 5 + 2g = 11 + g.",
+     "Take g from both sides: 5 + g = 11.",
+     "Take 5 from both sides: g = 6.",
+     "Check: A = 5 + 12 = 17 and B = 11 + 6 = 17."
+    ],
+    "a": "6 gigabytes"
+   },
+   "analogies": {
+    "home": "Two shops sell the same rice. One costs 4 + 2n and the other 1 + 3n. They match when 4 + 2n = 1 + 3n, so n = 3.",
+    "farm": "A farmer has hens and goats with 10 heads and 28 legs: h + g = 10 and 2h + 4g = 28 give g = 4, h = 6.",
+    "sport": "A taxi to the stadium has a start fee plus a cost per km. Another has a different mix. Their lines cross at one distance.",
+    "city": "Two gym memberships with joining fees and monthly prices cross at the month where the total costs are equal."
+   },
+   "mnemonic": "What you do to one side, do to the other. For two unknowns, you need two clues.",
+   "terms": [
+    [
+     "Linear equation",
+     "An equation where the unknown has power 1."
+    ],
+    [
+     "Simultaneous equations",
+     "Two or more equations solved together."
+    ],
+    [
+     "Substitution",
+     "Replacing a letter by an equal expression."
+    ],
+    [
+     "Elimination",
+     "Adding or subtracting equations to remove a letter."
+    ]
+   ],
+   "misc": {
+    "wrong": "Two unknowns can be found from one equation.",
+    "right": "One equation with two unknowns has infinitely many solutions. You need a second equation."
+   },
+   "trip": {
+    "wiki": "System of linear equations",
+    "prompt": "Find a diagram of two lines crossing and see what the crossing point means."
+   },
+   "sources": [
+    "Linear equation",
+    "System of linear equations"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Solve 3x + 5 = 20.",
+     "o": [
+      "x = 25/3",
+      "x = 5",
+      "x = 15",
+      "x = 8"
+     ],
+     "a": 1,
+     "why": "3x = 15 so x = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Solve 2x − 7 = x + 3.",
+     "o": [
+      "x = 10",
+      "x = 4",
+      "x = −4",
+      "x = 5"
+     ],
+     "a": 0,
+     "why": "Subtract x: x − 7 = 3, so x = 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If x + y = 10 and x − y = 4, what is x?",
+     "o": [
+      "6",
+      "3",
+      "14",
+      "7"
+     ],
+     "a": 3,
+     "why": "Adding gives 2x = 14, so x = 7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two straight lines on a graph are parallel. How many solutions does the system have?",
+     "o": [
+      "One",
+      "Two",
+      "None",
+      "Infinitely many"
+     ],
+     "a": 2,
+     "why": "Parallel lines never meet.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Mina solves 3(x − 2) = 12 and gets x = 6 by first dividing by 3. Her friend gets x = 6 by expanding first. What does this show?",
+     "o": [
+      "One of them is wrong",
+      "Both methods are valid",
+      "The answer depends on the method",
+      "Dividing first is never allowed"
+     ],
+     "a": 1,
+     "why": "Both do the same thing to each side. x − 2 = 4 gives x = 6, and 3x − 6 = 12 gives x = 6.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair of equations has infinitely many solutions?",
+     "o": [
+      "y = 2x + 1 and 2y = 4x + 2",
+      "y = 2x + 1 and y = 2x + 3",
+      "y = 2x and y = x",
+      "y = x + 1 and y = 2x"
+     ],
+     "a": 0,
+     "why": "The second equation is the first multiplied by 2: the same line.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "x + y = 10 and x − y = 4. Find y.",
+     "a": 3,
+     "tol": 0,
+     "why": "x = 7 so y = 10 − 7 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "2x + y = 11 and x + y = 7. Find x.",
+     "a": 4,
+     "tol": 0,
+     "why": "Subtract the second from the first: x = 4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Adult tickets cost 5 and child tickets cost 3. A family buys 4 tickets for 14 in total. Explain how to find how many are adult tickets.",
+     "rubric": [
+      [
+       "a + c = 4",
+       "4 tickets",
+       "total of 4",
+       "a + c"
+      ],
+      [
+       "5a",
+       "3c",
+       "5a + 3c",
+       "14"
+      ],
+      [
+       "1",
+       "one",
+       "substitut",
+       "eliminate",
+       "solve"
+      ]
+     ],
+     "min": 2,
+     "model": "Let a be adults and c children. a + c = 4 and 5a + 3c = 14. Substituting c = 4 − a gives 2a + 12 = 14, so a = 1 and c = 3.",
+     "why": "Two facts, two unknowns: set up two equations and solve.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Plan A: 5 + 2g and Plan B: 11 + g. For 10 gigabytes which is cheaper?",
+     "o": [
+      "Plan A (25)",
+      "Both cost 21",
+      "Plan A (21)",
+      "Plan B (21 compared with 25)"
+     ],
+     "a": 3,
+     "why": "A = 5 + 20 = 25 and B = 11 + 10 = 21. After 6 GB, B is cheaper.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The system x + y = 5 and x + y = 8 has...",
+     "o": [
+      "x = 5, y = 8",
+      "Infinitely many solutions",
+      "No solution",
+      "x = 3, y = 5"
+     ],
+     "a": 2,
+     "why": "x + y cannot be 5 and 8 at the same time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why you need two equations to find two unknowns.",
+     "rubric": [
+      [
+       "one equation",
+       "single",
+       "one"
+      ],
+      [
+       "many",
+       "infinite",
+       "several",
+       "any"
+      ],
+      [
+       "solutions",
+       "answers",
+       "pairs",
+       "possible"
+      ]
+     ],
+     "min": 2,
+     "model": "One equation like x + y = 10 has many pairs that work, for example 1 and 9 or 2 and 8. A second independent equation narrows it to one pair.",
+     "why": "Each independent equation removes one degree of freedom.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two lines cross at (2, 3). What does it mean for the system?",
+     "o": [
+      "Only one equation is satisfied",
+      "x = 2 and y = 3 satisfies both equations",
+      "No solution exists",
+      "The lines are parallel"
+     ],
+     "a": 1,
+     "why": "The crossing point lies on both lines.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Solving simultaneous equations",
+    "model": "When you have two unknowns you need two equations. One way is elimination. Add or subtract the equations so one letter disappears, solve for the other letter, then put it back to find the first. For x + y = 10 and x − y = 4, adding gives 2x = 14.",
+    "points": [
+     {
+      "k": [
+       "two",
+       "both",
+       "pair"
+      ],
+      "ask": "Why do I need two equations?"
+     },
+     {
+      "k": [
+       "add",
+       "subtract",
+       "eliminate",
+       "cancel",
+       "substitute"
+      ],
+      "ask": "How do I get rid of one letter?"
+     },
+     {
+      "k": [
+       "check",
+       "put back",
+       "substitute"
+      ],
+      "ask": "How do I check?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Quadratic equations",
+   "icon": "🏹",
+   "hook": "A ball is thrown in the air. Its height is not a straight line against time but a curve. What kind of equation describes a curve like that, and when does the ball land?",
+   "explain": [
+    "A quadratic equation has an x² term as its highest power: ax² + bx + c = 0. Its graph is a curve called a parabola. The solutions (roots) are the x values where the curve crosses the x-axis. There can be two, one or none.",
+    "Methods: factorising, square roots and the quadratic formula. For x² − 5x + 6 = 0 factorise to (x − 2)(x − 3) = 0. A product is zero only if one factor is zero, so x = 2 or x = 3. For x² = 49, x = 7 or x = −7. For harder ones, x = (−b ± √(b² − 4ac)) / 2a.",
+    "The part under the root, b² − 4ac, is the discriminant. If it is positive there are two real roots, if zero one root, and if negative none. Completing the square, x² + 6x = (x + 3)² − 9, shows the turning point of the curve."
+   ],
+   "example": {
+    "q": "Solve x² + 2x − 8 = 0.",
+    "steps": [
+     "Look for two numbers with product −8 and sum 2: 4 and −2.",
+     "Factorise: (x + 4)(x − 2) = 0.",
+     "Set each factor to zero: x = −4 or x = 2.",
+     "Check x = 2: 4 + 4 − 8 = 0."
+    ],
+    "a": "x = 2 or x = −4"
+   },
+   "analogies": {
+    "sport": "A thrown ball follows a parabola, and the roots are where it is at ground level.",
+    "city": "A bridge cable curves like a parabola.",
+    "nature": "Water from a fountain follows a parabolic arc.",
+    "farm": "A rectangular pen with area 24 and one side 2 more than the other: x(x + 2) = 24 gives x = 4."
+   },
+   "mnemonic": "Product zero means one of them is zero. Two factors, two roots, a hero.",
+   "terms": [
+    [
+     "Quadratic",
+     "An expression or equation with x² as the highest power."
+    ],
+    [
+     "Root",
+     "A value of x that makes the expression zero."
+    ],
+    [
+     "Discriminant",
+     "b² − 4ac, which tells how many real roots exist."
+    ],
+    [
+     "Parabola",
+     "The U-shaped graph of a quadratic."
+    ]
+   ],
+   "misc": {
+    "wrong": "x² = 49 has only one answer, x = 7.",
+    "right": "x = 7 and x = −7 both satisfy x² = 49, since (−7)² = 49."
+   },
+   "trip": {
+    "wiki": "Quadratic equation",
+    "prompt": "Find the quadratic formula and the graph showing roots."
+   },
+   "sources": [
+    "Quadratic equation",
+    "Parabola",
+    "Quadratic formula"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many real roots does x² − 5x + 6 = 0 have?",
+     "o": [
+      "2",
+      "1",
+      "0",
+      "3"
+     ],
+     "a": 0,
+     "why": "It factorises as (x − 2)(x − 3), giving 2 and 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Solve x² = 49.",
+     "o": [
+      "x = 7 only",
+      "x = 24.5",
+      "x = −7 only",
+      "x = 7 or x = −7"
+     ],
+     "a": 3,
+     "why": "Both 7 and −7 square to 49.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If (x − 4)(x + 1) = 0, what are the solutions?",
+     "o": [
+      "x = −4 or x = 1",
+      "x = 4 only",
+      "x = 4 or x = −1",
+      "x = 4 and x = 1"
+     ],
+     "a": 2,
+     "why": "Each factor can be zero: x − 4 = 0 or x + 1 = 0.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The discriminant of an equation is −3. What can you say?",
+     "o": [
+      "Two real roots",
+      "No real roots",
+      "One real root",
+      "Three roots"
+     ],
+     "a": 1,
+     "why": "A negative discriminant means the curve does not cross the x-axis.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Maya solves (x − 2)(x − 3) = 6 by saying x − 2 = 6 or x − 3 = 6. What is wrong?",
+     "o": [
+      "The zero product rule needs the product to equal zero",
+      "Nothing",
+      "She should add 6",
+      "The bracket is wrong"
+     ],
+     "a": 0,
+     "why": "The rule applies only when the product is 0. Expand first: x² − 5x = 0.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The graph of y = x² − 4 crosses the x-axis at...",
+     "o": [
+      "x = 4 only",
+      "x = 2 only",
+      "x = −4 and 4",
+      "x = 2 and x = −2"
+     ],
+     "a": 3,
+     "why": "x² − 4 = 0 gives x² = 4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Solve x² − 5x + 6 = 0 and give the larger root.",
+     "a": 3,
+     "tol": 0,
+     "why": "(x − 2)(x − 3) = 0. Roots 2 and 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the discriminant b² − 4ac of x² + 4x + 4.",
+     "a": 0,
+     "tol": 0,
+     "why": "16 − 16 = 0, so there is one repeated root x = −2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A rectangle has width x and length x + 2 and area 24. Explain how to find x.",
+     "rubric": [
+      [
+       "x(x + 2)",
+       "x × (x + 2)",
+       "x² + 2x",
+       "length times width",
+       "area"
+      ],
+      [
+       "24",
+       "= 24",
+       "equals 24"
+      ],
+      [
+       "4",
+       "factor",
+       "solve",
+       "(x + 6)(x − 4)",
+       "positive",
+       "not negative",
+       "−6",
+       "reject"
+      ]
+     ],
+     "min": 2,
+     "model": "x(x + 2) = 24 so x² + 2x − 24 = 0, which factorises as (x + 6)(x − 4) = 0. x = 4 because a length cannot be −6.",
+     "why": "Reject the negative root because lengths cannot be negative.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps for solving x² + 2x − 8 = 0 by factorising in order.",
+     "items": [
+      "Make the right-hand side zero",
+      "Find two numbers with product −8 and sum 2",
+      "Write (x + 4)(x − 2) = 0",
+      "Set each bracket equal to zero"
+     ],
+     "why": "Start with zero on one side, factorise, then use the zero product rule.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a ball thrown upward land at one root and start at the other in a model with h = 0 at both?",
+     "o": [
+      "There is only one root",
+      "The parabola is upside down",
+      "The two roots are the start and landing times",
+      "A ball never lands"
+     ],
+     "a": 2,
+     "why": "The curve crosses zero height at launch and at landing. A negative root would be before launch.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why x² + 1 = 0 has no real solutions.",
+     "rubric": [
+      [
+       "square",
+       "squared",
+       "x²"
+      ],
+      [
+       "negative",
+       "less than zero",
+       "below"
+      ],
+      [
+       "never",
+       "cannot",
+       "no real",
+       "always positive",
+       "at least"
+      ]
+     ],
+     "min": 2,
+     "model": "A real number squared is never negative, so x² is at least 0 and x² + 1 is at least 1. It can never be 0.",
+     "why": "The curve y = x² + 1 never touches the x-axis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "By completing the square, x² + 6x + 5 = (x + 3)² − 4. What is the minimum value of the expression?",
+     "o": [
+      "5",
+      "−4",
+      "3",
+      "−3"
+     ],
+     "a": 1,
+     "why": "(x + 3)² is at least 0, so the minimum is −4 when x = −3.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Solving a quadratic by factorising",
+    "model": "Put the equation in the form ax² + bx + c = 0, then write it as two brackets multiplied together. If two things multiply to give zero, one of them must be zero. So set each bracket equal to zero and solve. For example (x − 2)(x − 3) = 0 gives x = 2 or x = 3.",
+    "points": [
+     {
+      "k": [
+       "zero",
+       "= 0",
+       "equals 0"
+      ],
+      "ask": "What must be on the right side first?"
+     },
+     {
+      "k": [
+       "bracket",
+       "factor",
+       "factorise"
+      ],
+      "ask": "How do I split it into brackets?"
+     },
+     {
+      "k": [
+       "one of",
+       "either",
+       "each",
+       "two answers",
+       "both"
+      ],
+      "ask": "Why do I get two answers?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Functions and graphs",
+   "icon": "📈",
+   "hook": "A machine takes a number, doubles it and adds 3. If you put in 4, what comes out? If 11 came out, what went in?",
+   "explain": [
+    "A function is a rule that gives exactly one output for each input. We write f(x) = 2x + 3. Then f(4) = 2 × 4 + 3 = 11. Plotting the input x across and the output y up gives the graph of the function.",
+    "A linear function y = mx + c has a straight-line graph. The gradient m tells how steep the line is (the rise for each step along), and c is the y-intercept where the line crosses the y-axis. The graph of y = x² is a parabola. The graph of y = 1/x is a curve in two pieces with a break at x = 0.",
+    "The vertical line test: a graph shows a function if no vertical line meets it twice. The inverse function undoes the original. For f(x) = 2x + 3 the inverse is f⁻¹(x) = (x − 3) ÷ 2, so f⁻¹(11) = 4. The domain is the set of allowed inputs, and the range is the set of outputs."
+   ],
+   "example": {
+    "q": "f(x) = 2x + 3. Find f(4), and find x if f(x) = 11.",
+    "steps": [
+     "f(4) = 2 × 4 + 3 = 11.",
+     "For f(x) = 11 solve 2x + 3 = 11.",
+     "2x = 8, so x = 4."
+    ],
+    "a": "f(4) = 11 and x = 4"
+   },
+   "analogies": {
+    "home": "A cooking time rule: minutes = 40 + 20 × kg.",
+    "city": "A taxi fare: 3 plus 2 per km, f(d) = 2d + 3.",
+    "sport": "Distance run at steady speed 5 m/s: d = 5t.",
+    "tech": "A phone plan: monthly cost c = 10 + 2g where g is data used."
+   },
+   "mnemonic": "A function is a vending machine: one button, one snack. Gradient is the slope, intercept is where it starts.",
+   "terms": [
+    [
+     "Function",
+     "A rule giving exactly one output for each input."
+    ],
+    [
+     "Gradient",
+     "The steepness of a line: rise divided by run."
+    ],
+    [
+     "Intercept",
+     "Where a graph crosses an axis."
+    ],
+    [
+     "Domain",
+     "The set of allowed inputs."
+    ]
+   ],
+   "misc": {
+    "wrong": "Every graph is the graph of a function.",
+    "right": "A circle fails the vertical line test: some inputs have two outputs. So it is not a function y = f(x)."
+   },
+   "trip": {
+    "wiki": "Function (mathematics)",
+    "prompt": "Find a picture of the function machine or the vertical line test."
+   },
+   "sources": [
+    "Function (mathematics)",
+    "Linear function"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "f(x) = 3x − 1. What is f(2)?",
+     "o": [
+      "5",
+      "6",
+      "7",
+      "1"
+     ],
+     "a": 0,
+     "why": "3 × 2 − 1 = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In y = 2x + 1, what does the 2 tell you?",
+     "o": [
+      "The y-intercept",
+      "The x-intercept",
+      "The domain",
+      "The gradient"
+     ],
+     "a": 3,
+     "why": "In y = mx + c, m is the gradient.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The line y = 2x − 6 crosses the x-axis at...",
+     "o": [
+      "x = −6",
+      "x = 6",
+      "x = 3",
+      "x = 2"
+     ],
+     "a": 2,
+     "why": "Set y = 0: 2x = 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which graph is NOT a function of x?",
+     "o": [
+      "A straight line",
+      "A circle",
+      "A parabola",
+      "A horizontal line"
+     ],
+     "a": 1,
+     "why": "A circle has two y values for most x values.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which input is not allowed in f(x) = 1/x?",
+     "o": [
+      "0",
+      "1",
+      "−1",
+      "100"
+     ],
+     "a": 0,
+     "why": "You cannot divide by zero.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two lines y = 3x + 1 and y = 3x − 5 are...",
+     "o": [
+      "Perpendicular",
+      "The same",
+      "Crossing at the y-axis",
+      "Parallel"
+     ],
+     "a": 3,
+     "why": "They have the same gradient 3.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "f(x) = x². Find f(−3).",
+     "a": 9,
+     "tol": 0,
+     "why": "(−3)² = 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the gradient of the line through (0, 1) and (2, 5).",
+     "a": 2,
+     "tol": 0,
+     "why": "Rise 4, run 2: 4 ÷ 2 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain in your own words why y = x² is a function but x² + y² = 25 is not.",
+     "rubric": [
+      [
+       "one",
+       "single",
+       "exactly one",
+       "only one"
+      ],
+      [
+       "output",
+       "y",
+       "answer",
+       "value"
+      ],
+      [
+       "two",
+       "more than one",
+       "both",
+       "plus and minus",
+       "5 and −5",
+       "circle"
+      ]
+     ],
+     "min": 2,
+     "model": "In y = x², each x gives exactly one y. In x² + y² = 25 an input like x = 3 gives y = 4 or y = −4, so there are two outputs.",
+     "why": "A function must give one output per input.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The inverse of f(x) = 2x + 3 is...",
+     "o": [
+      "2x − 3",
+      "(x + 3) ÷ 2",
+      "(x − 3) ÷ 2",
+      "x ÷ 2 − 3"
+     ],
+     "a": 2,
+     "why": "Undo + 3 first then undo × 2. So subtract 3 and divide by 2.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A taxi charges 3 plus 2 per km. Which statement is correct?",
+     "o": [
+      "The gradient is 3 and the intercept is 2",
+      "The gradient is 2 and the intercept is 3",
+      "The gradient is 5",
+      "There is no gradient"
+     ],
+     "a": 1,
+     "why": "Cost = 2d + 3.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Two phone plans are c = 10 + 2g and c = 4 + 3g. Explain where their graphs cross and what that means.",
+     "rubric": [
+      [
+       "6",
+       "g = 6"
+      ],
+      [
+       "same",
+       "equal",
+       "cost"
+      ],
+      [
+       "cross",
+       "intersect",
+       "meet",
+       "point"
+      ]
+     ],
+     "min": 2,
+     "model": "Setting 10 + 2g = 4 + 3g gives g = 6. At 6 gigabytes both plans cost 22, so the graphs cross there.",
+     "why": "The intersection is where the two outputs are equal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A graph rises steeply and then flattens out. Which situation fits best?",
+     "o": [
+      "A plant growing fast at first then slowing",
+      "A car at constant speed",
+      "A falling stone with no air",
+      "A fixed price"
+     ],
+     "a": 0,
+     "why": "Constant speed is a straight line; this curve slows.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a function is",
+    "model": "A function is a rule that takes an input and gives exactly one output. Like a machine: put 4 in a machine that doubles and adds 3 and 11 comes out. We write f(x) = 2x + 3 and f(4) = 11. The graph shows all the input-output pairs.",
+    "points": [
+     {
+      "k": [
+       "rule",
+       "machine",
+       "input",
+       "output"
+      ],
+      "ask": "What goes in and what comes out?"
+     },
+     {
+      "k": [
+       "one",
+       "exactly one",
+       "single"
+      ],
+      "ask": "How many outputs for each input?"
+     },
+     {
+      "k": [
+       "graph",
+       "plot",
+       "line",
+       "curve"
+      ],
+      "ask": "How can I picture it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Coordinate geometry",
+   "icon": "🗺️",
+   "hook": "A treasure map uses a grid. How could you find the exact distance between two points, and the halfway point, using only their coordinates?",
+   "explain": [
+    "The coordinate plane has an x-axis (across) and a y-axis (up). A point is written (x, y). The gradient of the line through (x₁, y₁) and (x₂, y₂) is (y₂ − y₁) ÷ (x₂ − x₁). The equation of a line is y = mx + c.",
+    "The midpoint of two points is the average of the coordinates. For (1, 2) and (5, 8) it is (3, 5). The distance comes from Pythagoras: d = √((x₂ − x₁)² + (y₂ − y₁)²). From (1, 2) to (4, 6) the steps are 3 across and 4 up, so d = √(9 + 16) = 5.",
+    "Parallel lines have the same gradient. Perpendicular lines have gradients that multiply to −1, such as 2 and −1/2. To find a line with gradient 3 through (1, 5), write y = 3x + c, put in the point 5 = 3 + c, so c = 2 and y = 3x + 2."
+   ],
+   "example": {
+    "q": "Find the distance and midpoint of A(1, 2) and B(4, 6).",
+    "steps": [
+     "Across: 4 − 1 = 3. Up: 6 − 2 = 4.",
+     "Distance = √(3² + 4²) = √25 = 5.",
+     "Midpoint = ((1 + 4)/2, (2 + 6)/2) = (2.5, 4)."
+    ],
+    "a": "Distance 5, midpoint (2.5, 4)"
+   },
+   "analogies": {
+    "city": "Streets on a grid: a house at (3, 2) and a school at (7, 5) are 5 blocks apart in a straight line.",
+    "sea": "A ship at (0, 0) sails to (6, 8): distance 10 units.",
+    "sport": "On a pitch, the centre spot is the midpoint of the goal-line centres.",
+    "tech": "A screen uses pixel coordinates for each point."
+   },
+   "mnemonic": "Along the corridor, then up the stairs (x first, then y). Pythagoras tells the straight way.",
+   "terms": [
+    [
+     "Coordinates",
+     "A pair (x, y) giving a position."
+    ],
+    [
+     "Gradient",
+     "Steepness: change in y divided by change in x."
+    ],
+    [
+     "Midpoint",
+     "The point halfway between two points."
+    ],
+    [
+     "Perpendicular",
+     "At a right angle (90°)."
+    ]
+   ],
+   "misc": {
+    "wrong": "The distance between two points is found by adding the x difference and y difference.",
+    "right": "Adding the differences gives a longer, corner path. The straight distance uses Pythagoras: for 3 across and 4 up it is 5, not 7."
+   },
+   "trip": {
+    "wiki": "Cartesian coordinate system",
+    "prompt": "Find who the system is named after and look at the axes picture."
+   },
+   "sources": [
+    "Cartesian coordinate system",
+    "Slope",
+    "Distance"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which point is on the y-axis?",
+     "o": [
+      "(5, 0)",
+      "(3, 3)",
+      "(−2, 1)",
+      "(0, 5)"
+     ],
+     "a": 3,
+     "why": "On the y-axis x = 0.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the midpoint of (2, 4) and (6, 10)?",
+     "o": [
+      "(8, 14)",
+      "(4, 6)",
+      "(4, 7)",
+      "(3, 5)"
+     ],
+     "a": 2,
+     "why": "Average each coordinate: (2 + 6)/2 = 4 and (4 + 10)/2 = 7.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the gradient of y = −3x + 2?",
+     "o": [
+      "3",
+      "−3",
+      "2",
+      "−2"
+     ],
+     "a": 1,
+     "why": "The number multiplying x is the gradient.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which line is parallel to y = 2x + 1?",
+     "o": [
+      "y = 2x − 7",
+      "y = −2x + 1",
+      "y = x/2 + 1",
+      "y = 3x + 1"
+     ],
+     "a": 0,
+     "why": "Parallel lines have equal gradients.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A line has gradient 2. A perpendicular line has gradient...",
+     "o": [
+      "−2",
+      "1/2",
+      "2",
+      "−1/2"
+     ],
+     "a": 3,
+     "why": "The product must be −1: 2 × (−1/2) = −1.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Sam says the distance from (0, 0) to (3, 4) is 7 because 3 + 4 = 7. What is his mistake?",
+     "o": [
+      "He is right",
+      "It should be 12",
+      "He added instead of using Pythagoras",
+      "It should be 1"
+     ],
+     "a": 2,
+     "why": "√(9 + 16) = 5.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find the distance between (1, 2) and (4, 6).",
+     "a": 5,
+     "tol": 0,
+     "why": "√(3² + 4²) = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the distance between (−2, −1) and (4, 7).",
+     "a": 10,
+     "tol": 0,
+     "why": "Across 6, up 8: √(36 + 64) = 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A line has gradient 3 and passes through (1, 5). What is its y-intercept c?",
+     "a": 2,
+     "tol": 0,
+     "why": "5 = 3 × 1 + c, so c = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the gradient between two points does not depend on which point you call first.",
+     "rubric": [
+      [
+       "both",
+       "top and bottom",
+       "numerator and denominator",
+       "signs",
+       "negatives"
+      ],
+      [
+       "same",
+       "cancel",
+       "equal",
+       "unchanged",
+       "does not change"
+      ],
+      [
+       "divide",
+       "ratio",
+       "up and across",
+       "rise",
+       "run",
+       "difference"
+      ]
+     ],
+     "min": 2,
+     "model": "If you swap the points, both the rise and the run change sign, and a negative divided by a negative gives the same value.",
+     "why": "Swapping order flips both differences.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Points A(0, 0), B(4, 0) and C(2, 3). Is triangle ABC isosceles?",
+     "o": [
+      "No, all sides differ",
+      "Yes, AC = BC = √13",
+      "Yes, AB = AC",
+      "It is not a triangle"
+     ],
+     "a": 1,
+     "why": "AC = √(4 + 9) = √13 and BC = √(4 + 9) = √13.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Show that (0, 0), (2, 1) and (4, 2) lie on one straight line.",
+     "rubric": [
+      [
+       "gradient",
+       "slope"
+      ],
+      [
+       "1/2",
+       "0.5",
+       "half",
+       "same",
+       "equal"
+      ],
+      [
+       "both",
+       "each",
+       "between",
+       "pairs",
+       "every"
+      ]
+     ],
+     "min": 2,
+     "model": "The gradient from (0, 0) to (2, 1) is 1/2, and from (2, 1) to (4, 2) it is also 1/2. Equal gradients on joined segments mean one line.",
+     "why": "Same gradient for connected segments shows collinearity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A line has the equation y = 3x + 2. Is (2, 8) on it?",
+     "o": [
+      "Yes",
+      "No, y would be 6",
+      "No, y would be 7",
+      "It depends"
+     ],
+     "a": 0,
+     "why": "3 × 2 + 2 = 8.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Finding the distance between two points",
+    "model": "Find how far apart the points are across and up. Then use Pythagoras: square both, add them and take the square root. For (1, 2) and (4, 6), across is 3 and up is 4, so the distance is the square root of 9 + 16, which is 5.",
+    "points": [
+     {
+      "k": [
+       "across",
+       "x",
+       "horizontal",
+       "difference"
+      ],
+      "ask": "What do I measure first?"
+     },
+     {
+      "k": [
+       "pythagoras",
+       "square",
+       "root",
+       "right triangle"
+      ],
+      "ask": "How do I join the two numbers?"
+     },
+     {
+      "k": [
+       "example",
+       "3",
+       "4",
+       "5"
+      ],
+      "ask": "Can you show a worked example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Trigonometry fundamentals",
+   "icon": "📐",
+   "hook": "You cannot climb a tall tree to measure it, but you know how far you stand from it and the angle to its top. How can you find the height?",
+   "explain": [
+    "In a right-angled triangle the longest side is the hypotenuse. For an angle θ, the side across from it is the opposite and the side next to it (not the hypotenuse) is the adjacent. Pythagoras says (hypotenuse)² = (opposite)² + (adjacent)². A triangle with sides 6, 8 and 10 fits as 36 + 64 = 100.",
+    "The trigonometric ratios link angles to side ratios: sin θ = opposite ÷ hypotenuse, cos θ = adjacent ÷ hypotenuse and tan θ = opposite ÷ adjacent. They depend only on the angle, not the size of the triangle, because similar triangles have equal ratios. SOH CAH TOA helps recall them.",
+    "To find a side, rearrange. With hypotenuse 10 and angle 30°, the opposite is 10 × sin 30° = 5. To find an angle, use the inverse function: if tan θ = 1, θ = 45°. Always check that your calculator is in degrees mode."
+   ],
+   "example": {
+    "q": "A ladder 5 m long leans against a wall and makes an angle of 60° with the ground. How high up the wall does it reach? (sin 60° ≈ 0.866)",
+    "steps": [
+     "Draw the right triangle: the ladder is the hypotenuse (5 m).",
+     "The height is opposite the 60° angle, so use sin 60° = opposite ÷ hypotenuse.",
+     "Opposite = 5 × 0.866 = 4.33."
+    ],
+    "a": "About 4.3 m"
+   },
+   "analogies": {
+    "sea": "A lighthouse keeper finds a ship distance from the angle of the tower top.",
+    "city": "A surveyor finds a building height from a distance and an angle.",
+    "sport": "A ski slope at 20° drops by a height found from sine.",
+    "nature": "Find the height of a tree from the length of its shadow and the sun angle."
+   },
+   "mnemonic": "SOH CAH TOA: Sine = Opposite over Hypotenuse, Cosine = Adjacent over Hypotenuse, Tangent = Opposite over Adjacent.",
+   "terms": [
+    [
+     "Hypotenuse",
+     "The longest side of a right-angled triangle, opposite the right angle."
+    ],
+    [
+     "Sine",
+     "Opposite ÷ hypotenuse."
+    ],
+    [
+     "Cosine",
+     "Adjacent ÷ hypotenuse."
+    ],
+    [
+     "Tangent",
+     "Opposite ÷ adjacent."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger triangle with the same angles has different sin, cos and tan.",
+    "right": "Triangles with the same angles are similar, so the ratios are identical."
+   },
+   "trip": {
+    "wiki": "Trigonometry",
+    "prompt": "Find the right-angle triangle diagram and label the sides for one angle."
+   },
+   "sources": [
+    "Trigonometry",
+    "Pythagorean theorem",
+    "Trigonometric functions"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which side is the hypotenuse?",
+     "o": [
+      "The shortest side",
+      "The side next to the angle",
+      "Any side",
+      "The side opposite the right angle"
+     ],
+     "a": 3,
+     "why": "It is always the longest side.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "sin θ equals...",
+     "o": [
+      "Adjacent ÷ hypotenuse",
+      "Opposite ÷ adjacent",
+      "Opposite ÷ hypotenuse",
+      "Hypotenuse ÷ opposite"
+     ],
+     "a": 2,
+     "why": "SOH: Sine is Opposite over Hypotenuse.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A right triangle has sides 6 and 8 around the right angle. The hypotenuse is...",
+     "o": [
+      "14",
+      "10",
+      "7",
+      "12"
+     ],
+     "a": 1,
+     "why": "36 + 64 = 100.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "tan 45° equals...",
+     "o": [
+      "1",
+      "0",
+      "0.5",
+      "√2"
+     ],
+     "a": 0,
+     "why": "At 45° the opposite and adjacent sides are equal.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which set of sides could form a right triangle?",
+     "o": [
+      "4, 5, 6",
+      "6, 7, 8",
+      "3, 4, 6",
+      "5, 12, 13"
+     ],
+     "a": 3,
+     "why": "25 + 144 = 169 = 13².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Kai says sin θ can be 1.5. What is wrong?",
+     "o": [
+      "Nothing",
+      "It must be negative",
+      "Opposite cannot be longer than the hypotenuse",
+      "It must be whole"
+     ],
+     "a": 2,
+     "why": "The hypotenuse is the longest side, so sin θ is at most 1.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A right triangle has hypotenuse 13 and one side 5. Find the other side.",
+     "a": 12,
+     "tol": 0,
+     "why": "169 − 25 = 144 and √144 = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The hypotenuse is 10 m and the angle is 30°. Find the opposite side in metres.",
+     "a": 5,
+     "tol": 0.01,
+     "why": "10 × sin 30° = 10 × 0.5 = 5.",
+     "d": 2,
+     "k": "apply",
+     "unit": "m"
+    },
+    {
+     "t": "num",
+     "q": "A ladder is 5 m long and makes 60° with the ground. Use sin 60° = 0.866 to find the height reached in metres, to 1 decimal place.",
+     "a": 4.3,
+     "tol": 0.05,
+     "why": "5 × 0.866 = 4.33, rounding to 4.3.",
+     "d": 3,
+     "k": "apply",
+     "unit": "m"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the ratios sin, cos and tan depend on the angle but not on the size of the triangle.",
+     "rubric": [
+      [
+       "similar",
+       "same shape",
+       "scaled",
+       "enlarge",
+       "enlargement"
+      ],
+      [
+       "ratio",
+       "proportion",
+       "same",
+       "equal",
+       "unchanged"
+      ],
+      [
+       "angle",
+       "angles"
+      ]
+     ],
+     "min": 2,
+     "model": "Triangles with the same angles are similar: one is an enlargement of the other. All sides scale by the same factor, so the ratios of sides stay the same.",
+     "why": "Similarity keeps ratios fixed.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If tan θ = 3/4 in a right triangle, what is sin θ?",
+     "o": [
+      "4/5",
+      "3/5",
+      "3/4",
+      "5/3"
+     ],
+     "a": 1,
+     "why": "Take opposite 3 and adjacent 4. The hypotenuse is 5, so sin θ = 3/5.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student uses a calculator for sin 30° and gets −0.988. Explain a likely cause.",
+     "rubric": [
+      [
+       "radian",
+       "mode",
+       "setting"
+      ],
+      [
+       "degree",
+       "degrees",
+       "wrong"
+      ],
+      [
+       "0.5",
+       "half",
+       "check"
+      ]
+     ],
+     "min": 2,
+     "model": "The calculator is probably in radian mode rather than degree mode. In degree mode sin 30° = 0.5.",
+     "why": "Always check the angle mode.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A 6 m pole casts a 6 m shadow. What is the sun angle above horizontal?",
+     "o": [
+      "45°",
+      "30°",
+      "60°",
+      "90°"
+     ],
+     "a": 0,
+     "why": "tan θ = 6/6 = 1, so θ = 45°.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What sine, cosine and tangent mean",
+    "model": "In a right-angled triangle they are ratios of sides for a chosen angle. Sine is opposite divided by hypotenuse, cosine is adjacent divided by hypotenuse and tangent is opposite divided by adjacent. They let us find a missing side or angle when we know some measurements.",
+    "points": [
+     {
+      "k": [
+       "opposite",
+       "adjacent",
+       "hypotenuse",
+       "side"
+      ],
+      "ask": "Which sides are involved?"
+     },
+     {
+      "k": [
+       "ratio",
+       "divide",
+       "over"
+      ],
+      "ask": "What do we do with the sides?"
+     },
+     {
+      "k": [
+       "soh",
+       "cah",
+       "toa",
+       "remember",
+       "rhyme",
+       "mnemonic"
+      ],
+      "ask": "How do I remember which is which?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Sequences and series",
+   "icon": "🔁",
+   "hook": "A story says a clever child was asked to add 1 + 2 + 3 + ... up to 100 and found the total in seconds. How?",
+   "explain": [
+    "A sequence is a list of numbers following a rule. In an arithmetic sequence you add the same number each time, called the common difference d. For 3, 7, 11, ... the difference is 4, and the nth term is 4n − 1. The 20th term is 4 × 20 − 1 = 79.",
+    "In a geometric sequence you multiply by the same number, the common ratio r. For 2, 6, 18 the ratio is 3, so the nth term is 2 × 3ⁿ⁻¹ and the 6th term is 2 × 3⁵ = 486. Geometric sequences grow very fast (or shrink fast if r is between 0 and 1).",
+    "A series is the sum of terms. To add 1 to 100 pair first and last: 1 + 100, 2 + 99, ... gives 50 pairs of 101, so 5050. In general, the sum of an arithmetic series is n/2 × (first + last). Some infinite series have a finite sum: 1 + 1/2 + 1/4 + ... gets closer and closer to 2."
+   ],
+   "example": {
+    "q": "Find the sum of 2, 5, 8, ..., 29.",
+    "steps": [
+     "The difference is 3. Find the number of terms: 2 + 3(n − 1) = 29 gives n = 10.",
+     "Sum = n/2 × (first + last) = 10/2 × (2 + 29).",
+     "= 5 × 31 = 155."
+    ],
+    "a": "155"
+   },
+   "analogies": {
+    "home": "Saving 2 more each week: 2, 4, 6, 8 is arithmetic.",
+    "farm": "A bacteria colony that doubles each day: 1, 2, 4, 8 is geometric.",
+    "sport": "Seats in a stadium: each row has 2 more than the one below, an arithmetic sequence.",
+    "music": "Notes an octave apart double in frequency: a geometric sequence."
+   },
+   "mnemonic": "Arithmetic adds the same, geometric multiplies the same. Pair the ends to add a list.",
+   "terms": [
+    [
+     "Sequence",
+     "An ordered list of numbers following a rule."
+    ],
+    [
+     "Common difference",
+     "The amount added each step in an arithmetic sequence."
+    ],
+    [
+     "Common ratio",
+     "The multiplier in a geometric sequence."
+    ],
+    [
+     "Series",
+     "The sum of the terms of a sequence."
+    ]
+   ],
+   "misc": {
+    "wrong": "Every pattern of numbers is arithmetic or geometric.",
+    "right": "Many sequences are neither. For example 1, 1, 2, 3, 5, 8 (Fibonacci) adds the previous two terms."
+   },
+   "trip": {
+    "wiki": "Arithmetic progression",
+    "prompt": "Find the story of young Gauss and the sum of 1 to 100 on the page and check the pairing trick."
+   },
+   "sources": [
+    "Arithmetic progression",
+    "Geometric progression",
+    "Fibonacci sequence"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the next term of 3, 7, 11, 15, ...?",
+     "o": [
+      "18",
+      "20",
+      "23",
+      "19"
+     ],
+     "a": 3,
+     "why": "The common difference is 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which sequence is geometric?",
+     "o": [
+      "2, 4, 6, 8",
+      "1, 4, 9, 16",
+      "2, 6, 18, 54",
+      "1, 2, 4, 7"
+     ],
+     "a": 2,
+     "why": "Each term is 3 times the one before.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the nth term of 5, 9, 13, 17?",
+     "o": [
+      "5n",
+      "4n + 1",
+      "n + 4",
+      "4n − 1"
+     ],
+     "a": 1,
+     "why": "The difference is 4 and the first term is 5 = 4 + 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the next term of 1, 1, 2, 3, 5, 8?",
+     "o": [
+      "13",
+      "11",
+      "12",
+      "16"
+     ],
+     "a": 0,
+     "why": "Add the two terms before: 5 + 8 = 13.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Aisha says 1, 4, 9, 16 is arithmetic because the numbers grow. What is wrong?",
+     "o": [
+      "Nothing",
+      "It is geometric",
+      "The numbers are too big",
+      "The differences 3, 5, 7 are not constant"
+     ],
+     "a": 3,
+     "why": "An arithmetic sequence has a constant difference.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to 1 + 1/2 + 1/4 + 1/8 + ... if it goes on forever?",
+     "o": [
+      "It grows without limit",
+      "It reaches 3",
+      "It gets closer and closer to 2",
+      "It equals 1"
+     ],
+     "a": 2,
+     "why": "Each step covers half the remaining distance to 2.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find the 20th term of 3, 7, 11, ... (nth term 4n − 1).",
+     "a": 79,
+     "tol": 0,
+     "why": "4 × 20 − 1 = 79.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the 6th term of the geometric sequence 2, 6, 18, ...",
+     "a": 486,
+     "tol": 0,
+     "why": "2 × 3⁵ = 2 × 243 = 486.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the sum of the whole numbers from 1 to 100.",
+     "a": 5050,
+     "tol": 0,
+     "why": "50 pairs each totalling 101: 50 × 101 = 5050.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why pairing the first and last numbers works for adding 1 to 100.",
+     "rubric": [
+      [
+       "pair",
+       "pairs",
+       "pairing",
+       "first and last"
+      ],
+      [
+       "101",
+       "same total",
+       "same sum",
+       "equal"
+      ],
+      [
+       "50",
+       "fifty",
+       "half",
+       "100 ÷ 2"
+      ]
+     ],
+     "min": 2,
+     "model": "1 + 100, 2 + 99, 3 + 98 and so on each add to 101. There are 50 such pairs so the sum is 50 × 101 = 5050.",
+     "why": "The pairs all have the same sum, so we multiply.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A sequence starts 2, 4, ... Which statement is correct?",
+     "o": [
+      "It must be 6, 8",
+      "It could continue 6, 8 or 8, 16 or 7, 11; more information is needed",
+      "It must be 8, 16",
+      "It cannot continue"
+     ],
+     "a": 1,
+     "why": "Many rules fit two terms. More terms or a rule are needed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A savings plan puts in 5 in week 1, 10 in week 2, 15 in week 3, and so on for 10 weeks (the last amount is 50). Explain how to find the total saved.",
+     "rubric": [
+      [
+       "arithmetic",
+       "add 5",
+       "difference",
+       "5, 10"
+      ],
+      [
+       "275",
+       "10/2",
+       "5 × 55",
+       "n/2",
+       "average",
+       "first and last"
+      ],
+      [
+       "sum",
+       "total",
+       "add"
+      ]
+     ],
+     "min": 2,
+     "model": "It is arithmetic with first term 5, last 50 and 10 terms. Sum = 10/2 × (5 + 50) = 5 × 55 = 275.",
+     "why": "Use sum = n/2 × (first + last).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cell divides in two every hour. Starting with 1, how many after 5 hours?",
+     "o": [
+      "32",
+      "10",
+      "16",
+      "25"
+     ],
+     "a": 0,
+     "why": "1 × 2⁵ = 32.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Arithmetic and geometric sequences",
+    "model": "In an arithmetic sequence you add the same amount each step. In a geometric sequence you multiply by the same amount each step. For example 3, 7, 11 adds 4, while 2, 6, 18 multiplies by 3.",
+    "points": [
+     {
+      "k": [
+       "add",
+       "plus",
+       "difference",
+       "same amount"
+      ],
+      "ask": "What happens in an arithmetic sequence?"
+     },
+     {
+      "k": [
+       "multiply",
+       "times",
+       "ratio"
+      ],
+      "ask": "What happens in a geometric sequence?"
+     },
+     {
+      "k": [
+       "example",
+       "3, 7",
+       "2, 6",
+       "double"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Combinatorics and elementary probability",
+   "icon": "🎰",
+   "hook": "How many different 3-letter codes can you make from the letters A, B and C if each is used once? And how likely is it to roll a total of 7 with two dice?",
+   "explain": [
+    "Counting without listing everything uses simple rules. The multiplication principle: if one choice can be made in m ways and another in n ways, together they give m × n ways. 3 shirts and 4 trousers give 12 outfits. A 4-digit PIN with digits 0 to 9 can be chosen in 10 × 10 × 10 × 10 = 10 000 ways.",
+    "Order matters for arrangements (permutations). Three different letters can be arranged in 3 × 2 × 1 = 6 ways, written 3!. Five people in a line: 5! = 120. When order does not matter, we choose (combinations). Choosing 2 from 5 is (5 × 4) ÷ 2 = 10 because each pair is counted twice.",
+    "Probability = favourable outcomes ÷ total equally likely outcomes. Two dice have 36 outcomes, and 6 of them add to 7, so P(7) = 6/36 = 1/6. Independent events multiply: P(two heads in two flips) = 1/2 × 1/2 = 1/4. Without replacement the second probability changes: red then blue from 3 red and 2 blue is 3/5 × 2/4 = 3/10."
+   ],
+   "example": {
+    "q": "A bag holds 3 red and 2 blue counters. Two are taken without replacing. Find P(red then blue).",
+    "steps": [
+     "P(first is red) = 3/5.",
+     "Now 4 counters left, 2 blue: P(second is blue) = 2/4.",
+     "Multiply: 3/5 × 2/4 = 6/20 = 3/10."
+    ],
+    "a": "3/10"
+   },
+   "analogies": {
+    "home": "Choosing a meal: 3 starters and 4 mains make 12 meal choices.",
+    "sport": "Choosing 2 players from 5 for a doubles pair: 10 ways.",
+    "city": "A bus lock with 4 digits has 10 000 codes.",
+    "music": "Arranging 4 different songs in a playlist: 4! = 24 orders."
+   },
+   "mnemonic": "Choices multiply. Order matters? Count more. Order does not matter? Divide the repeats.",
+   "terms": [
+    [
+     "Permutation",
+     "An arrangement where order matters."
+    ],
+    [
+     "Combination",
+     "A selection where order does not matter."
+    ],
+    [
+     "Factorial n!",
+     "n × (n − 1) × ... × 1."
+    ],
+    [
+     "Independent events",
+     "Events where one does not affect the other."
+    ]
+   ],
+   "misc": {
+    "wrong": "If you flip a coin and get heads 5 times, tails is more likely next.",
+    "right": "Each flip is independent: P(tails) is still 1/2."
+   },
+   "trip": {
+    "wiki": "Combinatorics",
+    "prompt": "Find the page on permutations and check 3! by listing the six arrangements of ABC."
+   },
+   "sources": [
+    "Combinatorics",
+    "Probability",
+    "Permutation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "3 shirts and 4 trousers. How many outfits?",
+     "o": [
+      "7",
+      "34",
+      "24",
+      "12"
+     ],
+     "a": 3,
+     "why": "3 × 4 = 12.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How many ways can 3 different books be arranged on a shelf?",
+     "o": [
+      "3",
+      "9",
+      "6",
+      "27"
+     ],
+     "a": 2,
+     "why": "3 × 2 × 1 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A fair die is rolled. P(a number greater than 4)?",
+     "o": [
+      "1/6",
+      "1/3",
+      "2/3",
+      "5/6"
+     ],
+     "a": 1,
+     "why": "5 and 6 are 2 of the 6 outcomes.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a combination problem?",
+     "o": [
+      "Choosing 2 students from 5 for a pair",
+      "Arranging 5 runners in 1st, 2nd, 3rd",
+      "Making a 4-digit PIN",
+      "Seating 3 people in a row"
+     ],
+     "a": 0,
+     "why": "The pair {A, B} is the same as {B, A}.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "P(two heads in two coin flips)?",
+     "o": [
+      "1/2",
+      "1/3",
+      "2",
+      "1/4"
+     ],
+     "a": 3,
+     "why": "1/2 × 1/2 = 1/4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Pia flips a fair coin and gets 5 heads. She says tails is now more likely. What do you say?",
+     "o": [
+      "She is right",
+      "Heads is now more likely",
+      "Each flip is independent: still 1/2",
+      "The coin is broken"
+     ],
+     "a": 2,
+     "why": "Past flips do not change a fair coin.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "How many 4-digit PINs are possible if digits can repeat (0 to 9)?",
+     "a": 10000,
+     "tol": 0,
+     "why": "10 × 10 × 10 × 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In how many ways can 2 people be chosen from 5? (order does not matter)",
+     "a": 10,
+     "tol": 0,
+     "why": "(5 × 4) ÷ 2 = 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two dice are rolled. How many of the 36 outcomes add to 7?",
+     "a": 6,
+     "tol": 0,
+     "why": "(1,6), (2,5), (3,4), (4,3), (5,2), (6,1).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why choosing 2 from 5 gives 10 and not 20.",
+     "rubric": [
+      [
+       "order",
+       "twice",
+       "two ways",
+       "same pair",
+       "duplicate",
+       "repeat"
+      ],
+      [
+       "20",
+       "5 × 4",
+       "5×4"
+      ],
+      [
+       "divide",
+       "half",
+       "2",
+       "counted"
+      ]
+     ],
+     "min": 2,
+     "model": "Counting ordered pairs gives 5 × 4 = 20, but each pair like A-B and B-A is the same selection, so each is counted twice. 20 ÷ 2 = 10.",
+     "why": "Combinations ignore order, so divide by the number of orderings.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "3 red and 2 blue counters. Two are taken at once. P(both red)?",
+     "o": [
+      "9/25",
+      "3/10",
+      "3/5",
+      "6/25"
+     ],
+     "a": 1,
+     "why": "3/5 × 2/4 = 3/10 without replacement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it wrong to say P(sum = 7) with two dice is 1/11 because the sums 2 to 12 give 11 outcomes?",
+     "rubric": [
+      [
+       "not equally likely",
+       "unequal",
+       "different chances",
+       "not equal"
+      ],
+      [
+       "6",
+       "36",
+       "1/6",
+       "ways",
+       "combinations"
+      ],
+      [
+       "7 is",
+       "more ways",
+       "most",
+       "likely"
+      ]
+     ],
+     "min": 2,
+     "model": "The 11 sums are not equally likely. 7 can be made 6 ways out of 36 outcomes while 2 can be made only 1 way. So P(7) = 6/36 = 1/6.",
+     "why": "Probability by counting needs equally likely outcomes, which are the 36 pairs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A password has 3 letters from A to Z with no repeats allowed. How many?",
+     "o": [
+      "15 600",
+      "17 576",
+      "78",
+      "2 600"
+     ],
+     "a": 0,
+     "why": "26 × 25 × 24 = 15 600.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Counting possibilities",
+    "model": "When you make choices one after another, multiply the number of options at each step. 3 shirts and 4 trousers give 3 × 4 = 12 outfits. If the order matters, count each order. If it does not, divide to remove repeats.",
+    "points": [
+     {
+      "k": [
+       "multiply",
+       "times"
+      ],
+      "ask": "What do I do with the options?"
+     },
+     {
+      "k": [
+       "order",
+       "arrangement",
+       "permutation"
+      ],
+      "ask": "What if the order matters?"
+     },
+     {
+      "k": [
+       "example",
+       "shirt",
+       "trousers",
+       "outfit",
+       "12"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Descriptive statistics and distributions",
+   "icon": "📊",
+   "hook": "Two classes both have a mean test score of 60. In one class nearly everyone scored about 60; in the other, scores ranged from 20 to 100. How would you tell them apart?",
+   "explain": [
+    "Descriptive statistics summarise data. A measure of centre gives a typical value (mean, median, mode). A measure of spread tells how varied the data are: the range, the interquartile range (IQR) and the standard deviation. Two data sets can have the same mean but very different spread.",
+    "Quartiles split ordered data into four equal parts. For 2, 4, 4, 5, 7, 8, 10 the median is 5, the lower quartile Q1 is 4, the upper quartile Q3 is 8 and the IQR is 8 − 4 = 4. The standard deviation measures typical distance from the mean: for 2, 4, 4, 4, 5, 5, 7, 9 the mean is 5, the squared distances are 9, 1, 1, 1, 0, 0, 4, 16 with total 32, the variance is 32 ÷ 8 = 4 and the standard deviation is 2.",
+    "A histogram shows how data are distributed. A symmetric, bell-shaped distribution is called normal: about 68% of values lie within 1 standard deviation of the mean and about 95% within 2. A skewed distribution has a long tail on one side, and an outlier is a value far from the others that may need checking."
+   ],
+   "example": {
+    "q": "Find the median, quartiles and IQR of 2, 4, 4, 5, 7, 8, 10.",
+    "steps": [
+     "Seven values in order: median is the 4th value, 5.",
+     "Lower half (2, 4, 4): Q1 = 4. Upper half (7, 8, 10): Q3 = 8.",
+     "IQR = Q3 − Q1 = 8 − 4 = 4."
+    ],
+    "a": "Median 5, Q1 4, Q3 8, IQR 4"
+   },
+   "analogies": {
+    "home": "Weekly shopping bills: the mean tells the typical week; the range tells how much it varies.",
+    "farm": "Egg counts from 8 hens: a hen laying far fewer than the others is an outlier to check.",
+    "sport": "Two basketball players average 20 points. The one with a small spread is more consistent.",
+    "city": "Bus arrival delays: a small spread means a reliable service."
+   },
+   "mnemonic": "Centre says where, spread says how far. Same mean can still hide a different star.",
+   "terms": [
+    [
+     "Range",
+     "Largest value minus smallest."
+    ],
+    [
+     "IQR",
+     "Q3 minus Q1, the spread of the middle half."
+    ],
+    [
+     "Standard deviation",
+     "A measure of typical distance from the mean."
+    ],
+    [
+     "Outlier",
+     "A value far from the others."
+    ]
+   ],
+   "misc": {
+    "wrong": "If two data sets have the same mean, they are the same.",
+    "right": "The mean says nothing about spread. 59, 60, 61 and 20, 60, 100 have the same mean 60."
+   },
+   "limits": "Textbooks use slightly different methods to find quartiles for small data sets, so check which rule is being used.",
+   "trip": {
+    "wiki": "Standard deviation",
+    "prompt": "Find the picture of two bell curves with the same mean and different spreads."
+   },
+   "sources": [
+    "Descriptive statistics",
+    "Standard deviation",
+    "Interquartile range"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which measure shows how spread out data are?",
+     "o": [
+      "Mean",
+      "Mode",
+      "Median",
+      "Standard deviation"
+     ],
+     "a": 3,
+     "why": "The mean, median and mode show centre.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The range of 4, 9, 2, 12, 7 is...",
+     "o": [
+      "12",
+      "2",
+      "10",
+      "7"
+     ],
+     "a": 2,
+     "why": "12 − 2 = 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true for a symmetric bell-shaped distribution?",
+     "o": [
+      "All values lie within 1 standard deviation",
+      "About 68% of values lie within 1 standard deviation of the mean",
+      "About 50% lie within 1 standard deviation",
+      "The mean is always zero"
+     ],
+     "a": 1,
+     "why": "The empirical 68-95 rule applies to normal-shaped data.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Class A scores are 59, 60, 61. Class B scores are 20, 60, 100. Which statement is true?",
+     "o": [
+      "They have the same mean but B has larger spread",
+      "They have the same spread",
+      "A has the larger mean",
+      "B has the larger mean"
+     ],
+     "a": 0,
+     "why": "Both means are 60. The range is 2 for A and 80 for B.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A salary data set has one very large value. Which centre is least affected?",
+     "o": [
+      "Mean",
+      "Range",
+      "Total",
+      "Median"
+     ],
+     "a": 3,
+     "why": "The median depends on position, not size, of the extreme value.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Lina says a value of 90 in the data 10, 12, 11, 13, 90 must be deleted. What is the best advice?",
+     "o": [
+      "Delete it at once",
+      "Keep it and ignore it",
+      "Check whether it is an error or real before deciding",
+      "Change it to 12"
+     ],
+     "a": 2,
+     "why": "Outliers may be mistakes or real, important values.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find the median of 2, 4, 4, 5, 7, 8, 10.",
+     "a": 5,
+     "tol": 0,
+     "why": "The 4th of 7 values is 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the IQR of 2, 4, 4, 5, 7, 8, 10 (Q1 = 4, Q3 = 8).",
+     "a": 4,
+     "tol": 0,
+     "why": "8 − 4 = 4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the standard deviation of 2, 4, 4, 4, 5, 5, 7, 9 (population, mean 5).",
+     "a": 2,
+     "tol": 0.01,
+     "why": "Squared distances total 32. 32 ÷ 8 = 4 and √4 = 2.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Two bus companies both have a mean delay of 5 minutes. Explain why a passenger might prefer the company with the smaller spread.",
+     "rubric": [
+      [
+       "consistent",
+       "reliable",
+       "predictable",
+       "steady",
+       "similar"
+      ],
+      [
+       "spread",
+       "vary",
+       "varies",
+       "range",
+       "deviation"
+      ],
+      [
+       "late",
+       "delay",
+       "time",
+       "plan",
+       "miss",
+       "unpredictable"
+      ]
+     ],
+     "min": 2,
+     "model": "With a smaller spread the delays are close to 5 minutes every time, so the passenger can plan. A large spread means some buses are very late.",
+     "why": "Spread tells how much to trust the mean.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A histogram has a long tail to the right. Where is the mean compared with the median?",
+     "o": [
+      "The mean is less than the median",
+      "The mean is greater than the median",
+      "They are equal",
+      "The mean is always zero"
+     ],
+     "a": 1,
+     "why": "The tail pulls the mean toward the larger values.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A teacher says the mean mark is 70, so most students got near 70. Explain why this might be wrong.",
+     "rubric": [
+      [
+       "spread",
+       "vary",
+       "range",
+       "deviation",
+       "distribution"
+      ],
+      [
+       "outlier",
+       "extreme",
+       "very high",
+       "very low",
+       "bimodal",
+       "two groups",
+       "some"
+      ],
+      [
+       "mean",
+       "average",
+       "not typical",
+       "misleading",
+       "median"
+      ]
+     ],
+     "min": 2,
+     "model": "The mean says nothing about spread. Scores could be a mix of very high and very low values with few near 70, for example half getting 40 and half getting 100.",
+     "why": "Always look at spread and shape with the mean.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Scores on a test are normal with mean 50 and standard deviation 10. About what percentage score between 40 and 60?",
+     "o": [
+      "68%",
+      "34%",
+      "95%",
+      "50%"
+     ],
+     "a": 0,
+     "why": "That is 1 standard deviation either side of the mean.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Mean and spread",
+    "model": "The mean tells you the typical value, and the spread tells you how different the values are from one another. Two sets can have the same mean but different spread. The range is the biggest minus the smallest, and the standard deviation shows the typical distance from the mean.",
+    "points": [
+     {
+      "k": [
+       "mean",
+       "centre",
+       "typical",
+       "average"
+      ],
+      "ask": "What does the mean show?"
+     },
+     {
+      "k": [
+       "spread",
+       "range",
+       "vary",
+       "deviation",
+       "different"
+      ],
+      "ask": "What does spread show?"
+     },
+     {
+      "k": [
+       "example",
+       "class",
+       "test",
+       "score",
+       "same mean"
+      ],
+      "ask": "Can you give an example where the mean is the same but the data differ?"
+     }
+    ]
+   }
+  }
+ ]
+}

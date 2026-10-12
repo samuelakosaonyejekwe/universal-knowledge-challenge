@@ -1,0 +1,1755 @@
+{
+ "world": 10,
+ "lang": "ru",
+ "level": 1,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Language sounds and pronunciation",
+   "icon": "🔊",
+   "hook": "Russian has sounds that English does not have. Can you hear which part of a word is said loudest?",
+   "explain": [
+    "Every Russian word has one stressed syllable. It is said longer and louder. In молоко (moloko) the stress is on the last part: молокО.",
+    "Vowels that are not stressed get weaker. In молоко the first two о letters sound like a short \"a\": it sounds like \"malako\". So learn each new word together with its stress."
+   ],
+   "mnemonic": "Stress is the drum beat of a Russian word: loud on one beat, soft on the others.",
+   "items": [
+    [
+     "mother",
+     "мама",
+     "mama"
+    ],
+    [
+     "water",
+     "вода",
+     "vo-DA"
+    ],
+    [
+     "milk",
+     "молоко",
+     "ma-la-KO"
+    ],
+    [
+     "thank you",
+     "спасибо",
+     "spa-SEE-ba"
+    ],
+    [
+     "yes",
+     "да",
+     "da"
+    ],
+    [
+     "no",
+     "нет",
+     "nyet"
+    ],
+    [
+     "good, well",
+     "хорошо",
+     "kha-ra-SHO"
+    ],
+    [
+     "hi",
+     "привет",
+     "pri-VYET"
+    ]
+   ],
+   "sentences": [
+    [
+     "I drink water.",
+     [
+      "Я",
+      "пью",
+      "воду."
+     ]
+    ],
+    [
+     "This is my mother.",
+     [
+      "Это",
+      "моя",
+      "мама."
+     ]
+    ],
+    [
+     "Thank you, this is good.",
+     [
+      "Спасибо,",
+      "это",
+      "хорошо."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How is the first о in молоко (stressed on the last syllable) pronounced?",
+     "o": [
+      "Like a short \"a\"",
+      "Like the \"o\" in \"go\"",
+      "It is silent",
+      "Like \"u\" in \"put\""
+     ],
+     "a": 0,
+     "why": "An unstressed о is weakened and sounds like \"a\": \"malako\".",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How is the letter х in хорошо pronounced?",
+     "o": [
+      "Like English \"ks\" in \"box\"",
+      "A rough breathy sound, like \"ch\" in Scottish \"loch\"",
+      "Like English \"sh\"",
+      "Like English \"k\""
+     ],
+     "a": 1,
+     "why": "Russian х is a rough \"kh\" sound made in the back of the mouth.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can reading a Russian word \"as it is spelled\" give a wrong sound?",
+     "o": [
+      "Russian has silent consonants in every word",
+      "Unstressed vowels are weakened, so the sound can differ from the letter",
+      "Russian letters change sound every day",
+      "Russian words are never stressed"
+     ],
+     "a": 1,
+     "why": "Vowel reduction means о often sounds like \"a\" when unstressed, so you must know the stress.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The words замок (castle) and замок (lock) are spelled the same. What tells them apart?",
+     "o": [
+      "The number of letters",
+      "Capital letters",
+      "Where the stress falls",
+      "A different alphabet"
+     ],
+     "a": 2,
+     "why": "ЗАмок is a castle and замОк is a lock: stress can change meaning.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In хлеб (bread) the final б sounds like \"p\". What does this show?",
+     "o": [
+      "The letter б is silent",
+      "Russian never pronounces consonants",
+      "The word is foreign",
+      "A voiced consonant at the end of a word is said unvoiced"
+     ],
+     "a": 3,
+     "why": "Final devoicing: хлеб is said \"khlyep\".",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why stress matters in Russian",
+    "model": "Each Russian word has one stressed syllable that is louder and longer. Other vowels are weaker, and о is said like a short \"a\" when unstressed, as in молоко. Stress can even change meaning, so learn it with every new word.",
+    "points": [
+     {
+      "k": [
+       "stress",
+       "loud",
+       "syllable"
+      ],
+      "ask": "What do you mean by stress?"
+     },
+     {
+      "k": [
+       "weak",
+       "reduc",
+       "short",
+       "a"
+      ],
+      "ask": "What happens to the other vowels?"
+     },
+     {
+      "k": [
+       "word",
+       "example",
+       "молоко",
+       "meaning"
+      ],
+      "ask": "Can you give me an example word?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian phonology",
+    "prompt": "Find the part about vowel reduction and write down one word where о sounds like \"a\"."
+   },
+   "sources": [
+    "Russian phonology",
+    "Stress (linguistics)"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Alphabet, script or basic characters",
+   "icon": "🔤",
+   "hook": "The Russian letter Р looks like English P, but it sounds different. Can you guess its sound?",
+   "explain": [
+    "Russian uses the Cyrillic alphabet with 33 letters. Some letters look like English ones and sound the same, like К and М. Others are \"false friends\": В sounds like v, Н sounds like n, Р sounds like a rolled r and С sounds like s.",
+    "Some letters are new, like Д (d), Б (b), Г (g) and Я (ya). Two letters, Ь and Ъ, have no sound of their own. They only change how the letters beside them are said."
+   ],
+   "mnemonic": "False friends: В says v, Н says n, Р says r, С says s. They only pretend to be English.",
+   "items": [
+    [
+     "the letter for \"b\"",
+     "Б б",
+     "be"
+    ],
+    [
+     "the letter for \"v\"",
+     "В в",
+     "ve"
+    ],
+    [
+     "the letter for \"g\"",
+     "Г г",
+     "ge"
+    ],
+    [
+     "the letter for \"d\"",
+     "Д д",
+     "de"
+    ],
+    [
+     "the letter for \"n\"",
+     "Н н",
+     "en"
+    ],
+    [
+     "the letter for \"r\"",
+     "Р р",
+     "er"
+    ],
+    [
+     "the letter for \"s\"",
+     "С с",
+     "es"
+    ],
+    [
+     "the letter for \"ya\"",
+     "Я я",
+     "ya"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is the letter A.",
+     [
+      "Это",
+      "буква",
+      "А."
+     ]
+    ],
+    [
+     "This is my house.",
+     [
+      "Это",
+      "мой",
+      "дом."
+     ]
+    ],
+    [
+     "Here are a cat and a house.",
+     [
+      "Вот",
+      "кот",
+      "и",
+      "дом."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which sound does the Russian letter Р stand for?",
+     "o": [
+      "English \"p\"",
+      "A rolled \"r\"",
+      "English \"h\"",
+      "English \"ee\""
+     ],
+     "a": 1,
+     "why": "Р looks like P but is the Russian r, trilled with the tip of the tongue.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many letters are there in the Russian alphabet?",
+     "o": [
+      "26",
+      "30",
+      "33",
+      "36"
+     ],
+     "a": 2,
+     "why": "The Russian alphabet has 33 letters, including Ь and Ъ.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The alphabet is called Cyrillic. Why?",
+     "o": [
+      "It was invented by a Russian tsar called Cyril",
+      "It comes from Latin only",
+      "It is linked to Saint Cyril and the Slavic mission he led with his brother Methodius",
+      "It was made for computers"
+     ],
+     "a": 2,
+     "why": "Cyrillic is named in honour of Cyril, who with Methodius worked among the Slavs; it was shaped by their followers from Greek letters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it risky to read Н as \"h\" and С as \"k\"?",
+     "o": [
+      "They are silent letters",
+      "Russian has no n or s",
+      "They change by position only",
+      "They are false friends: Н is n and С is s"
+     ],
+     "a": 3,
+     "why": "Look-alike letters carry different sounds, so check each letter instead of guessing from English.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The letters Ь and Ъ do not make a sound. What do they do?",
+     "o": [
+      "They signal softness or a separation of nearby sounds",
+      "They make the vowel longer",
+      "They mark questions",
+      "They mean the word is plural"
+     ],
+     "a": 0,
+     "why": "The soft sign softens a consonant and the hard sign separates it from the next vowel.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The Russian alphabet",
+    "model": "Russian uses 33 Cyrillic letters. Some look like English letters but sound different, so В is v, Н is n, Р is r and С is s. Two letters, Ь and Ъ, make no sound alone.",
+    "points": [
+     {
+      "k": [
+       "33",
+       "cyrillic",
+       "letters"
+      ],
+      "ask": "How many letters are there and what is the alphabet called?"
+     },
+     {
+      "k": [
+       "false",
+       "look",
+       "в",
+       "н",
+       "р",
+       "с",
+       "different"
+      ],
+      "ask": "Do the letters sound like English ones?"
+     },
+     {
+      "k": [
+       "soft",
+       "hard",
+       "ь",
+       "ъ",
+       "silent"
+      ],
+      "ask": "Are there letters with no sound?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Cyrillic script",
+    "prompt": "Look at the table of letters and find three letters that look like English ones but sound different."
+   },
+   "sources": [
+    "Russian alphabet",
+    "Cyrillic script"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Greetings and introductions",
+   "icon": "👋",
+   "hook": "When do you say Привет to a friend, and when do you say Здравствуйте?",
+   "explain": [
+    "Привет (privet) means \"hi\" and is for friends and family. Здравствуйте (ZDRAST-vuy-tye) is \"hello\" for teachers, shop staff and anyone you do not know well. The first в is not pronounced.",
+    "To say your name, say Меня зовут (menya zovut), which means \"they call me\". To ask a friend, say Как тебя зовут? To ask an adult stranger, use the polite form: Как вас зовут?"
+   ],
+   "mnemonic": "Ты is for your team, Вы is for the boss: small word, big respect.",
+   "items": [
+    [
+     "hi (friends)",
+     "Привет",
+     "pri-VYET"
+    ],
+    [
+     "hello (polite)",
+     "Здравствуйте",
+     "ZDRAST-vuy-tye"
+    ],
+    [
+     "good morning",
+     "Доброе утро",
+     "DOB-ra-ye OO-tra"
+    ],
+    [
+     "good evening",
+     "Добрый вечер",
+     "DOB-ry VYE-cher"
+    ],
+    [
+     "goodbye",
+     "До свидания",
+     "da svee-DA-nya"
+    ],
+    [
+     "bye (casual)",
+     "Пока",
+     "pa-KA"
+    ],
+    [
+     "please / you are welcome",
+     "Пожалуйста",
+     "pa-ZHAL-sta"
+    ],
+    [
+     "nice to meet you",
+     "Очень приятно",
+     "O-chen pree-YAT-na"
+    ]
+   ],
+   "sentences": [
+    [
+     "My name is Anna.",
+     [
+      "Меня",
+      "зовут",
+      "Анна."
+     ]
+    ],
+    [
+     "What is your name? (friend)",
+     [
+      "Как",
+      "тебя",
+      "зовут?"
+     ]
+    ],
+    [
+     "Nice to meet you, Ivan.",
+     [
+      "Очень",
+      "приятно,",
+      "Иван."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "You meet your new teacher. Which greeting is best?",
+     "o": [
+      "Привет",
+      "Пока",
+      "Здравствуйте",
+      "Спасибо"
+     ],
+     "a": 2,
+     "why": "Здравствуйте is the polite greeting for teachers and people you do not know well.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You ask an older stranger for their name. Which question is polite?",
+     "o": [
+      "Как тебя зовут?",
+      "Как дела?",
+      "Где ты живёшь?",
+      "Как вас зовут?"
+     ],
+     "a": 3,
+     "why": "Вас is the polite \"you\", used with strangers and elders.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In Здравствуйте the first в is not pronounced. What does that teach us?",
+     "o": [
+      "Russian never uses the letter в",
+      "The word is borrowed from French",
+      "The letter в is a vowel",
+      "Russian spelling does not always show the sound exactly"
+     ],
+     "a": 3,
+     "why": "Some consonant clusters are simplified in speech: it sounds like \"ZDRAST-vuy-tye\".",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do Russians have two words for \"you\", ты and вы?",
+     "o": [
+      "Вы is both plural and polite, and ты is informal singular",
+      "Ты is only for children",
+      "Вы is only for writing",
+      "They are two spellings of one word"
+     ],
+     "a": 0,
+     "why": "Choosing ты or вы shows the relationship between speakers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You greet a friend in a text. Which is the natural choice?",
+     "o": [
+      "Добрый вечер, уважаемый коллега!",
+      "Привет!",
+      "До свидания!",
+      "Очень приятно!"
+     ],
+     "a": 1,
+     "why": "Привет is casual and fits a friend. Goodbye or very formal phrases would sound odd.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Greeting someone in Russian",
+    "model": "Use Привет with friends and Здравствуйте with teachers or strangers. To give your name say Меня зовут and your name. Ask Как тебя зовут? to a friend and Как вас зовут? politely.",
+    "points": [
+     {
+      "k": [
+       "привет",
+       "здравствуйте",
+       "hello"
+      ],
+      "ask": "How do I say hello?"
+     },
+     {
+      "k": [
+       "меня зовут",
+       "name"
+      ],
+      "ask": "How do I say my name?"
+     },
+     {
+      "k": [
+       "polite",
+       "formal",
+       "вы",
+       "ты"
+      ],
+      "ask": "When do I use the polite form?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Greeting",
+    "prompt": "Find how greetings change with politeness and note one example from another language."
+   },
+   "sources": [
+    "Greeting",
+    "T–V distinction",
+    "Russian language"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Numbers and counting",
+   "icon": "🔢",
+   "hook": "In Russian, \"two cats\" and \"five cats\" use different endings for \"cat\". Why?",
+   "explain": [
+    "Count from one to eight: один, два, три, четыре, пять, шесть, семь, восемь. Then comes девять (9) and десять (10).",
+    "The noun changes after a number. After один we use the basic form: один кот. After два, три, четыре we use a special form: два кота. From five on we use another form: пять котов. Also один has genders: один дом, одна мама, одно окно."
+   ],
+   "mnemonic": "One cat, two cat-A, five cat-OV: the number tells the ending.",
+   "items": [
+    [
+     "one",
+     "один",
+     "a-DEEN"
+    ],
+    [
+     "two",
+     "два",
+     "dva"
+    ],
+    [
+     "three",
+     "три",
+     "tree"
+    ],
+    [
+     "four",
+     "четыре",
+     "che-TY-re"
+    ],
+    [
+     "five",
+     "пять",
+     "pyat"
+    ],
+    [
+     "six",
+     "шесть",
+     "shest"
+    ],
+    [
+     "seven",
+     "семь",
+     "syem"
+    ],
+    [
+     "eight",
+     "восемь",
+     "VO-syem"
+    ]
+   ],
+   "sentences": [
+    [
+     "I have two cats.",
+     [
+      "У",
+      "меня",
+      "два",
+      "кота."
+     ]
+    ],
+    [
+     "I am seven years old.",
+     [
+      "Мне",
+      "семь",
+      "лет."
+     ]
+    ],
+    [
+     "One, two, three!",
+     [
+      "Один,",
+      "два,",
+      "три!"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is correct?",
+     "o": [
+      "три кот",
+      "три котов",
+      "три коты",
+      "три кота"
+     ],
+     "a": 3,
+     "why": "After два, три and четыре the noun takes a special form, here кота.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is correct for \"one mother\"?",
+     "o": [
+      "одна мама",
+      "один мама",
+      "одно мама",
+      "два мама"
+     ],
+     "a": 0,
+     "why": "Один has the feminine form одна with feminine nouns.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is it пять котов but два кота?",
+     "o": [
+      "The noun form depends on the number: 2 to 4 take one form and 5 or more take another",
+      "Cats change number at five",
+      "Two is a plural and five is a singular",
+      "It is only a spelling habit"
+     ],
+     "a": 0,
+     "why": "Numbers 2-4 govern the genitive singular, and 5 and above the genitive plural.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Мне пять лет means \"I am five years old\". What does it show about how Russians state age?",
+     "o": [
+      "The verb \"to be\" is used in the past",
+      "The person is in the dative: literally \"to me five years\"",
+      "Age is written in Roman numerals",
+      "The person is the subject"
+     ],
+     "a": 1,
+     "why": "Russian uses мне (to me) and a number, with no verb \"to be\".",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to один when the noun is neuter, as in окно?",
+     "o": [
+      "It stays один: один окно",
+      "It becomes одна: одна окно",
+      "It becomes одно: одно окно",
+      "It becomes два"
+     ],
+     "a": 2,
+     "why": "Один agrees in gender: один, одна, одно.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Counting from 1 to 8 in Russian",
+    "model": "The numbers are один, два, три, четыре, пять, шесть, семь, восемь. The noun after the number changes: один кот, два кота, пять котов. Один also has the forms одна and одно.",
+    "points": [
+     {
+      "k": [
+       "один",
+       "два",
+       "три",
+       "numbers",
+       "count"
+      ],
+      "ask": "What are the first numbers?"
+     },
+     {
+      "k": [
+       "noun",
+       "ending",
+       "change",
+       "кота",
+       "котов"
+      ],
+      "ask": "Does the word for the thing change?"
+     },
+     {
+      "k": [
+       "одна",
+       "одно",
+       "gender",
+       "feminine"
+      ],
+      "ask": "What about one with different words?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian numerals",
+    "prompt": "Find the numbers one to ten and say them aloud twice."
+   },
+   "sources": [
+    "Russian numerals",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Colours and shapes",
+   "icon": "🎨",
+   "hook": "Russian has two different basic words for blue. Why do you think that is?",
+   "explain": [
+    "Colour words are adjectives, so they must agree with the noun: красный мяч (a red ball, masculine), красная машина (a red car, feminine), красное яблоко (a red apple, neuter).",
+    "Russian has two basic blues: синий is dark blue and голубой is light blue, like the sky. Shapes are круг (circle), квадрат (square), треугольник (triangle). The letter ё has two dots and is always stressed."
+   ],
+   "mnemonic": "Red ball, red car, red apple: красный, красная, красное. The ending follows the noun.",
+   "items": [
+    [
+     "red",
+     "красный",
+     "KRAS-ny"
+    ],
+    [
+     "dark blue",
+     "синий",
+     "SEE-nee"
+    ],
+    [
+     "yellow",
+     "жёлтый",
+     "ZHYOL-ty"
+    ],
+    [
+     "green",
+     "зелёный",
+     "zye-LYO-ny"
+    ],
+    [
+     "white",
+     "белый",
+     "BYE-ly"
+    ],
+    [
+     "black",
+     "чёрный",
+     "CHYOR-ny"
+    ],
+    [
+     "circle",
+     "круг",
+     "kroog"
+    ],
+    [
+     "square",
+     "квадрат",
+     "kvad-RAT"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is a red ball.",
+     [
+      "Это",
+      "красный",
+      "мяч."
+     ]
+    ],
+    [
+     "This is a blue circle.",
+     [
+      "Это",
+      "синий",
+      "круг."
+     ]
+    ],
+    [
+     "The snow is white and cold.",
+     [
+      "Снег",
+      "белый",
+      "и",
+      "холодный."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is correct for \"a red apple\" (яблоко is neuter)?",
+     "o": [
+      "красное яблоко",
+      "красный яблоко",
+      "красная яблоко",
+      "красные яблоко"
+     ],
+     "a": 0,
+     "why": "The adjective agrees with the neuter noun, so it ends in -ое.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What colour is голубой?",
+     "o": [
+      "Dark blue",
+      "Light blue",
+      "Grey",
+      "Green"
+     ],
+     "a": 1,
+     "why": "Голубой is light blue; синий is dark blue.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does Russian have two words for blue?",
+     "o": [
+      "It copied them from English",
+      "It treats light blue and dark blue as two basic colours",
+      "One is only for water",
+      "The two words mean the same"
+     ],
+     "a": 1,
+     "why": "Languages divide the colour space differently, and Russian treats light and dark blue as separate basic colours.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is special about the letter ё?",
+     "o": [
+      "It is always silent",
+      "It is used only for foreign names",
+      "It is always stressed, though it is often printed as е",
+      "It makes the previous letter soft only in writing"
+     ],
+     "a": 2,
+     "why": "Ё is stressed; ordinary texts often write е, so learners should learn the words with ё.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"Красная машина\" — why is красная used?",
+     "o": [
+      "Because машина is plural",
+      "Because красный is a noun",
+      "Because the car is large",
+      "Машина is feminine, so the adjective takes the feminine ending"
+     ],
+     "a": 3,
+     "why": "Adjectives match the gender of their noun.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Colour words in Russian",
+    "model": "Colours are adjectives and agree with the noun: красный мяч, красная машина, красное яблоко. Russian has two blues, синий for dark and голубой for light.",
+    "points": [
+     {
+      "k": [
+       "adjective",
+       "agree",
+       "ending",
+       "gender"
+      ],
+      "ask": "Does the colour word change?"
+     },
+     {
+      "k": [
+       "синий",
+       "голубой",
+       "blue",
+       "two"
+      ],
+      "ask": "Is there anything special about blue?"
+     },
+     {
+      "k": [
+       "красный",
+       "example",
+       "мяч",
+       "машина"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Color term",
+    "prompt": "Look for the Russian blues in the page and think why two words might matter."
+   },
+   "sources": [
+    "Color term",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Family and people",
+   "icon": "👨‍👩‍👧",
+   "hook": "Who is a бабушка and who is a дедушка? Think of the people who tell you stories.",
+   "explain": [
+    "The words for family are: мама, папа, брат, сестра, бабушка (grandmother), дедушка (grandfather) and семья (family). Друг is a friend.",
+    "The word \"my\" changes with the noun: мой брат, моя сестра, моё имя. To say \"I have a brother\" Russians say У меня есть брат, which is literally \"by me there is a brother\". Russians also have a middle name from the father, such as Иванович, called отчество."
+   ],
+   "mnemonic": "Мама and папа are the same in many languages. Моя goes with feminine words, мой with masculine.",
+   "items": [
+    [
+     "mum",
+     "мама",
+     "MA-ma"
+    ],
+    [
+     "dad",
+     "папа",
+     "PA-pa"
+    ],
+    [
+     "brother",
+     "брат",
+     "brat"
+    ],
+    [
+     "sister",
+     "сестра",
+     "syes-TRA"
+    ],
+    [
+     "grandmother",
+     "бабушка",
+     "BA-boosh-ka"
+    ],
+    [
+     "grandfather",
+     "дедушка",
+     "DYE-doosh-ka"
+    ],
+    [
+     "family",
+     "семья",
+     "syem-YA"
+    ],
+    [
+     "friend",
+     "друг",
+     "drook"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is my family.",
+     [
+      "Это",
+      "моя",
+      "семья."
+     ]
+    ],
+    [
+     "I have a brother.",
+     [
+      "У",
+      "меня",
+      "есть",
+      "брат."
+     ]
+    ],
+    [
+     "My grandmother is kind.",
+     [
+      "Моя",
+      "бабушка",
+      "добрая."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is correct?",
+     "o": [
+      "мой сестра",
+      "моя сестра",
+      "моё сестра",
+      "мои сестра"
+     ],
+     "a": 1,
+     "why": "Сестра is feminine, so \"my\" is моя.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the отчество in Anna Ivanovna Petrova?",
+     "o": [
+      "Anna, her first name",
+      "Petrova, the surname",
+      "Ivanovna, formed from her father's name",
+      "Ivan, her husband"
+     ],
+     "a": 2,
+     "why": "The patronymic is made from the father's first name, here Ivan.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does Russian say У меня есть брат instead of \"I have a brother\"?",
+     "o": [
+      "It is an old spelling",
+      "Russians never talk about brothers",
+      "It uses a \"by me there is\" structure and has no ordinary verb \"to have\" here",
+      "The verb \"to have\" is secret"
+     ],
+     "a": 2,
+     "why": "Possession is expressed with у plus the person and есть.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A teacher is called Мария Ивановна. Why use both names?",
+     "o": [
+      "She has two surnames",
+      "It is a nickname",
+      "It is only used with children",
+      "Name plus patronymic is a respectful way to address someone"
+     ],
+     "a": 3,
+     "why": "Using the first name and patronymic is polite and common at school and work.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do мама and папа look similar in many languages?",
+     "o": [
+      "Early baby sounds often form words for parents",
+      "They were copied from English only",
+      "They have the same alphabet",
+      "They are always loan words"
+     ],
+     "a": 0,
+     "why": "Simple syllables like ma and pa are among the first sounds babies make.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Family words in Russian",
+    "model": "Use мама, папа, брат, сестра, бабушка and дедушка. My changes by gender: мой брат, моя сестра. Say У меня есть брат for \"I have a brother\".",
+    "points": [
+     {
+      "k": [
+       "мама",
+       "папа",
+       "брат",
+       "сестра",
+       "family"
+      ],
+      "ask": "What are some family words?"
+     },
+     {
+      "k": [
+       "мой",
+       "моя",
+       "my",
+       "gender"
+      ],
+      "ask": "How do I say \"my\"?"
+     },
+     {
+      "k": [
+       "у меня есть",
+       "have"
+      ],
+      "ask": "How do I say I have a brother?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian name",
+    "prompt": "Find what a patronymic is and make one for a made-up person."
+   },
+   "sources": [
+    "Russian naming customs",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Common objects",
+   "icon": "📚",
+   "hook": "There is no word for \"a\" or \"the\" in Russian. How does a book stay \"a book\"?",
+   "explain": [
+    "Russian has no articles. Книга can mean \"a book\" or \"the book\". Every noun has a gender. Most masculine nouns end in a consonant (стол), feminine in -а or -я (книга) and neuter in -о or -е (окно).",
+    "The word \"is\" is not used in the present: Это книга means \"This is a book\". To ask where something is, say Где? (where), as in Где мой телефон? Use на стол-е to say \"on the table\"."
+   ],
+   "mnemonic": "Стол is a boy, книга is a girl, окно is a thing in between.",
+   "items": [
+    [
+     "book",
+     "книга",
+     "KNEE-ga"
+    ],
+    [
+     "pen",
+     "ручка",
+     "ROOCH-ka"
+    ],
+    [
+     "table",
+     "стол",
+     "stol"
+    ],
+    [
+     "chair",
+     "стул",
+     "stool"
+    ],
+    [
+     "window",
+     "окно",
+     "ak-NO"
+    ],
+    [
+     "door",
+     "дверь",
+     "dvyer"
+    ],
+    [
+     "telephone",
+     "телефон",
+     "tye-lye-FON"
+    ],
+    [
+     "bag",
+     "сумка",
+     "SOOM-ka"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is my book.",
+     [
+      "Это",
+      "моя",
+      "книга."
+     ]
+    ],
+    [
+     "Where is my telephone?",
+     [
+      "Где",
+      "мой",
+      "телефон?"
+     ]
+    ],
+    [
+     "The book lies on the table.",
+     [
+      "Книга",
+      "лежит",
+      "на",
+      "столе."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which of these nouns is neuter?",
+     "o": [
+      "стол",
+      "книга",
+      "окно",
+      "сумка"
+     ],
+     "a": 2,
+     "why": "Nouns ending in -о are usually neuter.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How do you say \"a book\" in Russian?",
+     "o": [
+      "один книга",
+      "книгы",
+      "книго",
+      "книга"
+     ],
+     "a": 3,
+     "why": "Russian has no articles, so книга means both \"a book\" and \"the book\"; один would be \"one\", and it would also need the feminine form одна.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is it Это моя книга but not \"это есть моя книга\"?",
+     "o": [
+      "There is no word for books",
+      "Есть is only used with food",
+      "The sentence is incorrect",
+      "Russian omits the present tense of \"to be\""
+     ],
+     "a": 3,
+     "why": "In the present, the verb \"to be\" is left out, so Это моя книга is the natural sentence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A learner says \"мой окно\". What is wrong?",
+     "o": [
+      "Окно is neuter, so it should be моё окно",
+      "Окно is feminine",
+      "Моё is only for people",
+      "It has no gender"
+     ],
+     "a": 0,
+     "why": "The possessive agrees with the noun gender: моё for neuter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does стол become столе in \"на столе\"?",
+     "o": [
+      "Because it is plural",
+      "The noun takes the prepositional case after на for location",
+      "Because it ends with a vowel",
+      "It is an irregular word with no pattern"
+     ],
+     "a": 1,
+     "why": "Russian nouns change their ending according to their role, here the prepositional case for position.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Naming objects in Russian",
+    "model": "Russian has no a or the. Every noun is masculine, feminine or neuter, which you can often tell from the ending. Say Это книга for \"This is a book\" without a verb.",
+    "points": [
+     {
+      "k": [
+       "article",
+       "no",
+       "a",
+       "the"
+      ],
+      "ask": "Does Russian have a and the?"
+     },
+     {
+      "k": [
+       "gender",
+       "masculine",
+       "feminine",
+       "neuter"
+      ],
+      "ask": "What is gender?"
+     },
+     {
+      "k": [
+       "это",
+       "is",
+       "verb"
+      ],
+      "ask": "How do I say \"This is a book\"?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Grammatical gender",
+    "prompt": "Find how many genders Russian has and give one example of each."
+   },
+   "sources": [
+    "Grammatical gender",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Everyday actions",
+   "icon": "🏃",
+   "hook": "How does the Russian verb change when I read, you read and the children read?",
+   "explain": [
+    "Russian verbs have endings that show who does the action. For читать (to read): я читаю, ты читаешь, он читает, мы читаем, вы читаете, они читают.",
+    "Other useful verbs are писать (to write), играть (to play), спать (to sleep), пить (to drink), есть (to eat) and говорить (to speak). Because the ending shows the person, Russians often drop the pronoun and say Читаю книгу."
+   ],
+   "mnemonic": "Я читаЮ, ты читаЕШЬ: the end tells the person.",
+   "items": [
+    [
+     "to read",
+     "читать",
+     "chee-TAT"
+    ],
+    [
+     "to write",
+     "писать",
+     "pee-SAT"
+    ],
+    [
+     "to play",
+     "играть",
+     "eeg-RAT"
+    ],
+    [
+     "to sleep",
+     "спать",
+     "spat"
+    ],
+    [
+     "to drink",
+     "пить",
+     "peet"
+    ],
+    [
+     "to eat",
+     "есть",
+     "yest"
+    ],
+    [
+     "to listen",
+     "слушать",
+     "SLOO-shat"
+    ],
+    [
+     "to speak",
+     "говорить",
+     "ga-va-REET"
+    ]
+   ],
+   "sentences": [
+    [
+     "I am reading a book.",
+     [
+      "Я",
+      "читаю",
+      "книгу."
+     ]
+    ],
+    [
+     "Mum is drinking tea.",
+     [
+      "Мама",
+      "пьёт",
+      "чай."
+     ]
+    ],
+    [
+     "The children play in the yard.",
+     [
+      "Дети",
+      "играют",
+      "во",
+      "дворе."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which form means \"he reads\"?",
+     "o": [
+      "он читаю",
+      "он читаем",
+      "он читают",
+      "он читает"
+     ],
+     "a": 3,
+     "why": "The он ending for this verb is -ает.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How do you say \"I am a student\" in the present?",
+     "o": [
+      "Я студент",
+      "Я есть студент",
+      "Я быть студент",
+      "Я студент есть"
+     ],
+     "a": 0,
+     "why": "The present tense of \"to be\" is omitted.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can Russian say just Читаю книгу without я?",
+     "o": [
+      "The verb ending already shows the person",
+      "Russian has no pronouns",
+      "The book is the subject",
+      "Pronouns are forbidden"
+     ],
+     "a": 0,
+     "why": "The ending -ю can only go with я, so the pronoun is optional.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is \"они играют\" different from \"он играет\"?",
+     "o": [
+      "They are different tenses",
+      "The verb agrees with the subject in person and number",
+      "Они is a feminine word",
+      "It is just a spelling change"
+     ],
+     "a": 1,
+     "why": "Они is plural, so the verb takes the plural ending -ют.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In Я читаю книгу, why is it книгу and not книга?",
+     "o": [
+      "Книгу is the plural",
+      "Книгу is the subject form",
+      "The direct object takes the accusative ending",
+      "The verb changes the noun to feminine"
+     ],
+     "a": 2,
+     "why": "Книга is the dictionary form; as the object of читаю it becomes книгу.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Doing words in Russian",
+    "model": "Russian verbs change their endings with the person: я читаю, ты читаешь, он читает. Because the ending shows who acts, the pronoun can be dropped.",
+    "points": [
+     {
+      "k": [
+       "verb",
+       "ending",
+       "change",
+       "person"
+      ],
+      "ask": "Do verbs change?"
+     },
+     {
+      "k": [
+       "читаю",
+       "читаешь",
+       "читает",
+       "example"
+      ],
+      "ask": "Can you show me an example?"
+     },
+     {
+      "k": [
+       "pronoun",
+       "drop",
+       "omit",
+       "я"
+      ],
+      "ask": "Do I need to say я?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian verbs",
+    "prompt": "Find the table of present-tense endings and compare two persons."
+   },
+   "sources": [
+    "Russian verbs",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Simple listening and speaking",
+   "icon": "🗣️",
+   "hook": "What would you say if you hear Russian and do not understand?",
+   "explain": [
+    "Useful phrases when you listen: Я не понимаю (I do not understand), Повторите, пожалуйста (Please repeat), Говорите медленно (Speak slowly). To say you understand, say Я понимаю.",
+    "Как дела? means \"How are things?\" and a normal reply is Хорошо, спасибо. In Russian, a yes/no question may have the same words as a statement but the voice goes up on the key word. Ты говоришь по-русски? means \"Do you speak Russian?\""
+   ],
+   "mnemonic": "Listen, repeat, slow down: three tools that make talking possible.",
+   "items": [
+    [
+     "How are you?",
+     "Как дела?",
+     "kak dye-LA"
+    ],
+    [
+     "Fine, thanks.",
+     "Хорошо, спасибо.",
+     "kha-ra-SHO spa-SEE-ba"
+    ],
+    [
+     "I do not understand.",
+     "Я не понимаю.",
+     "ya nye pa-nee-MA-yu"
+    ],
+    [
+     "I understand.",
+     "Я понимаю.",
+     "ya pa-nee-MA-yu"
+    ],
+    [
+     "Please repeat.",
+     "Повторите, пожалуйста.",
+     "paf-ta-REE-tye pa-ZHAL-sta"
+    ],
+    [
+     "Speak slowly, please.",
+     "Говорите медленно.",
+     "ga-va-REE-tye MYED-lyen-na"
+    ],
+    [
+     "Excuse me.",
+     "Извините.",
+     "eez-vee-NEE-tye"
+    ],
+    [
+     "Where is the toilet?",
+     "Где туалет?",
+     "gdye too-a-LYET"
+    ]
+   ],
+   "sentences": [
+    [
+     "How are you? (polite)",
+     [
+      "Как",
+      "у",
+      "вас",
+      "дела?"
+     ]
+    ],
+    [
+     "I do not understand.",
+     [
+      "Я",
+      "не",
+      "понимаю."
+     ]
+    ],
+    [
+     "Please repeat once more.",
+     [
+      "Повторите",
+      "ещё",
+      "раз,",
+      "пожалуйста."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which reply fits Как дела?",
+     "o": [
+      "Хорошо, спасибо",
+      "Меня зовут Анна",
+      "До свидания",
+      "Это стол"
+     ],
+     "a": 0,
+     "why": "Как дела? asks how you are, so a short answer about how you are fits.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How does a spoken yes/no question usually differ from a statement in Russian?",
+     "o": [
+      "Verbs change to the past",
+      "The voice rises on the key word",
+      "An article is added",
+      "Word endings are dropped"
+     ],
+     "a": 1,
+     "why": "Intonation turns the same words into a question.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You do not catch a sentence. Which request is polite to a stranger?",
+     "o": [
+      "Что?",
+      "Повторите, пожалуйста",
+      "Пока",
+      "Не понимаю тебя"
+     ],
+     "a": 1,
+     "why": "Using the polite plural form with пожалуйста is appropriate with strangers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do Russians sometimes say Как дела? and expect a short answer?",
+     "o": [
+      "It is only used for doctors",
+      "It means \"what time is it\"",
+      "It works as a greeting as well as a question",
+      "It cannot be answered"
+     ],
+     "a": 2,
+     "why": "Like English \"How are you?\", it is often a social ritual.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why practise saying phrases aloud as well as reading them?",
+     "o": [
+      "Russian has no written form",
+      "Spoken Russian uses no verbs",
+      "Reading is not needed",
+      "Stress and intonation are part of meaning and do not show in spelling"
+     ],
+     "a": 3,
+     "why": "Pronunciation, stress and intonation need speaking practice.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Getting help when you do not understand",
+    "model": "Say Я не понимаю if you do not understand. Ask Повторите, пожалуйста for repetition and Говорите медленно for slower speech. Reply to Как дела? with Хорошо, спасибо.",
+    "points": [
+     {
+      "k": [
+       "не понимаю",
+       "understand"
+      ],
+      "ask": "How do I say I do not understand?"
+     },
+     {
+      "k": [
+       "повторите",
+       "repeat"
+      ],
+      "ask": "How do I ask someone to say it again?"
+     },
+     {
+      "k": [
+       "медленно",
+       "slow"
+      ],
+      "ask": "How do I ask for slower speech?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian language",
+    "prompt": "Find a short audio sample or phrase list and repeat two lines aloud."
+   },
+   "sources": [
+    "Russian language",
+    "Intonation (linguistics)"
+   ]
+  }
+ ]
+}

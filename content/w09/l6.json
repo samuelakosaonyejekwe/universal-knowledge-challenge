@@ -1,0 +1,2733 @@
+{
+ "world": 9,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Partial differential equations",
+   "icon": "🌡️",
+   "hook": "A metal rod is heated at one end. Its temperature depends on both position and time. What kind of equation can capture that, and why do sharp details in the temperature profile vanish first?",
+   "explain": [
+    "A partial differential equation (PDE) relates a function of several variables to its partial derivatives. Three classical examples are the heat equation u_t = k u_xx (parabolic), the wave equation u_tt = c² u_xx (hyperbolic) and Laplace's equation u_xx + u_yy = 0 (elliptic). The type matters: diffusion smooths and loses information, waves travel with finite speed, and elliptic problems describe equilibrium determined by boundary values.",
+    "Separation of variables looks for u = X(x)T(t). For the heat equation on [0, π] with u = 0 at both ends, X'' = −λX with X(0) = X(π) = 0 gives X = sin nx and λ = n², and T = e^(−kn²t). So u = Σ bₙ e^(−kn²t) sin nx, with bₙ fixed by the initial profile. High modes (large n) decay like e^(−kn²t), so fine detail disappears first. For the wave equation, d'Alembert's solution is u(x, t) = ½[f(x − ct) + f(x + ct)] when the initial velocity is 0: two copies of the initial shape travel in opposite directions.",
+    "First-order equations such as u_t + a u_x = 0 are solved by characteristics: u is constant along lines x − at = constant, so u = f(x − at). A solution should be checked by substitution, and a problem is well posed if a solution exists, is unique and depends continuously on the data (Hadamard). Backward heat problems are ill posed because tiny errors in the data explode."
+   ],
+   "example": {
+    "q": "Solve u_t = u_xx on [0, π] with u(0, t) = u(π, t) = 0 and u(x, 0) = 3 sin x. Find u(π/2, 1).",
+    "steps": [
+     "Try u = X(x)T(t): the boundary conditions give X = sin nx, and the initial shape 3 sin x is the n = 1 mode only.",
+     "The time factor for n = 1 is e^(−t), so u = 3e^(−t) sin x.",
+     "Check: u_t = −3e^(−t) sin x and u_xx = −3e^(−t) sin x, so they agree.",
+     "At x = π/2, t = 1: u = 3e^(−1) × 1 ≈ 1.104."
+    ],
+    "a": "u(π/2, 1) = 3/e ≈ 1.104"
+   },
+   "analogies": {
+    "city": "Heat flows through a building wall by the heat equation, so thick walls delay temperature changes.",
+    "sea": "Waves on a long channel obey a wave equation and travel at speed c without changing shape in the ideal case.",
+    "tech": "Image blurring is diffusion: running the heat equation on an image smooths sharp edges.",
+    "nature": "A pollutant spreading in a lake is a diffusion process."
+   },
+   "mnemonic": "Diffusion forgets, waves remember, Laplace sits still. Break a profile into modes and let each decay or travel.",
+   "terms": [
+    [
+     "PDE",
+     "An equation involving a function of several variables and its partial derivatives."
+    ],
+    [
+     "Separation of variables",
+     "Seeking solutions as a product of single-variable functions."
+    ],
+    [
+     "Characteristic",
+     "A curve along which a first-order PDE reduces to an ODE."
+    ],
+    [
+     "Well-posed",
+     "A problem with a solution that exists, is unique and depends continuously on the data."
+    ]
+   ],
+   "misc": {
+    "wrong": "The heat equation can be run backward in time just as easily as forward.",
+    "right": "Running it backward is ill posed: small errors in high-frequency modes blow up as e^(+kn²t)."
+   },
+   "limits": "Only a few PDEs have closed-form solutions on simple domains; most real problems need numerical methods or approximation.",
+   "trip": {
+    "wiki": "Heat equation",
+    "prompt": "Find the animation of an initial bump spreading out and relate it to the decay of Fourier modes."
+   },
+   "sources": [
+    "Partial differential equation",
+    "Heat equation",
+    "Wave equation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The heat equation u_t = k u_xx is classified as...",
+     "o": [
+      "Elliptic",
+      "Parabolic",
+      "Hyperbolic",
+      "Not a PDE"
+     ],
+     "a": 1,
+     "why": "It has one time derivative and a second spatial derivative.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Laplace's equation describes...",
+     "o": [
+      "Steady state with no time dependence",
+      "Travelling waves",
+      "Chaotic motion",
+      "Exponential decay in time"
+     ],
+     "a": 0,
+     "why": "It is the equilibrium of diffusion.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which function satisfies u_xx + u_yy = 0?",
+     "o": [
+      "u = x² + y²",
+      "u = xy²",
+      "u = e^(x+y)",
+      "u = x² − y²"
+     ],
+     "a": 3,
+     "why": "u_xx = 2 and u_yy = −2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "For u_t + 2u_x = 0, solutions are constant along...",
+     "o": [
+      "Lines x + 2t = constant",
+      "Lines t = constant",
+      "Lines x − 2t = constant",
+      "Circles"
+     ],
+     "a": 2,
+     "why": "A pattern moves right at speed 2.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do high-frequency modes die out fastest in heat flow?",
+     "o": [
+      "They have smaller amplitude initially",
+      "Mode n decays like e^(−kn²t)",
+      "They travel away",
+      "Heat is conserved"
+     ],
+     "a": 1,
+     "why": "The decay rate grows with n².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A student claims the backward heat equation is as stable as the forward one. What is the flaw?",
+     "o": [
+      "Backward evolution multiplies mode n by e^(+kn²t), amplifying errors enormously",
+      "None",
+      "It needs more boundary conditions only",
+      "Backward time is not defined mathematically"
+     ],
+     "a": 0,
+     "why": "High-frequency noise grows without bound.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "For u_t + 2u_x = 0 with u(x, 0) = x², find u(3, 1).",
+     "a": 1,
+     "tol": 0,
+     "why": "u = (x − 2t)² so u(3, 1) = 1² = 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "d'Alembert with c = 1, f(x) = x², zero initial velocity. Find u(2, 1).",
+     "a": 5,
+     "tol": 0,
+     "why": "½[(2 − 1)² + (2 + 1)²] = ½(1 + 9) = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Heat equation u_t = u_xx, u = 3e^(−t) sin x. Find u(π/2, 1) to 3 decimal places.",
+     "a": 1.104,
+     "tol": 0.002,
+     "why": "3e^(−1) = 1.1036.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the solution of the heat equation on a rod with ends held at 0 must tend to 0 as time grows.",
+     "rubric": [
+      [
+       "decay",
+       "decays",
+       "exponential",
+       "e^",
+       "die out",
+       "dies out",
+       "vanish",
+       "damped"
+      ],
+      [
+       "mode",
+       "modes",
+       "sin",
+       "fourier",
+       "series",
+       "every term",
+       "all terms"
+      ],
+      [
+       "boundary",
+       "ends",
+       "zero",
+       "heat flows out",
+       "lose heat",
+       "absorb"
+      ]
+     ],
+     "min": 2,
+     "model": "Each mode bₙe^(−kn²t) sin nx decays exponentially, so the sum goes to 0. Physically, heat leaks out through the ends held at 0 and nothing replaces it.",
+     "why": "Dirichlet conditions and the decay of every mode force the solution to zero.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can a wave equation solution keep a sharp corner while a heat equation solution cannot?",
+     "o": [
+      "Waves have less energy",
+      "Heat flows only in one direction",
+      "Corners cannot exist in any PDE",
+      "Waves transport shapes at finite speed; diffusion smooths instantly"
+     ],
+     "a": 3,
+     "why": "Hyperbolic equations propagate singularities along characteristics; parabolic equations smooth.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do boundary conditions matter for a PDE? Use an example.",
+     "rubric": [
+      [
+       "unique",
+       "uniqueness",
+       "determine",
+       "specify",
+       "fix",
+       "single solution"
+      ],
+      [
+       "boundary",
+       "ends",
+       "edges",
+       "edge",
+       "condition"
+      ],
+      [
+       "example",
+       "rod",
+       "temperature",
+       "string",
+       "fixed",
+       "zero",
+       "sin"
+      ]
+     ],
+     "min": 2,
+     "model": "A PDE alone has many solutions. Boundary (and initial) conditions select the one that matches the physical situation, such as a rod's ends held at 0, which restricts modes to sin nx.",
+     "why": "Conditions make the problem well posed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which condition is NOT needed to make the heat equation well posed on [0, π]?",
+     "o": [
+      "An initial temperature profile",
+      "Boundary conditions at both ends",
+      "A final temperature at a later time",
+      "A value of k"
+     ],
+     "a": 2,
+     "why": "Initial plus boundary data are enough; specifying the future would over-determine the problem.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Separation of variables",
+    "model": "To solve a PDE like the heat equation, assume the solution is a product of a function of x and a function of t. This splits one PDE into two ODEs. The boundary conditions fix the allowed shapes (sines), and the time factor makes each shape decay.",
+    "points": [
+     {
+      "k": [
+       "product",
+       "x and t",
+       "separate"
+      ],
+      "ask": "What do I assume about the solution?"
+     },
+     {
+      "k": [
+       "ode",
+       "two equations",
+       "split"
+      ],
+      "ask": "What does this do to the equation?"
+     },
+     {
+      "k": [
+       "boundary",
+       "sin",
+       "decay",
+       "mode"
+      ],
+      "ask": "How do the boundary conditions fit in?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Advanced numerical methods",
+   "icon": "💻",
+   "hook": "The computer says 0.1 + 0.2 is not exactly 0.3. If arithmetic is inexact, how can we trust a simulation that does billions of steps?",
+   "explain": [
+    "Numerical analysis designs algorithms that give approximate answers with controlled error. Computers store numbers in floating point, so every operation has a relative rounding error of about 10⁻¹⁶ in double precision. 0.1 has no exact binary form, so 0.1 + 0.2 ≠ 0.3 exactly. Errors can accumulate or, through subtracting nearly equal numbers (cancellation), be greatly amplified.",
+    "Methods have an order: error ∝ hᵖ, so halving h cuts the error by 2ᵖ. Euler's method is first order. Heun's method (improved Euler) takes the average of two slopes: for y' = y, h = 0.5 it predicts 1.5, averages slopes (1 + 1.5)/2 = 1.25 and gives y = 1.625 (exact e^0.5 ≈ 1.6487). The trapezoid rule and central differences are second order; Simpson's rule is fourth order and exact for cubics: for ∫₀¹ x² dx with two panels, Simpson gives (0.5/3)(0 + 4 × 0.25 + 1) = 1/3 exactly, while the trapezoid rule gives 0.375.",
+    "Root finding illustrates speed. Bisection halves the interval each step: from width 1, after k steps the width is 2⁻ᵏ, so 20 steps give below 10⁻⁶. Newton's method converges quadratically near a simple root: for x² − 2 from x₀ = 1 the iterates 1.5, 1.41667, 1.414216 roughly double the number of correct digits each time. Stability matters: Euler applied to y' = −10y multiplies by (1 − 10h) each step, so with h = 0.25 the factor is −1.5 and the numerical solution grows, though the true solution decays. Always verify with a known solution and test convergence by refining h."
+   ],
+   "example": {
+    "q": "Use Heun's method with h = 0.5 for y' = y, y(0) = 1 to estimate y(0.5).",
+    "steps": [
+     "Euler predictor: y* = 1 + 0.5 × 1 = 1.5.",
+     "Slope at start: 1. Slope at predictor: f(0.5, 1.5) = 1.5.",
+     "Average slope: (1 + 1.5)/2 = 1.25.",
+     "y₁ = 1 + 0.5 × 1.25 = 1.625."
+    ],
+    "a": "1.625 (exact: 1.6487)"
+   },
+   "analogies": {
+    "tech": "Weather forecasts run PDE solvers on grids, and the step size and stability decide whether the forecast is useful.",
+    "city": "Structural engineers use finite element methods to simulate stress in a bridge.",
+    "sport": "Game physics engines integrate motion in small time steps and must keep them stable.",
+    "sea": "Ocean models solve fluid equations on grids, choosing time steps small enough for stability."
+   },
+   "mnemonic": "Halve h, divide the error by 2 to the order. Test on a known answer, and refine until the answer stops changing.",
+   "terms": [
+    [
+     "Truncation error",
+     "Error from approximating a mathematical process, such as cutting off a series."
+    ],
+    [
+     "Rounding error",
+     "Error from finite-precision arithmetic."
+    ],
+    [
+     "Order of accuracy",
+     "The power p in error ∝ hᵖ."
+    ],
+    [
+     "Stability",
+     "Whether errors stay bounded as the algorithm runs."
+    ]
+   ],
+   "misc": {
+    "wrong": "A smaller step size always gives a more accurate result.",
+    "right": "Truncation error falls but rounding error rises as h shrinks, and an unstable method can fail at any step size above a limit."
+   },
+   "trip": {
+    "wiki": "Numerical analysis",
+    "prompt": "Find the sections on error and stability, and a method whose order you recognise."
+   },
+   "sources": [
+    "Numerical analysis",
+    "Floating-point arithmetic",
+    "Runge–Kutta methods"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why is 0.1 + 0.2 not exactly 0.3 in floating point?",
+     "o": [
+      "The computer makes random errors",
+      "0.1 and 0.2 have no exact binary representation",
+      "Addition is not defined",
+      "Decimals are not supported"
+     ],
+     "a": 1,
+     "why": "Binary floating point cannot store them exactly.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If a method has order 2 and you halve h, the error is multiplied by about...",
+     "o": [
+      "1/4",
+      "1/2",
+      "1/8",
+      "1/16"
+     ],
+     "a": 0,
+     "why": "Error ∝ h².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which method is exact for polynomials up to degree 3?",
+     "o": [
+      "Trapezoid rule",
+      "Left Riemann sum",
+      "Euler's method",
+      "Simpson's rule"
+     ],
+     "a": 3,
+     "why": "Simpson's rule integrates cubics exactly.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Bisection reduces the interval width by a factor of...",
+     "o": [
+      "10 each step",
+      "Squares each step",
+      "2 each step",
+      "4 each step"
+     ],
+     "a": 2,
+     "why": "It halves the interval containing the root.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Euler's method on y' = −10y with h = 0.25 gives a growing oscillation. Why?",
+     "o": [
+      "The true solution grows",
+      "The step is too large for stability: |1 − 10h| = 1.5 > 1",
+      "Rounding error alone",
+      "Euler cannot do decay"
+     ],
+     "a": 1,
+     "why": "Each step multiplies the value by −1.5.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is subtracting two nearly equal numbers dangerous?",
+     "o": [
+      "Leading digits cancel and relative error becomes large",
+      "The answer is always zero",
+      "The computer refuses",
+      "It makes numbers bigger"
+     ],
+     "a": 0,
+     "why": "The result has few significant digits left.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Trapezoid rule with two panels for ∫₀¹ x² dx. Give the value.",
+     "a": 0.375,
+     "tol": 0.0001,
+     "why": "(0.5/2)(0 + 2 × 0.25 + 1) = 0.375.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Simpson's rule with two panels for ∫₀¹ x² dx, to 3 decimal places.",
+     "a": 0.333,
+     "tol": 0.001,
+     "why": "(0.5/3)(0 + 4 × 0.25 + 1) = 1/3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many bisection steps (minimum) reduce an interval of width 1 to below 10⁻⁶?",
+     "a": 20,
+     "tol": 0,
+     "why": "2²⁰ = 1 048 576 > 10⁶ but 2¹⁹ = 524 288 < 10⁶.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why central differences f'(x) ≈ (f(x + h) − f(x − h))/(2h) are more accurate than forward differences.",
+     "rubric": [
+      [
+       "symmetric",
+       "centered",
+       "centred",
+       "both sides",
+       "balance",
+       "cancel"
+      ],
+      [
+       "second order",
+       "h²",
+       "order 2",
+       "error terms",
+       "taylor",
+       "even"
+      ],
+      [
+       "forward",
+       "first order",
+       "h "
+      ]
+     ],
+     "min": 2,
+     "model": "Taylor expansion shows that the h terms cancel in the symmetric difference, leaving an error proportional to h² (second order), while the forward difference has an error proportional to h.",
+     "why": "Symmetry cancels the leading error term.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A simulation gives nearly the same answer when h is halved. What can you conclude?",
+     "o": [
+      "The answer is exact",
+      "The method is unstable",
+      "Nothing at all",
+      "The method is probably converged, although a check with a known solution is still wise"
+     ],
+     "a": 3,
+     "why": "Agreement under refinement is evidence of convergence, not proof of correctness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Error at h = 0.1 is 4 × 10⁻³ and at h = 0.05 is 1 × 10⁻³. Estimate the order of the method and explain.",
+     "rubric": [
+      [
+       "2",
+       "second",
+       "quadratic"
+      ],
+      [
+       "ratio",
+       "4",
+       "factor",
+       "divide",
+       "quarter"
+      ],
+      [
+       "log",
+       "power",
+       "h²",
+       "error",
+       "halving",
+       "half"
+      ]
+     ],
+     "min": 2,
+     "model": "Halving h cut the error by a factor 4 = 2², so the method is second order: error ∝ h².",
+     "why": "Order = log₂ of the error ratio when h is halved.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Newton's method not guaranteed to converge?",
+     "o": [
+      "It never converges",
+      "It converges only for linear functions",
+      "A bad starting point or a zero derivative can send it away",
+      "It needs two starting points"
+     ],
+     "a": 2,
+     "why": "It uses f'(x) in the denominator and relies on a good starting guess.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why numerical methods have an order",
+    "model": "The order tells how fast the error shrinks as you make the step size smaller. If the order is 2, halving the step makes the error about four times smaller. Higher order means fewer steps for the same accuracy, but the method must also be stable.",
+    "points": [
+     {
+      "k": [
+       "error",
+       "smaller",
+       "shrink",
+       "accuracy"
+      ],
+      "ask": "What does the order describe?"
+     },
+     {
+      "k": [
+       "step",
+       "h",
+       "halve",
+       "half"
+      ],
+      "ask": "What do I change?"
+     },
+     {
+      "k": [
+       "stable",
+       "stability",
+       "unstable",
+       "blow up"
+      ],
+      "ask": "Is smaller always safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Mathematical modelling",
+   "icon": "🧪",
+   "hook": "How do you decide what to leave out when you build a mathematical model of an epidemic, a fishery or a bridge, and how do you know when to trust it?",
+   "explain": [
+    "Mathematical modelling turns a real question into mathematics, solves it, and interprets the answer back in the real world. The cycle is: pose the question, choose variables and assumptions, build equations, solve or simulate, validate against data, and revise. All models simplify: the aim is a model that is useful, not exact. Units and dimensional analysis check consistency: a pendulum's period T can depend only on length L and gravity g, and the only combination with units of time is T ∝ √(L/g).",
+    "Population models show typical choices. Exponential growth dP/dt = rP ignores limits; the logistic model dP/dt = rP(1 − P/K) adds a carrying capacity K. With r = 0.5 and K = 100, at P = 50 the growth rate is 0.5 × 50 × 0.5 = 12.5 and growth is fastest at P = K/2. Equilibria are points where dP/dt = 0: P = 0 (unstable) and P = K (stable). In the SIR epidemic model the basic reproduction number is R₀ = β/γ; with β = 0.3 and γ = 0.1, R₀ = 3 and the herd immunity threshold is 1 − 1/R₀ = 2/3.",
+    "Predator–prey (Lotka–Volterra) equations dx/dt = ax − bxy, dy/dt = −cy + dxy have an equilibrium at x = c/d, y = a/b; with a = 1, b = 0.5, c = 1, d = 0.25 it is (4, 2). Sensitivity analysis tests how outputs change when parameters or assumptions change. Good practice includes comparing with data not used to fit the model, being honest about uncertainty, and stating where the model should not be used."
+   ],
+   "example": {
+    "q": "In an SIR model β = 0.3 per day and γ = 0.1 per day. Find R₀ and the herd immunity threshold.",
+    "steps": [
+     "R₀ = β/γ = 0.3/0.1 = 3.",
+     "Immunity needed so that each case infects fewer than one other: 1 − 1/R₀.",
+     "= 1 − 1/3 = 2/3 ≈ 0.667."
+    ],
+    "a": "R₀ = 3 and the threshold is about 67%"
+   },
+   "analogies": {
+    "city": "Traffic flow models treat cars as a fluid to study jams.",
+    "farm": "Fishery managers use logistic-type models to set sustainable catch limits.",
+    "tech": "Epidemic models guide how many people to vaccinate.",
+    "nature": "Predator–prey models describe how lynx and hare numbers cycle."
+   },
+   "mnemonic": "Question, assumptions, equations, solve, validate, revise. All models are wrong; some are useful.",
+   "terms": [
+    [
+     "Carrying capacity",
+     "The maximum population an environment can sustain, K in the logistic model."
+    ],
+    [
+     "Equilibrium",
+     "A state where the rates of change are zero."
+    ],
+    [
+     "R₀",
+     "The average number of new infections caused by one case in a fully susceptible population."
+    ],
+    [
+     "Sensitivity analysis",
+     "Studying how model outputs depend on inputs and assumptions."
+    ]
+   ],
+   "misc": {
+    "wrong": "A model that fits past data perfectly must be right.",
+    "right": "Fitting is not validation: a model may overfit, or fail when conditions change. It should be tested on new data."
+   },
+   "limits": "Models are simplified. Predictions are conditional on assumptions such as constant parameters and homogeneous mixing, which may fail in real situations.",
+   "trip": {
+    "wiki": "Mathematical model",
+    "prompt": "Find the classification of models and list one assumption of a model you know."
+   },
+   "sources": [
+    "Mathematical model",
+    "Logistic function",
+    "Compartmental models in epidemiology"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The logistic model dP/dt = rP(1 − P/K) has a stable equilibrium at...",
+     "o": [
+      "P = 0",
+      "P = K",
+      "P = K/2",
+      "P = rK"
+     ],
+     "a": 1,
+     "why": "Near K, growth is positive below K and negative above K.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Population growth is fastest in the logistic model when P equals...",
+     "o": [
+      "K/2",
+      "K",
+      "0",
+      "2K"
+     ],
+     "a": 0,
+     "why": "The product P(1 − P/K) is largest at K/2.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "R₀ > 1 means...",
+     "o": [
+      "The disease is dying out",
+      "Everyone is immune",
+      "The disease is harmless",
+      "Each case causes more than one new case, so the outbreak grows"
+     ],
+     "a": 3,
+     "why": "With R₀ below 1 it declines.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Dimensional analysis shows T ∝ √(L/g) for a pendulum because...",
+     "o": [
+      "Newton said so",
+      "The mass cancels in every case",
+      "It is the only combination of L and g with units of time",
+      "Time is length"
+     ],
+     "a": 2,
+     "why": "L/g has units s² and mass cannot appear.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Zara fits a 10-parameter model to 11 data points and finds a perfect fit. What is the main concern?",
+     "o": [
+      "The model is too simple",
+      "Overfitting: the model may not predict new data",
+      "The data must be wrong",
+      "Nothing"
+     ],
+     "a": 1,
+     "why": "Too many parameters capture noise.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best test of a model?",
+     "o": [
+      "Prediction on data not used to build it",
+      "Fit to the data used to build it",
+      "Asking whether it looks complicated",
+      "Agreement with expectation"
+     ],
+     "a": 0,
+     "why": "Out-of-sample validation is more demanding.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Logistic growth with r = 0.5, K = 100. Find dP/dt at P = 50.",
+     "a": 12.5,
+     "tol": 0.01,
+     "why": "0.5 × 50 × (1 − 0.5) = 12.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Herd immunity threshold for R₀ = 3 as a decimal to 3 d.p.",
+     "a": 0.667,
+     "tol": 0.001,
+     "why": "1 − 1/3 = 0.667.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Lotka–Volterra with a = 1, b = 0.5, c = 1, d = 0.25. Find the equilibrium prey population x = c/d.",
+     "a": 4,
+     "tol": 0,
+     "why": "1/0.25 = 4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a model should state its assumptions and where it should not be used.",
+     "rubric": [
+      [
+       "assum",
+       "simplif",
+       "ignore",
+       "leave out",
+       "conditions"
+      ],
+      [
+       "valid",
+       "range",
+       "fail",
+       "break",
+       "wrong",
+       "not apply",
+       "extrapolat",
+       "limit",
+       "outside"
+      ],
+      [
+       "trust",
+       "predict",
+       "decision",
+       "reliable",
+       "misuse",
+       "mislead",
+       "interpret"
+      ]
+     ],
+     "min": 2,
+     "model": "Every model leaves things out. Stating assumptions shows when its predictions can be trusted and warns users about situations outside its range where it can mislead.",
+     "why": "Assumptions define the domain of validity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A logistic model with r = 0.5 predicts a population approaching K = 100. A year of drought halves K. What is the best action?",
+     "o": [
+      "Keep using K = 100",
+      "Set r = 0",
+      "Ignore the drought",
+      "Update K and recheck against new data"
+     ],
+     "a": 3,
+     "why": "Parameters are assumptions; when conditions change the model must be revised.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a simple SIR model overstate the herd-immunity threshold or understate it in real populations? Give one reason.",
+     "rubric": [
+      [
+       "heterogeneous",
+       "mixing",
+       "groups",
+       "contact",
+       "not uniform",
+       "different",
+       "network",
+       "age"
+      ],
+      [
+       "assum",
+       "homogeneous",
+       "everyone",
+       "same",
+       "equal"
+      ],
+      [
+       "threshold",
+       "immun",
+       "vaccin",
+       "spread",
+       "transmission",
+       "r0"
+      ]
+     ],
+     "min": 2,
+     "model": "The model assumes everyone mixes equally. In reality people differ in contacts and susceptibility, so the effective threshold can be lower or higher than 1 − 1/R₀.",
+     "why": "Homogeneous mixing is an assumption that can fail.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If you double all parameters' uncertainty and the output barely changes, the model output is...",
+     "o": [
+      "Wrong",
+      "Exact",
+      "Insensitive (robust) to those parameters",
+      "Chaotic"
+     ],
+     "a": 2,
+     "why": "Sensitivity analysis identifies which inputs matter.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The modelling cycle",
+    "model": "Modelling means turning a real question into maths, solving it, and checking the answer against reality. You choose variables and assumptions, build equations, solve, validate with data, and then revise if the model fails. No model is perfect, but a good one is useful for its purpose.",
+    "points": [
+     {
+      "k": [
+       "question",
+       "assumption",
+       "simplif",
+       "variables"
+      ],
+      "ask": "How do I start?"
+     },
+     {
+      "k": [
+       "solve",
+       "equation",
+       "simulate"
+      ],
+      "ask": "Then what?"
+     },
+     {
+      "k": [
+       "validate",
+       "check",
+       "data",
+       "revise",
+       "test"
+      ],
+      "ask": "How do I know it is any good?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Real and complex analysis",
+   "icon": "🔎",
+   "hook": "What does it really mean to say that 0.999... equals 1, or that a function is continuous? Analysis replaces intuition about \"getting close\" with exact definitions.",
+   "explain": [
+    "Real analysis makes limits rigorous. A sequence aₙ converges to L if for every ε > 0 there is N such that |aₙ − L| < ε for all n > N. For aₙ = 1/n, taking N = 100 works for ε = 0.01. A function f has limit L at a if for every ε > 0 there is δ > 0 with |f(x) − L| < ε whenever 0 < |x − a| < δ. For f(x) = 3x − 1 at a = 2, |f(x) − 5| = 3|x − 2|, so δ = ε/3 works.",
+    "Series Σaₙ converge if partial sums converge. Σ1/n diverges (the harmonic series) while Σ1/n² converges, to π²/6 ≈ 1.6449. The ratio test says Σaₙ converges if |aₙ₊₁/aₙ| tends to a limit less than 1: for n/2ⁿ the ratio tends to 1/2. The series Σxⁿ/n! has infinite radius of convergence and sums to eˣ. Key theorems: the intermediate value theorem (a continuous function on [a, b] takes every value between f(a) and f(b)) and the extreme value theorem (a continuous function on a closed bounded interval attains a maximum and minimum).",
+    "Complex analysis studies functions of z = x + iy. A function f = u + iv is differentiable (analytic) when the Cauchy–Riemann equations uₓ = vᵧ and uᵧ = −vₓ hold. For z² = (x² − y²) + 2xyi, uₓ = 2x = vᵧ. Euler's formula e^(iθ) = cos θ + i sin θ gives e^(iπ) = −1. Cauchy's theorem says the integral of an analytic function over a closed loop is zero, and ∮ dz/z around the unit circle is 2πi: the exception shows what a pole contributes (its residue 1, times 2πi)."
+   ],
+   "example": {
+    "q": "Prove that lim (x→2) (3x − 1) = 5 by finding δ in terms of ε.",
+    "steps": [
+     "We need |(3x − 1) − 5| < ε.",
+     "Simplify: |3x − 6| = 3|x − 2|.",
+     "This is less than ε when |x − 2| < ε/3.",
+     "So take δ = ε/3. For any ε the condition holds."
+    ],
+    "a": "δ = ε/3"
+   },
+   "analogies": {
+    "music": "A Fourier series expresses a periodic sound as an infinite sum of sine waves, and convergence tells when the sum matches the sound.",
+    "tech": "Signal processing uses complex exponentials to handle rotations and frequencies in a single formula.",
+    "city": "Computing a loan's present value uses a geometric series Σ(1/(1 + r))ⁿ.",
+    "sport": "A bouncing ball losing a fraction of its height each bounce has a total distance given by a convergent geometric series."
+   },
+   "mnemonic": "Epsilon is the target accuracy, delta is how close you must be, and N is how far along you need to go.",
+   "terms": [
+    [
+     "Convergence",
+     "A sequence or series approaches a single finite limit."
+    ],
+    [
+     "ε–δ definition",
+     "A precise definition of a limit using error ε and closeness δ."
+    ],
+    [
+     "Analytic function",
+     "A complex function that is differentiable in a neighbourhood."
+    ],
+    [
+     "Residue",
+     "The coefficient of 1/(z − a) in the expansion of f near a pole a."
+    ]
+   ],
+   "misc": {
+    "wrong": "If aₙ → 0, then Σaₙ converges.",
+    "right": "The harmonic series Σ1/n has terms tending to 0 but diverges. Tending to zero is necessary, not sufficient."
+   },
+   "trip": {
+    "wiki": "Cauchy–Riemann equations",
+    "prompt": "Find the explanation of why analytic functions are so rigid."
+   },
+   "sources": [
+    "Real analysis",
+    "Complex analysis",
+    "Cauchy–Riemann equations"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which statement does the ε–δ definition capture?",
+     "o": [
+      "f(a) = L",
+      "f(x) can be made as close as we like to L by taking x close enough to a",
+      "x = a",
+      "f is increasing"
+     ],
+     "a": 1,
+     "why": "It formalises \"approaches\".",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Does Σ1/n converge?",
+     "o": [
+      "No, it diverges",
+      "Yes, to 1",
+      "Yes, to π²/6",
+      "Yes, to ln 2"
+     ],
+     "a": 0,
+     "why": "The harmonic series grows without bound, though slowly.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Does Σ1/n² converge?",
+     "o": [
+      "No",
+      "Yes, to 1",
+      "Yes, to 2",
+      "Yes, to π²/6"
+     ],
+     "a": 3,
+     "why": "It converges, and the sum is π²/6 ≈ 1.645.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is e^(iπ)?",
+     "o": [
+      "1",
+      "i",
+      "−1",
+      "−i"
+     ],
+     "a": 2,
+     "why": "Euler's formula gives cos π + i sin π.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The integral of 1/z around the unit circle is...",
+     "o": [
+      "0",
+      "2πi",
+      "2π",
+      "1"
+     ],
+     "a": 1,
+     "why": "The function has a pole at 0 with residue 1.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Nate argues that since the terms 1/n tend to 0, Σ1/n must converge. Which is the best response?",
+     "o": [
+      "A counterexample: the harmonic series has terms tending to 0 yet diverges",
+      "He is right",
+      "Convergence needs positive terms",
+      "The terms must be integers"
+     ],
+     "a": 0,
+     "why": "The test for divergence is one-way only.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If f is continuous on [0, 1] with f(0) = −1 and f(1) = 2, what does the intermediate value theorem imply?",
+     "o": [
+      "f is increasing",
+      "f is linear",
+      "f has no root",
+      "f has a root in (0, 1)"
+     ],
+     "a": 3,
+     "why": "f must take the value 0 between −1 and 2.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "For lim (x→2)(3x − 1) = 5 and ε = 0.03, the largest δ from δ = ε/3 is...",
+     "a": 0.01,
+     "tol": 0.0001,
+     "why": "0.03/3 = 0.01.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the sum of Σ (1/2)ⁿ from n = 0 to infinity.",
+     "a": 2,
+     "tol": 0,
+     "why": "Geometric series with ratio 1/2: 1/(1 − 1/2) = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the integral of z² around any closed loop is zero while that of 1/z around the unit circle is not.",
+     "rubric": [
+      [
+       "analytic",
+       "differentiable",
+       "holomorphic",
+       "no pole",
+       "antiderivative",
+       "cauchy"
+      ],
+      [
+       "pole",
+       "singular",
+       "singularity",
+       "undefined",
+       "z = 0",
+       "not defined at 0"
+      ],
+      [
+       "residue",
+       "2πi",
+       "enclose",
+       "inside",
+       "loop"
+      ]
+     ],
+     "min": 2,
+     "model": "z² is analytic everywhere, so Cauchy's theorem gives zero. 1/z has a pole at 0 inside the unit circle, so the integral picks up 2πi times the residue 1.",
+     "why": "Singularities inside the loop contribute residues.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is f(x) = |x| differentiable at 0?",
+     "o": [
+      "Yes, f'(0) = 0",
+      "Yes, f'(0) = 1",
+      "No, the left and right derivatives are −1 and +1",
+      "Only for x positive"
+     ],
+     "a": 2,
+     "why": "The corner means no unique tangent. The function is continuous there.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Show using the ratio test that Σ n/2ⁿ converges.",
+     "rubric": [
+      [
+       "ratio",
+       "aₙ₊₁/aₙ",
+       "a_{n+1}",
+       "(n+1)/(2n)",
+       "(n + 1)/(2n)"
+      ],
+      [
+       "1/2",
+       "half",
+       "less than 1",
+       "< 1",
+       "limit"
+      ],
+      [
+       "converge",
+       "converges",
+       "absolutely"
+      ]
+     ],
+     "min": 2,
+     "model": "The ratio of successive terms is (n + 1)/(2n), which tends to 1/2 < 1. By the ratio test the series converges.",
+     "why": "A limiting ratio below 1 guarantees convergence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which condition does f(z) = z̄ (the conjugate) fail?",
+     "o": [
+      "Continuity",
+      "The Cauchy–Riemann equations",
+      "Being defined everywhere",
+      "Having real inputs"
+     ],
+     "a": 1,
+     "why": "u = x and v = −y give uₓ = 1 but vᵧ = −1.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What the epsilon-delta definition says",
+    "model": "To say a function approaches L near a, we say you can make the output as close to L as you like by choosing inputs close enough to a. Someone gives an error tolerance ε, and you find how close δ the input must be. For 3x − 1 near 2, δ = ε/3 works.",
+    "points": [
+     {
+      "k": [
+       "close",
+       "as close as",
+       "tolerance",
+       "error",
+       "ε",
+       "epsilon"
+      ],
+      "ask": "What is epsilon?"
+     },
+     {
+      "k": [
+       "δ",
+       "delta",
+       "input",
+       "x close",
+       "distance"
+      ],
+      "ask": "What is delta?"
+     },
+     {
+      "k": [
+       "example",
+       "3x",
+       "ε/3",
+       "find"
+      ],
+      "ask": "Can you show an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Abstract algebra",
+   "icon": "🔷",
+   "hook": "Why can you undo a Rubik's cube move, combine two moves into a third, and still not swap the order freely? The structure behind such questions is called a group.",
+   "explain": [
+    "A group is a set G with an operation satisfying four rules: closure (combining two elements stays in G), associativity, an identity element, and inverses for every element. The integers under addition form a group; so does the set of rotations of a square. A group is abelian if the operation is commutative. The symmetric group S₃ of permutations of three objects has 6 elements and is not abelian: swapping then rotating differs from rotating then swapping.",
+    "Cyclic groups are generated by one element: Z_n under addition mod n. The order of an element is the least k with kg = identity: in Z₆ the element 2 has order 3. Lagrange's theorem says the order of a subgroup divides the order of the group, so a group of order 12 cannot have a subgroup of order 5. The number of generators of Z₁₂ is φ(12) = 4 (the elements 1, 5, 7, 11). Z₄ and Z₂ × Z₂ both have 4 elements but are not isomorphic, since Z₄ has an element of order 4 and Z₂ × Z₂ does not.",
+    "Rings add a second operation. Z₆ has zero divisors, since 2 × 3 = 0, so it is a ring but not a field. Z_p for p prime is a field, where every non-zero element has an inverse: in Z₅, 3 × 2 = 6 ≡ 1. A homomorphism preserves structure, and the first isomorphism theorem says G/ker φ ≅ image φ. Abstract algebra is useful because a proof about all groups applies to every example at once, from symmetries of molecules to codes and cryptography."
+   ],
+   "example": {
+    "q": "In Z₁₂ under addition, find the order of 8 and the number of generators.",
+    "steps": [
+     "The order of 8 is the least k with 8k ≡ 0 (mod 12): 8, 16 ≡ 4, 24 ≡ 0, so k = 3.",
+     "Generators are the elements coprime to 12: 1, 5, 7, 11.",
+     "Their count is φ(12) = 4."
+    ],
+    "a": "Order 3; 4 generators"
+   },
+   "analogies": {
+    "music": "Transposing a melody by semitones is addition modulo 12 on pitch classes, a cyclic group.",
+    "city": "A clock face with 12 hours is Z₁₂; adding hours wraps around.",
+    "tech": "Error-correcting codes and elliptic curve cryptography are built on finite fields.",
+    "nature": "Crystals are classified by symmetry groups; molecules by point groups."
+   },
+   "mnemonic": "Closure, associativity, identity, inverse. Subgroup orders divide the group order.",
+   "terms": [
+    [
+     "Group",
+     "A set with an associative operation, an identity and inverses."
+    ],
+    [
+     "Subgroup",
+     "A subset that is itself a group under the same operation."
+    ],
+    [
+     "Order",
+     "The number of elements of a group, or of an element's repeat cycle."
+    ],
+    [
+     "Isomorphism",
+     "A structure-preserving one-to-one correspondence between two groups."
+    ]
+   ],
+   "misc": {
+    "wrong": "Every group is commutative.",
+    "right": "S₃ is not: rotating then reflecting differs from reflecting then rotating. Abelian groups are the special case."
+   },
+   "trip": {
+    "wiki": "Group (mathematics)",
+    "prompt": "Find the examples list and note the symmetry group of a square."
+   },
+   "sources": [
+    "Group (mathematics)",
+    "Lagrange's theorem (group theory)",
+    "Ring (mathematics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is NOT a group axiom?",
+     "o": [
+      "Commutativity",
+      "Closure",
+      "Identity",
+      "Inverses"
+     ],
+     "a": 0,
+     "why": "Commutativity defines abelian groups, not all groups.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many elements does S₃ have?",
+     "o": [
+      "3",
+      "9",
+      "8",
+      "6"
+     ],
+     "a": 3,
+     "why": "3! = 6.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A group has order 12. Which subgroup order is impossible?",
+     "o": [
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "a": 2,
+     "why": "Lagrange: subgroup order divides 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In Z₆, 2 × 3 = 0. What does this show?",
+     "o": [
+      "Z₆ is a field",
+      "Z₆ has zero divisors so it is not a field",
+      "2 is the identity",
+      "Z₆ is not a ring"
+     ],
+     "a": 1,
+     "why": "A field has no zero divisors.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are Z₄ and Z₂ × Z₂ not isomorphic?",
+     "o": [
+      "Z₄ has an element of order 4 and Z₂ × Z₂ does not",
+      "They have different sizes",
+      "Z₂ × Z₂ is infinite",
+      "Isomorphic groups must be cyclic"
+     ],
+     "a": 0,
+     "why": "Isomorphisms preserve orders of elements.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Leila claims all groups of order 6 are cyclic because Z₆ is. Which example refutes her?",
+     "o": [
+      "Z₆",
+      "Z₂ only",
+      "There is none",
+      "S₃, which is non-abelian"
+     ],
+     "a": 3,
+     "why": "A cyclic group is abelian but S₃ is not.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find the order of 2 in Z₆ (under addition).",
+     "a": 3,
+     "tol": 0,
+     "why": "2, 4, 6 ≡ 0 gives order 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many generators does Z₁₂ have?",
+     "a": 4,
+     "tol": 0,
+     "why": "φ(12) = 4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In Z₅, find the inverse of 3 under multiplication (a number x in 1 to 4).",
+     "a": 2,
+     "tol": 0,
+     "why": "3 × 2 = 6 ≡ 1 (mod 5).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why every element of a finite group has an order that divides the group order.",
+     "rubric": [
+      [
+       "subgroup",
+       "cyclic",
+       "generated"
+      ],
+      [
+       "lagrange",
+       "divides",
+       "divisor",
+       "multiple",
+       "cosets"
+      ],
+      [
+       "order",
+       "size",
+       "number of elements"
+      ]
+     ],
+     "min": 2,
+     "model": "The powers of g form a cyclic subgroup whose size is the order of g. By Lagrange's theorem the size of a subgroup divides the size of the group.",
+     "why": "This follows from Lagrange's theorem applied to the cyclic subgroup generated by g.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A group of order 15 contains an element of order 15. What follows?",
+     "o": [
+      "The group is non-abelian",
+      "The group has no proper subgroups",
+      "The group is cyclic",
+      "The group has order 30"
+     ],
+     "a": 2,
+     "why": "The powers of that element already give all 15 elements.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "State and illustrate the first isomorphism theorem in one example.",
+     "rubric": [
+      [
+       "kernel",
+       "ker"
+      ],
+      [
+       "image",
+       "quotient",
+       "factor"
+      ],
+      [
+       "isomorphic",
+       "isomorphism",
+       "≅",
+       "same structure",
+       "z/"
+      ]
+     ],
+     "min": 2,
+     "model": "If φ is a homomorphism, G/ker φ is isomorphic to the image of φ. Example: φ: Z → Z₆, n ↦ n mod 6 has kernel 6Z, so Z/6Z ≅ Z₆.",
+     "why": "The theorem links collapsing structure with the image.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do mathematicians study abstract groups rather than only specific examples?",
+     "o": [
+      "Specific examples are not true",
+      "A theorem proved for all groups applies to every example at once",
+      "Groups are only about numbers",
+      "It makes proofs shorter always"
+     ],
+     "a": 1,
+     "why": "Abstraction gives generality.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a group is",
+    "model": "A group is a set with one operation where combining two elements stays in the set, the operation is associative, there is a do-nothing element, and every element has an undo. Rotations of a square are an example: rotate, then undo it. Order may matter, so not every group is commutative.",
+    "points": [
+     {
+      "k": [
+       "operation",
+       "combine",
+       "closure"
+      ],
+      "ask": "What do I need about combining elements?"
+     },
+     {
+      "k": [
+       "identity",
+       "do nothing",
+       "neutral"
+      ],
+      "ask": "What is the special element?"
+     },
+     {
+      "k": [
+       "inverse",
+       "undo",
+       "reverse"
+      ],
+      "ask": "What about each element?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Topology and advanced geometry",
+   "icon": "🍩",
+   "hook": "A coffee cup and a doughnut can be smoothly deformed into each other, but a ball cannot become a doughnut without tearing. What does topology measure that survives stretching?",
+   "explain": [
+    "Topology studies properties preserved by continuous deformation. Two spaces are homeomorphic if there is a continuous bijection with continuous inverse. A circle and a square outline are homeomorphic; a circle and a line segment are not (the circle is compact and has no end points; removing a point from a circle leaves it connected, whereas removing an interior point disconnects a segment). A set is open if each point has a neighbourhood inside it, and a function is continuous if the preimage of every open set is open: this definition needs no distances.",
+    "Topological invariants distinguish spaces. The Euler characteristic χ = V − E + F is 2 for any polyhedron homeomorphic to a sphere: the cube gives 8 − 12 + 6 = 2 and the icosahedron 12 − 30 + 20 = 2. A surface of genus g (g holes) has χ = 2 − 2g, so a torus has χ = 0 and a double torus χ = −2. Connectedness, compactness and orientability are other invariants; the Möbius band has only one side and the Klein bottle cannot sit in 3D without self-intersection.",
+    "Beyond Euclidean geometry, different curvature gives different geometries. On a sphere of radius R, triangles have angle sum greater than 180°, and the area of a triangle equals R² times its angle excess (sum minus π in radians). A triangle with three right angles on the unit sphere has excess π/2 and area π/2 ≈ 1.571 (one eighth of the sphere's 4π). In hyperbolic geometry the angle sum is less than 180° and there are infinitely many parallels through a point. The Gaussian curvature of a sphere is 1/R²: for R = 2 it is 0.25."
+   ],
+   "example": {
+    "q": "Verify Euler's formula for a cube and find χ for a torus.",
+    "steps": [
+     "Cube: V = 8, E = 12, F = 6.",
+     "χ = 8 − 12 + 6 = 2, which matches a sphere (g = 0).",
+     "For a surface of genus g, χ = 2 − 2g.",
+     "A torus has g = 1, so χ = 2 − 2 = 0."
+    ],
+    "a": "Cube: 2; torus: 0"
+   },
+   "analogies": {
+    "city": "A subway map keeps connections and ignores distances: it is a topological picture.",
+    "sea": "Great-circle routes on the globe are geodesics of the sphere, and the flat map distorts them.",
+    "tech": "Data analysis uses topology to find holes and loops in point-cloud data (persistent homology).",
+    "nature": "Knots in DNA are studied with knot theory, a part of topology."
+   },
+   "mnemonic": "Stretch, bend, squash: keep it connected. Count the holes, not the lengths.",
+   "terms": [
+    [
+     "Homeomorphism",
+     "A continuous bijection with continuous inverse."
+    ],
+    [
+     "Compact",
+     "Closed and bounded in R^n; every open cover has a finite subcover."
+    ],
+    [
+     "Euler characteristic",
+     "V − E + F, an invariant of the surface."
+    ],
+    [
+     "Geodesic",
+     "The shortest path on a surface, such as a great circle on a sphere."
+    ]
+   ],
+   "misc": {
+    "wrong": "Topologically the same means having the same shape.",
+    "right": "Homeomorphic spaces can look very different; a square and a circle have the same topology but not the same geometry."
+   },
+   "trip": {
+    "wiki": "Euler characteristic",
+    "prompt": "Find the table of Euler characteristics for different surfaces."
+   },
+   "sources": [
+    "Topology",
+    "Euler characteristic",
+    "Non-Euclidean geometry"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which pair is homeomorphic?",
+     "o": [
+      "A coffee cup and a doughnut (torus)",
+      "A sphere and a torus",
+      "A disk and an annulus",
+      "A circle and a line segment"
+     ],
+     "a": 0,
+     "why": "Both have one hole.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is V − E + F for a cube?",
+     "o": [
+      "0",
+      "4",
+      "−2",
+      "2"
+     ],
+     "a": 3,
+     "why": "8 − 12 + 6 = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the Euler characteristic of a torus?",
+     "o": [
+      "2",
+      "1",
+      "0",
+      "−2"
+     ],
+     "a": 2,
+     "why": "χ = 2 − 2g with g = 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Angle sum of a triangle on a sphere is...",
+     "o": [
+      "Exactly 180°",
+      "Greater than 180°",
+      "Less than 180°",
+      "Always 360°"
+     ],
+     "a": 1,
+     "why": "Positive curvature gives angle excess.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Angle sum of a triangle in hyperbolic geometry is...",
+     "o": [
+      "Less than 180°",
+      "Greater than 180°",
+      "Exactly 180°",
+      "Exactly 360°"
+     ],
+     "a": 0,
+     "why": "Negative curvature.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a circle not homeomorphic to a line segment?",
+     "o": [
+      "The circle is longer",
+      "The segment has corners",
+      "The circle has no points",
+      "Removing an interior point disconnects the segment but not the circle"
+     ],
+     "a": 3,
+     "why": "Connectedness after removal is a topological invariant.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "The icosahedron has 12 vertices, 30 edges and 20 faces. Compute V − E + F.",
+     "a": 2,
+     "tol": 0,
+     "why": "12 − 30 + 20 = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Area of a spherical triangle on a unit sphere with three right angles (in square units, to 3 d.p., π ≈ 3.1416).",
+     "a": 1.571,
+     "tol": 0.002,
+     "why": "Excess π/2, area π/2 ≈ 1.571 (one eighth of 4π).",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the Gaussian curvature of a sphere of radius 2?",
+     "a": 0.25,
+     "tol": 0.0001,
+     "why": "1/R² = 1/4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the Euler characteristic is the same for every polyhedron that can be deformed into a sphere.",
+     "rubric": [
+      [
+       "invariant",
+       "topological",
+       "unchanged",
+       "same"
+      ],
+      [
+       "deform",
+       "stretch",
+       "continuous",
+       "homeomorphic",
+       "homeomorphism",
+       "bend"
+      ],
+      [
+       "sphere",
+       "genus",
+       "holes",
+       "no holes"
+      ]
+     ],
+     "min": 2,
+     "model": "V − E + F is a topological invariant: it does not change under continuous deformations. Every polyhedron without holes is homeomorphic to a sphere, so it has the same value, 2.",
+     "why": "Invariants depend on the topology, not on lengths or angles.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A closed surface has Euler characteristic −2. What is its genus (number of holes)?",
+     "o": [
+      "1",
+      "−2",
+      "2",
+      "3"
+     ],
+     "a": 2,
+     "why": "−2 = 2 − 2g gives g = 2.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a flat map of the Earth never preserve all distances?",
+     "rubric": [
+      [
+       "curvature",
+       "curved",
+       "sphere",
+       "gaussian",
+       "not flat",
+       "positive"
+      ],
+      [
+       "isometr",
+       "distort",
+       "distance",
+       "flatten",
+       "cannot",
+       "impossible"
+      ],
+      [
+       "angle",
+       "triangle",
+       "sum",
+       "excess",
+       "area",
+       "geodesic"
+      ]
+     ],
+     "min": 2,
+     "model": "The sphere has positive Gaussian curvature while the plane has zero, so no map can preserve all distances (Gauss's Theorema Egregium). Some distance, angle or area must be distorted.",
+     "why": "Curvature is an intrinsic property that a flattening would change.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A Möbius band has how many sides?",
+     "o": [
+      "Two",
+      "One",
+      "Zero",
+      "Three"
+     ],
+     "a": 1,
+     "why": "A path along it covers both \"sides\" before returning, so it has a single side.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What topology cares about",
+    "model": "Topology cares about properties that survive stretching and bending but not tearing or gluing. A cup and a doughnut are the same because each has one hole. Counting holes and pieces tells spaces apart without measuring lengths.",
+    "points": [
+     {
+      "k": [
+       "stretch",
+       "bend",
+       "deform",
+       "continuous"
+      ],
+      "ask": "What changes are allowed?"
+     },
+     {
+      "k": [
+       "tear",
+       "glue",
+       "cut",
+       "not allowed"
+      ],
+      "ask": "What changes are not allowed?"
+     },
+     {
+      "k": [
+       "hole",
+       "holes",
+       "count",
+       "genus",
+       "connected"
+      ],
+      "ask": "What do we count instead of lengths?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Stochastic processes",
+   "icon": "🎲",
+   "hook": "A drunken walker takes random steps left or right; a call centre receives random calls; a website visitor clicks from page to page. What mathematics describes systems that evolve at random through time?",
+   "explain": [
+    "A stochastic process is a family of random variables indexed by time. A Markov chain has the property that the future depends on the present state only. It is defined by a transition matrix P, whose rows sum to 1. For P = [[0.9, 0.1], [0.5, 0.5]] the probability of staying in state 1 for two steps is 0.9 × 0.9 + 0.1 × 0.5 = 0.86. The stationary distribution π satisfies πP = π: here 0.1π₁ = 0.5π₂, so π = (5/6, 1/6). The long-run fraction of time in state 1 is 5/6, and the mean return time to state 1 is 1/π₁ = 1.2 steps.",
+    "A simple symmetric random walk adds ±1 each step: the expected position is 0 and the variance after n steps is n, so the typical distance grows like √n. In the gambler's ruin problem a fair game starting with 3 and stopping at 0 or 10 reaches 10 with probability 3/10, since the expected fortune is a martingale (a fair game). Brownian motion is the continuous-time limit of random walks, with B_t having variance t, so B₄ has standard deviation 2.",
+    "The Poisson process counts random events at rate λ: the number of events in time t is Poisson(λt) and waiting times are exponential with mean 1/λ. With λ = 3 per hour, the expected number in 2 hours is 6, the chance of no events in an hour is e⁻³ ≈ 0.0498 and the mean wait is 20 minutes. Waiting for the first success with probability p each trial takes on average 1/p trials: 5 for p = 0.2. Stochastic models underpin queues, finance, genetics and Monte Carlo methods, and the Markov property simplifies analysis but should be checked against data."
+   ],
+   "example": {
+    "q": "A Markov chain has P = [[0.9, 0.1], [0.5, 0.5]]. Find the stationary distribution.",
+    "steps": [
+     "Solve πP = π with π₁ + π₂ = 1.",
+     "From the second column: 0.1π₁ + 0.5π₂ = π₂, so 0.1π₁ = 0.5π₂.",
+     "This gives π₁ = 5π₂, and with π₁ + π₂ = 1 we get π₂ = 1/6.",
+     "π = (5/6, 1/6) ≈ (0.833, 0.167)."
+    ],
+    "a": "π = (5/6, 1/6)"
+   },
+   "analogies": {
+    "city": "A bank's queue: customers arrive as a Poisson process and are served at random times.",
+    "tech": "PageRank models a surfer clicking links as a Markov chain and ranks pages by its stationary distribution.",
+    "nature": "Genetic drift in a small population is a random walk in allele frequency.",
+    "sport": "A tennis game from deuce can be modelled as a Markov chain with absorbing states."
+   },
+   "mnemonic": "Markov: only the present matters. Stationary: left eigenvector of P with eigenvalue 1. Random walk: spread grows like the square root of time.",
+   "terms": [
+    [
+     "Markov chain",
+     "A random process in which the next state depends only on the present state."
+    ],
+    [
+     "Stationary distribution",
+     "A distribution π with πP = π."
+    ],
+    [
+     "Martingale",
+     "A process whose expected future value, given the present, equals the present value."
+    ],
+    [
+     "Poisson process",
+     "A process of random events at a constant average rate λ."
+    ]
+   ],
+   "misc": {
+    "wrong": "In a fair game, after many plays you are likely to be back where you started.",
+    "right": "The expected position is the start, but the typical distance from the start grows like √n."
+   },
+   "trip": {
+    "wiki": "Markov chain",
+    "prompt": "Find the example of a two-state chain and compute its stationary distribution."
+   },
+   "sources": [
+    "Stochastic process",
+    "Markov chain",
+    "Poisson point process"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The Markov property says...",
+     "o": [
+      "The future depends on the past only through the present state",
+      "The future is independent of the present",
+      "The past determines the future",
+      "All states are equally likely"
+     ],
+     "a": 0,
+     "why": "It is memorylessness in state.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Each row of a transition matrix sums to...",
+     "o": [
+      "0",
+      "The number of states",
+      "Any value",
+      "1"
+     ],
+     "a": 3,
+     "why": "It is a probability distribution over next states.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In a Poisson process, the waiting time between events is...",
+     "o": [
+      "Normally distributed",
+      "Uniform",
+      "Exponentially distributed",
+      "Constant"
+     ],
+     "a": 2,
+     "why": "This gives the memoryless property.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fair gambler starts with 3 and stops at 0 or 10. Which gives the probability of reaching 10?",
+     "o": [
+      "7/10",
+      "3/10",
+      "1/2",
+      "3/7"
+     ],
+     "a": 1,
+     "why": "The fortune is a martingale, so P × 10 = 3.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "After n steps of a symmetric ±1 random walk, the standard deviation of position is...",
+     "o": [
+      "√n",
+      "n",
+      "n²",
+      "1"
+     ],
+     "a": 0,
+     "why": "The variance is n.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Hana says a random walk must return near the origin because its mean is 0. What is the flaw?",
+     "o": [
+      "A walk never returns",
+      "The mean is not 0",
+      "The mean does not matter",
+      "The mean is 0 but the spread grows like √n"
+     ],
+     "a": 3,
+     "why": "Expected value and typical size are different things.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "For P = [[0.9, 0.1], [0.5, 0.5]], find the probability of being in state 1 after two steps starting in state 1.",
+     "a": 0.86,
+     "tol": 0.0001,
+     "why": "0.9 × 0.9 + 0.1 × 0.5 = 0.86.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Poisson process with λ = 3 per hour. Find P(no events in 1 hour) to 3 d.p.",
+     "a": 0.05,
+     "tol": 0.001,
+     "why": "e⁻³ = 0.0498.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The long-run fraction in state 1 is π₁ = 5/6. What is the mean return time to state 1 (in steps)?",
+     "a": 1.2,
+     "tol": 0.001,
+     "why": "1/π₁ = 6/5 = 1.2.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the stationary distribution does not depend on where the chain starts for an ergodic chain.",
+     "rubric": [
+      [
+       "forget",
+       "lose memory",
+       "mixes",
+       "converge",
+       "converges",
+       "long run"
+      ],
+      [
+       "irreducible",
+       "connected",
+       "all states",
+       "reach",
+       "communicate",
+       "aperiodic"
+      ],
+      [
+       "unique",
+       "same",
+       "independent",
+       "limit",
+       "regardless",
+       "any start"
+      ]
+     ],
+     "min": 2,
+     "model": "In a chain where all states communicate and there is no periodic cycle, the distribution converges to the same unique stationary distribution from any starting state, because the chain forgets its start.",
+     "why": "Irreducibility and aperiodicity give convergence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A queue has arrivals at 3 per hour on average. What is the mean time between arrivals?",
+     "o": [
+      "3 minutes",
+      "3 hours",
+      "20 minutes",
+      "30 minutes"
+     ],
+     "a": 2,
+     "why": "1/λ = 1/3 hour = 20 minutes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a game with positive expected gain each round (a submartingale) different from a fair game when planning long-run strategy?",
+     "rubric": [
+      [
+       "expected",
+       "mean",
+       "on average"
+      ],
+      [
+       "grow",
+       "increase",
+       "positive",
+       "gain",
+       "drift",
+       "rise"
+      ],
+      [
+       "fair",
+       "martingale",
+       "zero",
+       "no change",
+       "stay"
+      ]
+     ],
+     "min": 2,
+     "model": "In a fair game the expected fortune stays constant, so no strategy changes the expectation. With a positive drift the expected fortune grows, so continuing is favourable on average.",
+     "why": "Drift determines long-run behaviour.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Brownian motion has B_t with variance t. What is the standard deviation of B₄?",
+     "o": [
+      "4",
+      "2",
+      "16",
+      "1"
+     ],
+     "a": 1,
+     "why": "√4 = 2.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a Markov chain is",
+    "model": "A Markov chain is a random process where the next step depends only on where you are now, not on how you got there. A table of probabilities for moving between states describes it. In the long run it can settle into a steady pattern called the stationary distribution.",
+    "points": [
+     {
+      "k": [
+       "present",
+       "now",
+       "current",
+       "only"
+      ],
+      "ask": "What does the next step depend on?"
+     },
+     {
+      "k": [
+       "table",
+       "matrix",
+       "probabilities",
+       "transition"
+      ],
+      "ask": "How do I describe the chain?"
+     },
+     {
+      "k": [
+       "long run",
+       "steady",
+       "stationary",
+       "settle"
+      ],
+      "ask": "What happens in the long run?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Advanced statistical modelling",
+   "icon": "📐",
+   "hook": "Real data have clumps, counts that cannot be negative, repeated measurements on the same people and more predictors than observations. How do modern statistical models cope?",
+   "explain": [
+    "Linear regression assumes a normal response with constant variance, but many outcomes are binary or counts. Generalised linear models (GLMs) combine a linear predictor with a link function and a suitable distribution. In logistic regression logit(p) = ln(p/(1 − p)) = β₀ + β₁x. With logit p = −2 + 0.5x and x = 4 the logit is 0 so p = 0.5. Each unit of x multiplies the odds by e^0.5 ≈ 1.649. Poisson regression models counts with ln λ = β₀ + β₁x: for ln λ = 1 + 0.2x and x = 5, λ = e² ≈ 7.39.",
+    "Parameters are usually estimated by maximum likelihood. For n Bernoulli trials with s successes the likelihood is maximised at p̂ = s/n, so 7 of 10 gives 0.7. Models are compared with penalised criteria: AIC = 2k − 2 ln L, where k is the number of parameters. Model A with k = 3 and ln L = −10 has AIC = 26; Model B with k = 5 and ln L = −8.5 has AIC = 27, so A is preferred because the extra fit does not repay the extra parameters. Overfitting is controlled by cross-validation (testing on held-out data) and regularisation, such as ridge regression, which shrinks coefficients toward zero and trades a little bias for much less variance.",
+    "Data with structure need extra tools. Mixed-effects models add random effects for groups (such as schools or patients) so that observations from the same group are not treated as independent. The bootstrap resamples the data with replacement to estimate uncertainty without strong assumptions. Multicollinearity (highly correlated predictors) inflates coefficient variance. Modelling choices must be checked with diagnostics such as residual plots, and results should be communicated with uncertainty, since a model is a tool for answering a question, not a replacement for judgement."
+   ],
+   "example": {
+    "q": "In a logistic regression logit p = −2 + 0.5x. Find p at x = 4 and the odds ratio per unit of x.",
+    "steps": [
+     "At x = 4: logit = −2 + 2 = 0.",
+     "p = e⁰/(1 + e⁰) = 1/2.",
+     "Each unit of x adds 0.5 to the log-odds, so the odds are multiplied by e^0.5.",
+     "e^0.5 ≈ 1.649."
+    ],
+    "a": "p = 0.5; odds ratio ≈ 1.65"
+   },
+   "analogies": {
+    "city": "Hospitals model the chance of readmission using logistic regression with patient features.",
+    "farm": "Counts of pests per plot are modelled by Poisson regression with weather as predictors.",
+    "tech": "Ridge or lasso regularisation helps when there are more predictors than observations.",
+    "sport": "Players within teams are grouped, so a mixed-effects model accounts for team-level variation."
+   },
+   "mnemonic": "Choose the distribution to fit the outcome, link it to a linear predictor, penalise complexity, and validate on data you held back.",
+   "terms": [
+    [
+     "Link function",
+     "A function connecting the mean of the response to the linear predictor."
+    ],
+    [
+     "Likelihood",
+     "The probability of the observed data viewed as a function of the parameters."
+    ],
+    [
+     "AIC",
+     "2k − 2 ln L, a criterion that penalises model complexity."
+    ],
+    [
+     "Regularisation",
+     "Adding a penalty to shrink coefficients and reduce overfitting."
+    ]
+   ],
+   "misc": {
+    "wrong": "A model with the best fit to the data you have is the best model.",
+    "right": "Extra parameters always improve in-sample fit but may hurt prediction. Use AIC, cross-validation or held-out data."
+   },
+   "limits": "Information criteria and cross-validation give guidance, not certainty; different criteria can favour different models, especially with small samples.",
+   "trip": {
+    "wiki": "Generalized linear model",
+    "prompt": "Find the table of common GLMs, their distributions and link functions."
+   },
+   "sources": [
+    "Generalized linear model",
+    "Akaike information criterion",
+    "Regularization (mathematics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which model suits a yes/no outcome?",
+     "o": [
+      "Logistic regression",
+      "Ordinary linear regression",
+      "Poisson regression",
+      "Ridge only"
+     ],
+     "a": 0,
+     "why": "The response is binary, modelled by a Bernoulli distribution and logit link.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which model suits counts of events in fixed time intervals?",
+     "o": [
+      "Logistic regression",
+      "Linear regression with identity link only",
+      "Normal regression",
+      "Poisson regression"
+     ],
+     "a": 3,
+     "why": "Counts are non-negative integers.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In logistic regression the coefficient β₁ = 0.5 means...",
+     "o": [
+      "p increases by 0.5",
+      "The odds increase by 0.5",
+      "Each unit of x multiplies the odds by e^0.5",
+      "x doubles"
+     ],
+     "a": 2,
+     "why": "The log-odds change linearly.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Ridge regression helps mainly by...",
+     "o": [
+      "Removing the intercept",
+      "Shrinking coefficients to reduce variance",
+      "Making the data larger",
+      "Guaranteeing causation"
+     ],
+     "a": 1,
+     "why": "It trades bias for lower variance.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two models: A has AIC 26, B has AIC 27. Which is preferred by AIC?",
+     "o": [
+      "Model A, with a slightly lower value",
+      "Model B",
+      "Neither",
+      "Whichever has more parameters"
+     ],
+     "a": 0,
+     "why": "Lower AIC is better.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Ben picks the model with the highest R² on his training data from a list of ever bigger models. What is the flaw?",
+     "o": [
+      "R² is not defined",
+      "The training data are too small to compute R²",
+      "Bigger models are always worse",
+      "R² on training data never decreases when adding predictors, so it rewards overfitting"
+     ],
+     "a": 3,
+     "why": "Use held-out or penalised measures.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "logit p = −2 + 0.5x. Find p at x = 4.",
+     "a": 0.5,
+     "tol": 0.001,
+     "why": "The logit is 0, so p = 0.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "ln λ = 1 + 0.2x for a Poisson model. Find λ at x = 5 to 2 d.p. (e² ≈ 7.389).",
+     "a": 7.39,
+     "tol": 0.01,
+     "why": "ln λ = 2, so λ = e².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Model with k = 3 parameters and ln L = −10. Find AIC = 2k − 2 ln L.",
+     "a": 26,
+     "tol": 0,
+     "why": "6 + 20 = 26.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why patients from the same hospital cannot be treated as independent observations, and how a mixed-effects model helps.",
+     "rubric": [
+      [
+       "similar",
+       "correlated",
+       "share",
+       "cluster",
+       "group",
+       "same hospital",
+       "dependent"
+      ],
+      [
+       "random effect",
+       "random effects",
+       "intercept",
+       "variation between",
+       "group-level",
+       "hospital effect"
+      ],
+      [
+       "standard error",
+       "inflate",
+       "overstate",
+       "confidence",
+       "precision",
+       "pseudo",
+       "independent"
+      ]
+     ],
+     "min": 2,
+     "model": "Patients in the same hospital share staff, equipment and practices, so their outcomes are correlated. Treating them as independent overstates the information. A mixed-effects model adds a random effect for hospital to capture between-group variation and give honest standard errors.",
+     "why": "Clustering reduces the effective sample size.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is the bootstrap useful?",
+     "o": [
+      "It makes the sample bigger with new information",
+      "It removes outliers",
+      "It estimates uncertainty by resampling the data, with few distributional assumptions",
+      "It proves causation"
+     ],
+     "a": 2,
+     "why": "Resampling mimics the sampling process.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Two predictors are almost perfectly correlated. Explain the effect on regression coefficients.",
+     "rubric": [
+      [
+       "unstable",
+       "inflate",
+       "large",
+       "variance",
+       "uncertain",
+       "wide"
+      ],
+      [
+       "correlat",
+       "collinear",
+       "multicollinear",
+       "overlap",
+       "similar"
+      ],
+      [
+       "separate",
+       "distinguish",
+       "individual",
+       "each",
+       "effect",
+       "cannot"
+      ]
+     ],
+     "min": 2,
+     "model": "Multicollinearity makes it hard to separate the effects of the predictors, so their coefficient estimates have very large variance and can change sign with small data changes, although predictions can still be fine.",
+     "why": "Collinearity inflates uncertainty in individual coefficients.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The MLE of p for 7 successes in 10 Bernoulli trials is...",
+     "o": [
+      "0.5",
+      "0.7",
+      "7",
+      "0.07"
+     ],
+     "a": 1,
+     "why": "Maximising p⁷(1 − p)³ gives p = 7/10.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why we penalise model complexity",
+    "model": "A bigger model can always fit the data you have a bit better, even if the extra parts are only fitting noise. That makes predictions on new data worse. Penalties such as AIC or regularisation, and testing on held-out data, help find a model that is as simple as it can be while still explaining the data.",
+    "points": [
+     {
+      "k": [
+       "noise",
+       "overfit",
+       "overfitting",
+       "random"
+      ],
+      "ask": "What is the danger of a bigger model?"
+     },
+     {
+      "k": [
+       "penalty",
+       "penalise",
+       "aic",
+       "regularis",
+       "shrink"
+      ],
+      "ask": "How can we guard against it?"
+     },
+     {
+      "k": [
+       "held out",
+       "test",
+       "new data",
+       "validation",
+       "cross"
+      ],
+      "ask": "How do I check it works on new data?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated mathematical research and computational challenge",
+   "icon": "🏁",
+   "hook": "You must estimate π by simulation, show the answer is reliable, and explain every choice. How do mathematics, computing and statistics come together in one honest piece of research?",
+   "explain": [
+    "An integrated project combines modelling, analysis, computation and statistics. A good workflow is: state the question precisely; choose a model and write down assumptions; derive what you can by hand; implement the computation; verify the code against a known case; check convergence and sensitivity; quantify uncertainty; and report limits. Reproducibility means that someone else can rerun your work: fix random seeds, record software versions and share code and data.",
+    "Monte Carlo estimation illustrates the combination. Throw N random points in the unit square and count those inside the quarter circle: the fraction p̂ estimates π/4, so π̂ = 4p̂. With p = π/4 ≈ 0.7854 the standard error of p̂ is √(p(1 − p)/N), so for N = 10 000 it is √(0.1686/10 000) ≈ 0.0041 and the standard error of π̂ is 4 × 0.0041 ≈ 0.016. Error shrinks like 1/√N: 100 times more points give only 10 times less error. A convergence study confirms orders of accuracy: if the error falls by a factor 16 when h is halved the method is fourth order (like RK4), and by 2 means first order (like Euler).",
+    "Computational cost and stability constrain design. An explicit finite-difference scheme for u_t = k u_xx needs r = kΔt/Δx² ≤ 1/2: with k = 1 and Δx = 0.1 the step must satisfy Δt ≤ 0.005. Halving Δx doubles the number of grid points and requires Δt four times smaller, so the 1D cost rises 8-fold. Good practice guards against p-hacking and overfitting by deciding analyses before looking, testing on held-out data, reporting all models tried and presenting uncertainty honestly. Checking against limiting cases, conservation laws, and dimensional analysis catches many errors before they reach a conclusion."
+   ],
+   "example": {
+    "q": "Estimate the standard error of a Monte Carlo estimate of π with N = 10 000 points.",
+    "steps": [
+     "p = π/4 ≈ 0.7854, so p(1 − p) ≈ 0.7854 × 0.2146 ≈ 0.1686.",
+     "SE of p̂ = √(0.1686/10 000) ≈ 0.0041.",
+     "π̂ = 4p̂, so SE(π̂) = 4 × 0.0041 ≈ 0.0164.",
+     "A 95% interval is about ±0.032 around the estimate."
+    ],
+    "a": "About 0.016"
+   },
+   "analogies": {
+    "city": "A transport authority models congestion, validates against sensor data and reports uncertainty with the forecast.",
+    "farm": "A crop trial combines a growth model, a randomised design and regression to compare varieties.",
+    "tech": "A machine learning team uses held-out data, cross-validation and reproducible pipelines.",
+    "sea": "A climate group compares simulations across grid resolutions to check convergence before drawing conclusions."
+   },
+   "mnemonic": "Question, model, derive, code, verify, converge, quantify, report. Check it against something you know.",
+   "terms": [
+    [
+     "Verification",
+     "Checking that the code solves the equations correctly, such as against a known solution."
+    ],
+    [
+     "Validation",
+     "Checking that the model represents reality, using independent data."
+    ],
+    [
+     "Reproducibility",
+     "The ability of others to repeat an analysis and obtain the same results."
+    ],
+    [
+     "Monte Carlo method",
+     "Estimation using random sampling."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a simulation runs without errors and gives a sensible number, it is correct.",
+    "right": "Code can run perfectly and be wrong. Verify against known cases, test convergence, and check sensitivity."
+   },
+   "limits": "Even careful computational research rests on assumptions and finite resources, so conclusions should be stated as conditional and uncertain, with a clear account of what was not tested.",
+   "trip": {
+    "wiki": "Monte Carlo method",
+    "prompt": "Find the pi-estimation example and think about how the error scales with the number of points."
+   },
+   "sources": [
+    "Monte Carlo method",
+    "Reproducibility",
+    "Verification and validation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Monte Carlo error typically falls like...",
+     "o": [
+      "1/√N",
+      "1/N",
+      "1/N²",
+      "Not at all"
+     ],
+     "a": 0,
+     "why": "Standard error scales with 1/√N.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Verification asks...",
+     "o": [
+      "Does the model match reality?",
+      "Is the paper long enough?",
+      "Is the sample random?",
+      "Does the code solve the model equations correctly?"
+     ],
+     "a": 3,
+     "why": "Validation compares with reality; verification compares with the maths.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which practice most improves reproducibility?",
+     "o": [
+      "Reporting only the best run",
+      "Using more digits",
+      "Fixing random seeds and sharing code and data",
+      "Not recording software versions"
+     ],
+     "a": 2,
+     "why": "Others can rerun exactly what you did.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how halving h and comparing errors lets you find the order of a method.",
+     "rubric": [
+      [
+       "ratio",
+       "divide",
+       "compare",
+       "factor"
+      ],
+      [
+       "2^p",
+       "2ᵖ",
+       "power",
+       "log",
+       "order",
+       "4",
+       "8",
+       "16",
+       "p"
+      ],
+      [
+       "halv",
+       "half",
+       "h/2",
+       "smaller step",
+       "error"
+      ]
+     ],
+     "min": 2,
+     "model": "If error ∝ hᵖ, halving h divides the error by 2ᵖ. So the ratio of errors is 2ᵖ and p = log₂ of that ratio (ratio 16 means order 4).",
+     "why": "Order is read from the error ratio under refinement.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Aliyu tries 30 model variants and reports only the one with p < 0.05. What is the problem?",
+     "o": [
+      "None, it is efficient",
+      "Selective reporting inflates false positives (p-hacking)",
+      "He should try 300 variants",
+      "p-values cannot be below 0.05"
+     ],
+     "a": 1,
+     "why": "Report all analyses or correct for multiple comparisons.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A simulation changes its answer by 20% when the grid is refined. What should you conclude?",
+     "o": [
+      "It is not yet converged; refine further before drawing conclusions",
+      "It is accurate",
+      "The grid is irrelevant",
+      "The model is validated"
+     ],
+     "a": 0,
+     "why": "Convergence studies need results that stabilise.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Monte Carlo π with N = 10 000: the SE of p̂ is 0.0041. Find the SE of π̂ = 4p̂ to 3 d.p.",
+     "a": 0.016,
+     "tol": 0.001,
+     "why": "4 × 0.0041 = 0.0164.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Explicit heat solver with k = 1, Δx = 0.1 needs Δt ≤ r Δx² with r = 1/2. Find the maximum Δt.",
+     "a": 0.005,
+     "tol": 0.0001,
+     "why": "0.5 × 0.01 = 0.005.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The error is 4 × 10⁻³ at h = 0.1 and 1 × 10⁻³ at h = 0.05. Find the order p (error ∝ hᵖ).",
+     "a": 2,
+     "tol": 0.01,
+     "why": "Ratio 4 = 2², so p = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the stages of a computational research project in a sensible order.",
+     "items": [
+      "State the question and assumptions",
+      "Build the model and code",
+      "Verify against a known case",
+      "Test convergence and sensitivity",
+      "Report results with uncertainty"
+     ],
+     "why": "Verification and convergence come before the conclusions are reported.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "To halve the Monte Carlo error you must...",
+     "o": [
+      "Use 2 times as many",
+      "Use half as many",
+      "Change the seed",
+      "Use about 4 times as many samples"
+     ],
+     "a": 3,
+     "why": "Error ∝ 1/√N.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Describe two checks you would run before trusting a numerical solution of a differential equation.",
+     "rubric": [
+      [
+       "known",
+       "exact",
+       "analytic",
+       "benchmark",
+       "test case"
+      ],
+      [
+       "refine",
+       "convergence",
+       "smaller step",
+       "grid",
+       "halve",
+       "order"
+      ],
+      [
+       "conserv",
+       "energy",
+       "limit",
+       "dimension",
+       "sensitivity",
+       "stability",
+       "independent"
+      ]
+     ],
+     "min": 2,
+     "model": "Compare with a known exact solution (verification), and refine the step size or grid to confirm that the error decreases at the expected rate. Conservation laws and limiting cases are further checks.",
+     "why": "Verification plus convergence testing builds trust.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it important to decide the analysis plan before seeing the outcome data?",
+     "o": [
+      "It saves time only",
+      "It is required by every journal",
+      "It prevents tuning choices to get a desired result",
+      "It makes data larger"
+     ],
+     "a": 2,
+     "why": "Pre-registration limits the garden of forking paths.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why verify and validate",
+    "model": "Verification asks whether your code correctly solves your equations, which you can test against a case with a known answer. Validation asks whether the model matches the real world, which needs independent data. Both are needed before you trust a result.",
+    "points": [
+     {
+      "k": [
+       "code",
+       "equations",
+       "correctly",
+       "known answer",
+       "verify"
+      ],
+      "ask": "What does verification check?"
+     },
+     {
+      "k": [
+       "real world",
+       "data",
+       "reality",
+       "validate",
+       "independent"
+      ],
+      "ask": "What does validation check?"
+     },
+     {
+      "k": [
+       "both",
+       "need",
+       "trust",
+       "result"
+      ],
+      "ask": "Why do I need both?"
+     }
+    ]
+   }
+  }
+ ]
+}

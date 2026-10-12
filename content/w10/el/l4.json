@@ -1,0 +1,1783 @@
+{
+ "world": 10,
+ "lang": "el",
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced grammar",
+   "icon": "🧩",
+   "hook": "Greek has no dative case. How can you say \"I give the book to my friend\"?",
+   "explain": [
+    "Modern Greek nouns have four cases. The nominative (ο φίλος) is the subject, the genitive (του φίλου) shows possession or \"of\", the accusative (τον φίλο) marks the object and follows most prepositions, and the vocative (φίλε!) is used when you call someone.",
+    "The old dative has disappeared. To mean \"to someone\" Greek uses σε plus the accusative (Δίνω το βιβλίο στον φίλο μου) or the genitive pronoun (Του δίνω το βιβλίο). The article changes with the case, so learn it with the noun: ο, του, τον."
+   ],
+   "mnemonic": "Ο φίλος, του φίλου, τον φίλο: the article shows the case before the noun does.",
+   "items": [
+    [
+     "nominative: the friend (subject)",
+     "ο φίλος",
+     "o fílos"
+    ],
+    [
+     "genitive: of the friend",
+     "του φίλου",
+     "tu fílu"
+    ],
+    [
+     "accusative: the friend (object)",
+     "τον φίλο",
+     "ton fílo"
+    ],
+    [
+     "vocative: calling a friend",
+     "φίλε!",
+     "fíle"
+    ],
+    [
+     "genitive: of the girl",
+     "της κοπέλας",
+     "tis kopélas"
+    ],
+    [
+     "accusative: the girl (object)",
+     "την κοπέλα",
+     "tin kopéla"
+    ],
+    [
+     "genitive plural: of the friends",
+     "των φίλων",
+     "ton fílon"
+    ],
+    [
+     "to the friend",
+     "στον φίλο",
+     "ston fílo"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is the book of my friend.",
+     [
+      "Αυτό",
+      "είναι",
+      "το",
+      "βιβλίο",
+      "του",
+      "φίλου",
+      "μου."
+     ]
+    ],
+    [
+     "I see my friend.",
+     [
+      "Βλέπω",
+      "τον",
+      "φίλο",
+      "μου."
+     ]
+    ],
+    [
+     "Friend, come here!",
+     [
+      "Φίλε,",
+      "έλα",
+      "εδώ!"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which case is used to call someone, as in Φίλε!?",
+     "o": [
+      "Vocative",
+      "Genitive",
+      "Accusative",
+      "Nominative"
+     ],
+     "a": 0,
+     "why": "The vocative is used for direct address.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How do you say \"to the friend\" with σε?",
+     "o": [
+      "στου φίλου",
+      "στον φίλο",
+      "στος φίλος",
+      "σε ο φίλος"
+     ],
+     "a": 1,
+     "why": "Σε plus the accusative of the article becomes στον.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "How does Greek express \"to someone\" without a dative?",
+     "o": [
+      "With a special verb",
+      "With σε plus the accusative or a genitive pronoun",
+      "With no word at all",
+      "With the vocative"
+     ],
+     "a": 1,
+     "why": "Σε + accusative and the weak genitive pronoun (μου, σου) replace the dative.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do many Greek names lose -ς when called, like Γιάννης → Γιάννη?",
+     "o": [
+      "The name changes meaning",
+      "It becomes feminine",
+      "The vocative of -ης names drops the final ς",
+      "It is a spelling error"
+     ],
+     "a": 2,
+     "why": "Masculine nouns in -ης drop ς in the vocative.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must the article be learned with each noun?",
+     "o": [
+      "It is only decoration",
+      "It is used only in writing",
+      "It has one form",
+      "It shows gender, number and case"
+     ],
+     "a": 3,
+     "why": "Ο, του, τον show the role of the noun.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Cases in Greek",
+    "model": "Modern Greek has four cases: nominative, genitive, accusative and vocative. The old dative is replaced by σε plus accusative or a genitive pronoun. The article changes with the case.",
+    "points": [
+     {
+      "k": [
+       "four",
+       "cases",
+       "nominative",
+       "genitive"
+      ],
+      "ask": "How many cases are there?"
+     },
+     {
+      "k": [
+       "dative",
+       "σε",
+       "accusative",
+       "to"
+      ],
+      "ask": "How do I say to someone?"
+     },
+     {
+      "k": [
+       "article",
+       "ο",
+       "του",
+       "τον",
+       "change"
+      ],
+      "ask": "Does the article change?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Modern Greek grammar",
+    "prompt": "Find the case table for ο φίλος and read the forms aloud."
+   },
+   "sources": [
+    "Modern Greek grammar",
+    "Vocative case"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Complex sentence patterns",
+   "icon": "🧬",
+   "hook": "In \"If I had time, I would come\" Greek uses a past form in both parts. Why?",
+   "explain": [
+    "A hypothetical (unreal) condition uses a past tense after αν and θα plus a past tense in the result: Αν είχα χρόνο, θα ερχόμουν (If I had time, I would come). For a possible future condition Greek uses αν plus a subjunctive form: Αν βρέξει, θα μείνουμε.",
+    "With a different subject Greek uses να plus the verb: Θέλω να έρθεις αύριο. Time clauses use μόλις (as soon as) with a subjunctive: Μόλις φτάσω, θα σε πάρω τηλέφωνο. Use παρόλο που (even though), ώστε (so that) and όχι μόνο... αλλά και (not only... but also) to build longer sentences."
+   ],
+   "mnemonic": "Past in the if-part, past in the θα-part: unreal.",
+   "items": [
+    [
+     "If I had time, I would come.",
+     "Αν είχα χρόνο, θα ερχόμουν",
+     "an íkha khróno, tha erkhómun"
+    ],
+    [
+     "not only... but also",
+     "όχι μόνο... αλλά και",
+     "ókhi móno... allá ke"
+    ],
+    [
+     "as soon as",
+     "μόλις",
+     "mólis"
+    ],
+    [
+     "even though",
+     "παρόλο που",
+     "paróllo pu"
+    ],
+    [
+     "so that",
+     "ώστε",
+     "óste"
+    ],
+    [
+     "provided that, since",
+     "εφόσον",
+     "efóson"
+    ],
+    [
+     "who, which (formal)",
+     "ο οποίος",
+     "o opíos"
+    ],
+    [
+     "It is important to...",
+     "Είναι σημαντικό να...",
+     "íne simandikó na"
+    ]
+   ],
+   "sentences": [
+    [
+     "If I had time, I would come.",
+     [
+      "Αν",
+      "είχα",
+      "χρόνο,",
+      "θα",
+      "ερχόμουν."
+     ]
+    ],
+    [
+     "I want you to come tomorrow.",
+     [
+      "Θέλω",
+      "να",
+      "έρθεις",
+      "αύριο."
+     ]
+    ],
+    [
+     "As soon as I arrive, I will call you.",
+     [
+      "Μόλις",
+      "φτάσω,",
+      "θα",
+      "σε",
+      "πάρω",
+      "τηλέφωνο."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which sentence expresses an unreal condition?",
+     "o": [
+      "Αν έχω χρόνο, έρχομαι πάντα",
+      "Αν είχα χρόνο, θα ερχόμουν",
+      "Αν θα έχω χρόνο, έρχομαι",
+      "Αν έχω θα χρόνο, ήρθα"
+     ],
+     "a": 1,
+     "why": "Past tense in both clauses shows that the condition is not real.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How do you say \"I want you to come\"?",
+     "o": [
+      "Θέλω έρθεις",
+      "Θέλω ότι έρθεις",
+      "Θέλω να έρθεις",
+      "Θέλω θα έρθεις"
+     ],
+     "a": 2,
+     "why": "Θέλω is followed by να and a verb that agrees with the new subject.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does παρόλο που express?",
+     "o": [
+      "Purpose",
+      "Time",
+      "Contrast: even though something is true",
+      "Question"
+     ],
+     "a": 2,
+     "why": "Παρόλο που is followed by the indicative.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is μόλις φτάσω without θα?",
+     "o": [
+      "Θα is not a Greek word",
+      "Φτάσω is a noun",
+      "It is a past tense",
+      "Future time clauses use the subjunctive form"
+     ],
+     "a": 3,
+     "why": "The να-form without να (after μόλις, όταν) refers to the future.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which word shows purpose?",
+     "o": [
+      "ώστε",
+      "εφόσον",
+      "παρόλο που",
+      "μόλις"
+     ],
+     "a": 0,
+     "why": "Ώστε means so that.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex sentences in Greek",
+    "model": "For an unreal condition use a past tense after αν and θα plus a past tense: Αν είχα χρόνο, θα ερχόμουν. For a different subject use να: Θέλω να έρθεις. Use μόλις with the subjunctive for the future.",
+    "points": [
+     {
+      "k": [
+       "unreal",
+       "αν είχα",
+       "past"
+      ],
+      "ask": "How do I say an unreal condition?"
+     },
+     {
+      "k": [
+       "να",
+       "subject",
+       "θέλω"
+      ],
+      "ask": "How do I say I want you to come?"
+     },
+     {
+      "k": [
+       "μόλις",
+       "future",
+       "subjunctive"
+      ],
+      "ask": "How do I say as soon as?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Modern Greek grammar",
+    "prompt": "Find conditional sentences and mark the verb forms."
+   },
+   "sources": [
+    "Modern Greek grammar",
+    "Conditional sentence"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Extended conversations",
+   "icon": "💬",
+   "hook": "Greek speakers say \"δηλαδή\" and \"λοιπόν\" all the time. What do these little words do?",
+   "explain": [
+    "Extended conversations use connectors. Παρεμπιπτόντως (by the way) adds a related point, στην πραγματικότητα (in reality) corrects an idea, ακριβώς (exactly) confirms, and λοιπόν (well, so) and δηλαδή (that is to say) organise speech.",
+    "To disagree gently say Δεν συμφωνώ απόλυτα (I do not completely agree). To ask politely use a plural form: Μπορείτε να με βοηθήσετε; Use Πώς να το πω... when you search for words. Show interest with Σοβαρά; (Really?)."
+   ],
+   "mnemonic": "Λοιπόν opens the floor, δηλαδή explains.",
+   "items": [
+    [
+     "Can you help me?",
+     "Μπορείτε να με βοηθήσετε;",
+     "boríte na me voithísete"
+    ],
+    [
+     "How should I put it...",
+     "Πώς να το πω...",
+     "pos na to po"
+    ],
+    [
+     "exactly",
+     "Ακριβώς",
+     "akrivós"
+    ],
+    [
+     "I agree.",
+     "Συμφωνώ",
+     "simfonó"
+    ],
+    [
+     "I do not completely agree.",
+     "Δεν συμφωνώ απόλυτα",
+     "dhen simfonó apólita"
+    ],
+    [
+     "Really?",
+     "Σοβαρά;",
+     "sovará"
+    ],
+    [
+     "in reality",
+     "Στην πραγματικότητα",
+     "stin praghmatikótita"
+    ],
+    [
+     "by the way",
+     "Παρεμπιπτόντως",
+     "parembiptóndos"
+    ]
+   ],
+   "sentences": [
+    [
+     "By the way, did you decide?",
+     [
+      "Παρεμπιπτόντως,",
+      "το",
+      "αποφάσισες;"
+     ]
+    ],
+    [
+     "In reality I do not know.",
+     [
+      "Στην",
+      "πραγματικότητα",
+      "δεν",
+      "ξέρω."
+     ]
+    ],
+    [
+     "I do not completely agree with you.",
+     [
+      "Δεν",
+      "συμφωνώ",
+      "απόλυτα",
+      "μαζί",
+      "σου."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does Παρεμπιπτόντως introduce?",
+     "o": [
+      "A goodbye",
+      "A price",
+      "A related side point",
+      "A command"
+     ],
+     "a": 2,
+     "why": "It means by the way.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase softens disagreement?",
+     "o": [
+      "Είσαι λάθος",
+      "Δεν σε ακούω",
+      "Ποτέ",
+      "Δεν συμφωνώ απόλυτα"
+     ],
+     "a": 3,
+     "why": "Απόλυτα (completely) with δεν makes it gentler.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is Μπορείτε να με βοηθήσετε; polite?",
+     "o": [
+      "It is a command",
+      "It is past tense",
+      "It is only for children",
+      "The plural form shows respect"
+     ],
+     "a": 3,
+     "why": "Plural address is formal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does δηλαδή do?",
+     "o": [
+      "It explains or restates",
+      "It asks a price",
+      "It says no",
+      "It marks the past"
+     ],
+     "a": 0,
+     "why": "It means that is to say.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why say Σοβαρά; during a story?",
+     "o": [
+      "To end the talk",
+      "To show surprise and interest",
+      "To correct grammar",
+      "To ask the time"
+     ],
+     "a": 1,
+     "why": "Back-channel words keep a conversation moving.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Conversation in Greek",
+    "model": "Use connectors: παρεμπιπτόντως for a side point, στην πραγματικότητα to correct, ακριβώς to confirm, δηλαδή to explain. Disagree gently with Δεν συμφωνώ απόλυτα.",
+    "points": [
+     {
+      "k": [
+       "παρεμπιπτόντως",
+       "connector"
+      ],
+      "ask": "Which words connect ideas?"
+     },
+     {
+      "k": [
+       "δεν συμφωνώ απόλυτα",
+       "disagree"
+      ],
+      "ask": "How do I disagree politely?"
+     },
+     {
+      "k": [
+       "δηλαδή",
+       "explain"
+      ],
+      "ask": "What does δηλαδή do?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Greek language",
+    "prompt": "Read a short dialogue and circle the connecting words."
+   },
+   "sources": [
+    "Greek language",
+    "Discourse marker"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Formal and informal registers",
+   "icon": "🎩",
+   "hook": "Greek used to have two official forms of the language, one formal and one spoken. Which won?",
+   "explain": [
+    "Formality in Greek is marked by εσύ (informal) and εσείς (formal or plural). Compare Γεια σου with Γεια σας, Δώσε μου (informal) with Δώστε μου (formal) and σε παρακαλώ with σας παρακαλώ. Formal greetings include Χαίρετε and Να είστε καλά (Take care).",
+    "For centuries Greek had a formal, archaising form (καθαρεύουσα) and a spoken one (δημοτική). In 1976 the demotic form became the official language of the state, and today formal register is shown mainly by vocabulary and polite forms. A formal letter ends Με εκτίμηση (with esteem)."
+   ],
+   "mnemonic": "Εσύ is a smile, εσείς is a polite bow.",
+   "items": [
+    [
+     "Hi!",
+     "Γεια!",
+     "ya"
+    ],
+    [
+     "Greetings (formal)",
+     "Χαίρετε",
+     "khérete"
+    ],
+    [
+     "Could you tell me...?",
+     "Θα μπορούσατε να μου πείτε...;",
+     "tha borúsate na mu pite"
+    ],
+    [
+     "Give me (informal)",
+     "Δώσε μου",
+     "dhóse mu"
+    ],
+    [
+     "Please give me (formal)",
+     "Δώστε μου, παρακαλώ",
+     "dhóste mu parakaló"
+    ],
+    [
+     "Take care (formal)",
+     "Να είστε καλά",
+     "na íste kalá"
+    ],
+    [
+     "See you (informal)",
+     "Τα λέμε",
+     "ta léme"
+    ],
+    [
+     "With esteem (closing)",
+     "Με εκτίμηση",
+     "me ektímisi"
+    ]
+   ],
+   "sentences": [
+    [
+     "Could you tell me the time?",
+     [
+      "Θα",
+      "μπορούσατε",
+      "να",
+      "μου",
+      "πείτε",
+      "την",
+      "ώρα;"
+     ]
+    ],
+    [
+     "Give me the pen, please.",
+     [
+      "Δώσε",
+      "μου",
+      "το",
+      "στυλό,",
+      "σε",
+      "παρακαλώ."
+     ]
+    ],
+    [
+     "Take care!",
+     [
+      "Να",
+      "είστε",
+      "καλά!"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "You meet an older neighbour. Which pronoun do you use?",
+     "o": [
+      "εσύ",
+      "εγώ",
+      "αυτός",
+      "εσείς"
+     ],
+     "a": 3,
+     "why": "Εσείς shows respect.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which closing fits a formal letter?",
+     "o": [
+      "Με εκτίμηση",
+      "Τα λέμε",
+      "Γεια",
+      "Φιλάκια"
+     ],
+     "a": 0,
+     "why": "It is the standard formal closing.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What happened in 1976 to Greek?",
+     "o": [
+      "Demotic became the official language of the state",
+      "Greek was banned",
+      "A new alphabet was adopted",
+      "Latin letters were introduced"
+     ],
+     "a": 0,
+     "why": "The language question ended with demotic as the standard.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the imperative differ in Δώσε and Δώστε?",
+     "o": [
+      "Δώστε is the past",
+      "The -τε ending shows plural or polite address",
+      "Δώσε is plural",
+      "They are different verbs"
+     ],
+     "a": 1,
+     "why": "Register is marked in verbs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use the plural with a stranger?",
+     "o": [
+      "Strangers always come in groups",
+      "It is a grammar mistake",
+      "Plural is a polite way of addressing one person",
+      "It means I am old"
+     ],
+     "a": 2,
+     "why": "Like French vous, εσείς is formal.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Registers in Greek",
+    "model": "Greek marks formality with εσύ and εσείς. Imperatives change: Δώσε and Δώστε. Demotic became the official language in 1976. End a formal letter with Με εκτίμηση.",
+    "points": [
+     {
+      "k": [
+       "εσύ",
+       "εσείς",
+       "formal",
+       "informal"
+      ],
+      "ask": "What is εσύ and εσείς?"
+     },
+     {
+      "k": [
+       "δώσε",
+       "δώστε",
+       "imperative"
+      ],
+      "ask": "How does a command change?"
+     },
+     {
+      "k": [
+       "1976",
+       "demotic",
+       "official"
+      ],
+      "ask": "What happened in 1976?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Greek language question",
+    "prompt": "Read about katharevousa and demotic and note one difference."
+   },
+   "sources": [
+    "Greek language question",
+    "T–V distinction"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Reading articles and literature",
+   "icon": "📚",
+   "hook": "Two Greek poets won the Nobel Prize in Literature. Can you name one?",
+   "explain": [
+    "Modern Greek literature includes the poets Konstantinos Kavafis (Cavafy), whose poem Ιθάκη says that the journey matters more than the arrival, Giorgos Seferis (Nobel Prize 1963) and Odysseas Elytis (Nobel Prize 1979). Nikos Kazantzakis wrote the novel Βίος και πολιτεία του Αλέξη Ζορμπά (Zorba the Greek).",
+    "To discuss reading, learn genre words: διήγημα (short story), μυθιστόρημα (novel), ποίημα (poem), and analysis words: πλοκή (plot), θέμα (theme). Newspaper articles (άρθρα) in εφημερίδες often use the present tense for recent events."
+   ],
+   "mnemonic": "Ιθάκη: enjoy the road, not only the harbour.",
+   "items": [
+    [
+     "short story",
+     "διήγημα",
+     "dhiíghima"
+    ],
+    [
+     "novel",
+     "μυθιστόρημα",
+     "mithistórima"
+    ],
+    [
+     "poet",
+     "ποιητής",
+     "piitís"
+    ],
+    [
+     "poem",
+     "ποίημα",
+     "píima"
+    ],
+    [
+     "plot",
+     "πλοκή",
+     "plokí"
+    ],
+    [
+     "theme",
+     "θέμα",
+     "théma"
+    ],
+    [
+     "newspaper",
+     "εφημερίδα",
+     "efimerídha"
+    ],
+    [
+     "article",
+     "άρθρο",
+     "árthro"
+    ]
+   ],
+   "sentences": [
+    [
+     "Cavafy is a great poet.",
+     [
+      "Ο",
+      "Καβάφης",
+      "είναι",
+      "σπουδαίος",
+      "ποιητής."
+     ]
+    ],
+    [
+     "This is a short story about friendship.",
+     [
+      "Αυτό",
+      "είναι",
+      "ένα",
+      "διήγημα",
+      "για",
+      "τη",
+      "φιλία."
+     ]
+    ],
+    [
+     "The article talks about the economy.",
+     [
+      "Το",
+      "άρθρο",
+      "μιλάει",
+      "για",
+      "την",
+      "οικονομία."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Who wrote the novel about Zorba?",
+     "o": [
+      "Nikos Kazantzakis",
+      "George Seferis",
+      "Constantine Cavafy",
+      "Odysseas Elytis"
+     ],
+     "a": 0,
+     "why": "Kazantzakis wrote Zorba the Greek.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which poet won the Nobel Prize in 1963?",
+     "o": [
+      "Constantine Cavafy",
+      "Giorgos Seferis",
+      "Nikos Kazantzakis",
+      "Alexandros Papadiamantis"
+     ],
+     "a": 1,
+     "why": "Seferis won the 1963 Nobel Prize in Literature.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is the main idea of Cavafy's poem Ιθάκη?",
+     "o": [
+      "Home is a bad place",
+      "The journey and what you learn matter more than reaching the goal",
+      "Travel is dangerous",
+      "Heroes never return"
+     ],
+     "a": 1,
+     "why": "The poem advises that the road brings richness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do Greek writers often use ancient myth?",
+     "o": [
+      "Greeks do not read modern stories",
+      "Myths are new inventions",
+      "Myths give shared images that link past and present",
+      "It is required by law"
+     ],
+     "a": 2,
+     "why": "Poets draw on a long cultural heritage.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the difference between πλοκή and θέμα?",
+     "o": [
+      "They are the same",
+      "Θέμα is the title",
+      "Πλοκή is the poet",
+      "Πλοκή is the sequence of events and θέμα is the main idea"
+     ],
+     "a": 3,
+     "why": "Plot tells what happens; theme says what it is about.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Modern Greek literature",
+    "model": "Cavafy, Seferis and Elytis are major poets, and Kazantzakis wrote Zorba. Analyse a text by plot (πλοκή) and theme (θέμα). Seferis won the Nobel Prize in 1963 and Elytis in 1979.",
+    "points": [
+     {
+      "k": [
+       "cavafy",
+       "seferis",
+       "elytis",
+       "poet"
+      ],
+      "ask": "Who are the poets?"
+     },
+     {
+      "k": [
+       "kazantzakis",
+       "zorba",
+       "novel"
+      ],
+      "ask": "Who wrote Zorba?"
+     },
+     {
+      "k": [
+       "πλοκή",
+       "θέμα",
+       "plot",
+       "theme"
+      ],
+      "ask": "How do I analyse a text?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Constantine P. Cavafy",
+    "prompt": "Read about Ithaca and summarise its message in one sentence."
+   },
+   "sources": [
+    "Constantine P. Cavafy",
+    "Modern Greek literature"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Essay and correspondence writing",
+   "icon": "✉️",
+   "hook": "How do you start a formal e-mail in Greek, and how do you finish it?",
+   "explain": [
+    "An essay has εισαγωγή (introduction), κύριο μέρος (main part) and επίλογος (conclusion). Link ideas with αρχικά (at first), έπειτα (then), συνεπώς (therefore) and συμπερασματικά (to conclude).",
+    "A formal letter begins Αξιότιμε κύριε or Αξιότιμη κυρία and ends Με εκτίμηση. Use Σας παρακαλώ να... (I ask you to...), Αναφορικά με... (regarding...) and Επισυνάπτω... (I attach...). Keep a clear, polite tone."
+   ],
+   "mnemonic": "Εισαγωγή opens, κύριο μέρος builds, επίλογος closes.",
+   "items": [
+    [
+     "Dear Sir,",
+     "Αξιότιμε κύριε,",
+     "aksiótime kírie"
+    ],
+    [
+     "With esteem,",
+     "Με εκτίμηση,",
+     "me ektímisi"
+    ],
+    [
+     "I ask you to...",
+     "Σας παρακαλώ να...",
+     "sas parakaló na"
+    ],
+    [
+     "at first",
+     "Αρχικά",
+     "arkhiká"
+    ],
+    [
+     "therefore",
+     "Συνεπώς",
+     "sinepós"
+    ],
+    [
+     "in conclusion",
+     "Συμπερασματικά",
+     "simberasmatiká"
+    ],
+    [
+     "regarding",
+     "Αναφορικά με",
+     "anaforiká me"
+    ],
+    [
+     "I attach",
+     "Επισυνάπτω",
+     "episinápto"
+    ]
+   ],
+   "sentences": [
+    [
+     "Please reply soon.",
+     [
+      "Σας",
+      "παρακαλώ",
+      "να",
+      "απαντήσετε",
+      "σύντομα."
+     ]
+    ],
+    [
+     "Therefore, the problem is solved.",
+     [
+      "Συνεπώς,",
+      "το",
+      "πρόβλημα",
+      "λύθηκε."
+     ]
+    ],
+    [
+     "I attach the document.",
+     [
+      "Επισυνάπτω",
+      "το",
+      "έγγραφο."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How does a formal letter to a woman begin?",
+     "o": [
+      "Γεια σου",
+      "Αξιότιμη κυρία",
+      "Φίλη μου",
+      "Τα λέμε"
+     ],
+     "a": 1,
+     "why": "It is a respectful opening.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which word introduces a conclusion?",
+     "o": [
+      "Αρχικά",
+      "Έπειτα",
+      "Συμπερασματικά",
+      "Παρεμπιπτόντως"
+     ],
+     "a": 2,
+     "why": "It means in conclusion.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which order is typical for an essay?",
+     "o": [
+      "Conclusion, main part, introduction",
+      "Main part only",
+      "Introduction, main part, conclusion",
+      "Conclusion only"
+     ],
+     "a": 2,
+     "why": "The structure guides the reader.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use Σας παρακαλώ να instead of a command?",
+     "o": [
+      "It is shorter",
+      "It is informal",
+      "It is a question",
+      "It is polite and indirect"
+     ],
+     "a": 3,
+     "why": "Polite requests avoid direct commands.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does Επισυνάπτω tell the reader?",
+     "o": [
+      "A document is attached",
+      "A letter is lost",
+      "A date is changed",
+      "A meeting is cancelled"
+     ],
+     "a": 0,
+     "why": "It is a formal verb for attaching.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Letters and essays in Greek",
+    "model": "An essay has εισαγωγή, κύριο μέρος and επίλογος. Link ideas with αρχικά, έπειτα, συνεπώς and συμπερασματικά. A formal letter begins Αξιότιμε... and ends Με εκτίμηση.",
+    "points": [
+     {
+      "k": [
+       "εισαγωγή",
+       "κύριο μέρος",
+       "επίλογος",
+       "structure"
+      ],
+      "ask": "How is an essay organised?"
+     },
+     {
+      "k": [
+       "αξιότιμε",
+       "με εκτίμηση",
+       "letter"
+      ],
+      "ask": "How do I start and end a letter?"
+     },
+     {
+      "k": [
+       "αρχικά",
+       "συνεπώς",
+       "link"
+      ],
+      "ask": "How do I link ideas?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Letter (message)",
+    "prompt": "Look at a model formal letter and mark the greeting and closing."
+   },
+   "sources": [
+    "Letter (message)",
+    "Essay"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Translation fundamentals",
+   "icon": "🔁",
+   "hook": "In Greek \"I miss you\" is \"Μου λείπεις\", which literally means \"you are missing to me\". Why?",
+   "explain": [
+    "Good translation carries meaning, not just words. Μου λείπεις (literally \"you are lacking to me\") is the natural way to say \"I miss you\". A literal translation (κατά λέξη μετάφραση) can sound strange or be wrong.",
+    "Translators check context (συμφραζόμενα), register and false friends. Greek uses articles more than English, so translating into Greek often means adding ο, η or το. Greek verbs show the person, so the pronoun can disappear in the translation. Idioms need an equivalent expression."
+   ],
+   "mnemonic": "Translate the message: the missing person is \"to me\".",
+   "items": [
+    [
+     "translation",
+     "μετάφραση",
+     "metáfrasi"
+    ],
+    [
+     "literal",
+     "κατά λέξη",
+     "katá léksi"
+    ],
+    [
+     "meaning",
+     "νόημα",
+     "nóima"
+    ],
+    [
+     "context",
+     "συμφραζόμενα",
+     "simfrazómena"
+    ],
+    [
+     "false friend",
+     "ψευδόφιλη λέξη",
+     "psevdhófili léksi"
+    ],
+    [
+     "equivalent",
+     "ισοδύναμο",
+     "isodhínamo"
+    ],
+    [
+     "dictionary",
+     "λεξικό",
+     "leksikó"
+    ],
+    [
+     "original",
+     "πρωτότυπο",
+     "protótipo"
+    ]
+   ],
+   "sentences": [
+    [
+     "Literal translation is not always right.",
+     [
+      "Η",
+      "κατά",
+      "λέξη",
+      "μετάφραση",
+      "δεν",
+      "είναι",
+      "πάντα",
+      "σωστή."
+     ]
+    ],
+    [
+     "You must understand the meaning.",
+     [
+      "Πρέπει",
+      "να",
+      "καταλάβεις",
+      "το",
+      "νόημα."
+     ]
+    ],
+    [
+     "Context helps.",
+     [
+      "Τα",
+      "συμφραζόμενα",
+      "βοηθούν."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you say \"I miss you\" naturally?",
+     "o": [
+      "Σε χάνω μου",
+      "Μισώ εσένα",
+      "Μου λείπεις",
+      "Μου χάνεσαι"
+     ],
+     "a": 2,
+     "why": "The person missed is the subject of λείπω.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a literal translation be wrong?",
+     "o": [
+      "Words have no meaning",
+      "Dictionaries are wrong",
+      "Greek has no verbs",
+      "Languages express ideas with different structures"
+     ],
+     "a": 3,
+     "why": "Structures and idioms differ.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a translation into Greek often add articles?",
+     "o": [
+      "Greek has no articles",
+      "English has more",
+      "Articles are optional in all cases",
+      "Greek uses the definite article more than English"
+     ],
+     "a": 3,
+     "why": "Greek puts the article before names and abstract nouns.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a good method for translating an idiom?",
+     "o": [
+      "Find an equivalent idiom in the target language",
+      "Translate word by word",
+      "Delete it",
+      "Add a footnote only"
+     ],
+     "a": 0,
+     "why": "Equivalence preserves the effect.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is context essential?",
+     "o": [
+      "Words never change",
+      "The same word can have several meanings",
+      "Context is decoration",
+      "Dictionaries give only one meaning"
+     ],
+     "a": 1,
+     "why": "Συμφραζόμενα choose among senses.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Translation basics",
+    "model": "Translation carries meaning rather than words. Μου λείπεις is the natural way to say I miss you. Check context, register and false friends.",
+    "points": [
+     {
+      "k": [
+       "meaning",
+       "context",
+       "literal"
+      ],
+      "ask": "Is word-for-word translation right?"
+     },
+     {
+      "k": [
+       "μου λείπεις",
+       "miss"
+      ],
+      "ask": "How do you say I miss you?"
+     },
+     {
+      "k": [
+       "idiom",
+       "equivalent"
+      ],
+      "ask": "What about idioms?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Translation",
+    "prompt": "Read about equivalence and give an example of your own."
+   },
+   "sources": [
+    "Translation",
+    "False friend"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Regional varieties and cultural context",
+   "icon": "🗺️",
+   "hook": "Greek is the official language of two countries. Which two?",
+   "explain": [
+    "Greek is the official language of Greece and Cyprus. Standard Modern Greek is understood everywhere, but regional speech differs: Cretan, Cypriot and others have special words and sounds. Greek communities live in many countries, for example Australia, the USA and Germany.",
+    "Culture shapes daily life. A πανηγύρι is a village festival with music and dance, a καφενείο is a traditional café where people talk, and Πάσχα (Easter) is the biggest celebration. The Orthodox date often differs from the Western date. The greeting is Χριστός Ανέστη! and the reply is Αληθώς Ανέστη!."
+   ],
+   "mnemonic": "Χριστός Ανέστη! and Αληθώς Ανέστη!: a call and its reply.",
+   "items": [
+    [
+     "island",
+     "νησί",
+     "nisí"
+    ],
+    [
+     "village festival",
+     "πανηγύρι",
+     "panighíri"
+    ],
+    [
+     "Easter",
+     "Πάσχα",
+     "páskha"
+    ],
+    [
+     "traditional café",
+     "καφενείο",
+     "kafenío"
+    ],
+    [
+     "tavern",
+     "ταβέρνα",
+     "tavérna"
+    ],
+    [
+     "dialect",
+     "διάλεκτος",
+     "dhiálektos"
+    ],
+    [
+     "Crete",
+     "Κρήτη",
+     "kríti"
+    ],
+    [
+     "national holiday",
+     "εθνική γιορτή",
+     "ethnikí yortí"
+    ]
+   ],
+   "sentences": [
+    [
+     "In summer we go to the island.",
+     [
+      "Το",
+      "καλοκαίρι",
+      "πάμε",
+      "στο",
+      "νησί."
+     ]
+    ],
+    [
+     "Easter is a big holiday.",
+     [
+      "Το",
+      "Πάσχα",
+      "είναι",
+      "μεγάλη",
+      "γιορτή."
+     ]
+    ],
+    [
+     "In the café we talk a lot.",
+     [
+      "Στο",
+      "καφενείο",
+      "συζητάμε",
+      "πολύ."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What do Greeks say at Easter?",
+     "o": [
+      "Καλή όρεξη!",
+      "Καλή επιτυχία!",
+      "Καληνύχτα!",
+      "Χριστός Ανέστη!"
+     ],
+     "a": 3,
+     "why": "The reply is Αληθώς Ανέστη!",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Where is Greek an official language?",
+     "o": [
+      "Greece and Cyprus",
+      "Greece and Italy",
+      "Greece and Egypt",
+      "Cyprus and Turkey only"
+     ],
+     "a": 0,
+     "why": "Greek is official in both Greece and Cyprus.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does regional speech exist in Greek?",
+     "o": [
+      "Language varies over place and history",
+      "Greek has no standard",
+      "Only cities speak Greek",
+      "Spelling changes by village"
+     ],
+     "a": 0,
+     "why": "Dialects develop in different regions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a καφενείο more than a café?",
+     "o": [
+      "It sells only food",
+      "It is a social place for conversation",
+      "It is a school",
+      "It is a church"
+     ],
+     "a": 1,
+     "why": "It is a community gathering place.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Orthodox Easter often on a different date from Western Easter?",
+     "o": [
+      "Greeks forget",
+      "It is always the same",
+      "The two traditions use different calendar calculations",
+      "It follows a lunar year only"
+     ],
+     "a": 2,
+     "why": "The Orthodox date is computed with the Julian calendar.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Greek regions and culture",
+    "model": "Greek is official in Greece and Cyprus and has regional varieties such as Cretan and Cypriot. Culture includes πανηγύρι, καφενείο and Πάσχα, with the greeting Χριστός Ανέστη.",
+    "points": [
+     {
+      "k": [
+       "greece",
+       "cyprus",
+       "official"
+      ],
+      "ask": "Where is Greek official?"
+     },
+     {
+      "k": [
+       "πανηγύρι",
+       "καφενείο",
+       "culture"
+      ],
+      "ask": "What are cultural words?"
+     },
+     {
+      "k": [
+       "χριστός ανέστη",
+       "easter"
+      ],
+      "ask": "How do Greeks greet at Easter?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Greek Orthodox Easter",
+    "prompt": "Read about the customs and note two traditions."
+   },
+   "sources": [
+    "Greek Orthodox Church",
+    "Greek dialects"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Structured debates and presentations",
+   "icon": "🎙️",
+   "hook": "The word \"democracy\" is Greek. Which two parts make it?",
+   "explain": [
+    "Δημοκρατία comes from δήμος (people) and κράτος (power). Greek political words are often used in debates. A presentation begins with a greeting and the topic: Καλημέρα σας, θα μιλήσω για... A debate uses θέση (thesis), επιχείρημα (argument), παράδειγμα (example) and συμπέρασμα (conclusion).",
+    "State your view with Κατά τη γνώμη μου... (In my opinion). Contrast ideas with Από τη μία... από την άλλη... (On the one hand... on the other). Object politely with Επιτρέψτε μου να διαφωνήσω (Allow me to disagree). End with Σας ευχαριστώ για την προσοχή σας."
+   ],
+   "mnemonic": "Θέση, επιχείρημα, παράδειγμα, συμπέρασμα: four steps to persuade.",
+   "items": [
+    [
+     "thesis",
+     "θέση",
+     "thési"
+    ],
+    [
+     "argument",
+     "επιχείρημα",
+     "epikhírima"
+    ],
+    [
+     "example",
+     "παράδειγμα",
+     "parádhigma"
+    ],
+    [
+     "objection",
+     "αντίρρηση",
+     "andírrisi"
+    ],
+    [
+     "conclusion",
+     "συμπέρασμα",
+     "simbérasma"
+    ],
+    [
+     "in my opinion",
+     "κατά τη γνώμη μου",
+     "katá ti ghnómi mu"
+    ],
+    [
+     "I agree",
+     "συμφωνώ",
+     "simfonó"
+    ],
+    [
+     "Allow me to disagree.",
+     "Επιτρέψτε μου να διαφωνήσω",
+     "epitrépste mu na dhiafoníso"
+    ]
+   ],
+   "sentences": [
+    [
+     "In my opinion, this is important.",
+     [
+      "Κατά",
+      "τη",
+      "γνώμη",
+      "μου,",
+      "αυτό",
+      "είναι",
+      "σημαντικό."
+     ]
+    ],
+    [
+     "I would like to give an example.",
+     [
+      "Θα",
+      "ήθελα",
+      "να",
+      "δώσω",
+      "ένα",
+      "παράδειγμα."
+     ]
+    ],
+    [
+     "From this the conclusion follows.",
+     [
+      "Από",
+      "αυτό",
+      "προκύπτει",
+      "το",
+      "συμπέρασμα."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What are the two parts of δημοκρατία?",
+     "o": [
+      "People and power",
+      "Land and sea",
+      "Law and war",
+      "City and king"
+     ],
+     "a": 0,
+     "why": "Δήμος means people and κράτος means power.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How do you thank the audience?",
+     "o": [
+      "Καληνύχτα",
+      "Σας ευχαριστώ για την προσοχή σας",
+      "Τα λέμε",
+      "Συγγνώμη"
+     ],
+     "a": 1,
+     "why": "It is the standard closing of a talk.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why give an example after an argument?",
+     "o": [
+      "It replaces the argument",
+      "It makes the claim concrete and credible",
+      "It ends the debate",
+      "It is unnecessary"
+     ],
+     "a": 1,
+     "why": "Evidence supports the claim.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a polite way to disagree?",
+     "o": [
+      "Κάνεις λάθος",
+      "Σώπα",
+      "Επιτρέψτε μου να διαφωνήσω",
+      "Είναι ανόητο"
+     ],
+     "a": 2,
+     "why": "It keeps respect for the other speaker.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does Από τη μία... από την άλλη do?",
+     "o": [
+      "It greets the audience",
+      "It ends a talk",
+      "It asks a question",
+      "It presents two sides of an issue"
+     ],
+     "a": 3,
+     "why": "It balances two views.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Presenting and debating in Greek",
+    "model": "Start with a greeting and topic. State a θέση, give επιχειρήματα and examples, and end with a συμπέρασμα. Disagree politely with Επιτρέψτε μου να διαφωνήσω and thank the audience.",
+    "points": [
+     {
+      "k": [
+       "θέση",
+       "επιχείρημα",
+       "example",
+       "structure"
+      ],
+      "ask": "How do I organise a talk?"
+     },
+     {
+      "k": [
+       "επιτρέψτε",
+       "διαφωνήσω",
+       "polite"
+      ],
+      "ask": "How do I disagree politely?"
+     },
+     {
+      "k": [
+       "ευχαριστώ",
+       "προσοχή",
+       "thank"
+      ],
+      "ask": "How do I finish?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Democracy",
+    "prompt": "Read the origin of the word and note the two Greek parts."
+   },
+   "sources": [
+    "Democracy",
+    "Debate"
+   ]
+  }
+ ]
+}

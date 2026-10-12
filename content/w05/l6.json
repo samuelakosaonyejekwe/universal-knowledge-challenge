@@ -1,0 +1,2746 @@
+{
+ "world": 5,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Coupled vessel-mooring-riser analysis",
+   "icon": "🔗",
+   "hook": "Analysing a floater, its moorings and its risers separately gives a different answer than analysing them together. Which one is right, and why do the differences grow with water depth?",
+   "explain": [
+    "A floating production system is one dynamic system. The vessel's six-degree-of-freedom motion is governed in the time domain by the Cummins equation: (M + A∞) ẍ + ∫K(t−τ) ẋ(τ) dτ + C x = F_wave + F_wind + F_current + F_moor + F_riser, where A∞ is the infinite-frequency added mass, K is the retardation (memory) function that represents radiation damping, C is hydrostatic stiffness, and F_moor, F_riser are line reactions that depend on the vessel motion.",
+    "Three levels of modelling exist. Quasi-static: lines are nonlinear springs given by catenary curves; line inertia and drag are ignored. Decoupled: the vessel motion is computed first, then applied as a prescribed motion to detailed finite-element line models. Fully coupled: vessel and line equations are solved together at each time step. In deep water, line drag and inertia add significant damping and mass to the floater, so quasi-static analysis tends to over-predict slow-drift motions and misjudge line tensions. Coupling is most important for large water depth, many lines and for floaters with low natural frequencies.",
+    "At low frequencies the slow-drift surge response is resonant and controlled by damping. Equivalent linear damping from quadratic drag F = ½ρ C_D A |v| v for harmonic velocity amplitude ω X is B_eq = (8/3π) × ½ρ C_D A ω X. At resonance a lightly damped mode responds with X = F₀/(2 ζ C). Verification uses benchmark cases, model tests and field measurements, because errors in damping, wave drift loads and wind-spectrum assumptions dominate uncertainty. Acceptance requires intact and damaged mooring-line cases, offset limits for risers and tension with safety factors."
+   ],
+   "example": {
+    "q": "A floater's surge mode has a slow-drift force amplitude F₀ = 0.5 MN at resonance, restoring stiffness C = 0.2 MN/m and damping ratio ζ = 0.10. Find the resonant amplitude. How does it change if ζ rises to 0.15 due to line drag?",
+    "steps": [
+     "X = F₀ ÷ (2 ζ C) = 0.5 ÷ (2 × 0.10 × 0.2) = 12.5 m.",
+     "With ζ = 0.15: X = 0.5 ÷ (2 × 0.15 × 0.2) = 8.33 m.",
+     "The amplitude falls by one third: damping controls resonance."
+    ],
+    "a": "12.5 m, falling to 8.3 m with more damping"
+   },
+   "analogies": {
+    "sport": "A kite and its flier cannot be analysed apart: the line affects the kite and the kite pulls the line.",
+    "music": "A string instrument's body and strings interact; the sound depends on the coupled system.",
+    "home": "A child on a swing: the chain, seat and child move together. Modelling only the child misses the physics.",
+    "tech": "In a car, wheels and suspension cannot be tested separately from the body at resonance."
+   },
+   "mnemonic": "Quasi-static is a spring, decoupled is a replay, coupled is the whole conversation.",
+   "terms": [
+    [
+     "Cummins equation",
+     "Time-domain equation of motion with a convolution for radiation memory."
+    ],
+    [
+     "Coupled analysis",
+     "Solving vessel and line dynamics together."
+    ],
+    [
+     "Retardation function",
+     "Kernel that describes radiation damping in the time domain."
+    ],
+    [
+     "Equivalent linearisation",
+     "Replacing a nonlinear damping force by a linear one that dissipates the same energy."
+    ]
+   ],
+   "misc": {
+    "wrong": "A more detailed model is automatically more accurate.",
+    "right": "Detail needs correct inputs. Poor damping coefficients, wave drift coefficients or soil data can make a sophisticated model wrong; validation against tests matters."
+   },
+   "limits": "Fully coupled analysis is expensive; screening uses simpler models. Viscous effects at model scale differ from full scale, so scaling of damping is a source of uncertainty.",
+   "trip": {
+    "wiki": "Hydrodynamic radiation",
+    "prompt": "Find the idea of radiation damping and added mass and compare their frequency dependence."
+   },
+   "sources": [
+    "Added mass",
+    "Hydrodynamics",
+    "Mooring"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the retardation function in the Cummins equation represent?",
+     "o": [
+      "Memory of radiated waves (radiation damping)",
+      "Mooring line tension from the fairlead to the anchor",
+      "Wind spectrum",
+      "Hydrostatic restoring"
+     ],
+     "a": 0,
+     "why": "Past motion affects present force via radiated waves.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does quasi-static mooring analysis often over-predict slow-drift offsets in deep water?",
+     "o": [
+      "It ignores line damping from drag and inertia",
+      "It uses too much damping from the hull and wind",
+      "It ignores gravity",
+      "It uses incorrect waves"
+     ],
+     "a": 0,
+     "why": "Long lines damp surge motions in the real system.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "At resonance of a lightly damped mode, the amplitude is controlled mainly by...",
+     "o": [
+      "Damping",
+      "Stiffness only",
+      "Mass only",
+      "Wave direction"
+     ],
+     "a": 0,
+     "why": "X = F₀/(2ζC) at resonance.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A vessel hull drag coefficient is unknown by ±30%. What is the effect on slow-drift prediction?",
+     "o": [
+      "Large uncertainty, as the damping is proportional to C_D",
+      "None, because drag only matters for wave-frequency motion",
+      "Only affects heave",
+      "Only affects wind"
+     ],
+     "a": 0,
+     "why": "Resonant response is inversely proportional to damping.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Decoupled analysis applies vessel motion to the lines but ignores...",
+     "o": [
+      "The effect of line forces and damping on the vessel",
+      "The mass of the mooring line and chain in the water",
+      "Waves",
+      "Gravity"
+     ],
+     "a": 0,
+     "why": "Feedback from lines onto the vessel is not included.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "F₀ = 0.5 MN, C = 0.2 MN/m and ζ = 0.10. Find the resonant amplitude X = F₀/(2ζC) in metres.",
+     "a": 12.5,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "0.5 ÷ 0.04 = 12.5 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With ζ raised to 0.15, find the new resonant amplitude in metres (2 decimal places).",
+     "a": 8.33,
+     "tol": 0.02,
+     "unit": "m",
+     "why": "0.5 ÷ (2 × 0.15 × 0.2) = 8.33 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use B_eq = (8/3π)(½ρ C_D A) ω X with ρ = 1025 kg/m³, C_D = 1, A = 1000 m², ω = 0.05 rad/s and X = 10 m. Find B_eq in kN s/m (nearest whole number).",
+     "a": 218,
+     "tol": 2,
+     "unit": "kN s/m",
+     "why": "½ρC_DA = 512 500; × ωX (0.5) = 256 250; × 0.8488 = 217.5 kN s/m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each modelling level to its description.",
+     "pairs": [
+      [
+       "Quasi-static",
+       "Lines as nonlinear springs"
+      ],
+      [
+       "Decoupled",
+       "Vessel motion applied to line models"
+      ],
+      [
+       "Fully coupled",
+       "Vessel and lines solved together"
+      ],
+      [
+       "Frequency domain",
+       "Linearised response via RAOs"
+      ]
+     ],
+     "why": "A hierarchy of fidelity and cost.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A deepwater FPSO mooring design passes quasi-static checks but fails when coupled analysis is performed. Suggest two physical reasons and the engineering response.",
+     "rubric": [
+      [
+       "damping",
+       "drag",
+       "line",
+       "mass",
+       "inertia"
+      ],
+      [
+       "dynamic",
+       "tension",
+       "snap",
+       "offset",
+       "slow-drift",
+       "resonance",
+       "wave-frequency"
+      ],
+      [
+       "redesign",
+       "stiffer",
+       "stronger",
+       "increase",
+       "pretension",
+       "capacity",
+       "margin",
+       "test",
+       "verify"
+      ]
+     ],
+     "min": 2,
+     "model": "Line dynamics add inertia and drag forces, giving dynamic tension amplification and possible snap loads that quasi-static analysis ignores, and the line damping changes the floater's slow-drift response. The design should be revised (line strength, pretension or layout) and verified with coupled analysis and model tests.",
+     "why": "Dynamic line effects can drive tension beyond the static estimate.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A line breaks in a coupled simulation, and the vessel overshoots to a larger offset than the static estimate. Which physics explains this?",
+     "o": [
+      "Transient dynamic response following sudden loss of restoring force",
+      "A static balance",
+      "Constant current",
+      "Loss of buoyancy"
+     ],
+     "a": 0,
+     "why": "The floater accelerates into a new equilibrium and overshoots.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are validation model tests still needed with advanced numerical models?",
+     "o": [
+      "Closure laws like drag and wave-drift are empirical and scale-dependent",
+      "Simulations are always wrong",
+      "Tests are free",
+      "Physics is not known"
+     ],
+     "a": 0,
+     "why": "Validation reduces uncertainty in empirical inputs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mooring line to the sea bed also drags over a sensitive habitat. How should coupled analysis be used?",
+     "o": [
+      "Evaluate line sweep and touchdown motion to choose a layout that avoids the habitat",
+      "Ignore habitat",
+      "Remove all lines",
+      "Use random layouts"
+     ],
+     "a": 0,
+     "why": "Time-domain results give touchdown footprints to protect sensitive areas.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why floater, moorings and risers must be analysed together",
+    "model": "The vessel moves the lines and the lines pull back, adding damping, mass and tension changes that matter more in deep water. Quasi-static models treat lines as springs and often over-predict slow drift, while coupled time-domain models solve the whole system. Resonant motion is set by damping.",
+    "points": [
+     {
+      "k": [
+       "vessel",
+       "line",
+       "mooring",
+       "riser",
+       "interact"
+      ],
+      "ask": "What interacts in the system?"
+     },
+     {
+      "k": [
+       "damping",
+       "drag",
+       "inertia"
+      ],
+      "ask": "What do the lines add?"
+     },
+     {
+      "k": [
+       "quasi-static",
+       "spring",
+       "ignore"
+      ],
+      "ask": "What do simple models assume?"
+     },
+     {
+      "k": [
+       "resonance",
+       "amplitude",
+       "damping ratio"
+      ],
+      "ask": "What controls resonant motion?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Nonlinear offshore structural dynamics",
+   "icon": "📉",
+   "hook": "A jacket survives a storm that exceeds its design load by 50%, but a linear analysis says it should have failed. Where does the reserve strength come from?",
+   "explain": [
+    "Offshore structures show geometric nonlinearity (large displacements, P-Δ effects), material nonlinearity (yielding, strain hardening, cracking) and boundary nonlinearity (soil-pile interaction, gaps, contact, tension-only lines). The equation of motion is M ü + C u̇ + f_int(u) = f_ext(t), with an internal force that is not simply K u. For a hardening Duffing oscillator ẍ + ω₀² (x + ε x³) = 0 the amplitude-dependent frequency is ω² ≈ ω₀² (1 + ¾ ε A²).",
+    "Solving needs incremental-iterative methods. Time-stepping schemes such as Newmark-β (β = 1/4, γ = 1/2 is unconditionally stable for linear systems) advance the response, and at each step Newton-Raphson iterations enforce equilibrium. Explicit central-difference schemes need no iteration but are only conditionally stable: Δt ≤ 2/ω_max = T_min/π, which can be very small for stiff meshes. Pushover analysis increases lateral load until collapse and gives the reserve strength ratio RSR = collapse load ÷ design load.",
+    "Nonlinear structural behaviour includes ductility (the ability to deform plastically without losing capacity), redundancy (alternative load paths) and energy absorption, which matter for accidental loads such as ship impact and earthquakes. Hysteretic damping through yielding dissipates energy but also accumulates damage. Collapse prediction depends on the soil model and member buckling model, and analysts should vary inputs, check mesh and time-step convergence, and compare with simplified checks. A calculation that cannot be verified should not be trusted for a safety decision."
+   ],
+   "example": {
+    "q": "A hardening oscillator has ω₀ = 2 rad/s, ε = 0.2 and amplitude A = 1. Find the amplitude-dependent angular frequency. Then find the critical time step for an explicit scheme if T_min = 0.1 s.",
+    "steps": [
+     "ω² = ω₀² (1 + ¾ ε A²) = 4 × (1 + 0.15) = 4.6; ω = 2.145 rad/s.",
+     "Δt_cr = T_min / π = 0.1 ÷ π = 0.0318 s.",
+     "Hardening raises the frequency by about 7%."
+    ],
+    "a": "ω ≈ 2.145 rad/s; Δt_cr ≈ 0.032 s"
+   },
+   "analogies": {
+    "home": "A paperclip bends elastically at first, then stays bent. After yielding, the response is nonlinear.",
+    "sport": "A diving board bends more easily for small loads than for a heavy dive that stiffens it through large displacement.",
+    "city": "A steel building in an earthquake yields at certain joints, absorbing energy without collapse.",
+    "tech": "Stepping through time in a simulation is like frames in a video: too long a step and the picture is wrong."
+   },
+   "mnemonic": "Step, iterate, check equilibrium. Explicit is cheap but tiny steps; implicit is robust.",
+   "terms": [
+    [
+     "P-Δ effect",
+     "Extra moment from axial load acting through lateral displacement."
+    ],
+    [
+     "Reserve strength ratio",
+     "Collapse load divided by design load."
+    ],
+    [
+     "Newmark-β",
+     "A family of implicit time-integration methods."
+    ],
+    [
+     "Ductility",
+     "Capacity to deform plastically without losing strength."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a linear analysis shows a member exceeds yield, the structure fails.",
+    "right": "Yielding of one member redistributes load. Collapse requires enough members to form a mechanism, which is why nonlinear pushover gives a higher capacity."
+   },
+   "limits": "Collapse analysis is sensitive to soil and joint models and to assumed imperfections. Results are for assessment of existing structures and require conservative treatment of uncertainties.",
+   "trip": {
+    "wiki": "Duffing equation",
+    "prompt": "Look at the frequency response curve and notice the jump phenomenon for hardening systems."
+   },
+   "sources": [
+    "Duffing equation",
+    "Newmark-beta method",
+    "Pushover analysis"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is reserve strength ratio?",
+     "o": [
+      "Collapse load divided by design load",
+      "Design load divided by the yield load of the steel",
+      "Weight divided by buoyancy",
+      "Mass divided by stiffness"
+     ],
+     "a": 0,
+     "why": "RSR measures margin to collapse.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A central-difference scheme is unstable. What is the most likely cause?",
+     "o": [
+      "The time step exceeds the critical value 2/ω_max",
+      "The mass is too small",
+      "The problem is fully linear, which always destabilises it",
+      "The load is zero"
+     ],
+     "a": 0,
+     "why": "Explicit methods are conditionally stable.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A hardening spring system (ε > 0) has a natural frequency that...",
+     "o": [
+      "Increases with amplitude",
+      "Decreases with amplitude",
+      "Is independent of amplitude",
+      "Becomes zero"
+     ],
+     "a": 0,
+     "why": "ω² ≈ ω₀²(1 + ¾εA²) rises with A.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Redundancy in a jacket matters in extreme events because...",
+     "o": [
+      "Loads can redistribute after a member yields or buckles",
+      "Redundant members add weight only and never carry any load",
+      "It reduces wave loads",
+      "It prevents corrosion"
+     ],
+     "a": 0,
+     "why": "Alternative load paths delay collapse.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which action best checks a nonlinear dynamic result?",
+     "o": [
+      "Halve the time step and refine the mesh and compare",
+      "Run once and accept the result if the solver converges",
+      "Increase damping until stable",
+      "Remove nonlinearity"
+     ],
+     "a": 0,
+     "why": "Convergence studies detect numerical error.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "ω₀ = 2 rad/s, ε = 0.2, A = 1. Find ω = ω₀√(1 + ¾εA²) in rad/s (3 decimal places).",
+     "a": 2.145,
+     "tol": 0.003,
+     "unit": "rad/s",
+     "why": "√4.6 = 2.1448.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The smallest natural period in a finite-element model is 0.1 s. Find the critical explicit time step Δt = T_min/π in seconds (3 decimal places).",
+     "a": 0.032,
+     "tol": 0.001,
+     "unit": "s",
+     "why": "0.1 ÷ π = 0.0318 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pushover analysis gives a collapse base shear of 45 MN. The design (100-year) base shear is 20 MN. Find the RSR (2 decimal places).",
+     "a": 2.25,
+     "tol": 0.01,
+     "unit": "",
+     "why": "45 ÷ 20 = 2.25.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps in one implicit time step with Newton-Raphson.",
+     "items": [
+      "Predict the displacement increment",
+      "Compute the internal force",
+      "Compare with the external load (residual)",
+      "Update the stiffness and iterate until the residual is small"
+     ],
+     "why": "Newton-Raphson iterates until equilibrium is satisfied at the new time.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a nonlinear collapse analysis may show greater capacity than a linear member-by-member check, and why this must not be trusted blindly.",
+     "rubric": [
+      [
+       "redistribut",
+       "redundan",
+       "load path",
+       "plastic",
+       "yield",
+       "ductil"
+      ],
+      [
+       "capacity",
+       "collapse",
+       "mechanism",
+       "reserve",
+       "higher"
+      ],
+      [
+       "uncertain",
+       "soil",
+       "assumption",
+       "imperfection",
+       "model",
+       "validate",
+       "conservative",
+       "sensitivity"
+      ]
+     ],
+     "min": 2,
+     "model": "After one member yields, load shifts to others, so overall capacity can exceed the point at which the first member reaches yield. But the result depends on soil, joint and buckling models and on imperfections, so it needs sensitivity checks and conservative assumptions.",
+     "why": "Reserve strength is real but model-dependent.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A platform has damage from a ship impact, with one brace missing. What is the right analysis?",
+     "o": [
+      "Residual strength analysis of the damaged structure under extreme load",
+      "Ignore damage",
+      "Re-run undamaged case",
+      "Remove loads"
+     ],
+     "a": 0,
+     "why": "Accidental damage cases verify survival.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A simulation shows spurious high-frequency oscillations after a sudden load. What is a sensible response?",
+     "o": [
+      "Check time step, mesh and numerical damping",
+      "Accept them as real physical vibration of the structure",
+      "Use a bigger time step",
+      "Remove mass"
+     ],
+     "a": 0,
+     "why": "High-frequency noise may be a numerical artifact.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the P-Δ effect more important for a tall, flexible structure?",
+     "o": [
+      "Large displacements under axial load create significant added moments",
+      "It is heavier",
+      "It has less damping",
+      "It floats"
+     ],
+     "a": 0,
+     "why": "Moment = axial load × lateral displacement.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why nonlinear analysis matters for extreme loads",
+    "model": "Real structures yield, buckle and redistribute load, so the force-deflection relation is not a straight line. Nonlinear time stepping with iteration captures that and gives a collapse load, from which the reserve strength ratio is found. But results rely on soil and joint models and must be checked for convergence.",
+    "points": [
+     {
+      "k": [
+       "yield",
+       "nonlinear",
+       "buckle",
+       "material"
+      ],
+      "ask": "Why is the response not linear?"
+     },
+     {
+      "k": [
+       "redistribut",
+       "redundan",
+       "load path"
+      ],
+      "ask": "What gives extra capacity?"
+     },
+     {
+      "k": [
+       "iteration",
+       "newton",
+       "time step",
+       "convergence"
+      ],
+      "ask": "How is it solved?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "validate",
+       "sensitivity",
+       "soil"
+      ],
+      "ask": "What must be checked?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Advanced geotechnical and foundation simulation",
+   "icon": "🧮",
+   "hook": "A suction caisson is installed in clay, then left alone for years. During the storm of its life it is loaded rapidly. Which soil strength applies: the one at installation, the long-term one, or neither?",
+   "explain": [
+    "Finite-element and finite-difference simulations of foundations use constitutive models that describe how soil responds to stress. The Mohr-Coulomb model gives shear strength τ = c' + σ' tan φ' in terms of effective stress. Critical-state models (such as Modified Cam-Clay) link stress, volume change and strength through the state of consolidation. Total-stress (undrained) analysis uses s_u, while effective-stress analysis tracks pore pressure; the choice depends on loading rate versus the drainage time.",
+    "Excess pore pressures dissipate by consolidation. In one-dimensional consolidation the time factor is T_v = c_v t ÷ H_dr², where c_v is the coefficient of consolidation and H_dr the longest drainage path. 50% consolidation occurs near T_v ≈ 0.197. Storm loading lasts minutes to hours, which is fast relative to consolidation in clay, so behaviour is undrained and cyclic loading can build pore pressure and degrade strength. Sands may drain partially, so analyses may be partially drained or use cyclic strength models.",
+    "Large deformation problems, such as installation of piles or the penetration of anchors and pipelines, need methods like Coupled Eulerian-Lagrangian (CEL) or remeshing to avoid mesh distortion. Lateral pile response may use p-y springs with p_u = N_p s_u D (N_p up to 9 to 12 at depth), or 3D continuum models. Validation uses centrifuge tests and field data. A simulation is a tool for understanding mechanisms, not a replacement for ground investigation: poor soil data produce precise-looking but wrong answers."
+   ],
+   "example": {
+    "q": "A clay layer of single drainage path H_dr = 5 m has c_v = 2 m²/yr. How long does 50% consolidation take (T_v = 0.197)? What is the Mohr-Coulomb shear strength of sand with σ' = 100 kPa, φ' = 30°, c' = 0?",
+    "steps": [
+     "t = T_v H² / c_v = 0.197 × 25 ÷ 2 = 2.46 years.",
+     "τ = σ' tan φ' = 100 × tan 30° = 100 × 0.5774 = 57.7 kPa."
+    ],
+    "a": "t ≈ 2.5 years; τ ≈ 57.7 kPa"
+   },
+   "analogies": {
+    "home": "Squeezing a wet sponge: water leaves slowly. Pressing quickly loads the water rather than the sponge, like undrained loading.",
+    "sport": "Running on wet sand: quick footfalls hold firm while a slow press sinks in, depending on drainage.",
+    "farm": "Waterlogged fields hold tractors poorly after heavy rain as pore pressure lowers the effective stress.",
+    "tech": "A simulation's mesh is like pixels. If a pixel is too stretched, the picture breaks, as in large deformation."
+   },
+   "mnemonic": "Effective stress governs strength. Fast loading is undrained; consolidation needs time.",
+   "terms": [
+    [
+     "Constitutive model",
+     "Equations relating soil stress and strain."
+    ],
+    [
+     "Consolidation",
+     "Gradual expulsion of pore water that increases effective stress."
+    ],
+    [
+     "CEL",
+     "Coupled Eulerian-Lagrangian method for large soil deformation."
+    ],
+    [
+     "p-y curve",
+     "Spring relation for lateral pile-soil resistance."
+    ]
+   ],
+   "misc": {
+    "wrong": "A more advanced constitutive model gives better predictions.",
+    "right": "Only if its parameters are calibrated from good tests. Many parameters add flexibility but also uncertainty."
+   },
+   "limits": "Models struggle with cyclic degradation, rate effects, anisotropy and layered or carbonate soils. Uncertainty analyses and conservative bounds are often needed.",
+   "trip": {
+    "wiki": "Consolidation (soil)",
+    "prompt": "Find Terzaghi's one-dimensional consolidation theory and the time factor for 50% consolidation."
+   },
+   "sources": [
+    "Consolidation (soil)",
+    "Mohr-Coulomb theory",
+    "Critical state soil mechanics"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which statement about a fast storm load on saturated clay is correct?",
+     "o": [
+      "It is approximately undrained",
+      "It is fully drained",
+      "It has no pore pressure",
+      "It increases effective stress"
+     ],
+     "a": 0,
+     "why": "Loading time is short compared with the drainage time.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does cyclic loading often do to the undrained strength of soft clay?",
+     "o": [
+      "Degrades it through pore pressure build-up and remoulding",
+      "Increases it indefinitely as the clay densifies each cycle",
+      "Has no effect",
+      "Makes it drained"
+     ],
+     "a": 0,
+     "why": "Cycles accumulate strain and pore pressure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the drainage path doubles, the time for the same degree of consolidation...",
+     "o": [
+      "Increases four times",
+      "Doubles, since time is proportional to path length",
+      "Halves",
+      "Stays the same"
+     ],
+     "a": 0,
+     "why": "t ∝ H².",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a Coupled Eulerian-Lagrangian method used for anchor penetration?",
+     "o": [
+      "It handles very large soil deformation without mesh distortion",
+      "It is faster for linear problems",
+      "It ignores soil",
+      "It handles only fluids"
+     ],
+     "a": 0,
+     "why": "Eulerian material flows through a fixed mesh.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A modeller calibrates a complex soil model to one triaxial test only. What is the main risk?",
+     "o": [
+      "Parameters are poorly constrained and predictions may be unreliable",
+      "The model is too simple",
+      "Tests are unnecessary",
+      "Results are always conservative"
+     ],
+     "a": 0,
+     "why": "Complex models need rich calibration data.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Single drainage, H_dr = 5 m, c_v = 2 m²/yr, T_v = 0.197. Find the time for 50% consolidation in years (1 decimal place).",
+     "a": 2.5,
+     "tol": 0.1,
+     "unit": "years",
+     "why": "0.197 × 25 ÷ 2 = 2.46 years.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Sand with σ' = 100 kPa, φ' = 30° and c' = 0. Find the shear strength τ = σ' tan φ' in kPa (1 decimal place).",
+     "a": 57.7,
+     "tol": 0.2,
+     "unit": "kPa",
+     "why": "100 × 0.5774 = 57.7 kPa.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pile of diameter 2 m in clay of s_u = 40 kPa has p_u = 9 s_u D. Find the ultimate lateral resistance per unit length in kN/m.",
+     "a": 720,
+     "tol": 1,
+     "unit": "kN/m",
+     "why": "9 × 40 × 2 = 720 kN/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each model or method to its use.",
+     "pairs": [
+      [
+       "Mohr-Coulomb",
+       "Strength in terms of effective stress"
+      ],
+      [
+       "Cam-Clay",
+       "Links strength and volume change"
+      ],
+      [
+       "CEL",
+       "Large deformation problems"
+      ],
+      [
+       "p-y curve",
+       "Lateral pile response"
+      ]
+     ],
+     "why": "Different tools suit different problems.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A suction caisson in clay is designed using the undrained strength measured before installation. Explain why long-term strength may differ and how this affects the design.",
+     "rubric": [
+      [
+       "consolidat",
+       "set-up",
+       "setup",
+       "pore",
+       "dissipat",
+       "reconsolidat",
+       "remould"
+      ],
+      [
+       "strength",
+       "increase",
+       "gain",
+       "change",
+       "differ",
+       "decrease",
+       "degrade"
+      ],
+      [
+       "conservative",
+       "design",
+       "range",
+       "sensitivity",
+       "test",
+       "margin",
+       "cyclic"
+      ]
+     ],
+     "min": 2,
+     "model": "Installation remoulds the clay and raises pore pressure; as it dissipates and the soil consolidates, strength usually recovers or increases. Cyclic storms may degrade it again. Designers use a range of strengths with sensitivity checks and conservative values.",
+     "why": "Soil strength changes with time and loading history.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A seismic loading event on loose saturated sand creates pore pressure ratios near 1. What is the consequence?",
+     "o": [
+      "Effective stress falls toward zero and the soil may liquefy",
+      "Strength increases",
+      "Soil dries out",
+      "Friction increases"
+     ],
+     "a": 0,
+     "why": "σ' = σ − u goes to zero as u approaches σ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A report gives a bearing capacity from software with 8 significant digits. How should an engineer interpret this?",
+     "o": [
+      "The precision is false; uncertainty in soil data dominates",
+      "It is exact because the software computes in double precision",
+      "It is conservative",
+      "It does not matter"
+     ],
+     "a": 0,
+     "why": "Input uncertainty dominates output precision.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Sea-bed surveys disturb habitat. Which is a sound practice?",
+     "o": [
+      "Limit sampling to what is needed and plan to minimise disturbance",
+      "Sample everywhere",
+      "Avoid surveys",
+      "Use explosives"
+     ],
+     "a": 0,
+     "why": "Survey design balances data needs and environmental protection.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why soil simulations need care",
+    "model": "Soil strength depends on effective stress, which changes as pore water pressure builds and dissipates. A storm is fast so clay behaves undrained, and cycles can weaken it. Simulations use constitutive models and special methods for large deformation, but they are only as good as their calibration.",
+    "points": [
+     {
+      "k": [
+       "effective stress",
+       "pore",
+       "water pressure"
+      ],
+      "ask": "What controls soil strength?"
+     },
+     {
+      "k": [
+       "undrained",
+       "fast",
+       "storm",
+       "drain"
+      ],
+      "ask": "How does loading rate matter?"
+     },
+     {
+      "k": [
+       "cyclic",
+       "degrad",
+       "weaken"
+      ],
+      "ask": "What do storm cycles do?"
+     },
+     {
+      "k": [
+       "calibrat",
+       "test",
+       "data",
+       "uncertain"
+      ],
+      "ask": "What limits a simulation?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Deepwater pipeline transient hydraulics",
+   "icon": "💥",
+   "hook": "A valve at the end of a 20 km subsea water-injection pipeline is shut in 10 seconds. Why can the pipe burst even though the steady pressure was safe?",
+   "explain": [
+    "Rapid changes in flow cause pressure transients (surge or water hammer). The key result is the Joukowsky equation: for an instantaneous velocity change Δv the pressure change is Δp = ρ c Δv, where c is the pressure-wave speed. In a thin-walled elastic pipe c = √(K/ρ) ÷ √(1 + K D/(E t)), where K is the fluid bulk modulus, E the pipe's Young's modulus, D the diameter and t the wall thickness. Pipe flexibility lowers c below the free-fluid sound speed.",
+    "The wave travels to the end and back in a time 2L/c (the reflection time). If a valve closes in less than 2L/c, the full Joukowsky pressure results; slower closures give less. Transient simulation uses the method of characteristics or finite volume schemes, with friction, valve characteristics, pump trips, and column separation when pressure falls to vapour pressure and vapour cavities form, followed by violent collapse. Entrained gas lowers c and cushions pressures, while pipeline pigs and slugs also create transients.",
+    "For compressible gas lines transients are slow and caused by line-pack changes: after a compressor trip the pipe takes minutes to hours to lose pressure. For multiphase lines, transient liquid surges and start-up/shutdown are modelled. Design responses include slow-closing valves, surge relief, accumulators, pump run-down inertia and operating procedures. Safety is paramount: pressure above the pipeline's maximum allowable operating pressure (MAOP) must be prevented by control systems and relief, since failure could release fluids to the sea."
+   ],
+   "example": {
+    "q": "A water-filled pipe has D = 0.5 m, t = 0.02 m, E = 207 GPa, K = 2.2 GPa, ρ = 1000 kg/m³. Find c, the Joukowsky pressure rise for Δv = 2 m/s, and the reflection time for L = 20 km.",
+    "steps": [
+     "c₀ = √(K/ρ) = √(2.2×10⁹/1000) = 1483 m/s. Factor: 1 + K D/(E t) = 1 + 2.2×10⁹×0.5 ÷ (207×10⁹×0.02) = 1.2657, √ = 1.125; c = 1318 m/s.",
+     "Δp = ρ c Δv = 1000 × 1318 × 2 = 2.64 MPa.",
+     "2L/c = 40 000 ÷ 1318 = 30.3 s. A 10 s closure is faster than this, so the full surge applies."
+    ],
+    "a": "c ≈ 1318 m/s; Δp ≈ 2.64 MPa; 2L/c ≈ 30.3 s"
+   },
+   "analogies": {
+    "home": "Turning off a tap quickly makes pipes bang in a house. That is water hammer.",
+    "sport": "A runner stopping suddenly behind a line of other runners causes a wave of bumping that travels backward.",
+    "city": "A sudden traffic stop on a motorway sends a stopping wave backward through the cars.",
+    "music": "A pulse on a stretched string reflects at the end and returns; a pressure wave does the same in a pipe."
+   },
+   "mnemonic": "Delta p = rho c delta v. Close slower than 2L/c to soften the blow.",
+   "terms": [
+    [
+     "Water hammer",
+     "Pressure surge caused by sudden flow change."
+    ],
+    [
+     "Joukowsky equation",
+     "Δp = ρcΔv for instantaneous velocity change."
+    ],
+    [
+     "Column separation",
+     "Vapour cavity formation when pressure drops to vapour pressure."
+    ],
+    [
+     "MAOP",
+     "Maximum allowable operating pressure."
+    ]
+   ],
+   "misc": {
+    "wrong": "Surge pressure depends only on how fast the fluid flows, not on the pipe.",
+    "right": "Wave speed, and so surge pressure, depends on the pipe stiffness through E, D and t, and on entrained gas."
+   },
+   "limits": "Elastic wave speed formulas assume linear elastic pipe and no gas. Steady friction models underestimate damping of fast transients, and unsteady friction models are sometimes used.",
+   "trip": {
+    "wiki": "Water hammer",
+    "prompt": "Find the Joukowsky equation and the formula for pressure wave speed in a pipe."
+   },
+   "sources": [
+    "Water hammer",
+    "Method of characteristics",
+    "Bulk modulus"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which quantity does the Joukowsky equation relate to pressure rise?",
+     "o": [
+      "Velocity change",
+      "Pipe length alone",
+      "Temperature",
+      "Wall roughness"
+     ],
+     "a": 0,
+     "why": "Δp = ρ c Δv.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A valve closure time greater than 2L/c leads to...",
+     "o": [
+      "A smaller pressure rise than the full Joukowsky value",
+      "A larger pressure rise than the full Joukowsky value because of reflections",
+      "No surge ever",
+      "Negative pressure always"
+     ],
+     "a": 0,
+     "why": "Reflections arrive during closure, partly relieving the surge.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Entrained gas bubbles in a liquid pipeline typically...",
+     "o": [
+      "Lower the wave speed and soften surges",
+      "Raise the wave speed and stiffen the surges",
+      "Remove surge",
+      "Increase density only"
+     ],
+     "a": 0,
+     "why": "Gas increases compressibility and reduces c.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pump trips on a long pipeline at a high point. What hazard may follow?",
+     "o": [
+      "Pressure falls to vapour pressure, causing column separation and violent rejoining",
+      "Pressure rises without limit",
+      "Flow doubles",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Low-pressure waves can create vapour cavities that later collapse.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which measure reduces surge risk in a water injection line?",
+     "o": [
+      "Slow-closing valves and surge relief",
+      "Faster valves so the flow stops sooner",
+      "Higher flow",
+      "Remove control"
+     ],
+     "a": 0,
+     "why": "Slowing the change of velocity reduces Δp.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1000 kg/m³, c = 1318 m/s and Δv = 2 m/s. Find the Joukowsky pressure rise in MPa (2 decimal places).",
+     "a": 2.64,
+     "tol": 0.02,
+     "unit": "MPa",
+     "why": "1000 × 1318 × 2 = 2.636 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pipeline is 20 km long and the wave speed is 1318 m/s. Find the reflection time 2L/c in seconds (1 decimal place).",
+     "a": 30.3,
+     "tol": 0.2,
+     "unit": "s",
+     "why": "40 000 ÷ 1318 = 30.3 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the free-fluid sound speed √(K/ρ) for K = 2.2 GPa and ρ = 1000 kg/m³, in m/s (nearest whole number).",
+     "a": 1483,
+     "tol": 2,
+     "unit": "m/s",
+     "why": "√(2.2×10⁶) = 1483 m/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Δp = ρcΔv",
+       "Instantaneous surge pressure"
+      ],
+      [
+       "2L/c",
+       "Reflection time"
+      ],
+      [
+       "Column separation",
+       "Vapour cavity formation"
+      ],
+      [
+       "Line pack",
+       "Compressible gas inventory in a pipeline"
+      ]
+     ],
+     "why": "Core transient concepts.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A water-injection pipeline operator proposes shutting an emergency valve in 5 s instead of 60 s to protect a well. Discuss the trade-off.",
+     "rubric": [
+      [
+       "surge",
+       "pressure",
+       "water hammer",
+       "hammer",
+       "joukowsky"
+      ],
+      [
+       "fast",
+       "quick",
+       "short",
+       "5 s",
+       "slower",
+       "slow",
+       "close time",
+       "2l/c"
+      ],
+      [
+       "well",
+       "protect",
+       "rupture",
+       "damage",
+       "burst",
+       "mawp",
+       "maop",
+       "relief",
+       "safety"
+      ]
+     ],
+     "min": 2,
+     "model": "Fast closure protects the well but generates a large surge, since 5 s is less than 2L/c, which could exceed the pipeline's allowable pressure and cause a rupture. A longer closure or surge relief lowers the pressure; the design must balance well protection and pipeline integrity, with transient analysis.",
+     "why": "Transients depend on closure time relative to 2L/c.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A thicker pipe wall changes the surge pressure how?",
+     "o": [
+      "Raises c and the Joukowsky pressure slightly",
+      "Lowers it greatly because the wall absorbs the surge",
+      "No relation",
+      "Eliminates surge"
+     ],
+     "a": 0,
+     "why": "A stiffer pipe increases wave speed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A transient simulation predicts a surge 10% above MAOP. What is a correct response?",
+     "o": [
+      "Change operations or add relief and re-run before accepting",
+      "Accept it because the overshoot is only 10% and within margin",
+      "Ignore",
+      "Raise MAOP"
+     ],
+     "a": 0,
+     "why": "Exceeding MAOP is unacceptable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A leak detection system uses pressure wave signatures. Why does wave speed matter?",
+     "o": [
+      "It converts arrival time differences to leak location",
+      "It cools the fluid so that leaks show on thermal scans",
+      "It stops leaks",
+      "It dissolves gas"
+     ],
+     "a": 0,
+     "why": "Location = distance from timing and wave speed.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a quick valve closure can burst a pipeline",
+    "model": "When flow is stopped suddenly the moving fluid's momentum becomes a pressure wave of size density times wave speed times velocity change. The wave goes to the end and back in 2L over c. If the valve closes faster than that, the full surge occurs. Slower valves and relief reduce it.",
+    "points": [
+     {
+      "k": [
+       "momentum",
+       "velocity",
+       "stop",
+       "flow"
+      ],
+      "ask": "What causes the surge?"
+     },
+     {
+      "k": [
+       "density",
+       "wave speed",
+       "joukowsky",
+       "rho"
+      ],
+      "ask": "How big is it?"
+     },
+     {
+      "k": [
+       "2l",
+       "reflection",
+       "time",
+       "closure"
+      ],
+      "ask": "What time matters?"
+     },
+     {
+      "k": [
+       "slow",
+       "relief",
+       "accumulator",
+       "valve"
+      ],
+      "ask": "How do you reduce it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Slug-hydrate coupled flow assurance",
+   "icon": "⚠️",
+   "hook": "Slugging and hydrates are usually studied separately, yet in real fields a slug blow-down can create the cold, wet conditions for a hydrate plug. How are the two coupled?",
+   "explain": [
+    "Hydrate formation needs gas, free water and subcooling. Transient flow decides the local temperature, pressure and water content. During shutdown the fluid cools towards seabed temperature, and the time to cool is governed by thermal inertia. With a lumped model T(t) = T_a + (T₀ − T_a) e^(−t/τ), where τ = (mass × heat capacity) ÷ (U × surface area) per unit length. The cooldown time to reach the hydrate temperature T_h is t = τ ln[(T₀ − T_a)/(T_h − T_a)].",
+    "Slugs couple the two problems in several ways. A liquid slug carries water and can wash inhibitor away from regions; a gas blow-out and rapid depressurisation can cool the fluid by Joule-Thomson expansion (a temperature drop of ΔT ≈ μ_JT ΔP; for natural gas typically a few tenths of a K per bar), possibly dropping below the hydrate temperature even if the line was warm; terrain slugging in cold, stagnant low points can hold water and cold fluids close to hydrate conditions, and slugs hitting separators force shutdowns and cooldown. Restart after a slugging trip is therefore a high-risk operation.",
+    "Management strategies combine: insulation with a long cooldown time, inhibitor injection with dosage set by the watercut and with margins for slug-induced concentration changes, flow control to avoid slugging, controlled depressurisation limited to avoid cold zones, and safe plug remediation procedures. Integrated transient simulation couples multiphase flow, thermal and hydrate-kinetic models. Good safety culture includes alarms, procedures and training, since shortcuts during restart can cause blockages, projectile hazards and spills."
+   ],
+   "example": {
+    "q": "A line at 60 °C is shut in with 4 °C ambient. The hydrate temperature at line pressure is 20 °C and the thermal time constant is τ = 40 h. Find the cooldown time to reach the hydrate temperature. In a blow-down the pressure falls by 80 bar with μ_JT = 0.3 K/bar (assumed). What is the temperature drop?",
+    "steps": [
+     "t = τ ln[(60 − 4)/(20 − 4)] = 40 × ln(3.5) = 40 × 1.2528 = 50.1 h.",
+     "ΔT = 0.3 × 80 = 24 K (assumed constant μ_JT).",
+     "If the fluid was at 40 °C before the blow-down, a 24 K drop gives 16 °C, which is below the 20 °C hydrate temperature."
+    ],
+    "a": "Cooldown time ≈ 50 h; JT cooling ≈ 24 K"
+   },
+   "analogies": {
+    "home": "A hot drink in a flask stays warm for hours; cooldown time depends on insulation and size, like a pipeline.",
+    "sport": "A spray can gets cold when released quickly, due to gas expansion.",
+    "city": "Two small traffic problems on a ring road can combine into a jam that neither would make alone.",
+    "tech": "A system may pass individual component tests but fail when subsystems interact."
+   },
+   "mnemonic": "Cooldown t = tau ln(ratio). Slug plus blow-down equals cold, wet, risky restart.",
+   "terms": [
+    [
+     "Cooldown time",
+     "Time for shut-in fluid to reach the hydrate or wax temperature."
+    ],
+    [
+     "Joule-Thomson effect",
+     "Temperature change of a gas on pressure drop through a restriction."
+    ],
+    [
+     "Thermal time constant",
+     "τ; characteristic time for temperature decay."
+    ],
+    [
+     "Restart",
+     "Procedure for resuming flow after a shutdown."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a line is warm during normal operation it is safe from hydrates at all times.",
+    "right": "Transients such as shutdown, blow-down and slugs can place fluid in the hydrate region even when steady operation is warm."
+   },
+   "limits": "Joule-Thomson coefficients vary with composition, temperature and pressure; the value used here is an assumed constant. Real analysis uses equations of state and transient simulators, and kinetic induction times affect actual formation.",
+   "trip": {
+    "wiki": "Joule-Thomson effect",
+    "prompt": "Find the sign and size of the Joule-Thomson coefficient for natural gas and explain why gas cools when expanded."
+   },
+   "sources": [
+    "Joule-Thomson effect",
+    "Clathrate hydrate",
+    "Slug flow"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which event can bring a warm flowline into hydrate conditions?",
+     "o": [
+      "A rapid depressurisation causing Joule-Thomson cooling",
+      "Increased flow, which sweeps heat away from the pipe wall",
+      "Higher temperature",
+      "Adding insulation"
+     ],
+     "a": 0,
+     "why": "Expansion cools the gas, possibly into the hydrate region.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Cooldown time increases if...",
+     "o": [
+      "Insulation improves (U falls)",
+      "Pipe surface area rises with no extra mass",
+      "Ambient temperature falls",
+      "Fluid mass falls"
+     ],
+     "a": 0,
+     "why": "τ = m c_p/(U A) increases when U falls.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A restart after a slugging trip begins with high watercut. Why is hydrate risk elevated?",
+     "o": [
+      "Free water is available and the line is cold",
+      "The water is dry and cannot join gas in a lattice",
+      "Pressure is low",
+      "Gas is absent"
+     ],
+     "a": 0,
+     "why": "Water, gas, cold and pressure are all present.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A plug has formed after a trip. What is the principle for safe action?",
+     "o": [
+      "Depressurise slowly from both sides and keep people clear",
+      "Pressurise one side hard to push the plug out of the line",
+      "Heat one end",
+      "Hammer the pipe"
+     ],
+     "a": 0,
+     "why": "Equal slow depressurisation avoids plug acceleration.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why must inhibitor dosing consider slugs?",
+     "o": [
+      "Slugs change local watercut and can dilute inhibitor",
+      "Slugs are chemical reaction products that consume it",
+      "Inhibitor is a slug",
+      "No reason"
+     ],
+     "a": 0,
+     "why": "Water surges can overwhelm a fixed dosing rate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "T₀ = 60 °C, T_a = 4 °C, T_h = 20 °C, τ = 40 h. Find the cooldown time t = τ ln[(T₀−T_a)/(T_h−T_a)] in hours (1 decimal place).",
+     "a": 50.1,
+     "tol": 0.2,
+     "unit": "h",
+     "why": "40 × ln 3.5 = 40 × 1.2528 = 50.1 h.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Assume μ_JT = 0.3 K/bar and a pressure drop of 80 bar. Find the temperature drop in K.",
+     "a": 24,
+     "tol": 0.1,
+     "unit": "K",
+     "why": "0.3 × 80 = 24 K.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The line is at 40 °C before the blow-down with a 24 K drop. Find the final temperature in °C.",
+     "a": 16,
+     "tol": 0.1,
+     "unit": "°C",
+     "why": "40 − 24 = 16 °C.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the chain of events from slug trip to hydrate risk.",
+     "items": [
+      "Slug trips the separator",
+      "Production is shut in",
+      "Fluid cools toward sea temperature",
+      "Restart or blow-down takes the fluid into the hydrate region"
+     ],
+     "why": "A trip leads to shutdown, cooldown and a risky restart.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Describe two measures that together reduce slug-hydrate coupled risk and explain why one measure alone is not enough.",
+     "rubric": [
+      [
+       "insulat",
+       "warm",
+       "cooldown",
+       "heat"
+      ],
+      [
+       "inhibit",
+       "meg",
+       "methanol",
+       "chemical",
+       "dose"
+      ],
+      [
+       "slug",
+       "choke",
+       "gas lift",
+       "flow control",
+       "slug catcher"
+      ],
+      [
+       "alone",
+       "not enough",
+       "fail",
+       "combination",
+       "layer",
+       "redundan",
+       "backup",
+       "independent"
+      ]
+     ],
+     "min": 2,
+     "model": "Insulation extends cooldown time, and inhibitor injection moves the hydrate boundary, while flow control limits slugs. No single measure covers all scenarios, because a long shutdown can exceed the cooldown time and a slug can overwhelm dosing, so layered, independent barriers are used.",
+     "why": "Defence in depth covers different failure modes.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A designer increases insulation thickness to double τ. How does cooldown time change?",
+     "o": [
+      "It doubles for the same temperature ratio",
+      "It stays the same, because τ does not affect cooldown",
+      "It halves",
+      "It becomes infinite"
+     ],
+     "a": 0,
+     "why": "t = τ × ln(ratio) is proportional to τ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A slug-induced trip occurs repeatedly. What is the right priority?",
+     "o": [
+      "Investigate and fix the cause rather than relying on repeated restarts",
+      "Restart faster",
+      "Disable trips",
+      "Ignore"
+     ],
+     "a": 0,
+     "why": "Repeated trips increase risk; root-cause fix is needed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A chemical injection pump fails during a restart. What should operators do?",
+     "o": [
+      "Stop the restart and return to a safe state",
+      "Continue the restart and dose by hand later",
+      "Increase flow",
+      "Switch off alarms"
+     ],
+     "a": 0,
+     "why": "Loss of a barrier means the hydrate protection is lost.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How slugging and hydrates combine into one problem",
+    "model": "A slug trip causes shutdown and the fluid cools toward sea temperature with a time constant set by insulation. Restart or blow-down can then bring cold, wet fluid into the hydrate region, and gas expansion cools it further. Layered defences and a safe plug procedure are needed.",
+    "points": [
+     {
+      "k": [
+       "trip",
+       "shutdown",
+       "cool",
+       "cooldown"
+      ],
+      "ask": "What happens after a slug trip?"
+     },
+     {
+      "k": [
+       "insulation",
+       "time constant",
+       "tau",
+       "u"
+      ],
+      "ask": "What sets how fast it cools?"
+     },
+     {
+      "k": [
+       "joule",
+       "expansion",
+       "blow",
+       "depressur"
+      ],
+      "ask": "How can gas expansion make it worse?"
+     },
+     {
+      "k": [
+       "layer",
+       "inhibitor",
+       "insulation",
+       "procedure",
+       "barrier"
+      ],
+      "ask": "How do engineers defend against it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Subsea thermal and deposition modelling",
+   "icon": "🌡️",
+   "hook": "Adding 5 cm of insulation to a flowline is expensive. How can an engineer predict how much heat it saves, and what else builds up inside the pipe over years?",
+   "explain": [
+    "Heat loss from a flowline is conduction through the pipe wall and insulation to the sea, plus convection inside and outside. For a cylindrical layer with inner radius r_i, outer radius r_o and conductivity k, the heat flow per unit length for a temperature difference ΔT is q' = 2π k ΔT ÷ ln(r_o/r_i). The overall heat transfer coefficient based on outer area is U = k ÷ [r_o ln(r_o/r_i)] for a single dominant layer (internal and external films are added in series: 1/U is the sum of resistances). Thicker insulation or lower k gives a smaller U and a longer cooldown. Pipe-in-pipe, syntactic foam and direct electrical heating are options.",
+    "Along a flowline, temperature falls exponentially towards the sea temperature, T(x) = T_a + (T_in − T_a) e^(−x/L₀), with L₀ = ṁ c_p ÷ (U π D). Steady and transient thermal models predict arrival temperatures, cooldown times and restart heat-up. Burial, soil conductivity and trenching change U.",
+    "Deposition mechanisms depend on temperature. Wax (paraffin) crystallises below the wax appearance temperature, and molecular diffusion of dissolved wax toward the cold wall (Fick's law, driven by the radial concentration gradient) builds a deposit. Deposits reduce the effective diameter and raise pressure drop (turbulent friction roughly ∝ D⁻⁵ at fixed flow rate). Mitigation: pigging, inhibitors, insulation, heating and operating above the wax temperature. Asphaltenes deposit due to pressure and composition changes, and scales form from incompatible waters, with scale inhibitors and treatments. Pigging a heavily waxed line can be hazardous because a wax plug can form, so progressively larger pigs, careful monitoring and bypass options are used."
+   ],
+   "example": {
+    "q": "A steel pipe of outer radius 0.20 m has 5 cm of insulation (k = 0.15 W/m·K) so r_o = 0.25 m. Find q' for ΔT = 56 K and the overall U based on the outer area. A wax layer then reduces D from 0.40 m to 0.38 m: by what factor does the friction pressure drop rise (∝ D⁻⁵)?",
+    "steps": [
+     "ln(0.25/0.20) = 0.2231; q'/ΔT = 2π × 0.15 ÷ 0.2231 = 4.224 W/m·K; q' = 4.224 × 56 = 236.5 W/m.",
+     "U = 0.15 ÷ (0.25 × 0.2231) = 2.69 W/m²·K.",
+     "Factor = (0.40/0.38)⁵ = 1.292."
+    ],
+    "a": "q' ≈ 237 W/m; U ≈ 2.7 W/m²K; pressure drop up by about 29%"
+   },
+   "analogies": {
+    "home": "A thick flask keeps tea hot longer. More insulation means lower U.",
+    "sport": "A wetsuit is thicker for colder water, as insulation thickness fits conditions.",
+    "farm": "Fat solidifying on a cold pan wall is like wax depositing on a cold pipe wall.",
+    "city": "Limescale furring a kettle is like scale in a pipe, narrowing the bore."
+   },
+   "mnemonic": "q' = 2πkΔT / ln(ro/ri). Thin film of wax, big jump in pressure drop.",
+   "terms": [
+    [
+     "Overall heat transfer coefficient",
+     "U; heat flux per unit area per kelvin."
+    ],
+    [
+     "Wax appearance temperature",
+     "Temperature below which wax crystals form."
+    ],
+    [
+     "Pigging",
+     "Running a pig through a pipeline to clean or inspect it."
+    ],
+    [
+     "Pipe-in-pipe",
+     "An insulated pipe inside a carrier pipe."
+    ]
+   ],
+   "misc": {
+    "wrong": "Doubling insulation thickness halves heat loss.",
+    "right": "Heat loss falls with the logarithm of the radius ratio, so returns diminish as thickness increases."
+   },
+   "limits": "Models need soil and film coefficients and fluid properties with uncertainty. Wax models have fitted parameters (diffusion coefficients, aging), so predictions are calibrated with flow loop tests.",
+   "trip": {
+    "wiki": "Thermal conductivity",
+    "prompt": "Find the cylinder heat conduction formula and test it for a pipe of your choice."
+   },
+   "sources": [
+    "Heat transfer",
+    "Wax deposition",
+    "Pigging"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "If insulation conductivity k halves, the heat loss per metre for the same geometry...",
+     "o": [
+      "Halves",
+      "Doubles",
+      "Stays the same",
+      "Quadruples"
+     ],
+     "a": 0,
+     "why": "q' ∝ k.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do returns diminish as insulation thickness increases?",
+     "o": [
+      "Heat loss depends on ln(r_o/r_i)",
+      "Insulation absorbs heat until it saturates",
+      "Thicker is worse",
+      "k changes sign"
+     ],
+     "a": 0,
+     "why": "The logarithm grows slowly with radius ratio.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Wax deposits mainly form on the pipe wall because...",
+     "o": [
+      "The wall is below the wax appearance temperature, driving diffusion of wax toward it",
+      "Wax is magnetic",
+      "The wall is hot",
+      "Gas condenses"
+     ],
+     "a": 0,
+     "why": "A temperature and concentration gradient moves wax to the cold wall.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A wax layer reduces diameter by 5%. What is the effect on turbulent friction pressure drop at constant flow?",
+     "o": [
+      "Increase of about 29% for 5% diameter loss",
+      "No change, since the flow rate is held constant",
+      "Decrease",
+      "5% increase only"
+     ],
+     "a": 0,
+     "why": "Δp ∝ D⁻⁵ gives (1/0.95)⁵ ≈ 1.30.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A pig run in a heavily waxed line is planned. What is the main risk?",
+     "o": [
+      "A wax plug may form and the pig can get stuck",
+      "The pipe floats up off the sea bed when the pig moves",
+      "Wax disappears",
+      "Pressure drops"
+     ],
+     "a": 0,
+     "why": "Large wax removal can pack in front of the pig.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Insulation k = 0.15 W/m·K, r_i = 0.20 m, r_o = 0.25 m, ΔT = 56 K. Find the heat loss per metre q' = 2πkΔT/ln(r_o/r_i) in W/m (nearest whole number).",
+     "a": 237,
+     "tol": 2,
+     "unit": "W/m",
+     "why": "4.224 × 56 = 236.5 W/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the overall U = k / [r_o ln(r_o/r_i)] for the insulation above in W/m²·K (2 decimal places).",
+     "a": 2.69,
+     "tol": 0.02,
+     "unit": "W/m²K",
+     "why": "0.15 ÷ (0.25 × 0.2231) = 2.69.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pipe diameter falls from 0.40 m to 0.38 m due to wax. Using Δp ∝ D⁻⁵, find the factor increase in friction pressure drop (2 decimal places).",
+     "a": 1.29,
+     "tol": 0.01,
+     "unit": "×",
+     "why": "(0.40/0.38)⁵ = 1.292.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each deposit to a main trigger.",
+     "pairs": [
+      [
+       "Wax",
+       "Cooling below the wax appearance temperature"
+      ],
+      [
+       "Scale",
+       "Mixing or heating of incompatible waters"
+      ],
+      [
+       "Asphaltene",
+       "Pressure or composition change"
+      ],
+      [
+       "Hydrate",
+       "Gas and water at high pressure and low temperature"
+      ]
+     ],
+     "why": "Each deposit has its own physical or chemical trigger.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why monitoring pressure drop over time can reveal wax build-up, and what you would check next.",
+     "rubric": [
+      [
+       "pressure drop",
+       "dp",
+       "differential",
+       "friction",
+       "rise",
+       "increase"
+      ],
+      [
+       "diameter",
+       "bore",
+       "narrow",
+       "restrict",
+       "deposit",
+       "wax",
+       "roughness"
+      ],
+      [
+       "pig",
+       "temperature",
+       "model",
+       "inspect",
+       "inhibitor",
+       "flow rate",
+       "verify",
+       "calibrate"
+      ]
+     ],
+     "min": 2,
+     "model": "A rising pressure drop at constant flow indicates the effective bore is shrinking or roughness has increased, consistent with a wax layer. Next compare with thermal model predictions of the wall temperature, check the flow rate and fluid properties, and plan pigging or inhibitor changes after assessing plug risk.",
+     "why": "Hydraulic behaviour signals changes in the effective diameter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A flowline is buried in soil with low conductivity. Compared with exposed on the sea bed, what is the usual effect on cooldown?",
+     "o": [
+      "Slower cooldown (lower U)",
+      "Faster cooldown, as soil removes heat quickly",
+      "No effect",
+      "Unpredictable"
+     ],
+     "a": 0,
+     "why": "Soil adds thermal resistance.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Chemicals such as wax inhibitors and scale inhibitors are discharged with produced water. What should the project consider?",
+     "o": [
+      "Toxicity, biodegradability and discharge limits to protect marine life",
+      "Colour only",
+      "Cost only",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Environmental management is part of flow assurance design.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Electrical heating of a flowline adds energy. What is a trade-off?",
+     "o": [
+      "Extra energy use and emissions versus avoiding chemicals and blockages",
+      "None",
+      "It cools fluid",
+      "It removes wax permanently"
+     ],
+     "a": 0,
+     "why": "Heating reduces hydrate/wax risks but uses power.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to estimate heat loss and why deposits form",
+    "model": "Heat loss from an insulated pipe depends on the conductivity and the log of the radius ratio, so thicker insulation helps but with diminishing returns. Below the wax temperature wax diffuses to the cold wall and builds up, narrowing the pipe and raising pressure drop strongly.",
+    "points": [
+     {
+      "k": [
+       "insulation",
+       "conductivity",
+       "k",
+       "thick"
+      ],
+      "ask": "What controls heat loss?"
+     },
+     {
+      "k": [
+       "log",
+       "diminishing",
+       "ln",
+       "radius"
+      ],
+      "ask": "Why does thicker insulation give diminishing returns?"
+     },
+     {
+      "k": [
+       "wax",
+       "cold wall",
+       "diffus",
+       "cool"
+      ],
+      "ask": "Why does wax deposit?"
+     },
+     {
+      "k": [
+       "pressure drop",
+       "diameter",
+       "pig",
+       "monitor"
+      ],
+      "ask": "How is it detected and managed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Advanced offshore installation simulation",
+   "icon": "🎛️",
+   "hook": "A 100-tonne subsea module is lowered through the splash zone from a heaving vessel. A single slack-then-snap in the slings could wreck it. How can a simulation tell if the plan is safe before the vessel leaves port?",
+   "explain": [
+    "Installation simulation couples the vessel and crane, the lifted object, the rigging and the waves. The vessel's motion at the crane tip comes from RAOs and the wave spectrum (typically in the time domain with irregular waves). The object is a rigid body with hydrodynamic forces from the sea state and slings modelled as tension-only elastic springs. Because the weather window is statistical, many realisations (seeds) are simulated and the extremes are fitted with a statistical distribution.",
+    "Through the splash zone the object feels varying buoyancy, slamming F_s = ½ ρ C_s A_s v_r² with relative velocity v_r between object and water, added mass and drag. When submerged, buoyancy lowers the effective weight, so the slings could lose tension: the criterion is that the dynamic hydrodynamic force stays below a fraction (typically 90%) of the static weight to avoid slack slings and snap loads. Heave compensation, ballast control, lowering speed and a choice of vessel or crane position can control the loads. Operational limits (H_s, T_p, current) form a weather window, and monitoring ensures operations stop when forecasts exceed limits.",
+    "Monte Carlo statistics must be treated with care. If p is the true probability of exceeding a limit and N independent runs are used, the standard error of the estimate p̂ is √(p(1−p)/N). Rare events need many runs or advanced methods (importance sampling, extrapolation of extremes). Simulations should be benchmarked against model tests, and a human decision remains with the installation manager: the safest action is often to wait."
+   ],
+   "example": {
+    "q": "A module weighs 1000 kN in air and displaces 40 m³. Slamming area A_s = 40 m², C_s = 5, relative velocity v_r = 1.5 m/s, ρ = 1025 kg/m³. Find the slamming force, the submerged static weight and the 90% limit.",
+    "steps": [
+     "F_s = ½ × 1025 × 5 × 40 × 1.5² = 230.6 kN.",
+     "Buoyancy = 1025 × 9.81 × 40 = 402 kN; static weight = 1000 − 402 = 598 kN.",
+     "Limit = 0.9 × 598 = 538 kN. Slamming alone is 231 kN, so margin remains, before adding added-mass and drag forces."
+    ],
+    "a": "F_s ≈ 231 kN; submerged weight ≈ 598 kN; limit ≈ 538 kN"
+   },
+   "analogies": {
+    "home": "Lowering a bucket into a well from a swinging rope: the rope goes slack if the bucket is pulled up by the water.",
+    "sport": "A fisherman playing a fish keeps the line tight; slack followed by a sharp pull can snap it.",
+    "city": "A crane on a building site stops when the wind exceeds the limit.",
+    "tech": "Rolling many virtual dice to see how often something goes wrong is Monte Carlo simulation."
+   },
+   "mnemonic": "No slack, no snap: dynamic force below 90% of static weight. Many seeds, then fit the tail.",
+   "terms": [
+    [
+     "Slamming",
+     "Impact load as an object enters the water."
+    ],
+    [
+     "Slack sling",
+     "Rigging that loses tension; a snap load may follow."
+    ],
+    [
+     "Weather window",
+     "A period when sea state is below limits."
+    ],
+    [
+     "Monte Carlo",
+     "Repeated random simulation to estimate statistics."
+    ]
+   ],
+   "misc": {
+    "wrong": "If the average load is below the crane rating the lift is safe.",
+    "right": "Extreme dynamic peaks, slack-snap events and extreme sea states in the window govern, not the average."
+   },
+   "limits": "Slamming and added-mass coefficients are empirical and uncertain; simplified criteria are conservative for some objects and unconservative for others. Simulations cannot capture every operational error.",
+   "trip": {
+    "wiki": "Monte Carlo method",
+    "prompt": "Find how the standard error of a Monte Carlo estimate falls with the number of runs."
+   },
+   "sources": [
+    "Monte Carlo method",
+    "Offshore construction",
+    "Heave compensation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the 90%-of-static-weight criterion protect against?",
+     "o": [
+      "Slack slings and snap loads",
+      "Corrosion of the sling and shackle steel",
+      "High tide",
+      "Marine growth"
+     ],
+     "a": 0,
+     "why": "If dynamic force exceeds the static weight the sling goes slack.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are many random wave realisations simulated for the same sea state?",
+     "o": [
+      "The maximum load varies from one realisation to another",
+      "To smooth the random waves into one average load case",
+      "The waves are identical, so repeats only check the code",
+      "To change the vessel"
+     ],
+     "a": 0,
+     "why": "Extremes are random, so statistics are needed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A submerged object is lowered deeper. What happens to slamming risk?",
+     "o": [
+      "It ends once the object is fully submerged, but added mass and drag remain",
+      "It increases forever",
+      "It is zero everywhere",
+      "It depends on air"
+     ],
+     "a": 0,
+     "why": "Slamming is an entry effect; other hydrodynamic forces continue.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Simulation shows 3 of 100 runs exceed the sling limit. A manager says 3% is acceptable. What is the best response?",
+     "o": [
+      "Check if the target probability allows this, quantify uncertainty and consider mitigation",
+      "Accept immediately",
+      "Ignore",
+      "Run 1 more"
+     ],
+     "a": 0,
+     "why": "Acceptance depends on target risk and uncertainty of the estimate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The forecast shows H_s rising above the lowering limit during the operation. What is the safest action?",
+     "o": [
+      "Delay or stop before starting the splash-zone phase",
+      "Continue, since the vessel can ride out the rising swell",
+      "Lower faster",
+      "Remove slack"
+     ],
+     "a": 0,
+     "why": "Operations must stay inside limits, and waiting is a valid decision.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use F_s = ½ρ C_s A_s v_r² with ρ = 1025 kg/m³, C_s = 5, A_s = 40 m² and v_r = 1.5 m/s. Find F_s in kN (nearest whole number).",
+     "a": 231,
+     "tol": 2,
+     "unit": "kN",
+     "why": "0.5 × 1025 × 5 × 40 × 2.25 = 230 625 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A module weighs 1000 kN in air and displaces 40 m³ of sea water (ρ = 1025 kg/m³, g = 9.81 m/s²). Find its submerged weight in kN (nearest whole number).",
+     "a": 598,
+     "tol": 2,
+     "unit": "kN",
+     "why": "Buoyancy 402 kN; 1000 − 402 = 598 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The probability of exceedance is p = 0.02 and N = 1000 independent runs. Find the standard error √(p(1−p)/N) (3 decimal places).",
+     "a": 0.004,
+     "tol": 0.0005,
+     "unit": "",
+     "why": "√(0.0196/1000) = 0.00443.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a simulation-based installation study.",
+     "items": [
+      "Define the vessel, object and rigging models",
+      "Apply irregular waves with many seeds",
+      "Extract extreme loads and slack events",
+      "Compare with criteria and set the weather window"
+     ],
+     "why": "Models and loads precede statistical extraction and decision.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why simulated results may need an additional safety margin, and name two sources of uncertainty.",
+     "rubric": [
+      [
+       "coefficient",
+       "slamming",
+       "added mass",
+       "drag",
+       "empirical",
+       "model"
+      ],
+      [
+       "wave",
+       "forecast",
+       "sea state",
+       "environment",
+       "weather",
+       "statistic",
+       "sampling",
+       "random"
+      ],
+      [
+       "margin",
+       "conservative",
+       "uncertain",
+       "validate",
+       "test",
+       "human",
+       "error"
+      ]
+     ],
+     "min": 2,
+     "model": "Hydrodynamic coefficients such as slamming and added mass are empirical, and forecasts and wave statistics have errors and sampling uncertainty, so a margin and validation by tests are used. Operational errors also exist.",
+     "why": "Uncertainty in inputs and models demands margin.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "To halve the standard error of a Monte Carlo probability estimate, the number of runs must...",
+     "o": [
+      "Increase by a factor of four",
+      "Double, since error falls linearly with runs",
+      "Halve",
+      "Stay the same"
+     ],
+     "a": 0,
+     "why": "Standard error ∝ 1/√N.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A heave-compensated crane fails during lowering at a depth of 50 m. What is a sensible response?",
+     "o": [
+      "Stop, hold the load and follow the contingency plan",
+      "Continue lowering to reach the sea bed and finish quickly",
+      "Cut the wire",
+      "Raise quickly"
+     ],
+     "a": 0,
+     "why": "Contingency planning reduces uncontrolled loads.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lowered module is dropped and lands on a live pipeline. What was the likely missing safeguard?",
+     "o": [
+      "Exclusion zones and route checks near sea-bed assets",
+      "Larger waves than were predicted in the weather forecast",
+      "More buoyancy",
+      "Different colour"
+     ],
+     "a": 0,
+     "why": "Dropped object assessment and exclusion zones protect assets.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a simulation checks a risky offshore lift",
+    "model": "The model combines vessel motion in random waves, the object and slings. Through the splash zone slamming and varying buoyancy act and the slings must stay in tension. Many random wave runs find the extremes, and operations are done only in a weather window with margin.",
+    "points": [
+     {
+      "k": [
+       "vessel",
+       "crane",
+       "wave",
+       "motion"
+      ],
+      "ask": "What drives the load?"
+     },
+     {
+      "k": [
+       "slack",
+       "snap",
+       "tension",
+       "sling"
+      ],
+      "ask": "What must the slings avoid?"
+     },
+     {
+      "k": [
+       "many",
+       "random",
+       "seed",
+       "monte carlo",
+       "statistic"
+      ],
+      "ask": "Why simulate many times?"
+     },
+     {
+      "k": [
+       "window",
+       "limit",
+       "wait",
+       "forecast"
+      ],
+      "ask": "What decides when to lift?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Offshore renewable energy systems",
+   "icon": "🌬️",
+   "hook": "Why is offshore wind energy increasing worldwide, and why does a floating turbine need to tilt less than about 10 degrees even in a storm?",
+   "explain": [
+    "The power in an air stream through a rotor of swept area A is ½ ρ A v³. The turbine extracts a fraction, the power coefficient C_p, so P = ½ ρ_air A C_p v³, with a theoretical (Betz) maximum of 16/27 ≈ 0.593. Modern offshore turbines reach C_p of about 0.45 to 0.50 in their operating range and are limited at rated power. Because power is proportional to v³, a modest wind speed increase gives a large energy gain. Offshore winds are stronger and steadier than onshore, giving higher capacity factors (CF), often 40% to 55%. Annual energy E = P_rated × 8760 h × CF.",
+    "Foundations: monopiles and jackets in shallow water, and floating foundations (spar, semi-submersible, TLP) in deeper water. For a floating wind turbine the rotor thrust T = ½ ρ_air A C_T v² acts at hub height h and creates an overturning moment M = T h, resisted by hydrostatic restoring C₅₅ = ρ g V GM. Static heel θ ≈ M/C₅₅. Dynamic effects couple wind, waves, mooring and the control system. The system must avoid resonance with the rotor frequencies (1P, 3P), and the controller must not destabilise the platform.",
+    "Tidal turbines use P = ½ ρ_w A C_p v³ with ρ_w = 1025 kg/m³: since water is about 800 times denser than air, a small rotor in a fast current gives a large power. Wave energy converters absorb wave power, which is typically 10 to 50 kW per metre on energetic coasts. Environmental issues include noise during piling, collision and displacement of birds, effects on fish and mammals, cable electromagnetic fields, habitat change, and fishing and shipping conflicts. Lifecycle assessment, careful siting and consultation help ensure a net benefit; contested trade-offs should be presented openly."
+   ],
+   "example": {
+    "q": "A rotor has D = 220 m. Wind speed is 11 m/s, C_p = 0.45, ρ_air = 1.225 kg/m³. Find the power. Then, for a 15 MW turbine with CF = 0.5, find annual energy. Finally find the thrust at C_T = 0.8.",
+    "steps": [
+     "A = π × 110² = 38 013 m²; P = 0.5 × 1.225 × 38 013 × 0.45 × 11³ = 13.9 MW.",
+     "E = 15 MW × 8760 h × 0.5 = 65 700 MWh.",
+     "T = 0.5 × 1.225 × 38 013 × 0.8 × 11² = 2.25 MN."
+    ],
+    "a": "P ≈ 13.9 MW; E ≈ 65 700 MWh; T ≈ 2.25 MN"
+   },
+   "analogies": {
+    "home": "A fan in front of a window gives a stronger breeze if you double its speed, though power needed is much more.",
+    "sport": "A sailboat's power increases quickly with wind speed.",
+    "farm": "A traditional windmill pumping water uses the same idea as a modern turbine.",
+    "sea": "A tidal turbine is like an underwater windmill turned by a predictable current."
+   },
+   "mnemonic": "Power goes as v cubed; Betz limit 16/27; thrust over restoring gives heel.",
+   "terms": [
+    [
+     "Capacity factor",
+     "Actual energy divided by energy at rated power for all hours."
+    ],
+    [
+     "Betz limit",
+     "Maximum fraction (16/27) of wind power a rotor can extract."
+    ],
+    [
+     "Thrust coefficient",
+     "C_T; dimensionless rotor thrust."
+    ],
+    [
+     "1P/3P",
+     "Excitation frequencies at once and three times per rotor revolution."
+    ]
+   ],
+   "misc": {
+    "wrong": "Renewable energy offshore has no environmental effects.",
+    "right": "It reduces emissions but has impacts on seabirds, marine mammals, habitats and fisheries; managing them is part of design."
+   },
+   "limits": "Simple formulas ignore wakes between turbines, turbulence, yaw, control and wave-wind coupling. Capacity factors vary by site and year, and costs depend on supply chains.",
+   "trip": {
+    "wiki": "Floating wind turbine",
+    "prompt": "Compare the floating foundation types. Which has the largest waterplane area?"
+   },
+   "sources": [
+    "Offshore wind power",
+    "Betz's law",
+    "Tidal power"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "If wind speed doubles, available wind power through a rotor...",
+     "o": [
+      "Increases eight times",
+      "Doubles, since power is proportional to speed",
+      "Quadruples",
+      "Halves"
+     ],
+     "a": 0,
+     "why": "P ∝ v³ and 2³ = 8.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does the Betz limit say?",
+     "o": [
+      "No rotor can extract more than 16/27 of the wind power",
+      "Wind turbines must be smaller than 100 m to avoid wake losses",
+      "Wind speed is constant",
+      "Efficiency can be 100%"
+     ],
+     "a": 0,
+     "why": "Conservation of mass and momentum limit extraction to 59.3%.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a tidal turbine of the same size more powerful at the same velocity than a wind turbine?",
+     "o": [
+      "Water is about 800 times denser than air",
+      "Water flows much faster than air at the same site",
+      "Tides are bigger",
+      "Turbines are heavier"
+     ],
+     "a": 0,
+     "why": "Power ∝ density.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A floating turbine's heel exceeds the limit in a storm. Which design change reduces heel?",
+     "o": [
+      "Increase the restoring stiffness, e.g. larger GM or displaced volume",
+      "Increase hub height",
+      "Reduce ballast",
+      "Remove moorings"
+     ],
+     "a": 0,
+     "why": "θ = M/C₅₅ falls when C₅₅ increases.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Piling for a monopile foundation is planned near a porpoise habitat. Which mitigation is appropriate?",
+     "o": [
+      "Noise reduction systems, soft start and seasonal timing",
+      "No mitigation is needed because porpoises avoid noisy areas",
+      "Louder piling",
+      "Extra night work"
+     ],
+     "a": 0,
+     "why": "Underwater noise can harm marine mammals.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Rotor D = 220 m. Find the swept area A = πD²/4 in m² (nearest whole number).",
+     "a": 38013,
+     "tol": 5,
+     "unit": "m²",
+     "why": "π × 110² = 38 013 m².",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use P = ½ρAC_p v³ with ρ = 1.225 kg/m³, A = 38 013 m², C_p = 0.45 and v = 11 m/s. Find P in MW (1 decimal place).",
+     "a": 13.9,
+     "tol": 0.1,
+     "unit": "MW",
+     "why": "0.5 × 1.225 × 38 013 × 0.45 × 1331 = 13.9 MW.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 15 MW turbine has capacity factor 0.5. Find annual energy in MWh (8760 hours).",
+     "a": 65700,
+     "tol": 10,
+     "unit": "MWh",
+     "why": "15 × 8760 × 0.5 = 65 700 MWh.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Thrust is 2.25 MN at hub height 150 m. The platform restoring stiffness is C₅₅ = 3.02×10⁹ N·m/rad. Find the static heel angle in degrees (1 decimal place).",
+     "a": 6.4,
+     "tol": 0.1,
+     "unit": "°",
+     "why": "M = 2.25×10⁶ × 150 = 3.38×10⁸ N·m; θ = 0.112 rad = 6.4°.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Discuss one benefit and one environmental concern of offshore wind farms and how a developer might address the concern.",
+     "rubric": [
+      [
+       "emission",
+       "carbon",
+       "clean",
+       "renewable",
+       "electricity",
+       "climate",
+       "fossil"
+      ],
+      [
+       "bird",
+       "noise",
+       "mammal",
+       "habitat",
+       "fish",
+       "porpoise",
+       "collision",
+       "cable",
+       "fishing"
+      ],
+      [
+       "survey",
+       "mitigat",
+       "avoid",
+       "monitor",
+       "siting",
+       "timing",
+       "assess",
+       "consult",
+       "bubble"
+      ]
+     ],
+     "min": 2,
+     "model": "A wind farm produces low-carbon electricity, reducing fossil fuel emissions. Piling noise and collisions can harm marine mammals and birds, so developers survey the area, choose sites and timing to avoid sensitive periods, use noise mitigation and monitor effects.",
+     "why": "Benefits and impacts are weighed with mitigation and monitoring.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A turbine's rotor-passing frequency (3P) coincides with the tower's natural frequency. What is the risk?",
+     "o": [
+      "Resonance and fatigue",
+      "Lower power output from the rotor stalling",
+      "Higher cost only",
+      "Wake effects"
+     ],
+     "a": 0,
+     "why": "Excitation at natural frequency amplifies response.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A floating turbine with a tuned controller increases blade pitch to reduce power above rated wind. Under some conditions this can cause platform pitch instability. Why?",
+     "o": [
+      "Thrust falls as wind rises, creating negative damping of platform motion",
+      "Pitching increases thrust",
+      "Winds vanish",
+      "Mass increases"
+     ],
+     "a": 0,
+     "why": "Above rated, thrust decreases with wind speed, which can feed energy into platform motion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about contested trade-offs is most appropriate?",
+     "o": [
+      "Present the benefits and the impacts openly and consult affected groups such as fishers",
+      "Hide impacts",
+      "Ignore fishers",
+      "Only consider cost"
+     ],
+     "a": 0,
+     "why": "Marine spatial planning balances interests transparently.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How offshore wind and tidal power work",
+    "model": "Power in moving air or water goes as density times swept area times speed cubed, and a turbine captures up to the Betz limit of about 59%. Offshore winds are stronger, giving higher capacity factors. Floating turbines must resist the thrust overturning moment with hydrostatic stiffness. Environmental effects need to be managed.",
+    "points": [
+     {
+      "k": [
+       "cube",
+       "cubed",
+       "v3",
+       "speed"
+      ],
+      "ask": "How does power depend on speed?"
+     },
+     {
+      "k": [
+       "betz",
+       "59",
+       "16/27",
+       "limit"
+      ],
+      "ask": "How much can a turbine capture?"
+     },
+     {
+      "k": [
+       "thrust",
+       "overturn",
+       "heel",
+       "restoring",
+       "stiffness"
+      ],
+      "ask": "What limits tilt of a floating turbine?"
+     },
+     {
+      "k": [
+       "noise",
+       "bird",
+       "mammal",
+       "habitat",
+       "mitigat"
+      ],
+      "ask": "What effects on the ocean must be managed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated offshore field development project",
+   "icon": "🏁",
+   "hook": "You are the lead engineer for a new deepwater field. Dozens of decisions interact: concept, flow assurance, moorings, safety, cost and the ocean. How do you bring them into one defensible plan?",
+   "explain": [
+    "Field development moves through phases: identify and assess opportunities, select a concept, define the design (FEED), execute (procure, build, install, commission), operate and finally decommission. Concept selection compares options (e.g. subsea tieback to an existing host, FPSO, semi-submersible with dry trees, TLP) using technical feasibility, safety, environmental impact, cost, schedule and flexibility. Decision matrices and scoring are common, but weights are judgments and should be examined with sensitivity checks.",
+    "Technical disciplines interact: reservoir and production profile set flow rates; flow assurance (hydrates, wax, slugging, thermal) sets insulation, chemicals and operating envelopes; hydrodynamics and structures size the floater and moorings; risers and pipelines link them; geotechnics and installation constrain foundations and vessel choice. Economics use discounting: NPV = Σ CF_t ÷ (1 + r)ᵗ. A simple exponential decline gives rate q = q₀ e^(−Dt) and cumulative recovery q₀/D (in consistent units) over infinite time, or (q₀/D)(1 − e^(−Dt)) by time t.",
+    "Risk and sustainability are integral: hazard identification, safety barriers, ALARP (as low as reasonably practicable) demonstration, spill response, emissions (flaring, power generation), noise, seabed disturbance, and decommissioning liabilities. Digital twins and monitoring support integrity during operation. Good engineering communication states assumptions and uncertainties clearly, uses independent checks, and respects the rights and interests of coastal communities. The best decision is not always the cheapest; a robust design that handles uncertainty and protects people and the ocean has lasting value."
+   ],
+   "example": {
+    "q": "Capex 2000 (million, at t = 0) and net revenue 600 per year for 5 years, discount rate 10%. Find NPV. Production starts at q₀ = 6000 m³/day with decline D = 0.2 per year: find the cumulative oil recovered over infinite time and the fraction recovered within 10 years.",
+    "steps": [
+     "Annuity factor (10%, 5 yr) = 3.7908; PV of revenue = 600 × 3.7908 = 2274.5; NPV = 2274.5 − 2000 = +274.5 million.",
+     "Cumulative = q₀ × 365 ÷ D = 6000 × 365 ÷ 0.2 = 10.95 million m³.",
+     "Fraction by 10 years = 1 − e^(−0.2 × 10) = 1 − e⁻² = 0.865."
+    ],
+    "a": "NPV ≈ +274 million; total ≈ 10.95 million m³; 86.5% by year 10"
+   },
+   "analogies": {
+    "home": "Planning a house build: location, design, finance and safety must all fit together.",
+    "city": "A new city district needs roads, power, water and a plan for its future retirement.",
+    "sport": "A team coach balances attack, defence and fitness. No single position wins alone.",
+    "nature": "An ecosystem has linked parts. Changing one thing affects the rest."
+   },
+   "mnemonic": "Phase, Option, Analyse, Risk, Decide, Monitor: and never forget the ocean.",
+   "terms": [
+    [
+     "NPV",
+     "Net present value: discounted sum of cash flows."
+    ],
+    [
+     "FEED",
+     "Front-end engineering design."
+    ],
+    [
+     "ALARP",
+     "As low as reasonably practicable; a principle for risk reduction."
+    ],
+    [
+     "Decline curve",
+     "Model of falling production rate over time."
+    ]
+   ],
+   "misc": {
+    "wrong": "The option with the highest NPV should always be chosen.",
+    "right": "NPV depends on uncertain prices and rates. Safety, environmental limits, flexibility and risk must be included in the decision."
+   },
+   "limits": "Economic models rely on uncertain forecasts and discount rates. Scoring matrices hide subjective weights. A project must state its assumptions and test alternative scenarios, including energy transition scenarios.",
+   "trip": {
+    "wiki": "Net present value",
+    "prompt": "Find the NPV formula and test how changing the discount rate changes the answer."
+   },
+   "sources": [
+    "Net present value",
+    "Oil field",
+    "ALARP"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a positive NPV mean?",
+     "o": [
+      "Discounted revenues exceed discounted costs at the chosen rate",
+      "The project is risk-free",
+      "The project is safe",
+      "The project is short"
+     ],
+     "a": 0,
+     "why": "NPV > 0 means value exceeds the discounted cost.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Raising the discount rate from 10% to 15% usually...",
+     "o": [
+      "Lowers NPV of future revenues",
+      "Raises NPV because revenues are discounted harder",
+      "Leaves it unchanged",
+      "Removes risk"
+     ],
+     "a": 0,
+     "why": "Future cash flows are worth less when discounted more.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a subsea tieback to an existing host often attractive for a small field?",
+     "o": [
+      "It reuses existing facilities and cuts cost",
+      "It needs no pipelines or umbilicals to the host",
+      "It has no flow assurance risk",
+      "It is always cheaper"
+     ],
+     "a": 0,
+     "why": "Reusing infrastructure reduces capital cost, though distance adds flow assurance challenges.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does ALARP require?",
+     "o": [
+      "Risk reduction until further reduction is grossly disproportionate in cost to its benefit",
+      "Zero risk",
+      "Lowest cost",
+      "Highest production"
+     ],
+     "a": 0,
+     "why": "ALARP weighs risk reduction against sacrifice.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A concept ranking changes when the weight on environmental impact is doubled. What does this tell you?",
+     "o": [
+      "The result is sensitive to subjective weights and needs discussion",
+      "The matrix is exact",
+      "Weights do not matter",
+      "The environment does not matter"
+     ],
+     "a": 0,
+     "why": "Sensitivity analysis reveals dependence on judgments.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Capex 2000 million, revenue 600 million per year for 5 years, r = 10% (annuity factor 3.7908). Find NPV in million (nearest whole number).",
+     "a": 274,
+     "tol": 1,
+     "unit": "million",
+     "why": "600 × 3.7908 − 2000 = 274.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "q₀ = 6000 m³/day and D = 0.2 per year. Find cumulative recovery over infinite time = q₀ × 365/D in million m³ (2 decimal places).",
+     "a": 10.95,
+     "tol": 0.02,
+     "unit": "million m³",
+     "why": "6000 × 365 ÷ 0.2 = 10.95 million m³.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Fraction recovered within 10 years = 1 − e^(−D t) with D = 0.2/yr. Find it as a decimal (3 decimal places).",
+     "a": 0.865,
+     "tol": 0.002,
+     "unit": "",
+     "why": "1 − e⁻² = 0.8647.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the main phases of a field development.",
+     "items": [
+      "Identify and assess opportunity",
+      "Select concept",
+      "Define design (FEED)",
+      "Execute and install",
+      "Operate, then decommission"
+     ],
+     "why": "Each phase builds on the previous one, ending with safe decommissioning.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Propose how you would present the case for choosing a lower-NPV concept that has much lower emissions and spill risk. Give two points.",
+     "rubric": [
+      [
+       "emission",
+       "spill",
+       "risk",
+       "environment",
+       "ocean",
+       "marine",
+       "safety",
+       "carbon"
+      ],
+      [
+       "robust",
+       "uncertain",
+       "scenario",
+       "sensitivity",
+       "price",
+       "regulation",
+       "licence",
+       "reputation",
+       "cost of failure",
+       "liabilit"
+      ],
+      [
+       "stakeholder",
+       "community",
+       "fisher",
+       "transparent",
+       "alarp",
+       "consult",
+       "long-term",
+       "decommission"
+      ]
+     ],
+     "min": 2,
+     "model": "A spill or major accident could cost far more than the NPV difference and harm the ocean and communities. The lower-risk concept is more robust under tighter regulation and price scenarios, meets ALARP and stakeholder expectations, and sensitivity analysis shows the NPV gap is small compared with the uncertainty.",
+     "why": "Decisions weigh risk, uncertainty and values beyond NPV.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A field produces more water than forecast. Which disciplines are affected?",
+     "o": [
+      "Flow assurance, topside water handling, hydrates and corrosion",
+      "Only accounting",
+      "Only moorings",
+      "None"
+     ],
+     "a": 0,
+     "why": "Water changes hydrate risk, separators, chemicals and economics.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A review shows decommissioning cost was not included in the early economics. What is the issue?",
+     "o": [
+      "Future liabilities were understated, distorting the decision",
+      "No issue, since decommissioning is paid after production ends",
+      "It lowers cost",
+      "It improves safety"
+     ],
+     "a": 0,
+     "why": "End-of-life costs and duties are part of lifecycle assessment.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An independent verifier raises a concern about assumed soil strength. What is the right response?",
+     "o": [
+      "Investigate with additional data or analysis and document the resolution",
+      "Ignore it",
+      "Replace the verifier",
+      "Hide the report"
+     ],
+     "a": 0,
+     "why": "Independent challenge improves safety and integrity.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How engineers choose and justify an offshore field development",
+    "model": "They move through phases and compare concepts on safety, environment, technical feasibility, cost and flexibility. Flow assurance, structures, moorings, pipelines and installation all interact. Economics use discounted cash flow and decline curves, but risk, uncertainty and ocean protection must be part of the decision.",
+    "points": [
+     {
+      "k": [
+       "phase",
+       "concept",
+       "feed",
+       "option"
+      ],
+      "ask": "How is the project structured?"
+     },
+     {
+      "k": [
+       "flow assurance",
+       "mooring",
+       "riser",
+       "interact",
+       "discipline"
+      ],
+      "ask": "What technical areas must fit together?"
+     },
+     {
+      "k": [
+       "npv",
+       "discount",
+       "cash",
+       "decline"
+      ],
+      "ask": "How is the economics assessed?"
+     },
+     {
+      "k": [
+       "risk",
+       "environment",
+       "alarp",
+       "uncertain",
+       "ocean",
+       "safety"
+      ],
+      "ask": "What else must be part of the decision?"
+     }
+    ]
+   }
+  }
+ ]
+}

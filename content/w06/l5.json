@@ -1,0 +1,2877 @@
+{
+ "world": 6,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced neutron transport concepts",
+   "icon": "🌀",
+   "hook": "Neutrons wander through a core, scattering many times before they are absorbed or escape. How can that random walk be turned into a usable calculation?",
+   "explain": [
+    "Neutron transport describes how the neutron population changes in position, energy and direction. The full transport equation tracks all three. A common simplification is diffusion theory, which treats neutrons like a gas that drifts from regions of high neutron flux to low flux. Fick's law gives the net current J = −D × (change of flux with position), where D is the diffusion coefficient.",
+    "Combining diffusion with absorption gives the diffusion length L = √(D ÷ Σa), where Σa is the macroscopic absorption cross-section. It is a measure of how far neutrons typically spread before being absorbed. A good moderator has a long diffusion length because it scatters well and absorbs little.",
+    "For a reactor of finite size, some neutrons leak out. The infinite-medium multiplication factor k∞ can be built from the four-factor formula: k∞ = η × f × p × ε, where η is neutrons produced per neutron absorbed in fuel, f is the fraction of absorption in the fuel, p is the chance of escaping resonance capture while slowing down, and ε is the fast-fission boost. The effective factor is k = k∞ × (probability of not leaking).",
+    "Computers solve transport using deterministic methods (dividing space and energy into a grid) or Monte Carlo methods (following many random neutron histories). Larger cores leak proportionally less, because volume grows faster than surface area."
+   ],
+   "example": {
+    "q": "Illustrative values: η = 1.6, f = 0.9, p = 0.8, ε = 1.1. What is k∞? If the non-leakage probability is 0.8, what is k?",
+    "steps": [
+     "k∞ = 1.6 × 0.9 × 0.8 × 1.1.",
+     "1.6 × 0.9 = 1.44; × 0.8 = 1.152; × 1.1 = 1.2672.",
+     "k = 1.2672 × 0.8 = 1.01376, which is about 1.014."
+    ],
+    "a": "k∞ ≈ 1.27 and k ≈ 1.01"
+   },
+   "analogies": {
+    "city": "People spreading out from a crowded square into quiet streets: they drift from high to low density.",
+    "nature": "A drop of ink spreading in still water.",
+    "sport": "Fans leaving a stadium: those near the edge exit first.",
+    "tech": "Heat spreading along a metal rod follows the same maths as neutron diffusion."
+   },
+   "mnemonic": "η, f, p, ε: Produce, Fuel share, Pass resonances, Extra fast fissions.",
+   "terms": [
+    [
+     "Neutron flux",
+     "Neutrons crossing unit area per second, summed over directions."
+    ],
+    [
+     "Diffusion length",
+     "Typical distance neutrons spread before being absorbed, √(D/Σa)."
+    ],
+    [
+     "Four-factor formula",
+     "k∞ = η f p ε for an infinite medium."
+    ],
+    [
+     "Non-leakage probability",
+     "Chance a neutron stays in the core."
+    ],
+    [
+     "Monte Carlo method",
+     "Statistical simulation of many random neutron histories."
+    ]
+   ],
+   "misc": {
+    "wrong": "Diffusion theory is exact for any reactor.",
+    "right": "It is an approximation, good where scattering dominates, but poor near boundaries, strong absorbers or voids, where transport theory is needed."
+   },
+   "limits": "The four-factor formula is a teaching model. Practical codes use many energy groups and nuclear data libraries.",
+   "trip": {
+    "wiki": "Neutron transport",
+    "prompt": "Find the difference between the transport equation and the diffusion approximation."
+   },
+   "sources": [
+    "Neutron transport",
+    "Four factor formula",
+    "Neutron diffusion"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In diffusion theory, in which direction is the net neutron current?",
+     "o": [
+      "From high flux to low flux",
+      "From low flux to high flux",
+      "Always upward",
+      "Perpendicular to the flux gradient"
+     ],
+     "a": 0,
+     "why": "Fick's law gives a current opposite to the flux gradient.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Illustrative: D = 1.0 cm and Σa = 0.04 cm⁻¹. What is the diffusion length L = √(D/Σa) in cm?",
+     "a": 5,
+     "tol": 0.05,
+     "unit": "cm",
+     "why": "D/Σa = 25 cm², so L = 5 cm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Illustrative: η = 1.5, f = 0.8, p = 0.9, ε = 1.0. Calculate k∞ to 2 decimal places.",
+     "a": 1.08,
+     "tol": 0.01,
+     "why": "1.5 × 0.8 = 1.2; × 0.9 = 1.08; × 1.0 = 1.08.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A core has k∞ = 1.25 and a non-leakage probability of 0.8. What is k?",
+     "a": 1,
+     "tol": 0.01,
+     "why": "1.25 × 0.8 = 1.00.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a larger core usually have a smaller fraction of neutrons leaking?",
+     "o": [
+      "Volume grows faster than surface area",
+      "Bigger cores always absorb more of the neutrons that reach the edge",
+      "Neutrons move more slowly in a bigger core, so fewer escape",
+      "Leakage is independent of core size, so the fraction stays the same"
+     ],
+     "a": 0,
+     "why": "Neutrons are made in the volume but escape through the surface.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In the four-factor formula, what does f represent?",
+     "o": [
+      "Fraction of absorptions occurring in the fuel",
+      "The boost to the count from fast fission in uranium-238",
+      "The probability of escaping resonance capture while slowing",
+      "The average number of neutrons released per absorption"
+     ],
+     "a": 0,
+     "why": "f is the thermal utilisation factor.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each factor to its meaning.",
+     "pairs": [
+      [
+       "η",
+       "Neutrons produced per absorption in fuel"
+      ],
+      [
+       "f",
+       "Share of absorption in fuel"
+      ],
+      [
+       "p",
+       "Chance of escaping resonance capture"
+      ],
+      [
+       "ε",
+       "Boost from fast fission"
+      ]
+     ],
+     "why": "These four processes make up k∞.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Compare deterministic and Monte Carlo methods for neutron transport: one strength and one weakness of each.",
+     "rubric": [
+      [
+       "deterministic",
+       "grid",
+       "mesh",
+       "discret"
+      ],
+      [
+       "fast",
+       "efficient",
+       "smooth",
+       "quick"
+      ],
+      [
+       "monte carlo",
+       "random",
+       "statistic",
+       "histories"
+      ],
+      [
+       "accurate",
+       "geometry",
+       "complex",
+       "noise",
+       "slow",
+       "uncertainty",
+       "computer time"
+      ]
+     ],
+     "min": 3,
+     "model": "Deterministic methods solve equations on a grid and are fast and smooth, but can lose accuracy from discretisation and complex geometry. Monte Carlo follows random neutron histories, handles complex geometry accurately, but is statistically noisy and needs lots of computer time.",
+     "why": "Each method has trade-offs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A moderator has a very high absorption cross-section. What happens to its diffusion length?",
+     "o": [
+      "It decreases",
+      "It increases",
+      "It stays the same",
+      "It becomes infinite"
+     ],
+     "a": 0,
+     "why": "L = √(D/Σa) falls as Σa rises.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer wants to reduce leakage from a small core. Which change helps?",
+     "o": [
+      "Surround it with a neutron reflector",
+      "Remove the material around the core so that less is absorbed",
+      "Drill holes through the core to let neutrons pass",
+      "Reduce the amount of fuel inside the core"
+     ],
+     "a": 0,
+     "why": "A reflector scatters neutrons back into the core.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is diffusion theory less reliable next to a strongly absorbing control rod?",
+     "o": [
+      "The flux changes sharply over a short distance",
+      "Neutrons become electrically charged near the absorber",
+      "The diffusion coefficient D becomes exactly zero there",
+      "Control rods repel neutrons, so the flux cannot be modelled"
+     ],
+     "a": 0,
+     "why": "Diffusion assumes a slowly varying flux.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why resonance capture during slowing down reduces k, and how reactor design limits it.",
+     "rubric": [
+      [
+       "resonance",
+       "capture",
+       "absorb"
+      ],
+      [
+       "slow",
+       "moderat",
+       "energy"
+      ],
+      [
+       "lattice",
+       "separate",
+       "fuel",
+       "geometry",
+       "spacing",
+       "heterogeneous",
+       "lumped"
+      ]
+     ],
+     "min": 2,
+     "model": "While slowing, neutrons pass through energies where uranium-238 strongly captures them, losing neutrons. Placing the fuel in separate rods in a moderator lets neutrons slow down in the moderator, away from the fuel, so more escape resonance capture.",
+     "why": "Lattice geometry raises p.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A result from a Monte Carlo code is k = 1.003 ± 0.004. Which interpretation is best?",
+     "o": [
+      "It is statistically consistent with k = 1",
+      "It means that k is known to be exactly 1.003",
+      "It means that the code has failed and the run is invalid",
+      "It means that k must certainly be above 1"
+     ],
+     "a": 0,
+     "why": "The uncertainty range includes 1.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Neutron diffusion and the four-factor formula",
+    "model": "In diffusion theory, neutrons drift from high to low flux, spreading a distance set by the diffusion length before absorption. The four-factor formula multiplies four terms to get k∞ for an infinite reactor, and leakage reduces this to the effective k. Bigger cores leak less.",
+    "points": [
+     {
+      "k": [
+       "flux",
+       "high",
+       "low",
+       "fick",
+       "drift"
+      ],
+      "ask": "Which way do neutrons spread?"
+     },
+     {
+      "k": [
+       "diffusion length",
+       "absorb",
+       "distance"
+      ],
+      "ask": "What is the diffusion length?"
+     },
+     {
+      "k": [
+       "four",
+       "η",
+       "eta",
+       "f",
+       "p",
+       "ε",
+       "epsilon"
+      ],
+      "ask": "How is k infinity built?"
+     },
+     {
+      "k": [
+       "leak",
+       "size",
+       "surface",
+       "reflector"
+      ],
+      "ask": "What about leakage?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Reactor kinetics",
+   "icon": "📈",
+   "hook": "How fast can reactor power change after control rods move? The answer depends on a tiny fraction of delayed neutrons.",
+   "explain": [
+    "Reactivity ρ = (k − 1) ÷ k measures how far a reactor is from steady operation. It is often quoted in pcm (per cent mille, 10⁻⁵). Positive ρ means power rises, negative means it falls, zero means steady.",
+    "Neutron lifetimes are very short (of the order of tens of microseconds in thermal reactors for prompt neutrons), so if the chain reaction depended only on prompt neutrons, power could change extremely fast. But a small fraction β of fission neutrons (about 0.65% for uranium-235) are delayed, emitted seconds after the fission by decaying fission products. These stretch the effective response time so that, for small reactivity, power changes over seconds to minutes.",
+    "If reactivity is below β, the reactor is controlled by delayed neutrons. If it ever exceeded β, it would be prompt critical and change on the very fast prompt timescale. Reactors are designed, and operated, so that this cannot happen from any credible reactivity insertion. Reactivity of β is called one dollar.",
+    "Long after a power change, fission products affect reactivity. Xenon-135, a strong neutron absorber, builds up from iodine-135 (half-life about 6.6 h) and has a half-life of about 9.1 h. After a shutdown, xenon can temporarily rise, which can make restarts harder. Temperature feedback also changes reactivity during power changes."
+   ],
+   "example": {
+    "q": "A reactor has k = 1.0020. What is its reactivity in pcm, and is the power rising or falling?",
+    "steps": [
+     "ρ = (k − 1) ÷ k = 0.0020 ÷ 1.0020 ≈ 0.001996.",
+     "In pcm: 0.001996 × 100 000 ≈ 199.6 pcm.",
+     "ρ is positive, so power is rising."
+    ],
+    "a": "About 200 pcm; power rising"
+   },
+   "analogies": {
+    "farm": "Filling a trough from a large tap and a slow drip: the drip is why the water level responds gently.",
+    "home": "A car with a slow-reacting throttle gives drivers time to respond.",
+    "sea": "A supertanker takes a long time to turn, which makes steering manageable.",
+    "tech": "A thermostat with a time lag."
+   },
+   "mnemonic": "Prompt is quick, delayed gives time; below one dollar, stay in control.",
+   "terms": [
+    [
+     "Reactivity (ρ)",
+     "(k − 1) ÷ k, deviation from steady operation."
+    ],
+    [
+     "pcm",
+     "10⁻⁵ of reactivity."
+    ],
+    [
+     "Delayed neutron fraction (β)",
+     "Fraction of fission neutrons emitted late."
+    ],
+    [
+     "Prompt critical",
+     "Reactivity above β, so the chain reaction can run on prompt neutrons alone."
+    ],
+    [
+     "Xenon-135",
+     "A fission product that absorbs neutrons strongly."
+    ]
+   ],
+   "misc": {
+    "wrong": "Reactors respond to rod movement in microseconds.",
+    "right": "Delayed neutrons slow the response for normal reactivity changes, so control takes seconds to minutes."
+   },
+   "limits": "Point kinetics ignores spatial effects. Real analysis uses three-dimensional models.",
+   "trip": {
+    "wiki": "Nuclear reactor physics",
+    "prompt": "Find the section on delayed neutrons and note the delayed fraction."
+   },
+   "sources": [
+    "Nuclear reactor physics",
+    "Delayed neutron",
+    "Xenon-135"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A reactor has k = 0.9950. Calculate ρ = (k − 1) ÷ k in pcm. Give a negative value rounded to the nearest pcm.",
+     "a": -503,
+     "tol": 2,
+     "unit": "pcm",
+     "why": "(0.9950 − 1) ÷ 0.9950 = −0.005025, or −503 pcm.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A reactor has k = 1.0005. What is ρ in pcm, to the nearest pcm?",
+     "a": 50,
+     "tol": 1,
+     "unit": "pcm",
+     "why": "0.0005 ÷ 1.0005 = 0.0004998, which is about 50 pcm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With a delayed fraction of 0.0065, how many pcm is one dollar of reactivity? (1 pcm = 10⁻⁵)",
+     "a": 650,
+     "tol": 1,
+     "unit": "pcm",
+     "why": "0.0065 ÷ 0.00001 = 650 pcm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Power rises as P = P₀ × e^(t/T). Use e ≈ 2.718. If the period T is 100 s and P₀ = 1 MW, what is the power after 100 s in MW? Round to 1 decimal place.",
+     "a": 2.7,
+     "tol": 0.1,
+     "unit": "MW",
+     "why": "e¹ ≈ 2.718.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a small fraction of delayed neutrons make control possible?",
+     "o": [
+      "They lengthen the effective time between generations",
+      "They are far more numerous than the prompt neutrons",
+      "They absorb the extra neutrons in the core",
+      "They travel faster than the prompt neutrons do"
+     ],
+     "a": 0,
+     "why": "Their delay dominates the average generation time.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does 'prompt critical' mean?",
+     "o": [
+      "The chain reaction could sustain itself with prompt neutrons alone",
+      "The reactor is operating at a steady power with delayed neutrons",
+      "The control rods are fully inserted in the core",
+      "The reactor is shut down and has no chain reaction"
+     ],
+     "a": 0,
+     "why": "Reactivity exceeds β.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "After a power reduction, xenon-135 rises temporarily because...",
+     "o": [
+      "Iodine-135 keeps decaying into it while burn-up falls",
+      "Fresh fuel is being loaded into the core at that time",
+      "Control rods produce it by capturing neutrons",
+      "Water in the core decomposes into xenon"
+     ],
+     "a": 0,
+     "why": "Production from iodine continues while neutron removal falls.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a reactivity of +100 pcm indicate?",
+     "o": [
+      "The chain reaction is slightly supercritical and power is rising",
+      "The reactor is shut down and the chain reaction has stopped completely",
+      "The reactor is exactly steady and the power stays constant over time",
+      "Power is falling slowly and the chain reaction is dying away"
+     ],
+     "a": 0,
+     "why": "Positive reactivity means k is above 1.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why reactors are designed so that no credible event inserts reactivity above β.",
+     "rubric": [
+      [
+       "prompt",
+       "fast",
+       "quick",
+       "microsecond"
+      ],
+      [
+       "control",
+       "respond",
+       "too fast",
+       "cannot",
+       "rapid",
+       "power surge",
+       "escalat"
+      ],
+      [
+       "delayed",
+       "beta",
+       "β"
+      ]
+     ],
+     "min": 2,
+     "model": "Above β the chain reaction can run on prompt neutrons alone, so power would rise far faster than any control system or operator could respond. Designs limit rod worth and reactivity insertions so that delayed neutrons always control the rate.",
+     "why": "Delayed neutrons are what make the system controllable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A core with strong negative temperature feedback has a power rise. What happens?",
+     "o": [
+      "Temperature rises, reactivity falls and the power rise slows",
+      "Power rises further because the feedback adds even more reactivity",
+      "Nothing changes, since feedback has no effect on power at all",
+      "The control rods retract by themselves to hold the power steady"
+     ],
+     "a": 0,
+     "why": "Negative feedback is self-limiting.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A positive reactivity of 0.2β is inserted. The power rises slowly, not instantly. Why?",
+     "o": [
+      "Delayed neutrons still set the timescale",
+      "Prompt neutrons have been removed from the core by the rods",
+      "β is zero for uranium-235 under these conditions",
+      "The control rods stick and stop the power rising faster"
+     ],
+     "a": 0,
+     "why": "Below β, the response is paced by delayed neutrons.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a reactor restarted soon after a shutdown be harder to bring to power than one restarted after about two days?",
+     "rubric": [
+      [
+       "xenon"
+      ],
+      [
+       "absorb",
+       "poison",
+       "negative reactivity",
+       "capture"
+      ],
+      [
+       "decay",
+       "burn",
+       "half-life",
+       "peak",
+       "hours",
+       "builds"
+      ]
+     ],
+     "min": 2,
+     "model": "After shutdown, xenon-135 builds up from iodine decay and reaches a peak after some hours. It absorbs neutrons and adds negative reactivity, making restart harder until it decays away.",
+     "why": "Xenon poisoning has a characteristic time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about 'one dollar' is correct?",
+     "o": [
+      "It is a unit of reactivity equal to β",
+      "It is a unit of cost for a kilogram of fuel",
+      "It is a unit of power equal to one megawatt",
+      "It is the same as 1 pcm of reactivity"
+     ],
+     "a": 0,
+     "why": "A dollar is reactivity equal to the delayed neutron fraction.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why reactors are controllable",
+    "model": "Reactivity measures how far k is from 1. Most fission neutrons are prompt, but a small fraction are delayed by seconds. Those delayed neutrons slow the reactor's response so that for normal reactivity changes the power changes over seconds to minutes. Designs keep reactivity below the delayed fraction.",
+    "points": [
+     {
+      "k": [
+       "reactivity",
+       "k",
+       "steady",
+       "deviation"
+      ],
+      "ask": "What is reactivity?"
+     },
+     {
+      "k": [
+       "prompt",
+       "fast",
+       "microsecond"
+      ],
+      "ask": "How fast are most neutrons?"
+     },
+     {
+      "k": [
+       "delayed",
+       "seconds",
+       "fraction",
+       "β",
+       "beta"
+      ],
+      "ask": "What gives us time?"
+     },
+     {
+      "k": [
+       "xenon",
+       "feedback",
+       "temperature",
+       "limit",
+       "below"
+      ],
+      "ask": "What else affects reactivity?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Reactor thermal-fluid behaviour",
+   "icon": "🌡️",
+   "hook": "Water at 300 °C flows through a pipe at several metres per second. Is the flow smooth or turbulent, and why does it matter for cooling?",
+   "explain": [
+    "Heat transfer from a fuel surface to coolant is described by Newton's law of cooling: q = h × ΔT, where q is the heat flux (W/m²), h is the heat transfer coefficient and ΔT is the difference between surface and coolant temperature. Turbulent flow mixes the fluid and gives a much higher h than smooth laminar flow.",
+    "The flow regime is indicated by the Reynolds number Re = ρ v D ÷ μ, where ρ is density, v speed, D pipe diameter and μ dynamic viscosity. For pipes, flow below Re ≈ 2300 is usually laminar and above about 4000 turbulent, with a transition between.",
+    "Boiling changes everything. In nucleate boiling, bubbles form and detach from the surface, which enhances heat transfer. If heat flux becomes too high, a vapour film can blanket the surface (departure from nucleate boiling or critical heat flux), heat transfer collapses and surface temperature can rise sharply. Designers keep a margin, called the departure from nucleate boiling ratio, above 1.",
+    "Reactor channels also have a power distribution: the middle of the core is hotter than the edge, so engineers apply peaking factors and carry out sub-channel analysis to ensure the hottest channel stays within limits. Two-phase flow also affects neutron moderation through the void fraction, linking thermal-hydraulics to neutronics."
+   ],
+   "example": {
+    "q": "Water has ρ = 1000 kg/m³, v = 2 m/s, D = 0.1 m and μ = 0.001 Pa·s. Find Re and state the regime.",
+    "steps": [
+     "Re = ρ v D ÷ μ.",
+     "Re = 1000 × 2 × 0.1 ÷ 0.001 = 200 ÷ 0.001 = 200 000.",
+     "200 000 is far above 4000, so the flow is turbulent."
+    ],
+    "a": "Re = 200 000, turbulent"
+   },
+   "analogies": {
+    "nature": "A slow stream flows smoothly; a fast one is churning and mixing.",
+    "home": "Stirring a hot drink mixes heat better than leaving it still.",
+    "city": "A busy junction mixes traffic more than a quiet lane.",
+    "sport": "Fast swimming makes more turbulence than gliding."
+   },
+   "mnemonic": "Re up, mixing up, h up; but beware the vapour blanket.",
+   "terms": [
+    [
+     "Heat flux",
+     "Heat transferred per unit area per second, W/m²."
+    ],
+    [
+     "Reynolds number",
+     "ρvD/μ, an indicator of flow regime."
+    ],
+    [
+     "Critical heat flux",
+     "The heat flux at which boiling heat transfer sharply degrades."
+    ],
+    [
+     "Void fraction",
+     "The fraction of volume occupied by vapour."
+    ],
+    [
+     "Peaking factor",
+     "Ratio of local to average power."
+    ]
+   ],
+   "misc": {
+    "wrong": "More boiling always means better cooling.",
+    "right": "Bubbly boiling helps, but beyond the critical heat flux a vapour film insulates the surface and cooling collapses."
+   },
+   "limits": "Correlations for h and critical heat flux are empirical and valid only in tested ranges.",
+   "trip": {
+    "wiki": "Critical heat flux",
+    "prompt": "Find the boiling curve and mark the nucleate boiling and film boiling regions."
+   },
+   "sources": [
+    "Reynolds number",
+    "Critical heat flux",
+    "Heat transfer coefficient"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Water: ρ = 1000 kg/m³, v = 3 m/s, D = 0.02 m, μ = 0.001 Pa·s. Calculate the Reynolds number.",
+     "a": 60000,
+     "tol": 100,
+     "why": "1000 × 3 × 0.02 ÷ 0.001 = 60 000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A surface at 330 °C is cooled by water at 310 °C with h = 8000 W/m²K. What is the heat flux in kW/m²?",
+     "a": 160,
+     "tol": 1,
+     "unit": "kW/m²",
+     "why": "q = hΔT = 8000 × 20 = 160 000 W/m² = 160 kW/m².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A fuel rod surface of area 2 m² has a heat flux of 500 kW/m². What heat power does it transfer, in MW?",
+     "a": 1,
+     "tol": 0.01,
+     "unit": "MW",
+     "why": "500 kW/m² × 2 m² = 1000 kW = 1 MW.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A Reynolds number of 500 for pipe flow suggests the flow is...",
+     "o": [
+      "Laminar",
+      "Turbulent",
+      "Supersonic",
+      "Boiling"
+     ],
+     "a": 0,
+     "why": "Re below about 2300 is laminar.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What happens beyond the critical heat flux?",
+     "o": [
+      "A vapour film forms and heat transfer sharply falls",
+      "Heat transfer doubles because the surface gets hotter",
+      "The coolant freezes onto the surface of the cladding",
+      "Flow becomes smooth and laminar again at once"
+     ],
+     "a": 0,
+     "why": "The vapour insulates the surface.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A designer lowers coolant flow while keeping power. What happens to the margin to critical heat flux?",
+     "o": [
+      "It decreases",
+      "It increases",
+      "It is unaffected",
+      "It becomes infinite"
+     ],
+     "a": 0,
+     "why": "Lower flow reduces cooling capability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A DNBR (margin ratio) of 1.0 means...",
+     "o": [
+      "The surface is at the point where boiling heat transfer degrades",
+      "The surface has a very large and safe margin from any boiling trouble at all",
+      "There is no heat flux leaving the surface of the cladding",
+      "The flow past the surface is entirely laminar and smooth throughout"
+     ],
+     "a": 0,
+     "why": "The ratio compares limit to actual heat flux.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Reynolds number",
+       "Flow regime indicator"
+      ],
+      [
+       "Heat flux",
+       "Heat per area per second"
+      ],
+      [
+       "Void fraction",
+       "Fraction of volume occupied by vapour"
+      ],
+      [
+       "Peaking factor",
+       "Local to average power"
+      ]
+     ],
+     "why": "Core thermal-hydraulic vocabulary.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a hot channel analysis is needed even if the average coolant temperature is within limits.",
+     "rubric": [
+      [
+       "hot",
+       "peak",
+       "hottest",
+       "highest",
+       "local"
+      ],
+      [
+       "average",
+       "mean",
+       "distribution",
+       "not uniform",
+       "uneven",
+       "varies"
+      ],
+      [
+       "limit",
+       "margin",
+       "fail",
+       "critical heat flux",
+       "boil",
+       "cladding"
+      ]
+     ],
+     "min": 2,
+     "model": "Power is not uniform across the core, so some channels run hotter than the average. A failure or limit is reached locally, so the hottest channel must be analysed with peaking factors to ensure every location keeps a safety margin.",
+     "why": "Safety is determined by the worst location.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How does a rising void fraction in a water-moderated core usually affect neutron moderation?",
+     "o": [
+      "It reduces moderation",
+      "It increases moderation",
+      "It has no effect",
+      "It reverses the flow"
+     ],
+     "a": 0,
+     "why": "Less liquid water means fewer moderating atoms.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are turbulent flows preferred for heat removal?",
+     "o": [
+      "Mixing gives a higher heat transfer coefficient",
+      "They are quieter and so are easier to run",
+      "They reduce the density of the coolant",
+      "They avoid the need for pumps altogether"
+     ],
+     "a": 0,
+     "why": "Turbulence enhances transport.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A boiling water reactor's power rises and so does the void fraction. Describe the feedback effect and why it is stabilising.",
+     "rubric": [
+      [
+       "void",
+       "bubble",
+       "steam",
+       "vapour"
+      ],
+      [
+       "moderat",
+       "less water",
+       "neutron"
+      ],
+      [
+       "reduce",
+       "lower",
+       "fall",
+       "decrease",
+       "negative"
+      ],
+      [
+       "power",
+       "reactivity",
+       "stabil",
+       "self-limit"
+      ]
+     ],
+     "min": 3,
+     "model": "More power creates more steam voids, which means less moderator, so fewer neutrons are slowed and reactivity falls. This negative void feedback reduces power and stabilises the reactor.",
+     "why": "Negative feedback gives inherent stability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is accurate about empirical correlations such as those for critical heat flux?",
+     "o": [
+      "They are valid only within the range of experiments",
+      "They hold for all conditions, inside or outside the tests",
+      "They are derived from first principles only",
+      "They never need to be tested against experiments"
+     ],
+     "a": 0,
+     "why": "Extrapolation is risky.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Heat transfer to reactor coolant",
+    "model": "Heat flux is the heat transfer coefficient times the temperature difference. Turbulent flow, shown by a large Reynolds number, mixes the coolant and removes heat well. Boiling helps up to a limit, called the critical heat flux, beyond which a vapour film insulates the surface, so designs keep margin.",
+    "points": [
+     {
+      "k": [
+       "heat flux",
+       "coefficient",
+       "h",
+       "temperature difference"
+      ],
+      "ask": "How is heat transfer described?"
+     },
+     {
+      "k": [
+       "reynolds",
+       "turbulent",
+       "laminar"
+      ],
+      "ask": "What does the flow regime matter?"
+     },
+     {
+      "k": [
+       "boiling",
+       "vapour",
+       "critical",
+       "film"
+      ],
+      "ask": "What limit comes with boiling?"
+     },
+     {
+      "k": [
+       "margin",
+       "hot channel",
+       "peaking"
+      ],
+      "ask": "How do designers stay safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Nuclear structural materials",
+   "icon": "🛠️",
+   "hook": "A steel vessel must survive decades of heat, stress and neutron bombardment. What happens inside the metal over time?",
+   "explain": [
+    "Fast neutrons displace atoms in a metal's lattice. The radiation damage is measured in displacements per atom (dpa). Over time, the resulting defects harden and embrittle ferritic steels, raising the temperature at which the steel changes from ductile to brittle behaviour (the ductile-to-brittle transition temperature). Plants therefore monitor vessel toughness with surveillance specimens.",
+    "A key concern is pressurised thermal shock: if cold water suddenly contacts a hot, embrittled vessel wall, thermal stresses add to pressure stresses. Thermal stress for a constrained surface can be estimated as σ = E × α × ΔT, where E is Young's modulus, α the thermal expansion coefficient and ΔT the temperature change.",
+    "Other ageing mechanisms include creep (slow deformation under load at high temperature), irradiation swelling (voids forming in the lattice), corrosion, stress corrosion cracking and fatigue from repeated heating and cooling cycles. Zirconium alloy cladding can absorb hydrogen, which makes it more brittle, and oxidises in water.",
+    "Material choice is a balance: low neutron absorption, strength at temperature, compatibility with the coolant, and manufacturability. Future designs with higher temperatures or more intense radiation are driving research into new alloys, ceramics and coatings."
+   ],
+   "example": {
+    "q": "A steel wall (E = 200 GPa, α = 12 × 10⁻⁶ per K) is suddenly cooled by 50 K while fully constrained. Estimate the thermal stress σ = EαΔT.",
+    "steps": [
+     "E = 200 × 10⁹ Pa; α = 12 × 10⁻⁶ /K; ΔT = 50 K.",
+     "α × ΔT = 12 × 10⁻⁶ × 50 = 6 × 10⁻⁴.",
+     "σ = 200 × 10⁹ × 6 × 10⁻⁴ = 1.2 × 10⁸ Pa = 120 MPa."
+    ],
+    "a": "About 120 MPa"
+   },
+   "analogies": {
+    "home": "A glass cracks when hot water is poured into it while cold.",
+    "city": "A bridge suffers metal fatigue from millions of loads.",
+    "sea": "A ship's hull ages from waves and salt.",
+    "sport": "A bendy ruler eventually snaps after many bends."
+   },
+   "mnemonic": "Dpa, DBTT, creep, swell, corrode, fatigue: six ways metal ages.",
+   "terms": [
+    [
+     "Displacements per atom (dpa)",
+     "A measure of radiation damage."
+    ],
+    [
+     "Ductile-to-brittle transition temperature",
+     "Temperature below which a steel behaves in a brittle way."
+    ],
+    [
+     "Creep",
+     "Slow deformation under steady load at high temperature."
+    ],
+    [
+     "Swelling",
+     "Volume increase due to irradiation-formed voids."
+    ],
+    [
+     "Stress corrosion cracking",
+     "Cracking from combined stress and a corrosive environment."
+    ]
+   ],
+   "misc": {
+    "wrong": "Metal that survives 10 years will survive 40 years.",
+    "right": "Ageing effects accumulate and can accelerate, so monitoring and assessment must continue for the whole life."
+   },
+   "limits": "Predicting ageing relies on test data from limited conditions, so safety cases include conservative margins.",
+   "trip": {
+    "wiki": "Radiation damage",
+    "prompt": "Find how irradiation changes the mechanical properties of steel."
+   },
+   "sources": [
+    "Radiation damage",
+    "Pressurized thermal shock",
+    "Creep (deformation)"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A constrained steel part has E = 210 GPa, α = 12 × 10⁻⁶ /K and cools by 40 K. Estimate σ = EαΔT in MPa.",
+     "a": 100.8,
+     "tol": 1,
+     "unit": "MPa",
+     "why": "210 × 10⁹ × 12 × 10⁻⁶ × 40 = 1.008 × 10⁸ Pa = 100.8 MPa.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A material receives 2 dpa per year. How many years until it reaches 30 dpa?",
+     "a": 15,
+     "tol": 0,
+     "unit": "years",
+     "why": "30 ÷ 2 = 15.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does dpa measure?",
+     "o": [
+      "Radiation damage as displacements per atom",
+      "The radiation dose delivered to a person",
+      "The decay rate of a source in becquerels",
+      "The pressure inside the vessel"
+     ],
+     "a": 0,
+     "why": "It estimates how many times each atom is knocked from position.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does radiation embrittlement do to the ductile-to-brittle transition temperature?",
+     "o": [
+      "Raises it",
+      "Lowers it",
+      "Removes it",
+      "Leaves it unchanged"
+     ],
+     "a": 0,
+     "why": "The steel becomes brittle at higher temperatures.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is pressurised thermal shock a concern for an old vessel?",
+     "o": [
+      "Cold water on a brittle hot wall adds thermal stress",
+      "Hot water cools the vessel and makes the steel stronger",
+      "It increases the ductility of the wall at low temperature",
+      "It reduces the pressure inside the vessel"
+     ],
+     "a": 0,
+     "why": "Combined stresses with reduced toughness raise fracture risk.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each ageing process to its description.",
+     "pairs": [
+      [
+       "Creep",
+       "Slow deformation under load at high temperature"
+      ],
+      [
+       "Swelling",
+       "Void growth increasing volume"
+      ],
+      [
+       "Fatigue",
+       "Damage from repeated cycles"
+      ],
+      [
+       "Embrittlement",
+       "Loss of toughness"
+      ]
+     ],
+     "why": "Different mechanisms need different monitoring.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Surveillance specimens inside a vessel are usually placed...",
+     "o": [
+      "Where they receive equal or greater radiation than the wall",
+      "In a separate building away from the plant",
+      "Outside the plant, in a store room",
+      "Inside the turbine hall beside the generator"
+     ],
+     "a": 0,
+     "why": "They give an early indication of how the wall will age.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why life extension of a nuclear plant needs more than a visual inspection.",
+     "rubric": [
+      [
+       "age",
+       "degrad",
+       "embrittle",
+       "creep",
+       "fatigue",
+       "corrosion",
+       "damage"
+      ],
+      [
+       "inside",
+       "hidden",
+       "cannot see",
+       "not visible",
+       "microstructure",
+       "measure",
+       "test",
+       "surveillance",
+       "non-destructive",
+       "ultrasonic",
+       "data"
+      ],
+      [
+       "assess",
+       "analysis",
+       "safety case",
+       "model",
+       "evidence"
+      ]
+     ],
+     "min": 2,
+     "model": "Ageing damage such as embrittlement and cracking can be hidden inside the metal, so operators use surveillance specimens, ultrasonic and other non-destructive testing and engineering analysis to show that safety margins remain.",
+     "why": "Evidence-based assessment is needed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A new alloy has excellent strength at 800 °C but absorbs many neutrons. For a thermal reactor core, what is the main concern?",
+     "o": [
+      "It wastes neutrons and lowers efficiency",
+      "It cools the core by absorbing extra heat",
+      "It becomes a moderator and slows the neutrons",
+      "It melts at once when the reactor starts"
+     ],
+     "a": 0,
+     "why": "Neutron economy matters for core materials.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order from lowest to highest damage for a component receiving radiation: 0.1 dpa, 1 dpa, 10 dpa, 100 dpa.",
+     "items": [
+      "0.1 dpa",
+      "1 dpa",
+      "10 dpa",
+      "100 dpa"
+     ],
+     "why": "More dpa means more damage.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Fusion first-wall materials face 14 MeV neutrons. Why is this a materials challenge?",
+     "o": [
+      "Higher energy neutrons cause more damage and transmutation gases",
+      "They are harmless to structural materials",
+      "They carry electric charge and are steered away",
+      "They cool the wall as they pass through it"
+     ],
+     "a": 0,
+     "why": "High-energy neutrons produce more displacements and helium and hydrogen.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are conservative safety margins used when data on materials come from limited tests?",
+     "rubric": [
+      [
+       "uncertain",
+       "limited",
+       "not known",
+       "extrapolat",
+       "unknown"
+      ],
+      [
+       "margin",
+       "conservative",
+       "safe",
+       "cautious",
+       "extra"
+      ]
+     ],
+     "min": 2,
+     "model": "Test data cover limited conditions and times, so predictions carry uncertainty. Conservative margins ensure safety even if materials behave worse than expected.",
+     "why": "Margins cover uncertainty.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A plant owner proposes to skip surveillance to save cost. What is the best response from a regulator?",
+     "o": [
+      "Require monitoring because it provides the evidence for safe operation",
+      "Allow it, because the plant is old and has run well for many years without trouble",
+      "Reduce the safety margin to match the lack of data from the specimens",
+      "Ignore the proposal and say nothing to the owner about it at all"
+     ],
+     "a": 0,
+     "why": "Safety decisions rely on evidence.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How reactor metals age",
+    "model": "Neutrons knock atoms out of place in metals, measured in dpa. Over years this can make steel brittle. Heat, stress and corrosion add creep, swelling, cracking and fatigue. Engineers monitor with test specimens and inspections and keep safety margins.",
+    "points": [
+     {
+      "k": [
+       "neutron",
+       "displace",
+       "dpa",
+       "damage"
+      ],
+      "ask": "What do neutrons do to metals?"
+     },
+     {
+      "k": [
+       "brittle",
+       "embrittle",
+       "toughness"
+      ],
+      "ask": "What is the effect on steel?"
+     },
+     {
+      "k": [
+       "creep",
+       "fatigue",
+       "corrosion",
+       "swelling"
+      ],
+      "ask": "Are there other ageing effects?"
+     },
+     {
+      "k": [
+       "monitor",
+       "inspect",
+       "specimen",
+       "margin"
+      ],
+      "ask": "How is safety kept?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Advanced radiation protection",
+   "icon": "🧪",
+   "hook": "A worker breathes in a tiny amount of radioactive dust. Why is internal exposure treated differently from standing near a source?",
+   "explain": [
+    "Radiation protection rests on three principles from the International Commission on Radiological Protection: justification (the benefit must outweigh the harm), optimisation (keep doses as low as reasonably achievable) and dose limits for individuals in planned activities.",
+    "External exposure ends when you leave the field. Internal exposure continues while the radionuclide stays in the body. The committed effective dose is the dose integrated over a standard period (50 years for adults) after an intake. For an intake I (in becquerels) and a dose coefficient e(g) in Sv/Bq, E = I × e(g). The coefficient depends on the radionuclide, its chemical form and how the body handles it.",
+    "Effective half-life combines physical decay and biological removal: 1/T_eff = 1/T_phys + 1/T_bio. A radionuclide that is removed quickly by the body, or decays quickly, has a short effective half-life.",
+    "Collective dose, in person-sieverts, is the sum of individual doses across a group and is used for optimisation, comparing options for large numbers of people. Natural sources such as radon gas in buildings are often the largest part of a person's dose, and radiation protection also covers medical exposures, where patient benefit is central."
+   ],
+   "example": {
+    "q": "Illustrative: a worker inhales 2000 Bq of a radionuclide with a dose coefficient of 3 × 10⁻⁸ Sv/Bq. What is the committed effective dose in µSv?",
+    "steps": [
+     "E = I × e(g) = 2000 × 3 × 10⁻⁸.",
+     "2000 × 3 × 10⁻⁸ = 6 × 10⁻⁵ Sv.",
+     "6 × 10⁻⁵ Sv = 60 µSv."
+    ],
+    "a": "60 µSv"
+   },
+   "analogies": {
+    "home": "A smoker's smoke lingers in a room; swallowing a pill keeps acting inside you.",
+    "sea": "A diver can leave the water, but a swallowed substance stays.",
+    "city": "Noise ends when the siren stops; pollution in a lake stays.",
+    "sport": "A sprain is felt only while you move; a break needs time to heal."
+   },
+   "mnemonic": "Justify, Optimise, Limit: JOL; and 1/T_eff adds the rates.",
+   "terms": [
+    [
+     "Committed effective dose",
+     "Lifetime dose from an intake, assigned to the year of intake."
+    ],
+    [
+     "Dose coefficient",
+     "Dose per unit intake, Sv/Bq."
+    ],
+    [
+     "Effective half-life",
+     "Combined result of physical decay and biological removal."
+    ],
+    [
+     "Collective dose",
+     "Sum of individual doses in a group, in person-Sv."
+    ],
+    [
+     "Optimisation",
+     "Keeping doses as low as reasonably achievable."
+    ]
+   ],
+   "misc": {
+    "wrong": "If every worker is below the limit, no further effort on dose is needed.",
+    "right": "Optimisation requires reducing doses further where reasonable, because the limit is a ceiling, not a target."
+   },
+   "limits": "Risk at low doses is uncertain, and dose coefficients are model-based reference values.",
+   "trip": {
+    "wiki": "Committed dose",
+    "prompt": "Find the definition of committed dose and the time period used."
+   },
+   "sources": [
+    "Committed dose",
+    "Radiation protection",
+    "Biological half-life"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A worker takes in 5000 Bq of a radionuclide with a dose coefficient of 2 × 10⁻⁸ Sv/Bq. What is the committed effective dose in µSv?",
+     "a": 100,
+     "tol": 1,
+     "unit": "µSv",
+     "why": "5000 × 2 × 10⁻⁸ = 10⁻⁴ Sv = 100 µSv.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A radionuclide has a physical half-life of 8 days and a biological half-life of 8 days. What is the effective half-life in days?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "days",
+     "why": "1/T = 1/8 + 1/8 = 1/4, so 4 days.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Physical half-life 6 h and biological half-life 12 h. Calculate the effective half-life in hours.",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "h",
+     "why": "1/T = 1/6 + 1/12 = 3/12 = 1/4, so 4 h.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "10 workers each receive 2 mSv. What is the collective dose in person-mSv?",
+     "a": 20,
+     "tol": 0,
+     "unit": "person-mSv",
+     "why": "10 × 2 = 20.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is NOT one of the three ICRP principles?",
+     "o": [
+      "Maximum possible exposure",
+      "Justification of the practice",
+      "Optimisation of protection",
+      "Dose limitation for individuals"
+     ],
+     "a": 0,
+     "why": "The three are justification, optimisation and limitation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is internal exposure harder to control once it has happened?",
+     "o": [
+      "The radionuclide stays in the body and keeps irradiating",
+      "It stops at once when the person leaves the room",
+      "It gets reflected out of the body by the skin",
+      "It is shielded completely by the skin"
+     ],
+     "a": 0,
+     "why": "You cannot step away from it.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An alpha emitter is in a sealed source on a bench. Why is it a minor risk outside the body but a major one if inhaled?",
+     "o": [
+      "Alpha is stopped by air and skin but deposits all its energy in nearby tissue if inside",
+      "Alpha turns into gamma rays as soon as it enters the body and passes through it",
+      "Alpha becomes much faster once it is inside the body, and so goes deeper",
+      "The skin makes the alpha particles in the first place, so they only arise inside"
+     ],
+     "a": 0,
+     "why": "Alpha has a short range and strong ionisation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "According to the ICRP framework, what does optimisation require?",
+     "o": [
+      "Keeping doses as low as reasonably achievable even below the limit",
+      "Staying exactly at the limit for the whole working year",
+      "Ignoring small doses that are below the limit",
+      "Removing all of the dose limits for trained workers"
+     ],
+     "a": 0,
+     "why": "A limit is a ceiling, not a target.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A radionuclide has a long physical half-life but the body removes it in days. Explain what this means for its internal dose.",
+     "rubric": [
+      [
+       "effective",
+       "combined",
+       "biological"
+      ],
+      [
+       "short",
+       "shorter",
+       "days",
+       "removed",
+       "excreted",
+       "leaves"
+      ],
+      [
+       "dose",
+       "lower",
+       "less",
+       "reduced",
+       "exposure"
+      ]
+     ],
+     "min": 2,
+     "model": "The effective half-life is dominated by the shorter biological removal time, so the radionuclide leaves the body quickly and the committed dose is lower than if it remained for its full physical half-life.",
+     "why": "Effective half-life combines decay and excretion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Radon in homes is an important topic because...",
+     "o": [
+      "It is a natural source that can be a large part of a person's dose and can be reduced by ventilation",
+      "It is only made by nuclear reactors and so is a rare problem for most homes",
+      "It cannot be measured in a home with any device, so nothing can be done",
+      "It is harmless in every amount in every house, so it is not a topic at all"
+     ],
+     "a": 0,
+     "why": "Radon is a natural radioactive gas that accumulates indoors.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A medical scan is proposed for a patient. Which principle asks whether the scan will do more good than harm?",
+     "o": [
+      "Justification",
+      "Optimisation",
+      "Dose limit for patients only",
+      "Collective dose"
+     ],
+     "a": 0,
+     "why": "Benefit must outweigh risk, and patient dose limits are not applied in the same way as occupational limits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a dose limit alone not a good way of ensuring protection? Mention optimisation.",
+     "rubric": [
+      [
+       "limit",
+       "ceiling",
+       "maximum"
+      ],
+      [
+       "optimis",
+       "alara",
+       "as low as",
+       "further",
+       "reduce"
+      ],
+      [
+       "not a target",
+       "reasonable",
+       "below",
+       "still",
+       "risk",
+       "any dose"
+      ]
+     ],
+     "min": 2,
+     "model": "A limit is a ceiling, not a target. Because any dose might carry some risk, optimisation (ALARA) requires reducing doses further wherever reasonably practicable even if they are below the limit.",
+     "why": "Optimisation goes beyond compliance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two options for a job give: A) 5 workers × 4 mSv, B) 8 workers × 2 mSv. Which has the lower collective dose?",
+     "o": [
+      "B at 16 person-mSv",
+      "A at 20 person-mSv",
+      "They are equal",
+      "Cannot be compared"
+     ],
+     "a": 0,
+     "why": "A = 20 person-mSv, B = 16 person-mSv.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Internal exposure and optimisation",
+    "model": "Radiation protection is based on justification, optimisation and dose limits. Internal exposure continues while a radionuclide stays in the body, so dose is calculated from the intake times a dose coefficient. The effective half-life combines decay and biological removal. Limits are ceilings, so doses are kept as low as reasonably achievable.",
+    "points": [
+     {
+      "k": [
+       "justif",
+       "optimis",
+       "limit"
+      ],
+      "ask": "What are the principles?"
+     },
+     {
+      "k": [
+       "internal",
+       "intake",
+       "inhale",
+       "stays",
+       "body"
+      ],
+      "ask": "Why is internal exposure different?"
+     },
+     {
+      "k": [
+       "coefficient",
+       "intake",
+       "multiply",
+       "bq",
+       "sv"
+      ],
+      "ask": "How do you calculate it?"
+     },
+     {
+      "k": [
+       "effective",
+       "half-life",
+       "biological",
+       "decay"
+      ],
+      "ask": "How long does it stay?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Reactor safety assessment",
+   "icon": "📊",
+   "hook": "How do you show that something with a very small chance of failing is safe enough? You have to count the ways it can go wrong.",
+   "explain": [
+    "Safety assessment uses two complementary approaches. Deterministic analysis examines specific postulated accidents, such as a pipe break, with conservative assumptions, to show the plant stays within acceptance limits. Probabilistic safety assessment (PSA) estimates how often accident sequences could occur and what the consequences would be.",
+    "PSA uses event trees (what happens after an initiating event depending on whether each safety system works) and fault trees (how a system can fail). For independent events, probabilities multiply for AND combinations: if two trains each fail with probability 0.01, both fail with probability 0.01 × 0.01 = 10⁻⁴. For OR combinations of rare events the probabilities roughly add.",
+    "Independence is rarely perfect. Common-cause failures, such as a shared design flaw, flooding or a maintenance error affecting both trains, can dominate the risk. They are often modelled with a fraction β of failures being common-cause.",
+    "Risk is frequency times consequence. Core damage frequency is expressed per reactor-year. Results are used for risk-informed decisions, not as a single pass/fail number, and they carry uncertainties. The International Nuclear Event Scale, from level 0 to 7, communicates the significance of events to the public."
+   ],
+   "example": {
+    "q": "An initiating event occurs 0.1 times per year. Two independent cooling trains each fail on demand with probability 0.01. How often do both fail after an initiating event, per year (ignoring common cause)?",
+    "steps": [
+     "Probability both fail = 0.01 × 0.01 = 10⁻⁴.",
+     "Frequency = 0.1 × 10⁻⁴.",
+     "= 10⁻⁵ per year."
+    ],
+    "a": "10⁻⁵ per year"
+   },
+   "analogies": {
+    "home": "Two smoke alarms both failing is much less likely than one, unless they share a dead battery supplier.",
+    "city": "Two bridges both closing at once is rare unless the same flood hits both.",
+    "sea": "Two lifeboats are better than one unless both are in the same damaged section.",
+    "sport": "Two goalkeepers helps unless both are injured by the same tackle."
+   },
+   "mnemonic": "AND multiplies, OR adds, common cause bites.",
+   "terms": [
+    [
+     "Deterministic analysis",
+     "Analysis of defined accidents with conservative assumptions."
+    ],
+    [
+     "Probabilistic safety assessment",
+     "Estimating frequencies and consequences of accident sequences."
+    ],
+    [
+     "Fault tree",
+     "A diagram of how a failure could happen."
+    ],
+    [
+     "Common-cause failure",
+     "A single cause disabling several components."
+    ],
+    [
+     "INES",
+     "International Nuclear Event Scale, levels 0 to 7."
+    ]
+   ],
+   "misc": {
+    "wrong": "A tiny calculated risk means nothing can go wrong.",
+    "right": "Numbers have uncertainties and miss unknown events, so assessments are combined with defence in depth and humility."
+   },
+   "limits": "Rare event estimates rely on models and limited data. Risk perception also differs from calculated risk.",
+   "trip": {
+    "wiki": "Probabilistic risk assessment",
+    "prompt": "Find an example of a fault tree and identify AND and OR gates."
+   },
+   "sources": [
+    "Probabilistic risk assessment",
+    "Fault tree analysis",
+    "International Nuclear Event Scale"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Two independent components each fail with probability 0.05. What is the probability that both fail? Give your answer as a decimal.",
+     "a": 0.0025,
+     "tol": 0.00005,
+     "why": "0.05 × 0.05 = 0.0025.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An initiating event happens 0.2 times per year and the safety system fails on demand with probability 0.001. How often per year does the sequence occur? Give your answer as a decimal.",
+     "a": 0.0002,
+     "tol": 0.000005,
+     "why": "0.2 × 0.001 = 0.0002 per year.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A core damage frequency is 10⁻⁵ per reactor-year. How many core damage events would be expected in a fleet of 400 reactors over 10 years? (400 × 10 reactor-years)",
+     "a": 0.04,
+     "tol": 0.001,
+     "why": "4000 reactor-years × 10⁻⁵ = 0.04.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does an AND gate in a fault tree represent?",
+     "o": [
+      "All inputs must fail for the output to occur",
+      "Any single input is enough to cause the output",
+      "The inputs are simply added to give the output",
+      "There are no failures anywhere in the system"
+     ],
+     "a": 0,
+     "why": "AND needs all conditions.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can common-cause failures dominate risk even when each train is very reliable?",
+     "o": [
+      "A single cause can defeat redundant trains together",
+      "The trains are always fully independent of each other",
+      "The failure probabilities subtract from one another",
+      "Common-cause failures reduce the frequency of events"
+     ],
+     "a": 0,
+     "why": "Redundancy gives little benefit against shared causes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Deterministic analysis is best described as...",
+     "o": [
+      "Studying defined accidents with conservative assumptions",
+      "Estimating every event frequency using statistics and past records",
+      "Counting the visitors who tour the plant each year",
+      "Measuring the dose in a room with a handheld detector"
+     ],
+     "a": 0,
+     "why": "It shows acceptance limits are met for chosen events.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which tool follows the possible outcomes after an initiating event depending on whether safety systems work?",
+     "o": [
+      "Event tree",
+      "Fault tree",
+      "Dosimeter",
+      "Decay chain"
+     ],
+     "a": 0,
+     "why": "Event trees branch on success or failure of each safety function.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why should a PSA result be used with its uncertainties and not as a single pass/fail number?",
+     "rubric": [
+      [
+       "uncertain",
+       "range",
+       "estimate",
+       "model",
+       "assumption",
+       "data"
+      ],
+      [
+       "decision",
+       "risk-informed",
+       "judg",
+       "context",
+       "not a single",
+       "combined",
+       "insight"
+      ]
+     ],
+     "min": 2,
+     "model": "PSA results depend on models, data and assumptions, so they carry uncertainty. They give insights into which sequences matter and support risk-informed judgement alongside deterministic analysis and defence in depth.",
+     "why": "Risk numbers inform decisions; they do not replace judgement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer adds a third cooling train but all three share one power supply. What is the main weakness?",
+     "o": [
+      "A single power failure can disable all three",
+      "There is too much cooling for the core",
+      "The efficiency of the plant is much higher",
+      "The weight of the cooling trains is lower"
+     ],
+     "a": 0,
+     "why": "Dependencies reduce the benefit of redundancy.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the simple structure of an event tree.",
+     "items": [
+      "Initiating event",
+      "First safety system works or fails",
+      "Second safety system works or fails",
+      "End state with consequence"
+     ],
+     "why": "Branches follow the sequence.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do regulators require both deterministic and probabilistic analyses?",
+     "o": [
+      "Each reveals weaknesses the other might miss",
+      "They duplicate each other, so one would be enough",
+      "Only one of them is accepted in most countries",
+      "To slow down the approval of new plants"
+     ],
+     "a": 0,
+     "why": "Complementary methods give better insight.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the public might judge nuclear risk differently from a calculated frequency, and how communication can respond.",
+     "rubric": [
+      [
+       "severe",
+       "consequence",
+       "dread",
+       "fear",
+       "catastroph",
+       "unfamiliar",
+       "invisible",
+       "trust",
+       "control"
+      ],
+      [
+       "communicat",
+       "transparent",
+       "open",
+       "explain",
+       "involve",
+       "dialogue",
+       "plain",
+       "honest",
+       "compar"
+      ]
+     ],
+     "min": 2,
+     "model": "People weigh not only frequency but also severity, dread, trust and control. Open, honest communication, plain explanations, fair comparisons and public involvement can help people to understand and judge the risk.",
+     "why": "Risk perception includes values, not only numbers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A plant improves its safety so that estimated frequency of core damage falls tenfold. What is a sensible next step?",
+     "o": [
+      "Keep looking for remaining weaknesses and unknowns",
+      "Stop all assessment, since the risk is now small",
+      "Remove some barriers, since the plant is safer",
+      "Claim that the risk of an accident is now zero"
+     ],
+     "a": 0,
+     "why": "Continuous improvement is core to safety culture.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Assessing reactor safety",
+    "model": "Safety is assessed in two ways: deterministic analysis of chosen accidents with conservative assumptions, and probabilistic assessment of how often failures could combine. For independent failures, probabilities multiply, but common causes can defeat redundancy. Results come with uncertainties and are used to inform decisions.",
+    "points": [
+     {
+      "k": [
+       "deterministic",
+       "accident",
+       "conservative"
+      ],
+      "ask": "What is deterministic analysis?"
+     },
+     {
+      "k": [
+       "probabilistic",
+       "frequency",
+       "psa",
+       "chance"
+      ],
+      "ask": "And probabilistic assessment?"
+     },
+     {
+      "k": [
+       "multiply",
+       "and",
+       "independent",
+       "fault tree"
+      ],
+      "ask": "How do probabilities combine?"
+     },
+     {
+      "k": [
+       "common cause",
+       "shared",
+       "uncertain"
+      ],
+      "ask": "What are the limits?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Nuclear waste engineering",
+   "icon": "⛏️",
+   "hook": "Some waste stays radioactive for hundreds of thousands of years. How do engineers design for times longer than any human institution has lasted?",
+   "explain": [
+    "Waste engineering starts with characterisation: which radionuclides, how much activity, how much heat. Short-lived fission products such as caesium-137 (half-life about 30 years) and strontium-90 (about 29 years) dominate activity and heat for the first few hundred years. Long-lived actinides such as plutonium-239 (about 24 000 years) and some fission products such as technetium-99 (about 211 000 years) dominate the long term.",
+    "Used fuel is first cooled in pools or dry storage to let heat fall. Waste forms immobilise radionuclides: high-level liquid waste can be turned into glass (vitrification), and used fuel can be placed in corrosion-resistant canisters. In a deep geological repository, safety relies on multiple barriers: the waste form, the canister, a buffer (often clay) and the host rock, whose slow groundwater movement delays and spreads out any release.",
+    "Safety is judged by modelling how radionuclides could eventually move, and estimating the dose to people far into the future against regulatory targets. Because predictions over such times are uncertain, assessments use multiple lines of evidence, including natural analogues such as ancient uranium deposits where radionuclides have stayed in place for very long times.",
+    "Alternatives under study include partitioning and transmutation (separating long-lived radionuclides and converting them in reactors into shorter-lived ones), which could shorten the isolation time needed but does not remove the need for a repository. The issues are also social: siting, consent, retrievability and responsibility to future generations."
+   ],
+   "example": {
+    "q": "Caesium-137 has a half-life of about 30 years. What fraction of its activity remains after 300 years?",
+    "steps": [
+     "300 ÷ 30 = 10 half-lives.",
+     "Fraction = (1/2)¹⁰ = 1/1024.",
+     "1/1024 ≈ 0.001, about 0.1%."
+    ],
+    "a": "About 1/1000 (0.1%)"
+   },
+   "analogies": {
+    "home": "A pill bottle has a child-safe cap, a box and a locked cabinet: many barriers.",
+    "city": "A vault in a bank has layers: door, walls, guards.",
+    "nature": "Ancient minerals hold elements in place for millions of years.",
+    "sea": "A shipwreck's cargo stays sealed in the seabed."
+   },
+   "mnemonic": "Characterise, cool, immobilise, isolate, and keep asking.",
+   "terms": [
+    [
+     "Vitrification",
+     "Turning liquid waste into stable glass."
+    ],
+    [
+     "Buffer",
+     "Material such as clay around a canister."
+    ],
+    [
+     "Natural analogue",
+     "A natural system that shows long-term behaviour."
+    ],
+    [
+     "Partitioning and transmutation",
+     "Separating and converting long-lived radionuclides."
+    ],
+    [
+     "Retrievability",
+     "The ability to take waste back out."
+    ]
+   ],
+   "misc": {
+    "wrong": "Reprocessing or transmutation eliminates the need for a repository.",
+    "right": "They can reduce the volume, heat or longevity of waste, but some waste will still need long-term disposal."
+   },
+   "limits": "Long-term predictions rely on models. Experts and publics differ over disposal versus long-term storage.",
+   "trip": {
+    "wiki": "Deep geological repository",
+    "prompt": "Find the multi-barrier concept and name the engineered and natural barriers."
+   },
+   "sources": [
+    "Radioactive waste",
+    "Deep geological repository",
+    "Vitrification"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Strontium-90 has a half-life of about 29 years. What fraction remains after 87 years? Give a decimal.",
+     "a": 0.125,
+     "tol": 0.002,
+     "why": "87 ÷ 29 = 3 half-lives: (1/2)³ = 0.125.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Caesium-137 (half-life 30 years) has an initial activity of 8000 Bq in a sample. What is the activity after 120 years?",
+     "a": 500,
+     "tol": 1,
+     "unit": "Bq",
+     "why": "120 ÷ 30 = 4 half-lives: 8000/16 = 500.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A sample with half-life 24 000 years has decayed to 1/4 of its original activity. How old is it in years?",
+     "a": 48000,
+     "tol": 100,
+     "unit": "years",
+     "why": "1/4 is two half-lives: 2 × 24 000 = 48 000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about caesium-137 and technetium-99 is true?",
+     "o": [
+      "Technetium-99 has a much longer half-life, so it matters over longer times",
+      "Caesium-137 has the longer half-life of the two, so it matters over longer times",
+      "Both have exactly the same half-life, so they matter for the same time",
+      "Neither is radioactive in the long term, so neither matters in a repository"
+     ],
+     "a": 0,
+     "why": "Tc-99 has a half-life of about 211 000 years.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of vitrification?",
+     "o": [
+      "Immobilise radionuclides in stable glass",
+      "Make the waste hotter so that it dries out",
+      "Speed up the decay of the radionuclides",
+      "Dilute the waste with water so it spreads out"
+     ],
+     "a": 0,
+     "why": "Glass resists leaching.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is clay often used as a buffer around canisters?",
+     "o": [
+      "It swells and has very low permeability, slowing water and radionuclide movement",
+      "It generates electric power inside the repository, which runs the monitors",
+      "It absorbs gamma rays only and nothing else, so it shields the canister",
+      "It is transparent, so the canisters can be inspected from outside"
+     ],
+     "a": 0,
+     "why": "Low permeability limits transport.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which barrier in a repository is designed to slow groundwater movement around a canister using a swelling, low-permeability material?",
+     "o": [
+      "Clay buffer",
+      "Steel door",
+      "Surface fence",
+      "Cooling pool"
+     ],
+     "a": 0,
+     "why": "A clay buffer limits water flow and radionuclide transport.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why are natural analogues useful in making a safety case for a repository?",
+     "rubric": [
+      [
+       "natural",
+       "ancient",
+       "deposit",
+       "uranium",
+       "oklo",
+       "long time",
+       "millions"
+      ],
+      [
+       "evidence",
+       "show",
+       "stayed",
+       "confidence",
+       "behaviour",
+       "test",
+       "support",
+       "model"
+      ]
+     ],
+     "min": 2,
+     "model": "Natural systems such as ancient uranium ore bodies show how radionuclides have behaved over millions of years, giving evidence to support and check models whose predictions cannot be tested directly over such times.",
+     "why": "Analogues support long-term confidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A community asks to be able to remove waste from a repository if future generations find a better method. This is a request for...",
+     "o": [
+      "Retrievability",
+      "Vitrification of the waste into glass",
+      "Partitioning of the waste into separate streams",
+      "Fusion of the waste into a stable metal"
+     ],
+     "a": 0,
+     "why": "Retrievability is a design and policy consideration.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages after fuel leaves a reactor.",
+     "items": [
+      "Cooling in a pool",
+      "Dry cask storage",
+      "Encapsulation in a canister",
+      "Placement in a repository"
+     ],
+     "why": "Heat falls over time before disposal.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does keeping waste isolated for 100 000 years not require any one barrier to last that long?",
+     "o": [
+      "Multiple barriers and radioactive decay reduce risk progressively",
+      "Barriers last for ever, and so nothing is ever able to reach the surface",
+      "Decay stops entirely after a few thousand years, so the waste is safe",
+      "Rock is indestructible, so no other barriers are needed at all"
+     ],
+     "a": 0,
+     "why": "Safety relies on layers and decay.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give one argument for deep geological disposal and one argument for long-term surface storage.",
+     "rubric": [
+      [
+       "disposal",
+       "repository",
+       "deep",
+       "passive",
+       "isolat",
+       "does not rely",
+       "no need for",
+       "safe from"
+      ],
+      [
+       "storage",
+       "surface",
+       "monitor",
+       "retriev",
+       "flexib",
+       "future",
+       "new technology",
+       "technolog"
+      ]
+     ],
+     "min": 2,
+     "model": "Deep disposal isolates waste passively from surface events and does not depend on future institutions. Long-term storage keeps waste accessible and flexible so future generations can use new technology, but it relies on ongoing care.",
+     "why": "Both approaches have strengths and costs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fair statement about nuclear waste ethics is...",
+     "o": [
+      "Present generations should not leave unfair burdens to the future",
+      "Future people do not matter, since they are not yet born",
+      "Waste is never a problem, so the question does not arise",
+      "Only experts are affected by how the waste is managed"
+     ],
+     "a": 0,
+     "why": "Intergenerational justice is a common principle.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Engineering a repository",
+    "model": "Engineers first work out which radionuclides and how much heat the waste contains. The waste is cooled, turned into stable forms such as glass or placed in canisters, and later put deep underground behind a clay buffer and rock. Decay and several barriers reduce risk over time. Societies still debate siting and responsibility.",
+    "points": [
+     {
+      "k": [
+       "characteris",
+       "radionuclide",
+       "heat",
+       "half-life"
+      ],
+      "ask": "What do engineers need to know first?"
+     },
+     {
+      "k": [
+       "cool",
+       "glass",
+       "vitrif",
+       "canister"
+      ],
+      "ask": "How is it prepared?"
+     },
+     {
+      "k": [
+       "barrier",
+       "clay",
+       "buffer",
+       "rock",
+       "deep"
+      ],
+      "ask": "How does a repository protect?"
+     },
+     {
+      "k": [
+       "debate",
+       "ethic",
+       "future",
+       "consent",
+       "siting"
+      ],
+      "ask": "What is still debated?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Nuclear power plant systems",
+   "icon": "🏭",
+   "hook": "A plant has hundreds of systems. If you had to group them by their job, what groups would you make?",
+   "explain": [
+    "In a pressurised water reactor (PWR), the primary circuit keeps water at high pressure (set by a pressuriser) so it stays liquid, carrying heat from the core to steam generators. A separate secondary circuit boils water into steam, which drives the turbine, then is condensed and returned by feed pumps. In a boiling water reactor (BWR) water boils in the core and the steam goes directly to the turbine.",
+    "Other designs use different choices. Heavy-water reactors such as CANDU can use natural uranium because heavy water absorbs fewer neutrons, and can refuel online. Gas-cooled reactors use graphite and carbon dioxide. Fast reactors use no moderator and a liquid-metal or other coolant.",
+    "Support systems include the chemical and volume control system (which adjusts coolant chemistry and, in PWRs, dissolved boric acid as a slow-acting neutron absorber), the residual heat removal system, component cooling, electrical supplies with backup generators, ventilation and filtration, and fire protection.",
+    "Thermodynamically, the steam cycle is limited by the Carnot efficiency η_max = 1 − T_cold ÷ T_hot (temperatures in kelvin). Real efficiencies are lower. Because water-cooled reactors operate at modest steam temperatures, their efficiency is around one third, lower than gas-cooled and advanced designs aiming for higher outlet temperatures."
+   ],
+   "example": {
+    "q": "Steam is at 280 °C and the cooling water at 27 °C. What is the Carnot efficiency limit? (Add 273 to convert to kelvin.)",
+    "steps": [
+     "T_hot = 280 + 273 = 553 K; T_cold = 27 + 273 = 300 K.",
+     "η = 1 − 300 ÷ 553 = 1 − 0.5425.",
+     "η ≈ 0.4575, about 46%."
+    ],
+    "a": "About 46%"
+   },
+   "analogies": {
+    "home": "A kettle-and-turbine system like a steam engine in a museum.",
+    "city": "A district heating network where one loop heats another through a heat exchanger.",
+    "farm": "Two water tanks separated by a pipe wall that passes only heat.",
+    "tech": "A laptop's cooling loop moves heat away without mixing fluids."
+   },
+   "mnemonic": "PWR: pressurise, exchange, spin. BWR: boil, spin.",
+   "terms": [
+    [
+     "Pressuriser",
+     "A vessel that controls pressure in a PWR primary circuit."
+    ],
+    [
+     "Steam generator",
+     "A heat exchanger that makes steam in the secondary circuit."
+    ],
+    [
+     "Boric acid",
+     "A dissolved neutron absorber used in PWR coolant."
+    ],
+    [
+     "Carnot efficiency",
+     "The maximum efficiency of a heat engine between two temperatures."
+    ],
+    [
+     "Residual heat removal",
+     "A system that removes decay heat after shutdown."
+    ]
+   ],
+   "misc": {
+    "wrong": "The water turning the turbine in a PWR passes through the core.",
+    "right": "In a PWR, turbine steam comes from a separate secondary loop, so the core water stays in the primary circuit."
+   },
+   "limits": "This is a simplified overview. Plants differ widely in design and details.",
+   "trip": {
+    "wiki": "Pressurized water reactor",
+    "prompt": "Find the diagram and trace the primary and secondary loops."
+   },
+   "sources": [
+    "Pressurized water reactor",
+    "Boiling water reactor",
+    "CANDU reactor"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A steam cycle runs between 327 °C and 27 °C. What is the Carnot efficiency limit as a percentage? (Add 273 to each.)",
+     "a": 50,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "T_hot = 600 K, T_cold = 300 K: 1 − 300/600 = 0.5, or 50%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plant with 3000 MWt has a real efficiency of 34%. How many MWe does it produce?",
+     "a": 1020,
+     "tol": 1,
+     "unit": "MWe",
+     "why": "3000 × 0.34 = 1020.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the role of the pressuriser in a PWR?",
+     "o": [
+      "Controls primary circuit pressure so water stays liquid",
+      "Makes the steam for the turbine in the secondary loop",
+      "Absorbs the neutrons produced in the core",
+      "Stores the waste produced by the fuel"
+     ],
+     "a": 0,
+     "why": "It maintains high pressure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the main difference between a PWR and a BWR?",
+     "o": [
+      "In a BWR water boils in the core and drives the turbine directly",
+      "A PWR has no water in the core at all, while a BWR has water",
+      "A BWR has no turbine in the plant, and so it makes no electricity",
+      "A PWR uses fusion to make its heat, while a BWR uses fission"
+     ],
+     "a": 0,
+     "why": "PWRs use a separate secondary loop.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can heavy-water reactors use natural uranium?",
+     "o": [
+      "Heavy water absorbs very few neutrons",
+      "Heavy water makes more neutrons than ordinary water",
+      "Uranium is stronger when it is not enriched",
+      "They use fusion to help the fission along"
+     ],
+     "a": 0,
+     "why": "Good neutron economy allows lower fuel enrichment.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer wants higher thermal efficiency. Which change helps most in principle?",
+     "o": [
+      "Raise the steam temperature",
+      "Lower the steam temperature",
+      "Use warmer cooling water",
+      "Reduce pressure"
+     ],
+     "a": 0,
+     "why": "Carnot efficiency rises with T_hot.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each system to its function.",
+     "pairs": [
+      [
+       "Steam generator",
+       "Transfers heat from primary to secondary"
+      ],
+      [
+       "Pressuriser",
+       "Controls primary pressure"
+      ],
+      [
+       "Condenser",
+       "Turns steam back to water"
+      ],
+      [
+       "Residual heat removal",
+       "Removes decay heat after shutdown"
+      ]
+     ],
+     "why": "Systems cooperate in the plant.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Give one advantage and one disadvantage of a BWR's direct cycle compared with a PWR.",
+     "rubric": [
+      [
+       "simpler",
+       "fewer",
+       "no steam generator",
+       "one loop",
+       "direct",
+       "lower pressure",
+       "cheaper"
+      ],
+      [
+       "turbine",
+       "radioactive",
+       "contamina",
+       "shielding",
+       "access",
+       "steam carries"
+      ]
+     ],
+     "min": 2,
+     "model": "A BWR is simpler, with no steam generator and lower pressure. However, the steam that goes to the turbine has been in the core and can carry some radioactivity, so the turbine area needs shielding and controlled access.",
+     "why": "Designs trade simplicity against separation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the PWR heat path.",
+     "items": [
+      "Core",
+      "Primary coolant loop",
+      "Steam generator",
+      "Turbine",
+      "Condenser"
+     ],
+     "why": "Heat flows outward from the core to the heat sink.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A PWR operator needs a slow, long-term reduction in reactivity as fuel burns. What is one tool?",
+     "o": [
+      "Adjusting dissolved boric acid concentration",
+      "Removing all of the moderator from the core",
+      "Adding more steam to the primary loop",
+      "Changing the design of the turbine blades"
+     ],
+     "a": 0,
+     "why": "Boron absorbs neutrons and can be adjusted gradually.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is separating primary and secondary circuits a safety advantage?",
+     "o": [
+      "It keeps radioactive core water away from the turbine hall",
+      "It saves fuel by letting the same water be reused again and again",
+      "It increases the power of the plant by raising the steam pressure",
+      "It removes the need for any cooling system to be built"
+     ],
+     "a": 0,
+     "why": "An extra barrier reduces contamination paths.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare the thermal efficiency of a typical water-cooled reactor with a design that has a much higher outlet temperature, and explain the reason.",
+     "rubric": [
+      [
+       "higher",
+       "better",
+       "improve",
+       "more efficient"
+      ],
+      [
+       "temperature",
+       "carnot",
+       "hot",
+       "t_hot",
+       "outlet"
+      ],
+      [
+       "water",
+       "limit",
+       "pressure",
+       "steam",
+       "lower",
+       "33",
+       "third"
+      ]
+     ],
+     "min": 2,
+     "model": "A typical water-cooled reactor has efficiency around one third because its steam temperature is limited by pressure. A design with a much higher outlet temperature can reach higher efficiency, because the Carnot limit rises with hot-side temperature.",
+     "why": "Temperature difference sets the limit.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A plant adds a diesel generator in a separate building. What principle is being applied?",
+     "o": [
+      "Independence and physical separation",
+      "Moderator selection for a new design",
+      "Fusion confinement of the plasma",
+      "Reprocessing of the used fuel"
+     ],
+     "a": 0,
+     "why": "Separation guards against common causes.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a nuclear power plant is organised",
+    "model": "In a PWR, pressurised water carries heat from the core to steam generators, where a separate loop makes steam for the turbine. In a BWR the water boils in the core. Support systems handle chemistry, decay heat, power and ventilation. Efficiency is limited by temperatures.",
+    "points": [
+     {
+      "k": [
+       "primary",
+       "pressur",
+       "core",
+       "water"
+      ],
+      "ask": "What does the primary circuit do?"
+     },
+     {
+      "k": [
+       "steam generator",
+       "secondary",
+       "turbine"
+      ],
+      "ask": "How is the turbine driven?"
+     },
+     {
+      "k": [
+       "bwr",
+       "boil",
+       "direct"
+      ],
+      "ask": "Is there a different design?"
+     },
+     {
+      "k": [
+       "efficien",
+       "carnot",
+       "temperature",
+       "third"
+      ],
+      "ask": "What limits efficiency?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Nuclear fusion engineering",
+   "icon": "🔆",
+   "hook": "A fusion plasma must be hotter than the Sun's core yet must not touch the walls. How can you hold something that hot?",
+   "explain": [
+    "The most accessible fusion reaction is deuterium plus tritium: D + T → helium-4 + neutron + 17.6 MeV. About 14.1 MeV goes to the neutron and about 3.5 MeV to the helium nucleus (alpha particle). The alpha particles stay in the plasma and can heat it, while the neutrons escape and carry most of the energy into the surrounding blanket.",
+    "To get net energy, a plasma must be hot (about 100 million kelvin), dense enough, and held long enough. This is summarised by the Lawson criterion; for deuterium-tritium it needs a triple product of density × temperature × energy confinement time of roughly 3 × 10²¹ keV·s/m³. The gain Q is fusion power divided by the heating power supplied.",
+    "Magnetic confinement uses strong fields to hold the charged plasma away from walls. Tokamaks (such as the ITER device under construction in France) use a doughnut-shaped field with a current in the plasma; stellarators use twisted coils to avoid driving that current. Inertial confinement compresses a tiny fuel pellet with lasers. In December 2022, the US National Ignition Facility reported about 3.15 MJ of fusion energy from about 2.05 MJ of laser energy delivered to the target, a target gain above 1, though the facility as a whole used far more energy.",
+    "Engineering challenges include tritium, which is scarce and must be bred in the reactor by neutrons striking lithium (n + Li-6 → T + He-4), materials facing intense neutron damage, heat exhaust, and superconducting magnets. Fusion produces no chain reaction and no long-lived high-level waste of the kind from fission, but structural materials become radioactive and tritium must be handled safely."
+   ],
+   "example": {
+    "q": "Energy released per D-T reaction is 17.6 MeV. Convert it to joules. (1 MeV = 1.602 × 10⁻¹³ J.)",
+    "steps": [
+     "Energy = 17.6 × 1.602 × 10⁻¹³ J.",
+     "17.6 × 1.602 ≈ 28.2.",
+     "Energy ≈ 28.2 × 10⁻¹³ J = 2.82 × 10⁻¹² J."
+    ],
+    "a": "About 2.8 × 10⁻¹² J"
+   },
+   "analogies": {
+    "home": "A magnetic bottle that holds a gas without a container touching it.",
+    "sea": "A whirlpool shape held by currents.",
+    "sport": "Keeping a ball in the air with a series of juggling hits.",
+    "nature": "The Sun does it with gravity; on Earth we use magnets."
+   },
+   "mnemonic": "Hot, dense, long: n × T × τ. Breed tritium from lithium.",
+   "terms": [
+    [
+     "Plasma",
+     "A hot ionised gas."
+    ],
+    [
+     "Tokamak",
+     "A doughnut-shaped magnetic confinement device."
+    ],
+    [
+     "Lawson criterion",
+     "Condition on density, temperature and confinement time for net energy."
+    ],
+    [
+     "Gain (Q)",
+     "Fusion power divided by input heating power."
+    ],
+    [
+     "Breeding blanket",
+     "A layer that makes tritium from lithium using neutrons."
+    ]
+   ],
+   "misc": {
+    "wrong": "Fusion plants have been supplying electricity for years.",
+    "right": "Fusion experiments have produced fusion energy, but no device has yet delivered net electricity to a grid."
+   },
+   "limits": "Timelines for commercial fusion are uncertain and debated. Different designs and approaches are being tested.",
+   "trip": {
+    "wiki": "ITER",
+    "prompt": "Find ITER's goals and its expected fusion gain."
+   },
+   "sources": [
+    "Nuclear fusion",
+    "Tokamak",
+    "Lawson criterion"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "In a D-T reaction 14.1 MeV goes to the neutron and 3.5 MeV to the alpha particle. What is the total energy in MeV, rounded to 1 decimal place?",
+     "a": 17.6,
+     "tol": 0.1,
+     "unit": "MeV",
+     "why": "14.1 + 3.5 = 17.6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A fusion plasma gets 50 MW of heating and produces 250 MW of fusion power. What is Q?",
+     "a": 5,
+     "tol": 0.05,
+     "why": "Q = 250 ÷ 50 = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The Lawson triple product needed is about 3 × 10²¹ keV·s/m³. A plasma has n = 10²⁰ m⁻³ and T = 10 keV. What energy confinement time in seconds is needed?",
+     "a": 3,
+     "tol": 0.05,
+     "unit": "s",
+     "why": "τ = 3 × 10²¹ ÷ (10²⁰ × 10) = 3 s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why are alpha particles useful inside the plasma?",
+     "o": [
+      "They are charged, are held by the magnetic field and heat the plasma",
+      "They escape the plasma at once and heat only the walls of the vessel",
+      "They cool the plasma and so stop the reaction from carrying on",
+      "They are neutral, so they pass straight out through the magnetic field"
+     ],
+     "a": 0,
+     "why": "Alpha heating can sustain the plasma temperature.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Where does the tritium fuel come from for a working reactor?",
+     "o": [
+      "Bred from lithium by neutrons in a blanket",
+      "Mined from the ground in large amounts like uranium",
+      "Made by the Sun and collected in space",
+      "Extracted from uranium ore at the plant"
+     ],
+     "a": 0,
+     "why": "Tritium is scarce naturally, so it must be bred.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about fusion waste is most accurate?",
+     "o": [
+      "No long-lived high-level fuel waste like fission, but activated structural materials and tritium need management",
+      "There is no radioactivity at all anywhere in a fusion plant of any kind",
+      "It is exactly the same as fission waste in every way, in size and life",
+      "It is much larger in volume than fission waste, and it lasts longer"
+     ],
+     "a": 0,
+     "why": "Neutron activation still produces some radioactive material.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which device holds the plasma using a doughnut-shaped magnetic field with a current driven in the plasma?",
+     "o": [
+      "Tokamak",
+      "Stellarator",
+      "Laser pellet chamber",
+      "Steam generator"
+     ],
+     "a": 0,
+     "why": "A tokamak uses plasma current; a stellarator uses twisted coils.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a plasma must be confined by magnetic fields rather than touching a solid wall.",
+     "rubric": [
+      [
+       "hot",
+       "million",
+       "temperature",
+       "heat"
+      ],
+      [
+       "wall",
+       "melt",
+       "cool",
+       "contaminat",
+       "touch",
+       "impurit"
+      ],
+      [
+       "magnet",
+       "charged",
+       "field",
+       "confine"
+      ]
+     ],
+     "min": 2,
+     "model": "A fusion plasma is at about a hundred million kelvin, so contact with a solid wall would cool it and contaminate it, as well as damage the wall. Because the plasma is charged, magnetic fields can hold it away from the walls.",
+     "why": "Magnetic confinement exploits plasma charge.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A device reports 'target gain above 1' for fusion energy compared with laser energy on target. Why is this not the same as a power plant breaking even?",
+     "o": [
+      "The facility used much more energy overall and no electricity was produced",
+      "The reaction failed and the fusion energy output was zero throughout",
+      "The gain was actually below 1 in the experiment, so nothing was gained",
+      "The experiment used fission instead of fusion to produce its energy"
+     ],
+     "a": 0,
+     "why": "Net electricity needs the whole system's energy balance to be positive.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the D-T fuel route in a future plant.",
+     "items": [
+      "Lithium in the blanket",
+      "Neutrons from fusion hit lithium",
+      "Tritium is bred",
+      "Tritium is fed into the plasma"
+     ],
+     "why": "Neutron capture on lithium makes tritium.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a fusion plasma disrupting not lead to a runaway chain reaction as in fission?",
+     "o": [
+      "Fusion needs extreme conditions that fail when confinement is lost",
+      "Fusion has no energy to release in the first place, so it cannot run away",
+      "Plasma is cold, so it cannot run away in any case",
+      "Fusion does have a chain reaction, but a very slow one that stays safe"
+     ],
+     "a": 0,
+     "why": "The reaction stops if conditions are lost.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Present one reason for and one reason against large public investment in fusion research.",
+     "rubric": [
+      [
+       "for",
+       "potential",
+       "clean",
+       "abundant",
+       "fuel",
+       "low carbon",
+       "long-term",
+       "climate",
+       "energy"
+      ],
+      [
+       "against",
+       "uncertain",
+       "cost",
+       "decades",
+       "alternatives",
+       "risk",
+       "late",
+       "renewable",
+       "now"
+      ]
+     ],
+     "min": 2,
+     "model": "For: fusion could provide abundant, low-carbon energy with plentiful fuel, and research has spin-off benefits. Against: it is expensive, uncertain and may arrive too late to help with near-term climate goals, so money might be used on existing alternatives.",
+     "why": "Reasonable people weigh these differently.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the biggest materials challenge unique to a D-T fusion device compared with a fission reactor?",
+     "o": [
+      "High-energy 14 MeV neutron damage to structures",
+      "A lack of any electricity in the plant",
+      "No coolant is needed anywhere in the device",
+      "There is too little heat to be of any use"
+     ],
+     "a": 0,
+     "why": "Fusion neutrons are much more energetic.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a fusion reactor would work",
+    "model": "A fusion reactor would heat deuterium and tritium to about a hundred million kelvin and hold the plasma with magnets while it fuses, releasing 17.6 MeV per reaction. Neutrons would heat a blanket that also breeds tritium from lithium. The main challenges are keeping the plasma hot and confined, materials, and tritium.",
+    "points": [
+     {
+      "k": [
+       "deuterium",
+       "tritium",
+       "d-t",
+       "17.6"
+      ],
+      "ask": "Which fuel is used?"
+     },
+     {
+      "k": [
+       "hot",
+       "million",
+       "plasma",
+       "temperature"
+      ],
+      "ask": "What conditions are needed?"
+     },
+     {
+      "k": [
+       "magnet",
+       "tokamak",
+       "confine",
+       "stellarator"
+      ],
+      "ask": "How is the plasma held?"
+     },
+     {
+      "k": [
+       "lithium",
+       "breed",
+       "blanket",
+       "neutron",
+       "challenge"
+      ],
+      "ask": "What are the challenges?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2802 @@
+{
+ "world": 4,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Atmospheric properties",
+   "icon": "🌍",
+   "hook": "Climb a very tall mountain and breathing gets harder, and it gets colder. What is changing in the air as you go up?",
+   "explain": [
+    "The atmosphere is the blanket of gas around Earth. It is mostly nitrogen (about 78%) and oxygen (about 21%). Air has mass, pressure, temperature and density. Density is how much mass is packed into each cubic metre.",
+    "At sea level, in standard conditions, air has a density of about 1.225 kg/m³, a pressure of about 101 325 pascals (Pa) and a temperature of 15 °C. Higher up there is less air above, so pressure and density both fall. That is why the air is 'thin' on high mountains.",
+    "In the lowest layer, the troposphere, the temperature falls by about 6.5 °C for every kilometre you climb, up to roughly 11 km. Most airliners cruise near the top of this layer. Wings and engines make less force in thin air, so altitude changes how an aircraft performs."
+   ],
+   "example": {
+    "q": "A room measures 5 m × 4 m × 3 m. Use 1.225 kg/m³ for air. What is the mass of the air in the room?",
+    "steps": [
+     "Volume = 5 × 4 × 3 = 60 m³.",
+     "Mass = density × volume.",
+     "Mass = 1.225 × 60 = 73.5 kg."
+    ],
+    "a": "73.5 kg"
+   },
+   "analogies": {
+    "sea": "Dive deeper in the sea and the water above presses harder. In air, being low down means more air above you, so pressure is larger.",
+    "home": "A stack of pillows: the bottom pillow is squashed most. The bottom of the atmosphere is squashed most too.",
+    "city": "A crowded train carriage near the door is packed tight. Air near the ground is packed tighter than air high up.",
+    "nature": "Mountain climbers breathe more slowly and tire quickly because each breath contains less oxygen."
+   },
+   "mnemonic": "Up, up, up: less air, less push, more cold!",
+   "terms": [
+    [
+     "Density",
+     "Mass in each cubic metre, in kg/m³."
+    ],
+    [
+     "Pressure",
+     "Force pushing on each square metre, in pascals (Pa)."
+    ],
+    [
+     "Troposphere",
+     "The lowest layer of the atmosphere, where weather happens."
+    ],
+    [
+     "Altitude",
+     "Height above sea level."
+    ]
+   ],
+   "misc": {
+    "wrong": "Air has no weight, so it cannot push on anything.",
+    "right": "Air has mass. At sea level one cubic metre has about 1.2 kg, and the air pressing on us is about 101 kPa."
+   },
+   "limits": "These are standard-atmosphere values. Real air changes with weather, place and season.",
+   "trip": {
+    "wiki": "International Standard Atmosphere",
+    "prompt": "Find the table of height, temperature and pressure. What happens to pressure as height rises?"
+   },
+   "sources": [
+    "Atmosphere of Earth",
+    "International Standard Atmosphere",
+    "Troposphere"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which gas makes up most of the air?",
+     "o": [
+      "Nitrogen",
+      "Oxygen",
+      "Carbon dioxide",
+      "Helium"
+     ],
+     "a": 0,
+     "why": "About 78% of air is nitrogen and about 21% is oxygen.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to air density as you climb higher?",
+     "o": [
+      "It decreases",
+      "It increases",
+      "It stays the same",
+      "It becomes zero at 1 km"
+     ],
+     "a": 0,
+     "why": "Less air lies above you, so the air is less compressed.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the standard sea-level air density used in this game?",
+     "o": [
+      "1.225 kg/m³",
+      "12.25 kg/m³",
+      "0.1225 kg/m³",
+      "1000 kg/m³"
+     ],
+     "a": 0,
+     "why": "1.225 kg/m³ is the standard sea-level value. 1000 kg/m³ is about water.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Air has density 1.225 kg/m³. What is the mass of 10 m³ of air in kilograms?",
+     "a": 12.25,
+     "tol": 0.05,
+     "unit": "kg",
+     "why": "Mass = density × volume = 1.225 × 10 = 12.25 kg.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At sea level the temperature is 15 °C and it falls 6.5 °C per kilometre in the troposphere. What is the temperature at 4 km, in °C?",
+     "a": -11,
+     "tol": 0.5,
+     "unit": "°C",
+     "why": "Fall = 6.5 × 4 = 26 °C. So 15 − 26 = −11 °C.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a plane's engine make less power high in the sky without help?",
+     "o": [
+      "There is less oxygen-bearing air per cubic metre",
+      "Gravity is much stronger up high, so it drags the engine",
+      "The air is hotter up high, so the engine overheats and slows",
+      "Clouds block the intake and keep the engine from running well"
+     ],
+     "a": 0,
+     "why": "Thin air has fewer oxygen molecules in each cubic metre, so a simple engine burns less fuel.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A balloon is carried up a mountain. It swells a bit. Why?",
+     "o": [
+      "Outside pressure is lower",
+      "Outside pressure is higher",
+      "The balloon gets heavier",
+      "Gravity pulls it open"
+     ],
+     "a": 0,
+     "why": "With less pressure pushing in from outside, the gas inside expands.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these places in order from the lowest air pressure to the highest.",
+     "items": [
+      "Top of a jet's cruise height",
+      "Top of a high mountain",
+      "A hill town",
+      "Sea level"
+     ],
+     "why": "Pressure falls as altitude rises, so cruise height has the lowest and sea level the highest.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is the air 'thinner' on top of a high mountain than at the beach?",
+     "rubric": [
+      [
+       "less air above",
+       "fewer air above",
+       "air above"
+      ],
+      [
+       "pressure"
+      ],
+      [
+       "density",
+       "fewer molecules",
+       "less crowded",
+       "less dense",
+       "spread out"
+      ]
+     ],
+     "min": 2,
+     "model": "There is less air above you high up, so the pressure is lower and the air is less dense, with fewer air molecules in each cubic metre.",
+     "why": "Air near the ground is squashed by all the air above it. Higher up there is less air above, so pressure and density are smaller.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each word to its meaning.",
+     "pairs": [
+      [
+       "Density",
+       "Mass per cubic metre"
+      ],
+      [
+       "Pressure",
+       "Force on each square metre"
+      ],
+      [
+       "Altitude",
+       "Height above sea level"
+      ],
+      [
+       "Troposphere",
+       "Lowest layer, with weather"
+      ]
+     ],
+     "why": "These are the basic words used to describe the atmosphere.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which statement is most accurate?",
+     "o": [
+      "Air density and pressure both fall with height",
+      "Pressure falls with height but the density stays about the same",
+      "Density falls with height but the pressure stays about the same",
+      "Both density and pressure rise steadily as you climb higher"
+     ],
+     "a": 0,
+     "why": "Both fall, because there is less air above and the air is less compressed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A pilot flies in air that is much colder and thinner than at the airport. Name one effect on the aircraft.",
+     "rubric": [
+      [
+       "less lift",
+       "lift is less",
+       "lift drops",
+       "less drag",
+       "drag is less",
+       "engine",
+       "power",
+       "thrust"
+      ],
+      [
+       "thin",
+       "density",
+       "less air",
+       "fewer"
+      ]
+     ],
+     "min": 2,
+     "model": "Thinner air has lower density, so wings make less lift at the same speed and engines get less air. Drag is also smaller.",
+     "why": "Lift, drag and engine power all depend on air density.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The standard value 15 °C at sea level is used because",
+     "o": [
+      "It gives engineers a shared reference for comparing aircraft",
+      "Every single day on Earth has an air temperature of exactly 15 °C",
+      "Planes cannot fly safely in any other kind of weather",
+      "Air at sea level can only ever have this one temperature"
+     ],
+     "a": 0,
+     "why": "Standard values let people compare designs. Real days differ from the standard.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why air is thinner high up",
+    "model": "Air has weight and is pulled down by gravity. At the ground there is lots of air above pushing down, so the air is squashed and dense. High up there is less air above, so pressure and density are lower, and it is also colder.",
+    "points": [
+     {
+      "k": [
+       "gravity",
+       "weight",
+       "pull"
+      ],
+      "ask": "Why does air stay near the ground?"
+     },
+     {
+      "k": [
+       "above",
+       "pushing",
+       "squash",
+       "press"
+      ],
+      "ask": "What squashes the air at the bottom?"
+     },
+     {
+      "k": [
+       "less",
+       "thin",
+       "lower",
+       "density"
+      ],
+      "ask": "So what is different high up?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Four forces of flight",
+   "icon": "⚖️",
+   "hook": "A passenger jet cruises at a steady speed and height for hours. If forces are acting on it all the time, why is it not speeding up, rising or sinking?",
+   "explain": [
+    "Four forces act on an aircraft. Weight pulls it down. Lift pushes it up. Thrust pushes it forward. Drag pulls it back. Forces are measured in newtons (N).",
+    "Weight equals mass times the gravitational field strength: W = m × g, where g = 9.81 N/kg (or 9.81 m/s²) near the ground. If lift equals weight, the aircraft does not climb or sink. If thrust equals drag, it keeps its speed. This is steady, level flight.",
+    "If forces are unbalanced, Newton's second law applies: resultant force = mass × acceleration. More thrust than drag makes the aircraft speed up. More lift than weight makes it climb."
+   ],
+   "example": {
+    "q": "A 1000 kg aircraft has thrust 5000 N and drag 3000 N. What is its acceleration? (Assume level flight.)",
+    "steps": [
+     "Resultant forward force = 5000 − 3000 = 2000 N.",
+     "a = F ÷ m.",
+     "a = 2000 ÷ 1000 = 2 m/s²."
+    ],
+    "a": "2 m/s²"
+   },
+   "analogies": {
+    "sea": "A rowing boat at steady speed: the push from the oars equals the water's drag.",
+    "sport": "A cyclist at steady speed pedals just hard enough to match the air resistance.",
+    "city": "A lift moving at steady speed has the cable pull equal to its weight.",
+    "farm": "A tractor pulling a plough at steady speed: the engine force matches the soil's resistance."
+   },
+   "mnemonic": "Up is Lift, down is Weight, forward is Thrust, back is Drag. Balanced, it flies straight.",
+   "terms": [
+    [
+     "Weight",
+     "The downward pull of gravity, W = m × g."
+    ],
+    [
+     "Lift",
+     "The upward force from the air flowing past the wings."
+    ],
+    [
+     "Thrust",
+     "The forward force from the engine or propeller."
+    ],
+    [
+     "Drag",
+     "The backward force of air resistance."
+    ],
+    [
+     "Resultant force",
+     "What is left after all forces are added."
+    ]
+   ],
+   "misc": {
+    "wrong": "Thrust is what holds an aircraft up.",
+    "right": "Lift holds an aircraft up. Thrust moves it forward through the air so the wings can make lift."
+   },
+   "limits": "This simple picture shows four forces in level flight. In a climb or turn the forces point in other directions, and the thrust line may not be exactly horizontal.",
+   "trip": {
+    "wiki": "Four forces",
+    "prompt": "Find the diagram with the four arrows. Which two arrows are equal in steady level flight?"
+   },
+   "sources": [
+    "Four forces",
+    "Lift (force)",
+    "Drag (physics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which force acts upward on a flying aircraft?",
+     "o": [
+      "Lift",
+      "Weight",
+      "Drag",
+      "Mass"
+     ],
+     "a": 0,
+     "why": "Lift is the upward force. Weight and drag do not act up.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In steady level flight at constant speed, which pair is balanced?",
+     "o": [
+      "Lift = weight and thrust = drag",
+      "Lift equals thrust and weight equals drag",
+      "Weight equals drag and nothing else is balanced",
+      "None of the forces are balanced in steady flight"
+     ],
+     "a": 0,
+     "why": "Both pairs are balanced, so there is no acceleration.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A small aircraft has mass 800 kg. Use g = 9.81 m/s². What is its weight in newtons?",
+     "a": 7848,
+     "tol": 1,
+     "unit": "N",
+     "why": "W = m × g = 800 × 9.81 = 7848 N.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The aircraft in the last question flies level at a steady speed. How much lift must the wings make, in newtons?",
+     "a": 7848,
+     "tol": 1,
+     "unit": "N",
+     "why": "Level flight means lift equals weight, so L = 7848 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 2000 kg aircraft has thrust 6000 N and drag 4000 N. What is its acceleration in m/s²?",
+     "a": 1,
+     "tol": 0.02,
+     "unit": "m/s²",
+     "why": "Resultant = 6000 − 4000 = 2000 N. a = 2000 ÷ 2000 = 1 m/s².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The pilot reduces thrust a little during level flight. At first, what happens to the speed?",
+     "o": [
+      "It falls, because drag is now larger than thrust",
+      "It rises, because drag is now smaller than the thrust",
+      "It stays exactly the same until the pilot moves the controls",
+      "The plane stops moving at once because thrust is lower"
+     ],
+     "a": 0,
+     "why": "With thrust below drag, the resultant force is backward, so the aircraft decelerates.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is measured in newtons?",
+     "o": [
+      "Weight",
+      "Mass",
+      "Density",
+      "Speed"
+     ],
+     "a": 0,
+     "why": "Weight is a force. Mass is in kilograms.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each force to its usual direction.",
+     "pairs": [
+      [
+       "Lift",
+       "Up"
+      ],
+      [
+       "Weight",
+       "Down"
+      ],
+      [
+       "Thrust",
+       "Forward"
+      ],
+      [
+       "Drag",
+       "Backward"
+      ]
+     ],
+     "why": "These are the four forces in the standard diagram.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A plane flies at a steady speed in a straight, level line. Explain what this tells you about the forces on it.",
+     "rubric": [
+      [
+       "balanced",
+       "equal",
+       "cancel",
+       "same size"
+      ],
+      [
+       "lift",
+       "weight"
+      ],
+      [
+       "thrust",
+       "drag"
+      ],
+      [
+       "no resultant",
+       "zero",
+       "no net",
+       "unbalanced force is zero"
+      ]
+     ],
+     "min": 2,
+     "model": "The forces are balanced: lift equals weight and thrust equals drag, so there is no resultant force and no acceleration.",
+     "why": "Newton's first law: with no resultant force, motion does not change.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cargo plane is loaded with more freight. To fly level at the same speed it needs",
+     "o": [
+      "More lift",
+      "Less lift",
+      "The same lift",
+      "No lift"
+     ],
+     "a": 0,
+     "why": "More mass means more weight, and lift must equal weight in level flight.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says 'the engine holds the plane up because it is so strong'. What is the best reply?",
+     "o": [
+      "The engine makes thrust forward; the wings make lift when air flows past them",
+      "The student is right, as strong engines hold planes up",
+      "Engines make lift only in jets, not in propeller planes",
+      "Thrust and lift are two words for one force"
+     ],
+     "a": 0,
+     "why": "Thrust moves the aircraft forward. Lift comes mainly from the wings turning the airflow.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A glider has no engine yet flies steadily down at a constant speed. What balances its weight?",
+     "o": [
+      "The total force from the air (lift and drag combined)",
+      "Nothing balances it, because a glider is falling freely",
+      "Thrust from the wind blowing steadily against it",
+      "Gravity turns off while the glider is moving down"
+     ],
+     "a": 0,
+     "why": "At constant velocity the resultant force is zero. The air's total force on the glider equals its weight and points upward.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If an aircraft's mass doubles and the thrust-minus-drag stays the same, the acceleration",
+     "o": [
+      "Halves",
+      "Doubles",
+      "Stays the same",
+      "Becomes zero"
+     ],
+     "a": 0,
+     "why": "a = F ÷ m, so doubling the mass halves the acceleration.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The four forces of flight",
+    "model": "There are four forces on a plane. Weight pulls it down and lift pushes it up. Thrust pushes it forward and drag pulls it back. When lift equals weight and thrust equals drag, the plane flies straight and level at a steady speed.",
+    "points": [
+     {
+      "k": [
+       "weight",
+       "gravity"
+      ],
+      "ask": "What pulls the plane down?"
+     },
+     {
+      "k": [
+       "lift"
+      ],
+      "ask": "What holds it up?"
+     },
+     {
+      "k": [
+       "thrust",
+       "engine"
+      ],
+      "ask": "What pushes it forward?"
+     },
+     {
+      "k": [
+       "drag",
+       "air resistance"
+      ],
+      "ask": "What slows it down?"
+     },
+     {
+      "k": [
+       "balanced",
+       "equal",
+       "steady"
+      ],
+      "ask": "When does it fly at a steady speed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Wing and airfoil geometry",
+   "icon": "📐",
+   "hook": "Cut a wing slice along the flight direction and you do not find a flat board. Why do engineers shape it so carefully?",
+   "explain": [
+    "The cross-section of a wing is called an airfoil. Its front edge is the leading edge and its back edge is the trailing edge. The straight line joining them is the chord. The curved line halfway between the top and bottom surfaces is the camber line.",
+    "Seen from above, the distance from wingtip to wingtip is the span. The wing area S is the planform area. For a rectangular wing, area = span × chord. Aspect ratio is span² ÷ area, which for a rectangular wing equals span ÷ chord.",
+    "The angle between the chord and the oncoming air is the angle of attack. Many gliders have long, thin wings with a high aspect ratio, which suits efficient flight. Short, stubby wings suit strong, fast manoeuvres."
+   ],
+   "example": {
+    "q": "A rectangular wing has span 12 m and chord 1.5 m. What are its area and aspect ratio?",
+    "steps": [
+     "Area = span × chord = 12 × 1.5 = 18 m².",
+     "Aspect ratio = span² ÷ area = 144 ÷ 18.",
+     "144 ÷ 18 = 8."
+    ],
+    "a": "Area 18 m², aspect ratio 8"
+   },
+   "analogies": {
+    "sea": "A sailing boat's sail has a leading edge facing the wind and a trailing edge behind, just like a wing.",
+    "nature": "An albatross has long narrow wings (high aspect ratio) for gliding over oceans. A sparrow has short wide wings for quick turns.",
+    "sport": "A surfboard's front is its nose; its length is like the chord.",
+    "city": "A cross-section of a bridge beam shows its shape in the same way an airfoil shows a wing."
+   },
+   "mnemonic": "Leading edge leads, trailing edge trails, chord is the line between, span is the width.",
+   "terms": [
+    [
+     "Chord",
+     "The straight line from leading edge to trailing edge."
+    ],
+    [
+     "Span",
+     "The distance from wingtip to wingtip."
+    ],
+    [
+     "Aspect ratio",
+     "Span squared divided by wing area."
+    ],
+    [
+     "Camber",
+     "How curved the airfoil is."
+    ],
+    [
+     "Angle of attack",
+     "The angle between the chord and the oncoming air."
+    ]
+   ],
+   "misc": {
+    "wrong": "The angle of attack is the same as the angle the aircraft's nose points above the horizon.",
+    "right": "Angle of attack is measured between the chord and the airflow. In a climb the nose can point up while the angle of attack is small, or in a descent it can be large."
+   },
+   "limits": "Real wings are often tapered, swept and twisted, so the simple span × chord formula is only exact for rectangular wings.",
+   "trip": {
+    "wiki": "Airfoil",
+    "prompt": "Find the labelled diagram of an airfoil. Point out the chord and the camber line."
+   },
+   "sources": [
+    "Airfoil",
+    "Wing",
+    "Aspect ratio (aeronautics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the front edge of an airfoil called?",
+     "o": [
+      "Leading edge",
+      "Trailing edge",
+      "Chord",
+      "Camber"
+     ],
+     "a": 0,
+     "why": "The leading edge meets the air first.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the chord?",
+     "o": [
+      "The straight line from leading to trailing edge",
+      "The distance from one wingtip across to the other wingtip",
+      "The curve of the wing between the top and the bottom",
+      "The total weight of the wing divided by its area"
+     ],
+     "a": 0,
+     "why": "Span is the wingtip distance; chord is the front-to-back line.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A rectangular wing has span 10 m and chord 2 m. What is its area in m²?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "m²",
+     "why": "Area = span × chord = 10 × 2 = 20 m².",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rectangular wing has span 15 m and chord 1.5 m. What is its aspect ratio (span ÷ chord)?",
+     "a": 10,
+     "tol": 0.05,
+     "why": "15 ÷ 1.5 = 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A glider needs very efficient flight. Which wing suits it best?",
+     "o": [
+      "Long and thin, with high aspect ratio",
+      "Short and wide, with low aspect ratio",
+      "No wing at all",
+      "A round disc"
+     ],
+     "a": 0,
+     "why": "Long, narrow wings lose less energy at the wingtips, so gliders use them.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does a cambered airfoil have?",
+     "o": [
+      "A curved shape between top and bottom",
+      "A flat top and a flat bottom with no curve at all",
+      "A leading edge that is missing from the front",
+      "A span of zero between the two wingtips"
+     ],
+     "a": 0,
+     "why": "Camber means the middle line is curved.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A plane is climbing steeply but flying very fast. Its nose is high. Is its angle of attack necessarily large?",
+     "o": [
+      "No, because angle of attack is measured against the airflow",
+      "Yes, a high nose always means a large angle of attack",
+      "Only in rain, when the airflow is different",
+      "It is always zero when the plane climbs"
+     ],
+     "a": 0,
+     "why": "Angle of attack compares the chord to the oncoming air, not to the horizon.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from the front of an airfoil to the back.",
+     "items": [
+      "Leading edge",
+      "Thickest part",
+      "Mid-chord",
+      "Trailing edge"
+     ],
+     "why": "The leading edge is first, the thickest part is usually near the front quarter, then mid-chord, then the trailing edge.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do long-distance gliding birds like albatrosses have long, narrow wings?",
+     "rubric": [
+      [
+       "efficient",
+       "less drag",
+       "glide",
+       "gliding",
+       "far",
+       "energy"
+      ],
+      [
+       "long",
+       "narrow",
+       "high aspect",
+       "span"
+      ]
+     ],
+     "min": 1,
+     "model": "Long, narrow wings have a high aspect ratio, which gives lift with little drag from the wingtips. This lets the bird glide a long way using little energy.",
+     "why": "High aspect ratio wings lose less energy at the tips.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each wing word to its meaning.",
+     "pairs": [
+      [
+       "Span",
+       "Wingtip to wingtip"
+      ],
+      [
+       "Chord",
+       "Front to back line"
+      ],
+      [
+       "Camber",
+       "Curve of the airfoil"
+      ],
+      [
+       "Angle of attack",
+       "Angle between chord and airflow"
+      ]
+     ],
+     "why": "These words describe wing shape and orientation.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two rectangular wings have the same area, 20 m². Wing A is 20 m by 1 m; wing B is 5 m by 4 m. Which has the higher aspect ratio?",
+     "o": [
+      "Wing A (400 ÷ 20 = 20)",
+      "Wing B (400 ÷ 20 = 20), because it is wider",
+      "They are equal because the areas match",
+      "It cannot be known without the weight of each wing"
+     ],
+     "a": 0,
+     "why": "Aspect ratio = span² ÷ area. Wing A: 400 ÷ 20 = 20. Wing B: 25 ÷ 20 = 1.25.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why angle of attack matters for the lift a wing makes.",
+     "rubric": [
+      [
+       "angle"
+      ],
+      [
+       "airflow",
+       "air",
+       "flow"
+      ],
+      [
+       "lift",
+       "more",
+       "increases",
+       "larger"
+      ]
+     ],
+     "min": 2,
+     "model": "A larger angle of attack turns the air more and increases lift, up to a point. Past that point the airflow separates from the wing and lift drops, which is called a stall.",
+     "why": "Lift grows with angle of attack until stall.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A symmetric airfoil (top and bottom curves equal) can still make lift because",
+     "o": [
+      "It can be tilted to a positive angle of attack",
+      "It cannot make any lift, because its top and bottom are the same",
+      "It has a lot of camber on the top surface",
+      "It is sharper than other wings, so air bends around it"
+     ],
+     "a": 0,
+     "why": "Tilting a symmetric airfoil into the airflow turns the air downward and creates lift.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The shape of a wing",
+    "model": "A wing's slice is called an airfoil. The front is the leading edge and the back is the trailing edge. The chord is the line between them, and the span is wingtip to wingtip. The angle the wing is tilted into the air is called the angle of attack.",
+    "points": [
+     {
+      "k": [
+       "leading",
+       "front"
+      ],
+      "ask": "What is the front of the wing called?"
+     },
+     {
+      "k": [
+       "chord",
+       "line"
+      ],
+      "ask": "What is the chord?"
+     },
+     {
+      "k": [
+       "span",
+       "wingtip"
+      ],
+      "ask": "How do we measure how wide a wing is?"
+     },
+     {
+      "k": [
+       "angle",
+       "attack",
+       "tilt"
+      ],
+      "ask": "What does angle of attack mean?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Lift generation",
+   "icon": "🛫",
+   "hook": "Some people say the air over the top of a wing must 'catch up' with the air below. Is that how lift really works?",
+   "explain": [
+    "A wing makes lift by changing the airflow. It turns the air downward, and by Newton's third law the air pushes the wing up. At the same time the air over the top moves faster and its pressure drops, while the pressure under the wing is higher. This pressure difference over the wing's area is the lift force. These are two views of the same event.",
+    "The equal transit time idea (the air on top must travel further so it must rush to meet the air below) is a misconception. The air above actually arrives at the trailing edge before the air from below. Speed is not set by a need to meet up.",
+    "Engineers use the lift equation: L = ½ × ρ × v² × S × C_L. Here ρ is air density, v is speed, S is wing area and C_L is the lift coefficient, which depends on airfoil shape and angle of attack. Lift grows with the square of speed, so doubling the speed makes four times the lift."
+   ],
+   "example": {
+    "q": "A wing has area 10 m² and C_L = 1.0. It flies at 40 m/s at sea level (ρ = 1.225 kg/m³). Find the lift.",
+    "steps": [
+     "Write L = ½ × ρ × v² × S × C_L.",
+     "v² = 40² = 1600.",
+     "L = 0.5 × 1.225 × 1600 × 10 × 1.0.",
+     "0.5 × 1.225 = 0.6125; 0.6125 × 1600 = 980; 980 × 10 = 9800."
+    ],
+    "a": "9800 N"
+   },
+   "analogies": {
+    "sea": "A paddle pushes water backward and the canoe goes forward. A wing pushes air downward and is pushed up.",
+    "sport": "Hold your hand flat out of a car window at a slight tilt (with an adult, safely). It rises as air is deflected downward.",
+    "home": "A hair dryer's air hitting a tilted tray pushes the tray up and away.",
+    "nature": "A bird tilts its wings to climb, which turns more air downward."
+   },
+   "mnemonic": "Turn the air down, get pushed up. Pressure low on top, higher below.",
+   "terms": [
+    [
+     "Lift",
+     "The force on a wing at right angles to the oncoming air."
+    ],
+    [
+     "Lift coefficient",
+     "A number showing how well a wing makes lift (C_L)."
+    ],
+    [
+     "Pressure difference",
+     "Higher pressure below, lower above, giving a net upward force."
+    ],
+    [
+     "Equal transit time",
+     "A false idea that air above and below must reach the back together."
+    ]
+   ],
+   "misc": {
+    "wrong": "Air over the top of a wing must meet up with the air below, so it travels faster to catch up.",
+    "right": "This 'equal transit time' idea is a myth. Air over the top actually gets to the trailing edge first. Lift comes from the wing turning the flow downward and from lower pressure on top, which are linked."
+   },
+   "limits": "The lift equation is a model that packs the details into C_L. Real lift depends on flow conditions, and at high speed or large angles it behaves differently.",
+   "trip": {
+    "wiki": "Lift (force)",
+    "prompt": "Find the section on explanations of lift. Which two ideas does it say must both be true?"
+   },
+   "sources": [
+    "Lift (force)",
+    "Bernoulli's principle",
+    "Angle of attack"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which statement about how wings make lift is correct?",
+     "o": [
+      "The wing turns air downward and the pressure is lower on top",
+      "Air on the top and bottom must reach the back at the same time",
+      "Wings work only because of the engine",
+      "Air is not needed"
+     ],
+     "a": 0,
+     "why": "Both the downward turning of the flow and the pressure difference describe lift. Equal transit time is a myth.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In the lift equation L = ½ρv²SC_L, what does S stand for?",
+     "o": [
+      "Wing area",
+      "Speed of the air",
+      "Span of the wing",
+      "Stall angle of the wing"
+     ],
+     "a": 0,
+     "why": "S is the wing area in m².",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1.225 kg/m³, v = 40 m/s, S = 10 m² and C_L = 1.0. What is the lift in newtons?",
+     "a": 9800,
+     "tol": 10,
+     "unit": "N",
+     "why": "L = 0.5 × 1.225 × 1600 × 10 × 1 = 9800 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wing makes 4000 N of lift. If its speed doubles and nothing else changes, what is the new lift in newtons?",
+     "a": 16000,
+     "tol": 10,
+     "unit": "N",
+     "why": "Lift depends on v², so doubling speed gives 2² = 4 times the lift: 4 × 4000 = 16 000 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An aircraft is flying slower during landing. To keep making enough lift it can",
+     "o": [
+      "Raise the angle of attack or extend flaps",
+      "Lower its weight to zero for the landing",
+      "Switch off the engines so it glides more",
+      "Turn the wings upside down for the approach"
+     ],
+     "a": 0,
+     "why": "Increasing C_L with angle of attack or flaps makes up for the lower v².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does the evidence show about air over the top of a wing?",
+     "o": [
+      "It reaches the trailing edge before the air from below",
+      "It arrives later than the air that passed below",
+      "It stops moving at the front of the wing",
+      "It reverses and flows toward the leading edge"
+     ],
+     "a": 0,
+     "why": "The top flow is faster and arrives first, which disproves equal transit time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The same wing flies at the same speed at 10 km height where ρ is much smaller. Compared with sea level, its lift is",
+     "o": [
+      "Smaller",
+      "Larger",
+      "Exactly the same",
+      "Negative"
+     ],
+     "a": 0,
+     "why": "Lift is proportional to ρ, so thinner air gives less lift.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from smallest to largest lift, using L = ½ρv²SC_L with the same ρ, S, C_L.",
+     "items": [
+      "v = 20 m/s",
+      "v = 30 m/s",
+      "v = 40 m/s",
+      "v = 60 m/s"
+     ],
+     "why": "Lift rises with v², so the order of lift follows the order of speed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain, in your own words, one correct reason a wing makes lift.",
+     "rubric": [
+      [
+       "turns",
+       "deflects",
+       "pushes",
+       "bends",
+       "redirects",
+       "downward",
+       "downwash"
+      ],
+      [
+       "air",
+       "airflow",
+       "flow"
+      ],
+      [
+       "pressure",
+       "lower",
+       "higher",
+       "faster"
+      ]
+     ],
+     "min": 2,
+     "model": "The wing is tilted or curved so it turns the air flowing past it downward. The air pushes back up on the wing, and the pressure on top is lower than below, which together make lift.",
+     "why": "Lift is the reaction to turning the airflow, and shows as a pressure difference.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity in the lift equation to its meaning.",
+     "pairs": [
+      [
+       "ρ",
+       "Air density"
+      ],
+      [
+       "v",
+       "Speed through the air"
+      ],
+      [
+       "S",
+       "Wing area"
+      ],
+      [
+       "C_L",
+       "Lift coefficient"
+      ]
+     ],
+     "why": "The lift equation combines these four quantities.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student claims 'a flat plate tilted into the wind cannot make lift because the top and bottom are the same length'. What is the best answer?",
+     "o": [
+      "It can, because it turns the air downward at an angle of attack",
+      "It cannot, because lift needs a top and bottom of different lengths",
+      "Only curved wings can ever make lift in air",
+      "Flat plates make drag only and never any lift"
+     ],
+     "a": 0,
+     "why": "A tilted flat plate deflects air and makes lift, which refutes the equal transit time idea.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a plane need a longer take-off run on a hot day at a high-altitude airport?",
+     "rubric": [
+      [
+       "density",
+       "thin",
+       "thinner",
+       "less dense",
+       "less air"
+      ],
+      [
+       "lift",
+       "speed",
+       "faster",
+       "longer"
+      ],
+      [
+       "hot",
+       "warm",
+       "high",
+       "altitude"
+      ]
+     ],
+     "min": 2,
+     "model": "Hot air and high altitude both reduce air density. With lower density the wings need more speed to make enough lift, so the take-off run is longer.",
+     "why": "Lift ∝ ρv², so lower ρ needs higher v.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Newton's third law explains lift because",
+     "o": [
+      "If the wing pushes air down, the air pushes the wing up",
+      "The wing pushes air upward, so the air pushes the wing down",
+      "Air does not push back on a wing at all",
+      "Gravity reverses when the wing moves through the air"
+     ],
+     "a": 0,
+     "why": "Downward momentum given to air is matched by an upward force on the wing.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a wing makes lift",
+    "model": "A wing is tilted into the air and shaped so it turns the air downward. The air pushes the wing back up, and the pressure on top is lower than underneath. Lift grows with speed, wing area and air density.",
+    "points": [
+     {
+      "k": [
+       "turn",
+       "turns",
+       "down",
+       "downward",
+       "deflect",
+       "bend"
+      ],
+      "ask": "What does the wing do to the air?"
+     },
+     {
+      "k": [
+       "push",
+       "pushes",
+       "reaction",
+       "third law"
+      ],
+      "ask": "How does that give an upward force?"
+     },
+     {
+      "k": [
+       "pressure",
+       "lower",
+       "higher"
+      ],
+      "ask": "What about the pressure?"
+     },
+     {
+      "k": [
+       "speed",
+       "faster",
+       "area",
+       "density"
+      ],
+      "ask": "What makes lift bigger?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Aircraft stability fundamentals",
+   "icon": "🎯",
+   "hook": "A paper dart with the wrong weight in the nose tumbles; one with the right balance glides steadily. Why does balance matter?",
+   "explain": [
+    "An aircraft is stable if, after a small disturbance such as a gust, it tends to return to its original flight. It is unstable if the disturbance grows, and neutrally stable if it just stays disturbed.",
+    "Balance depends on the centre of gravity (CG), where the weight acts, and the centre of pressure, where the lift effectively acts. The tailplane, a small wing at the back, helps by pushing down or up to keep the nose steady. A CG that is too far back makes an aircraft hard or impossible to control.",
+    "Aircraft move about three axes: pitch (nose up and down), roll (one wing up, the other down) and yaw (nose left or right). Each axis can be stable. A tail fin helps yaw stability, and wings angled slightly upward (dihedral) help roll stability."
+   ],
+   "example": {
+    "q": "A seesaw has a 20 kg child 2 m from the pivot. How heavy is a child on the other side if 1 m from the pivot, to balance it?",
+    "steps": [
+     "Balance when mass × distance matches on both sides.",
+     "20 × 2 = 40.",
+     "Need m × 1 = 40, so m = 40 kg."
+    ],
+    "a": "40 kg"
+   },
+   "analogies": {
+    "sea": "A boat with a heavy keel rights itself after a wave. That is stability.",
+    "sport": "A bicycle is stable when rolling but wobbles at very slow speeds.",
+    "home": "A ball in a bowl rolls back to the middle (stable). A ball on top of an upside-down bowl rolls away (unstable).",
+    "farm": "A loaded cart with the load far back may tip its front up."
+   },
+   "mnemonic": "Ball in a bowl comes back; ball on a hill rolls away.",
+   "terms": [
+    [
+     "Stable",
+     "Returns to its original state after a disturbance."
+    ],
+    [
+     "Centre of gravity",
+     "The point where the weight seems to act."
+    ],
+    [
+     "Pitch",
+     "Nose up or down."
+    ],
+    [
+     "Roll",
+     "Tilting one wing up and the other down."
+    ],
+    [
+     "Yaw",
+     "Nose turning left or right."
+    ]
+   ],
+   "misc": {
+    "wrong": "More stable is always better for every aircraft.",
+    "right": "Very stable aircraft are harder to manoeuvre. Airliners favour stability; some fighters are made nearly unstable so they respond fast, with computers helping to control them."
+   },
+   "limits": "This level uses simple ideas. Full stability analysis uses equations for forces and moments about each axis.",
+   "trip": {
+    "wiki": "Flight dynamics (fixed-wing aircraft)",
+    "prompt": "Find the picture showing pitch, roll and yaw axes. Which axis runs along the fuselage?"
+   },
+   "sources": [
+    "Flight dynamics (fixed-wing aircraft)",
+    "Aircraft principal axes",
+    "Center of mass"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A gust tilts an aircraft's nose up, and it drifts back to level by itself. This aircraft is",
+     "o": [
+      "Stable in pitch",
+      "Unstable in pitch",
+      "Out of fuel",
+      "Rolling"
+     ],
+     "a": 0,
+     "why": "Returning after a disturbance is stability.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which motion is 'yaw'?",
+     "o": [
+      "Nose turning left or right",
+      "The nose going up or down",
+      "One wing going up and the other going down",
+      "The whole aircraft moving backward"
+     ],
+     "a": 0,
+     "why": "Yaw is rotation about the vertical axis.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which motion is 'roll'?",
+     "o": [
+      "One wing rises and the other falls",
+      "The nose pointing up or down",
+      "The nose pointing left or right",
+      "The aircraft flying backward"
+     ],
+     "a": 0,
+     "why": "Roll is rotation about the axis along the fuselage.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A seesaw balances when mass × distance is equal on both sides. A 30 kg child sits 1.5 m from the pivot. How far from the pivot must a 45 kg child sit, in metres?",
+     "a": 1,
+     "tol": 0.02,
+     "unit": "m",
+     "why": "30 × 1.5 = 45. Then 45 × d = 45 gives d = 1 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a tailplane help an aircraft?",
+     "o": [
+      "It helps keep the nose steady in pitch",
+      "It pushes the plane forward like an engine does",
+      "It stores the fuel for the whole flight",
+      "It is only there for show and does nothing"
+     ],
+     "a": 0,
+     "why": "The tailplane produces a force that opposes pitch disturbances.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pilot loads heavy baggage in the very back of a small plane. Why is this dangerous?",
+     "o": [
+      "The centre of gravity moves back and can make the plane hard to control",
+      "The plane gets slower for ever after take-off, however it flies",
+      "The wings fall off because of the load behind them",
+      "There is no danger as long as the bags are tied down"
+     ],
+     "a": 0,
+     "why": "A CG too far back reduces stability, so pitch can run away.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an unstable situation?",
+     "o": [
+      "A ball balanced on top of a hill",
+      "A ball in a bowl",
+      "A heavy-bottomed toy that stands up again",
+      "A kite with a tail that flies steadily"
+     ],
+     "a": 0,
+     "why": "On the hill a small push makes the ball roll further away.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each axis motion to the direction it moves.",
+     "pairs": [
+      [
+       "Pitch",
+       "Nose up or down"
+      ],
+      [
+       "Roll",
+       "Wing up, wing down"
+      ],
+      [
+       "Yaw",
+       "Nose left or right"
+      ]
+     ],
+     "why": "The three axes describe all rotations of an aircraft.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why are airliners built to be very stable, even though that makes them slower to respond?",
+     "rubric": [
+      [
+       "safe",
+       "safety",
+       "comfort",
+       "steady",
+       "smooth",
+       "passenger"
+      ],
+      [
+       "stable",
+       "stability",
+       "return",
+       "recover",
+       "level"
+      ]
+     ],
+     "min": 1,
+     "model": "Airliners are designed for safe and comfortable flight. A very stable aircraft recovers from gusts by itself and is easy to fly for long journeys, so slow response is acceptable.",
+     "why": "Stability favours safety and comfort over agility.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "A gust lifts an aircraft's nose in a stable aircraft. Put the recovery in order.",
+     "items": [
+      "Gust raises the nose",
+      "Restoring force opposes the pitch up",
+      "Nose moves back down",
+      "Aircraft returns to steady flight"
+     ],
+     "why": "A stable aircraft produces a force that opposes the disturbance.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fighter is made slightly unstable on purpose. What advantage does it give?",
+     "o": [
+      "It responds very quickly to control inputs",
+      "It is easier to fly without any help from a computer",
+      "It needs no tail at all, so it is simply lighter",
+      "It never moves, which keeps it perfectly steady"
+     ],
+     "a": 0,
+     "why": "An unstable aircraft changes direction fast, but needs computers to keep it flying.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a darts' tail of feathers (flights) make it fly nose first?",
+     "o": [
+      "The tail creates a restoring force when the dart yaws or pitches",
+      "Feathers make the dart heavier at the front end",
+      "Air does not touch feathers on a flying dart",
+      "Feathers push the dart forward like tiny engines"
+     ],
+     "a": 0,
+     "why": "The tail acts like a weather vane and pulls the back in line with the flow.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does wing dihedral (wings tilted up in a shallow V) help roll stability?",
+     "rubric": [
+      [
+       "roll",
+       "tilt",
+       "bank",
+       "lower wing",
+       "one wing"
+      ],
+      [
+       "more lift",
+       "lift",
+       "angle of attack",
+       "sideways",
+       "restor",
+       "back to level",
+       "levels"
+      ]
+     ],
+     "min": 2,
+     "model": "If one wing dips, the lower wing meets the airflow at a higher effective angle and makes more lift. That lifts the low wing and levels the aircraft.",
+     "why": "Dihedral gives a restoring rolling effect when the aircraft slips sideways.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What makes an aircraft stable",
+    "model": "A stable aircraft returns to steady flight after a gust. Its weight must be balanced well, and its tail helps keep the nose steady. A ball in a bowl is a good picture: push it and it rolls back.",
+    "points": [
+     {
+      "k": [
+       "return",
+       "returns",
+       "back",
+       "recover"
+      ],
+      "ask": "What does stable mean?"
+     },
+     {
+      "k": [
+       "tail",
+       "tailplane",
+       "fin"
+      ],
+      "ask": "What part helps keep a plane steady?"
+     },
+     {
+      "k": [
+       "balance",
+       "centre of gravity",
+       "weight"
+      ],
+      "ask": "Does where the weight sits matter?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Aircraft control surfaces",
+   "icon": "🎛️",
+   "hook": "A plane has no steering wheel. How does the pilot make it climb, dip or turn?",
+   "explain": [
+    "Control surfaces are movable parts of the wings and tail. Moving one changes the airflow around it and so changes the force on the aircraft. The pilot uses them to turn the aircraft about its three axes.",
+    "Elevators on the tailplane control pitch: raising the elevator pushes the tail down and the nose up. Ailerons on the wing tips control roll: one goes up while the other goes down. The rudder on the tail fin controls yaw.",
+    "To turn, a pilot banks (rolls) the aircraft using the ailerons, so the lift tilts toward the inside of the turn. The rudder keeps the turn coordinated. Flaps on the inner wings change the wing's shape to make more lift at low speeds, which helps with take-off and landing."
+   ],
+   "example": {
+    "q": "The pilot wants the nose to rise. Which surface moves, and how?",
+    "steps": [
+     "Nose up and down is pitch.",
+     "Elevators control pitch.",
+     "Raise the elevator trailing edge so the tail is pushed down and the nose lifts."
+    ],
+    "a": "Raise the elevator"
+   },
+   "analogies": {
+    "sea": "A boat's rudder swings to turn the boat. The plane's rudder turns its nose left or right.",
+    "sport": "A diver tucks or stretches arms to turn in the air, like moving control surfaces.",
+    "home": "A door hinge: a small movable flap changes a bigger thing's behaviour.",
+    "city": "A bus driver turns a wheel to steer; a pilot moves control surfaces."
+   },
+   "mnemonic": "Elevator = nose up/down, Ailerons = roll, Rudder = yaw.",
+   "terms": [
+    [
+     "Elevator",
+     "Tail surface that controls pitch."
+    ],
+    [
+     "Aileron",
+     "Wing-tip surface that controls roll."
+    ],
+    [
+     "Rudder",
+     "Tail-fin surface that controls yaw."
+    ],
+    [
+     "Flap",
+     "Surface that adds lift at low speed."
+    ]
+   ],
+   "misc": {
+    "wrong": "A plane turns by using the rudder alone, like a boat.",
+    "right": "A plane mainly turns by banking: the tilted lift force pulls it round. The rudder only helps keep the turn smooth."
+   },
+   "limits": "Many aircraft also use spoilers, trim tabs and fly-by-wire computers. Controls and names vary between designs.",
+   "trip": {
+    "wiki": "Aircraft flight control system",
+    "prompt": "Find the picture of control surfaces. Which are the ailerons, elevator and rudder?"
+   },
+   "sources": [
+    "Aircraft flight control system",
+    "Aileron",
+    "Elevator (aeronautics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which control surface controls pitch?",
+     "o": [
+      "Elevator",
+      "Aileron",
+      "Rudder",
+      "Flap"
+     ],
+     "a": 0,
+     "why": "Elevators move the nose up and down.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which control surface mainly controls roll?",
+     "o": [
+      "Ailerons",
+      "Rudder",
+      "Elevators",
+      "Landing gear"
+     ],
+     "a": 0,
+     "why": "Ailerons raise one wing and lower the other.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which control surface controls yaw?",
+     "o": [
+      "Rudder",
+      "Elevator",
+      "Flaps",
+      "Spoilers only"
+     ],
+     "a": 0,
+     "why": "The rudder swings the nose left or right.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "When the right aileron goes up and the left aileron goes down, the aircraft",
+     "o": [
+      "Rolls to the right",
+      "Rolls to the left",
+      "Pitches the nose up",
+      "Yaws only, without any roll"
+     ],
+     "a": 0,
+     "why": "The up aileron reduces lift on the right wing, so it drops, causing a roll to the right.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do pilots extend flaps for landing?",
+     "o": [
+      "To make more lift at a low speed",
+      "To make the aircraft heavier so it sinks",
+      "To stop the engine from running too hot",
+      "To hide the wheels inside the wing"
+     ],
+     "a": 0,
+     "why": "Flaps raise the lift coefficient, so lift stays enough at lower speed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "To turn left, a pilot mainly",
+     "o": [
+      "Banks the aircraft left",
+      "Uses only the rudder",
+      "Raises the flaps",
+      "Lowers the landing gear"
+     ],
+     "a": 0,
+     "why": "Banking tilts the lift force toward the inside, which pulls the aircraft round.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each surface to its job.",
+     "pairs": [
+      [
+       "Elevator",
+       "Pitch"
+      ],
+      [
+       "Aileron",
+       "Roll"
+      ],
+      [
+       "Rudder",
+       "Yaw"
+      ],
+      [
+       "Flap",
+       "More lift at low speed"
+      ]
+     ],
+     "why": "Each moves the aircraft about a different axis or adds lift.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these steps for a left turn in order.",
+     "items": [
+      "Pilot moves ailerons to roll left",
+      "Aircraft banks",
+      "Lift tilts toward the left",
+      "Aircraft turns left"
+     ],
+     "why": "Banking tilts lift sideways, giving a force that turns the flight path.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how raising the elevator makes the aircraft's nose go up.",
+     "rubric": [
+      [
+       "tail"
+      ],
+      [
+       "down",
+       "downward"
+      ],
+      [
+       "force",
+       "push",
+       "pushes",
+       "lift"
+      ],
+      [
+       "nose"
+      ]
+     ],
+     "min": 2,
+     "model": "Raising the elevator changes the tailplane's shape so the tail gets a downward force. The tail goes down and the nose rises.",
+     "why": "The elevator changes the tail's lift, which rotates the aircraft about its pitch axis.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are ailerons on the wing tips, not near the fuselage?",
+     "o": [
+      "A force far from the centre makes a stronger rolling turn",
+      "Wing tips are warmer, so the controls work better",
+      "Air is thicker at the tips than near the body",
+      "They are lighter there, so the wing can be thinner and strong"
+     ],
+     "a": 0,
+     "why": "Twisting effect equals force times distance, so surfaces far out are more effective.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A car turns with its wheels. Why can't a plane turn the same way on its own in the air?",
+     "o": [
+      "There is no ground to grip, so it changes the forces from the air",
+      "Planes have no engines to turn with",
+      "Air has no pressure, so it cannot push a wing",
+      "Planes are too big to be turned at all"
+     ],
+     "a": 0,
+     "why": "In the air a plane changes direction by changing the air forces on it, mainly by banking.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "When a pilot banks, why must the pilot also pull back a little on the elevator?",
+     "rubric": [
+      [
+       "lift",
+       "vertical"
+      ],
+      [
+       "tilt",
+       "tilted",
+       "bank",
+       "banked",
+       "component",
+       "less"
+      ],
+      [
+       "weight",
+       "height",
+       "descend",
+       "lose height",
+       "sink",
+       "more lift"
+      ]
+     ],
+     "min": 2,
+     "model": "When banked, part of the lift points sideways, so less points up. To balance the weight and not lose height, the pilot raises the angle of attack with the elevator to make more total lift.",
+     "why": "Total lift must rise in a turn so its vertical part still equals weight.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is correct?",
+     "o": [
+      "Control surfaces change forces by changing airflow",
+      "Control surfaces work even in a vacuum",
+      "They only work when the plane is at zero speed",
+      "They add weight only and change no forces"
+     ],
+     "a": 0,
+     "why": "They depend on air flowing past them.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a pilot steers",
+    "model": "A plane steers by moving flaps on the wings and tail. The elevator moves the nose up and down, the ailerons roll the wings, and the rudder turns the nose left or right. To turn, the plane banks so the lift pulls it round.",
+    "points": [
+     {
+      "k": [
+       "elevator"
+      ],
+      "ask": "What makes the nose go up and down?"
+     },
+     {
+      "k": [
+       "aileron",
+       "ailerons"
+      ],
+      "ask": "What makes the wings roll?"
+     },
+     {
+      "k": [
+       "rudder"
+      ],
+      "ask": "What swings the nose left or right?"
+     },
+     {
+      "k": [
+       "bank",
+       "tilt",
+       "tilts",
+       "lean"
+      ],
+      "ask": "How does a plane actually turn?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Aircraft propulsion",
+   "icon": "🛩️",
+   "hook": "A propeller plane and a jet airliner look very different, but both push air backward. Why does pushing air back move a plane forward?",
+   "explain": [
+    "Thrust is made by pushing a lot of air (or gas) backward. By Newton's third law, the air pushes the aircraft forward. A propeller is a set of spinning twisted blades, which act like small rotating wings that pull the aircraft forward. It accelerates a large amount of air by a small amount.",
+    "A jet engine takes in air, compresses it, burns fuel with it and shoots hot gas out of the back much faster than the incoming air. A turbofan, used on airliners, also has a big fan that pushes extra air around the core, which is efficient and quieter.",
+    "A useful number is thrust-to-weight ratio: thrust divided by weight. A ratio above 1 means the engines could lift the aircraft straight up; most airliners are about 0.2 to 0.3, while rockets and some fighters are above 1."
+   ],
+   "example": {
+    "q": "A model rocket has mass 0.5 kg and its motor gives 15 N of thrust. Use g = 9.81 m/s². What is the thrust-to-weight ratio?",
+    "steps": [
+     "Weight = 0.5 × 9.81 = 4.905 N.",
+     "Ratio = thrust ÷ weight.",
+     "15 ÷ 4.905 = 3.06."
+    ],
+    "a": "About 3.06"
+   },
+   "analogies": {
+    "sea": "A motorboat's propeller pushes water back and the boat moves forward.",
+    "home": "A desk fan blows air one way and, on wheels, would be pushed the other way.",
+    "sport": "A swimmer pushes water behind them to move ahead.",
+    "nature": "A squid squirts water backward to shoot forward."
+   },
+   "mnemonic": "Push air back, plane goes ahead. Thrust over weight tells you if it can climb straight up.",
+   "terms": [
+    [
+     "Propeller",
+     "Twisted spinning blades that push air backward."
+    ],
+    [
+     "Turbojet",
+     "An engine that makes thrust from a fast jet of hot gas."
+    ],
+    [
+     "Turbofan",
+     "A jet engine with a large fan that moves extra air."
+    ],
+    [
+     "Thrust-to-weight ratio",
+     "Thrust divided by weight."
+    ]
+   ],
+   "misc": {
+    "wrong": "A jet pushes against the air behind it, so it could not work in space.",
+    "right": "Thrust comes from throwing mass backward, not from pushing on outside air. Rockets carry their own propellant and work in space; jet engines need air for burning, so they do not."
+   },
+   "limits": "Engine performance depends on speed, altitude and air density. The simple thrust-to-weight number is for one moment, not the whole flight.",
+   "trip": {
+    "wiki": "Turbofan",
+    "prompt": "Find the diagram of a turbofan. Where does the air going round the core go?"
+   },
+   "sources": [
+    "Turbofan",
+    "Propeller (aeronautics)",
+    "Thrust-to-weight ratio"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How does a propeller make thrust?",
+     "o": [
+      "It pushes air backward",
+      "It pulls the plane along the ground",
+      "It heats the wing so it lifts",
+      "It cools the engine as it spins"
+     ],
+     "a": 0,
+     "why": "Pushing air back gives a forward reaction force.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do jet engines need from the atmosphere?",
+     "o": [
+      "Air for burning fuel",
+      "Water to cool the flame inside",
+      "Sand to clean the engine blades",
+      "Nothing at all from the air"
+     ],
+     "a": 0,
+     "why": "They take in air to burn fuel with it.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "An aircraft has weight 50 000 N and its engines give 15 000 N of thrust. What is the thrust-to-weight ratio?",
+     "a": 0.3,
+     "tol": 0.01,
+     "why": "15 000 ÷ 50 000 = 0.3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A toy rocket has mass 0.2 kg and thrust 6 N. Use g = 9.81 m/s². What is its thrust-to-weight ratio (give 2 decimal places)?",
+     "a": 3.06,
+     "tol": 0.02,
+     "why": "Weight = 0.2 × 9.81 = 1.962 N. Then 6 ÷ 1.962 = 3.06.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A thrust-to-weight ratio greater than 1 means",
+     "o": [
+      "The thrust is more than the weight, so it could climb straight up",
+      "The aircraft cannot fly at all",
+      "The engine is switched off",
+      "The weight of the aircraft is zero"
+     ],
+     "a": 0,
+     "why": "Thrust exceeding weight can overcome gravity directly.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does an airliner with a thrust-to-weight ratio of only about 0.25 still fly well?",
+     "o": [
+      "Its wings make the lift, so thrust only needs to beat drag",
+      "It has hidden rockets that fire when it needs more power",
+      "It does not obey gravity as smaller planes do",
+      "The ratio given is wrong; it should really be above 1"
+     ],
+     "a": 0,
+     "why": "Wings hold the weight; thrust only needs to match drag.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which engine would work in space?",
+     "o": [
+      "A rocket",
+      "A turbofan",
+      "A propeller",
+      "A piston engine with a propeller"
+     ],
+     "a": 0,
+     "why": "Rockets carry their own propellant. The others need air.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each engine to a key idea.",
+     "pairs": [
+      [
+       "Propeller",
+       "Spinning twisted blades push air back"
+      ],
+      [
+       "Turbojet",
+       "Fast jet of hot gas"
+      ],
+      [
+       "Turbofan",
+       "Big fan moves extra air"
+      ],
+      [
+       "Rocket",
+       "Carries its own propellant"
+      ]
+     ],
+     "why": "Different engines all make thrust by pushing mass backward.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the stages of a basic jet engine in order.",
+     "items": [
+      "Air enters",
+      "Air is compressed",
+      "Fuel burns with the air",
+      "Hot gas leaves at the back"
+     ],
+     "why": "Compress before burning so the burning is efficient; the exit jet gives thrust.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a propeller aircraft moves forward when the propeller pushes air backward.",
+     "rubric": [
+      [
+       "third law",
+       "reaction",
+       "equal and opposite",
+       "pushes back",
+       "pushes forward",
+       "forward force"
+      ],
+      [
+       "air"
+      ],
+      [
+       "backward",
+       "back",
+       "behind"
+      ]
+     ],
+     "min": 2,
+     "model": "The propeller accelerates air backward. By Newton's third law the air pushes the propeller, and the aircraft, forward with an equal force.",
+     "why": "Thrust is the reaction to throwing air backward.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is the best reason a turbofan is more efficient at airliner speeds than a pure turbojet?",
+     "o": [
+      "It moves a larger mass of air by a smaller speed change",
+      "It burns no fuel at all",
+      "It has no air intake, so it is quieter",
+      "It is lighter than air so it floats up"
+     ],
+     "a": 0,
+     "why": "Thrust is mass flow times speed change. Moving more air more slowly wastes less kinetic energy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student says a rocket works by pushing against the ground. Explain what is wrong.",
+     "rubric": [
+      [
+       "gas",
+       "exhaust",
+       "hot gas",
+       "propellant",
+       "fuel"
+      ],
+      [
+       "backward",
+       "out",
+       "downward",
+       "back"
+      ],
+      [
+       "space",
+       "no ground",
+       "air",
+       "anything",
+       "reaction",
+       "third law"
+      ]
+     ],
+     "min": 2,
+     "model": "A rocket throws exhaust gas backward, and the gas pushes the rocket forward. It does not need the ground or air, so it works in space.",
+     "why": "Thrust comes from expelling mass, not from pushing on external objects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the engine thrust of a cruising aircraft is 20 kN, drag must be about",
+     "o": [
+      "20 kN",
+      "0 kN",
+      "40 kN",
+      "The weight"
+     ],
+     "a": 0,
+     "why": "Steady speed in level flight means thrust equals drag.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How engines push planes",
+    "model": "An engine pushes air or gas backward, and the push-back moves the plane forward. A propeller does this with spinning blades. A jet engine burns fuel in compressed air and shoots hot gas out of the back.",
+    "points": [
+     {
+      "k": [
+       "push",
+       "pushes",
+       "backward",
+       "back"
+      ],
+      "ask": "What does an engine push, and which way?"
+     },
+     {
+      "k": [
+       "reaction",
+       "forward",
+       "third law"
+      ],
+      "ask": "Why does that move the plane forward?"
+     },
+     {
+      "k": [
+       "propeller",
+       "blades",
+       "jet",
+       "fuel"
+      ],
+      "ask": "What kinds of engines are there?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Basic flight manoeuvres",
+   "icon": "🔄",
+   "hook": "Every flight has the same basic steps: take off, climb, cruise, descend and land. What does the pilot change at each step?",
+   "explain": [
+    "Take-off: the aircraft speeds up on the runway until its wings make more lift than its weight. Then the pilot raises the nose a little (rotation) and it leaves the ground.",
+    "Climb: the aircraft needs extra lift or power to gain height. Cruise is steady level flight. In a descent the pilot lowers power or the nose, and the aircraft trades height for speed or lower power. A glider turns height into forward motion.",
+    "In a turn the aircraft banks, so part of the lift points sideways and pulls the flight path round. Landing reverses take-off: the pilot slows down, extends flaps, lines up with the runway, and flares gently so the wheels touch the runway softly."
+   ],
+   "example": {
+    "q": "An aircraft climbs at a steady 5 m/s. How long does it take to climb 300 m?",
+    "steps": [
+     "Time = height ÷ climb rate.",
+     "300 ÷ 5 = 60.",
+     "Units: m ÷ (m/s) = s."
+    ],
+    "a": "60 s"
+   },
+   "analogies": {
+    "sport": "A cyclist shifts gears for a hill. A pilot adds power for a climb.",
+    "city": "A bus slows before a stop, much like a plane slows before landing.",
+    "sea": "A sailboat leans (heels) as it turns. A plane banks as it turns.",
+    "home": "Going up the stairs takes effort; coming down is easy. A plane's climb takes extra power."
+   },
+   "mnemonic": "Roll, rotate, climb, cruise, descend, flare, land.",
+   "terms": [
+    [
+     "Rotation",
+     "Raising the nose at take-off speed."
+    ],
+    [
+     "Bank",
+     "Tilting the wings in a turn."
+    ],
+    [
+     "Climb rate",
+     "How fast height is gained, in m/s."
+    ],
+    [
+     "Flare",
+     "A small nose-up change just before touchdown."
+    ]
+   ],
+   "misc": {
+    "wrong": "A plane lifts off simply when the engine gets strong enough.",
+    "right": "A plane lifts off when its speed is high enough for the wings to make lift equal to or greater than its weight."
+   },
+   "limits": "This is a simplified view. Real flight procedures include many checks, weather limits and instructions from air traffic control. The game is educational, not pilot training.",
+   "trip": {
+    "wiki": "Takeoff",
+    "prompt": "Find the stages of take-off. What happens at rotation?"
+   },
+   "sources": [
+    "Takeoff",
+    "Landing",
+    "Banked turn"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What must happen before an aircraft can leave the runway?",
+     "o": [
+      "Wings must make enough lift",
+      "The doors must be closed only",
+      "The wheels must stop",
+      "The engines must turn off"
+     ],
+     "a": 0,
+     "why": "Lift must reach about the aircraft's weight.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A helicopter climbs at 4 m/s. How many seconds does it need to gain 120 m?",
+     "a": 30,
+     "tol": 0.1,
+     "unit": "s",
+     "why": "120 ÷ 4 = 30 s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An aircraft descends 2400 m at 8 m/s. How long does the descent take, in seconds?",
+     "a": 300,
+     "tol": 1,
+     "unit": "s",
+     "why": "2400 ÷ 8 = 300 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does 'banking' mean?",
+     "o": [
+      "Tilting the wings in a turn",
+      "Going to a money bank near the airport",
+      "Flying backward for a short time",
+      "Dropping the wheels to slow down"
+     ],
+     "a": 0,
+     "why": "Banking is rolling the aircraft into a turn.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why do pilots like to take off facing into the wind?",
+     "o": [
+      "More air flows over the wings at a lower ground speed",
+      "The wind pushes down on the plane, helping it stay on the runway",
+      "Wind makes the runway longer for the plane",
+      "Wind helps the radio signal reach the tower"
+     ],
+     "a": 0,
+     "why": "Airspeed is what makes lift, so a headwind helps reach flying speed sooner.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "During a banked turn the lift force",
+     "o": [
+      "Tilts so part of it points toward the centre of the turn",
+      "Becomes zero because the wings are tilted",
+      "Points straight down toward the ground",
+      "Is replaced by drag until the turn is finished"
+     ],
+     "a": 0,
+     "why": "The sideways part of the lift provides the force that curves the path.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these flight phases in order.",
+     "items": [
+      "Take-off",
+      "Climb",
+      "Cruise",
+      "Descent",
+      "Landing"
+     ],
+     "why": "This is the usual order of a flight.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a plane land at a lower speed than it cruises?",
+     "o": [
+      "It extends flaps and slows so it can touch down gently",
+      "Its engines cannot run fast near the ground",
+      "Gravity gets stronger close to the runway",
+      "Runways become slippery at higher speeds"
+     ],
+     "a": 0,
+     "why": "Slower, flap-assisted flight means a safe, short landing.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why an aircraft must make more total lift when it banks in a level turn.",
+     "rubric": [
+      [
+       "tilt",
+       "tilted",
+       "bank",
+       "banked",
+       "sideways"
+      ],
+      [
+       "vertical",
+       "upward",
+       "weight",
+       "height"
+      ],
+      [
+       "more",
+       "greater",
+       "larger",
+       "increase"
+      ]
+     ],
+     "min": 2,
+     "model": "In a bank, part of the lift points sideways. The upward part must still equal the weight to hold height, so the total lift must be larger.",
+     "why": "The vertical part of lift equals total lift times cos of the bank angle, which is less than total lift.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each word to its meaning.",
+     "pairs": [
+      [
+       "Rotation",
+       "Raising the nose at take-off speed"
+      ],
+      [
+       "Cruise",
+       "Steady level flight"
+      ],
+      [
+       "Flare",
+       "Slight nose-up before touchdown"
+      ],
+      [
+       "Descent",
+       "Losing height"
+      ]
+     ],
+     "why": "These terms describe parts of a flight.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A glider has no engine. How can it gain height?",
+     "o": [
+      "By finding rising air such as thermals",
+      "By reversing gravity for a short while",
+      "By using thrust from the wind alone",
+      "It cannot ever gain height at all"
+     ],
+     "a": 0,
+     "why": "Rising warm air lifts the glider, which can circle in it to gain height.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a bigger load mean a longer take-off run?",
+     "o": [
+      "It needs a higher speed to make more lift",
+      "It reduces drag, so the plane needs less speed",
+      "The wheels get smaller when the plane is full",
+      "The air gets thicker when the plane carries more"
+     ],
+     "a": 0,
+     "why": "More weight needs more lift, so a higher speed is needed, which takes longer on the runway.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a go-around (aborting a landing and flying again) a normal safety procedure?",
+     "rubric": [
+      [
+       "safe",
+       "safety",
+       "unsafe",
+       "not stable",
+       "not aligned",
+       "blocked",
+       "wrong",
+       "too fast",
+       "too high"
+      ],
+      [
+       "landing",
+       "runway",
+       "approach"
+      ]
+     ],
+     "min": 1,
+     "model": "If the approach is unstable or the runway is not clear, it is safer to climb away and try again than to force a landing.",
+     "why": "Safe flying means giving up a bad approach.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The steps of a flight",
+    "model": "A flight starts with take-off, when speed gives the wings enough lift. Then the plane climbs and cruises level. To turn, it banks so lift tilts. At the end it slows, extends flaps and lands gently.",
+    "points": [
+     {
+      "k": [
+       "take-off",
+       "takeoff",
+       "speed",
+       "lift"
+      ],
+      "ask": "What lets the plane leave the ground?"
+     },
+     {
+      "k": [
+       "bank",
+       "tilt",
+       "turn"
+      ],
+      "ask": "How does a plane turn?"
+     },
+     {
+      "k": [
+       "slow",
+       "flaps",
+       "land",
+       "landing"
+      ],
+      "ask": "How does it land safely?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Rocket motion fundamentals",
+   "icon": "🚀",
+   "hook": "Rockets work in empty space where there is nothing to push against. And to stay in orbit, a satellite must be going very fast sideways. Why?",
+   "explain": [
+    "A rocket makes thrust by throwing propellant out of its nozzle at high speed. By Newton's third law, the propellant pushes the rocket the other way. To lift off, thrust must be bigger than weight, so the thrust-to-weight ratio must be above 1.",
+    "As fuel burns, the rocket gets lighter, so the same thrust gives more acceleration. A rocket also drops empty tanks in stages so it does not carry dead weight. The more speed needed and the lighter the exhaust speed, the more propellant is required. That idea is the rocket equation, which you will meet later with numbers.",
+    "A satellite stays up because it is falling around Earth. It moves sideways so fast, about 7.8 km/s (7800 m/s) for a low orbit, that as it falls the ground curves away beneath it. It is not 'beyond gravity': gravity there is still strong."
+   ],
+   "example": {
+    "q": "A rocket of mass 500 kg has thrust 10 000 N. Use g = 9.81 m/s², ignoring air resistance. What is its upward acceleration at lift-off?",
+    "steps": [
+     "Weight = 500 × 9.81 = 4905 N.",
+     "Resultant = 10 000 − 4905 = 5095 N.",
+     "a = 5095 ÷ 500 = 10.19 m/s²."
+    ],
+    "a": "About 10.2 m/s²"
+   },
+   "analogies": {
+    "sport": "A skater on ice who throws a heavy ball forward slides backward.",
+    "sea": "A person in a canoe throwing a heavy bag backward makes the canoe move forward.",
+    "nature": "A squid ejects water to jet away.",
+    "tech": "A space probe uses small thrusters to adjust its path."
+   },
+   "mnemonic": "Throw mass back, go forward. To orbit, go sideways fast and keep falling around.",
+   "terms": [
+    [
+     "Propellant",
+     "The fuel and oxidiser a rocket uses to make thrust."
+    ],
+    [
+     "Stage",
+     "A part of a rocket dropped once its fuel is used up."
+    ],
+    [
+     "Orbit",
+     "The curved path of a falling object that keeps missing the ground."
+    ],
+    [
+     "Orbital speed",
+     "The sideways speed needed to stay in orbit, about 7.8 km/s near Earth."
+    ]
+   ],
+   "misc": {
+    "wrong": "Astronauts float in orbit because there is no gravity there.",
+    "right": "Gravity at orbit height is about 90% of its value at the ground. Astronauts float because they and their spacecraft are in free fall together."
+   },
+   "limits": "The numbers here ignore air drag and the Earth's rotation. Real launches follow carefully planned curved paths. The game is educational and does not replace real engineering training.",
+   "trip": {
+    "wiki": "Orbit",
+    "prompt": "Find Newton's cannonball picture. What happens when the cannonball is fired faster each time?"
+   },
+   "sources": [
+    "Rocket",
+    "Orbit",
+    "Newton's cannonball"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What must be true for a rocket to lift off the pad?",
+     "o": [
+      "Thrust must be greater than weight",
+      "Thrust must be exactly zero",
+      "The air must be thick enough for wings",
+      "Weight must be exactly zero"
+     ],
+     "a": 0,
+     "why": "Only if thrust beats weight is there an upward resultant force.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A rocket of mass 500 kg has thrust 10 000 N. Use g = 9.81 m/s². What is its upward acceleration at lift-off in m/s², ignoring air drag?",
+     "a": 10.19,
+     "tol": 0.05,
+     "unit": "m/s²",
+     "why": "(10 000 − 500 × 9.81) ÷ 500 = 5095 ÷ 500 = 10.19 m/s².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A satellite moves at 7.8 km/s. How far does it travel in 100 seconds, in kilometres?",
+     "a": 780,
+     "tol": 1,
+     "unit": "km",
+     "why": "Distance = speed × time = 7.8 × 100 = 780 km.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a rocket work in space?",
+     "o": [
+      "It throws propellant backward, and the reaction pushes it forward",
+      "It pushes against the air around it, just like a propeller",
+      "It uses big wings that work in thin air",
+      "It pushes on the distant stars for support"
+     ],
+     "a": 0,
+     "why": "Thrust needs expelled mass, not outside air.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do rockets use stages?",
+     "o": [
+      "To drop empty tanks and stop carrying dead weight",
+      "To make the rocket look taller on the pad",
+      "To make more noise as it climbs",
+      "To use less fuel for no good reason"
+     ],
+     "a": 0,
+     "why": "Dropping used parts means the remaining rocket is lighter and speeds up more.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do astronauts float in the space station?",
+     "o": [
+      "They and the station are in free fall around Earth",
+      "There is no gravity at all up there",
+      "They are too far from Earth to feel its pull",
+      "Air in the station pushes them up gently"
+     ],
+     "a": 0,
+     "why": "Gravity is still about 90% there; everyone falls together, so they feel weightless.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A satellite's orbit is best described as",
+     "o": [
+      "Continuous falling while moving sideways fast",
+      "Hovering in place with no forces acting",
+      "Being pushed along by air all the way",
+      "Being so far away that gravity cannot reach it"
+     ],
+     "a": 0,
+     "why": "It falls toward Earth but moves sideways so fast that it keeps missing it.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for a two-stage rocket flight.",
+     "items": [
+      "First stage burns",
+      "First stage drops away",
+      "Second stage burns",
+      "Spacecraft reaches orbital speed"
+     ],
+     "why": "Each stage works then is dropped, so the next one carries less mass.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a satellite does not fall to the ground.",
+     "rubric": [
+      [
+       "sideways",
+       "fast",
+       "speed",
+       "horizontal"
+      ],
+      [
+       "fall",
+       "falling",
+       "free fall",
+       "curve",
+       "curves",
+       "miss",
+       "missing"
+      ],
+      [
+       "gravity",
+       "orbit"
+      ]
+     ],
+     "min": 2,
+     "model": "A satellite is falling toward Earth all the time, but it moves sideways so fast that the Earth's surface curves away below it. It keeps missing the ground, which is orbiting.",
+     "why": "Orbit is falling with enough sideways speed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Propellant",
+       "Matter thrown out to make thrust"
+      ],
+      [
+       "Stage",
+       "Part dropped when used up"
+      ],
+      [
+       "Orbit",
+       "Path of a falling object that keeps missing Earth"
+      ],
+      [
+       "Thrust-to-weight",
+       "Thrust divided by weight"
+      ]
+     ],
+     "why": "These are core rocket ideas.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says 'there is no gravity in orbit'. What is the best correction?",
+     "o": [
+      "Gravity is still strong; the satellite is in continuous free fall",
+      "The student is right, because there is no gravity up there",
+      "Gravity turns off above 100 km, so objects drift freely",
+      "Satellites are pushed along by steady winds in space"
+     ],
+     "a": 0,
+     "why": "At about 400 km high gravity is still around 90% of its surface value.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a rocket's acceleration increase during burn even if thrust stays constant?",
+     "rubric": [
+      [
+       "lighter",
+       "less mass",
+       "mass decreases",
+       "loses mass",
+       "burns fuel",
+       "burning fuel",
+       "used fuel"
+      ],
+      [
+       "acceleration",
+       "a = f",
+       "force divided by mass",
+       "f/m",
+       "f ÷ m",
+       "same force"
+      ]
+     ],
+     "min": 2,
+     "model": "As propellant burns, the rocket's mass falls. With the same thrust, a = F ÷ m gets larger, so acceleration rises.",
+     "why": "Newton's second law with decreasing mass.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a rocket launched from the pad first go straight up, then tilt over?",
+     "o": [
+      "It must climb out of thick air, then build sideways speed to reach orbit",
+      "It is lost, and the tilt is a steering mistake",
+      "The launch pad is slanted, so it follows the slope of the pad",
+      "Wind blows it over and it cannot be steered"
+     ],
+     "a": 0,
+     "why": "Orbit needs large sideways speed, so the path gradually turns toward horizontal.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How rockets and orbits work",
+    "model": "A rocket throws burning gas out of its back, and the gas pushes the rocket forward. It lifts off if its thrust is greater than its weight. A satellite stays in orbit because it moves sideways so fast that it keeps falling around Earth.",
+    "points": [
+     {
+      "k": [
+       "gas",
+       "propellant",
+       "exhaust",
+       "throw",
+       "thrown"
+      ],
+      "ask": "What does a rocket throw out?"
+     },
+     {
+      "k": [
+       "thrust",
+       "weight",
+       "greater",
+       "more than"
+      ],
+      "ask": "What must be true to lift off?"
+     },
+     {
+      "k": [
+       "sideways",
+       "fast",
+       "falling",
+       "fall",
+       "orbit"
+      ],
+      "ask": "Why does a satellite not fall down?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2682 @@
+{
+ "world": 11,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced genetics",
+   "icon": "🧬",
+   "hook": "In fruit flies, two genes on the same chromosome do not follow Mendel's 9:3:3:1 ratio. How can crosses reveal the distance between genes?",
+   "explain": [
+    "Mendel's law of independent assortment holds for genes on different chromosomes. In a dihybrid cross AaBb × AaBb of unlinked genes with complete dominance, the phenotype ratio is 9:3:3:1. Genes close together on a chromosome are linked and tend to be inherited together. Crossing over in meiosis recombines them; the recombination frequency rises with distance, so it is used to build genetic maps: 1% recombination = 1 map unit (centimorgan).",
+    "Other patterns extend Mendel. Incomplete dominance gives an intermediate phenotype, codominance shows both alleles (human ABO blood group AB), and multiple alleles exist in a population. Sex-linked genes on the X chromosome give different ratios in males (one X) and females. Epistasis occurs when one gene masks the effect of another. Polygenic traits and the environment give continuous variation.",
+    "Pedigrees trace traits through families. Rare recessive autosomal traits often skip generations and affect males and females equally; X-linked recessive traits are seen more often in males, passed from carrier mothers. Population genetics uses the Hardy–Weinberg equations p² + 2pq + q² = 1."
+   ],
+   "example": {
+    "q": "A test cross of a heterozygous fly (AaBb) with a double recessive (aabb) gives 420 parental and 80 recombinant offspring (total 500). What is the distance between the genes?",
+    "steps": [
+     "Recombination frequency = recombinants ÷ total.",
+     "80 ÷ 500 = 0.16 = 16%.",
+     "1% = 1 map unit, so 16 map units."
+    ],
+    "a": "16 map units (cM)"
+   },
+   "analogies": {
+    "music": "Two songs on one album (linked genes) are usually played together, unless the playlist is shuffled by crossing over.",
+    "farm": "Breeders map genes near each other to track a trait by a nearby marker.",
+    "tech": "Two files saved in the same folder usually move together unless copied separately."
+   },
+   "mnemonic": "Linked = Lined up together; the farther apart, the more often they split (recombine).",
+   "terms": [
+    [
+     "Linkage",
+     "Tendency of genes close on a chromosome to be inherited together."
+    ],
+    [
+     "Recombination frequency",
+     "Fraction of offspring with new allele combinations."
+    ],
+    [
+     "Codominance",
+     "Both alleles are fully expressed in the heterozygote."
+    ],
+    [
+     "Epistasis",
+     "One gene masks or modifies the expression of another."
+    ]
+   ],
+   "misc": {
+    "wrong": "A 9:3:3:1 ratio is expected for any two genes.",
+    "right": "It is expected only when the genes assort independently, such as on different chromosomes or far apart on one chromosome."
+   },
+   "limits": "Map distance is only approximately proportional to physical distance, and double crossovers make long distances underestimate. Recombination rates also vary along chromosomes.",
+   "trip": {
+    "wiki": "Genetic linkage",
+    "prompt": "Find Morgan's fruit fly work and say how recombination frequency was used to map genes."
+   },
+   "sources": [
+    "Genetic linkage",
+    "Mendelian inheritance",
+    "Hardy–Weinberg principle"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What phenotypic ratio is expected from AaBb × AaBb for two unlinked genes with complete dominance?",
+     "o": [
+      "9:3:3:1",
+      "3:1",
+      "1:1:1:1",
+      "1:2:1"
+     ],
+     "a": 0,
+     "why": "Independent assortment gives 9:3:3:1.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "In an AaBb × AaBb cross of unlinked genes, what fraction of offspring show both dominant phenotypes? Give the percentage.",
+     "a": 56.25,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "9/16 = 0.5625 = 56.25%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A test cross gives 360 parental and 40 recombinant offspring. How many map units separate the genes?",
+     "a": 10,
+     "tol": 0.1,
+     "unit": "map units",
+     "why": "40 ÷ 400 = 10%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A woman is a carrier of an X-linked recessive allele and her partner is unaffected. What fraction of their sons is expected to be affected?",
+     "o": [
+      "One half",
+      "None",
+      "All",
+      "One quarter"
+     ],
+     "a": 0,
+     "why": "Sons receive her X chromosome, so half receive the allele.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In a population, a recessive trait has frequency q² = 0.09. What is the expected frequency of carriers (2pq)?",
+     "a": 0.42,
+     "tol": 0.005,
+     "why": "q = 0.3, p = 0.7, 2pq = 2 × 0.7 × 0.3 = 0.42.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A cross produces many more parental-type offspring than recombinant ones. What does it suggest?",
+     "o": [
+      "The genes are linked",
+      "The genes are on different chromosomes",
+      "Both alleles are lethal",
+      "The trait is polygenic"
+     ],
+     "a": 0,
+     "why": "Linked genes stay together except when crossing over separates them.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A person with blood type AB shows both A and B antigens. This is an example of:",
+     "o": [
+      "Codominance",
+      "Incomplete dominance",
+      "Epistasis",
+      "Polygenic inheritance"
+     ],
+     "a": 0,
+     "why": "Both alleles are expressed fully.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each pattern to an example.",
+     "pairs": [
+      [
+       "Incomplete dominance",
+       "Red × white flowers give pink"
+      ],
+      [
+       "Codominance",
+       "AB blood group"
+      ],
+      [
+       "Sex linkage",
+       "Red–green colour blindness"
+      ],
+      [
+       "Epistasis",
+       "A gene for pigment blocks expression of a colour gene"
+      ]
+     ],
+     "why": "Each pattern departs from simple dominance.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A rare autosomal recessive disease appears in a child of two unaffected parents. What are the parents' genotypes?",
+     "o": [
+      "Both are heterozygous carriers",
+      "Both are homozygous dominant for the gene",
+      "One is homozygous recessive and affected",
+      "Both are X-linked carriers of the gene"
+     ],
+     "a": 0,
+     "why": "The child needs two copies, one from each carrier parent.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the recombination frequency between two genes never exceeds 50%, even if they are very far apart on one chromosome.",
+     "rubric": [
+      [
+       "50",
+       "half"
+      ],
+      [
+       "independent",
+       "unlinked",
+       "assort"
+      ],
+      [
+       "multiple",
+       "double",
+       "even number",
+       "crossover"
+      ],
+      [
+       "parental",
+       "recombinant"
+      ]
+     ],
+     "min": 2,
+     "model": "Genes far apart on one chromosome have so many crossovers between them that parental and recombinant gametes become equally frequent, so they behave as unlinked, giving at most 50% recombinants.",
+     "why": "Frequent crossing over (including double crossovers) saturates at 50%.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A father with an X-linked recessive disease and an unaffected non-carrier mother have children. Which is expected?",
+     "o": [
+      "All daughters are carriers and no sons are affected",
+      "All sons are affected and no daughters are",
+      "Half the daughters are affected by the disease",
+      "No children carry the allele at all"
+     ],
+     "a": 0,
+     "why": "Sons receive the father's Y; daughters receive his X with the allele.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Height in humans shows a bell-shaped distribution. What does this suggest?",
+     "o": [
+      "Many genes plus environmental influences",
+      "A single dominant gene with complete dominance",
+      "Codominance between two alleles of one gene",
+      "X-linkage of a single recessive gene"
+     ],
+     "a": 0,
+     "why": "Continuous traits are polygenic with environmental effects.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A scientist finds that a Hardy–Weinberg expectation is violated in a small isolated population. Which cause is least likely to matter?",
+     "o": [
+      "Random mating",
+      "Genetic drift",
+      "Selection",
+      "Migration"
+     ],
+     "a": 0,
+     "why": "Random mating is an assumption of the model, not a disturbance; drift, selection and migration all alter allele frequencies.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How recombination frequency maps genes",
+    "model": "Genes on the same chromosome tend to be inherited together. Crossing over in meiosis occasionally separates them, producing recombinant offspring. The farther apart two genes are, the more often a crossover falls between them. So the percentage of recombinants measures distance in map units.",
+    "points": [
+     {
+      "k": [
+       "same chromosome",
+       "linked",
+       "together"
+      ],
+      "ask": "Why aren't linked genes inherited independently?"
+     },
+     {
+      "k": [
+       "crossing over",
+       "crossover",
+       "recombin",
+       "meiosis"
+      ],
+      "ask": "What separates them sometimes?"
+     },
+     {
+      "k": [
+       "distance",
+       "percent",
+       "map unit",
+       "centimorgan",
+       "farther"
+      ],
+      "ask": "How does that give a map?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Genomics",
+   "icon": "🗺️",
+   "hook": "The human genome has about 3.1 billion base pairs, but only about 1–2% codes for proteins. What is the rest doing?",
+   "explain": [
+    "Genomics studies whole genomes. The Human Genome Project produced a reference sequence in 2003, and a complete telomere-to-telomere assembly was published in 2022. Humans have about 20 000 protein-coding genes. Much of the rest includes regulatory regions (promoters, enhancers), non-coding RNA genes, introns and repetitive sequences such as transposable elements.",
+    "Sequencing technologies break DNA into reads, which are assembled or aligned to a reference. Coverage (depth) = (number of reads × read length) ÷ genome length. Variants include single-nucleotide polymorphisms (SNPs), insertions, deletions and copy-number changes. Genome-wide association studies (GWAS) link variants to traits statistically, though association does not imply causation. Comparative genomics reveals conserved sequences that are likely functional.",
+    "Individual humans differ at roughly 0.1% of sites. Epigenetic marks such as DNA methylation and histone modifications alter gene activity without changing the DNA sequence. Genomic data raise privacy and fairness questions, because they identify relatives and can reflect biased sampling of populations."
+   ],
+   "example": {
+    "q": "A 3 Gb genome is sequenced with 600 million reads of 150 bases each. What is the average coverage?",
+    "steps": [
+     "Total bases = 600 000 000 × 150 = 9 × 10¹⁰.",
+     "Genome length = 3 × 10⁹.",
+     "Coverage = 9 × 10¹⁰ ÷ 3 × 10⁹ = 30×."
+    ],
+    "a": "30× coverage"
+   },
+   "analogies": {
+    "tech": "A genome is a huge shredded book; sequencing reads are scraps and assembly is piecing them back together using overlap.",
+    "city": "Most of a city is roads and utilities rather than homes, as most of a genome is not protein-coding.",
+    "music": "Gene regulation is like the conductor's marks that decide when each instrument plays."
+   },
+   "mnemonic": "Genome = the book, genes = the sentences, regulation = the punctuation and stage directions.",
+   "terms": [
+    [
+     "Genome",
+     "All the genetic material of an organism."
+    ],
+    [
+     "SNP",
+     "A single base-pair difference between individuals."
+    ],
+    [
+     "Coverage",
+     "Average number of times each base is sequenced."
+    ],
+    [
+     "Epigenetics",
+     "Heritable or lasting changes in gene activity without DNA sequence change."
+    ]
+   ],
+   "misc": {
+    "wrong": "Non-coding DNA is junk with no function.",
+    "right": "Much non-coding DNA is regulatory or encodes functional RNAs, though the fraction that is functional is debated."
+   },
+   "limits": "Estimates of the functional fraction of the human genome range widely, from a few percent to over 80%, depending on how 'function' is defined.",
+   "trip": {
+    "wiki": "Human genome",
+    "prompt": "Find how much of the human genome is protein-coding, and list two other types of sequence."
+   },
+   "sources": [
+    "Human genome",
+    "Genomics",
+    "Epigenetics"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Roughly what share of the human genome codes for proteins?",
+     "o": [
+      "1–2%",
+      "About 10–15%",
+      "About 50%",
+      "Over 90%"
+     ],
+     "a": 0,
+     "why": "Most of the genome is non-coding.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A 2 Gb genome is sequenced with 400 million reads of 100 bases. What is the average coverage (×)?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "×",
+     "why": "4 × 10¹⁰ ÷ 2 × 10⁹ = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two people differ at 0.1% of positions in a 3.1 billion-base genome. About how many million differences is that?",
+     "a": 3.1,
+     "tol": 0.05,
+     "unit": "million",
+     "why": "0.001 × 3.1 × 10⁹ = 3.1 × 10⁶.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A GWAS finds a SNP associated with a disease. Which conclusion is justified?",
+     "o": [
+      "The SNP is statistically associated; causation needs more evidence",
+      "The SNP is proven to cause the disease",
+      "The SNP is found in every single patient",
+      "The gene containing the SNP is deleted"
+     ],
+     "a": 0,
+     "why": "Association can arise from linkage with a causal variant.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "DNA methylation at a promoter usually has what effect?",
+     "o": [
+      "Reduces transcription",
+      "Deletes the gene",
+      "Increases mutation to RNA",
+      "Makes the gene a SNP"
+     ],
+     "a": 0,
+     "why": "Methylation often silences gene expression without changing the sequence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are sequences conserved across distant species often considered functional?",
+     "o": [
+      "Selection has kept them unchanged",
+      "They are the largest regions of the genome",
+      "They are protein-coding regions only",
+      "They mutate faster than other sequences"
+     ],
+     "a": 0,
+     "why": "Purifying selection removes mutations in functional sequences.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Reference genomes based mainly on one ancestry group could cause which problem?",
+     "o": [
+      "Variants common in other populations may be misinterpreted",
+      "DNA is read as if it were RNA",
+      "The genome has fewer genes than expected",
+      "Sequence reads become much longer"
+     ],
+     "a": 0,
+     "why": "Sampling bias reduces accuracy and fairness in diagnosis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "SNP",
+       "Single-base difference"
+      ],
+      [
+       "Enhancer",
+       "Regulatory DNA boosting transcription"
+      ],
+      [
+       "Transposable element",
+       "Mobile repeated sequence"
+      ],
+      [
+       "Exon",
+       "Part retained in mature mRNA"
+      ]
+     ],
+     "why": "Genomic features have distinct roles.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order a typical short-read sequencing workflow.",
+     "items": [
+      "Extract DNA",
+      "Fragment and prepare library",
+      "Sequence the reads",
+      "Align or assemble to a reference",
+      "Call variants"
+     ],
+     "why": "Samples are prepared before sequencing and analysis.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why higher sequencing coverage improves the reliability of variant calls.",
+     "rubric": [
+      [
+       "error",
+       "mistake",
+       "noise"
+      ],
+      [
+       "multiple",
+       "many reads",
+       "repeated",
+       "several reads",
+       "each base"
+      ],
+      [
+       "consensus",
+       "agree",
+       "majority",
+       "confidence",
+       "distinguish"
+      ],
+      [
+       "real",
+       "true",
+       "heterozyg"
+      ]
+     ],
+     "min": 3,
+     "model": "Each base is covered by many reads, so random sequencing errors can be outvoted by the consensus. High coverage also helps distinguish a true heterozygous variant (about half the reads) from error.",
+     "why": "Redundancy reduces the effect of random errors.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Identical twins have the same DNA sequence but can differ in disease risk. Which factor may contribute?",
+     "o": [
+      "Epigenetic and environmental differences",
+      "They have different chromosomes in their cells",
+      "They have totally different genes in their cells",
+      "They belong to two different species"
+     ],
+     "a": 0,
+     "why": "Epigenetic marks and environment alter outcomes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The genome of a lungfish is much larger than a human's, yet it is not more complex. What does this show?",
+     "o": [
+      "Genome size does not track organism complexity",
+      "Bigger genomes always mean more genes and more complexity",
+      "Lungfish have more chromosomes, so they are more complex",
+      "The figure is a measurement error in the genome project"
+     ],
+     "a": 0,
+     "why": "Genome size varies widely with repeats and polyploidy (the C-value paradox).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A company holds genomic data from many customers. Which issue is most relevant?",
+     "o": [
+      "Privacy, since relatives can be identified",
+      "Gene deletion in the sequenced samples",
+      "Protein folding errors in the lab",
+      "Base pairing rules being broken"
+     ],
+     "a": 0,
+     "why": "Genomes are inherently shared with kin.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a genome is sequenced and what coverage means",
+    "model": "DNA is cut into small fragments and each is read, giving millions of short reads. They are aligned to a reference or assembled by their overlaps. Coverage is how many times each base is read on average. Higher coverage means errors can be outvoted, so the sequence is more reliable.",
+    "points": [
+     {
+      "k": [
+       "fragment",
+       "read",
+       "piece"
+      ],
+      "ask": "How do we read a whole genome?"
+     },
+     {
+      "k": [
+       "align",
+       "assemble",
+       "overlap",
+       "reference"
+      ],
+      "ask": "How are the pieces put together?"
+     },
+     {
+      "k": [
+       "coverage",
+       "depth",
+       "error",
+       "reliab",
+       "times"
+      ],
+      "ask": "Why does coverage matter?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Biochemistry",
+   "icon": "⚗️",
+   "hook": "ATP releases energy when its terminal phosphate is removed, yet the same bond is not especially strong. Why is the reaction so useful?",
+   "explain": [
+    "Biochemical reactions follow thermodynamics. The Gibbs free energy change ΔG = ΔH − TΔS (T in kelvin) predicts direction: a reaction proceeds spontaneously if ΔG < 0. Cells couple unfavourable (ΔG > 0) reactions to ATP hydrolysis (ΔG about −30 kJ/mol under standard conditions, more negative in cells) so the combined process is favourable.",
+    "Enzymes lower activation energy but do not change ΔG or the equilibrium position. Kinetics: v = Vmax[S] ÷ (Km + [S]); Km is the substrate concentration at half Vmax and indicates affinity (lower Km, higher affinity). Lineweaver–Burk plots 1/v against 1/[S]. Competitive inhibitors raise apparent Km without changing Vmax; non-competitive inhibitors lower Vmax. Allosteric enzymes show sigmoidal kinetics and are regulated by effectors.",
+    "Central metabolism: glycolysis converts glucose to pyruvate in the cytoplasm with a net gain of 2 ATP and 2 NADH; the link reaction and Krebs cycle in the mitochondrial matrix produce CO₂, NADH and FADH₂; the electron transport chain uses these to pump protons across the inner membrane, and ATP synthase uses the proton gradient to make ATP (chemiosmosis). The maximum yield is about 30–32 ATP per glucose."
+   ],
+   "example": {
+    "q": "A reaction has ΔH = −40 kJ/mol and ΔS = −0.05 kJ/(mol·K). Find ΔG at 300 K.",
+    "steps": [
+     "ΔG = ΔH − TΔS.",
+     "TΔS = 300 × (−0.05) = −15 kJ/mol.",
+     "ΔG = −40 − (−15) = −25 kJ/mol."
+    ],
+    "a": "−25 kJ/mol (spontaneous)"
+   },
+   "analogies": {
+    "tech": "ATP is a rechargeable battery that is charged by respiration and discharged to drive work.",
+    "city": "Coupling reactions is like using a downhill river to turn a wheel that lifts water uphill.",
+    "farm": "A dam holds water that drives turbines, as the proton gradient drives ATP synthase."
+   },
+   "mnemonic": "Negative ΔG goes: reactions flow downhill; enzymes lower the hill, not the drop.",
+   "terms": [
+    [
+     "Gibbs free energy",
+     "Energy available to do work; ΔG < 0 means spontaneous."
+    ],
+    [
+     "Km",
+     "Substrate concentration giving half the maximum rate."
+    ],
+    [
+     "Chemiosmosis",
+     "ATP made using a proton gradient across a membrane."
+    ],
+    [
+     "Coupled reaction",
+     "A favourable reaction driving an unfavourable one."
+    ]
+   ],
+   "misc": {
+    "wrong": "Enzymes make unfavourable reactions spontaneous.",
+    "right": "Enzymes change speed only; they do not alter ΔG or the equilibrium position."
+   },
+   "limits": "ATP yields per glucose are estimates that depend on shuttle systems and proton-to-ATP ratios, which is why sources say 30–32 rather than a single number.",
+   "trip": {
+    "wiki": "Cellular respiration",
+    "prompt": "Find where each stage of glucose oxidation occurs in the cell and what it produces."
+   },
+   "sources": [
+    "Gibbs free energy",
+    "Michaelis–Menten kinetics",
+    "Oxidative phosphorylation"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A reaction has ΔH = −20 kJ/mol and ΔS = +0.02 kJ/(mol·K). Find ΔG at 300 K in kJ/mol.",
+     "a": -26,
+     "tol": 0.1,
+     "unit": "kJ/mol",
+     "why": "TΔS = 6; ΔG = −20 − 6 = −26.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using v = Vmax[S] ÷ (Km + [S]), Vmax = 200, Km = 10 mM. Find v at [S] = 30 mM.",
+     "a": 150,
+     "tol": 0.5,
+     "why": "200 × 30 ÷ 40 = 150.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Glycolysis, the Krebs cycle and oxidative phosphorylation give about 2, 2 and 26 ATP per glucose. What is the approximate total?",
+     "o": [
+      "About 30",
+      "About 4",
+      "About 56",
+      "About 12"
+     ],
+     "a": 0,
+     "why": "2 + 2 + 26 = 30 (an estimate).",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Where in the cell does the electron transport chain operate in eukaryotes?",
+     "o": [
+      "Inner mitochondrial membrane",
+      "The nucleus of the cell",
+      "The cytoplasm of the cell",
+      "The Golgi apparatus"
+     ],
+     "a": 0,
+     "why": "The proteins are embedded in the inner membrane.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A competitive inhibitor changes Km and Vmax how?",
+     "o": [
+      "Km apparent rises, Vmax unchanged",
+      "Km is unchanged but Vmax falls",
+      "Both Km and Vmax rise",
+      "Both Km and Vmax fall"
+     ],
+     "a": 0,
+     "why": "More substrate overcomes competition, so Vmax can still be reached but needs a higher concentration.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A cell poison blocks ATP synthase but not the electron transport chain. What happens to the proton gradient?",
+     "o": [
+      "It builds up because protons cannot flow back through ATP synthase",
+      "It vanishes because protons are used up in water",
+      "Protons are made into water inside the matrix",
+      "It reverses permanently and cannot be restored"
+     ],
+     "a": 0,
+     "why": "Protons accumulate and eventually electron transport slows.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of aerobic glucose oxidation.",
+     "items": [
+      "Glycolysis",
+      "Link reaction",
+      "Krebs cycle",
+      "Electron transport chain"
+     ],
+     "why": "Glucose is progressively oxidised.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each stage to its location.",
+     "pairs": [
+      [
+       "Glycolysis",
+       "Cytoplasm"
+      ],
+      [
+       "Krebs cycle",
+       "Mitochondrial matrix"
+      ],
+      [
+       "Electron transport",
+       "Inner mitochondrial membrane"
+      ],
+      [
+       "Calvin cycle",
+       "Chloroplast stroma"
+      ]
+     ],
+     "why": "Each pathway has a compartment.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why coupling an unfavourable reaction to ATP hydrolysis can make the overall reaction proceed.",
+     "rubric": [
+      [
+       "atp",
+       "hydrolysis"
+      ],
+      [
+       "free energy",
+       "δg",
+       "dg",
+       "energy"
+      ],
+      [
+       "negative",
+       "released",
+       "favourable",
+       "exergonic"
+      ],
+      [
+       "overall",
+       "sum",
+       "combined",
+       "net"
+      ]
+     ],
+     "min": 3,
+     "model": "ATP hydrolysis has a large negative ΔG. When coupled to a reaction with a smaller positive ΔG, the sum of free energy changes is negative, so the overall process is spontaneous.",
+     "why": "Free energy changes of coupled reactions add.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A reaction has ΔG = −10 kJ/mol. Adding an enzyme changes it to:",
+     "o": [
+      "Still −10 kJ/mol but faster",
+      "It becomes −20 kJ/mol as the enzyme speeds it",
+      "It becomes 0 kJ/mol and equilibrium is reached",
+      "It becomes +10 kJ/mol and the reaction reverses"
+     ],
+     "a": 0,
+     "why": "Catalysts leave ΔG unchanged.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does cyanide poisoning rapidly stop ATP production even if oxygen is available?",
+     "o": [
+      "It blocks the final electron transfer in the respiratory chain",
+      "It destroys the glucose in the blood supply",
+      "It removes all the ribosomes from the cell",
+      "It blocks glycolysis in the cytoplasm only"
+     ],
+     "a": 0,
+     "why": "It inhibits cytochrome c oxidase.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A low-Km enzyme and a high-Km enzyme compete for the same substrate at low concentration. Which is more active?",
+     "o": [
+      "The low-Km enzyme",
+      "The high-Km enzyme",
+      "Both equally",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "Low Km means high affinity, so it saturates at lower concentration.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A reaction at equilibrium has ΔG equal to:",
+     "o": [
+      "Zero",
+      "Strongly negative",
+      "Strongly positive",
+      "Equal to ΔH"
+     ],
+     "a": 0,
+     "why": "At equilibrium there is no net driving force.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How the proton gradient makes ATP",
+    "model": "Electrons from NADH and FADH₂ pass along the electron transport chain in the inner mitochondrial membrane. The energy released pumps protons across the membrane, making a gradient. Protons flow back through ATP synthase, and this flow drives the formation of ATP from ADP and phosphate.",
+    "points": [
+     {
+      "k": [
+       "electron",
+       "nadh",
+       "chain"
+      ],
+      "ask": "What powers the pumping?"
+     },
+     {
+      "k": [
+       "proton",
+       "gradient",
+       "pump",
+       "membrane"
+      ],
+      "ask": "What is built across the membrane?"
+     },
+     {
+      "k": [
+       "atp synthase",
+       "flow",
+       "atp",
+       "adp"
+      ],
+      "ask": "How is ATP made?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Cellular signalling",
+   "icon": "📡",
+   "hook": "A single adrenaline molecule can make a liver cell release thousands of glucose molecules. How can a tiny signal have such a large effect?",
+   "explain": [
+    "Cells communicate with signalling molecules (ligands) that bind to receptors. Steps: reception, transduction and response. Water-soluble ligands (most peptide hormones, adrenaline) bind to cell-surface receptors. Lipid-soluble ligands (steroid hormones) cross the membrane and bind intracellular receptors that act as transcription factors.",
+    "G protein-coupled receptors (GPCRs) activate G proteins, which activate enzymes such as adenylyl cyclase to produce cyclic AMP (cAMP), a second messenger. cAMP activates protein kinase A, which phosphorylates target proteins. Each step multiplies the signal, so the cascade amplifies it. Receptor tyrosine kinases dimerise and phosphorylate each other, activating pathways such as Ras–MAPK, which promote cell growth and division.",
+    "Signals are switched off by hydrolysis of GTP, breakdown of second messengers (phosphodiesterase breaks down cAMP) and phosphatases that remove phosphate groups. Errors cause disease: mutations that lock Ras on are found in many cancers, and cholera toxin keeps a G protein active, causing severe water loss."
+   ],
+   "example": {
+    "q": "One activated receptor activates 10 G proteins; each G protein activates 1 adenylyl cyclase, and each cyclase makes 100 cAMP. How many cAMP molecules come from a single receptor?",
+    "steps": [
+     "10 G proteins → 10 cyclases.",
+     "Each makes 100 cAMP.",
+     "10 × 100 = 1000."
+    ],
+    "a": "1000 cAMP"
+   },
+   "analogies": {
+    "tech": "A doorbell press triggers a loud bell: small input, big output.",
+    "sport": "A coach whistle sets a whole team in motion, with each player relaying the signal.",
+    "city": "A single alarm signal from a lookout leads a whole town to respond."
+   },
+   "mnemonic": "Receive, Relay, Respond: the three R's of signalling.",
+   "terms": [
+    [
+     "Ligand",
+     "A molecule that binds a receptor."
+    ],
+    [
+     "Second messenger",
+     "A small molecule that relays a signal inside a cell, like cAMP."
+    ],
+    [
+     "Kinase",
+     "An enzyme that adds phosphate groups to proteins."
+    ],
+    [
+     "Signal transduction",
+     "Conversion of an extracellular signal into a cellular response."
+    ]
+   ],
+   "misc": {
+    "wrong": "Hormones enter every cell and act directly on DNA.",
+    "right": "Only cells with the right receptors respond, and most hormones bind surface receptors and act via cascades."
+   },
+   "limits": "Pathway diagrams are linear simplifications; real cells have extensive crosstalk and feedback among pathways.",
+   "trip": {
+    "wiki": "Cell signaling",
+    "prompt": "Find a diagram of the cAMP pathway and mark each step where the signal is amplified."
+   },
+   "sources": [
+    "Cell signaling",
+    "G protein-coupled receptor",
+    "Second messenger system"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which type of ligand typically acts on intracellular receptors?",
+     "o": [
+      "Steroid hormones",
+      "Insulin",
+      "Adrenaline",
+      "Peptide neurotransmitters"
+     ],
+     "a": 0,
+     "why": "Lipid-soluble steroid hormones cross the membrane.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is cAMP?",
+     "o": [
+      "A second messenger",
+      "A receptor",
+      "An antibody",
+      "A transcription factor"
+     ],
+     "a": 0,
+     "why": "cAMP relays the signal inside the cell.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "One receptor activates 20 G proteins, and each G protein leads to 50 cAMP molecules. How many cAMP molecules result from a single receptor?",
+     "a": 1000,
+     "tol": 0,
+     "why": "20 × 50 = 1000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A cascade has three enzyme steps, each activating 10 molecules of the next. How many molecules at the end per signal molecule?",
+     "a": 1000,
+     "tol": 0,
+     "why": "10 × 10 × 10 = 1000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A drug inhibits phosphodiesterase. What happens to cAMP signalling?",
+     "o": [
+      "It is prolonged",
+      "It is stopped",
+      "It reverses",
+      "It becomes cGMP only"
+     ],
+     "a": 0,
+     "why": "cAMP is not broken down, so the signal persists.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A Ras mutation locks the protein in its GTP-bound state. What is the likely effect?",
+     "o": [
+      "Constant growth signalling that can drive cancer",
+      "Loss of all growth signals in the cell",
+      "Faster apoptosis of cells that are damaged",
+      "Reduced levels of cAMP in the cell"
+     ],
+     "a": 0,
+     "why": "Ras cannot hydrolyse GTP to switch off.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a GPCR–cAMP pathway.",
+     "items": [
+      "Ligand binds receptor",
+      "G protein is activated",
+      "Adenylyl cyclase makes cAMP",
+      "Protein kinase A is activated",
+      "Target proteins are phosphorylated"
+     ],
+     "why": "The signal relays from receptor to response.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each component to its role.",
+     "pairs": [
+      [
+       "Receptor",
+       "Detects the ligand"
+      ],
+      [
+       "Kinase",
+       "Adds phosphate"
+      ],
+      [
+       "Phosphatase",
+       "Removes phosphate"
+      ],
+      [
+       "Phosphodiesterase",
+       "Breaks down cAMP"
+      ]
+     ],
+     "why": "Each switches the pathway on or off.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why cells need mechanisms to switch signals off.",
+     "rubric": [
+      [
+       "continuous",
+       "constant",
+       "persist",
+       "overstimul",
+       "always on",
+       "uncontrol"
+      ],
+      [
+       "respond",
+       "change",
+       "new signal",
+       "reset",
+       "sensitiv"
+      ],
+      [
+       "disease",
+       "cancer",
+       "damage",
+       "cholera",
+       "proliferat"
+      ],
+      [
+       "gtp",
+       "phosphatase",
+       "phosphodiesterase",
+       "degrad",
+       "hydrolys"
+      ]
+     ],
+     "min": 2,
+     "model": "If signals stayed on, cells would respond continuously and could not react to new signals, risking disease such as cancer. Mechanisms like GTP hydrolysis, phosphatases and phosphodiesterase terminate signals.",
+     "why": "Signalling must be transient and controllable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cell lacks the receptor for a hormone. How will it respond to the hormone?",
+     "o": [
+      "It will not respond",
+      "It will respond normally",
+      "It will divide",
+      "It will make the receptor immediately"
+     ],
+     "a": 0,
+     "why": "Specific receptors determine target cells.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can the same hormone have different effects in different tissues?",
+     "o": [
+      "Cells have different receptors and downstream proteins",
+      "The hormone changes its shape in each tissue",
+      "The hormone is made from different genes in each tissue",
+      "All receptors are identical in every cell type"
+     ],
+     "a": 0,
+     "why": "Response depends on the cell's signalling machinery.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Cholera toxin causes severe diarrhoea by:",
+     "o": [
+      "Locking a G protein on so cAMP stays high in gut cells",
+      "Killing the bacteria in the gut lining",
+      "Blocking the insulin receptors on the gut wall",
+      "Stopping cell division in the intestine lining"
+     ],
+     "a": 0,
+     "why": "High cAMP drives chloride and water secretion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Targeted cancer drugs often inhibit a particular kinase. Why?",
+     "o": [
+      "Overactive kinases may drive uncontrolled growth",
+      "Kinases make DNA in the nucleus, so blocking them stops growth",
+      "Kinases are not essential to any cell, so blocking them is harmless",
+      "They are designed to kill all body cells equally"
+     ],
+     "a": 0,
+     "why": "Blocking a hyperactive kinase can slow tumour growth.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a small signal is amplified inside a cell",
+    "model": "A hormone binds a receptor on the cell surface. The receptor activates several G proteins, each activates an enzyme that makes many cAMP molecules. cAMP activates kinases that act on many targets. Each step multiplies the signal, so one hormone molecule can cause a large response.",
+    "points": [
+     {
+      "k": [
+       "receptor",
+       "bind",
+       "hormone"
+      ],
+      "ask": "What starts the signal?"
+     },
+     {
+      "k": [
+       "g protein",
+       "enzyme",
+       "camp",
+       "second messenger"
+      ],
+      "ask": "What happens inside the cell?"
+     },
+     {
+      "k": [
+       "amplif",
+       "multipl",
+       "cascade",
+       "many"
+      ],
+      "ask": "Why is the response large?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Neuroscience",
+   "icon": "🧠",
+   "hook": "Neurons are at rest with the inside of the cell about 70 mV more negative than the outside. How does this voltage turn into a signal that travels a metre in milliseconds?",
+   "explain": [
+    "A neuron at rest has a negative resting potential, about −70 mV, maintained by the sodium–potassium pump (3 Na⁺ out, 2 K⁺ in) and by leak channels that make the membrane more permeable to K⁺. The equilibrium potential for an ion is given by the Nernst equation: E = (61.5 mV ÷ z) × log₁₀([out] ÷ [in]) at 37 °C.",
+    "An action potential is an all-or-nothing event. If depolarisation reaches threshold (about −55 mV), voltage-gated Na⁺ channels open and Na⁺ rushes in, then Na⁺ channels inactivate and K⁺ channels open, repolarising the membrane. A refractory period prevents backward propagation. In myelinated axons the impulse jumps between nodes of Ranvier (saltatory conduction), which is faster.",
+    "At synapses, an action potential triggers Ca²⁺ entry and release of neurotransmitter, which binds receptors on the next cell. Excitatory inputs (glutamate) depolarise, inhibitory inputs (GABA) hyperpolarise. Neurons add up inputs (summation). Learning involves changes in synaptic strength, such as long-term potentiation. The brain is organised into regions: cortex for higher functions, cerebellum for coordination, brainstem for vital functions."
+   ],
+   "example": {
+    "q": "Use E = 61.5 × log₁₀([K⁺]out ÷ [K⁺]in) mV with [K⁺]out = 5 mM and [K⁺]in = 140 mM. Find E(K⁺).",
+    "steps": [
+     "Ratio = 5 ÷ 140 = 0.0357.",
+     "log₁₀(0.0357) ≈ −1.447.",
+     "E = 61.5 × (−1.447) ≈ −89 mV."
+    ],
+    "a": "About −89 mV"
+   },
+   "analogies": {
+    "tech": "An action potential is a digital signal: it either fires fully or not at all.",
+    "sport": "A stadium wave passes along by each person standing in turn, like depolarisation travelling along an axon.",
+    "city": "A synapse is a relay station where an electrical signal is converted to a chemical message."
+   },
+   "mnemonic": "Na⁺ in, up; K⁺ out, down: depolarise then repolarise.",
+   "terms": [
+    [
+     "Resting potential",
+     "Steady voltage across a neuron's membrane at rest, about −70 mV."
+    ],
+    [
+     "Action potential",
+     "Brief, all-or-nothing reversal of membrane voltage."
+    ],
+    [
+     "Synapse",
+     "Junction where one neuron signals to another cell."
+    ],
+    [
+     "Myelin",
+     "Fatty insulating sheath that speeds conduction."
+    ]
+   ],
+   "misc": {
+    "wrong": "Stronger stimuli produce bigger action potentials.",
+    "right": "Action potentials are all-or-nothing; stimulus strength is coded by firing frequency and the number of neurons firing."
+   },
+   "limits": "The Nernst equation gives single-ion equilibrium; the real resting potential depends on several ions (Goldman equation).",
+   "trip": {
+    "wiki": "Action potential",
+    "prompt": "Find the action potential graph and label depolarisation, repolarisation and the refractory period."
+   },
+   "sources": [
+    "Action potential",
+    "Resting potential",
+    "Neurotransmitter"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which ion mainly rushes in during depolarisation?",
+     "o": [
+      "Sodium",
+      "Potassium",
+      "Chloride",
+      "Calcium leaving"
+     ],
+     "a": 0,
+     "why": "Voltage-gated Na⁺ channels open.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "The Na⁺/K⁺ pump moves 3 Na⁺ out and 2 K⁺ in per cycle. After 100 cycles, how many net positive charges have left the cell?",
+     "a": 100,
+     "tol": 0,
+     "why": "Each cycle: 3 out − 2 in = 1 net positive charge out; 100 cycles = 100.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using E = 61.5 × log₁₀([out] ÷ [in]) for K⁺ with [out] = 10 mM and [in] = 100 mM, what is E in mV?",
+     "a": -61.5,
+     "tol": 0.3,
+     "unit": "mV",
+     "why": "log₁₀(0.1) = −1, so E = −61.5 mV.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An axon fires at 40 action potentials per second. About how many does it fire in 2.5 seconds?",
+     "o": [
+      "100",
+      "250",
+      "160",
+      "16 000"
+     ],
+     "a": 0,
+     "why": "40 × 2.5 = 100.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A drug blocks voltage-gated Na⁺ channels. What is the effect on a neuron?",
+     "o": [
+      "Action potentials cannot be generated",
+      "More action potentials are fired than before",
+      "Larger action potentials are produced",
+      "No effect on the excitability of the neuron"
+     ],
+     "a": 0,
+     "why": "Depolarisation to threshold is no longer regenerative.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is conduction faster in myelinated axons?",
+     "o": [
+      "The impulse jumps between nodes of Ranvier",
+      "Myelin is a conductor of electricity",
+      "Myelinated axons contain more sodium",
+      "Myelinated axons are always much shorter"
+     ],
+     "a": 0,
+     "why": "Saltatory conduction speeds propagation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "GABA binding to its receptor opens Cl⁻ channels. What is the effect on the postsynaptic neuron?",
+     "o": [
+      "Hyperpolarisation, making firing less likely",
+      "Depolarisation, making the neuron fire more easily",
+      "No change in the membrane voltage",
+      "An immediate action potential in the neuron"
+     ],
+     "a": 0,
+     "why": "Cl⁻ entry makes the inside more negative.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the events at a chemical synapse.",
+     "items": [
+      "Action potential arrives",
+      "Ca²⁺ enters the terminal",
+      "Vesicles release neurotransmitter",
+      "Neurotransmitter binds postsynaptic receptors",
+      "Postsynaptic potential results"
+     ],
+     "why": "Calcium entry triggers vesicle fusion.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each brain region to a function.",
+     "pairs": [
+      [
+       "Cerebellum",
+       "Coordination and balance"
+      ],
+      [
+       "Brainstem",
+       "Breathing and heart rate"
+      ],
+      [
+       "Hippocampus",
+       "Forming new memories"
+      ],
+      [
+       "Cortex",
+       "Higher functions"
+      ]
+     ],
+     "why": "Regions are specialised.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how the nervous system distinguishes a weak from a strong stimulus even though action potentials are all-or-nothing.",
+     "rubric": [
+      [
+       "frequency",
+       "rate",
+       "more often",
+       "faster firing",
+       "more impulses"
+      ],
+      [
+       "number of neurons",
+       "more neurons",
+       "recruit",
+       "different neurons",
+       "threshold"
+      ],
+      [
+       "all-or-nothing",
+       "same size",
+       "same amplitude"
+      ]
+     ],
+     "min": 2,
+     "model": "Action potentials are always the same size, so strength is coded by how often a neuron fires and by how many neurons (with different thresholds) are recruited.",
+     "why": "Frequency and population coding carry intensity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Multiple sclerosis damages myelin. Which symptom follows?",
+     "o": [
+      "Slower or blocked signal conduction",
+      "Faster signals along the damaged nerves",
+      "More neurotransmitter released at synapses",
+      "Increased bone growth near the nerves"
+     ],
+     "a": 0,
+     "why": "Loss of insulation disrupts saltatory conduction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Long-term potentiation is strengthened synaptic transmission after repeated activity. Why does it matter?",
+     "o": [
+      "It is a cellular basis for learning and memory",
+      "It prevents signals from crossing synapses",
+      "It destroys neurons that are used a lot",
+      "It changes the DNA sequence of the neuron"
+     ],
+     "a": 0,
+     "why": "Synaptic strength changes underlie memory.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the main role of the refractory period?",
+     "o": [
+      "It makes impulses travel one way and limits firing rate",
+      "It resets the DNA inside the nerve cell",
+      "It makes the axon thicker after each impulse",
+      "It increases the amplitude of each impulse over time"
+     ],
+     "a": 0,
+     "why": "Inactivated Na⁺ channels prevent backward propagation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a neuron fires an action potential",
+    "model": "At rest the inside of the neuron is negative. A stimulus depolarises it to threshold, voltage-gated sodium channels open and Na⁺ rushes in. Then potassium channels open and K⁺ leaves, restoring the negative voltage. The pulse travels along the axon and triggers neurotransmitter release at the synapse.",
+    "points": [
+     {
+      "k": [
+       "rest",
+       "negative",
+       "threshold"
+      ],
+      "ask": "What is the state before firing?"
+     },
+     {
+      "k": [
+       "sodium",
+       "na",
+       "depolaris"
+      ],
+      "ask": "What causes the rise?"
+     },
+     {
+      "k": [
+       "potassium",
+       "repolaris",
+       "synapse",
+       "neurotransmitter"
+      ],
+      "ask": "How does it end and pass on?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Developmental biology",
+   "icon": "🧫",
+   "hook": "A single fertilised egg becomes an animal with hundreds of cell types, all with the same DNA. How do cells know what to become?",
+   "explain": [
+    "Development turns one cell into a patterned organism through cell division, differentiation, morphogenesis and growth. Cells differ not because their DNA differs but because they express different genes. Signalling molecules called morphogens form concentration gradients that tell cells their position; cells respond to different thresholds by activating different genes. In Drosophila, the Bicoid gradient sets up the head–tail axis.",
+    "Hox genes encode transcription factors that specify identity along the body axis and are conserved from flies to mammals. Induction occurs when one group of cells signals another to change fate. Stem cells can self-renew and differentiate: embryonic stem cells are pluripotent, adult stem cells are multipotent. Differentiation involves epigenetic changes that stabilise gene expression.",
+    "Cells also die in a controlled way, apoptosis, which sculpts structures such as separating fingers and toes. Model organisms (the fruit fly, zebrafish, mouse, nematode worm and the plant Arabidopsis) have taught us general principles. Errors in signalling can cause birth defects; for example, some drugs and toxins disrupt development at specific stages."
+   ],
+   "example": {
+    "q": "A morphogen concentration falls by half every 100 µm from its source. A gene turns on above 25% of the source concentration. At what distance from the source does the gene switch off?",
+    "steps": [
+     "After 100 µm: 50%.",
+     "After 200 µm: 25%.",
+     "The threshold is 25%, so the gene is on up to about 200 µm."
+    ],
+    "a": "About 200 µm"
+   },
+   "analogies": {
+    "city": "Postcodes tell a letter where to go, as morphogen levels tell cells where they are.",
+    "music": "The same score played with different instruments gives different parts: same DNA, different expression.",
+    "farm": "Soil moisture varies across a field, and crops respond differently along the gradient."
+   },
+   "mnemonic": "Same genes, different switches: position decides fate.",
+   "terms": [
+    [
+     "Morphogen",
+     "A signalling molecule that forms a gradient and specifies cell fate."
+    ],
+    [
+     "Differentiation",
+     "Process by which a cell becomes specialised."
+    ],
+    [
+     "Pluripotent",
+     "Able to form nearly all cell types."
+    ],
+    [
+     "Apoptosis",
+     "Programmed, controlled cell death."
+    ]
+   ],
+   "misc": {
+    "wrong": "Specialised cells lose the genes they don't use.",
+    "right": "Almost all cells keep the full genome and switch genes on and off, as cloning and reprogramming experiments show."
+   },
+   "trip": {
+    "wiki": "Developmental biology",
+    "prompt": "Find the Hox genes and compare their order on a fly and a mouse chromosome."
+   },
+   "sources": [
+    "Developmental biology",
+    "Morphogen",
+    "Hox gene"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What do Hox genes specify?",
+     "o": [
+      "Identity of body regions along the axis",
+      "Eye colour and nothing else",
+      "Blood type of the adult",
+      "Blood clotting factors in the blood"
+     ],
+     "a": 0,
+     "why": "Hox genes pattern the body plan.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A cell that can form nearly any cell type of the body is:",
+     "o": [
+      "Pluripotent",
+      "Unipotent",
+      "Terminally differentiated",
+      "Apoptotic"
+     ],
+     "a": 0,
+     "why": "Embryonic stem cells are pluripotent.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A morphogen halves in concentration every 50 µm. Starting at 100 units at the source, what is the concentration at 150 µm?",
+     "a": 12.5,
+     "tol": 0.05,
+     "unit": "units",
+     "why": "150 µm is 3 halvings: 100 → 50 → 25 → 12.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A zygote divides with every cell dividing at each round. How many cells after 6 rounds?",
+     "a": 64,
+     "tol": 0,
+     "why": "2⁶ = 64.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A developing hand has 20 000 cells in the webbing between digits, and apoptosis removes 85%. How many cells remain?",
+     "o": [
+      "3000",
+      "17 000",
+      "1500",
+      "85"
+     ],
+     "a": 0,
+     "why": "15% of 20 000 = 3000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A nucleus from an adult cell is placed into an egg with its nucleus removed and a whole animal develops. What does this show?",
+     "o": [
+      "Differentiated cells retain the full genome",
+      "Specialised cells lose genes as they develop",
+      "Eggs contain no DNA of their own",
+      "Cloning of animals is impossible"
+     ],
+     "a": 0,
+     "why": "Nuclear transfer demonstrates genomic equivalence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mutant fly has legs growing where antennae should be. Which gene type is probably affected?",
+     "o": [
+      "A Hox (homeotic) gene",
+      "A metabolic enzyme gene",
+      "A ribosomal gene",
+      "A gene for eye pigment"
+     ],
+     "a": 0,
+     "why": "Homeotic mutations transform body parts.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the developmental events.",
+     "items": [
+      "Fertilisation",
+      "Cleavage divisions",
+      "Gastrulation",
+      "Organ formation"
+     ],
+     "why": "Early cell divisions precede formation of germ layers and organs.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each process to its role.",
+     "pairs": [
+      [
+       "Induction",
+       "One tissue changes another's fate"
+      ],
+      [
+       "Apoptosis",
+       "Removes cells to shape structures"
+      ],
+      [
+       "Morphogen gradient",
+       "Gives positional information"
+      ],
+      [
+       "Self-renewal",
+       "Stem cell makes more stem cells"
+      ]
+     ],
+     "why": "Different mechanisms build the embryo.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a morphogen gradient can lead to several different cell types across a tissue.",
+     "rubric": [
+      [
+       "concentration",
+       "gradient",
+       "level"
+      ],
+      [
+       "threshold",
+       "different levels",
+       "different concentrations"
+      ],
+      [
+       "gene",
+       "express",
+       "transcription"
+      ],
+      [
+       "position",
+       "distance",
+       "fate",
+       "different cell types"
+      ]
+     ],
+     "min": 3,
+     "model": "Cells at different distances from the source receive different morphogen concentrations. Different concentration thresholds switch on different genes, so cells at different positions adopt different fates.",
+     "why": "Thresholds convert a continuous gradient into discrete cell types.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might a drug cause the most harm to the embryo at a specific stage?",
+     "o": [
+      "Particular structures form during critical windows",
+      "Embryos have no cells to be harmed at that stage",
+      "Drugs only work at night during pregnancy",
+      "All embryonic stages are identical in their risk"
+     ],
+     "a": 0,
+     "why": "Critical periods of organ formation make timing important.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Adult stem cells in bone marrow make blood cells but not neurons in normal conditions. They are:",
+     "o": [
+      "Multipotent",
+      "Pluripotent",
+      "Totipotent",
+      "Differentiated into nerve"
+     ],
+     "a": 0,
+     "why": "Their potential is limited to a range of related cell types.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are similar developmental genes found in flies and mice?",
+     "o": [
+      "They inherited them from a common ancestor",
+      "It happened by chance alone",
+      "Flies copied the genes from mice",
+      "The genes are identical in all animals and plants"
+     ],
+     "a": 0,
+     "why": "Deep conservation reflects shared ancestry.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How cells with the same DNA become different",
+    "model": "All cells carry the same genome, but different genes are switched on. Signals such as morphogens form gradients, so cells at different positions get different amounts. These levels switch on different transcription factors and genes, giving each cell its fate.",
+    "points": [
+     {
+      "k": [
+       "same dna",
+       "same genes",
+       "genome",
+       "all cells"
+      ],
+      "ask": "Do cells have different DNA?"
+     },
+     {
+      "k": [
+       "gradient",
+       "morphogen",
+       "signal",
+       "position"
+      ],
+      "ask": "How do cells know where they are?"
+     },
+     {
+      "k": [
+       "gene",
+       "express",
+       "switch",
+       "transcription",
+       "fate"
+      ],
+      "ask": "What do those signals change?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Biotechnology",
+   "icon": "🧪",
+   "hook": "Bacteria can be engineered to make human insulin. How do you move a gene from one species to another and get it to work?",
+   "explain": [
+    "Recombinant DNA technology cuts DNA with restriction enzymes at specific sequences, often leaving sticky ends, and joins pieces with DNA ligase. A gene is inserted into a vector such as a plasmid, introduced into host cells (transformation), and cells carrying it are selected, for example with an antibiotic resistance marker. The host then expresses the gene, as bacteria do for human insulin.",
+    "PCR amplifies DNA through repeated cycles of denaturation (about 95 °C), annealing of primers (about 55–65 °C) and extension by a heat-stable polymerase (about 72 °C). Ideal amplification doubles the DNA each cycle, giving 2ⁿ copies after n cycles. Gel electrophoresis separates DNA fragments by size: smaller fragments move farther through the gel toward the positive electrode.",
+    "CRISPR–Cas9 uses a guide RNA to direct the Cas9 nuclease to a matching DNA sequence, making a cut that cells repair; researchers can disrupt a gene or, with a template, edit it. Applications include medicines, crops with improved traits, and diagnostics. Ethical questions concern safety, consent, fairness of access, environmental release and heritable human editing, which most countries restrict."
+   ],
+   "example": {
+    "q": "Starting from 1 DNA molecule, ideal PCR for 10 cycles gives how many copies?",
+    "steps": [
+     "Each cycle doubles the number.",
+     "After 10 cycles: 2¹⁰.",
+     "2¹⁰ = 1024."
+    ],
+    "a": "1024 copies"
+   },
+   "analogies": {
+    "tech": "Restriction enzymes are like scissors, ligase is glue, a plasmid is a USB stick carrying new instructions.",
+    "farm": "Selective breeding takes generations; genetic engineering moves specific genes directly.",
+    "home": "PCR is like a photocopier that doubles the pages each cycle."
+   },
+   "mnemonic": "Cut, Paste, Copy, Check: restriction enzyme, ligase, PCR, gel.",
+   "terms": [
+    [
+     "Restriction enzyme",
+     "Enzyme that cuts DNA at a specific sequence."
+    ],
+    [
+     "Plasmid",
+     "Circular DNA used as a vector."
+    ],
+    [
+     "PCR",
+     "Technique that makes many copies of a DNA segment."
+    ],
+    [
+     "CRISPR–Cas9",
+     "A system that cuts DNA at a site chosen by a guide RNA."
+    ]
+   ],
+   "misc": {
+    "wrong": "Genetically engineered foods always contain DNA that other foods lack.",
+    "right": "All foods contain DNA. The question is which genes and traits have been changed, and each product is assessed for safety individually."
+   },
+   "limits": "Off-target edits, unequal access to therapies and ecological effects of released organisms are active areas of debate and regulation.",
+   "trip": {
+    "wiki": "CRISPR",
+    "prompt": "Find how Cas9 is guided to its target sequence and what the cell does after the cut."
+   },
+   "sources": [
+    "Genetic engineering",
+    "Polymerase chain reaction",
+    "CRISPR"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which enzyme joins DNA fragments together?",
+     "o": [
+      "DNA ligase",
+      "Restriction enzyme",
+      "Helicase",
+      "Taq polymerase"
+     ],
+     "a": 0,
+     "why": "Ligase seals the sugar–phosphate backbone.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Ideal PCR starts with 5 DNA molecules. How many copies after 8 cycles?",
+     "a": 1280,
+     "tol": 0,
+     "why": "5 × 2⁸ = 5 × 256 = 1280.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plasmid of 5000 base pairs is cut by a restriction enzyme at two sites giving one fragment of 1200 bp and another. What is the size of the other fragment?",
+     "a": 3800,
+     "tol": 0,
+     "unit": "bp",
+     "why": "5000 − 1200 = 3800 bp.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In gel electrophoresis, which DNA fragments travel farthest?",
+     "o": [
+      "The smallest",
+      "The largest",
+      "All the same",
+      "Those with the most G–C"
+     ],
+     "a": 0,
+     "why": "Small fragments move through the gel more easily.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a heat-stable polymerase used in PCR?",
+     "o": [
+      "It survives the repeated heating to about 95 °C",
+      "It copies only RNA in the sample",
+      "It is cheaper than other polymerases to buy",
+      "It works only when it is kept in the cold"
+     ],
+     "a": 0,
+     "why": "Taq polymerase is not denatured at high temperature.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Bacteria transformed with a plasmid carrying an ampicillin resistance gene are grown on ampicillin plates. Why?",
+     "o": [
+      "Only bacteria that took up the plasmid survive",
+      "To kill the plasmid as it enters the cell",
+      "To make insulin faster in the culture",
+      "To increase the PCR yield from the sample"
+     ],
+     "a": 0,
+     "why": "Antibiotics select for transformed cells.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of one PCR cycle.",
+     "items": [
+      "Denaturation",
+      "Primer annealing",
+      "Extension by polymerase",
+      "Number of copies doubles"
+     ],
+     "why": "Each cycle includes these steps and doubles the target.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the tool to its function.",
+     "pairs": [
+      [
+       "Restriction enzyme",
+       "Cuts DNA at a specific site"
+      ],
+      [
+       "Ligase",
+       "Joins DNA fragments"
+      ],
+      [
+       "Guide RNA",
+       "Directs Cas9 to its target"
+      ],
+      [
+       "Primer",
+       "Starts DNA synthesis in PCR"
+      ]
+     ],
+     "why": "Each tool plays a role in genetic engineering.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A company wants to produce human insulin in bacteria. Describe the main steps.",
+     "rubric": [
+      [
+       "gene",
+       "insulin gene"
+      ],
+      [
+       "plasmid",
+       "vector"
+      ],
+      [
+       "restriction",
+       "cut",
+       "ligase",
+       "join",
+       "insert"
+      ],
+      [
+       "bacteria",
+       "host",
+       "transform"
+      ],
+      [
+       "ferment",
+       "grow",
+       "culture",
+       "purif",
+       "harvest"
+      ]
+     ],
+     "min": 4,
+     "model": "Isolate the human insulin gene, cut it and a plasmid with the same restriction enzyme, join them with ligase, insert the plasmid into bacteria, select the transformed cells, then grow them in a fermenter and purify the insulin.",
+     "why": "Recombinant DNA workflow.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Heritable germline editing in humans is restricted in many countries mainly because:",
+     "o": [
+      "Changes pass to future generations who cannot consent, and safety is uncertain",
+      "DNA cannot be cut by any enzyme in the lab, so edits fail",
+      "It is far too cheap, so everyone would use it",
+      "It affects only plants, not animals, so it needs no laws"
+     ],
+     "a": 0,
+     "why": "Ethical and safety concerns are major.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A forensic lab amplifies DNA from a tiny sample. A risk is contamination. Why is PCR especially vulnerable?",
+     "o": [
+      "It exponentially amplifies any DNA present, including contaminants",
+      "It destroys DNA so contaminants are removed first",
+      "It works only with RNA samples",
+      "It cannot amplify very small samples of DNA at all"
+     ],
+     "a": 0,
+     "why": "Small amounts of stray DNA are copied too.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A gene-edited crop is released. Which concern requires ecological testing?",
+     "o": [
+      "Gene flow to wild relatives",
+      "Photosynthesis stops in the crop",
+      "Roots of the crop become metal",
+      "DNA of the crop turns into RNA"
+     ],
+     "a": 0,
+     "why": "Transfer of traits to wild plants could alter ecosystems.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can eukaryotic genes with introns not be directly expressed in bacteria from genomic DNA?",
+     "o": [
+      "Bacteria cannot splice introns",
+      "Bacteria lack DNA to start with",
+      "Introns are proteins that bacteria destroy",
+      "Genes are always too short in bacteria"
+     ],
+     "a": 0,
+     "why": "cDNA made from mRNA is used instead.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How PCR copies DNA",
+    "model": "PCR heats DNA to separate the strands, cools it so short primers can attach to the target, then a heat-stable polymerase builds new strands from each primer. Every cycle doubles the number of copies, so after 30 cycles there are about a billion copies of the starting piece.",
+    "points": [
+     {
+      "k": [
+       "heat",
+       "separate",
+       "denatur"
+      ],
+      "ask": "What happens first?"
+     },
+     {
+      "k": [
+       "primer",
+       "anneal",
+       "polymerase",
+       "extend"
+      ],
+      "ask": "How are new strands made?"
+     },
+     {
+      "k": [
+       "double",
+       "exponential",
+       "2",
+       "copies",
+       "billion"
+      ],
+      "ask": "How many copies do you get?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Bioinformatics",
+   "icon": "💻",
+   "hook": "You find a new gene in a bacterium. How can a computer tell you what it probably does, using only its sequence?",
+   "explain": [
+    "Bioinformatics uses computation to analyse biological data. Sequences are stored in public databases such as GenBank and UniProt. Pairwise alignment compares sequences to find similarity; BLAST searches databases for matches and reports an E-value, the number of matches with at least that score expected by chance. Smaller E-values indicate more significant matches. High sequence similarity suggests homology (common ancestry), which often implies similar function, but this is an inference.",
+    "Multiple sequence alignments reveal conserved residues and are used to build phylogenetic trees. Gene finders predict genes by signals such as start codons, open reading frames (ORFs) and splice sites. GC content is the fraction of bases that are G or C. Transcriptomics (RNA-seq) counts reads to estimate gene expression; normalisation is needed, for example reads per million, before comparing samples.",
+    "Data analysis requires careful statistics. Testing thousands of genes at once means many false positives by chance, so p-values must be corrected for multiple testing (for example Bonferroni: divide the threshold by the number of tests). Machine learning methods such as protein structure prediction have advanced rapidly but depend on training data and need experimental validation."
+   ],
+   "example": {
+    "q": "In an RNA-seq sample, gene X has 500 reads out of 20 million total reads. Compute reads per million (RPM).",
+    "steps": [
+     "RPM = reads ÷ (total reads ÷ 1 000 000).",
+     "Total in millions = 20.",
+     "500 ÷ 20 = 25."
+    ],
+    "a": "25 RPM"
+   },
+   "analogies": {
+    "tech": "BLAST is a search engine for sequences.",
+    "city": "Alignment is like lining up two maps to find matching roads.",
+    "sport": "Normalisation is like comparing goals per match rather than raw goals."
+   },
+   "mnemonic": "Search, Align, Count, Correct: BLAST, MSA, RNA-seq, multiple testing.",
+   "terms": [
+    [
+     "Alignment",
+     "Arranging sequences to show regions of similarity."
+    ],
+    [
+     "E-value",
+     "Expected number of equally good matches by chance."
+    ],
+    [
+     "ORF",
+     "A stretch of sequence that could be translated, from a start to a stop codon."
+    ],
+    [
+     "Multiple testing correction",
+     "Adjusting thresholds when many tests are done."
+    ]
+   ],
+   "misc": {
+    "wrong": "A sequence match always proves the same function.",
+    "right": "A strong match suggests a shared ancestor and probably similar function, but function must be confirmed experimentally."
+   },
+   "limits": "Databases contain annotation errors that propagate when predictions are copied from entry to entry.",
+   "trip": {
+    "wiki": "BLAST (biotechnology)",
+    "prompt": "Find how an E-value is interpreted and why smaller values are better."
+   },
+   "sources": [
+    "Bioinformatics",
+    "BLAST (biotechnology)",
+    "Sequence alignment"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A BLAST hit has E = 10⁻⁵⁰. What does this mean?",
+     "o": [
+      "Such a match is extremely unlikely by chance",
+      "The match is certainly wrong",
+      "The two sequences are identical",
+      "The query sequence must be RNA"
+     ],
+     "a": 0,
+     "why": "A tiny E-value means high significance.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A DNA sequence is 200 bases long and 120 of them are G or C. What is its GC content?",
+     "o": [
+      "60%",
+      "40%",
+      "120%",
+      "30%"
+     ],
+     "a": 0,
+     "why": "120 ÷ 200 = 60%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Gene Y has 300 reads in a library of 15 million. Compute reads per million.",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "RPM",
+     "why": "300 ÷ 15 = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A study tests 2000 genes at α = 0.05. Using Bonferroni, what per-gene threshold should be used?",
+     "a": 0.000025,
+     "tol": 0.000001,
+     "why": "0.05 ÷ 2000 = 0.000025.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If 2000 independent tests each have a 5% chance of a false positive and no real effects exist, about how many false positives are expected?",
+     "o": [
+      "About 100",
+      "About 5",
+      "About 2000",
+      "None"
+     ],
+     "a": 0,
+     "why": "2000 × 0.05 = 100.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A gene shares 80% identity with a well-studied enzyme in another species. A cautious conclusion is that it:",
+     "o": [
+      "Probably has a similar function but needs testing",
+      "Certainly has the same function in both species",
+      "Is totally unrelated to the other enzyme",
+      "Is a pseudogene that does nothing at all"
+     ],
+     "a": 0,
+     "why": "Homology suggests function; confirmation needed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An ORF finder reads a DNA sequence in all six frames. Why six?",
+     "o": [
+      "Three frames on each of the two strands",
+      "Six chromosomes are present in each cell",
+      "Six different amino acids are coded",
+      "Six start codons exist in the genetic code"
+     ],
+     "a": 0,
+     "why": "Each strand can be read in three frames.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order a simple RNA-seq analysis.",
+     "items": [
+      "Extract RNA and sequence",
+      "Align reads to the genome",
+      "Count reads per gene",
+      "Normalise and test for differences"
+     ],
+     "why": "Reads are counted and normalised before comparing.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each tool to its purpose.",
+     "pairs": [
+      [
+       "BLAST",
+       "Search a database for similar sequences"
+      ],
+      [
+       "Multiple alignment",
+       "Find conserved positions"
+      ],
+      [
+       "Phylogenetic tree",
+       "Show inferred relationships"
+      ],
+      [
+       "RNA-seq",
+       "Measure gene expression"
+      ]
+     ],
+     "why": "Different tools answer different questions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why must results be corrected when thousands of genes are tested at once?",
+     "rubric": [
+      [
+       "false positive",
+       "by chance",
+       "chance",
+       "type i"
+      ],
+      [
+       "many tests",
+       "thousands",
+       "multiple",
+       "each test"
+      ],
+      [
+       "threshold",
+       "correct",
+       "adjust",
+       "bonferroni",
+       "fdr",
+       "stricter"
+      ]
+     ],
+     "min": 2,
+     "model": "With thousands of tests, many genes would appear significant by chance alone, so the significance threshold is adjusted (for example Bonferroni or false discovery rate) to control false positives.",
+     "why": "Multiple testing inflates false positives.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A database annotation says protein Z is a kinase, but it was inferred only from sequence similarity to another computer-annotated entry. What is the problem?",
+     "o": [
+      "Errors can propagate through database chains",
+      "Kinases are not proteins",
+      "Databases never contain proteins at all",
+      "Sequence similarity is impossible to measure"
+     ],
+     "a": 0,
+     "why": "Unverified annotations spread errors.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two RNA-seq samples have 10 million and 40 million reads. A gene has 100 reads in each. Which is correct?",
+     "o": [
+      "Its expression is higher in the smaller library",
+      "It is exactly the same in both samples",
+      "It is higher in the larger library",
+      "It cannot be compared between the samples"
+     ],
+     "a": 0,
+     "why": "100 reads in 10 M is 10 RPM; in 40 M it is 2.5 RPM.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A machine learning model predicts protein structures from sequence. Which caution applies?",
+     "o": [
+      "Predictions need experimental validation and depend on training data",
+      "They are always perfect and need no checking",
+      "They replace the need for all experiments",
+      "They work only on DNA sequences, not on proteins"
+     ],
+     "a": 0,
+     "why": "Models can be wrong, especially for unusual proteins.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a BLAST search does",
+    "model": "BLAST compares a query sequence with a database and finds the closest matching sequences. It reports an E-value, the number of matches that good you would expect by chance. A very small E-value means the match is likely real, which suggests the genes share an ancestor and may have a similar function.",
+    "points": [
+     {
+      "k": [
+       "compare",
+       "database",
+       "search",
+       "match"
+      ],
+      "ask": "What does BLAST do?"
+     },
+     {
+      "k": [
+       "e-value",
+       "chance",
+       "significan"
+      ],
+      "ask": "How do you know a match is real?"
+     },
+     {
+      "k": [
+       "homolog",
+       "ancestor",
+       "function",
+       "similar"
+      ],
+      "ask": "What can you infer?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Conservation biology and environmental change",
+   "icon": "🌏",
+   "hook": "Species are being lost faster than the typical background rate. How do scientists measure biodiversity, and which actions work best?",
+   "explain": [
+    "Biodiversity has genetic, species and ecosystem levels. Species diversity is measured by richness (number of species) and by indices that also consider evenness, such as Simpson's index D = 1 − Σ(n/N)², where n is the number of individuals of each species and N the total. D near 1 means high diversity.",
+    "Main threats are habitat loss and fragmentation, overexploitation, invasive species, pollution and climate change. Small populations are at risk from genetic drift, inbreeding and chance events (extinction vortex). Conservation strategies include protected areas, wildlife corridors, captive breeding and reintroduction, restoring habitat, sustainable management and working with Indigenous and local communities, whose lands often hold high biodiversity. The IUCN Red List classifies species by extinction risk.",
+    "Climate change shifts the ranges and timing of species. Atmospheric CO₂ has risen from about 280 ppm before industrialisation to over 420 ppm, mainly from fossil fuels and land-use change. Oceans absorb CO₂ and become more acidic. Ecosystem services (pollination, clean water, carbon storage) show how biodiversity supports people. Solutions need evidence, local participation and fairness."
+   ],
+   "example": {
+    "q": "A sample has 50 individuals of species A, 30 of B and 20 of C. Calculate Simpson's diversity index D = 1 − Σ(n/N)².",
+    "steps": [
+     "N = 100; proportions 0.5, 0.3, 0.2.",
+     "Squares: 0.25 + 0.09 + 0.04 = 0.38.",
+     "D = 1 − 0.38 = 0.62."
+    ],
+    "a": "D = 0.62"
+   },
+   "analogies": {
+    "farm": "Planting many crop varieties spreads risk against disease, as genetic diversity buffers a species.",
+    "city": "A city with many kinds of businesses is more resilient than one dependent on a single factory.",
+    "tech": "Backups in several locations protect data, as many species protect an ecosystem's functions."
+   },
+   "mnemonic": "HIPPO threats: Habitat loss, Invasives, Pollution, Population (human), Overharvest, plus climate.",
+   "terms": [
+    [
+     "Species richness",
+     "The number of different species in an area."
+    ],
+    [
+     "Habitat fragmentation",
+     "Breaking of habitat into small isolated patches."
+    ],
+    [
+     "Ecosystem services",
+     "Benefits people get from ecosystems."
+    ],
+    [
+     "Extinction vortex",
+     "Feedback in which small populations become more vulnerable."
+    ]
+   ],
+   "misc": {
+    "wrong": "Conservation means keeping nature free of people.",
+    "right": "Many successful programmes involve local and Indigenous communities and sustainable use, not only exclusion."
+   },
+   "limits": "Extinction rate estimates vary with methods, and many species, especially invertebrates, are undescribed, so the true scale is uncertain.",
+   "trip": {
+    "wiki": "IUCN Red List",
+    "prompt": "Find the Red List categories and place one species you know into one."
+   },
+   "sources": [
+    "Conservation biology",
+    "Biodiversity",
+    "Climate change"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A sample has 40 individuals of species A and 60 of species B. Calculate Simpson's D = 1 − Σ(n/N)².",
+     "a": 0.48,
+     "tol": 0.005,
+     "why": "0.4² + 0.6² = 0.16 + 0.36 = 0.52, so D = 0.48.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A sample has 4 equally abundant species with 25 individuals each. Calculate D = 1 − Σ(n/N)².",
+     "a": 0.75,
+     "tol": 0.005,
+     "why": "4 × 0.25² = 0.25, so D = 0.75.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "CO₂ rose from 280 ppm to 420 ppm. What is the percentage increase?",
+     "o": [
+      "50%",
+      "33%",
+      "140%",
+      "66%"
+     ],
+     "a": 0,
+     "why": "(420 − 280) ÷ 280 = 0.5 = 50%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which sample is more diverse by Simpson's index: species counts 50, 50 or counts 95, 5?",
+     "o": [
+      "50, 50 (higher evenness)",
+      "95, 5, because one species dominates",
+      "Both samples are identical in diversity",
+      "The samples cannot be compared at all"
+     ],
+     "a": 0,
+     "why": "50/50: D = 0.5; 95/5: D ≈ 0.095.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do wildlife corridors help conserve fragmented populations?",
+     "o": [
+      "They allow movement and gene flow between patches",
+      "They remove the predators from every patch",
+      "They increase pollution in the patches",
+      "They isolate the patches from one another"
+     ],
+     "a": 0,
+     "why": "Connectivity reduces inbreeding and local extinction.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An invasive predator is introduced to an island with prey that evolved without predators. What is the likely result?",
+     "o": [
+      "Rapid decline of naive prey species",
+      "No change, since the prey cope easily",
+      "More prey, since they are not used to predators",
+      "Prey evolve instantly to resist the predator"
+     ],
+     "a": 0,
+     "why": "Prey lacking defences are vulnerable.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the IUCN Red List categories from lowest to highest extinction risk.",
+     "items": [
+      "Least Concern",
+      "Vulnerable",
+      "Endangered",
+      "Critically Endangered"
+     ],
+     "why": "Risk rises across these categories.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the threat to a conservation response.",
+     "pairs": [
+      [
+       "Habitat fragmentation",
+       "Wildlife corridors"
+      ],
+      [
+       "Overexploitation",
+       "Quotas and sustainable harvest"
+      ],
+      [
+       "Invasive species",
+       "Removal and biosecurity"
+      ],
+      [
+       "Climate change",
+       "Cutting emissions and protecting refuges"
+      ]
+     ],
+     "why": "Responses should match the cause.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why very small populations are at high risk of extinction even if the original cause of decline stops.",
+     "rubric": [
+      [
+       "inbreed",
+       "genetic diversity",
+       "drift",
+       "genetic"
+      ],
+      [
+       "chance",
+       "random",
+       "catastrophe",
+       "disease",
+       "demograph"
+      ],
+      [
+       "vortex",
+       "feedback",
+       "further decline",
+       "spiral"
+      ],
+      [
+       "mates",
+       "reproduc",
+       "fewer"
+      ]
+     ],
+     "min": 2,
+     "model": "Small populations lose genetic diversity through drift and inbreeding, and random events such as disease or poor breeding years can wipe them out. These effects reinforce one another in an extinction vortex.",
+     "why": "Small size creates self-reinforcing risks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Ocean acidification is mainly caused by:",
+     "o": [
+      "Absorption of atmospheric CO₂ by seawater",
+      "Oil spills at sea on the surface",
+      "Warming of the water alone",
+      "Salt running off from the land"
+     ],
+     "a": 0,
+     "why": "CO₂ dissolves to form carbonic acid, lowering pH.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A reserve protects a forest but local people lose access to resources without compensation. What does evidence suggest about long-term success?",
+     "o": [
+      "It is often less successful without local support and fairness",
+      "It is always successful, whatever the local people think",
+      "People never matter to a conservation project",
+      "Forests do not need protection from anyone"
+     ],
+     "a": 0,
+     "why": "Community involvement improves conservation outcomes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A species is lost from an ecosystem but the total species richness stays the same because a new invader arrived. Why is richness alone misleading?",
+     "o": [
+      "It ignores species identity and function",
+      "Richness is always an accurate measure of ecosystem health",
+      "Invaders always add the services that were lost",
+      "Richness counts individuals rather than species"
+     ],
+     "a": 0,
+     "why": "Different species have different roles and values.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Mangrove forests are protected as coastal defences and fish nurseries. This is an argument based on:",
+     "o": [
+      "Ecosystem services",
+      "Genetic drift in small populations",
+      "Speciation of new fish",
+      "Mutation of the mangrove genes"
+     ],
+     "a": 0,
+     "why": "They provide benefits to people.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to measure biodiversity",
+    "model": "Species richness counts the species. Simpson's index also considers how evenly individuals are spread: add the squares of each species' proportion and subtract from 1. A community with many species of similar abundance has a value close to 1.",
+    "points": [
+     {
+      "k": [
+       "richness",
+       "number of species",
+       "count"
+      ],
+      "ask": "What is the simplest measure?"
+     },
+     {
+      "k": [
+       "even",
+       "abundance",
+       "proportion",
+       "simpson"
+      ],
+      "ask": "What else matters?"
+     },
+     {
+      "k": [
+       "square",
+       "1 -",
+       "1-",
+       "formula",
+       "index",
+       "close to 1",
+       "high"
+      ],
+      "ask": "How do you read the index?"
+     }
+    ]
+   }
+  }
+ ]
+}

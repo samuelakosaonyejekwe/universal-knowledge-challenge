@@ -1,0 +1,2623 @@
+{
+ "world": 2,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Chemical thermodynamics",
+   "icon": "🌡️",
+   "hook": "Ice melts above 0 °C but freezes below it, and the heat involved is the same either way. What decides which direction a change goes?",
+   "explain": [
+    "Enthalpy change ΔH is heat exchanged at constant pressure. Hess's law says ΔH for a reaction is the same whichever route is taken, because enthalpy is a state function. So we can add known reaction enthalpies to find an unknown one.",
+    "Entropy S measures how many ways energy and matter can be arranged: gases have higher entropy than liquids, and liquids higher than solids. The second law says total entropy of the universe increases in a spontaneous change.",
+    "Gibbs free energy combines both: ΔG = ΔH − TΔS (T in kelvin). A reaction is spontaneous when ΔG is negative. If ΔH is positive and ΔS is positive, the reaction becomes spontaneous only at high enough temperature. Spontaneous does not mean fast; kinetics decides speed."
+   ],
+   "example": {
+    "q": "ΔH = −100 kJ/mol and ΔS = −200 J/K/mol. Find ΔG at 298 K.",
+    "steps": [
+     "Convert ΔS: −200 J/K = −0.200 kJ/K.",
+     "TΔS = 298 × (−0.200) = −59.6 kJ.",
+     "ΔG = −100 − (−59.6) = −40.4 kJ/mol."
+    ],
+    "a": "ΔG = −40.4 kJ/mol (spontaneous)"
+   },
+   "analogies": {
+    "home": "A tidy room spontaneously becomes messy; tidying costs effort. Entropy favours mess.",
+    "city": "Water runs downhill by itself, like a spontaneous change.",
+    "sport": "A ball rolls down a slope on its own but needs a push to go up.",
+    "tech": "A phone battery loses charge spontaneously; charging requires input."
+   },
+   "mnemonic": "G = H − TS: heat and disorder both vote on spontaneity.",
+   "terms": [
+    [
+     "Enthalpy (H)",
+     "Heat content at constant pressure."
+    ],
+    [
+     "Entropy (S)",
+     "A measure of dispersal or disorder of energy and matter."
+    ],
+    [
+     "Gibbs free energy (G)",
+     "H − TS; negative ΔG means spontaneous."
+    ],
+    [
+     "Hess's law",
+     "Total enthalpy change is independent of route."
+    ]
+   ],
+   "misc": {
+    "wrong": "A negative ΔG means the reaction is fast.",
+    "right": "ΔG says whether a reaction can happen; the rate depends on activation energy."
+   },
+   "limits": "ΔG predicts spontaneity at constant temperature and pressure; ΔH and ΔS are assumed constant over small temperature ranges.",
+   "trip": {
+    "wiki": "Gibbs free energy",
+    "prompt": "Find the table of signs of ΔH and ΔS and the conditions for spontaneity."
+   },
+   "sources": [
+    "Gibbs free energy",
+    "Entropy",
+    "Hess's law"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Given C + O₂ → CO₂ with ΔH = −394 kJ/mol and CO + ½O₂ → CO₂ with ΔH = −283 kJ/mol, find ΔH in kJ/mol for C + ½O₂ → CO.",
+     "a": -111,
+     "tol": 1,
+     "unit": "kJ/mol",
+     "why": "(−394) − (−283) = −111 kJ/mol by Hess's law.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "ΔH = +40 kJ/mol and ΔS = +100 J/K/mol. At what temperature in kelvin does ΔG = 0?",
+     "a": 400,
+     "tol": 1,
+     "unit": "K",
+     "why": "T = ΔH ÷ ΔS = 40 000 ÷ 100 = 400 K.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which has the highest entropy?",
+     "o": [
+      "Steam",
+      "Ice",
+      "Liquid water",
+      "They are equal"
+     ],
+     "a": 0,
+     "why": "Gases are most dispersed.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A reaction has ΔG = −20 kJ/mol. What does this tell you?",
+     "o": [
+      "It is spontaneous but says nothing about speed",
+      "It is very fast and will finish at once",
+      "It can never happen under these conditions",
+      "It must be endothermic to be spontaneous"
+     ],
+     "a": 0,
+     "why": "ΔG negative means feasible.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "ΔH is negative and ΔS is positive. For which temperatures is the reaction spontaneous?",
+     "o": [
+      "All temperatures",
+      "Only at high temperatures",
+      "Only at low temperatures",
+      "At no temperature at all"
+     ],
+     "a": 0,
+     "why": "ΔG = negative − (T × positive) is always negative.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a state function be added along different routes?",
+     "o": [
+      "Its value depends only on start and end states",
+      "Its value never changes during a reaction",
+      "Its value is always exactly zero at the start",
+      "It is only ever measured in joules, not kilojoules"
+     ],
+     "a": 0,
+     "why": "Basis of Hess's law.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each change to the sign of ΔS of the system.",
+     "pairs": [
+      [
+       "Ice melting",
+       "Entropy rises"
+      ],
+      [
+       "Gas condensing",
+       "Entropy falls"
+      ],
+      [
+       "Salt dissolving in water",
+       "Ions disperse, so up"
+      ],
+      [
+       "2 mol gas making 1 mol gas",
+       "Fewer gas moles, so down"
+      ]
+     ],
+     "why": "Entropy rises when particles disperse.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order by entropy, lowest first.",
+     "items": [
+      "Ice at 0 °C",
+      "Water at 25 °C",
+      "Steam at 100 °C"
+     ],
+     "why": "Solid < liquid < gas.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a reaction with positive ΔH can still happen spontaneously.",
+     "rubric": [
+      [
+       "entropy",
+       "disorder",
+       "δs",
+       "dispersal"
+      ],
+      [
+       "temperature",
+       "high t",
+       "tδs",
+       "increase",
+       "δg",
+       "free energy"
+      ]
+     ],
+     "min": 2,
+     "model": "If entropy increases enough, the −TΔS term can outweigh the positive ΔH so ΔG is negative, especially at high temperature.",
+     "why": "ΔG = ΔH − TΔS.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Diamond converting to graphite has negative ΔG at room temperature, yet diamonds last. Why?",
+     "o": [
+      "The activation energy is huge so the rate is negligible",
+      "Diamond is not made of carbon atoms at all",
+      "ΔG is actually positive so it does not happen",
+      "Graphite is heavier so it cannot form from it"
+     ],
+     "a": 0,
+     "why": "Thermodynamics versus kinetics.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The second law says that:",
+     "o": [
+      "Total entropy of system plus surroundings increases in a spontaneous process",
+      "Energy is created in every spontaneous process",
+      "Entropy of the system always falls over time",
+      "Temperature stays constant in every process"
+     ],
+     "a": 0,
+     "why": "Statement of the second law.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Freezing water below 0 °C is spontaneous even though ΔS of the water is negative. Why?",
+     "o": [
+      "Released heat raises the surroundings' entropy enough",
+      "Entropy is irrelevant to whether freezing happens",
+      "The water vanishes into the surroundings as it freezes",
+      "ΔH of freezing is positive so heat is absorbed"
+     ],
+     "a": 0,
+     "why": "Total entropy rises.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must temperature be in kelvin in ΔG = ΔH − TΔS?",
+     "o": [
+      "Kelvin is an absolute scale starting at zero",
+      "Celsius gives the wrong answers for water only",
+      "It is just a tradition that has no effect",
+      "It makes the numbers in the equation smaller"
+     ],
+     "a": 0,
+     "why": "T multiplies ΔS, so zero must mean absolute zero.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Spontaneity and Gibbs free energy",
+    "model": "A change is spontaneous if ΔG = ΔH − TΔS is negative. Enthalpy tells about heat and entropy about disorder. Temperature sets how much the entropy term counts. Spontaneous does not mean fast.",
+    "points": [
+     {
+      "k": [
+       "enthalpy",
+       "heat",
+       "δh"
+      ],
+      "ask": "What does ΔH tell us?"
+     },
+     {
+      "k": [
+       "entropy",
+       "disorder",
+       "δs"
+      ],
+      "ask": "What does entropy tell us?"
+     },
+     {
+      "k": [
+       "gibbs",
+       "negative",
+       "spontaneous",
+       "δg"
+      ],
+      "ask": "How do I decide if a reaction happens?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Electrochemistry",
+   "icon": "🔋",
+   "hook": "A zinc strip in copper sulfate solution slowly becomes coated with copper. Can we capture the electron flow as a useful current?",
+   "explain": [
+    "Redox reactions involve electron transfer. Oxidation is loss of electrons and reduction is gain (OIL RIG). In a galvanic (voltaic) cell, oxidation at the anode and reduction at the cathode are separated, and electrons flow through an external wire. A salt bridge completes the circuit with ions.",
+    "Standard electrode potentials E° (volts, versus the standard hydrogen electrode) rank the tendency to be reduced. For Zn²⁺/Zn it is −0.76 V and for Cu²⁺/Cu it is +0.34 V. The cell potential is E°cell = E°cathode − E°anode = 0.34 − (−0.76) = +1.10 V. A positive E°cell means a spontaneous reaction.",
+    "In electrolysis an external supply forces a non-spontaneous reaction. Faraday's law: moles of electrons = Q ÷ F, where Q = I × t and F = 96 500 C/mol. At the cathode Cu²⁺ + 2e⁻ → Cu, so 2 mol of electrons deposit 1 mol of copper."
+   ],
+   "example": {
+    "q": "A current of 2.00 A flows for 965 s in a copper(II) sulfate cell. What mass of copper is deposited? (Cu 63.5, F = 96 500 C/mol)",
+    "steps": [
+     "Q = 2.00 × 965 = 1930 C.",
+     "Moles of e⁻ = 1930 ÷ 96 500 = 0.0200 mol.",
+     "Cu²⁺ + 2e⁻ → Cu: 0.0100 mol Cu, mass 0.0100 × 63.5 = 0.635 g."
+    ],
+    "a": "0.635 g"
+   },
+   "analogies": {
+    "home": "A battery is like a water tank pushing water through a pipe: the voltage is the push.",
+    "city": "A water wheel is turned by the flow, as a motor is by electrons.",
+    "farm": "A solar-powered fence charger stores electrical energy.",
+    "tech": "A phone battery is a cell that is charged by electrolysis in reverse."
+   },
+   "mnemonic": "OIL RIG: Oxidation Is Loss, Reduction Is Gain. An Ox, Red Cat: anode oxidation, cathode reduction.",
+   "terms": [
+    [
+     "Oxidation",
+     "Loss of electrons."
+    ],
+    [
+     "Reduction",
+     "Gain of electrons."
+    ],
+    [
+     "Anode",
+     "Electrode where oxidation occurs."
+    ],
+    [
+     "Electrolysis",
+     "Using electricity to drive a non-spontaneous reaction."
+    ]
+   ],
+   "misc": {
+    "wrong": "Electrons flow through the salt bridge.",
+    "right": "Electrons flow in the external wire; ions move through the salt bridge."
+   },
+   "limits": "Standard potentials apply at 1 mol/L, 25 °C and 1 atm. Real cell voltages change with concentration.",
+   "trip": {
+    "wiki": "Galvanic cell",
+    "prompt": "Find a diagram of a Daniell cell and trace the direction of electron flow."
+   },
+   "sources": [
+    "Galvanic cell",
+    "Standard electrode potential",
+    "Faraday's laws of electrolysis"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A cell has cathode E° = +0.34 V and anode E° = −0.76 V. What is E°cell in volts?",
+     "a": 1.1,
+     "tol": 0.01,
+     "unit": "V",
+     "why": "0.34 − (−0.76) = 1.10 V.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How many coulombs flow when 0.50 A passes for 600 s?",
+     "why": "Q = I t = 0.50 × 600 = 300 C.",
+     "d": 1,
+     "k": "apply",
+     "o": [
+      "300 C",
+      "30 C",
+      "1200 C",
+      "0.0008 C"
+     ],
+     "a": 0
+    },
+    {
+     "t": "num",
+     "q": "A current of 1.00 A flows for 9650 s through molten sodium chloride. How many moles of sodium form? (Na⁺ + e⁻ → Na; F = 96 500)",
+     "a": 0.1,
+     "tol": 0.005,
+     "unit": "mol",
+     "why": "Q = 9650 C; mol e⁻ = 0.100; 1 e⁻ per Na gives 0.100 mol.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which half-reaction is oxidation?",
+     "o": [
+      "Zn → Zn²⁺ + 2e⁻",
+      "Cu²⁺ + 2e⁻ → Cu",
+      "O₂ + 4e⁻ → 2O²⁻",
+      "Ag⁺ + e⁻ → Ag"
+     ],
+     "a": 0,
+     "why": "Electrons are lost.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "At which electrode does reduction occur in a galvanic cell?",
+     "o": [
+      "Cathode",
+      "Anode",
+      "Salt bridge",
+      "Wire"
+     ],
+     "a": 0,
+     "why": "Cathode reduces.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A positive E°cell indicates:",
+     "o": [
+      "A spontaneous reaction under standard conditions",
+      "A non-spontaneous reaction under standard conditions",
+      "No reaction takes place at all",
+      "A reaction that always happens quickly"
+     ],
+     "a": 0,
+     "why": "ΔG° = −nFE°.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the role of the salt bridge?",
+     "o": [
+      "Allows ions to move and keeps charges balanced",
+      "It carries electrons from one half-cell to the other",
+      "It makes extra electrons for the circuit",
+      "It stops the reaction from ever taking place"
+     ],
+     "a": 0,
+     "why": "Ion flow completes the circuit.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its role.",
+     "pairs": [
+      [
+       "Anode (galvanic)",
+       "Oxidation happens here"
+      ],
+      [
+       "Cathode (galvanic)",
+       "Reduction happens here"
+      ],
+      [
+       "Salt bridge",
+       "Ion flow between half-cells"
+      ],
+      [
+       "External wire",
+       "Electron flow"
+      ]
+     ],
+     "why": "Roles in a cell.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order these metals by their ease of oxidation, most easily oxidised first (E°: Mg −2.37 V, Zn −0.76 V, Cu +0.34 V, Ag +0.80 V).",
+     "items": [
+      "Magnesium",
+      "Zinc",
+      "Copper",
+      "Silver"
+     ],
+     "why": "More negative E° means more easily oxidised.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does a zinc strip become coated with copper in copper sulfate solution?",
+     "rubric": [
+      [
+       "zinc",
+       "zn"
+      ],
+      [
+       "more reactive",
+       "oxidis",
+       "loses electrons",
+       "gives electrons",
+       "displace"
+      ],
+      [
+       "copper",
+       "cu",
+       "reduced",
+       "gains electrons",
+       "deposit"
+      ]
+     ],
+     "min": 2,
+     "model": "Zinc is more easily oxidised than copper, so it loses electrons to Cu²⁺ ions, which are reduced and deposited as copper metal.",
+     "why": "Displacement reaction as a redox process.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In electrolysis the anode is positive. In a galvanic cell the anode is negative. What is the same in both?",
+     "o": [
+      "Oxidation occurs at the anode",
+      "Reduction occurs at the anode",
+      "The reaction is spontaneous",
+      "There is no wire"
+     ],
+     "a": 0,
+     "why": "Anode is defined by oxidation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Doubling the current for the same time in electrolysis does what to mass deposited?",
+     "o": [
+      "Doubles it",
+      "Halves it",
+      "No change",
+      "Quadruples it"
+     ],
+     "a": 0,
+     "why": "Q doubles.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a cell voltage fall as a battery is used?",
+     "o": [
+      "Reactant concentrations change and approach equilibrium",
+      "The electrons run out entirely from the wire",
+      "The connecting wire becomes shorter with use",
+      "The metal electrodes become much lighter"
+     ],
+     "a": 0,
+     "why": "Q approaches K, E → 0.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Galvanic cells and electrolysis",
+    "model": "In redox, one species loses electrons (oxidation at the anode) and another gains them (reduction at the cathode). In a galvanic cell the electrons flow through a wire and give a voltage from the standard potentials. In electrolysis, electricity drives a reaction, and Faraday's law links charge to moles.",
+    "points": [
+     {
+      "k": [
+       "oxidation",
+       "reduction",
+       "lose",
+       "gain",
+       "electron"
+      ],
+      "ask": "What are oxidation and reduction?"
+     },
+     {
+      "k": [
+       "anode",
+       "cathode"
+      ],
+      "ask": "What happens at each electrode?"
+     },
+     {
+      "k": [
+       "voltage",
+       "potential",
+       "cell",
+       "faraday",
+       "charge"
+      ],
+      "ask": "How do I get a voltage or a mass?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Organic chemistry and functional groups",
+   "icon": "🧬",
+   "hook": "Methane, ethanol, vinegar and plastic bags all have carbon backbones. How can one element give such variety?",
+   "explain": [
+    "Carbon forms four bonds and can bond to itself in chains and rings, giving millions of compounds. Hydrocarbons contain only C and H. Alkanes are saturated with single bonds and have formula CₙH₂ₙ₊₂, such as methane CH₄ and propane C₃H₈. Alkenes contain a C=C double bond and have formula CₙH₂ₙ, such as ethene C₂H₄.",
+    "A functional group is a group of atoms that decides how a molecule reacts. Alcohols have –OH (ethanol C₂H₅OH), carboxylic acids have –COOH (ethanoic acid), esters have –COO– and amines have –NH₂. Isomers share a molecular formula but have different structures: butane and 2-methylpropane are both C₄H₁₀.",
+    "Alkenes undergo addition reactions: ethene + bromine → 1,2-dibromoethane, which also decolourises bromine water as a test. Alkanes burn: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. Alcohols can be oxidised to carboxylic acids."
+   ],
+   "example": {
+    "q": "Give the molecular formula of an alkane with 8 carbon atoms.",
+    "steps": [
+     "General formula CₙH₂ₙ₊₂.",
+     "n = 8 gives H = 2 × 8 + 2.",
+     "H = 18."
+    ],
+    "a": "C₈H₁₈"
+   },
+   "analogies": {
+    "home": "Lego with the same bricks in different shapes: isomers.",
+    "farm": "Ethanol from fermented crops is used as fuel.",
+    "sport": "The same players can form different formations, like isomers.",
+    "tech": "A plastic is a long chain, like a long train of identical carriages."
+   },
+   "mnemonic": "Meth-Eth-Prop-But: one, two, three, four carbons; then pent, hex, hept, oct.",
+   "terms": [
+    [
+     "Functional group",
+     "An atom or group that gives a molecule its characteristic reactions."
+    ],
+    [
+     "Isomer",
+     "A compound with the same formula but a different structure."
+    ],
+    [
+     "Saturated",
+     "Only single carbon–carbon bonds."
+    ],
+    [
+     "Addition reaction",
+     "Atoms add across a double bond."
+    ]
+   ],
+   "misc": {
+    "wrong": "Isomers have the same properties because they have the same atoms.",
+    "right": "Different arrangements give different properties, such as boiling points."
+   },
+   "limits": "Naming rules (IUPAC) have many exceptions for complex molecules.",
+   "trip": {
+    "wiki": "Functional group",
+    "prompt": "Find the table of functional groups and identify the one in ethanol."
+   },
+   "sources": [
+    "Functional group",
+    "Alkane",
+    "Alkene"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "How many hydrogen atoms are in an alkane with 5 carbon atoms?",
+     "a": 12,
+     "tol": 0,
+     "why": "CₙH₂ₙ₊₂: 2 × 5 + 2 = 12.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which functional group is in alcohols?",
+     "o": [
+      "–OH",
+      "–COOH",
+      "–NH₂",
+      "C=C"
+     ],
+     "a": 0,
+     "why": "Hydroxyl.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an alkene?",
+     "o": [
+      "C₃H₆",
+      "C₃H₈",
+      "C₄H₁₀",
+      "CH₄"
+     ],
+     "a": 0,
+     "why": "CₙH₂ₙ with n = 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How can bromine water distinguish ethene from ethane?",
+     "o": [
+      "Ethene decolourises it",
+      "Ethane decolourises it",
+      "Both decolourise it",
+      "Neither does"
+     ],
+     "a": 0,
+     "why": "Addition across C=C.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Butane and 2-methylpropane are:",
+     "o": [
+      "Isomers",
+      "Identical",
+      "Alkenes",
+      "Elements"
+     ],
+     "a": 0,
+     "why": "Both C₄H₁₀ with different structures.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the product of complete combustion of ethanol?",
+     "o": [
+      "CO₂ and H₂O",
+      "CO and H₂",
+      "Carbon only",
+      "Methane"
+     ],
+     "a": 0,
+     "why": "Hydrocarbon derivatives burn to CO₂ + H₂O.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each compound class to its functional group.",
+     "pairs": [
+      [
+       "Alcohol",
+       "–OH"
+      ],
+      [
+       "Carboxylic acid",
+       "–COOH"
+      ],
+      [
+       "Amine",
+       "–NH₂"
+      ],
+      [
+       "Alkene",
+       "C=C"
+      ]
+     ],
+     "why": "Groups define classes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order these alkanes by number of carbon atoms, fewest first.",
+     "items": [
+      "Methane",
+      "Ethane",
+      "Propane",
+      "Butane"
+     ],
+     "why": "1, 2, 3, 4 carbons.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why are alkenes more reactive than alkanes?",
+     "rubric": [
+      [
+       "double bond",
+       "c=c",
+       "pi bond",
+       "unsaturated"
+      ],
+      [
+       "addition",
+       "add",
+       "break",
+       "react",
+       "electron"
+      ]
+     ],
+     "min": 2,
+     "model": "Alkenes have a C=C double bond whose second bond is weaker and electron-rich, so other atoms can add across it. Alkanes have only strong, stable single bonds.",
+     "why": "Double bonds are sites of reaction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Ethanol boils at 78 °C but dimethyl ether (same formula C₂H₆O) boils at −24 °C. Why?",
+     "o": [
+      "Ethanol forms hydrogen bonds between molecules",
+      "Ethanol is lighter, so it boils at a higher temperature",
+      "Ether has more atoms so it boils more easily",
+      "Ether is ionic and ethanol is not"
+     ],
+     "a": 0,
+     "why": "–OH allows hydrogen bonding.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are there so many organic compounds?",
+     "o": [
+      "Carbon forms four bonds and long chains and rings",
+      "Carbon is the most common element on Earth",
+      "Carbon forms ionic bonds with every element",
+      "Carbon is a gas that mixes with anything"
+     ],
+     "a": 0,
+     "why": "Catenation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about C₂H₆ and C₂H₄ is correct?",
+     "o": [
+      "C₂H₄ is unsaturated",
+      "C₂H₆ is unsaturated",
+      "Both are alkenes",
+      "Both are saturated"
+     ],
+     "a": 0,
+     "why": "C₂H₄ has C=C.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Plastic bags are made by joining many ethene units. This process is called:",
+     "o": [
+      "Addition polymerisation",
+      "Combustion",
+      "Neutralisation",
+      "Distillation"
+     ],
+     "a": 0,
+     "why": "Double bonds open to link molecules.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Hydrocarbons and functional groups",
+    "model": "Carbon makes four bonds and builds chains. Alkanes have single bonds, alkenes have a C=C double bond and are more reactive. A functional group such as –OH in alcohols decides how a molecule behaves. Isomers have the same formula but different structures.",
+    "points": [
+     {
+      "k": [
+       "alkane",
+       "alkene",
+       "double bond"
+      ],
+      "ask": "What is the difference between alkanes and alkenes?"
+     },
+     {
+      "k": [
+       "functional",
+       "group",
+       "-oh",
+       "alcohol",
+       "acid"
+      ],
+      "ask": "What is a functional group?"
+     },
+     {
+      "k": [
+       "isomer",
+       "same formula",
+       "different structure"
+      ],
+      "ask": "What are isomers?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Analytical chemistry",
+   "icon": "🧫",
+   "hook": "A river sample is tested for dissolved iron. How could you find out how much is there without guessing?",
+   "explain": [
+    "Analytical chemistry finds what is in a sample (qualitative) and how much (quantitative). Titration is a precise method: a solution of known concentration is added from a burette to a measured volume of another until an indicator shows the end point. At neutralisation the moles of acid and base are in the ratio given by the equation.",
+    "For HCl + NaOH → NaCl + H₂O the ratio is 1 : 1, so moles = concentration × volume (in litres) for each, and they are equal at the end point. Always do rough and then accurate runs, and average concordant results (within 0.10 mL).",
+    "Colorimetry uses the Beer–Lambert law: absorbance A = ε × c × l, where ε is the molar absorptivity, c concentration and l path length. A calibration curve of absorbance against concentration for standard solutions lets us read the concentration of an unknown. pH is −log₁₀[H⁺]."
+   ],
+   "example": {
+    "q": "25.0 mL of NaOH needs 20.0 mL of 0.100 mol/L HCl. Find the concentration of NaOH.",
+    "steps": [
+     "Moles HCl = 0.100 × 0.0200 = 0.00200 mol.",
+     "1 : 1 ratio, so moles NaOH = 0.00200 mol.",
+     "Concentration = 0.00200 ÷ 0.0250 = 0.0800 mol/L."
+    ],
+    "a": "0.0800 mol/L"
+   },
+   "analogies": {
+    "home": "Adding drops of lemon juice to milk until it curdles: the endpoint.",
+    "farm": "Soil testing: sampling a few spots represents a field.",
+    "sea": "Measuring the salt in seawater from a small sample.",
+    "tech": "A calibration line is like a ruler you build from known marks."
+   },
+   "mnemonic": "Titrate: rough, then slow; swirl, and stop at the first stable colour.",
+   "terms": [
+    [
+     "Titration",
+     "Adding a solution of known concentration to find an unknown one."
+    ],
+    [
+     "End point",
+     "The point where the indicator changes colour."
+    ],
+    [
+     "Calibration curve",
+     "A graph from known standards used to find unknowns."
+    ],
+    [
+     "Absorbance",
+     "How much light a sample absorbs."
+    ]
+   ],
+   "misc": {
+    "wrong": "One titration is enough.",
+    "right": "Repeat until results agree (concordant) to reduce random error."
+   },
+   "limits": "Every measurement has uncertainty; accuracy depends on equipment and technique.",
+   "trip": {
+    "wiki": "Titration",
+    "prompt": "Find a titration curve and spot the equivalence point."
+   },
+   "sources": [
+    "Titration",
+    "Analytical chemistry",
+    "Beer–Lambert law"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "20.0 mL of 0.100 mol/L HCl neutralises 25.0 mL of NaOH (1 : 1). What is the NaOH concentration in mol/L?",
+     "a": 0.08,
+     "tol": 0.001,
+     "unit": "mol/L",
+     "why": "0.00200 ÷ 0.0250 = 0.0800.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the pH of a solution with [H⁺] = 1.0 × 10⁻³ mol/L?",
+     "why": "pH = −log(10⁻³) = 3.",
+     "d": 1,
+     "k": "apply",
+     "o": [
+      "3",
+      "1",
+      "-3",
+      "0.001"
+     ],
+     "a": 0
+    },
+    {
+     "t": "num",
+     "q": "A solution has ε = 2000 L/mol/cm, c = 0.00020 mol/L and l = 1.0 cm. What is its absorbance A?",
+     "a": 0.4,
+     "tol": 0.005,
+     "why": "A = 2000 × 0.00020 × 1.0 = 0.40.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of an indicator in titration?",
+     "o": [
+      "To show the end point",
+      "To speed the reaction",
+      "To neutralise the acid",
+      "To heat the mixture"
+     ],
+     "a": 0,
+     "why": "Colour change marks the end.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we do a rough titration first?",
+     "o": [
+      "To find the approximate end point volume",
+      "To use up chemicals before the real test",
+      "To rinse out the burette before filling",
+      "To calibrate the pH meter beforehand"
+     ],
+     "a": 0,
+     "why": "Then add slowly near it.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a quantitative test?",
+     "o": [
+      "Titration",
+      "Noting a colour change only",
+      "A flame test colour",
+      "Smelling a gas"
+     ],
+     "a": 0,
+     "why": "Titration gives amounts.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Burette readings are 20.10, 20.15 and 20.05 mL. These results are:",
+     "o": [
+      "Concordant",
+      "Random",
+      "Wrong",
+      "Not usable"
+     ],
+     "a": 0,
+     "why": "Within 0.10 mL.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each technique to its use.",
+     "pairs": [
+      [
+       "Titration",
+       "Find concentration by volume"
+      ],
+      [
+       "Colorimetry",
+       "Find concentration by light absorbed"
+      ],
+      [
+       "pH meter",
+       "Measure acidity"
+      ],
+      [
+       "Flame test",
+       "Identify some metal ions"
+      ]
+     ],
+     "why": "Different analytical methods.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a titration.",
+     "items": [
+      "Rinse and fill the burette",
+      "Pipette a measured volume into a flask and add indicator",
+      "Add titrant until the colour changes",
+      "Record the volume and repeat"
+     ],
+     "why": "Standard method.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a calibration curve is used to find an unknown concentration in colorimetry.",
+     "rubric": [
+      [
+       "standard",
+       "known"
+      ],
+      [
+       "absorbance",
+       "reading",
+       "measure"
+      ],
+      [
+       "graph",
+       "curve",
+       "line",
+       "read",
+       "compare"
+      ]
+     ],
+     "min": 2,
+     "model": "Measure the absorbance of several solutions of known concentration to plot a graph. Then measure the unknown's absorbance and read its concentration from the line.",
+     "why": "Calibration links signal to concentration.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Adding more indicator than needed can:",
+     "o": [
+      "Introduce error since indicators are weak acids or bases",
+      "Make the results exact by adding extra colour",
+      "Speed up the end point without any error",
+      "Remove all of the other errors in the method"
+     ],
+     "a": 0,
+     "why": "Use only a few drops.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mean titre of 22.50 mL with scatter of ±0.05 mL suggests:",
+     "o": [
+      "Good precision",
+      "Poor precision",
+      "Wrong chemistry",
+      "Accuracy guaranteed"
+     ],
+     "a": 0,
+     "why": "Precision is about spread, not correctness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the pH scale use a logarithm?",
+     "o": [
+      "Concentrations of H⁺ span many orders of magnitude",
+      "To make the scale harder to read",
+      "Because H⁺ ions are a kind of gas",
+      "To avoid needing any units at all"
+     ],
+     "a": 0,
+     "why": "Compact scale.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Titration and concentration",
+    "model": "In a titration you add a solution of known concentration to a measured volume of another until the indicator changes. Using the balanced equation, moles of one equal moles of the other in the ratio, so concentration = moles ÷ volume in litres.",
+    "points": [
+     {
+      "k": [
+       "burette",
+       "known",
+       "titrant",
+       "indicator",
+       "end point"
+      ],
+      "ask": "How does a titration work?"
+     },
+     {
+      "k": [
+       "moles",
+       "ratio",
+       "equation"
+      ],
+      "ask": "How do you calculate with it?"
+     },
+     {
+      "k": [
+       "repeat",
+       "concordant",
+       "average"
+      ],
+      "ask": "How do you make it reliable?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Spectroscopy and chromatography",
+   "icon": "🌈",
+   "hook": "A forensic lab can tell which dye is in a pen ink from a tiny smear. What tools can separate and identify mixtures?",
+   "explain": [
+    "Chromatography separates a mixture because its components spread between a stationary phase and a mobile phase to different extents. In paper or thin-layer chromatography, the retention factor is Rf = distance moved by spot ÷ distance moved by solvent front, always between 0 and 1. Rf values can identify substances under the same conditions.",
+    "Spectroscopy studies how matter interacts with radiation. Energy and frequency are linked by E = hν and c = λν. Infrared (IR) spectroscopy detects bond vibrations: O–H in alcohols gives a broad band near 3300 cm⁻¹ and C=O gives a strong band near 1700 cm⁻¹. UV-visible spectroscopy detects electron transitions, which explains colour.",
+    "Mass spectrometry measures mass-to-charge ratios of ions. The molecular ion peak (M⁺) gives the relative molecular mass, and fragments help work out structure. Techniques are often combined, such as gas chromatography coupled to mass spectrometry (GC-MS)."
+   ],
+   "example": {
+    "q": "A spot moves 3.0 cm while the solvent front moves 6.0 cm. Find Rf.",
+    "steps": [
+     "Rf = distance of spot ÷ distance of solvent.",
+     "Rf = 3.0 ÷ 6.0.",
+     "Rf = 0.50."
+    ],
+    "a": "0.50"
+   },
+   "analogies": {
+    "home": "Ink spreading on wet blotting paper separates into colours.",
+    "sport": "Runners of different speeds spread out along a track.",
+    "city": "Cars with different speeds sort themselves in lanes.",
+    "music": "A prism splits white light as an instrument separates sound into pitches."
+   },
+   "mnemonic": "Chromatography: they race, the fast ones win; Rf is the race fraction.",
+   "terms": [
+    [
+     "Stationary phase",
+     "The fixed material (e.g. paper) in chromatography."
+    ],
+    [
+     "Mobile phase",
+     "The solvent that moves through it."
+    ],
+    [
+     "Rf",
+     "Spot distance divided by solvent distance."
+    ],
+    [
+     "Mass spectrometry",
+     "Measuring the mass-to-charge ratio of ions."
+    ]
+   ],
+   "misc": {
+    "wrong": "An Rf value can be bigger than 1.",
+    "right": "The spot cannot travel further than the solvent, so Rf ≤ 1."
+   },
+   "limits": "Rf depends on solvent, temperature and paper, so compare only under identical conditions.",
+   "trip": {
+    "wiki": "Chromatography",
+    "prompt": "Find the thin-layer chromatography picture and measure an Rf by eye."
+   },
+   "sources": [
+    "Chromatography",
+    "Infrared spectroscopy",
+    "Mass spectrometry"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A pigment travels 4.5 cm and the solvent front 9.0 cm. What is Rf?",
+     "a": 0.5,
+     "tol": 0.005,
+     "why": "4.5 ÷ 9.0 = 0.50.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Light has wavelength 500 nm (5.00 × 10⁻⁷ m). Using c = 3.00 × 10⁸ m/s, what is its frequency in units of 10¹⁴ Hz?",
+     "a": 6,
+     "tol": 0.05,
+     "unit": "×10¹⁴ Hz",
+     "why": "ν = c ÷ λ = 3.00 × 10⁸ ÷ 5.00 × 10⁻⁷ = 6.0 × 10¹⁴ Hz.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In chromatography, the substance that spreads furthest is:",
+     "o": [
+      "The one least attracted to the stationary phase",
+      "The one most attracted to the paper",
+      "The heaviest molecule in the mixture",
+      "The one with the reddest colour"
+     ],
+     "a": 0,
+     "why": "Less attraction means more movement.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A strong IR band near 1700 cm⁻¹ suggests which bond?",
+     "o": [
+      "C=O",
+      "C–H",
+      "O–H",
+      "C≡N"
+     ],
+     "a": 0,
+     "why": "Carbonyl stretch.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A broad IR band near 3300 cm⁻¹ suggests:",
+     "o": [
+      "O–H",
+      "C=O",
+      "C–C",
+      "C–Cl"
+     ],
+     "a": 0,
+     "why": "Hydroxyl stretch.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The molecular ion peak in a mass spectrum gives:",
+     "o": [
+      "The relative molecular mass",
+      "The colour of the compound",
+      "The boiling point of the compound",
+      "The pH of the sample"
+     ],
+     "a": 0,
+     "why": "M⁺ corresponds to the molecule minus one electron.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pen ink spot has the same Rf and colour as a known dye in three solvents. What can you conclude?",
+     "o": [
+      "It is probably the same dye",
+      "It is definitely the same dye",
+      "It is certainly a different dye",
+      "Nothing can be concluded at all"
+     ],
+     "a": 0,
+     "why": "Matching in several systems is strong evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each technique to what it mainly shows.",
+     "pairs": [
+      [
+       "IR spectroscopy",
+       "Functional groups"
+      ],
+      [
+       "Mass spectrometry",
+       "Molecular mass"
+      ],
+      [
+       "Paper chromatography",
+       "Separation of dyes"
+      ],
+      [
+       "UV-visible spectroscopy",
+       "Electronic transitions"
+      ]
+     ],
+     "why": "Each probes different information.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of paper chromatography.",
+     "items": [
+      "Draw a pencil line and place a spot on it",
+      "Stand the paper in a solvent below the line",
+      "Let the solvent rise and mark the front",
+      "Measure distances and calculate Rf"
+     ],
+     "why": "Pencil does not run.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is the start line drawn in pencil rather than ink?",
+     "rubric": [
+      [
+       "pencil",
+       "graphite"
+      ],
+      [
+       "dissolve",
+       "ink",
+       "run",
+       "separate",
+       "interfere",
+       "insoluble",
+       "move"
+      ]
+     ],
+     "min": 2,
+     "model": "Pencil graphite does not dissolve in the solvent, whereas ink dyes would also run and mix with the sample spots.",
+     "why": "Avoids contamination.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is GC-MS powerful?",
+     "o": [
+      "It separates components then identifies each",
+      "It measures only the colour of each part",
+      "It needs no sample to work",
+      "It destroys all the information about the mixture"
+     ],
+     "a": 0,
+     "why": "Separation plus identification.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A coloured compound absorbs green light. It looks:",
+     "o": [
+      "Magenta or purple (the complementary colour)",
+      "Green, the same colour that it absorbs",
+      "Black, as it absorbs the green light",
+      "Clear, because green light is not seen"
+     ],
+     "a": 0,
+     "why": "We see the colours not absorbed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a higher Rf in the same system indicate a different substance from a lower Rf?",
+     "o": [
+      "Different attraction to the two phases",
+      "They have different colours on the paper",
+      "The paper had different weights",
+      "It is just random chance each time"
+     ],
+     "a": 0,
+     "why": "Rf reflects partitioning.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Separating and identifying substances",
+    "model": "Chromatography separates a mixture because components move at different speeds between a stationary and a mobile phase; Rf is spot distance divided by solvent distance. Spectroscopy uses radiation, such as IR to find bonds, and mass spectrometry gives the mass of molecules.",
+    "points": [
+     {
+      "k": [
+       "chromatography",
+       "separate",
+       "stationary",
+       "mobile",
+       "solvent"
+      ],
+      "ask": "How does chromatography separate things?"
+     },
+     {
+      "k": [
+       "rf",
+       "distance",
+       "ratio",
+       "divide"
+      ],
+      "ask": "What is Rf?"
+     },
+     {
+      "k": [
+       "infrared",
+       "ir",
+       "mass spec",
+       "spectro",
+       "bond"
+      ],
+      "ask": "How do spectra help identify a substance?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Crystallography and crystal structures",
+   "icon": "💎",
+   "hook": "Both diamond and graphite are pure carbon, yet one is the hardest natural material and the other is soft enough for a pencil. What differs?",
+   "explain": [
+    "A crystal has atoms arranged in a repeating three-dimensional pattern. The smallest repeating block is the unit cell. Common metal structures are simple cubic (1 atom per cell, coordination number 6), body-centred cubic BCC (2 atoms, coordination 8) and face-centred cubic FCC (4 atoms, coordination 12). The atomic packing factor is 0.52 for simple cubic, 0.68 for BCC and 0.74 for FCC.",
+    "Density follows from the cell: ρ = (n × M) ÷ (N_A × a³), with n atoms per cell, M molar mass, N_A = 6.02 × 10²³ and a the cell edge. For FCC copper with a = 0.361 nm, M = 63.5 g/mol and n = 4, ρ ≈ 8.97 g/cm³.",
+    "X-ray diffraction finds structures using Bragg's law nλ = 2d sinθ, where d is the spacing between planes. Allotropes, like diamond (a tetrahedral covalent network) and graphite (layers weakly bonded), show how structure controls properties."
+   ],
+   "example": {
+    "q": "X-rays of wavelength 0.154 nm give a first-order (n = 1) peak for planes with d = 0.154 nm. Find θ.",
+    "steps": [
+     "nλ = 2d sinθ gives sinθ = λ ÷ (2d).",
+     "sinθ = 0.154 ÷ 0.308 = 0.50.",
+     "θ = 30°."
+    ],
+    "a": "θ = 30°"
+   },
+   "analogies": {
+    "home": "Tiles on a floor repeat in a pattern: the unit cell is one tile pattern.",
+    "farm": "An orchard planted in rows: every tree has the same neighbours.",
+    "city": "A grid of streets repeating block by block.",
+    "sport": "Oranges stacked in a market pile pack closely like FCC."
+   },
+   "mnemonic": "SC 1, BCC 2, FCC 4: count atoms per cell, share corners by eight, faces by two.",
+   "terms": [
+    [
+     "Unit cell",
+     "Smallest repeating block of a crystal."
+    ],
+    [
+     "Coordination number",
+     "Number of nearest neighbours of an atom."
+    ],
+    [
+     "Packing factor",
+     "Fraction of volume filled by atoms."
+    ],
+    [
+     "Allotrope",
+     "Different structural forms of the same element."
+    ]
+   ],
+   "misc": {
+    "wrong": "Atoms in a solid are packed with no gaps.",
+    "right": "Even the best packing (FCC, 74%) leaves about 26% empty space."
+   },
+   "limits": "Real crystals contain defects and many materials are polycrystalline or amorphous.",
+   "trip": {
+    "wiki": "Crystal structure",
+    "prompt": "Find pictures of FCC and BCC unit cells and count the atoms."
+   },
+   "sources": [
+    "Crystal structure",
+    "Bragg's law",
+    "Allotropes of carbon"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "How many atoms per unit cell are there in FCC?",
+     "a": 4,
+     "tol": 0,
+     "why": "8 corners × 1/8 + 6 faces × 1/2 = 4.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Copper is FCC with a = 0.361 nm (3.61 × 10⁻⁸ cm), M = 63.5 g/mol, N_A = 6.02 × 10²³. Calculate its density in g/cm³.",
+     "a": 8.97,
+     "tol": 0.1,
+     "unit": "g/cm³",
+     "why": "ρ = 4 × 63.5 ÷ (6.02 × 10²³ × 4.70 × 10⁻²³) ≈ 8.97 g/cm³.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "First-order Bragg reflection for planes with d = 0.154 nm and λ = 0.154 nm. What is θ in degrees?",
+     "why": "sinθ = 0.5.",
+     "d": 2,
+     "k": "apply",
+     "o": [
+      "30°",
+      "60°",
+      "15°",
+      "45°"
+     ],
+     "a": 0
+    },
+    {
+     "t": "mc",
+     "q": "Which has the highest packing factor?",
+     "o": [
+      "FCC",
+      "BCC",
+      "Simple cubic",
+      "They are equal"
+     ],
+     "a": 0,
+     "why": "0.74 vs 0.68 and 0.52.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the coordination number in BCC?",
+     "o": [
+      "8",
+      "6",
+      "12",
+      "4"
+     ],
+     "a": 0,
+     "why": "Eight corner neighbours touch the body atom.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is graphite soft and diamond hard?",
+     "o": [
+      "Graphite has weakly bonded layers; diamond is a 3D covalent network",
+      "Diamond is a metal and graphite is not",
+      "Graphite is made of ions and diamond is not",
+      "Diamond has layers that slide over each other"
+     ],
+     "a": 0,
+     "why": "Structure controls properties.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "X-ray diffraction works because:",
+     "o": [
+      "Atomic spacings are similar to the X-ray wavelength",
+      "X-rays are very hot and melt the crystal",
+      "Atoms are magnetic and attract the X-rays",
+      "Crystals are transparent to all radiation"
+     ],
+     "a": 0,
+     "why": "Interference needs comparable scales.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each structure to its atoms per unit cell.",
+     "pairs": [
+      [
+       "Simple cubic",
+       "1"
+      ],
+      [
+       "BCC",
+       "2"
+      ],
+      [
+       "FCC",
+       "4"
+      ],
+      [
+       "Diamond cubic",
+       "8"
+      ]
+     ],
+     "why": "Count atoms shared between cells.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by packing factor, lowest first.",
+     "items": [
+      "Simple cubic (0.52)",
+      "BCC (0.68)",
+      "FCC (0.74)"
+     ],
+     "why": "FCC packs best.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do metals with FCC structure such as copper bend more easily than hard, brittle ceramics?",
+     "rubric": [
+      [
+       "slip",
+       "slide",
+       "planes",
+       "layers"
+      ],
+      [
+       "dislocation",
+       "close-packed",
+       "ductile",
+       "metallic bond",
+       "non-directional"
+      ]
+     ],
+     "min": 1,
+     "model": "FCC metals have many close-packed planes on which atoms can slip, helped by non-directional metallic bonding, so they deform plastically.",
+     "why": "Slip systems enable ductility.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If you double the cell edge a, how does the volume change?",
+     "o": [
+      "Multiplies by 8",
+      "It doubles",
+      "It quadruples",
+      "It stays the same"
+     ],
+     "a": 0,
+     "why": "Volume scales as a³.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A material gives broad humps, not sharp peaks, in X-ray diffraction. It is probably:",
+     "o": [
+      "Amorphous",
+      "A perfect crystal",
+      "An FCC metal",
+      "A single crystal"
+     ],
+     "a": 0,
+     "why": "No long-range order.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does FCC iron (austenite) dissolve more carbon than BCC iron?",
+     "o": [
+      "Its interstitial spaces are larger",
+      "It has far fewer atoms to fill the space",
+      "It is a gas at high temperature",
+      "It is a ceramic with no gaps"
+     ],
+     "a": 0,
+     "why": "Larger interstitial sites.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Crystal structures",
+    "model": "Crystals are repeating patterns of atoms whose smallest repeat is the unit cell. FCC, BCC and simple cubic differ in atoms per cell and packing. X-ray diffraction and Bragg's law reveal the spacings.",
+    "points": [
+     {
+      "k": [
+       "unit cell",
+       "repeat",
+       "pattern"
+      ],
+      "ask": "What is a unit cell?"
+     },
+     {
+      "k": [
+       "fcc",
+       "bcc",
+       "cubic",
+       "packing",
+       "coordination"
+      ],
+      "ask": "What kinds of structure are there?"
+     },
+     {
+      "k": [
+       "x-ray",
+       "bragg",
+       "diffraction"
+      ],
+      "ask": "How do we find the structure?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Mechanical behaviour of materials",
+   "icon": "🔩",
+   "hook": "A paper clip bent once is easy to straighten but after a few bends it snaps. What happens inside the metal?",
+   "explain": [
+    "A tensile test pulls a sample and plots engineering stress σ = F ÷ A₀ against strain ε = ΔL ÷ L₀. At low stress the behaviour is elastic: σ = Eε (Hooke's law), and the sample returns to shape. The slope is Young's modulus: steel is about 200 GPa and aluminium about 70 GPa.",
+    "Beyond the yield strength, plastic deformation starts and is permanent; atoms move by dislocation slip. Work hardening makes the metal stronger but less ductile. The maximum on the curve is the tensile strength. Ductility is measured by percentage elongation at fracture, and toughness is the energy absorbed before fracture (the area under the curve).",
+    "Under repeated loading below the yield strength, cracks can grow and cause fatigue failure, as in the bent paper clip. Engineers use a safety factor, the ratio of the strength to the working stress, to allow for uncertainty. Hardness resists indentation; creep is slow deformation at high temperature under constant load."
+   ],
+   "example": {
+    "q": "A steel rod (E = 200 GPa) carries 100 MPa. What is its strain?",
+    "steps": [
+     "ε = σ ÷ E.",
+     "ε = 100 × 10⁶ ÷ 200 × 10⁹.",
+     "ε = 5.0 × 10⁻⁴."
+    ],
+    "a": "5.0 × 10⁻⁴"
+   },
+   "analogies": {
+    "home": "Bending a spoon back and forth until it snaps is fatigue.",
+    "sport": "A pole vault pole bends elastically and springs back.",
+    "city": "A bridge is designed for a load far below its failure load: a safety factor.",
+    "tech": "Phone screens use hard glass but can still crack under impact (brittle fracture)."
+   },
+   "mnemonic": "Elastic springs back, plastic stays bent, fatigue creeps, safety factor keeps.",
+   "terms": [
+    [
+     "Yield strength",
+     "Stress at which permanent deformation starts."
+    ],
+    [
+     "Ductility",
+     "Ability to deform plastically before breaking."
+    ],
+    [
+     "Toughness",
+     "Energy absorbed before fracture."
+    ],
+    [
+     "Fatigue",
+     "Failure under repeated loading."
+    ]
+   ],
+   "misc": {
+    "wrong": "Hard materials are tough.",
+    "right": "Hardness and toughness differ: glass is hard but brittle, so low toughness."
+   },
+   "limits": "Engineering stress and strain use the original dimensions; the true values differ once the sample necks.",
+   "trip": {
+    "wiki": "Stress–strain curve",
+    "prompt": "Find a stress-strain curve for a ductile metal and label yield and fracture."
+   },
+   "sources": [
+    "Stress–strain curve",
+    "Fatigue (material)",
+    "Ductility"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A bar originally 200 mm long is 230 mm long at fracture. What is the percentage elongation?",
+     "a": 15,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "(230 − 200) ÷ 200 × 100 = 15%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Yield strength is 250 MPa and working stress is 100 MPa. What is the safety factor?",
+     "why": "250 ÷ 100 = 2.5.",
+     "d": 2,
+     "k": "apply",
+     "o": [
+      "2.5",
+      "0.4",
+      "150",
+      "25"
+     ],
+     "a": 0
+    },
+    {
+     "t": "num",
+     "q": "A 2.0 m steel wire (E = 200 GPa) carries a stress of 100 MPa. By how many millimetres does it extend?",
+     "a": 1,
+     "tol": 0.02,
+     "unit": "mm",
+     "why": "ε = 5 × 10⁻⁴; ΔL = 5 × 10⁻⁴ × 2000 mm = 1.0 mm.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does the slope of the elastic part of a stress-strain curve give?",
+     "o": [
+      "Young's modulus",
+      "The yield strength of the material",
+      "The toughness of the material",
+      "The hardness of the material"
+     ],
+     "a": 0,
+     "why": "E = σ ÷ ε.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which describes a brittle material?",
+     "o": [
+      "Fractures with little plastic deformation",
+      "Stretches a great deal before it fails",
+      "Yields at a very low stress",
+      "Heals itself after cracking"
+     ],
+     "a": 0,
+     "why": "No necking.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Work hardening makes a metal:",
+     "o": [
+      "Stronger but less ductile",
+      "Weaker but more ductile",
+      "Lighter in mass",
+      "Magnetic in nature"
+     ],
+     "a": 0,
+     "why": "Dislocations pile up.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Fatigue failure occurs when:",
+     "o": [
+      "Repeated stress below yield causes cracks to grow",
+      "A single load exceeds the yield strength",
+      "The metal is heated once to a high temperature",
+      "The metal is cooled quickly in water"
+     ],
+     "a": 0,
+     "why": "Cyclic loading.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each property to its meaning.",
+     "pairs": [
+      [
+       "Toughness",
+       "Energy absorbed before fracture"
+      ],
+      [
+       "Hardness",
+       "Resistance to indentation"
+      ],
+      [
+       "Creep",
+       "Slow deformation under constant load"
+      ],
+      [
+       "Ductility",
+       "Plastic strain before fracture"
+      ]
+     ],
+     "why": "Mechanical vocabulary.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the events in a tensile test of a ductile metal.",
+     "items": [
+      "Elastic stretching",
+      "Yielding",
+      "Work hardening to maximum stress",
+      "Necking and fracture"
+     ],
+     "why": "Standard curve sequence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a paper clip become harder to bend and then snap after repeated bending?",
+     "rubric": [
+      [
+       "work hardening",
+       "hardens",
+       "dislocation",
+       "stronger",
+       "less ductile"
+      ],
+      [
+       "fatigue",
+       "crack",
+       "fracture",
+       "snap",
+       "repeated"
+      ]
+     ],
+     "min": 2,
+     "model": "Plastic bending creates and tangles dislocations (work hardening), reducing ductility, and repeated cycles grow cracks until fatigue fracture occurs.",
+     "why": "Combination of work hardening and fatigue.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do bridge designers keep working stress well below yield strength?",
+     "o": [
+      "To allow for uncertainty, overload and fatigue",
+      "To use more material just for appearance",
+      "Because yield strength is close to zero",
+      "Because steel is a brittle material"
+     ],
+     "a": 0,
+     "why": "Safety margin.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A material has high stiffness but low toughness. It is most likely:",
+     "o": [
+      "A ceramic",
+      "A rubber",
+      "A polymer foam",
+      "Soft clay"
+     ],
+     "a": 0,
+     "why": "Ceramics are stiff and brittle.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a notch or sharp corner weaken a part?",
+     "o": [
+      "Stress concentrates there",
+      "It adds mass to that part of the component",
+      "It adds extra energy to the material",
+      "It heats the part up locally"
+     ],
+     "a": 0,
+     "why": "Stress concentration starts cracks.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How materials respond to loads",
+    "model": "A tensile test gives a stress-strain curve. Elastic deformation is reversible, with stress equal to Young's modulus times strain. Beyond yield it is permanent. Repeated loading can cause fatigue. Engineers add a safety factor.",
+    "points": [
+     {
+      "k": [
+       "elastic",
+       "reversible",
+       "hooke",
+       "modulus"
+      ],
+      "ask": "What is elastic behaviour?"
+     },
+     {
+      "k": [
+       "plastic",
+       "yield",
+       "permanent"
+      ],
+      "ask": "What happens beyond yield?"
+     },
+     {
+      "k": [
+       "fatigue",
+       "repeated",
+       "crack",
+       "safety"
+      ],
+      "ask": "Why do things fail at low loads?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Phase diagrams and phase transformations",
+   "icon": "📈",
+   "hook": "Solder melts over a range of temperatures, while pure lead melts at a single temperature. How can a map tell us what phases exist for any mix and temperature?",
+   "explain": [
+    "A phase is a region of uniform structure and composition. A phase diagram maps which phases are stable at given temperature, pressure and composition. In a single-component diagram like water's, lines separate solid, liquid and gas; the triple point (0.01 °C, about 611 Pa for water) is where all three coexist, and the critical point ends the liquid-gas line.",
+    "In a binary alloy diagram, the liquidus is the temperature above which everything is liquid and the solidus is the temperature below which everything is solid. In between, liquid and solid coexist. A eutectic is the composition with the lowest melting point, where liquid turns directly into two solids. The lever rule gives phase fractions: in a two-phase region, the fraction of one phase equals the distance from the overall composition to the other phase's boundary divided by the whole tie-line length.",
+    "Gibbs phase rule: F = C − P + 2, where F is degrees of freedom, C components and P phases (at fixed pressure, F = C − P + 1). At the triple point of water, C = 1 and P = 3, so F = 0. Transformations like precipitation need time, so rapid cooling can trap non-equilibrium structures."
+   ],
+   "example": {
+    "q": "An alloy of 30 wt% B lies in a two-phase region with α at 10 wt% B and liquid at 50 wt% B. What fraction is liquid?",
+    "steps": [
+     "Tie line from 10 to 50, length 40.",
+     "Liquid fraction = (30 − 10) ÷ (50 − 10).",
+     "= 20 ÷ 40 = 0.50."
+    ],
+    "a": "0.50 (50% liquid)"
+   },
+   "analogies": {
+    "home": "A map shows where land and sea are; a phase diagram shows where each phase is stable.",
+    "farm": "A weather map with zones of rain and sun.",
+    "sea": "Sea ice forms from salty water at a lower temperature than fresh.",
+    "nature": "A seesaw balances at a pivot: the lever rule balances phase amounts."
+   },
+   "mnemonic": "Liquidus top, solidus below, eutectic lowest, lever to know.",
+   "terms": [
+    [
+     "Phase",
+     "A region of uniform structure and composition."
+    ],
+    [
+     "Eutectic",
+     "Composition with the lowest melting point in an alloy system."
+    ],
+    [
+     "Liquidus",
+     "Boundary above which only liquid exists."
+    ],
+    [
+     "Lever rule",
+     "Method to find phase fractions on a tie line."
+    ]
+   ],
+   "misc": {
+    "wrong": "All alloys melt at one temperature like pure metals.",
+    "right": "Most alloys melt over a range between the solidus and liquidus; eutectics and pure metals melt at one temperature."
+   },
+   "limits": "Phase diagrams show equilibrium; real cooling rates can produce non-equilibrium structures.",
+   "trip": {
+    "wiki": "Phase diagram",
+    "prompt": "Find the water phase diagram and mark the triple point and critical point."
+   },
+   "sources": [
+    "Phase diagram",
+    "Eutectic system",
+    "Lever rule"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "An alloy of 40 wt% B lies between α (20 wt% B) and β (60 wt% B). What mass fraction is β?",
+     "a": 0.5,
+     "tol": 0.01,
+     "why": "(40 − 20) ÷ (60 − 20) = 0.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At the triple point of a pure substance (C = 1, P = 3), how many degrees of freedom F does the phase rule give?",
+     "a": 0,
+     "tol": 0,
+     "why": "F = 1 − 3 + 2 = 0.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does the solidus line mean?",
+     "o": [
+      "Below it everything is solid",
+      "Above it everything is liquid",
+      "It is the boiling point",
+      "It is the eutectic"
+     ],
+     "a": 0,
+     "why": "Complete solidification temperature.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "At a eutectic composition on cooling, the liquid transforms into:",
+     "o": [
+      "Two solid phases at once",
+      "One single solid phase",
+      "A gas and a solid",
+      "A different liquid"
+     ],
+     "a": 0,
+     "why": "Eutectic reaction.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "At the triple point of water, which phases coexist?",
+     "o": [
+      "Ice, liquid and vapour",
+      "Only liquid water, whatever the pressure",
+      "Liquid and gas only, without any ice",
+      "Ice and gas only, without any liquid"
+     ],
+     "a": 0,
+     "why": "By definition.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The slope of the solid-liquid line for water is negative. This means:",
+     "o": [
+      "Ice can melt under pressure",
+      "Ice is denser than water",
+      "Water boils at lower pressure",
+      "Ice never forms"
+     ],
+     "a": 0,
+     "why": "Ice is less dense, so pressure favours liquid.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is solder often a near-eutectic Sn–Pb or Sn–Ag–Cu alloy?",
+     "o": [
+      "It melts at a low, sharp temperature",
+      "It is shiny and looks attractive",
+      "It is magnetic and sticks to metals",
+      "It is a ceramic that melts at high heat"
+     ],
+     "a": 0,
+     "why": "Easy, quick joining.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its description.",
+     "pairs": [
+      [
+       "Liquidus",
+       "Boundary above which all is liquid"
+      ],
+      [
+       "Solidus",
+       "Boundary below which all is solid"
+      ],
+      [
+       "Tie line",
+       "Horizontal line across a two-phase region"
+      ],
+      [
+       "Eutectic point",
+       "Lowest melting composition"
+      ]
+     ],
+     "why": "Diagram vocabulary.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the states met when cooling a hypoeutectic alloy from liquid.",
+     "items": [
+      "All liquid",
+      "Liquid plus primary solid",
+      "Eutectic reaction at the eutectic temperature",
+      "Fully solid"
+     ],
+     "why": "Standard path.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can fast cooling give a different structure than the phase diagram predicts?",
+     "rubric": [
+      [
+       "time",
+       "slow",
+       "diffusion",
+       "atoms move"
+      ],
+      [
+       "equilibrium",
+       "non-equilibrium",
+       "trapped",
+       "not enough"
+      ]
+     ],
+     "min": 2,
+     "model": "Phase diagrams assume equilibrium, which requires time for atoms to diffuse. Fast cooling can trap a structure that is not the equilibrium one.",
+     "why": "Kinetics controls actual structure.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What does the lever rule require?",
+     "o": [
+      "A tie line across a two-phase region",
+      "A single phase across the whole range",
+      "The triple point of the substance",
+      "The use of a catalyst"
+     ],
+     "a": 0,
+     "why": "Fractions come from tie line lengths.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Salt on icy roads helps because:",
+     "o": [
+      "It lowers the freezing point of water",
+      "It raises the boiling point only",
+      "It heats the road by reacting",
+      "It makes the ice denser so it sinks"
+     ],
+     "a": 0,
+     "why": "Eutectic-like depression.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In the phase rule, what happens to F in a two-phase region of a binary alloy at fixed pressure?",
+     "o": [
+      "F = 2 − 2 + 1 = 1",
+      "F = 0, so the system is fixed",
+      "F = 3, so three variables are free",
+      "F = 2, so two variables are free"
+     ],
+     "a": 0,
+     "why": "C=2, P=2, F=C−P+1=1.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading phase diagrams",
+    "model": "A phase diagram shows which phases are stable at given temperature and composition. Liquidus and solidus bound the melting range. A eutectic melts at the lowest temperature. The lever rule gives how much of each phase is present.",
+    "points": [
+     {
+      "k": [
+       "phase",
+       "stable",
+       "temperature",
+       "composition"
+      ],
+      "ask": "What does a phase diagram show?"
+     },
+     {
+      "k": [
+       "liquidus",
+       "solidus",
+       "melting range",
+       "eutectic"
+      ],
+      "ask": "What are the key lines and points?"
+     },
+     {
+      "k": [
+       "lever",
+       "fraction",
+       "tie line"
+      ],
+      "ask": "How do I find the amounts?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Corrosion and materials degradation",
+   "icon": "🧲",
+   "hook": "Iron ships rust in seawater, yet a zinc block bolted to the hull protects them. How can sacrificing one metal save another?",
+   "explain": [
+    "Corrosion is the electrochemical degradation of a metal. For iron, the anode reaction is Fe → Fe²⁺ + 2e⁻ and the cathode reaction in neutral water is O₂ + 2H₂O + 4e⁻ → 4OH⁻. Fe²⁺ and OH⁻ combine and are further oxidised to hydrated iron(III) oxide, rust. Both oxygen and water are needed, and salt speeds it up by raising conductivity.",
+    "Rust flakes off and exposes fresh metal, but some metals such as aluminium and stainless steel form a thin, tight oxide film that protects them: passivation. Galvanic corrosion occurs when two different metals touch in an electrolyte: the more active metal (lower E°) corrodes. Sacrificial protection uses zinc or magnesium, which corrode in place of iron.",
+    "Prevention includes painting or coating, galvanising (a zinc coating), alloying (stainless steel with chromium), cathodic protection and control of the environment. Other degradation includes oxidation at high temperature, stress-corrosion cracking and UV damage to polymers. Faraday's law links current to mass loss: m = I t M ÷ (n F)."
+   ],
+   "example": {
+    "q": "A corrosion current of 0.50 A flows for 3860 s, oxidising iron to Fe²⁺. What mass of iron dissolves? (Fe 56, F = 96 500 C/mol)",
+    "steps": [
+     "Q = 0.50 × 3860 = 1930 C.",
+     "Moles e⁻ = 1930 ÷ 96 500 = 0.0200 mol; Fe → Fe²⁺ uses 2 e⁻.",
+     "Moles Fe = 0.0100 mol; mass = 0.0100 × 56 = 0.56 g."
+    ],
+    "a": "0.56 g"
+   },
+   "analogies": {
+    "home": "A bicycle chain left in the rain gets orange; oil keeps water away.",
+    "farm": "A galvanised bucket with a zinc coat resists rust.",
+    "sea": "Boats use zinc anodes that slowly dissolve instead of the hull.",
+    "city": "Painted bridges and railings are protected by coatings."
+   },
+   "mnemonic": "Iron + oxygen + water = rust; coat, alloy or sacrifice to save it.",
+   "terms": [
+    [
+     "Corrosion",
+     "Electrochemical degradation of a metal."
+    ],
+    [
+     "Passivation",
+     "Formation of a protective oxide film."
+    ],
+    [
+     "Sacrificial anode",
+     "A more active metal that corrodes in place of another."
+    ],
+    [
+     "Galvanising",
+     "Coating steel with zinc."
+    ]
+   ],
+   "misc": {
+    "wrong": "Rust only forms in sea water.",
+    "right": "Any damp, oxygen-rich place allows rust; salt just speeds it."
+   },
+   "limits": "Rates depend on many factors such as pH, temperature, flow and microstructure, so lab data are only a guide.",
+   "trip": {
+    "wiki": "Corrosion",
+    "prompt": "Find the picture of a sacrificial anode on a ship and say which metal corrodes."
+   },
+   "sources": [
+    "Corrosion",
+    "Galvanic corrosion",
+    "Passivation (chemistry)"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A current of 1.00 A oxidises iron to Fe²⁺ for 1930 s. What mass of iron is lost? (Fe 56, F = 96 500)",
+     "a": 0.56,
+     "tol": 0.01,
+     "unit": "g",
+     "why": "mol e⁻ = 1930 ÷ 96 500 = 0.0200; Fe = 0.0100 mol; 0.56 g.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What two substances are needed for iron to rust?",
+     "o": [
+      "Oxygen and water",
+      "Nitrogen and water",
+      "Carbon dioxide only",
+      "Hydrogen and oxygen only"
+     ],
+     "a": 0,
+     "why": "Both are required.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a zinc coating protect steel even if scratched?",
+     "o": [
+      "Zinc is more reactive and corrodes first",
+      "Zinc is harder than the steel",
+      "Zinc is a gas that coats the steel",
+      "Zinc is heavier than the steel"
+     ],
+     "a": 0,
+     "why": "Sacrificial protection.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Aluminium resists corrosion because:",
+     "o": [
+      "A thin oxide film passivates it",
+      "It does not react with oxygen at all",
+      "It is a noble gas",
+      "It is a polymer"
+     ],
+     "a": 0,
+     "why": "Al₂O₃ layer.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does salty water speed up rusting?",
+     "o": [
+      "It makes the electrolyte more conductive",
+      "It removes the oxygen from the water",
+      "It cools the metal down so it rusts",
+      "It acts as a catalyst for dissolving air"
+     ],
+     "a": 0,
+     "why": "Ions help the circuit.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which half-reaction occurs at the cathode in neutral rusting?",
+     "o": [
+      "O₂ + 2H₂O + 4e⁻ → 4OH⁻",
+      "Fe → Fe²⁺ + 2e⁻",
+      "Zn → Zn²⁺ + 2e⁻",
+      "2H₂O → O₂ + 4H⁺ + 4e⁻"
+     ],
+     "a": 0,
+     "why": "Oxygen reduction.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each protection method to how it works.",
+     "pairs": [
+      [
+       "Painting",
+       "Barrier against water and oxygen"
+      ],
+      [
+       "Galvanising",
+       "Zinc coating that also sacrifices itself"
+      ],
+      [
+       "Stainless steel",
+       "Chromium oxide passive film"
+      ],
+      [
+       "Sacrificial anode",
+       "More active metal corrodes instead"
+      ]
+     ],
+     "why": "Different mechanisms.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of rusting of an iron surface in a water drop.",
+     "items": [
+      "Fe oxidises to Fe²⁺ at the anode",
+      "Electrons flow to where oxygen reduces",
+      "OH⁻ forms at the cathode",
+      "Fe(OH)₂ is further oxidised to hydrated Fe₂O₃ (rust)"
+     ],
+     "why": "Electrochemical sequence.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A copper pipe is joined to a steel pipe in damp conditions. Which corrodes faster, and why?",
+     "rubric": [
+      [
+       "steel",
+       "iron"
+      ],
+      [
+       "more active",
+       "anode",
+       "lower potential",
+       "galvanic",
+       "electron",
+       "oxidis",
+       "loses"
+      ]
+     ],
+     "min": 2,
+     "model": "The steel corrodes faster because it is the more active metal, so it acts as the anode in a galvanic cell with copper.",
+     "why": "Galvanic couple.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tin can has a tin coating on steel. If the tin is scratched, the steel:",
+     "o": [
+      "Corrodes faster, because iron is more active than tin",
+      "Is protected, because tin is more reactive",
+      "Turns into zinc over time",
+      "Becomes passive and stops corroding"
+     ],
+     "a": 0,
+     "why": "Tin is less active so does not sacrifice itself.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is a painted car rusting around a chip a concern?",
+     "o": [
+      "The exposed metal corrodes and rust spreads under the paint",
+      "Paint is magnetic and draws in rust",
+      "Paint acts as a catalyst for rust",
+      "Rust never spreads once it has started"
+     ],
+     "a": 0,
+     "why": "Under-film corrosion.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which environment would corrode steel slowest?",
+     "o": [
+      "Dry air",
+      "Seaside spray",
+      "Wet soil",
+      "Acid rain"
+     ],
+     "a": 0,
+     "why": "No water electrolyte.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Plastics degrade outdoors mainly by:",
+     "o": [
+      "UV light breaking polymer chains",
+      "Rusting of the plastic itself",
+      "Passivation of the surface",
+      "Galvanic coupling with metals"
+     ],
+     "a": 0,
+     "why": "Photo-degradation.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why metals corrode and how to protect them",
+    "model": "Corrosion is an electrochemical process: the metal is oxidised at the anode while oxygen is reduced at the cathode. Water and oxygen are needed, and salt speeds it. Coatings, alloys and sacrificial metals like zinc protect iron.",
+    "points": [
+     {
+      "k": [
+       "oxid",
+       "anode",
+       "lose electrons",
+       "rust",
+       "iron"
+      ],
+      "ask": "What happens to the iron?"
+     },
+     {
+      "k": [
+       "water",
+       "oxygen",
+       "salt",
+       "electrolyte"
+      ],
+      "ask": "What does rusting need?"
+     },
+     {
+      "k": [
+       "zinc",
+       "sacrificial",
+       "coat",
+       "paint",
+       "galvanis",
+       "stainless"
+      ],
+      "ask": "How can we prevent it?"
+     }
+    ]
+   }
+  }
+ ]
+}

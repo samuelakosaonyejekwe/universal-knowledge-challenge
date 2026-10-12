@@ -1,0 +1,2759 @@
+{
+ "world": 3,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Engineering units and measurements",
+   "icon": "📏",
+   "hook": "A builder orders a beam in metres, but the factory reads the order in millimetres. What could go wrong, and how do engineers avoid it?",
+   "explain": [
+    "Engineers use the SI system. The base units we need are the metre (m) for length, the kilogram (kg) for mass and the second (s) for time. Other units are built from these: speed is m/s, force is the newton (N), energy is the joule (J) and power is the watt (W).",
+    "Prefixes change the size of a unit. Milli (m) means one thousandth, centi (c) one hundredth and kilo (k) one thousand. So 1 m = 1000 mm and 1 kg = 1000 g.",
+    "Measuring is never perfect. Every tool has a small error, so engineers write how close a size must be, such as 20 mm ± 0.1 mm. Mixing units is a classic cause of failure: one famous space probe was lost when two teams used different units.",
+    "Good habit: write the unit with every number, convert everything to one system before calculating, and check that the answer looks sensible."
+   ],
+   "example": {
+    "q": "A shaft is 750 mm long. How long is it in metres?",
+    "steps": [
+     "1 m = 1000 mm, so divide by 1000.",
+     "750 ÷ 1000 = 0.75.",
+     "Check: less than 1 m, which fits because 750 mm is less than 1000 mm."
+    ],
+    "a": "0.75 m"
+   },
+   "analogies": {
+    "home": "A recipe in grams and a recipe in ounces cannot be mixed without converting.",
+    "city": "Road signs in kilometres and speed in miles per hour confuse drivers who cross borders.",
+    "farm": "A farmer buys fertiliser by the kilogram but spreads it per hectare. Units must match.",
+    "sport": "A 100 m race is measured in metres and timed in seconds, so speed comes out in m/s."
+   },
+   "mnemonic": "Kilo is a thousand, milli is a thousandth. Always write the unit.",
+   "terms": [
+    [
+     "SI",
+     "The international system of units used by engineers."
+    ],
+    [
+     "Newton (N)",
+     "The unit of force."
+    ],
+    [
+     "Prefix",
+     "A word-part such as kilo or milli that scales a unit."
+    ],
+    [
+     "Tolerance",
+     "The allowed error in a size, such as ± 0.1 mm."
+    ]
+   ],
+   "misc": {
+    "wrong": "Mass and weight are the same thing.",
+    "right": "Mass (kg) is how much matter there is. Weight is a force (N) equal to mass × g, so it changes with gravity but mass does not."
+   },
+   "limits": "Some industries still use inches or pounds, so engineers must convert carefully.",
+   "trip": {
+    "wiki": "International System of Units",
+    "prompt": "Find the seven base units. Which three do we use most in mechanics?"
+   },
+   "sources": [
+    "International System of Units",
+    "Metric prefix",
+    "Measurement uncertainty"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is the SI unit of force?",
+     "o": [
+      "Newton",
+      "Kilogram",
+      "Joule",
+      "Watt"
+     ],
+     "a": 0,
+     "why": "Force is measured in newtons. Joule is energy and watt is power.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the prefix milli mean?",
+     "o": [
+      "One thousandth",
+      "One thousand times larger",
+      "One hundredth",
+      "One millionth"
+     ],
+     "a": 0,
+     "why": "Milli means 1/1000, so 1 mm is one thousandth of a metre.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Convert 2.5 m to millimetres.",
+     "a": 2500,
+     "tol": 0.5,
+     "unit": "mm",
+     "why": "2.5 × 1000 = 2500 mm.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A car travels at 72 km/h. What is this speed in m/s? (1 km = 1000 m, 1 h = 3600 s)",
+     "a": 20,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "72 × 1000 ÷ 3600 = 20 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A part must be 40 mm ± 0.2 mm. Which length is acceptable?",
+     "o": [
+      "40.1 mm",
+      "40.3 mm",
+      "39.7 mm",
+      "40.5 mm"
+     ],
+     "a": 0,
+     "why": "The allowed range is 39.8 mm to 40.2 mm. Only 40.1 mm is inside it.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An astronaut has a mass of 80 kg on Earth. What is her mass on the Moon?",
+     "o": [
+      "80 kg",
+      "About 13 kg",
+      "About 480 kg",
+      "0 kg"
+     ],
+     "a": 0,
+     "why": "Mass does not depend on gravity. Her weight would be smaller on the Moon, but her mass stays 80 kg.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "One team gives a length in inches and another reads it as millimetres. What is the likely result?",
+     "o": [
+      "A part of the wrong size",
+      "A part of the perfect size",
+      "A lighter part than planned",
+      "A cheaper part for the same job"
+     ],
+     "a": 0,
+     "why": "Unit mix-ups give wrong sizes, which is why units are always written.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these lengths from shortest to longest.",
+     "items": [
+      "0.5 mm",
+      "2 cm",
+      "0.3 m",
+      "1 km"
+     ],
+     "why": "0.5 mm = 0.0005 m, 2 cm = 0.02 m, 0.3 m, and 1 km = 1000 m.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why should an engineer write the unit next to every number in a calculation?",
+     "rubric": [
+      [
+       "mix",
+       "confus",
+       "wrong",
+       "mistake",
+       "error"
+      ],
+      [
+       "unit",
+       "units"
+      ],
+      [
+       "convert",
+       "same system",
+       "consistent",
+       "check"
+      ]
+     ],
+     "min": 2,
+     "model": "Without the unit nobody knows what the number means, and mixed units (such as mm and m) cause wrong answers. Writing units lets you convert to one system and check the result.",
+     "why": "Units give numbers meaning and let engineers spot errors early.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its SI unit.",
+     "pairs": [
+      [
+       "Length",
+       "metre"
+      ],
+      [
+       "Mass",
+       "kilogram"
+      ],
+      [
+       "Time",
+       "second"
+      ],
+      [
+       "Force",
+       "newton"
+      ]
+     ],
+     "why": "These are the units used throughout mechanics.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A drawing says 12 mm but a worker cuts 12 cm. By what factor is the part too long?",
+     "o": [
+      "10 times",
+      "100 times",
+      "2 times",
+      "1000 times"
+     ],
+     "a": 0,
+     "why": "1 cm = 10 mm, so 12 cm = 120 mm, which is ten times 12 mm.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do two careful people measuring the same rod often get slightly different readings?",
+     "o": [
+      "Every measurement has some uncertainty",
+      "One of them is always cheating",
+      "Rods change length every second",
+      "The unit of length is wrong for the rod"
+     ],
+     "a": 0,
+     "why": "Tools, reading and temperature create small errors, so tolerances are given.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why mass in kilograms is used for a cargo load, while weight in newtons is used when checking a rope.",
+     "rubric": [
+      [
+       "mass",
+       "kilogram",
+       "kg"
+      ],
+      [
+       "weight",
+       "force",
+       "newton"
+      ],
+      [
+       "gravity",
+       "g",
+       "pull"
+      ]
+     ],
+     "min": 2,
+     "model": "Mass tells how much matter there is, which stays the same anywhere. A rope feels the force of gravity on that mass, the weight in newtons (mass × g), so rope checks use newtons.",
+     "why": "Ropes carry forces, so we convert mass to weight with W = m × g.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why engineers use SI units",
+    "model": "SI units are an agreed set, such as metres, kilograms and seconds. Everyone uses the same units, so a part made in one country fits a design from another. Prefixes like milli and kilo change the size, so you must convert before you calculate.",
+    "points": [
+     {
+      "k": [
+       "metre",
+       "kilogram",
+       "second",
+       "si"
+      ],
+      "ask": "Which units do you mean?"
+     },
+     {
+      "k": [
+       "agree",
+       "same",
+       "everyone",
+       "standard"
+      ],
+      "ask": "Why does everyone need the same ones?"
+     },
+     {
+      "k": [
+       "convert",
+       "prefix",
+       "milli",
+       "kilo"
+      ],
+      "ask": "What if the numbers use different sizes?"
+     },
+     {
+      "k": [
+       "mistake",
+       "error",
+       "wrong",
+       "example"
+      ],
+      "ask": "What goes wrong if they are mixed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Engineering drawing and visualisation",
+   "icon": "📐",
+   "hook": "A photo shows a bracket from one side only. How can you tell a worker exactly where the holes go?",
+   "explain": [
+    "Engineers use orthographic drawings: separate views of the object from the front, the top and the side. Each view is flat and shows true lengths, so the part can be measured exactly.",
+    "Line types matter. Thick solid lines show visible edges, dashed lines show hidden edges and thin chain lines mark centres of holes and axes. Dimensions with arrows and numbers give sizes in millimetres.",
+    "Scale tells how a drawing compares with the real part. A 1:5 scale means the drawing is five times smaller. A 2:1 scale means it is twice as big, used for tiny parts.",
+    "Visualisation is imagining the 3D shape from the views. Practise it by sketching an isometric picture, where the three edge directions are drawn at 30° to the horizontal."
+   ],
+   "example": {
+    "q": "A drawing at scale 1:5 shows a bracket 24 mm long. How long is the real bracket?",
+    "steps": [
+     "Scale 1:5 means the real part is 5 times the drawing.",
+     "Real length = 24 × 5.",
+     "24 × 5 = 120 mm."
+    ],
+    "a": "120 mm"
+   },
+   "analogies": {
+    "home": "A flat-pack furniture sheet shows front and side views of each part.",
+    "city": "An architect's plan shows a building from above, like a top view.",
+    "farm": "A barn plan shows where doors and beams go, with sizes written on it.",
+    "tech": "CAD software makes the views from a 3D model automatically."
+   },
+   "mnemonic": "Solid you see, dashed hidden, chain is the centre.",
+   "terms": [
+    [
+     "Orthographic view",
+     "A flat view of one side of an object."
+    ],
+    [
+     "Isometric drawing",
+     "A 3D-looking sketch with edges at 30°."
+    ],
+    [
+     "Dimension",
+     "A size written on a drawing."
+    ],
+    [
+     "Scale",
+     "The ratio of drawing size to real size."
+    ]
+   ],
+   "misc": {
+    "wrong": "You can measure sizes directly from a drawing with a ruler.",
+    "right": "You should read the written dimensions, because prints and screens may not be at the stated scale."
+   },
+   "limits": "Standards for drawing differ a little between regions, but the main ideas are shared.",
+   "trip": {
+    "wiki": "Technical drawing",
+    "prompt": "Find an example drawing with front, top and side views. Spot one dashed line and say what it shows."
+   },
+   "sources": [
+    "Technical drawing",
+    "Orthographic projection",
+    "Isometric projection"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a dashed line on a drawing show?",
+     "o": [
+      "A hidden edge",
+      "A visible edge",
+      "A cut line only",
+      "A dimension"
+     ],
+     "a": 0,
+     "why": "Dashed lines show edges that are behind other material.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A drawing is made at scale 1:2. What does that mean?",
+     "o": [
+      "The drawing is half the real size",
+      "The drawing is twice the real size",
+      "The drawing is the real size",
+      "The part is half a kilogram"
+     ],
+     "a": 0,
+     "why": "1:2 means one unit on paper stands for two in real life.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A drawing at scale 1:10 shows a pipe 35 mm long. How long is the real pipe in millimetres?",
+     "a": 350,
+     "tol": 0.5,
+     "unit": "mm",
+     "why": "35 × 10 = 350 mm.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plate is 80 mm long and 50 mm wide. What is its area in square millimetres?",
+     "a": 4000,
+     "tol": 1,
+     "unit": "mm²",
+     "why": "80 × 50 = 4000 mm².",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A round hole goes straight through a block from top to bottom. How does the top view show it?",
+     "o": [
+      "A circle",
+      "A rectangle",
+      "A dashed rectangle",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Looking down the hole you see a circle. In the front view it appears as two dashed lines.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do engineers use several views instead of one picture?",
+     "o": [
+      "Each view shows true sizes and details others hide",
+      "One view is always wrong and misleading",
+      "Views are cheaper to print than photos",
+      "Photos are not allowed in factories"
+     ],
+     "a": 0,
+     "why": "A single view hides depth, so the other views complete the information.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A small watch screw is drawn at 5:1. Why?",
+     "o": [
+      "The real part is too small to show details at actual size",
+      "The screw is huge and needs to be shrunk",
+      "The drawing must fit a smaller sheet",
+      "It is cheaper to draw it that way"
+     ],
+     "a": 0,
+     "why": "A larger scale makes tiny details readable.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A worker reads a drawing and cuts a plate 5 mm too short. Give one possible cause linked to reading drawings.",
+     "rubric": [
+      [
+       "scale",
+       "ratio"
+      ],
+      [
+       "unit",
+       "units",
+       "mm",
+       "cm"
+      ],
+      [
+       "dimension",
+       "dimensions",
+       "number"
+      ],
+      [
+       "measure",
+       "ruler",
+       "print"
+      ]
+     ],
+     "min": 1,
+     "model": "The worker may have measured the printed drawing with a ruler instead of reading the written dimension, or misread the scale or the units.",
+     "why": "Written dimensions are the source of truth, not the printed lengths.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps for making a part from a drawing in order.",
+     "items": [
+      "Read the title block and scale",
+      "Read the dimensions",
+      "Mark the material",
+      "Cut the part",
+      "Inspect against the drawing"
+     ],
+     "why": "Read first, then make, then check against the drawing.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each line to its meaning.",
+     "pairs": [
+      [
+       "Thick solid line",
+       "Visible edge"
+      ],
+      [
+       "Dashed line",
+       "Hidden edge"
+      ],
+      [
+       "Thin chain line",
+       "Centre line"
+      ],
+      [
+       "Arrowed line with a number",
+       "Dimension"
+      ]
+     ],
+     "why": "The line types follow common drawing standards.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two engineers in different countries build the same part from one drawing. What makes this possible?",
+     "o": [
+      "Shared drawing standards and written dimensions",
+      "Telepathy between the engineers",
+      "Identical machines in both countries",
+      "Photographs of the finished part"
+     ],
+     "a": 0,
+     "why": "Agreed symbols, units and views remove guessing.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A hole is drawn as 10 mm ± 0.05 mm. A worker drills 10.08 mm. What should happen?",
+     "o": [
+      "The part fails inspection",
+      "The part is accepted",
+      "The drawing is changed silently",
+      "Nothing, it is close"
+     ],
+     "a": 0,
+     "why": "10.08 is outside the range 9.95 to 10.05 mm.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is an isometric sketch useful before making a drawing with views?",
+     "rubric": [
+      [
+       "3d",
+       "three",
+       "shape",
+       "picture",
+       "visual"
+      ],
+      [
+       "idea",
+       "plan",
+       "check",
+       "understand"
+      ],
+      [
+       "early",
+       "before",
+       "mistake"
+      ]
+     ],
+     "min": 2,
+     "model": "An isometric sketch shows the overall 3D shape quickly, so you can check the idea and find mistakes before drawing exact views.",
+     "why": "It helps visualise the whole part while planning.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why engineers draw several views of a part",
+    "model": "One picture hides some sides of an object. Engineers draw the front, top and side views with exact sizes in millimetres. Hidden edges are dashed. Together the views let someone make the part without guessing.",
+    "points": [
+     {
+      "k": [
+       "view",
+       "front",
+       "top",
+       "side"
+      ],
+      "ask": "Which views do you draw?"
+     },
+     {
+      "k": [
+       "hidden",
+       "dashed",
+       "edge"
+      ],
+      "ask": "How do you show something you cannot see?"
+     },
+     {
+      "k": [
+       "size",
+       "dimension",
+       "mm",
+       "number"
+      ],
+      "ask": "How does the maker know the size?"
+     },
+     {
+      "k": [
+       "scale",
+       "example",
+       "hole"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Forces and equilibrium",
+   "icon": "⚖️",
+   "hook": "A lamp hangs from two ropes. Does each rope carry the whole weight, or just a part of it?",
+   "explain": [
+    "A force has a size (in newtons) and a direction. The weight of an object is W = m × g. On Earth g is about 9.8 m/s², so a 10 kg mass weighs about 98 N.",
+    "An object is in equilibrium when the forces on it add up to zero. Then it does not speed up. A lamp hanging on two equal ropes is in equilibrium: the upward pull of the ropes equals the downward weight.",
+    "Forces that act at right angles can be combined with Pythagoras. A 30 N and a 40 N force at right angles give a resultant of √(30² + 40²) = 50 N.",
+    "Safety link: when a rope or cable is loaded, engineers add a safety factor, so the rope can carry several times the expected load. Ropes at wide angles carry more tension, so never assume it is simply shared."
+   ],
+   "example": {
+    "q": "A 100 kg sign hangs from two vertical ropes that share the load equally. Use g = 9.8 m/s². What is the tension in each rope?",
+    "steps": [
+     "Weight W = m × g = 100 × 9.8 = 980 N.",
+     "Equilibrium: total upward force = 980 N.",
+     "Two equal ropes: each carries 980 ÷ 2 = 490 N."
+    ],
+    "a": "490 N"
+   },
+   "analogies": {
+    "home": "Two people carry a heavy table. Each lifts about half.",
+    "city": "Cables on a bridge pull up to balance the weight of the deck.",
+    "farm": "A hay bale on a hoist hangs still when the rope pulls up as hard as gravity pulls down.",
+    "sea": "A buoy floats still when upward buoyancy equals its weight."
+   },
+   "mnemonic": "Still means zero: up equals down, left equals right.",
+   "terms": [
+    [
+     "Weight",
+     "The downward force on a mass, W = m × g."
+    ],
+    [
+     "Equilibrium",
+     "A state where the forces add up to zero."
+    ],
+    [
+     "Resultant",
+     "One force that has the same effect as several forces."
+    ],
+    [
+     "Tension",
+     "A pulling force in a rope or cable."
+    ]
+   ],
+   "misc": {
+    "wrong": "An object at rest has no forces acting on it.",
+    "right": "Forces still act, but they balance. The resultant is zero."
+   },
+   "limits": "These calculations treat objects as rigid and ignore small deformations.",
+   "trip": {
+    "wiki": "Mechanical equilibrium",
+    "prompt": "Find an example of a structure in equilibrium. What are the opposing forces?"
+   },
+   "sources": [
+    "Mechanical equilibrium",
+    "Force",
+    "Weight"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the formula for weight?",
+     "o": [
+      "W = m × g",
+      "W = m ÷ g",
+      "W = g ÷ m",
+      "W = m + g"
+     ],
+     "a": 0,
+     "why": "Weight in newtons equals mass times the gravitational acceleration.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "What is the weight of a 25 kg crate? Use g = 9.8 m/s².",
+     "a": 245,
+     "tol": 0.5,
+     "unit": "N",
+     "why": "W = 25 × 9.8 = 245 N.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two forces of 6 N and 8 N act at right angles on a bracket. What is the size of the resultant?",
+     "a": 10,
+     "tol": 0.05,
+     "unit": "N",
+     "why": "√(6² + 8²) = √100 = 10 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A box rests on the floor. The floor pushes up with 200 N. What is the weight of the box?",
+     "o": [
+      "200 N",
+      "0 N",
+      "400 N",
+      "100 N"
+     ],
+     "a": 0,
+     "why": "At rest the forces balance, so the upward force equals the weight.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lamp hangs from one rope and weighs 50 N. The tension in the rope is what?",
+     "o": [
+      "50 N",
+      "25 N",
+      "100 N",
+      "0 N"
+     ],
+     "a": 0,
+     "why": "The only upward force is the rope, so it must equal the weight.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A person pulls a trolley with 100 N to the right. A second person pulls with 100 N to the left. What happens?",
+     "o": [
+      "The trolley stays still",
+      "It speeds up to the right",
+      "It speeds up to the left",
+      "It spins"
+     ],
+     "a": 0,
+     "why": "The resultant force is 100 − 100 = 0, so the trolley is in equilibrium.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A hanging sign is held by two ropes. The ropes are moved so they are almost horizontal. What happens to the tension?",
+     "o": [
+      "It becomes much larger",
+      "It becomes slightly smaller",
+      "It stays exactly the same",
+      "It becomes zero, since the ropes are flat"
+     ],
+     "a": 0,
+     "why": "Nearly flat ropes need a very large tension to give enough upward force. This is why we avoid flat cables under load.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order of increasing weight on Earth.",
+     "items": [
+      "500 g bag",
+      "2 kg book bundle",
+      "20 kg sack",
+      "150 kg motor"
+     ],
+     "why": "Weight grows with mass at the same place.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A shelf bracket is overloaded and bends. Explain in terms of forces what the designer should change.",
+     "rubric": [
+      [
+       "stronger",
+       "thicker",
+       "bigger",
+       "material",
+       "reinforce",
+       "support"
+      ],
+      [
+       "more bracket",
+       "extra",
+       "additional",
+       "second",
+       "two"
+      ],
+      [
+       "reduce load",
+       "lower load",
+       "less weight",
+       "safety factor",
+       "limit"
+      ]
+     ],
+     "min": 1,
+     "model": "The load force is too large for the bracket. Reduce the load, add more brackets to share it, or use a stronger or thicker bracket, and apply a safety factor.",
+     "why": "Failure happens when the force exceeds what a part can carry, so we reduce the force or raise the capacity.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the term to its meaning.",
+     "pairs": [
+      [
+       "Tension",
+       "Pulling force in a rope"
+      ],
+      [
+       "Weight",
+       "Force of gravity on a mass"
+      ],
+      [
+       "Resultant",
+       "Single force replacing several"
+      ],
+      [
+       "Equilibrium",
+       "Forces add up to zero"
+      ]
+     ],
+     "why": "These are the key force words.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A rope breaks at 1000 N. It is used to lift a 90 kg load slowly at a constant speed (g = 9.8 m/s²). Is it safe?",
+     "o": [
+      "No, the safety margin is too small",
+      "Yes, 882 N is plenty",
+      "Yes, because the speed is constant",
+      "It depends on the colour"
+     ],
+     "a": 0,
+     "why": "The load is 882 N, only slightly under 1000 N. Safety factors of 5 or more are normal for lifting.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rope breaks at 1000 N. Which statement about the lifted load is correct?",
+     "o": [
+      "Starting the lift with a jerk adds extra force",
+      "Jerking the load never changes the rope force",
+      "Jerking lowers the force in the rope",
+      "Only the colour of the rope matters here"
+     ],
+     "a": 0,
+     "why": "Accelerating a load needs extra force beyond its weight, so jerks may snap a rope.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A crane lifts a 200 kg load at a constant speed. The cable tension is closest to which value? (g = 9.8 m/s²)",
+     "o": [
+      "1960 N",
+      "200 N",
+      "980 N",
+      "3920 N"
+     ],
+     "a": 0,
+     "why": "Constant speed means equilibrium, so tension equals weight, 200 × 9.8 = 1960 N.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What equilibrium means",
+    "model": "An object is in equilibrium when all the forces on it cancel out. A lamp hanging from two ropes does not move because the upward pull of the ropes equals its weight. If the forces were not equal, the lamp would speed up.",
+    "points": [
+     {
+      "k": [
+       "force",
+       "push",
+       "pull"
+      ],
+      "ask": "What is a force?"
+     },
+     {
+      "k": [
+       "cancel",
+       "balance",
+       "equal",
+       "zero"
+      ],
+      "ask": "What do you mean when you say the forces cancel?"
+     },
+     {
+      "k": [
+       "weight",
+       "gravity",
+       "down"
+      ],
+      "ask": "What force pulls the lamp down?"
+     },
+     {
+      "k": [
+       "rope",
+       "tension",
+       "example",
+       "lamp"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Moments and torque",
+   "icon": "🔩",
+   "hook": "Why is it easier to undo a tight wheel nut with a long spanner than a short one? Predict how much easier.",
+   "explain": [
+    "A force can turn something as well as push it. The turning effect is called a moment, or torque, and its size is force × perpendicular distance from the pivot: M = F × d. The unit is newton metre (N m).",
+    "Doubling the distance doubles the turning effect for the same force. That is why long spanners and long door handles help.",
+    "A balanced seesaw obeys the principle of moments: clockwise moments equal anticlockwise moments. A 30 kg child 2 m from the pivot balances a 40 kg child at 1.5 m, since 30 × 2 = 40 × 1.5.",
+    "Safety link: bolts have a recommended tightening torque. Too little and the nut can work loose; too much and the bolt stretches or snaps. Engineers use torque wrenches for important joints, such as wheels."
+   ],
+   "example": {
+    "q": "A spanner is 0.25 m long. A worker pushes on its end with 80 N, at right angles. What torque is applied?",
+    "steps": [
+     "Use M = F × d.",
+     "F = 80 N, d = 0.25 m.",
+     "M = 80 × 0.25 = 20 N m."
+    ],
+    "a": "20 N m"
+   },
+   "analogies": {
+    "home": "Pushing a door near the hinge is hard; pushing at the handle is easy.",
+    "city": "A tall crane arm has a heavy counterweight on the short side to balance moments.",
+    "farm": "A long-handled pump handle lets a farmer move water with a small push.",
+    "sport": "A longer cricket bat or golf club swings with a bigger turning effect from the hands."
+   },
+   "mnemonic": "Turning effect = push × distance. Far from the pivot, easy to turn.",
+   "terms": [
+    [
+     "Moment",
+     "The turning effect of a force about a pivot."
+    ],
+    [
+     "Torque",
+     "A turning moment, usually of a shaft or bolt."
+    ],
+    [
+     "Pivot",
+     "The point about which something turns."
+    ],
+    [
+     "Perpendicular distance",
+     "The shortest distance from the pivot to the line of the force."
+    ]
+   ],
+   "misc": {
+    "wrong": "The turning effect depends only on how big the force is.",
+    "right": "It depends on both the force and the distance from the pivot."
+   },
+   "limits": "Only the part of a force at right angles to the arm creates torque; pushing along the handle does not turn it.",
+   "trip": {
+    "wiki": "Torque",
+    "prompt": "Find an example with a spanner or lever. Which distance is the arm?"
+   },
+   "sources": [
+    "Torque",
+    "Moment (physics)",
+    "Lever"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the formula for a moment?",
+     "o": [
+      "M = F × d",
+      "M = F ÷ d",
+      "M = F + d",
+      "M = d ÷ F"
+     ],
+     "a": 0,
+     "why": "Moment is force times perpendicular distance.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A force of 50 N is applied 0.4 m from a pivot at right angles. What is the moment in N m?",
+     "a": 20,
+     "tol": 0.05,
+     "unit": "N m",
+     "why": "M = 50 × 0.4 = 20 N m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 30 kg child sits 2 m from the pivot of a seesaw. Where must a 40 kg child sit on the other side to balance it? Answer in metres.",
+     "a": 1.5,
+     "tol": 0.02,
+     "unit": "m",
+     "why": "Balance: 30 × 2 = 40 × x, so x = 60 ÷ 40 = 1.5 m (g cancels).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bolt needs 40 N m of torque. You use a spanner 0.5 m long. What force at the end is needed in newtons?",
+     "a": 80,
+     "tol": 0.5,
+     "unit": "N",
+     "why": "F = M ÷ d = 40 ÷ 0.5 = 80 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A long pipe is slid over a spanner handle to make a nut turn. What does this do?",
+     "o": [
+      "Increases the distance and so the torque",
+      "Reduces the torque, so the nut is harder to turn",
+      "Makes the nut weaker",
+      "Makes the bolt lighter"
+     ],
+     "a": 0,
+     "why": "A longer arm gives more torque for the same push.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bolt on an engine needs 25 N m. A worker uses a very long bar and tightens as hard as possible. What is the risk?",
+     "o": [
+      "The bolt may stretch or snap",
+      "The bolt gets lighter and easier to remove",
+      "The engine runs cooler",
+      "Nothing at all happens to it"
+     ],
+     "a": 0,
+     "why": "Over-tightening can overload the bolt. Torque wrenches limit the torque.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a door handle fitted far from the hinge?",
+     "o": [
+      "A longer arm needs less force to give the same torque",
+      "It looks better on the door",
+      "It weighs less than other handles",
+      "It makes a pleasing noise when pulled"
+     ],
+     "a": 0,
+     "why": "Torque = force × distance, so large distance means small force.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A crane has a counterweight on its short arm. Explain how this stops the crane tipping.",
+     "rubric": [
+      [
+       "moment",
+       "torque",
+       "turning"
+      ],
+      [
+       "balance",
+       "cancel",
+       "equal",
+       "opposite"
+      ],
+      [
+       "load",
+       "weight"
+      ],
+      [
+       "distance",
+       "arm",
+       "far"
+      ]
+     ],
+     "min": 2,
+     "model": "The load on the long arm gives a clockwise moment. The counterweight on the short arm gives an anticlockwise moment. When the moments balance, the crane does not tip.",
+     "why": "Tipping is a moment problem, so engineers balance moments.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A 60 N push is applied to four tools at right angles. Which gives the most torque?",
+     "o": [
+      "A wheel brace 0.50 m long",
+      "A screwdriver handle 0.03 m",
+      "A small spanner 0.15 m",
+      "A long spanner 0.30 m"
+     ],
+     "a": 0,
+     "why": "M = 60 × d, so the longest arm wins: 30 N m for 0.50 m compared with 18, 9 and 1.8 N m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each situation to its explanation.",
+     "pairs": [
+      [
+       "Door pushed at the hinge",
+       "Tiny distance, tiny torque"
+      ],
+      [
+       "Long spanner",
+       "Large distance, large torque"
+      ],
+      [
+       "Seesaw balanced",
+       "Equal clockwise and anticlockwise moments"
+      ],
+      [
+       "Torque wrench",
+       "Limits tightening torque"
+      ]
+     ],
+     "why": "Each uses M = F × d.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A cyclist pushes a pedal straight down with 200 N when the crank is horizontal (length 0.17 m). What is the torque?",
+     "o": [
+      "34 N m",
+      "3.4 N m",
+      "340 N m",
+      "1176 N m"
+     ],
+     "a": 0,
+     "why": "200 × 0.17 = 34 N m.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The cyclist pushes on the pedal when the crank is pointing straight down. What is the torque then?",
+     "o": [
+      "Zero, because the force passes through the pivot",
+      "Maximum, because the force is largest there",
+      "34 N m, the same in every position",
+      "Double the value at the horizontal position"
+     ],
+     "a": 0,
+     "why": "The perpendicular distance is zero, so there is no turning effect.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do wheel nuts have a specified torque and a tightening order?",
+     "o": [
+      "To clamp evenly without stripping or loosening",
+      "To make the nuts shiny and neat",
+      "To save time on the wheel change",
+      "To make the wheel lighter for the car"
+     ],
+     "a": 0,
+     "why": "Even clamping avoids warped wheels and nuts that work loose or snap.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What torque is and why a long spanner helps",
+    "model": "Torque is a turning effect. It equals force times the distance from the pivot. A long spanner gives a bigger distance, so the same push gives a bigger torque. That is why a long spanner loosens a tight nut more easily.",
+    "points": [
+     {
+      "k": [
+       "turn",
+       "turning",
+       "rotate"
+      ],
+      "ask": "What does torque do?"
+     },
+     {
+      "k": [
+       "force",
+       "push"
+      ],
+      "ask": "What do I need to make torque?"
+     },
+     {
+      "k": [
+       "distance",
+       "long",
+       "pivot",
+       "arm"
+      ],
+      "ask": "Why does the distance matter?"
+     },
+     {
+      "k": [
+       "spanner",
+       "example",
+       "door",
+       "seesaw"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Basic kinematics",
+   "icon": "🚗",
+   "hook": "A train takes 30 seconds to stop from a steady speed. How far does it travel while braking, and does doubling the speed double the distance?",
+   "explain": [
+    "Kinematics describes motion without asking what causes it. Speed is distance divided by time: v = d ÷ t, measured in m/s. Acceleration is the change in speed divided by time: a = (v − u) ÷ t, in m/s².",
+    "For steady speed, distance = speed × time. For constant acceleration from a start speed u, the speed after time t is v = u + a × t. A falling object, ignoring air, gains about 9.8 m/s every second.",
+    "A speed-time graph tells a story. A flat line is steady speed, a slope is acceleration and the area under the line is the distance travelled.",
+    "Safety link: braking distance grows with the square of speed. If a car doubles its speed, its braking distance is about four times as long, which is why speed limits matter near schools."
+   ],
+   "example": {
+    "q": "A car speeds up from 0 to 20 m/s in 8 s. What is its acceleration?",
+    "steps": [
+     "a = (v − u) ÷ t.",
+     "v = 20 m/s, u = 0, t = 8 s.",
+     "a = 20 ÷ 8 = 2.5 m/s²."
+    ],
+    "a": "2.5 m/s²"
+   },
+   "analogies": {
+    "home": "A lift's display counts floors per second, like speed.",
+    "city": "A tram leaving a stop speeds up gently so passengers do not fall.",
+    "farm": "A tractor moves at a steady 2 m/s while ploughing, so in 100 s it covers 200 m.",
+    "sport": "A sprinter's acceleration phase is the first few seconds out of the blocks."
+   },
+   "mnemonic": "Speed is distance per second. Acceleration is speed gained per second.",
+   "terms": [
+    [
+     "Speed",
+     "Distance travelled per unit time."
+    ],
+    [
+     "Acceleration",
+     "Rate of change of speed, in m/s²."
+    ],
+    [
+     "Displacement",
+     "How far and in which direction something has moved."
+    ],
+    [
+     "Constant acceleration",
+     "An acceleration that stays the same."
+    ]
+   ],
+   "misc": {
+    "wrong": "Acceleration means only speeding up.",
+    "right": "Acceleration is any change in speed or direction, so slowing down (deceleration) and turning also involve acceleration."
+   },
+   "limits": "Our simple formulas assume straight-line motion and constant acceleration.",
+   "trip": {
+    "wiki": "Kinematics",
+    "prompt": "Find a speed-time graph. Which part of it is the acceleration?"
+   },
+   "sources": [
+    "Kinematics",
+    "Acceleration",
+    "Speed"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the unit of acceleration?",
+     "o": [
+      "m/s²",
+      "m/s, metres per second",
+      "N, newtons",
+      "J, joules"
+     ],
+     "a": 0,
+     "why": "Acceleration is change in speed per second: metres per second per second.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A cyclist rides at a steady 6 m/s for 30 s. How far does she travel in metres?",
+     "a": 180,
+     "tol": 0.5,
+     "unit": "m",
+     "why": "d = v × t = 6 × 30 = 180 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A car moving at 12 m/s speeds up at 2 m/s² for 5 s. What is its final speed in m/s?",
+     "a": 22,
+     "tol": 0.1,
+     "unit": "m/s",
+     "why": "v = u + a t = 12 + 2 × 5 = 22 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A stone is dropped and falls for 3 s. Ignoring air and using g = 9.8 m/s², what is its speed in m/s?",
+     "a": 29.4,
+     "tol": 0.1,
+     "unit": "m/s",
+     "why": "v = g t = 9.8 × 3 = 29.4 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "On a speed-time graph the line is flat. What does this mean?",
+     "o": [
+      "Steady speed",
+      "Speeding up",
+      "Slowing down",
+      "The object has stopped for sure"
+     ],
+     "a": 0,
+     "why": "A flat line means the speed does not change. (Stopped would be a flat line at zero speed.)",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A car's braking distance at 10 m/s is 8 m. About how far at 20 m/s on the same road?",
+     "o": [
+      "About 32 m",
+      "About 16 m",
+      "About 8 m",
+      "About 80 m"
+     ],
+     "a": 0,
+     "why": "Braking distance grows with speed squared, so doubling speed gives about four times the distance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lorry takes a bend at a steady 10 m/s. Is it accelerating?",
+     "o": [
+      "Yes, because its direction changes",
+      "No, because its speed is constant",
+      "No, because it is only turning",
+      "Only if it also speeds up"
+     ],
+     "a": 0,
+     "why": "Acceleration includes change of direction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the typical speed of a cyclist?",
+     "o": [
+      "About 6 m/s",
+      "About 0.6 m/s",
+      "About 60 m/s",
+      "About 600 m/s"
+     ],
+     "a": 0,
+     "why": "6 m/s is about 22 km/h, a normal cycling speed.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is it more dangerous to drive at double the speed near a school, even though it is only twice as fast?",
+     "rubric": [
+      [
+       "braking",
+       "stopping",
+       "stop"
+      ],
+      [
+       "four",
+       "4",
+       "square",
+       "squared",
+       "much longer",
+       "more than double"
+      ],
+      [
+       "distance",
+       "longer"
+      ],
+      [
+       "time",
+       "react",
+       "reaction"
+      ]
+     ],
+     "min": 2,
+     "model": "Braking distance grows with the square of speed, so doubling speed makes the stopping distance about four times as long. The driver also travels twice as far during the reaction time.",
+     "why": "Distance needed to stop rises faster than speed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its formula.",
+     "pairs": [
+      [
+       "Speed",
+       "distance ÷ time"
+      ],
+      [
+       "Acceleration",
+       "change in speed ÷ time"
+      ],
+      [
+       "Distance at steady speed",
+       "speed × time"
+      ],
+      [
+       "Final speed",
+       "u + a t"
+      ]
+     ],
+     "why": "These are the core kinematic relations.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A speed-time graph rises in a straight line from 0 to 10 m/s over 5 s. What is the distance travelled?",
+     "o": [
+      "25 m",
+      "50 m",
+      "10 m",
+      "5 m"
+     ],
+     "a": 0,
+     "why": "Distance is the area of a triangle: ½ × 5 × 10 = 25 m.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which has the greater acceleration: 0 to 10 m/s in 5 s, or 0 to 30 m/s in 10 s?",
+     "o": [
+      "The second, 3 m/s² against 2 m/s²",
+      "The first, 2 m/s² against 3 m/s²",
+      "They are equal at 2 m/s²",
+      "Neither accelerates at all"
+     ],
+     "a": 0,
+     "why": "10 ÷ 5 = 2 m/s² and 30 ÷ 10 = 3 m/s².",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lift must not accelerate too fast. Why?",
+     "o": [
+      "Passengers feel extra force and may be hurt or frightened",
+      "The lift would simply go slower",
+      "Cables would shrink in the shaft",
+      "It would use no energy at all"
+     ],
+     "a": 0,
+     "why": "Large accelerations give large forces on the body and cables.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The difference between speed and acceleration",
+    "model": "Speed tells how far something goes each second. Acceleration tells how quickly the speed changes. A car at a steady 20 m/s has no acceleration, while a car going from 0 to 20 m/s in 8 s has an acceleration of 2.5 m/s².",
+    "points": [
+     {
+      "k": [
+       "distance",
+       "far",
+       "per second"
+      ],
+      "ask": "What does speed tell me?"
+     },
+     {
+      "k": [
+       "change",
+       "faster",
+       "speed up",
+       "slow"
+      ],
+      "ask": "What does acceleration tell me?"
+     },
+     {
+      "k": [
+       "m/s",
+       "unit",
+       "metres"
+      ],
+      "ask": "What units do they use?"
+     },
+     {
+      "k": [
+       "car",
+       "example",
+       "train"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Work, energy and power",
+   "icon": "⚡",
+   "hook": "Two cranes lift the same brick to the same height. One takes 10 seconds, the other 40. Did one do more work?",
+   "explain": [
+    "In physics, work is done when a force moves something: work = force × distance moved in the direction of the force. The unit is the joule (J). Pushing a box with 50 N for 6 m is 50 × 6 = 300 J of work.",
+    "Energy is the ability to do work. Lifting a mass m through a height h stores gravitational potential energy E = m × g × h. A moving object has kinetic energy.",
+    "Power is how fast work is done: P = W ÷ t, measured in watts (W). The two cranes do the same work, but the faster one has four times the power.",
+    "No machine is perfectly efficient. Efficiency = useful output ÷ input energy × 100%. Some energy always becomes heat through friction, which is why engines need cooling and bearings need oil."
+   ],
+   "example": {
+    "q": "A motor lifts a 5 kg load through 4 m. Use g = 10 m/s². How much energy is stored in the load?",
+    "steps": [
+     "E = m × g × h.",
+     "E = 5 × 10 × 4.",
+     "E = 200 J."
+    ],
+    "a": "200 J"
+   },
+   "analogies": {
+    "home": "Carrying shopping upstairs takes the same work whether you walk or run, but running needs more power.",
+    "city": "A lift uses a motor with a power rating in kilowatts.",
+    "farm": "A pump lifts water from a well. A bigger pump fills the tank faster.",
+    "sea": "A tug uses a lot of power to pull a ship slowly."
+   },
+   "mnemonic": "Work is force times distance. Power is work per second.",
+   "terms": [
+    [
+     "Work",
+     "Energy transferred when a force moves an object, in joules."
+    ],
+    [
+     "Power",
+     "Rate of doing work, in watts."
+    ],
+    [
+     "Efficiency",
+     "The fraction of input energy that becomes useful output."
+    ],
+    [
+     "Potential energy",
+     "Stored energy because of height."
+    ]
+   ],
+   "misc": {
+    "wrong": "Holding a heavy box still is hard work in the physics sense.",
+    "right": "If nothing moves, the force does no work in physics terms, although your muscles still use energy."
+   },
+   "limits": "We assume the force acts along the motion and that g is constant near the surface.",
+   "trip": {
+    "wiki": "Mechanical efficiency",
+    "prompt": "Find the efficiency of an engine or motor. Where does the lost energy go?"
+   },
+   "sources": [
+    "Work (physics)",
+    "Power (physics)",
+    "Mechanical efficiency"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the unit of power?",
+     "o": [
+      "Watt",
+      "Joule",
+      "Newton",
+      "Pascal"
+     ],
+     "a": 0,
+     "why": "Power is measured in watts, one watt being one joule per second.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A force of 50 N pushes a box 6 m along a floor. How much work is done in joules?",
+     "a": 300,
+     "tol": 0.5,
+     "unit": "J",
+     "why": "W = F × d = 50 × 6 = 300 J.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A motor does 300 J of work in 10 s. What is its power in watts?",
+     "a": 30,
+     "tol": 0.1,
+     "unit": "W",
+     "why": "P = 300 ÷ 10 = 30 W.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A machine takes in 400 J of energy and delivers 300 J of useful work. What is its efficiency in percent?",
+     "a": 75,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "300 ÷ 400 = 0.75, so 75%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How much potential energy does a 20 kg bucket gain when lifted 3 m? Use g = 10 m/s².",
+     "a": 600,
+     "tol": 1,
+     "unit": "J",
+     "why": "E = m g h = 20 × 10 × 3 = 600 J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A claim says a machine is 120% efficient. What is wrong?",
+     "o": [
+      "It would give out more energy than it takes in",
+      "Nothing is wrong, it is possible with good design",
+      "Efficiency is measured in kilograms",
+      "It would be too heavy to lift"
+     ],
+     "a": 0,
+     "why": "Energy cannot be created, so efficiency cannot be above 100%.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two motors lift the same load to the same height. Motor A takes 5 s and motor B takes 10 s. Which statement is correct?",
+     "o": [
+      "A has twice the power of B",
+      "B has more power because it works longer",
+      "They have the same power",
+      "A does more work than B"
+     ],
+     "a": 0,
+     "why": "The work is equal but A does it in half the time, so its power is double.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Where does most of the wasted energy in a gearbox end up?",
+     "o": [
+      "As heat from friction",
+      "As extra speed in the shafts",
+      "As sound only, which is lost in the air",
+      "It simply disappears"
+     ],
+     "a": 0,
+     "why": "Friction turns useful energy into heat, which is why gearboxes are lubricated and cooled.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A student says: \"I held a heavy box in the air for a minute so I did a lot of work.\" Explain whether this is correct in physics.",
+     "rubric": [
+      [
+       "no",
+       "not",
+       "incorrect",
+       "wrong"
+      ],
+      [
+       "move",
+       "moves",
+       "distance",
+       "displacement"
+      ],
+      [
+       "force"
+      ],
+      [
+       "energy",
+       "muscles",
+       "tire",
+       "tired"
+      ]
+     ],
+     "min": 2,
+     "model": "In physics, work needs the force to move the box through a distance. Holding it still means no distance, so no work was done on the box, although the muscles still use energy.",
+     "why": "W = F × d, and d is zero.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which has the greatest power?",
+     "o": [
+      "A car engine at 80 000 W",
+      "A large electric kettle at 3000 W",
+      "A bright light bulb at 100 W",
+      "A laptop and its charger at 65 W"
+     ],
+     "a": 0,
+     "why": "80 000 W is the largest number of watts.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A pump with 60% efficiency receives 500 W of input power. What is the useful output power?",
+     "o": [
+      "300 W",
+      "200 W",
+      "500 W",
+      "833 W"
+     ],
+     "a": 0,
+     "why": "0.60 × 500 = 300 W.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The 200 W of lost power in the pump becomes what, mainly?",
+     "o": [
+      "Heat in the pump and fluid",
+      "More water in the pipe",
+      "Light from the pump",
+      "Extra mass in the pump"
+     ],
+     "a": 0,
+     "why": "Losses are mostly friction and turbulence, so they heat the machine.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why should a lift motor have a power rating well above the minimum for the load?",
+     "o": [
+      "For safety margin, acceleration and losses",
+      "So it looks big and impressive",
+      "To waste energy on purpose",
+      "Because lifts are always heavy"
+     ],
+     "a": 0,
+     "why": "Starting the load needs extra power and losses reduce the output.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The difference between work and power",
+    "model": "Work is the energy used when a force moves something, in joules. Power is how quickly the work is done, in watts. Two motors lifting the same brick do the same work, but the one that is faster has more power.",
+    "points": [
+     {
+      "k": [
+       "force",
+       "distance",
+       "joule",
+       "energy"
+      ],
+      "ask": "How do you work out work?"
+     },
+     {
+      "k": [
+       "fast",
+       "quick",
+       "time",
+       "second"
+      ],
+      "ask": "What does power add?"
+     },
+     {
+      "k": [
+       "watt",
+       "unit"
+      ],
+      "ask": "What unit is power in?"
+     },
+     {
+      "k": [
+       "example",
+       "motor",
+       "crane",
+       "lift"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Engineering materials",
+   "icon": "🔩",
+   "hook": "A bicycle frame and a bridge girder are both made of metal, but not the same metal. Why would an engineer choose different ones?",
+   "explain": [
+    "Engineers choose materials by their properties. Strength is how much force a material can carry before it fails. Stiffness is how little it bends under load. Hardness resists scratching. Toughness is how much energy it absorbs before breaking.",
+    "Ductile materials such as mild steel and copper stretch before they break, giving a warning. Brittle materials such as glass and cast iron snap suddenly. In safety-critical designs, ductile failure is usually preferred.",
+    "Density is mass per volume: ρ = m ÷ V. Steel is about 7800 kg/m³ and aluminium about 2700 kg/m³. A lighter material helps vehicles save fuel, but may cost more or be less stiff.",
+    "Cost, availability, corrosion and recycling also matter. Steel rusts unless protected; aluminium forms a thin protective oxide layer."
+   ],
+   "example": {
+    "q": "A block of metal has a mass of 2.7 kg and a volume of 0.001 m³. What is its density, and which metal is it likely to be?",
+    "steps": [
+     "ρ = m ÷ V.",
+     "ρ = 2.7 ÷ 0.001 = 2700 kg/m³.",
+     "This matches aluminium at about 2700 kg/m³."
+    ],
+    "a": "2700 kg/m³, likely aluminium"
+   },
+   "analogies": {
+    "home": "A glass cup is hard but breaks suddenly. A plastic cup bends first.",
+    "city": "Bridge cables use strong steel, while window frames use light aluminium.",
+    "farm": "A plough blade needs hard steel to resist wear.",
+    "sea": "Boats need materials that resist corrosion in salt water."
+   },
+   "mnemonic": "Strong, stiff, tough, hard: pick the right one for the job.",
+   "terms": [
+    [
+     "Ductile",
+     "Able to stretch a lot before breaking."
+    ],
+    [
+     "Brittle",
+     "Breaks suddenly with little stretch."
+    ],
+    [
+     "Density",
+     "Mass per unit volume, in kg/m³."
+    ],
+    [
+     "Corrosion",
+     "Gradual damage to a material by chemical reaction, such as rust."
+    ]
+   ],
+   "misc": {
+    "wrong": "The strongest material is always the best choice.",
+    "right": "The best material balances strength, weight, cost, safety and how it can be made."
+   },
+   "limits": "Property values vary with the exact alloy, treatment and temperature.",
+   "trip": {
+    "wiki": "Ductility",
+    "prompt": "Find an example of ductile and brittle fracture. Which gives a warning?"
+   },
+   "sources": [
+    "Materials science",
+    "Ductility",
+    "Density"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A material that stretches a lot before breaking is called what?",
+     "o": [
+      "Ductile",
+      "Brittle",
+      "Hard",
+      "Dense"
+     ],
+     "a": 0,
+     "why": "Ductile materials deform plastically first.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A steel block has a volume of 0.002 m³ and a density of 7800 kg/m³. What is its mass in kilograms?",
+     "a": 15.6,
+     "tol": 0.1,
+     "unit": "kg",
+     "why": "m = ρ × V = 7800 × 0.002 = 15.6 kg.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plastic part has a mass of 0.46 kg and a volume of 0.0004 m³. What is its density in kg/m³?",
+     "a": 1150,
+     "tol": 5,
+     "unit": "kg/m³",
+     "why": "ρ = 0.46 ÷ 0.0004 = 1150 kg/m³.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A cargo hook must give warning before it fails. Which type of failure is safer?",
+     "o": [
+      "Ductile, with visible stretching",
+      "Brittle, with sudden snapping and no warning",
+      "Either is equally safe",
+      "Neither can fail"
+     ],
+     "a": 0,
+     "why": "Visible bending warns people before total failure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is aluminium used in aircraft skin instead of steel?",
+     "o": [
+      "It is much less dense, so it saves weight",
+      "It is heavier, which helps flight",
+      "It is brittle and cracks easily",
+      "It cannot be shaped into sheets"
+     ],
+     "a": 0,
+     "why": "Light structure saves fuel while still being strong enough with good design.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A coastal footbridge uses plain steel with no paint. What will most likely happen?",
+     "o": [
+      "It will corrode and weaken",
+      "It will become lighter and stronger",
+      "It will float",
+      "It will gain strength"
+     ],
+     "a": 0,
+     "why": "Salt water speeds up rusting, so protection or stainless steel is needed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Glass is very hard but breaks if dropped. What does this show?",
+     "o": [
+      "Hard does not mean tough",
+      "Hard means tough, so glass should not break",
+      "Glass is ductile and bends",
+      "Glass is dense and heavy"
+     ],
+     "a": 0,
+     "why": "Hardness resists scratching, toughness resists breaking by absorbing energy.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give two factors, other than strength, that an engineer weighs when choosing a material for a bicycle frame.",
+     "rubric": [
+      [
+       "weight",
+       "light",
+       "density"
+      ],
+      [
+       "cost",
+       "price",
+       "cheap"
+      ],
+      [
+       "corrosion",
+       "rust"
+      ],
+      [
+       "stiff",
+       "stiffness"
+      ],
+      [
+       "make",
+       "manufactur",
+       "weld",
+       "shape"
+      ]
+     ],
+     "min": 2,
+     "model": "The frame should be light so riding is easy, and cheap enough to sell. It should also resist rust, be stiff enough to ride efficiently and be easy to make and join.",
+     "why": "Design is a balance of several properties.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these from lowest density to highest density.",
+     "items": [
+      "Water 1000 kg/m³",
+      "Aluminium 2700 kg/m³",
+      "Steel 7800 kg/m³",
+      "Lead 11 300 kg/m³"
+     ],
+     "why": "The densities are in increasing order.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the property to its meaning.",
+     "pairs": [
+      [
+       "Strength",
+       "Force carried before failure"
+      ],
+      [
+       "Stiffness",
+       "Resistance to bending"
+      ],
+      [
+       "Hardness",
+       "Resistance to scratching"
+      ],
+      [
+       "Toughness",
+       "Energy absorbed before breaking"
+      ]
+     ],
+     "why": "These are four distinct properties.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A material is very strong but brittle. Where is it a risky choice?",
+     "o": [
+      "In a part that may be hit or shocked",
+      "In a part that is only compressed gently",
+      "In a decoration",
+      "In a stationary base"
+     ],
+     "a": 0,
+     "why": "Brittle materials may crack without warning under shocks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Cast iron cracks easily when stretched but resists squashing well. Which use suits it?",
+     "o": [
+      "An engine block or machine base",
+      "A rope that hangs a heavy load",
+      "A spring that stretches often",
+      "A hook under tension on a crane"
+     ],
+     "a": 0,
+     "why": "It is better in compression, and its poor tension behaviour matters less in a base.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A recycled aluminium can needs far less energy to remake than new aluminium needs to be extracted. What decision does this support?",
+     "o": [
+      "Design for recycling",
+      "Use only new ore from mines",
+      "Never use aluminium again",
+      "Use heavier metals instead"
+     ],
+     "a": 0,
+     "why": "Recycling saves energy and resources, which is part of sustainable design.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How engineers choose a material",
+    "model": "Engineers pick a material by what the part must do. They check strength, weight, cost and whether it resists rust. A bridge uses strong steel, while an aircraft skin uses light aluminium. The best choice is a balance, not just the strongest.",
+    "points": [
+     {
+      "k": [
+       "strong",
+       "strength"
+      ],
+      "ask": "What do you check first?"
+     },
+     {
+      "k": [
+       "light",
+       "weight",
+       "density"
+      ],
+      "ask": "Does weight matter?"
+     },
+     {
+      "k": [
+       "cost",
+       "rust",
+       "corrosion",
+       "price"
+      ],
+      "ask": "What else matters?"
+     },
+     {
+      "k": [
+       "example",
+       "bridge",
+       "aircraft",
+       "bicycle"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Mechanical components",
+   "icon": "⚙️",
+   "hook": "Take a bicycle apart in your mind. How many different small parts are holding, turning and cushioning it?",
+   "explain": [
+    "Machines are built from standard components. Fasteners such as bolts, screws and rivets hold parts together. Bearings let shafts turn with little friction. Springs store energy and absorb shocks. Gears, belts and chains pass motion and torque from one shaft to another.",
+    "Gear ratio = number of teeth on the driven gear ÷ number of teeth on the driver. A 20-tooth driver turning a 60-tooth gear has ratio 3. The driven gear turns three times slower but gives three times the torque (ignoring losses).",
+    "A spring obeys Hooke's law: force F = k × x, where k is stiffness in N/m and x is the stretch. A spring with k = 200 N/m stretched 0.05 m gives 10 N.",
+    "Safety link: rotating parts need guards. Nuts can loosen from vibration, so engineers use lock washers or locknuts. Parts without lubrication wear out and can overheat."
+   ],
+   "example": {
+    "q": "A motor turns a 20-tooth gear at 360 rpm. It drives a 60-tooth gear. How fast does the big gear turn?",
+    "steps": [
+     "Gear ratio = 60 ÷ 20 = 3.",
+     "Speed of driven gear = 360 ÷ 3.",
+     "= 120 rpm."
+    ],
+    "a": "120 rpm"
+   },
+   "analogies": {
+    "home": "A hinge is a simple bearing that lets a door turn.",
+    "city": "A tram's pantograph spring keeps the contact against the wire.",
+    "farm": "A tractor's belt drives a pump from the engine.",
+    "music": "A piano key return spring brings the key back up."
+   },
+   "mnemonic": "Teeth driven over teeth driver gives the ratio.",
+   "terms": [
+    [
+     "Bearing",
+     "A part that supports a turning shaft with low friction."
+    ],
+    [
+     "Gear ratio",
+     "Teeth on the driven gear divided by teeth on the driver."
+    ],
+    [
+     "Hooke's law",
+     "Spring force is proportional to stretch: F = k x."
+    ],
+    [
+     "Fastener",
+     "A part that holds other parts together."
+    ]
+   ],
+   "misc": {
+    "wrong": "A gear that turns faster is always better.",
+    "right": "A faster gear gives less torque. Engineers trade speed for turning force depending on the job."
+   },
+   "limits": "Real gear trains lose some power as heat and noise, so output torque is a bit less than ideal.",
+   "trip": {
+    "wiki": "Gear train",
+    "prompt": "Find a gear train. Which gear is the driver and which is driven?"
+   },
+   "sources": [
+    "Gear train",
+    "Bearing (mechanical)",
+    "Hooke's law"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the job of a bearing?",
+     "o": [
+      "Support a turning shaft with low friction",
+      "Store electrical energy for later use",
+      "Cut metal into shapes",
+      "Join metal sheets together"
+     ],
+     "a": 0,
+     "why": "Bearings reduce friction between moving parts.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A 15-tooth driver gear turns a 45-tooth driven gear. What is the gear ratio?",
+     "a": 3,
+     "tol": 0.01,
+     "why": "Ratio = 45 ÷ 15 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The driver gear turns at 600 rpm and the gear ratio is 4. What is the speed of the driven gear in rpm?",
+     "a": 150,
+     "tol": 0.5,
+     "unit": "rpm",
+     "why": "600 ÷ 4 = 150 rpm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A spring has stiffness 400 N/m. How much force is needed to stretch it 0.03 m?",
+     "a": 12,
+     "tol": 0.05,
+     "unit": "N",
+     "why": "F = k x = 400 × 0.03 = 12 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A small gear drives a big gear. What happens to torque at the big gear?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It is zero",
+      "It stays the same in every case"
+     ],
+     "a": 0,
+     "why": "Slowing down the speed by a ratio multiplies the torque by about the same ratio, ignoring losses.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A nut on a vibrating machine keeps loosening. What is a sensible fix?",
+     "o": [
+      "Fit a locknut or lock washer",
+      "Use a weaker bolt that gives way",
+      "Remove the washer entirely",
+      "Paint over the nut and leave it"
+     ],
+     "a": 0,
+     "why": "Locking devices stop vibration unscrewing fasteners.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a belt drive fitted with a guard?",
+     "o": [
+      "To stop hands and clothing getting caught",
+      "To make a noise as a warning",
+      "To save paint on the belt",
+      "To cool the belt as it turns"
+     ],
+     "a": 0,
+     "why": "Moving belts can trap people, so guards are a basic safety measure.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A car's suspension spring is replaced by one that is twice as stiff. What changes?",
+     "o": [
+      "The same compression needs twice the force",
+      "It needs half the force for the same squash",
+      "Nothing changes",
+      "The car becomes lighter overall"
+     ],
+     "a": 0,
+     "why": "F = k x, so doubling k doubles the force for the same x.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a bicycle uses low gear for climbing a steep hill.",
+     "rubric": [
+      [
+       "torque",
+       "force",
+       "push",
+       "turning"
+      ],
+      [
+       "more",
+       "greater",
+       "bigger",
+       "extra"
+      ],
+      [
+       "slow",
+       "slower",
+       "speed"
+      ],
+      [
+       "ratio",
+       "teeth"
+      ]
+     ],
+     "min": 2,
+     "model": "A low gear has a high gear ratio, so the wheel gets more turning force from the same pedal effort, but turns slower. This is just what is needed on a steep hill.",
+     "why": "Gears trade speed for torque.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each component to its job.",
+     "pairs": [
+      [
+       "Spring",
+       "Stores energy"
+      ],
+      [
+       "Bolt",
+       "Holds parts together"
+      ],
+      [
+       "Belt",
+       "Transmits motion between pulleys"
+      ],
+      [
+       "Gear",
+       "Transmits torque by teeth"
+      ]
+     ],
+     "why": "These are common machine elements.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A gearbox has a 20-tooth driver and a 60-tooth driven gear, and loses 10% of power as heat. If the input torque is 10 N m, the output torque is closest to what?",
+     "o": [
+      "27 N m",
+      "30 N m",
+      "33 N m",
+      "10 N m"
+     ],
+     "a": 0,
+     "why": "Ideal torque is 10 × 3 = 30 N m. With 90% efficiency it is about 27 N m.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a gearbox need oil?",
+     "o": [
+      "To reduce friction and wear and carry away heat",
+      "To make gears stick together",
+      "To make it heavier and steadier",
+      "To change the gear ratio"
+     ],
+     "a": 0,
+     "why": "Lubrication protects the teeth and bearings.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bolt holding a fairground ride shows a small crack. What should happen?",
+     "o": [
+      "Stop the ride and replace it",
+      "Keep running until it breaks",
+      "Paint over it",
+      "Tighten it a lot more"
+     ],
+     "a": 0,
+     "why": "A cracked fastener may fail suddenly and endanger people, so it must be replaced.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a gear train changes speed and torque",
+    "model": "Two gears meshing turn each other. If a small driver gear turns a big gear, the big one turns slower but with more torque. The gear ratio is the teeth on the big gear divided by the teeth on the small one. For example, a ratio of 3 makes the output turn three times slower and with three times the torque.",
+    "points": [
+     {
+      "k": [
+       "teeth",
+       "gear"
+      ],
+      "ask": "What is a gear?"
+     },
+     {
+      "k": [
+       "ratio",
+       "divide"
+      ],
+      "ask": "How do you work out the ratio?"
+     },
+     {
+      "k": [
+       "slow",
+       "slower",
+       "speed"
+      ],
+      "ask": "What happens to the speed?"
+     },
+     {
+      "k": [
+       "torque",
+       "force",
+       "turning",
+       "example",
+       "bicycle"
+      ],
+      "ask": "What do we gain, and where do we see it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Introduction to manufacturing processes",
+   "icon": "🏭",
+   "hook": "A cup could be carved from a block, melted and poured into a mould, bent from sheet or printed layer by layer. Which route is best?",
+   "explain": [
+    "Manufacturing turns materials into useful parts. There are four main families. Casting pours molten metal or plastic into a mould. Forming and forging shape material by pushing or hammering it. Machining cuts material away with tools such as drills and lathes. Additive manufacturing (3D printing) builds parts layer by layer.",
+    "Joining processes such as welding, bolting and gluing combine parts into assemblies.",
+    "Choice depends on the shape, material, number of parts and cost. Casting suits many identical complex parts. Machining gives accurate surfaces. 3D printing suits one-offs and complex shapes with little waste.",
+    "Safety link: factory work needs protective equipment, machine guards and training. Eye protection, ear protection and gloves (but never loose gloves near rotating parts) are standard."
+   ],
+   "example": {
+    "q": "A 2 kg block is machined into a 0.5 kg part. What percentage of the material becomes waste?",
+    "steps": [
+     "Waste = 2 − 0.5 = 1.5 kg.",
+     "Percentage = 1.5 ÷ 2 × 100.",
+     "= 75%."
+    ],
+    "a": "75%"
+   },
+   "analogies": {
+    "home": "Baking a cake in a tin is casting. Cutting a shape from dough is machining.",
+    "city": "Car body panels are pressed from sheet metal, which is forming.",
+    "farm": "A blacksmith heats and hammers a horseshoe, which is forging.",
+    "tech": "A 3D printer adds plastic layer by layer."
+   },
+   "mnemonic": "Pour, push, cut, add, join.",
+   "terms": [
+    [
+     "Casting",
+     "Shaping by pouring liquid material into a mould."
+    ],
+    [
+     "Machining",
+     "Removing material with cutting tools."
+    ],
+    [
+     "Additive manufacturing",
+     "Building a part by adding material layer by layer."
+    ],
+    [
+     "Assembly",
+     "Joining parts into a finished product."
+    ]
+   ],
+   "misc": {
+    "wrong": "3D printing will replace all other manufacturing.",
+    "right": "Each process has strengths. Printing is slow for large numbers, while casting and forming are fast for mass production."
+   },
+   "limits": "Process choices change as technology improves, and mixed routes are common.",
+   "trip": {
+    "wiki": "Manufacturing",
+    "prompt": "Find a video or diagram of casting and one of machining. What is different about the shapes they make?"
+   },
+   "sources": [
+    "Manufacturing",
+    "Casting",
+    "Machining"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which process removes material using a cutting tool?",
+     "o": [
+      "Machining",
+      "Casting, where metal is poured into a mould",
+      "Forging",
+      "3D printing"
+     ],
+     "a": 0,
+     "why": "Drilling, turning and milling are machining.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which process builds a part layer by layer?",
+     "o": [
+      "Additive manufacturing",
+      "Casting",
+      "Machining",
+      "Forging, where hot metal is hammered"
+     ],
+     "a": 0,
+     "why": "3D printing adds material only where it is needed.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A 2 kg block is machined to a 0.5 kg part. What percentage of the block is removed?",
+     "a": 75,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "(2 − 0.5) ÷ 2 × 100 = 75%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A machine makes one part every 3 minutes. How many hours does it need for 50 parts?",
+     "a": 2.5,
+     "tol": 0.02,
+     "unit": "h",
+     "why": "50 × 3 = 150 minutes = 2.5 hours.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A factory needs 100 000 identical metal parts. Which route is most likely cheapest?",
+     "o": [
+      "Casting or pressing in a mould or die",
+      "Carving each from a solid block by hand",
+      "Printing one at a time",
+      "Welding scraps"
+     ],
+     "a": 0,
+     "why": "Moulds and dies cost a lot at first but each part is cheap and quick.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A designer needs a single prototype with a complex hollow shape. Which process is the best fit?",
+     "o": [
+      "Additive manufacturing",
+      "Making a casting mould",
+      "Forging",
+      "Pressing sheet"
+     ],
+     "a": 0,
+     "why": "No tooling is needed, so one-offs are quick and cheap.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A worker feeds a part into a spinning lathe wearing a long loose scarf. What is wrong?",
+     "o": [
+      "The scarf can be caught and pull the worker in",
+      "Nothing, scarves are safe near lathes",
+      "The scarf slows the lathe down",
+      "The scarf makes the part shiny"
+     ],
+     "a": 0,
+     "why": "Loose clothing near rotating machinery is a serious entanglement hazard.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does forging often produce stronger parts than machining the same shape from a solid block?",
+     "rubric": [
+      [
+       "grain",
+       "fibre",
+       "flow",
+       "structure"
+      ],
+      [
+       "align",
+       "aligned",
+       "follow",
+       "along"
+      ],
+      [
+       "cut",
+       "cuts",
+       "removes",
+       "interrupts"
+      ],
+      [
+       "strong",
+       "stronger",
+       "strength"
+      ]
+     ],
+     "min": 2,
+     "model": "Forging squeezes and shapes the metal so its internal grain flows along the shape. Machining cuts across the grain, which can leave weak directions.",
+     "why": "Grain flow improves strength in forged parts.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these steps of making a metal casting in order.",
+     "items": [
+      "Make a pattern and mould",
+      "Melt the metal",
+      "Pour into the mould",
+      "Let it cool and solidify",
+      "Remove and finish the part"
+     ],
+     "why": "The mould comes first, then the molten metal is poured and cooled.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each process to a typical product.",
+     "pairs": [
+      [
+       "Casting",
+       "Engine block"
+      ],
+      [
+       "Sheet forming",
+       "Car door panel"
+      ],
+      [
+       "Machining",
+       "Precision shaft"
+      ],
+      [
+       "3D printing",
+       "Custom prototype"
+      ]
+     ],
+     "why": "Each process fits particular shapes and numbers.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A moulding tool costs 50 000 currency units and each part then costs 1. Machining costs 10 per part with no tooling. At what quantity are they equal?",
+     "o": [
+      "About 5556 parts",
+      "About 500 parts",
+      "About 50 000 parts",
+      "About 100 parts, since tooling is dear"
+     ],
+     "a": 0,
+     "why": "50 000 + 1n = 10n gives 9n = 50 000, so n is about 5556.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "For orders above that quantity, which route is cheaper?",
+     "o": [
+      "The mould",
+      "Machining",
+      "They are always the same",
+      "Neither can be used"
+     ],
+     "a": 0,
+     "why": "Beyond the break-even number the cheap per-part cost of moulding wins.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does machining generate waste chips that are often recycled?",
+     "o": [
+      "It removes material, and metal chips can be melted again",
+      "It adds material to the part",
+      "It produces no waste at all",
+      "It makes liquids that are poured away"
+     ],
+     "a": 0,
+     "why": "Recycling chips reduces waste and cost.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The main ways to make a part",
+    "model": "There are four main ways. Casting pours liquid into a mould. Forming shapes material by pressing or hammering. Machining cuts material away. 3D printing adds material layer by layer. The best choice depends on the shape and how many parts you need.",
+    "points": [
+     {
+      "k": [
+       "cast",
+       "pour",
+       "mould"
+      ],
+      "ask": "What is casting?"
+     },
+     {
+      "k": [
+       "cut",
+       "machin",
+       "remove"
+      ],
+      "ask": "What is machining?"
+     },
+     {
+      "k": [
+       "print",
+       "layer",
+       "add"
+      ],
+      "ask": "What is 3D printing?"
+     },
+     {
+      "k": [
+       "number",
+       "many",
+       "cost",
+       "choose",
+       "example"
+      ],
+      "ask": "How do you choose between them?"
+     }
+    ]
+   }
+  }
+ ]
+}

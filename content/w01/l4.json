@@ -1,0 +1,2906 @@
+{
+ "world": 1,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced dynamics and oscillations",
+   "icon": "🎢",
+   "hook": "A child on a swing returns to the start again and again with almost the same rhythm, whether she swings high or low. What controls that rhythm?",
+   "explain": [
+    "An object moving in a circle of radius r at speed v has a centripetal acceleration a = v² ÷ r directed towards the centre. The force needed is F = mv² ÷ r. It is not a new force: it is the resultant of real forces such as tension, friction or gravity. Without it the object would move off in a straight line.",
+    "An oscillation is a repeating motion about an equilibrium position. In simple harmonic motion (SHM) the restoring force is proportional to displacement and points back to equilibrium. For a mass m on a spring of stiffness k, T = 2π√(m ÷ k). For a simple pendulum with small swings of length L, T = 2π√(L ÷ g). The period does not depend on the amplitude (small swings) or on the mass of the pendulum.",
+    "Every oscillating system has a natural frequency. If a periodic force drives it at that frequency, the amplitude grows large: this is resonance. Resonance can be useful, as in musical instruments and radio tuning, or destructive, as in a bridge pushed in step by wind or marching. Damping removes energy and shrinks the oscillation."
+   ],
+   "example": {
+    "q": "A 0.5 kg mass hangs on a spring with k = 50 N/m. Find the period of vertical oscillation.",
+    "steps": [
+     "T = 2π√(m ÷ k).",
+     "m ÷ k = 0.5 ÷ 50 = 0.01 and √0.01 = 0.1.",
+     "T = 2π × 0.1 ≈ 0.63."
+    ],
+    "a": "about 0.63 s"
+   },
+   "analogies": {
+    "sport": "A trampoline athlete times each push with the bounce to rise higher, which is like driving at resonance.",
+    "music": "A wine glass can shatter when a singer holds its natural frequency.",
+    "city": "A car on a bend needs friction from tyres to supply the centripetal force.",
+    "tech": "Quartz in a watch vibrates at a precise frequency that sets the time."
+   },
+   "mnemonic": "Restoring force toward the middle makes the swing; push in time and the swing grows.",
+   "terms": [
+    [
+     "Centripetal acceleration",
+     "Acceleration towards the centre of a circular path, v² ÷ r."
+    ],
+    [
+     "Simple harmonic motion",
+     "Oscillation with a restoring force proportional to displacement."
+    ],
+    [
+     "Natural frequency",
+     "The frequency at which a system oscillates freely."
+    ],
+    [
+     "Resonance",
+     "Large amplitude when driven at the natural frequency."
+    ]
+   ],
+   "misc": {
+    "wrong": "There is an outward centrifugal force acting on a car turning a corner.",
+    "right": "In an inertial frame the only requirement is an inward resultant force. The outward feeling is the passenger's inertia wanting to go straight."
+   },
+   "limits": "SHM formulas for a pendulum assume small angles, below about 15°. Real oscillators are damped and may be non-linear at large amplitudes.",
+   "trip": {
+    "wiki": "Simple harmonic motion",
+    "prompt": "Find the graph of displacement against time for SHM and identify amplitude and period."
+   },
+   "sources": [
+    "Simple harmonic motion",
+    "Centripetal force",
+    "Resonance"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A 1000 kg car takes a bend of radius 20 m at 10 m/s. What centripetal force is needed in newtons?",
+     "a": 5000,
+     "tol": 20,
+     "unit": "N",
+     "why": "F = mv² ÷ r = 1000 × 100 ÷ 20 = 5000 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A simple pendulum has a length of 1.0 m. Using g = 9.8 m/s², find its period to one decimal place.",
+     "a": 2,
+     "tol": 0.1,
+     "unit": "s",
+     "why": "T = 2π√(1 ÷ 9.8) = 2π × 0.3194 ≈ 2.0 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A pendulum's length is quadrupled. What happens to its period (small swings)?",
+     "o": [
+      "It doubles",
+      "It quadruples",
+      "It halves",
+      "It stays the same"
+     ],
+     "a": 0,
+     "why": "T is proportional to √L, so 4 times L gives √4 = 2 times the period.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In SHM, where is the speed of the oscillating object greatest?",
+     "o": [
+      "At the equilibrium position",
+      "At the maximum displacement",
+      "Halfway between",
+      "It is constant"
+     ],
+     "a": 0,
+     "why": "At equilibrium all the energy is kinetic; at the ends it is stored as potential energy and speed is zero.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A ball whirls in a horizontal circle on a string. The string breaks. Which path does the ball take next (viewed from above, ignoring gravity)?",
+     "o": [
+      "A straight line along the tangent",
+      "A line directly outward from the centre",
+      "It continues in a circle",
+      "A line towards the centre"
+     ],
+     "a": 0,
+     "why": "With no resultant force the ball moves in a straight line at constant velocity, which is along the tangent at the point of release.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mass on a spring is doubled in mass. What happens to its period?",
+     "o": [
+      "It increases by a factor of √2",
+      "It doubles, because period is proportional to mass",
+      "It halves, because a heavier mass moves more steadily",
+      "It stays the same, because the spring is unchanged"
+     ],
+     "a": 0,
+     "why": "T ∝ √m, so doubling m multiplies T by √2 ≈ 1.41.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A soldier column crossing a footbridge is told to break step. Why?",
+     "o": [
+      "Marching in step could drive the bridge at its natural frequency",
+      "Marching tires the soldiers on a bridge too quickly",
+      "Their boots are too heavy for the bridge floor",
+      "A footbridge can carry only one person at a time"
+     ],
+     "a": 0,
+     "why": "A regular force at the natural frequency causes resonance and large oscillations.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each system to the formula for its period.",
+     "pairs": [
+      [
+       "Mass on a spring",
+       "T = 2π√(m ÷ k)"
+      ],
+      [
+       "Simple pendulum",
+       "T = 2π√(L ÷ g)"
+      ],
+      [
+       "Frequency from period",
+       "f = 1 ÷ T"
+      ]
+     ],
+     "why": "These are standard results for SHM.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A car turns a corner on an icy road and slides straight on instead of turning. Explain using centripetal force.",
+     "rubric": [
+      [
+       "friction",
+       "grip"
+      ],
+      [
+       "centripetal",
+       "inward",
+       "towards the centre",
+       "toward the centre",
+       "resultant",
+       "sideways force"
+      ],
+      [
+       "not enough",
+       "too small",
+       "insufficient",
+       "reduced",
+       "less",
+       "low",
+       "ice"
+      ],
+      [
+       "straight",
+       "tangent",
+       "inertia",
+       "continue"
+      ]
+     ],
+     "min": 3,
+     "model": "To turn, the car needs an inward centripetal force supplied by tyre friction. On ice the friction is too small, so there is not enough inward force and the car moves on in a straight line because of its inertia.",
+     "why": "Circular motion needs an inward resultant force of mv² ÷ r.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child on a swing is pushed once and left. The swing's amplitude slowly drops. What is the cause?",
+     "o": [
+      "Damping from air resistance and friction",
+      "Resonance between the swing and the air around it",
+      "A change in the period of the swing",
+      "Gravity getting weaker as the swing rises"
+     ],
+     "a": 0,
+     "why": "Damping removes mechanical energy as heat, so the amplitude decays.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An astronaut in the orbiting space station feels weightless. Which description is right?",
+     "o": [
+      "She is in free fall: gravity supplies the centripetal force of her orbit",
+      "There is no gravity at that height above Earth",
+      "Her mass drops to zero when she is in orbit",
+      "Centrifugal force exactly cancels the pull of gravity"
+     ],
+     "a": 0,
+     "why": "Gravity at 400 km is still about 90% of its surface value. Station and astronaut fall together around Earth.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a pendulum clock keep time well even as the swing gradually gets smaller?",
+     "rubric": [
+      [
+       "period"
+      ],
+      [
+       "independent",
+       "does not depend",
+       "doesn't depend",
+       "same",
+       "constant",
+       "not depend"
+      ],
+      [
+       "amplitude",
+       "swing size",
+       "size of the swing"
+      ]
+     ],
+     "min": 2,
+     "model": "For small swings the period depends on the length and g but not on the amplitude. As friction shrinks the swing, the period stays almost the same, so timekeeping stays steady.",
+     "why": "T = 2π√(L ÷ g) has no amplitude term for small angles.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The speed of a car going round a curve is doubled. By what factor does the required centripetal force change at the same radius?",
+     "o": [
+      "It becomes 4 times larger",
+      "It doubles, because force is proportional to speed",
+      "It halves, because the curve feels gentler",
+      "It stays the same"
+     ],
+     "a": 0,
+     "why": "F = mv² ÷ r, so doubling v multiplies F by 4.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why pushing a swing at the right moments makes it go high",
+    "model": "A swing has a natural rhythm set by its length. If you push in time with that rhythm, each push adds energy when the swing is already moving the right way, so the amplitude grows. This is resonance. Pushing at the wrong rhythm works against the swing and does little. For example, a pendulum 1 m long swings once in about 2 s.",
+    "points": [
+     {
+      "k": [
+       "natural",
+       "own rhythm",
+       "frequency",
+       "period"
+      ],
+      "ask": "What do you mean by the swing having its own rhythm?"
+     },
+     {
+      "k": [
+       "push",
+       "in time",
+       "same rhythm",
+       "match",
+       "timing"
+      ],
+      "ask": "How should I push it?"
+     },
+     {
+      "k": [
+       "energy",
+       "bigger",
+       "grow",
+       "amplitude",
+       "higher"
+      ],
+      "ask": "What does that do to the swing?"
+     },
+     {
+      "k": [
+       "resonance"
+      ],
+      "ask": "Is there a name for this effect?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Thermodynamics and heat engines",
+   "icon": "🚂",
+   "hook": "A car engine burns fuel and moves the car, but it also gets hot and spits out warm exhaust. Why can no engine turn all heat into work?",
+   "explain": [
+    "Thermodynamics studies heat, work and energy in systems of many particles. The zeroth law says that if two systems are each in thermal equilibrium with a third, they are in equilibrium with each other, which is why thermometers work. The first law is energy conservation: ΔU = Q − W, where Q is heat added to the system and W is the work done by it.",
+    "Heat needed to change temperature is Q = m × c × ΔT, where c is specific heat capacity (water about 4200 J/kg·K). Melting needs latent heat: Q = m × L (ice about 334 000 J/kg). For an ideal gas, pV = nRT, with T in kelvin and R = 8.31 J/mol·K.",
+    "The second law says heat flows spontaneously from hot to cold, and entropy of an isolated system never decreases. A heat engine takes heat Qh from a hot reservoir, does work W and rejects Qc to a cold one. Its efficiency is W ÷ Qh, always below 100%. The Carnot limit is the best possible: η = 1 − Tc ÷ Th, with temperatures in kelvin."
+   ],
+   "example": {
+    "q": "A heat engine takes in 500 J from a hot reservoir at 600 K and rejects 350 J to a cold reservoir at 300 K. Find its efficiency and compare it with the Carnot limit.",
+    "steps": [
+     "W = Qh − Qc = 500 − 350 = 150 J.",
+     "η = 150 ÷ 500 = 0.30, or 30%.",
+     "Carnot: η = 1 − 300 ÷ 600 = 0.50, or 50%, so the engine is below the limit."
+    ],
+    "a": "30%, below the Carnot limit of 50%"
+   },
+   "analogies": {
+    "city": "A power station boils water into steam to spin a turbine, then cools the steam down in cooling towers.",
+    "farm": "A steam tractor works because hot steam expands and pushes pistons.",
+    "home": "A refrigerator moves heat from the cold inside to the warmer kitchen, and needs electrical work to do it.",
+    "sea": "Ships use turbines driven by steam, with sea water as the cold reservoir."
+   },
+   "mnemonic": "First law: you can't win (energy is conserved). Second law: you can't even break even (some heat is always wasted).",
+   "terms": [
+    [
+     "Internal energy",
+     "The total kinetic and potential energy of a system's particles."
+    ],
+    [
+     "Specific heat capacity",
+     "Energy needed to raise 1 kg by 1 K."
+    ],
+    [
+     "Entropy",
+     "A measure of how spread out the energy is; it tends to rise."
+    ],
+    [
+     "Carnot efficiency",
+     "The maximum efficiency of an engine between two temperatures."
+    ]
+   ],
+   "misc": {
+    "wrong": "A good enough engine could be 100% efficient.",
+    "right": "The second law forbids it. Some heat must flow to a colder reservoir, and the Carnot limit is 1 − Tc ÷ Th."
+   },
+   "limits": "Ideal gas and Carnot engines are idealised. Real engines have friction and irreversible processes, so their efficiency is lower still. Entropy is statistical for large numbers of particles.",
+   "trip": {
+    "wiki": "Heat engine",
+    "prompt": "Find the energy-flow diagram of a heat engine and label Qh, Qc and W."
+   },
+   "sources": [
+    "Thermodynamics",
+    "Heat engine",
+    "Second law of thermodynamics"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "How much heat is needed to warm 2 kg of water from 20 °C to 50 °C? Use c = 4200 J/kg·K.",
+     "a": 252000,
+     "tol": 500,
+     "unit": "J",
+     "why": "Q = mcΔT = 2 × 4200 × 30 = 252 000 J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the Carnot efficiency, as a fraction, of an engine working between 500 K and 300 K?",
+     "a": 0.4,
+     "tol": 0.01,
+     "why": "η = 1 − 300 ÷ 500 = 0.4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An engine takes in 800 J of heat and does 200 J of work. What is its efficiency?",
+     "o": [
+      "25%",
+      "75%",
+      "40%",
+      "4%"
+     ],
+     "a": 0,
+     "why": "η = W ÷ Qh = 200 ÷ 800 = 25%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A gas absorbs 300 J of heat and does 100 J of work. What is its change in internal energy?",
+     "o": [
+      "+200 J",
+      "+400 J",
+      "−200 J",
+      "+300 J"
+     ],
+     "a": 0,
+     "why": "ΔU = Q − W = 300 − 100 = 200 J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Gas at 100 kPa in a 2 L cylinder is slowly compressed to 1 L at constant temperature. What is the new pressure?",
+     "o": [
+      "200 kPa",
+      "50 kPa",
+      "100 kPa",
+      "400 kPa"
+     ],
+     "a": 0,
+     "why": "At constant T, pV is constant: 100 × 2 = p × 1, so p = 200 kPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is a form of the second law?",
+     "o": [
+      "Heat does not spontaneously flow from cold to hot",
+      "Energy is created inside engines as they run",
+      "All heat taken in can be turned into work",
+      "The temperature of a system never changes"
+     ],
+     "a": 0,
+     "why": "Spontaneous heat flow is always from hotter to colder; reversing it takes work, as in a fridge.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A refrigerator door is left open in a closed, insulated room. What will happen to the room's temperature over time?",
+     "o": [
+      "It will rise",
+      "It will fall",
+      "It stays exactly the same",
+      "It will fall then rise"
+     ],
+     "a": 0,
+     "why": "The fridge moves heat but its motor adds electrical energy, which ends up as heat in the room.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of heating ice into steam.",
+     "items": [
+      "Ice warms to 0 °C",
+      "Ice melts at 0 °C",
+      "Water warms to 100 °C",
+      "Water boils at 100 °C"
+     ],
+     "why": "Temperature rises, then stays constant during the change of state while latent heat is absorbed.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why raising the temperature of the hot reservoir increases the maximum possible efficiency of a heat engine.",
+     "rubric": [
+      [
+       "carnot",
+       "1 −",
+       "1-",
+       "tc",
+       "th"
+      ],
+      [
+       "bigger",
+       "larger",
+       "greater",
+       "bigger difference",
+       "ratio",
+       "difference"
+      ],
+      [
+       "efficien"
+      ],
+      [
+       "cold",
+       "hot",
+       "temperature"
+      ]
+     ],
+     "min": 3,
+     "model": "The maximum efficiency is 1 − Tc ÷ Th. Raising Th makes Tc ÷ Th smaller, so the efficiency limit increases. A bigger temperature difference lets more of the heat become work.",
+     "why": "Efficiency depends on the ratio of absolute temperatures.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A company claims an engine working between 400 K and 300 K has 40% efficiency. What is the best assessment?",
+     "o": [
+      "Impossible: the Carnot limit is 25%",
+      "Possible: the Carnot limit is 75%",
+      "Possible: any efficiency below 100%",
+      "Impossible: engines are never above 10%"
+     ],
+     "a": 0,
+     "why": "η_max = 1 − 300 ÷ 400 = 0.25, so 40% would break the second law.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is it possible to cool a room by leaving a refrigerator door open if the fridge stands inside the room?",
+     "o": [
+      "No, the fridge heats the room overall",
+      "Yes, because it removes heat from the air each time",
+      "Yes, as long as the fridge is large enough",
+      "Only in winter when the air outside is cold"
+     ],
+     "a": 0,
+     "why": "Heat expelled at the back equals heat removed plus the electrical work done, so net heating results.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a hot cup of coffee never spontaneously get hotter by taking heat from the cooler air around it, even though that would conserve energy?",
+     "rubric": [
+      [
+       "second law",
+       "entropy"
+      ],
+      [
+       "hot to cold",
+       "cold to hot",
+       "direction",
+       "spontaneous"
+      ],
+      [
+       "conserve",
+       "first law",
+       "energy is not enough",
+       "not forbidden",
+       "doesn't forbid",
+       "does not forbid"
+      ]
+     ],
+     "min": 2,
+     "model": "The first law only requires that energy be conserved, which this would satisfy. The second law adds a direction: heat flows spontaneously from hot to cold and entropy increases, so this reverse flow does not happen on its own.",
+     "why": "The second law sets the direction of processes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must temperatures be in kelvin in the formula η = 1 − Tc ÷ Th?",
+     "o": [
+      "Kelvin starts at absolute zero, so ratios make sense",
+      "Kelvin degrees are bigger steps than Celsius degrees",
+      "Celsius readings cannot ever be negative",
+      "Kelvin is the only SI unit that can measure heat"
+     ],
+     "a": 0,
+     "why": "Ratios of temperatures only have meaning on a scale whose zero is physical, absolute zero.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why no engine can turn all heat into work",
+    "model": "An engine takes heat from something hot, turns some of it into work, and must dump the rest into something colder. This is the second law of thermodynamics. The best possible efficiency is 1 minus the cold temperature over the hot temperature, in kelvin. For example, between 600 K and 300 K the best is 50%.",
+    "points": [
+     {
+      "k": [
+       "hot",
+       "heat",
+       "take",
+       "burn"
+      ],
+      "ask": "What does the engine take in?"
+     },
+     {
+      "k": [
+       "work",
+       "some",
+       "part",
+       "motion"
+      ],
+      "ask": "What does it do with that heat?"
+     },
+     {
+      "k": [
+       "cold",
+       "dump",
+       "waste",
+       "exhaust",
+       "reject"
+      ],
+      "ask": "What happens to the rest?"
+     },
+     {
+      "k": [
+       "kelvin",
+       "1 -",
+       "1 −",
+       "carnot",
+       "50",
+       "tc",
+       "th"
+      ],
+      "ask": "Is there a formula for the best possible efficiency?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Fluid dynamics and Bernoulli's principle",
+   "icon": "✈️",
+   "hook": "An aircraft weighing many tonnes stays in the air with no wings flapping. What produces the lift?",
+   "explain": [
+    "Fluid dynamics describes moving fluids. For a steady flow of an incompressible fluid, the continuity equation says that what flows in must flow out: A₁v₁ = A₂v₂. Water speeds up where a pipe narrows. The volume flow rate is Q = A × v, in m³/s.",
+    "Bernoulli's principle follows from conservation of energy along a streamline: p + ½ρv² + ρgh = constant. If the speed rises, the pressure falls (at constant height). This holds for steady, smooth, incompressible flow with negligible viscosity.",
+    "Applications include the Venturi tube, the spray from an atomiser, and Torricelli's law for water leaving a tank at depth h: v = √(2gh). Lift on a wing is a consequence of the wing deflecting air downwards and the pressure being lower above than below. Both Newton's laws and Bernoulli's principle describe the same lift. Real fluids have viscosity, which causes drag and can lead to turbulence."
+   ],
+   "example": {
+    "q": "Water flows at 2 m/s in a pipe of cross-section 0.02 m², then into a section of 0.005 m². What is the speed there, and what is the pressure drop? Use ρ = 1000 kg/m³ and ignore height changes.",
+    "steps": [
+     "Continuity: 0.02 × 2 = 0.005 × v₂, so v₂ = 8 m/s.",
+     "Δp = ½ρ(v₂² − v₁²) = 0.5 × 1000 × (64 − 4).",
+     "Δp = 30 000 Pa."
+    ],
+    "a": "8 m/s; pressure falls by 30 000 Pa"
+   },
+   "analogies": {
+    "city": "Traffic speeds up where the road narrows to keep the flow rate steady.",
+    "nature": "A river flows faster through a narrow gorge than in a wide valley.",
+    "home": "A thumb partly over a hose end makes the water shoot out faster.",
+    "sport": "A cricket or tennis ball with spin curves because the air moves faster on one side."
+   },
+   "mnemonic": "Narrow means fast, fast means low pressure.",
+   "terms": [
+    [
+     "Continuity equation",
+     "A₁v₁ = A₂v₂: the flow rate is the same everywhere in a pipe."
+    ],
+    [
+     "Streamline",
+     "The path of a small fluid element in steady flow."
+    ],
+    [
+     "Viscosity",
+     "A fluid's internal resistance to flow."
+    ],
+    [
+     "Laminar flow",
+     "Smooth flow in layers, without eddies."
+    ]
+   ],
+   "misc": {
+    "wrong": "Air over a wing must travel faster because it has a longer way to go and must meet the other air at the back.",
+    "right": "There is no such 'equal transit time' rule. The faster flow above the wing arises because the wing shape and angle deflect the flow and change pressure."
+   },
+   "limits": "Bernoulli's equation neglects viscosity and assumes steady, incompressible flow. For fast air near the speed of sound, compressibility matters, and turbulence needs more advanced methods.",
+   "trip": {
+    "wiki": "Bernoulli's principle",
+    "prompt": "Find the Venturi tube diagram and see where the pressure is lowest."
+   },
+   "sources": [
+    "Bernoulli's principle",
+    "Continuity equation",
+    "Lift (force)"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Water at 1.5 m/s flows through a pipe of cross-sectional area 0.04 m² into a section of area 0.01 m². What is the speed in the narrow section?",
+     "a": 6,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "A₁v₁ = A₂v₂: 0.04 × 1.5 = 0.01 × v₂, so v₂ = 6 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Water leaves a hole in the side of a tank 1.8 m below the surface. Using Torricelli's law with g = 10 m/s², what is its exit speed?",
+     "a": 6,
+     "tol": 0.1,
+     "unit": "m/s",
+     "why": "v = √(2gh) = √(2 × 10 × 1.8) = √36 = 6 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "As a fluid moves through a constriction, what happens to the pressure?",
+     "o": [
+      "It drops where the speed rises",
+      "It rises where the speed rises",
+      "It never changes",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "By Bernoulli's principle, higher speed means lower pressure at the same height.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A river is 20 m wide and 2 m deep and flows at 1 m/s. It narrows to 10 m wide and 2 m deep. What is the new speed?",
+     "o": [
+      "2 m/s",
+      "1 m/s",
+      "0.5 m/s",
+      "4 m/s"
+     ],
+     "a": 0,
+     "why": "Area halves from 40 to 20 m², so speed doubles to keep Av constant.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two sheets of paper hang parallel and close together. You blow air between them. What happens?",
+     "o": [
+      "They move together",
+      "They move apart because of the moving air",
+      "They stay still because the air pushes equally",
+      "They rise upward"
+     ],
+     "a": 0,
+     "why": "The air between moves faster, so the pressure is lower there than outside, and the higher outside pressure pushes the sheets together.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A spray bottle works by blowing air quickly across the top of a tube dipped in liquid. Why does the liquid rise?",
+     "o": [
+      "Pressure is lower above the tube",
+      "Air is heavier than the liquid in the bottle",
+      "The liquid is lighter than the air above it",
+      "The moving air is hotter than the liquid"
+     ],
+     "a": 0,
+     "why": "Fast air at the top lowers the pressure, and the higher pressure on the liquid surface pushes it up the tube.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Continuity equation",
+       "A₁v₁ = A₂v₂"
+      ],
+      [
+       "Bernoulli's equation",
+       "p + ½ρv² + ρgh = constant"
+      ],
+      [
+       "Viscosity",
+       "Internal friction of a fluid"
+      ],
+      [
+       "Turbulent flow",
+       "Irregular swirling flow"
+      ]
+     ],
+     "why": "These are standard definitions in fluid dynamics.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the roof of a house can be lifted off in a strong wind.",
+     "rubric": [
+      [
+       "pressure"
+      ],
+      [
+       "lower",
+       "less",
+       "reduced",
+       "drop",
+       "falls"
+      ],
+      [
+       "outside",
+       "above",
+       "wind",
+       "faster",
+       "speed"
+      ],
+      [
+       "inside",
+       "below",
+       "higher",
+       "greater"
+      ]
+     ],
+     "min": 3,
+     "model": "Fast wind over the roof lowers the pressure outside. The pressure inside is higher, so the net force pushes the roof upward and can lift it.",
+     "why": "A pressure difference gives a net force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a garden hose spray farther when you partly block the opening with your thumb?",
+     "o": [
+      "The same flow squeezed through a smaller area leaves faster",
+      "The water becomes lighter once it is squeezed",
+      "The pressure in the hose disappears",
+      "The water gets hotter in the narrow opening"
+     ],
+     "a": 0,
+     "why": "With a smaller area, continuity requires a higher speed.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps in a Venturi tube from start to end.",
+     "items": [
+      "Fluid enters a wide section at low speed",
+      "The tube narrows and the fluid speeds up",
+      "Pressure drops at the narrow section",
+      "The tube widens, speed falls and pressure recovers"
+     ],
+     "why": "Speed and pressure change in opposite directions through the tube.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says: 'Bernoulli says high speed means low pressure, so a faster-flowing river must have a lower pressure at its bottom than still water of the same depth.' Is the claim right?",
+     "o": [
+      "Not necessarily: Bernoulli compares points along the same streamline, and depth also matters",
+      "Yes, always, since faster flow means lower pressure anywhere",
+      "No, because the pressure is the same in all rivers",
+      "Yes, but only for rivers that are very deep"
+     ],
+     "a": 0,
+     "why": "Bernoulli's principle applies along a streamline, and the ρgh term matters. Hydrostatic pressure at depth is almost the same in a slow river.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A heavy aircraft needs a long runway to take off. Using ideas about lift, explain why.",
+     "rubric": [
+      [
+       "speed",
+       "faster",
+       "velocity"
+      ],
+      [
+       "lift"
+      ],
+      [
+       "weight",
+       "equal",
+       "overcome",
+       "greater than"
+      ],
+      [
+       "wings",
+       "air",
+       "pressure"
+      ]
+     ],
+     "min": 3,
+     "model": "Lift grows with the speed of air over the wings. The plane must reach a speed at which lift exceeds its weight, and a heavier plane needs a higher speed, which takes a longer distance to reach.",
+     "why": "Lift rises roughly with speed squared and must equal weight at take-off.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Blood flows through an artery that is partly blocked. Which change would you expect at the narrowed point, ignoring viscosity?",
+     "o": [
+      "Faster flow and lower pressure",
+      "Slower flow and higher pressure",
+      "Faster flow and higher pressure",
+      "No change"
+     ],
+     "a": 0,
+     "why": "Continuity raises the speed in the narrow part, and Bernoulli's principle lowers the pressure there.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why fast-moving fluid has lower pressure",
+    "model": "When a pipe narrows, the same amount of fluid must pass each second, so it speeds up. Energy conservation says that if the fluid gains speed, it loses pressure. This is Bernoulli's principle. For example, air moving quickly over a wing has lower pressure than the air beneath it.",
+    "points": [
+     {
+      "k": [
+       "narrow",
+       "squeeze",
+       "smaller",
+       "pipe"
+      ],
+      "ask": "What happens when a pipe narrows?"
+     },
+     {
+      "k": [
+       "faster",
+       "speed up",
+       "same amount",
+       "continuity"
+      ],
+      "ask": "Why does the fluid speed up?"
+     },
+     {
+      "k": [
+       "pressure",
+       "lower",
+       "drop",
+       "energy"
+      ],
+      "ask": "What happens to pressure then?"
+     },
+     {
+      "k": [
+       "wing",
+       "lift",
+       "spray",
+       "example"
+      ],
+      "ask": "Where can I see this in real life?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Wave interference and diffraction",
+   "icon": "〰️",
+   "hook": "Noise-cancelling headphones add sound to make the world quieter. How can adding sound reduce sound?",
+   "explain": [
+    "When two waves meet, their displacements add: this is superposition. If crests meet crests (in phase), the result is bigger: constructive interference. If crests meet troughs (half a cycle out of phase), they cancel: destructive interference. For two sources, constructive interference occurs where the path difference is a whole number of wavelengths (nλ), and destructive interference where it is (n + ½)λ.",
+    "Diffraction is the spreading of waves as they pass through a gap or round an obstacle. It is strongest when the gap is about the size of the wavelength. This is why we can hear around corners (sound wavelengths of about 0.3 m–3 m) but not see around them (visible light about 400–700 nm).",
+    "In Young's double-slit experiment, coherent light passes through two narrow slits and makes bright and dark fringes on a screen. The fringe spacing is x = λD ÷ d, where d is slit separation and D is the distance to the screen. This showed that light behaves as a wave. Standing waves form when two identical waves travel in opposite directions, as on a guitar string where the fundamental has λ = 2L."
+   ],
+   "example": {
+    "q": "Light of wavelength 600 nm passes through two slits 0.30 mm apart. The screen is 2.0 m away. Find the fringe spacing.",
+    "steps": [
+     "x = λD ÷ d.",
+     "λ = 600 × 10⁻⁹ m, D = 2.0 m, d = 0.30 × 10⁻³ m.",
+     "x = (600 × 10⁻⁹ × 2.0) ÷ (0.30 × 10⁻³) = 4.0 × 10⁻³ m."
+    ],
+    "a": "4.0 mm"
+   },
+   "analogies": {
+    "sea": "Two ripples from two stones meeting on a pond make still patches and big splashes.",
+    "music": "Two guitar strings slightly out of tune make a wobbling sound called beats.",
+    "tech": "Noise-cancelling headphones make a copy of the noise in the opposite phase.",
+    "city": "Radio signals from two towers can add up or fade in different places."
+   },
+   "mnemonic": "In step they add, out of step they cancel: path difference tells which.",
+   "terms": [
+    [
+     "Superposition",
+     "The total displacement is the sum of the individual waves."
+    ],
+    [
+     "Coherent",
+     "Waves with a fixed phase difference."
+    ],
+    [
+     "Diffraction",
+     "Spreading of waves through gaps or around edges."
+    ],
+    [
+     "Standing wave",
+     "A pattern with fixed nodes and antinodes, from two waves travelling oppositely."
+    ]
+   ],
+   "misc": {
+    "wrong": "When waves cancel, their energy is destroyed.",
+    "right": "Energy is redistributed. It is reduced in the dark fringes and increased in the bright fringes, so the total is conserved."
+   },
+   "limits": "Simple double-slit formulas assume narrow slits, small angles and a distant screen. Real slits of finite width also diffract, which shapes the pattern.",
+   "trip": {
+    "wiki": "Double-slit experiment",
+    "prompt": "Find the interference pattern picture and mark bright and dark fringes."
+   },
+   "sources": [
+    "Wave interference",
+    "Diffraction",
+    "Double-slit experiment"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "In a double-slit experiment, λ = 500 nm, slit separation d = 0.25 mm and screen distance D = 1.5 m. What is the fringe spacing in millimetres?",
+     "a": 3,
+     "tol": 0.05,
+     "unit": "mm",
+     "why": "x = λD ÷ d = (500 × 10⁻⁹ × 1.5) ÷ (0.25 × 10⁻³) = 3.0 × 10⁻³ m = 3 mm.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A guitar string of length 0.65 m vibrates in its fundamental mode with a wave speed of 260 m/s on the string. What is the frequency?",
+     "a": 200,
+     "tol": 1,
+     "unit": "Hz",
+     "why": "λ = 2L = 1.3 m, so f = v ÷ λ = 260 ÷ 1.3 = 200 Hz.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two speakers play tones of 440 Hz and 444 Hz. How many beats per second are heard?",
+     "o": [
+      "4",
+      "2",
+      "8",
+      "884"
+     ],
+     "a": 0,
+     "why": "The beat frequency is the difference between frequencies: 444 − 440 = 4 Hz.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two waves meet in phase. What type of interference occurs?",
+     "o": [
+      "Constructive",
+      "Destructive",
+      "No interference",
+      "Diffraction only"
+     ],
+     "a": 0,
+     "why": "In phase waves add to give a larger amplitude.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "At a point, waves from two sources travel paths differing by 1.5 wavelengths. What is observed there?",
+     "o": [
+      "Destructive interference",
+      "Constructive interference",
+      "No waves at all",
+      "A standing wave"
+     ],
+     "a": 0,
+     "why": "A path difference of (n + ½)λ gives destructive interference; here n = 1.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can you hear a person talking around a corner but not see them?",
+     "o": [
+      "Sound wavelengths are much larger, so they diffract more",
+      "Light cannot bend around corners at all",
+      "Sound travels faster than light does",
+      "Light is absorbed by the air near corners"
+     ],
+     "a": 0,
+     "why": "Diffraction is strong when the gap or obstacle is comparable with the wavelength. Sound wavelengths are about a million times longer than light's.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each phenomenon to its cause.",
+     "pairs": [
+      [
+       "Beats",
+       "Two close frequencies interfering"
+      ],
+      [
+       "Standing wave",
+       "Two identical waves in opposite directions"
+      ],
+      [
+       "Single-slit spreading",
+       "Diffraction"
+      ],
+      [
+       "Noise cancelling",
+       "Destructive interference"
+      ]
+     ],
+     "why": "Each is a consequence of superposition or diffraction.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how noise-cancelling headphones reduce noise.",
+     "rubric": [
+      [
+       "opposite",
+       "inverse",
+       "out of phase",
+       "antiphase",
+       "anti-phase"
+      ],
+      [
+       "destructive",
+       "cancel",
+       "cancels",
+       "superposition",
+       "add"
+      ],
+      [
+       "microphone",
+       "detect",
+       "sense",
+       "copy",
+       "measure"
+      ]
+     ],
+     "min": 2,
+     "model": "A microphone picks up the noise and the headphone plays a wave of the same size but opposite phase. The two waves add and cancel by destructive interference at the ear.",
+     "why": "Superposition of a wave and its inverse gives nearly zero.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In a double-slit experiment the slits are moved closer together. What happens to the fringe spacing?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "The fringes vanish"
+     ],
+     "a": 0,
+     "why": "x = λD ÷ d, so smaller d gives a larger spacing.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these from the longest wavelength to the shortest.",
+     "items": [
+      "Radio waves",
+      "Microwaves",
+      "Visible light",
+      "X-rays"
+     ],
+     "why": "The electromagnetic spectrum in order of decreasing wavelength.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If one slit of a double-slit experiment is covered, what changes?",
+     "o": [
+      "The fringes disappear and a single broad band remains",
+      "The fringes become sharper and brighter",
+      "The screen goes completely dark",
+      "The fringes move to one side of the screen"
+     ],
+     "a": 0,
+     "why": "Interference needs two sources; a single slit only diffracts.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student says interference destroys energy in dark fringes. Is this correct?",
+     "rubric": [
+      [
+       "no",
+       "not",
+       "incorrect",
+       "wrong",
+       "false"
+      ],
+      [
+       "redistribut",
+       "elsewhere",
+       "bright fringes",
+       "moves",
+       "conserved",
+       "goes to"
+      ],
+      [
+       "energy"
+      ]
+     ],
+     "min": 2,
+     "model": "No. Energy is redistributed: the dark fringes have little energy and the bright fringes have more than the sum of the individual waves would give, so overall energy is conserved.",
+     "why": "Interference moves energy around, but the total stays the same.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A radio wave of wavelength 3 m and visible light of 500 nm both meet a 1 m gap. Which diffracts more?",
+     "o": [
+      "The radio wave",
+      "The visible light",
+      "Both equally",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "The wavelength is closer to the size of the gap, so spreading is much greater.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How waves can cancel or add",
+    "model": "When two waves meet, we add their displacements. If crests meet crests, the wave gets bigger. If a crest meets a trough, they cancel. This is interference. For example, noise-cancelling headphones play a copy of the noise upside down so it cancels the original.",
+    "points": [
+     {
+      "k": [
+       "add",
+       "meet",
+       "overlap",
+       "superposition",
+       "together"
+      ],
+      "ask": "What happens when two waves meet?"
+     },
+     {
+      "k": [
+       "crest",
+       "in step",
+       "in phase",
+       "bigger",
+       "constructive"
+      ],
+      "ask": "When do they make a bigger wave?"
+     },
+     {
+      "k": [
+       "trough",
+       "out of step",
+       "cancel",
+       "destructive",
+       "opposite"
+      ],
+      "ask": "When do they cancel?"
+     },
+     {
+      "k": [
+       "headphone",
+       "noise",
+       "example",
+       "double slit",
+       "beats"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Electric and magnetic fields",
+   "icon": "⚡",
+   "hook": "A balloon rubbed on hair can lift small bits of paper without touching them. What acts across the gap?",
+   "explain": [
+    "Electric charge comes in two types, positive and negative. Like charges repel and unlike attract. The force between point charges is given by Coulomb's law: F = k q₁ q₂ ÷ r², with k ≈ 9.0 × 10⁹ N·m²/C². The force falls with the square of the distance.",
+    "An electric field is the force a charge would feel per unit charge: E = F ÷ q, in newtons per coulomb (N/C) or volts per metre (V/m). Between two parallel plates with voltage V and gap d the field is uniform, E = V ÷ d. Field lines start on positive charges and end on negative ones.",
+    "Magnetic fields B (in tesla, T) act on moving charges. The force on a charge q moving at speed v at right angles to B is F = qvB. This force is perpendicular to the velocity, so it changes direction but not speed, giving circular motion of radius r = mv ÷ (qB). A straight wire of length L carrying current I at right angles to B feels F = BIL. Electric and magnetic fields are unified in Maxwell's electromagnetism."
+   ],
+   "example": {
+    "q": "Two point charges of +1.0 μC are 0.30 m apart. Find the force between them. Use k = 9.0 × 10⁹ N·m²/C².",
+    "steps": [
+     "F = k q₁ q₂ ÷ r².",
+     "q = 1.0 × 10⁻⁶ C, so q₁ q₂ = 1.0 × 10⁻¹² C².",
+     "F = 9.0 × 10⁹ × 1.0 × 10⁻¹² ÷ 0.09 = 0.10 N."
+    ],
+    "a": "0.10 N, repulsive"
+   },
+   "analogies": {
+    "nature": "Lightning is a giant discharge between oppositely charged clouds and ground.",
+    "tech": "A touch screen senses changes in electric field when your finger approaches.",
+    "city": "Maglev trains use magnetic forces to float above the track.",
+    "sea": "A ship's compass uses Earth's magnetic field."
+   },
+   "mnemonic": "Charges feel E in any case; moving charges feel B too.",
+   "terms": [
+    [
+     "Electric field",
+     "Force per unit charge, in N/C or V/m."
+    ],
+    [
+     "Coulomb's law",
+     "The force between charges is proportional to q₁q₂ and inversely to r²."
+    ],
+    [
+     "Magnetic field",
+     "A region where moving charges and magnets feel forces, measured in tesla."
+    ],
+    [
+     "Tesla",
+     "The SI unit of magnetic field: 1 N per A·m."
+    ]
+   ],
+   "misc": {
+    "wrong": "A magnetic field can speed up a charged particle.",
+    "right": "The magnetic force is at right angles to the velocity, so it does no work. It changes the direction but not the speed."
+   },
+   "limits": "Coulomb's law as written is for stationary point charges. Moving charges, fast fields and quantum effects need the full Maxwell and quantum theories.",
+   "trip": {
+    "wiki": "Electric field",
+    "prompt": "Find field-line drawings for a single charge, two opposite charges and two plates."
+   },
+   "sources": [
+    "Coulomb's law",
+    "Electric field",
+    "Magnetic field"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A uniform electric field exists between two plates 2.0 cm apart with a potential difference of 500 V. What is the field strength in V/m?",
+     "a": 25000,
+     "tol": 100,
+     "unit": "V/m",
+     "why": "E = V ÷ d = 500 ÷ 0.02 = 25 000 V/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wire 0.10 m long carries 2.0 A at right angles to a field of 0.50 T. What force acts on it?",
+     "a": 0.1,
+     "tol": 0.005,
+     "unit": "N",
+     "why": "F = BIL = 0.50 × 2.0 × 0.10 = 0.10 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The distance between two point charges is doubled. What happens to the force between them?",
+     "o": [
+      "It becomes one quarter",
+      "It halves",
+      "It doubles",
+      "It becomes four times larger"
+     ],
+     "a": 0,
+     "why": "F ∝ 1 ÷ r², so doubling r makes F four times smaller.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A proton enters a uniform magnetic field at right angles to the field. What is its path?",
+     "o": [
+      "A circle",
+      "A straight line",
+      "A parabola",
+      "It stops"
+     ],
+     "a": 0,
+     "why": "The magnetic force is always perpendicular to the velocity, giving circular motion.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A charge of 2.0 μC is in a field of 3000 N/C. What force acts on it?",
+     "o": [
+      "6.0 × 10⁻³ N",
+      "6.0 N",
+      "1.5 × 10⁹ N",
+      "6.0 × 10⁻⁹ N"
+     ],
+     "a": 0,
+     "why": "F = qE = 2.0 × 10⁻⁶ × 3000 = 6.0 × 10⁻³ N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A negatively charged balloon sticks to a neutral wall. What is the best explanation?",
+     "o": [
+      "It repels electrons in the wall's surface, leaving a net attraction",
+      "The wall is positively charged all the way through",
+      "Gravity pulls the balloon towards the wall",
+      "The balloon has lost all its charge"
+     ],
+     "a": 0,
+     "why": "Charges in the wall shift (polarisation), so the nearer surface is slightly positive and attracts the balloon.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a magnetic field not change the speed of a moving charge?",
+     "o": [
+      "The force is perpendicular to the motion, so it does no work",
+      "Magnetic forces are far too weak to speed it up",
+      "The moving charge has no mass",
+      "The field is always zero"
+     ],
+     "a": 0,
+     "why": "Work = force × displacement in the force's direction; perpendicular force gives zero work.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its SI unit.",
+     "pairs": [
+      [
+       "Electric field",
+       "V/m"
+      ],
+      [
+       "Magnetic field",
+       "Tesla"
+      ],
+      [
+       "Charge",
+       "Coulomb"
+      ],
+      [
+       "Potential difference",
+       "Volt"
+      ]
+     ],
+     "why": "These are the SI units.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "An electron moves in a circle in a magnetic field. Explain what happens to the radius if its speed is doubled.",
+     "rubric": [
+      [
+       "doubles",
+       "twice",
+       "double",
+       "2 times",
+       "two times",
+       "twice as big",
+       "twice as large",
+       "2x"
+      ],
+      [
+       "directly proportional",
+       "r = mv",
+       "mv ÷",
+       "mv/"
+      ]
+     ],
+     "min": 1,
+     "model": "The radius is r = mv ÷ (qB), so it is proportional to speed. Doubling the speed doubles the radius, since the magnetic force increases only in proportion to v while the centripetal force needed grows with v².",
+     "why": "Radius is proportional to speed for fixed field, mass and charge.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these by force from smallest to largest for two 1 μC point charges at the distances shown. Use F = kq²/r².",
+     "items": [
+      "1.0 m apart (0.009 N)",
+      "0.5 m apart (0.036 N)",
+      "0.3 m apart (0.1 N)",
+      "0.1 m apart (0.9 N)"
+     ],
+     "why": "Force rises as the distance falls: F ∝ 1 ÷ r².",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Gravity and the electric force both follow an inverse-square law. Why is gravity the dominant force for planets, despite being far weaker for particles?",
+     "o": [
+      "Large bodies are almost neutral, so electric forces cancel, while mass always adds",
+      "Gravity is stronger than electricity at every distance",
+      "Planets carry no charge at all, not even tiny ones",
+      "Electric forces only act over very short ranges"
+     ],
+     "a": 0,
+     "why": "Positive and negative charges cancel in neutral bodies, but there is only one sign of mass, so gravity accumulates.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a magnetic field be used to bend a beam of charged particles without changing its energy?",
+     "rubric": [
+      [
+       "perpendicular",
+       "right angle",
+       "right angles",
+       "at 90"
+      ],
+      [
+       "no work",
+       "does no work",
+       "zero work"
+      ],
+      [
+       "speed",
+       "energy",
+       "direction"
+      ]
+     ],
+     "min": 2,
+     "model": "The magnetic force is always perpendicular to the velocity, so it does no work. It changes the direction of the particles but not their speed or kinetic energy.",
+     "why": "Work equals force times displacement along the force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A proton and an electron enter the same uniform magnetic field at the same speed, perpendicular to it. Compared with the electron, the proton's circle has...",
+     "o": [
+      "A larger radius, because the proton has more mass",
+      "A smaller radius, because the proton is bigger",
+      "The same radius, because the speed is the same",
+      "No circle, because the proton goes straight"
+     ],
+     "a": 0,
+     "why": "r = mv ÷ (qB) and the charges have equal size but the proton is about 1836 times more massive.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What an electric field is",
+    "model": "An electric field is the region around a charge where other charges feel a force. Its strength is the force per unit of charge. Like charges push apart and unlike charges pull together. For example, 500 V across a 2 cm gap gives a field of 25 000 V/m.",
+    "points": [
+     {
+      "k": [
+       "charge",
+       "positive",
+       "negative"
+      ],
+      "ask": "What creates an electric field?"
+     },
+     {
+      "k": [
+       "force",
+       "push",
+       "pull",
+       "repel",
+       "attract"
+      ],
+      "ask": "What does the field do to other charges?"
+     },
+     {
+      "k": [
+       "per charge",
+       "per unit",
+       "n/c",
+       "v/m",
+       "strength",
+       "f/q"
+      ],
+      "ask": "How do we measure its strength?"
+     },
+     {
+      "k": [
+       "example",
+       "plates",
+       "balloon",
+       "500",
+       "lightning"
+      ],
+      "ask": "Can you give me an everyday example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Electromagnetic induction",
+   "icon": "🔌",
+   "hook": "A bicycle dynamo lights a lamp without any battery, but only while the wheel is turning. Where does the electricity come from?",
+   "explain": [
+    "Magnetic flux Φ through a loop measures how much magnetic field passes through it: Φ = B × A × cos θ, in webers (Wb). Faraday's law of induction says that a changing flux induces an electromotive force (emf) in a coil: ε = N × ΔΦ ÷ Δt, where N is the number of turns.",
+    "Lenz's law gives the direction: the induced current opposes the change that produced it. This is energy conservation at work. If you push a magnet into a coil, the induced current makes a field that pushes back, so you must do work, and that work becomes electrical energy.",
+    "A conductor of length L moving at speed v at right angles to a field B has a motional emf ε = B L v. Generators turn a coil in a field to produce alternating current. Transformers change AC voltage with Vs ÷ Vp = Ns ÷ Np. Power lines use high voltage to reduce losses I²R. Eddy currents are induced in moving metal and are used in induction cookers and magnetic brakes."
+   ],
+   "example": {
+    "q": "A coil of 200 turns has the magnetic flux through it change by 0.002 Wb in 0.10 s. Find the induced emf.",
+    "steps": [
+     "ε = N ΔΦ ÷ Δt.",
+     "ΔΦ ÷ Δt = 0.002 ÷ 0.10 = 0.02 Wb/s.",
+     "ε = 200 × 0.02 = 4 V."
+    ],
+    "a": "4 V"
+   },
+   "analogies": {
+    "city": "Induction cookers heat a pan by inducing currents in the metal base.",
+    "sport": "Pushing a swing harder against its motion takes more effort, like pushing a magnet into a coil.",
+    "tech": "Wireless phone chargers use a coil to induce current in the phone.",
+    "farm": "Wind turbines turn coils in magnetic fields to make electricity."
+   },
+   "mnemonic": "Change the flux, make a voltage; Lenz says the current fights back.",
+   "terms": [
+    [
+     "Magnetic flux",
+     "Field strength times area through a loop, in webers."
+    ],
+    [
+     "Electromotive force (emf)",
+     "Energy per coulomb supplied by a source, in volts."
+    ],
+    [
+     "Lenz's law",
+     "Induced current opposes the change that causes it."
+    ],
+    [
+     "Eddy current",
+     "A circulating current induced in a piece of metal."
+    ]
+   ],
+   "misc": {
+    "wrong": "A magnet sitting near a coil induces a current.",
+    "right": "Only a changing flux induces an emf. A stationary magnet gives no current."
+   },
+   "limits": "The simple formulas use a uniform field and ideal coils. Real transformers lose some energy to resistance, eddy currents and magnetisation.",
+   "trip": {
+    "wiki": "Faraday's law of induction",
+    "prompt": "Find the diagram of a magnet moving through a coil and the galvanometer reading."
+   },
+   "sources": [
+    "Faraday's law of induction",
+    "Lenz's law",
+    "Electromagnetic induction"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A flat coil of area 0.02 m² is at right angles to a uniform field of 0.50 T. What is the magnetic flux in webers?",
+     "a": 0.01,
+     "tol": 0.0005,
+     "unit": "Wb",
+     "why": "Φ = BA = 0.50 × 0.02 = 0.010 Wb.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A metal rod 0.50 m long moves at 3.0 m/s at right angles to a field of 0.40 T. What emf is induced between its ends?",
+     "a": 0.6,
+     "tol": 0.02,
+     "unit": "V",
+     "why": "ε = BLv = 0.40 × 0.50 × 3.0 = 0.60 V.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An ideal transformer has 100 turns on the primary and 400 on the secondary. If the primary is 12 V AC, what is the secondary voltage?",
+     "o": [
+      "48 V",
+      "3 V",
+      "12 V",
+      "4800 V"
+     ],
+     "a": 0,
+     "why": "Vs = 12 × 400 ÷ 100 = 48 V.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A bar magnet is held still inside a coil. What reading shows on the connected galvanometer?",
+     "o": [
+      "Zero",
+      "A steady current",
+      "A rising current",
+      "An alternating current"
+     ],
+     "a": 0,
+     "why": "The flux is not changing, so no emf is induced.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A north pole is pushed towards a coil. According to Lenz's law, how does the coil react?",
+     "o": [
+      "It makes a north pole face the magnet, opposing the approach",
+      "It makes a south pole face the magnet and pulls it in",
+      "It makes no magnetic field at all",
+      "It attracts the magnet towards the coil"
+     ],
+     "a": 0,
+     "why": "The induced current opposes the change, so the coil end facing the magnet repels it.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "To increase the emf from a turning coil generator you can...",
+     "o": [
+      "Spin the coil faster",
+      "Use fewer turns of wire in the coil",
+      "Use a weaker magnet in the generator",
+      "Stop the coil from moving"
+     ],
+     "a": 0,
+     "why": "Faster rotation changes the flux faster, and more turns or stronger fields also raise the emf.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Lenz's law is a consequence of which principle?",
+     "o": [
+      "Conservation of energy",
+      "Conservation of mass",
+      "Newton's third law only",
+      "The second law of thermodynamics only"
+     ],
+     "a": 0,
+     "why": "If the induced current aided the change, energy would be created from nothing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each device to its use of induction.",
+     "pairs": [
+      [
+       "Generator",
+       "Coil turning in a field produces emf"
+      ],
+      [
+       "Transformer",
+       "Changes AC voltage between coils"
+      ],
+      [
+       "Induction cooker",
+       "Heats a pan with eddy currents"
+      ],
+      [
+       "Wireless charger",
+       "Coil induces current in the phone"
+      ]
+     ],
+     "why": "Each uses a changing magnetic flux.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A magnet is dropped through a copper tube and falls more slowly than through a plastic tube. Explain.",
+     "rubric": [
+      [
+       "eddy",
+       "induced current",
+       "current induced",
+       "currents"
+      ],
+      [
+       "lenz",
+       "oppos",
+       "against",
+       "resist",
+       "slow"
+      ],
+      [
+       "flux",
+       "changing field",
+       "changing magnetic",
+       "magnetic field"
+      ]
+     ],
+     "min": 2,
+     "model": "The moving magnet changes the flux through the copper, which induces eddy currents. By Lenz's law these produce a field that opposes the magnet's motion, so it falls more slowly. Plastic is an insulator, so no currents flow.",
+     "why": "Lenz's law gives a braking force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps showing how a bicycle dynamo lights a lamp.",
+     "items": [
+      "The wheel turns the magnet",
+      "The flux through the coil changes",
+      "An emf is induced in the coil",
+      "Current flows through the lamp"
+     ],
+     "why": "Rotation changes the flux, which induces an emf and drives a current.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a transformer work with AC but not with steady DC?",
+     "o": [
+      "Only a changing current makes a changing flux in the core",
+      "DC has too little voltage to work a transformer",
+      "DC cannot flow through the coils",
+      "AC always carries more power than DC"
+     ],
+     "a": 0,
+     "why": "Induction requires a changing flux.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A 1 kW power line carries power over a long wire. Why is it better to send it at 10 000 V than at 100 V?",
+     "rubric": [
+      [
+       "current"
+      ],
+      [
+       "lower",
+       "smaller",
+       "less",
+       "reduce"
+      ],
+      [
+       "heat",
+       "loss",
+       "i²r",
+       "i squared",
+       "wasted",
+       "resistance"
+      ]
+     ],
+     "min": 2,
+     "model": "For a given power, P = VI, a higher voltage means a smaller current. The power lost as heat in the wires is I²R, so a smaller current greatly reduces the loss.",
+     "why": "Losses go as the square of the current.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A student pushes a magnet into a coil faster. Compared with a slow push, the induced emf is...",
+     "o": [
+      "Larger, because the flux changes faster",
+      "Smaller, because the push is more sudden",
+      "The same, because the magnet is the same",
+      "Zero, as the coil does not notice speed"
+     ],
+     "a": 0,
+     "why": "ε = NΔΦ ÷ Δt, so a smaller time gives a larger emf.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a changing magnetic field makes electricity",
+    "model": "If the magnetic field through a coil changes, a voltage appears in the coil. The faster it changes and the more turns the coil has, the larger the voltage. The current it drives opposes the change. For example, in a bicycle dynamo a spinning magnet keeps changing the field through a coil.",
+    "points": [
+     {
+      "k": [
+       "change",
+       "changing",
+       "moving",
+       "spin"
+      ],
+      "ask": "What has to happen to the field?"
+     },
+     {
+      "k": [
+       "voltage",
+       "emf",
+       "current",
+       "induce"
+      ],
+      "ask": "What do we get in the coil?"
+     },
+     {
+      "k": [
+       "faster",
+       "turns",
+       "stronger",
+       "more"
+      ],
+      "ask": "What makes the voltage bigger?"
+     },
+     {
+      "k": [
+       "dynamo",
+       "generator",
+       "example",
+       "transformer"
+      ],
+      "ask": "Where do I see this in everyday life?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Orbital mechanics and satellites",
+   "icon": "🛰️",
+   "hook": "The International Space Station is pulled by gravity at about 90% of its strength on the ground, yet it never falls to Earth. Why not?",
+   "explain": [
+    "Newton's law of gravitation says two masses attract with a force F = G m₁ m₂ ÷ r², where G = 6.67 × 10⁻¹¹ N·m²/kg². For a satellite in a circular orbit, gravity provides the centripetal force: G M m ÷ r² = m v² ÷ r, so the orbital speed is v = √(GM ÷ r). A satellite is in continual free fall, moving sideways fast enough that it keeps missing Earth.",
+    "Using Earth's GM ≈ 3.99 × 10¹⁴ m³/s², a satellite 400 km above the surface (r ≈ 6.77 × 10⁶ m) moves at about 7.7 km/s and takes about 92 minutes per orbit. Higher orbits are slower and longer: a geostationary satellite orbits at r ≈ 4.22 × 10⁷ m (about 35 800 km altitude) in one sidereal day, so it stays above the same point on the equator. Kepler's third law gives T² ∝ r³.",
+    "The escape speed from a body's surface is v = √(2GM ÷ R), about 11.2 km/s for Earth, independent of the mass of the escaping object. To change orbit, spacecraft fire engines: speeding up at one point raises the opposite side of the orbit. A Hohmann transfer uses two burns to move between circular orbits efficiently. Orbital energy is negative for bound orbits."
+   ],
+   "example": {
+    "q": "Find the orbital speed of a satellite at r = 6.77 × 10⁶ m. Use GM = 3.99 × 10¹⁴ m³/s².",
+    "steps": [
+     "v = √(GM ÷ r).",
+     "GM ÷ r = 3.99 × 10¹⁴ ÷ 6.77 × 10⁶ ≈ 5.89 × 10⁷.",
+     "v = √(5.89 × 10⁷) ≈ 7.7 × 10³ m/s."
+    ],
+    "a": "About 7.7 km/s"
+   },
+   "analogies": {
+    "sport": "A hammer thrower swings the ball in a circle: the pull of the wire is like gravity on a satellite.",
+    "tech": "GPS satellites orbit at about 20 200 km and complete two orbits per day.",
+    "city": "A communications satellite stays above one place like a TV mast in the sky.",
+    "sea": "A ship's radar is useful, but satellites give accurate position anywhere on the ocean."
+   },
+   "mnemonic": "Orbiting is falling forward: fast enough sideways and the ground curves away.",
+   "terms": [
+    [
+     "Orbital speed",
+     "The speed needed to stay in a circular orbit, √(GM ÷ r)."
+    ],
+    [
+     "Geostationary orbit",
+     "An equatorial orbit with a 24-hour period that keeps a satellite fixed over one point."
+    ],
+    [
+     "Escape speed",
+     "The minimum launch speed to leave a body's gravity without further propulsion."
+    ],
+    [
+     "Hohmann transfer",
+     "A two-burn ellipse used to move between circular orbits."
+    ]
+   ],
+   "misc": {
+    "wrong": "Astronauts float on the Space Station because there is no gravity there.",
+    "right": "Gravity there is about 90% of its surface value. They float because they and the station are in free fall around Earth."
+   },
+   "limits": "These formulas assume a point mass or sphere and circular orbits. Real orbits are perturbed by Earth's bulge, the Moon, the Sun and atmospheric drag at low altitude.",
+   "trip": {
+    "wiki": "Orbital mechanics",
+    "prompt": "Find the diagram of a Hohmann transfer orbit and mark the two engine burns."
+   },
+   "sources": [
+    "Orbital mechanics",
+    "Geostationary orbit",
+    "Escape velocity"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Use v = √(GM ÷ r) with GM = 3.99 × 10¹⁴ m³/s² to find the orbital speed at r = 4.22 × 10⁷ m (geostationary orbit) in m/s, to the nearest 10 m/s.",
+     "a": 3070,
+     "tol": 30,
+     "unit": "m/s",
+     "why": "GM ÷ r = 3.99 × 10¹⁴ ÷ 4.22 × 10⁷ ≈ 9.45 × 10⁶; v ≈ 3075 m/s, about 3.07 km/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using v = √(2GM ÷ R) with GM = 3.99 × 10¹⁴ m³/s² and R = 6.37 × 10⁶ m, find Earth's escape speed in km/s to one decimal place.",
+     "a": 11.2,
+     "tol": 0.1,
+     "unit": "km/s",
+     "why": "2GM ÷ R = 7.98 × 10¹⁴ ÷ 6.37 × 10⁶ ≈ 1.253 × 10⁸; the square root is about 1.12 × 10⁴ m/s = 11.2 km/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Satellite A orbits at a greater radius than satellite B around the same planet. Which has the greater orbital speed?",
+     "o": [
+      "B, the closer one",
+      "A, the farther one",
+      "Both are equal",
+      "It depends on their masses"
+     ],
+     "a": 0,
+     "why": "v = √(GM ÷ r), so a smaller radius means a higher speed. The satellite's own mass cancels.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a satellite's orbital speed independent of its own mass?",
+     "o": [
+      "Its mass cancels from both sides of G M m ÷ r² = m v² ÷ r",
+      "Gravity does not act on a satellite in orbit",
+      "All satellites in orbit have exactly the same mass",
+      "Mass does not exist in space"
+     ],
+     "a": 0,
+     "why": "Gravity is proportional to the satellite's mass and so is the mass needed for the centripetal force, so m cancels.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A geostationary satellite has an orbital period of...",
+     "o": [
+      "About 24 hours (one sidereal day)",
+      "About 90 minutes",
+      "One week",
+      "One year"
+     ],
+     "a": 0,
+     "why": "It must match Earth's rotation to stay over one point.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "An astronaut in a spacecraft wants to move to a higher circular orbit. What is the first step of a Hohmann transfer?",
+     "o": [
+      "Fire the engine along the direction of motion",
+      "Fire the engine backwards to slow down",
+      "Switch off the engine and wait for the orbit to rise",
+      "Fire the engine towards Earth"
+     ],
+     "a": 0,
+     "why": "A prograde burn raises the opposite side of the orbit, forming an elliptical transfer.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A satellite loses some speed due to air drag in low orbit. What happens to its altitude over time?",
+     "o": [
+      "It descends to a lower orbit",
+      "It rises to a higher, slower orbit",
+      "It stays exactly the same",
+      "It escapes from Earth"
+     ],
+     "a": 0,
+     "why": "It falls into a lower orbit, where the orbital speed is actually higher, so a satellite that slows spirals inward.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each orbit type with its typical use.",
+     "pairs": [
+      [
+       "Low Earth orbit",
+       "Space station and imaging"
+      ],
+      [
+       "Geostationary orbit",
+       "Weather and TV broadcast"
+      ],
+      [
+       "GPS orbit",
+       "Navigation"
+      ],
+      [
+       "Polar orbit",
+       "Mapping the whole Earth"
+      ]
+     ],
+     "why": "Each orbit suits a different task.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why astronauts feel weightless in orbit although gravity acts on them.",
+     "rubric": [
+      [
+       "free fall",
+       "falling",
+       "freefall"
+      ],
+      [
+       "gravity",
+       "pull"
+      ],
+      [
+       "same",
+       "together",
+       "both",
+       "spacecraft",
+       "station",
+       "no contact",
+       "no force"
+      ]
+     ],
+     "min": 2,
+     "model": "The astronauts and the station are both in free fall, accelerating towards Earth at the same rate while moving sideways fast, so nothing pushes on them from the floor. Without that contact force they feel weightless, even though gravity still acts.",
+     "why": "Weight sensation comes from contact forces, not from gravity alone.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these orbits by period, shortest first.",
+     "items": [
+      "Low Earth orbit (about 92 minutes)",
+      "GPS orbit (about 12 hours)",
+      "Geostationary orbit (about 24 hours)",
+      "The Moon (about 27 days)"
+     ],
+     "why": "Period grows with orbital radius (Kepler's third law).",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The International Space Station orbits 400 km above Earth, where g is about 8.7 m/s². Which statement is correct?",
+     "o": [
+      "Gravity is still strong there; the station is in continuous free fall",
+      "Gravity is nearly zero at that height",
+      "Gravity points away from Earth up there",
+      "Gravity only acts on large objects at that height"
+     ],
+     "a": 0,
+     "why": "At r = 6.77 × 10⁶ m, g is about 9.8 × (6.37 ÷ 6.77)² ≈ 8.7 m/s², about 89% of the surface value.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must rockets launch eastward from near the equator when possible?",
+     "rubric": [
+      [
+       "rotation",
+       "spin",
+       "rotates",
+       "rotating"
+      ],
+      [
+       "speed",
+       "boost",
+       "extra",
+       "velocity"
+      ],
+      [
+       "equator",
+       "fastest",
+       "largest"
+      ],
+      [
+       "fuel",
+       "save",
+       "less"
+      ]
+     ],
+     "min": 3,
+     "model": "Earth rotates eastward and the surface moves fastest at the equator (about 465 m/s). Launching east gives the rocket a free speed boost, which saves fuel.",
+     "why": "The launch site's speed adds to the speed needed for orbit.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A satellite is in a circular orbit with radius r. If the radius is increased to 4r, its period (Kepler's third law) becomes...",
+     "o": [
+      "8 times longer",
+      "4 times longer",
+      "2 times longer",
+      "16 times longer"
+     ],
+     "a": 0,
+     "why": "T² ∝ r³, so T ∝ r^(3/2) and 4^(3/2) = 8.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a satellite stays in orbit",
+    "model": "A satellite is always falling towards Earth, but it also moves sideways very fast, so the ground curves away beneath it as fast as it falls. Gravity supplies the force that bends its path into a circle. Higher satellites move slower. For example, the Space Station moves at about 7.7 km/s and goes around Earth in about 92 minutes.",
+    "points": [
+     {
+      "k": [
+       "gravity",
+       "pull",
+       "falling",
+       "fall"
+      ],
+      "ask": "What pulls the satellite?"
+     },
+     {
+      "k": [
+       "sideways",
+       "fast",
+       "speed",
+       "horizontal"
+      ],
+      "ask": "Why does it not hit the ground?"
+     },
+     {
+      "k": [
+       "curve",
+       "circle",
+       "miss",
+       "away"
+      ],
+      "ask": "So what does the ground do?"
+     },
+     {
+      "k": [
+       "higher",
+       "slower",
+       "7.7",
+       "92",
+       "example",
+       "station"
+      ],
+      "ask": "Does height change the speed? Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Telescopes and astronomical spectroscopy",
+   "icon": "🔭",
+   "hook": "No spacecraft has visited a distant star, yet astronomers know what it is made of and how fast it moves. How can light alone tell us so much?",
+   "explain": [
+    "A telescope collects light and forms an image. Its light-gathering power is proportional to the area of the main lens or mirror, so to D². Its angular resolution is limited by diffraction, θ ≈ 1.22 λ ÷ D (in radians). A larger aperture gives a brighter image and finer detail. Magnification of a refracting telescope is M = f_objective ÷ f_eyepiece. Large telescopes use mirrors because big lenses sag and are hard to make.",
+    "Telescopes can work at any wavelength. Radio dishes, infrared and X-ray telescopes show different physics. The atmosphere blocks X-rays and much infrared, so those are observed from space. Hubble and James Webb are space telescopes.",
+    "A spectrograph splits light into a spectrum. A hot solid gives a continuous spectrum, a hot thin gas gives emission lines, and a continuous source seen through cooler gas gives absorption lines. Each element has a fingerprint of lines. The peak wavelength of a hot object follows Wien's law, λ_max = 2.898 × 10⁻³ m·K ÷ T. The Doppler shift gives radial velocity: Δλ ÷ λ ≈ v ÷ c for v much less than c."
+   ],
+   "example": {
+    "q": "The Sun's surface temperature is about 5800 K. At what wavelength does it emit most strongly?",
+    "steps": [
+     "Wien's law: λ_max = 2.898 × 10⁻³ ÷ T.",
+     "= 2.898 × 10⁻³ ÷ 5800.",
+     "= 5.0 × 10⁻⁷ m = 500 nm."
+    ],
+    "a": "About 500 nm, in the green part of the visible spectrum"
+   },
+   "analogies": {
+    "music": "A prism splits light like an orchestra's chord can be broken into separate notes.",
+    "city": "A siren sounds higher as an ambulance approaches and lower as it leaves; light shifts in the same way.",
+    "nature": "A bird-watcher's binoculars gather more light and show more detail than the naked eye.",
+    "tech": "A digital camera sensor collects photons just as a telescope mirror collects light."
+   },
+   "mnemonic": "Aperture gathers, wavelength limits, lines tell the recipe, shifts tell the motion.",
+   "terms": [
+    [
+     "Aperture",
+     "The diameter of a telescope's main lens or mirror."
+    ],
+    [
+     "Angular resolution",
+     "The smallest angle between two objects that can be seen as separate."
+    ],
+    [
+     "Spectrum",
+     "Light spread out by wavelength."
+    ],
+    [
+     "Redshift",
+     "A lengthening of observed wavelengths because the source moves away."
+    ]
+   ],
+   "misc": {
+    "wrong": "The main job of a telescope is to magnify.",
+    "right": "Its main job is to gather light and give resolution. Without enough light, more magnification only makes a bigger blur."
+   },
+   "limits": "The Doppler formula Δλ ÷ λ = v ÷ c is valid only for speeds much less than light. Atmospheric turbulence limits ground-based resolution unless corrected by adaptive optics.",
+   "trip": {
+    "wiki": "Astronomical spectroscopy",
+    "prompt": "Find an example of absorption lines in the Sun's spectrum and the elements they identify."
+   },
+   "sources": [
+    "Telescope",
+    "Astronomical spectroscopy",
+    "Doppler effect"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A telescope with a 0.20 m mirror and another with a 0.05 m mirror both observe a faint star. How many times more light does the larger mirror collect?",
+     "a": 16,
+     "tol": 0.2,
+     "why": "Light collected is proportional to D²: (0.20 ÷ 0.05)² = 4² = 16.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A telescope has an objective of focal length 1200 mm and an eyepiece of focal length 30 mm. What is its magnification?",
+     "o": [
+      "40",
+      "36 000",
+      "0.025",
+      "1170"
+     ],
+     "a": 0,
+     "why": "M = f_o ÷ f_e = 1200 ÷ 30 = 40.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A hydrogen line of rest wavelength 656.3 nm is observed in a galaxy at 656.956 nm. What is the galaxy's recession speed in km/s? Use c = 3.00 × 10⁵ km/s.",
+     "a": 300,
+     "tol": 5,
+     "unit": "km/s",
+     "why": "Δλ = 0.656 nm, Δλ ÷ λ = 0.001; v = 0.001 × 3.00 × 10⁵ = 300 km/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A star's peak emission is in the blue part of the spectrum compared with a red star. What does Wien's law say about its temperature?",
+     "o": [
+      "It is hotter",
+      "It is cooler",
+      "The same",
+      "It cannot be known"
+     ],
+     "a": 0,
+     "why": "A shorter peak wavelength means a higher temperature.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A spectrum shows dark lines on a bright continuous background. What does that tell us?",
+     "o": [
+      "Cooler gas lies between us and the hot source",
+      "The source is a hot, thin gas on its own",
+      "The source is a laser beam",
+      "There is no gas anywhere in the path"
+     ],
+     "a": 0,
+     "why": "Absorption lines arise when a cooler gas removes particular wavelengths from a continuous spectrum.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The spectral lines of a star are all shifted towards the red compared with a laboratory. What does this suggest?",
+     "o": [
+      "The star is moving away from us",
+      "The star is moving towards us at high speed",
+      "The star is slowly cooling down",
+      "The star is stationary relative to us"
+     ],
+     "a": 0,
+     "why": "A redshift from the Doppler effect means the source is receding.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why are the largest modern optical telescopes built with mirrors and not lenses?",
+     "o": [
+      "A mirror can be supported from behind, whereas a large lens sags and absorbs light",
+      "Mirrors are cheaper than glass in all cases",
+      "Lenses are unable to form any image",
+      "Mirrors always give lower resolution than lenses"
+     ],
+     "a": 0,
+     "why": "A lens can only be supported at its edge and light passes through the glass, so very large lenses are impractical.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each spectrum type to its source.",
+     "pairs": [
+      [
+       "Continuous",
+       "Hot dense object"
+      ],
+      [
+       "Emission lines",
+       "Hot thin gas"
+      ],
+      [
+       "Absorption lines",
+       "Cool gas in front of a hot source"
+      ]
+     ],
+     "why": "Kirchhoff's three kinds of spectra.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do astronomers build telescopes on high mountains or launch them into space?",
+     "rubric": [
+      [
+       "atmosphere",
+       "air"
+      ],
+      [
+       "blur",
+       "turbulence",
+       "twinkl",
+       "distort",
+       "block",
+       "absorb",
+       "absorption"
+      ],
+      [
+       "wavelength",
+       "infrared",
+       "x-ray",
+       "ultraviolet",
+       "clearer",
+       "sharper",
+       "above"
+      ]
+     ],
+     "min": 2,
+     "model": "The atmosphere blurs images through turbulence and blocks wavelengths such as X-rays and much infrared. Mountains lie above much of the air, and space telescopes avoid it altogether.",
+     "why": "Atmospheric turbulence and absorption limit ground-based observations.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these types of electromagnetic radiation by increasing wavelength.",
+     "items": [
+      "Gamma rays",
+      "X-rays",
+      "Visible light",
+      "Infrared",
+      "Radio"
+     ],
+     "why": "Wavelength increases from gamma rays to radio.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two telescopes have the same aperture but one observes at radio wavelengths of 21 cm and the other at visible light of 550 nm. Which has finer angular resolution?",
+     "o": [
+      "The visible light telescope",
+      "The radio telescope, because its wavelength is longer",
+      "Both are equal because the apertures are equal",
+      "It depends on the colour of the source only"
+     ],
+     "a": 0,
+     "why": "θ = 1.22 λ ÷ D, so a smaller wavelength gives a smaller angle. This is why radio astronomers use arrays of dishes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A star's spectrum shows a pattern of absorption lines identical to that of hydrogen but all shifted to longer wavelengths. Explain what each part of the evidence tells you.",
+     "rubric": [
+      [
+       "hydrogen",
+       "element",
+       "fingerprint",
+       "pattern"
+      ],
+      [
+       "shift",
+       "redshift",
+       "longer wavelength",
+       "doppler"
+      ],
+      [
+       "moving away",
+       "receding",
+       "recession",
+       "velocity",
+       "speed"
+      ]
+     ],
+     "min": 3,
+     "model": "The line pattern identifies hydrogen in the star. The shift of all lines to longer wavelengths is a Doppler redshift, and the size of the shift gives the star's recession speed.",
+     "why": "Line patterns give composition; shifts give velocity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Doubling the diameter of a telescope mirror has what effect on its limit of resolution (diffraction-limited)?",
+     "o": [
+      "The smallest resolvable angle is halved",
+      "The smallest resolvable angle is doubled",
+      "No change",
+      "The smallest resolvable angle is quartered"
+     ],
+     "a": 0,
+     "why": "θ ∝ 1 ÷ D, so doubling D halves θ.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How astronomers learn what a star is made of",
+    "model": "Starlight can be split into a spectrum. Each chemical element absorbs or emits light at its own special wavelengths, like a fingerprint. By matching these dark or bright lines, astronomers find which elements are present. If the lines are shifted, the star is moving. For example, hydrogen lines shifted to the red show the star moving away.",
+    "points": [
+     {
+      "k": [
+       "spectrum",
+       "split",
+       "prism",
+       "rainbow",
+       "spread"
+      ],
+      "ask": "What do you do with the light?"
+     },
+     {
+      "k": [
+       "line",
+       "fingerprint",
+       "element",
+       "wavelength"
+      ],
+      "ask": "How do you know which elements are there?"
+     },
+     {
+      "k": [
+       "shift",
+       "doppler",
+       "red",
+       "blue",
+       "moving"
+      ],
+      "ask": "How can you tell if it is moving?"
+     },
+     {
+      "k": [
+       "hydrogen",
+       "example",
+       "sun",
+       "temperature",
+       "colour"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Stellar structure and evolution",
+   "icon": "🌟",
+   "hook": "The Sun has shone steadily for about 4.6 billion years without blowing up or collapsing. What keeps it in balance?",
+   "explain": [
+    "A star is a ball of hot gas held together by its own gravity. Gravity pulls inward, while the gas pressure from the hot core pushes outward. When the two balance, the star is in hydrostatic equilibrium. This balance is held by nuclear fusion in the core: in the Sun, four hydrogen nuclei fuse into one helium nucleus, turning about 0.7% of the mass into energy by E = mc². The Sun converts roughly 4 million tonnes of mass to energy every second.",
+    "A star's luminosity depends on its size and surface temperature: L = 4πR²σT⁴, where σ = 5.67 × 10⁻⁸ W/m²·K⁴. The Hertzsprung–Russell (H–R) diagram plots luminosity against temperature. Most stars lie on the main sequence, where they fuse hydrogen. More massive stars are hotter and far more luminous, and they use up fuel much faster. The Sun's main-sequence life is about 10 billion years, while a star of 2 solar masses lasts around 1–2 billion years.",
+    "When hydrogen in the core runs out, the core contracts and heats up, and the star swells into a red giant. A Sun-like star later sheds its outer layers as a planetary nebula and leaves a white dwarf, which is supported by electron degeneracy pressure and cools slowly. A white dwarf cannot exceed about 1.4 solar masses (the Chandrasekhar limit). A much more massive star ends in a core-collapse supernova, leaving a neutron star or a black hole."
+   ],
+   "example": {
+    "q": "A star has the same surface temperature as the Sun but twice the radius. How many times more luminous is it?",
+    "steps": [
+     "L = 4πR²σT⁴, so with T fixed L ∝ R².",
+     "R is doubled, so L is multiplied by 2² = 4."
+    ],
+    "a": "4 times as luminous as the Sun"
+   },
+   "analogies": {
+    "home": "A pressure cooker stays balanced when the steam pushing out matches the lid's weight pushing in.",
+    "sport": "A balloon stays round when the air pushing out balances the rubber pulling in.",
+    "city": "A busy shop uses up its stock faster the more customers it has, as massive stars burn fuel faster.",
+    "nature": "A campfire with lots of dry wood burns brightly but quickly."
+   },
+   "mnemonic": "Gravity squeezes, fusion pushes; heavy stars shine bright and die young.",
+   "terms": [
+    [
+     "Hydrostatic equilibrium",
+     "The balance between gravity inward and pressure outward."
+    ],
+    [
+     "Main sequence",
+     "The long stage in which a star fuses hydrogen in its core."
+    ],
+    [
+     "Luminosity",
+     "Total energy a star radiates per second, in watts."
+    ],
+    [
+     "White dwarf",
+     "The dense remnant core of a Sun-like star."
+    ]
+   ],
+   "misc": {
+    "wrong": "Stars burn like fires, by combustion of fuel with oxygen.",
+    "right": "Stars shine because of nuclear fusion in their cores, not chemical burning."
+   },
+   "limits": "Lifetimes and luminosities from simple scaling are approximate. Stellar evolution also depends on composition, rotation, binary partners and mass loss.",
+   "trip": {
+    "wiki": "Stellar evolution",
+    "prompt": "Find the Hertzsprung–Russell diagram and locate the Sun, a red giant and a white dwarf."
+   },
+   "sources": [
+    "Stellar evolution",
+    "Hertzsprung–Russell diagram",
+    "Stellar structure"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A star has the same radius as the Sun but a surface temperature twice as high (in kelvin). By what factor is it more luminous? Use L ∝ R²T⁴.",
+     "a": 16,
+     "tol": 0.2,
+     "why": "L ∝ T⁴, so 2⁴ = 16 times.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The Sun loses about 4.3 × 10⁹ kg of mass per second to energy. Using E = mc² with c = 3.0 × 10⁸ m/s, what is the power in units of 10²⁶ W? Give the value to one decimal place.",
+     "a": 3.9,
+     "tol": 0.1,
+     "unit": "× 10²⁶ W",
+     "why": "E = 4.3 × 10⁹ × 9.0 × 10¹⁶ = 3.87 × 10²⁶ J each second, so about 3.9 × 10²⁶ W.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What process makes a main-sequence star shine?",
+     "o": [
+      "Fusion of hydrogen into helium in its core",
+      "Burning of oxygen in its outer layers",
+      "Radioactive decay of heavy atoms only",
+      "Gravity compressing the star forever"
+     ],
+     "a": 0,
+     "why": "Hydrogen fusion releases the energy that holds the star up and makes it shine.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A star's core suddenly produced less energy. What would happen first, according to hydrostatic equilibrium?",
+     "o": [
+      "The core would contract and heat up",
+      "The star would expand rapidly and cool",
+      "Nothing would change inside the star",
+      "Gravity would disappear from the core"
+     ],
+     "a": 0,
+     "why": "Reduced pressure lets gravity win, so the core contracts and heats until balance is restored.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A star 10 times the Sun's mass lives for a shorter time than the Sun. Why?",
+     "o": [
+      "Its luminosity rises much faster than its fuel supply",
+      "It has less fuel than the Sun has",
+      "It is cooler than the Sun, so it fades sooner",
+      "It does no fusion at all"
+     ],
+     "a": 0,
+     "why": "More mass gives more fuel, but the luminosity increases much more steeply, so the fuel is used up sooner.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What will the Sun become after its red giant stage?",
+     "o": [
+      "A white dwarf",
+      "A black hole",
+      "A neutron star",
+      "A supernova remnant only"
+     ],
+     "a": 0,
+     "why": "The Sun is not massive enough for a supernova. It will shed its outer layers and leave a white dwarf.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "On the H–R diagram, where would a cool, very luminous star be found?",
+     "o": [
+      "Upper right, as a red giant or supergiant",
+      "Lower left, as a white dwarf",
+      "Middle of the main sequence, like the Sun",
+      "Off the diagram altogether"
+     ],
+     "a": 0,
+     "why": "Low temperature gives a red colour. High luminosity with low temperature requires a very large radius.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each stellar object to its description.",
+     "pairs": [
+      [
+       "Main-sequence star",
+       "Fuses hydrogen in its core"
+      ],
+      [
+       "Red giant",
+       "Swollen star with a contracting core"
+      ],
+      [
+       "White dwarf",
+       "Dense remnant of a Sun-like star"
+      ],
+      [
+       "Neutron star",
+       "Remnant of a core-collapse supernova"
+      ]
+     ],
+     "why": "Each is a stage or remnant in stellar evolution.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a star can stay stable for billions of years.",
+     "rubric": [
+      [
+       "gravity",
+       "inward"
+      ],
+      [
+       "pressure",
+       "outward",
+       "push out"
+      ],
+      [
+       "fusion",
+       "nuclear",
+       "energy"
+      ],
+      [
+       "balance",
+       "equilibrium",
+       "balanced",
+       "equal"
+      ]
+     ],
+     "min": 3,
+     "model": "Gravity pulls the star inward while hot gas pressure pushes outward, and fusion in the core replaces the energy that is lost, so the two balance (hydrostatic equilibrium) for as long as the fuel lasts.",
+     "why": "Hydrostatic equilibrium, sustained by fusion, keeps the star stable.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the life stages of the Sun.",
+     "items": [
+      "Collapsing gas cloud",
+      "Main-sequence star",
+      "Red giant",
+      "Planetary nebula",
+      "White dwarf"
+     ],
+     "why": "This is the expected sequence for a star of one solar mass.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says: 'A star with twice the Sun's mass has twice the lifetime because it has twice the fuel.' What is the flaw?",
+     "o": [
+      "Luminosity grows much faster than mass, so the lifetime is shorter",
+      "Fuel supply does not depend on mass at all",
+      "More massive stars do not fuse hydrogen",
+      "Lifetime depends only on the colour of the star"
+     ],
+     "a": 0,
+     "why": "Luminosity rises roughly as M^3.5, so lifetime ∝ M ÷ L falls with increasing mass.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do astronomers think the Sun cannot become a supernova?",
+     "rubric": [
+      [
+       "mass",
+       "massive",
+       "not enough",
+       "too small",
+       "too low",
+       "too light"
+      ],
+      [
+       "white dwarf",
+       "planetary nebula",
+       "shed",
+       "outer layers"
+      ],
+      [
+       "core",
+       "collapse",
+       "iron",
+       "1.4",
+       "chandrasekhar",
+       "limit",
+       "supernova"
+      ]
+     ],
+     "min": 2,
+     "model": "The Sun is not massive enough to compress its core to the conditions needed for core collapse. It will end as a white dwarf below the Chandrasekhar limit of about 1.4 solar masses after shedding its outer layers.",
+     "why": "Only stars above roughly 8 solar masses end as core-collapse supernovae.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A red giant and a white dwarf have the same surface temperature. Which has the greater luminosity?",
+     "o": [
+      "The red giant, because of its much larger surface area",
+      "The white dwarf, as it is much hotter inside",
+      "They are equal because the temperatures match",
+      "It depends on their colour alone"
+     ],
+     "a": 0,
+     "why": "L ∝ R²T⁴, so with the same T the larger radius gives the greater luminosity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why stars are stable and how they eventually change",
+    "model": "A star is squeezed inward by its own gravity and pushed outward by hot gas pressure from fusion in its core. While these balance, the star is stable. When hydrogen in the core runs out, the balance changes and the star swells into a red giant. For example, the Sun will end as a white dwarf.",
+    "points": [
+     {
+      "k": [
+       "gravity",
+       "inward",
+       "squeeze"
+      ],
+      "ask": "What pulls a star in?"
+     },
+     {
+      "k": [
+       "pressure",
+       "fusion",
+       "outward",
+       "push out",
+       "hot"
+      ],
+      "ask": "What stops it collapsing?"
+     },
+     {
+      "k": [
+       "balance",
+       "equilibrium",
+       "stable"
+      ],
+      "ask": "What do we call that situation?"
+     },
+     {
+      "k": [
+       "runs out",
+       "red giant",
+       "white dwarf",
+       "hydrogen",
+       "example",
+       "sun"
+      ],
+      "ask": "What happens when the fuel is gone?"
+     }
+    ]
+   }
+  }
+ ]
+}

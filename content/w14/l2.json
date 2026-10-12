@@ -1,0 +1,2940 @@
+{
+ "world": 14,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Musical notes",
+   "icon": "🔤",
+   "hook": "A piano has 88 keys, yet music uses only seven letter names. How can so few names label so many keys?",
+   "explain": [
+    "Musical notes use the first seven letters of the alphabet: A B C D E F G. After G, the letters start again at A, but higher. The distance from one letter to the next one with the same name is called an octave, and the two notes sound like the same note at different heights.",
+    "On a piano the white keys carry the letter names. The black keys are in between. A black key is named from its white neighbour: a sharp (♯) raises a note by one step on the keyboard and a flat (♭) lowers it. So the black key just above C is C♯, which is also D♭.",
+    "Computers and synthesisers number notes with MIDI numbers. Middle C is 60, and each key to the right adds 1. So D is 62 (with C♯ at 61 between), and C one octave higher is 72."
+   ],
+   "example": {
+    "q": "Which MIDI number is the note one octave above middle C (60)?",
+    "steps": [
+     "An octave has twelve keys, counting white and black.",
+     "Add 12 to 60.",
+     "60 + 12 = 72."
+    ],
+    "a": "72 (the next C)"
+   },
+   "analogies": {
+    "home": "House numbers repeat the same pattern on each street. Note letters repeat in each octave.",
+    "city": "A bus route A to G loops back to A, like the note names.",
+    "music": "A piano keyboard is a ladder. Every twelve rungs the names start again.",
+    "nature": "Day names repeat every seven days, just like seven note letters repeat."
+   },
+   "mnemonic": "A B C D E F G, then round again, higher up the tree.",
+   "terms": [
+    [
+     "Octave",
+     "The distance between a note and the next note with the same letter name."
+    ],
+    [
+     "Sharp ♯",
+     "A sign that raises a note by one semitone."
+    ],
+    [
+     "Flat ♭",
+     "A sign that lowers a note by one semitone."
+    ],
+    [
+     "Semitone",
+     "The smallest step on a piano, from one key to the very next."
+    ]
+   ],
+   "misc": {
+    "wrong": "The black keys are less important than the white keys.",
+    "right": "The black keys are full notes too. They give the sharps and flats that complete the twelve notes of the octave."
+   },
+   "limits": "Some traditions, such as Indian and Arabic music, also use notes in the cracks between piano keys.",
+   "trip": {
+    "wiki": "Musical note",
+    "prompt": "Find the picture of a piano keyboard. Count the notes from one C to the next C."
+   },
+   "sources": [
+    "Musical note",
+    "Octave",
+    "Sharp (music)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which letters are used for note names?",
+     "o": [
+      "A to Z",
+      "A to G",
+      "A to M",
+      "C to Z"
+     ],
+     "a": 1,
+     "why": "Music uses seven letters, A B C D E F G, and then repeats them.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the distance between a note and the next note with the same name?",
+     "o": [
+      "An octave",
+      "A semitone",
+      "A chord",
+      "A time signature"
+     ],
+     "a": 0,
+     "why": "Octave comes from the Latin for eight, because there are eight note names from C to the next C.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a sharp sign do?",
+     "o": [
+      "Lowers the note by a semitone",
+      "Makes the note louder",
+      "Doubles the note length",
+      "Raises the note by a semitone"
+     ],
+     "a": 3,
+     "why": "Sharp means one semitone higher.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Listen. These two notes are C and the C above it. What interval is between them?",
+     "o": [
+      "A perfect fifth",
+      "A major third",
+      "An octave",
+      "A semitone"
+     ],
+     "a": 2,
+     "why": "60 to 72 is twelve semitones, an octave.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       60,
+       72
+      ],
+      "dur": 0.6
+     }
+    },
+    {
+     "t": "num",
+     "q": "Middle C is MIDI 60. What is the MIDI number of G above it, seven keys higher?",
+     "a": 67,
+     "tol": 0,
+     "why": "60 + 7 = 67, which is G.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       60,
+       67
+      ],
+      "dur": 0.6
+     }
+    },
+    {
+     "t": "mc",
+     "q": "On a piano, which key lies between C and D?",
+     "o": [
+      "B♭ or A♯ on the far side",
+      "C♯ (also called D♭)",
+      "F♯, two keys up from E",
+      "E, the white key beside F"
+     ],
+     "a": 1,
+     "why": "The black key between C and D has two names: C sharp and D flat.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the MIDI number to its note name.",
+     "pairs": [
+      [
+       "60",
+       "C"
+      ],
+      [
+       "62",
+       "D"
+      ],
+      [
+       "64",
+       "E"
+      ],
+      [
+       "67",
+       "G"
+      ]
+     ],
+     "why": "Starting at 60 = C: 62 is D, 64 is E, 67 is G.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A song moves from the note A up the letters. What is the next letter name after G?",
+     "o": [
+      "A again, but higher",
+      "H, as the alphabet continues",
+      "Z, the last letter of all",
+      "The song has to end there"
+     ],
+     "a": 0,
+     "why": "The names loop: after G comes A in the next octave.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these notes in order from lowest to highest, starting on C.",
+     "items": [
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+     ],
+     "why": "Letters rise with the alphabet: C D E F G.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain in your own words why only seven letter names are enough for a whole piano.",
+     "rubric": [
+      [
+       "repeat",
+       "again",
+       "loop",
+       "cycle"
+      ],
+      [
+       "octave",
+       "same name",
+       "same letter"
+      ],
+      [
+       "higher",
+       "lower",
+       "height",
+       "pitch"
+      ]
+     ],
+     "min": 2,
+     "model": "The names repeat. After G we start again at A in the next octave, so every note has a letter name and the octave tells how high it is.",
+     "why": "Notes an octave apart sound alike, so the letters cycle and do not need new names.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A friend says C♯ and D♭ are different keys on a piano. What is the best reply?",
+     "o": [
+      "They are two different keys, side by side",
+      "C♯ is a white key and D♭ is a black key",
+      "D♭ is always higher than C♯ on a piano",
+      "On a piano they are the same key with two names"
+     ],
+     "a": 3,
+     "why": "They sound identical on a piano. The name used depends on the key of the music.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do two notes an octave apart sound so similar?",
+     "rubric": [
+      [
+       "same name",
+       "same letter",
+       "same note"
+      ],
+      [
+       "vibrat",
+       "frequency",
+       "twice",
+       "double"
+      ],
+      [
+       "similar",
+       "blend",
+       "match",
+       "alike"
+      ]
+     ],
+     "min": 2,
+     "model": "The higher note vibrates twice as fast as the lower one, so the sound waves fit together and the notes blend and seem to be the same note.",
+     "why": "An octave is a 2:1 frequency ratio, which gives a very smooth blend.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A synthesiser plays MIDI 69, which is an A. Which MIDI number is the A one octave lower?",
+     "o": [
+      "81",
+      "63",
+      "57",
+      "48"
+     ],
+     "a": 2,
+     "why": "An octave is 12 semitones, and 69 − 12 = 57. Both are A.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The names of musical notes",
+    "model": "Notes use the letters A to G. After G the letters start again at A higher up, and that gap is an octave. Black keys on a piano are sharps and flats, one small step above or below a white key.",
+    "points": [
+     {
+      "k": [
+       "a to g",
+       "seven",
+       "letters",
+       "a b c"
+      ],
+      "ask": "Which letters do we use?"
+     },
+     {
+      "k": [
+       "again",
+       "repeat",
+       "loop",
+       "octave"
+      ],
+      "ask": "What happens after G?"
+     },
+     {
+      "k": [
+       "sharp",
+       "flat",
+       "black key",
+       "semitone"
+      ],
+      "ask": "What are the black keys?"
+     },
+     {
+      "k": [
+       "piano",
+       "keyboard",
+       "example",
+       "60",
+       "middle c"
+      ],
+      "ask": "Can you show me on an instrument?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Staff notation",
+   "icon": "📜",
+   "hook": "If you wrote a secret code for sounds, how would you show high and low on paper?",
+   "explain": [
+    "Music is written on a staff, which is five horizontal lines with four spaces. A note placed higher on the staff sounds higher. The note sits either on a line or in a space.",
+    "At the start of the staff is a clef. The treble clef (the curly G sign) is for higher notes. The bass clef is for lower notes. In the treble clef the lines, from the bottom, are E G B D F, and the spaces are F A C E.",
+    "Extra short lines called ledger lines extend the staff. Middle C sits on a ledger line just below the treble staff. The shape of the note head tells how long it lasts, which we study in the next stage."
+   ],
+   "example": {
+    "q": "Which note names are on the spaces of the treble staff, from the bottom?",
+    "steps": [
+     "Spaces are counted from the bottom up.",
+     "They spell F, A, C, E.",
+     "So the first space is F, then A, C, E."
+    ],
+    "a": "F A C E"
+   },
+   "analogies": {
+    "home": "A bookshelf with five shelves: where a book sits shows which shelf. Notes work the same way.",
+    "city": "Floors of an apartment block: higher floor means higher sound.",
+    "nature": "Birds on five wires: higher wire, higher note.",
+    "tech": "A graph has height for pitch and time along the side."
+   },
+   "mnemonic": "Lines: Every Good Boy Does Fine. Spaces spell FACE.",
+   "terms": [
+    [
+     "Staff",
+     "Five lines and four spaces on which notes are written."
+    ],
+    [
+     "Clef",
+     "The sign at the start of the staff that fixes which lines are which notes."
+    ],
+    [
+     "Treble clef",
+     "The clef for higher notes, curling around the line G."
+    ],
+    [
+     "Ledger line",
+     "A short extra line above or below the staff."
+    ]
+   ],
+   "misc": {
+    "wrong": "A note further to the right is higher.",
+    "right": "Up and down on the staff shows pitch. Left to right shows time."
+   },
+   "trip": {
+    "wiki": "Staff (music)",
+    "prompt": "Look at the staff diagram. Count the lines and spaces."
+   },
+   "sources": [
+    "Staff (music)",
+    "Clef",
+    "Treble clef"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many lines does a staff have?",
+     "o": [
+      "Three",
+      "Five",
+      "Four",
+      "Eight"
+     ],
+     "a": 1,
+     "why": "A staff has five lines and four spaces.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a note higher on the staff mean?",
+     "o": [
+      "A higher pitch",
+      "A louder sound",
+      "A longer sound",
+      "A faster tempo"
+     ],
+     "a": 0,
+     "why": "Vertical position shows pitch.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What are the lines of the treble staff, bottom to top?",
+     "o": [
+      "F A C E G",
+      "A C E G B",
+      "C D E F G",
+      "E G B D F"
+     ],
+     "a": 3,
+     "why": "The line notes are E, G, B, D, F.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The spaces of the treble staff spell which word, bottom to top?",
+     "o": [
+      "EDGE",
+      "BEAD",
+      "FACE",
+      "CAGE"
+     ],
+     "a": 2,
+     "why": "Spaces are F A C E.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Where is middle C written in the treble clef?",
+     "o": [
+      "On the top line of the staff",
+      "On a ledger line below the staff",
+      "In the top space of the staff",
+      "On the middle line of the staff"
+     ],
+     "a": 1,
+     "why": "Middle C sits just below the five lines on its own short line.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each sign to what it is.",
+     "pairs": [
+      [
+       "Staff",
+       "Five lines for notes"
+      ],
+      [
+       "Treble clef",
+       "Sign for higher notes"
+      ],
+      [
+       "Ledger line",
+       "Short extra line"
+      ],
+      [
+       "Bass clef",
+       "Sign for lower notes"
+      ]
+     ],
+     "why": "These are the basic parts of notation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Name the treble line notes in order from the bottom line to the top.",
+     "items": [
+      "E",
+      "G",
+      "B",
+      "D",
+      "F"
+     ],
+     "why": "Every Good Boy Does Fine: E G B D F.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A tune uses notes on the lowest line and the highest line of the staff. Which are they?",
+     "o": [
+      "E and F",
+      "C and D",
+      "A and B",
+      "G and A"
+     ],
+     "a": 0,
+     "why": "Bottom line is E, top line is F.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A note sits in the second space from the bottom. What letter is it?",
+     "o": [
+      "G",
+      "C",
+      "E",
+      "A"
+     ],
+     "a": 3,
+     "why": "Spaces from the bottom are F, A, C, E, so the second space is A.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is a bass clef useful as well as a treble clef?",
+     "rubric": [
+      [
+       "low",
+       "lower",
+       "deep"
+      ],
+      [
+       "ledger",
+       "too many lines",
+       "fit",
+       "staff",
+       "room"
+      ]
+     ],
+     "min": 1,
+     "model": "Low notes would need many ledger lines in treble clef. The bass clef places them on the staff so they are easier to read.",
+     "why": "Two clefs let the staff cover the whole range with fewer extra lines.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A friend says the staff has six lines. Why might they be wrong?",
+     "o": [
+      "The staff really has two sets of lines",
+      "The staff really has ten lines in a row",
+      "They counted the spaces as well, but there are five lines and four spaces",
+      "The staff has no lines, only spaces and dots"
+     ],
+     "a": 2,
+     "why": "Standard notation uses a five-line staff.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How could you remember which notes are in the treble lines and which in the spaces?",
+     "rubric": [
+      [
+       "every good boy",
+       "egbdf",
+       "sentence",
+       "phrase"
+      ],
+      [
+       "face",
+       "spaces spell",
+       "word"
+      ]
+     ],
+     "min": 1,
+     "model": "Lines can be remembered with Every Good Boy Does Fine (E G B D F) and the spaces simply spell FACE.",
+     "why": "Memory aids turn the pattern into something easy to recall.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do composers use ledger lines?",
+     "o": [
+      "To change the key of the piece",
+      "To write notes above or below the staff",
+      "To make a passage louder or softer",
+      "To show the tempo of the music"
+     ],
+     "a": 1,
+     "why": "Ledger lines extend the staff when notes are too high or low.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How music is written",
+    "model": "Music is written on a staff of five lines. The higher a note sits, the higher it sounds. A clef at the start tells us the note names. In treble clef the lines are E G B D F and the spaces spell FACE.",
+    "points": [
+     {
+      "k": [
+       "five",
+       "5",
+       "lines"
+      ],
+      "ask": "How many lines are there?"
+     },
+     {
+      "k": [
+       "higher",
+       "up",
+       "pitch"
+      ],
+      "ask": "What does going higher mean?"
+     },
+     {
+      "k": [
+       "clef",
+       "treble",
+       "bass"
+      ],
+      "ask": "What is the sign at the start?"
+     },
+     {
+      "k": [
+       "face",
+       "egbdf",
+       "good boy"
+      ],
+      "ask": "How do I remember the notes?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Rhythm values",
+   "icon": "⏱️",
+   "hook": "Some notes are long and some are short. How could you write down how long each one lasts?",
+   "explain": [
+    "The shape of a note tells how long it lasts, counted in beats. In common time a quarter note lasts 1 beat, a half note 2 beats and a whole note 4 beats. An eighth note lasts half a beat, so two eighth notes fit into one beat.",
+    "Each value is half of the one before it: a whole note equals two halves, a half equals two quarters, and a quarter equals two eighths. A dot after a note adds half of its own value, so a dotted half note lasts 3 beats.",
+    "Silence is written too. A rest is a sign for a pause, and each note value has a matching rest. Rests are part of rhythm, because the gaps shape the pattern."
+   ],
+   "example": {
+    "q": "In 4/4, how many beats are in half note + quarter note + quarter note?",
+    "steps": [
+     "Half note = 2 beats.",
+     "Quarter = 1 beat, twice makes 2 beats.",
+     "2 + 2 = 4."
+    ],
+    "a": "4 beats, one full bar"
+   },
+   "analogies": {
+    "home": "A cake cut in halves, quarters, eighths: the pieces get smaller but make the whole.",
+    "farm": "A bucket of 4 litres split into equal jugs shows whole, half and quarter.",
+    "sport": "A race of 4 laps: a half note is 2 laps, a quarter 1 lap.",
+    "music": "Clapping slowly once for a whole note and four times for four quarters fills the same time."
+   },
+   "mnemonic": "Whole is four, half is two, quarter is one, eighth is half of that.",
+   "terms": [
+    [
+     "Quarter note",
+     "A note lasting one beat in 4/4."
+    ],
+    [
+     "Half note",
+     "A note lasting two beats in 4/4."
+    ],
+    [
+     "Whole note",
+     "A note lasting four beats in 4/4."
+    ],
+    [
+     "Rest",
+     "A sign for a silence of a certain length."
+    ]
+   ],
+   "misc": {
+    "wrong": "A half note lasts half a beat.",
+    "right": "A half note is half of a whole note, so it lasts two beats in 4/4. The eighth note is the one lasting half a beat."
+   },
+   "trip": {
+    "wiki": "Note value",
+    "prompt": "Look at the table of note lengths. Find which notes add up to one whole note."
+   },
+   "sources": [
+    "Note value",
+    "Rest (music)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In 4/4, how many beats does a whole note last?",
+     "o": [
+      "Four",
+      "One",
+      "Two",
+      "Eight"
+     ],
+     "a": 0,
+     "why": "A whole note fills the whole bar of four beats.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In 4/4, how many beats does a half note last?",
+     "o": [
+      "One",
+      "Four",
+      "Three",
+      "Two"
+     ],
+     "a": 3,
+     "why": "Half of four is two.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How long is a quarter note in 4/4?",
+     "o": [
+      "Two beats",
+      "Half a beat",
+      "One beat",
+      "Four beats"
+     ],
+     "a": 2,
+     "why": "A quarter note is one of four beats.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many eighth notes fit into one beat (a quarter note)?",
+     "o": [
+      "Four",
+      "Two",
+      "Three",
+      "One"
+     ],
+     "a": 1,
+     "why": "Each eighth is half a beat.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A dotted half note lasts how many beats? (A dot adds half the note's value.)",
+     "a": 3,
+     "tol": 0,
+     "why": "Half note is 2, a dot adds 1, so 3 beats.",
+     "d": 2,
+     "k": "apply",
+     "unit": "beats"
+    },
+    {
+     "t": "num",
+     "q": "Add up: half note, quarter note, eighth note, eighth note. How many beats?",
+     "a": 4,
+     "tol": 0,
+     "why": "2 + 1 + 0.5 + 0.5 = 4.",
+     "d": 2,
+     "k": "apply",
+     "unit": "beats",
+     "au": {
+      "rhythm": [
+       2,
+       1,
+       0.5,
+       0.5
+      ]
+     }
+    },
+    {
+     "t": "match",
+     "q": "Match each note to its length in 4/4.",
+     "pairs": [
+      [
+       "Whole note",
+       "4 beats"
+      ],
+      [
+       "Half note",
+       "2 beats"
+      ],
+      [
+       "Quarter note",
+       "1 beat"
+      ],
+      [
+       "Eighth note",
+       "Half a beat"
+      ]
+     ],
+     "why": "Each value halves the one before.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A bar of 4/4 has a half note then a half rest. How many beats of sound?",
+     "o": [
+      "Two",
+      "Four",
+      "One",
+      "Three"
+     ],
+     "a": 0,
+     "why": "The note sounds for 2 beats, then the rest is silent for 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from longest to shortest.",
+     "items": [
+      "Whole note",
+      "Half note",
+      "Quarter note",
+      "Eighth note"
+     ],
+     "why": "Each is half of the one before.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does music need rests as well as notes?",
+     "rubric": [
+      [
+       "silence",
+       "pause",
+       "gap",
+       "break",
+       "space"
+      ],
+      [
+       "rhythm",
+       "pattern",
+       "shape",
+       "breath",
+       "time"
+      ]
+     ],
+     "min": 2,
+     "model": "Rests give silences of exact lengths. The gaps help shape the rhythm and let performers breathe, so the music keeps its beat.",
+     "why": "Silence is part of the rhythm and must be counted.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is true about two quarter notes and one half note?",
+     "o": [
+      "The half note is longer",
+      "The quarters are longer",
+      "They cannot be compared",
+      "They last the same time"
+     ],
+     "a": 3,
+     "why": "1 + 1 = 2 beats, the same as a half note.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A learner says a dot adds one whole beat to any note. Is it right? Explain.",
+     "rubric": [
+      [
+       "half",
+       "50%",
+       "half its value",
+       "half of"
+      ],
+      [
+       "no",
+       "not always",
+       "depends",
+       "wrong",
+       "its own"
+      ]
+     ],
+     "min": 1,
+     "model": "No. A dot adds half the note's own value. For a half note that is 1 beat; for a quarter note it is half a beat.",
+     "why": "The dot is relative, not a fixed amount.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two bars of 4/4 are filled with only whole notes. How many whole notes?",
+     "o": [
+      "Four",
+      "One",
+      "Two",
+      "Eight"
+     ],
+     "a": 2,
+     "why": "Each whole note fills one bar of four beats.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How long notes last",
+    "model": "Each note shape lasts a certain number of beats. In 4/4 a quarter note is one beat, a half note is two and a whole note is four. An eighth note is half a beat. Rests show silence of the same lengths.",
+    "points": [
+     {
+      "k": [
+       "beat",
+       "count"
+      ],
+      "ask": "What do we count?"
+     },
+     {
+      "k": [
+       "quarter",
+       "one beat",
+       "half note",
+       "whole"
+      ],
+      "ask": "How long is each note?"
+     },
+     {
+      "k": [
+       "half",
+       "double",
+       "halves"
+      ],
+      "ask": "How are they related?"
+     },
+     {
+      "k": [
+       "rest",
+       "silence"
+      ],
+      "ask": "What about silence?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Time signatures",
+   "icon": "🕒",
+   "hook": "Why can you march to some songs and waltz to others? What changes in the counting?",
+   "explain": [
+    "A time signature is two numbers at the start of the music. The top number says how many beats are in each bar (a bar is one measure between two vertical bar lines). The bottom number says which note value counts as one beat: 4 means quarter note.",
+    "So 4/4 has four quarter-note beats in a bar and is often called common time. 3/4 has three beats, which feels like a waltz: ONE-two-three. 2/4 has two beats, like a march. The first beat of a bar is usually the strongest.",
+    "Other signatures such as 6/8 count six eighth notes, usually felt in two groups of three, giving a rolling swing. Many songs from around the world use these metres, and some music uses odd numbers such as 5 or 7 beats."
+   ],
+   "example": {
+    "q": "A bar of 3/4 is filled with quarter notes. How many?",
+    "steps": [
+     "Top number 3 means three beats per bar.",
+     "Bottom 4 means a quarter note is one beat.",
+     "So three quarter notes fill the bar."
+    ],
+    "a": "3 quarter notes"
+   },
+   "analogies": {
+    "home": "Marching is 1-2, 1-2. Waltzing is 1-2-3, 1-2-3.",
+    "sport": "Rowing strokes can count 1-2 together, like 2/4.",
+    "farm": "A rocking chair in six small rocks, grouped in two big ones: like 6/8.",
+    "city": "Walking steps are in 2s; skipping feels in 3s."
+   },
+   "mnemonic": "Top is how many, bottom is which kind.",
+   "terms": [
+    [
+     "Bar (measure)",
+     "One group of beats between two bar lines."
+    ],
+    [
+     "Time signature",
+     "Two numbers showing beats per bar and the note that gets a beat."
+    ],
+    [
+     "Common time",
+     "Another name for 4/4."
+    ],
+    [
+     "Metre",
+     "The pattern of strong and weak beats."
+    ]
+   ],
+   "misc": {
+    "wrong": "The bottom number is the number of beats.",
+    "right": "The top number is the number of beats. The bottom number only says which note value is one beat."
+   },
+   "trip": {
+    "wiki": "Time signature",
+    "prompt": "Look at the table of examples. Find a signature with an odd number on top."
+   },
+   "sources": [
+    "Time signature",
+    "Metre (music)",
+    "Bar (music)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In a time signature, what does the top number show?",
+     "o": [
+      "Which note value is the beat",
+      "How many beats are in a bar",
+      "How fast the music is played",
+      "How loud the music is played"
+     ],
+     "a": 1,
+     "why": "The top number counts beats in each bar.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In 4/4, what does the bottom 4 mean?",
+     "o": [
+      "A quarter note gets one beat",
+      "There are four bars in the piece",
+      "Only four notes can be played",
+      "The music runs four times faster"
+     ],
+     "a": 0,
+     "why": "The bottom number says which note value is one beat. 4 means quarter note.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which time signature feels like a waltz?",
+     "o": [
+      "4/4",
+      "2/4",
+      "12/8",
+      "3/4"
+     ],
+     "a": 3,
+     "why": "A waltz has three beats per bar.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Listen to one bar of three even beats. Which signature fits it best?",
+     "o": [
+      "4/4",
+      "2/4",
+      "3/4",
+      "5/4"
+     ],
+     "a": 2,
+     "why": "Three counts per bar: ONE-two-three.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "rhythm": [
+       1,
+       1,
+       1
+      ]
+     }
+    },
+    {
+     "t": "num",
+     "q": "How many beats are in a bar of 2/4?",
+     "a": 2,
+     "tol": 0,
+     "why": "The top number is 2.",
+     "d": 1,
+     "k": "recall",
+     "unit": "beats"
+    },
+    {
+     "t": "num",
+     "q": "A song in 4/4 has 8 bars. How many beats in total?",
+     "a": 32,
+     "tol": 0,
+     "why": "8 × 4 = 32.",
+     "d": 2,
+     "k": "apply",
+     "unit": "beats"
+    },
+    {
+     "t": "match",
+     "q": "Match the time signature to its feel.",
+     "pairs": [
+      [
+       "2/4",
+       "March"
+      ],
+      [
+       "3/4",
+       "Waltz"
+      ],
+      [
+       "4/4",
+       "Common time"
+      ],
+      [
+       "6/8",
+       "Two groups of three"
+      ]
+     ],
+     "why": "These are common metres.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In 6/8, how many eighth-note beats are in a bar?",
+     "o": [
+      "Eight",
+      "Six",
+      "Three",
+      "Two"
+     ],
+     "a": 1,
+     "why": "The top number 6 counts six eighth notes.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which beat in a bar is usually the strongest?",
+     "o": [
+      "The first",
+      "The last",
+      "The second",
+      "All are equal"
+     ],
+     "a": 0,
+     "why": "The first beat, the downbeat, gets the main stress.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A bar of 3/4 contains a half note. What else could fill the bar?",
+     "rubric": [
+      [
+       "quarter",
+       "one beat",
+       "1 beat"
+      ],
+      [
+       "one",
+       "single",
+       "a quarter",
+       "1"
+      ]
+     ],
+     "min": 1,
+     "model": "A quarter note: 2 beats from the half note plus 1 beat from a quarter note makes 3 beats.",
+     "why": "The remaining beat must be filled with a 1-beat note or rest.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A friend says 6/8 and 3/4 are exactly the same. What do you say?",
+     "o": [
+      "They are identical in every way",
+      "6/8 has eight beats in every bar",
+      "3/4 has six beats in every bar, so they match",
+      "Both have six eighths in a bar but 6/8 groups them in 2 threes and 3/4 in 3 twos"
+     ],
+     "a": 3,
+     "why": "Same length of bar but different strong beats and feel.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a composer choose 3/4 for a dance?",
+     "rubric": [
+      [
+       "waltz",
+       "dance",
+       "three"
+      ],
+      [
+       "sway",
+       "swing",
+       "turn",
+       "rotate",
+       "feel",
+       "flow"
+      ]
+     ],
+     "min": 1,
+     "model": "Three beats per bar with a strong first beat gives a swaying, turning feel that suits dances like the waltz.",
+     "why": "Metre shapes the movement a piece suggests.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Bars in 5/4 contain which total?",
+     "o": [
+      "Four quarter-note beats in all",
+      "Five whole notes in each bar",
+      "Five quarter-note beats",
+      "Fifty beats in each bar"
+     ],
+     "a": 2,
+     "why": "Top number 5, bottom 4.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Time signatures",
+    "model": "A time signature has two numbers. The top says how many beats are in each bar. The bottom says which note counts as a beat. So 3/4 has three quarter-note beats and sounds like a waltz.",
+    "points": [
+     {
+      "k": [
+       "top",
+       "beats",
+       "how many"
+      ],
+      "ask": "What does the top number tell me?"
+     },
+     {
+      "k": [
+       "bottom",
+       "quarter",
+       "note value",
+       "which note"
+      ],
+      "ask": "What does the bottom number mean?"
+     },
+     {
+      "k": [
+       "bar",
+       "measure"
+      ],
+      "ask": "What is a bar?"
+     },
+     {
+      "k": [
+       "waltz",
+       "march",
+       "3/4",
+       "4/4",
+       "example"
+      ],
+      "ask": "Can you give an example of each feel?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Major and minor scales",
+   "icon": "🎹",
+   "hook": "Why do some tunes sound bright and cheerful while others sound dark or sad?",
+   "explain": [
+    "A scale is a ladder of notes in order from low to high. The major scale is made from a pattern of whole steps (W, two semitones) and half steps (H, one semitone): W W H W W W H. Starting on C and playing only white keys gives C D E F G A B C.",
+    "The natural minor scale uses a different pattern: W H W W H W W. Played from A on the white keys it gives A B C D E F G A. The third note is lower than in major, which gives a darker or more serious colour.",
+    "Major often sounds bright and minor darker, but this is a tendency, not a law. Many cultures use other scales as well, such as five-note pentatonic scales found in music from East Asia, Africa, the Americas and Europe."
+   ],
+   "example": {
+    "q": "Build a C major scale by following W W H W W W H.",
+    "steps": [
+     "Start on C. Whole step up is D.",
+     "Whole step to E; half step to F.",
+     "Then W to G, W to A, W to B, H to C."
+    ],
+    "a": "C D E F G A B C"
+   },
+   "analogies": {
+    "home": "A staircase with same-height steps but one place with a short step: that short step makes the shape.",
+    "nature": "Hills with a pattern of steep and gentle slopes make a skyline like a scale.",
+    "city": "A road with pattern of long and short blocks.",
+    "music": "Major and minor are like sunny and cloudy: both useful."
+   },
+   "mnemonic": "Major: Whole Whole Half, Whole Whole Whole Half.",
+   "terms": [
+    [
+     "Scale",
+     "A set of notes in order from low to high."
+    ],
+    [
+     "Whole step",
+     "A distance of two semitones."
+    ],
+    [
+     "Half step",
+     "A distance of one semitone."
+    ],
+    [
+     "Pentatonic",
+     "A five-note scale."
+    ]
+   ],
+   "misc": {
+    "wrong": "Minor songs are always sad.",
+    "right": "Minor often sounds darker but many happy or energetic songs are in minor too."
+   },
+   "limits": "The bright-major and dark-minor link is partly learned from culture, not a universal rule.",
+   "trip": {
+    "wiki": "Major scale",
+    "prompt": "Find the pattern of whole and half steps. Where are the two half steps?"
+   },
+   "sources": [
+    "Major scale",
+    "Minor scale",
+    "Pentatonic scale"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which note pattern builds a major scale?",
+     "o": [
+      "W H W W H W W",
+      "W W H W W W H",
+      "H H W W H H W",
+      "W W W W W W W"
+     ],
+     "a": 1,
+     "why": "This is the major scale pattern.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which white-key scale starting on C is major?",
+     "o": [
+      "C D E F G A B C",
+      "A B C D E F G A",
+      "D E F G A B C D",
+      "C D E G A B C"
+     ],
+     "a": 0,
+     "why": "All white keys from C make C major.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How many semitones are in a whole step?",
+     "a": 2,
+     "tol": 0,
+     "why": "A whole step is two half steps.",
+     "d": 1,
+     "k": "recall",
+     "unit": "semitones"
+    },
+    {
+     "t": "num",
+     "q": "How many semitones are in a full major scale from C to the next C?",
+     "a": 12,
+     "tol": 0,
+     "why": "2+2+1+2+2+2+1 = 12.",
+     "d": 2,
+     "k": "apply",
+     "unit": "semitones"
+    },
+    {
+     "t": "mc",
+     "q": "Listen. Which scale is this?",
+     "o": [
+      "A natural minor",
+      "A pentatonic scale",
+      "A chromatic scale",
+      "C major"
+     ],
+     "a": 3,
+     "why": "The notes 60 62 64 65 67 69 71 72 form C major.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       60,
+       62,
+       64,
+       65,
+       67,
+       69,
+       71,
+       72
+      ],
+      "dur": 0.4
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Listen. These notes run from A up to A using only white keys. Which scale is it?",
+     "o": [
+      "C major",
+      "A chromatic scale",
+      "A natural minor",
+      "A pentatonic scale"
+     ],
+     "a": 2,
+     "why": "The notes 57 59 60 62 64 65 67 69 form A natural minor.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       57,
+       59,
+       60,
+       62,
+       64,
+       65,
+       67,
+       69
+      ],
+      "dur": 0.4
+     }
+    },
+    {
+     "t": "match",
+     "q": "Match the scale to its pattern.",
+     "pairs": [
+      [
+       "Major",
+       "W W H W W W H"
+      ],
+      [
+       "Natural minor",
+       "W H W W H W W"
+      ],
+      [
+       "Pentatonic",
+       "Five notes"
+      ]
+     ],
+     "why": "The two patterns differ in where half steps fall.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many notes are in a pentatonic scale?",
+     "o": [
+      "Seven",
+      "Five",
+      "Ten",
+      "Three"
+     ],
+     "a": 1,
+     "why": "Penta means five.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the first six notes of the C major scale in order.",
+     "items": [
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "A"
+     ],
+     "why": "C D E F G A.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is it unfair to say all minor songs are sad?",
+     "rubric": [
+      [
+       "happy",
+       "energetic",
+       "fast",
+       "upbeat",
+       "bright"
+      ],
+      [
+       "many",
+       "some",
+       "not always",
+       "also",
+       "culture",
+       "depends"
+      ],
+      [
+       "tempo",
+       "rhythm",
+       "lyric",
+       "words",
+       "mood"
+      ]
+     ],
+     "min": 2,
+     "model": "Mood comes from many things: tempo, rhythm, lyrics and culture as well as scale. Plenty of lively or happy songs use minor scales.",
+     "why": "Major and minor are tendencies, not rules.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two scales both use only the white keys but start on different notes. What happens?",
+     "o": [
+      "They get different patterns of steps and different colours",
+      "They have identical patterns of steps",
+      "Both of them become major scales",
+      "Neither of them counts as a scale"
+     ],
+     "a": 0,
+     "why": "Starting elsewhere changes where the half steps fall.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do pentatonic scales appear in so many parts of the world?",
+     "rubric": [
+      [
+       "simple",
+       "easy",
+       "fewer",
+       "five"
+      ],
+      [
+       "sing",
+       "voice",
+       "sound good",
+       "no clash",
+       "together",
+       "fit"
+      ]
+     ],
+     "min": 1,
+     "model": "With only five notes, most notes sound pleasant together, so pentatonic scales are easy to sing and play. Many cultures developed them independently.",
+     "why": "Few notes means fewer harsh intervals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tune has a half step between its 3rd and 4th notes and its 7th and 8th. What type of scale is it?",
+     "o": [
+      "Natural minor",
+      "Pentatonic",
+      "Chromatic",
+      "Major"
+     ],
+     "a": 3,
+     "why": "Major has half steps at those places.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Major and minor scales",
+    "model": "A scale is a set of notes in order. The major scale uses the steps whole whole half whole whole whole half and sounds bright. The natural minor scale uses a different pattern and often sounds darker.",
+    "points": [
+     {
+      "k": [
+       "scale",
+       "ladder",
+       "notes in order"
+      ],
+      "ask": "What is a scale?"
+     },
+     {
+      "k": [
+       "whole",
+       "half",
+       "step",
+       "semitone"
+      ],
+      "ask": "What are the steps?"
+     },
+     {
+      "k": [
+       "major",
+       "bright",
+       "happy"
+      ],
+      "ask": "How does major feel?"
+     },
+     {
+      "k": [
+       "minor",
+       "dark",
+       "sad",
+       "different"
+      ],
+      "ask": "And minor?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Basic intervals",
+   "icon": "📏",
+   "hook": "Two notes can be close like neighbours or far like cousins. How could we measure the gap between them?",
+   "explain": [
+    "An interval is the distance in pitch between two notes. We count it in semitones for exact size, and we name it by counting letter names including both ends. C up to E is a third because C D E are three letters.",
+    "Some common intervals from C: C to D is a second (2 semitones), to E a major third (4), to F a fourth (5), to G a perfect fifth (7), and to the next C an octave (12). A minor third is 3 semitones.",
+    "Intervals have colours. Seconds feel close, thirds sweet, perfect fifths strong and open, and octaves very smooth. Songs often start with a famous interval, which helps ear training."
+   ],
+   "example": {
+    "q": "How many semitones from C (60) to G (67), and what is the interval?",
+    "steps": [
+     "Subtract: 67 − 60 = 7 semitones.",
+     "Count the letters C D E F G: five.",
+     "Seven semitones over five letters is a perfect fifth."
+    ],
+    "a": "A perfect fifth"
+   },
+   "analogies": {
+    "home": "Steps on stairs: a step, two steps, a whole flight.",
+    "city": "Bus stops along a line: the distance between stops is the interval.",
+    "nature": "Stepping stones across a stream, some close, some far.",
+    "sport": "Running the same distance each lap; an octave is one lap around."
+   },
+   "mnemonic": "Count the letters; count the semitones.",
+   "terms": [
+    [
+     "Interval",
+     "The distance in pitch between two notes."
+    ],
+    [
+     "Third",
+     "Interval spanning three letter names, e.g. C to E."
+    ],
+    [
+     "Perfect fifth",
+     "Interval of seven semitones, e.g. C to G."
+    ],
+    [
+     "Octave",
+     "Interval of twelve semitones."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger number means exactly the same size every time.",
+    "right": "Size also depends on semitones. A third can be 3 or 4 semitones: minor or major."
+   },
+   "trip": {
+    "wiki": "Interval (music)",
+    "prompt": "Find the table of intervals and their semitone counts."
+   },
+   "sources": [
+    "Interval (music)",
+    "Semitone"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "How many semitones are from C (60) to G (67)?",
+     "a": 7,
+     "tol": 0,
+     "why": "67 − 60 = 7.",
+     "d": 1,
+     "k": "apply",
+     "unit": "semitones",
+     "au": {
+      "notes": [
+       60,
+       67
+      ],
+      "dur": 0.6
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Listen. What is this interval from 60 to 67?",
+     "o": [
+      "A major third up",
+      "An octave up",
+      "A perfect fifth",
+      "A major second up"
+     ],
+     "a": 2,
+     "why": "Seven semitones is a perfect fifth.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       60,
+       67
+      ],
+      "dur": 0.6
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Listen. What is this interval from 60 to 64?",
+     "o": [
+      "A perfect fifth",
+      "A major third",
+      "An octave",
+      "A second"
+     ],
+     "a": 1,
+     "why": "Four semitones is a major third.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       60,
+       64
+      ],
+      "dur": 0.6
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Listen. What is this interval from 60 to 72?",
+     "o": [
+      "An octave",
+      "A perfect fifth up",
+      "A major third up",
+      "A perfect fourth up"
+     ],
+     "a": 0,
+     "why": "Twelve semitones is an octave.",
+     "d": 1,
+     "k": "apply",
+     "au": {
+      "notes": [
+       60,
+       72
+      ],
+      "dur": 0.6
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Listen. What is this interval from 60 to 62?",
+     "o": [
+      "A major third up",
+      "A perfect fourth up",
+      "A perfect fifth up",
+      "A major second"
+     ],
+     "a": 3,
+     "why": "Two semitones, one whole step.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       60,
+       62
+      ],
+      "dur": 0.6
+     }
+    },
+    {
+     "t": "match",
+     "q": "Match each interval above C to its semitones.",
+     "pairs": [
+      [
+       "Major second",
+       "2"
+      ],
+      [
+       "Major third",
+       "4"
+      ],
+      [
+       "Perfect fourth",
+       "5"
+      ],
+      [
+       "Perfect fifth",
+       "7"
+      ]
+     ],
+     "why": "These are standard sizes.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many semitones in a minor third?",
+     "o": [
+      "2",
+      "4",
+      "3",
+      "5"
+     ],
+     "a": 2,
+     "why": "Minor third is one semitone smaller than a major third.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How is C to E named a third?",
+     "o": [
+      "It has exactly three semitones in it",
+      "C D E are three letter names",
+      "It is third in volume in a chord",
+      "It is played three times in a row"
+     ],
+     "a": 1,
+     "why": "We count letters including both ends.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these intervals above C from smallest to largest.",
+     "items": [
+      "Major second",
+      "Major third",
+      "Perfect fifth",
+      "Octave"
+     ],
+     "why": "2, 4, 7 and 12 semitones.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why can a third be either 3 or 4 semitones?",
+     "rubric": [
+      [
+       "major",
+       "minor"
+      ],
+      [
+       "semitone",
+       "half step",
+       "smaller",
+       "bigger",
+       "larger",
+       "one"
+      ],
+      [
+       "letter",
+       "name",
+       "count"
+      ]
+     ],
+     "min": 2,
+     "model": "A third always spans three letter names, but its exact size depends on the semitones: a minor third is 3 and a major third is 4.",
+     "why": "Number gives the letter distance; quality gives exact size.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is the largest of these intervals?",
+     "o": [
+      "An octave",
+      "A perfect fifth",
+      "A major third",
+      "A major second"
+     ],
+     "a": 0,
+     "why": "An octave is 12 semitones.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How could you use known intervals to remember a tune?",
+     "rubric": [
+      [
+       "start",
+       "first",
+       "begin",
+       "opening"
+      ],
+      [
+       "interval",
+       "jump",
+       "leap",
+       "distance",
+       "gap"
+      ]
+     ],
+     "min": 1,
+     "model": "Notice the opening jump of the tune and name its interval, such as a rising fifth, then use that known gap to find the next notes.",
+     "why": "Intervals give a map of the melody.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tune jumps from 62 to 69. What interval?",
+     "o": [
+      "A major third",
+      "An octave",
+      "A perfect fourth",
+      "A perfect fifth"
+     ],
+     "a": 3,
+     "why": "69 − 62 = 7 semitones.",
+     "d": 3,
+     "k": "reason",
+     "au": {
+      "notes": [
+       62,
+       69
+      ],
+      "dur": 0.6
+     }
+    }
+   ],
+   "teach": {
+    "topic": "Intervals",
+    "model": "An interval is the distance between two notes. We name it by counting letters and measure it in semitones. From C, E is a major third, G is a perfect fifth and the next C is an octave.",
+    "points": [
+     {
+      "k": [
+       "distance",
+       "gap",
+       "between two notes"
+      ],
+      "ask": "What is an interval?"
+     },
+     {
+      "k": [
+       "semitone",
+       "half step"
+      ],
+      "ask": "How do we measure it?"
+     },
+     {
+      "k": [
+       "third",
+       "fifth",
+       "octave",
+       "second"
+      ],
+      "ask": "Can you name one?"
+     },
+     {
+      "k": [
+       "count",
+       "letter",
+       "c d e"
+      ],
+      "ask": "How do we name it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Chords and harmony",
+   "icon": "🎶",
+   "hook": "When three notes play together, why do they sometimes blend and sometimes clash?",
+   "explain": [
+    "Harmony means notes sounding at the same time. A chord is three or more notes played together. The simplest chord is a triad, built by stacking thirds: a root note, a third above it and a fifth above it.",
+    "A major triad has a major third and then a minor third: C E G, which is 4 and then 3 semitones. A minor triad swaps this: C E♭ G, which is 3 then 4 semitones. Major chords sound bright and minor chords sound darker.",
+    "Songs from many cultures use chords to support the melody. Guitar strumming and piano accompaniment are common ways to play them."
+   ],
+   "example": {
+    "q": "Build a C major triad from C by stacking a major third and then a minor third.",
+    "steps": [
+     "Start on C (60).",
+     "Major third: add 4 semitones gives E (64).",
+     "Minor third: add 3 gives G (67)."
+    ],
+    "a": "C E G (60, 64, 67)"
+   },
+   "analogies": {
+    "home": "Three voices singing different notes at once, like a family choir.",
+    "sport": "A team has different positions that work together.",
+    "music": "A melody is one voice; a chord is a group of voices.",
+    "nature": "Colours mixing: separate notes blend into one sound."
+   },
+   "mnemonic": "Root, third, fifth: stack them like pancakes.",
+   "terms": [
+    [
+     "Harmony",
+     "Notes sounding together."
+    ],
+    [
+     "Chord",
+     "Three or more notes played at the same time."
+    ],
+    [
+     "Triad",
+     "A chord made of root, third and fifth."
+    ],
+    [
+     "Root",
+     "The note a chord is named after."
+    ]
+   ],
+   "misc": {
+    "wrong": "A chord is just a loud note.",
+    "right": "A chord is several different notes at once. Each note adds to the colour."
+   },
+   "trip": {
+    "wiki": "Chord (music)",
+    "prompt": "Find a picture of a C major chord. Count the notes."
+   },
+   "sources": [
+    "Chord (music)",
+    "Triad (music)",
+    "Harmony"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a chord?",
+     "o": [
+      "One long note held on its own",
+      "A fast and bouncy rhythm",
+      "Three or more notes sounding together",
+      "A kind of small drum"
+     ],
+     "a": 2,
+     "why": "A chord is notes played at once.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which notes form a C major triad?",
+     "o": [
+      "C D E",
+      "C E G",
+      "C F A",
+      "D F A"
+     ],
+     "a": 1,
+     "why": "C E G are root, third and fifth.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Listen. Is this chord major or minor? (60, 64, 67)",
+     "o": [
+      "Major",
+      "Minor",
+      "Neither",
+      "Single note"
+     ],
+     "a": 0,
+     "why": "The 4 then 3 semitones pattern gives a major triad.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       [
+        60,
+        64,
+        67
+       ]
+      ],
+      "dur": 1.2
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Listen. Is this chord major or minor? (60, 63, 67)",
+     "o": [
+      "Major",
+      "Neither",
+      "Single note",
+      "Minor"
+     ],
+     "a": 3,
+     "why": "The 3 then 4 semitone pattern gives a minor triad.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       [
+        60,
+        63,
+        67
+       ]
+      ],
+      "dur": 1.2
+     }
+    },
+    {
+     "t": "num",
+     "q": "How many semitones from the root to the third in a major triad?",
+     "a": 4,
+     "tol": 0,
+     "why": "Major third is 4 semitones.",
+     "d": 2,
+     "k": "recall",
+     "unit": "semitones"
+    },
+    {
+     "t": "mc",
+     "q": "A minor triad differs from a major triad because its third is",
+     "o": [
+      "a semitone higher",
+      "an octave higher",
+      "a semitone lower",
+      "missing"
+     ],
+     "a": 2,
+     "why": "Lowering the third by one semitone makes it minor.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the chord to the notes.",
+     "pairs": [
+      [
+       "C major",
+       "C E G"
+      ],
+      [
+       "G major",
+       "G B D"
+      ],
+      [
+       "F major",
+       "F A C"
+      ],
+      [
+       "A minor",
+       "A C E"
+      ]
+     ],
+     "why": "Each is a triad built from the stated root.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which instrument can play a chord easily?",
+     "o": [
+      "A single recorder",
+      "A guitar",
+      "A solo flute",
+      "A triangle"
+     ],
+     "a": 1,
+     "why": "Guitars and keyboards play several notes at once.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the notes of a C major triad in order from bottom to top.",
+     "items": [
+      "C",
+      "E",
+      "G"
+     ],
+     "why": "Root, third, fifth.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why chords support a melody in a song.",
+     "rubric": [
+      [
+       "harmony",
+       "background",
+       "accompan",
+       "support",
+       "under"
+      ],
+      [
+       "melody",
+       "tune",
+       "singer",
+       "voice"
+      ],
+      [
+       "colour",
+       "mood",
+       "feel",
+       "fuller",
+       "richer",
+       "depth"
+      ]
+     ],
+     "min": 2,
+     "model": "The chords sound underneath the melody, adding fuller sound and mood so the tune feels grounded.",
+     "why": "Chords provide harmony and mood for the tune.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does changing one note of a triad by a semitone change the mood?",
+     "o": [
+      "It changes the third, which decides major or minor",
+      "It changes the beat of the music",
+      "It changes the loudness of the chord",
+      "It changes the instrument that plays"
+     ],
+     "a": 0,
+     "why": "The third decides the colour.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might two notes that are a semitone apart sound tense when played together?",
+     "rubric": [
+      [
+       "close",
+       "clash",
+       "rub",
+       "beat",
+       "tense"
+      ],
+      [
+       "wave",
+       "vibrat",
+       "frequency",
+       "near"
+      ]
+     ],
+     "min": 1,
+     "model": "The two pitches are so close that their sound waves interfere and rub against each other, which our ears hear as tension.",
+     "why": "Close frequencies cause roughness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A chord is built on G with a major third and perfect fifth. Which notes?",
+     "o": [
+      "G A B",
+      "G C E",
+      "G B F",
+      "G B D"
+     ],
+     "a": 3,
+     "why": "G up 4 semitones is B and up 7 is D.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Chords and harmony",
+    "model": "A chord is three or more notes played together. A triad is made of a root, a third and a fifth. C E G is a C major chord. Chords make a harmony that supports the melody.",
+    "points": [
+     {
+      "k": [
+       "together",
+       "same time",
+       "at once"
+      ],
+      "ask": "What makes a chord?"
+     },
+     {
+      "k": [
+       "three",
+       "triad"
+      ],
+      "ask": "How many notes in a triad?"
+     },
+     {
+      "k": [
+       "c e g",
+       "root",
+       "third",
+       "fifth"
+      ],
+      "ask": "Can you show me a chord?"
+     },
+     {
+      "k": [
+       "major",
+       "minor",
+       "bright",
+       "dark"
+      ],
+      "ask": "How do chords differ?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Instrument families",
+   "icon": "🎻",
+   "hook": "An orchestra has dozens of instruments. How do musicians sort them into groups?",
+   "explain": [
+    "Instruments are grouped into families by how they make sound. In a symphony orchestra there are four main families: strings, woodwind, brass and percussion.",
+    "Strings (violin, viola, cello, double bass, harp) make sound from vibrating strings. Woodwinds (flute, oboe, clarinet, bassoon) make sound with air across an opening or a reed. Brass (trumpet, horn, trombone, tuba) make sound when the player buzzes the lips into a metal mouthpiece. Percussion (timpani, snare drum, xylophone, cymbals) make sound by being hit or shaken.",
+    "Families are about how the sound is made, not what the instrument is made from. A saxophone is made of metal but is woodwind because it uses a reed. Every culture has its own instruments: the kora in West Africa is a string instrument, the sitar in India, the koto in Japan."
+   ],
+   "example": {
+    "q": "Which family does a clarinet belong to?",
+    "steps": [
+     "A clarinet uses a single reed.",
+     "Reed instruments are woodwind.",
+     "So it is in the woodwind family."
+    ],
+    "a": "Woodwind"
+   },
+   "analogies": {
+    "home": "Kitchen tools: pots to bang, strings of a rubber band, whistles to blow.",
+    "city": "A city has many vehicles but they group into bus, bike and train by how they move.",
+    "farm": "Animals grouped by sound: moos, clucks, buzzes.",
+    "sport": "Teams grouped by roles."
+   },
+   "mnemonic": "Strings pluck or bow, woodwinds blow, brass buzz, percussion hits.",
+   "terms": [
+    [
+     "Strings",
+     "Instruments with vibrating strings, such as violin and harp."
+    ],
+    [
+     "Woodwind",
+     "Instruments played by blowing air across an opening or reed."
+    ],
+    [
+     "Brass",
+     "Instruments played by buzzing lips into a metal mouthpiece."
+    ],
+    [
+     "Percussion",
+     "Instruments that are hit, shaken or scraped."
+    ]
+   ],
+   "misc": {
+    "wrong": "Woodwind instruments are all made of wood.",
+    "right": "Families depend on how sound is made. A flute is usually metal but is woodwind, and a saxophone too."
+   },
+   "trip": {
+    "wiki": "Musical instrument",
+    "prompt": "Find the instrument families. Choose one instrument from another continent."
+   },
+   "sources": [
+    "Orchestra",
+    "Musical instrument",
+    "Woodwind instrument"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which family does a trumpet belong to?",
+     "o": [
+      "Woodwind",
+      "Strings",
+      "Brass",
+      "Percussion"
+     ],
+     "a": 2,
+     "why": "Trumpets are buzzed with the lips into a metal mouthpiece.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which family does a cello belong to?",
+     "o": [
+      "Brass",
+      "Strings",
+      "Woodwind",
+      "Percussion"
+     ],
+     "a": 1,
+     "why": "The cello is a bowed string instrument.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which family does a flute belong to?",
+     "o": [
+      "Woodwind",
+      "Brass",
+      "Strings",
+      "Percussion"
+     ],
+     "a": 0,
+     "why": "Air is blown across its opening, so it is woodwind.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which family does a snare drum belong to?",
+     "o": [
+      "Strings",
+      "Brass",
+      "Woodwind",
+      "Percussion"
+     ],
+     "a": 3,
+     "why": "It is hit with sticks.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A saxophone is made of metal. Which family is it?",
+     "o": [
+      "Brass",
+      "Strings",
+      "Woodwind",
+      "Percussion"
+     ],
+     "a": 2,
+     "why": "It uses a reed, so it is woodwind.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each instrument to its family.",
+     "pairs": [
+      [
+       "Violin",
+       "Strings"
+      ],
+      [
+       "Oboe",
+       "Woodwind"
+      ],
+      [
+       "Trombone",
+       "Brass"
+      ],
+      [
+       "Xylophone",
+       "Percussion"
+      ]
+     ],
+     "why": "Families depend on how the sound is made.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The kora of West Africa has strings that are plucked. Which family?",
+     "o": [
+      "Brass",
+      "Strings",
+      "Woodwind",
+      "Percussion"
+     ],
+     "a": 1,
+     "why": "It produces sound with plucked strings.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do brass players buzz their lips?",
+     "o": [
+      "The buzz starts the vibration that the metal tube shapes",
+      "To keep their lips wet and ready",
+      "To make the sound louder, and nothing more",
+      "To cool down the instrument itself"
+     ],
+     "a": 0,
+     "why": "Lip vibration starts the sound.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which instrument is NOT in the string family of the orchestra?",
+     "o": [
+      "Harp",
+      "Viola",
+      "Double bass",
+      "Clarinet"
+     ],
+     "a": 3,
+     "why": "The clarinet is a reed woodwind. Harp, viola and double bass all have strings.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why do orchestras include several families together?",
+     "rubric": [
+      [
+       "different",
+       "variety",
+       "range",
+       "many"
+      ],
+      [
+       "sound",
+       "tone",
+       "colour",
+       "timbre"
+      ],
+      [
+       "balance",
+       "blend",
+       "rich",
+       "together"
+      ]
+     ],
+     "min": 2,
+     "model": "Each family has its own tone colour, so combining them gives variety, a wide range of pitches and a richer sound.",
+     "why": "Different timbres blend into a fuller texture.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which statement about instrument families is correct?",
+     "o": [
+      "They are grouped by their colour",
+      "They are grouped by their price",
+      "They are grouped by how the sound is produced",
+      "They are grouped by the country they come from"
+     ],
+     "a": 2,
+     "why": "Sound production decides families.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A piano has strings but is hit by hammers. Why is it hard to place it in one family?",
+     "rubric": [
+      [
+       "string",
+       "strings"
+      ],
+      [
+       "hammer",
+       "hit",
+       "struck",
+       "percussion",
+       "keyboard"
+      ]
+     ],
+     "min": 2,
+     "model": "Its sound comes from vibrating strings, so it is like strings, but they are struck by hammers like percussion. Many lists give keyboards their own group.",
+     "why": "Classification by method is not always clear.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A student says a flute must be brass because many flutes are made of metal. What is the best reply?",
+     "o": [
+      "Flutes are in fact made only of wood",
+      "Families depend on how the sound is made, and a flute is blown across an opening",
+      "Anything made of metal counts as brass",
+      "Brass is any instrument that plays loudly"
+     ],
+     "a": 1,
+     "why": "Material does not decide the family. Brass instruments are played by buzzing the lips; a flute uses a stream of air across an edge.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Instrument families",
+    "model": "Instruments are grouped by how they make sound. Strings are plucked or bowed, woodwinds are blown across an opening or reed, brass are buzzed with the lips, and percussion are hit or shaken. An orchestra uses them together.",
+    "points": [
+     {
+      "k": [
+       "string",
+       "violin",
+       "cello"
+      ],
+      "ask": "What are strings?"
+     },
+     {
+      "k": [
+       "woodwind",
+       "flute",
+       "clarinet",
+       "reed"
+      ],
+      "ask": "What are woodwinds?"
+     },
+     {
+      "k": [
+       "brass",
+       "trumpet",
+       "buzz"
+      ],
+      "ask": "What about brass?"
+     },
+     {
+      "k": [
+       "percussion",
+       "drum",
+       "hit"
+      ],
+      "ask": "What about percussion?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Introductory instrumental performance",
+   "icon": "🎺",
+   "hook": "You are about to play a short tune for friends. What should you do before, during and after?",
+   "explain": [
+    "Good performance starts with preparing: sit or stand with a relaxed back, hold the instrument properly, and warm up gently. Practise slowly first, then speed up. Short practice every day works better than one long session.",
+    "During the performance, keep a steady beat, breathe, and listen to yourself and others. If you make a mistake, keep going. The audience will follow your confidence. When playing in a group, watch for a starting signal and match your volume to the others.",
+    "After a performance, take a bow, thank the audience and think about what went well and what to improve. Every culture has a form of performance, from village drumming circles to concert halls."
+   ],
+   "example": {
+    "q": "Name three steps for learning a hard piece.",
+    "steps": [
+     "Play it slowly and accurately.",
+     "Repeat the tricky bars on their own.",
+     "Speed up a little at a time."
+    ],
+    "a": "Slow first, repeat the hard bars, then speed up"
+   },
+   "analogies": {
+    "home": "Practising a recipe before cooking for guests.",
+    "sport": "Training before a match with warm-ups.",
+    "city": "Rehearsing a play before opening night.",
+    "farm": "Planting a little every day grows a harvest of skill."
+   },
+   "mnemonic": "Slow and steady wins the song.",
+   "terms": [
+    [
+     "Warm-up",
+     "Gentle playing to prepare the body and the sound."
+    ],
+    [
+     "Rehearsal",
+     "Practice with others before a performance."
+    ],
+    [
+     "Posture",
+     "How you hold your body when playing."
+    ],
+    [
+     "Cue",
+     "A signal to start playing."
+    ]
+   ],
+   "misc": {
+    "wrong": "If you make a mistake, you should stop and start again.",
+    "right": "Usually you keep going. Steady rhythm matters more than a single wrong note."
+   },
+   "trip": {
+    "wiki": "Musical performance",
+    "prompt": "Find a picture of a live performance. How are the players sitting or standing?"
+   },
+   "sources": [
+    "Musical performance",
+    "Practice (learning method)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What should you do first when practising a hard piece?",
+     "o": [
+      "Play it slowly",
+      "Play it as fast as possible",
+      "Skip it",
+      "Play it very loudly"
+     ],
+     "a": 0,
+     "why": "Slow practice builds accuracy.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You make a mistake in a performance. What is usually best?",
+     "o": [
+      "Stop and walk off the stage",
+      "Go back and start from the top",
+      "Blame the instrument in front of all",
+      "Keep going with the beat"
+     ],
+     "a": 3,
+     "why": "Continuing keeps the music flowing.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a warm-up useful?",
+     "o": [
+      "It makes the whole room warmer",
+      "It can take the place of practice",
+      "It prepares your body and sound",
+      "It is a routine meant only for drummers"
+     ],
+     "a": 2,
+     "why": "A warm-up gets muscles and sound ready.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which practice is generally better?",
+     "o": [
+      "One huge session a month",
+      "Short sessions every day",
+      "No practice",
+      "Only playing loudly"
+     ],
+     "a": 1,
+     "why": "Regular short practice builds skill steadily.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In a group performance, what should you do?",
+     "o": [
+      "Listen to the others and match volume",
+      "Play as loud as you possibly can",
+      "Ignore the others and follow yourself",
+      "Stop playing whenever you feel like it"
+     ],
+     "a": 0,
+     "why": "Ensemble means listening.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the word to what it means.",
+     "pairs": [
+      [
+       "Warm-up",
+       "Gentle preparation"
+      ],
+      [
+       "Rehearsal",
+       "Practice with others"
+      ],
+      [
+       "Posture",
+       "Body position"
+      ],
+      [
+       "Cue",
+       "Signal to start"
+      ]
+     ],
+     "why": "These are performance words.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does good posture help a singer or wind player?",
+     "o": [
+      "It hides the instrument",
+      "It makes music louder only",
+      "It changes the key",
+      "It lets air move freely"
+     ],
+     "a": 3,
+     "why": "Relaxed posture supports breathing.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in a sensible order.",
+     "items": [
+      "Warm up",
+      "Practise slowly",
+      "Rehearse with others",
+      "Perform"
+     ],
+     "why": "Prepare, learn, combine, share.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why watch for a cue in a group?",
+     "o": [
+      "So that listeners feel confused",
+      "So that you can play much faster",
+      "So everyone starts together",
+      "So that you can swap instruments"
+     ],
+     "a": 2,
+     "why": "Cues keep the group together.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can a performer reduce nerves before playing?",
+     "rubric": [
+      [
+       "breath",
+       "breathe",
+       "deep",
+       "calm"
+      ],
+      [
+       "practi",
+       "prepare",
+       "rehears",
+       "warm"
+      ],
+      [
+       "smile",
+       "focus",
+       "enjoy",
+       "friends",
+       "positive"
+      ]
+     ],
+     "min": 2,
+     "model": "Prepare well, take slow breaths, warm up and focus on enjoying sharing the music.",
+     "why": "Preparation and calm breathing help.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A friend never practises slowly and often makes the same mistake. What advice?",
+     "o": [
+      "Play it faster so it is over sooner",
+      "Slow down on the hard part until it is correct",
+      "Ignore it and hope it fixes itself",
+      "Play it louder so nobody notices it"
+     ],
+     "a": 1,
+     "why": "Slow practice fixes errors.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is listening as important as playing in an ensemble?",
+     "rubric": [
+      [
+       "together",
+       "blend",
+       "balance",
+       "match",
+       "tuning",
+       "in time"
+      ],
+      [
+       "listen",
+       "hear",
+       "ears"
+      ]
+     ],
+     "min": 1,
+     "model": "Listening lets players stay in time and in tune and balance their volume with the others.",
+     "why": "Ensembles depend on hearing each other.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is recording yourself a helpful tool?",
+     "o": [
+      "You can hear mistakes you missed while playing",
+      "It stops all mistakes from happening",
+      "It makes you sound louder to others",
+      "It can fully replace regular practice"
+     ],
+     "a": 0,
+     "why": "Listening back gives feedback.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Playing for others",
+    "model": "Before you perform, warm up and practise slowly. During the performance, keep a steady beat, breathe and listen. If you make a mistake, keep going. After the performance, think about what to improve.",
+    "points": [
+     {
+      "k": [
+       "warm",
+       "prepare",
+       "practi"
+      ],
+      "ask": "What do I do before?"
+     },
+     {
+      "k": [
+       "slow",
+       "steady",
+       "beat"
+      ],
+      "ask": "How should I practise?"
+     },
+     {
+      "k": [
+       "mistake",
+       "keep going",
+       "continue"
+      ],
+      "ask": "What if I make a mistake?"
+     },
+     {
+      "k": [
+       "listen",
+       "together",
+       "group",
+       "ensemble"
+      ],
+      "ask": "What about playing with others?"
+     }
+    ]
+   }
+  }
+ ]
+}

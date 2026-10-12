@@ -1,0 +1,1772 @@
+{
+ "world": 10,
+ "lang": "ru",
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced grammar",
+   "icon": "🧩",
+   "hook": "A Russian noun can end in six different ways. How do you decide which ending to use?",
+   "explain": [
+    "Russian has six cases. The nominative (мама) is the subject, the genitive (нет мамы) shows \"of\" or absence, the dative (дать маме) shows the receiver, the accusative (вижу маму) marks the direct object, the instrumental (с мамой) shows \"with\" or the tool, and the prepositional (о маме) is used after в, на and о.",
+    "The case depends on the role of the word and on the preposition or verb before it. У takes the genitive (у мамы), к takes the dative (к маме), с in the sense of \"together with\" takes the instrumental. For masculine animate nouns the accusative looks like the genitive: вижу брата but вижу стол."
+   ],
+   "mnemonic": "Six cases are six hats: the word puts on the hat that the sentence asks for.",
+   "items": [
+    [
+     "nominative: subject (mum)",
+     "мама",
+     "MA-ma"
+    ],
+    [
+     "genitive: no mum",
+     "нет мамы",
+     "nyet MA-my"
+    ],
+    [
+     "dative: to give to mum",
+     "дать маме",
+     "dat MA-mye"
+    ],
+    [
+     "accusative: I see mum",
+     "вижу маму",
+     "VEE-zhoo MA-moo"
+    ],
+    [
+     "instrumental: with mum",
+     "с мамой",
+     "s MA-moy"
+    ],
+    [
+     "prepositional: about mum",
+     "о маме",
+     "a MA-mye"
+    ],
+    [
+     "genitive plural: no books",
+     "нет книг",
+     "nyet kneek"
+    ],
+    [
+     "instrumental: to write with a pen",
+     "писать ручкой",
+     "pee-SAT ROOCH-koy"
+    ]
+   ],
+   "sentences": [
+    [
+     "I am going to my mum.",
+     [
+      "Я",
+      "иду",
+      "к",
+      "маме."
+     ]
+    ],
+    [
+     "We are talking about the book.",
+     [
+      "Мы",
+      "говорим",
+      "о",
+      "книге."
+     ]
+    ],
+    [
+     "He writes with a pen.",
+     [
+      "Он",
+      "пишет",
+      "ручкой."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which case follows the preposition у (\"at someone's place\")?",
+     "o": [
+      "Genitive: у мамы",
+      "Dative: у маме",
+      "Accusative: у маму",
+      "Instrumental: у мамой"
+     ],
+     "a": 0,
+     "why": "У always takes the genitive.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which form is correct for \"I see my brother\"?",
+     "o": [
+      "Я вижу брат",
+      "Я вижу брата",
+      "Я вижу брате",
+      "Я вижу братом"
+     ],
+     "a": 1,
+     "why": "A masculine animate object uses the genitive-looking accusative.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is it Я вижу стол but Я вижу брата?",
+     "o": [
+      "Брат is feminine",
+      "Animate masculine nouns take the genitive form in the accusative",
+      "Стол is plural",
+      "It is a spelling variant"
+     ],
+     "a": 1,
+     "why": "Animacy affects the accusative in masculine singular and in plurals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In Мы говорим о книге, why does книга end in -е?",
+     "o": [
+      "Книга is in the plural",
+      "The verb говорим changes it",
+      "The preposition о takes the prepositional case",
+      "It is nominative"
+     ],
+     "a": 2,
+     "why": "The prepositional case is used with о, в and на.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which sentence has the instrumental of accompaniment?",
+     "o": [
+      "Я иду к другу",
+      "Я иду от друга",
+      "Я иду для друга",
+      "Я иду с другом"
+     ],
+     "a": 3,
+     "why": "С plus the instrumental means together with.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The six cases in Russian",
+    "model": "Russian has six cases: nominative, genitive, dative, accusative, instrumental and prepositional. The case depends on the role of the word and on the preposition. For example у takes the genitive and с, meaning with, takes the instrumental.",
+    "points": [
+     {
+      "k": [
+       "six",
+       "cases",
+       "nominative",
+       "genitive"
+      ],
+      "ask": "How many cases are there?"
+     },
+     {
+      "k": [
+       "preposition",
+       "у",
+       "с",
+       "к",
+       "case"
+      ],
+      "ask": "Which case follows a preposition?"
+     },
+     {
+      "k": [
+       "example",
+       "мама",
+       "маме",
+       "мамой"
+      ],
+      "ask": "Can you show an example?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian cases",
+    "prompt": "Find the table of case endings for мама and read the six forms aloud."
+   },
+   "sources": [
+    "Russian cases",
+    "Russian grammar"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Complex sentence patterns",
+   "icon": "🧬",
+   "hook": "In \"the book that I read\", the word \"that\" changes its case in Russian. Which one?",
+   "explain": [
+    "Который agrees with its noun in gender and number, but its case comes from its job inside the relative clause: Книга, которую я читаю (accusative, because I read it); Человек, с которым я говорю (instrumental, because of с).",
+    "Other patterns: чтобы after verbs of wanting with a different subject takes the past form: Я хочу, чтобы ты пришёл. The conditional uses бы: Если бы я знал, я бы сказал. Pairs such as не только... но и (not only... but also) and connecting words like как только (as soon as) and несмотря на то, что (despite the fact that) build longer sentences."
+   ],
+   "mnemonic": "Gender from the noun, case from the clause.",
+   "items": [
+    [
+     "the book that I am reading",
+     "книга, которую я читаю",
+     "KNEE-ga ka-TO-ryu-yu"
+    ],
+    [
+     "the man who lives next door",
+     "человек, который живёт рядом",
+     "che-la-VYEK ka-TO-ry"
+    ],
+    [
+     "the man with whom I speak",
+     "человек, с которым я говорю",
+     "s ka-TO-rym"
+    ],
+    [
+     "I want you to come.",
+     "Я хочу, чтобы ты пришёл.",
+     "ya kha-CHOO SHTO-by"
+    ],
+    [
+     "If I knew, I would say.",
+     "Если бы я знал, я бы сказал.",
+     "YES-lee by ya znal"
+    ],
+    [
+     "not only... but also",
+     "не только... но и",
+     "nye TOL-ka no ee"
+    ],
+    [
+     "as soon as",
+     "как только",
+     "kak TOL-ka"
+    ],
+    [
+     "despite the fact that",
+     "несмотря на то, что",
+     "nye-smat-RYA na to shto"
+    ]
+   ],
+   "sentences": [
+    [
+     "If I knew, I would tell you.",
+     [
+      "Если",
+      "бы",
+      "я",
+      "знал,",
+      "я",
+      "бы",
+      "сказал."
+     ]
+    ],
+    [
+     "I want you to come.",
+     [
+      "Я",
+      "хочу,",
+      "чтобы",
+      "ты",
+      "пришёл."
+     ]
+    ],
+    [
+     "The book that I am reading is interesting.",
+     [
+      "Книга,",
+      "которую",
+      "я",
+      "читаю,",
+      "интересная."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is correct?",
+     "o": [
+      "Я хочу, чтобы ты прийти",
+      "Я хочу, чтобы ты пришёл",
+      "Я хочу, чтобы ты придёшь",
+      "Я хочу, что ты пришёл"
+     ],
+     "a": 1,
+     "why": "Чтобы with a different subject takes the past-tense form.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it книга, которую я читаю?",
+     "o": [
+      "Nominative, because книга is the subject",
+      "Dative, because the book is given to someone",
+      "Которую is accusative: the book is the object of читаю",
+      "Genitive, because the book is absent"
+     ],
+     "a": 2,
+     "why": "The case of который comes from its role in the clause.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which part of который shows the gender?",
+     "o": [
+      "The first letter",
+      "The verb after it",
+      "The ending: который, которая, которое",
+      "Nothing"
+     ],
+     "a": 2,
+     "why": "Gender follows the noun described.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does бы add in Я бы сказал?",
+     "o": [
+      "The future",
+      "A question",
+      "Negation",
+      "A hypothetical or polite meaning"
+     ],
+     "a": 3,
+     "why": "Бы marks the conditional.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which version is more natural?",
+     "o": [
+      "Как только он придёт, мы начнём",
+      "Как только он придёт, мы начинаем всегда",
+      "Как только он пришёл, мы начнём всегда",
+      "Как только придёт он, мы начали"
+     ],
+     "a": 0,
+     "why": "Russian uses the future in both clauses for a future event.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex patterns in Russian",
+    "model": "Который agrees with its noun in gender and number, but its case comes from its job in its own clause. Use чтобы with a past form when the subjects differ, and бы for conditionals.",
+    "points": [
+     {
+      "k": [
+       "который",
+       "agree",
+       "case",
+       "clause"
+      ],
+      "ask": "How does который work?"
+     },
+     {
+      "k": [
+       "чтобы",
+       "past",
+       "subject"
+      ],
+      "ask": "What about чтобы?"
+     },
+     {
+      "k": [
+       "бы",
+       "conditional",
+       "if"
+      ],
+      "ask": "How do I make a conditional?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian grammar",
+    "prompt": "Find relative clauses with который and mark its case in each example."
+   },
+   "sources": [
+    "Russian grammar",
+    "Relative clause"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Extended conversations",
+   "icon": "💬",
+   "hook": "In a long conversation Russians use small words such as \"кстати\" and \"ну\". What do they do?",
+   "explain": [
+    "Extended conversations need connecting words. Кстати (by the way) adds a new topic, на самом деле (actually) corrects an idea, вот именно (exactly) confirms, and ну works as a thinking pause. To disagree gently, say Я не совсем согласен (I do not entirely agree).",
+    "Polite requests use the conditional: Не могли бы вы мне помочь? (Could you help me?). Use Как вам сказать... when you look for the right words. Active listening shows interest: Правда? and Понятно."
+   ],
+   "mnemonic": "Кстати opens a side door in the conversation.",
+   "items": [
+    [
+     "Could you help me?",
+     "Не могли бы вы мне помочь?",
+     "nye mag-LEE by vy mnye pa-MOCHT"
+    ],
+    [
+     "How can I put it...",
+     "Как вам сказать...",
+     "kak vam ska-ZAT"
+    ],
+    [
+     "exactly",
+     "Вот именно",
+     "vot EE-myen-na"
+    ],
+    [
+     "I agree.",
+     "Согласен",
+     "sag-LA-syen"
+    ],
+    [
+     "I do not entirely agree.",
+     "Я не совсем согласен",
+     "ya nye sav-SYEM sag-LA-syen"
+    ],
+    [
+     "come on, really?",
+     "Да ладно",
+     "da LAD-na"
+    ],
+    [
+     "actually",
+     "На самом деле",
+     "na SA-mam DYE-lye"
+    ],
+    [
+     "by the way",
+     "Кстати",
+     "KSTA-tee"
+    ]
+   ],
+   "sentences": [
+    [
+     "By the way, have you decided yet?",
+     [
+      "Кстати,",
+      "ты",
+      "уже",
+      "решил?"
+     ]
+    ],
+    [
+     "Actually, I do not know.",
+     [
+      "На",
+      "самом",
+      "деле",
+      "я",
+      "не",
+      "знаю."
+     ]
+    ],
+    [
+     "I do not entirely agree with you.",
+     [
+      "Я",
+      "с",
+      "вами",
+      "не",
+      "совсем",
+      "согласен."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does Кстати do in a conversation?",
+     "o": [
+      "It says goodbye",
+      "It asks a price",
+      "It introduces a related new point",
+      "It makes a command"
+     ],
+     "a": 2,
+     "why": "Кстати means by the way.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase softens disagreement?",
+     "o": [
+      "Ты не прав",
+      "Это глупо",
+      "Нет, никогда",
+      "Я не совсем согласен"
+     ],
+     "a": 3,
+     "why": "Не совсем is a polite way to disagree.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why use Не могли бы вы...? instead of Помогите?",
+     "o": [
+      "It is shorter",
+      "It is a command",
+      "It is only for children",
+      "The conditional is more polite and indirect"
+     ],
+     "a": 3,
+     "why": "Indirect requests soften the tone.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the function of ну in speech?",
+     "o": [
+      "It marks hesitation or continuation",
+      "It means no",
+      "It means yes",
+      "It marks the past"
+     ],
+     "a": 0,
+     "why": "Ну is a discourse particle.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A friend says Да ладно! after your news. What does it express?",
+     "o": [
+      "Anger",
+      "Surprise or disbelief",
+      "Sadness",
+      "A question about price"
+     ],
+     "a": 1,
+     "why": "Да ладно can mean \"no way\" in a friendly tone.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Conversation in Russian",
+    "model": "Use connectors: кстати for a related new point, на самом деле to correct, вот именно to confirm. Disagree gently with Я не совсем согласен. Ask politely with Не могли бы вы...?",
+    "points": [
+     {
+      "k": [
+       "кстати",
+       "connector"
+      ],
+      "ask": "Which words connect ideas?"
+     },
+     {
+      "k": [
+       "не совсем",
+       "disagree",
+       "polite"
+      ],
+      "ask": "How do I disagree politely?"
+     },
+     {
+      "k": [
+       "не могли бы",
+       "request",
+       "conditional"
+      ],
+      "ask": "How do I ask politely?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Russian language",
+    "prompt": "Read a short dialogue and circle the connecting words."
+   },
+   "sources": [
+    "Russian language",
+    "Discourse marker"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Formal and informal registers",
+   "icon": "🎩",
+   "hook": "You greet your friend with \"Привет\" and your teacher with \"Здравствуйте\". What else changes with register?",
+   "explain": [
+    "Register means the level of formality. The informal ты and the formal вы affect the verb: Дай мне ручку (informal) and Дайте мне ручку (formal). Informal Извини becomes Извините. Goodbye can be Пока (casual) or Всего доброго (formal).",
+    "At school or work address older people by first name and patronymic: Иван Петрович. In an e-mail start with Добрый день, ... or Уважаемый ... A phrase like Не подскажете, который час? (Could you tell me what time it is?) is polite in the street."
+   ],
+   "mnemonic": "Ты is the handshake, вы is the bow.",
+   "items": [
+    [
+     "Hi! (informal)",
+     "Привет!",
+     "pree-VYET"
+    ],
+    [
+     "Good day (formal)",
+     "Добрый день",
+     "DOB-ry dyen"
+    ],
+    [
+     "Could you tell me...?",
+     "Не подскажете...",
+     "nye pad-SKA-zhe-tye"
+    ],
+    [
+     "Give me (informal)",
+     "Дай мне",
+     "day mnye"
+    ],
+    [
+     "Please pass it (formal)",
+     "Передайте, пожалуйста",
+     "pye-rye-DAY-tye"
+    ],
+    [
+     "Many thanks! (formal)",
+     "Спасибо вам огромное",
+     "spa-SEE-ba vam ag-ROM-na-ye"
+    ],
+    [
+     "Bye! (informal)",
+     "Пока!",
+     "pa-KA"
+    ],
+    [
+     "All the best (formal goodbye)",
+     "Всего доброго",
+     "fsye-VO DOB-ra-va"
+    ]
+   ],
+   "sentences": [
+    [
+     "Could you tell me what time it is?",
+     [
+      "Не",
+      "подскажете,",
+      "который",
+      "час?"
+     ]
+    ],
+    [
+     "Give me the pen, please.",
+     [
+      "Дай",
+      "мне",
+      "ручку,",
+      "пожалуйста."
+     ]
+    ],
+    [
+     "All the best to you!",
+     [
+      "Всего",
+      "вам",
+      "доброго!"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you address an older teacher called Ольга Ивановна?",
+     "o": [
+      "Оля, with ты",
+      "Ольга, with ты",
+      "Ивановна alone, with ты",
+      "Ольга Ивановна, with вы"
+     ],
+     "a": 3,
+     "why": "First name and patronymic plus вы is respectful.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is formal?",
+     "o": [
+      "Передайте, пожалуйста",
+      "Передай",
+      "Пока",
+      "Дай"
+     ],
+     "a": 0,
+     "why": "The -те ending is the formal or plural imperative.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does the imperative change between Дай and Дайте?",
+     "o": [
+      "The ending -те marks plural or polite address",
+      "Дайте is the past",
+      "Дай is plural",
+      "They are different verbs"
+     ],
+     "a": 0,
+     "why": "Register affects verb forms.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A new classmate of your age uses ты. What does it show?",
+     "o": [
+      "A mistake",
+      "Informal, equal relationship",
+      "Rudeness",
+      "A foreign accent"
+     ],
+     "a": 1,
+     "why": "Ты is normal among peers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which e-mail opening is appropriate for an unknown professor?",
+     "o": [
+      "Привет!",
+      "Эй!",
+      "Здравствуйте, Иван Петрович!",
+      "Дорогой друг!"
+     ],
+     "a": 2,
+     "why": "Formal register needs вы or name and patronymic.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Registers in Russian",
+    "model": "Russian marks formality with ты and вы. The imperative changes: Дай for a friend and Дайте for polite use. Use first name and patronymic for older people.",
+    "points": [
+     {
+      "k": [
+       "ты",
+       "вы",
+       "formal",
+       "informal"
+      ],
+      "ask": "What is ты and вы?"
+     },
+     {
+      "k": [
+       "дай",
+       "дайте",
+       "imperative"
+      ],
+      "ask": "How does the command change?"
+     },
+     {
+      "k": [
+       "patronymic",
+       "отчество",
+       "name"
+      ],
+      "ask": "How do I address a teacher?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "T–V distinction",
+    "prompt": "Read about how languages show politeness and note the Russian example."
+   },
+   "sources": [
+    "T–V distinction",
+    "Russian naming customs"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Reading articles and literature",
+   "icon": "📚",
+   "hook": "Which Russian poet is often called the founder of modern Russian literature?",
+   "explain": [
+    "Alexander Pushkin (1799–1837) wrote Евгений Онегин, a novel in verse, and shaped the modern literary language. Lev Tolstoy wrote Война и мир and Анна Каренина, Fyodor Dostoevsky wrote Преступление и наказание, and Anton Chekhov wrote short stories and plays such as Вишнёвый сад.",
+    "To read literature, learn the words for genres: рассказ (short story), роман (novel), стихотворение (poem), and the vocabulary of analysis: сюжет (plot), тема (theme), герой (character). Newspaper articles in Russian often use the present tense for a past event in headlines."
+   ],
+   "mnemonic": "Pushkin writes poems, Tolstoy writes big novels, Chekhov writes short stories.",
+   "items": [
+    [
+     "short story",
+     "рассказ",
+     "ras-SKAZ"
+    ],
+    [
+     "novel",
+     "роман",
+     "ra-MAN"
+    ],
+    [
+     "poet",
+     "поэт",
+     "pa-ET"
+    ],
+    [
+     "poem",
+     "стихотворение",
+     "stee-kha-tvo-RYE-nee-ye"
+    ],
+    [
+     "author",
+     "автор",
+     "AF-tar"
+    ],
+    [
+     "plot",
+     "сюжет",
+     "syoo-ZHET"
+    ],
+    [
+     "theme",
+     "тема",
+     "TYE-ma"
+    ],
+    [
+     "main character",
+     "главный герой",
+     "GLAV-ny gye-ROY"
+    ]
+   ],
+   "sentences": [
+    [
+     "Pushkin is a great Russian poet.",
+     [
+      "Пушкин",
+      "—",
+      "великий",
+      "русский",
+      "поэт."
+     ]
+    ],
+    [
+     "This is a story about friendship.",
+     [
+      "Это",
+      "рассказ",
+      "о",
+      "дружбе."
+     ]
+    ],
+    [
+     "The main character looks for his place.",
+     [
+      "Главный",
+      "герой",
+      "ищет",
+      "своё",
+      "место."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Who wrote the novel in verse Евгений Онегин?",
+     "o": [
+      "Pushkin",
+      "Tolstoy",
+      "Chekhov",
+      "Gorky"
+     ],
+     "a": 0,
+     "why": "Pushkin wrote Eugene Onegin.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which genre is Вишнёвый сад by Chekhov?",
+     "o": [
+      "A poem",
+      "A play",
+      "A newspaper article",
+      "A fairy tale"
+     ],
+     "a": 1,
+     "why": "The Cherry Orchard is a play.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is Pushkin called the founder of modern literary Russian?",
+     "o": [
+      "He invented the alphabet",
+      "He joined everyday speech and older literary language into a model style",
+      "He wrote the first dictionary",
+      "He was the first tsar"
+     ],
+     "a": 1,
+     "why": "His works set a pattern for later writers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the difference between сюжет and тема?",
+     "o": [
+      "They are the same",
+      "Тема is the title",
+      "Сюжет is the sequence of events and тема is the main idea",
+      "Сюжет is the author"
+     ],
+     "a": 2,
+     "why": "Plot tells what happens; theme tells what it is about.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a headline say \"Президент подписывает закон\" about a past event?",
+     "o": [
+      "It is a mistake",
+      "The event is in the future",
+      "Headlines have no tense",
+      "Russian headlines often use the present to sound immediate"
+     ],
+     "a": 3,
+     "why": "The historical present is common in headlines.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Russian literature",
+    "model": "Pushkin is the founder of modern literary Russian. Tolstoy, Dostoevsky and Chekhov are other great writers. Analyse a text by its plot (сюжет), theme (тема) and character (герой).",
+    "points": [
+     {
+      "k": [
+       "pushkin",
+       "tolstoy",
+       "chekhov",
+       "writer"
+      ],
+      "ask": "Who are the main writers?"
+     },
+     {
+      "k": [
+       "сюжет",
+       "plot"
+      ],
+      "ask": "What is plot?"
+     },
+     {
+      "k": [
+       "тема",
+       "theme"
+      ],
+      "ask": "What is theme?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Alexander Pushkin",
+    "prompt": "Read the first section and note two works with their genres."
+   },
+   "sources": [
+    "Alexander Pushkin",
+    "Russian literature"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Essay and correspondence writing",
+   "icon": "✉️",
+   "hook": "In a polite letter to one person, Russians write the word \"Вы\" with a capital letter. Why?",
+   "explain": [
+    "An essay has three parts: introduction (введение), main part (основная часть) and conclusion (заключение). Link ideas with во-первых... во-вторых..., таким образом (thus), итак (so) and в заключение (in conclusion).",
+    "A formal letter begins Уважаемый господин Иванов, and ends С уважением, followed by the name. In a letter to one person the polite Вы and Ваш are capitalised. Use Прошу вас to ask, and Прилагаю to say that something is attached."
+   ],
+   "mnemonic": "Введение opens, основная часть builds, заключение closes.",
+   "items": [
+    [
+     "Dear Mr Ivanov,",
+     "Уважаемый господин Иванов,",
+     "oo-va-ZHA-ye-my gas-pa-DEEN ee-VA-nov"
+    ],
+    [
+     "Yours sincerely,",
+     "С уважением,",
+     "s oo-va-ZHE-nee-yem"
+    ],
+    [
+     "I ask you...",
+     "Прошу вас...",
+     "pra-SHOO vas"
+    ],
+    [
+     "firstly... secondly...",
+     "Во-первых... во-вторых...",
+     "va-PYER-vykh... va-fta-RYKH"
+    ],
+    [
+     "thus",
+     "Таким образом",
+     "ta-KEEM OB-ra-zam"
+    ],
+    [
+     "so, therefore",
+     "Итак",
+     "ee-TAK"
+    ],
+    [
+     "in conclusion",
+     "В заключение",
+     "v zak-lyu-CHE-nee-ye"
+    ],
+    [
+     "I attach",
+     "Прилагаю",
+     "pree-la-GA-yu"
+    ]
+   ],
+   "sentences": [
+    [
+     "Please reply as soon as possible.",
+     [
+      "Прошу",
+      "вас",
+      "ответить",
+      "как",
+      "можно",
+      "скорее."
+     ]
+    ],
+    [
+     "Thus, the problem is solved.",
+     [
+      "Таким",
+      "образом,",
+      "проблема",
+      "решена."
+     ]
+    ],
+    [
+     "In conclusion I want to say thank you.",
+     [
+      "В",
+      "заключение",
+      "хочу",
+      "сказать",
+      "спасибо."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you end a formal letter?",
+     "o": [
+      "Пока",
+      "С уважением",
+      "Привет",
+      "Увидимся"
+     ],
+     "a": 1,
+     "why": "С уважением means with respect.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a personal letter to one person, how is the polite \"you\" written?",
+     "o": [
+      "With a small letter always",
+      "With ы only",
+      "With a capital letter: Вы",
+      "With a hyphen"
+     ],
+     "a": 2,
+     "why": "The capital Вы shows personal respect in a letter.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which order is typical for an essay?",
+     "o": [
+      "Conclusion, main part, introduction",
+      "Main part only",
+      "Introduction, main part, conclusion",
+      "Conclusion only"
+     ],
+     "a": 2,
+     "why": "The three-part structure guides the reader.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use Таким образом in the last paragraph?",
+     "o": [
+      "It begins a question",
+      "It begins a quotation",
+      "It changes the topic",
+      "It signals a summary of what has been shown"
+     ],
+     "a": 3,
+     "why": "It means \"thus\" and introduces a conclusion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which opening is right for a letter to a company director?",
+     "o": [
+      "Уважаемый Иван Петрович!",
+      "Привет, Иван!",
+      "Эй, директор!",
+      "Дорогуша!"
+     ],
+     "a": 0,
+     "why": "Respectful forms with name and patronymic are polite.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Writing letters and essays in Russian",
+    "model": "An essay has a введение, основная часть and заключение. Use linking words like во-первых, во-вторых and таким образом. A formal letter starts Уважаемый... and ends С уважением.",
+    "points": [
+     {
+      "k": [
+       "введение",
+       "основная",
+       "заключение",
+       "structure"
+      ],
+      "ask": "How is an essay organised?"
+     },
+     {
+      "k": [
+       "уважаемый",
+       "с уважением",
+       "letter"
+      ],
+      "ask": "How do I start and end a letter?"
+     },
+     {
+      "k": [
+       "во-первых",
+       "таким образом",
+       "link"
+      ],
+      "ask": "How do I link ideas?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Letter (message)",
+    "prompt": "Look at a model formal letter and mark the greeting and closing."
+   },
+   "sources": [
+    "Letter (message)",
+    "Essay"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Translation fundamentals",
+   "icon": "🔁",
+   "hook": "If you translate \"I miss you\" word by word into Russian, you may say something strange. Why?",
+   "explain": [
+    "Good translation carries meaning, not just words. A literal translation (дословный перевод) often fails. \"I miss you\" is Я скучаю по тебе, with по and the dative. Russian У меня есть кот is the usual way to say \"I have a cat\".",
+    "Translators watch for false friends, context and register, and use a dictionary and a bilingual sense of style. Russian has no articles, so a translator into English must decide between \"a\" and \"the\" by context. The aspects of Russian verbs, perfective and imperfective, often need extra words in English."
+   ],
+   "mnemonic": "Translate the message, not the words.",
+   "items": [
+    [
+     "translation",
+     "перевод",
+     "pye-re-VOT"
+    ],
+    [
+     "literal",
+     "дословный",
+     "das-LOV-ny"
+    ],
+    [
+     "meaning",
+     "смысл",
+     "smysl"
+    ],
+    [
+     "context",
+     "контекст",
+     "kan-TEKST"
+    ],
+    [
+     "false friend",
+     "ложный друг",
+     "LOZH-ny drook"
+    ],
+    [
+     "equivalent",
+     "эквивалент",
+     "e-kvee-va-LYENT"
+    ],
+    [
+     "dictionary",
+     "словарь",
+     "sla-VAR"
+    ],
+    [
+     "original",
+     "оригинал",
+     "a-ree-gee-NAL"
+    ]
+   ],
+   "sentences": [
+    [
+     "A literal translation is not always accurate.",
+     [
+      "Дословный",
+      "перевод",
+      "не",
+      "всегда",
+      "точен."
+     ]
+    ],
+    [
+     "You need to understand the meaning of the sentence.",
+     [
+      "Нужно",
+      "понять",
+      "смысл",
+      "предложения."
+     ]
+    ],
+    [
+     "Context helps choose a word.",
+     [
+      "Контекст",
+      "помогает",
+      "выбрать",
+      "слово."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you say \"I miss you\" naturally?",
+     "o": [
+      "Я пропускаю тебя",
+      "Я скучаю тебя",
+      "Я скучаю по тебе",
+      "Я мисс ты"
+     ],
+     "a": 2,
+     "why": "Скучать по plus the dative is the natural construction.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a literal translation be wrong?",
+     "o": [
+      "Words never have meaning",
+      "Dictionaries are wrong",
+      "Context does not exist",
+      "Languages express ideas with different structures"
+     ],
+     "a": 3,
+     "why": "Structures and idioms differ between languages.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Translating from Russian into English, how do you decide between \"a\" and \"the\"?",
+     "o": [
+      "Russian marks them with endings",
+      "Always choose \"a\"",
+      "Always choose \"the\"",
+      "From context, since Russian has no articles"
+     ],
+     "a": 3,
+     "why": "The translator reads context to choose.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is магазин → \"magazine\" a mistake?",
+     "o": [
+      "It is a false friend: магазин means shop",
+      "It is correct",
+      "It means newspaper",
+      "It is a verb"
+     ],
+     "a": 0,
+     "why": "False friends look the same but differ in meaning.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which approach is better for a proverb?",
+     "o": [
+      "Translate each word literally",
+      "Find an equivalent proverb in the target language",
+      "Leave it out",
+      "Add a joke"
+     ],
+     "a": 1,
+     "why": "A proverb is best matched by a similar saying.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basic translation",
+    "model": "Good translation transfers meaning, not just words. Watch for false friends, context and register. Russian has no articles, so you must choose a or the from context.",
+    "points": [
+     {
+      "k": [
+       "meaning",
+       "context",
+       "literal"
+      ],
+      "ask": "Is word-for-word translation right?"
+     },
+     {
+      "k": [
+       "false",
+       "friend",
+       "магазин"
+      ],
+      "ask": "What are false friends?"
+     },
+     {
+      "k": [
+       "article",
+       "context"
+      ],
+      "ask": "What about articles?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Translation",
+    "prompt": "Read about equivalence in translation and note one example."
+   },
+   "sources": [
+    "Translation",
+    "False friend"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Regional varieties and cultural context",
+   "icon": "🗺️",
+   "hook": "Russia spans 11 time zones. Do all Russians speak and live in the same way?",
+   "explain": [
+    "Russian is spoken across a huge area and in many countries as a first or second language. The standard literary language is based on the speech of Moscow, but regional speech differs. In many southern and Moscow varieties unstressed о sounds like a (\"akanye\"), while some northern dialects keep a clear о (\"okanye\").",
+    "Culture shapes everyday life. A дача is a country house for summer weekends, a самовар is a tea urn, and Масленица is a spring festival with pancakes (блины) before Orthodox Lent. Russians celebrate Новый год with a decorated tree and Дед Мороз, and Orthodox Christmas is on 7 January."
+   ],
+   "mnemonic": "Moscow says \"malako\", the north may say \"moloko\".",
+   "items": [
+    [
+     "summer house",
+     "дача",
+     "DA-cha"
+    ],
+    [
+     "tea urn",
+     "самовар",
+     "sa-ma-VAR"
+    ],
+    [
+     "pancake festival",
+     "Масленица",
+     "MAS-lye-nee-tsa"
+    ],
+    [
+     "pancakes",
+     "блины",
+     "blee-NY"
+    ],
+    [
+     "steam bath",
+     "баня",
+     "BA-nya"
+    ],
+    [
+     "Siberia",
+     "Сибирь",
+     "see-BEER"
+    ],
+    [
+     "the Volga",
+     "Волга",
+     "VOL-ga"
+    ],
+    [
+     "New Year",
+     "Новый год",
+     "NO-vy got"
+    ]
+   ],
+   "sentences": [
+    [
+     "In summer we live at the dacha.",
+     [
+      "Летом",
+      "мы",
+      "живём",
+      "на",
+      "даче."
+     ]
+    ],
+    [
+     "Pancakes are baked at Maslenitsa.",
+     [
+      "На",
+      "Масленицу",
+      "пекут",
+      "блины."
+     ]
+    ],
+    [
+     "Siberia is very big.",
+     [
+      "Сибирь",
+      "очень",
+      "большая."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is Масленица?",
+     "o": [
+      "A kind of tea",
+      "A summer house",
+      "A river",
+      "A spring festival with pancakes"
+     ],
+     "a": 3,
+     "why": "It is a festival before Lent.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is \"akanye\"?",
+     "o": [
+      "Pronouncing unstressed о like a",
+      "Dropping all vowels",
+      "Pronouncing ы like и",
+      "Rolling the r"
+     ],
+     "a": 0,
+     "why": "Akanye is common in standard Russian.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does Russia have regional dialect differences?",
+     "o": [
+      "Because the language spread over a large area over centuries",
+      "Because Russian has no rules",
+      "Because all Russians live in cities",
+      "Because of the alphabet"
+     ],
+     "a": 0,
+     "why": "Geography and history shape variation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Russian also used outside Russia?",
+     "o": [
+      "It is the only language there",
+      "It is a first or second language in many neighbouring countries",
+      "It is forbidden",
+      "It has no speakers"
+     ],
+     "a": 1,
+     "why": "Many people in former Soviet countries use Russian.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Orthodox Christmas on 7 January?",
+     "o": [
+      "It is the wrong date",
+      "It follows the Chinese calendar",
+      "The Russian Orthodox Church follows the Julian calendar",
+      "It is a school holiday only"
+     ],
+     "a": 2,
+     "why": "Julian dates are about 13 days later than Gregorian ones.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Russian regions and culture",
+    "model": "Standard Russian is based on Moscow speech, but regions differ: akanye in the south and okanye in the north. Culture includes дача, самовар, Масленица and Новый год. Orthodox Christmas is on 7 January.",
+    "points": [
+     {
+      "k": [
+       "standard",
+       "moscow",
+       "dialect"
+      ],
+      "ask": "Is Russian the same everywhere?"
+     },
+     {
+      "k": [
+       "дача",
+       "самовар",
+       "масленица",
+       "culture"
+      ],
+      "ask": "What are cultural words?"
+     },
+     {
+      "k": [
+       "7 january",
+       "christmas",
+       "julian"
+      ],
+      "ask": "When is Christmas?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Maslenitsa",
+    "prompt": "Read about the festival and note two traditions."
+   },
+   "sources": [
+    "Maslenitsa",
+    "Russian dialects"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Structured debates and presentations",
+   "icon": "🎙️",
+   "hook": "You must convince a classroom in two minutes. How do you start and organise your argument in Russian?",
+   "explain": [
+    "A presentation begins with a greeting and the topic: Добрый день, уважаемые слушатели! Сегодня я расскажу о... A debate uses thesis (тезис), argument (аргумент), example (пример) and conclusion (вывод). Introduce your view: По моему мнению...",
+    "To contrast ideas, use С одной стороны... с другой стороны... To object politely say Позвольте возразить (Allow me to object). To end, summarise: Из этого следует вывод... and thank the audience: Спасибо за внимание!"
+   ],
+   "mnemonic": "Тезис, аргумент, пример, вывод: four steps to persuade.",
+   "items": [
+    [
+     "thesis",
+     "тезис",
+     "TYE-zees"
+    ],
+    [
+     "argument",
+     "аргумент",
+     "ar-goo-MYENT"
+    ],
+    [
+     "example",
+     "пример",
+     "pree-MYER"
+    ],
+    [
+     "objection",
+     "возражение",
+     "vaz-ra-ZHE-nee-ye"
+    ],
+    [
+     "conclusion",
+     "вывод",
+     "VY-vat"
+    ],
+    [
+     "in my opinion",
+     "по моему мнению",
+     "pa ma-ye-MOO MNYE-nee-yu"
+    ],
+    [
+     "to agree",
+     "согласиться",
+     "sag-la-SEET-sya"
+    ],
+    [
+     "Allow me to object.",
+     "Позвольте возразить",
+     "paz-VOL-tye vaz-ra-ZEET"
+    ]
+   ],
+   "sentences": [
+    [
+     "In my opinion, this is important.",
+     [
+      "По",
+      "моему",
+      "мнению,",
+      "это",
+      "важно."
+     ]
+    ],
+    [
+     "I want to give an example.",
+     [
+      "Я",
+      "хочу",
+      "привести",
+      "пример."
+     ]
+    ],
+    [
+     "From this a conclusion follows.",
+     [
+      "Из",
+      "этого",
+      "следует",
+      "вывод."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you thank the audience at the end?",
+     "o": [
+      "Спасибо за внимание!",
+      "До свидания!",
+      "Пока!",
+      "Здравствуйте!"
+     ],
+     "a": 0,
+     "why": "It is the usual closing of a presentation.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase introduces your opinion?",
+     "o": [
+      "Кстати",
+      "По моему мнению",
+      "Вот именно",
+      "Всего доброго"
+     ],
+     "a": 1,
+     "why": "It means in my opinion.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a speaker give an example after an argument?",
+     "o": [
+      "Examples replace arguments",
+      "Examples make an abstract claim concrete and believable",
+      "Examples are unnecessary",
+      "They end the debate"
+     ],
+     "a": 1,
+     "why": "Evidence supports the claim.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a polite way to disagree in a debate?",
+     "o": [
+      "Вы не правы!",
+      "Замолчите!",
+      "Позвольте возразить",
+      "Это глупо!"
+     ],
+     "a": 2,
+     "why": "Позвольте возразить keeps respect.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does \"с одной стороны... с другой стороны\" do?",
+     "o": [
+      "It asks a question",
+      "It ends a talk",
+      "It greets the audience",
+      "It balances two points of view"
+     ],
+     "a": 3,
+     "why": "It presents two sides of an issue.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Presenting and debating in Russian",
+    "model": "Start with a greeting and topic. State a thesis, give arguments and examples, and end with a conclusion. Disagree politely with Позвольте возразить and thank the audience.",
+    "points": [
+     {
+      "k": [
+       "тезис",
+       "argument",
+       "example",
+       "structure"
+      ],
+      "ask": "How do I organise a talk?"
+     },
+     {
+      "k": [
+       "позвольте",
+       "возразить",
+       "polite"
+      ],
+      "ask": "How do I disagree politely?"
+     },
+     {
+      "k": [
+       "спасибо за внимание",
+       "thank"
+      ],
+      "ask": "How do I finish?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Debate",
+    "prompt": "Watch or read a short debate and list one argument and one example."
+   },
+   "sources": [
+    "Debate",
+    "Public speaking"
+   ]
+  }
+ ]
+}

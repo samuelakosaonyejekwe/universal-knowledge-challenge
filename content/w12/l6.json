@@ -1,0 +1,2932 @@
+{
+ "world": 12,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced economic modelling",
+   "icon": "🧮",
+   "hook": "If a price rises, how much extra income would exactly compensate a consumer, and why does the answer differ depending on which welfare benchmark we choose?",
+   "explain": [
+    "Constrained optimisation is the core technique of microeconomic modelling. A consumer maximises U(x, y) subject to Px·x + Py·y = I. The Lagrangian L = U + λ(I − Px·x − Py·y) gives first-order conditions MUx = λPx and MUy = λPy. The multiplier λ is the marginal utility of income, and the envelope theorem says dV/dI = λ, where V is the indirect utility function.",
+    "For Cobb-Douglas utility U = x^a·y^(1−a), demands are x* = a·I ÷ Px and y* = (1 − a)·I ÷ Py, so budget shares are constant. The expenditure function e(p, u) is the minimum spending to reach utility u. Welfare changes from a price rise can be measured by compensating variation (CV): the extra income needed to restore the original utility at new prices, CV = e(p¹, u⁰) − I.",
+    "Comparative statics asks how optimal choices change when parameters change. Models are judged by internal consistency, tractability and fit with evidence, not by realism alone. Different welfare measures (CV, equivalent variation, consumer surplus) coincide only under special conditions, so choosing a measure is a modelling decision that should be stated."
+   ],
+   "example": {
+    "q": "U = x^0.4·y^0.6, I = 500, Px = 10, Py = 15. Find the optimal bundle and utility. Then Px rises to 20: find the new demand for x and the compensating variation (round to the nearest unit).",
+    "steps": [
+     "x* = 0.4 × 500 ÷ 10 = 20; y* = 0.6 × 500 ÷ 15 = 20; V = 20^0.4 × 20^0.6 = 20.",
+     "After Px = 20: x* = 0.4 × 500 ÷ 20 = 10, y* stays 20; V = 10^0.4 × 20^0.6 ≈ 15.16.",
+     "Expenditure to reach u = 20 at new prices: e = 20 × (20 ÷ 0.4)^0.4 × (15 ÷ 0.6)^0.6 ≈ 659.75, so CV ≈ 659.75 − 500 ≈ 160."
+    ],
+    "a": "Bundle (20, 20), V = 20; after the rise x = 10; CV ≈ 160"
+   },
+   "analogies": {
+    "farm": "A farmer allocating a fixed budget between seed and fertiliser spends fixed shares of it.",
+    "city": "A city planner with a fixed budget allocates across roads and parks until extra benefit per unit of money equalises.",
+    "tech": "An optimiser in software searches for the best settings under a resource limit.",
+    "music": "An orchestra balances rehearsal time across pieces, weighing marginal improvement."
+   },
+   "mnemonic": "Lagrange: price the constraint (λ), then every first-order condition says marginal benefit = λ × price.",
+   "terms": [
+    [
+     "Lagrange multiplier",
+     "The shadow price of the constraint: the marginal value of relaxing it."
+    ],
+    [
+     "Indirect utility",
+     "Maximum utility attainable as a function of prices and income."
+    ],
+    [
+     "Expenditure function",
+     "Minimum spending needed to reach a given utility at given prices."
+    ],
+    [
+     "Compensating variation",
+     "Income change needed to restore original utility after a price change."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a model has unrealistic assumptions, its results say nothing.",
+    "right": "Models isolate mechanisms; the question is whether the mechanism is important and whether predictions survive testing."
+   },
+   "limits": "Cobb-Douglas imposes constant budget shares, which data often reject. Welfare measures treat money as comparable across people, which is a value judgement.",
+   "trip": {
+    "wiki": "Compensating variation",
+    "prompt": "Find how compensating and equivalent variation differ and when they coincide."
+   },
+   "sources": [
+    "Compensating variation",
+    "Lagrange multiplier",
+    "Envelope theorem"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In the consumer's problem, the Lagrange multiplier λ at the optimum is interpreted as...",
+     "o": [
+      "the marginal utility of income",
+      "the total utility reached at the optimum",
+      "the price of good x at the optimum",
+      "the share of the budget spent on good x"
+     ],
+     "a": 0,
+     "why": "By the envelope theorem, dV/dI = λ.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "U = x^0.3·y^0.7, I = 200, Px = 5. What is the optimal x?",
+     "a": 12,
+     "tol": 0,
+     "why": "x* = 0.3 × 200 ÷ 5 = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For U = x^0.4·y^0.6 with I = 500, Px = 10, Py = 15, what is optimal y?",
+     "a": 20,
+     "tol": 0,
+     "why": "y* = 0.6 × 500 ÷ 15 = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "After Px rises to 20 (same U, I, Py), what is the optimal x?",
+     "a": 10,
+     "tol": 0,
+     "why": "x* = 0.4 × 500 ÷ 20 = 10; demand for x halves because the price doubles (unit price elasticity for Cobb-Douglas).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "With Cobb-Douglas utility, a rise in Py leaves the demand for x...",
+     "o": [
+      "unchanged",
+      "lower, since y is dearer and the consumer buys less x",
+      "higher, since the consumer switches from y to x",
+      "zero, since x is no longer affordable"
+     ],
+     "a": 0,
+     "why": "x* = a·I ÷ Px does not depend on Py, because the substitution and income effects cancel.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The envelope theorem is useful because it says...",
+     "o": [
+      "the effect of a parameter on the maximised value is its direct effect, holding choices fixed",
+      "choices never change when a parameter changes, so nothing needs solving",
+      "the constraint is irrelevant to the maximised value",
+      "the second-order condition is always zero at an optimum"
+     ],
+     "a": 0,
+     "why": "Re-optimisation effects are second order at the optimum.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Compensating variation after a price increase is...",
+     "o": [
+      "positive: extra income needed to restore original utility",
+      "negative: income taken away to leave utility unchanged",
+      "zero by definition, since the consumer buys the same bundle",
+      "equal to the price rise times the original quantity, in every case"
+     ],
+     "a": 0,
+     "why": "The consumer is worse off and needs extra income.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each object to its meaning.",
+     "pairs": [
+      [
+       "Indirect utility",
+       "Max utility given prices and income"
+      ],
+      [
+       "Expenditure function",
+       "Min cost of reaching a utility level"
+      ],
+      [
+       "Marshallian demand",
+       "Demand holding income fixed"
+      ],
+      [
+       "Hicksian demand",
+       "Demand holding utility fixed"
+      ]
+     ],
+     "why": "The primal and dual problems.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why compensating variation and the change in consumer surplus generally differ.",
+     "rubric": [
+      [
+       "income effect",
+       "income",
+       "wealth"
+      ],
+      [
+       "marshallian",
+       "hicksian",
+       "compensated",
+       "uncompensated",
+       "demand curve"
+      ],
+      [
+       "differ",
+       "approximat",
+       "not equal",
+       "only equal",
+       "quasi-linear",
+       "constant marginal utility"
+      ]
+     ],
+     "min": 2,
+     "model": "Consumer surplus is measured under the ordinary (Marshallian) demand curve, which includes income effects, whereas CV uses the compensated (Hicksian) demand curve. They coincide only when income effects are zero, for example with quasi-linear utility.",
+     "why": "Different demand curves give different areas.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A modeller finds budget shares of food fall as income rises. Which feature of Cobb-Douglas is contradicted?",
+     "o": [
+      "Constant budget shares",
+      "Diminishing marginal utility",
+      "Positive prices",
+      "Convex preferences"
+     ],
+     "a": 0,
+     "why": "Engel's law conflicts with constant shares.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A cost-benefit analysis sums compensating variations across rich and poor people. What assumption is embedded?",
+     "o": [
+      "A dollar has equal social value to everyone, which is a value judgement",
+      "Utility is observable, so it can be added across people",
+      "There are no losers, so each person gains from the project",
+      "Prices are equal for everyone, so values can be compared"
+     ],
+     "a": 0,
+     "why": "Unweighted sums ignore distribution; weights can be added explicitly.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a modeller prefer a simple, unrealistic model to a complex, realistic one?",
+     "rubric": [
+      [
+       "transparen",
+       "clear",
+       "understand",
+       "mechanism",
+       "isolate",
+       "tractab"
+      ],
+      [
+       "test",
+       "estimate",
+       "identify",
+       "predict",
+       "discipline"
+      ],
+      [
+       "too many",
+       "parameters",
+       "black box",
+       "overfit",
+       "fragile"
+      ]
+     ],
+     "min": 2,
+     "model": "A simple model isolates mechanisms, is transparent and easier to test and estimate, whereas a complex model with many parameters can be a black box that overfits and hides which assumptions matter.",
+     "why": "Parsimony has scientific benefits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Second-order conditions in constrained optimisation ensure that...",
+     "o": [
+      "the stationary point is a maximum rather than a minimum",
+      "the constraint binds, so the consumer spends all income",
+      "prices are positive for every good",
+      "the multiplier is zero at every optimum"
+     ],
+     "a": 0,
+     "why": "First-order conditions are necessary but not sufficient.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Constrained optimisation in economics",
+    "model": "A consumer picks the bundle with the highest utility she can afford. We set up a Lagrangian, and the multiplier tells us how much utility an extra unit of income would add. With Cobb-Douglas preferences she spends fixed shares of her income on each good. For example, with a = 0.4, I = 500 and Px = 10 she buys 20 units of x.",
+    "points": [
+     {
+      "k": [
+       "maximis",
+       "utility",
+       "budget",
+       "constraint"
+      ],
+      "ask": "What problem is being solved?"
+     },
+     {
+      "k": [
+       "lagrang",
+       "multiplier",
+       "shadow price",
+       "marginal utility of income"
+      ],
+      "ask": "What does the multiplier mean?"
+     },
+     {
+      "k": [
+       "share",
+       "a ·",
+       "fixed",
+       "cobb"
+      ],
+      "ask": "How do Cobb-Douglas demands look?"
+     },
+     {
+      "k": [
+       "compensating",
+       "welfare",
+       "income needed",
+       "restore"
+      ],
+      "ask": "How can we measure the welfare cost of a price rise?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Dynamic macroeconomics",
+   "icon": "⏳",
+   "hook": "If a household expects higher income next year, how should it change consumption today, and what does that imply for how central banks affect the economy?",
+   "explain": [
+    "Dynamic macroeconomics models decisions over time. A household maximising lifetime utility chooses consumption so that the marginal utility of consumption today equals the discounted marginal utility tomorrow adjusted for the interest rate. With constant relative risk aversion σ, the Euler equation gives consumption growth ≈ (r − ρ) ÷ σ, where r is the real interest rate and ρ the rate of time preference.",
+    "Shocks are often modelled as persistent processes, such as an AR(1): x_t = φ·x_(t−1) + ε_t, with half-life ln(0.5) ÷ ln φ. Dynamic stochastic general equilibrium (DSGE) models combine households, firms and a central bank with rational expectations. A simple monetary rule is the Taylor rule: i = r* + π + 0.5(π − π*) + 0.5y, where y is the output gap.",
+    "Forward-looking behaviour means expectations about policy matter, as the Lucas critique warns. Models differ on price stickiness, financial frictions and heterogeneity among households. Since the 2008 crisis many economists have extended these models to include banks, inequality and non-linearities, and debate remains about how much weight to put on them for policy."
+   ],
+   "example": {
+    "q": "A household has r = 5%, ρ = 2% and σ = 1.5. What is the optimal consumption growth? A shock follows x_t = 0.9·x_(t−1); what is its half-life? With r* = 2%, π = 4%, π* = 2% and y = −1, what rate does the Taylor rule in the text give?",
+    "steps": [
+     "Consumption growth ≈ (0.05 − 0.02) ÷ 1.5 = 0.02, or 2% a year.",
+     "Half-life = ln 0.5 ÷ ln 0.9 ≈ 6.6 periods.",
+     "i = 2 + 4 + 0.5 × (4 − 2) + 0.5 × (−1) = 2 + 4 + 1 − 0.5 = 6.5%."
+    ],
+    "a": "2% growth; half-life about 6.6 periods; Taylor rate 6.5%"
+   },
+   "analogies": {
+    "farm": "A farmer deciding how much grain to eat now versus plant for later weighs the return on planting.",
+    "city": "A city smooths spending over good and bad budget years.",
+    "nature": "A river carries a shock downstream, fading gradually: persistence and decay.",
+    "tech": "A thermostat anticipates temperature drift and adjusts earlier."
+   },
+   "mnemonic": "Euler: shift consumption towards the future when returns beat impatience.",
+   "terms": [
+    [
+     "Euler equation",
+     "Condition linking consumption today and tomorrow to the interest rate and patience."
+    ],
+    [
+     "AR(1)",
+     "A process where today's value depends on yesterday's plus a shock."
+    ],
+    [
+     "DSGE",
+     "Dynamic stochastic general equilibrium models with optimising agents and rational expectations."
+    ],
+    [
+     "Taylor rule",
+     "A rule setting the policy rate in response to inflation and the output gap."
+    ]
+   ],
+   "misc": {
+    "wrong": "Rational expectations means people never make forecast errors.",
+    "right": "It means forecast errors are unpredictable on average given available information, not that they are zero."
+   },
+   "limits": "Representative-agent models may miss distributional effects. Parameter values are uncertain and estimates differ across studies.",
+   "trip": {
+    "wiki": "Dynamic stochastic general equilibrium",
+    "prompt": "Find the main building blocks of a New Keynesian DSGE model."
+   },
+   "sources": [
+    "Dynamic stochastic general equilibrium",
+    "Euler equation",
+    "Taylor rule"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "With r = 6%, ρ = 3% and σ = 1.5, what is the optimal consumption growth in % per year?",
+     "a": 2,
+     "tol": 0.01,
+     "unit": "%",
+     "why": "(6 − 3) ÷ 1.5 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A shock follows x_t = 0.8·x_(t−1). What is its half-life in periods (to one decimal)?",
+     "a": 3.1,
+     "tol": 0.1,
+     "unit": "periods",
+     "why": "ln 0.5 ÷ ln 0.8 = 3.106.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Using i = r* + π + 0.5(π − π*) + 0.5y with r* = 2, π = 3, π* = 2, y = 1 (all in %), what policy rate does the rule give?",
+     "o": [
+      "6%",
+      "5%",
+      "7%",
+      "3.5%"
+     ],
+     "a": 0,
+     "why": "2 + 3 + 0.5 + 0.5 = 6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If r exceeds ρ, the Euler equation implies consumption...",
+     "o": [
+      "grows over time",
+      "falls over time",
+      "is constant",
+      "is zero"
+     ],
+     "a": 0,
+     "why": "Saving is rewarded more than impatience, so households tilt consumption to the future.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A higher σ (stronger desire to smooth consumption) makes consumption growth respond...",
+     "o": [
+      "less to the interest rate",
+      "more to the interest rate",
+      "not at all, ever",
+      "negatively"
+     ],
+     "a": 0,
+     "why": "Growth is (r − ρ) ÷ σ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A more persistent shock (φ closer to 1) has...",
+     "o": [
+      "a longer half-life",
+      "a shorter half-life",
+      "no half-life",
+      "a half-life of one period always"
+     ],
+     "a": 0,
+     "why": "Decay is slower.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Euler equation",
+       "Intertemporal optimality condition"
+      ],
+      [
+       "Rational expectations",
+       "Forecast errors are unpredictable given the information set"
+      ],
+      [
+       "Output gap",
+       "Output relative to potential"
+      ],
+      [
+       "Shock",
+       "Unpredictable disturbance"
+      ]
+     ],
+     "why": "Core dynamic macro concepts.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the Lucas critique matters for using an estimated consumption function to predict the effect of a tax change.",
+     "rubric": [
+      [
+       "expect",
+       "forward",
+       "anticipat",
+       "behaviour",
+       "adapt",
+       "rational"
+      ],
+      [
+       "policy",
+       "regime",
+       "rule",
+       "tax",
+       "change"
+      ],
+      [
+       "parameter",
+       "relationship",
+       "break",
+       "unstable",
+       "structural",
+       "deep"
+      ]
+     ],
+     "min": 2,
+     "model": "Estimated relationships reflect behaviour under past policy. If people form expectations and adapt when the tax regime changes, the relationship may shift, so forecasts based on old parameters can fail unless the model uses structural parameters.",
+     "why": "Policy changes alter behaviour.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In a New Keynesian model, why does monetary policy affect real output in the short run?",
+     "o": [
+      "Sticky prices mean nominal interest changes alter real rates",
+      "Prices are perfectly flexible, so nominal changes have no real effect",
+      "Money is neutral at all times, so policy cannot matter",
+      "Expectations are irrelevant to how firms set prices"
+     ],
+     "a": 0,
+     "why": "Price stickiness lets nominal moves change real variables.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps in a standard DSGE exercise.",
+     "items": [
+      "Specify optimising agents and constraints",
+      "Derive first-order conditions",
+      "Solve for equilibrium dynamics",
+      "Calibrate or estimate parameters",
+      "Simulate shocks and policies"
+     ],
+     "why": "Build, solve, bring to data, then experiment.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Critics say representative-agent models ignore inequality. Which response is most sound?",
+     "o": [
+      "Heterogeneous-agent models can show that distribution changes how policy works, so the debate is substantive",
+      "Inequality never affects aggregates, so the critics are wrong",
+      "Representative agents are always accurate, so the critics are wrong",
+      "Heterogeneity is unmeasurable, so no model could include it"
+     ],
+     "a": 0,
+     "why": "Modern work shows that distribution can matter for transmission.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do central banks care about inflation expectations as well as current inflation?",
+     "rubric": [
+      [
+       "expect",
+       "anticipat",
+       "believe",
+       "forward"
+      ],
+      [
+       "wage",
+       "price setting",
+       "contract",
+       "set prices",
+       "bargain"
+      ],
+      [
+       "self",
+       "credib",
+       "anchor",
+       "spiral",
+       "persist"
+      ]
+     ],
+     "min": 2,
+     "model": "Wage and price setting depend on expected inflation, so if expectations rise they can become self-fulfilling. Credibility that anchors expectations makes inflation easier to control.",
+     "why": "Expectations drive price-setting.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Near the zero lower bound on the policy rate, which policy question becomes central?",
+     "o": [
+      "What other tools or fiscal measures can stimulate demand",
+      "How to raise rates still further to slow the economy",
+      "Whether inflation is positive in a given year",
+      "How to lower the exchange rate and nothing else"
+     ],
+     "a": 0,
+     "why": "Conventional rate cuts are limited.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The Euler equation and persistence",
+    "model": "Dynamic models have people choose consumption over time. If the interest rate is higher than their impatience, they let consumption rise over time; how fast depends on how much they like smooth consumption. Shocks fade gradually, and the more persistent they are the longer they last. For example, an AR(1) with 0.9 takes about 6.6 periods to halve.",
+    "points": [
+     {
+      "k": [
+       "over time",
+       "today",
+       "tomorrow",
+       "lifetime",
+       "intertemporal"
+      ],
+      "ask": "What is different about dynamic models?"
+     },
+     {
+      "k": [
+       "interest",
+       "patience",
+       "impatient",
+       "r minus",
+       "grow"
+      ],
+      "ask": "What does the Euler equation say?"
+     },
+     {
+      "k": [
+       "persist",
+       "decay",
+       "half-life",
+       "ar(1)",
+       "fade"
+      ],
+      "ask": "How do shocks behave?"
+     },
+     {
+      "k": [
+       "expectation",
+       "policy",
+       "rule",
+       "taylor",
+       "credib"
+      ],
+      "ask": "Why do expectations about policy matter?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "International financial economics",
+   "icon": "🌐",
+   "hook": "If interest rates are higher at home than abroad, why doesn't everyone move their money home and earn more?",
+   "explain": [
+    "Covered interest parity (CIP) says that, with free capital flows and no risk of default, the forward exchange rate adjusts so that borrowing in one currency and lending in another earns no riskless profit: F = S·(1 + i) ÷ (1 + i*), where S and F are domestic-currency prices of foreign currency. Uncovered interest parity (UIP) says the expected depreciation of the higher-interest currency equals the interest differential: E[ΔS]/S ≈ i − i*. Empirically UIP often fails, which is the forward premium puzzle, suggesting risk premia or expectation errors.",
+    "The balance of payments records international transactions: the current account (trade, income, transfers) plus the financial account plus changes in official reserves sum to zero (with errors). A current account deficit must be financed by net capital inflows or reserve depletion. The real exchange rate q = S·P* ÷ P compares price levels.",
+    "The Mundell-Fleming trilemma states that a country cannot simultaneously have a fixed exchange rate, free capital mobility and independent monetary policy. Economists disagree about the best regime and about the risks from volatile capital flows, especially for emerging economies with foreign-currency debt."
+   ],
+   "example": {
+    "q": "Home is Zedland with i = 6%; Arboland has i* = 2%. The spot rate S = 2.5 Zeds per Arbo. Find the one-year forward rate under CIP. Also: if the current account is −30 and net private capital inflow is +20, what happens to official reserves? Real exchange rate with P* = 100 Arbo-basket price and P = 200 Zeds?",
+    "steps": [
+     "F = 2.5 × 1.06 ÷ 1.02 ≈ 2.598 Zeds per Arbo.",
+     "CA + financial account + change in reserves = 0 gives −30 + 20 + ΔR = 0, so 10 of official financing is needed: reserves fall by 10.",
+     "q = S·P* ÷ P = 2.5 × 100 ÷ 200 = 1.25."
+    ],
+    "a": "F ≈ 2.598; reserves fall by 10; q = 1.25"
+   },
+   "analogies": {
+    "farm": "If two markets pay different prices for the same grain after shipping, traders arbitrage until equal.",
+    "city": "Currency booths adjust quotes so you cannot profit by swapping around in a loop.",
+    "sea": "A ship hauls goods where the net price is highest.",
+    "tech": "A trading algorithm exploits tiny price differences within milliseconds."
+   },
+   "mnemonic": "CIP is arbitrage (holds tightly); UIP is a forecast (often fails).",
+   "terms": [
+    [
+     "Covered interest parity",
+     "Forward premium offsets the interest differential, leaving no riskless arbitrage."
+    ],
+    [
+     "Uncovered interest parity",
+     "Expected currency change offsets the interest differential."
+    ],
+    [
+     "Current account",
+     "Trade, income and transfers with the rest of the world."
+    ],
+    [
+     "Trilemma",
+     "Fixed exchange rate, free capital flows and independent monetary policy cannot all hold."
+    ]
+   ],
+   "misc": {
+    "wrong": "A current account deficit is always bad.",
+    "right": "It can reflect profitable investment financed from abroad or unsustainable borrowing; the context decides."
+   },
+   "limits": "CIP deviations have appeared after 2008 because of funding constraints. UIP fails empirically, and exchange rates are hard to forecast.",
+   "trip": {
+    "wiki": "Covered interest arbitrage",
+    "prompt": "Find how the forward rate is derived and what CIP deviations mean."
+   },
+   "sources": [
+    "Interest rate parity",
+    "Balance of payments",
+    "Mundell–Fleming model"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "S = 2.5 Zeds per Arbo, i = 6% (Zedland), i* = 2% (Arboland). What is the one-year forward rate F under CIP (to three decimals)?",
+     "a": 2.598,
+     "tol": 0.002,
+     "why": "2.5 × 1.06 ÷ 1.02 = 2.598.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "By UIP, if home interest is 5% and foreign is 1%, what is the expected depreciation of the home currency, approximately?",
+     "o": [
+      "4% a year",
+      "6% a year",
+      "1% a year",
+      "5% a year"
+     ],
+     "a": 0,
+     "why": "Expected depreciation is about i − i* = 4%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Current account = −50, private net capital inflow = +30. By how much must official reserves fall?",
+     "a": 20,
+     "tol": 0,
+     "why": "CA + financial + ΔR = 0 gives reserves supplying 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "S = 2 Zeds per Arbo, P* = 150 (Arbo prices), P = 200 (Zed prices). What is the real exchange rate q = S·P* ÷ P?",
+     "a": 1.5,
+     "tol": 0.001,
+     "why": "2 × 150 ÷ 200 = 1.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "CIP violations are small and short-lived because...",
+     "o": [
+      "riskless arbitrage profits attract traders",
+      "exchange rates are fixed, so no profits are possible",
+      "interest rates are equal in all countries at all times",
+      "banks are closed, so the gaps cannot be used"
+     ],
+     "a": 0,
+     "why": "Arbitrage enforces the relationship when capital can move.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The forward premium puzzle is that high-interest currencies...",
+     "o": [
+      "tend not to depreciate as UIP predicts",
+      "always depreciate by exactly the amount UIP predicts",
+      "are fixed by law at a single value",
+      "carry no interest, so they attract no investors"
+     ],
+     "a": 0,
+     "why": "Empirically they often appreciate on average.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Under a credibly fixed exchange rate with free capital mobility, the trilemma implies...",
+     "o": [
+      "monetary policy cannot be independent",
+      "fiscal policy is banned, as all spending must stop",
+      "the current account is zero, whatever happens",
+      "there is no inflation, as the rate cannot move"
+     ],
+     "a": 0,
+     "why": "Interest rates must follow the anchor country's.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each balance-of-payments item.",
+     "pairs": [
+      [
+       "Trade in goods",
+       "Current account"
+      ],
+      [
+       "Foreign direct investment",
+       "Financial account"
+      ],
+      [
+       "Central bank selling foreign currency",
+       "Change in official reserves"
+      ],
+      [
+       "Remittances",
+       "Current account transfers"
+      ]
+     ],
+     "why": "BoP classification.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A country runs a large current account deficit financed by short-term foreign borrowing in foreign currency. Explain why this may be risky.",
+     "rubric": [
+      [
+       "sudden stop",
+       "withdraw",
+       "reverse",
+       "flee",
+       "stop"
+      ],
+      [
+       "currency",
+       "depreciat",
+       "debt burden",
+       "foreign currency",
+       "dear"
+      ],
+      [
+       "short-term",
+       "roll over",
+       "refinanc",
+       "crisis",
+       "reserves"
+      ]
+     ],
+     "min": 2,
+     "model": "If foreign lenders suddenly stop rolling over short-term loans, the country may face a currency fall that raises the burden of foreign-currency debt, and limited reserves may not cover repayments, which can trigger a crisis.",
+     "why": "Maturity and currency mismatch create vulnerability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Persistent deviations from UIP are most plausibly explained by...",
+     "o": [
+      "risk premia and expectational errors",
+      "exact arbitrage, with no gaps left in the market",
+      "fixed rates in every country, so no risk",
+      "an absence of interest in either currency"
+     ],
+     "a": 0,
+     "why": "Investors demand compensation or form imperfect expectations.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Some economists argue capital controls can be sensible for emerging economies; others oppose them. What is the best summary?",
+     "o": [
+      "There is a trade-off between stability from limiting volatile flows and losing benefits of capital access, and evidence is mixed",
+      "Controls always work, so no debate exists",
+      "Controls never work, so no debate exists",
+      "The trilemma is false, so the debate is empty"
+     ],
+     "a": 0,
+     "why": "The debate involves empirical uncertainty and trade-offs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a country with a floating exchange rate still be exposed to foreign monetary policy?",
+     "rubric": [
+      [
+       "capital",
+       "flows",
+       "spill",
+       "global",
+       "dollar",
+       "financial"
+      ],
+      [
+       "interest",
+       "rates",
+       "borrow",
+       "cost",
+       "conditions"
+      ],
+      [
+       "exchange",
+       "currency",
+       "depreciat",
+       "inflation"
+      ]
+     ],
+     "min": 2,
+     "model": "Global financial conditions and capital flows respond to major central banks' policies, so a floating currency may not fully insulate a country from changes in funding costs, exchange rates and capital flows.",
+     "why": "Financial spillovers cross borders.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A real exchange rate that rises (a real depreciation) tends to...",
+     "o": [
+      "improve competitiveness of home exports",
+      "hurt exports",
+      "have no trade effects",
+      "remove current account deficits instantly"
+     ],
+     "a": 0,
+     "why": "Home goods become cheaper relative to foreign goods, though effects take time.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Interest parity and the trilemma",
+    "model": "Covered interest parity says the forward exchange rate is set so there is no riskless profit from borrowing in one currency and lending in another. Uncovered parity says the higher-interest currency should be expected to fall, but this often fails in the data. The trilemma says a country cannot have a fixed exchange rate, free capital flows and its own monetary policy together.",
+    "points": [
+     {
+      "k": [
+       "covered",
+       "forward",
+       "arbitrage",
+       "no riskless"
+      ],
+      "ask": "What does covered interest parity say?"
+     },
+     {
+      "k": [
+       "uncovered",
+       "expected",
+       "depreciat",
+       "fails",
+       "puzzle"
+      ],
+      "ask": "And uncovered parity?"
+     },
+     {
+      "k": [
+       "trilemma",
+       "fixed",
+       "capital",
+       "monetary",
+       "two of three"
+      ],
+      "ask": "What is the trilemma?"
+     },
+     {
+      "k": [
+       "current account",
+       "financing",
+       "capital inflow",
+       "reserves"
+      ],
+      "ask": "How is a deficit financed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Advanced econometrics",
+   "icon": "🔬",
+   "hook": "Wages rise with education in the data. But what if more able people both get more education and earn more? How can economists estimate the true return?",
+   "explain": [
+    "When a regressor is correlated with the error term (endogeneity), OLS is biased. Omitted variable bias: if the true model is y = β₁x₁ + β₂x₂ + u and x₂ is left out, the estimate of β₁ converges to β₁ + β₂·δ, where δ is the slope from regressing x₂ on x₁. Other sources are reverse causality and measurement error.",
+    "An instrumental variable z must be relevant (correlated with x) and exogenous (affecting y only through x). With one instrument, the IV estimator is β̂_IV = Cov(z, y) ÷ Cov(z, x). Two-stage least squares regresses x on z, then y on the fitted values. Weak instruments (first-stage F below about 10) give biased and unreliable estimates. Panel data with fixed effects remove time-invariant unobserved differences between units.",
+    "Robust inference matters: heteroskedasticity-robust or clustered standard errors correct for non-constant variance or correlation within groups. Time series require attention to non-stationarity: a series with a unit root can produce spurious regressions. Modern empirical work focuses on credible identification, transparency and robustness checks, and acknowledges limits of external validity."
+   ],
+   "example": {
+    "q": "True model y = 2x₁ + 3x₂ + u. Regressing x₂ on x₁ gives slope 0.4. What does OLS of y on x₁ alone estimate? Separately, Cov(z, y) = 3 and Cov(z, x) = 1.5: find the IV estimate.",
+    "steps": [
+     "Omitted variable bias: bias = β₂ × δ = 3 × 0.4 = 1.2.",
+     "OLS estimate converges to 2 + 1.2 = 3.2.",
+     "IV: β̂ = 3 ÷ 1.5 = 2."
+    ],
+    "a": "OLS ≈ 3.2 (biased up); IV estimate = 2"
+   },
+   "analogies": {
+    "farm": "Comparing fertilised and unfertilised fields is misleading if farmers fertilise only the best soil.",
+    "city": "Comparing hospital outcomes without noting sicker patients go to better hospitals gives misleading results.",
+    "sport": "A coach's effect is hard to isolate if good coaches are assigned to strong squads.",
+    "tech": "A lottery for slots (random) can provide an instrument for who gets treated."
+   },
+   "mnemonic": "Instrument = relevant and exogenous: moves x, but does not touch y except through x.",
+   "terms": [
+    [
+     "Endogeneity",
+     "Correlation between a regressor and the error term."
+    ],
+    [
+     "Instrumental variable",
+     "A variable that affects the outcome only through the regressor of interest."
+    ],
+    [
+     "Fixed effects",
+     "Unit-specific intercepts controlling for time-invariant unobservables."
+    ],
+    [
+     "Weak instrument",
+     "An instrument only weakly correlated with the regressor."
+    ]
+   ],
+   "misc": {
+    "wrong": "Adding more control variables always removes bias.",
+    "right": "Controlling for the wrong variables (such as mediators or colliders) can introduce bias; choose controls based on a causal model."
+   },
+   "limits": "Valid instruments are hard to find and their exogeneity cannot be fully tested. IV estimates a local effect for those whose behaviour the instrument changes.",
+   "trip": {
+    "wiki": "Instrumental variables estimation",
+    "prompt": "Find the conditions for a valid instrument and an example from labour economics."
+   },
+   "sources": [
+    "Instrumental variables estimation",
+    "Omitted-variable bias",
+    "Fixed effects model"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "True β₂ = 3 and the slope from regressing x₂ on x₁ is 0.4. By how much is the OLS estimate of β₁ biased when x₂ is omitted?",
+     "a": 1.2,
+     "tol": 0.001,
+     "why": "Bias = β₂ × δ = 3 × 0.4 = 1.2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Cov(z, y) = 3 and Cov(z, x) = 1.5. What is the IV estimate?",
+     "a": 2,
+     "tol": 0,
+     "why": "3 ÷ 1.5 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The first-stage F-statistic for an instrument is 4. Using the usual rule of thumb (threshold about 10), the instrument is...",
+     "o": [
+      "weak",
+      "strong",
+      "exogenous",
+      "invalid because it is relevant"
+     ],
+     "a": 0,
+     "why": "F below 10 suggests a weak instrument.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A valid instrument must be...",
+     "o": [
+      "relevant and exogenous",
+      "random and large",
+      "unobserved",
+      "correlated with the error"
+     ],
+     "a": 0,
+     "why": "It must predict x and be uncorrelated with the error.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Individual fixed effects in a panel remove bias from...",
+     "o": [
+      "time-invariant unobserved differences between units",
+      "all omitted variables, whether or not they change over time",
+      "time-varying confounders that differ between units",
+      "reverse causality between the variables"
+     ],
+     "a": 0,
+     "why": "They absorb constant unit-specific factors.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Robust (heteroskedasticity-consistent) standard errors are used because...",
+     "o": [
+      "error variance may not be constant, which invalidates the usual standard errors",
+      "coefficients are biased, and robust errors remove the bias",
+      "R² is too high, and robust errors lower it",
+      "x is endogenous, and robust errors fix that"
+     ],
+     "a": 0,
+     "why": "They correct inference, not bias.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Regressing one trending unit-root series on another unrelated one often yields...",
+     "o": [
+      "a spuriously significant relationship",
+      "a zero coefficient, since the series are unrelated",
+      "a negative R², which shows the fit is poor",
+      "a perfect causal link between the series"
+     ],
+     "a": 0,
+     "why": "Non-stationary series can appear related by chance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each problem to a typical remedy.",
+     "pairs": [
+      [
+       "Endogeneity",
+       "Instrumental variables"
+      ],
+      [
+       "Unobserved fixed differences",
+       "Panel fixed effects"
+      ],
+      [
+       "Non-constant error variance",
+       "Robust standard errors"
+      ],
+      [
+       "Selection into treatment",
+       "Randomisation or quasi-experiment"
+      ]
+     ],
+     "why": "Each issue has a corresponding tool.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does IV estimate a 'local' effect and why might that limit generalisation?",
+     "rubric": [
+      [
+       "compl",
+       "those whose",
+       "affected by the instrument",
+       "marginal",
+       "subgroup"
+      ],
+      [
+       "not everyone",
+       "limited",
+       "differ",
+       "heterogen",
+       "not all",
+       "generali"
+      ],
+      [
+       "instrument",
+       "change",
+       "behaviour",
+       "treatment"
+      ]
+     ],
+     "min": 2,
+     "model": "IV identifies the effect only for people whose treatment status is changed by the instrument, so if effects differ across people the estimate may not apply to others or to the whole population.",
+     "why": "Heterogeneous effects limit external validity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A researcher controls for a variable caused by both treatment and outcome (a collider). What is the likely result?",
+     "o": [
+      "Bias may be introduced",
+      "Bias is removed",
+      "Nothing changes",
+      "Standard errors vanish"
+     ],
+     "a": 0,
+     "why": "Conditioning on a collider opens a spurious path.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A study uses distance to college as an instrument for education in wage regressions. Which concern is most serious?",
+     "o": [
+      "Distance might be correlated with family background or local labour markets, violating exogeneity",
+      "Distance is not numeric, so it cannot be used",
+      "Education is random, so no instrument is needed",
+      "Wages are fixed, so they cannot respond"
+     ],
+     "a": 0,
+     "why": "Exogeneity is the untestable assumption.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What can a researcher do to build credibility in an empirical study?",
+     "rubric": [
+      [
+       "robust",
+       "sensitiv",
+       "alternative",
+       "specification"
+      ],
+      [
+       "pre-regist",
+       "transparen",
+       "replicat",
+       "data",
+       "code",
+       "share"
+      ],
+      [
+       "placebo",
+       "falsif",
+       "assumption",
+       "test",
+       "limit",
+       "identif"
+      ]
+     ],
+     "min": 2,
+     "model": "A researcher can show results under alternative specifications, run placebo or falsification tests, state assumptions and limits, and share data and code so others can replicate.",
+     "why": "Transparency and robustness improve credibility.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A coefficient is statistically significant but tiny in economic terms. How should it be interpreted?",
+     "o": [
+      "As precisely estimated but of little practical importance",
+      "As important, because the p-value is small",
+      "As meaningless, because the size is tiny",
+      "As proving causation, because it is significant"
+     ],
+     "a": 0,
+     "why": "Significance is not the same as magnitude.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Endogeneity and instrumental variables",
+    "model": "When a variable we put in a regression is tangled up with unobserved factors, OLS gives biased answers. An instrument is something that shifts the variable but affects the outcome only through it, which lets us isolate a causal effect. With one instrument the estimate is the covariance of the instrument with the outcome divided by its covariance with the variable. Weak or invalid instruments make results unreliable.",
+    "points": [
+     {
+      "k": [
+       "endogen",
+       "correlated",
+       "error",
+       "omitted",
+       "bias"
+      ],
+      "ask": "What is the problem with OLS here?"
+     },
+     {
+      "k": [
+       "instrument",
+       "relevant",
+       "exogenous",
+       "shifts"
+      ],
+      "ask": "What makes a good instrument?"
+     },
+     {
+      "k": [
+       "cov",
+       "divide",
+       "ratio",
+       "two-stage",
+       "2sls"
+      ],
+      "ask": "How do we compute the IV estimate?"
+     },
+     {
+      "k": [
+       "weak",
+       "valid",
+       "limit",
+       "local",
+       "assumption"
+      ],
+      "ask": "What are the limits?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Development economics",
+   "icon": "🌍",
+   "hook": "Giving poor households cash sounds simple, but how can we find out whether it actually improves their lives rather than what we hope it does?",
+   "explain": [
+    "Development economics studies why some countries and households remain poor and which policies help. Poverty is measured using a poverty line z. The headcount ratio is the share of people below z. The poverty gap index averages the shortfall (z − y) ÷ z across the population, with zero for the non-poor. The squared gap (FGT2) gives more weight to the poorest. The Gini coefficient summarises inequality; for n values, G = Σᵢ Σⱼ |yᵢ − yⱼ| ÷ (2n²·ȳ).",
+    "Poverty trap models show that low savings, low health or low capital can reinforce one another so that some people or regions stay poor without a push. Evidence comes from randomised controlled trials of cash transfers, microfinance, education and health programmes, as well as natural experiments and macro studies on institutions, geography and trade. Results often vary by context, and large-scale effects can differ from small pilots.",
+    "Debates include aid versus trade and institutions, the role of the state and markets, and how to respect local knowledge and autonomy. Measuring development well means attending to inequality, voice and sustainability as well as income. No single policy has proved a universal solution."
+   ],
+   "example": {
+    "q": "Four people have incomes 40, 60, 90, 150. The poverty line is z = 100. Find the headcount ratio, the poverty gap index and the Gini coefficient (3 decimals).",
+    "steps": [
+     "Three of four are below 100, so the headcount is 75%.",
+     "Gaps: (100−40)/100 = 0.6; 0.4; 0.1; 0. Mean = 1.1 ÷ 4 = 0.275.",
+     "Gini: mean = 85; sum of |yᵢ − yⱼ| over unordered pairs = 20+50+110+30+90+60 = 360, ordered = 720; G = 720 ÷ (2 × 16 × 85) = 0.2647."
+    ],
+    "a": "Headcount 75%; poverty gap 0.275; Gini ≈ 0.265"
+   },
+   "analogies": {
+    "farm": "A farmer who cannot afford seed cannot grow enough to afford seed next year: a trap.",
+    "city": "Poor neighbourhoods may lack schools and jobs that reinforce each other.",
+    "nature": "A seed on rocky ground needs soil first before it can grow.",
+    "tech": "Mobile money lets households without branches save and send funds safely."
+   },
+   "mnemonic": "Count the poor, measure the gap, weigh the poorest, and check the spread.",
+   "terms": [
+    [
+     "Headcount ratio",
+     "Share of the population below the poverty line."
+    ],
+    [
+     "Poverty gap index",
+     "Average shortfall below the poverty line as a share of the line, over the whole population."
+    ],
+    [
+     "Poverty trap",
+     "Self-reinforcing mechanism that keeps people poor."
+    ],
+    [
+     "Randomised controlled trial",
+     "Experiment assigning treatment at random to estimate causal effects."
+    ]
+   ],
+   "misc": {
+    "wrong": "One successful pilot proves the programme will work everywhere.",
+    "right": "Context, scale and implementation can change results, so replication across settings is needed."
+   },
+   "limits": "Poverty lines are arbitrary to some degree, and RCTs may not answer large structural questions. Ethics and local participation matter in design.",
+   "trip": {
+    "wiki": "Poverty trap",
+    "prompt": "Find the mechanisms that can create poverty traps and policy responses debated by economists."
+   },
+   "sources": [
+    "Development economics",
+    "Poverty trap",
+    "Gini coefficient"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Incomes are 40, 60, 90, 150 and the poverty line is 100. What is the headcount ratio in %?",
+     "a": 75,
+     "tol": 0,
+     "unit": "%",
+     "why": "3 of 4 are below 100.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For the same data, what is the poverty gap index (average of (z − y)/z over all four people, zero for the non-poor)?",
+     "a": 0.275,
+     "tol": 0.001,
+     "why": "(0.6 + 0.4 + 0.1 + 0) ÷ 4 = 0.275.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Incomes 20, 20, 60 (z = 50). What is the poverty gap index?",
+     "a": 0.4,
+     "tol": 0.001,
+     "why": "Gaps 0.6, 0.6, 0; mean = 1.2 ÷ 3 = 0.4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The squared poverty gap (FGT2) is useful because it...",
+     "o": [
+      "gives more weight to the poorest",
+      "ignores inequality among the poor altogether",
+      "counts only the people who are not poor",
+      "equals the simple headcount of poor people"
+     ],
+     "a": 0,
+     "why": "Squaring shortfalls emphasises larger gaps.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which describes a poverty trap?",
+     "o": [
+      "Low income prevents investment in health or capital that would raise income",
+      "High savings reduce income in the next year",
+      "Rich countries cannot grow, whatever they do",
+      "Prices are fixed, so nobody can invest"
+     ],
+     "a": 0,
+     "why": "A self-reinforcing cycle.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are randomised trials valued in development research?",
+     "o": [
+      "Random assignment helps isolate causal effects",
+      "They are always cheap to run, in every setting",
+      "They answer all questions about a policy",
+      "They avoid all ethical concerns for researchers"
+     ],
+     "a": 0,
+     "why": "Randomisation balances unobservables on average.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A cash-transfer pilot succeeds in one region. What is a sound next step?",
+     "o": [
+      "Test it in other settings and at scale",
+      "Assume it works everywhere, since it worked once",
+      "Cancel it, since one region is not enough",
+      "Ignore local differences, since the money is the same"
+     ],
+     "a": 0,
+     "why": "External validity must be checked.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each measure to what it captures.",
+     "pairs": [
+      [
+       "Headcount ratio",
+       "How many are poor"
+      ],
+      [
+       "Poverty gap",
+       "How far below the line on average"
+      ],
+      [
+       "FGT2",
+       "Weights the poorest more"
+      ],
+      [
+       "Gini",
+       "Inequality across all incomes"
+      ]
+     ],
+     "why": "Different measures answer different questions.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why measuring development only by GDP per person can miss important aspects of wellbeing and give one alternative.",
+     "rubric": [
+      [
+       "inequality",
+       "distribution",
+       "average",
+       "poor"
+      ],
+      [
+       "health",
+       "education",
+       "life expectancy",
+       "hdi",
+       "capabilit",
+       "freedom",
+       "environment"
+      ],
+      [
+       "not capture",
+       "miss",
+       "ignore",
+       "hide",
+       "leave out"
+      ]
+     ],
+     "min": 2,
+     "model": "GDP per person is an average that can hide inequality and ignores health, education, freedom and sustainability. Alternatives include the Human Development Index, multidimensional poverty measures and capability-based approaches.",
+     "why": "Wellbeing is multidimensional.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Aid advocates and sceptics disagree. Which statement best describes the evidence?",
+     "o": [
+      "Effects vary by type of aid, context and governance, so blanket claims are unsupported",
+      "Aid always raises growth, in every country",
+      "Aid always lowers growth, in every country",
+      "There is no evidence on aid, so nothing can be said"
+     ],
+     "a": 0,
+     "why": "Mixed and context-dependent results.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Microfinance was expected to transform poverty. RCTs found modest average effects on income. What is the best lesson?",
+     "o": [
+      "Tools help some households, but are not a universal fix and effects are heterogeneous",
+      "Microfinance is always harmful to the poor",
+      "The trials are invalid, so their results can be ignored",
+      "Credit never matters to any household"
+     ],
+     "a": 0,
+     "why": "Rigorous evidence tempers early hopes without dismissing value.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is participation by local communities important in design and evaluation of development programmes?",
+     "rubric": [
+      [
+       "local",
+       "knowledge",
+       "context",
+       "know"
+      ],
+      [
+       "ownership",
+       "legitim",
+       "trust",
+       "accountab",
+       "respect",
+       "voice"
+      ],
+      [
+       "effective",
+       "fit",
+       "priorit",
+       "better",
+       "sustain"
+      ]
+     ],
+     "min": 2,
+     "model": "Communities hold knowledge about local constraints and priorities, and participation builds legitimacy, accountability and respect, which tends to make programmes better fitted and more sustainable.",
+     "why": "Participation improves design and legitimacy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A large infrastructure project raises national growth but displaces a community. How should this be assessed?",
+     "o": [
+      "Weigh aggregate gains against distribution, rights and compensation, recognising different value judgements",
+      "Only growth matters, so the community's loss can be set aside",
+      "Only the displaced matter, so the gains count for nothing",
+      "It cannot be assessed, since the effects differ"
+     ],
+     "a": 0,
+     "why": "Both efficiency and justice are relevant.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Measuring poverty and testing programmes",
+    "model": "To measure poverty we count how many people are below a poverty line and how far below they are on average. The Gini coefficient summarises inequality. To find out whether a programme works we compare treated and untreated groups, ideally with random assignment. Results may differ from place to place, so replication matters.",
+    "points": [
+     {
+      "k": [
+       "poverty line",
+       "headcount",
+       "below",
+       "count"
+      ],
+      "ask": "How do we count the poor?"
+     },
+     {
+      "k": [
+       "gap",
+       "how far",
+       "shortfall",
+       "depth"
+      ],
+      "ask": "How do we measure how poor they are?"
+     },
+     {
+      "k": [
+       "gini",
+       "inequality",
+       "spread"
+      ],
+      "ask": "How is inequality summarised?"
+     },
+     {
+      "k": [
+       "random",
+       "trial",
+       "compare",
+       "control",
+       "context",
+       "replicat"
+      ],
+      "ask": "How do we test if a programme works?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Environmental and resource economics",
+   "icon": "🌍",
+   "hook": "How much should today's generation spend to avoid damage that will occur in 50 years, and who should decide the discount rate?",
+   "explain": [
+    "Environmental economics applies externality and public goods theory to pollution and resource use. The efficient level of abatement sets marginal abatement cost (MAC) equal to the marginal benefit of avoided damage (MB). Instruments include taxes, tradable permits (cap-and-trade) and standards. With certainty about costs, a tax and a permit system can reach the same outcome; with uncertainty, their results differ (Weitzman), depending on the slopes of marginal costs and benefits.",
+    "Discounting is central for long-run problems. The present value of a future damage D in t years is D ÷ (1 + r)^t. At r = 1%, 3% and 5%, 100 of damage in 50 years is worth about 60.8, 22.8 and 8.7 today. Economists argue over r: some favour market-based rates, others lower rates on ethical grounds of fairness between generations. For exhaustible resources the Hotelling rule says the net price of a resource in the ground should rise at the rate of interest in an efficient market.",
+    "Coase argued that with clear property rights and low transaction costs, parties can bargain to an efficient outcome whatever the initial allocation. In practice transaction costs, uncertainty and equity concerns limit this. Valuing nature involves methods such as travel-cost and stated-preference surveys, which are contested, and some argue that certain values should not be priced."
+   ],
+   "example": {
+    "q": "MAC = 2A and MB of avoided damage = 60 − A (per unit of abatement A). Find the efficient abatement and the price on carbon that achieves it. Also find the present value of 100 of damage in 50 years at 3%, and the price of a resource worth 20 today under Hotelling at r = 5% after 3 years.",
+    "steps": [
+     "Set 2A = 60 − A, so 3A = 60, A = 20. MAC at A = 20 is 40, so a price (tax) of 40 per unit.",
+     "PV = 100 ÷ 1.03^50 ≈ 100 ÷ 4.384 ≈ 22.8.",
+     "Hotelling: 20 × 1.05³ ≈ 23.15."
+    ],
+    "a": "A = 20 with a price of 40; PV ≈ 22.8; resource price ≈ 23.15"
+   },
+   "analogies": {
+    "farm": "A village agrees on how many animals can graze so the pasture lasts.",
+    "sea": "Fishing quotas keep stocks from collapsing.",
+    "city": "A congestion charge makes drivers pay for the delay they cause.",
+    "nature": "A forest saved today provides timber and clean air later."
+   },
+   "mnemonic": "Equalise marginal cost to marginal benefit, and mind the discount rate.",
+   "terms": [
+    [
+     "Marginal abatement cost",
+     "Cost of cutting one more unit of pollution."
+    ],
+    [
+     "Cap-and-trade",
+     "A system of tradable emissions permits under an overall cap."
+    ],
+    [
+     "Discount rate",
+     "Rate used to convert future values into present values."
+    ],
+    [
+     "Hotelling rule",
+     "In an efficient market, an exhaustible resource's net price rises at the interest rate."
+    ]
+   ],
+   "misc": {
+    "wrong": "A carbon tax and a cap-and-trade system are always identical.",
+    "right": "They are equivalent under certainty, but with uncertainty, administrative differences and political economy they can differ."
+   },
+   "limits": "Estimates of damages, especially for climate change, are highly uncertain and depend on the discount rate and on treatment of catastrophic risk and non-market values.",
+   "trip": {
+    "wiki": "Social cost of carbon",
+    "prompt": "Find what the social cost of carbon is and why estimates vary so much."
+   },
+   "sources": [
+    "Environmental economics",
+    "Hotelling's rule",
+    "Coase theorem"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "MAC = 2A and MB = 60 − A. What is the efficient abatement A?",
+     "a": 20,
+     "tol": 0,
+     "why": "2A = 60 − A gives A = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the present value of 100 of damage in 50 years at a 3% discount rate (nearest whole number)?",
+     "a": 23,
+     "tol": 1,
+     "why": "100 ÷ 1.03^50 ≈ 22.8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A resource has a net price of 20 now. Under the Hotelling rule with r = 5%, what is the price after 3 years (two decimals)?",
+     "a": 23.15,
+     "tol": 0.01,
+     "why": "20 × 1.05³ = 23.15.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Raising the discount rate from 1% to 5% in a climate damages calculation will tend to...",
+     "o": [
+      "lower the present value of long-run damages, weakening the case for costly action now",
+      "raise the present value of long-run damages, strengthening the case for action now",
+      "have no effect on the value of the damages",
+      "remove uncertainty about the damages altogether"
+     ],
+     "a": 0,
+     "why": "Future benefits are discounted more heavily.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The Coase theorem says that bargaining can reach an efficient outcome if...",
+     "o": [
+      "property rights are clear and transaction costs are low",
+      "there are many polluters, since a crowd bargains better",
+      "prices are fixed by the government",
+      "the government taxes everyone who takes part"
+     ],
+     "a": 0,
+     "why": "These are the key conditions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If damage is steeply increasing in emissions while abatement costs are uncertain and fairly flat, economists following Weitzman would tend to favour...",
+     "o": [
+      "a quantity limit (cap)",
+      "a tax on emissions, since price control is best here",
+      "no policy, since costs are uncertain",
+      "a subsidy for abatement, which fixes the price paid"
+     ],
+     "a": 0,
+     "why": "When the marginal benefit curve is steep relative to marginal cost, getting the quantity right matters most.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each instrument to its feature.",
+     "pairs": [
+      [
+       "Carbon tax",
+       "Sets the price, quantity adjusts"
+      ],
+      [
+       "Cap-and-trade",
+       "Sets the quantity, price adjusts"
+      ],
+      [
+       "Technology standard",
+       "Mandates a method"
+      ],
+      [
+       "Subsidy for clean energy",
+       "Lowers cost of the desired activity"
+      ]
+     ],
+     "why": "Instruments differ in what they fix.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why is the choice of discount rate for climate policy partly an ethical question?",
+     "rubric": [
+      [
+       "future",
+       "generation",
+       "later",
+       "descendants"
+      ],
+      [
+       "weigh",
+       "value",
+       "count",
+       "fair",
+       "equity",
+       "ethic"
+      ],
+      [
+       "rate",
+       "high",
+       "low",
+       "impatien",
+       "pure time"
+      ]
+     ],
+     "min": 2,
+     "model": "A high discount rate gives little weight to future generations' welfare, a low rate gives them more. How much to weigh future people against present people is an ethical judgment, not only an empirical question.",
+     "why": "Intergenerational fairness is at stake.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A regulator sets a cap on total fishing and allows trading of quotas. A main efficiency benefit is...",
+     "o": [
+      "quotas flow to those who can fish at lowest cost",
+      "fish become free to catch for everyone",
+      "fishing effort is unlimited, since quotas can be sold",
+      "costs vanish, as quotas pay for the boats"
+     ],
+     "a": 0,
+     "why": "Trading equalises marginal costs across firms.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a valid criticism of putting a monetary value on ecosystems?",
+     "o": [
+      "Some people hold values they regard as not tradable, and valuation methods rest on contested assumptions",
+      "Money values are exact, so no one can doubt them",
+      "Ecosystems have no value, so none can be set",
+      "Prices always capture all the values that people hold"
+     ],
+     "a": 0,
+     "why": "Valuation is controversial.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Developing countries argue rich countries should bear more of the cost of climate action. Which is the most balanced framing?",
+     "o": [
+      "It combines questions of efficiency, historical responsibility and capacity to pay, on which values differ",
+      "Only efficiency matters, so history can be set aside",
+      "Responsibility is irrelevant to who pays",
+      "Nobody disagrees about who should pay"
+     ],
+     "a": 0,
+     "why": "Equity principles are contested.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a carbon price be regressive, and how could policy respond?",
+     "rubric": [
+      [
+       "poor",
+       "low-income",
+       "share of income",
+       "lower-income",
+       "regressive"
+      ],
+      [
+       "energy",
+       "heating",
+       "fuel",
+       "transport",
+       "necessities"
+      ],
+      [
+       "rebate",
+       "dividend",
+       "transfer",
+       "revenue",
+       "compensat",
+       "recycle"
+      ]
+     ],
+     "min": 2,
+     "model": "Low-income households spend a larger share of income on energy, so a carbon price can take a bigger share of their income. Policy can return the revenue as equal rebates or targeted transfers to offset this.",
+     "why": "Revenue recycling addresses distribution.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Under deep uncertainty about catastrophic outcomes, a plausible policy principle is...",
+     "o": [
+      "to weigh insurance-like benefits of avoiding extreme risks, not only expected values",
+      "to ignore tail risks, since they are very unlikely",
+      "to use the highest discount rate available",
+      "to wait indefinitely for better information"
+     ],
+     "a": 0,
+     "why": "Risk aversion and tail risks matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Pricing pollution and discounting the future",
+    "model": "The efficient amount of pollution control is where the cost of cutting one more unit equals the benefit of the damage avoided. A tax or tradable permits can achieve this by putting a price on pollution. Because damages occur in the future we discount them, and the choice of discount rate strongly changes how much we do today, which is partly an ethical matter. For example, 100 of damage in 50 years is worth about 23 today at 3% but about 61 at 1%.",
+    "points": [
+     {
+      "k": [
+       "marginal",
+       "cost",
+       "benefit",
+       "equal",
+       "efficient"
+      ],
+      "ask": "What is the efficient level of pollution control?"
+     },
+     {
+      "k": [
+       "tax",
+       "permit",
+       "cap",
+       "trade",
+       "price"
+      ],
+      "ask": "How can we get there?"
+     },
+     {
+      "k": [
+       "discount",
+       "future",
+       "present value",
+       "rate"
+      ],
+      "ask": "What is discounting?"
+     },
+     {
+      "k": [
+       "ethic",
+       "generation",
+       "fair",
+       "disagree",
+       "value"
+      ],
+      "ask": "Why is the discount rate contested?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Financial risk modelling",
+   "icon": "📊",
+   "hook": "A bank says there is only a 5% chance of losing more than a certain amount in a day. Does that tell you how bad the bad days could be?",
+   "explain": [
+    "Risk models quantify uncertainty about returns and losses. For a portfolio of two assets with weights w₁, w₂, volatilities σ₁, σ₂ and correlation ρ, the variance is w₁²σ₁² + w₂²σ₂² + 2w₁w₂ρσ₁σ₂. Diversification lowers risk when ρ is below 1. The Sharpe ratio is (expected return − risk-free rate) ÷ volatility. The Capital Asset Pricing Model (CAPM) says expected return = rf + β(market premium).",
+    "Value at Risk (VaR) at confidence level c is the loss threshold that is exceeded only (1 − c) of the time. Under a normal distribution with zero mean, one-day 95% VaR = 1.645 × σ × portfolio value. Expected shortfall (ES) is the average loss in the tail beyond VaR, and captures severity. Credit risk is often summarised as expected loss = probability of default × loss given default × exposure.",
+    "Models rest on assumptions: stable distributions, correlations and liquidity. In crises correlations tend to rise, tails are fatter than normal, and models can fail together. Risk management therefore adds stress tests, scenario analysis and judgement. This lesson explains methods; it is not advice about investments."
+   ],
+   "example": {
+    "q": "Weights 0.6 and 0.4, volatilities 20% and 10%, correlation 0.25. Find the portfolio standard deviation. Also: one-day σ = 2% on a portfolio worth 1,000,000 zeds, find the 95% VaR (z = 1.645). Credit: PD 2%, LGD 40%, exposure 500,000.",
+    "steps": [
+     "Variance = 0.36×0.04 + 0.16×0.01 + 2×0.6×0.4×0.25×0.2×0.1 = 0.0144 + 0.0016 + 0.0024 = 0.0184; σ = √0.0184 ≈ 13.6%.",
+     "VaR = 1.645 × 0.02 × 1,000,000 = 32,900 zeds.",
+     "Expected loss = 0.02 × 0.40 × 500,000 = 4,000 zeds."
+    ],
+    "a": "σ ≈ 13.6%; VaR = 32,900 zeds; expected loss = 4,000 zeds"
+   },
+   "analogies": {
+    "farm": "Growing several crops means one bad harvest does not ruin the farm.",
+    "sea": "A harbour insures against storms by planning for the rare big wave, not just average waves.",
+    "city": "A flood barrier is built for a once-in-a-hundred-years flood, not the average river level.",
+    "sport": "A coach rotates players so one injury does not sink the team."
+   },
+   "mnemonic": "VaR says where the tail starts; expected shortfall says how deep it is.",
+   "terms": [
+    [
+     "Value at Risk",
+     "A loss threshold exceeded with a stated small probability."
+    ],
+    [
+     "Expected shortfall",
+     "Average loss when the loss exceeds VaR."
+    ],
+    [
+     "Beta",
+     "Sensitivity of an asset's return to the market's return."
+    ],
+    [
+     "Sharpe ratio",
+     "Excess return per unit of volatility."
+    ]
+   ],
+   "misc": {
+    "wrong": "VaR tells you the worst possible loss.",
+    "right": "VaR only gives a threshold exceeded with small probability; losses beyond it can be much larger."
+   },
+   "limits": "Normality understates tail risk, and correlations are unstable in stress. Past data may not represent future conditions. Not investment advice.",
+   "trip": {
+    "wiki": "Value at risk",
+    "prompt": "Find the criticisms of VaR and what expected shortfall adds."
+   },
+   "sources": [
+    "Value at risk",
+    "Expected shortfall",
+    "Capital asset pricing model"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Weights 0.6/0.4, volatilities 20%/10%, correlation 0.25. What is the portfolio variance?",
+     "a": 0.0184,
+     "tol": 0.0001,
+     "why": "0.0144 + 0.0016 + 0.0024 = 0.0184.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "One-day return volatility is 2% on a portfolio of 1,000,000. What is the one-day 95% VaR with z = 1.645 (zero mean)?",
+     "a": 32900,
+     "tol": 1,
+     "unit": "zeds",
+     "why": "1.645 × 0.02 × 1,000,000 = 32,900.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Probability of default 2%, loss given default 40%, exposure 500,000. What is expected loss?",
+     "a": 4000,
+     "tol": 0,
+     "unit": "zeds",
+     "why": "0.02 × 0.40 × 500,000 = 4,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Expected return 8%, risk-free rate 2%, volatility 15%. What is the Sharpe ratio?",
+     "o": [
+      "0.4",
+      "0.53",
+      "0.13",
+      "2.5"
+     ],
+     "a": 0,
+     "why": "(8 − 2) ÷ 15 = 0.4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "CAPM: rf = 2%, β = 1.2, market premium = 5%. What is the expected return?",
+     "o": [
+      "8%",
+      "6%",
+      "7.2%",
+      "10%"
+     ],
+     "a": 0,
+     "why": "2 + 1.2 × 5 = 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Diversification reduces portfolio risk most when correlation between assets is...",
+     "o": [
+      "low or negative",
+      "exactly 1, since assets then move together",
+      "undefined, since correlation has no value for assets",
+      "irrelevant, since risk depends on the mean return only"
+     ],
+     "a": 0,
+     "why": "Imperfectly correlated assets offset each other.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Expected shortfall is better than VaR at capturing...",
+     "o": [
+      "the size of losses in the tail",
+      "the mean return on the portfolio over the period",
+      "the median return on the portfolio",
+      "the risk-free rate of return in the market"
+     ],
+     "a": 0,
+     "why": "It averages losses beyond the VaR threshold.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In a crisis, correlations among risky assets tend to...",
+     "o": [
+      "rise, reducing diversification benefits",
+      "fall to zero, which increases diversification benefits",
+      "become negative, which increases diversification benefits",
+      "stay fixed, so diversification is unchanged"
+     ],
+     "a": 0,
+     "why": "Assets often fall together in stress.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each measure to what it summarises.",
+     "pairs": [
+      [
+       "Volatility",
+       "Dispersion of returns"
+      ],
+      [
+       "Beta",
+       "Sensitivity to market"
+      ],
+      [
+       "VaR",
+       "Tail loss threshold"
+      ],
+      [
+       "Expected loss (credit)",
+       "PD × LGD × exposure"
+      ]
+     ],
+     "why": "Risk measures capture different dimensions.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why VaR based on a normal distribution may understate risk in financial markets.",
+     "rubric": [
+      [
+       "fat",
+       "tail",
+       "extreme",
+       "rare",
+       "heavy"
+      ],
+      [
+       "normal",
+       "assum",
+       "distribution",
+       "model"
+      ],
+      [
+       "crisis",
+       "correlat",
+       "underestimate",
+       "losses",
+       "bigger",
+       "shock"
+      ]
+     ],
+     "min": 2,
+     "model": "Real returns have fatter tails than the normal distribution, so extreme losses occur more often than the model implies, especially in crises when correlations rise, and VaR therefore understates the risk.",
+     "why": "Tail risk is underestimated.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A bank's risk model performed well for years then failed in a crisis. What is the most useful response?",
+     "o": [
+      "Examine the assumptions, add stress tests and scenarios, and combine models with judgement",
+      "Trust the model more, since it worked for years",
+      "Ignore it, since models cannot be of any use",
+      "Remove all risk limits, since the model is a guide"
+     ],
+     "a": 0,
+     "why": "Model risk requires humility and complementary tools.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can individually sensible risk management by each firm create systemic risk?",
+     "rubric": [
+      [
+       "sell",
+       "fire sale",
+       "deleverag",
+       "all",
+       "same time",
+       "herd"
+      ],
+      [
+       "price",
+       "fall",
+       "spiral",
+       "collapse",
+       "spread",
+       "contagion"
+      ],
+      [
+       "correlat",
+       "linked",
+       "connected",
+       "common",
+       "similar models"
+      ]
+     ],
+     "min": 2,
+     "model": "If many firms follow similar rules and sell assets at the same time, prices fall, which triggers more selling. Links between institutions spread losses, so individually prudent actions can amplify a system-wide crisis.",
+     "why": "Fallacy of composition in finance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is a reasonable view on using models in finance?",
+     "o": [
+      "Models are useful tools but must be used with awareness of their assumptions and limits",
+      "Models predict exactly what will happen, so judgement is not needed",
+      "Models are useless in finance, so should be dropped",
+      "Only past data matters, so assumptions can be ignored"
+     ],
+     "a": 0,
+     "why": "Balanced use is wise.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Measuring financial risk",
+    "model": "Risk models measure how much a portfolio might lose. Spreading money across assets that do not move together reduces risk. Value at Risk gives a loss level that is exceeded only on a small share of days, but it says nothing about how bad those days are, which expected shortfall tries to capture. Models can fail in crises, so judgement and stress tests are needed. This is education, not investment advice.",
+    "points": [
+     {
+      "k": [
+       "diversif",
+       "spread",
+       "correlat",
+       "not move together"
+      ],
+      "ask": "How does diversification reduce risk?"
+     },
+     {
+      "k": [
+       "var",
+       "value at risk",
+       "threshold",
+       "small probability",
+       "exceeded"
+      ],
+      "ask": "What does Value at Risk tell us?"
+     },
+     {
+      "k": [
+       "shortfall",
+       "tail",
+       "how bad",
+       "average loss"
+      ],
+      "ask": "What does it not tell us?"
+     },
+     {
+      "k": [
+       "assumption",
+       "crisis",
+       "fat",
+       "stress",
+       "judgement",
+       "limit"
+      ],
+      "ask": "Why can models fail?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Economic forecasting and uncertainty",
+   "icon": "🔮",
+   "hook": "If forecasts are often wrong, why do governments and firms still rely on them, and how should they use them?",
+   "explain": [
+    "Forecasting uses models and judgement to predict economic variables. Forecast accuracy is measured by errors: mean absolute error (MAE) and root mean squared error (RMSE), which penalises large errors more. A forecast should be compared with a simple benchmark such as a no-change forecast. Forecasts of turning points like recessions are especially hard.",
+    "Uncertainty comes from several sources: shocks that are unpredictable, uncertainty about parameters, uncertainty about the model, and data revisions. For an AR(1) process x_t = φx_(t−1) + ε_t with error standard deviation σ, the two-step-ahead forecast variance is σ²(1 + φ²), so intervals widen with the horizon. Good forecasts report ranges or fan charts, not just a single number.",
+    "Bayes' rule updates beliefs with new evidence: P(A|B) = P(B|A)·P(A) ÷ P(B). Scenario analysis explores 'what if' paths when probabilities are unclear. Combining forecasts from several models often beats a single model. Honest communication of uncertainty helps decision-makers avoid false precision."
+   ],
+   "example": {
+    "q": "Forecast errors over four quarters are +1, −1, +2, −2. Find MAE and RMSE. Then: for AR(1) with φ = 0.8 and σ = 1, find the two-step forecast standard deviation and the 95% interval half-width. Last: prior recession probability 20%; a signal appears with probability 0.8 in recessions and 0.2 otherwise; find P(recession | signal).",
+    "steps": [
+     "MAE = (1+1+2+2) ÷ 4 = 1.5; MSE = (1+1+4+4) ÷ 4 = 2.5; RMSE ≈ 1.58.",
+     "Variance = 1×(1 + 0.64) = 1.64; sd ≈ 1.28; half-width = 1.96 × 1.28 ≈ 2.51.",
+     "P = 0.8×0.2 ÷ (0.8×0.2 + 0.2×0.8) = 0.16 ÷ 0.32 = 0.5."
+    ],
+    "a": "MAE 1.5, RMSE ≈ 1.58; interval ±2.51; posterior 50%"
+   },
+   "analogies": {
+    "farm": "A farmer plans for a range of rainfall, not just the average.",
+    "sea": "A sailor reads a weather forecast with probabilities and keeps a margin of safety.",
+    "city": "A city plans for peak demand scenarios.",
+    "tech": "An ensemble of models gives a more stable prediction."
+   },
+   "mnemonic": "A forecast without an error bar is a story without a caveat.",
+   "terms": [
+    [
+     "RMSE",
+     "Square root of the mean squared forecast error."
+    ],
+    [
+     "Fan chart",
+     "A chart showing the range of likely forecast outcomes widening over time."
+    ],
+    [
+     "Bayes' rule",
+     "A rule for updating probabilities with new evidence."
+    ],
+    [
+     "Scenario analysis",
+     "Exploring alternative paths of the future without assigning precise probabilities."
+    ]
+   ],
+   "misc": {
+    "wrong": "A good model is one that never gets a forecast wrong.",
+    "right": "A good forecast is calibrated and honest about uncertainty, and is judged against benchmarks."
+   },
+   "limits": "Structural breaks, data revisions and unprecedented events make forecasts less reliable. The historical record of forecasting turning points is poor.",
+   "trip": {
+    "wiki": "Forecasting",
+    "prompt": "Find the difference between point forecasts and density or interval forecasts."
+   },
+   "sources": [
+    "Forecasting",
+    "Bayes' theorem",
+    "Scenario planning"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Forecast errors are +1, −1, +2, −2. What is the mean absolute error?",
+     "a": 1.5,
+     "tol": 0.001,
+     "why": "(1 + 1 + 2 + 2) ÷ 4 = 1.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "For errors +1, −1, +2, −2, what is the RMSE?",
+     "o": [
+      "About 1.58",
+      "1.5",
+      "2.5",
+      "About 1.22"
+     ],
+     "a": 0,
+     "why": "√(10 ÷ 4) = √2.5 ≈ 1.58, larger than the MAE of 1.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Prior probability of recession is 20%. A signal occurs with probability 0.8 in recessions and 0.2 otherwise. What is P(recession | signal)?",
+     "a": 0.5,
+     "tol": 0.001,
+     "why": "0.16 ÷ (0.16 + 0.16) = 0.5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "AR(1) with φ = 0.8 and σ = 1. What is the variance of the two-step-ahead forecast error?",
+     "a": 1.64,
+     "tol": 0.001,
+     "why": "σ²(1 + φ²) = 1 + 0.64.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "RMSE differs from MAE in that it...",
+     "o": [
+      "penalises large errors more",
+      "ignores large errors, so it is less sensitive than MAE",
+      "is always smaller than MAE, for any data",
+      "is not affected by the scale of the data"
+     ],
+     "a": 0,
+     "why": "Squaring emphasises large errors.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why compare a model's forecasts with a no-change benchmark?",
+     "o": [
+      "To show whether the model adds value over a simple rule",
+      "To make the model look worse than it really is",
+      "Because benchmarks are always the best forecast",
+      "To remove all error from the forecast"
+     ],
+     "a": 0,
+     "why": "A model should beat simple alternatives to justify its complexity.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "As the forecast horizon grows for a stationary AR(1), the forecast uncertainty...",
+     "o": [
+      "rises towards the unconditional variance",
+      "falls to zero, since the forecast becomes exact",
+      "stays at zero for every horizon",
+      "becomes negative as the horizon lengthens"
+     ],
+     "a": 0,
+     "why": "Information about the current state fades.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does combining forecasts from several models often help?",
+     "o": [
+      "Errors from different models partly offset and model uncertainty is reduced",
+      "All models are identical, so combining adds nothing new",
+      "It removes shocks from the economy",
+      "It guarantees accuracy for every forecast"
+     ],
+     "a": 0,
+     "why": "Diversification of forecast errors.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each source of uncertainty to an example.",
+     "pairs": [
+      [
+       "Shock uncertainty",
+       "An unforeseen pandemic"
+      ],
+      [
+       "Parameter uncertainty",
+       "Unsure of a multiplier's size"
+      ],
+      [
+       "Model uncertainty",
+       "Unsure which theory is right"
+      ],
+      [
+       "Data uncertainty",
+       "Later revisions to GDP"
+      ]
+     ],
+     "why": "Forecasters face several types of uncertainty.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A minister asks for a single number for next year's growth. Explain how you would present the forecast honestly.",
+     "rubric": [
+      [
+       "range",
+       "interval",
+       "fan",
+       "band",
+       "uncertain"
+      ],
+      [
+       "scenario",
+       "assum",
+       "risk",
+       "if",
+       "depends"
+      ],
+      [
+       "probab",
+       "likely",
+       "confidence",
+       "error",
+       "past"
+      ]
+     ],
+     "min": 2,
+     "model": "I would give a central estimate with a range or fan chart, state the key assumptions and risks, show scenarios, and note how accurate similar forecasts have been, so that the uncertainty is clear.",
+     "why": "Communicating uncertainty improves decisions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A signal predicting recession has a high hit rate but recessions are rare. Why might most signals still be false alarms?",
+     "o": [
+      "With a low base rate, even a good test produces many false positives",
+      "Signals are random, so the base rate cannot matter",
+      "The base rate does not matter for a good test",
+      "Recessions are common, so most alarms are true"
+     ],
+     "a": 0,
+     "why": "Bayes' rule: low prior probability lowers the posterior.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it risky to rely on a single model for policy decisions during a regime change?",
+     "rubric": [
+      [
+       "break",
+       "structural",
+       "regime",
+       "change",
+       "different"
+      ],
+      [
+       "parameter",
+       "relationship",
+       "fit",
+       "assum",
+       "past"
+      ],
+      [
+       "robust",
+       "several",
+       "scenario",
+       "alternative",
+       "diversif"
+      ]
+     ],
+     "min": 2,
+     "model": "Relationships estimated in the past can break when the regime changes, so a single model may mislead. Using several models and scenarios gives more robust guidance.",
+     "why": "Model uncertainty is large at structural breaks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A forecaster's 80% intervals contain the true outcome only 50% of the time. This forecaster is...",
+     "o": [
+      "overconfident (poorly calibrated)",
+      "well calibrated, since its intervals are wide",
+      "underconfident, since its intervals are too wide",
+      "perfect, since half of the outcomes were inside"
+     ],
+     "a": 0,
+     "why": "Intervals were too narrow for the stated confidence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Forecast errors and uncertainty",
+    "model": "Forecasts are always uncertain. We measure their errors with MAE and RMSE and compare them with simple benchmarks. Uncertainty grows as we look further ahead, so good forecasts give ranges and scenarios, not just one number. Bayes' rule shows how to update probabilities when new evidence arrives, and low base rates mean many alarms can be false.",
+    "points": [
+     {
+      "k": [
+       "error",
+       "mae",
+       "rmse",
+       "accuracy",
+       "wrong"
+      ],
+      "ask": "How do we measure forecast accuracy?"
+     },
+     {
+      "k": [
+       "range",
+       "interval",
+       "fan",
+       "uncertain",
+       "widen"
+      ],
+      "ask": "Why report a range?"
+     },
+     {
+      "k": [
+       "bayes",
+       "update",
+       "evidence",
+       "prior",
+       "base rate"
+      ],
+      "ask": "How do we update beliefs?"
+     },
+     {
+      "k": [
+       "scenario",
+       "model",
+       "combine",
+       "benchmark",
+       "assumption"
+      ],
+      "ask": "How can we make forecasts more robust?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated economic-policy simulation",
+   "icon": "🎛️",
+   "hook": "Suppose you advise a government facing weak output and inflation near target. You can cut interest rates a little, a lot, or not at all. How would you decide, and what would you admit you do not know?",
+   "explain": [
+    "An integrated simulation combines models, data and judgement to compare policies. A compact illustration is a three-equation system. Output gap: y_t = 0.6·y_(t−1) − 0.5·(r_t − r*), where r_t = i_t − π_t is the real interest rate and r* is the neutral real rate. Inflation: π_t = π_(t−1) + 0.2·y_t. The central bank chooses the policy rate i_t to minimise a loss function such as L = (π − π*)² + y².",
+    "Simulating policies shows trade-offs and dynamics. With y₀ = −2, π₀ = 2 = π*, r* = 2 and a policy rate of 2 (real rate 0), the next-period gap is y₁ = 0.6 × (−2) − 0.5 × (0 − 2) = −0.2 and π₁ = 2 + 0.2 × (−0.2) = 1.96. Cutting the policy rate to 0 (real rate −2) gives y₁ = −1.2 + 2 = 0.8 and π₁ = 2.16, with larger loss because the economy overshoots.",
+    "Real policy analysis adds uncertainty about parameters and the model itself, shocks, lags, financial stability and distributional effects. Robust approaches test policies across many scenarios and weigh worst cases, and explain their value judgements openly. The simulation informs decisions but does not make them: choices about risk, fairness and the role of government are for society to settle."
+   ],
+   "example": {
+    "q": "Using the system with y₀ = −2, π₀ = 2, π* = 2, r* = 2: compute the loss L = (π₁ − 2)² + y₁² for (A) i = 2 and (B) i = 0. Which has the lower loss?",
+    "steps": [
+     "A: r = 2 − 2 = 0; y₁ = 0.6(−2) − 0.5(0 − 2) = −0.2; π₁ = 2 + 0.2(−0.2) = 1.96; L = 0.04² + 0.2² = 0.0016 + 0.04 = 0.0416.",
+     "B: r = 0 − 2 = −2; y₁ = −1.2 − 0.5(−2 − 2) = −1.2 + 2 = 0.8; π₁ = 2 + 0.16 = 2.16; L = 0.16² + 0.8² = 0.0256 + 0.64 = 0.6656.",
+     "A has the lower loss in this model, but only because of its assumed parameters."
+    ],
+    "a": "L(A) = 0.0416; L(B) = 0.6656; A is better in this model"
+   },
+   "analogies": {
+    "sea": "A navigator tests several routes in simulation but still watches the weather.",
+    "farm": "A farm plan is tested across wet and dry year scenarios.",
+    "city": "A traffic model tests road changes before building them.",
+    "tech": "A flight simulator tests responses to engine failure."
+   },
+   "mnemonic": "Model, simulate, stress-test, then decide with eyes open.",
+   "terms": [
+    [
+     "Loss function",
+     "A formula scoring how far outcomes are from targets."
+    ],
+    [
+     "Neutral real rate (r*)",
+     "The real interest rate consistent with stable inflation at full employment."
+    ],
+    [
+     "Robust policy",
+     "A policy that performs acceptably across many possible models or scenarios."
+    ],
+    [
+     "Sensitivity analysis",
+     "Checking how results change when assumptions change."
+    ]
+   ],
+   "misc": {
+    "wrong": "A simulation tells us what will happen.",
+    "right": "A simulation tells us what follows from the assumptions. Its value lies in exploring trade-offs and testing assumptions."
+   },
+   "limits": "Results depend heavily on assumed parameters and on equal weighting in the loss function. Different weights on output and inflation, or other goals such as financial stability, change the best policy.",
+   "trip": {
+    "wiki": "Monetary policy",
+    "prompt": "Find how central banks use models and judgement to set policy and communicate uncertainty."
+   },
+   "sources": [
+    "Monetary policy",
+    "Taylor rule",
+    "Scenario analysis"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "With y₀ = −2, π₀ = 2, r* = 2 and policy rate i = 2, what is the next-period output gap y₁ (y₁ = 0.6y₀ − 0.5(r − r*), r = i − π₀)?",
+     "a": -0.2,
+     "tol": 0.001,
+     "why": "0.6(−2) − 0.5(0 − 2) = −1.2 + 1 = −0.2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "With y₁ = −0.2, what is π₁ = π₀ + 0.2·y₁ (π₀ = 2)?",
+     "o": [
+      "1.96",
+      "2.04",
+      "1.8",
+      "2.2"
+     ],
+     "a": 0,
+     "why": "2 + 0.2(−0.2) = 1.96.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "For option A (y₁ = −0.2, π₁ = 1.96, π* = 2), what is the loss L = (π − π*)² + y²?",
+     "o": [
+      "0.0416",
+      "0.24",
+      "0.2",
+      "0.0016"
+     ],
+     "a": 0,
+     "why": "0.0016 + 0.04 = 0.0416.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For option B (y₁ = 0.8, π₁ = 2.16), what is the loss?",
+     "a": 0.6656,
+     "tol": 0.0005,
+     "why": "0.0256 + 0.64 = 0.6656.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If the loss function put a very large weight on inflation deviations and almost none on output, the best policy would...",
+     "o": [
+      "focus mainly on returning inflation to target",
+      "ignore inflation, since output has almost no weight",
+      "always cut rates, whatever inflation does",
+      "be unaffected by the weights on either term"
+     ],
+     "a": 0,
+     "why": "Weights express priorities and change the optimum.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why test a policy across many scenarios rather than one baseline?",
+     "o": [
+      "To find policies that perform acceptably if assumptions are wrong",
+      "To make the results look more precise than they are",
+      "To avoid making a decision",
+      "Because one scenario is always the correct one"
+     ],
+     "a": 0,
+     "why": "Robustness to uncertainty.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A simulation shows policy A is best. Which caveat is most important to state?",
+     "o": [
+      "It is best given the model's assumptions and the chosen loss function",
+      "It is best in the real world with certainty, since the model says so",
+      "Models do not matter to the choice of policy",
+      "Only A is valid, and the others should be dropped"
+     ],
+     "a": 0,
+     "why": "Conclusions are conditional.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of integrated policy analysis.",
+     "items": [
+      "Define objectives and constraints",
+      "Build or select models and gather data",
+      "Simulate options and run sensitivity checks",
+      "Weigh trade-offs and distributional effects",
+      "Decide, communicate uncertainty and monitor"
+     ],
+     "why": "A sensible workflow from goals to monitoring.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each element to its role.",
+     "pairs": [
+      [
+       "Loss function",
+       "Scores outcomes against targets"
+      ],
+      [
+       "Sensitivity analysis",
+       "Tests dependence on assumptions"
+      ],
+      [
+       "Scenario",
+       "A coherent alternative future path"
+      ],
+      [
+       "Distributional analysis",
+       "Shows who gains and who loses"
+      ]
+     ],
+     "why": "Elements of a policy toolkit.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "The simulation recommends a policy that helps average output but hurts a vulnerable group. How should the analyst and decision-maker respond?",
+     "rubric": [
+      [
+       "distribut",
+       "vulnerable",
+       "who",
+       "group",
+       "gain",
+       "lose"
+      ],
+      [
+       "compensat",
+       "offset",
+       "mitigat",
+       "target",
+       "support",
+       "alternative"
+      ],
+      [
+       "value",
+       "judgement",
+       "trade-off",
+       "transparen",
+       "democrat",
+       "disagree",
+       "weigh"
+      ]
+     ],
+     "min": 2,
+     "model": "The analyst should show who gains and loses, explore offsetting or alternative policies, and be transparent that the choice involves value judgements about fairness. Decision-makers, accountable to the public, then weigh the trade-offs.",
+     "why": "Efficiency results must be paired with distributional and ethical analysis.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two advisers use the same model but weight output and inflation differently and recommend different rates. What does this show?",
+     "o": [
+      "Disagreement can come from values and priorities, not only from facts",
+      "One adviser has the wrong model, since their results differ",
+      "Weights have no effect on the advice given",
+      "Models decide everything, so values play no part"
+     ],
+     "a": 0,
+     "why": "Policy involves both positive and normative components.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What should an honest final policy report include to help the public judge the advice?",
+     "rubric": [
+      [
+       "assum",
+       "model",
+       "data"
+      ],
+      [
+       "uncertain",
+       "range",
+       "risk",
+       "scenario",
+       "sensitiv",
+       "confidence"
+      ],
+      [
+       "trade-off",
+       "value",
+       "distribut",
+       "limit",
+       "who",
+       "alternative"
+      ]
+     ],
+     "min": 2,
+     "model": "It should state assumptions and data, show uncertainty through ranges and scenarios, set out the trade-offs and who is affected, and acknowledge limits and alternatives, so that readers can judge for themselves.",
+     "why": "Transparency supports accountable decisions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After a policy is adopted, why is monitoring and revision important?",
+     "o": [
+      "Models and parameters are uncertain, so outcomes should be checked and policy adjusted",
+      "Policies never need change once they have been chosen",
+      "Monitoring causes failure, so it should be avoided",
+      "Models predict perfectly, so no check is required"
+     ],
+     "a": 0,
+     "why": "Adaptive policy learns from outcomes.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a policy simulation is used",
+    "model": "A policy simulation uses a simple model to trace what would happen under different policies. A loss function scores each outcome against targets such as inflation and output. But results depend on the assumptions, so analysts test many scenarios, show who gains and who loses, and state their uncertainty. The simulation informs the decision, but values and fairness are for people to weigh.",
+    "points": [
+     {
+      "k": [
+       "model",
+       "simulate",
+       "what would happen",
+       "trace"
+      ],
+      "ask": "What does a simulation do?"
+     },
+     {
+      "k": [
+       "loss",
+       "target",
+       "score",
+       "objective",
+       "inflation",
+       "output"
+      ],
+      "ask": "How are outcomes compared?"
+     },
+     {
+      "k": [
+       "assumption",
+       "scenario",
+       "sensitiv",
+       "uncertain",
+       "robust"
+      ],
+      "ask": "Why test many scenarios?"
+     },
+     {
+      "k": [
+       "value",
+       "fair",
+       "distribut",
+       "who gains",
+       "decide",
+       "judgement"
+      ],
+      "ask": "What can't the model decide?"
+     }
+    ]
+   }
+  }
+ ]
+}

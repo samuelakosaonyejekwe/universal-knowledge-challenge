@@ -1,0 +1,2773 @@
+{
+ "world": 7,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Plate tectonics",
+   "icon": "🧩",
+   "hook": "The east coast of South America and the west coast of Africa look like jigsaw pieces. Is that a coincidence?",
+   "explain": [
+    "Earth's rigid outer shell (the lithosphere) is broken into large pieces called tectonic plates. They move slowly, a few centimetres a year, about as fast as fingernails grow, carried by slow movement in the hot mantle below.",
+    "Alfred Wegener proposed continental drift in 1912 using matching coastlines, fossils and rocks on different continents. Many scientists rejected it because he could not explain what pushed the continents. In the 1950s and 1960s, studies of the sea floor, including spreading at mid-ocean ridges and magnetic stripes, led to the theory of plate tectonics.",
+    "At divergent boundaries plates move apart and new crust forms, like the Mid-Atlantic Ridge. At convergent boundaries plates collide: one may sink under the other (subduction), or two continents crumple to form mountains, as the Himalayas formed when India met Asia. At transform boundaries plates slide past each other, as along the San Andreas Fault.",
+    "Most earthquakes and volcanoes occur along plate boundaries. The Pacific \"Ring of Fire\" is the best-known belt."
+   ],
+   "example": {
+    "q": "The Atlantic floor spreads at about 2.5 cm a year on each side, so the two sides move apart at 5 cm a year. How far apart do they move in 20 million years?",
+    "steps": [
+     "Rate: 5 cm per year = 0.05 m per year.",
+     "Multiply by 20,000,000 years: 0.05 × 20,000,000 = 1,000,000 m.",
+     "1,000,000 m = 1,000 km."
+    ],
+    "a": "About 1,000 km"
+   },
+   "analogies": {
+    "home": "Cracked eggshell pieces floating on a soft yolk can bump and slide, like plates over the mantle.",
+    "sea": "Boats drifting together and apart on a pond show how slow motion shifts positions over long times.",
+    "nature": "Ice floes on a river drift, crack and crunch together.",
+    "tech": "GPS stations measure plate motion by tracking positions to millimetres over years."
+   },
+   "mnemonic": "Apart, together, sliding past: divergent, convergent, transform.",
+   "terms": [
+    [
+     "Lithosphere",
+     "The rigid outer layer of Earth, crust plus upper mantle."
+    ],
+    [
+     "Tectonic plate",
+     "A large slab of lithosphere that moves slowly."
+    ],
+    [
+     "Subduction",
+     "One plate sliding down beneath another."
+    ],
+    [
+     "Mid-ocean ridge",
+     "An undersea mountain chain where new crust forms."
+    ]
+   ],
+   "misc": {
+    "wrong": "Continents plough through the ocean floor.",
+    "right": "Continents are carried along with the plates, which include ocean floor, so they move together."
+   },
+   "limits": "Plate motions are measured and well supported, but scientists still debate exactly what drives them (mantle drag, slab pull and ridge push).",
+   "trip": {
+    "wiki": "Plate tectonics",
+    "prompt": "Look at a map of plates. Which plate do you live on?"
+   },
+   "sources": [
+    "Plate tectonics",
+    "Continental drift",
+    "Alfred Wegener"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What are tectonic plates?",
+     "o": [
+      "Large pieces of Earth's rigid outer shell",
+      "Layers of the gas that wraps around Earth",
+      "Parts of the hot, dense core at the centre",
+      "Sections of the deep ocean water"
+     ],
+     "a": 0,
+     "why": "The lithosphere is broken into plates.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What forms at a divergent boundary?",
+     "o": [
+      "New crust as plates move apart",
+      "Tall mountains only, with no change to crust",
+      "A deep trench where one plate sinks",
+      "Nothing happens when the plates move apart"
+     ],
+     "a": 0,
+     "why": "Magma rises to fill the gap.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The Himalayas formed mainly because...",
+     "o": [
+      "India collided with Asia",
+      "Volcanoes erupted along the coast of Asia",
+      "The ocean dried up and left high land",
+      "Wind blew sand into huge piles over time"
+     ],
+     "a": 0,
+     "why": "Two continental plates crumpled.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which fault is a famous transform boundary?",
+     "o": [
+      "San Andreas Fault",
+      "Mid-Atlantic Ridge",
+      "Mariana Trench",
+      "Ring of Fire"
+     ],
+     "a": 0,
+     "why": "The Pacific and North American plates slide past.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which evidence did Wegener use?",
+     "o": [
+      "Matching fossils and rocks on opposite continents",
+      "Satellite photos taken from space last century",
+      "Radio signals from deep under the sea",
+      "Weather maps showing winds across the oceans"
+     ],
+     "a": 0,
+     "why": "Same fossils on separated continents suggested they were joined.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why was Wegener's idea first rejected?",
+     "o": [
+      "He could not explain a force that moved continents",
+      "He had no fossils to show other scientists",
+      "He used no maps of the continents",
+      "He lived too early for people to hear him speak"
+     ],
+     "a": 0,
+     "why": "A mechanism was missing until sea-floor evidence arrived.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A new volcanic island appears in the middle of an ocean ridge. What boundary is this?",
+     "o": [
+      "Divergent",
+      "Convergent",
+      "Transform",
+      "None"
+     ],
+     "a": 0,
+     "why": "Magma rises where plates pull apart.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plate moves at 4 cm a year. How many kilometres will it move in 10 million years?",
+     "a": 400,
+     "tol": 5,
+     "unit": "km",
+     "why": "4 cm × 10,000,000 = 40,000,000 cm = 400 km.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each boundary to what happens.",
+     "pairs": [
+      [
+       "Divergent",
+       "Plates move apart"
+      ],
+      [
+       "Convergent",
+       "Plates move together"
+      ],
+      [
+       "Transform",
+       "Plates slide past each other"
+      ]
+     ],
+     "why": "The three main boundary types.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain two pieces of evidence that continents were once joined.",
+     "rubric": [
+      [
+       "coast",
+       "fit",
+       "jigsaw",
+       "shape",
+       "match"
+      ],
+      [
+       "fossil",
+       "mesosaurus",
+       "glossopteris",
+       "animal",
+       "plant"
+      ],
+      [
+       "rock",
+       "mountain",
+       "geology",
+       "sea floor",
+       "magnetic",
+       "stripe",
+       "spreading"
+      ]
+     ],
+     "min": 2,
+     "model": "The coastlines of South America and Africa fit together, and the same fossils and rock types are found on both sides of the Atlantic. Sea-floor spreading and magnetic stripes also show the floor is moving apart.",
+     "why": "Multiple lines of evidence agree.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are the oldest ocean floors younger than most continental rocks?",
+     "o": [
+      "Ocean crust is created at ridges and recycled at subduction zones",
+      "Oceans are much newer than the rest of the planet",
+      "Rocks do not age when they sit in water",
+      "Ocean floor is made of ice that melts away"
+     ],
+     "a": 0,
+     "why": "Ocean crust is continually renewed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Where would you expect most earthquakes?",
+     "o": [
+      "Along plate boundaries",
+      "Middle of plates always",
+      "On the poles",
+      "In deserts"
+     ],
+     "a": 0,
+     "why": "Stress builds at boundaries.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student says \"continents move, so Earth must be getting bigger\". Evaluate.",
+     "rubric": [
+      [
+       "subduct",
+       "destroy",
+       "recycl",
+       "sink",
+       "consum"
+      ],
+      [
+       "no",
+       "not",
+       "wrong",
+       "same size"
+      ],
+      [
+       "crust",
+       "plate",
+       "ridge",
+       "created",
+       "new"
+      ]
+     ],
+     "min": 2,
+     "model": "No. New crust forms at ridges but old crust sinks into the mantle at subduction zones, so Earth's size stays about the same.",
+     "why": "Creation is balanced by destruction.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How tectonic plates move",
+    "model": "Earth's outer shell is broken into plates that move a few centimetres a year. At ridges they move apart, at collisions they push together and at faults they slide past. This builds mountains and causes earthquakes and volcanoes.",
+    "points": [
+     {
+      "k": [
+       "plate",
+       "shell",
+       "piece",
+       "crust"
+      ],
+      "ask": "What are plates?"
+     },
+     {
+      "k": [
+       "move",
+       "centimetre",
+       "slowly",
+       "mantle"
+      ],
+      "ask": "How fast and why do they move?"
+     },
+     {
+      "k": [
+       "apart",
+       "together",
+       "slide",
+       "boundary"
+      ],
+      "ask": "What can they do at their edges?"
+     },
+     {
+      "k": [
+       "mountain",
+       "earthquake",
+       "volcano"
+      ],
+      "ask": "What does this cause?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Volcanoes and earthquakes",
+   "icon": "🌋",
+   "hook": "Why do volcanoes and earthquakes cluster in the same belts around the world?",
+   "explain": [
+    "A volcano is an opening in the crust where magma (molten rock) reaches the surface as lava, ash and gas. Most are near subduction zones and ridges, but a few, like Hawaii, sit over hot spots in the mantle.",
+    "Shield volcanoes have gentle slopes and runny lava. Composite (strato) volcanoes are steep and can erupt explosively. Not all eruptions are alike: gas content and the thickness (viscosity) of magma matter.",
+    "An earthquake is shaking caused by sudden release of stress along a fault. The point underground where it starts is the focus. The point on the surface directly above is the epicentre. Seismometers record the waves.",
+    "Magnitude measures energy released. Each step up on the moment magnitude scale means the shaking amplitude is ten times bigger and the energy about 32 times bigger. Earthquakes under the sea can cause tsunamis."
+   ],
+   "example": {
+    "q": "How many times larger is the ground shaking amplitude of a magnitude 7 earthquake compared with a magnitude 5?",
+    "steps": [
+     "The difference is 2 magnitude units.",
+     "Each unit multiplies amplitude by 10.",
+     "10 × 10 = 100."
+    ],
+    "a": "About 100 times"
+   },
+   "analogies": {
+    "home": "Shaking a bottle of fizzy drink then opening it is like gas-rich magma erupting.",
+    "city": "Buildings in earthquake zones use flexible frames and base isolators so they sway instead of break.",
+    "sea": "A tsunami is like a push in a bathtub creating waves that travel far.",
+    "nature": "Bending a stick until it snaps shows how rock stress releases as an earthquake."
+   },
+   "mnemonic": "Focus is deep, epicentre is on top.",
+   "terms": [
+    [
+     "Magma",
+     "Molten rock beneath the surface."
+    ],
+    [
+     "Epicentre",
+     "The point on the surface above where an earthquake starts."
+    ],
+    [
+     "Magnitude",
+     "A measure of the energy of an earthquake."
+    ],
+    [
+     "Hot spot",
+     "A fixed source of heat in the mantle that makes volcanoes."
+    ]
+   ],
+   "misc": {
+    "wrong": "Earthquakes can be predicted exactly.",
+    "right": "Scientists can map where earthquakes are likely, but cannot say exactly when they will happen."
+   },
+   "limits": "Volcanic eruptions can sometimes be forecast from warning signs; exact timing is still uncertain.",
+   "trip": {
+    "wiki": "Volcano",
+    "prompt": "Compare a shield volcano and a composite volcano. Which looks steeper?"
+   },
+   "sources": [
+    "Volcano",
+    "Earthquake",
+    "Ring of Fire"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the point on the surface above an earthquake's focus?",
+     "o": [
+      "Epicentre",
+      "Crater",
+      "Hot spot",
+      "Fault line"
+     ],
+     "a": 0,
+     "why": "The epicentre is directly above the focus.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which volcano type is gently sloped with runny lava?",
+     "o": [
+      "Shield volcano",
+      "Composite volcano",
+      "Dome",
+      "Cinder only"
+     ],
+     "a": 0,
+     "why": "Hawaiian volcanoes are shield volcanoes.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why do subduction zones have volcanoes?",
+     "o": [
+      "Water from the sinking plate helps rock melt",
+      "The plates freeze and crack above the sinking edge",
+      "The Sun heats the plate until it melts",
+      "The ocean boils when it meets the plate"
+     ],
+     "a": 0,
+     "why": "Water lowers the melting point of mantle rock.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Hawaii is far from plate boundaries. What explains its volcanoes?",
+     "o": [
+      "A hot spot in the mantle",
+      "A transform fault where plates slide past",
+      "A mid-ocean ridge where plates spread apart",
+      "A glacier melting on the volcano"
+     ],
+     "a": 0,
+     "why": "The plate moves over a fixed plume.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What causes a tsunami?",
+     "o": [
+      "Sudden movement of the sea floor",
+      "Strong wind blowing hard across the sea",
+      "The Moon's pull alone on the ocean",
+      "Heavy rain over a long time"
+     ],
+     "a": 0,
+     "why": "Quakes or landslides move water.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does a seismometer do?",
+     "o": [
+      "Records ground shaking",
+      "Measures wind speed at the earthquake site",
+      "Measures how much rainfall there has been",
+      "Maps the rivers that run near a fault"
+     ],
+     "a": 0,
+     "why": "It detects seismic waves.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which place is on the Ring of Fire?",
+     "o": [
+      "Japan",
+      "Brazil",
+      "Egypt",
+      "Poland"
+     ],
+     "a": 0,
+     "why": "Japan lies on the Pacific edge.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Each step in magnitude multiplies amplitude by 10. How many times bigger is the amplitude at magnitude 8 than at magnitude 6?",
+     "a": 100,
+     "tol": 0,
+     "unit": "",
+     "why": "Two steps: 10 × 10 = 100.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the events of an earthquake-generated tsunami.",
+     "items": [
+      "Plates lock and stress builds",
+      "Sudden slip on the fault",
+      "Sea floor lifts and moves water",
+      "Waves cross the ocean",
+      "Waves reach the coast"
+     ],
+     "why": "Stress release moves water.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Describe two ways to reduce harm from earthquakes in a city.",
+     "rubric": [
+      [
+       "building",
+       "code",
+       "strong",
+       "flexible",
+       "design",
+       "reinforce",
+       "resistant"
+      ],
+      [
+       "drill",
+       "practice",
+       "prepare",
+       "education",
+       "plan",
+       "warning",
+       "evacu",
+       "shelter"
+      ],
+      [
+       "map",
+       "zone",
+       "avoid",
+       "land use",
+       "insurance"
+      ]
+     ],
+     "min": 2,
+     "model": "Make buildings earthquake resistant with flexible frames and strict building codes, and teach people what to do through drills and early-warning systems.",
+     "why": "Preparation and design save lives.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two eruptions: one has runny lava with little gas, the other thick lava with much gas. Which is more explosive?",
+     "o": [
+      "The thick, gas-rich one",
+      "The runny one, because it flows easily",
+      "Both are equally explosive",
+      "Neither can erupt at all"
+     ],
+     "a": 0,
+     "why": "Gas trapped in thick magma bursts violently.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do some regions with many people live near volcanoes?",
+     "o": [
+      "Volcanic soils are fertile and may supply geothermal energy",
+      "Volcanoes are completely safe to live near",
+      "Lava is cold and harmless when it flows",
+      "No other kind of soil exists anywhere"
+     ],
+     "a": 0,
+     "why": "Benefits can outweigh risks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A magnitude 6 earthquake hits a rich region and a poorer region with similar populations. Why might damage differ?",
+     "o": [
+      "Building quality and preparedness differ",
+      "Earth shakes differently in rich regions",
+      "Waves choose where they cause damage",
+      "Magnitude changes depending on wealth"
+     ],
+     "a": 0,
+     "why": "Vulnerability depends on society.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Volcanoes and earthquakes",
+    "model": "Volcanoes are where magma reaches the surface. Earthquakes are shaking from sudden movement on faults. Both are common at plate boundaries. Magnitude measures energy.",
+    "points": [
+     {
+      "k": [
+       "magma",
+       "lava",
+       "rock",
+       "melt"
+      ],
+      "ask": "What comes out of a volcano?"
+     },
+     {
+      "k": [
+       "fault",
+       "plate",
+       "stress",
+       "break",
+       "slip"
+      ],
+      "ask": "What causes an earthquake?"
+     },
+     {
+      "k": [
+       "boundary",
+       "ring of fire",
+       "edges"
+      ],
+      "ask": "Where do they happen?"
+     },
+     {
+      "k": [
+       "magnitude",
+       "scale",
+       "strong"
+      ],
+      "ask": "How do we measure the size?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Rivers and landscape formation",
+   "icon": "🏞️",
+   "hook": "How can a gentle river carve a canyon as deep as the Grand Canyon?",
+   "explain": [
+    "Rivers shape land by erosion (wearing away), transport (carrying material) and deposition (dropping it). Their power depends on how fast the water moves and how much rock and sand it carries.",
+    "Near the source, the river is steep and fast and cuts down, making narrow V-shaped valleys with rapids and waterfalls. In the middle course it widens. In the lower course, where the land is flat, it swings in bends called meanders.",
+    "Over time the outside of a bend erodes and the inside builds up. A meander can get cut off, leaving an oxbow lake. After floods, rivers drop sediment on the floodplain, making fertile soil. Where a river reaches the sea and slows, it may build a delta, like the Nile or Mississippi delta.",
+    "Waterfalls form where a river crosses a band of hard rock lying over softer rock; the soft rock wears away faster, leaving a drop."
+   ],
+   "example": {
+    "q": "A river drops 1,200 m over 300 km. What is its average gradient in metres per kilometre?",
+    "steps": [
+     "Gradient = drop ÷ distance.",
+     "1,200 m ÷ 300 km = 4 m per km."
+    ],
+    "a": "4 m/km"
+   },
+   "analogies": {
+    "home": "Running water in a sandbox cuts channels and piles sand where it slows.",
+    "farm": "Floods leave rich mud that farmers on floodplains use for crops.",
+    "city": "Cities build levees and dams to control rivers.",
+    "nature": "Pebbles in a stream are smoother downstream because they bump and wear each other."
+   },
+   "mnemonic": "Up high: cut. Middle: carry. Down low: drop.",
+   "terms": [
+    [
+     "Erosion",
+     "Wearing away of rock and soil."
+    ],
+    [
+     "Meander",
+     "A winding bend in a river."
+    ],
+    [
+     "Floodplain",
+     "Flat land beside a river that floods."
+    ],
+    [
+     "Delta",
+     "Land built where a river deposits sediment at its mouth."
+    ]
+   ],
+   "misc": {
+    "wrong": "Rivers carve canyons quickly in floods only.",
+    "right": "Most canyon carving happened over millions of years, with floods doing extra work occasionally."
+   },
+   "limits": "Canyon depth also depends on the land rising and on rock type, not only on the river.",
+   "trip": {
+    "wiki": "River",
+    "prompt": "Compare photos of a river near its source and near its mouth. How do the valley shapes differ?"
+   },
+   "sources": [
+    "River",
+    "Meander",
+    "Delta (geography)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is erosion?",
+     "o": [
+      "Wearing away of land",
+      "Dropping of sediment",
+      "Freezing of water",
+      "Growth of plants"
+     ],
+     "a": 0,
+     "why": "Rivers erode their banks and beds.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What shape is a valley near a river's source?",
+     "o": [
+      "V-shaped",
+      "Wide and flat",
+      "Round",
+      "U-shaped from glaciers always"
+     ],
+     "a": 0,
+     "why": "Rivers cut downward.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Where do oxbow lakes form?",
+     "o": [
+      "Where a meander is cut off",
+      "At a waterfall, where the water drops",
+      "Near the source, high in the hills",
+      "On the top of the mountains"
+     ],
+     "a": 0,
+     "why": "The old loop becomes a lake.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is floodplain soil fertile?",
+     "o": [
+      "Floods deposit nutrient-rich silt",
+      "It is volcanic ash from nearby eruptions",
+      "It is made of ice carried by glaciers",
+      "It is imported from other countries by farmers"
+     ],
+     "a": 0,
+     "why": "Fresh sediment adds nutrients.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do deltas form at river mouths?",
+     "o": [
+      "The river slows and drops its load",
+      "The sea freezes and blocks the river",
+      "Wind builds sand into the shape of a delta",
+      "Mountains rise up at the mouth of the river"
+     ],
+     "a": 0,
+     "why": "Slower water cannot carry sediment.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How does a waterfall form?",
+     "o": [
+      "Hard rock overlies soft rock which erodes faster",
+      "Rain digs a deep hole in the river bed",
+      "Ice melts and drops over the edge of the rock",
+      "Wind blows the rock away from the river bed"
+     ],
+     "a": 0,
+     "why": "Differential erosion makes a step.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A river bend's fastest water is on the outside. What happens there?",
+     "o": [
+      "Erosion",
+      "Deposition",
+      "Nothing",
+      "Freezing"
+     ],
+     "a": 0,
+     "why": "Fast water erodes the outer bank.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A river falls 900 m over 450 km. What is its gradient in m/km?",
+     "a": 2,
+     "tol": 0.05,
+     "unit": "m/km",
+     "why": "900 ÷ 450 = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order a river's course from the source to the mouth.",
+     "items": [
+      "Spring in the hills",
+      "Steep V-shaped valley",
+      "Wide valley with meanders",
+      "Delta at the sea"
+     ],
+     "why": "The river changes from steep to gentle.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why meanders get bigger over time.",
+     "rubric": [
+      [
+       "outside",
+       "outer"
+      ],
+      [
+       "erode",
+       "erosion",
+       "cut",
+       "wear"
+      ],
+      [
+       "inside",
+       "inner",
+       "deposit",
+       "build",
+       "slow"
+      ]
+     ],
+     "min": 2,
+     "model": "Water flows fast on the outside of a bend and erodes the bank, while on the inside the water is slow and drops sediment, so the bend swings out wider.",
+     "why": "Erosion outside, deposition inside.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A town sits on a floodplain. What is a trade-off?",
+     "o": [
+      "Fertile soil but a flood risk",
+      "There is no water on a floodplain",
+      "There is no farming possible there",
+      "The climate is cold and nothing else"
+     ],
+     "a": 0,
+     "why": "Floodplains are rich but risky.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a dam traps sediment upstream, what might happen to a delta?",
+     "o": [
+      "It may shrink as less sediment arrives",
+      "It grows faster as extra sediment arrives",
+      "Nothing happens to the delta at all",
+      "It slowly becomes a mountain"
+     ],
+     "a": 0,
+     "why": "Less deposition means erosion wins.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What changes when a river flows from steep land to flat land?",
+     "o": [
+      "It slows and deposits more",
+      "It speeds up and erodes the bed more",
+      "It disappears into the ground",
+      "It erodes deeper than before"
+     ],
+     "a": 0,
+     "why": "Gradient controls energy.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How rivers shape land",
+    "model": "Rivers erode, carry and drop material. Near the source they cut V-shaped valleys. Lower down they meander across floodplains and build deltas at the mouth.",
+    "points": [
+     {
+      "k": [
+       "erode",
+       "wear",
+       "cut"
+      ],
+      "ask": "What does a river do to rock?"
+     },
+     {
+      "k": [
+       "carry",
+       "transport",
+       "sediment"
+      ],
+      "ask": "Where does the material go?"
+     },
+     {
+      "k": [
+       "drop",
+       "deposit",
+       "slow"
+      ],
+      "ask": "When does it drop it?"
+     },
+     {
+      "k": [
+       "meander",
+       "delta",
+       "valley",
+       "floodplain",
+       "waterfall"
+      ],
+      "ask": "What shapes does it make?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Ocean currents and tides",
+   "icon": "🌊",
+   "hook": "The sea rises and falls twice a day on many coasts. What pulls the ocean?",
+   "explain": [
+    "Ocean currents are large streams of water moving through the ocean. Surface currents are pushed by winds and bent by Earth's spin (the Coriolis effect), forming huge loops called gyres: clockwise in the Northern Hemisphere and anticlockwise in the Southern.",
+    "Warm currents carry heat away from the tropics. The Gulf Stream and its extension help keep north-west Europe milder than other places at the same latitude. Cold currents such as the Humboldt (Peru) Current bring cold water along the west coast of South America and support rich fisheries.",
+    "Deep currents are driven by differences in temperature and salt, and make up a slow global \"conveyor belt\" that takes hundreds to a thousand years to circulate.",
+    "Tides are caused mainly by the Moon's gravity, with help from the Sun. Most coasts have two high and two low tides each day, about 12 hours 25 minutes apart. Spring tides (biggest range) happen at new and full Moon, when the Sun, Earth and Moon line up. Neap tides (smallest range) happen at the quarter Moons."
+   ],
+   "example": {
+    "q": "High tide occurs at 06:00. About when is the next high tide?",
+    "steps": [
+     "High tides are about 12 h 25 min apart.",
+     "06:00 + 12:25 = 18:25."
+    ],
+    "a": "About 18:25"
+   },
+   "analogies": {
+    "home": "Stirring a cup of tea makes a swirl, like winds driving gyres.",
+    "sea": "Sailors used currents and winds to plan routes between continents.",
+    "sport": "Surfers check tide tables to know when waves break best.",
+    "nature": "Fish and turtles ride currents to travel and feed."
+   },
+   "mnemonic": "Moon pulls, sea bulges: two highs a day.",
+   "terms": [
+    [
+     "Current",
+     "A steady flow of water in the ocean."
+    ],
+    [
+     "Gyre",
+     "A giant circular system of currents."
+    ],
+    [
+     "Tide",
+     "Regular rise and fall of sea level."
+    ],
+    [
+     "Coriolis effect",
+     "The bending of moving air and water caused by Earth's spin."
+    ]
+   ],
+   "misc": {
+    "wrong": "Tides are caused by the Sun heating the water.",
+    "right": "Tides are caused mostly by the Moon's gravity, with the Sun adding a smaller effect."
+   },
+   "limits": "Tidal ranges vary hugely: tiny in the Mediterranean, very large in the Bay of Fundy, because of coastline shape.",
+   "trip": {
+    "wiki": "Ocean current",
+    "prompt": "Find the Gulf Stream on a map. Which way does it flow?"
+   },
+   "sources": [
+    "Ocean current",
+    "Tide",
+    "Coriolis force"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What mainly causes tides?",
+     "o": [
+      "The Moon's gravity",
+      "The wind blowing across the ocean",
+      "Heat in the ocean from the Sun",
+      "Fish swimming together in huge groups"
+     ],
+     "a": 0,
+     "why": "The Moon pulls on the sea.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "When are spring tides?",
+     "o": [
+      "At new and full Moon",
+      "At first quarter only",
+      "Only in spring",
+      "At sunrise"
+     ],
+     "a": 0,
+     "why": "Sun, Moon and Earth line up.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the Gulf Stream do?",
+     "o": [
+      "Carries warm water toward north-west Europe",
+      "Cools the whole coast of Africa with cold water",
+      "Brings blocks of ice to the coast of Peru",
+      "Flows from the Atlantic across land into the Pacific"
+     ],
+     "a": 0,
+     "why": "It helps keep Europe mild.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which direction do gyres turn in the Northern Hemisphere?",
+     "o": [
+      "Clockwise",
+      "Anticlockwise",
+      "Back and forth",
+      "They do not turn"
+     ],
+     "a": 0,
+     "why": "The Coriolis effect turns them to the right.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the sea off Peru full of fish?",
+     "o": [
+      "The Humboldt Current brings cold nutrient-rich water",
+      "It is very warm and fish like warm water",
+      "It has no waves and is very still",
+      "It is freshwater, which fish prefer"
+     ],
+     "a": 0,
+     "why": "Upwelling brings nutrients.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How often are there high tides on most coasts?",
+     "o": [
+      "About twice a day",
+      "Once a month, near the full Moon",
+      "Once a year, in the spring",
+      "Four times a day, every six hours"
+     ],
+     "a": 0,
+     "why": "Typically two highs and two lows.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What drives deep ocean currents?",
+     "o": [
+      "Differences in temperature and salinity",
+      "Surface wind only, blowing across the top",
+      "Earth's core heating the ocean floor",
+      "Volcanoes erupting on the sea bed"
+     ],
+     "a": 0,
+     "why": "Cold, salty water sinks.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A high tide is at 02:00. How many hours later (to the nearest hour) is the next high tide?",
+     "a": 12,
+     "tol": 1,
+     "unit": "h",
+     "why": "About 12 h 25 min.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order through one Moon cycle, starting at new Moon.",
+     "items": [
+      "New Moon (spring tide)",
+      "First quarter (neap tide)",
+      "Full Moon (spring tide)",
+      "Last quarter (neap tide)"
+     ],
+     "why": "Springs happen at new and full Moon, neaps at the quarters.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is London warmer in winter than a place at the same latitude in northern Canada?",
+     "rubric": [
+      [
+       "gulf stream",
+       "north atlantic",
+       "warm current",
+       "current",
+       "warm water"
+      ],
+      [
+       "wind",
+       "westerl",
+       "air"
+      ],
+      [
+       "heat",
+       "mild",
+       "warmer",
+       "ocean"
+      ]
+     ],
+     "min": 2,
+     "model": "Warm water from the Gulf Stream and North Atlantic Drift heats the air, and westerly winds carry that mild air over Europe.",
+     "why": "Oceans move heat.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A ship wants to cross the North Atlantic from Europe to the Caribbean. Which current helps?",
+     "o": [
+      "The Canary Current then North Equatorial Current",
+      "The Gulf Stream, flowing north-east away from the Caribbean",
+      "The Antarctic Circumpolar Current around the south",
+      "The Kuroshio Current, off the coast of Japan"
+     ],
+     "a": 0,
+     "why": "The clockwise gyre flows south by Europe and west across the tropics.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can some bays have much bigger tides than open ocean?",
+     "o": [
+      "The shape funnels and amplifies the water",
+      "They are closer to the Sun than other places",
+      "They have no Moon above them",
+      "They are deeper than the open ocean"
+     ],
+     "a": 0,
+     "why": "Coastline shape matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the Moon stopped existing, what would remain of tides?",
+     "o": [
+      "Smaller tides caused by the Sun",
+      "No tides at all would remain",
+      "Bigger tides than we have now",
+      "Tides every hour of the day and night"
+     ],
+     "a": 0,
+     "why": "The Sun also pulls.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Ocean currents and tides",
+    "model": "Winds and Earth's spin drive surface currents in big gyres. Warm and cold currents change climate. Tides rise and fall twice a day mainly because of the Moon's gravity.",
+    "points": [
+     {
+      "k": [
+       "current",
+       "gyre",
+       "flow",
+       "stream"
+      ],
+      "ask": "What are currents?"
+     },
+     {
+      "k": [
+       "wind",
+       "spin",
+       "temperature",
+       "salt"
+      ],
+      "ask": "What drives them?"
+     },
+     {
+      "k": [
+       "moon",
+       "gravity"
+      ],
+      "ask": "What causes tides?"
+     },
+     {
+      "k": [
+       "twice",
+       "two",
+       "day"
+      ],
+      "ask": "How often do tides happen?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Atmospheric circulation",
+   "icon": "🌬️",
+   "hook": "Why do ships and planes use certain routes, and why do deserts line up at similar latitudes?",
+   "explain": [
+    "The Sun heats the equator most. Warm air rises there, creating low pressure and heavy rain. The air spreads out, cools and sinks around 30° N and 30° S, where it makes high pressure and dry weather, which is why many deserts (Sahara, Arabian, Kalahari, Australian) lie near these latitudes.",
+    "Surface air flows from high to low pressure. Earth's spin bends winds (Coriolis effect), creating the trade winds (blowing toward the equator from the east), the westerlies (mid-latitudes, from the west) and the polar easterlies.",
+    "These loops form three circulation cells in each hemisphere: the Hadley, Ferrel and polar cells. The meeting zone near the equator is the Intertropical Convergence Zone (ITCZ), which moves north and south with the seasons and brings monsoon rains to places like India and West Africa.",
+    "Local winds also matter. In the day, land heats faster than sea, so a sea breeze blows toward the land. At night the breeze reverses."
+   ],
+   "example": {
+    "q": "Winds blow from a high-pressure area to a low-pressure area. Pressure is high at A and low at B. Which way does wind blow?",
+    "steps": [
+     "Wind moves from high pressure to low pressure.",
+     "A is high; B is low.",
+     "Wind blows from A toward B."
+    ],
+    "a": "From A to B"
+   },
+   "analogies": {
+    "home": "Warm air rises above a radiator and cooler air flows in to replace it.",
+    "sea": "Sailors used trade winds to cross the Atlantic.",
+    "city": "A sea breeze cools coastal cities on hot afternoons.",
+    "sport": "Kite surfers and sailors check wind forecasts."
+   },
+   "mnemonic": "Rise at the equator, sink at thirty.",
+   "terms": [
+    [
+     "Air pressure",
+     "The weight of the air pressing on a surface."
+    ],
+    [
+     "Trade winds",
+     "Steady winds blowing toward the equator."
+    ],
+    [
+     "ITCZ",
+     "The belt of rising air and rain near the equator."
+    ],
+    [
+     "Westerlies",
+     "Winds from the west in the mid-latitudes."
+    ]
+   ],
+   "misc": {
+    "wrong": "Wind blows straight from high to low pressure.",
+    "right": "Earth's spin bends moving air, so winds curve to the right in the north and to the left in the south."
+   },
+   "limits": "The three-cell model is a simplification. Real circulation has jet streams and many local patterns.",
+   "trip": {
+    "wiki": "Atmospheric circulation",
+    "prompt": "On the diagram, find where air rises and where air sinks. Which are rainy?"
+   },
+   "sources": [
+    "Atmospheric circulation",
+    "Hadley cell",
+    "Trade winds"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Where does air rise strongly?",
+     "o": [
+      "Near the equator",
+      "At 30° N",
+      "At the poles",
+      "Over the desert only"
+     ],
+     "a": 0,
+     "why": "Strong heating makes air rise.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it dry near 30° latitude?",
+     "o": [
+      "Dry air sinks there",
+      "It is cold",
+      "Rain is blocked by walls",
+      "The sea is absent"
+     ],
+     "a": 0,
+     "why": "Sinking air warms and holds moisture.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which winds blow toward the equator?",
+     "o": [
+      "Trade winds",
+      "Westerlies",
+      "Polar winds",
+      "Jet only"
+     ],
+     "a": 0,
+     "why": "The trades blow from the east.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which direction does wind blow relative to pressure?",
+     "o": [
+      "From high to low",
+      "From low to high",
+      "Sideways only",
+      "Up always"
+     ],
+     "a": 0,
+     "why": "Air flows away from high pressure.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the ITCZ associated with?",
+     "o": [
+      "Heavy tropical rain",
+      "Deserts and very dry, sandy land",
+      "Snow and ice in the polar regions",
+      "Frost and cold air near the poles"
+     ],
+     "a": 0,
+     "why": "Rising moist air makes storms.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "During the day, which way does the sea breeze blow?",
+     "o": [
+      "From sea to land",
+      "From land to sea",
+      "Along the shore only",
+      "Straight up"
+     ],
+     "a": 0,
+     "why": "Land heats faster and the air above rises.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The Coriolis effect makes winds in the Southern Hemisphere curve...",
+     "o": [
+      "To the left",
+      "To the right",
+      "Upward",
+      "Downward"
+     ],
+     "a": 0,
+     "why": "The direction reverses across the equator.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "If the trade winds blow at 8 m/s, how many kilometres would air travel in 1 hour at that speed? (1 km = 1000 m)",
+     "a": 28.8,
+     "tol": 0.1,
+     "unit": "km",
+     "why": "8 m/s × 3600 s = 28,800 m = 28.8 km.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each wind belt to its direction.",
+     "pairs": [
+      [
+       "Trade winds",
+       "From the east toward the equator"
+      ],
+      [
+       "Westerlies",
+       "From the west in mid-latitudes"
+      ],
+      [
+       "Polar easterlies",
+       "From the east near the poles"
+      ]
+     ],
+     "why": "Each belt has a typical direction.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the Sahara is a desert in terms of air movement.",
+     "rubric": [
+      [
+       "sink",
+       "sinking",
+       "descend",
+       "falls"
+      ],
+      [
+       "high pressure",
+       "dry",
+       "no cloud",
+       "no rain",
+       "clear",
+       "stable"
+      ],
+      [
+       "30",
+       "subtropic",
+       "hadley",
+       "latitude",
+       "tropic"
+      ]
+     ],
+     "min": 2,
+     "model": "The Sahara lies near 30° N where the Hadley cell's air sinks. Sinking air warms, makes high pressure and stops clouds forming, so there is very little rain.",
+     "why": "Circulation explains desert belts.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Monsoon rains arrive in India in summer. What shifts to bring them?",
+     "o": [
+      "The ITCZ and wind direction move north",
+      "The equator moves north in summer",
+      "Earth stops spinning for a few months",
+      "The Moon pulls the rain north"
+     ],
+     "a": 0,
+     "why": "Seasonal shifts bring moist air from the sea.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do planes flying east across the Atlantic often take less time than westward ones?",
+     "o": [
+      "The jet stream and westerlies blow from the west",
+      "Planes are heavier when flying westward",
+      "Earth spins more slowly in one direction",
+      "Winds are absent over the Atlantic Ocean"
+     ],
+     "a": 0,
+     "why": "Winds help eastward flights.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If Earth did not spin, how would circulation change?",
+     "o": [
+      "Winds would flow more directly between high and low pressure",
+      "There would be no change at all",
+      "There would be no wind anywhere on Earth",
+      "Only polar winds would blow around the planet"
+     ],
+     "a": 0,
+     "why": "The Coriolis effect would vanish.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Atmospheric circulation",
+    "model": "The Sun heats the equator most, so air rises there and sinks near 30° latitude. Surface winds blow from high to low pressure and Earth's spin bends them into belts such as the trade winds and westerlies.",
+    "points": [
+     {
+      "k": [
+       "sun",
+       "heat",
+       "equator",
+       "warm"
+      ],
+      "ask": "Why does air rise at the equator?"
+     },
+     {
+      "k": [
+       "sink",
+       "dry",
+       "desert",
+       "30"
+      ],
+      "ask": "What happens at 30 degrees?"
+     },
+     {
+      "k": [
+       "pressure",
+       "high",
+       "low"
+      ],
+      "ask": "Which way does wind blow?"
+     },
+     {
+      "k": [
+       "spin",
+       "coriolis",
+       "curve"
+      ],
+      "ask": "What bends the winds?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Ecosystems and biomes",
+   "icon": "🌳",
+   "hook": "A rainforest and a desert both have living things. Why are the plants and animals so different?",
+   "explain": [
+    "An ecosystem is a community of living things and their non-living surroundings, linked by energy and nutrients. A biome is a very large region with a similar climate and similar vegetation. Examples are tropical rainforest, savanna, desert, temperate forest, grassland, taiga and tundra.",
+    "Producers (plants and algae) make food from sunlight. Consumers eat other living things: herbivores eat plants, carnivores eat animals. Decomposers such as fungi and bacteria break down dead matter and return nutrients to the soil.",
+    "Energy passes along food chains, and most of it is lost as heat at each step, so there are fewer top predators than plants. Many food chains link together in a food web.",
+    "Living things are adapted to their biome. Cacti store water and have spines. Polar bears have thick fur and fat. Rainforest trees grow tall to reach sunlight. Biodiversity, the variety of life, is highest in tropical rainforests and coral reefs."
+   ],
+   "example": {
+    "q": "In a food chain, grass → grasshopper → frog → snake, which is the producer and which is the top consumer?",
+    "steps": [
+     "Grass makes food by photosynthesis, so it is the producer.",
+     "The snake eats the frog and nothing eats the snake in this chain.",
+     "So the snake is the top consumer."
+    ],
+    "a": "Grass is the producer; snake is the top consumer"
+   },
+   "analogies": {
+    "home": "A compost bin shows decomposers turning waste into soil.",
+    "farm": "A farm is a managed ecosystem with crops, insects, birds and soil life.",
+    "sea": "A coral reef shelters thousands of species that depend on one another.",
+    "nature": "A pond has algae, insects, fish and herons in a food web."
+   },
+   "mnemonic": "Producers make, consumers take, decomposers return.",
+   "terms": [
+    [
+     "Ecosystem",
+     "Living things and their surroundings that interact."
+    ],
+    [
+     "Biome",
+     "A large region defined by climate and vegetation."
+    ],
+    [
+     "Producer",
+     "A living thing that makes its own food from sunlight."
+    ],
+    [
+     "Decomposer",
+     "A living thing that breaks down dead matter."
+    ]
+   ],
+   "misc": {
+    "wrong": "Removing one species never matters.",
+    "right": "Species are linked in food webs, so removing one can affect many others."
+   },
+   "limits": "Biome boundaries are blurry and scientists use different numbers of biomes.",
+   "trip": {
+    "wiki": "Biome",
+    "prompt": "Pick two biomes. What adaptation helps a plant or animal survive in each?"
+   },
+   "sources": [
+    "Biome",
+    "Ecosystem",
+    "Food web"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a biome?",
+     "o": [
+      "A large region with similar climate and vegetation",
+      "A single pond with plants and fish",
+      "A kind of rock formed from lava",
+      "A big city and its suburbs"
+     ],
+     "a": 0,
+     "why": "Examples include tundra and rainforest.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do decomposers do?",
+     "o": [
+      "Break down dead matter and return nutrients",
+      "Make food from sunlight, like green plants do",
+      "Eat only plants and never any animals",
+      "Hunt animals and catch them for food"
+     ],
+     "a": 0,
+     "why": "Fungi and bacteria recycle nutrients.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why are there fewer top predators than plants?",
+     "o": [
+      "Energy is lost at each step of the chain",
+      "Predators are shy and hide from people",
+      "Plants multiply very fast, so they stay few",
+      "Lions and other predators dislike eating plants"
+     ],
+     "a": 0,
+     "why": "Only a small share of energy passes on.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which adaptation helps a cactus survive in a desert?",
+     "o": [
+      "Storing water in its stem",
+      "Large thin leaves that lose water fast",
+      "Shallow roots that stay in the shade",
+      "Growing under water, as in a pond"
+     ],
+     "a": 0,
+     "why": "Cacti save water.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which biome has the highest biodiversity?",
+     "o": [
+      "Tropical rainforest",
+      "Tundra, in the cold north",
+      "Desert, which is hot and dry",
+      "Taiga, with its cold evergreen forests"
+     ],
+     "a": 0,
+     "why": "Warmth and rain support many species.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a producer?",
+     "o": [
+      "A tree",
+      "A fox",
+      "A beetle that eats leaves",
+      "A mushroom"
+     ],
+     "a": 0,
+     "why": "Trees make food by photosynthesis.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If frogs disappeared from a pond, what might happen to insects they eat?",
+     "o": [
+      "Insect numbers might increase",
+      "Insects would vanish from the pond",
+      "Nothing would change for the insects",
+      "The frogs would return and eat more"
+     ],
+     "a": 0,
+     "why": "Fewer predators lead to more prey, at least for a while.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each biome to a typical feature.",
+     "pairs": [
+      [
+       "Tundra",
+       "Frozen ground, no trees"
+      ],
+      [
+       "Tropical rainforest",
+       "Warm and wet all year"
+      ],
+      [
+       "Savanna",
+       "Grasses and a dry season"
+      ],
+      [
+       "Taiga",
+       "Cone-bearing forest in cold lands"
+      ]
+     ],
+     "why": "Climate shapes biome features.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order this food chain from producer to top consumer.",
+     "items": [
+      "Algae",
+      "Small fish",
+      "Larger fish",
+      "Seal"
+     ],
+     "why": "Energy passes up the chain.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why decomposers are essential to an ecosystem.",
+     "rubric": [
+      [
+       "dead",
+       "waste",
+       "decay",
+       "rot"
+      ],
+      [
+       "nutrient",
+       "return",
+       "recycle",
+       "soil",
+       "minerals"
+      ],
+      [
+       "plants",
+       "grow",
+       "producers",
+       "food chain",
+       "new life"
+      ]
+     ],
+     "min": 2,
+     "model": "They break down dead plants and animals and waste, returning nutrients to the soil so plants can grow again. Without them nutrients would be locked in dead matter.",
+     "why": "Decomposers close the loop.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A farmer sprays all insects in a field. Why might crops still suffer?",
+     "o": [
+      "Pollinators and natural pest controllers are also killed",
+      "Crops love chemicals, so they grow too much",
+      "Soil disappears when the insects go",
+      "Rain stops falling on the field"
+     ],
+     "a": 0,
+     "why": "Ecosystems are connected.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do desert animals often come out at night?",
+     "o": [
+      "To avoid the heat and save water",
+      "They hate light and are scared of it",
+      "Deserts are always dark at noon",
+      "Food is gone in the day and returns at night"
+     ],
+     "a": 0,
+     "why": "Behaviour adapts to climate.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How might a drier climate change a savanna over time?",
+     "o": [
+      "It could become more like desert",
+      "It becomes tundra with permanent snow",
+      "It turns into a thick rainforest",
+      "Nothing changes at all in the savanna"
+     ],
+     "a": 0,
+     "why": "Vegetation follows climate.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Ecosystems and biomes",
+    "model": "An ecosystem is living things and their surroundings working together. A biome is a large region with similar climate and plants. Producers make food, consumers eat, and decomposers recycle nutrients.",
+    "points": [
+     {
+      "k": [
+       "ecosystem",
+       "living",
+       "environment"
+      ],
+      "ask": "What is an ecosystem?"
+     },
+     {
+      "k": [
+       "biome",
+       "climate",
+       "region"
+      ],
+      "ask": "What is a biome?"
+     },
+     {
+      "k": [
+       "producer",
+       "consumer",
+       "decompos"
+      ],
+      "ask": "What roles do living things have?"
+     },
+     {
+      "k": [
+       "adapt",
+       "survive"
+      ],
+      "ask": "How do they fit their home?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Population distribution and migration",
+   "icon": "🚶",
+   "hook": "Why do some people leave their homes for far-off places while others stay for life?",
+   "explain": [
+    "Population is not spread evenly. Densely populated regions include South Asia, East Asia, Western Europe and the Nile valley. Sparsely populated ones include deserts, polar lands, high mountains and tropical rainforests.",
+    "Population change depends on births, deaths and migration. Natural increase = birth rate − death rate (per 1,000 people). The demographic transition model describes how birth and death rates change as countries develop: death rates fall first, so population grows quickly; later birth rates fall too.",
+    "Migration is moving to live in a new place. Push factors drive people away, such as war, drought, poverty or lack of jobs. Pull factors attract them, such as work, safety, schools or family. Internal migration is within a country; international migration crosses borders. Refugees flee danger or persecution.",
+    "Migration has existed throughout human history. It changes both the places people leave and the places they arrive: remittances support families, and migrants add skills, culture and labour."
+   ],
+   "example": {
+    "q": "A country has a birth rate of 30 per 1,000 and a death rate of 10 per 1,000. What is its natural increase as a percentage?",
+    "steps": [
+     "Natural increase = 30 − 10 = 20 per 1,000.",
+     "20 ÷ 1,000 = 0.02.",
+     "0.02 = 2%."
+    ],
+    "a": "2 percent per year"
+   },
+   "analogies": {
+    "home": "A family moves because of a new job. That is a pull factor.",
+    "farm": "A drought can push farmers to move to towns.",
+    "city": "Cities attract young workers, so the city grows.",
+    "sea": "Ports have always been entry points for new people and ideas."
+   },
+   "mnemonic": "Push away, pull toward.",
+   "terms": [
+    [
+     "Natural increase",
+     "Birth rate minus death rate."
+    ],
+    [
+     "Migration",
+     "Moving from one place to live in another."
+    ],
+    [
+     "Push factor",
+     "A reason that drives people to leave."
+    ],
+    [
+     "Pull factor",
+     "A reason that attracts people to a new place."
+    ]
+   ],
+   "misc": {
+    "wrong": "Migrants always move for money.",
+    "right": "People migrate for many reasons, including safety, family, education and climate."
+   },
+   "limits": "Population figures and migration numbers are estimates and vary between sources.",
+   "trip": {
+    "wiki": "Human migration",
+    "prompt": "Pick a migration flow on a map. Name one push and one pull factor."
+   },
+   "sources": [
+    "Human migration",
+    "Demographic transition",
+    "Population density"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is natural increase?",
+     "o": [
+      "Birth rate minus death rate",
+      "Death rate minus birth rate",
+      "Migration only",
+      "Total population"
+     ],
+     "a": 0,
+     "why": "It ignores migration.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a push factor?",
+     "o": [
+      "War in the home region",
+      "Good schools in the new country",
+      "High wages in the new place",
+      "Clean air in another region"
+     ],
+     "a": 0,
+     "why": "Push factors drive people away.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a pull factor?",
+     "o": [
+      "Job opportunities",
+      "Famine after the crops fail",
+      "Flooding that destroys farmland",
+      "Conflict between armed groups"
+     ],
+     "a": 0,
+     "why": "Pull factors attract.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a refugee?",
+     "o": [
+      "A person forced to flee danger or persecution",
+      "A tourist who is travelling for fun",
+      "A student who is visiting a school",
+      "A trader who sells goods in markets"
+     ],
+     "a": 0,
+     "why": "Refugees cannot safely stay home.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In early demographic transition, why does population grow fast?",
+     "o": [
+      "Death rates fall while birth rates remain high",
+      "Births fall quickly while death rates stay high",
+      "Deaths rise sharply as medicine gets worse",
+      "Nobody migrates, so numbers stay the same"
+     ],
+     "a": 0,
+     "why": "Medicine and food reduce deaths first.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A region has a death rate higher than its birth rate and no migration. What happens to its population?",
+     "o": [
+      "It decreases",
+      "It rises",
+      "It stays equal",
+      "It doubles"
+     ],
+     "a": 0,
+     "why": "Natural decrease.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Internal migration means...",
+     "o": [
+      "Moving within the same country",
+      "Crossing a border into another country",
+      "Moving by plane to a different country",
+      "Being a tourist on a short holiday"
+     ],
+     "a": 0,
+     "why": "For example, moving from village to city.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A town has a birth rate of 18 and a death rate of 12 per 1,000. What is the natural increase per 1,000?",
+     "a": 6,
+     "tol": 0,
+     "unit": "per 1,000",
+     "why": "18 − 12 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each example to its meaning.",
+     "pairs": [
+      [
+       "Drought destroying crops",
+       "Pushes people out"
+      ],
+      [
+       "Higher paid jobs elsewhere",
+       "Pulls people in"
+      ],
+      [
+       "Moving from village to city in the same country",
+       "Internal migration"
+      ]
+     ],
+     "why": "Push and pull factors and migration types explain choices.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give two ways migration can benefit the destination country.",
+     "rubric": [
+      [
+       "labour",
+       "workers",
+       "jobs",
+       "skills",
+       "fill",
+       "workforce"
+      ],
+      [
+       "culture",
+       "diversity",
+       "ideas",
+       "food",
+       "new"
+      ],
+      [
+       "tax",
+       "economy",
+       "business",
+       "grow",
+       "young",
+       "pay"
+      ]
+     ],
+     "min": 2,
+     "model": "Migrants fill jobs and bring skills, and they add cultural diversity and business ideas, which can help the economy grow.",
+     "why": "Benefits come with challenges too.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Many young people leave a village. What may happen to the village?",
+     "o": [
+      "Fewer workers and an older average age",
+      "More schools open and the village grows younger",
+      "The village grows faster than ever",
+      "Nothing changes in the village at all"
+     ],
+     "a": 0,
+     "why": "Selective migration changes population structure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do remittances matter?",
+     "o": [
+      "Money sent home supports families and local economies",
+      "They stop people from migrating at all",
+      "They are taxes paid by migrants to governments",
+      "They are gifts that tourists leave behind"
+     ],
+     "a": 0,
+     "why": "Remittances are large flows of money.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do migration numbers differ by source?",
+     "o": [
+      "Definitions and data collection vary",
+      "Maps lie about where migrants are",
+      "Migrants hide from every census taker",
+      "The numbers are random and mean nothing"
+     ],
+     "a": 0,
+     "why": "Counting is hard.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Population distribution and migration",
+    "model": "People live mostly where water, food and work are available. Population changes with births, deaths and migration. Push factors drive people out and pull factors attract them.",
+    "points": [
+     {
+      "k": [
+       "birth",
+       "death",
+       "natural increase"
+      ],
+      "ask": "What changes population?"
+     },
+     {
+      "k": [
+       "migrat",
+       "move"
+      ],
+      "ask": "What is migration?"
+     },
+     {
+      "k": [
+       "push",
+       "pull"
+      ],
+      "ask": "What causes it?"
+     },
+     {
+      "k": [
+       "example",
+       "war",
+       "job",
+       "drought",
+       "school"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Agriculture and industrial geography",
+   "icon": "🌾",
+   "hook": "Why is rice grown in flooded fields in Asia but wheat on dry plains in Canada and Ukraine?",
+   "explain": [
+    "Farming depends on climate, soil, relief (the shape of land) and markets. Subsistence farming grows food mainly for the farmer's family. Commercial farming grows food to sell. Intensive farming gets a large output from a small area using lots of labour or inputs; extensive farming uses large areas with less input per hectare.",
+    "Rice needs warm temperatures and plenty of water, so it suits monsoon Asia. Wheat prefers cooler, drier temperate plains. Cocoa grows only near the equator, in West Africa and South America. Pastoral farmers in dry lands herd animals such as camels, cattle and sheep.",
+    "Industry is grouped into sectors. The primary sector takes raw materials (farming, mining, fishing). The secondary sector manufactures goods. The tertiary sector provides services such as teaching, shops and transport. The quaternary sector deals with information and research. As countries develop, more workers shift from primary toward tertiary jobs.",
+    "Industries locate where costs are lowest: near raw materials, energy, workers, markets or ports. The Industrial Revolution began in Britain around 1760, with coal and iron nearby. Today much manufacturing is in East Asia and many services are global."
+   ],
+   "example": {
+    "q": "A country has 100 workers: 10 primary, 30 secondary, 60 tertiary. What percentage is in services?",
+    "steps": [
+     "Services are the tertiary sector: 60 workers.",
+     "60 ÷ 100 = 0.60.",
+     "So 60 percent."
+    ],
+    "a": "60 percent"
+   },
+   "analogies": {
+    "home": "A bakery gets flour (primary), makes bread (secondary) and sells it (tertiary).",
+    "farm": "A dairy farm milks cows, then a factory makes cheese, then a shop sells it.",
+    "city": "Cities mostly have service jobs: banks, schools, hospitals.",
+    "sea": "Fishing is primary, canning is secondary, shipping is tertiary."
+   },
+   "mnemonic": "Take it, make it, serve it, think it: primary, secondary, tertiary, quaternary.",
+   "terms": [
+    [
+     "Subsistence farming",
+     "Growing food mainly for your own family."
+    ],
+    [
+     "Commercial farming",
+     "Growing crops or animals to sell."
+    ],
+    [
+     "Primary sector",
+     "Jobs that take raw materials from nature."
+    ],
+    [
+     "Tertiary sector",
+     "Service jobs."
+    ]
+   ],
+   "misc": {
+    "wrong": "Developed countries have no farming.",
+    "right": "They still farm, but with machines, so few workers produce lots of food."
+   },
+   "limits": "Sector boundaries overlap, and some jobs fit more than one sector.",
+   "trip": {
+    "wiki": "Agriculture",
+    "prompt": "Compare a rice paddy and a wheat prairie photo. What differs about the land and the water?"
+   },
+   "sources": [
+    "Agriculture",
+    "Economic sector",
+    "Industrial Revolution"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is subsistence farming?",
+     "o": [
+      "Growing food mainly for the family",
+      "Growing food only for export to other countries",
+      "Not farming at all, only hunting",
+      "Fishing in lakes only, with no crops"
+     ],
+     "a": 0,
+     "why": "Surplus is small.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which sector is mining in?",
+     "o": [
+      "Primary",
+      "Secondary",
+      "Tertiary",
+      "Quaternary"
+     ],
+     "a": 0,
+     "why": "It takes raw materials from the earth.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which sector is teaching in?",
+     "o": [
+      "Tertiary",
+      "Primary",
+      "Secondary",
+      "None"
+     ],
+     "a": 0,
+     "why": "Teaching is a service.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which crop needs a hot wet climate?",
+     "o": [
+      "Rice",
+      "Wheat",
+      "Oats",
+      "Barley"
+     ],
+     "a": 0,
+     "why": "Rice thrives where water is plentiful and warm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why did many early factories grow near coalfields?",
+     "o": [
+      "Coal powered the machines",
+      "Coal is food that workers ate",
+      "Coal cooled the factories on hot days",
+      "Coal made the roads that led to them"
+     ],
+     "a": 0,
+     "why": "Energy was bulky to move.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "As a country develops, which sector usually grows most?",
+     "o": [
+      "Tertiary",
+      "Primary",
+      "Subsistence",
+      "Hunting"
+     ],
+     "a": 0,
+     "why": "More service jobs.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is intensive farming?",
+     "o": [
+      "High output from a small area using lots of inputs",
+      "Farming a huge area of empty land with few inputs",
+      "Hunting wild animals in forests",
+      "Fishing at sea in big boats"
+     ],
+     "a": 0,
+     "why": "It uses labour or fertiliser per hectare heavily.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A country has 200 workers: 20 primary, 60 secondary, 120 tertiary. What percentage is in the secondary sector?",
+     "a": 30,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "60 ÷ 200 = 0.3 = 30%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each job to its sector.",
+     "pairs": [
+      [
+       "Wheat farmer",
+       "Primary"
+      ],
+      [
+       "Car factory worker",
+       "Secondary"
+      ],
+      [
+       "Nurse",
+       "Tertiary"
+      ],
+      [
+       "Software researcher",
+       "Quaternary"
+      ]
+     ],
+     "why": "Sectors group work by type.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a steel factory might locate near a port.",
+     "rubric": [
+      [
+       "import",
+       "iron ore",
+       "raw material",
+       "coal",
+       "bring"
+      ],
+      [
+       "export",
+       "sell",
+       "ship",
+       "market",
+       "trade",
+       "transport"
+      ],
+      [
+       "cost",
+       "cheap",
+       "easier",
+       "bulk",
+       "heavy"
+      ]
+     ],
+     "min": 2,
+     "model": "Steel needs heavy raw materials such as iron ore and coal, and a port lets the factory import them and ship steel out cheaply by sea.",
+     "why": "Transport costs shape location.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A drought hits a farming region. Why might food prices rise elsewhere?",
+     "o": [
+      "Supply drops while demand stays",
+      "Everyone buys less food so prices fall",
+      "Farmers stop growing food everywhere",
+      "Prices are fixed by law and never change"
+     ],
+     "a": 0,
+     "why": "Global markets link places.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a country with little farmland still export food?",
+     "o": [
+      "High-tech farming or greenhouses give high yields",
+      "It cannot, because there is no farmland",
+      "Food grows by itself in factories",
+      "Farmland is free and so anyone can use it"
+     ],
+     "a": 0,
+     "why": "Technology raises yields, as in the Netherlands.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do many clothes factories locate where labour is cheaper?",
+     "o": [
+      "Labour is a big share of production cost",
+      "Cloth is heavy and costly to carry far",
+      "Sheep only live in those places",
+      "Rivers there run red and dye the cloth"
+     ],
+     "a": 0,
+     "why": "Firms cut costs.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Farming and industry",
+    "model": "Farming types depend on climate and soil. Industry has sectors: primary takes raw materials, secondary makes goods, tertiary gives services. Industries locate where costs are lowest.",
+    "points": [
+     {
+      "k": [
+       "climate",
+       "soil",
+       "water",
+       "rain"
+      ],
+      "ask": "What does farming depend on?"
+     },
+     {
+      "k": [
+       "primary",
+       "secondary",
+       "tertiary",
+       "sector"
+      ],
+      "ask": "How is industry grouped?"
+     },
+     {
+      "k": [
+       "raw material",
+       "factory",
+       "service"
+      ],
+      "ask": "Can you give examples?"
+     },
+     {
+      "k": [
+       "cost",
+       "location",
+       "near",
+       "port",
+       "market"
+      ],
+      "ask": "Where do factories go?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Urban geography",
+   "icon": "🏙️",
+   "hook": "In 1950 only a few cities had 10 million people. Today there are dozens. How do cities grow and what problems follow?",
+   "explain": [
+    "Urbanisation is the increasing share of people living in towns and cities. Since about 2007, more than half of the world's people live in cities. Cities grow by natural increase and by migration from the countryside (rural-to-urban migration).",
+    "A megacity has more than 10 million people. Examples include Tokyo, Delhi, Shanghai, São Paulo, Cairo, Lagos and Mexico City. Most of today's fastest growth is in Asia and Africa.",
+    "Inside a city, land uses are arranged in zones. The central business district (CBD) has the highest land values, tall buildings, offices and shops. Residential areas surround it, and factories often sit near transport links. Land is cheaper at the edges, so cities spread outward in urban sprawl.",
+    "Rapid growth brings challenges: housing shortages and informal settlements, traffic, pollution, and pressure on water and sanitation. Good planning provides public transport, green spaces and affordable homes."
+   ],
+   "example": {
+    "q": "A city had 8 million people and grew to 12 million. By what percentage did it grow?",
+    "steps": [
+     "Increase = 12 − 8 = 4 million.",
+     "Divide by the original: 4 ÷ 8 = 0.5.",
+     "0.5 = 50%."
+    ],
+    "a": "50 percent"
+   },
+   "analogies": {
+    "home": "A crowded bus makes you stand close together; cities have the same problem with space.",
+    "city": "Metro trains move many people using little street space.",
+    "farm": "Farms near cities supply fresh food, but city edges are growing into farmland.",
+    "tech": "Smart traffic lights and apps help cities manage movement."
+   },
+   "mnemonic": "Cities grow like ripples, with the core in the middle.",
+   "terms": [
+    [
+     "Urbanisation",
+     "The growing share of people living in cities."
+    ],
+    [
+     "Megacity",
+     "A city of more than 10 million people."
+    ],
+    [
+     "CBD",
+     "The central business district, the commercial core."
+    ],
+    [
+     "Urban sprawl",
+     "Spread of a city into surrounding land."
+    ]
+   ],
+   "misc": {
+    "wrong": "Cities are always richer and cleaner than the countryside.",
+    "right": "Cities offer jobs and services but may also have slums, pollution and crowding."
+   },
+   "limits": "City populations are counted differently (city proper vs metropolitan area), so rankings vary.",
+   "trip": {
+    "wiki": "Urbanization",
+    "prompt": "Look at a map or photo of a megacity. What do you notice about the centre and the edges?"
+   },
+   "sources": [
+    "Urbanization",
+    "Megacity",
+    "Central business district"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a megacity?",
+     "o": [
+      "A city of more than 10 million people",
+      "A town of about 1,000 people",
+      "A capital city with a parliament",
+      "A port with ships and cranes"
+     ],
+     "a": 0,
+     "why": "It is defined by size.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the CBD contain?",
+     "o": [
+      "Offices, shops and high land values",
+      "Farms and fields that stretch for miles",
+      "Forests and wild animals",
+      "Airports only, with no shops"
+     ],
+     "a": 0,
+     "why": "It is the commercial centre.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is urban sprawl?",
+     "o": [
+      "Cities spreading outward into surrounding land",
+      "The city centre is shrinking each year",
+      "Farmland is growing around the city",
+      "A flood moves through the streets"
+     ],
+     "a": 0,
+     "why": "Growth at the edges.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a main cause of urban growth in poorer countries?",
+     "o": [
+      "Rural-to-urban migration",
+      "More farms being built in the countryside",
+      "Fewer births in the poorer countries",
+      "Schools closing in the villages"
+     ],
+     "a": 0,
+     "why": "People seek jobs and services.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which city is a megacity in Africa?",
+     "o": [
+      "Lagos",
+      "Oslo",
+      "Perth",
+      "Quito"
+     ],
+     "a": 0,
+     "why": "Lagos, Nigeria, is very large and growing.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why are land prices highest in the CBD?",
+     "o": [
+      "Many want to be there and space is limited",
+      "It is far from the centre of the city",
+      "There is no demand for it",
+      "It has no roads leading into it"
+     ],
+     "a": 0,
+     "why": "Demand and access raise prices.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How can planners reduce traffic jams?",
+     "o": [
+      "Provide public transport",
+      "Remove all the buses from city streets",
+      "Build only more roads for cars",
+      "Stop people from cycling in the city"
+     ],
+     "a": 0,
+     "why": "Moving many people in fewer vehicles.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city has 5 million people and covers 500 km². What is its density in people per km²?",
+     "a": 10000,
+     "tol": 10,
+     "unit": "people/km²",
+     "why": "5,000,000 ÷ 500 = 10,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these from the city centre outward in a typical simple model.",
+     "items": [
+      "CBD",
+      "Older inner city",
+      "Suburbs",
+      "Rural fringe"
+     ],
+     "why": "Land uses form rings.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Describe two problems of rapid urban growth and one possible solution.",
+     "rubric": [
+      [
+       "housing",
+       "slum",
+       "informal",
+       "shortage",
+       "overcrowd"
+      ],
+      [
+       "traffic",
+       "pollution",
+       "congestion",
+       "water",
+       "sanitation",
+       "waste",
+       "crime",
+       "jobs"
+      ],
+      [
+       "plan",
+       "public transport",
+       "build",
+       "invest",
+       "solution",
+       "green",
+       "improve",
+       "affordable",
+       "services"
+      ]
+     ],
+     "min": 2,
+     "model": "Rapid growth can cause housing shortages and informal settlements, and traffic and pollution. Planners can invest in public transport, affordable housing and clean water.",
+     "why": "Growth needs planning.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might a city build a green belt around its edge?",
+     "o": [
+      "To limit sprawl and protect nature",
+      "To block the trains from entering the city",
+      "To remove parks and green spaces",
+      "To cut down trees near the city edge"
+     ],
+     "a": 0,
+     "why": "Green belts stop endless spread.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can informal settlements have poor health outcomes?",
+     "o": [
+      "Limited clean water and sanitation",
+      "Too many parks and green spaces",
+      "Too few people living close together",
+      "Too much rain falling all year"
+     ],
+     "a": 0,
+     "why": "Services are missing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why may two lists rank the largest city differently?",
+     "o": [
+      "They define city boundaries differently",
+      "Cities move from place to place",
+      "Maps are wrong about their size",
+      "The numbers are kept secret by the governments"
+     ],
+     "a": 0,
+     "why": "City proper and metro area differ.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How cities grow",
+    "model": "Cities grow when people move in from the countryside and by natural increase. A city has a central business district and spreads outward. Fast growth causes problems that planning can ease.",
+    "points": [
+     {
+      "k": [
+       "migrat",
+       "move",
+       "rural",
+       "countryside"
+      ],
+      "ask": "Why do cities grow?"
+     },
+     {
+      "k": [
+       "cbd",
+       "centre",
+       "centre",
+       "business"
+      ],
+      "ask": "What is in the middle?"
+     },
+     {
+      "k": [
+       "sprawl",
+       "spread",
+       "edge"
+      ],
+      "ask": "What happens at the edges?"
+     },
+     {
+      "k": [
+       "problem",
+       "traffic",
+       "housing",
+       "pollution",
+       "plan"
+      ],
+      "ask": "What problems appear and how can we help?"
+     }
+    ]
+   }
+  }
+ ]
+}

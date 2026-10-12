@@ -1,0 +1,1776 @@
+{
+ "world": 10,
+ "lang": "ja",
+ "level": 1,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Language sounds and pronunciation",
+   "icon": "🔊",
+   "hook": "Say \"a, i, u, e, o\" slowly. Japanese has five clean vowels, and each sound takes the same beat.",
+   "explain": [
+    "Japanese has five vowels: あ (a), い (i), う (u), え (e), お (o). They are short and clear, like Spanish vowels. Japanese is said in beats called morae. Each kana is one beat: さかな (sa-ka-na) has three beats.",
+    "A long vowel takes two beats and can change a word. おばさん (obasan, aunt) and おばあさん (obāsan, grandmother) are different words. In romaji, a line over the vowel (ā, ī, ū, ē, ō) shows the long vowel. Japanese also has pitch accent: the pitch of the voice goes high and low, and, for example, あめ can mean rain or candy depending on the pitch."
+   ],
+   "mnemonic": "Five vowels, one beat each: a-i-u-e-o.",
+   "items": [
+    [
+     "rain, candy",
+     "あめ",
+     "ame"
+    ],
+    [
+     "dog",
+     "いぬ",
+     "inu"
+    ],
+    [
+     "sea",
+     "うみ",
+     "umi"
+    ],
+    [
+     "station",
+     "えき",
+     "eki"
+    ],
+    [
+     "cat",
+     "ねこ",
+     "neko"
+    ],
+    [
+     "fish",
+     "さかな",
+     "sakana"
+    ],
+    [
+     "mountain",
+     "やま",
+     "yama"
+    ],
+    [
+     "sweets, snack",
+     "おかし",
+     "okashi"
+    ]
+   ],
+   "sentences": [
+    [
+     "There is a cat.",
+     [
+      "ねこ",
+      "が",
+      "いる"
+     ]
+    ],
+    [
+     "Dogs are cute.",
+     [
+      "いぬ",
+      "は",
+      "かわいい"
+     ]
+    ],
+    [
+     "The sea is wide.",
+     [
+      "うみ",
+      "は",
+      "ひろい"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How many beats are in さかな?",
+     "o": [
+      "Three",
+      "Two",
+      "Four",
+      "Six"
+     ],
+     "a": 0,
+     "why": "Each kana is one beat, so さ-か-な has three.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What difference do おばさん and おばあさん show?",
+     "o": [
+      "Nothing, they are the same",
+      "Vowel length changes the word",
+      "Only the spelling",
+      "Only the tone"
+     ],
+     "a": 1,
+     "why": "A long vowel is longer and changes the meaning.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is vowel length important in Japanese?",
+     "o": [
+      "It does not matter",
+      "It marks a question",
+      "It can change the word",
+      "It marks a plural"
+     ],
+     "a": 2,
+     "why": "A long vowel adds a beat, so the length can distinguish words.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The word あめ can mean rain or candy. What helps tell them apart?",
+     "o": [
+      "Spelling in romaji",
+      "Nothing",
+      "Capital letters",
+      "Pitch and context"
+     ],
+     "a": 3,
+     "why": "Pitch accent and context separate them.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A learner says どうも as \"dō-mo\" with the first vowel short. What might happen?",
+     "o": [
+      "The word may sound different",
+      "Nothing at all",
+      "It becomes a question",
+      "It becomes katakana"
+     ],
+     "a": 0,
+     "why": "Shortening a long vowel can make the word sound different.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Japanese vowels and beats",
+    "model": "Japanese has five vowels: a, i, u, e, o. Each kana is one beat. A long vowel takes two beats and can change the word, for example obasan and obāsan.",
+    "points": [
+     {
+      "k": [
+       "five",
+       "a i u e o",
+       "vowel"
+      ],
+      "ask": "How many vowels does Japanese have?"
+     },
+     {
+      "k": [
+       "beat",
+       "mora",
+       "one"
+      ],
+      "ask": "How long does each kana take?"
+     },
+     {
+      "k": [
+       "long",
+       "two",
+       "change",
+       "meaning"
+      ],
+      "ask": "What does a long vowel do?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese phonology",
+    "prompt": "Listen to the five vowels in a sample and say them aloud."
+   },
+   "sources": [
+    "Japanese phonology",
+    "Mora (linguistics)"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Alphabet, script or basic characters",
+   "icon": "🈂️",
+   "hook": "Japanese uses three kinds of writing in one sentence. Can you spot them?",
+   "explain": [
+    "Japanese uses hiragana (ひらがな), katakana (カタカナ) and kanji (漢字) together. Hiragana is used for native words and grammar endings. Katakana is used for foreign words (like コーヒー, coffee), names and emphasis. Kanji are characters from China that carry meaning, like 山 (mountain) and 川 (river).",
+    "Each kana stands for a sound: あ is a, か is ka. There are 46 basic hiragana and 46 basic katakana. Kanji have usually two kinds of readings: a Japanese reading (kun) and a Chinese-derived reading (on). 山 is やま (yama) alone and さん (-san) in words such as 富士山 (Fujisan).",
+    "Rōmaji is the Latin-letter spelling of Japanese. This course uses Hepburn romaji, which shows the sounds, like shi, chi and tsu. Writing runs left to right in horizontal text, and in some books, from top to bottom and right to left."
+   ],
+   "mnemonic": "Hiragana is soft and round, katakana is sharp for foreign words.",
+   "items": [
+    [
+     "hiragana",
+     "ひらがな",
+     "hiragana"
+    ],
+    [
+     "katakana",
+     "カタカナ",
+     "katakana"
+    ],
+    [
+     "kanji",
+     "漢字",
+     "kanji"
+    ],
+    [
+     "Latin letters (romaji)",
+     "ローマ字",
+     "rōmaji"
+    ],
+    [
+     "character, letter",
+     "文字",
+     "moji"
+    ],
+    [
+     "Japan",
+     "日本",
+     "Nihon"
+    ],
+    [
+     "mountain",
+     "山",
+     "yama"
+    ],
+    [
+     "river",
+     "川",
+     "kawa"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is hiragana.",
+     [
+      "これ",
+      "は",
+      "ひらがな",
+      "です"
+     ]
+    ],
+    [
+     "This is katakana.",
+     [
+      "これ",
+      "は",
+      "カタカナ",
+      "です"
+     ]
+    ],
+    [
+     "The mountain is tall.",
+     [
+      "やま",
+      "は",
+      "たかい"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which script is used for foreign words like コーヒー?",
+     "o": [
+      "Hiragana",
+      "Katakana",
+      "Kanji",
+      "Rōmaji"
+     ],
+     "a": 1,
+     "why": "Katakana is used for loanwords.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does the character 山 mean?",
+     "o": [
+      "River",
+      "Sea",
+      "Mountain",
+      "Rain"
+     ],
+     "a": 2,
+     "why": "山 means mountain.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does 山 have two readings, やま and さん?",
+     "o": [
+      "It is a mistake",
+      "It changes with the weather",
+      "It is a pitch rule",
+      "Kun and on readings"
+     ],
+     "a": 3,
+     "why": "Kanji have Japanese (kun) and Chinese-derived (on) readings.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A shop sign has \"ラーメン\". Which script is it?",
+     "o": [
+      "Katakana",
+      "Hiragana",
+      "Kanji",
+      "Hepburn romaji"
+     ],
+     "a": 0,
+     "why": "ラーメン is written in katakana for a loanword (from Chinese).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about kanji is correct?",
+     "o": [
+      "They are only sounds",
+      "They carry meaning and came from Chinese characters",
+      "They are only used for foreign words",
+      "They are the Latin alphabet"
+     ],
+     "a": 1,
+     "why": "Kanji are Chinese-derived characters that carry meaning.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Three scripts of Japanese",
+    "model": "Japanese uses hiragana for native words and endings, katakana for foreign words and names, and kanji for meaning. Romaji spells Japanese with Latin letters.",
+    "points": [
+     {
+      "k": [
+       "hiragana",
+       "katakana",
+       "kanji"
+      ],
+      "ask": "Which scripts are used?"
+     },
+     {
+      "k": [
+       "foreign",
+       "loan",
+       "katakana"
+      ],
+      "ask": "What is katakana for?"
+     },
+     {
+      "k": [
+       "meaning",
+       "kanji",
+       "chinese"
+      ],
+      "ask": "What is kanji for?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese writing system",
+    "prompt": "Find a picture of a Japanese sign and name each script you see."
+   },
+   "sources": [
+    "Japanese writing system",
+    "Hiragana",
+    "Katakana"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Greetings and introductions",
+   "icon": "🙇",
+   "hook": "In Japan, people bow when they meet. What do they say when they greet each other?",
+   "explain": [
+    "Greetings depend on the time of day. おはよう (ohayō) is good morning, and the polite form is おはようございます. こんにちは (konnichiwa) is hello in the daytime, and こんばんは (konbanwa) is good evening. さようなら (sayōnara) is goodbye.",
+    "To thank, say ありがとう (arigatō), and politely ありがとうございます. The reply is どういたしまして (dō itashimashite). すみません (sumimasen) means excuse me or sorry. When you meet someone for the first time, say はじめまして (hajimemashite) and then よろしくおねがいします.",
+    "To say your name, use わたしは…です (I am…). The ending です (desu) is polite. In Japan, the family name comes first, and people often add さん (-san) to someone else's name, but never to their own. Bowing is common and shows respect."
+   ],
+   "mnemonic": "Say hajimemashite, then your name, then yoroshiku.",
+   "items": [
+    [
+     "good morning",
+     "おはよう",
+     "ohayō"
+    ],
+    [
+     "hello (daytime)",
+     "こんにちは",
+     "konnichiwa"
+    ],
+    [
+     "good evening",
+     "こんばんは",
+     "konbanwa"
+    ],
+    [
+     "goodbye",
+     "さようなら",
+     "sayōnara"
+    ],
+    [
+     "thank you",
+     "ありがとう",
+     "arigatō"
+    ],
+    [
+     "excuse me, sorry",
+     "すみません",
+     "sumimasen"
+    ],
+    [
+     "you are welcome",
+     "どういたしまして",
+     "dō itashimashite"
+    ],
+    [
+     "nice to meet you (first meeting)",
+     "はじめまして",
+     "hajimemashite"
+    ]
+   ],
+   "sentences": [
+    [
+     "I am Tanaka.",
+     [
+      "わたし",
+      "は",
+      "たなか",
+      "です"
+     ]
+    ],
+    [
+     "Nice to meet you, please treat me well.",
+     [
+      "はじめまして",
+      "よろしく",
+      "おねがいします"
+     ]
+    ],
+    [
+     "What is your name?",
+     [
+      "お名前",
+      "は",
+      "何",
+      "です",
+      "か"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which is said when meeting someone for the first time?",
+     "o": [
+      "さようなら",
+      "ありがとう",
+      "はじめまして",
+      "おはよう"
+     ],
+     "a": 2,
+     "why": "はじめまして is used at a first meeting.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which word is a reply to ありがとう?",
+     "o": [
+      "すみません",
+      "こんばんは",
+      "はじめまして",
+      "どういたしまして"
+     ],
+     "a": 3,
+     "why": "どういたしまして means you are welcome.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A person says \"I am Tanaka-san\". What is wrong?",
+     "o": [
+      "You do not add -san to your own name",
+      "Nothing is wrong",
+      "Tanaka is not a name",
+      "-san is a verb"
+     ],
+     "a": 0,
+     "why": "Japanese people do not add -san to their own name.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "At 8 pm, which greeting is right?",
+     "o": [
+      "おはよう",
+      "こんばんは",
+      "こんにちは",
+      "さようなら"
+     ],
+     "a": 1,
+     "why": "こんばんは is the evening greeting.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the family name come first in Japan?",
+     "o": [
+      "It is a spelling rule",
+      "It is a mistake",
+      "It is the Japanese naming order",
+      "Because of hiragana"
+     ],
+     "a": 2,
+     "why": "Japanese naming order puts the family name before the given name.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Greetings in Japanese",
+    "model": "Japanese greetings change with the time of day: ohayō, konnichiwa, konbanwa. At a first meeting say hajimemashite. Use -san after other people's names but not your own.",
+    "points": [
+     {
+      "k": [
+       "ohayō",
+       "konnichiwa",
+       "konbanwa",
+       "morning",
+       "evening"
+      ],
+      "ask": "How do greetings change?"
+     },
+     {
+      "k": [
+       "hajimemashite",
+       "first",
+       "meet"
+      ],
+      "ask": "What do I say at a first meeting?"
+     },
+     {
+      "k": [
+       "san",
+       "other",
+       "not your own",
+       "own"
+      ],
+      "ask": "When do I use -san?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese honorifics",
+    "prompt": "Read about -san and note when it is not used."
+   },
+   "sources": [
+    "Japanese honorifics",
+    "Bowing"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Numbers and counting",
+   "icon": "🔢",
+   "hook": "How many fingers do you have? In Japanese, the number words are short and regular.",
+   "explain": [
+    "The Chinese-derived numbers are 一 ichi, 二 ni, 三 san, 四 yon or shi, 五 go, 六 roku, 七 nana or shichi, 八 hachi, 九 kyū, 十 jū. Bigger numbers are built by combining: 十一 is jūichi (11), 二十 is nijū (20). Four and seven have two readings, and yon and nana are more common today.",
+    "Japanese also has native counting words for small numbers of things: ひとつ, ふたつ, みっつ, よっつ, いつつ. To count people, use ひとり (one person), ふたり (two people) and then さんにん, よにん. The word for the counting suffix for age is 歳 (sai).",
+    "The number four, shi, sounds like the word for death, so people often prefer yon. Hospitals and apartments may avoid the number four in some places. Counting words (counters) change depending on the shape and kind of object."
+   ],
+   "mnemonic": "Use yon and nana for four and seven in daily speech.",
+   "items": [
+    [
+     "one",
+     "一",
+     "ichi"
+    ],
+    [
+     "two",
+     "二",
+     "ni"
+    ],
+    [
+     "three",
+     "三",
+     "san"
+    ],
+    [
+     "four",
+     "四",
+     "yon"
+    ],
+    [
+     "five",
+     "五",
+     "go"
+    ],
+    [
+     "six",
+     "六",
+     "roku"
+    ],
+    [
+     "eight",
+     "八",
+     "hachi"
+    ],
+    [
+     "ten",
+     "十",
+     "jū"
+    ]
+   ],
+   "sentences": [
+    [
+     "There are three apples.",
+     [
+      "りんご",
+      "が",
+      "みっつ",
+      "あります"
+     ]
+    ],
+    [
+     "I am five years old.",
+     [
+      "わたし",
+      "は",
+      "ごさい",
+      "です"
+     ]
+    ],
+    [
+     "My family is four people.",
+     [
+      "かぞく",
+      "は",
+      "よにん",
+      "です"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How do you say 11?",
+     "o": [
+      "二十",
+      "一一",
+      "百一",
+      "十一"
+     ],
+     "a": 3,
+     "why": "十 and 一 are combined as jūichi.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do many people say yon instead of shi for four?",
+     "o": [
+      "Shi sounds like death",
+      "Yon is shorter to write",
+      "Shi means five",
+      "It is a tone"
+     ],
+     "a": 0,
+     "why": "Shi sounds like the word for death, so yon is preferred.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What is 二十 read as?",
+     "o": [
+      "jūni",
+      "nijū",
+      "nini",
+      "sanjū"
+     ],
+     "a": 1,
+     "why": "二 is ni and 十 is jū, so nijū.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child counts two people. Which word is correct?",
+     "o": [
+      "にこ",
+      "ふたつ",
+      "ふたり",
+      "ににん only for objects"
+     ],
+     "a": 2,
+     "why": "Two people is ふたり.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are there different counting words in Japanese?",
+     "o": [
+      "They are random",
+      "Only for tones",
+      "Only for kanji",
+      "Counters depend on the kind of object"
+     ],
+     "a": 3,
+     "why": "Counters change with the type or shape of the thing counted.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Counting in Japanese",
+    "model": "The numbers are ichi, ni, san, yon, go, roku, nana, hachi, kyū, jū. Bigger numbers are combined, so 11 is jūichi. People are counted with hitori, futari, and so on.",
+    "points": [
+     {
+      "k": [
+       "ichi",
+       "ni",
+       "san",
+       "one",
+       "two",
+       "three"
+      ],
+      "ask": "Can you say some numbers?"
+     },
+     {
+      "k": [
+       "combine",
+       "build",
+       "add"
+      ],
+      "ask": "How do I make bigger numbers?"
+     },
+     {
+      "k": [
+       "people",
+       "hitori",
+       "futari",
+       "counter"
+      ],
+      "ask": "How do I count people?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese numerals",
+    "prompt": "Find the numbers 1 to 10 and note which have two readings."
+   },
+   "sources": [
+    "Japanese numerals",
+    "Japanese counter word"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Colours and shapes",
+   "icon": "🎨",
+   "hook": "What colour is the sky? What shape is the moon? Japanese colours often end in い.",
+   "explain": [
+    "Some colours are adjectives that end in い (i): あかい (red), あおい (blue), しろい (white) and くろい (black). The noun forms are あか, あお, しろ and くろ. Others are only nouns: きいろ (yellow) and みどり (green). 黄色い (kiiroi) also works as an adjective.",
+    "Say りんごはあかいです (apples are red). To describe a noun, put the adjective before it: あかいりんご (a red apple). For shapes, まる (circle) and しかく (square) are common words, and まるい is the adjective round.",
+    "In Japanese, あお covers both blue and, in some phrases, green: traffic lights go \"ao\" for green, and 青りんご means green apple. This shows that colour words do not always match across languages."
+   ],
+   "mnemonic": "あか, あお, しろ, くろ: most colours become adjectives with い.",
+   "items": [
+    [
+     "red",
+     "あか",
+     "aka"
+    ],
+    [
+     "blue",
+     "あお",
+     "ao"
+    ],
+    [
+     "yellow",
+     "きいろ",
+     "kiiro"
+    ],
+    [
+     "green",
+     "みどり",
+     "midori"
+    ],
+    [
+     "white",
+     "しろ",
+     "shiro"
+    ],
+    [
+     "black",
+     "くろ",
+     "kuro"
+    ],
+    [
+     "circle",
+     "まる",
+     "maru"
+    ],
+    [
+     "square",
+     "しかく",
+     "shikaku"
+    ]
+   ],
+   "sentences": [
+    [
+     "Apples are red.",
+     [
+      "りんご",
+      "は",
+      "あかい",
+      "です"
+     ]
+    ],
+    [
+     "The sky is blue.",
+     [
+      "そら",
+      "は",
+      "あおい",
+      "です"
+     ]
+    ],
+    [
+     "The moon is round.",
+     [
+      "つき",
+      "は",
+      "まるい",
+      "です"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which word means \"white\"?",
+     "o": [
+      "しろ",
+      "くろ",
+      "あか",
+      "あお"
+     ],
+     "a": 0,
+     "why": "しろ is white.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How do you say \"a red apple\"?",
+     "o": [
+      "りんごあかい",
+      "あかいりんご",
+      "あかのりんごです",
+      "りんごあかを"
+     ],
+     "a": 1,
+     "why": "The adjective comes before the noun.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In Japan, what colour is a traffic light \"go\" signal called?",
+     "o": [
+      "あか",
+      "くろ",
+      "あお",
+      "しろ"
+     ],
+     "a": 2,
+     "why": "It is commonly called あお (blue), though it looks green.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does this show about colour words?",
+     "o": [
+      "All languages share the same colours",
+      "Colours have no names",
+      "Colour words are always nouns",
+      "Colour boundaries differ between languages"
+     ],
+     "a": 3,
+     "why": "Colour categories differ across languages.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is not an い-adjective colour?",
+     "o": [
+      "みどり",
+      "あかい",
+      "しろい",
+      "あおい"
+     ],
+     "a": 0,
+     "why": "みどり is a noun and not an い-adjective.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Colours in Japanese",
+    "model": "Colours like aka, ao, shiro and kuro can be adjectives with い. Kiiro and midori are mostly nouns. The adjective goes before the noun, as in akai ringo.",
+    "points": [
+     {
+      "k": [
+       "い",
+       "adjective",
+       "akai"
+      ],
+      "ask": "How do colour adjectives look?"
+     },
+     {
+      "k": [
+       "before",
+       "noun"
+      ],
+      "ask": "Where does the adjective go?"
+     },
+     {
+      "k": [
+       "ao",
+       "blue",
+       "green"
+      ],
+      "ask": "What is special about ao?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese color terms",
+    "prompt": "Read about ao and midori and note what is special about them."
+   },
+   "sources": [
+    "Color term",
+    "Japanese language"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Family and people",
+   "icon": "👪",
+   "hook": "In Japanese, you call your own mum one thing and someone else's mum another. Why?",
+   "explain": [
+    "Family words change for your own family and other people's family. Others' mother is おかあさん (okāsan) and your own mother is はは (haha). Others' father is おとうさん (otōsan) and your own is ちち (chichi). In a family, children use おかあさん to their own mother, too.",
+    "Siblings show age. おにいさん (onīsan) is an older brother and おねえさん (onēsan) is an older sister. Younger siblings are おとうと (otōto) and いもうと (imōto). Grandparents are おじいさん (ojīsan) and おばあさん (obāsan).",
+    "The use of \"uchi\" (inside) and \"soto\" (outside) groups is an important idea. When talking to outsiders, you lower your own group and honour the other's. That is why one word for a mum changes with the speaker and listener."
+   ],
+   "mnemonic": "Inside the family: haha, chichi. Outside: okāsan, otōsan.",
+   "items": [
+    [
+     "mother (someone else's)",
+     "おかあさん",
+     "okāsan"
+    ],
+    [
+     "father (someone else's)",
+     "おとうさん",
+     "otōsan"
+    ],
+    [
+     "older brother",
+     "おにいさん",
+     "onīsan"
+    ],
+    [
+     "older sister",
+     "おねえさん",
+     "onēsan"
+    ],
+    [
+     "younger brother",
+     "おとうと",
+     "otōto"
+    ],
+    [
+     "younger sister",
+     "いもうと",
+     "imōto"
+    ],
+    [
+     "grandfather",
+     "おじいさん",
+     "ojīsan"
+    ],
+    [
+     "grandmother",
+     "おばあさん",
+     "obāsan"
+    ]
+   ],
+   "sentences": [
+    [
+     "My mother is kind.",
+     [
+      "わたし",
+      "の",
+      "おかあさん",
+      "は",
+      "やさしい"
+     ]
+    ],
+    [
+     "Father is a teacher.",
+     [
+      "おとうさん",
+      "は",
+      "せんせい",
+      "です"
+     ]
+    ],
+    [
+     "I have a younger sister.",
+     [
+      "いもうと",
+      "が",
+      "います"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which word means \"younger sister\"?",
+     "o": [
+      "おねえさん",
+      "いもうと",
+      "おばあさん",
+      "おとうと"
+     ],
+     "a": 1,
+     "why": "いもうと is a younger sister.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How would you talk to a friend about your own mother?",
+     "o": [
+      "おかあさん",
+      "おばあさん",
+      "はは",
+      "おねえさん"
+     ],
+     "a": 2,
+     "why": "To outsiders you use はは for your own mother.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"obāsan\" different from \"obasan\"?",
+     "o": [
+      "They are the same word",
+      "One is for men",
+      "One is a place",
+      "Vowel length changes the meaning"
+     ],
+     "a": 3,
+     "why": "The long ā makes it grandmother, and the short a makes it aunt.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does the uchi–soto idea explain?",
+     "o": [
+      "Different words for own and others' family",
+      "The rule for numbers",
+      "The order of kanji",
+      "Pitch accent"
+     ],
+     "a": 0,
+     "why": "It explains why words differ for your own group and other people's group.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child calls to their mother in the kitchen. Which word is natural?",
+     "o": [
+      "はは",
+      "おかあさん",
+      "おばあさん",
+      "おじいさん"
+     ],
+     "a": 1,
+     "why": "Children call their own mother おかあさん directly.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Family words in Japanese",
+    "model": "Japanese has different words for your own family and other people's family: haha and okāsan. Siblings show age, and long vowels matter, as in obāsan and obasan.",
+    "points": [
+     {
+      "k": [
+       "haha",
+       "okāsan",
+       "own",
+       "other"
+      ],
+      "ask": "Why two words for mother?"
+     },
+     {
+      "k": [
+       "older",
+       "younger",
+       "age"
+      ],
+      "ask": "How do siblings differ?"
+     },
+     {
+      "k": [
+       "long",
+       "vowel",
+       "obāsan"
+      ],
+      "ask": "What about grandmother?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Uchi-soto",
+    "prompt": "Read about uchi-soto and note one example."
+   },
+   "sources": [
+    "Uchi-soto",
+    "Japanese honorifics"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Common objects",
+   "icon": "🎒",
+   "hook": "Look around you. Which things are near you, and which are far? Japanese has special words for that.",
+   "explain": [
+    "Japanese has three pointing words: これ (kore) is this, near me; それ (sore) is that, near you; and あれ (are) is that over there, far from both. Say これはほんです (this is a book). The particle は marks the topic and です is the polite ending.",
+    "Common objects: ほん (book), つくえ (desk), いす (chair), かばん (bag), えんぴつ (pencil), とけい (clock or watch), かさ (umbrella) and ぼうし (hat). The particle の shows belonging: わたしのほん (my book).",
+    "To say where something is, use に and あります for things: つくえのうえにかばんがあります (there is a bag on the desk). For living things, use います. Japanese does not use \"a\" or \"the\"."
+   ],
+   "mnemonic": "Kore near me, sore near you, are far from both.",
+   "items": [
+    [
+     "book",
+     "ほん",
+     "hon"
+    ],
+    [
+     "desk",
+     "つくえ",
+     "tsukue"
+    ],
+    [
+     "chair",
+     "いす",
+     "isu"
+    ],
+    [
+     "bag",
+     "かばん",
+     "kaban"
+    ],
+    [
+     "pencil",
+     "えんぴつ",
+     "enpitsu"
+    ],
+    [
+     "clock, watch",
+     "とけい",
+     "tokei"
+    ],
+    [
+     "umbrella",
+     "かさ",
+     "kasa"
+    ],
+    [
+     "hat",
+     "ぼうし",
+     "bōshi"
+    ]
+   ],
+   "sentences": [
+    [
+     "This is my book.",
+     [
+      "これ",
+      "は",
+      "わたし",
+      "の",
+      "ほん",
+      "です"
+     ]
+    ],
+    [
+     "There is a bag on the desk.",
+     [
+      "つくえ",
+      "の",
+      "うえ",
+      "に",
+      "かばん",
+      "が",
+      "あります"
+     ]
+    ],
+    [
+     "That over there is a clock.",
+     [
+      "あれ",
+      "は",
+      "とけい",
+      "です"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which word means \"that over there\"?",
+     "o": [
+      "これ",
+      "それ",
+      "あれ",
+      "ここ"
+     ],
+     "a": 2,
+     "why": "あれ points to something far from both people.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which particle shows \"my\" in わたしのほん?",
+     "o": [
+      "は",
+      "を",
+      "に",
+      "の"
+     ],
+     "a": 3,
+     "why": "の shows possession.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which verb is used for a bag on the desk?",
+     "o": [
+      "あります",
+      "います",
+      "します",
+      "きます"
+     ],
+     "a": 0,
+     "why": "あります is for things that do not move on their own.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Your friend holds a pen. What do you say?",
+     "o": [
+      "これは ペンですか",
+      "それは ペンですか",
+      "あれは ペンですか",
+      "ここは ペンですか"
+     ],
+     "a": 1,
+     "why": "それ points to something near the listener.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Japanese not need \"a\" or \"the\"?",
+     "o": [
+      "Articles are in kanji",
+      "Articles are in the verb",
+      "Japanese has no articles",
+      "Articles are always silent"
+     ],
+     "a": 2,
+     "why": "Japanese has no articles.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Objects and pointing words",
+    "model": "Kore means this one near me, sore means that one near you and are means that one far away. の shows belonging, and に あります tells where something is.",
+    "points": [
+     {
+      "k": [
+       "kore",
+       "sore",
+       "are",
+       "this",
+       "that"
+      ],
+      "ask": "What are the three pointing words?"
+     },
+     {
+      "k": [
+       "の",
+       "belong",
+       "my"
+      ],
+      "ask": "What does の do?"
+     },
+     {
+      "k": [
+       "あります",
+       "います",
+       "exist",
+       "there is"
+      ],
+      "ask": "How do I say where something is?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese demonstratives",
+    "prompt": "Find kosoado words and place them on a diagram."
+   },
+   "sources": [
+    "Japanese demonstratives",
+    "Japanese grammar"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Everyday actions",
+   "icon": "🏃",
+   "hook": "Can you act out eating, drinking and running? Japanese verbs end with -masu when polite.",
+   "explain": [
+    "Dictionary-form verbs end in -u: たべる (eat), のむ (drink), みる (see), きく (listen), はなす (speak), あるく (walk), はしる (run), ねる (sleep). The polite form ends in -masu: たべます, のみます, みます. The verb comes at the end of the sentence.",
+    "Particles mark roles. を marks the thing acted on: ごはんをたべます (I eat rice). で marks where an action happens: こうえんではしります (I run in the park). が marks the subject, especially in descriptions: いぬがはしります.",
+    "Negative polite forms use -masen: たべません (do not eat). Japanese verbs do not change for person or number, so たべます can mean I eat, you eat or he eats. Context tells who."
+   ],
+   "mnemonic": "Verb last: object を, place で, verb ます.",
+   "items": [
+    [
+     "eat",
+     "たべる",
+     "taberu"
+    ],
+    [
+     "drink",
+     "のむ",
+     "nomu"
+    ],
+    [
+     "see, watch",
+     "みる",
+     "miru"
+    ],
+    [
+     "listen, hear",
+     "きく",
+     "kiku"
+    ],
+    [
+     "speak",
+     "はなす",
+     "hanasu"
+    ],
+    [
+     "walk",
+     "あるく",
+     "aruku"
+    ],
+    [
+     "run",
+     "はしる",
+     "hashiru"
+    ],
+    [
+     "sleep",
+     "ねる",
+     "neru"
+    ]
+   ],
+   "sentences": [
+    [
+     "I eat rice.",
+     [
+      "わたし",
+      "は",
+      "ごはん",
+      "を",
+      "たべます"
+     ]
+    ],
+    [
+     "The cat drinks water.",
+     [
+      "ねこ",
+      "は",
+      "みず",
+      "を",
+      "のみます"
+     ]
+    ],
+    [
+     "The dog runs in the park.",
+     [
+      "いぬ",
+      "が",
+      "こうえん",
+      "で",
+      "はしります"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Where does the verb go in a Japanese sentence?",
+     "o": [
+      "At the start",
+      "After the subject",
+      "Before the object",
+      "At the end"
+     ],
+     "a": 3,
+     "why": "The verb comes at the end.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which particle marks the object of an action?",
+     "o": [
+      "を",
+      "で",
+      "に",
+      "の"
+     ],
+     "a": 0,
+     "why": "を marks the thing acted on.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "How do you say \"I do not eat\" politely?",
+     "o": [
+      "たべます",
+      "たべません",
+      "たべない です only",
+      "たべました"
+     ],
+     "a": 1,
+     "why": "-masen is the negative polite ending.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which particle marks where the action takes place?",
+     "o": [
+      "を",
+      "は",
+      "で",
+      "が"
+     ],
+     "a": 2,
+     "why": "で marks the place of an action.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can たべます mean I eat, you eat or she eats?",
+     "o": [
+      "It is a mistake",
+      "Each pronoun is built in",
+      "Only tones tell",
+      "Verbs do not change for person"
+     ],
+     "a": 3,
+     "why": "Japanese verbs do not change for person.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Japanese verbs in simple sentences",
+    "model": "The verb goes last. Particles mark the roles: を for the object, で for the place. The polite form ends in masu, and masen is the negative.",
+    "points": [
+     {
+      "k": [
+       "last",
+       "end",
+       "verb"
+      ],
+      "ask": "Where does the verb go?"
+     },
+     {
+      "k": [
+       "を",
+       "で",
+       "particle"
+      ],
+      "ask": "How do I show roles?"
+     },
+     {
+      "k": [
+       "masu",
+       "masen",
+       "polite"
+      ],
+      "ask": "What is the polite form?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Japanese verb conjugation",
+    "prompt": "Find the table of masu forms and read three."
+   },
+   "sources": [
+    "Japanese verb conjugation",
+    "Japanese grammar"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Simple listening and speaking",
+   "icon": "👂",
+   "hook": "If someone speaks too fast in Japanese, what can you say? Polite requests are your best friend.",
+   "explain": [
+    "Helpful phrases keep a conversation alive. はい (hai) is yes and いいえ (iie) is no. わかりました (wakarimashita) means I understood, and わかりません (wakarimasen) means I do not understand. もういちどおねがいします (mō ichido onegaishimasu) means please say it once more.",
+    "To ask someone to speak slowly, say ゆっくりおねがいします or ゆっくりはなしてください. ください (kudasai) with a verb ending in -te makes a polite request. Because \"hai\" can also mean \"I am listening\", it does not always mean agreement.",
+    "Listen for the sentence ending, because the verb and the polite ending come last. Repeat what you hear, and use short answers. Nodding and the small sound あいづち (aizuchi), such as はい or ええ, show that you are following."
+   ],
+   "mnemonic": "Slow, again, please: yukkuri, mō ichido, onegaishimasu.",
+   "items": [
+    [
+     "yes",
+     "はい",
+     "hai"
+    ],
+    [
+     "no",
+     "いいえ",
+     "iie"
+    ],
+    [
+     "I understood",
+     "わかりました",
+     "wakarimashita"
+    ],
+    [
+     "I do not understand",
+     "わかりません",
+     "wakarimasen"
+    ],
+    [
+     "please say it once more",
+     "もう一度 お願いします",
+     "mō ichido onegaishimasu"
+    ],
+    [
+     "please (slowly)",
+     "ゆっくり お願いします",
+     "yukkuri onegaishimasu"
+    ],
+    [
+     "it is all right",
+     "大丈夫です",
+     "daijōbu desu"
+    ],
+    [
+     "please",
+     "ください",
+     "kudasai"
+    ]
+   ],
+   "sentences": [
+    [
+     "Please speak slowly.",
+     [
+      "ゆっくり",
+      "はなして",
+      "ください"
+     ]
+    ],
+    [
+     "I understand Japanese a little.",
+     [
+      "にほんご",
+      "が",
+      "すこし",
+      "わかります"
+     ]
+    ],
+    [
+     "Please say it once more.",
+     [
+      "もう",
+      "いちど",
+      "いって",
+      "ください"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does わかりません mean?",
+     "o": [
+      "I do not understand",
+      "I understand",
+      "Please speak slowly",
+      "Goodbye"
+     ],
+     "a": 0,
+     "why": "わかりません is the negative of understand.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which request asks a speaker to slow down?",
+     "o": [
+      "もう いちど",
+      "ゆっくり はなして ください",
+      "わかりました",
+      "いいえ"
+     ],
+     "a": 1,
+     "why": "ゆっくり means slowly.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In conversation, a listener keeps saying はい. What might it mean?",
+     "o": [
+      "I agree completely",
+      "I refuse",
+      "I am listening",
+      "I am leaving"
+     ],
+     "a": 2,
+     "why": "はい can signal that you are listening, not necessarily agreeing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is あいづち?",
+     "o": [
+      "A kind of kanji",
+      "A pitch accent rule",
+      "A greeting",
+      "Short listening responses"
+     ],
+     "a": 3,
+     "why": "Aizuchi are short responses showing you are following the speaker.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why listen for the end of the sentence?",
+     "o": [
+      "The verb comes at the end",
+      "The subject is last",
+      "The end is silent",
+      "The end is optional"
+     ],
+     "a": 0,
+     "why": "The verb and polite ending come last.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Asking for help in Japanese",
+    "model": "If I do not understand, I can say wakarimasen and ask for the speaker to repeat or speak slowly. Adding onegaishimasu or kudasai makes it polite. Hai can show that I am listening.",
+    "points": [
+     {
+      "k": [
+       "wakarimasen",
+       "do not understand"
+      ],
+      "ask": "What do I say if I do not understand?"
+     },
+     {
+      "k": [
+       "slow",
+       "yukkuri",
+       "repeat",
+       "again"
+      ],
+      "ask": "What can I ask the speaker?"
+     },
+     {
+      "k": [
+       "hai",
+       "listening",
+       "aizuchi"
+      ],
+      "ask": "What does hai show?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Aizuchi",
+    "prompt": "Read about aizuchi and list two examples."
+   },
+   "sources": [
+    "Aizuchi",
+    "Japanese language"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2828 @@
+{
+ "world": 3,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Multiphysics engineering analysis",
+   "icon": "🔗",
+   "hook": "An electric motor housing heats up from its windings, expands, changes the air gap and so changes the magnetic and heating behaviour in turn. How do you analyse a system where the physics feed back on each other?",
+   "explain": [
+    "Many real problems couple several physical fields: thermal with structural (thermal stress), fluid with structure (aeroelasticity), electrical with thermal (Joule heating) and chemical with thermal. A multiphysics model solves the governing equations of each field together or in sequence. The central modelling decision is the coupling: one-way (field A drives B, with no feedback) or two-way, solved either monolithically (one big system) or by staggered iteration between solvers.",
+    "A simple coupled estimate is thermal stress. A bar of length L free to expand lengthens by ΔL = α L ΔT. For steel with α = 12 × 10⁻⁶ K⁻¹, L = 2 m and ΔT = 50 K, ΔL = 1.2 mm. If the bar is fully constrained, the stress is σ = E α ΔT = 200 × 10⁹ × 12 × 10⁻⁶ × 50 = 120 MPa (compressive on heating), which can buckle slender members or crush joints.",
+    "Time and length scales decide how to couple. For a lumped thermal body, the time constant is τ = ρ c V ÷ (h A). For a steel plate of effective thickness V ÷ A = 0.01 m, ρ = 7800 kg/m³, c = 500 J/(kg K) and h = 50 W/(m² K): τ = 7800 × 500 × 0.01 ÷ 50 = 780 s. The lumped approximation is valid when the Biot number Bi = h L ÷ k is below about 0.1; with k = 50 W/(m K) and L = 0.01 m, Bi = 0.01. Joule heating in a conductor is P = I² R: 100 A through 0.002 Ω dissipates 20 W.",
+    "Credible multiphysics work needs verification of each single-physics model first, then of the coupling (check energy balance and conservation across interfaces), then validation against measurements. Common failure causes are mismatched meshes at interfaces, inconsistent units, using one-way coupling when feedback is strong, and unconverged coupling iterations. Safety link: thermal runaway in batteries is a coupled electro-thermal-chemical process, so design relies on conservative models and tests, not on a single simulation."
+   ],
+   "example": {
+    "q": "A steel member (E = 200 GPa, α = 12 × 10⁻⁶ K⁻¹) is rigidly fixed at both ends and warms by 50 K. Find the thermal stress.",
+    "steps": [
+     "Free expansion strain would be α ΔT = 12 × 10⁻⁶ × 50 = 6 × 10⁻⁴.",
+     "The constraint prevents it, so the elastic strain is −6 × 10⁻⁴.",
+     "σ = E × strain = 200 × 10⁹ × 6 × 10⁻⁴ = 1.2 × 10⁸ Pa = 120 MPa, compressive."
+    ],
+    "a": "120 MPa compressive"
+   },
+   "analogies": {
+    "home": "A pan of hot oil heats the handle, which then warms your hand: heat links the pieces in a chain.",
+    "city": "Railway tracks expand in summer heat and can buckle if no gaps are left.",
+    "farm": "A greenhouse's glass, air, plants and sun interact: heat, humidity and growth are linked.",
+    "tech": "A phone gets hot while charging, which changes the battery's performance, which changes the heat."
+   },
+   "mnemonic": "Couple the fields, check the scales, conserve at the interface.",
+   "terms": [
+    [
+     "Multiphysics",
+     "Analysis of two or more interacting physical phenomena."
+    ],
+    [
+     "One-way coupling",
+     "One field drives another with no feedback."
+    ],
+    [
+     "Thermal stress",
+     "Stress from constrained thermal expansion, σ = E α ΔT."
+    ],
+    [
+     "Biot number",
+     "h L ÷ k, comparing surface heat transfer to internal conduction."
+    ]
+   ],
+   "misc": {
+    "wrong": "Running separate simulations of each physics and combining the pictures is the same as a coupled analysis.",
+    "right": "If the fields feed back on each other, the answers change when solved together; interface conservation and iteration to convergence are needed."
+   },
+   "limits": "Coupled models need material data that vary with temperature and field, and uncertainty in those data can dominate the answer.",
+   "trip": {
+    "wiki": "Multiphysics",
+    "prompt": "Find an example of a coupled problem such as thermal-structural. Which direction is the coupling?"
+   },
+   "sources": [
+    "Multiphysics",
+    "Thermal stress",
+    "Biot number"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What distinguishes two-way from one-way coupling?",
+     "o": [
+      "Both fields influence each other",
+      "Only one equation is used for both fields",
+      "It requires no mesh at the interface at all",
+      "It never needs any iteration between the solvers"
+     ],
+     "a": 0,
+     "why": "Feedback in both directions is two-way coupling.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A steel rod (α = 12 × 10⁻⁶ K⁻¹) of length 2 m is heated by 50 K and is free to expand. What is the extension in millimetres?",
+     "a": 1.2,
+     "tol": 0.02,
+     "unit": "mm",
+     "why": "ΔL = α L ΔT = 12 × 10⁻⁶ × 2 × 50 = 1.2 × 10⁻³ m = 1.2 mm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Aluminium (E = 70 GPa, α = 23 × 10⁻⁶ K⁻¹) is fully constrained and heated by 40 K. What is the compressive stress in MPa?",
+     "a": 64.4,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "σ = E α ΔT = 70 × 10⁹ × 23 × 10⁻⁶ × 40 = 6.44 × 10⁷ Pa = 64.4 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A steel plate has ρ = 7800 kg/m³, c = 500 J/(kg K), V ÷ A = 0.01 m and h = 50 W/(m² K). What is its lumped thermal time constant in seconds?",
+     "a": 780,
+     "tol": 2,
+     "unit": "s",
+     "why": "τ = ρ c (V ÷ A) ÷ h = 7800 × 500 × 0.01 ÷ 50 = 780 s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The Biot number of a body is 2. What does this imply about a lumped-temperature model?",
+     "o": [
+      "It is invalid because internal temperature differences matter",
+      "It is exact, because the temperature is then uniform",
+      "Conduction in the body is effectively infinite",
+      "Convection at the surface is zero"
+     ],
+     "a": 0,
+     "why": "Bi greater than about 0.1 means conduction inside is not fast compared to surface transfer.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two codes are coupled and the exchanged heat flux at an interface does not conserve energy between them. What is the likely cause?",
+     "o": [
+      "Mismatched interface mapping or meshes",
+      "Perfect coupling, so the mismatch must be harmless",
+      "Too small a mesh at the interface",
+      "A negative absolute temperature in one code"
+     ],
+     "a": 0,
+     "why": "Interpolation between non-matching meshes can lose or create flux unless conservative mapping is used.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A battery pack design is validated only with a one-way electrical to thermal model. When is this dangerous?",
+     "o": [
+      "When temperature changes resistance and heating strongly (feedback)",
+      "When the pack is cold and makes almost no heat, since all models are risky then",
+      "When there is no heat",
+      "Never"
+     ],
+     "a": 0,
+     "why": "Thermal runaway is a positive-feedback process, which one-way coupling cannot capture.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are long railway rails welded with expansion allowances or pre-tensioned?",
+     "o": [
+      "To avoid buckling from thermal compressive stress",
+      "To make noise that warns of approaching trains",
+      "To save steel only, with no effect on stress",
+      "To reduce friction between the rail and the wheels"
+     ],
+     "a": 0,
+     "why": "Constrained rails develop large compressive stress in summer.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Describe a sound verification and validation sequence for a coupled thermal-structural simulation of an engine component.",
+     "rubric": [
+      [
+       "single",
+       "each physics",
+       "separately",
+       "individual",
+       "thermal alone",
+       "structural alone"
+      ],
+      [
+       "interface",
+       "conserv",
+       "energy balance",
+       "coupling",
+       "mapping"
+      ],
+      [
+       "mesh",
+       "converg",
+       "refine"
+      ],
+      [
+       "validate",
+       "experiment",
+       "test",
+       "measure",
+       "thermocouple",
+       "strain gauge"
+      ]
+     ],
+     "min": 3,
+     "model": "First verify each single-physics model against hand calculations, then check that the coupling conserves energy at interfaces and that coupling iterations and mesh refinement converge. Finally validate against measurements such as thermocouple and strain-gauge data.",
+     "why": "Errors are isolated by building confidence in layers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each coupled example to its fields.",
+     "pairs": [
+      [
+       "Thermal stress",
+       "Thermal and structural"
+      ],
+      [
+       "Joule heating",
+       "Electrical and thermal"
+      ],
+      [
+       "Flutter",
+       "Fluid and structure"
+      ],
+      [
+       "Battery runaway",
+       "Electrical, thermal and chemical"
+      ]
+     ],
+     "why": "Each example shows which physics interact.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A solver uses staggered coupling and the results change when the time step is halved. What does that show?",
+     "o": [
+      "Splitting error from lagging the coupling is significant",
+      "The physics is wrong, since a good model cannot depend on the time step",
+      "Time steps are irrelevant",
+      "The mesh is perfect"
+     ],
+     "a": 0,
+     "why": "Lagging the exchange adds time-step-dependent error; sub-iterations or smaller steps reduce it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The thermal conductivity data used in a model came from room temperature, but the part runs at 600 °C. What is the sensible action?",
+     "o": [
+      "Use temperature-dependent data and quantify uncertainty",
+      "Ignore the difference, since conductivity hardly changes",
+      "Use the room-temperature value anyway",
+      "Remove conduction from the model to avoid the problem"
+     ],
+     "a": 0,
+     "why": "Material properties vary with temperature, and stale data can bias the whole coupled result.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A claim states a coupled simulation 'proves' a design safe. What is the best response?",
+     "o": [
+      "Ask for validation, uncertainty bounds and independent checks",
+      "Accept it, since the simulation is detailed enough",
+      "Reject all simulation as unreliable",
+      "Increase the mesh density only and accept the result"
+     ],
+     "a": 0,
+     "why": "Simulation supports but does not replace validated evidence for safety decisions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why coupled physics must sometimes be solved together",
+    "model": "When two physical effects affect each other, such as heat changing size and size changing heat flow, solving them separately can give the wrong answer. A multiphysics model exchanges information between the fields, either in one solver or by iterating between solvers. Engineers verify each physics, check conservation at the interface and validate with measurements.",
+    "points": [
+     {
+      "k": [
+       "interact",
+       "affect",
+       "feedback",
+       "depend",
+       "couple"
+      ],
+      "ask": "What makes a problem multiphysics?"
+     },
+     {
+      "k": [
+       "together",
+       "iterate",
+       "monolithic",
+       "staggered",
+       "exchange"
+      ],
+      "ask": "How are they solved?"
+     },
+     {
+      "k": [
+       "conserv",
+       "interface",
+       "energy",
+       "balance",
+       "check"
+      ],
+      "ask": "What must you check at the interface?"
+     },
+     {
+      "k": [
+       "validate",
+       "measure",
+       "experiment",
+       "example",
+       "thermal stress"
+      ],
+      "ask": "How do you trust the result, and what is an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Advanced structural simulation",
+   "icon": "🏛️",
+   "hook": "A slender column carries a load far below the material's strength, yet it suddenly bows sideways and collapses. How can a simulation predict that, and what must it include?",
+   "explain": [
+    "Advanced structural simulation extends linear static FEA to dynamics, stability and extreme events. Four analysis types matter most: modal (natural frequencies and mode shapes), buckling (loss of stability), transient dynamics and nonlinear analysis (material, geometric and contact).",
+    "Euler buckling for a slender column gives the critical load Pcr = π² E I ÷ (K L)², where K depends on end conditions (1 for pinned-pinned, 2 for fixed-free). For a steel column (E = 200 GPa) of diameter 20 mm, I = π d⁴ ÷ 64 = 7.85 × 10⁻⁹ m⁴. With L = 1 m and pinned ends, Pcr = 9.87 × 200 × 10⁹ × 7.85 × 10⁻⁹ = 15.5 kN. Fixed-free (K = 2) gives one quarter, 3.9 kN. Buckling depends on stiffness, not strength; imperfections and nonlinearity lower the real load.",
+    "Modal analysis gives the natural frequencies, such as for a cantilever f₁ = (1.875² ÷ 2π) √(E I ÷ (ρ A L⁴)). For the same 20 mm steel rod as a 0.5 m cantilever (ρ = 7850 kg/m³, A = 3.14 × 10⁻⁴ m²), f₁ ≈ 56.5 Hz. Frequencies drive the avoidance of resonance and the choice of dynamic method.",
+    "Explicit dynamics suits impacts and crashes with small time steps limited by the stability condition Δt ≤ Lₑ ÷ c, where c = √(E ÷ ρ) is the wave speed. For steel c = 5050 m/s, so with a 5 mm element Δt ≈ 1 μs. Implicit methods take larger steps but must solve equations at each step. Good practice includes sensitivity to imperfections, mesh and time-step convergence, correct contact and constraints, and comparison with hand estimates and tests. Responsible use means not trusting a buckling load without knockdown factors for imperfections."
+   ],
+   "example": {
+    "q": "A pinned-pinned steel column (E = 200 GPa) has a solid circular section of 20 mm diameter and is 1 m long. Find the Euler critical load.",
+    "steps": [
+     "I = π d⁴ ÷ 64 = π × (0.02)⁴ ÷ 64 = 7.854 × 10⁻⁹ m⁴.",
+     "Pcr = π² E I ÷ (K L)² with K = 1, L = 1 m.",
+     "Pcr = 9.870 × 200 × 10⁹ × 7.854 × 10⁻⁹ = 15 503 N ≈ 15.5 kN."
+    ],
+    "a": "About 15.5 kN"
+   },
+   "analogies": {
+    "home": "A thin plastic ruler squeezed end to end suddenly bows sideways long before it crushes.",
+    "city": "Tall slender towers and bridge piers are checked for stability as well as strength.",
+    "farm": "A long thin fence post under a heavy load can bend sideways rather than crush.",
+    "sea": "A ship's thin hull plates can buckle under compressive wave loads."
+   },
+   "mnemonic": "Strength crushes, stiffness buckles: check both, then dynamics.",
+   "terms": [
+    [
+     "Buckling",
+     "Sudden sideways instability under compression."
+    ],
+    [
+     "Modal analysis",
+     "Finding natural frequencies and mode shapes."
+    ],
+    [
+     "Explicit dynamics",
+     "Time stepping without solving a global system, limited by a small stable step."
+    ],
+    [
+     "Knockdown factor",
+     "A reduction to account for imperfections in theoretical buckling loads."
+    ]
+   ],
+   "misc": {
+    "wrong": "A column fails only when stress reaches the material's yield strength.",
+    "right": "Slender columns buckle at a load set by stiffness and geometry, often much lower than the crushing load."
+   },
+   "limits": "Classical Euler buckling assumes perfect, elastic, straight columns. Real columns have imperfections, plasticity and eccentric loads.",
+   "trip": {
+    "wiki": "Buckling",
+    "prompt": "Find the Euler buckling formula and the effective length factors for different end conditions."
+   },
+   "sources": [
+    "Buckling",
+    "Euler's critical load",
+    "Structural dynamics"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which property mainly controls Euler buckling load of a slender column?",
+     "o": [
+      "Stiffness (E I) and length",
+      "Yield strength only, whatever the length",
+      "The colour of the coating on the column",
+      "Density only, as it sets the weight"
+     ],
+     "a": 0,
+     "why": "Pcr = π² E I ÷ (K L)², so it depends on bending stiffness and effective length.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A pinned-pinned steel column (E = 200 GPa) has I = 7.854 × 10⁻⁹ m⁴ and L = 1 m. What is the Euler load in kN? Use π² = 9.87.",
+     "a": 15.5,
+     "tol": 0.2,
+     "unit": "kN",
+     "why": "Pcr = 9.87 × 200 × 10⁹ × 7.854 × 10⁻⁹ = 15 503 N = 15.5 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The same column is fixed at the base and free at the top (K = 2). What is the Euler load in kN?",
+     "a": 3.88,
+     "tol": 0.1,
+     "unit": "kN",
+     "why": "Pcr = 15.5 ÷ 2² = 3.88 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For steel, E = 200 GPa and ρ = 7850 kg/m³. What is the elastic wave speed √(E ÷ ρ) in m/s? Round to the nearest 10.",
+     "a": 5050,
+     "tol": 30,
+     "unit": "m/s",
+     "why": "√(2 × 10¹¹ ÷ 7850) = √(2.548 × 10⁷) = 5048 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An explicit dynamic model uses 5 mm elements in steel. About what is the stable time step?",
+     "o": [
+      "About 1 microsecond",
+      "About 1 second",
+      "About 1 millisecond",
+      "About 1 minute"
+     ],
+     "a": 0,
+     "why": "Δt ≈ Lₑ ÷ c = 0.005 ÷ 5050 ≈ 1 × 10⁻⁶ s.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does halving the length of a pinned column raise its Euler load fourfold?",
+     "o": [
+      "Pcr ∝ 1 ÷ L²",
+      "Pcr ∝ L",
+      "Pcr ∝ 1 ÷ L",
+      "Pcr is independent of length"
+     ],
+     "a": 0,
+     "why": "Length appears squared in the denominator.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tested thin cylinder buckles at 60% of the theoretical load. What explains this?",
+     "o": [
+      "Geometric imperfections reduce the buckling load",
+      "The theory is exact, so the test must be faulty",
+      "Steel is always weaker than the tables suggest",
+      "The cylinder is too short for the theory"
+     ],
+     "a": 0,
+     "why": "Shell buckling is highly imperfection-sensitive, so knockdown factors are used.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A linear buckling analysis predicts a safe load factor of 1.5 for a shell. What is the responsible action?",
+     "o": [
+      "Include imperfections and nonlinear analysis, and apply knockdown factors",
+      "Accept 1.5 as a safe load factor, since linear analysis already includes everything",
+      "Double the load",
+      "Ignore stability"
+     ],
+     "a": 0,
+     "why": "Linear eigenvalue buckling is non-conservative for imperfection-sensitive structures.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a modal analysis is carried out before choosing the loading frequency range for a transient simulation.",
+     "rubric": [
+      [
+       "natural",
+       "frequenc",
+       "mode"
+      ],
+      [
+       "resonan",
+       "excit"
+      ],
+      [
+       "time step",
+       "step",
+       "resolve",
+       "highest"
+      ],
+      [
+       "load",
+       "forcing",
+       "range",
+       "contain"
+      ]
+     ],
+     "min": 2,
+     "model": "Modal analysis reveals the natural frequencies and mode shapes. It shows whether the loading can excite resonance and which frequencies the time step and mesh must resolve.",
+     "why": "It guides both the physics expectations and numerical settings.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each analysis to its purpose.",
+     "pairs": [
+      [
+       "Modal",
+       "Natural frequencies and shapes"
+      ],
+      [
+       "Linear buckling",
+       "Estimate stability load"
+      ],
+      [
+       "Explicit transient",
+       "Impact and crash events"
+      ],
+      [
+       "Nonlinear static",
+       "Plasticity, large deflection and contact"
+      ]
+     ],
+     "why": "Each analysis answers a different design question.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A column of 1 m length and 20 mm diameter is replaced by a 40 mm diameter column. How does the Euler load change?",
+     "o": [
+      "It rises sixteen times",
+      "It rises four times, in line with the diameter squared",
+      "It doubles, in line with the diameter",
+      "It rises eight times, in line with the diameter cubed"
+     ],
+     "a": 0,
+     "why": "I ∝ d⁴, so doubling d gives 2⁴ = 16.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Mesh refinement shows the first natural frequency changing by 0.2% while stresses change by 12%. What can you conclude?",
+     "o": [
+      "The frequency has converged but the stress has not",
+      "All results have converged, since the frequency has",
+      "Neither has converged, as both changed",
+      "The model is invalid and must be rebuilt"
+     ],
+     "a": 0,
+     "why": "Derived quantities such as local stresses converge more slowly than global ones.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A footbridge's first vertical mode is near 2 Hz, close to walking pace. What is the design concern?",
+     "o": [
+      "Resonant vibration from pedestrian loading, affecting comfort and safety",
+      "Corrosion of the steel and wear of the bearings are the only real worries",
+      "None",
+      "Aesthetic only"
+     ],
+     "a": 0,
+     "why": "Pedestrian frequencies of 1.5 to 2.5 Hz can excite lively bridges; codes require checks.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a slender column can buckle below its crushing load",
+    "model": "A slender column under compression can suddenly bow sideways when the load reaches a critical value that depends on its stiffness and length, not its strength. The Euler load is π² E I ÷ (K L)². Halving the length makes it four times larger. Real columns buckle earlier because of imperfections, so engineers apply knockdown factors.",
+    "points": [
+     {
+      "k": [
+       "slender",
+       "thin",
+       "long",
+       "column"
+      ],
+      "ask": "What kind of member buckles?"
+     },
+     {
+      "k": [
+       "stiff",
+       "e i",
+       "ei",
+       "length",
+       "geometry"
+      ],
+      "ask": "What decides the buckling load?"
+     },
+     {
+      "k": [
+       "strength",
+       "crush",
+       "yield",
+       "not"
+      ],
+      "ask": "Is it about strength?"
+     },
+     {
+      "k": [
+       "imperfection",
+       "knockdown",
+       "safety",
+       "real",
+       "earlier"
+      ],
+      "ask": "Why do real columns buckle earlier?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Turbulence and complex fluid systems",
+   "icon": "🌪️",
+   "hook": "Stir milk into coffee: it forms swirls of every size, from the cup scale down to tiny filaments. How small do the smallest swirls get, and what would it cost to simulate every one?",
+   "explain": [
+    "Turbulence is chaotic three-dimensional flow with eddies over a wide range of scales. Energy enters at large scales, cascades to smaller eddies and is dissipated by viscosity at the Kolmogorov scale η = (ν³ ÷ ε)^(1/4), where ν is kinematic viscosity and ε the dissipation rate per unit mass. For water (ν = 10⁻⁶ m²/s) with ε = 1 m²/s³, η = (10⁻¹⁸)^(1/4) = 3.2 × 10⁻⁵ m.",
+    "Resolving all scales (DNS) needs about Re^(9/4) grid points in three dimensions. At Re = 10⁴ that is 10⁹ points; at 10⁶ it is 3 × 10¹³. This is why industry uses RANS models and sometimes LES. Key turbulence quantities: turbulent kinetic energy k = ½(u′² + v′² + w′²) (for fluctuation rms values 0.5, 0.4 and 0.3 m/s, k = 0.25 m²/s²) and turbulence intensity I = u′ ÷ U (0.5 ÷ 10 = 5%).",
+    "Near walls the friction velocity uτ = √(τw ÷ ρ) sets the scale. With τw = 2 Pa in water, uτ = 0.0447 m/s, and a point 1 mm from the wall has y⁺ = y uτ ÷ ν = 44.7. Wall functions are valid for y⁺ roughly 30 to 300; resolving the viscous sublayer needs y⁺ near 1.",
+    "Complex fluids add more difficulty. Non-Newtonian fluids have shear-dependent viscosity, for example the power law μ = K γ̇ⁿ⁻¹; with K = 2 Pa sⁿ, n = 0.5 and γ̇ = 100 s⁻¹, μ = 0.2 Pa s. Multiphase flow (bubbles, sprays, slurries) and compressible turbulence need extra models. Honest practice includes showing grid and model sensitivity, comparing with benchmarks and stating uncertainty. Safety link: turbulent loads cause flow-induced vibration of pipes and heat exchanger tubes, which fatigue them."
+   ],
+   "example": {
+    "q": "Water (ν = 10⁻⁶ m²/s) has a turbulent dissipation rate ε = 1 m²/s³. Find the Kolmogorov length scale.",
+    "steps": [
+     "η = (ν³ ÷ ε)^(1/4).",
+     "ν³ = 10⁻¹⁸, divided by 1 gives 10⁻¹⁸.",
+     "η = (10⁻¹⁸)^(1/4) = 10^(−4.5) = 3.2 × 10⁻⁵ m, about 32 μm."
+    ],
+    "a": "About 32 micrometres"
+   },
+   "analogies": {
+    "home": "Smoke from a candle rises smoothly, then breaks into swirls of many sizes.",
+    "city": "River flow around bridge piers forms eddies that scour the bed.",
+    "farm": "Wind through a crop field makes gusts at many scales.",
+    "sea": "Ship wakes show large vortices breaking into smaller ones."
+   },
+   "mnemonic": "Big eddies feed small eddies, viscosity eats the smallest.",
+   "terms": [
+    [
+     "Kolmogorov scale",
+     "Smallest turbulent length scale where viscosity dissipates energy."
+    ],
+    [
+     "Turbulent kinetic energy",
+     "Energy per unit mass in velocity fluctuations."
+    ],
+    [
+     "y⁺",
+     "Dimensionless distance from a wall in wall units."
+    ],
+    [
+     "Non-Newtonian fluid",
+     "A fluid whose viscosity depends on the rate of shear."
+    ]
+   ],
+   "misc": {
+    "wrong": "Turbulence is random noise that cannot be modelled.",
+    "right": "Turbulence is deterministic but chaotic. Its statistics follow patterns and models capture them with limits."
+   },
+   "limits": "Turbulence models are empirical, and no single model works for all flows. Separation, rotation and strong curvature are challenging.",
+   "trip": {
+    "wiki": "Kolmogorov microscales",
+    "prompt": "Find the energy cascade diagram. Where are energy-containing eddies, the inertial range and dissipation?"
+   },
+   "sources": [
+    "Turbulence",
+    "Kolmogorov microscales",
+    "Non-Newtonian fluid"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "At which scale is turbulent energy mainly dissipated into heat?",
+     "o": [
+      "The smallest (Kolmogorov) scale",
+      "The largest eddies, which carry the flow energy",
+      "The pipe diameter of the system",
+      "The mesh size used in the model"
+     ],
+     "a": 0,
+     "why": "Viscosity acts strongly on the smallest eddies.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A turbulent flow has fluctuation rms values u′ = 0.5, v′ = 0.4 and w′ = 0.3 m/s. What is the turbulent kinetic energy k = ½(u′² + v′² + w′²) in m²/s²?",
+     "a": 0.25,
+     "tol": 0.005,
+     "unit": "m²/s²",
+     "why": "½(0.25 + 0.16 + 0.09) = 0.25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The wall shear stress in water is 2 Pa (ρ = 1000 kg/m³, ν = 10⁻⁶ m²/s). What is y⁺ at 1 mm from the wall? Round to one decimal place.",
+     "a": 44.7,
+     "tol": 0.4,
+     "why": "uτ = √(2 ÷ 1000) = 0.0447 m/s; y⁺ = 0.001 × 0.0447 ÷ 10⁻⁶ = 44.7.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A shear-thinning fluid follows μ = K γ̇ⁿ⁻¹ with K = 2 Pa sⁿ and n = 0.5. What is the apparent viscosity at γ̇ = 100 s⁻¹ in Pa s?",
+     "a": 0.2,
+     "tol": 0.005,
+     "unit": "Pa s",
+     "why": "μ = 2 × 100^(−0.5) = 2 ÷ 10 = 0.2 Pa s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How does the number of DNS grid points scale with Reynolds number in 3D?",
+     "o": [
+      "About Re^(9/4)",
+      "About Re",
+      "About Re^(1/2)",
+      "Independent of Re"
+     ],
+     "a": 0,
+     "why": "Resolving the full range of scales needs Re^(9/4) points.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can't DNS be used for a full-size aircraft wing in design?",
+     "o": [
+      "The number of grid points required is far beyond computing capacity",
+      "DNS is inaccurate for every flow, so engineers never use it for any wing",
+      "Wings are too small",
+      "DNS needs no mesh"
+     ],
+     "a": 0,
+     "why": "Re of 10⁷ or more gives astronomically many points.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A heat exchanger tube bundle cracks near supports after months. What flow-related mechanism is likely?",
+     "o": [
+      "Flow-induced vibration causing fatigue and fretting",
+      "Cavitation of the air in the shell",
+      "Static overload from the weight of the tubes",
+      "Frozen water blocking the tubes"
+     ],
+     "a": 0,
+     "why": "Turbulent buffeting and vortex shedding excite tubes, causing fretting wear and fatigue.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An LES case shows large changes when the filter width is halved. What does this suggest?",
+     "o": [
+      "The grid is too coarse to resolve the energy-containing eddies",
+      "The grid is perfect and the change is only random noise in the solver",
+      "LES doesn't depend on grid",
+      "The Reynolds number is zero"
+     ],
+     "a": 0,
+     "why": "A good LES resolves most turbulent energy so results are not sensitive to the filter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain the energy cascade in turbulence in a few sentences.",
+     "rubric": [
+      [
+       "large",
+       "big",
+       "largest"
+      ],
+      [
+       "small",
+       "smaller",
+       "smallest"
+      ],
+      [
+       "transfer",
+       "cascade",
+       "break",
+       "pass",
+       "feed"
+      ],
+      [
+       "viscos",
+       "dissipat",
+       "heat"
+      ]
+     ],
+     "min": 3,
+     "model": "Energy enters turbulence at large scales and is passed to smaller and smaller eddies through breakup, with little loss in the inertial range. At the smallest (Kolmogorov) scales viscosity converts the energy into heat.",
+     "why": "The cascade explains why small scales need modelling or fine grids.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each approach to its feature.",
+     "pairs": [
+      [
+       "DNS",
+       "Resolves all scales"
+      ],
+      [
+       "LES",
+       "Resolves large eddies, models small"
+      ],
+      [
+       "RANS",
+       "Models all turbulence, solves averages"
+      ],
+      [
+       "Wall function",
+       "Bridges the near-wall region"
+      ]
+     ],
+     "why": "Cost and fidelity trade off between these approaches.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A pipe flow of toothpaste-like fluid seems to flow only above a minimum stress. What property is this?",
+     "o": [
+      "Yield stress (Bingham-type behaviour)",
+      "Turbulence caused by the high speed",
+      "Cavitation from low pressure",
+      "Compressibility of the fluid"
+     ],
+     "a": 0,
+     "why": "Some fluids behave as solids until a yield stress is exceeded.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A CFD team reports one RANS model result with no sensitivity study. What is the best critique?",
+     "o": [
+      "Model-form uncertainty is not quantified; compare models and meshes",
+      "None; one RANS model is the industry standard and needs no comparison",
+      "Add colours",
+      "Run fewer cases"
+     ],
+     "a": 0,
+     "why": "Different turbulence models can disagree, especially in separated flow.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Doubling Re in a flow raises DNS cost by how much compared with DNS count of grid points alone?",
+     "o": [
+      "About 4.8 times in points",
+      "Twice as many points, in step with Re",
+      "Half as many points, since cells get larger",
+      "No change at all, as the mesh does not depend on Re"
+     ],
+     "a": 0,
+     "why": "2^(9/4) is about 4.76 times as many points (and more total cost, since time steps also rise).",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why turbulence is so costly to simulate",
+    "model": "Turbulence has eddies from the size of the flow down to tiny scales where viscosity dissipates the energy. Resolving them all needs a number of grid points that grows like Re to the power 9/4, which is impossible at engineering Reynolds numbers. So we model the small scales (LES) or all of them (RANS), and accept modelling uncertainty.",
+    "points": [
+     {
+      "k": [
+       "eddy",
+       "eddies",
+       "swirl",
+       "scale",
+       "size"
+      ],
+      "ask": "What is in a turbulent flow?"
+     },
+     {
+      "k": [
+       "cascade",
+       "large",
+       "small",
+       "dissipat",
+       "viscos"
+      ],
+      "ask": "How does energy move between scales?"
+     },
+     {
+      "k": [
+       "grid",
+       "points",
+       "re",
+       "9/4",
+       "cost",
+       "dns"
+      ],
+      "ask": "Why can't we just simulate everything?"
+     },
+     {
+      "k": [
+       "model",
+       "les",
+       "rans",
+       "uncertain",
+       "compromise"
+      ],
+      "ask": "What do engineers do instead?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Nonlinear mechanical behaviour",
+   "icon": "📉",
+   "hook": "A paper clip bent a little springs back; bent more, it stays bent; a rubber band stretches ten times its length. Why can't one linear stiffness describe them all?",
+   "explain": [
+    "Linear analysis assumes small displacements, linear elastic materials and fixed boundary conditions. Real behaviour departs from this in three ways: material nonlinearity (plasticity, hyperelasticity, creep), geometric nonlinearity (large displacement, buckling) and boundary nonlinearity (contact, friction). Each can change the stiffness during loading.",
+    "Plasticity: a bilinear steel with E = 200 GPa, yield 250 MPa and tangent modulus Et = 2 GPa yields at strain 0.00125. At a total strain of 0.005, the plastic part is 0.00375 and the stress is 250 + 2000 × 0.00375 = 257.5 MPa. Large-strain work uses true values: σtrue = σeng (1 + εeng) and εtrue = ln(1 + εeng). At engineering stress 400 MPa and strain 0.10, σtrue = 440 MPa and εtrue = 0.0953.",
+    "Hyperelastic materials like rubber store energy elastically at large strain. For an incompressible neo-Hookean solid in uniaxial stretch λ, σ = μ(λ² − 1 ÷ λ). With μ = 0.5 MPa and λ = 2, σ = 0.5 × (4 − 0.5) = 1.75 MPa. Creep is time-dependent deformation; Norton's law ε̇ = A σⁿ means that with n = 5, doubling the stress raises the creep rate 2⁵ = 32 times.",
+    "Nonlinear problems are solved incrementally with Newton–Raphson iteration, which converges quadratically near the solution but can fail near snap-through, contact changes or softening. Good practice is small load steps, line search or arc-length methods, checking energy balance, and comparing with simple tests. The consequence of ignoring nonlinearity is serious: a linear model may predict safe stresses when plastic collapse, snap-through or contact loss is real."
+   ],
+   "example": {
+    "q": "Steel with E = 200 GPa, yield stress 250 MPa and tangent modulus 2 GPa is strained to 0.005. What is the stress?",
+    "steps": [
+     "Yield strain = 250 ÷ 200 000 = 0.00125.",
+     "Plastic strain beyond yield = 0.005 − 0.00125 = 0.00375.",
+     "σ = 250 + 2000 MPa × 0.00375 = 257.5 MPa."
+    ],
+    "a": "257.5 MPa"
+   },
+   "analogies": {
+    "home": "Bending a spoon a little returns, but bending far leaves a permanent bend.",
+    "city": "A bridge bearing that lifts off and re-contacts the pier changes the structure's stiffness.",
+    "farm": "A rubber hose stretches far more with little force at first, then stiffens.",
+    "sport": "A diving board stiffens as it bends further because of geometry."
+   },
+   "mnemonic": "Material, geometry, contact: three roads to nonlinear.",
+   "terms": [
+    [
+     "Plasticity",
+     "Permanent deformation beyond yield."
+    ],
+    [
+     "Hyperelasticity",
+     "Large-strain elastic behaviour of rubber-like materials."
+    ],
+    [
+     "Newton–Raphson",
+     "Iterative method that linearises the problem at each step."
+    ],
+    [
+     "Creep",
+     "Time-dependent deformation under sustained stress."
+    ]
+   ],
+   "misc": {
+    "wrong": "If the linear stress is below yield, the nonlinear result will be about the same.",
+    "right": "Large displacement, contact and local plasticity can redistribute loads, so linear results may be unconservative or wrong."
+   },
+   "limits": "Nonlinear material models need calibrated data from tests, and solutions can be non-unique, with different load paths giving different answers.",
+   "trip": {
+    "wiki": "Plasticity (physics)",
+    "prompt": "Find a stress-strain curve with elastic and plastic regions. Where would a bilinear model approximate it?"
+   },
+   "sources": [
+    "Plasticity (physics)",
+    "Hyperelastic material",
+    "Creep (deformation)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a geometric nonlinearity?",
+     "o": [
+      "Large deflection changing the stiffness",
+      "Yielding of the steel under load",
+      "Contact between the parts of the assembly",
+      "Rubber stretching under a heavy pull"
+     ],
+     "a": 0,
+     "why": "When displacements are large, the geometry changes the load path.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A steel with E = 200 GPa, σy = 250 MPa and tangent modulus 2 GPa is strained to 0.006. What is the stress in MPa?",
+     "a": 259.5,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "Plastic strain = 0.006 − 0.00125 = 0.00475; σ = 250 + 2000 × 0.00475 = 259.5 MPa.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A specimen reaches engineering stress 400 MPa at engineering strain 0.10. What is the true stress in MPa (assuming constant volume)?",
+     "a": 440,
+     "tol": 1,
+     "unit": "MPa",
+     "why": "σtrue = 400 × 1.10 = 440 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An incompressible neo-Hookean rubber has μ = 0.5 MPa and is stretched uniaxially to λ = 2. What is the (Cauchy) stress in MPa?",
+     "a": 1.75,
+     "tol": 0.02,
+     "unit": "MPa",
+     "why": "σ = μ(λ² − 1 ÷ λ) = 0.5 × (4 − 0.5) = 1.75 MPa.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A creep law ε̇ = A σⁿ has n = 5. The stress rises by 20%. By what factor does the creep rate increase?",
+     "o": [
+      "About 2.5",
+      "About 1.2, the same as the rise in stress",
+      "About 5, equal to the exponent n",
+      "About 1.0, with no increase at all"
+     ],
+     "a": 0,
+     "why": "1.2⁵ = 2.49.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A Newton–Raphson solution fails to converge as a shallow arch snaps through. What is a suitable remedy?",
+     "o": [
+      "Use arc-length control or smaller steps",
+      "Increase the load step to jump over the snap",
+      "Switch to a linear analysis for the whole arch",
+      "Remove the boundary conditions from the model"
+     ],
+     "a": 0,
+     "why": "Load control cannot follow limit points; arc-length methods trace the full path.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A linear analysis shows a bracket stress of 180 MPa, below the 250 MPa yield. Contact at a pin is modelled as bonded. Why might this be unsafe?",
+     "o": [
+      "The real contact can open or slide and raise local stress",
+      "Bonded contact is always the safe, conservative choice for any pin joint",
+      "Pins carry no load",
+      "Contact removes stress"
+     ],
+     "a": 0,
+     "why": "Contact nonlinearity can concentrate loads in ways bonded models miss.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a rubber seal's stiffness increase at large compression?",
+     "o": [
+      "Material and geometric stiffening at large strain",
+      "It turns into steel when it is squeezed hard",
+      "Its mass increases as it is compressed",
+      "It moves into the linear range at large strain"
+     ],
+     "a": 0,
+     "why": "Hyperelastic response and contact make the force-deflection curve rise steeply.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A designer uses a linear elastic model to approve a ductile steel bracket whose peak stress is 30% above yield at a notch. Argue for or against approval and justify it.",
+     "rubric": [
+      [
+       "plastic",
+       "yield",
+       "local",
+       "redistribut"
+      ],
+      [
+       "nonlinear",
+       "elastic-plastic",
+       "analysis",
+       "strain",
+       "cycle"
+      ],
+      [
+       "fatigue",
+       "ratchet",
+       "shakedown",
+       "repeated",
+       "life"
+      ],
+      [
+       "safe",
+       "accept",
+       "fail",
+       "collapse",
+       "check"
+      ]
+     ],
+     "min": 2,
+     "model": "A locally yielded notch in a ductile steel does not automatically mean failure, since plasticity redistributes load. But linear stress cannot show strains or whether repeated loading causes ratcheting or fatigue, so a nonlinear elastic-plastic analysis and a fatigue check are needed before approval.",
+     "why": "Linear results beyond yield are not meaningful quantitatively.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each nonlinearity to an example.",
+     "pairs": [
+      [
+       "Material",
+       "Yielding of steel"
+      ],
+      [
+       "Geometric",
+       "Large deflection of a thin plate"
+      ],
+      [
+       "Contact",
+       "Parts closing a gap"
+      ],
+      [
+       "Time-dependent",
+       "Creep in hot turbine blades"
+      ]
+     ],
+     "why": "Each type changes the response in a different way.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An elastic-perfectly plastic beam reaches full plastic hinge at a bending moment higher than first yield. What is the ratio called for a rectangle?",
+     "o": [
+      "Shape factor of 1.5",
+      "A factor of 0.5, since the section is half used",
+      "A factor of 3, as the moment is tripled",
+      "Equal to one, since the beam yields at once"
+     ],
+     "a": 0,
+     "why": "The plastic moment is 1.5 times the first yield moment for a rectangular section.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After a part is loaded beyond yield and unloaded, what remains?",
+     "o": [
+      "Residual stresses and permanent strain",
+      "Nothing remains once the load is taken off",
+      "A higher modulus only, with no strain left",
+      "Zero strain, as the part springs back fully"
+     ],
+     "a": 0,
+     "why": "Plastic deformation leaves residual strain and stress, which affect later fatigue and distortion.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A nonlinear model gives different results depending on the order loads are applied. What does that indicate?",
+     "o": [
+      "Path dependence, as in plasticity and friction",
+      "A mistake in the software, always",
+      "Linear superposition holds, so order should matter little",
+      "Gravity is absent from the model"
+     ],
+     "a": 0,
+     "why": "Plastic and frictional responses depend on history, so the load sequence must be modelled.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why nonlinear analysis is needed",
+    "model": "A linear model assumes constant stiffness, small movements and fixed supports. Real structures can yield, deflect far, or make and lose contact, so stiffness changes as loading proceeds. Nonlinear solvers apply the load in steps and iterate, using methods such as Newton–Raphson. Ignoring nonlinearity can hide collapse or snap-through.",
+    "points": [
+     {
+      "k": [
+       "stiffness",
+       "constant",
+       "change",
+       "linear"
+      ],
+      "ask": "What does a linear model assume?"
+     },
+     {
+      "k": [
+       "yield",
+       "plastic",
+       "large",
+       "contact",
+       "material",
+       "geometric"
+      ],
+      "ask": "How does reality differ?"
+     },
+     {
+      "k": [
+       "step",
+       "increment",
+       "iterate",
+       "newton"
+      ],
+      "ask": "How is it solved?"
+     },
+     {
+      "k": [
+       "collapse",
+       "snap",
+       "unsafe",
+       "wrong",
+       "risk",
+       "example"
+      ],
+      "ask": "What could go wrong if you ignore it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Advanced thermal-fluid systems",
+   "icon": "🏭",
+   "hook": "A power plant turns fuel heat into electricity, then discards most of it. Where does it go, and how do heat exchangers and cycle design decide how much is wasted?",
+   "explain": [
+    "Thermal-fluid systems combine thermodynamic cycles, heat exchangers and fluid machinery. In a Rankine steam cycle a pump raises the pressure of liquid water, a boiler adds heat, a turbine extracts work and a condenser rejects heat. Efficiency η = (w_turbine − w_pump) ÷ q_in. For w_turbine = 1000 kJ/kg, w_pump = 10 kJ/kg and q_in = 3000 kJ/kg, η = 990 ÷ 3000 = 33%. Higher boiler temperature, lower condenser pressure and reheating raise efficiency, within material and moisture limits.",
+    "Heat exchanger design uses Q = U A ΔT_lm, where U is the overall coefficient, A the area and ΔT_lm the log-mean temperature difference: ΔT_lm = (ΔT₁ − ΔT₂) ÷ ln(ΔT₁ ÷ ΔT₂). With ΔT₁ = 60 K and ΔT₂ = 20 K, ΔT_lm = 40 ÷ 1.0986 = 36.4 K. For U = 500 W/(m² K) and A = 2 m², Q = 36.4 kW. The effectiveness–NTU method is used when outlet temperatures are unknown; with a condensing or boiling stream (capacity ratio zero), ε = 1 − e^(−NTU), so NTU = 1 gives 63.2%.",
+    "Refrigeration and heat pumps move heat against its natural direction using work. The coefficient of performance COP = Q_cold ÷ W for cooling. The ideal limit is Carnot COP = Tc ÷ (Th − Tc). For a cold space at 268 K and surroundings at 303 K, COP_Carnot = 268 ÷ 35 = 7.66; real systems reach perhaps half of this.",
+    "Design decisions trade capital cost, efficiency, size, fouling and safety. Fouling raises thermal resistance over time, and pressure drop raises pumping power. Safety and environmental points: high-pressure steam and refrigerants need relief devices and inspection; refrigerants with high global warming potential are being replaced; waste heat can be recovered by combined heat and power or organic Rankine cycles."
+   ],
+   "example": {
+    "q": "A heat exchanger has terminal temperature differences of 60 K at one end and 20 K at the other, U = 500 W/(m² K) and area 2 m². Find the log-mean temperature difference and the heat duty.",
+    "steps": [
+     "ΔT_lm = (60 − 20) ÷ ln(60 ÷ 20) = 40 ÷ ln 3 = 40 ÷ 1.0986 = 36.4 K.",
+     "Q = U A ΔT_lm = 500 × 2 × 36.4.",
+     "Q = 36 400 W, about 36.4 kW."
+    ],
+    "a": "ΔT_lm ≈ 36.4 K; Q ≈ 36.4 kW"
+   },
+   "analogies": {
+    "home": "A refrigerator pumps heat from inside to the kitchen, using electricity.",
+    "city": "District heating uses waste heat from power stations to warm buildings.",
+    "farm": "A milk cooler removes heat from fresh milk using a refrigeration cycle.",
+    "sea": "A ship's engine cooling uses seawater in heat exchangers."
+   },
+   "mnemonic": "Pump, boil, expand, condense; and Q = U A ΔT_lm.",
+   "terms": [
+    [
+     "Rankine cycle",
+     "Steam power cycle with pump, boiler, turbine and condenser."
+    ],
+    [
+     "Log-mean temperature difference",
+     "Effective temperature difference in a heat exchanger."
+    ],
+    [
+     "NTU",
+     "Number of transfer units, U A ÷ C_min."
+    ],
+    [
+     "COP",
+     "Coefficient of performance of a refrigerator or heat pump."
+    ]
+   ],
+   "misc": {
+    "wrong": "A heat pump creates energy because it delivers more heat than the electricity it uses.",
+    "right": "It moves existing heat from a cold source to a warm space, using work; the COP above 1 does not violate conservation of energy."
+   },
+   "limits": "Ideal-cycle calculations neglect pressure drops, leakage and irreversibilities, so real efficiencies are lower.",
+   "trip": {
+    "wiki": "Rankine cycle",
+    "prompt": "Find the T–s diagram of a Rankine cycle. Mark where heat is added and rejected."
+   },
+   "sources": [
+    "Rankine cycle",
+    "Heat exchanger",
+    "Heat pump and refrigeration cycle"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In a Rankine cycle, which component rejects heat to the surroundings?",
+     "o": [
+      "Condenser",
+      "Boiler, which takes in heat from the fuel",
+      "Turbine, which produces the work",
+      "Pump, which raises the water pressure"
+     ],
+     "a": 0,
+     "why": "The condenser turns exhaust steam back to liquid by rejecting heat.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A Rankine cycle has w_turbine = 1000 kJ/kg, w_pump = 10 kJ/kg and q_in = 3000 kJ/kg. What is the thermal efficiency in percent?",
+     "a": 33,
+     "tol": 0.3,
+     "unit": "%",
+     "why": "η = (1000 − 10) ÷ 3000 = 0.33.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A heat exchanger has end temperature differences of 60 K and 20 K. What is the log-mean temperature difference in kelvin? (ln 3 = 1.0986)",
+     "a": 36.4,
+     "tol": 0.2,
+     "unit": "K",
+     "why": "40 ÷ 1.0986 = 36.4 K.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A refrigerator works between a cold space at 268 K and surroundings at 303 K. What is the Carnot COP? Round to two decimals.",
+     "a": 7.66,
+     "tol": 0.05,
+     "why": "268 ÷ 35 = 7.657.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the log-mean temperature difference used rather than the arithmetic mean?",
+     "o": [
+      "The temperature difference varies nonlinearly along the exchanger",
+      "It is simpler to calculate by hand and gives the same answer as any mean",
+      "It is always larger",
+      "Fluids do not change temperature"
+     ],
+     "a": 0,
+     "why": "Heat transfer rate depends on the local difference, which varies exponentially.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Fouling builds up inside a heat exchanger. What is the effect on U and the outlet temperatures?",
+     "o": [
+      "U falls, so the duty falls for the same flows",
+      "U rises, so the exchanger works better",
+      "The duty rises for the same flows",
+      "Nothing changes, since fouling is only on the surface"
+     ],
+     "a": 0,
+     "why": "Deposits add thermal resistance.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Raising the condenser pressure of a steam plant (everything else equal) usually does what to efficiency?",
+     "o": [
+      "Lowers it",
+      "Raises it",
+      "Leaves it unchanged",
+      "Doubles it"
+     ],
+     "a": 0,
+     "why": "Higher condenser temperature increases the heat rejected relative to the work.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A heat pump delivers 4 kW of heat for 1 kW of electrical input. Which statement is correct?",
+     "o": [
+      "It moves 3 kW from outside plus 1 kW of work",
+      "It creates 3 kW of heat from nothing at all",
+      "It violates the first law, so the figures must be wrong",
+      "It has an efficiency of only 25%, wasting most of the power"
+     ],
+     "a": 0,
+     "why": "Energy balance: Q_out = Q_in + W.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give two reasons why a power plant engineer would add a reheat stage in a steam cycle.",
+     "rubric": [
+      [
+       "moisture",
+       "wet",
+       "droplet",
+       "erosion",
+       "blade"
+      ],
+      [
+       "efficien",
+       "work",
+       "mean temperature",
+       "heat addition"
+      ],
+      [
+       "dry",
+       "quality"
+      ],
+      [
+       "increase",
+       "raise",
+       "higher",
+       "improve"
+      ]
+     ],
+     "min": 2,
+     "model": "Reheating keeps the steam drier at the turbine exit, reducing blade erosion from droplets, and it raises the average temperature at which heat is added, so the cycle efficiency and work output improve.",
+     "why": "Reheat improves both durability and efficiency.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each device to its function.",
+     "pairs": [
+      [
+       "Condenser",
+       "Rejects heat and condenses steam"
+      ],
+      [
+       "Turbine",
+       "Extracts work from expanding steam"
+      ],
+      [
+       "Compressor",
+       "Raises refrigerant pressure"
+      ],
+      [
+       "Evaporator",
+       "Absorbs heat from the cold space"
+      ]
+     ],
+     "why": "These are the main components of power and refrigeration cycles.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A plant boosts boiler temperature by 100 K using a new alloy. What practical issue is critical?",
+     "o": [
+      "Creep and oxidation limits of the material",
+      "None, since higher temperature is always better",
+      "Cooler steam leaving the boiler",
+      "Smaller turbines only"
+     ],
+     "a": 0,
+     "why": "At high temperature materials creep and corrode, so alloys limit the cycle.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A refrigerant leaks in a small enclosed machine room. What is the main hazard?",
+     "o": [
+      "Displacement of oxygen or toxicity/flammability depending on refrigerant",
+      "None, since the refrigerant is only a harmless gas that leaks away quickly",
+      "Excess oxygen",
+      "Heat only"
+     ],
+     "a": 0,
+     "why": "Refrigerant safety class determines ventilation, detection and handling requirements.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which project choice reduces total energy use most clearly?",
+     "o": [
+      "Recovering waste heat to heat buildings or processes",
+      "Rejecting more heat to the surroundings",
+      "Increasing fouling in the exchangers",
+      "Increasing the pressure drop in the pipes"
+     ],
+     "a": 0,
+     "why": "Cogeneration uses heat that would be wasted, raising overall fuel utilisation.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a heat exchanger duty is calculated",
+    "model": "Heat transfer in an exchanger depends on the overall coefficient U, the area A, and an average temperature difference. Because the difference varies along the exchanger, we use the log-mean value, (ΔT₁ − ΔT₂) ÷ ln(ΔT₁ ÷ ΔT₂). Then Q = U A ΔT_lm. Fouling lowers U and so the duty.",
+    "points": [
+     {
+      "k": [
+       "u",
+       "coefficient",
+       "area",
+       "a"
+      ],
+      "ask": "What properties of the exchanger matter?"
+     },
+     {
+      "k": [
+       "temperature",
+       "difference",
+       "average",
+       "log",
+       "mean"
+      ],
+      "ask": "What temperature difference do you use?"
+     },
+     {
+      "k": [
+       "formula",
+       "q",
+       "u a",
+       "δt",
+       "×"
+      ],
+      "ask": "How do you combine them?"
+     },
+     {
+      "k": [
+       "fouling",
+       "dirt",
+       "deposit",
+       "lower",
+       "example"
+      ],
+      "ask": "What can reduce performance over time?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Intelligent manufacturing",
+   "icon": "🧠",
+   "hook": "A vision system flags defective parts with 95% sensitivity and a 5% false alarm rate, yet only 1 part in 100 is actually defective. If it flags a part, how likely is the part to be truly defective?",
+   "explain": [
+    "Intelligent manufacturing connects sensors, networks, data analytics and automation so a factory can sense, decide and adapt. Typical elements are machine data collection (for example through OPC UA or MQTT), edge computing near the machine, cloud analytics, machine learning and feedback into the process. Industry 4.0 and Industry 5.0 describe these trends, the latter adding human-centric and sustainability goals.",
+    "Machine learning for quality inspection must be judged with the right metrics. From a confusion matrix with true positives TP, false positives FP and false negatives FN: precision = TP ÷ (TP + FP), recall = TP ÷ (TP + FN) and F1 = 2PR ÷ (P + R). With TP = 90, FP = 10 and FN = 30, precision = 0.90, recall = 0.75 and F1 = 0.818.",
+    "Base rates matter. By Bayes' theorem, P(defect | alarm) = P(alarm | defect) P(defect) ÷ P(alarm). With sensitivity 0.95, false-alarm rate 0.05 and defect rate 0.01: 0.95 × 0.01 = 0.0095 true alarms, 0.05 × 0.99 = 0.0495 false alarms, so P = 0.0095 ÷ 0.0590 = 16.1%. Most alarms are false, so a second check or a better model is needed.",
+    "Design and governance decisions: models must be validated on new data, monitored for drift when materials or lighting change, and given a safe fallback. Cybersecurity is a safety matter: a networked machine can be attacked, so networks are segmented and access controlled. Human issues are real: transparency to workers, avoiding unfair surveillance, retraining and keeping humans accountable for safety-critical decisions. Machine learning should not be used to override mandatory safety functions."
+   ],
+   "example": {
+    "q": "A defect classifier has 90 true positives, 10 false positives and 30 false negatives. Find precision, recall and F1.",
+    "steps": [
+     "Precision = 90 ÷ (90 + 10) = 0.90.",
+     "Recall = 90 ÷ (90 + 30) = 0.75.",
+     "F1 = 2 × 0.90 × 0.75 ÷ (0.90 + 0.75) = 1.35 ÷ 1.65 = 0.818."
+    ],
+    "a": "Precision 0.90; recall 0.75; F1 0.82"
+   },
+   "analogies": {
+    "home": "A smoke detector that triggers on toast will be ignored: too many false alarms reduce trust.",
+    "city": "Traffic cameras count cars and adjust lights, using data to adapt.",
+    "farm": "A sorting machine uses cameras to grade fruit, and its settings must be tuned for each harvest.",
+    "tech": "Email spam filters balance missing spam against blocking real mail."
+   },
+   "mnemonic": "Sense, connect, learn, act, and check the base rate.",
+   "terms": [
+    [
+     "Edge computing",
+     "Processing data close to the machine."
+    ],
+    [
+     "Precision",
+     "Fraction of flagged items that are truly positive."
+    ],
+    [
+     "Recall",
+     "Fraction of true positives that are found."
+    ],
+    [
+     "Model drift",
+     "Loss of model accuracy as conditions change."
+    ]
+   ],
+   "misc": {
+    "wrong": "A 95% accurate detector means 95% of its alarms are real.",
+    "right": "When defects are rare, even a good detector produces mostly false alarms. The base rate controls the real meaning of an alarm."
+   },
+   "limits": "Data quality, labels and changing conditions limit what models can do, and results from one factory may not carry over to another.",
+   "trip": {
+    "wiki": "Industry 4.0",
+    "prompt": "Find the main technologies of Industry 4.0. Which ones need cybersecurity attention?"
+   },
+   "sources": [
+    "Industry 4.0",
+    "Machine learning",
+    "Precision and recall"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which describes edge computing in a factory?",
+     "o": [
+      "Processing data near the machine",
+      "Storing all data in a far data centre only",
+      "Using no sensors",
+      "Printing reports"
+     ],
+     "a": 0,
+     "why": "Edge computing reduces latency and bandwidth.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A classifier has TP = 90, FP = 10 and FN = 30. What is the recall?",
+     "a": 0.75,
+     "tol": 0.005,
+     "why": "90 ÷ (90 + 30) = 0.75.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using the same counts, what is the F1 score to three decimal places?",
+     "a": 0.818,
+     "tol": 0.004,
+     "why": "F1 = 2 × 0.9 × 0.75 ÷ 1.65 = 0.818.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Defect rate 1%, sensitivity 95%, false alarm rate 5%. What is the probability that a flagged part is truly defective, in percent? Round to one decimal place.",
+     "a": 16.1,
+     "tol": 0.3,
+     "unit": "%",
+     "why": "0.0095 ÷ (0.0095 + 0.0495) = 0.161.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A model trained in summer lighting fails in winter. What is this called?",
+     "o": [
+      "Distribution shift or model drift",
+      "Overheating of the camera sensor",
+      "Cavitation in the cooling pump",
+      "Latency in the network"
+     ],
+     "a": 0,
+     "why": "Conditions changed from the training data.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A plant connects safety PLCs to the open office network for convenience. What is the main concern?",
+     "o": [
+      "Cyber attack could disable safety functions",
+      "Slower email for the office staff",
+      "More colours on the screens",
+      "Lower cost of the whole network"
+     ],
+     "a": 0,
+     "why": "Safety systems must be isolated and protected from network threats.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a team prefer high recall over high precision in a safety-critical inspection?",
+     "o": [
+      "Missing a defect is more costly than a false alarm",
+      "False alarms are dangerous for the staff",
+      "Precision is meaningless in inspection",
+      "They like to produce long lists of parts"
+     ],
+     "a": 0,
+     "why": "The costs of errors are asymmetrical; tolerate some false alarms to catch defects.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A machine-learning system suggests running a press faster beyond its rated limit to meet targets. What is the right response?",
+     "o": [
+      "Apply human review and safety limits; the model must not override them",
+      "Delete the safety limits so the press can run at the speed the model likes",
+      "Accept automatically",
+      "Ignore it silently"
+     ],
+     "a": 0,
+     "why": "Safety limits and accountability stay with humans and engineered safeguards.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a model with 99% accuracy can still be useless for detecting a defect that occurs in 1 in 1000 parts.",
+     "rubric": [
+      [
+       "rare",
+       "base rate",
+       "imbalanced",
+       "imbalance",
+       "1 in 1000",
+       "0.1%"
+      ],
+      [
+       "always good",
+       "predict none",
+       "never flag",
+       "everything good",
+       "trivial",
+       "majority"
+      ],
+      [
+       "accuracy",
+       "99"
+      ],
+      [
+       "recall",
+       "miss",
+       "false negative",
+       "precision",
+       "useless"
+      ]
+     ],
+     "min": 2,
+     "model": "If defects are very rare, a model that always says 'good' is 99.9% accurate yet finds no defects. Accuracy hides the problem; recall and precision on the rare class are the right measures.",
+     "why": "Class imbalance makes accuracy misleading.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Precision",
+       "Share of alarms that are real"
+      ],
+      [
+       "Recall",
+       "Share of defects found"
+      ],
+      [
+       "OPC UA",
+       "Industrial communication standard"
+      ],
+      [
+       "Model drift",
+       "Accuracy loss as conditions change"
+      ]
+     ],
+     "why": "These terms are used to judge and run intelligent systems.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A vision system adds a second independent check for flagged parts, with the same sensitivity and false alarm rate. Roughly what happens to the share of real defects among parts flagged twice?",
+     "o": [
+      "It rises substantially",
+      "It falls, because two checks double the false alarms",
+      "It stays at 16%, since both checks are identical",
+      "It becomes zero after the second check"
+     ],
+     "a": 0,
+     "why": "Independent confirmation removes most false alarms, so the posterior probability rises.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A worker-monitoring analytics tool tracks each person's every move. What ethical issue is most direct?",
+     "o": [
+      "Privacy, fairness and consent",
+      "Colour accuracy of the camera images",
+      "Mesh quality of the model",
+      "Torque of the motors on the line"
+     ],
+     "a": 0,
+     "why": "Workplace data collection must be transparent, proportionate and fair.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why should training data for a defect model include rare faults deliberately?",
+     "o": [
+      "Otherwise the model never learns to recognise them",
+      "They are cheap to collect and easy to label",
+      "They are decorative for the reports",
+      "Faults do not exist in good factories"
+     ],
+     "a": 0,
+     "why": "Models learn from examples; rare classes need enough representative samples.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a good-sounding defect detector can still mislead",
+    "model": "If defects are rare, even an accurate detector flags many good parts. With a 1% defect rate, 95% sensitivity and 5% false alarms, only about 16% of flagged parts are really defective. So engineers look at precision and recall, not just accuracy, and add confirmation checks.",
+    "points": [
+     {
+      "k": [
+       "rare",
+       "base rate",
+       "few",
+       "1%"
+      ],
+      "ask": "What matters about how common defects are?"
+     },
+     {
+      "k": [
+       "false alarm",
+       "false positive",
+       "wrong"
+      ],
+      "ask": "What happens with the good parts?"
+     },
+     {
+      "k": [
+       "precision",
+       "recall",
+       "accuracy",
+       "metric"
+      ],
+      "ask": "Which measures should be used?"
+     },
+     {
+      "k": [
+       "confirm",
+       "second",
+       "check",
+       "human",
+       "improve",
+       "example"
+      ],
+      "ask": "What can be done about it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Autonomous robotics",
+   "icon": "🚜",
+   "hook": "A warehouse robot must find its way, avoid people and keep track of its own position using noisy sensors. How can it combine imperfect information into a confident estimate?",
+   "explain": [
+    "An autonomous robot cycles through sensing, estimation, planning and control. Sensors include encoders, inertial units, lidar, cameras and ultrasonic devices, each with noise and failure modes. Estimation fuses them to track the state (position, heading, velocity) with uncertainty.",
+    "The Kalman filter combines a prediction with a measurement, weighting by their uncertainties. In one dimension, with prior variance P and measurement variance R, the gain is K = P ÷ (P + R). With P = 4 and R = 1, K = 0.8. If the predicted position is x = 10 and the measurement is z = 12, the update is x̂ = 10 + 0.8 × (12 − 10) = 11.6 and the new variance is (1 − K) P = 0.8, smaller than either input.",
+    "Kinematics of a differential-drive robot: forward speed v = (v_r + v_l) ÷ 2 and turn rate ω = (v_r − v_l) ÷ L, where L is wheel separation. With v_r = 0.6, v_l = 0.4 m/s and L = 0.4 m, v = 0.5 m/s, ω = 0.5 rad/s and turning radius v ÷ ω = 1 m. Path planning searches a map for a collision-free route, for example with A*, which uses a cost-to-go heuristic, while local planners react to moving obstacles.",
+    "Safety is decisive. The stopping distance must fit within the sensing range: d = v t_r + v² ÷ (2a). For v = 2 m/s, a reaction time of 0.2 s and deceleration of 1 m/s², d = 0.4 + 2 = 2.4 m. Standards such as ISO 13482 (personal care robots) and ISO 3691-4 (driverless industrial trucks) call for hazard analysis, safe stopping and emergency stops. Failure causes include sensor blinding, localisation loss, software faults and unexpected human behaviour. Responsible design keeps humans able to intervene, logs decisions and tests in simulation and in controlled trials before public deployment."
+   ],
+   "example": {
+    "q": "A robot's predicted position has variance 4 m² and a sensor reading has variance 1 m². The prediction is 10 m and the sensor says 12 m. Find the updated estimate and variance.",
+    "steps": [
+     "K = P ÷ (P + R) = 4 ÷ 5 = 0.8.",
+     "x̂ = 10 + 0.8 × (12 − 10) = 11.6 m.",
+     "New variance = (1 − 0.8) × 4 = 0.8 m²."
+    ],
+    "a": "11.6 m with variance 0.8 m²"
+   },
+   "analogies": {
+    "home": "A robot vacuum remembers where it has been and bumps sensors to correct its map.",
+    "city": "A phone's navigation fuses GPS, motion sensors and map data to know where you are.",
+    "farm": "A self-driving tractor follows GPS lines and uses sensors to detect obstacles.",
+    "sea": "Autonomous boats combine GPS, compass and radar to avoid collisions."
+   },
+   "mnemonic": "Sense, estimate, plan, act; trust the less uncertain more.",
+   "terms": [
+    [
+     "Sensor fusion",
+     "Combining several sensors to improve an estimate."
+    ],
+    [
+     "Kalman gain",
+     "Weight given to a measurement versus the prediction."
+    ],
+    [
+     "Localisation",
+     "Estimating the robot's position in a map."
+    ],
+    [
+     "Stopping distance",
+     "Distance covered during reaction and braking."
+    ]
+   ],
+   "misc": {
+    "wrong": "More sensors always make a robot safer.",
+    "right": "More data helps only if fused correctly and if common-cause failures are handled. Sensors may all fail in fog, dust or glare."
+   },
+   "limits": "The basic Kalman filter assumes linear dynamics and Gaussian noise. Real robots need extended or particle filters and checks for outliers.",
+   "trip": {
+    "wiki": "Kalman filter",
+    "prompt": "Find a diagram of prediction and update steps. Where does the uncertainty shrink?"
+   },
+   "sources": [
+    "Kalman filter",
+    "Autonomous robot",
+    "Differential wheeled robot"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the Kalman gain do?",
+     "o": [
+      "Weights the measurement against the prediction",
+      "Increases the motor speed of the vehicle",
+      "Selects the map to use for planning",
+      "Switches off sensors that are noisy"
+     ],
+     "a": 0,
+     "why": "A high gain trusts the measurement more.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Prior variance P = 4 and measurement variance R = 1. What is the Kalman gain?",
+     "a": 0.8,
+     "tol": 0.005,
+     "why": "K = 4 ÷ (4 + 1) = 0.8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A differential drive robot has v_r = 0.6 m/s, v_l = 0.4 m/s and wheel separation 0.4 m. What is its turn rate in rad/s?",
+     "a": 0.5,
+     "tol": 0.01,
+     "unit": "rad/s",
+     "why": "ω = (0.6 − 0.4) ÷ 0.4 = 0.5 rad/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A robot at 2 m/s has a reaction time of 0.2 s and decelerates at 1 m/s². What is its stopping distance in metres?",
+     "a": 2.4,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "0.4 + 4 ÷ 2 = 2.4 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A lidar sensor's range is 3 m but the stopping distance at the robot's speed is 4 m. What is wrong?",
+     "o": [
+      "It may not stop before an unseen obstacle; reduce speed or improve sensing",
+      "Nothing is wrong, because the lidar range is long enough for any robot",
+      "The robot is too slow",
+      "The sensor is too accurate"
+     ],
+     "a": 0,
+     "why": "Safe speed is limited by the sensing horizon and braking capability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A robot's wheel odometry drifts because wheels slip. How can it correct its position?",
+     "o": [
+      "Fuse with lidar or camera landmarks",
+      "Drive faster to reduce the time of drift",
+      "Ignore the map and trust the wheels only",
+      "Remove the encoders from the wheels"
+     ],
+     "a": 0,
+     "why": "External references correct accumulated dead-reckoning errors.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A glass wall is invisible to a robot's lidar. What design response is sensible?",
+     "o": [
+      "Add a complementary sensor such as ultrasonic or bumpers",
+      "Assume no glass exists in the building and keep the robot on lidar only",
+      "Remove the lidar",
+      "Increase speed"
+     ],
+     "a": 0,
+     "why": "Diverse sensors cover each other's blind spots.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which principle applies to an autonomous machine operating near people?",
+     "o": [
+      "It must fail to a safe state, such as stopping, when faults or uncertainty occur",
+      "It should continue at full speed when unsure, so work is not delayed or interrupted",
+      "It should hide faults",
+      "It should rely on one sensor"
+     ],
+     "a": 0,
+     "why": "Fail-safe behaviour and hazard analysis are fundamental.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a Kalman filter produce an estimate that is more certain than either the prediction or the measurement alone?",
+     "rubric": [
+      [
+       "combin",
+       "fuse",
+       "fusion",
+       "weigh",
+       "weight"
+      ],
+      [
+       "variance",
+       "uncertaint",
+       "noise"
+      ],
+      [
+       "independent",
+       "both",
+       "information",
+       "more information",
+       "two sources"
+      ],
+      [
+       "smaller",
+       "reduce",
+       "lower",
+       "less"
+      ]
+     ],
+     "min": 2,
+     "model": "It combines two independent pieces of information, weighted by their uncertainties, so the new variance is smaller than either. With variances 4 and 1 the result has variance 0.8.",
+     "why": "Independent information reduces uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each robot function to a method or sensor.",
+     "pairs": [
+      [
+       "Localisation",
+       "Kalman filter and landmarks"
+      ],
+      [
+       "Obstacle detection",
+       "Lidar or ultrasonic"
+      ],
+      [
+       "Route finding",
+       "A* search"
+      ],
+      [
+       "Wheel speed feedback",
+       "Encoders"
+      ]
+     ],
+     "why": "Autonomy needs several cooperating functions.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A robot repeatedly drifts left by 2 cm per metre travelled. After 10 m with no correction, the sideways error will be?",
+     "o": [
+      "About 20 cm",
+      "About 2 cm, the error in the first metre",
+      "About 2 m, ten times too large",
+      "About 20 m, beyond the whole route"
+     ],
+     "a": 0,
+     "why": "Systematic errors accumulate: 2 cm per m × 10 m = 20 cm.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why test an autonomy stack in simulation and in controlled trials before use among the public?",
+     "o": [
+      "Rare dangerous situations can be explored safely and failures understood",
+      "It removes all risk from the product, so no later checks are needed in service",
+      "It is cheaper only",
+      "Simulation is the same as reality"
+     ],
+     "a": 0,
+     "why": "Simulation extends coverage but must be backed by real-world validation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A robot's decision logs are stored. What is the main engineering and ethical benefit?",
+     "o": [
+      "Accountability and learning from incidents",
+      "Faster speed of the robot",
+      "Lower mass of the robot",
+      "Simpler hardware for the robot"
+     ],
+     "a": 0,
+     "why": "Logs support incident investigation and improvement.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a robot combines its sensors into a better estimate",
+    "model": "A robot predicts where it is and also measures it with a sensor. Both are uncertain. The Kalman filter weighs them by their uncertainties, trusting the less noisy one more. The result is more certain than either. For example, a prediction of 10 m and a reading of 12 m with variances 4 and 1 give 11.6 m.",
+    "points": [
+     {
+      "k": [
+       "predict",
+       "expect",
+       "model",
+       "odometry"
+      ],
+      "ask": "What does the robot start with?"
+     },
+     {
+      "k": [
+       "measure",
+       "sensor",
+       "reading",
+       "lidar"
+      ],
+      "ask": "What else does it have?"
+     },
+     {
+      "k": [
+       "weight",
+       "uncertain",
+       "variance",
+       "trust",
+       "gain"
+      ],
+      "ask": "How does it combine them?"
+     },
+     {
+      "k": [
+       "better",
+       "smaller",
+       "certain",
+       "example",
+       "11.6",
+       "safe"
+      ],
+      "ask": "What do we get out?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Digital twins and predictive maintenance",
+   "icon": "🪞",
+   "hook": "A pump on a remote offshore platform hums slightly differently each week. How can a computer model of it, fed with live sensor data, warn of failure before anyone climbs aboard?",
+   "explain": [
+    "A digital twin is a virtual model of a physical asset, kept in step with it by live data and used for monitoring, prediction and what-if tests. It may combine physics-based models, data-driven models and the asset's maintenance history. The loop is: sense, update the model, predict, decide and act on the real machine.",
+    "Predictive maintenance estimates remaining useful life (RUL). If a health index falls linearly from 0.6 to a failure threshold of 0.2 at 0.01 per day, RUL = (0.6 − 0.2) ÷ 0.01 = 40 days. Reliability models such as the Weibull distribution describe failure: R(t) = exp(−(t ÷ η)^β). With η = 1000 h and β = 2, R(500 h) = exp(−0.25) = 0.779. A β above 1 indicates wear-out.",
+    "Condition monitoring uses physics: a rolling bearing's outer-race defect frequency is BPFO = (n ÷ 2) f_r (1 − (d ÷ D) cos φ). With n = 9 balls, shaft speed f_r = 30 Hz, d ÷ D = 0.2 and φ = 0: BPFO = 4.5 × 30 × 0.8 = 108 Hz. A spectrum peak at 108 Hz and its harmonics suggests an outer-race fault. Sampling must satisfy the Nyquist criterion, at least twice the highest frequency of interest; for content up to 1 kHz, sample above 2 kHz.",
+    "Decisions and risks: alarm thresholds trade missed failures against false alarms and unnecessary stops; models must be updated as the asset changes; sensors and communications can fail; and data security matters because a twin can reveal operations or be attacked. A digital twin is only as good as its validation: check it against measured behaviour, record uncertainty and keep a human responsible for safety-critical decisions. Benefits include fewer unplanned stops, safer working and less waste, but only when predictions are trusted for good reasons."
+   ],
+   "example": {
+    "q": "A bearing has 9 balls, shaft speed 30 Hz, d ÷ D = 0.2 and contact angle 0°. Find the outer-race defect frequency BPFO.",
+    "steps": [
+     "BPFO = (n ÷ 2) × f_r × (1 − (d ÷ D) cos φ).",
+     "= 4.5 × 30 × (1 − 0.2 × 1) = 4.5 × 30 × 0.8.",
+     "= 108 Hz."
+    ],
+    "a": "108 Hz"
+   },
+   "analogies": {
+    "home": "A fitness watch builds a model of your health from heart-rate data and warns of unusual patterns.",
+    "city": "A transport authority models its trains from live data to schedule maintenance before breakdowns.",
+    "farm": "A tractor's telemetry predicts a filter change from hours and pressure drop.",
+    "sea": "Ship engines are monitored remotely so ports can prepare spares."
+   },
+   "mnemonic": "Sense, sync, simulate, predict, decide, act.",
+   "terms": [
+    [
+     "Digital twin",
+     "A live virtual model of a physical asset."
+    ],
+    [
+     "Remaining useful life",
+     "Estimated time before a component reaches its failure threshold."
+    ],
+    [
+     "Weibull distribution",
+     "A flexible life distribution with shape β and scale η."
+    ],
+    [
+     "Nyquist criterion",
+     "Sample at more than twice the highest frequency present."
+    ]
+   ],
+   "misc": {
+    "wrong": "A digital twin is just a 3D picture of a machine.",
+    "right": "A true twin is linked to live data and has predictive models; the visual model alone is not a twin."
+   },
+   "limits": "Predictions depend on the quality of models and data, and rare failures give little data to learn from.",
+   "trip": {
+    "wiki": "Digital twin",
+    "prompt": "Find an example of a digital twin in industry. What data does it receive and what decisions does it support?"
+   },
+   "sources": [
+    "Digital twin",
+    "Predictive maintenance",
+    "Weibull distribution"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What makes a model a digital twin rather than just a simulation?",
+     "o": [
+      "It is kept in step with a real asset by live data",
+      "It is shown in colour on a screen",
+      "It is very large and detailed",
+      "It has no equations inside"
+     ],
+     "a": 0,
+     "why": "The data link to a specific physical asset defines a twin.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A health index is 0.6 now, falls 0.01 per day, and failure occurs at 0.2. What is the remaining useful life in days?",
+     "a": 40,
+     "tol": 0.5,
+     "unit": "days",
+     "why": "(0.6 − 0.2) ÷ 0.01 = 40 days.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A component follows a Weibull law with η = 1000 h and β = 2. What is the probability it survives 500 h? Give three decimal places.",
+     "a": 0.779,
+     "tol": 0.004,
+     "why": "R = exp(−(0.5)²) = exp(−0.25) = 0.7788.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bearing has 9 balls, shaft speed 30 Hz, d ÷ D = 0.2 and φ = 0. What is BPFO in Hz?",
+     "a": 108,
+     "tol": 0.5,
+     "unit": "Hz",
+     "why": "4.5 × 30 × 0.8 = 108 Hz.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Vibration content up to 1 kHz matters. What is the minimum sampling rate in principle?",
+     "o": [
+      "Above 2 kHz",
+      "500 Hz",
+      "1 kHz exactly",
+      "100 Hz"
+     ],
+     "a": 0,
+     "why": "The sampling rate must exceed twice the highest frequency, or aliasing occurs.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A Weibull shape parameter β = 3 implies what kind of failure behaviour?",
+     "o": [
+      "Wear-out, with failure rate increasing over time",
+      "Constant random failures at a steady rate",
+      "Infant mortality, with failures early in life",
+      "No failures during the whole life"
+     ],
+     "a": 0,
+     "why": "β above 1 means an increasing hazard rate.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A twin predicts failure in 40 days but a manual inspection finds no damage. What should the team do?",
+     "o": [
+      "Investigate the discrepancy and recalibrate or validate the model",
+      "Ignore the inspection, because the digital twin is newer and more advanced",
+      "Replace everything",
+      "Delete the twin"
+     ],
+     "a": 0,
+     "why": "Disagreement between model and reality is a signal to check both.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Setting the alarm threshold very low in a predictive maintenance system tends to cause what?",
+     "o": [
+      "Many false alarms and unnecessary stops",
+      "Missed failures only, since alarms are rare",
+      "No alarms at all, as the limit is never reached",
+      "Lower cost, since fewer parts are checked"
+     ],
+     "a": 0,
+     "why": "Sensitive thresholds raise false positives, so thresholds trade risks.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give two risks of relying on a digital twin for safety-critical maintenance decisions, and one mitigation.",
+     "rubric": [
+      [
+       "data",
+       "sensor",
+       "quality",
+       "fail",
+       "drift"
+      ],
+      [
+       "model",
+       "assumption",
+       "validat",
+       "wrong",
+       "outdated"
+      ],
+      [
+       "secur",
+       "cyber",
+       "attack",
+       "hack"
+      ],
+      [
+       "human",
+       "review",
+       "redundan",
+       "independent",
+       "inspection",
+       "verify",
+       "validate"
+      ]
+     ],
+     "min": 3,
+     "model": "Sensor faults or poor data can feed the twin wrong values, and the model may be outdated or unvalidated. Cyber attacks are another risk. Mitigate by validating against inspection, using redundant sensors and keeping an accountable human in the decision.",
+     "why": "Predictions support but do not replace safety engineering.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "RUL",
+       "Time left before failure threshold"
+      ],
+      [
+       "BPFO",
+       "Bearing outer-race defect frequency"
+      ],
+      [
+       "Weibull β > 1",
+       "Wear-out behaviour"
+      ],
+      [
+       "Aliasing",
+       "False low frequency from under-sampling"
+      ]
+     ],
+     "why": "These terms organise condition-based maintenance.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A twin's input data have a 2-hour delay. For which decision is that most problematic?",
+     "o": [
+      "A fast safety shutdown that needs real-time response",
+      "Long-term planning of spares",
+      "Annual budgeting for the plant",
+      "Training staff on the new system"
+     ],
+     "a": 0,
+     "why": "Latency matters for fast events; safety shutdowns must be local and hard-wired.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A twin of a wind turbine gearbox has seen no data from failed gearboxes. What is the limitation?",
+     "o": [
+      "Data-driven failure prediction is hard without failure examples; physics models are needed",
+      "None, since a twin built from physics alone predicts every failure without any data",
+      "It predicts perfectly",
+      "Failures are impossible"
+     ],
+     "a": 0,
+     "why": "Rare failures give little training data, so hybrid models help.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Reducing the sampling rate of vibration data to save storage can cause what?",
+     "o": [
+      "Aliasing and lost fault frequencies",
+      "Better resolution of the fast vibrations",
+      "Lower noise in the signal",
+      "More sensors on the machine"
+     ],
+     "a": 0,
+     "why": "Under-sampling folds high-frequency content into false low frequencies.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How predictive maintenance warns before a failure",
+    "model": "Sensors send live data from a machine to a model. The model compares the data with healthy behaviour and tracks a health index. When the index trends toward a failure threshold, the system estimates the remaining useful life and schedules repair before breakdown. It must be validated, and humans stay in charge of safety decisions.",
+    "points": [
+     {
+      "k": [
+       "sensor",
+       "data",
+       "live",
+       "measure"
+      ],
+      "ask": "What information does it use?"
+     },
+     {
+      "k": [
+       "model",
+       "twin",
+       "health",
+       "healthy",
+       "compare"
+      ],
+      "ask": "What does it do with the data?"
+     },
+     {
+      "k": [
+       "trend",
+       "threshold",
+       "remaining",
+       "life",
+       "rul",
+       "predict"
+      ],
+      "ask": "How does it predict failure?"
+     },
+     {
+      "k": [
+       "validate",
+       "human",
+       "false alarm",
+       "safety",
+       "check",
+       "example"
+      ],
+      "ask": "What are the risks?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated mechanical design and manufacturing project",
+   "icon": "🧰",
+   "hook": "You are asked to design a hoist for a workshop: lift 500 kg at 0.2 m/s, be safe, be buildable and be affordable. Where do you even begin, and how do you know when you are done?",
+   "explain": [
+    "An integrated project joins everything: requirements, concepts, analysis, manufacturing, testing and lifecycle. A structured process helps: state requirements with measurable targets; generate concepts; select with a weighted decision matrix; do first-order calculations; check failure modes; design for manufacture and assembly; prototype and test; and plan maintenance and end of life. Each step can send you back.",
+    "First-order sizing for the hoist: lifting power at the load P = m g v = 500 × 9.8 × 0.2 = 980 W. With an overall efficiency of 0.8, the motor must supply 980 ÷ 0.8 = 1225 W, so a 1.5 kW motor is a sensible standard size. For a drum of 0.2 m diameter, ω = v ÷ r = 0.2 ÷ 0.1 = 2 rad/s = 19.1 rpm; a 1500 rpm motor needs a total reduction of 1500 ÷ 19.1 ≈ 78.5. Drum torque is m g r = 500 × 9.8 × 0.1 = 490 N m. A wire rope with a safety factor of 5 must have a minimum breaking load of at least 5 × 4900 = 24.5 kN.",
+    "A weighted decision matrix compares concepts. With criteria safety (weight 0.5), cost (0.3) and maintainability (0.2): concept A scores 8, 6 and 7, giving 0.5 × 8 + 0.3 × 6 + 0.2 × 7 = 7.2; concept B scores 6, 9 and 8, giving 3 + 2.7 + 1.6 = 7.3. The matrix is a conversation tool, so test how sensitive the ranking is to the weights.",
+    "Critical decisions are safety-driven: a lifting appliance needs an independent brake that holds the load on power loss, overload protection, limit switches, a rope inspection plan, an emergency stop and clear markings, following the relevant standards and legal requirements. Failure analysis (FMEA) ranks risks by severity, occurrence and detection. Design for manufacture simplifies parts and chooses standard components. Verification checks that the design meets requirements (calculations, FEA, tests), while validation checks that it meets the user's real need. Document assumptions, test results and limits, and take responsibility for the design's consequences."
+   ],
+   "example": {
+    "q": "For the hoist, find the motor power needed and the required reduction ratio. The load is 500 kg at 0.2 m/s, overall efficiency is 0.8, drum diameter 0.2 m and motor speed 1500 rpm. Use g = 9.8 m/s².",
+    "steps": [
+     "Output power = 500 × 9.8 × 0.2 = 980 W; motor power = 980 ÷ 0.8 = 1225 W.",
+     "Drum speed: ω = v ÷ r = 0.2 ÷ 0.1 = 2 rad/s = 2 × 60 ÷ (2π) = 19.1 rpm.",
+     "Reduction ratio = 1500 ÷ 19.1 ≈ 78.5."
+    ],
+    "a": "About 1.2 kW (choose 1.5 kW); ratio about 78.5"
+   },
+   "analogies": {
+    "home": "Planning a house extension means requirements, plans, permits, building and checking.",
+    "city": "A new tram line involves design, safety approval, construction, testing and maintenance planning.",
+    "farm": "A grain elevator design combines capacity, power, safety and cost.",
+    "sport": "A team chooses a game plan, trains, tests in matches and adapts."
+   },
+   "mnemonic": "Need, concepts, numbers, safety, make, test, maintain.",
+   "terms": [
+    [
+     "Verification",
+     "Checking that the design meets its specification."
+    ],
+    [
+     "Validation",
+     "Checking that the product meets the real user need."
+    ],
+    [
+     "Decision matrix",
+     "A weighted scoring method for comparing concepts."
+    ],
+    [
+     "Design for manufacture",
+     "Designing so parts are easy and cheap to make and assemble."
+    ]
+   ],
+   "misc": {
+    "wrong": "The best design is the one with the highest score in the decision matrix.",
+    "right": "The matrix guides discussion. Safety requirements are constraints that must be met, not traded off against cost."
+   },
+   "limits": "First-order calculations are for sizing. Final design needs detailed analysis, standards compliance and testing.",
+   "trip": {
+    "wiki": "Systems engineering",
+    "prompt": "Find the V-model diagram. Match each design stage to the test that checks it."
+   },
+   "sources": [
+    "Systems engineering",
+    "Engineering design process",
+    "Failure mode and effects analysis"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the difference between verification and validation?",
+     "o": [
+      "Verification checks the design meets specs; validation checks it meets the real need",
+      "They are two names for the same check, which is done once at the end of the project",
+      "Validation is calculation only",
+      "Verification is marketing"
+     ],
+     "a": 0,
+     "why": "You can build the thing right and still build the wrong thing.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A hoist lifts 500 kg at 0.2 m/s. What is the useful lifting power in watts? Use g = 9.8 m/s².",
+     "a": 980,
+     "tol": 2,
+     "unit": "W",
+     "why": "P = m g v = 500 × 9.8 × 0.2 = 980 W.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The drum radius is 0.1 m and the load is 500 kg. What torque is needed at the drum in N m? Use g = 9.8 m/s².",
+     "a": 490,
+     "tol": 1,
+     "unit": "N m",
+     "why": "T = m g r = 500 × 9.8 × 0.1 = 490 N m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wire rope must have a safety factor of 5 for a 4900 N load. What minimum breaking load is needed, in kN?",
+     "a": 24.5,
+     "tol": 0.1,
+     "unit": "kN",
+     "why": "5 × 4900 = 24 500 N = 24.5 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Concept A scores 8, 6, 7 and concept B scores 6, 9, 8 on safety (0.5), cost (0.3) and maintainability (0.2). Which has the higher weighted score?",
+     "o": [
+      "B with 7.3",
+      "A with 7.2",
+      "Equal",
+      "Neither can be scored"
+     ],
+     "a": 0,
+     "why": "A = 4 + 1.8 + 1.4 = 7.2; B = 3 + 2.7 + 1.6 = 7.3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Concept B scores very low on safety (3) but wins on cost. What does a sound engineer do?",
+     "o": [
+      "Reject or redesign it, because safety is a requirement not a trade-off",
+      "Choose B anyway, since cost decides the winner",
+      "Remove the safety row from the table",
+      "Hide the low score from the customer"
+     ],
+     "a": 0,
+     "why": "Minimum safety is a constraint; scoring is for comparing acceptable options.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The hoist motor loses power mid-lift. What must happen?",
+     "o": [
+      "An independent brake holds the load",
+      "The load falls slowly to the ground",
+      "The rope releases itself from the drum",
+      "The controller restarts the motor by itself"
+     ],
+     "a": 0,
+     "why": "A fail-safe brake that engages on power loss is a basic lifting requirement.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which action best checks that the finished hoist meets the user's real need?",
+     "o": [
+      "Trial in the workshop with real users and loads under supervision",
+      "Calculating the design again several times on paper with a safety factor",
+      "Another meeting",
+      "Changing the paint"
+     ],
+     "a": 0,
+     "why": "Validation uses real use conditions, not only calculations.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "List four activities you would include in a plan that takes the hoist from concept to a safe in-service product.",
+     "rubric": [
+      [
+       "requirement",
+       "specification",
+       "need"
+      ],
+      [
+       "calculat",
+       "analysis",
+       "fea",
+       "stress",
+       "size"
+      ],
+      [
+       "fmea",
+       "hazard",
+       "risk",
+       "failure"
+      ],
+      [
+       "prototype",
+       "test",
+       "proof",
+       "load test"
+      ],
+      [
+       "manufactur",
+       "assembl",
+       "dfm",
+       "supplier",
+       "inspect",
+       "maintenance",
+       "training",
+       "manual",
+       "standard",
+       "certif"
+      ]
+     ],
+     "min": 4,
+     "model": "Write measurable requirements; size components by calculation and analysis; run FMEA or hazard analysis; build a prototype and proof-load test it; plan manufacture and assembly; and set up inspection, maintenance, training and compliance with lifting standards.",
+     "why": "A safe product needs analysis, testing, manufacture and lifecycle planning.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each project stage to its main output.",
+     "pairs": [
+      [
+       "Requirements",
+       "Measurable targets"
+      ],
+      [
+       "Concept selection",
+       "Chosen design direction"
+      ],
+      [
+       "Analysis and FMEA",
+       "Sized parts and risk list"
+      ],
+      [
+       "Testing",
+       "Evidence the design works safely"
+      ]
+     ],
+     "why": "Each stage produces something the next stage uses.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A proof test of 1.25 times the rated load is applied before a hoist enters service. What is its purpose?",
+     "o": [
+      "To confirm the structure and brake hold with a margin before use",
+      "To wear the hoist in so that its parts settle into the shape they will keep",
+      "To make it look new",
+      "To lower the load rating"
+     ],
+     "a": 0,
+     "why": "Proof testing verifies safe capacity and reveals defects, within standard limits.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Cost pressure pushes the team to use a lower grade of rope with a safety factor of 3.5 against a requirement of 5. What is the correct step?",
+     "o": [
+      "Keep the requirement; find savings elsewhere or change the requirement only through proper approval",
+      "Quietly use the cheaper rope, since 3.5 is close enough to 5 and no one will notice",
+      "Remove the proof test from the plan so the rope's real rating is never measured",
+      "Mark the rope as 5"
+     ],
+     "a": 0,
+     "why": "Safety requirements cannot be eroded to save cost; changes need formal justification and approval.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After delivery, the supplier learns a batch of rope is under-strength. What is the ethical obligation?",
+     "o": [
+      "Inform users promptly and recall or replace the affected parts",
+      "Say nothing, since no one has been hurt yet",
+      "Wait for a failure before taking any action",
+      "Blame the user for overloading the equipment"
+     ],
+     "a": 0,
+     "why": "Engineering ethics puts public safety first and requires prompt disclosure.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to turn a need into a safe design",
+    "model": "Start with measurable requirements, such as lift 500 kg at 0.2 m/s. Generate concepts and compare them, but treat safety as a constraint, not a score to trade off. Size the motor, gearing and rope with first-order calculations, check the failure modes, prototype and test, and plan maintenance. Verification checks the design meets the specification, and validation checks it meets the real need.",
+    "points": [
+     {
+      "k": [
+       "requirement",
+       "measurable",
+       "target",
+       "need",
+       "specification"
+      ],
+      "ask": "Where do you start?"
+     },
+     {
+      "k": [
+       "concept",
+       "compare",
+       "matrix",
+       "choose",
+       "select"
+      ],
+      "ask": "How do you choose between ideas?"
+     },
+     {
+      "k": [
+       "calculat",
+       "size",
+       "power",
+       "torque",
+       "rope",
+       "safety factor",
+       "fmea"
+      ],
+      "ask": "How do you check it will work and be safe?"
+     },
+     {
+      "k": [
+       "test",
+       "prototype",
+       "validat",
+       "verif",
+       "maintenance",
+       "standard"
+      ],
+      "ask": "How do you know you're done?"
+     }
+    ]
+   }
+  }
+ ]
+}

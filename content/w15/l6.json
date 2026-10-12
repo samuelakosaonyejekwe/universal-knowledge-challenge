@@ -1,0 +1,2896 @@
+{
+ "world": 15,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced fine-art composition",
+   "icon": "🧭",
+   "hook": "How might a painter predict where a viewer's eye will travel, and does the path change with the viewer's purpose?",
+   "explain": [
+    "Composition at an advanced level is the management of attention, tension and meaning. Gestalt principles describe how viewers group elements automatically: proximity, similarity, closure, continuity and figure-ground. Rudolf Arnheim, in Art and Visual Perception (1954), applied this to art, arguing that visual forces such as balance, weight and direction act on every element in a field.",
+    "Visual hierarchy ranks what is seen first, second and third using contrast, scale, isolation, edge sharpness and colour intensity. Pictorial space can be deep, shallow or deliberately flat. Alfred Yarbus reported in 1967 that eye movements vary with the viewer's task, though later replications give mixed support, so predictions of gaze remain probabilistic. Different traditions organise space differently: Chinese hand scrolls unroll in time, Persian miniatures use multiple viewpoints and ornamental borders, and Mesoamerican codices use register and glyph sequence.",
+    "Proportion systems are tools. Root-two rectangles, such as the ISO A-series paper with sides in ratio 1 to √2 (about 1.414), keep their proportion when halved. Critics note that claims about universal proportion in masterpieces are often weak. A sound composition analysis states the visual evidence, the hypothesised effect, and the alternatives it considered."
+   ],
+   "example": {
+    "q": "A sheet of A4 paper measures 210 mm by 297 mm. What is the ratio of long side to short side, to three decimals, and what does it show?",
+    "steps": [
+     "Divide: 297 ÷ 210 = 1.4143.",
+     "Round to 1.414.",
+     "Compare √2 = 1.4142.",
+     "So the sheet approximates the root-two ratio, which is preserved when halved."
+    ],
+    "a": "About 1.414, the root-two ratio"
+   },
+   "analogies": {
+    "city": "A transport map groups lines by colour and continuity, using Gestalt principles to simplify.",
+    "music": "A fugue states a subject and lets it recur in different voices, like a repeated motif in a composition.",
+    "tech": "Interface designers apply hierarchy so the primary action is noticed first.",
+    "sport": "A coach's diagram uses proximity and arrows to show relationships among players."
+   },
+   "mnemonic": "Group, rank, direct, test: attention is a path, not a guess.",
+   "terms": [
+    [
+     "Gestalt principles",
+     "Rules by which perception groups elements into wholes."
+    ],
+    [
+     "Visual hierarchy",
+     "The order in which elements attract attention."
+    ],
+    [
+     "Figure-ground",
+     "The perceptual separation of an object from its background."
+    ],
+    [
+     "Pictorial space",
+     "The sense of depth or flatness within a picture."
+    ]
+   ],
+   "misc": {
+    "wrong": "A formula can guarantee a good composition.",
+    "right": "Formulas are heuristics. Effectiveness depends on aims, context and the viewer."
+   },
+   "limits": "Eye-tracking findings vary with tasks and populations, and prediction of gaze remains probabilistic.",
+   "trip": {
+    "wiki": "Gestalt psychology",
+    "prompt": "Find examples of figure-ground ambiguity. What makes the image flip?"
+   },
+   "sources": [
+    "Gestalt psychology",
+    "Rudolf Arnheim",
+    "Visual hierarchy"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A page is 297 mm by 210 mm. What is long side divided by short side, to three decimal places?",
+     "a": 1.414,
+     "tol": 0.001,
+     "why": "297 ÷ 210 = 1.4143, rounded to 1.414.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Halving an A3 sheet (297 × 420 mm) across its long side gives A4. What is the ratio of A3's long to short side, to three decimals?",
+     "a": 1.414,
+     "tol": 0.001,
+     "why": "420 ÷ 297 = 1.4141.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a Gestalt principle?",
+     "o": [
+      "Chiaroscuro",
+      "Closure",
+      "Sfumato",
+      "Impasto"
+     ],
+     "a": 1,
+     "why": "Closure is perceiving incomplete shapes as whole.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Who applied Gestalt ideas in Art and Visual Perception (1954)?",
+     "o": [
+      "Rudolf Arnheim",
+      "Edmund Feldman",
+      "Erwin Panofsky",
+      "Josef Albers"
+     ],
+     "a": 0,
+     "why": "Arnheim wrote the book.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which variables create visual hierarchy?",
+     "o": [
+      "Frame size, price and age of the work in total",
+      "The artist's reputation and the title it carries",
+      "The wall colour and the room's lighting alone",
+      "Contrast, scale, isolation and edge sharpness"
+     ],
+     "a": 3,
+     "why": "Multiple variables work together.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A designer wants a poster's key message seen first. Which strategy works?",
+     "o": [
+      "Make it smaller and paler than the other text",
+      "Cover it with a large decoration",
+      "Raise its contrast and scale and isolate it",
+      "Give equal weight to all the text on the poster"
+     ],
+     "a": 2,
+     "why": "Differentiation creates hierarchy.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A scroll painting unfolds as the viewer unrolls it. What compositional dimension is added?",
+     "o": [
+      "Mass",
+      "Time",
+      "Casting",
+      "Lux"
+     ],
+     "a": 1,
+     "why": "Hand scrolls are viewed sequentially.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the Gestalt principle to its effect.",
+     "pairs": [
+      [
+       "Proximity",
+       "Near items are grouped"
+      ],
+      [
+       "Similarity",
+       "Alike items are grouped"
+      ],
+      [
+       "Continuity",
+       "Smooth paths are followed"
+      ],
+      [
+       "Closure",
+       "Gaps are filled in"
+      ]
+     ],
+     "why": "Each principle describes grouping.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Evaluate the claim that Yarbus's 1967 findings prove that gaze can be precisely predicted from task.",
+     "rubric": [
+      [
+       "mixed",
+       "replication",
+       "replications",
+       "later",
+       "limited",
+       "contested",
+       "probabilistic",
+       "not proven",
+       "weak"
+      ],
+      [
+       "task",
+       "viewer",
+       "individual",
+       "vary",
+       "variation",
+       "differences",
+       "context",
+       "population"
+      ]
+     ],
+     "min": 2,
+     "model": "Yarbus reported that eye movement patterns vary with task, but later replications give mixed support and gaze varies between viewers, so prediction is probabilistic, not precise.",
+     "why": "Evidence supports tendencies, not precise prediction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it weak to say a masterpiece is great because it contains the golden ratio?",
+     "o": [
+      "Measured evidence is selective, and quality has many causes",
+      "Golden ratio shapes are found in every single masterpiece ever made",
+      "Measurements prove that the artist planned the ratio",
+      "The golden ratio has been disproved as a mathematical idea"
+     ],
+     "a": 0,
+     "why": "Post-hoc fits can be found in many images.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A composition has two equally strong focal points. What is the likely effect?",
+     "o": [
+      "A clear hierarchy that guides the eye",
+      "No effect at all on the viewer",
+      "Perfect calm and balance across the whole picture",
+      "Competing attention and tension"
+     ],
+     "a": 3,
+     "why": "Equal emphasis splits attention.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might an artist deliberately flatten pictorial space?",
+     "o": [
+      "They cannot draw depth, and so choose flatness instead",
+      "Depth is forbidden in art by museum rules",
+      "To emphasise surface, pattern or symbolic arrangement",
+      "Flatness is always accidental and never intentional"
+     ],
+     "a": 2,
+     "why": "Flatness is a choice in many traditions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Analyse how you would test whether a composition directs attention as intended.",
+     "rubric": [
+      [
+       "viewer",
+       "viewers",
+       "test",
+       "testing",
+       "observe",
+       "show",
+       "ask",
+       "people",
+       "participants"
+      ],
+      [
+       "eye",
+       "gaze",
+       "first",
+       "look",
+       "looks",
+       "fixate",
+       "track",
+       "tracking",
+       "record",
+       "attention"
+      ],
+      [
+       "revise",
+       "adjust",
+       "change",
+       "compare",
+       "iterate",
+       "alternative",
+       "alternatives",
+       "version"
+      ]
+     ],
+     "min": 2,
+     "model": "Show it to several viewers, record where they look first and for how long, compare with the intended hierarchy, and revise.",
+     "why": "Testing links intention and perception.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced fine-art composition",
+    "model": "Composition manages attention. Gestalt principles explain grouping. Visual hierarchy ranks what is seen first. Formulas like the golden ratio are guides, not guarantees, and gaze prediction is probabilistic.",
+    "points": [
+     {
+      "k": [
+       "gestalt",
+       "group",
+       "proximity",
+       "closure"
+      ],
+      "ask": "What are Gestalt principles?"
+     },
+     {
+      "k": [
+       "hierarchy",
+       "contrast",
+       "scale",
+       "first"
+      ],
+      "ask": "How do I control what is seen first?"
+     },
+     {
+      "k": [
+       "test",
+       "evidence",
+       "probabilistic",
+       "guide"
+      ],
+      "ask": "How reliable are formulas?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Professional painting techniques",
+   "icon": "🧪",
+   "hook": "What would you need to know about a tube of paint to be sure a painting made with it will last a century?",
+   "explain": [
+    "Professional practice begins with materials. A paint is pigment suspended in a binder: drying oil for oil paint, acrylic polymer emulsion for acrylic, gum arabic for watercolour, egg yolk for tempera. Pigments differ in opacity, tinting strength, toxicity and permanence. Examples: lead white is warm and dense but toxic, titanium white is bright and opaque, Prussian blue was first made in the early 1700s, and synthetic ultramarine was commercialised in 1826, replacing costly lapis lazuli.",
+    "Supports and grounds determine stability. Canvas is stretched on a frame and sized to protect it from the acid of oil; gesso grounds give tooth. Panels need stable wood and bracing. The lightfastness rating on a tube (for example ASTM I or II) predicts fading resistance. Professionals keep records of materials, protect finished works with removable varnish, and practise safe handling of solvents, dust and heavy-metal pigments such as cadmium and lead.",
+    "Techniques differ by tradition: egg tempera on panel, buon fresco in wet plaster, oil glazing in Northern Europe, ink-and-colour on silk in East Asia, natural earth pigments on bark and canvas in Indigenous Australia. A professional can explain why a technique was chosen, not only how to perform it."
+   ],
+   "example": {
+    "q": "A canvas is 60 cm by 80 cm. A stretcher is square when its two diagonals are equal. What should each diagonal measure?",
+    "steps": [
+     "Use Pythagoras: d² = 60² + 80².",
+     "d² = 3600 + 6400 = 10000.",
+     "d = 100.",
+     "Each diagonal should be 100 cm."
+    ],
+    "a": "100 cm"
+   },
+   "analogies": {
+    "home": "Bread dough needs the right ratio of ingredients and baking, like paint needs the right binder and drying.",
+    "farm": "Farmers choose seed and soil for the crop, as painters choose support and ground.",
+    "city": "Building materials are tested for durability, as pigments are rated for lightfastness.",
+    "nature": "Earth pigments such as ochres are minerals ground for use in many cultures."
+   },
+   "mnemonic": "Pigment, binder, ground, care: permanence is a chain, and every link is rare.",
+   "terms": [
+    [
+     "Binder",
+     "The substance that holds pigment and forms the paint film."
+    ],
+    [
+     "Ground",
+     "The prepared surface that receives paint."
+    ],
+    [
+     "Lightfastness",
+     "Resistance of a pigment to fading in light."
+    ],
+    [
+     "Buon fresco",
+     "Painting with pigment in water on fresh lime plaster."
+    ]
+   ],
+   "misc": {
+    "wrong": "Expensive paint is always more permanent.",
+    "right": "Permanence depends on the pigment and binder, and not on price."
+   },
+   "limits": "Lightfastness ratings are tested in labs and may not match every real setting.",
+   "trip": {
+    "wiki": "Pigment",
+    "prompt": "Choose a pigment and read its history. When was it first used and is it toxic?"
+   },
+   "sources": [
+    "Pigment",
+    "Egg tempera",
+    "Fresco"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A canvas is 90 cm by 120 cm. What should each diagonal measure, in cm, if it is perfectly square?",
+     "a": 150,
+     "tol": 0.5,
+     "unit": "cm",
+     "why": "√(90² + 120²) = √(8100 + 14400) = √22500 = 150.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the binder in tempera?",
+     "o": [
+      "Linseed oil",
+      "Egg yolk",
+      "Gum arabic",
+      "Acrylic polymer"
+     ],
+     "a": 1,
+     "why": "Egg tempera uses yolk.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the binder in watercolour?",
+     "o": [
+      "Gum arabic",
+      "Egg yolk",
+      "Linseed oil",
+      "Wax"
+     ],
+     "a": 0,
+     "why": "Gum arabic binds the pigment.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "When was synthetic ultramarine commercialised?",
+     "o": [
+      "1426",
+      "1626",
+      "1926",
+      "1826"
+     ],
+     "a": 3,
+     "why": "It replaced costly lapis lazuli.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is canvas sized before oil painting?",
+     "o": [
+      "To make the canvas colourless so the paint appears brighter",
+      "To make the fabric stretch more easily as the paint dries",
+      "To protect the fabric from oil and give a stable surface",
+      "To make the paint dry in minutes instead of days"
+     ],
+     "a": 2,
+     "why": "Sizing isolates the fibres.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A studio uses cadmium and lead pigments. What practice is essential?",
+     "o": [
+      "Wear gloves and keep solvent away from flames, but sinks are fine for disposal",
+      "Avoid ingestion and inhalation, and dispose of waste properly",
+      "Dilute pigments in water so they become harmless to handle",
+      "Store them in unlabelled jars to avoid theft"
+     ],
+     "a": 1,
+     "why": "Heavy metals are toxic.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A painter wants a work to last many decades. Which choice is best?",
+     "o": [
+      "Pigments with ASTM I or II lightfastness",
+      "The cheapest tubes available in the shop",
+      "The brightest tubes, whatever their ratings",
+      "The newest tubes from a recent product line"
+     ],
+     "a": 0,
+     "why": "Ratings predict fading resistance.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the tradition to a technique.",
+     "pairs": [
+      [
+       "Italian wall painting",
+       "Buon fresco"
+      ],
+      [
+       "Early European panels",
+       "Egg tempera"
+      ],
+      [
+       "Northern European glazing",
+       "Oil"
+      ],
+      [
+       "East Asian silk painting",
+       "Ink and mineral colour"
+      ]
+     ],
+     "why": "Techniques are tied to place and period.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why price is a poor guide to a paint's permanence.",
+     "rubric": [
+      [
+       "pigment",
+       "binder",
+       "composition",
+       "chemistry",
+       "material",
+       "formula"
+      ],
+      [
+       "lightfast",
+       "lightfastness",
+       "fade",
+       "fading",
+       "rating",
+       "test",
+       "permanent",
+       "stable",
+       "durable"
+      ]
+     ],
+     "min": 2,
+     "model": "Permanence depends on the pigment and binder chemistry and tested lightfastness, not the price of the tube.",
+     "why": "Check ratings, not price.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a removable varnish used on finished paintings?",
+     "o": [
+      "It makes the paint film harder to damage so it never needs treatment",
+      "It speeds the drying of the lower layers by sealing them",
+      "It makes the colours permanently brighter and unchanging",
+      "It protects the surface and can be taken off in future conservation"
+     ],
+     "a": 3,
+     "why": "Reversibility is a conservation principle.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might a historical painting contain pigments now known to be toxic?",
+     "o": [
+      "They were used by accident because they were unknown",
+      "They were safe pigments that later became toxic through ageing",
+      "Their dangers were not understood or were accepted at the time",
+      "They were chosen because toxic pigments were thought to fade less"
+     ],
+     "a": 2,
+     "why": "Material knowledge has changed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why document materials used in each artwork?",
+     "o": [
+      "It is required by law before any painting can be sold",
+      "It helps conservators and collectors understand and care for it",
+      "It lets buyers claim a tax reduction on the work",
+      "It proves the painter's technique is better than other artists'"
+     ],
+     "a": 1,
+     "why": "Records support care.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Justify a choice between oil, acrylic and egg tempera for a small detailed portrait on panel.",
+     "rubric": [
+      [
+       "oil",
+       "acrylic",
+       "tempera"
+      ],
+      [
+       "because",
+       "detail",
+       "dry",
+       "dries",
+       "blend",
+       "blending",
+       "fine",
+       "layer",
+       "layers",
+       "glaze",
+       "control",
+       "fast",
+       "slow",
+       "permanent"
+      ]
+     ],
+     "min": 2,
+     "model": "Egg tempera suits fine detail on a rigid panel because it dries fast and builds in thin layers, while oil allows slower blending.",
+     "why": "Justify by working properties.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Professional painting techniques",
+    "model": "Paint is pigment in a binder. Choose permanent pigments, a stable support and ground, and record materials. Handle toxic pigments and solvents safely. Techniques link to traditions and purposes.",
+    "points": [
+     {
+      "k": [
+       "pigment",
+       "binder",
+       "paint"
+      ],
+      "ask": "What is paint made of?"
+     },
+     {
+      "k": [
+       "ground",
+       "support",
+       "canvas",
+       "panel"
+      ],
+      "ask": "What do I paint on?"
+     },
+     {
+      "k": [
+       "safety",
+       "lightfast",
+       "record",
+       "toxic"
+      ],
+      "ask": "What professional care is needed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Advanced three-dimensional artistic design",
+   "icon": "🪑",
+   "hook": "What does it mean for a three-dimensional object to be well designed, and who decides?",
+   "explain": [
+    "Three-dimensional design joins form, function, material and context. Louis Sullivan wrote in 1896 that \"form ever follows function\" in the context of tall office buildings, and the slogan became a modernist principle. The Bauhaus, founded by Walter Gropius in Weimar in 1919, taught design as a combination of art, craft and industry. Critics later argued that function alone does not decide form, because culture, symbolism and pleasure also matter.",
+    "Design process moves from research and sketches to models and prototypes, with testing and revision. Ergonomics tests fit to the human body. Material selection weighs strength, weight, cost, finish, sustainability and the energy to make and recycle. Joints (dovetail, mortise and tenon, welding, bolts) transfer loads. Tolerance is the allowable variation in a dimension. Modular design uses repeated units that fit together.",
+    "Global design traditions offer many models: Japanese joinery that uses wood joints without nails, West African stools carved from single logs, Scandinavian furniture of simple forms, and Isamu Noguchi's sculptural furniture. Design ethics include accessibility, repairability and the life cycle of materials."
+   ],
+   "example": {
+    "q": "A solid cube has sides 40 cm. A hollow version has walls 2 cm thick on all sides. How many cm³ of material does the hollow cube use?",
+    "steps": [
+     "Outer volume: 40³ = 64000.",
+     "Inner cube side: 40 − 2 − 2 = 36.",
+     "Inner volume: 36³ = 46656.",
+     "Material = 64000 − 46656 = 17344 cm³."
+    ],
+    "a": "17344 cm³"
+   },
+   "analogies": {
+    "home": "A chair is designed for comfort, durability and fit with a table.",
+    "city": "Bike lanes and benches shape how people move and rest.",
+    "tech": "Phone cases are designed around exact tolerances.",
+    "farm": "Hand tools have handles shaped by long use and the body's grip."
+   },
+   "mnemonic": "Form meets function, but culture and context finish the sentence.",
+   "terms": [
+    [
+     "Ergonomics",
+     "The study of fitting objects to human bodies and tasks."
+    ],
+    [
+     "Prototype",
+     "An early model made to test a design."
+    ],
+    [
+     "Tolerance",
+     "The allowed variation in a measurement."
+    ],
+    [
+     "Life cycle",
+     "All stages of an object from raw material to disposal."
+    ]
+   ],
+   "misc": {
+    "wrong": "Good design is only about looks.",
+    "right": "Design weighs use, safety, material, cost, meaning and impact."
+   },
+   "limits": "Slogans such as form follows function simplify a debated idea.",
+   "trip": {
+    "wiki": "Bauhaus",
+    "prompt": "Find Bauhaus objects. How do they show function and form?"
+   },
+   "sources": [
+    "Bauhaus",
+    "Ergonomics",
+    "Isamu Noguchi"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A solid cube is 30 cm per side. A hollow version has 1.5 cm walls on all sides. How many cm³ of material does it use?",
+     "a": 7317,
+     "tol": 0,
+     "unit": "cm³",
+     "why": "Outer 30³ = 27000. Inner side 30 − 3 = 27, 27³ = 19683. Difference = 7317.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Who said that form ever follows function in 1896?",
+     "o": [
+      "Louis Sullivan",
+      "Walter Gropius",
+      "Isamu Noguchi",
+      "Le Corbusier"
+     ],
+     "a": 0,
+     "why": "Sullivan wrote about tall office buildings.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Where and when was the Bauhaus founded?",
+     "o": [
+      "Paris, 1819",
+      "Tokyo, 1969",
+      "New York, 1919",
+      "Weimar, 1919"
+     ],
+     "a": 3,
+     "why": "Gropius founded it in Weimar.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is ergonomics?",
+     "o": [
+      "The study of casting metals in moulds",
+      "The theory of colour contrast in design",
+      "Fitting designs to human bodies and tasks",
+      "The study of carving stone for sculpture"
+     ],
+     "a": 2,
+     "why": "It tests fit and comfort.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a prototype?",
+     "o": [
+      "The final product that is sold in the shops",
+      "An early model used to test a design",
+      "A copy of an existing artwork",
+      "A sales brochure for the design"
+     ],
+     "a": 1,
+     "why": "Prototypes test and refine.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A part must fit within 0.1 mm of a slot. What is 0.1 mm?",
+     "o": [
+      "The tolerance",
+      "The colour specified for the part",
+      "The finish applied to its surface",
+      "The cost of making each part"
+     ],
+     "a": 0,
+     "why": "Tolerance is allowed variation.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A chair is repeatedly breaking at the joint. Which action is best?",
+     "o": [
+      "Paint the chair a different colour",
+      "Make the chair larger and much heavier",
+      "Ignore the problem because all chairs break in the end",
+      "Test and revise the joint design or material"
+     ],
+     "a": 3,
+     "why": "Iteration fixes weakness.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the design term to its meaning.",
+     "pairs": [
+      [
+       "Ergonomics",
+       "Fit to the body"
+      ],
+      [
+       "Tolerance",
+       "Allowed variation"
+      ],
+      [
+       "Prototype",
+       "Test model"
+      ],
+      [
+       "Modular",
+       "Repeated fitting units"
+      ]
+     ],
+     "why": "These terms organise design work.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why \"form follows function\" is a useful but incomplete principle.",
+     "rubric": [
+      [
+       "useful",
+       "helps",
+       "good",
+       "clear",
+       "guide",
+       "purpose",
+       "efficient"
+      ],
+      [
+       "culture",
+       "symbol",
+       "symbolism",
+       "meaning",
+       "pleasure",
+       "beauty",
+       "emotion",
+       "incomplete",
+       "also",
+       "more",
+       "context",
+       "not only",
+       "ornament"
+      ]
+     ],
+     "min": 2,
+     "model": "It reminds designers to prioritise use, but culture, meaning and pleasure also shape form, so function alone is not enough.",
+     "why": "The slogan simplifies.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why consider an object's life cycle?",
+     "o": [
+      "It lowers the price of materials only",
+      "It changes the colour of the object over time",
+      "Material choices affect energy, waste and repair",
+      "It is optional and has no effect on how a design is made"
+     ],
+     "a": 2,
+     "why": "Sustainability depends on life cycle.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might a designer choose joinery without glue or nails?",
+     "o": [
+      "Glued joints are always stronger than other joints",
+      "Parts can be repaired, replaced or recycled",
+      "Joinery without glue is less skilled than gluing",
+      "It is always faster to make than glued joints"
+     ],
+     "a": 1,
+     "why": "Mechanical joints can be reversible.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bench is too high for children. Which design principle is violated?",
+     "o": [
+      "Ergonomics",
+      "Colour theory",
+      "Casting",
+      "Perspective"
+     ],
+     "a": 0,
+     "why": "Dimensions must fit users.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Evaluate a chair that is beautiful but uncomfortable. Use two criteria.",
+     "rubric": [
+      [
+       "function",
+       "comfort",
+       "ergonomic",
+       "ergonomics",
+       "use",
+       "fit",
+       "support"
+      ],
+      [
+       "beauty",
+       "form",
+       "look",
+       "aesthetic",
+       "style",
+       "material",
+       "durability",
+       "cost",
+       "sustainability"
+      ]
+     ],
+     "min": 2,
+     "model": "The chair meets aesthetic criteria but fails function and ergonomics, so I would revise the seat height and support.",
+     "why": "Balance criteria.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced three-dimensional artistic design",
+    "model": "3D design joins form, function, material and context. Prototype, test and revise. Check ergonomics, tolerances, materials and life cycle. Slogans such as form follows function are useful but incomplete.",
+    "points": [
+     {
+      "k": [
+       "form",
+       "function",
+       "material"
+      ],
+      "ask": "What does design combine?"
+     },
+     {
+      "k": [
+       "prototype",
+       "test",
+       "revise"
+      ],
+      "ask": "How do designers work?"
+     },
+     {
+      "k": [
+       "ergonomic",
+       "tolerance",
+       "life cycle",
+       "sustainable"
+      ],
+      "ask": "What else do they consider?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Contemporary artistic movements",
+   "icon": "🌐",
+   "hook": "Since the 1950s art has asked \"what counts as art?\" again and again. Which answers seem most convincing to you, and why?",
+   "explain": [
+    "After modernism, art became more varied. Pop art in Britain and the United States in the 1950s and 1960s took imagery from advertising and mass culture: Richard Hamilton's collage of 1956 and Andy Warhol's soup can paintings of 1962. Minimalism in the 1960s, with Donald Judd and Dan Flavin, reduced work to simple industrial forms. Conceptual and performance art put ideas and actions first: Yoko Ono's Cut Piece (1964) invited the audience to take part.",
+    "Feminist art challenged exclusion. Judy Chicago's The Dinner Party (1974 to 1979) honoured women of history. Postmodernism questioned grand narratives and mixed styles. Neo-expressionism in the 1980s included Jean-Michel Basquiat. Street art and muralism moved art into public space. The 1989 exhibition Magiciens de la Terre in Paris is often cited as a turning point in showing living artists from across the world together, though critics have debated its framing.",
+    "Contemporary art is now global, with major centres and biennials in Dakar, Havana, Sharjah, São Paulo, Johannesburg, Venice and many more. Themes include identity, migration, ecology, memory and technology. Critics ask who gets shown, who writes the history, and how markets shape taste."
+   ],
+   "example": {
+    "q": "How many years passed between Warhol's soup cans (1962) and the start of Judy Chicago's The Dinner Party (1974)?",
+    "steps": [
+     "Take the later date: 1974.",
+     "Take the earlier date: 1962.",
+     "Subtract: 1974 − 1962 = 12.",
+     "Check: just over a decade."
+    ],
+    "a": "12 years"
+   },
+   "analogies": {
+    "city": "Biennials turn cities into temporary exhibition spaces.",
+    "music": "Pop art parallels pop music in using mass culture.",
+    "tech": "Digital and internet-based art reflects networked life.",
+    "home": "Installation art can turn an ordinary room into the art itself."
+   },
+   "mnemonic": "Pop took the shop, minimal took the box, concept took the thought, and the world took the stage.",
+   "terms": [
+    [
+     "Pop art",
+     "Art using imagery from advertising and popular culture."
+    ],
+    [
+     "Minimalism",
+     "Art using simple geometric forms and industrial materials."
+    ],
+    [
+     "Performance art",
+     "Art in which the artist's actions are the work."
+    ],
+    [
+     "Biennial",
+     "A large international art exhibition held every two years."
+    ]
+   ],
+   "misc": {
+    "wrong": "Contemporary art is just whatever the market says.",
+    "right": "Markets matter, but artists, curators, communities and critics also shape contemporary art."
+   },
+   "limits": "Movement labels are retrospective and often simplify. Many artists reject them.",
+   "trip": {
+    "wiki": "Contemporary art",
+    "prompt": "Choose an artist from outside Europe and North America. Which movements does their work relate to?"
+   },
+   "sources": [
+    "Pop art",
+    "Minimalism",
+    "Magiciens de la Terre"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which movement used imagery from advertising and mass culture?",
+     "o": [
+      "Impressionism",
+      "Cubism",
+      "Fauvism",
+      "Pop art"
+     ],
+     "a": 3,
+     "why": "Pop art embraced popular culture.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Who painted Campbell's soup cans in 1962?",
+     "o": [
+      "Donald Judd",
+      "Judy Chicago",
+      "Andy Warhol",
+      "Dan Flavin"
+     ],
+     "a": 2,
+     "why": "Warhol exhibited 32 canvases.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is Minimalism known for?",
+     "o": [
+      "Dreamlike scenes drawn from the unconscious mind",
+      "Simple geometric forms and industrial materials",
+      "Loose brushwork showing the effects of light",
+      "Gilded decoration and rich ornament"
+     ],
+     "a": 1,
+     "why": "Judd and Flavin exemplify it.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What was distinctive about Yoko Ono's Cut Piece (1964)?",
+     "o": [
+      "The audience took part in the performance",
+      "It was a painting hung on a gallery wall for months",
+      "It was a bronze statue placed in a park",
+      "It was a film shown in a cinema"
+     ],
+     "a": 0,
+     "why": "The audience acted on the work.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "When was Judy Chicago's The Dinner Party made?",
+     "o": [
+      "1874 to 1879",
+      "1954 to 1959",
+      "1994 to 1999",
+      "1974 to 1979"
+     ],
+     "a": 3,
+     "why": "It honours women in history.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Magiciens de la Terre (1989) often cited?",
+     "o": [
+      "It was the first museum ever to show contemporary art",
+      "It banned painting in favour of installations",
+      "It showed living artists from across the world together",
+      "It was a pop concert held in an art gallery"
+     ],
+     "a": 2,
+     "why": "It was a turning point but also debated.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "An artist covers a street with a mural about migration. Which categories fit?",
+     "o": [
+      "Minimalist art only, in a gallery",
+      "Public art and socially engaged art",
+      "Cast bronze sculpture art only",
+      "Renaissance art only, in a church"
+     ],
+     "a": 1,
+     "why": "Murals engage communities.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the artist or work to the movement.",
+     "pairs": [
+      [
+       "Warhol",
+       "Pop art"
+      ],
+      [
+       "Judd",
+       "Minimalism"
+      ],
+      [
+       "Ono",
+       "Performance art"
+      ],
+      [
+       "Chicago",
+       "Feminist art"
+      ]
+     ],
+     "why": "Each fits a movement.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why an exhibition framing non-Western artists as \"exotic\" can be criticised.",
+     "rubric": [
+      [
+       "stereotype",
+       "stereotypes",
+       "exotic",
+       "other",
+       "othering",
+       "difference",
+       "reduce",
+       "reduced",
+       "label"
+      ],
+      [
+       "context",
+       "individual",
+       "individuals",
+       "equal",
+       "equally",
+       "power",
+       "west",
+       "western",
+       "colonial",
+       "colonialism",
+       "contemporary",
+       "peers"
+      ]
+     ],
+     "min": 2,
+     "model": "Framing artists as exotic treats them as the Other and stresses difference over their individual contemporary practice, reflecting unequal power.",
+     "why": "Framing affects how artists are seen.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do many artists reject movement labels?",
+     "o": [
+      "Labels simplify varied practices",
+      "Labels are illegal in many places",
+      "Artists dislike the use of colour",
+      "Labels are always completely accurate"
+     ],
+     "a": 0,
+     "why": "Labels are retrospective summaries.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can Pop art be read as both celebration and critique of consumer culture?",
+     "o": [
+      "It is only decoration, so it has no meaning at all",
+      "It is anti-colour, so it avoids commercial images",
+      "It has no meaning outside the shops it came from",
+      "It uses commercial imagery with ambiguous attitude"
+     ],
+     "a": 3,
+     "why": "Ambiguity invites multiple readings.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a biennial more than a sale of art?",
+     "o": [
+      "It bans the sale of works so only the ideas are shown",
+      "It only shows paintings by the artists who are most famous",
+      "It frames themes and brings together artists and publics",
+      "It is a school that teaches new artists"
+     ],
+     "a": 2,
+     "why": "Biennials shape discourse.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Analyse one way markets can shape which art is seen and remembered.",
+     "rubric": [
+      [
+       "market",
+       "markets",
+       "money",
+       "price",
+       "prices",
+       "collector",
+       "collectors",
+       "gallery",
+       "galleries",
+       "auction",
+       "sales",
+       "buyers"
+      ],
+      [
+       "visible",
+       "seen",
+       "remember",
+       "remembered",
+       "shown",
+       "promote",
+       "funding",
+       "canon",
+       "exclude",
+       "status",
+       "history",
+       "attention"
+      ]
+     ],
+     "min": 2,
+     "model": "Collectors and galleries with money decide whom to promote and show, so some artists become more visible and remembered in the canon.",
+     "why": "Markets and institutions affect visibility.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Contemporary artistic movements",
+    "model": "Pop art used mass culture, Minimalism simple forms, conceptual and performance art ideas and actions. Feminist and postcolonial approaches broadened who is shown. Contemporary art is global and its labels are debated.",
+    "points": [
+     {
+      "k": [
+       "pop",
+       "minimal",
+       "conceptual",
+       "performance"
+      ],
+      "ask": "Which movements are there?"
+     },
+     {
+      "k": [
+       "feminist",
+       "postcolonial",
+       "global",
+       "who"
+      ],
+      "ask": "How did art change who it includes?"
+     },
+     {
+      "k": [
+       "market",
+       "label",
+       "debate"
+      ],
+      "ask": "What debates exist?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Art conservation and materials",
+   "icon": "🛡️",
+   "hook": "What would you do first to find out whether a painting is original, damaged or restored?",
+   "explain": [
+    "Conservation protects cultural heritage. Preventive conservation controls the environment: stable temperature, relative humidity often kept around 45 to 55%, controlled light (UV is filtered), pest management, clean storage and careful handling. Interventive conservation treats objects, guided by principles: minimal intervention, reversibility where possible, compatible materials and full documentation.",
+    "Causes of deterioration include light fading, humidity swings that crack paint on wood or canvas, acid in paper, pests, pollutants, and past restorations. Technical examination reveals more than the eye: X-radiography shows lead-containing underlayers and changes, infrared reflectography reveals underdrawing, X-ray fluorescence identifies elements in pigments, and dendrochronology dates wood panels by tree rings. Radiocarbon dating dates organic material, with a carbon-14 half-life of about 5,730 years.",
+    "Ethics are debated. Cleaning of the Sistine Chapel ceiling from 1980 to 1994 revealed brighter colours and sparked disagreement. A 2012 amateur attempt to retouch the Ecce Homo fresco in Borja, Spain, caused widespread concern. Conservation also respects living traditions, for instance where sacred objects are renewed by communities rather than preserved unchanged."
+   ],
+   "example": {
+    "q": "A sample has 25% of its original carbon-14. About how old is it? (half-life 5,730 years)",
+    "steps": [
+     "25% is two halvings: 100% → 50% → 25%.",
+     "Two half-lives = 2 × 5,730.",
+     "Compute: 11,460 years.",
+     "Check: older than one half-life but younger than three."
+    ],
+    "a": "About 11,460 years"
+   },
+   "analogies": {
+    "home": "Keeping photos out of sunlight and damp is preventive conservation.",
+    "farm": "Seed stores are dry and cool to prevent mould, like archives.",
+    "city": "Museums use air control like a building's climate system.",
+    "nature": "Natural pigments in leaves fade in sun, showing why light matters."
+   },
+   "mnemonic": "Prevent first, treat least, document all; reversible if you can.",
+   "terms": [
+    [
+     "Preventive conservation",
+     "Controlling the environment to slow deterioration."
+    ],
+    [
+     "Reversibility",
+     "The ability to remove a treatment later."
+    ],
+    [
+     "Dendrochronology",
+     "Dating wood by tree ring patterns."
+    ],
+    [
+     "X-radiography",
+     "Imaging an object with X-rays to see inside."
+    ]
+   ],
+   "misc": {
+    "wrong": "Restoration should make an object look new.",
+    "right": "Conservation aims to stabilise and respect the object's history."
+   },
+   "limits": "Cleaning and restoration decisions involve judgement, and experts can disagree.",
+   "trip": {
+    "wiki": "Conservation and restoration",
+    "prompt": "Read about conservation ethics. Which principle matters most for an old painting?"
+   },
+   "sources": [
+    "Conservation and restoration of cultural property",
+    "Dendrochronology",
+    "X-ray fluorescence"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A sample has 12.5% of its original carbon-14. How many years old is it? (half-life 5,730 years)",
+     "a": 17190,
+     "tol": 50,
+     "unit": "years",
+     "why": "12.5% is three half-lives: 3 × 5,730 = 17,190.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A sample has 50% of its original carbon-14. How many years old is it? (half-life 5,730 years)",
+     "a": 5730,
+     "tol": 10,
+     "unit": "years",
+     "why": "One half-life.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is preventive conservation?",
+     "o": [
+      "Repainting damaged areas to match the original colours",
+      "Controlling the environment to slow deterioration",
+      "Cleaning surfaces with solvent after damage has happened",
+      "Selling works before they deteriorate any further"
+     ],
+     "a": 1,
+     "why": "It reduces risk before damage.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which technique reveals underdrawing?",
+     "o": [
+      "Infrared reflectography",
+      "Dendrochronology, the study of tree rings",
+      "Radiocarbon dating of the paint",
+      "Casting in plaster"
+     ],
+     "a": 0,
+     "why": "Infrared can penetrate paint layers.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which technique dates wood panels?",
+     "o": [
+      "XRF",
+      "X-radiography",
+      "Carbon-14 on pigment",
+      "Dendrochronology"
+     ],
+     "a": 3,
+     "why": "Tree-ring patterns date wood.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does reversibility mean?",
+     "o": [
+      "A treatment is cheap to carry out",
+      "A treatment cannot be seen by anyone",
+      "A treatment can be removed later",
+      "A treatment can be done quickly in a day"
+     ],
+     "a": 2,
+     "why": "Reversibility respects future options.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A museum sees paint flaking on a wooden panel after humidity swings. Best action?",
+     "o": [
+      "Paint over the flaking areas with a thicker layer of fresh paint",
+      "Stabilise humidity and consult a conservator",
+      "Heat the panel to make the paint stick again",
+      "Leave it, as flaking stops by itself after a week"
+     ],
+     "a": 1,
+     "why": "Environmental control prevents more damage.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the method to what it reveals.",
+     "pairs": [
+      [
+       "X-radiography",
+       "Internal structure and lead-based layers"
+      ],
+      [
+       "Infrared reflectography",
+       "Underdrawing"
+      ],
+      [
+       "X-ray fluorescence",
+       "Elements in pigments"
+      ],
+      [
+       "Dendrochronology",
+       "Wood age"
+      ]
+     ],
+     "why": "Each tool reveals specific information.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why documentation is a core principle of conservation.",
+     "rubric": [
+      [
+       "record",
+       "records",
+       "document",
+       "documentation",
+       "photograph",
+       "report",
+       "written"
+      ],
+      [
+       "future",
+       "later",
+       "conservators",
+       "history",
+       "understand",
+       "track",
+       "reverse",
+       "decisions",
+       "evidence",
+       "treatment",
+       "treatments"
+      ]
+     ],
+     "min": 2,
+     "model": "Documenting condition and treatment lets future conservators understand what was done and make better decisions.",
+     "why": "Records preserve evidence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can cleaning be controversial?",
+     "o": [
+      "It changes appearance and judgements differ about original surface",
+      "Restorers always agree that dirt is part of the original paint",
+      "Cleaning always damages the colours, so it is never done",
+      "Cleaning is only done to make an old work look brand new"
+     ],
+     "a": 0,
+     "why": "The Sistine ceiling cleaning showed such debate.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can carbon-14 dating not directly date a ceramic pot?",
+     "o": [
+      "Pots are far too heavy to be tested",
+      "Pots are too modern to be dated by this method",
+      "Carbon is too rare in clay to measure properly",
+      "Fired clay has no organic carbon from its making"
+     ],
+     "a": 3,
+     "why": "It dates organic material such as wood or charcoal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a community renew a sacred object instead of preserving it unchanged?",
+     "o": [
+      "Renewal is cheaper than conservation and so is always preferred",
+      "Law forbids preserving sacred objects in museums",
+      "Living practice values renewal over fixed material",
+      "The community has made a mistake about its own tradition"
+     ],
+     "a": 2,
+     "why": "Cultural values guide conservation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Justify minimal intervention as a guiding principle.",
+     "rubric": [
+      [
+       "reversible",
+       "reverse",
+       "remove",
+       "undo",
+       "later",
+       "future"
+      ],
+      [
+       "original",
+       "authentic",
+       "authenticity",
+       "damage",
+       "risk",
+       "less",
+       "least",
+       "change",
+       "preserve",
+       "respect",
+       "evidence"
+      ]
+     ],
+     "min": 2,
+     "model": "Doing as little as necessary keeps the original material, reduces risk, and leaves options for future treatment.",
+     "why": "Less intervention means less irreversible change.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Art conservation and materials",
+    "model": "Conservation slows deterioration with environmental control and careful treatment. Use minimal intervention, reversibility and documentation. Scientific imaging and dating reveal hidden information. Decisions involve ethics.",
+    "points": [
+     {
+      "k": [
+       "environment",
+       "humidity",
+       "light",
+       "prevent"
+      ],
+      "ask": "How is damage prevented?"
+     },
+     {
+      "k": [
+       "minimal",
+       "reversible",
+       "document"
+      ],
+      "ask": "What principles guide treatment?"
+     },
+     {
+      "k": [
+       "x-ray",
+       "infrared",
+       "dating",
+       "analysis"
+      ],
+      "ask": "How is science used?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Advanced digital art",
+   "icon": "🧮",
+   "hook": "If a computer can generate an image, who is the author, and what skills still matter?",
+   "explain": [
+    "Advanced digital practice rests on technical understanding. Colour management uses ICC profiles to keep colour consistent between devices, and common screen standards such as sRGB define the colour range. Bit depth sets how many levels each channel has: 8 bits per channel gives 256 levels, and three channels give 2²⁴ = 16,777,216 colours. Higher bit depth reduces banding in gradients.",
+    "Workflows may be non-destructive, using layers, masks, adjustment layers and smart objects. Procedural and generative art uses rules or algorithms, sometimes with randomness. Photogrammetry builds 3D models from many photographs. Real-time engines render interactive scenes. Accessibility practice includes text descriptions and sufficient contrast.",
+    "AI image generators raise contested questions about authorship, consent, copyright and labour, since many are trained on large collections of existing images. Laws and norms differ between countries and are changing, so artists keep records of their process and check licences. Digital art builds on traditional skills, and artists in places from Lagos to Seoul work in these media."
+   ],
+   "example": {
+    "q": "An uncompressed 1920 × 1080 image has 3 channels at 8 bits each. How many bytes is it?",
+    "steps": [
+     "Pixels: 1920 × 1080 = 2,073,600.",
+     "Bytes per pixel: 3.",
+     "Multiply: 2,073,600 × 3 = 6,220,800.",
+     "About 6.2 MB."
+    ],
+    "a": "6,220,800 bytes (about 6.2 MB)"
+   },
+   "analogies": {
+    "home": "A phone camera applies colour and compression settings automatically.",
+    "music": "Sample rate and bit depth in audio echo resolution and bit depth in images.",
+    "city": "Digital signage must be calibrated for sunlight and contrast.",
+    "tech": "Games render scenes in real time from 3D models."
+   },
+   "mnemonic": "Profile your colour, deepen your bits, work in layers, and credit your tools.",
+   "terms": [
+    [
+     "ICC profile",
+     "A file describing how a device reproduces colour."
+    ],
+    [
+     "Bit depth",
+     "The number of bits used to represent each channel."
+    ],
+    [
+     "Generative art",
+     "Art made using rules or algorithms."
+    ],
+    [
+     "Photogrammetry",
+     "Making 3D models from overlapping photographs."
+    ]
+   ],
+   "misc": {
+    "wrong": "AI image generation settles questions about authorship.",
+    "right": "Authorship, consent and copyright are debated and legally unsettled in many places."
+   },
+   "limits": "Law and technology around generative tools change quickly, so information can date fast.",
+   "trip": {
+    "wiki": "Generative art",
+    "prompt": "Look at generative artworks. Which rules can you spot?"
+   },
+   "sources": [
+    "Generative art",
+    "Color management",
+    "Photogrammetry"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "How many colours can 24-bit RGB represent? Give the exact number.",
+     "a": 16777216,
+     "tol": 0,
+     "unit": "colours",
+     "why": "2²⁴ = 16,777,216.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many bytes is an uncompressed 1000 × 1000 pixel image with 3 channels at 8 bits each?",
+     "a": 3000000,
+     "tol": 0,
+     "unit": "bytes",
+     "why": "1,000,000 pixels × 3 bytes = 3,000,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How many levels does an 8-bit channel have?",
+     "o": [
+      "128",
+      "256",
+      "1024",
+      "65,536"
+     ],
+     "a": 1,
+     "why": "2⁸ = 256.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does an ICC profile do?",
+     "o": [
+      "Describes how a device reproduces colour",
+      "Compresses images so that files are smaller",
+      "Stores all of the layers of a file",
+      "Draws lines and shapes on the canvas"
+     ],
+     "a": 0,
+     "why": "It enables consistent colour management.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does higher bit depth reduce?",
+     "o": [
+      "The size of the file on the disk",
+      "The resolution of the image on screen",
+      "The number of layers in the file",
+      "Banding in gradients"
+     ],
+     "a": 3,
+     "why": "More levels give smoother gradients.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is generative art?",
+     "o": [
+      "Art made on canvas with a brush and oil paint",
+      "Art made for sale at auction houses",
+      "Art made using rules or algorithms",
+      "Art displayed in a public place"
+     ],
+     "a": 2,
+     "why": "It uses processes with some autonomy.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A print looks different from the screen. What should be checked first?",
+     "o": [
+      "Whether the layers have been named clearly in the file",
+      "Colour profiles and the print workflow",
+      "Whether the file name has been typed correctly",
+      "Whether the brush size matches the original sketch"
+     ],
+     "a": 1,
+     "why": "Colour management links devices.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An artist uses an AI tool and publishes. What is a responsible practice?",
+     "o": [
+      "Check licences and disclose the use where required",
+      "Hide the tool so the work is seen as hand-made",
+      "Claim that no tools were used to produce the image",
+      "Delete the records to avoid questions about the process"
+     ],
+     "a": 0,
+     "why": "Transparency and licence checks help.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Evaluate the claim that AI image generators clearly respect artists' rights.",
+     "rubric": [
+      [
+       "debated",
+       "contested",
+       "unsettled",
+       "unclear",
+       "controversial",
+       "disagree",
+       "disagreement",
+       "uncertain",
+       "varies"
+      ],
+      [
+       "consent",
+       "copyright",
+       "training",
+       "data",
+       "licence",
+       "license",
+       "compensation",
+       "credit",
+       "rights",
+       "law"
+      ]
+     ],
+     "min": 2,
+     "model": "The claim is contested: artists and companies disagree about consent, copyright and compensation for training data, and the law is unsettled.",
+     "why": "The issues are debated.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do digital artists still study composition and colour?",
+     "o": [
+      "Software removes the need to study them",
+      "Colour is obsolete in digital work",
+      "Composition is banned in digital art",
+      "The tools change but perception does not"
+     ],
+     "a": 3,
+     "why": "Fundamentals still guide effect.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why keep process files and layers for a digital work?",
+     "o": [
+      "They are required to get the right colour",
+      "They reduce the file size a great deal",
+      "They document authorship and allow revision",
+      "They are useless once the work is finished"
+     ],
+     "a": 2,
+     "why": "Records support provenance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a gradient show bands on an 8-bit display?",
+     "o": [
+      "Pixels are round, not square",
+      "Limited tonal steps between colours",
+      "Some layers are hidden in the file",
+      "The screen is turned up too bright"
+     ],
+     "a": 1,
+     "why": "Dithering and higher bit depth help.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Propose a workflow for a digital illustration that can be printed large without quality loss.",
+     "rubric": [
+      [
+       "vector",
+       "high resolution",
+       "resolution",
+       "ppi",
+       "dpi",
+       "large",
+       "pixels",
+       "pixel"
+      ],
+      [
+       "profile",
+       "colour",
+       "color",
+       "cmyk",
+       "proof",
+       "test",
+       "layers",
+       "non-destructive",
+       "backup",
+       "original"
+      ]
+     ],
+     "min": 2,
+     "model": "Work at high resolution or in vector, keep layers, manage colour with profiles and test a proof print.",
+     "why": "Plan resolution and colour.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced digital art",
+    "model": "Advanced digital art needs colour management, bit depth and non-destructive workflows. Generative art uses rules. AI image tools raise unsettled questions of authorship, consent and copyright.",
+    "points": [
+     {
+      "k": [
+       "color",
+       "colour",
+       "profile",
+       "bit"
+      ],
+      "ask": "What technical basics matter?"
+     },
+     {
+      "k": [
+       "layer",
+       "non-destructive",
+       "workflow"
+      ],
+      "ask": "How do I work safely?"
+     },
+     {
+      "k": [
+       "ai",
+       "authorship",
+       "copyright",
+       "consent"
+      ],
+      "ask": "What debates exist?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Installation and public art",
+   "icon": "🏙️",
+   "hook": "Who should decide what art stands in a shared public square: artists, officials or residents?",
+   "explain": [
+    "Installation art creates an immersive environment, and the viewer's movement through it is part of the work. Site-specific works are made for one place and respond to its architecture, history and community. Land art and environmental art work with landscape. Public art is accessible to everyone, in streets, parks or transport hubs, and must consider safety, maintenance and consent.",
+    "Examples show debates. Richard Serra's Tilted Arc was installed in a New York plaza in 1981 and removed in 1989 after hearings, raising the question of whether a site-specific work can be moved. Christo and Jeanne-Claude wrapped the Reichstag in Berlin in 1995 and installed The Gates in Central Park in 2005. Anish Kapoor's Cloud Gate in Chicago was made from 2004 to 2006. Ai Weiwei's Sunflower Seeds filled Tate Modern's Turbine Hall in 2010. Mexican muralists Diego Rivera, José Clemente Orozco and David Alfaro Siqueiros painted public murals from the 1920s.",
+    "Process matters as much as outcome: consultation with residents, permits, engineering, insurance, fabrication, installation and long-term maintenance. Some cities use percent-for-art policies that set aside a share of construction budgets for art. Public art can be temporary, such as festivals and projections, or permanent. It can celebrate, commemorate, challenge or heal, and communities may disagree about monuments, so decisions about removal or recontextualisation are contested."
+   ],
+   "example": {
+    "q": "A construction budget is 12 million and a percent-for-art policy sets aside 1%. How much is for art?",
+    "steps": [
+     "1% means 1 ÷ 100.",
+     "12,000,000 × 0.01.",
+     "Compute: 120,000.",
+     "So 120,000 is set aside."
+    ],
+    "a": "120,000"
+   },
+   "analogies": {
+    "home": "Rearranging a room for a party changes how people move, like an installation.",
+    "city": "A town square with a sculpture becomes a meeting place and a landmark.",
+    "farm": "Land art can shape a field into a pattern visible from above.",
+    "sea": "Coastal sculptures respond to tides and weather."
+   },
+   "mnemonic": "Place, people, process, permanence; ask who it serves.",
+   "terms": [
+    [
+     "Installation art",
+     "Art that transforms a space into an environment."
+    ],
+    [
+     "Site-specific",
+     "Made for and dependent on a particular place."
+    ],
+    [
+     "Percent-for-art",
+     "A policy that allocates part of a budget to art."
+    ],
+    [
+     "Recontextualisation",
+     "Changing the setting or interpretation of a monument."
+    ]
+   ],
+   "misc": {
+    "wrong": "Public art is whatever the artist wants.",
+    "right": "Public art involves consultation, safety, maintenance and community needs."
+   },
+   "limits": "Debates over removal of monuments are ongoing, and each case involves local history.",
+   "trip": {
+    "wiki": "Tilted Arc",
+    "prompt": "Read the Tilted Arc case. What arguments were made on each side?"
+   },
+   "sources": [
+    "Installation art",
+    "Tilted Arc",
+    "Public art"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A building budget is 20 million. A percent-for-art policy sets aside 1%. How much is that in millions?",
+     "a": 0.2,
+     "tol": 0.001,
+     "unit": "million",
+     "why": "20 × 0.01 = 0.2 million.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A project costs 450,000 for fabrication and 15% of that for installation. What is the installation cost?",
+     "a": 67500,
+     "tol": 1,
+     "why": "450,000 × 0.15 = 67,500.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is site-specific art?",
+     "o": [
+      "Made for a particular place",
+      "Made in a studio and sold anywhere",
+      "Made to be sold in any gallery",
+      "A drawing in a sketchbook only"
+     ],
+     "a": 0,
+     "why": "Moving it may change its meaning.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What happened to Tilted Arc?",
+     "o": [
+      "It was moved to Berlin in 1981 for display",
+      "It was never built",
+      "It was replaced by a new work in 1995",
+      "It was removed in 1989 after hearings"
+     ],
+     "a": 3,
+     "why": "It was installed in 1981 and removed in 1989.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Who made The Gates in Central Park (2005)?",
+     "o": [
+      "Ai Weiwei of China",
+      "Anish Kapoor of India and Britain",
+      "Christo and Jeanne-Claude",
+      "Diego Rivera of Mexico"
+     ],
+     "a": 2,
+     "why": "They also wrapped the Reichstag.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which work filled Tate Modern's Turbine Hall in 2010?",
+     "o": [
+      "Cloud Gate in Chicago",
+      "Sunflower Seeds",
+      "The Gates in Central Park",
+      "Tilted Arc in New York"
+     ],
+     "a": 1,
+     "why": "It was by Ai Weiwei.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which artists painted public murals in Mexico from the 1920s?",
+     "o": [
+      "Rivera, Orozco and Siqueiros",
+      "Judd, Flavin and Serra in the 1960s",
+      "Monet and Renoir in France",
+      "Hepworth and Moore in Britain"
+     ],
+     "a": 0,
+     "why": "These are the Mexican muralists.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A town plans a monument. Which step ensures it serves residents?",
+     "o": [
+      "Hide the plans until work begins",
+      "Skip permits to save time",
+      "Rely on one person's opinion",
+      "Consultation with the community"
+     ],
+     "a": 3,
+     "why": "Consultation is essential.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the work to the artist.",
+     "pairs": [
+      [
+       "Cloud Gate",
+       "Anish Kapoor"
+      ],
+      [
+       "Sunflower Seeds",
+       "Ai Weiwei"
+      ],
+      [
+       "Tilted Arc",
+       "Richard Serra"
+      ],
+      [
+       "The Gates",
+       "Christo and Jeanne-Claude"
+      ]
+     ],
+     "why": "These are well-known installations or public works.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Evaluate arguments for moving a site-specific work to a new location.",
+     "rubric": [
+      [
+       "site",
+       "place",
+       "location",
+       "context",
+       "meaning",
+       "specific",
+       "original"
+      ],
+      [
+       "change",
+       "changes",
+       "lose",
+       "loses",
+       "destroy",
+       "destroys",
+       "altered",
+       "safety",
+       "community",
+       "residents",
+       "consult",
+       "consultation",
+       "move",
+       "moving"
+      ]
+     ],
+     "min": 2,
+     "model": "A site-specific work depends on its place, so moving it changes or destroys its meaning, though communities may have valid reasons such as safety or use of space.",
+     "why": "Balance artistic and community concerns.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is maintenance part of public art planning?",
+     "o": [
+      "It is not needed because public art does not age",
+      "Art never ages when it is displayed outdoors",
+      "Works exposed to weather and use will degrade",
+      "Cleaners alone decide how public art is made"
+     ],
+     "a": 2,
+     "why": "Long-term care needs budgeting.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are temporary projections or festivals useful as public art?",
+     "o": [
+      "They last forever without maintenance",
+      "They allow experiment with low long-term commitment",
+      "They need no permits or permission",
+      "They remove audiences and replace them with machines"
+     ],
+     "a": 1,
+     "why": "Temporary works reduce risk.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Design a consultation process for a mural in a neighbourhood. Name two steps.",
+     "rubric": [
+      [
+       "meet",
+       "meeting",
+       "meetings",
+       "workshop",
+       "workshops",
+       "survey",
+       "surveys",
+       "consult",
+       "consultation",
+       "listen",
+       "residents"
+      ],
+      [
+       "sketch",
+       "sketches",
+       "design",
+       "designs",
+       "feedback",
+       "revise",
+       "revisions",
+       "vote",
+       "approval",
+       "permit",
+       "permits",
+       "collaborate"
+      ]
+     ],
+     "min": 2,
+     "model": "Hold community meetings and surveys, show sketches to residents, take feedback, and revise the design before getting permits.",
+     "why": "Consultation builds legitimacy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Installation and public art",
+    "model": "Installation art makes an environment. Site-specific art depends on its place. Public art needs consultation, permits, engineering and maintenance. Communities may disagree about monuments.",
+    "points": [
+     {
+      "k": [
+       "installation",
+       "environment",
+       "site-specific"
+      ],
+      "ask": "What is installation art?"
+     },
+     {
+      "k": [
+       "public",
+       "community",
+       "consultation",
+       "permit"
+      ],
+      "ask": "What does public art need?"
+     },
+     {
+      "k": [
+       "debate",
+       "monument",
+       "removal"
+      ],
+      "ask": "Why can it be contested?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Cross-cultural artistic investigation",
+   "icon": "🔬",
+   "hook": "How can you study the art of a culture that is not your own without distorting it?",
+   "explain": [
+    "Cross-cultural investigation compares art across cultures with attention to method and ethics. Good practice includes using primary sources (objects, documents, artists' own words), learning key terms in the original language, acknowledging your own position (positionality), consulting communities, and avoiding projecting your categories onto others. Edward Said's Orientalism (1978) criticised how Western scholarship constructed the East as exotic and unchanging.",
+    "Case studies show complexity. Japonisme in the later 1800s transformed European art through admiration but also stereotyping. Picasso and others engaged with African sculpture early in the 1900s, often without crediting makers. Aboriginal artists have campaigned against fake art that imitates Indigenous designs. In the United States, the Native American Graves Protection and Repatriation Act (1990) set procedures for returning certain remains and objects to tribes. Debates about appropriation and appreciation depend on power, credit, consent and benefit.",
+    "A strong investigation states a clear question, defines terms, selects comparable cases, gathers varied evidence, and tests alternative explanations. It reports limits honestly and shares findings with the communities involved when possible. Collaborative projects that centre community voices, such as co-curated exhibitions, are increasingly common."
+   ],
+   "example": {
+    "q": "A study of 40 sources finds 28 are by authors from one region. What percentage is that?",
+    "steps": [
+     "Fraction: 28 ÷ 40 = 0.7.",
+     "Convert: 0.7 × 100 = 70%.",
+     "Interpret: heavy dependence on one region.",
+     "Consider adding diverse sources."
+    ],
+    "a": "70%"
+   },
+   "analogies": {
+    "home": "Asking a family member to explain a tradition is better than guessing.",
+    "city": "Neighbourhood festivals show living traditions best when residents speak.",
+    "music": "Learning a song in its original language shows nuances lost in translation.",
+    "tech": "Digital archives can be co-managed with the communities whose heritage they hold."
+   },
+   "mnemonic": "Ask, listen, credit, share: scholarship with people, not about them.",
+   "terms": [
+    [
+     "Positionality",
+     "The researcher's own background and perspective that shape the study."
+    ],
+    [
+     "Orientalism",
+     "Edward Said's critique of Western stereotyped representation of the East."
+    ],
+    [
+     "Repatriation",
+     "Returning cultural objects or remains to their communities of origin."
+    ],
+    [
+     "Co-curation",
+     "Developing an exhibition together with the source community."
+    ]
+   ],
+   "misc": {
+    "wrong": "An outsider can study any tradition without consultation.",
+    "right": "Ethical research involves consulting communities and acknowledging limits."
+   },
+   "limits": "Debates over appropriation do not have a single agreed rule, and communities themselves differ.",
+   "trip": {
+    "wiki": "Orientalism (book)",
+    "prompt": "Read about Orientalism. Which ideas can you use when studying art?"
+   },
+   "sources": [
+    "Orientalism (book)",
+    "Cultural appropriation",
+    "Native American Graves Protection and Repatriation Act"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Of 50 sources, 35 are from a single region. What percentage is that?",
+     "a": 70,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "35 ÷ 50 = 0.7.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "You consult 6 community members and 3 more join. If you plan 12 consultations, how many remain?",
+     "a": 3,
+     "tol": 0,
+     "why": "6 + 3 = 9 and 12 − 9 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Who wrote Orientalism in 1978?",
+     "o": [
+      "Edward Said",
+      "Erwin Panofsky",
+      "Rudolf Arnheim",
+      "Josef Albers"
+     ],
+     "a": 0,
+     "why": "Said critiqued Western representations.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is positionality?",
+     "o": [
+      "A pose chosen by a model while an artist draws",
+      "The camera angle used in photographs of artworks",
+      "The arrangement of works within an exhibition space",
+      "The researcher's background that shapes the study"
+     ],
+     "a": 3,
+     "why": "Acknowledging bias improves rigour.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What did the NAGPRA of 1990 provide?",
+     "o": [
+      "Rules limiting the export of Native American art to other countries",
+      "A national scheme paying tribes for museum loans",
+      "Procedures for returning certain remains and objects to tribes in the US",
+      "A code setting display heights in American museums"
+     ],
+     "a": 2,
+     "why": "It concerns repatriation.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is co-curation?",
+     "o": [
+      "Selling an exhibition to a second museum after it closes",
+      "Developing an exhibition with the source community",
+      "Copying wall labels from earlier exhibitions",
+      "Painting an artwork together with another artist"
+     ],
+     "a": 1,
+     "why": "It shares authority.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is using primary sources recommended?",
+     "o": [
+      "They offer direct evidence rather than second-hand claims",
+      "They always prove what the artist intended without any doubt",
+      "They are easier to find than books and articles",
+      "They are shorter than later accounts so are easier to read"
+     ],
+     "a": 0,
+     "why": "Primary evidence grounds claims.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You want to study a ceremonial textile. What is the best first step?",
+     "o": [
+      "Photograph it without asking anyone",
+      "Buy a copy and study that",
+      "Guess the meaning from its pattern",
+      "Learn terms and consult the community"
+     ],
+     "a": 3,
+     "why": "Consultation and learning avoid error.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Distinguish cultural appreciation from appropriation using two criteria.",
+     "rubric": [
+      [
+       "credit",
+       "acknowledge",
+       "acknowledgement",
+       "attribution",
+       "name"
+      ],
+      [
+       "consent",
+       "permission",
+       "power",
+       "benefit",
+       "profit",
+       "respect",
+       "stereotype",
+       "context",
+       "community",
+       "permissions",
+       "exploit"
+      ]
+     ],
+     "min": 2,
+     "model": "Appreciation credits sources, seeks permission and respects context, while appropriation takes without credit or consent and benefits the borrower at the source's expense.",
+     "why": "Power, credit and consent matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do critics call Orientalism a distortion?",
+     "o": [
+      "It praised the accuracy of Eastern art",
+      "It used no sources of any kind at all",
+      "It presented the East as exotic and unchanging",
+      "It was only about the art of China"
+     ],
+     "a": 2,
+     "why": "Said argued this was a power-laden view.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might the same borrowing be judged differently by different communities?",
+     "o": [
+      "Everyone in all communities agrees about what is acceptable",
+      "Communities hold different views on consent and context",
+      "Law everywhere forbids all borrowing between cultures",
+      "Art made by cultures cannot belong to anyone"
+     ],
+     "a": 1,
+     "why": "There is no single rule.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why report the limits of your study?",
+     "o": [
+      "Honesty about evidence helps others judge your claims",
+      "It reduces the length of the report",
+      "It hides errors from the reviewers",
+      "Colour theory requires it in every study"
+     ],
+     "a": 0,
+     "why": "Transparency is a scholarly norm.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Outline an ethical method to investigate an art tradition you are an outsider to.",
+     "rubric": [
+      [
+       "question",
+       "research question",
+       "define",
+       "terms"
+      ],
+      [
+       "primary",
+       "sources",
+       "evidence",
+       "objects",
+       "documents",
+       "artists"
+      ],
+      [
+       "consult",
+       "consultation",
+       "community",
+       "permission",
+       "collaborate",
+       "listen"
+      ],
+      [
+       "limits",
+       "positionality",
+       "acknowledge",
+       "bias",
+       "share",
+       "report"
+      ]
+     ],
+     "min": 3,
+     "model": "I would set a clear question, use primary sources, consult the community, acknowledge my positionality and limits, and share findings.",
+     "why": "Rigour and ethics go together.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Cross-cultural artistic investigation",
+    "model": "Cross-cultural study uses primary sources, learns key terms, acknowledges positionality and consults communities. It respects credit and consent and states its limits.",
+    "points": [
+     {
+      "k": [
+       "primary",
+       "sources",
+       "evidence"
+      ],
+      "ask": "What evidence do I use?"
+     },
+     {
+      "k": [
+       "community",
+       "consult",
+       "permission"
+      ],
+      "ask": "Who should I talk to?"
+     },
+     {
+      "k": [
+       "limits",
+       "bias",
+       "positionality"
+      ],
+      "ask": "How do I stay honest?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Original artistic portfolio and exhibition project",
+   "icon": "🎓",
+   "hook": "If you had to show who you are as an artist in twelve works and one page of text, what would you include?",
+   "explain": [
+    "A portfolio is a curated body of work that shows a coherent direction, skill and growth. It includes finished works, selected process materials (sketches, tests, maquettes), an artist statement and good documentation. The strongest portfolios have a clear question or theme developed across several pieces, not a random assortment.",
+    "The project plan has stages: research and proposal, experimentation, production, critique and revision, documentation, and presentation. Regular critiques with peers test whether intention matches effect. Good documentation uses even light, a neutral background, a scale reference, and sharp, colour-accurate images. An artist statement states what the work explores and how, in plain language without jargon.",
+    "Exhibition planning uses a timeline, a budget, a floor plan, a risk assessment, a label plan and accessibility measures. Ethical practice credits sources, obtains permission for images or community material, and acknowledges collaborators. Evaluation compares outcomes with aims: audience response, learning and what to do next. Artists around the world also build practice by joining collectives, residencies and community workshops."
+   ],
+   "example": {
+    "q": "A budget has materials 300, framing 180, printing 120 and venue costs 400. Funding is 900. What is left or short?",
+    "steps": [
+     "Add costs: 300 + 180 + 120 + 400 = 1000.",
+     "Compare with funding 900.",
+     "Difference: 900 − 1000 = −100.",
+     "There is a shortfall of 100."
+    ],
+    "a": "Short by 100"
+   },
+   "analogies": {
+    "home": "Planning a family event needs a theme, a list, a budget and a schedule.",
+    "city": "City galleries plan routes, signs and safety for visitors.",
+    "music": "A concert programme sequences works to build a mood.",
+    "tech": "Online portfolios need clear navigation and alt text."
+   },
+   "mnemonic": "Question, make, critique, document, show, reflect.",
+   "terms": [
+    [
+     "Portfolio",
+     "A selected body of work showing direction and skill."
+    ],
+    [
+     "Artist statement",
+     "A short text explaining the intentions and ideas of the work."
+    ],
+    [
+     "Critique",
+     "A structured discussion of work in progress."
+    ],
+    [
+     "Risk assessment",
+     "A plan identifying hazards and how to reduce them."
+    ]
+   ],
+   "misc": {
+    "wrong": "A portfolio should contain every piece you have made.",
+    "right": "A portfolio is a selection that supports a clear direction."
+   },
+   "limits": "Standards for portfolios differ between schools, countries and fields.",
+   "trip": {
+    "wiki": "Portfolio",
+    "prompt": "Look at portfolio guidance. What is the balance between process and finished work?"
+   },
+   "sources": [
+    "Artist's statement",
+    "Portfolio",
+    "Critique"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A show costs materials 450, printing 150, framing 200 and venue 300. Funding is 1000. What is the balance (positive for surplus)?",
+     "a": -100,
+     "tol": 0,
+     "why": "Costs total 1100, so 1000 − 1100 = −100.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wall is 5 m long. Each work is 0.5 m wide and every work needs a 0.5 m gap on its left, plus one final 0.5 m gap at the right end. What is the greatest number of works that fit?",
+     "a": 4,
+     "tol": 0,
+     "unit": "works",
+     "why": "n works need n × 0.5 + (n + 1) × 0.5 = n + 0.5 metres. For n = 4 that is 4.5 m, and n = 5 needs 5.5 m, which is too long.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is an artist statement?",
+     "o": [
+      "A list of prices and edition sizes for the works on show",
+      "A catalogue of the tools and materials used in a studio",
+      "A legal agreement between an artist and a gallery",
+      "A short text explaining the work's ideas and intentions"
+     ],
+     "a": 3,
+     "why": "It orients viewers.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is critique?",
+     "o": [
+      "A private review in which only the artist speaks about the work",
+      "A formal valuation setting the sale price of the work",
+      "Structured discussion to test whether intention matches effect",
+      "A legal check that the work is free of copyright disputes"
+     ],
+     "a": 2,
+     "why": "Critique improves work.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of a risk assessment?",
+     "o": [
+      "Raise the prices of the works",
+      "Identify hazards and reduce harm",
+      "Choose the colours of the display",
+      "Select titles for the works"
+     ],
+     "a": 1,
+     "why": "Safety is part of planning.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why use a neutral background and scale reference in documentation?",
+     "o": [
+      "So the work is represented accurately",
+      "To hide flaws so the work looks perfect",
+      "To save time when photographing the work",
+      "To add drama to the image"
+     ],
+     "a": 0,
+     "why": "Accurate documentation supports review.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A portfolio contains many unrelated styles with no theme. What is the best improvement?",
+     "o": [
+      "Add more random work to show a wide range",
+      "Remove all labels so the pieces speak for themselves",
+      "Change the colours so the pieces look alike",
+      "Select works that develop a coherent question"
+     ],
+     "a": 3,
+     "why": "Coherence shows direction.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the project stages.",
+     "items": [
+      "Research and proposal",
+      "Experimentation",
+      "Production",
+      "Critique and revision",
+      "Documentation and presentation"
+     ],
+     "why": "Planning precedes making, and critique precedes the final show.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the document to its purpose.",
+     "pairs": [
+      [
+       "Budget",
+       "Tracks costs"
+      ],
+      [
+       "Floor plan",
+       "Arranges works in space"
+      ],
+      [
+       "Risk assessment",
+       "Plans safety"
+      ],
+      [
+       "Label plan",
+       "Informs visitors"
+      ]
+     ],
+     "why": "Each plan supports an exhibition.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how critique improves a work in progress.",
+     "rubric": [
+      [
+       "feedback",
+       "response",
+       "perspective",
+       "view",
+       "views",
+       "opinions",
+       "others",
+       "peers",
+       "audience"
+      ],
+      [
+       "intention",
+       "intend",
+       "effect",
+       "clear",
+       "clarity",
+       "revise",
+       "improve",
+       "test",
+       "blind spots",
+       "understand",
+       "see"
+      ]
+     ],
+     "min": 2,
+     "model": "Peers show how the work is received, so you can compare effect with intention and revise unclear parts.",
+     "why": "Feedback reveals blind spots.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why should a portfolio show some process work?",
+     "o": [
+      "It fills space in the portfolio when there are few finished works",
+      "It is required to match the colour of the finished works",
+      "It evidences research, experimentation and growth",
+      "It replaces the finished work so it is not needed"
+     ],
+     "a": 2,
+     "why": "Process shows thinking.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why obtain permission for community material used in a show?",
+     "o": [
+      "It saves money for the museum",
+      "Respect, consent and ethical practice",
+      "It is always optional for an exhibition",
+      "It changes the colour of the objects"
+     ],
+     "a": 1,
+     "why": "Consent is core to ethics.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Evaluate your own exhibition against its aims. List two measures.",
+     "rubric": [
+      [
+       "audience",
+       "visitor",
+       "visitors",
+       "attendance",
+       "feedback",
+       "comments",
+       "response",
+       "survey"
+      ],
+      [
+       "aim",
+       "aims",
+       "goal",
+       "goals",
+       "learning",
+       "learned",
+       "achieved",
+       "outcomes",
+       "compare",
+       "evaluate",
+       "reflection",
+       "reflect"
+      ]
+     ],
+     "min": 2,
+     "model": "I would count visitors and collect feedback, then compare the results with my aims and note what to change.",
+     "why": "Evaluation needs evidence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Original artistic portfolio and exhibition project",
+    "model": "A portfolio is a coherent selection of work with process and an artist statement. Plan the project with research, experiment, make, critique, document and present. Budget, plan safety, credit sources and evaluate.",
+    "points": [
+     {
+      "k": [
+       "portfolio",
+       "theme",
+       "selection",
+       "coherent"
+      ],
+      "ask": "What is a portfolio?"
+     },
+     {
+      "k": [
+       "critique",
+       "document",
+       "statement"
+      ],
+      "ask": "What supports it?"
+     },
+     {
+      "k": [
+       "budget",
+       "plan",
+       "ethics",
+       "evaluate"
+      ],
+      "ask": "How do I run the exhibition?"
+     }
+    ]
+   }
+  }
+ ]
+}

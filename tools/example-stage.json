@@ -1,0 +1,68 @@
+{
+  "n": 3,
+  "title": "Forces and Newton's laws",
+  "icon": "🛒",
+  "hook": "An empty shopping trolley and a full one get the same push. Which one speeds up more — and why? Make your prediction before reading on.",
+  "explain": [
+    "A force is a push or a pull. Forces are measured in newtons (N). If the forces on an object balance, its motion does not change: it stays still, or keeps moving in a straight line at a steady speed. That is Newton's first law, and the resistance of an object to changes in its motion is called inertia.",
+    "When the forces do not balance, the leftover (resultant) force makes the object accelerate. Newton's second law says how much: acceleration = resultant force ÷ mass, usually written F = m × a. Double the force and the acceleration doubles; double the mass and the acceleration halves.",
+    "Newton's third law says forces always come in pairs. When you push on a wall with 50 N, the wall pushes back on you with 50 N. The two forces are equal in size, opposite in direction, and act on different objects — which is why they do not cancel out."
+  ],
+  "example": {
+    "q": "A 20 N resultant force acts on a 5 kg trolley. What is its acceleration?",
+    "steps": [
+      "Write what you know: F = 20 N, m = 5 kg.",
+      "Choose the law that links them: F = m × a, so a = F ÷ m.",
+      "Calculate: a = 20 ÷ 5 = 4.",
+      "Add the unit and check it is sensible: 4 m/s² means the speed grows by 4 m/s every second."
+    ],
+    "a": "4 m/s²"
+  },
+  "analogies": {
+    "farm": "A tractor pulling an empty trailer picks up speed quickly. Load the trailer with grain and the same pull gives a much gentler acceleration, because the mass is bigger.",
+    "city": "A train pulling away from a station accelerates slowly because its mass is huge. A bicycle given the same force would shoot forward.",
+    "sport": "Kick a football and a heavy medicine ball equally hard. The football flies off; the medicine ball barely moves. Same force, different mass, different acceleration.",
+    "sea": "A small dinghy and a loaded cargo ship both feel the wind, but the dinghy speeds up far faster because it has much less mass."
+  },
+  "mnemonic": "Picture three trolleys in a row: the first refuses to budge (law 1, inertia), the second is labelled F = m × a (law 2), and the third bumps you back when you bump it (law 3).",
+  "terms": [
+    ["Force", "A push or a pull, measured in newtons (N)."],
+    ["Resultant force", "The single force left over when all the forces on an object are combined."],
+    ["Inertia", "The tendency of an object to keep doing what it is already doing."],
+    ["Acceleration", "How quickly velocity changes, measured in m/s²."]
+  ],
+  "misc": {
+    "wrong": "An object needs a force to keep it moving.",
+    "right": "A force is needed to change motion. With no resultant force, a moving object keeps moving at the same speed in the same direction; on Earth, friction is the hidden force that slows things down."
+  },
+  "limits": "These laws assume friction and air resistance are small unless stated, and they work for everyday speeds. Close to the speed of light or at atomic scale, relativity and quantum physics are needed.",
+  "trip": { "wiki": "Newton's laws of motion", "prompt": "Find one real machine or sport on the page where you can spot all three laws at work." },
+  "sources": ["Newton's laws of motion", "Force", "Inertia"],
+  "questions": [
+    { "t": "mc", "q": "What is the unit of force?", "o": ["Newton (N)", "Kilogram (kg)", "Metre per second (m/s)", "Joule (J)"], "a": 0, "why": "Force is measured in newtons. Kilograms measure mass, m/s measures speed and joules measure energy.", "d": 1, "k": "recall" },
+    { "t": "mc", "q": "A book rests on a table and does not move. What can you say about the forces on it?", "o": ["They are balanced", "There are no forces on it", "Gravity is the only force", "The table's push is bigger than gravity"], "a": 0, "why": "Gravity pulls the book down and the table pushes up with an equal force, so the resultant force is zero and the motion does not change.", "d": 1, "k": "concept" },
+    { "t": "num", "q": "A resultant force of 12 N acts on a 3 kg toy car. What is its acceleration in m/s²?", "a": 4, "tol": 0.05, "unit": "m/s²", "why": "a = F ÷ m = 12 ÷ 3 = 4 m/s².", "d": 1, "k": "apply" },
+    { "t": "num", "q": "What resultant force is needed to accelerate a 40 kg cart at 0.5 m/s²? Answer in newtons.", "a": 20, "tol": 0.1, "unit": "N", "why": "F = m × a = 40 × 0.5 = 20 N.", "d": 2, "k": "apply" },
+    { "t": "mc", "q": "You double the mass of a sledge but pull with the same force. What happens to its acceleration?", "o": ["It halves", "It doubles", "It stays the same", "It becomes zero"], "a": 0, "why": "a = F ÷ m, so with the same force and twice the mass the acceleration is half as large.", "d": 2, "k": "concept" },
+    { "t": "mc", "q": "A swimmer pushes backwards on the water. Which force moves the swimmer forwards?", "o": ["The water pushing forwards on the swimmer", "The swimmer pushing backwards on the water", "Gravity", "The swimmer's weight"], "a": 0, "why": "Newton's third law: the swimmer pushes the water back, and the water pushes the swimmer forward with an equal force. Only forces acting on the swimmer can accelerate the swimmer.", "d": 2, "k": "reason" },
+    { "t": "mc", "q": "A spacecraft far from any planet switches off its engines. What does it do next?", "o": ["Keeps moving at the same speed in a straight line", "Slows down and stops", "Speeds up", "Turns in a circle"], "a": 0, "why": "With no resultant force there is nothing to change its motion, so by the first law it carries on at constant velocity.", "d": 2, "k": "reason" },
+    { "t": "match", "q": "Match each law to what it says.", "pairs": [["First law", "No resultant force, no change in motion"], ["Second law", "Resultant force = mass × acceleration"], ["Third law", "Forces come in equal and opposite pairs"]], "why": "Law 1 is about inertia, law 2 links force, mass and acceleration, and law 3 is about pairs of forces on two different objects.", "d": 1, "k": "recall" },
+    { "t": "text", "q": "A passenger standing on a bus lurches forward when the bus brakes suddenly. Explain why, using the idea of inertia.", "rubric": [["inertia", "keeps moving", "keep moving", "continues", "carries on"], ["bus slows", "bus stops", "brakes", "decelerat"], ["no force", "nothing to stop", "not enough force", "friction", "unbalanced"]], "min": 2, "model": "The bus slows down because the brakes act on it, but the passenger's body has inertia and keeps moving forward at the earlier speed until a force (grip on a rail, friction from the floor) slows it too.", "why": "The brakes act on the bus, not directly on the passenger. With little force on the passenger's upper body, it carries on moving — that is inertia.", "d": 2, "k": "reason" },
+    { "t": "mc", "q": "A car travels along a straight road at a steady 20 m/s. The engine's forward force is 800 N. How big are the resistive forces (friction and drag) in total?", "o": ["800 N", "0 N", "More than 800 N", "Less than 800 N but not zero"], "a": 0, "why": "Steady speed in a straight line means zero acceleration, so the resultant force is zero. The resistive forces must exactly balance the 800 N driving force.", "d": 3, "k": "reason" }
+  ],
+  "panel": [
+    { "t": "mc", "q": "A horse pulls a cart. A student says: 'By the third law the cart pulls back equally hard, so the cart can never move.' What is the flaw?", "o": ["The two forces act on different objects, so they do not cancel on the cart", "The horse actually pulls harder than the cart pulls back", "The third law does not apply to animals", "The third law only works when nothing is moving"], "a": 0, "why": "The cart's motion depends only on the forces on the cart: the horse's pull forward and friction backward. The cart's pull on the horse acts on the horse, not on the cart.", "d": 3, "k": "reason" },
+    { "t": "text", "q": "On the Moon a hammer weighs about one sixth of its Earth weight. Is it six times easier to stop a moving hammer there? Explain.", "rubric": [["mass", "inertia"], ["same", "unchanged", "does not change", "doesn't change"], ["weight", "gravity"]], "min": 2, "model": "No. Weight is smaller on the Moon, but the hammer's mass — and so its inertia — is unchanged. Stopping it needs the same force for the same deceleration, because F = m × a depends on mass, not weight.", "why": "Weight depends on gravity, but resistance to changes in motion depends on mass, which is the same everywhere.", "d": 3, "k": "reason" },
+    { "t": "mc", "q": "A parachutist falls at a constant speed. Which statement is correct?", "o": ["Air resistance equals her weight", "Air resistance is greater than her weight", "No forces act on her", "Her weight is greater than air resistance"], "a": 0, "why": "Constant velocity means zero resultant force, so the upward air resistance exactly balances the downward weight (terminal velocity).", "d": 2, "k": "reason" }
+  ],
+  "teach": {
+    "topic": "Why a heavy trolley is harder to speed up than a light one",
+    "model": "A push is a force. The more stuff (mass) something has, the more it resists a change in its motion, so the same push speeds it up less. If you push twice as hard it speeds up twice as fast. For example, an empty trolley races away but a full one barely creeps forward with the same push.",
+    "points": [
+      { "k": ["force", "push", "pull"], "ask": "What do you actually mean by a 'force'?" },
+      { "k": ["mass", "heavier", "heavy", "more stuff", "weight"], "ask": "Why does it matter how heavy the trolley is?" },
+      { "k": ["accelerat", "speed up", "speeds up", "faster"], "ask": "So what does the push do to how fast it is going?" },
+      { "k": ["example", "like", "imagine", "trolley", "ball", "car"], "ask": "Can you give me an everyday example so I can picture it?" }
+    ]
+  }
+}

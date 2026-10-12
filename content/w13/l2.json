@@ -1,0 +1,2673 @@
+{
+ "world": 13,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Complete chess rules",
+   "icon": "📜",
+   "hook": "You have only a king and a bishop left against a lone king. Can you ever win? The rules of chess have an answer, and it is not what most people guess.",
+   "explain": [
+    "White always moves first, then the players take turns. You cannot pass. A game ends in one of three ways: checkmate (a win), resignation (a player gives up), or a draw.",
+    "A draw is a tie. There are several kinds. Stalemate is when the player to move is not in check but has no legal move. Players can also agree to a draw. A position repeated three times, or 50 moves by each side with no pawn move and no capture, can be claimed as a draw. If neither side has enough pieces to checkmate, such as king against king, the game is drawn too.",
+    "Good manners matter. Shake hands, do not talk during a game, and in serious play, if you touch a piece you must move it. Moves are written in algebraic notation: a letter for the piece (K, Q, R, B, N; none for pawns), then the square, so Nf3 means a knight goes to f3. An x shows a capture, + means check and # means checkmate."
+   ],
+   "example": {
+    "q": "Black has only a king on h8. White has a king on f7 and a queen on g6. It is Black's turn. What is the result?",
+    "steps": [
+     "Is Black in check? The queen on g6 does not attack h8, and the king on f7 does not either. So no check.",
+     "Can the black king move? g8, g7 and h7 are all attacked by the white queen or king.",
+     "Not in check and no legal move is stalemate."
+    ],
+    "a": "Stalemate, a draw"
+   },
+   "analogies": {
+    "home": "Stalemate is like a board game where you must move but every move is against the rules, so the game is called a tie.",
+    "city": "A one-way traffic jam where no car can move is like a stalemate.",
+    "farm": "A fox with no way to catch the hen and no safe step is stuck. Nobody wins.",
+    "sport": "A match that ends level after both sides have no way to score is a draw."
+   },
+   "mnemonic": "Check and no escape: mate. No check and no move: stalemate.",
+   "terms": [
+    [
+     "Stalemate",
+     "The player to move is not in check but has no legal move. The game is a draw."
+    ],
+    [
+     "Draw",
+     "A game that ends in a tie."
+    ],
+    [
+     "Algebraic notation",
+     "The way moves are written down, like Nf3 or exd5."
+    ],
+    [
+     "Threefold repetition",
+     "The same position three times, which a player can claim as a draw."
+    ]
+   ],
+   "misc": {
+    "wrong": "Stalemate is a win for the player who cannot move.",
+    "right": "Stalemate is a draw. Nobody wins."
+   },
+   "limits": "Rules for time controls, touch-move and some draw claims differ a little between clubs, tournaments and online sites.",
+   "trip": {
+    "wiki": "Rules of chess",
+    "prompt": "Find the list of ways a game can be drawn. How many can you spot?"
+   },
+   "sources": [
+    "Rules of chess",
+    "Stalemate",
+    "Draw (chess)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Who moves first in chess?",
+     "o": [
+      "White",
+      "Black",
+      "The older player",
+      "Whoever has more pieces"
+     ],
+     "a": 0,
+     "why": "White always makes the first move.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is stalemate?",
+     "o": [
+      "The player to move is not in check but has no legal move",
+      "The king is attacked and every escape square is covered",
+      "Both players have only a king left on the board",
+      "A pawn has reached the last row and cannot promote"
+     ],
+     "a": 0,
+     "why": "It is a draw, not a win.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does Nf3 mean?",
+     "o": [
+      "A knight moves to f3",
+      "A pawn moves to f3",
+      "A knight on f3 is captured",
+      "A check on f3"
+     ],
+     "a": 0,
+     "why": "N is the knight and f3 is the square.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does the symbol # show?",
+     "o": [
+      "Checkmate",
+      "A capture",
+      "A check",
+      "A draw"
+     ],
+     "a": 0,
+     "why": "+ is check, # is checkmate, x is a capture.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair of lone pieces on the board cannot checkmate at all?",
+     "o": [
+      "King against king",
+      "King and queen against king",
+      "King and rook against king",
+      "King and pawn against king"
+     ],
+     "a": 0,
+     "why": "Two kings alone cannot give checkmate: a draw.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between checkmate and stalemate.",
+     "rubric": [
+      [
+       "check",
+       "attack"
+      ],
+      [
+       "escape",
+       "legal move",
+       "no move",
+       "cannot move",
+       "no way"
+      ],
+      [
+       "win",
+       "won",
+       "draw",
+       "tie"
+      ]
+     ],
+     "min": 2,
+     "model": "In checkmate the king is attacked and has no escape, so the attacker wins. In stalemate the king is not attacked but the player has no legal move, so the game is a draw.",
+     "why": "Both have no legal move for the player, but only checkmate includes a check.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the symbol to its meaning.",
+     "pairs": [
+      [
+       "x",
+       "Capture"
+      ],
+      [
+       "+",
+       "Check"
+      ],
+      [
+       "#",
+       "Checkmate"
+      ],
+      [
+       "O-O",
+       "Castling kingside"
+      ]
+     ],
+     "why": "Notation uses a few simple symbols.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "White is winning easily, but the move he plays leaves Black with no legal move and not in check. What is the result?",
+     "o": [
+      "A draw by stalemate",
+      "A win for White",
+      "A win for Black",
+      "White must take the move back"
+     ],
+     "a": 0,
+     "why": "The rule says stalemate is a draw, so be careful when ahead.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the game events in a sensible order.",
+     "items": [
+      "White makes the first move",
+      "Black replies",
+      "Players take turns",
+      "A king is checkmated",
+      "The game ends"
+     ],
+     "why": "White starts and the game ends at mate.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a draw by threefold repetition useful?",
+     "o": [
+      "It stops a game that is going in circles",
+      "It lets the stronger side claim a win after three moves",
+      "It gives the player with more pieces an automatic extra turn",
+      "It restarts the game with the pieces back on their squares"
+     ],
+     "a": 0,
+     "why": "If the same position appears again and again, neither side is making progress.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A player is a queen ahead but must be careful. Why?",
+     "o": [
+      "A careless move could stalemate the opponent",
+      "The queen could be captured by a pawn after a few moves",
+      "A player cannot win with a queen unless a rook helps",
+      "Stalemate counts as a win for the player who made the move"
+     ],
+     "a": 0,
+     "why": "Stalemate turns a won game into a draw.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why did chess-makers include stalemate as a draw instead of a win?",
+     "rubric": [
+      [
+       "fair",
+       "balance",
+       "reward",
+       "prevent"
+      ],
+      [
+       "draw",
+       "tie",
+       "not a win",
+       "not win"
+      ],
+      [
+       "trap",
+       "cannot move",
+       "no move",
+       "stuck"
+      ]
+     ],
+     "min": 2,
+     "model": "It keeps the game fair: a player who is stuck but not attacked has not been beaten, and it stops the stronger side winning too easily by trapping a lone king without attacking it.",
+     "why": "A draw rewards defence, and checkmate must include a real attack.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is a draw always a bad result?",
+     "o": [
+      "No, it can be good for the weaker side",
+      "No, a draw is always worse than a loss",
+      "Yes, because it always means you played badly",
+      "Only for the player with the white pieces"
+     ],
+     "a": 0,
+     "why": "A draw against a stronger opponent can be a fine result.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Winning, losing and drawing",
+    "model": "A game ends when a king is checkmated, a player resigns, or it is a draw. A draw can be a stalemate, an agreement, a repeated position or too few pieces. Moves are written down with letters and squares.",
+    "points": [
+     {
+      "k": [
+       "checkmate",
+       "mate"
+      ],
+      "ask": "How do you win?"
+     },
+     {
+      "k": [
+       "draw",
+       "stalemate",
+       "tie"
+      ],
+      "ask": "How can a game be a tie?"
+     },
+     {
+      "k": [
+       "notation",
+       "letter",
+       "square",
+       "write"
+      ],
+      "ask": "How are moves written?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Castling and en passant",
+   "icon": "🏰",
+   "hook": "There is one move in chess where two pieces move at once. And another where a pawn captures a pawn that is not on the square it lands on. What are they?",
+   "explain": [
+    "Castling moves the king two squares towards a rook, and the rook jumps over to the other side of the king. It protects the king and wakes up the rook. Kingside castling is written O-O (king to g1, rook to f1 for White). Queenside castling is O-O-O (king to c1, rook to d1).",
+    "You may castle only if the king and that rook have never moved, there are no pieces between them, the king is not in check, and the king does not pass through or land on a square that is attacked.",
+    "En passant (\"in passing\") is a special pawn capture. If a pawn moves two squares from its start and lands beside an enemy pawn, that enemy pawn may capture it as if it had moved only one square. This must be done on the very next move or the chance is lost."
+   ],
+   "example": {
+    "q": "White pawn on e5. Black plays d7-d5, landing beside it. What can White do?",
+    "steps": [
+     "The black pawn moved two squares and now stands next to the white pawn on the fifth rank.",
+     "White can capture it en passant, on the very next move.",
+     "The white pawn moves diagonally to d6 and the black pawn on d5 is removed: exd6."
+    ],
+    "a": "exd6 e.p."
+   },
+   "analogies": {
+    "home": "Castling is like tucking a treasure into a safe and moving the guard next to it in one go.",
+    "city": "Think of a mayor moving behind the city wall while a guard takes his place beside him.",
+    "farm": "The farmer steps into the barn, and the sheepdog jumps beside him, both in one move.",
+    "sport": "Like a goalkeeper and a defender swapping places quickly to protect the goal."
+   },
+   "mnemonic": "Castle: king two steps, rook hops over. En passant: capture right now or never.",
+   "terms": [
+    [
+     "Castling",
+     "A special move: the king moves two squares and a rook jumps over it."
+    ],
+    [
+     "En passant",
+     "A pawn capture of a pawn that has just moved two squares."
+    ],
+    [
+     "Kingside",
+     "The side of the board with the king, the e-h files."
+    ]
+   ],
+   "misc": {
+    "wrong": "You can castle even if the king is in check.",
+    "right": "You cannot castle out of check, through attacked squares, or into check."
+   },
+   "trip": {
+    "wiki": "Castling",
+    "prompt": "Find the pictures of the king and rook before and after castling. Which squares do they land on?"
+   },
+   "sources": [
+    "Castling",
+    "En passant"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many squares does the king move when castling?",
+     "o": [
+      "Two",
+      "One",
+      "Three",
+      "Four"
+     ],
+     "a": 0,
+     "why": "The king moves two squares towards the rook.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these stops you from castling?",
+     "o": [
+      "The king has already moved",
+      "The rook is on its corner",
+      "Your queen is on the board",
+      "A pawn is next to the king"
+     ],
+     "a": 0,
+     "why": "The king and rook must both be unmoved.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You may castle through a square that is attacked.",
+     "o": [
+      "False; it is not allowed",
+      "True",
+      "True, but only the rook",
+      "True, but only on the queenside"
+     ],
+     "a": 0,
+     "why": "The king may not cross an attacked square.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "White king e1, white rook h1, black rook f8 on an empty f-file. Can White castle kingside?",
+     "o": [
+      "No, the king would cross f1, which is attacked",
+      "Yes, because the king and the rook have never moved",
+      "Yes, as long as the rook is not itself attacked",
+      "No, castling is only allowed on the queenside"
+     ],
+     "a": 0,
+     "why": "The king passes f1, which the rook attacks, so castling is illegal.",
+     "d": 3,
+     "k": "apply",
+     "fen": "5rk1/8/8/8/8/8/8/4K2R w K - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "White pawn e5, Black pawn on d5 has just moved from d7. What is White's en passant capture?",
+     "o": [
+      "exd6",
+      "exd5",
+      "e6",
+      "dxe5"
+     ],
+     "a": 0,
+     "why": "The pawn lands on d6, the square the black pawn jumped over.",
+     "d": 2,
+     "k": "apply",
+     "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "When must en passant be played?",
+     "o": [
+      "On the very next move",
+      "Any time later",
+      "Only at the end of the game",
+      "On the 3rd move"
+     ],
+     "a": 0,
+     "why": "The right is lost if you wait.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why is castling useful in the opening?",
+     "rubric": [
+      [
+       "king",
+       "safe",
+       "safety",
+       "protect"
+      ],
+      [
+       "rook",
+       "develop",
+       "active",
+       "centre",
+       "center",
+       "file"
+      ]
+     ],
+     "min": 2,
+     "model": "It moves the king to safety behind pawns and brings the rook into play in one move.",
+     "why": "Castling does two jobs at once.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "After White castles kingside, on which file does the rook finish? Answer with the number of the file, counting a=1, b=2 ... (f is 6).",
+     "a": 6,
+     "tol": 0,
+     "why": "The rook lands on f1, the f file, which is the 6th file.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the castle to its notation.",
+     "pairs": [
+      [
+       "Kingside castling",
+       "O-O"
+      ],
+      [
+       "Queenside castling",
+       "O-O-O"
+      ],
+      [
+       "Capture",
+       "x"
+      ],
+      [
+       "Checkmate",
+       "#"
+      ]
+     ],
+     "why": "Castling is written with O for the rook-king shape.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Only a pawn can be captured en passant. Why?",
+     "o": [
+      "The rule is about a pawn jumping two squares past an enemy pawn",
+      "Only pawns on the edge of the board can be captured this way",
+      "The rule applies after any pawn move of one square",
+      "It is allowed only in the last ten moves of the game"
+     ],
+     "a": 0,
+     "why": "The rule exists so a pawn cannot dodge the enemy pawn by its double step.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "White wants to castle queenside. A black piece attacks b1, but c1 and d1 are safe, the king is not in check and nothing has moved. Is castling allowed?",
+     "o": [
+      "Yes, only the king's path matters",
+      "No",
+      "Only if the rook moves first",
+      "Only for Black"
+     ],
+     "a": 0,
+     "why": "The king passes d1 and lands on c1. Only those must be safe, b1 may be attacked.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does en passant exist?",
+     "rubric": [
+      [
+       "double",
+       "two squares",
+       "two-step"
+      ],
+      [
+       "pawn",
+       "capture"
+      ],
+      [
+       "avoid",
+       "escape",
+       "dodge",
+       "pass"
+      ]
+     ],
+     "min": 2,
+     "model": "The double step would let a pawn slip past an enemy pawn that could have captured it on one step. En passant keeps that capture available.",
+     "why": "It keeps the double step from helping a pawn escape.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true about castling and check?",
+     "o": [
+      "You cannot castle while in check",
+      "You can castle out of check",
+      "Check makes castling required",
+      "Castling gives check always"
+     ],
+     "a": 0,
+     "why": "A king in check must be saved by other means.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Castling and en passant",
+    "model": "Castling moves the king two squares and the rook jumps to the other side. It needs unmoved pieces, a clear path and no attacks. En passant lets a pawn capture one that jumped two squares, but only straight away.",
+    "points": [
+     {
+      "k": [
+       "king",
+       "two",
+       "squares"
+      ],
+      "ask": "What moves in castling?"
+     },
+     {
+      "k": [
+       "rook",
+       "jump",
+       "over"
+      ],
+      "ask": "What happens to the rook?"
+     },
+     {
+      "k": [
+       "pawn",
+       "next move",
+       "immediately",
+       "right away"
+      ],
+      "ask": "When can you play en passant?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Pawn promotion",
+   "icon": "🎖️",
+   "hook": "A tiny pawn can walk all the way across the board and change into something much stronger. What do you think it becomes?",
+   "explain": [
+    "When a pawn reaches the far end of the board, the last rank, it must promote. The player replaces it with a queen, rook, bishop or knight of the same colour. It cannot stay a pawn, and it cannot become a king.",
+    "Most players choose a queen, because it is the strongest piece. So you can have two or more queens on the board! Choosing a knight, rook or bishop is called underpromotion. It is rare, but sometimes it is better: a knight can give a check that a queen cannot, or it can avoid a stalemate.",
+    "A pawn that is close to promoting is a big danger, so the other side must stop it. In notation, promotion is written like a8=Q."
+   ],
+   "example": {
+    "q": "A white pawn is on a7 and the square a8 is empty. Black has a king on h8 and nothing else on the a8-h8 line. What happens after a8=Q?",
+    "steps": [
+     "The pawn reaches the last rank and is replaced by a queen.",
+     "The new queen on a8 looks along the 8th rank to h8.",
+     "It gives check, written a8=Q+."
+    ],
+    "a": "A new queen with check"
+   },
+   "analogies": {
+    "home": "It is like a child reaching the top of the school and becoming a prefect.",
+    "city": "A messenger who reaches the capital is promoted to a minister.",
+    "farm": "A seedling that reaches the top of the field becomes a tall plant.",
+    "sport": "A young player who scores in the last minute is named captain."
+   },
+   "mnemonic": "Pawn walks to rank eight, then it gets a crown.",
+   "terms": [
+    [
+     "Promotion",
+     "A pawn that reaches the last rank is replaced by a queen, rook, bishop or knight."
+    ],
+    [
+     "Last rank",
+     "The row farthest from the pawn's starting side."
+    ],
+    [
+     "Underpromotion",
+     "Promoting to a piece other than the queen."
+    ]
+   ],
+   "misc": {
+    "wrong": "A pawn that promotes must become a queen or a king.",
+    "right": "It can become a queen, rook, bishop or knight, but never a king or a pawn."
+   },
+   "trip": {
+    "wiki": "Promotion (chess)",
+    "prompt": "Look at the table of promotion choices. Which piece is chosen most often?"
+   },
+   "sources": [
+    "Promotion (chess)",
+    "Pawn (chess)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which pieces can a pawn promote to?",
+     "o": [
+      "Queen, rook, bishop or knight",
+      "Only a queen",
+      "Only the king",
+      "Any piece, including a king"
+     ],
+     "a": 0,
+     "why": "Four choices, never a king.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Where must a white pawn be to promote?",
+     "o": [
+      "The 8th rank",
+      "The 5th rank",
+      "The 1st rank",
+      "The e file"
+     ],
+     "a": 0,
+     "why": "It reaches the far end.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A white pawn is on e2 and nothing blocks it. What is the fewest number of moves it needs to reach e8?",
+     "a": 5,
+     "tol": 0,
+     "why": "e2-e4 uses the double step, then e5, e6, e7, e8: 5 moves.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do most players promote to a queen?",
+     "o": [
+      "It is the strongest piece",
+      "It is the cheapest",
+      "It looks best",
+      "It is the rule"
+     ],
+     "a": 0,
+     "why": "A queen moves like a rook and bishop.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Can you have two queens at the same time?",
+     "o": [
+      "Yes, if you promote a pawn",
+      "No, never",
+      "Only in a draw",
+      "Only the white side"
+     ],
+     "a": 0,
+     "why": "Promotion can add more queens.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the move a7-a8 promoting to a queen with check written as?",
+     "o": [
+      "a8=Q+",
+      "Qa8",
+      "a8x",
+      "O-O"
+     ],
+     "a": 0,
+     "why": "= shows promotion and + shows check.",
+     "d": 2,
+     "k": "apply",
+     "fen": "7k/P7/8/8/8/8/8/K7 w - - 0 1"
+    },
+    {
+     "t": "text",
+     "q": "Give a reason someone might promote to a knight instead of a queen.",
+     "rubric": [
+      [
+       "check",
+       "fork",
+       "attack",
+       "win a piece"
+      ],
+      [
+       "stalemate",
+       "draw",
+       "avoid"
+      ],
+      [
+       "knight",
+       "jump",
+       "l shape",
+       "move differently"
+      ]
+     ],
+     "min": 1,
+     "model": "A knight can give a check or fork that a queen cannot, or it can avoid a stalemate that a queen would cause.",
+     "why": "Underpromotion is rare but can solve a special problem.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put a pawn's journey in order for a white pawn.",
+     "items": [
+      "It starts on the second rank",
+      "It advances up the board",
+      "It reaches the eighth rank",
+      "It is replaced by a new piece"
+     ],
+     "why": "Promotion happens at the end of the journey.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A white pawn on b7 can promote on b8, but a black rook on b8 blocks it. Can it still promote?",
+     "o": [
+      "Only by capturing an enemy piece on a8 or c8",
+      "Yes, a pawn can jump over the rook to promote",
+      "Yes, by capturing the rook straight ahead",
+      "No, a blocked pawn can never promote"
+     ],
+     "a": 0,
+     "why": "Pawns do not capture forwards; a diagonal capture onto the last rank also promotes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pawn on the 7th rank is called \"dangerous\". Why?",
+     "o": [
+      "It is one step from becoming a queen",
+      "It is far from the king and cannot be defended",
+      "It blocks the other pawns from moving forward",
+      "It is protected by every piece on the board"
+     ],
+     "a": 0,
+     "why": "The other side must stop it quickly.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a pawn advance toward promotion even when it is far away?",
+     "o": [
+      "Because a promoted piece can change the balance of the game",
+      "Because a pawn that moves forward early can never be captured",
+      "Because every pawn must move at least once before the endgame",
+      "Because pawns are worth more than a queen when they advance"
+     ],
+     "a": 0,
+     "why": "A new queen is a large gain.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What could go wrong if you always promote to a queen?",
+     "rubric": [
+      [
+       "stalemate",
+       "draw",
+       "no move"
+      ],
+      [
+       "knight",
+       "check",
+       "fork"
+      ]
+     ],
+     "min": 1,
+     "model": "A queen can create a stalemate in some endings, and in rare cases a knight gives a winning check or fork a queen cannot.",
+     "why": "Sometimes a lower piece wins where a queen does not.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pawn on a7 with a black bishop on b8. What can the white pawn do?",
+     "o": [
+      "Capture the bishop on b8 and promote",
+      "Move straight ahead to b8 and promote",
+      "Jump over the bishop to c8",
+      "Stay where it is, because pawns cannot capture"
+     ],
+     "a": 0,
+     "why": "axb8 is a capture that promotes.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Pawn promotion",
+    "model": "When a pawn reaches the last rank it must change into a queen, rook, bishop or knight. Most players pick a queen. Sometimes another piece is better.",
+    "points": [
+     {
+      "k": [
+       "last",
+       "eighth",
+       "8th",
+       "end",
+       "far"
+      ],
+      "ask": "Where does a pawn promote?"
+     },
+     {
+      "k": [
+       "queen",
+       "rook",
+       "bishop",
+       "knight"
+      ],
+      "ask": "What can it change into?"
+     },
+     {
+      "k": [
+       "strongest",
+       "queen",
+       "why"
+      ],
+      "ask": "Why pick a queen?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Opening principles",
+   "icon": "🚀",
+   "hook": "In the first ten moves of a chess game, what should you be trying to do? Run for the king? Or something slower?",
+   "explain": [
+    "The opening is the first stage of the game. Good habits help: control the centre, develop your pieces, and make your king safe. Do not move the same piece again and again for no reason, and do not bring the queen out too early because it can be chased.",
+    "Moving pawns such as e4 or d4 take central squares and open lines for bishops and the queen. Then bring out knights and bishops. Then castle.",
+    "Each move should have a purpose. Do not make moves just to move. A good opening gives you a plan for the middle of the game."
+   ],
+   "example": {
+    "q": "1.e4 e5 2.Nf3 Nc6 3.Bc4. Which opening principles does White follow?",
+    "steps": [
+     "e4 takes the centre.",
+     "Nf3 and Bc4 develop a knight and a bishop.",
+     "The pieces also prepare for castling."
+    ],
+    "a": "Centre, development, and getting ready to castle"
+   },
+   "analogies": {
+    "home": "Before you cook, you set the table and bring out the pots. The opening is that preparation.",
+    "city": "A city builds roads and a centre first, before it builds the far districts.",
+    "farm": "You prepare the field and fetch your tools before you plant.",
+    "sport": "In football, you spread to your positions before attacking."
+   },
+   "mnemonic": "Centre, Develop, Castle: C-D-C. Do not rush the queen.",
+   "terms": [
+    [
+     "Opening",
+     "The first moves of a game."
+    ],
+    [
+     "Development",
+     "Bringing pieces from their start squares to active squares."
+    ],
+    [
+     "Tempo",
+     "One move, or the idea of time in chess."
+    ]
+   ],
+   "misc": {
+    "wrong": "It is good to bring your queen out first.",
+    "right": "An early queen can be chased by weaker pieces, losing time."
+   },
+   "trip": {
+    "wiki": "Chess opening",
+    "prompt": "Look at the list of opening principles. Which one do you do first?"
+   },
+   "sources": [
+    "Chess opening",
+    "Chess strategy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a good opening principle?",
+     "o": [
+      "Control the centre",
+      "Move the same piece many times",
+      "Attack with the queen first",
+      "Move edge pawns first"
+     ],
+     "a": 0,
+     "why": "The centre gives pieces more room.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece should you usually NOT bring out too early?",
+     "o": [
+      "The queen",
+      "A knight",
+      "A bishop",
+      "A central pawn"
+     ],
+     "a": 0,
+     "why": "It can be chased, and you lose time.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does \"develop\" mean in chess?",
+     "o": [
+      "Move pieces to active squares",
+      "Capture as many pawns as possible early on",
+      "Move all the pawns before any other piece",
+      "Place the king in the middle of the board"
+     ],
+     "a": 0,
+     "why": "Development means getting pieces into play.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order a good opening plan.",
+     "items": [
+      "Take the centre with a pawn",
+      "Bring out the knights",
+      "Bring out the bishops",
+      "Castle"
+     ],
+     "why": "Centre, then develop, then king safety.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You have moved a knight to f3. What is a good next move?",
+     "o": [
+      "Develop another piece",
+      "Move the same knight again",
+      "Push an edge pawn",
+      "Retreat the queen"
+     ],
+     "a": 0,
+     "why": "Use each move to bring out a new piece.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we avoid pushing many pawns on the edge early?",
+     "o": [
+      "They do not help the centre or development",
+      "They are against the rules of the opening",
+      "They always give an immediate check",
+      "They weaken the king more than any other pawn move"
+     ],
+     "a": 0,
+     "why": "Edge pawns do little to control the middle.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "You move your queen 3 times in the opening while your opponent develops 3 pieces. How many more pieces has your opponent developed?",
+     "a": 3,
+     "tol": 0,
+     "why": "You developed none; they developed 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why developing a piece is more useful than moving a developed piece again in the opening.",
+     "rubric": [
+      [
+       "new",
+       "another",
+       "more pieces",
+       "other"
+      ],
+      [
+       "active",
+       "play",
+       "attack",
+       "centre",
+       "center"
+      ],
+      [
+       "time",
+       "tempo",
+       "waste"
+      ]
+     ],
+     "min": 2,
+     "model": "Each move should add a new piece to the game. Moving the same piece again wastes time while the opponent brings out more pieces.",
+     "why": "The player who develops faster gets more activity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which sequence follows the principles best?",
+     "o": [
+      "e4, Nf3, Bc4, O-O",
+      "a4, h4, Ra3, Rh3",
+      "Qh5, Qf3, Qg3, Qh4",
+      "Nh3, Ng1, Nh3, Ng1"
+     ],
+     "a": 0,
+     "why": "It controls the centre, develops, and castles.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the aim of the opening in one sentence?",
+     "o": [
+      "To get a good, active position and a safe king",
+      "To win a pawn as quickly as possible",
+      "To trade queens before move ten",
+      "To make sure the opponent castles first"
+     ],
+     "a": 0,
+     "why": "The opening prepares the middle game.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A beginner plays 1.e4 e5 2.Qh5. Why is that a risk?",
+     "o": [
+      "The queen can be chased, losing time",
+      "The queen is trapped and cannot move at all",
+      "It is illegal to move the queen before the knights",
+      "Black is able to give checkmate at once"
+     ],
+     "a": 0,
+     "why": "Minor pieces can attack the queen and gain tempi.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the centre important?",
+     "rubric": [
+      [
+       "move",
+       "mobility",
+       "squares",
+       "reach"
+      ],
+      [
+       "control",
+       "centre",
+       "center"
+      ],
+      [
+       "pieces",
+       "knight",
+       "bishop"
+      ]
+     ],
+     "min": 1,
+     "model": "Pieces in the centre can reach more squares, so they control more of the board.",
+     "why": "A piece on the edge has far fewer moves.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If both players follow all the principles, what usually follows?",
+     "o": [
+      "A balanced game decided later",
+      "A forced win for the side with the first move",
+      "An immediate stalemate on the next move",
+      "A draw agreed at move five"
+     ],
+     "a": 0,
+     "why": "Principles help but do not guarantee a win.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Opening principles",
+    "model": "In the opening: take the centre, develop knights and bishops, and castle to protect the king. Avoid moving one piece many times or bringing the queen out too early.",
+    "points": [
+     {
+      "k": [
+       "centre",
+       "center",
+       "middle"
+      ],
+      "ask": "What should I control?"
+     },
+     {
+      "k": [
+       "develop",
+       "knights",
+       "bishops",
+       "pieces out"
+      ],
+      "ask": "Which pieces do I move?"
+     },
+     {
+      "k": [
+       "castle",
+       "king",
+       "safe"
+      ],
+      "ask": "How do I look after my king?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Piece development",
+   "icon": "🐎",
+   "hook": "Your knight sits at home on g1, hidden behind a pawn. Is it helping you? What if it jumps out?",
+   "explain": [
+    "Developing a piece means moving it from its home square to a place where it does more. Knights usually come out first, to squares like f3 and c3. They look towards the centre. A knight on the edge sees few squares, which is why people say: \"a knight on the rim is dim\".",
+    "Bishops come out next. A pawn move such as e4 or d4 opens a diagonal for a bishop. Place bishops on open diagonals where they can see many squares.",
+    "After that, castle, and then connect your rooks so they can protect each other along the first rank. Try to move each piece only once or twice in the opening."
+   ],
+   "example": {
+    "q": "After 1.e4 e5, which is the better development: 2.Nf3 or 2.Na3?",
+    "steps": [
+     "Nf3 goes towards the centre and attacks the e5 pawn.",
+     "Na3 puts the knight on the edge, where it controls few squares.",
+     "So 2.Nf3 is the better development."
+    ],
+    "a": "2.Nf3"
+   },
+   "analogies": {
+    "home": "You take toys out of the box so you can play with them. Pieces at home are not playing.",
+    "city": "A fire engine in the garage cannot help. It must go out to the street.",
+    "farm": "A sheepdog tied to the fence cannot herd. It must be near the flock.",
+    "sport": "A substitute on the bench does not help the team until he comes on to the pitch."
+   },
+   "mnemonic": "Knights before bishops, then castle, then connect.",
+   "terms": [
+    [
+     "Development",
+     "Moving a piece off its start square to a useful one."
+    ],
+    [
+     "Open diagonal",
+     "A diagonal with no blocking pawns, good for a bishop."
+    ],
+    [
+     "Connect the rooks",
+     "Clear the first rank so the rooks protect each other."
+    ]
+   ],
+   "misc": {
+    "wrong": "A knight on the edge is as strong as one in the centre.",
+    "right": "A knight in the centre reaches 8 squares, but on the edge only 4 or fewer."
+   },
+   "trip": {
+    "wiki": "Chess opening",
+    "prompt": "Look at the Italian Game diagram. Which pieces are developed after 3 moves?"
+   },
+   "sources": [
+    "Chess opening",
+    "Italian Game"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which squares are good first squares for the white knights?",
+     "o": [
+      "f3 and c3",
+      "a3 and h3",
+      "b3 and g3",
+      "a1 and h1"
+     ],
+     "a": 0,
+     "why": "f3 and c3 look at the centre.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How many squares does a knight attack from e4 on an empty board?",
+     "a": 8,
+     "tol": 0,
+     "why": "From e4 the knight has 8 jumps.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many squares does a knight attack from h4 on an empty board?",
+     "a": 4,
+     "tol": 0,
+     "why": "On the edge there are only 4: f3, f5, g2 and g6.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does 1.e4 help the bishop on f1?",
+     "o": [
+      "It opens a diagonal",
+      "It blocks the bishop",
+      "It captures a pawn",
+      "It checks the king"
+     ],
+     "a": 0,
+     "why": "The e-pawn moved away from the bishop's diagonal.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the better development?",
+     "o": [
+      "Nf3",
+      "Na3",
+      "Nh3",
+      "Rg1"
+     ],
+     "a": 0,
+     "why": "Nf3 goes towards the centre.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does \"connect the rooks\" mean?",
+     "o": [
+      "No pieces stand between them on the first rank",
+      "The two rooks stand on the same file",
+      "Each rook stands next to the queen",
+      "The rooks have been traded off the board"
+     ],
+     "a": 0,
+     "why": "They then defend each other.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the usual development of White's kingside pieces.",
+     "items": [
+      "Pawn to e4",
+      "Knight to f3",
+      "Bishop to c4",
+      "Castle kingside"
+     ],
+     "why": "Open lines, develop, castle.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A bishop is blocked by its own pawn. What is the usual remedy?",
+     "o": [
+      "Move the pawn to open a diagonal",
+      "Move the king",
+      "Trade the bishop for nothing",
+      "Move a rook"
+     ],
+     "a": 0,
+     "why": "Free the bishop by moving the pawn.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a knight on the rim is weaker than one in the centre.",
+     "rubric": [
+      [
+       "fewer",
+       "less",
+       "few",
+       "smaller"
+      ],
+      [
+       "squares",
+       "moves",
+       "attack",
+       "reach",
+       "control"
+      ],
+      [
+       "edge",
+       "rim",
+       "centre",
+       "center"
+      ]
+     ],
+     "min": 2,
+     "model": "A knight on the edge has fewer jumps, so it attacks fewer squares. In the centre it can reach eight.",
+     "why": "The same piece does more in the middle.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why not move one knight four times in the opening?",
+     "o": [
+      "The other pieces stay at home, so you fall behind",
+      "The knight runs out of squares to move to",
+      "The rules forbid moving a knight twice",
+      "The knight loses strength each time it moves"
+     ],
+     "a": 0,
+     "why": "Spend moves on bringing new pieces out.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You can develop a bishop on a good diagonal or a rook on the edge. Which is better early?",
+     "o": [
+      "The bishop",
+      "The rook",
+      "Neither",
+      "Both equally"
+     ],
+     "a": 0,
+     "why": "Bishops need open diagonals now; rooks need open files later.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a lead in development an advantage?",
+     "rubric": [
+      [
+       "more pieces",
+       "more active",
+       "attack",
+       "ready"
+      ],
+      [
+       "opponent",
+       "behind",
+       "slow",
+       "tempo",
+       "time"
+      ],
+      [
+       "attack",
+       "threat",
+       "exploit",
+       "centre"
+      ]
+     ],
+     "min": 1,
+     "model": "With more pieces in play, you can make threats before your opponent can defend.",
+     "why": "Having extra active pieces creates attacks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which move after 1.e4 e5 2.Nf3 Nc6 develops a bishop towards the f7 square?",
+     "o": [
+      "Bc4",
+      "Be3",
+      "Bf4",
+      "Ba6"
+     ],
+     "a": 0,
+     "why": "Bc4 aims along the diagonal at f7.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Piece development",
+    "model": "Developing means bringing pieces to active squares. Knights go towards the centre, bishops go to open diagonals, then castle and connect the rooks. A knight on the edge sees little.",
+    "points": [
+     {
+      "k": [
+       "knight",
+       "f3",
+       "c3"
+      ],
+      "ask": "Which piece first?"
+     },
+     {
+      "k": [
+       "bishop",
+       "diagonal"
+      ],
+      "ask": "What do bishops want?"
+     },
+     {
+      "k": [
+       "castle",
+       "rook",
+       "connect"
+      ],
+      "ask": "What comes after?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Control of the centre",
+   "icon": "🎯",
+   "hook": "Four squares in the middle of the board: d4, e4, d5 and e5. Why do chess players fight over them?",
+   "explain": [
+    "The centre is the four squares d4, e4, d5 and e5, with the squares around them. A piece in the centre can reach more squares than a piece on the edge. It can quickly go to either side of the board.",
+    "You can control the centre in two ways. You can put pawns there (e4, d4), which also attack nearby squares. Or you can attack the centre from a distance with pieces like bishops and knights.",
+    "The centre also helps your attack and defence. If you have more control there, your opponent has less room to move."
+   ],
+   "example": {
+    "q": "A knight on d4 and one on a1. Which attacks more squares?",
+    "steps": [
+     "The knight on d4 has 8 jumps.",
+     "The knight on a1 is in a corner with only 2 jumps (b3 and c2).",
+     "The central knight is much stronger."
+    ],
+    "a": "The knight on d4 attacks 8 squares, the one on a1 only 2"
+   },
+   "analogies": {
+    "home": "The living room is the middle of the house: from there, you can reach every room fast.",
+    "city": "A central station connects many roads. A station on the edge connects few.",
+    "farm": "A well in the middle of the farm can serve every field.",
+    "sport": "In basketball and football, the centre of the pitch is where the game flows."
+   },
+   "mnemonic": "Centre squares: d4, e4, d5, e5. From the middle, go everywhere.",
+   "terms": [
+    [
+     "Centre",
+     "d4, e4, d5, e5, the four middle squares."
+    ],
+    [
+     "Occupy",
+     "To put a piece or pawn on a square."
+    ],
+    [
+     "Control",
+     "To attack a square so the opponent cannot use it safely."
+    ]
+   ],
+   "misc": {
+    "wrong": "The centre only matters in the opening.",
+    "right": "Control of the centre helps all through the game, though the plan can change."
+   },
+   "trip": {
+    "wiki": "Chess strategy",
+    "prompt": "Look for the section about the centre. How many ways are listed to control it?"
+   },
+   "sources": [
+    "Chess strategy",
+    "Chess opening"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which of these squares is a centre square?",
+     "o": [
+      "e4",
+      "a1",
+      "h8",
+      "b2"
+     ],
+     "a": 0,
+     "why": "The four centre squares are d4, e4, d5, e5.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which pawn move takes space in the centre for White?",
+     "o": [
+      "e2-e4",
+      "a2-a4",
+      "h2-h4",
+      "b2-b3"
+     ],
+     "a": 0,
+     "why": "e4 stands on a centre square.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How many centre squares are there?",
+     "a": 4,
+     "tol": 0,
+     "why": "d4, e4, d5, e5.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How many squares does a knight on d4 attack on an empty board?",
+     "a": 8,
+     "tol": 0,
+     "why": "All eight jumps stay on the board.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a bishop in the centre stronger than one in the corner?",
+     "o": [
+      "It sees more squares on its diagonals",
+      "It is protected by more pawns than any other piece",
+      "It can change colour when it moves",
+      "It cannot be captured while in the centre"
+     ],
+     "a": 0,
+     "why": "More squares means more power.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a way to control the centre without a pawn there?",
+     "o": [
+      "Place a knight on f3 to attack d4 and e5",
+      "Put a rook on a1 to look along the first rank",
+      "Move the king to the centre of the board",
+      "Push the a-pawn and h-pawn first"
+     ],
+     "a": 0,
+     "why": "A knight on f3 attacks d4 and e5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is it good to control the centre?",
+     "rubric": [
+      [
+       "more squares",
+       "more room",
+       "space",
+       "reach",
+       "mobility"
+      ],
+      [
+       "quickly",
+       "either side",
+       "both sides",
+       "faster"
+      ],
+      [
+       "attack",
+       "defend",
+       "defence",
+       "defense"
+      ]
+     ],
+     "min": 2,
+     "model": "Pieces in the centre can reach both sides quickly, attack more squares, and take space away from the opponent.",
+     "why": "The centre is a hub.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the piece to how many squares it attacks from d4 on an empty board.",
+     "pairs": [
+      [
+       "Knight",
+       "8"
+      ],
+      [
+       "Bishop",
+       "13"
+      ],
+      [
+       "Rook",
+       "14"
+      ],
+      [
+       "Queen",
+       "27"
+      ]
+     ],
+     "why": "On d4: knight 8, bishop 13, rook 14, queen 27.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "After 1.e4 e5, White plays 2.d4. What does this do?",
+     "o": [
+      "It fights for the centre",
+      "It blocks the bishop",
+      "It gives checkmate",
+      "It protects the king"
+     ],
+     "a": 0,
+     "why": "The d4 pawn attacks e5 and claims the centre.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A friend says \"never move edge pawns\". What is the best correction?",
+     "o": [
+      "Centre pawns usually matter more early on",
+      "Edge pawns are against the rules in the opening",
+      "Edge pawns can never be useful in any game",
+      "Only edge pawns are able to promote"
+     ],
+     "a": 0,
+     "why": "Edge pawns are not forbidden; they are just usually less urgent.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A piece in the corner vs a piece in the centre. Which has more mobility?",
+     "o": [
+      "The centre piece",
+      "The corner piece",
+      "They are equal",
+      "Corner pieces can jump"
+     ],
+     "a": 0,
+     "why": "More central means more squares.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can you control the centre if you have no pawn there?",
+     "rubric": [
+      [
+       "piece",
+       "knight",
+       "bishop",
+       "queen",
+       "rook"
+      ],
+      [
+       "attack",
+       "aim",
+       "target",
+       "look at",
+       "control"
+      ]
+     ],
+     "min": 1,
+     "model": "Pieces can attack centre squares from a distance. Knights on c3 or f3 and bishops on long diagonals often do this.",
+     "why": "Control is not the same as occupation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a risk of building a large centre?",
+     "o": [
+      "The opponent can attack it later",
+      "It is illegal",
+      "It blocks castling for ever",
+      "It cannot be captured"
+     ],
+     "a": 0,
+     "why": "A pawn centre can become a target.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Control of the centre",
+    "model": "The four middle squares are d4, e4, d5 and e5. Pieces there reach more squares and can go to both sides. You can control the centre with pawns or with pieces.",
+    "points": [
+     {
+      "k": [
+       "d4",
+       "e4",
+       "d5",
+       "e5",
+       "middle",
+       "four"
+      ],
+      "ask": "Which squares are the centre?"
+     },
+     {
+      "k": [
+       "more squares",
+       "mobility",
+       "reach",
+       "move"
+      ],
+      "ask": "Why is the centre good?"
+     },
+     {
+      "k": [
+       "pawn",
+       "knight",
+       "bishop"
+      ],
+      "ask": "How do I control it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "King safety",
+   "icon": "🛡️",
+   "hook": "In a battle, the leader is protected carefully. In chess, what protects the king?",
+   "explain": [
+    "The king is the one piece you cannot afford to lose. In the opening and middle game the king is safest in a corner, behind pawns. Castling gets the king there fast.",
+    "Pawns in front of the king act like a wall. If you move the pawns in front of your castled king, you make holes that an attacker can use. Keep a pawn shield of three pawns.",
+    "A common danger is the back rank. If the king is behind its pawns and the first rank is empty of defenders, a rook or queen can checkmate on the back rank. A small pawn move such as h3, called \"luft\", gives the king an escape square. In the endgame the king becomes active and should come to the centre."
+   ],
+   "example": {
+    "q": "White king e1, rook a1, Black king g8 with pawns f7, g7, h7. White to move. What is the best move?",
+    "steps": [
+     "The black king has no escape squares because his own pawns block the 7th rank.",
+     "Ra8 gives check along the 8th rank.",
+     "Nothing can block or capture, so it is checkmate: Ra8#."
+    ],
+    "a": "Ra8#"
+   },
+   "analogies": {
+    "home": "You lock the front door and close the windows to keep your home safe.",
+    "city": "A city keeps its leader inside the palace behind walls.",
+    "farm": "A farmer keeps the animals in a barn behind a fence.",
+    "sport": "A goalkeeper stays behind the defenders to protect the goal."
+   },
+   "mnemonic": "Castle early; keep the pawn shield; make luft.",
+   "terms": [
+    [
+     "Pawn shield",
+     "Pawns in front of a castled king."
+    ],
+    [
+     "Back-rank mate",
+     "A checkmate on the first or last rank, where the king is blocked by its own pawns."
+    ],
+    [
+     "Luft",
+     "An escape square for the king, made by moving a pawn."
+    ]
+   ],
+   "misc": {
+    "wrong": "The king should always go to the centre.",
+    "right": "In the opening and middle game the king should be safe; in the endgame it becomes active."
+   },
+   "trip": {
+    "wiki": "Back-rank checkmate",
+    "prompt": "Find a diagram of a back-rank mate. What stops the king from escaping?"
+   },
+   "sources": [
+    "Checkmate",
+    "Castling",
+    "Chess strategy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Where is the king usually safest in the opening?",
+     "o": [
+      "Castled behind his pawns",
+      "In the centre",
+      "Far in front",
+      "On a light square"
+     ],
+     "a": 0,
+     "why": "Castling tucks the king away.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a back-rank mate?",
+     "o": [
+      "A mate on the first or last rank with the king blocked by his own pawns",
+      "A mate delivered only by a pawn on the second rank",
+      "Any mate that happens on the e file",
+      "A mate that can only be given with a knight"
+     ],
+     "a": 0,
+     "why": "The king cannot step forward.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "White king e1 and rook a1. Black king g8, pawns f7 g7 h7. Which move checkmates?",
+     "o": [
+      "Ra8#",
+      "Ra7",
+      "Ra6",
+      "Kd2"
+     ],
+     "a": 0,
+     "why": "The rook checks along the 8th rank and the pawns block escape.",
+     "d": 2,
+     "k": "apply",
+     "fen": "6k1/5ppp/8/8/8/8/8/R3K3 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Which pawn move makes luft for a castled king?",
+     "o": [
+      "h3 (or h6)",
+      "a3",
+      "b4",
+      "Qd3"
+     ],
+     "a": 0,
+     "why": "It gives the king the h2 square.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You castled kingside. Which pawn moves weaken your king the most?",
+     "o": [
+      "The pawns in front of the king, like f, g and h",
+      "The pawns on the a and b files",
+      "The pawns on the b and c files",
+      "The pawn on the a file only"
+     ],
+     "a": 0,
+     "why": "They form the shield.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it dangerous to leave your king in the centre in the opening?",
+     "rubric": [
+      [
+       "open",
+       "attack",
+       "exposed",
+       "danger",
+       "check"
+      ],
+      [
+       "centre",
+       "center",
+       "middle"
+      ],
+      [
+       "castle",
+       "pieces",
+       "lines",
+       "files"
+      ]
+     ],
+     "min": 2,
+     "model": "In the centre the king can be attacked along open files and diagonals before you have time to bring pieces to help.",
+     "why": "Castle early.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps for a safe king.",
+     "items": [
+      "Develop the knight and bishop",
+      "Castle",
+      "Keep the pawn shield",
+      "Make luft if needed"
+     ],
+     "why": "A sensible order of habits.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a pawn shield?",
+     "o": [
+      "The pawns in front of a castled king",
+      "A pawn that promotes",
+      "A pawn on the edge",
+      "A pawn that captures the king"
+     ],
+     "a": 0,
+     "why": "They block enemy lines to the king.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In the endgame, why can the king go to the centre?",
+     "o": [
+      "There are fewer pieces to attack him",
+      "Kings are always safest in the centre",
+      "The queen allows the king to leave home",
+      "The rules say the king must be active"
+     ],
+     "a": 0,
+     "why": "With few pieces, the king is safe and helps the pawns.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What defends against a back-rank mate?",
+     "o": [
+      "Make luft or keep a rook on the first rank",
+      "Move the queen far away from the king",
+      "Push an edge pawn forward",
+      "Trade the rooks as soon as possible"
+     ],
+     "a": 0,
+     "why": "Either an escape square or a defender stops it.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In 1.f3 e5 2.g4 Qh4#, why is it checkmate?",
+     "o": [
+      "The f and g pawns left, so the e1-h4 diagonal is open to the king",
+      "The queen jumped over the pawns to reach h4",
+      "Pawns cannot block a check from a queen",
+      "The king stood on a square of the wrong colour"
+     ],
+     "a": 0,
+     "why": "Moving the f and g pawns weakened the king (Fool's mate).",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How does luft help against back-rank mate?",
+     "rubric": [
+      [
+       "escape",
+       "flight",
+       "square",
+       "room"
+      ],
+      [
+       "king",
+       "move"
+      ],
+      [
+       "check",
+       "attack",
+       "rook",
+       "mate"
+      ]
+     ],
+     "min": 2,
+     "model": "Luft gives the king an escape square, so a rook or queen check on the back rank is not mate.",
+     "why": "A pawn move gives the king room.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can too many pawn moves in front of the king be risky?",
+     "o": [
+      "They create holes the opponent can use",
+      "They block the rook from reaching an open file",
+      "They promote too early",
+      "They always cause stalemate"
+     ],
+     "a": 0,
+     "why": "The shield protects the king.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "King safety",
+    "model": "Castle early so the king sits behind a pawn shield. Do not move the shield pawns without a reason. A back-rank mate is stopped by making luft.",
+    "points": [
+     {
+      "k": [
+       "castle"
+      ],
+      "ask": "How do I move the king to safety?"
+     },
+     {
+      "k": [
+       "pawn",
+       "shield",
+       "wall"
+      ],
+      "ask": "What protects the king?"
+     },
+     {
+      "k": [
+       "luft",
+       "back rank",
+       "escape"
+      ],
+      "ask": "What stops a back-rank mate?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Basic chess tactics",
+   "icon": "💥",
+   "hook": "A good chess player often wins a piece with a single clever move. How can one move attack two things at once?",
+   "explain": [
+    "A tactic is a short plan that wins material or checkmates. Tactics begin with seeing what is attacked and what is not protected. A piece that nobody protects is \"hanging\". Before every move, ask: what is my opponent threatening, and what can I attack?",
+    "A fork is when one piece attacks two or more enemy pieces at the same time. Knights are great forkers because they attack in an L shape that few pieces can guard against. A pin is when a piece cannot move without exposing a more valuable piece behind it. A skewer is like a pin the other way round: the valuable piece must move and the piece behind it is captured.",
+    "The best way to improve is to check three things on every move: checks, captures and threats. Then check what the opponent could do in reply."
+   ],
+   "example": {
+    "q": "White knight on d5, Black king on e8, Black rook on a8. White to move. What wins a rook?",
+    "steps": [
+     "Look for a knight move that attacks the king and the rook together.",
+     "Nc7+ attacks e8 and a8 from c7.",
+     "The king must deal with the check, so White takes the rook next: Nxa8."
+    ],
+    "a": "Nc7+ then Nxa8"
+   },
+   "analogies": {
+    "home": "A parent who looks at two noisy children at once is forking them.",
+    "city": "A traffic officer who blocks two roads with one cone is making a fork.",
+    "farm": "A scarecrow that guards two fields at once is like a fork.",
+    "sport": "A goalkeeper who covers two attackers by standing between them uses the same idea."
+   },
+   "mnemonic": "Fork: two at once. Pin: stuck in line. Skewer: big one moves, small one falls.",
+   "terms": [
+    [
+     "Fork",
+     "One piece attacks two or more pieces at once."
+    ],
+    [
+     "Pin",
+     "A piece cannot move without exposing something more valuable behind it."
+    ],
+    [
+     "Hanging piece",
+     "A piece that is attacked and not protected."
+    ]
+   ],
+   "misc": {
+    "wrong": "Tactics are luck.",
+    "right": "Tactics come from patterns you can learn and look for."
+   },
+   "trip": {
+    "wiki": "Fork (chess)",
+    "prompt": "Find a picture of a knight fork. Which two pieces does the knight attack?"
+   },
+   "sources": [
+    "Fork (chess)",
+    "Pin (chess)",
+    "Chess tactic"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a fork?",
+     "o": [
+      "One piece attacks two or more enemy pieces at once",
+      "A pawn advances two squares on its first move",
+      "A king and a rook swap places in one move",
+      "A piece that cannot be captured by any other piece"
+     ],
+     "a": 0,
+     "why": "The opponent can usually save only one.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "White knight d5, black king e8, black rook a8. Which move wins the rook?",
+     "o": [
+      "Nc7+",
+      "Ne7",
+      "Nf6+",
+      "Nb6"
+     ],
+     "a": 0,
+     "why": "Nc7 checks the king and attacks the rook.",
+     "d": 3,
+     "k": "apply",
+     "fen": "r3k3/8/8/3N4/8/8/8/4K3 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Black to move: a white bishop on b5 attacks the black knight on c6, which blocks the line to the king on e8. Can the knight move away?",
+     "o": [
+      "No, it is pinned to the king",
+      "Yes, anywhere",
+      "Yes, but only backwards",
+      "Only if it is White's turn"
+     ],
+     "a": 0,
+     "why": "Moving the knight would put its own king in check, which is not allowed.",
+     "d": 3,
+     "k": "apply",
+     "fen": "4k3/8/2n5/1B6/8/8/8/4K3 b - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "What is a hanging piece?",
+     "o": [
+      "A piece that is attacked and not protected",
+      "A piece that has left the board",
+      "A piece that is pinned against its king",
+      "A pawn that is about to promote"
+     ],
+     "a": 0,
+     "why": "It can be taken for free.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are knights good at forking?",
+     "o": [
+      "Their L-shaped attack is hard to guard against and they jump",
+      "They are worth more than rooks",
+      "They can never be captured",
+      "They are the only piece that can give check"
+     ],
+     "a": 0,
+     "why": "Knights attack squares others cannot see.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "List three things to check before you make a move.",
+     "rubric": [
+      [
+       "check"
+      ],
+      [
+       "capture",
+       "take"
+      ],
+      [
+       "threat",
+       "attack",
+       "threaten",
+       "hanging",
+       "unprotected",
+       "protect"
+      ]
+     ],
+     "min": 3,
+     "model": "Check for checks, captures and threats, both yours and your opponent's.",
+     "why": "Looking for forcing moves first finds most tactics.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "You fork a rook (5) and a knight (3), and your opponent saves the rook. How many points of value do you win?",
+     "a": 3,
+     "tol": 0,
+     "why": "You capture the knight, worth 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps of a tactic in order.",
+     "items": [
+      "See an unprotected piece",
+      "Find a move that attacks it",
+      "Check the reply",
+      "Make the move"
+     ],
+     "why": "Look, find, check, play.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A skewer attacks a valuable piece with another behind it. What happens?",
+     "o": [
+      "The valuable piece must move, and the piece behind is lost",
+      "Both pieces are safe because they protect each other",
+      "The attacking piece is captured at once",
+      "The game is declared a draw by repetition"
+     ],
+     "a": 0,
+     "why": "It is a pin in reverse.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You see a free piece but a quick check shows it is a trap. What should you do?",
+     "o": [
+      "Look at your opponent's reply first",
+      "Take it at once, since a free piece is always free",
+      "Move the king to a safer square",
+      "Offer a draw so the piece is not lost"
+     ],
+     "a": 0,
+     "why": "Always check what the opponent can do next.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a pin on a king stop the pinned piece moving at all?",
+     "o": [
+      "Moving would leave the king in check, which is illegal",
+      "The pinned piece is too tired to move",
+      "Only pawns can ever be pinned",
+      "The king is allowed to capture the pinning piece"
+     ],
+     "a": 0,
+     "why": "You may never expose your own king.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why check the opponent's reply before capturing a free piece?",
+     "rubric": [
+      [
+       "trap",
+       "bait",
+       "poison"
+      ],
+      [
+       "reply",
+       "response",
+       "recapture",
+       "threat",
+       "answer"
+      ],
+      [
+       "lose",
+       "mistake",
+       "blunder",
+       "protected",
+       "guard"
+      ]
+     ],
+     "min": 2,
+     "model": "The piece may be protected or a trap, so your capture could lose more than you gain.",
+     "why": "Check what happens after your move.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which usually wins more: a fork on a king and queen, or a fork on two pawns?",
+     "o": [
+      "King and queen",
+      "Two pawns",
+      "They win the same",
+      "Neither wins anything"
+     ],
+     "a": 0,
+     "why": "The check forces the king to move, then the queen falls.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basic chess tactics",
+    "model": "A fork attacks two pieces at once. A pin freezes a piece that is in front of something more valuable. Always check for hanging pieces, and look at checks, captures and threats first.",
+    "points": [
+     {
+      "k": [
+       "fork",
+       "two at once",
+       "two pieces"
+      ],
+      "ask": "What is a fork?"
+     },
+     {
+      "k": [
+       "pin",
+       "cannot move",
+       "stuck"
+      ],
+      "ask": "What is a pin?"
+     },
+     {
+      "k": [
+       "hanging",
+       "unprotected",
+       "protect"
+      ],
+      "ask": "What is a hanging piece?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Elementary logical reasoning",
+   "icon": "🧠",
+   "hook": "Three friends each hold a different chess piece. You get three clues. Can you work out who has what, without guessing?",
+   "explain": [
+    "Logical reasoning means getting a certain conclusion from facts. If the facts are true and the reasoning is right, the answer must be true. We call this deduction.",
+    "An \"if... then...\" statement links two facts. If a piece is a bishop, then it moves on diagonals. A piece moves in an L. Is it a bishop? No. The facts allow only a knight. Be careful: \"if bishop then diagonal\" does not mean \"if diagonal then bishop\", because a queen also moves on diagonals.",
+    "Another tool is elimination: cross out what cannot be true until one answer is left. Chess uses the same thinking: \"If he takes my knight, then I take his rook. If he does not, then I fork his pieces.\""
+   ],
+   "example": {
+    "q": "Mia, Noor and Omar each hold one piece: king, queen or rook. Noor has the queen. Mia does not have the king. Who has the king?",
+    "steps": [
+     "Noor has the queen.",
+     "Mia cannot have the king, so she must have the rook (the queen is taken).",
+     "The king is left for Omar."
+    ],
+    "a": "Omar"
+   },
+   "analogies": {
+    "home": "Finding a lost sock: it is not in the wash, not in the drawer, so it must be under the bed.",
+    "city": "Finding the right bus by crossing off the ones that go the wrong way.",
+    "farm": "A farmer knows the gate is shut and the sheep cannot jump it, so they are inside.",
+    "sport": "A coach picks a lineup by ruling out injured players one by one."
+   },
+   "mnemonic": "Use clues, cross out the impossible, keep what is left.",
+   "terms": [
+    [
+     "Deduction",
+     "Reaching a sure answer from facts."
+    ],
+    [
+     "Elimination",
+     "Crossing out what cannot be true."
+    ],
+    [
+     "If-then statement",
+     "A rule that links a condition to a result."
+    ]
+   ],
+   "misc": {
+    "wrong": "If all bishops move diagonally, then all diagonal movers are bishops.",
+    "right": "Queens also move diagonally, so that does not follow."
+   },
+   "trip": {
+    "wiki": "Deductive reasoning",
+    "prompt": "Look for the example that uses \"All men are mortal\". How does it work?"
+   },
+   "sources": [
+    "Deductive reasoning",
+    "Logic"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Mia, Noor and Omar hold the king, queen and rook. Noor has the queen and Mia does not have the king. Who has the king?",
+     "o": [
+      "Omar",
+      "Mia",
+      "Noor",
+      "No one"
+     ],
+     "a": 0,
+     "why": "Mia has the rook, so Omar has the king.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "All knights jump. This piece cannot jump. What follows?",
+     "o": [
+      "It is not a knight",
+      "It is a knight",
+      "It is a queen",
+      "It is a pawn"
+     ],
+     "a": 0,
+     "why": "If it were a knight, it would jump.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a piece is a bishop, then it moves diagonally. This piece moves diagonally. Must it be a bishop?",
+     "o": [
+      "No, it could be a queen",
+      "Yes",
+      "Yes, or a king",
+      "Only a pawn"
+     ],
+     "a": 0,
+     "why": "The queen also moves diagonally.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Four players each play every other player once. How many games are there?",
+     "a": 6,
+     "tol": 0,
+     "why": "Pairs: 3 + 2 + 1 = 6.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the odd one out: rook, bishop, queen, chessboard?",
+     "o": [
+      "Chessboard",
+      "Rook",
+      "Bishop",
+      "Queen"
+     ],
+     "a": 0,
+     "why": "The others are pieces.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these numbers in order from smallest to biggest: 14, 3, 27, 8.",
+     "items": [
+      "3",
+      "8",
+      "14",
+      "27"
+     ],
+     "why": "Compare the numbers.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A friend says \"My piece moves in straight lines and only forward one step.\" What do you deduce?",
+     "o": [
+      "Probably a pawn, since a pawn moves forward one step",
+      "A rook, because it moves in straight lines",
+      "A knight, because it moves one step forward",
+      "A bishop, because it moves forward on diagonals"
+     ],
+     "a": 0,
+     "why": "Rooks go farther and bishops are diagonal.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how you can solve a puzzle by elimination.",
+     "rubric": [
+      [
+       "cross",
+       "rule out",
+       "remove",
+       "eliminate",
+       "cannot"
+      ],
+      [
+       "left",
+       "remaining",
+       "only",
+       "one",
+       "last"
+      ],
+      [
+       "clue",
+       "fact",
+       "impossible"
+      ]
+     ],
+     "min": 2,
+     "model": "List the possible answers and use each clue to cross out the ones that cannot be true. The answer that remains is the solution.",
+     "why": "Eliminate until only one is possible.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If I take your rook, you take my queen. I take your rook. What happens?",
+     "o": [
+      "You take my queen",
+      "I win a queen",
+      "Nothing",
+      "The game ends"
+     ],
+     "a": 0,
+     "why": "It follows from the rule.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What comes next? 3, 6, 12, 24, ?",
+     "o": [
+      "48",
+      "30",
+      "36",
+      "27"
+     ],
+     "a": 0,
+     "why": "Each number doubles.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"if A then B\" different from \"if B then A\"?",
+     "o": [
+      "The second claim needs a separate check",
+      "They are the same statement in a different order",
+      "Only the first statement can be false",
+      "Both statements are always false"
+     ],
+     "a": 0,
+     "why": "Bishops move diagonally, but not every diagonal mover is a bishop.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A puzzle says only a rook, a knight or a king stands on f5. It is not a king and does not move in an L. What is it, and how do you know?",
+     "rubric": [
+      [
+       "rook"
+      ],
+      [
+       "not",
+       "neither",
+       "only left",
+       "eliminate",
+       "cannot"
+      ],
+      [
+       "king",
+       "knight",
+       "l"
+      ]
+     ],
+     "min": 2,
+     "model": "It is a rook. The king is ruled out, and the knight is ruled out because it moves in an L.",
+     "why": "This uses elimination.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do chess players ask \"if I do this, what then?\"",
+     "o": [
+      "To follow the chain of consequences",
+      "To waste the opponent's time on the clock",
+      "To make the opponent nervous",
+      "Because the rules require it before each move"
+     ],
+     "a": 0,
+     "why": "This is logical reasoning applied to chess.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Simple logical reasoning",
+    "model": "Logic goes from facts to a sure answer. Use clues, cross out what cannot be true, and be careful with if-then statements: they do not always work backwards.",
+    "points": [
+     {
+      "k": [
+       "clue",
+       "fact"
+      ],
+      "ask": "What do I start with?"
+     },
+     {
+      "k": [
+       "eliminate",
+       "cross out",
+       "rule out"
+      ],
+      "ask": "How do I narrow it down?"
+     },
+     {
+      "k": [
+       "if",
+       "then",
+       "backwards",
+       "reverse"
+      ],
+      "ask": "What is tricky about if-then?"
+     }
+    ]
+   }
+  }
+ ]
+}

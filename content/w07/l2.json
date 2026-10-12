@@ -1,0 +1,2823 @@
+{
+ "world": 7,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Latitude and longitude",
+   "icon": "📍",
+   "hook": "Every place on Earth has an address made only of two numbers. How could numbers pin down a spot on a round planet?",
+   "explain": [
+    "Geographers draw imaginary lines on the globe. Lines that run east-west are lines of latitude. The equator is 0° latitude, the poles are 90° north and 90° south.",
+    "Lines of longitude run from pole to pole. The prime meridian, at 0° longitude, passes through Greenwich in London. Longitude is measured up to 180° east and 180° west.",
+    "A place is given as latitude first, then longitude. Nairobi is near 1° S, 37° E. That means just south of the equator and east of the prime meridian.",
+    "One degree of latitude is always about 111 km on the ground. Degrees of longitude get shorter toward the poles, because the lines meet there."
+   ],
+   "example": {
+    "q": "Roughly how far is it from the equator (0°) to the North Pole (90° N)?",
+    "steps": [
+     "The change in latitude is 90 degrees.",
+     "Each degree of latitude is about 111 km.",
+     "Multiply: 90 × 111 = 9,990 km."
+    ],
+    "a": "About 10,000 km"
+   },
+   "analogies": {
+    "home": "Think of rows and columns of seats in a cinema. Row and seat number find your place. Latitude and longitude do the same for Earth.",
+    "sea": "A ship's captain reports position as latitude and longitude, so rescuers know where to go.",
+    "tech": "A phone shows coordinates in the same way, using satellites to work them out.",
+    "city": "A city street grid with avenue and street numbers works like a small version of this idea."
+   },
+   "mnemonic": "Latitude is like a ladder (rungs go across), longitude runs long from top to bottom.",
+   "terms": [
+    [
+     "Latitude",
+     "Distance north or south of the equator, in degrees."
+    ],
+    [
+     "Longitude",
+     "Distance east or west of the prime meridian, in degrees."
+    ],
+    [
+     "Equator",
+     "The 0° latitude line around the middle of Earth."
+    ],
+    [
+     "Coordinates",
+     "A pair of numbers that give an exact place."
+    ]
+   ],
+   "misc": {
+    "wrong": "Longitude lines are parallel like latitude lines.",
+    "right": "Latitude lines are parallel. Longitude lines are not parallel; they all meet at the two poles."
+   },
+   "limits": "There are two ways to write degrees: decimals or degrees and minutes. They describe the same places.",
+   "trip": {
+    "wiki": "Geographic coordinate system",
+    "prompt": "Find the equator and the prime meridian on a map. Which continents does each cross?"
+   },
+   "sources": [
+    "Latitude",
+    "Longitude",
+    "Equator"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which line is 0° latitude?",
+     "o": [
+      "The equator",
+      "The prime meridian",
+      "The Tropic of Cancer",
+      "The Arctic Circle"
+     ],
+     "a": 0,
+     "why": "The equator is 0° latitude.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the greatest latitude possible?",
+     "o": [
+      "90°",
+      "180°",
+      "360°",
+      "45°"
+     ],
+     "a": 0,
+     "why": "The poles are at 90° N and 90° S.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the greatest longitude east or west of the prime meridian?",
+     "o": [
+      "180°",
+      "90°",
+      "360°",
+      "45°"
+     ],
+     "a": 0,
+     "why": "Longitude runs to 180° east and 180° west.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair of coordinates is in the Southern Hemisphere?",
+     "o": [
+      "30° S, 25° E",
+      "30° N, 25° E",
+      "10° N, 5° W",
+      "45° N, 90° E"
+     ],
+     "a": 0,
+     "why": "South latitude means south of the equator.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which lines all meet at the poles?",
+     "o": [
+      "Lines of longitude",
+      "Lines of latitude, which circle Earth east to west",
+      "The equator and the tropics",
+      "The Arctic Circle only"
+     ],
+     "a": 0,
+     "why": "Longitude lines run from pole to pole.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A place is at 0° latitude and 0° longitude. Where is it?",
+     "o": [
+      "Where the equator and prime meridian cross, in the Atlantic Ocean off West Africa",
+      "In the Arctic Ocean, where the North Pole is found",
+      "In the middle of Europe, close to the Alps and Paris",
+      "In the Pacific Ocean, where the date line crosses the equator"
+     ],
+     "a": 0,
+     "why": "The two zero lines cross in the Gulf of Guinea, in the Atlantic.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is one degree of longitude shorter near the poles?",
+     "o": [
+      "The lines get closer together toward the poles",
+      "The poles are warm and the lines spread out there",
+      "Earth is flat there, so the lines run straight and parallel",
+      "Latitude changes faster than the Sun does"
+     ],
+     "a": 0,
+     "why": "All longitude lines converge at the poles.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "About how many kilometres is 5 degrees of latitude? Use 111 km per degree.",
+     "a": 555,
+     "tol": 5,
+     "unit": "km",
+     "why": "5 × 111 = 555 km.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Equator",
+       "0° latitude"
+      ],
+      [
+       "Prime meridian",
+       "0° longitude"
+      ],
+      [
+       "North Pole",
+       "90° N"
+      ],
+      [
+       "International Date Line",
+       "Near 180° longitude"
+      ]
+     ],
+     "why": "These are key reference lines of the globe.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why do we need both latitude and longitude to name a place exactly?",
+     "rubric": [
+      [
+       "latitude",
+       "north",
+       "south",
+       "across",
+       "east-west"
+      ],
+      [
+       "longitude",
+       "east",
+       "west"
+      ],
+      [
+       "both",
+       "two",
+       "together",
+       "cross",
+       "one number is not enough",
+       "not enough"
+      ]
+     ],
+     "min": 2,
+     "model": "Latitude gives only how far north or south, so many places share it. Longitude gives how far east or west. Where the two lines cross is one exact place.",
+     "why": "One number gives a whole line of places. Two lines cross at one point.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A ship at 5° N, 20° W moves south until it is at 5° S, 20° W. What did it cross?",
+     "o": [
+      "The equator",
+      "The prime meridian",
+      "The International Date Line",
+      "The Arctic Circle"
+     ],
+     "a": 0,
+     "why": "Its latitude changed from north to south, so it crossed 0°.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A friend says two cities with the same latitude must be close together. Is she right? Explain.",
+     "rubric": [
+      [
+       "no",
+       "not",
+       "wrong",
+       "far",
+       "different"
+      ],
+      [
+       "longitude",
+       "east",
+       "west",
+       "around the world",
+       "same line",
+       "circle"
+      ]
+     ],
+     "min": 2,
+     "model": "No. A line of latitude goes all the way around Earth, so cities on it can be on opposite sides of the world. Their longitudes may differ a lot.",
+     "why": "Same latitude only says same distance from the equator.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two places have the same longitude of 30° E. What can be said about them?",
+     "o": [
+      "They lie on the same north-south line",
+      "They are on the equator",
+      "They are the same distance from the equator",
+      "They are at the same height"
+     ],
+     "a": 0,
+     "why": "A longitude line runs from pole to pole.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How latitude and longitude give an exact place",
+    "model": "Latitude lines run east-west and measure distance from the equator. Longitude lines run from pole to pole and measure distance from the prime meridian. A place is where one of each cross, so two numbers find it.",
+    "points": [
+     {
+      "k": [
+       "latitude",
+       "equator",
+       "north",
+       "south"
+      ],
+      "ask": "What does the first number mean?"
+     },
+     {
+      "k": [
+       "longitude",
+       "prime meridian",
+       "east",
+       "west"
+      ],
+      "ask": "And the second number?"
+     },
+     {
+      "k": [
+       "degree",
+       "degrees"
+      ],
+      "ask": "What unit do we use?"
+     },
+     {
+      "k": [
+       "example",
+       "like",
+       "row",
+       "seat",
+       "grid",
+       "cross"
+      ],
+      "ask": "Is there an everyday example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Map scales and symbols",
+   "icon": "📏",
+   "hook": "A map of a whole country fits on one page. How can it still be used to measure real distances?",
+   "explain": [
+    "A map is a small picture of a big place. The scale tells how much smaller. A scale of 1:50,000 means 1 cm on the map is 50,000 cm on the ground, which is 0.5 km.",
+    "A bar scale is a little ruler on the map. A large-scale map shows a small area with lots of detail, like a town. A small-scale map shows a large area with little detail, like a continent.",
+    "Map symbols are small pictures or colours that stand for things. The key lists them. Blue usually means water. Green may mean forest or parks. Contour lines show height.",
+    "Contour lines join places of the same height. Lines close together mean steep ground. Lines far apart mean gentle ground."
+   ],
+   "example": {
+    "q": "A map has scale 1:100,000. Two towns are 6 cm apart on the map. How far apart are they in real life?",
+    "steps": [
+     "1 cm on the map is 100,000 cm on the ground.",
+     "100,000 cm = 1,000 m = 1 km.",
+     "So 1 cm = 1 km.",
+     "6 cm = 6 km."
+    ],
+    "a": "6 km"
+   },
+   "analogies": {
+    "home": "A plan of your room on paper uses a scale: 1 cm for each metre, for instance.",
+    "city": "A city bus map is small-scale and simple. A street map of one district shows each building.",
+    "sport": "A football pitch diagram on a coach's board uses a scale.",
+    "tech": "On a phone map, zooming in changes the scale. The same place gets more detail."
+   },
+   "mnemonic": "Large scale, large detail, small area. Small scale, small detail, big area.",
+   "terms": [
+    [
+     "Scale",
+     "The link between a distance on the map and the real distance."
+    ],
+    [
+     "Key",
+     "A list that explains the map symbols."
+    ],
+    [
+     "Contour line",
+     "A line joining places of equal height."
+    ],
+    [
+     "Symbol",
+     "A small picture or colour that stands for something real."
+    ]
+   ],
+   "misc": {
+    "wrong": "A large-scale map shows a large area.",
+    "right": "A large-scale map shows a small area in great detail. A small-scale map shows a large area."
+   },
+   "limits": "No flat map can show real distances perfectly everywhere. Scales are best for small areas.",
+   "trip": {
+    "wiki": "Map scale",
+    "prompt": "Compare a world map with a town map. Which has the larger scale?"
+   },
+   "sources": [
+    "Scale (map)",
+    "Contour line",
+    "Topographic map"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A map scale is 1:50,000. What is 1 cm on the map?",
+     "o": [
+      "0.5 km on the ground",
+      "5 km on the ground",
+      "50 km on the ground, which is a very long way",
+      "50 m on the ground"
+     ],
+     "a": 0,
+     "why": "50,000 cm = 500 m = 0.5 km.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which map has the largest scale?",
+     "o": [
+      "A map of a village",
+      "A map of Asia showing every country",
+      "A world map in an atlas",
+      "A map of the whole continent of Africa"
+     ],
+     "a": 0,
+     "why": "Smaller areas can be shown larger, with detail.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do contour lines show?",
+     "o": [
+      "Height of the land",
+      "Rainfall",
+      "Borders",
+      "Population"
+     ],
+     "a": 0,
+     "why": "Each line joins points of equal height.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Contour lines are very close together on a map. What is the land like?",
+     "o": [
+      "Steep",
+      "Flat",
+      "Under water",
+      "Empty"
+     ],
+     "a": 0,
+     "why": "Lines close together mean height changes quickly.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a map key do?",
+     "o": [
+      "Explains the symbols",
+      "Gives the weather",
+      "Shows the scale",
+      "Locks the map"
+     ],
+     "a": 0,
+     "why": "The key lists what each symbol stands for.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which scale shows the most detail?",
+     "o": [
+      "1:10,000",
+      "1:1,000,000",
+      "1:100,000",
+      "1:50,000,000"
+     ],
+     "a": 0,
+     "why": "The smaller the number on the right, the larger the scale and the more detail.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "On a map with a scale of 1:25,000, 1 cm equals 250 m. How many metres on the ground is 4 cm?",
+     "a": 1000,
+     "tol": 5,
+     "unit": "m",
+     "why": "4 × 250 m = 1,000 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A map has a scale of 1 cm = 5 km. Two cities are 7 cm apart. How many kilometres apart are they?",
+     "a": 35,
+     "tol": 0.5,
+     "unit": "km",
+     "why": "7 × 5 = 35 km.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these maps from the largest scale to the smallest scale.",
+     "items": [
+      "Plan of a classroom",
+      "Street map of a town",
+      "Map of a country",
+      "World map"
+     ],
+     "why": "The smaller the area shown, the larger the scale.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A hiker sees contour lines packed closely on one side of a hill and spread far apart on the other. Which side is easier to climb, and why?",
+     "rubric": [
+      [
+       "far apart",
+       "spread",
+       "wide",
+       "gentle",
+       "gradual"
+      ],
+      [
+       "easier",
+       "easy",
+       "less steep",
+       "not steep",
+       "flatter"
+      ],
+      [
+       "height",
+       "slope",
+       "steep"
+      ]
+     ],
+     "min": 2,
+     "model": "The side where the contour lines are far apart is easier to climb, because the height rises slowly and the slope is gentle.",
+     "why": "Spread-out contours mean gentle slope.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two maps show the same park. Map A shows more tiny paths. Which has the larger scale?",
+     "o": [
+      "Map A",
+      "Map B",
+      "They are equal",
+      "Neither has a scale"
+     ],
+     "a": 0,
+     "why": "More detail means a larger scale.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a world map not show every street?",
+     "o": [
+      "At a small scale there is too little space for detail",
+      "Streets do not exist in many big cities",
+      "Maps of the world are kept secret by governments",
+      "The map colours would be too bright to see them clearly"
+     ],
+     "a": 0,
+     "why": "Small scales must leave out detail.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how you would find the real distance between two towns using a map with a bar scale.",
+     "rubric": [
+      [
+       "ruler",
+       "measure",
+       "string",
+       "paper"
+      ],
+      [
+       "bar scale",
+       "scale",
+       "compare",
+       "line"
+      ],
+      [
+       "distance",
+       "kilometre",
+       "km",
+       "multiply",
+       "real"
+      ]
+     ],
+     "min": 2,
+     "model": "Measure the straight line between the towns with a ruler or string. Lay it along the bar scale or multiply by the scale to turn it into real kilometres.",
+     "why": "Measure, then compare with the scale.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How map scale and symbols work",
+    "model": "A scale shows how much a map is shrunk. 1 cm on the map can stand for a certain distance on the ground. Symbols and a key show what things are. Contour lines show height.",
+    "points": [
+     {
+      "k": [
+       "scale",
+       "shrunk",
+       "smaller",
+       "ratio"
+      ],
+      "ask": "What does scale mean?"
+     },
+     {
+      "k": [
+       "centimetre",
+       "cm",
+       "kilometre",
+       "km",
+       "measure"
+      ],
+      "ask": "How do you use it?"
+     },
+     {
+      "k": [
+       "symbol",
+       "key"
+      ],
+      "ask": "How do we read the pictures?"
+     },
+     {
+      "k": [
+       "contour",
+       "height",
+       "steep"
+      ],
+      "ask": "How can a flat map show hills?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "World regions and countries",
+   "icon": "🌐",
+   "hook": "Is Russia in Europe or Asia? Is it fair that one country can be in two continents?",
+   "explain": [
+    "Geographers sort the world into regions: groups of countries that share location, climate or history. Examples are West Africa, Western Europe, South Asia, Central America and Oceania.",
+    "There are around 195 countries today: about 193 member states of the United Nations and a few others. Numbers change a little as politics change. Africa has the most UN member states, 54.",
+    "Some countries sit in two continents. Russia lies in Europe and Asia. Turkey is in both too. Egypt is mostly in Africa, with the Sinai part in Asia.",
+    "Region names help us compare places. For example, the Middle East is a region, not a continent, and people define it a little differently."
+   ],
+   "example": {
+    "q": "Egypt has land in Africa and Asia. Is it correct to say it is in two continents?",
+    "steps": [
+     "Most of Egypt is in northeast Africa.",
+     "The Sinai Peninsula is east of the Suez Canal, in Asia.",
+     "So Egypt is a transcontinental country."
+    ],
+    "a": "Yes, mostly Africa with a small part in Asia"
+   },
+   "analogies": {
+    "home": "Rooms on one floor of a house form a group. Countries in a region are neighbours like that.",
+    "city": "A city has districts: north, central, harbour. Regions are like districts of the world.",
+    "sport": "Football has continental competitions, such as those in Africa, Asia and South America.",
+    "nature": "Regions with the same climate often share similar plants and animals."
+   },
+   "mnemonic": "A region is a neighbourhood of countries.",
+   "terms": [
+    [
+     "Region",
+     "A group of places that share something, like location or climate."
+    ],
+    [
+     "Country",
+     "A land with its own government and borders."
+    ],
+    [
+     "Transcontinental",
+     "Lying in more than one continent."
+    ],
+    [
+     "Hemisphere",
+     "Half of the globe."
+    ]
+   ],
+   "misc": {
+    "wrong": "Everyone agrees where each region begins and ends.",
+    "right": "Region borders are drawn differently by different people and organisations."
+   },
+   "limits": "The number of countries depends on who counts and whether disputed areas are included.",
+   "trip": {
+    "wiki": "List of sovereign states",
+    "prompt": "Find a country that is in two continents. How does the map show this?"
+   },
+   "sources": [
+    "Region",
+    "Transcontinental country",
+    "United Nations"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which of these is a region, not a country?",
+     "o": [
+      "West Africa",
+      "Egypt",
+      "Kenya",
+      "Peru"
+     ],
+     "a": 0,
+     "why": "West Africa is a group of countries.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which continent has the most countries?",
+     "o": [
+      "Africa",
+      "Europe",
+      "North America",
+      "Oceania"
+     ],
+     "a": 0,
+     "why": "Africa has 54 UN member states.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which country is in two continents?",
+     "o": [
+      "Turkey",
+      "Japan",
+      "Brazil",
+      "Kenya"
+     ],
+     "a": 0,
+     "why": "Turkey lies in both Europe and Asia.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is in South Asia?",
+     "o": [
+      "India",
+      "Peru",
+      "Norway",
+      "Chad"
+     ],
+     "a": 0,
+     "why": "India is the biggest country in South Asia.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is in Oceania?",
+     "o": [
+      "New Zealand",
+      "Chile, a long country in South America",
+      "Egypt, a country in the north of Africa",
+      "Spain, a country in the south of Europe"
+     ],
+     "a": 0,
+     "why": "New Zealand is in Oceania.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The number of countries is given as \"about 195\". Why \"about\"?",
+     "o": [
+      "Some places are disputed or change status",
+      "Nobody has ever counted them carefully",
+      "Countries keep their numbers secret from others",
+      "There are exactly 195, and that never changes"
+     ],
+     "a": 0,
+     "why": "Counts depend on how disputed territories are treated.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair is both in Central America?",
+     "o": [
+      "Costa Rica and Guatemala",
+      "Brazil and Peru, both in South America",
+      "Nigeria and Ghana, both in West Africa",
+      "Poland and Czechia, both in Central Europe"
+     ],
+     "a": 0,
+     "why": "These are neighbours in Central America.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each country to its continent.",
+     "pairs": [
+      [
+       "Nigeria",
+       "Africa"
+      ],
+      [
+       "Vietnam",
+       "Asia"
+      ],
+      [
+       "Colombia",
+       "South America"
+      ],
+      [
+       "Poland",
+       "Europe"
+      ]
+     ],
+     "why": "These countries are in these continents.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from smallest area to largest area.",
+     "items": [
+      "Vatican City",
+      "Iceland",
+      "India",
+      "Russia"
+     ],
+     "why": "Vatican City is the smallest country. Iceland is mid-size, India is bigger, Russia is the largest.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do geographers group countries into regions?",
+     "rubric": [
+      [
+       "compare",
+       "together",
+       "group",
+       "similar",
+       "share"
+      ],
+      [
+       "climate",
+       "history",
+       "language",
+       "culture",
+       "location",
+       "economy",
+       "neighbour"
+      ],
+      [
+       "easier",
+       "study",
+       "understand",
+       "organise",
+       "organize"
+      ]
+     ],
+     "min": 2,
+     "model": "Grouping countries by shared location, climate or history makes the world easier to study and compare.",
+     "why": "Regions organise a huge world.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A newspaper lists Turkey with Europe in sport and with Asia in geography. What explains this?",
+     "o": [
+      "Turkey is partly in both continents",
+      "Turkey moved from one continent to another",
+      "Newspapers always get geography wrong",
+      "Turkey belongs to no continent at all"
+     ],
+     "a": 0,
+     "why": "Transcontinental countries can be grouped either way.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might two atlases show slightly different regions?",
+     "o": [
+      "Regions are human groupings, not natural lines",
+      "Earth changed overnight and moved the regions around",
+      "One of the atlases was printed without any ink",
+      "Rivers slowly erase the borders each year"
+     ],
+     "a": 0,
+     "why": "Regions are defined by people.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best reason to learn about regions?",
+     "o": [
+      "To compare places that share features",
+      "To memorise the names of places only",
+      "To avoid ever having to use maps",
+      "To remove the borders between countries"
+     ],
+     "a": 0,
+     "why": "Regions show patterns.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "World regions and countries",
+    "model": "Countries are grouped into regions that share location, climate or history. Some countries lie in two continents. Region boundaries are drawn by people, so they are not always agreed.",
+    "points": [
+     {
+      "k": [
+       "region",
+       "group"
+      ],
+      "ask": "What is a region?"
+     },
+     {
+      "k": [
+       "country",
+       "countries"
+      ],
+      "ask": "How is it different from a country?"
+     },
+     {
+      "k": [
+       "share",
+       "climate",
+       "location",
+       "history",
+       "culture"
+      ],
+      "ask": "What do the places in a region share?"
+     },
+     {
+      "k": [
+       "example",
+       "africa",
+       "asia",
+       "europe",
+       "america"
+      ],
+      "ask": "Can you name one?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Earth's internal structure",
+   "icon": "🧅",
+   "hook": "We have never dug to the centre of Earth. How do we know what is inside?",
+   "explain": [
+    "Earth is built in layers like an onion. The thin outer layer is the crust, the rock we live on. Under it is the thick mantle, mostly hot solid rock that can flow very slowly.",
+    "In the middle is the core. The outer core is liquid metal, mainly iron and nickel. The inner core is solid metal, because the pressure is enormous.",
+    "From the surface to the centre is about 6,371 km. The crust is thin: roughly 5 to 10 km under the oceans and up to about 70 km under big mountains.",
+    "Scientists learn about the layers from earthquake waves. Waves bend and speed up or slow down as they pass through different materials. We also study volcanoes and rocks."
+   ],
+   "example": {
+    "q": "Earth's radius is about 6,371 km. The crust under land averages about 35 km thick. About what fraction of the radius is it?",
+    "steps": [
+     "Divide the thickness by the radius: 35 ÷ 6,371.",
+     "That is about 0.0055.",
+     "Less than 1 percent."
+    ],
+    "a": "About half of one percent, very thin"
+   },
+   "analogies": {
+    "home": "An egg has a shell, white and yolk. Earth has crust, mantle and core.",
+    "farm": "A peach has skin, flesh and a stone, like crust, mantle and core.",
+    "tech": "Doctors use scans to see inside a body without cutting. Earthquake waves work like a scan of Earth.",
+    "nature": "A tree has bark and layers inside, seen in its rings."
+   },
+   "mnemonic": "Crust is the crumb, mantle is the middle, core is the centre.",
+   "terms": [
+    [
+     "Crust",
+     "The thin, solid outer layer of Earth."
+    ],
+    [
+     "Mantle",
+     "The thick layer of hot rock under the crust."
+    ],
+    [
+     "Outer core",
+     "A layer of liquid metal around the centre."
+    ],
+    [
+     "Inner core",
+     "The solid metal ball at the centre."
+    ]
+   ],
+   "misc": {
+    "wrong": "The mantle is a sea of liquid lava.",
+    "right": "The mantle is mostly solid rock that flows very slowly. Only small parts melt to form magma."
+   },
+   "limits": "Our knowledge comes from indirect evidence. The deepest drill hole is only about 12 km, far short of the mantle.",
+   "trip": {
+    "wiki": "Structure of the Earth",
+    "prompt": "Find a diagram of Earth's layers. Which layer is the thickest?"
+   },
+   "sources": [
+    "Structure of the Earth",
+    "Crust (geology)",
+    "Mantle (geology)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the outer layer of Earth called?",
+     "o": [
+      "The crust",
+      "The core",
+      "The mantle",
+      "The magma"
+     ],
+     "a": 0,
+     "why": "We live on the crust.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which layer is thickest?",
+     "o": [
+      "The mantle",
+      "The crust",
+      "The inner core",
+      "The atmosphere"
+     ],
+     "a": 0,
+     "why": "The mantle makes up most of Earth's volume.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the outer core made of?",
+     "o": [
+      "Liquid metal",
+      "Solid rock that never moves at all",
+      "Hot gas like the Sun is made of",
+      "Ice that is kept cold by the core"
+     ],
+     "a": 0,
+     "why": "It is mostly molten iron and nickel.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the inner core solid even though it is very hot?",
+     "o": [
+      "The pressure is enormous",
+      "The pressure is enormous, which squeezes it hard",
+      "It is actually cold, not hot at all",
+      "It is made of ice and glass"
+     ],
+     "a": 0,
+     "why": "Great pressure keeps the metal solid.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How do scientists learn about the inside of Earth?",
+     "o": [
+      "By studying earthquake waves",
+      "By digging to the centre",
+      "By looking through telescopes",
+      "By asking volcanoes"
+     ],
+     "a": 0,
+     "why": "Waves change as they pass through layers.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Where is the crust thinnest?",
+     "o": [
+      "Under the oceans",
+      "Under high mountains",
+      "At the core",
+      "Nowhere"
+     ],
+     "a": 0,
+     "why": "Ocean crust is thin, about 5 to 10 km.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The crust is much thinner than the mantle. What is a fair comparison?",
+     "o": [
+      "Like the skin of an apple",
+      "Like the core in the middle of the apple",
+      "Like half of the whole apple, cut across",
+      "Like the whole of the apple, with no gap"
+     ],
+     "a": 0,
+     "why": "The crust is a very thin skin compared with Earth's size.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Earth's radius is about 6,371 km. About how many kilometres is its diameter?",
+     "a": 12742,
+     "tol": 20,
+     "unit": "km",
+     "why": "Diameter = 2 × radius = 12,742 km.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the layers from the surface to the centre.",
+     "items": [
+      "Crust",
+      "Mantle",
+      "Outer core",
+      "Inner core"
+     ],
+     "why": "Each layer lies inside the previous one.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why do scientists use earthquake waves instead of digging to the centre?",
+     "rubric": [
+      [
+       "too deep",
+       "far",
+       "cannot dig",
+       "impossible",
+       "hot",
+       "pressure",
+       "12 km",
+       "deepest"
+      ],
+      [
+       "wave",
+       "vibration",
+       "seismic",
+       "earthquake"
+      ],
+      [
+       "bend",
+       "speed",
+       "change",
+       "different layers",
+       "pass through"
+      ]
+     ],
+     "min": 2,
+     "model": "Nobody can dig that deep because of heat, pressure and distance. Earthquake waves travel through Earth and change as they cross different layers, so they reveal what is inside.",
+     "why": "Waves are the scan; drilling cannot reach.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Earthquake waves that cannot pass through a layer show that layer is...",
+     "o": [
+      "Liquid",
+      "Solid",
+      "Cold",
+      "Empty of metal"
+     ],
+     "a": 0,
+     "why": "One kind of wave cannot travel through liquid, which tells us the outer core is liquid.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If Earth were an apple, which part matches humans' habitat?",
+     "o": [
+      "The skin",
+      "The seeds",
+      "The core",
+      "The flesh"
+     ],
+     "a": 0,
+     "why": "We live on the crust, the thin outer layer.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the mantle flow although it is solid?",
+     "o": [
+      "Over millions of years, hot rock slowly creeps",
+      "It is really liquid water deep below the ground",
+      "It is mostly gas and empty space inside",
+      "Because it is full of hot air bubbles that rise"
+     ],
+     "a": 0,
+     "why": "Under heat and pressure, solid rock can deform very slowly.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The layers inside Earth",
+    "model": "Earth has a thin crust, a thick mantle, a liquid outer core and a solid inner core. Scientists know this from earthquake waves.",
+    "points": [
+     {
+      "k": [
+       "crust"
+      ],
+      "ask": "What is on the outside?"
+     },
+     {
+      "k": [
+       "mantle",
+       "core"
+      ],
+      "ask": "What is underneath?"
+     },
+     {
+      "k": [
+       "wave",
+       "earthquake",
+       "seismic"
+      ],
+      "ask": "How do we know without digging?"
+     },
+     {
+      "k": [
+       "onion",
+       "egg",
+       "layer",
+       "peach"
+      ],
+      "ask": "What is it like?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Rocks and landforms",
+   "icon": "🪨",
+   "hook": "A pebble on a beach may once have been part of a mountain. How can rock change?",
+   "explain": [
+    "Rocks are of three main kinds. Igneous rocks form when hot melted rock cools and hardens. Granite and basalt are examples.",
+    "Sedimentary rocks form when bits of sand, mud and shells settle in layers and are pressed together over a long time. Sandstone, limestone and shale are examples. Fossils are found in them.",
+    "Metamorphic rocks form when heat and pressure change old rocks without melting them completely. Marble comes from limestone. Slate comes from shale.",
+    "Over millions of years, rocks can change from one type to another. This is called the rock cycle. Wind, water and ice break rocks down in a process called weathering."
+   ],
+   "example": {
+    "q": "A layer of sand is buried and pressed for millions of years into rock. What type is it?",
+    "steps": [
+     "The rock is made of sand pressed together.",
+     "That is how sedimentary rocks form.",
+     "Sandstone is an example."
+    ],
+    "a": "Sedimentary rock (sandstone)"
+   },
+   "analogies": {
+    "home": "Cooling chocolate that was melted becomes hard again, like igneous rock.",
+    "farm": "Soil layers settle one on top of another, like sedimentary layers.",
+    "nature": "Waves slowly turn big stones into small pebbles and sand.",
+    "city": "Marble floors and slate roofs are metamorphic rocks used in building."
+   },
+   "mnemonic": "Ignite, settle, squeeze: igneous, sedimentary, metamorphic.",
+   "terms": [
+    [
+     "Igneous rock",
+     "Rock formed from cooled melted rock."
+    ],
+    [
+     "Sedimentary rock",
+     "Rock formed from layers of settled pieces."
+    ],
+    [
+     "Metamorphic rock",
+     "Rock changed by heat and pressure."
+    ],
+    [
+     "Weathering",
+     "Breaking down of rock by wind, water, ice or plants."
+    ]
+   ],
+   "misc": {
+    "wrong": "Rocks never change.",
+    "right": "Rocks slowly change over millions of years in the rock cycle."
+   },
+   "limits": "The rock cycle has many paths. A rock does not follow a fixed order.",
+   "trip": {
+    "wiki": "Rock cycle",
+    "prompt": "Look at a photo of layered cliffs. Which type of rock shows layers?"
+   },
+   "sources": [
+    "Rock (geology)",
+    "Igneous rock",
+    "Sedimentary rock"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which rock forms when melted rock cools?",
+     "o": [
+      "Igneous",
+      "Sedimentary",
+      "Metamorphic",
+      "Fossil"
+     ],
+     "a": 0,
+     "why": "Igneous rocks come from cooled magma or lava.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which rock type often contains fossils?",
+     "o": [
+      "Sedimentary",
+      "Igneous",
+      "Metamorphic",
+      "None"
+     ],
+     "a": 0,
+     "why": "Fossils are preserved in settled layers.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Marble is formed from limestone by heat and pressure. What type of rock is marble?",
+     "o": [
+      "Metamorphic",
+      "Igneous",
+      "Sedimentary",
+      "Volcanic ash"
+     ],
+     "a": 0,
+     "why": "Changed by heat and pressure.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an example of weathering?",
+     "o": [
+      "Frost cracking a rock",
+      "A volcano erupting lava onto the land",
+      "A mine digging deep into the ground",
+      "Magma cooling and hardening into rock"
+     ],
+     "a": 0,
+     "why": "Ice breaks rock apart.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Granite has large crystals and forms from magma cooling slowly underground. What type is it?",
+     "o": [
+      "Igneous",
+      "Sedimentary",
+      "Metamorphic",
+      "Organic"
+     ],
+     "a": 0,
+     "why": "Cooled magma makes igneous rock.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do sedimentary rocks have layers?",
+     "o": [
+      "Sediments settled in layers over time",
+      "They were melted and then poured into flat layers",
+      "They are crystals that grew in a cave",
+      "They are glass that was cooled very slowly"
+     ],
+     "a": 0,
+     "why": "Each layer is a new deposit.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which lands are made of lava rock?",
+     "o": [
+      "Hawaii's islands",
+      "The Sahara dunes",
+      "The Great Plains",
+      "The Himalaya snows"
+     ],
+     "a": 0,
+     "why": "Hawaii's islands are volcanic basalt.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each rock to its type.",
+     "pairs": [
+      [
+       "Basalt",
+       "Igneous"
+      ],
+      [
+       "Sandstone",
+       "Sedimentary"
+      ],
+      [
+       "Slate",
+       "Metamorphic"
+      ],
+      [
+       "Granite",
+       "Intrusive igneous"
+      ]
+     ],
+     "why": "Basalt and granite are igneous (granite cooled underground).",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps for making a sedimentary rock.",
+     "items": [
+      "Weathering breaks rock",
+      "Water carries sediment",
+      "Sediment settles in layers",
+      "Layers are pressed into rock"
+     ],
+     "why": "Erosion and deposition feed the layers.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how an igneous rock could become sedimentary rock.",
+     "rubric": [
+      [
+       "weather",
+       "break",
+       "erode",
+       "erosion",
+       "wear"
+      ],
+      [
+       "sediment",
+       "pieces",
+       "sand",
+       "particles",
+       "settle",
+       "deposit"
+      ],
+      [
+       "press",
+       "compact",
+       "cement",
+       "squeeze",
+       "buried"
+      ]
+     ],
+     "min": 2,
+     "model": "The igneous rock is weathered and broken into pieces. Water carries them and they settle as sediment in layers, which are pressed and cemented into sedimentary rock.",
+     "why": "This is part of the rock cycle.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A geologist finds fossil shells high on a mountain. What does that suggest?",
+     "o": [
+      "The rock formed in a sea and was later lifted up",
+      "Shells grow naturally on mountains",
+      "Mountains are mostly made of old shells",
+      "Someone long ago carried them up and put them there"
+     ],
+     "a": 0,
+     "why": "Sedimentary rocks with marine fossils show past seas.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which change needs the most heat?",
+     "o": [
+      "Rock melting into magma",
+      "Sand settling at the bottom of a lake",
+      "Rain slowly wearing away a rock",
+      "Ice cracking stone on a cold night"
+     ],
+     "a": 0,
+     "why": "Melting needs temperatures of hundreds of degrees Celsius or more.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does slate split into thin sheets?",
+     "o": [
+      "Pressure squeezed its minerals into layers",
+      "It was once made of paper that was pressed flat",
+      "It splits because it gets wet in the rain",
+      "It was melted and then set into thin sheets"
+     ],
+     "a": 0,
+     "why": "Metamorphic pressure lines up minerals.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The three kinds of rock",
+    "model": "Igneous rock comes from cooled melted rock. Sedimentary rock comes from layers pressed together. Metamorphic rock is changed by heat and pressure. Rocks slowly change in the rock cycle.",
+    "points": [
+     {
+      "k": [
+       "igneous",
+       "melted",
+       "cool",
+       "lava",
+       "magma"
+      ],
+      "ask": "How is igneous rock made?"
+     },
+     {
+      "k": [
+       "sedimentary",
+       "layer",
+       "settle",
+       "press"
+      ],
+      "ask": "And sedimentary?"
+     },
+     {
+      "k": [
+       "metamorphic",
+       "heat",
+       "pressure",
+       "change"
+      ],
+      "ask": "And metamorphic?"
+     },
+     {
+      "k": [
+       "cycle",
+       "change",
+       "millions"
+      ],
+      "ask": "Do rocks stay the same forever?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Water cycle and drainage systems",
+   "icon": "💧",
+   "hook": "The water you drink today may once have been in a dinosaur-age sea. How does water keep moving?",
+   "explain": [
+    "Water is always moving in the water cycle. The Sun heats oceans, lakes and rivers and water evaporates into the air as invisible vapour. Plants also give out water vapour, called transpiration.",
+    "High in the sky, the air cools. Vapour condenses into tiny drops that form clouds. When drops get big and heavy, they fall as precipitation: rain, snow, sleet or hail.",
+    "Some water runs over the ground into streams. Some soaks into the ground. All water eventually flows back to the sea or evaporates again.",
+    "A drainage basin is all the land that drains into one river. The high ground between two basins is a watershed or divide. A river and its tributaries, the smaller rivers that join it, form a network."
+   ],
+   "example": {
+    "q": "Rain falls on a mountain and flows into river A. Rain on the other side flows to river B. What is the ridge between called?",
+    "steps": [
+     "Water runs downhill on both sides.",
+     "The high line separates two drainage basins.",
+     "That line is the watershed."
+    ],
+    "a": "A watershed (drainage divide)"
+   },
+   "analogies": {
+    "home": "Steam from a kettle meets a cold window and turns back into drops. That is condensation.",
+    "farm": "Farmers watch for rain and use irrigation, taking water from rivers.",
+    "city": "Storm drains in a city carry rain to rivers, a small drainage system.",
+    "nature": "A leaf gives out water vapour that joins the clouds."
+   },
+   "mnemonic": "Evaporate up, condense in clouds, precipitate down, collect, repeat.",
+   "terms": [
+    [
+     "Evaporation",
+     "Liquid water turning into vapour."
+    ],
+    [
+     "Condensation",
+     "Vapour cooling into drops of water."
+    ],
+    [
+     "Precipitation",
+     "Water falling as rain, snow, sleet or hail."
+    ],
+    [
+     "Drainage basin",
+     "All land drained by one river and its tributaries."
+    ]
+   ],
+   "misc": {
+    "wrong": "Clouds are made of water vapour.",
+    "right": "Water vapour is invisible. Clouds are made of tiny liquid drops or ice crystals."
+   },
+   "limits": "The cycle has no starting point. Total water on Earth stays nearly the same, but where it is changes.",
+   "trip": {
+    "wiki": "Water cycle",
+    "prompt": "Trace a drop of water through the cycle in the diagram. Where can it be stored for a long time?"
+   },
+   "sources": [
+    "Water cycle",
+    "Drainage basin",
+    "Evaporation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What happens in evaporation?",
+     "o": [
+      "Liquid water turns into vapour",
+      "Vapour cools and turns into tiny drops of water",
+      "Water freezes into ice when it gets cold",
+      "Rain falls from the cloud to the ground"
+     ],
+     "a": 0,
+     "why": "Heat changes liquid into gas.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What forms clouds?",
+     "o": [
+      "Condensation",
+      "Evaporation, when water turns to vapour",
+      "Erosion, when rocks are worn away",
+      "Freezing, when water turns into ice"
+     ],
+     "a": 0,
+     "why": "Vapour cools and condenses into drops.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is NOT precipitation?",
+     "o": [
+      "Fog rising from a river at dawn",
+      "Rain falling from a heavy cloud",
+      "Snow settling on the ground",
+      "Hail bouncing off a roof"
+     ],
+     "a": 0,
+     "why": "Fog is condensed water near the ground, not falling.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a tributary?",
+     "o": [
+      "A smaller river that joins a larger one",
+      "The mouth of a river, where it meets the sea",
+      "A lake that forms in a high valley",
+      "A dam built across a river to hold water"
+     ],
+     "a": 0,
+     "why": "Tributaries feed the main river.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What drives the water cycle?",
+     "o": [
+      "Energy from the Sun",
+      "The Moon's pull on the clouds only",
+      "Volcanoes erupting in the sea",
+      "Wind turbines spinning on a hill"
+     ],
+     "a": 0,
+     "why": "Solar heat causes evaporation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a cold glass of water get drops on the outside?",
+     "o": [
+      "Vapour in the air condenses on the cold surface",
+      "Water slowly leaks through the glass from the inside",
+      "The glass makes water by itself when it is cold",
+      "The glass is hot and so it makes water on the outside"
+     ],
+     "a": 0,
+     "why": "Cooling air vapour condenses.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Where do rivers in one drainage basin end up?",
+     "o": [
+      "In the same sea, lake or inland sink",
+      "In different oceans on opposite sides of the world",
+      "In the sky, where the water joins the clouds",
+      "At the top of the highest mountain in the basin"
+     ],
+     "a": 0,
+     "why": "All water in a basin drains to one outlet.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Evaporation",
+       "Liquid to vapour"
+      ],
+      [
+       "Condensation",
+       "Vapour to drops"
+      ],
+      [
+       "Precipitation",
+       "Water falling"
+      ],
+      [
+       "Watershed",
+       "Ridge between basins"
+      ]
+     ],
+     "why": "Four key ideas of the water cycle.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of the water cycle starting with the Sun heating the sea.",
+     "items": [
+      "Evaporation",
+      "Condensation",
+      "Clouds form",
+      "Precipitation",
+      "Run-off to rivers"
+     ],
+     "why": "Water goes up, forms clouds, falls and flows back.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a forest make rain more likely nearby?",
+     "rubric": [
+      [
+       "transpir",
+       "plants give out",
+       "trees release",
+       "leaves release",
+       "vapour",
+       "water vapour"
+      ],
+      [
+       "cloud",
+       "condense",
+       "rain",
+       "humid",
+       "moist"
+      ],
+      [
+       "evapor",
+       "air",
+       "atmosphere"
+      ]
+     ],
+     "min": 2,
+     "model": "Trees take up water and release it as vapour from their leaves (transpiration). This adds moisture to the air, which can condense into clouds and fall as rain.",
+     "why": "Plants help move water to the air.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city covers soil with concrete. What is likely to happen to rain run-off?",
+     "o": [
+      "More water runs quickly into drains and rivers",
+      "Rain soaks into the ground more easily than before",
+      "It stops raining over the city because of the concrete",
+      "It all evaporates at once and nothing reaches rivers"
+     ],
+     "a": 0,
+     "why": "Hard surfaces stop water soaking in.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the amount of water on Earth stay roughly constant?",
+     "o": [
+      "It is recycled in the water cycle",
+      "New water arrives from space every single day",
+      "Water is used up and lost for ever once it is drunk",
+      "Water leaves Earth into space all the time"
+     ],
+     "a": 0,
+     "why": "Water changes place and form but is not lost.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A river basin is shared by three countries. Why might they need to cooperate?",
+     "o": [
+      "Actions upstream affect water downstream",
+      "Rivers stop flowing when they reach a border",
+      "Water is free, so no one needs rules for it",
+      "Basins have no water in them at all"
+     ],
+     "a": 0,
+     "why": "Dams or pollution upstream change water downstream.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The water cycle and drainage basins",
+    "model": "Heat from the Sun makes water evaporate. The vapour cools, condenses into clouds and falls as rain or snow. Water runs into rivers inside a drainage basin and returns to the sea.",
+    "points": [
+     {
+      "k": [
+       "evaporat",
+       "sun",
+       "heat"
+      ],
+      "ask": "How does water get into the air?"
+     },
+     {
+      "k": [
+       "condens",
+       "cloud",
+       "cool"
+      ],
+      "ask": "How does a cloud form?"
+     },
+     {
+      "k": [
+       "rain",
+       "snow",
+       "precipitation",
+       "fall"
+      ],
+      "ask": "How does it come back down?"
+     },
+     {
+      "k": [
+       "river",
+       "basin",
+       "sea",
+       "flow"
+      ],
+      "ask": "Where does it go after that?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Climate and vegetation zones",
+   "icon": "🌴",
+   "hook": "Why are there rainforests near the equator but ice near the poles?",
+   "explain": [
+    "Climate is the usual weather of a place over many years (30 years is common). Weather is just what is happening today. Climate depends on latitude, height, distance from the sea and winds.",
+    "Near the equator the Sun is high in the sky all year, so it is hot. Toward the poles the Sun is low, so sunlight is spread out and it is cold. Mountains are colder than lowlands at the same latitude.",
+    "Natural vegetation follows climate. Tropical rainforests are hot and wet all year. Savannas are warm with a dry season and have grass and scattered trees. Deserts get very little rain. Temperate regions have four seasons with forests or grassland. Tundra is cold, treeless and frozen for long periods.",
+    "The Köppen system is a famous way of grouping climates. It uses temperature and rainfall."
+   ],
+   "example": {
+    "q": "A place is hot all year and rains almost every day. Which vegetation do you expect?",
+    "steps": [
+     "Hot all year means tropical.",
+     "Rain all year gives lots of water.",
+     "That grows dense rainforest."
+    ],
+    "a": "Tropical rainforest"
+   },
+   "analogies": {
+    "home": "A room near the heater is warm, a room by an open window is cool. Latitude is like distance from the heater.",
+    "farm": "Farmers choose crops to fit the climate: rice in wet warm places, wheat in drier temperate ones.",
+    "city": "People in hot climates build houses with thick walls and shade; people in cold ones insulate.",
+    "nature": "Cacti store water in deserts; spruce trees shed snow in cold forests."
+   },
+   "mnemonic": "Hot and wet: forest. Hot and dry: desert. Cold: tundra.",
+   "terms": [
+    [
+     "Climate",
+     "Average weather of a place over many years."
+    ],
+    [
+     "Vegetation",
+     "The plants that grow naturally in a place."
+    ],
+    [
+     "Desert",
+     "A place with very little rainfall."
+    ],
+    [
+     "Tundra",
+     "Cold treeless land with frozen ground."
+    ]
+   ],
+   "misc": {
+    "wrong": "All deserts are hot.",
+    "right": "A desert is defined by low rainfall. Antarctica and parts of the Gobi are cold deserts."
+   },
+   "limits": "Climate zones have blurry edges and are shifting as the climate changes.",
+   "trip": {
+    "wiki": "Köppen climate classification",
+    "prompt": "Find a climate map. Which zone is your home in?"
+   },
+   "sources": [
+    "Climate",
+    "Biome",
+    "Köppen climate classification"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is climate?",
+     "o": [
+      "The usual weather of a place over many years",
+      "Today's weather, such as sun in the morning",
+      "The direction the wind is blowing right now",
+      "Whether it will rain tomorrow afternoon"
+     ],
+     "a": 0,
+     "why": "Climate is long-term.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it hotter near the equator?",
+     "o": [
+      "The Sun is high in the sky",
+      "Earth is closer to the Sun there",
+      "The sea is warmer",
+      "It has more volcanoes"
+     ],
+     "a": 0,
+     "why": "Sunlight is more concentrated when the Sun is high.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which vegetation fits a hot place with a long dry season?",
+     "o": [
+      "Savanna",
+      "Tundra",
+      "Taiga",
+      "Rainforest"
+     ],
+     "a": 0,
+     "why": "Savannas have grasses and scattered trees.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a cold desert?",
+     "o": [
+      "Antarctica",
+      "The Amazon",
+      "The Congo basin",
+      "Java"
+     ],
+     "a": 0,
+     "why": "Antarctica gets very little precipitation.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the top of a tall mountain near the equator cold?",
+     "o": [
+      "Air gets colder with height",
+      "The Sun is much further away from the top",
+      "The top is always in the shadow of other peaks",
+      "The top is close to the sea and its cold water"
+     ],
+     "a": 0,
+     "why": "Temperature falls with altitude.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What kind of vegetation grows in tundra?",
+     "o": [
+      "Mosses, lichens and small shrubs",
+      "Tall rainforest trees with huge leaves",
+      "Palm trees growing in warm soil",
+      "Rice growing in flooded fields"
+     ],
+     "a": 0,
+     "why": "Cold, short summers allow only low plants.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a sign of a temperate climate?",
+     "o": [
+      "Four distinct seasons",
+      "Four distinct seasons through the year",
+      "It is very hot every day of the year",
+      "Frozen ground and ice all the year round"
+     ],
+     "a": 0,
+     "why": "Temperate climates have clear seasons.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each climate to its typical vegetation.",
+     "pairs": [
+      [
+       "Tropical wet",
+       "Rainforest"
+      ],
+      [
+       "Hot dry",
+       "Desert scrub"
+      ],
+      [
+       "Very cold",
+       "Tundra"
+      ],
+      [
+       "Temperate",
+       "Deciduous forest"
+      ]
+     ],
+     "why": "Plants adapt to rain and temperature.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order these places from coldest to warmest on average.",
+     "items": [
+      "Antarctica",
+      "Siberia in winter",
+      "London",
+      "Singapore"
+     ],
+     "why": "Colder places are nearer the poles.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Two cities are both at 30° N. One is by the sea and the other is far inland. Why might their climates differ?",
+     "rubric": [
+      [
+       "sea",
+       "ocean",
+       "coast",
+       "water"
+      ],
+      [
+       "inland",
+       "far",
+       "continental",
+       "interior"
+      ],
+      [
+       "temperature",
+       "warm",
+       "cool",
+       "moderate",
+       "rain",
+       "extreme",
+       "dry"
+      ]
+     ],
+     "min": 2,
+     "model": "The sea keeps temperatures steadier and brings moisture, so the coastal city is milder and wetter. The inland city has bigger temperature swings and is often drier.",
+     "why": "Distance from the sea matters.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A traveller flies from a rainforest to a savanna at the same latitude. What changed most?",
+     "o": [
+      "Rainfall pattern",
+      "Latitude, which stayed the same",
+      "Gravity, which is the same everywhere",
+      "The length of the day through the year"
+     ],
+     "a": 0,
+     "why": "Rain, not heat, separates these zones.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do high mountains near the equator have snow?",
+     "o": [
+      "Temperature drops with altitude",
+      "They are much closer to the Sun than the plains",
+      "Rain is very rare there, so snow can lie on top",
+      "Latitude changes quickly as you climb them"
+     ],
+     "a": 0,
+     "why": "Kilimanjaro has ice caps despite the equator.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are polar regions cold if they get summer sunlight?",
+     "o": [
+      "The Sun is low, spreading its energy over a large area",
+      "The Sun is switched off for most of the summer",
+      "They are much further away from Earth than other places",
+      "They are always under the shadow of the Moon"
+     ],
+     "a": 0,
+     "why": "Low angle sun is weak.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Climate and vegetation zones",
+    "model": "Climate is a place's usual weather. It depends on latitude, height and distance from the sea. Plants follow climate: rainforest where hot and wet, desert where dry, tundra where cold.",
+    "points": [
+     {
+      "k": [
+       "climate",
+       "weather",
+       "average",
+       "usual"
+      ],
+      "ask": "What is climate?"
+     },
+     {
+      "k": [
+       "latitude",
+       "equator",
+       "sun",
+       "heat",
+       "cold"
+      ],
+      "ask": "Why is the equator hot?"
+     },
+     {
+      "k": [
+       "rain",
+       "wet",
+       "dry",
+       "temperature"
+      ],
+      "ask": "What decides the plants?"
+     },
+     {
+      "k": [
+       "rainforest",
+       "desert",
+       "tundra",
+       "savanna"
+      ],
+      "ask": "Can you name a zone?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Population and settlements",
+   "icon": "👥",
+   "hook": "More than eight billion people share Earth, but they are not spread evenly. Why do some places teem with people and others are almost empty?",
+   "explain": [
+    "The world population is about eight billion people. Population density is the number of people per square kilometre. It is found by dividing population by area.",
+    "People mostly live where it is easy to grow food and find water: river valleys, coasts and fertile plains. South and East Asia, Europe and the Nile valley are densely settled. Deserts, polar lands, high mountains and thick rainforests have few people.",
+    "Settlements are places where people live. A rural settlement is in the countryside: a farm, hamlet or village. An urban settlement is a town or city. Today more than half of all people live in cities.",
+    "Settlements start where there is a reason: water, flat land, a river crossing, a port, a mine or a safe hill."
+   ],
+   "example": {
+    "q": "A country has 6,000,000 people living on 20,000 km². What is its population density?",
+    "steps": [
+     "Density = population ÷ area.",
+     "6,000,000 ÷ 20,000 = 300."
+    ],
+    "a": "300 people per km²"
+   },
+   "analogies": {
+    "home": "A crowded room has high density. A big hall with a few people has low density.",
+    "city": "Apartment towers fit many people on small land.",
+    "farm": "Farm villages sit near fields and wells, so work and water are close.",
+    "sea": "Many large cities are ports on the coast because trade passes through."
+   },
+   "mnemonic": "People go where water, food and work are.",
+   "terms": [
+    [
+     "Population density",
+     "Number of people per square kilometre."
+    ],
+    [
+     "Settlement",
+     "A place where people live."
+    ],
+    [
+     "Rural",
+     "In the countryside."
+    ],
+    [
+     "Urban",
+     "In a town or city."
+    ]
+   ],
+   "misc": {
+    "wrong": "Big countries always have the most people per km².",
+    "right": "Density depends on people and area. Canada is huge but has a low density; Bangladesh is small and has a high one."
+   },
+   "limits": "Averages hide differences. Most of Egypt's people live along the Nile, even though the average density looks low.",
+   "trip": {
+    "wiki": "Population density",
+    "prompt": "Look at a night-time lights map. What does it tell you about where people live?"
+   },
+   "sources": [
+    "Population density",
+    "Human settlement",
+    "Urbanization"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How do you calculate population density?",
+     "o": [
+      "Population divided by area",
+      "Area divided by population",
+      "Population plus area",
+      "Population times area"
+     ],
+     "a": 0,
+     "why": "Density = people ÷ km².",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which place is likely to have a very low population density?",
+     "o": [
+      "Antarctica",
+      "The Nile Delta",
+      "Tokyo region",
+      "The Ganges plain"
+     ],
+     "a": 0,
+     "why": "It is too cold for permanent settlement.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do many people live on river plains?",
+     "o": [
+      "Flat land, water and fertile soil",
+      "The rivers there are cold and keep people cool",
+      "The plains are really mountains in disguise",
+      "There is no farming on a river plain"
+     ],
+     "a": 0,
+     "why": "These help farming and trade.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a rural settlement?",
+     "o": [
+      "A farming village",
+      "A capital city with a large airport",
+      "A big port with ships and cranes",
+      "A metro area with trains and tall towers"
+     ],
+     "a": 0,
+     "why": "Rural means countryside.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which describes most of the Sahara?",
+     "o": [
+      "Sparsely populated",
+      "Densely populated",
+      "Full of rainforest",
+      "Under the sea"
+     ],
+     "a": 0,
+     "why": "Water is scarce.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor would NOT help a settlement grow?",
+     "o": [
+      "No water supply",
+      "A river crossing",
+      "Fertile soil",
+      "A good harbour"
+     ],
+     "a": 0,
+     "why": "People need water.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A country is large but its average density is low. What can be true inside it?",
+     "o": [
+      "Most people may still be crowded in a few areas",
+      "Everyone must be spread out evenly across the land",
+      "Nobody lives there at all",
+      "It cannot have any cities in it"
+     ],
+     "a": 0,
+     "why": "Averages hide clusters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A region has 900,000 people living on 300 km². How many people per km² is that?",
+     "a": 3000,
+     "tol": 1,
+     "unit": "people/km²",
+     "why": "900,000 ÷ 300 = 3,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these settlements from smallest to largest.",
+     "items": [
+      "Hamlet",
+      "Village",
+      "Town",
+      "City"
+     ],
+     "why": "Settlements grow with the number of people and services.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give two reasons why a city might grow beside a large river.",
+     "rubric": [
+      [
+       "water",
+       "drink",
+       "supply"
+      ],
+      [
+       "trade",
+       "transport",
+       "boat",
+       "ship",
+       "port",
+       "travel"
+      ],
+      [
+       "food",
+       "farm",
+       "fertile",
+       "soil",
+       "irrigat"
+      ]
+     ],
+     "min": 2,
+     "model": "A river gives fresh water for people and farms, fertile soil, and routes for boats and trade.",
+     "why": "Water, food and transport.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can a small country have a higher density than a large one?",
+     "o": [
+      "Density is people per area, so a small area can hold many people",
+      "Small countries always have far more land than large ones",
+      "Large countries are always empty and have no people",
+      "Maths does not work for countries of different sizes"
+     ],
+     "a": 0,
+     "why": "Density depends on both numbers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A new mine opens in a desert. What may happen nearby?",
+     "o": [
+      "A settlement may grow to house workers",
+      "The desert turns into a green forest overnight",
+      "No one ever comes to the area",
+      "All the rivers in the world appear there"
+     ],
+     "a": 0,
+     "why": "Resources can attract settlement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "More than half of people live in cities. What does this suggest about rural areas?",
+     "o": [
+      "Fewer proportion of people live there than before",
+      "A smaller share of people live there than before",
+      "They are growing faster than the cities now",
+      "They have been left empty and have no farms at all"
+     ],
+     "a": 0,
+     "why": "Urbanisation is shifting people.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Where people live and why",
+    "model": "Population density is the number of people per square kilometre. People gather where there is water, flat fertile land and work, and avoid deserts, ice and high mountains. Settlements are rural or urban.",
+    "points": [
+     {
+      "k": [
+       "density",
+       "per square",
+       "per km",
+       "divide"
+      ],
+      "ask": "How do we measure crowding?"
+     },
+     {
+      "k": [
+       "water",
+       "food",
+       "fertile",
+       "flat",
+       "river",
+       "coast"
+      ],
+      "ask": "Why do people choose some places?"
+     },
+     {
+      "k": [
+       "desert",
+       "ice",
+       "mountain",
+       "cold",
+       "dry"
+      ],
+      "ask": "Where do few people live?"
+     },
+     {
+      "k": [
+       "rural",
+       "urban",
+       "village",
+       "city"
+      ],
+      "ask": "What kinds of settlement are there?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Natural resources",
+   "icon": "⛏️",
+   "hook": "A phone, a bicycle and a loaf of bread all start in nature. Where do their ingredients come from?",
+   "explain": [
+    "Natural resources are materials from nature that people use, such as water, soil, forests, fish, minerals and fuels. We also use energy from the Sun, wind and moving water.",
+    "Renewable resources can be replaced naturally in a human lifetime if we use them carefully: wood from managed forests, fish, solar power and wind. Non-renewable resources, such as coal, oil, natural gas and metal ores, take millions of years to form, so once used they are gone for practical purposes.",
+    "Resources are not spread evenly. Oil is concentrated in places like the Arabian Peninsula; copper is found in Chile, Peru and Zambia; fertile soil is found on big plains. Some countries sell resources to others.",
+    "Using resources wisely means reducing waste, reusing, recycling and choosing renewables. This is called sustainability."
+   ],
+   "example": {
+    "q": "A village uses a forest for firewood. Each year the trees that grow back equal the wood cut. Is the resource being used sustainably?",
+    "steps": [
+     "Wood is renewable.",
+     "Cut wood equals regrown wood.",
+     "The forest is not shrinking, so it is sustainable."
+    ],
+    "a": "Yes, it is used sustainably"
+   },
+   "analogies": {
+    "home": "Saving water by turning off the tap means the water lasts.",
+    "farm": "Farmers rotate crops to keep soil healthy for future seasons.",
+    "city": "Recycling bins collect metal, glass and paper to make new things.",
+    "tech": "Phones contain metals like copper and gold that can be recycled."
+   },
+   "mnemonic": "Renewable can regrow, non-renewable will go.",
+   "terms": [
+    [
+     "Natural resource",
+     "A material from nature that people use."
+    ],
+    [
+     "Renewable",
+     "Replaced naturally in a short time."
+    ],
+    [
+     "Non-renewable",
+     "Takes millions of years to form, so it runs out."
+    ],
+    [
+     "Sustainability",
+     "Using resources so future people can use them too."
+    ]
+   ],
+   "misc": {
+    "wrong": "Renewable resources can never run out.",
+    "right": "Renewables can be used up if we take them faster than they are replaced, as with overfishing."
+   },
+   "limits": "Whether a resource is renewable depends on how fast we use it compared to how fast it recovers.",
+   "trip": {
+    "wiki": "Natural resource",
+    "prompt": "Find where one mineral, such as copper or iron ore, is mined. Which countries appear?"
+   },
+   "sources": [
+    "Natural resource",
+    "Renewable resource",
+    "Sustainability"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a renewable resource?",
+     "o": [
+      "Wind",
+      "Coal",
+      "Oil",
+      "Iron ore"
+     ],
+     "a": 0,
+     "why": "Wind is replaced continually.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is non-renewable?",
+     "o": [
+      "Natural gas",
+      "Sunlight",
+      "Wind",
+      "Managed forest"
+     ],
+     "a": 0,
+     "why": "Gas takes millions of years to form.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why are oil and coal called fossil fuels?",
+     "o": [
+      "They formed from ancient plants and animals",
+      "They are the fossils of dinosaurs only",
+      "They are dug up from museums and not from the ground",
+      "They are made in factories from metal"
+     ],
+     "a": 0,
+     "why": "They formed over millions of years.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which action helps sustainability?",
+     "o": [
+      "Recycling metal cans",
+      "Throwing cans in rivers",
+      "Burning plastics",
+      "Using more than needed"
+     ],
+     "a": 0,
+     "why": "Recycling reduces mining.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can overfishing turn fish into a non-renewable resource in practice?",
+     "o": [
+      "Fish are caught faster than they can breed",
+      "Fish turn into rocks when they are caught",
+      "Fish forget how to swim in crowded seas",
+      "Water disappears from the sea where people fish"
+     ],
+     "a": 0,
+     "why": "Rates matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which country group is known for large oil reserves?",
+     "o": [
+      "Countries around the Persian Gulf",
+      "Iceland and Ireland, in northern Europe",
+      "Switzerland and Austria, in the Alps",
+      "Nepal and Bhutan, in the Himalayas"
+     ],
+     "a": 0,
+     "why": "The Gulf region holds major reserves.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which energy source needs no fuel to be burned?",
+     "o": [
+      "Solar panels",
+      "A coal power plant",
+      "A gas power plant burning fuel in a turbine",
+      "A wood fire in a stove"
+     ],
+     "a": 0,
+     "why": "Panels use sunlight directly.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each resource to its type.",
+     "pairs": [
+      [
+       "Solar energy",
+       "Renewable"
+      ],
+      [
+       "Coal",
+       "Non-renewable"
+      ],
+      [
+       "Fresh water",
+       "Renewable if looked after"
+      ],
+      [
+       "Copper ore",
+       "Finite metal from mines"
+      ]
+     ],
+     "why": "Resources differ in how fast they are replaced.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps from resource to product.",
+     "items": [
+      "Mine iron ore",
+      "Smelt it into iron",
+      "Make steel",
+      "Build a bicycle frame"
+     ],
+     "why": "Raw material is processed before use.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why recycling aluminium cans helps protect natural resources.",
+     "rubric": [
+      [
+       "less",
+       "reduce",
+       "save",
+       "fewer",
+       "avoid"
+      ],
+      [
+       "mine",
+       "mining",
+       "ore",
+       "bauxite",
+       "raw material",
+       "extract"
+      ],
+      [
+       "energy",
+       "waste",
+       "landfill",
+       "pollution",
+       "environment"
+      ]
+     ],
+     "min": 2,
+     "model": "Recycling reuses metal that is already made, so less ore needs to be mined, less energy is used and less waste goes to landfill.",
+     "why": "Recycling cuts both mining and waste.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A country earns most money from one mineral that will run out. What is a wise plan?",
+     "o": [
+      "Use the money to build other industries and schools",
+      "Spend all of it quickly on things now",
+      "Ignore the future and wait until it runs out",
+      "Stop all trade with other countries"
+     ],
+     "a": 0,
+     "why": "Diversifying protects the future.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do resources cause trade between countries?",
+     "o": [
+      "They are found in some places and not others",
+      "They are found in some places and not in others",
+      "They are found everywhere in equal amounts",
+      "They are free and so no one needs to pay for them"
+     ],
+     "a": 0,
+     "why": "Uneven distribution creates trade.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best reason to prefer solar power over coal?",
+     "o": [
+      "It does not run out and makes less pollution when running",
+      "It works best at night when it is dark",
+      "It is free to build and never needs repairs",
+      "It makes more smoke than coal when it runs"
+     ],
+     "a": 0,
+     "why": "Renewable energy has less operating pollution.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Natural resources",
+    "model": "Natural resources are materials from nature that we use. Renewable ones, like wind and managed forests, can be replaced. Non-renewable ones, like coal and oil, take millions of years. Using them wisely is sustainability.",
+    "points": [
+     {
+      "k": [
+       "renewable",
+       "replace",
+       "regrow",
+       "wind",
+       "sun"
+      ],
+      "ask": "What is a renewable resource?"
+     },
+     {
+      "k": [
+       "non-renewable",
+       "run out",
+       "coal",
+       "oil",
+       "gas",
+       "millions"
+      ],
+      "ask": "What about non-renewable?"
+     },
+     {
+      "k": [
+       "uneven",
+       "not everywhere",
+       "some countries",
+       "trade"
+      ],
+      "ask": "Is every country given the same resources?"
+     },
+     {
+      "k": [
+       "recycle",
+       "save",
+       "reuse",
+       "sustain"
+      ],
+      "ask": "How can we use them wisely?"
+     }
+    ]
+   }
+  }
+ ]
+}

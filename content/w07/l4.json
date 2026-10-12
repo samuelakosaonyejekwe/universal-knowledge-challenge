@@ -1,0 +1,2768 @@
+{
+ "world": 7,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced physical geography",
+   "icon": "🏔️",
+   "hook": "Glaciers, deserts, coasts and soils look unrelated. What do they have in common as shapers of land?",
+   "explain": [
+    "Physical geography studies how Earth's surface is shaped by the lithosphere, atmosphere, hydrosphere and biosphere acting together. Landscapes result from a balance between uplift and building processes, and wearing-down processes.",
+    "Glaciers form where more snow falls than melts, compressing into ice that flows downhill under gravity. They carve U-shaped valleys, cirques and arêtes, and deposit moraines. About 10 percent of land is covered by ice, mostly in Antarctica and Greenland, holding roughly 69 percent of Earth's fresh water.",
+    "Deserts are defined by low precipitation (usually under 250 mm a year), not by heat. Wind moves sand into dunes, but most desert landforms are shaped by rare flash floods. Coasts are shaped by waves: erosion makes cliffs, caves, arches and stacks, while deposition forms beaches, spits and bars.",
+    "Soil forms slowly from weathered rock, organic matter, water and air, influenced by climate, organisms, relief and time. A soil profile has horizons: O (organic), A (topsoil), B (subsoil) and C (weathered rock). Poor land use causes degradation through erosion, salinisation and loss of nutrients."
+   ],
+   "example": {
+    "q": "A desert gets 180 mm of rain a year. Under the common 250 mm rule, is it a desert, and does it need to be hot?",
+    "steps": [
+     "180 mm is below 250 mm, so it meets the low-rainfall rule.",
+     "Deserts are defined by dryness, not temperature.",
+     "Cold places such as Antarctica also count."
+    ],
+    "a": "Yes it is a desert; heat is not required"
+   },
+   "analogies": {
+    "home": "A tap dripping onto a bar of soap carves a channel slowly, like water on rock.",
+    "farm": "Farmers plant cover crops and terraces to keep soil from washing or blowing away.",
+    "sea": "Waves undercut cliffs the way a saw cuts under a plank.",
+    "nature": "A glacier is like a slow conveyor belt for rock."
+   },
+   "mnemonic": "Glaciers gouge, waves wear, winds winnow, soils slowly grow.",
+   "terms": [
+    [
+     "Cirque",
+     "A bowl-shaped hollow carved by a glacier near its head."
+    ],
+    [
+     "Moraine",
+     "Rock debris dropped by a glacier."
+    ],
+    [
+     "Soil horizon",
+     "A layer within a soil profile."
+    ],
+    [
+     "Salinisation",
+     "Build-up of salts in soil, harming crops."
+    ]
+   ],
+   "misc": {
+    "wrong": "Wind is the main cause of landforms in deserts.",
+    "right": "Wind moves sand, but occasional running water shapes many desert valleys and fans."
+   },
+   "limits": "Rates of change vary greatly, from slow rock weathering to sudden landslides, so landscapes reflect past climates as well as present ones.",
+   "trip": {
+    "wiki": "Glacier",
+    "prompt": "Find a photo of a U-shaped valley. Compare it with a V-shaped river valley."
+   },
+   "sources": [
+    "Glacier",
+    "Desert",
+    "Soil horizon"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which valley shape is typical of glacial erosion?",
+     "o": [
+      "U-shaped",
+      "V-shaped",
+      "Flat-topped",
+      "Spiral"
+     ],
+     "a": 0,
+     "why": "Ice fills and widens the valley.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How are deserts commonly defined?",
+     "o": [
+      "By low precipitation",
+      "By very high temperature all year",
+      "By a cover of loose sand dunes",
+      "By a complete lack of animal life"
+     ],
+     "a": 0,
+     "why": "Under about 250 mm a year.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What forms a stack on a coast?",
+     "o": [
+      "A wave-cut arch whose top collapses",
+      "A glacier cutting a deep valley",
+      "A river delta building into the sea",
+      "A wind-blown dune of coastal sand"
+     ],
+     "a": 0,
+     "why": "Erosion widens cracks into caves, arches and stacks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which horizon is the topsoil?",
+     "o": [
+      "A horizon",
+      "O horizon",
+      "C horizon",
+      "Bedrock"
+     ],
+     "a": 0,
+     "why": "The A horizon mixes organic matter and minerals.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Where is most of Earth's fresh water stored?",
+     "o": [
+      "In ice sheets and glaciers",
+      "In rivers that flow to the sea",
+      "In lakes and ponds across the continents",
+      "In the air as water vapour"
+     ],
+     "a": 0,
+     "why": "About 69 percent is locked in ice.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Irrigating in a hot dry region without drainage may cause what?",
+     "o": [
+      "Salinisation",
+      "Rainforest, as the extra water grows trees",
+      "Glaciation, as ice sheets spread across the field",
+      "Sea breezes, which blow salt out of the soil"
+     ],
+     "a": 0,
+     "why": "Evaporation leaves salts behind.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What deposits moraine?",
+     "o": [
+      "A glacier",
+      "A river",
+      "A volcano",
+      "Wind only"
+     ],
+     "a": 0,
+     "why": "Glaciers drop carried debris.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Antarctica and Greenland ice hold about 69 percent of fresh water. If total fresh water were 100 units, how many units are NOT ice?",
+     "a": 31,
+     "tol": 0.5,
+     "unit": "units",
+     "why": "100 − 69 = 31.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each landform to its main process.",
+     "pairs": [
+      [
+       "Cirque",
+       "Glacial erosion"
+      ],
+      [
+       "Sea arch",
+       "Wave erosion"
+      ],
+      [
+       "Sand dune",
+       "Wind deposition"
+      ],
+      [
+       "Spit",
+       "Wave deposition"
+      ]
+     ],
+     "why": "Each process makes characteristic landforms.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why soil takes much longer to form than it can be lost.",
+     "rubric": [
+      [
+       "slow",
+       "centuries",
+       "thousand",
+       "years",
+       "weather"
+      ],
+      [
+       "erosion",
+       "wash",
+       "blow",
+       "lost",
+       "removed",
+       "rain",
+       "wind"
+      ],
+      [
+       "rock",
+       "organic",
+       "time",
+       "form",
+       "nutrient"
+      ]
+     ],
+     "min": 2,
+     "model": "Soil forms slowly as rock weathers and organic matter builds up, taking centuries or more. Erosion by water and wind can remove topsoil in a few seasons if land is left bare.",
+     "why": "Formation is slow and loss is fast.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do cold deserts like the Gobi exist far from the sea?",
+     "o": [
+      "Moisture-bearing winds rarely reach the interior",
+      "They are too hot for any moisture to remain",
+      "They sit on high mountains close to the clouds",
+      "They lack any soil, so water cannot be held"
+     ],
+     "a": 0,
+     "why": "Continentality and rain shadow limit rain.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A farmer ploughs up and down a slope. Why is soil loss higher than ploughing along the contour?",
+     "o": [
+      "Water runs straight down furrows and carries soil away",
+      "Rain falls much harder on the up-and-down slopes",
+      "Soil is lighter when ploughed in that direction",
+      "Slopes collapse whenever a plough crosses them"
+     ],
+     "a": 0,
+     "why": "Contour ploughing slows run-off.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do glaciers leave U-shaped valleys but rivers V-shaped ones?",
+     "rubric": [
+      [
+       "ice",
+       "glacier",
+       "wide",
+       "thick",
+       "fills"
+      ],
+      [
+       "river",
+       "narrow",
+       "cuts down",
+       "vertical",
+       "downward"
+      ],
+      [
+       "sides",
+       "erode",
+       "bottom",
+       "valley"
+      ]
+     ],
+     "min": 2,
+     "model": "Glaciers are wide and thick, grinding the floor and sides together, so the valley becomes broad and U-shaped. Rivers mainly cut downwards, leaving steep V-shaped sides.",
+     "why": "Process shapes form.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How glaciers, deserts, coasts and soils are shaped",
+    "model": "Landscapes come from processes: glaciers carve valleys, waves shape coasts, wind and rare floods shape deserts, and weathering forms soils. Each leaves recognisable landforms.",
+    "points": [
+     {
+      "k": [
+       "glacier",
+       "ice",
+       "u-shaped"
+      ],
+      "ask": "What do glaciers do?"
+     },
+     {
+      "k": [
+       "wave",
+       "coast",
+       "cliff",
+       "erosion"
+      ],
+      "ask": "And waves?"
+     },
+     {
+      "k": [
+       "desert",
+       "rain",
+       "dry",
+       "wind"
+      ],
+      "ask": "How do deserts form?"
+     },
+     {
+      "k": [
+       "soil",
+       "weather",
+       "layer",
+       "profile"
+      ],
+      "ask": "And soil?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Climate systems and variability",
+   "icon": "🌡️",
+   "hook": "Why does the Pacific Ocean decide whether Peru floods and Australia burns in some years?",
+   "explain": [
+    "Climate is the statistical pattern of weather over at least about 30 years. The climate system includes the atmosphere, oceans, ice, land surface and living things. The greenhouse effect warms Earth: gases such as water vapour, carbon dioxide and methane absorb outgoing infrared radiation and re-emit some of it downward. Without it Earth's average temperature would be around −18 °C instead of about +15 °C.",
+    "Albedo is the fraction of sunlight reflected. Fresh snow reflects most; dark ocean absorbs most. Changes in ice cover can therefore amplify temperature changes (a positive feedback).",
+    "Climate varies naturally. The El Niño–Southern Oscillation (ENSO) is a swing in the tropical Pacific. In El Niño, trade winds weaken and warm water spreads east, bringing floods to coastal Peru and often drought to Australia and Indonesia. La Niña has the opposite pattern. Cycles come every 2 to 7 years.",
+    "Other patterns include the monsoon (seasonal reversal of winds driven by land-sea heating differences) and the North Atlantic Oscillation, which affects European winters. Temperature falls with height at about 6.5 °C per km (the average environmental lapse rate)."
+   ],
+   "example": {
+    "q": "A town at sea level has an average temperature of 20 °C. Estimate the temperature of a village 2,000 m higher, using 6.5 °C per km.",
+    "steps": [
+     "Height difference is 2 km.",
+     "Fall in temperature = 2 × 6.5 = 13 °C.",
+     "20 − 13 = 7 °C."
+    ],
+    "a": "About 7 °C"
+   },
+   "analogies": {
+    "home": "A car parked in sunlight heats up because glass lets sunlight in but slows heat getting out, like greenhouse gases.",
+    "sea": "Warm and cool ocean patches change rain over land far away.",
+    "farm": "Farmers watch ENSO forecasts to choose crops and plan water.",
+    "tech": "Computer models simulate the atmosphere and oceans to forecast climate patterns."
+   },
+   "mnemonic": "Greenhouse traps heat; albedo bounces light; ENSO swings the Pacific.",
+   "terms": [
+    [
+     "Greenhouse effect",
+     "Warming of Earth because some gases absorb and re-emit heat."
+    ],
+    [
+     "Albedo",
+     "The fraction of sunlight a surface reflects."
+    ],
+    [
+     "ENSO",
+     "A natural climate swing in the tropical Pacific."
+    ],
+    [
+     "Feedback",
+     "A change that amplifies or reduces itself."
+    ]
+   ],
+   "misc": {
+    "wrong": "The greenhouse effect is the same as global warming.",
+    "right": "The natural greenhouse effect keeps Earth habitable. Global warming is the extra warming from rising greenhouse gases."
+   },
+   "limits": "ENSO strength and timing are hard to forecast far ahead, and its links to climate change are active research.",
+   "trip": {
+    "wiki": "El Niño–Southern Oscillation",
+    "prompt": "Compare maps of rainfall in El Niño and La Niña years. Where do the patterns flip?"
+   },
+   "sources": [
+    "Climate",
+    "Greenhouse effect",
+    "El Niño–Southern Oscillation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which gas is a greenhouse gas?",
+     "o": [
+      "Carbon dioxide",
+      "Oxygen, which we breathe in",
+      "Nitrogen, the most common gas in the air",
+      "Argon, a rare gas found in tiny amounts"
+     ],
+     "a": 0,
+     "why": "CO₂ absorbs infrared radiation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to albedo when sea ice melts?",
+     "o": [
+      "It falls",
+      "It rises",
+      "It is unchanged",
+      "It becomes infinite"
+     ],
+     "a": 0,
+     "why": "Dark ocean replaces bright ice.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a positive feedback?",
+     "o": [
+      "A change that amplifies itself",
+      "A change that reverses itself and settles down",
+      "A change that is good for people and nature",
+      "A change that happens in a random way"
+     ],
+     "a": 0,
+     "why": "Less ice leads to more warming, leading to less ice.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In El Niño years, what happens to the trade winds?",
+     "o": [
+      "They weaken",
+      "They strengthen",
+      "They stop Earth's spin",
+      "They reverse in the Atlantic only"
+     ],
+     "a": 0,
+     "why": "Warm water spreads east.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "El Niño often brings drought to...",
+     "o": [
+      "Australia and Indonesia",
+      "The coast of Peru and Ecuador, which gets heavy rain",
+      "Iceland and Greenland, in the far north",
+      "Southern Brazil, which becomes much wetter"
+     ],
+     "a": 0,
+     "why": "The rain moves east with warm water.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What drives monsoons?",
+     "o": [
+      "Seasonal differences in heating of land and sea",
+      "The Moon's pull on the winds over the ocean",
+      "Earth's core warming the continents from below",
+      "Volcanoes sending ash into the sky each year"
+     ],
+     "a": 0,
+     "why": "Winds reverse as land heats and cools faster than sea.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How does temperature change with height in the lower atmosphere?",
+     "o": [
+      "It falls by about 6.5 °C per km",
+      "It rises by about 6.5 °C for every km you climb",
+      "It stays equal at every height in the air",
+      "It doubles for every kilometre of height"
+     ],
+     "a": 0,
+     "why": "The average lapse rate.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Using 6.5 °C per km, how much colder is a mountain station 3,000 m above a valley station?",
+     "a": 19.5,
+     "tol": 0.2,
+     "unit": "°C",
+     "why": "3 × 6.5 = 19.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the chain of the greenhouse effect.",
+     "items": [
+      "Sunlight reaches the surface",
+      "Surface emits infrared",
+      "Greenhouse gases absorb some infrared",
+      "They re-emit heat in all directions",
+      "Lower atmosphere warms"
+     ],
+     "why": "Heat is slowed on its way out.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why Earth would be much colder without a natural greenhouse effect.",
+     "rubric": [
+      [
+       "absorb",
+       "trap",
+       "hold",
+       "retain",
+       "re-emit",
+       "radiat"
+      ],
+      [
+       "infrared",
+       "heat",
+       "warmth",
+       "energy"
+      ],
+      [
+       "escape",
+       "space",
+       "minus",
+       "-18",
+       "frozen",
+       "cold"
+      ]
+     ],
+     "min": 2,
+     "model": "Greenhouse gases absorb outgoing infrared radiation and send some back down. Without them more heat would escape to space and the average temperature would be about −18 °C.",
+     "why": "The natural effect keeps Earth habitable.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can a warm ocean patch in the Pacific change rain in Africa?",
+     "o": [
+      "Tropical heating shifts atmospheric circulation worldwide",
+      "Water flows across land from the Pacific to Africa",
+      "Clouds ride ocean currents all the way to Africa",
+      "It is a coincidence, with no real link at all"
+     ],
+     "a": 0,
+     "why": "Teleconnections link regions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Snow cover retreats in spring. How does this affect local warming?",
+     "o": [
+      "More sunlight is absorbed, increasing warming",
+      "Less sunlight is absorbed, which slows the warming",
+      "There is no effect on local warming at all",
+      "The air cools because bare ground reflects heat"
+     ],
+     "a": 0,
+     "why": "Albedo feedback.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Climate is averaged over 30 years. Why?",
+     "o": [
+      "To separate long-term patterns from year-to-year variability",
+      "Nobody measured the weather before 30 years ago",
+      "30 is a lucky number that people like",
+      "Weather stays constant, so a short time is enough"
+     ],
+     "a": 0,
+     "why": "Averaging smooths natural variation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Climate systems and variability",
+    "model": "Climate is the long-term pattern of weather. Greenhouse gases keep Earth warm, albedo controls how much sunlight is reflected, and natural cycles like ENSO shift weather around the world.",
+    "points": [
+     {
+      "k": [
+       "greenhouse",
+       "gas",
+       "heat",
+       "trap"
+      ],
+      "ask": "What keeps Earth warm?"
+     },
+     {
+      "k": [
+       "albedo",
+       "reflect"
+      ],
+      "ask": "What decides how much sunlight is reflected?"
+     },
+     {
+      "k": [
+       "el niño",
+       "enso",
+       "pacific",
+       "cycle"
+      ],
+      "ask": "What is a natural cycle?"
+     },
+     {
+      "k": [
+       "30 years",
+       "long term",
+       "average"
+      ],
+      "ask": "Why is climate averaged?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Hydrology and watershed management",
+   "icon": "🌧️",
+   "hook": "Two catchments get the same storm. One floods in an hour and the other barely rises. What differs?",
+   "explain": [
+    "Hydrology studies the movement and storage of water. A catchment (drainage basin) is the land that drains to a river. Inputs are precipitation; outputs are evaporation, transpiration and river flow; stores include vegetation, soil, groundwater and lakes.",
+    "Water reaches rivers by overland flow, throughflow in soil and groundwater flow. Infiltration is soil absorption; it falls when the ground is saturated, frozen, paved or steeply sloped. Impermeable surfaces send water quickly to rivers, giving a short lag time and a high peak discharge.",
+    "Discharge is the volume passing a point per unit time: Q = A × v (cross-section area times mean velocity), in m³/s. A storm hydrograph plots discharge against time. A flashy hydrograph has a steep rising limb and a high, early peak; a gentle one is typical of forested, permeable catchments.",
+    "Management combines hard engineering (dams, levees, channels) and soft approaches (afforestation, wetlands, floodplain zoning, flood warnings). Dams can store water and make electricity but alter sediment, ecology and people's lives. Rivers crossing borders need shared governance."
+   ],
+   "example": {
+    "q": "A river channel is 20 m wide and 2 m deep on average with a mean velocity of 1.5 m/s. What is the discharge?",
+    "steps": [
+     "Cross-section area = 20 × 2 = 40 m².",
+     "Discharge Q = A × v = 40 × 1.5.",
+     "Q = 60 m³/s."
+    ],
+    "a": "60 m³/s"
+   },
+   "analogies": {
+    "home": "A sponge soaks up spilled water, but a plate lets it run off, like permeable and impermeable ground.",
+    "city": "Paved streets and drains send rain quickly to rivers; green roofs and rain gardens slow it.",
+    "farm": "Terraces and ponds hold water on fields and recharge groundwater.",
+    "tech": "River gauges and satellites feed flood warning systems."
+   },
+   "mnemonic": "Rough ground slows water; hard ground speeds it.",
+   "terms": [
+    [
+     "Catchment",
+     "Area of land drained by a river and its tributaries."
+    ],
+    [
+     "Infiltration",
+     "Water soaking into the soil."
+    ],
+    [
+     "Discharge",
+     "Volume of water passing a point each second."
+    ],
+    [
+     "Lag time",
+     "Delay between peak rainfall and peak river flow."
+    ]
+   ],
+   "misc": {
+    "wrong": "Building a dam always reduces flood risk for everyone.",
+    "right": "Dams can reduce floods downstream but may shift problems elsewhere, harm sediment supply and displace people."
+   },
+   "limits": "Hydrological models rely on gauge data that is sparse in many regions, so predictions carry uncertainty.",
+   "trip": {
+    "wiki": "Drainage basin",
+    "prompt": "Find a hydrograph. Where is the peak discharge and what is the lag time?"
+   },
+   "sources": [
+    "Hydrology",
+    "Drainage basin",
+    "Hydrograph"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a short lag time suggest?",
+     "o": [
+      "Water reaches the river quickly",
+      "Water is slow to get to the river",
+      "Soil is deep and soaks up the water",
+      "There is no rain in the catchment"
+     ],
+     "a": 0,
+     "why": "Impermeable or steep catchments respond fast.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which land cover reduces peak discharge most?",
+     "o": [
+      "Dense forest",
+      "Concrete, which sends water straight off",
+      "Bare rock, which has no soil to hold water",
+      "Tarmac, which seals the ground"
+     ],
+     "a": 0,
+     "why": "Trees intercept rain and promote infiltration.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is discharge measured in?",
+     "o": [
+      "m³/s",
+      "m/s, which is metres per second",
+      "kg, a measure of mass",
+      "°C, a measure of temperature"
+     ],
+     "a": 0,
+     "why": "Volume per second.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a soft engineering flood strategy?",
+     "o": [
+      "Restoring wetlands",
+      "Building a concrete wall",
+      "Straightening a channel",
+      "Raising a levee only"
+     ],
+     "a": 0,
+     "why": "It works with natural processes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Urbanisation tends to...",
+     "o": [
+      "Increase flood peaks",
+      "Decrease run-off and flood peaks",
+      "Remove rivers from the landscape",
+      "Lengthen lag time before floods arrive"
+     ],
+     "a": 0,
+     "why": "Hard surfaces cut infiltration.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is throughflow?",
+     "o": [
+      "Water moving sideways through soil",
+      "Water held in clouds high in the sky",
+      "Water flowing along the river channel",
+      "Waves breaking along an ocean coast"
+     ],
+     "a": 0,
+     "why": "It is slower than overland flow.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A large dam traps sediment. What can happen downstream?",
+     "o": [
+      "Channel and delta erosion",
+      "More sediment reaches the river and delta",
+      "Faster growth of the deltas at the coast",
+      "No effect on the river or the delta"
+     ],
+     "a": 0,
+     "why": "Sediment starved rivers erode.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A stream is 5 m wide, 0.8 m deep, and flows at 0.5 m/s. What is its discharge in m³/s?",
+     "a": 2,
+     "tol": 0.05,
+     "unit": "m³/s",
+     "why": "Area = 4 m²; Q = 4 × 0.5 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the parts of a storm hydrograph.",
+     "items": [
+      "Base flow",
+      "Rising limb",
+      "Peak discharge",
+      "Falling limb",
+      "Return to base flow"
+     ],
+     "why": "Discharge rises, peaks, then recedes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Suggest two ways to reduce flood risk in a town that has been paved over.",
+     "rubric": [
+      [
+       "permeable",
+       "green roof",
+       "rain garden",
+       "sustainable drainage",
+       "suds",
+       "plant",
+       "tree",
+       "wetland"
+      ],
+      [
+       "storage",
+       "pond",
+       "store",
+       "basin",
+       "retention",
+       "detention",
+       "dam"
+      ],
+      [
+       "warning",
+       "zoning",
+       "levee",
+       "floodplain",
+       "channel",
+       "plan"
+      ]
+     ],
+     "min": 2,
+     "model": "Add permeable paving, green roofs and rain gardens to increase infiltration, and build storage ponds or restore wetlands to hold water. Flood warnings and zoning also help.",
+     "why": "Slow, store and warn.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A catchment is steep, with thin soil, and a storm falls on frozen ground. What does the hydrograph look like?",
+     "o": [
+      "Steep and flashy with a high peak",
+      "Flat and low, with a very small peak",
+      "Delayed and wide, spread over many days",
+      "No peak at all, only a steady flow"
+     ],
+     "a": 0,
+     "why": "Little infiltration and fast run-off.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does sharing a river basin require cooperation?",
+     "o": [
+      "Upstream uses change water quantity and quality downstream",
+      "Rivers ignore borders, so no rules are needed",
+      "Water is unlimited, so no one needs to share",
+      "Borders stop the river from flowing across them"
+     ],
+     "a": 0,
+     "why": "Hydrology crosses political lines.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A wetland is restored upstream. What is its main flood effect?",
+     "o": [
+      "Stores water and lowers peaks",
+      "Raises flood peaks by sending water to the river",
+      "Dries the river by taking all its water",
+      "Removes rainfall from the catchment"
+     ],
+     "a": 0,
+     "why": "Wetlands act like sponges.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Hydrology and watershed management",
+    "model": "A catchment collects rain and sends it to a river. Soils and plants slow water; paved surfaces speed it. Discharge is area times velocity. Managers use dams, levees and natural methods to control floods and supply water.",
+    "points": [
+     {
+      "k": [
+       "catchment",
+       "basin",
+       "drain"
+      ],
+      "ask": "What is a catchment?"
+     },
+     {
+      "k": [
+       "infiltrat",
+       "soak",
+       "permeable"
+      ],
+      "ask": "Why does ground cover matter?"
+     },
+     {
+      "k": [
+       "discharge",
+       "area",
+       "velocity",
+       "hydrograph"
+      ],
+      "ask": "How do we measure flow?"
+     },
+     {
+      "k": [
+       "dam",
+       "levee",
+       "wetland",
+       "flood",
+       "manage"
+      ],
+      "ask": "How do people manage it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Geomorphology",
+   "icon": "⛰️",
+   "hook": "The Himalaya rise about 5 mm a year yet erode quickly. How can a mountain grow and wear away at the same time?",
+   "explain": [
+    "Geomorphology studies landforms and the processes that shape them. Endogenic (internal) processes such as tectonic uplift and volcanism build relief. Exogenic (external) processes such as weathering, erosion, transport and deposition lower it. Relief is the balance of both over time.",
+    "Weathering breaks rock down in place. Physical weathering includes freeze-thaw, where water freezes in cracks and expands about 9 percent. Chemical weathering changes minerals, for example carbonic acid dissolving limestone to make caves and karst. Biological weathering involves roots and organisms.",
+    "Mass movement is downslope movement under gravity, from slow creep to rapid landslides, often triggered by heavy rain or earthquakes. Slopes fail when driving forces exceed resistance.",
+    "Different rocks make different landscapes: resistant granite forms uplands; limestone gives karst with sinkholes; sandstone forms cliffs. Landscapes are also inherited from past climates. Much of northern Europe and North America was shaped by ice sheets during the last ice age, which ended about 11,700 years ago."
+   ],
+   "example": {
+    "q": "A mountain is uplifted at 4 mm per year and eroded at 3 mm per year. What is the net change in height per year, and after 1 million years?",
+    "steps": [
+     "Net = 4 − 3 = 1 mm per year.",
+     "1 mm × 1,000,000 = 1,000,000 mm.",
+     "1,000,000 mm = 1,000 m."
+    ],
+    "a": "+1 mm a year, about +1,000 m in a million years"
+   },
+   "analogies": {
+    "home": "Sandcastles slump when too wet, like slopes failing after heavy rain.",
+    "farm": "Terraces stop soil creep on steep fields.",
+    "city": "Hillside cities use retaining walls and drains to prevent landslides.",
+    "nature": "Tree roots wedge into rock cracks and break them open."
+   },
+   "mnemonic": "Build up: tectonics. Wear down: weathering and erosion.",
+   "terms": [
+    [
+     "Weathering",
+     "Breakdown of rock in place."
+    ],
+    [
+     "Mass movement",
+     "Downslope movement of rock and soil under gravity."
+    ],
+    [
+     "Karst",
+     "Landscape formed by dissolving of rock like limestone."
+    ],
+    [
+     "Relief",
+     "Differences in height of the land."
+    ]
+   ],
+   "misc": {
+    "wrong": "Mountains are permanent features.",
+    "right": "Mountains rise and are worn down over millions of years; relief reflects ongoing balance."
+   },
+   "limits": "Dating landforms and measuring erosion rates have large uncertainties, especially over long timescales.",
+   "trip": {
+    "wiki": "Geomorphology",
+    "prompt": "Look at a karst landscape photo. What features show that rock has dissolved?"
+   },
+   "sources": [
+    "Geomorphology",
+    "Weathering",
+    "Karst"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is an endogenic process?",
+     "o": [
+      "Tectonic uplift",
+      "Frost wedging in cracks of rock",
+      "River erosion cutting a valley",
+      "Wave action on a rocky coast"
+     ],
+     "a": 0,
+     "why": "It comes from within Earth.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What breaks rock in freeze-thaw weathering?",
+     "o": [
+      "Water expanding as it freezes",
+      "Wind blowing grains against the rock",
+      "Roots growing in the cracks of rock",
+      "Acid rain dissolving the surface"
+     ],
+     "a": 0,
+     "why": "Ice expansion widens cracks.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What forms caves in limestone?",
+     "o": [
+      "Dissolving by weak acid in water",
+      "Freezing and thawing of ice in rock",
+      "Wind blowing sand across stone",
+      "Volcanoes erupting under the limestone"
+     ],
+     "a": 0,
+     "why": "A chemical weathering process.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which condition most raises landslide risk?",
+     "o": [
+      "Heavy rain on a steep slope",
+      "Dry flat ground with no rain",
+      "Calm weather and clear skies",
+      "A grass-free desert with no slope"
+     ],
+     "a": 0,
+     "why": "Water adds weight and cuts friction.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What are inherited landforms?",
+     "o": [
+      "Shapes made by past climates",
+      "Shapes made by storms yesterday",
+      "Hills built by people with machines",
+      "Artificial lakes made by people"
+     ],
+     "a": 0,
+     "why": "Glaciated valleys remain after ice leaves.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A cliff made of hard and soft rock erodes unevenly. What results?",
+     "o": [
+      "Headlands and bays",
+      "Flat beaches only, all along the cliff",
+      "Volcanoes rising from the sea",
+      "Deltas building out into the water"
+     ],
+     "a": 0,
+     "why": "Soft rock erodes faster.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does karst often lack at the surface?",
+     "o": [
+      "Rivers, since water goes underground",
+      "Rocks, because the ground is all soil",
+      "Sky above it, since caves roof it over",
+      "Soil, because the land is bare"
+     ],
+     "a": 0,
+     "why": "Water disappears through sinkholes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "If water expands by about 9 percent on freezing, how many cm³ of ice come from 200 cm³ of water?",
+     "a": 218,
+     "tol": 1,
+     "unit": "cm³",
+     "why": "200 × 1.09 = 218.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the process to its type.",
+     "pairs": [
+      [
+       "Freeze-thaw",
+       "Physical weathering"
+      ],
+      [
+       "Dissolving limestone",
+       "Chemical weathering"
+      ],
+      [
+       "Root wedging",
+       "Biological weathering"
+      ],
+      [
+       "Landslide",
+       "Mass movement"
+      ]
+     ],
+     "why": "Weathering type depends on how rock breaks.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a mountain range can be high even though erosion is constant.",
+     "rubric": [
+      [
+       "uplift",
+       "tectonic",
+       "collision",
+       "rise",
+       "pushed"
+      ],
+      [
+       "balance",
+       "faster",
+       "equal",
+       "exceed",
+       "rate",
+       "keeps pace"
+      ],
+      [
+       "erosion",
+       "weathering",
+       "wear"
+      ]
+     ],
+     "min": 2,
+     "model": "Tectonic uplift raises the land at a rate that can match or exceed erosion. As long as uplift keeps pace with erosion, the range remains high.",
+     "why": "Uplift versus erosion.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does the Appalachian range look low and rounded while the Himalaya is sharp and high?",
+     "o": [
+      "The Appalachians are far older and more eroded",
+      "They are newer and still being pushed up",
+      "They lack rock, so the hills are soft",
+      "They lie in the sea and are worn down by waves"
+     ],
+     "a": 0,
+     "why": "Time and tectonic activity shape form.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does vegetation reduce slope failure?",
+     "o": [
+      "Roots bind soil and take up water",
+      "Roots add weight and pull the slope down",
+      "Leaves attract rain onto the slope",
+      "Shade freezes the soil and holds it"
+     ],
+     "a": 0,
+     "why": "Vegetation stabilises slopes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a rare flood do more landscape work than many small ones?",
+     "o": [
+      "High energy moves large sediment",
+      "Floods are cold and cool the land",
+      "Water is magic and rearranges rock",
+      "They last for years and wear the land slowly"
+     ],
+     "a": 0,
+     "why": "Magnitude-frequency matters.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Geomorphology",
+    "model": "Landforms come from building processes like uplift and wearing processes like weathering, erosion and mass movement. Rock type and past climates decide the shape.",
+    "points": [
+     {
+      "k": [
+       "uplift",
+       "tectonic",
+       "build"
+      ],
+      "ask": "What raises land?"
+     },
+     {
+      "k": [
+       "weather",
+       "erosion",
+       "wear"
+      ],
+      "ask": "What lowers land?"
+     },
+     {
+      "k": [
+       "rock",
+       "limestone",
+       "granite"
+      ],
+      "ask": "What decides local shape?"
+     },
+     {
+      "k": [
+       "landslide",
+       "gravity",
+       "slope"
+      ],
+      "ask": "How does gravity act?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Economic geography",
+   "icon": "💹",
+   "hook": "Two countries have the same total income, yet life in one seems far better. How do we measure development fairly?",
+   "explain": [
+    "Economic geography studies where economic activity occurs and why. Gross Domestic Product (GDP) measures the value of goods and services produced in a country in a year. GDP per capita divides GDP by population. It is a rough indicator of average income but hides inequality and unpaid work.",
+    "The Human Development Index (HDI) combines life expectancy, education and income per person into a number between 0 and 1. Other indicators are infant mortality, literacy and access to clean water. Countries are often grouped by income or HDI, but classification systems change.",
+    "Trade links regions. Comparative advantage means a country gains by specialising in what it produces at lower opportunity cost. Raw materials often sell for less than manufactured goods, so exporting only raw materials can leave countries vulnerable to price swings.",
+    "Development differs across space. Core-periphery models describe rich cores with strong industry and services and poorer peripheries, at scales from cities to continents. Globalisation links economies through trade, investment, migration and information, with gains for many but also inequality and dislocation."
+   ],
+   "example": {
+    "q": "A country has a GDP of 600 billion dollars and 50 million people. What is GDP per capita?",
+    "steps": [
+     "600 billion = 600,000,000,000.",
+     "Divide by 50,000,000.",
+     "600,000,000,000 ÷ 50,000,000 = 12,000."
+    ],
+    "a": "12,000 dollars per person"
+   },
+   "analogies": {
+    "home": "Family income per person tells you more than total income in a big household.",
+    "city": "Cities often have the highest incomes but also big gaps between rich and poor.",
+    "farm": "A country that exports only raw crops depends on weather and global prices.",
+    "tech": "Digital services allow some countries to jump into high-value work."
+   },
+   "mnemonic": "GDP is money; HDI also counts health and learning.",
+   "terms": [
+    [
+     "GDP",
+     "Value of goods and services a country makes in a year."
+    ],
+    [
+     "HDI",
+     "An index combining health, education and income."
+    ],
+    [
+     "Comparative advantage",
+     "Gain from specialising in what you produce at lower opportunity cost."
+    ],
+    [
+     "Globalisation",
+     "Growing worldwide links in trade, ideas and people."
+    ]
+   ],
+   "misc": {
+    "wrong": "A high GDP means everyone is well off.",
+    "right": "GDP is a total or an average; it can hide wide inequality and says nothing about health or the environment."
+   },
+   "limits": "Development indices simplify complex realities, and different measures rank countries differently.",
+   "trip": {
+    "wiki": "Human Development Index",
+    "prompt": "Find a map of HDI. Which regions have the highest and lowest values?"
+   },
+   "sources": [
+    "Gross domestic product",
+    "Human Development Index",
+    "Globalization"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does GDP per capita measure?",
+     "o": [
+      "Average output per person",
+      "Total area of the country in square kilometres",
+      "The number of people who live in the country",
+      "How much rain falls in the country"
+     ],
+     "a": 0,
+     "why": "GDP divided by population.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which does HDI include?",
+     "o": [
+      "Life expectancy",
+      "Rainfall",
+      "Land area",
+      "Number of cities"
+     ],
+     "a": 0,
+     "why": "Plus education and income.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is GDP an incomplete measure of well-being?",
+     "o": [
+      "It ignores inequality and unpaid work",
+      "It uses the wrong units for money",
+      "It counts only farms and fields",
+      "It never changes over time"
+     ],
+     "a": 0,
+     "why": "Averages hide differences.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can exporting only raw materials be risky?",
+     "o": [
+      "Prices can fall sharply",
+      "The goods are heavy and cost a lot to carry",
+      "Nobody ever buys raw materials",
+      "They need no ports, so trade is hard"
+     ],
+     "a": 0,
+     "why": "Commodity prices are volatile.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Comparative advantage suggests countries should...",
+     "o": [
+      "Specialise where their opportunity cost is lowest",
+      "Make everything they need at home",
+      "Avoid trade with other countries",
+      "Export nothing at all"
+     ],
+     "a": 0,
+     "why": "Both sides can gain from trade.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which pattern describes a rich core and poorer periphery?",
+     "o": [
+      "Core-periphery model",
+      "The water cycle of rivers and seas",
+      "The rock cycle that forms new rocks",
+      "A Hadley cell of rising warm air"
+     ],
+     "a": 0,
+     "why": "It can apply at many scales.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Globalisation often increases...",
+     "o": [
+      "Trade and cultural exchange",
+      "Isolation between countries and peoples",
+      "Distances between far-away places",
+      "Border walls only, with no trade"
+     ],
+     "a": 0,
+     "why": "Links grow stronger.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A country's GDP is 90 billion dollars with 3 million people. What is GDP per capita in dollars?",
+     "a": 30000,
+     "tol": 10,
+     "unit": "dollars",
+     "why": "90,000,000,000 ÷ 3,000,000 = 30,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these by increasing value added in a supply chain.",
+     "items": [
+      "Cotton harvested",
+      "Cotton spun into thread",
+      "Thread woven into cloth",
+      "Cloth made into a designer shirt"
+     ],
+     "why": "Each processing step adds value.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why might two countries with equal GDP per capita have different HDI values?",
+     "rubric": [
+      [
+       "health",
+       "life expectancy",
+       "education",
+       "school",
+       "literacy"
+      ],
+      [
+       "inequality",
+       "distribution",
+       "spread",
+       "income"
+      ],
+      [
+       "different",
+       "not just",
+       "also",
+       "other",
+       "includes"
+      ]
+     ],
+     "min": 2,
+     "model": "HDI also counts life expectancy and education, not only income, and income may be shared differently, so equal GDP per capita can come with different health and schooling.",
+     "why": "HDI is broader.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A country opens a new factory but profits leave the country. What does GDP show versus local income?",
+     "o": [
+      "GDP rises while local income gains are smaller",
+      "GDP falls because of the new factory",
+      "Both GDP and local income rise equally",
+      "Nothing changes in GDP or income"
+     ],
+     "a": 0,
+     "why": "Production and local ownership differ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might fair trade rules matter to small producers?",
+     "o": [
+      "They help secure stable prices",
+      "They remove farming from poor regions",
+      "They ban exports from small producers",
+      "They lower the quality of the goods"
+     ],
+     "a": 0,
+     "why": "Price stability supports livelihoods.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do development indicators change over time?",
+     "o": [
+      "Economies and societies change and measures are updated",
+      "Maps move because the continents drift",
+      "The planets move around the Sun",
+      "The rules for measuring stay constant"
+     ],
+     "a": 0,
+     "why": "Indices are not fixed truths.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Measuring development",
+    "model": "GDP per capita shows average income. HDI adds health and education. Trade and specialisation connect economies, and rich cores and poorer peripheries show unequal development.",
+    "points": [
+     {
+      "k": [
+       "gdp",
+       "income",
+       "per person"
+      ],
+      "ask": "What does GDP measure?"
+     },
+     {
+      "k": [
+       "hdi",
+       "health",
+       "education"
+      ],
+      "ask": "What else matters?"
+     },
+     {
+      "k": [
+       "trade",
+       "specialis",
+       "export"
+      ],
+      "ask": "How do countries trade?"
+     },
+     {
+      "k": [
+       "core",
+       "periphery",
+       "inequal",
+       "unequal"
+      ],
+      "ask": "Is development even?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Political geography and borders",
+   "icon": "🗾",
+   "hook": "A line on a map can mean peace, a dispute or a closed gate. What makes a border real?",
+   "explain": [
+    "A state is a political unit with defined territory, a permanent population, a government and recognised sovereignty. A nation is a group sharing identity, such as language, culture or history. Nation-states try to match the two, but many states contain several nations and some nations are spread across several states, such as the Kurds or the Sámi.",
+    "Boundaries can follow physical features (rivers, mountains), geometric lines (straight lines of latitude or longitude, as in parts of the United States–Canada border and in Africa) or cultural features (language, religion). Many African boundaries were drawn in the 1880s by European powers at the Berlin Conference, often without regard for local societies.",
+    "Under the UN Convention on the Law of the Sea, coastal states have territorial seas to 12 nautical miles and an Exclusive Economic Zone (EEZ) of up to 200 nautical miles for resources. One nautical mile is 1.852 km.",
+    "Some borders are disputed. Geographers describe such cases neutrally, noting who claims what, and how maps differ. Supranational organisations such as the European Union and African Union show how states may share some decisions. Geopolitics studies how geography influences power and international relations."
+   ],
+   "example": {
+    "q": "A coastal state's EEZ extends 200 nautical miles. Convert to kilometres (1 nautical mile = 1.852 km).",
+    "steps": [
+     "Multiply 200 × 1.852.",
+     "200 × 1.852 = 370.4."
+    ],
+    "a": "About 370 km"
+   },
+   "analogies": {
+    "home": "Fences between gardens show who is responsible for each, but neighbours can disagree about where they lie.",
+    "sea": "Fishing rights depend on the EEZ boundaries.",
+    "city": "Even cities have boundaries that decide taxes and services.",
+    "tech": "Satellite imagery is used to map and verify borders."
+   },
+   "mnemonic": "State is the land and government, nation is the people who share identity.",
+   "terms": [
+    [
+     "Sovereignty",
+     "Supreme authority of a state over its territory."
+    ],
+    [
+     "Nation",
+     "A group sharing identity such as language or history."
+    ],
+    [
+     "EEZ",
+     "Zone up to 200 nautical miles where a coastal state has resource rights."
+    ],
+    [
+     "Geopolitics",
+     "How geography influences politics and power."
+    ]
+   ],
+   "misc": {
+    "wrong": "Nation and state mean the same thing.",
+    "right": "A state is a political unit; a nation is a community of identity. They often differ."
+   },
+   "limits": "Disputed territories exist worldwide, and different governments and maps may show them differently. Geographers present the claims rather than choose.",
+   "trip": {
+    "wiki": "Border",
+    "prompt": "Pick a border that follows a river and one that is a straight line. What problems might each cause?"
+   },
+   "sources": [
+    "State (polity)",
+    "Nation",
+    "Exclusive economic zone"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a nation-state?",
+     "o": [
+      "A state whose population largely shares one national identity",
+      "Any island, whatever its people",
+      "A city with a mayor and a council",
+      "A region inside a larger country"
+     ],
+     "a": 0,
+     "why": "It aims to match state and nation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the limit of a territorial sea?",
+     "o": [
+      "12 nautical miles",
+      "200 nautical miles",
+      "1 km",
+      "50 km"
+     ],
+     "a": 0,
+     "why": "The EEZ is wider at 200.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which border type is a straight line along a parallel?",
+     "o": [
+      "Geometric",
+      "Physical",
+      "Cultural",
+      "Natural only"
+     ],
+     "a": 0,
+     "why": "It is drawn by coordinates.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What was the Berlin Conference of 1884–85 about?",
+     "o": [
+      "European powers setting rules for claiming African territory",
+      "Space exploration and the first satellites",
+      "Trading in Asia only, with no African link",
+      "Ending the ice ages by warming the planet"
+     ],
+     "a": 0,
+     "why": "It shaped many boundaries without African consent.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a supranational organisation?",
+     "o": [
+      "A group of states sharing some decisions",
+      "A big company that trades in many countries",
+      "A school that teaches many nations",
+      "A river that flows through many states"
+     ],
+     "a": 0,
+     "why": "The EU and African Union are examples.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How should a geographer treat a disputed border?",
+     "o": [
+      "Present the competing claims neutrally",
+      "Choose a favourite claim and show only that one",
+      "Ignore the dispute and leave it off",
+      "Delete the area from the map"
+     ],
+     "a": 0,
+     "why": "Neutral description is accurate.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which group is a nation spread across several states?",
+     "o": [
+      "The Kurds",
+      "Icelanders",
+      "Monégasques",
+      "Maltese"
+     ],
+     "a": 0,
+     "why": "The Kurds live in parts of several countries.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A ship is 150 nautical miles from the coast. How many kilometres is that (1 nm = 1.852 km)?",
+     "a": 277.8,
+     "tol": 0.5,
+     "unit": "km",
+     "why": "150 × 1.852 = 277.8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its description.",
+     "pairs": [
+      [
+       "Enclave",
+       "A territory surrounded by another state"
+      ],
+      [
+       "Landlocked",
+       "No coast"
+      ],
+      [
+       "Archipelago",
+       "A group of islands"
+      ]
+     ],
+     "why": "Terms describe territory shape.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why can river boundaries cause disputes?",
+     "rubric": [
+      [
+       "move",
+       "shift",
+       "change",
+       "course",
+       "meander"
+      ],
+      [
+       "which",
+       "where",
+       "exact",
+       "centre",
+       "middle",
+       "bank"
+      ],
+      [
+       "flood",
+       "water",
+       "use",
+       "resource",
+       "share"
+      ]
+     ],
+     "min": 2,
+     "model": "Rivers can shift course after floods, so the boundary may become unclear, and countries may disagree about where exactly the line lies or how to share the water.",
+     "why": "Natural features are not fixed.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can straight-line borders ignore local geography?",
+     "o": [
+      "They are drawn on maps without regard to peoples or terrain",
+      "Lines follow rivers, so they respect geography",
+      "They avoid maps and are only drawn on the ground",
+      "They match the villages and farms exactly"
+     ],
+     "a": 0,
+     "why": "Geometric borders may cut across communities.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A landlocked country wants trade. What does it need?",
+     "o": [
+      "Access agreements through neighbouring ports",
+      "Ports of its own at once, on its own coast",
+      "An end to all borders around it",
+      "No trade at all with neighbours"
+     ],
+     "a": 0,
+     "why": "Transit rights are important.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are EEZs important?",
+     "o": [
+      "They give rights to fish, oil and wind energy",
+      "They give each country extra land to farm",
+      "They remove borders at sea",
+      "They end wars between countries"
+     ],
+     "a": 0,
+     "why": "Resources define their value.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Political geography and borders",
+    "model": "A state has territory, people, a government and sovereignty. A nation is a community of identity. Borders can follow rivers, straight lines or culture, and some are disputed. At sea, states claim territorial waters and an EEZ.",
+    "points": [
+     {
+      "k": [
+       "state",
+       "territory",
+       "government",
+       "sovereign"
+      ],
+      "ask": "What is a state?"
+     },
+     {
+      "k": [
+       "nation",
+       "identity",
+       "people",
+       "culture"
+      ],
+      "ask": "And a nation?"
+     },
+     {
+      "k": [
+       "border",
+       "river",
+       "line",
+       "boundary"
+      ],
+      "ask": "How are borders drawn?"
+     },
+     {
+      "k": [
+       "dispute",
+       "claim",
+       "neutral"
+      ],
+      "ask": "What about disputed borders?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Transport and logistics geography",
+   "icon": "🚢",
+   "hook": "A T-shirt may travel across three continents before you wear it. How does it move so cheaply?",
+   "explain": [
+    "Transport geography studies how people and goods move. Modes are road, rail, water, air and pipeline. Each balances cost, speed, capacity and flexibility. Sea transport is slow but very cheap per tonne; air freight is fast but costly; road gives door-to-door flexibility; rail suits heavy bulk on land.",
+    "The standardised shipping container, widely adopted from the 1960s, cut handling costs and let goods switch between ship, train and truck (intermodal transport). Most of the world's traded goods by volume travel by sea.",
+    "Networks use nodes (ports, airports, stations) and links (routes). A hub-and-spoke system routes traffic through a central hub to many smaller spokes, which saves routes but concentrates traffic. Just-in-time logistics keeps stocks low but is sensitive to delays.",
+    "Chokepoints are narrow passages where traffic concentrates: the Suez Canal (opened 1869), the Panama Canal (opened 1914), the Strait of Malacca and the Strait of Hormuz. Blocking one raises costs. Distance is not just kilometres; time and cost matter, so geographers also use friction of distance."
+   ],
+   "example": {
+    "q": "A ship sails at 20 knots. One knot is 1 nautical mile per hour (1.852 km/h). How long to sail 3,000 nautical miles?",
+    "steps": [
+     "Time = distance ÷ speed.",
+     "3,000 ÷ 20 = 150 hours.",
+     "150 ÷ 24 = 6.25 days."
+    ],
+    "a": "150 hours, about 6.25 days"
+   },
+   "analogies": {
+    "home": "A neighbourhood shop is a spoke; the supermarket warehouse is the hub.",
+    "city": "Bus and metro networks use interchange stations as nodes.",
+    "farm": "Refrigerated trucks and containers carry fruit across oceans.",
+    "sea": "Ports with deep water and cranes handle the biggest ships."
+   },
+   "mnemonic": "Nodes and links, hubs and spokes, boxes on boats.",
+   "terms": [
+    [
+     "Intermodal transport",
+     "Moving goods in one container by more than one mode."
+    ],
+    [
+     "Hub-and-spoke",
+     "A network where routes pass through a central hub."
+    ],
+    [
+     "Chokepoint",
+     "A narrow route where traffic is concentrated."
+    ],
+    [
+     "Friction of distance",
+     "How cost and time reduce movement with distance."
+    ]
+   ],
+   "misc": {
+    "wrong": "Air freight carries most world trade.",
+    "right": "Most trade by volume goes by sea; air carries a small share of high-value, urgent goods."
+   },
+   "limits": "Trade statistics differ by whether weight or value is counted. By value, air carries a larger share.",
+   "trip": {
+    "wiki": "Intermodal container",
+    "prompt": "Look at a map of shipping lanes. Which chokepoints do they pass through?"
+   },
+   "sources": [
+    "Transport geography",
+    "Intermodal container",
+    "Suez Canal"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which mode is usually cheapest per tonne over long distances?",
+     "o": [
+      "Sea",
+      "Air",
+      "Road",
+      "Helicopter"
+     ],
+     "a": 0,
+     "why": "Large ships carry huge loads.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why did containers transform shipping?",
+     "o": [
+      "They standardised handling and cut costs",
+      "They were bigger ships with huge sails",
+      "They were lighter than the old crates",
+      "They were cheaper wooden boxes"
+     ],
+     "a": 0,
+     "why": "Easy transfer between modes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which canal links the Mediterranean and Red Sea?",
+     "o": [
+      "Suez Canal",
+      "Panama Canal",
+      "Kiel Canal",
+      "Erie Canal"
+     ],
+     "a": 0,
+     "why": "It shortens Europe–Asia routes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the Panama Canal connect?",
+     "o": [
+      "Atlantic and Pacific Oceans",
+      "Red Sea and Indian Ocean",
+      "Baltic and North Sea",
+      "Black Sea and Atlantic Ocean"
+     ],
+     "a": 0,
+     "why": "It cuts the voyage around South America.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a risk of just-in-time supply chains?",
+     "o": [
+      "Delays quickly stop production",
+      "Too much stock sits in storage",
+      "Sea routes become slower",
+      "Trucks become cheaper to run"
+     ],
+     "a": 0,
+     "why": "Little stock buffers shocks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do airlines use hubs?",
+     "o": [
+      "Fewer routes can link many cities",
+      "Hubs are cheaper to build, that is all",
+      "Planes cannot land at any other airport",
+      "Spokes are faster than direct flights"
+     ],
+     "a": 0,
+     "why": "Connections save routes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which good is best suited to air freight?",
+     "o": [
+      "Fresh flowers or urgent medicine",
+      "Coal, which is bulky and cheap",
+      "Gravel for building roads",
+      "Timber logs from the forest"
+     ],
+     "a": 0,
+     "why": "High value and perishable.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A truck carries goods 480 km at an average 60 km/h. How many hours does the trip take?",
+     "a": 8,
+     "tol": 0.1,
+     "unit": "h",
+     "why": "480 ÷ 60 = 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order these modes from the cheapest to the most expensive per tonne-kilometre for long freight.",
+     "items": [
+      "Sea",
+      "Rail",
+      "Road",
+      "Air"
+     ],
+     "why": "Capacity and speed differ.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a blocked chokepoint such as a canal affects prices worldwide.",
+     "rubric": [
+      [
+       "delay",
+       "reroute",
+       "longer",
+       "detour",
+       "around",
+       "blocked"
+      ],
+      [
+       "cost",
+       "fuel",
+       "price",
+       "expensive",
+       "shipping rates"
+      ],
+      [
+       "supply",
+       "shortage",
+       "goods",
+       "trade",
+       "global",
+       "many ships"
+      ]
+     ],
+     "min": 2,
+     "model": "Ships must wait or sail a much longer route, which raises fuel and shipping costs and delays supplies, so goods become scarcer or dearer in many countries.",
+     "why": "Chokepoints concentrate risk.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A landlocked country builds a rail link to a distant port. What does this reduce?",
+     "o": [
+      "Friction of distance for trade",
+      "Distance in kilometres between two places",
+      "The size of the oceans",
+      "The population of the country"
+     ],
+     "a": 0,
+     "why": "Faster, cheaper movement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the Strait of Malacca strategically important?",
+     "o": [
+      "Much Asia–Europe sea trade passes through it",
+      "It is the widest sea strait in the whole world",
+      "It lies in Europe, near many ports",
+      "It has no ships on it, so it is quiet"
+     ],
+     "a": 0,
+     "why": "It links the Indian and Pacific Oceans.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How could cities cut transport emissions?",
+     "o": [
+      "Invest in public and active transport",
+      "Widen roads only, so cars move faster",
+      "Ban walking in busy streets",
+      "Increase the number of parking spaces"
+     ],
+     "a": 0,
+     "why": "Efficient modes cut pollution.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Transport and logistics",
+    "model": "Goods move by road, rail, sea, air and pipeline, each with its own cost and speed. Containers make switching modes easy. Networks of hubs and chokepoints decide how efficient, and how fragile, trade is.",
+    "points": [
+     {
+      "k": [
+       "sea",
+       "ship",
+       "road",
+       "rail",
+       "air"
+      ],
+      "ask": "What modes exist?"
+     },
+     {
+      "k": [
+       "container",
+       "intermodal"
+      ],
+      "ask": "How do goods switch modes?"
+     },
+     {
+      "k": [
+       "hub",
+       "spoke",
+       "network"
+      ],
+      "ask": "How are routes organised?"
+     },
+     {
+      "k": [
+       "chokepoint",
+       "canal",
+       "strait",
+       "block"
+      ],
+      "ask": "What is fragile?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Geographic information systems",
+   "icon": "🗺️",
+   "hook": "A map app can show traffic, weather and shops all at once. How is that possible from a flat screen?",
+   "explain": [
+    "A Geographic Information System (GIS) stores, analyses and displays spatial data. Data are organised into layers, each holding one theme such as roads, rivers, land use or elevation. Layers share a coordinate system so they overlay precisely.",
+    "There are two data models. Vector data uses points (a well), lines (a road) and polygons (a lake) with attribute tables. Raster data is a grid of cells, each with a value, such as elevation or satellite pixels. Resolution is the cell size.",
+    "Maps flatten a sphere, so projections distort something: area, shape, distance or direction. The Mercator projection preserves shape and compass bearings locally, which suits navigation, but exaggerates areas near the poles (Greenland looks as big as Africa, though Africa is about 14 times larger). Equal-area projections keep sizes true.",
+    "GIS operations include buffering (zones around features), overlay (combining layers) and querying. A planner can find sites within 500 m of a road and outside a flood zone. GNSS/GPS gives positions from satellites with several metres of accuracy."
+   ],
+   "example": {
+    "q": "A raster map has cells of 30 m by 30 m. How many hectares does one cell cover? (1 hectare = 10,000 m²)",
+    "steps": [
+     "Area = 30 × 30 = 900 m².",
+     "900 ÷ 10,000 = 0.09 hectares."
+    ],
+    "a": "0.09 hectares"
+   },
+   "analogies": {
+    "home": "Transparent sheets stacked on a table, each with one drawing, are like GIS layers.",
+    "city": "Planners overlay schools, bus routes and population to find who lacks access.",
+    "farm": "Farmers map soil and yield layers to apply fertiliser only where needed.",
+    "sea": "Marine GIS shows depth, currents and shipping lanes."
+   },
+   "mnemonic": "Layers stack, vectors draw, rasters grid.",
+   "terms": [
+    [
+     "GIS",
+     "A system for storing, analysing and mapping spatial data."
+    ],
+    [
+     "Vector data",
+     "Points, lines and polygons with attributes."
+    ],
+    [
+     "Raster data",
+     "A grid of cells with values."
+    ],
+    [
+     "Projection",
+     "A method of flattening the globe onto a map."
+    ]
+   ],
+   "misc": {
+    "wrong": "A map projection can show shapes, areas and distances all perfectly.",
+    "right": "Every flat projection distorts at least one property of the globe."
+   },
+   "limits": "GIS results depend on data quality, scale and the choices the analyst makes.",
+   "trip": {
+    "wiki": "Geographic information system",
+    "prompt": "Find two layers of a city map and imagine overlaying them. What question could they answer together?"
+   },
+   "sources": [
+    "Geographic information system",
+    "Map projection",
+    "Mercator projection"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a GIS layer?",
+     "o": [
+      "A dataset of one theme in a shared coordinate system",
+      "A drawing pen used for map making",
+      "A type of paper used for printing maps",
+      "A satellite in orbit around Earth"
+     ],
+     "a": 0,
+     "why": "Layers overlay.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is vector data?",
+     "o": [
+      "A polygon outlining a lake",
+      "A grid of elevation cells covering the land",
+      "A pixel in a satellite photograph",
+      "A raster tile from a web map"
+     ],
+     "a": 0,
+     "why": "Vectors use points, lines and polygons.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is raster data?",
+     "o": [
+      "A satellite image",
+      "A road line",
+      "A city point",
+      "A boundary polygon"
+     ],
+     "a": 0,
+     "why": "Grid cells hold values.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the Mercator projection exaggerate?",
+     "o": [
+      "Areas near the poles",
+      "Areas near the equator",
+      "Time zones",
+      "Compass directions"
+     ],
+     "a": 0,
+     "why": "Greenland looks too large.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does a buffer do?",
+     "o": [
+      "Creates a zone around a feature",
+      "Removes a layer from the map",
+      "Makes a grid of squares over the map",
+      "Prints a map on paper"
+     ],
+     "a": 0,
+     "why": "For example, 500 m around a river.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A planner wants flat land outside a flood zone. Which GIS action helps?",
+     "o": [
+      "Overlay slope and flood layers",
+      "Print a globe and measure it by hand",
+      "Delete the elevation layer to save space",
+      "Zoom out only, so the detail is hidden"
+     ],
+     "a": 0,
+     "why": "Overlay analysis combines criteria.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does every flat map distort?",
+     "o": [
+      "A sphere cannot be flattened without stretching or tearing",
+      "Maps are small, so they must be inaccurate",
+      "Paper stretches, so every map gets distorted",
+      "The Earth is flat, so the map is perfect"
+     ],
+     "a": 0,
+     "why": "This is a mathematical limit.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A raster cell is 10 m × 10 m. How many cells are needed to cover 1 hectare (10,000 m²)?",
+     "a": 100,
+     "tol": 0,
+     "unit": "cells",
+     "why": "Each cell is 100 m²; 10,000 ÷ 100 = 100.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each projection property to its use.",
+     "pairs": [
+      [
+       "Equal-area",
+       "Comparing sizes of regions"
+      ],
+      [
+       "Conformal (Mercator)",
+       "Navigation by compass bearing"
+      ],
+      [
+       "Equidistant",
+       "Measuring distances from a centre"
+      ]
+     ],
+     "why": "Different projections serve different tasks.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why is it helpful for all GIS layers to use the same coordinate system?",
+     "rubric": [
+      [
+       "align",
+       "overlay",
+       "line up",
+       "match",
+       "register"
+      ],
+      [
+       "same",
+       "common",
+       "shared",
+       "consistent"
+      ],
+      [
+       "position",
+       "location",
+       "error",
+       "mistake",
+       "wrong"
+      ]
+     ],
+     "min": 2,
+     "model": "If layers share a coordinate system they line up exactly, so features overlay in the right places; otherwise positions would be misplaced and analysis would give wrong answers.",
+     "why": "Alignment makes analysis valid.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A hospital layer is overlaid on a population layer. What question can be answered?",
+     "o": [
+      "Which communities are far from care",
+      "Rainfall totals in each district",
+      "The age of Earth in years",
+      "The height of the volcanoes nearby"
+     ],
+     "a": 0,
+     "why": "Spatial overlay reveals gaps.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why choose an equal-area projection for a map of population?",
+     "o": [
+      "It keeps areas comparable",
+      "It makes the map look prettier to readers",
+      "It shows the poles much bigger than the rest",
+      "It speeds up GPS in phones"
+     ],
+     "a": 0,
+     "why": "Size distortion misleads.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does coarse resolution hide small features?",
+     "o": [
+      "A cell has one value covering a large area",
+      "The cells are left blank in that area",
+      "Satellites sleep when they pass over small things",
+      "The colours fade as the image gets older"
+     ],
+     "a": 0,
+     "why": "Detail below cell size is lost.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Geographic information systems",
+    "model": "A GIS stacks layers of spatial data in a common coordinate system. Vector data uses points, lines and polygons; raster data uses grids. Projections flatten the globe and always distort something.",
+    "points": [
+     {
+      "k": [
+       "layer",
+       "overlay",
+       "stack"
+      ],
+      "ask": "What is a layer?"
+     },
+     {
+      "k": [
+       "vector",
+       "raster",
+       "grid",
+       "point",
+       "polygon"
+      ],
+      "ask": "How is data stored?"
+     },
+     {
+      "k": [
+       "projection",
+       "distort",
+       "flatten"
+      ],
+      "ask": "Why are flat maps imperfect?"
+     },
+     {
+      "k": [
+       "buffer",
+       "overlay",
+       "query",
+       "analys"
+      ],
+      "ask": "What can a GIS do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Remote sensing and satellite mapping",
+   "icon": "🛰️",
+   "hook": "A satellite can tell how green a forest is without anyone going there. How?",
+   "explain": [
+    "Remote sensing collects information about Earth from a distance, usually with sensors on satellites, aircraft or drones. Passive sensors record reflected sunlight or emitted heat; active sensors, such as radar and lidar, send their own signal and record the return.",
+    "Different surfaces reflect and emit different wavelengths. Healthy plants absorb red light for photosynthesis and reflect a lot of near-infrared. The Normalised Difference Vegetation Index is NDVI = (NIR − Red) ÷ (NIR + Red). Values near 1 show dense healthy vegetation; near 0 bare ground; negative values water or snow.",
+    "Resolution has four forms: spatial (pixel size), spectral (number of bands), temporal (how often a place is revisited) and radiometric (sensitivity). Landsat satellites have imaged the whole Earth since 1972 with 30 m pixels, giving a long record of change. Radar can see through clouds and at night.",
+    "Uses include mapping land cover, tracking deforestation, monitoring floods and droughts, measuring sea ice and guiding disaster response. Images are checked against ground truth, direct observations in the field."
+   ],
+   "example": {
+    "q": "A pixel reflects near-infrared 0.50 and red 0.10. Calculate NDVI.",
+    "steps": [
+     "NIR − Red = 0.50 − 0.10 = 0.40.",
+     "NIR + Red = 0.50 + 0.10 = 0.60.",
+     "NDVI = 0.40 ÷ 0.60 = 0.67."
+    ],
+    "a": "About 0.67, healthy vegetation"
+   },
+   "analogies": {
+    "home": "A camera sees colours; a thermal camera sees heat. Satellites carry sensors for many invisible kinds of light.",
+    "farm": "Farmers use NDVI images to find stressed crops.",
+    "city": "Night-time light images show where cities and power are.",
+    "sea": "Satellites track sea-surface temperature and sea ice."
+   },
+   "mnemonic": "Sensors see what eyes cannot: red, near-infrared, heat and radar.",
+   "terms": [
+    [
+     "Remote sensing",
+     "Gathering information about Earth from a distance."
+    ],
+    [
+     "NDVI",
+     "An index of vegetation greenness from red and near-infrared light."
+    ],
+    [
+     "Spatial resolution",
+     "The size of the smallest ground detail a pixel can show."
+    ],
+    [
+     "Ground truth",
+     "Field observations used to check images."
+    ]
+   ],
+   "misc": {
+    "wrong": "Satellite images are simply photographs.",
+    "right": "Many sensors record invisible wavelengths or radar signals, and images are processed and calibrated before use."
+   },
+   "limits": "Clouds, shadows and mixed pixels can mislead classification, so results need checking.",
+   "trip": {
+    "wiki": "Remote sensing",
+    "prompt": "Compare satellite images of a place across years. What changes do you notice?"
+   },
+   "sources": [
+    "Remote sensing",
+    "Normalized difference vegetation index",
+    "Landsat program"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is an active sensor?",
+     "o": [
+      "One that sends its own signal",
+      "One that only uses the sunlight reflected",
+      "One that sits on the ground, not in space",
+      "One that sleeps when not in use"
+     ],
+     "a": 0,
+     "why": "Radar and lidar are active.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is NDVI high for healthy plants?",
+     "o": [
+      "They reflect strongly in near-infrared and absorb red",
+      "They reflect red light strongly",
+      "They absorb all light and reflect none",
+      "They emit radio waves of their own"
+     ],
+     "a": 0,
+     "why": "The contrast raises the index.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does spatial resolution describe?",
+     "o": [
+      "Pixel size on the ground",
+      "Number of years",
+      "How often a place is imaged",
+      "Image colour only"
+     ],
+     "a": 0,
+     "why": "Smaller pixels show finer detail.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which sensor is best for seeing through cloud?",
+     "o": [
+      "Radar",
+      "Visible camera",
+      "Near-infrared only",
+      "Human eye"
+     ],
+     "a": 0,
+     "why": "Microwaves pass through clouds.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is ground truth?",
+     "o": [
+      "Field data used to verify satellite results",
+      "The orbit that a satellite follows",
+      "A map projection that flattens the globe",
+      "A type of cloud seen from space"
+     ],
+     "a": 0,
+     "why": "Checking reduces errors.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "NDVI near 0 usually indicates what?",
+     "o": [
+      "Bare ground",
+      "Dense forest",
+      "Deep ocean",
+      "Fresh snow only"
+     ],
+     "a": 0,
+     "why": "Little vegetation.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why use satellites with high temporal resolution to track floods?",
+     "o": [
+      "They revisit often to catch rapid change",
+      "They can see more colours than others",
+      "They are cheaper to build and launch",
+      "They orbit slowly and take few pictures"
+     ],
+     "a": 0,
+     "why": "Floods change in days.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Compute NDVI when NIR = 0.60 and Red = 0.20.",
+     "a": 0.5,
+     "tol": 0.01,
+     "unit": "",
+     "why": "(0.60 − 0.20) ÷ (0.60 + 0.20) = 0.40 ÷ 0.80 = 0.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a remote sensing study.",
+     "items": [
+      "Choose sensor and dates",
+      "Acquire and correct images",
+      "Classify land cover",
+      "Check against ground truth"
+     ],
+     "why": "Each step supports the next.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how time-series satellite images can reveal deforestation.",
+     "rubric": [
+      [
+       "compare",
+       "change",
+       "over time",
+       "series",
+       "before",
+       "after",
+       "different dates"
+      ],
+      [
+       "forest",
+       "green",
+       "vegetation",
+       "ndvi",
+       "tree",
+       "clearing",
+       "loss"
+      ],
+      [
+       "image",
+       "satellite",
+       "pixel",
+       "map",
+       "detect"
+      ]
+     ],
+     "min": 2,
+     "model": "Images of the same place on different dates are compared. Falling NDVI or a switch from forest to bare ground shows where trees have been cleared.",
+     "why": "Change detection works by comparing dates.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A 30 m pixel mixes a small house with trees. What problem results?",
+     "o": [
+      "A mixed pixel hides the house",
+      "The house is shown clearly and separately",
+      "Pixels vanish when they are mixed",
+      "The sensor flips and records upside down"
+     ],
+     "a": 0,
+     "why": "Pixels record averages.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do scientists calibrate sensors?",
+     "o": [
+      "So measurements are comparable across time and sensors",
+      "To change the colours of the images",
+      "To save power on the satellite",
+      "To remove clouds from the pictures"
+     ],
+     "a": 0,
+     "why": "Consistency is essential.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a long satellite record useful for climate studies?",
+     "o": [
+      "It shows trends over decades",
+      "It makes the weather happen",
+      "It slows down the pace of change",
+      "It stops all error from happening"
+     ],
+     "a": 0,
+     "why": "Landsat covers many decades.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Remote sensing",
+    "model": "Satellites and aircraft record light, heat or radar from Earth. Healthy plants reflect near-infrared and absorb red, which NDVI measures. Images are checked with ground truth and used to map change.",
+    "points": [
+     {
+      "k": [
+       "sensor",
+       "satellite",
+       "record",
+       "distance"
+      ],
+      "ask": "What is remote sensing?"
+     },
+     {
+      "k": [
+       "infrared",
+       "red",
+       "ndvi",
+       "plant"
+      ],
+      "ask": "How does it measure vegetation?"
+     },
+     {
+      "k": [
+       "resolution",
+       "pixel",
+       "detail"
+      ],
+      "ask": "What limits detail?"
+     },
+     {
+      "k": [
+       "change",
+       "time",
+       "compare",
+       "map"
+      ],
+      "ask": "What can we do with it?"
+     }
+    ]
+   }
+  }
+ ]
+}

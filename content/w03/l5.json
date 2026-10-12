@@ -1,0 +1,2818 @@
+{
+ "world": 3,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Finite element analysis",
+   "icon": "🧩",
+   "hook": "A computer predicts the stress in a bracket by splitting it into thousands of tiny pieces. Why does the answer sometimes change when the pieces are made smaller, and which answer should you trust?",
+   "explain": [
+    "Finite element analysis (FEA) approximates a continuous structure by a mesh of simple elements joined at nodes. Each element has a stiffness relation between nodal forces and displacements. The solver assembles all of them into K u = F, applies supports (boundary conditions) and solves for the unknown displacements. Strains and stresses follow from the displacements.",
+    "The simplest element is a bar with stiffness k = A E ÷ L. For A = 100 mm² = 1 × 10⁻⁴ m², E = 200 GPa and L = 0.5 m, k = 4 × 10⁷ N/m, so a 10 kN load gives u = F ÷ k = 0.25 mm. Real models use shell and solid elements, but the principle is the same.",
+    "Results depend on the mesh, so a convergence study is essential: refine the mesh until the quantity of interest stops changing. Stress is less accurate than displacement, and at sharp re-entrant corners the theoretical stress is infinite (a singularity), so refining the mesh just keeps raising it. Real parts have fillets, so model them.",
+    "To judge yielding under multiaxial stress use the von Mises equivalent stress. For plane stress, σᵥₘ = √(σ₁² − σ₁σ₂ + σ₂²). With σ₁ = 100 MPa and σ₂ = 50 MPa, σᵥₘ = 86.6 MPa. Verification asks whether the equations were solved correctly (check against a hand calculation). Validation asks whether the model represents reality (compare with tests). A coloured plot is not evidence by itself."
+   ],
+   "example": {
+    "q": "A plane-stress point has principal stresses 100 MPa and 50 MPa. The material yields at 250 MPa. Find the von Mises stress and the safety factor against yield.",
+    "steps": [
+     "σᵥₘ = √(100² − 100 × 50 + 50²) = √(10 000 − 5000 + 2500).",
+     "= √7500 = 86.6 MPa.",
+     "n = 250 ÷ 86.6 = 2.89."
+    ],
+    "a": "86.6 MPa; safety factor about 2.9"
+   },
+   "analogies": {
+    "home": "Tiling a curved bathtub with many small flat tiles: smaller tiles follow the curve better.",
+    "city": "A city traffic model splits roads into segments and adds up the flow between them.",
+    "farm": "Estimating a field's area by counting small squares: finer squares give a better estimate.",
+    "tech": "A digital photo is made of pixels, and more pixels capture more detail."
+   },
+   "mnemonic": "Mesh, constrain, load, solve, then converge and validate.",
+   "terms": [
+    [
+     "Element",
+     "A small piece of the model with a known stiffness relation."
+    ],
+    [
+     "Node",
+     "A point where elements connect and displacements are found."
+    ],
+    [
+     "Mesh convergence",
+     "Refining the mesh until results stop changing significantly."
+    ],
+    [
+     "Von Mises stress",
+     "An equivalent stress used to predict yielding of ductile metals."
+    ]
+   ],
+   "misc": {
+    "wrong": "A finer mesh always gives a more accurate stress.",
+    "right": "Refinement helps only where the model is physically sound. At singularities and wrong boundary conditions, a finer mesh gives larger but meaningless values."
+   },
+   "limits": "FEA gives approximate answers that depend on element type, supports, loads and material models. Errors in the set-up can produce confident but wrong results.",
+   "trip": {
+    "wiki": "Finite element method",
+    "prompt": "Find a mesh refinement example. What quantity is checked for convergence?"
+   },
+   "sources": [
+    "Finite element method",
+    "Von Mises yield criterion",
+    "Stress concentration"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What equation does a linear static finite element solver assemble and solve?",
+     "o": [
+      "K u = F",
+      "F = m a",
+      "P = T ω",
+      "σ = E ε only"
+     ],
+     "a": 0,
+     "why": "K is the global stiffness matrix, u the nodal displacements and F the load vector.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A bar has A = 100 mm², E = 200 GPa and L = 0.5 m. What is its axial stiffness k = AE ÷ L in N/m? Give your answer in units of 10⁷ N/m.",
+     "a": 4,
+     "tol": 0.02,
+     "unit": "× 10⁷ N/m",
+     "why": "k = 1 × 10⁻⁴ × 2 × 10¹¹ ÷ 0.5 = 4 × 10⁷ N/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plane-stress point has principal stresses 120 MPa and 0 MPa. What is the von Mises stress in MPa?",
+     "a": 120,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "√(120² − 0 + 0) = 120 MPa: for uniaxial stress the von Mises stress equals the applied stress.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A mesh is refined near a sharp internal corner and the peak stress keeps rising without limit. What does this indicate?",
+     "o": [
+      "A stress singularity from unrealistic geometry",
+      "Perfect convergence to the true stress, so no change is needed",
+      "A faster solver in the software",
+      "A material error only, in the input data"
+     ],
+     "a": 0,
+     "why": "A perfectly sharp re-entrant corner has theoretically infinite stress, so the model needs a realistic fillet.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which activity checks that the FEA model matches physical reality?",
+     "o": [
+      "Validation against tests",
+      "Verification of the solver only",
+      "Rendering colours",
+      "Refining the mesh"
+     ],
+     "a": 0,
+     "why": "Validation compares predictions with experiments. Verification checks the maths was solved correctly.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "An analyst fixes a part rigidly at the supports in a model, but in reality it rests on rubber pads. What is the likely result?",
+     "o": [
+      "Stresses near the supports are overestimated or wrong",
+      "An exact match with the real part, since fixing is safer",
+      "Zero stress anywhere near the supports",
+      "Lower mesh quality only, with no effect on stress"
+     ],
+     "a": 0,
+     "why": "Boundary conditions strongly affect results, and rigid supports are stiffer than reality.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A two-element mesh and a 200-element mesh give displacements of 0.249 mm and 0.250 mm for a simple bar. What does this suggest?",
+     "o": [
+      "The displacement result is converged",
+      "The mesh is badly wrong because the two answers differ",
+      "The load must be zero in the model",
+      "Stress must also be wrong by a large amount"
+     ],
+     "a": 0,
+     "why": "Small change with refinement indicates convergence for that quantity.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use von Mises stress instead of the largest principal stress for steel?",
+     "o": [
+      "It predicts yield under combined stresses in ductile metals",
+      "It is always larger than the principal stress, so it is safer",
+      "It ignores shear and looks only at tension",
+      "It applies to brittle glass only and not to metals"
+     ],
+     "a": 0,
+     "why": "Yielding in ductile metals correlates with distortion energy.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A colleague presents a bright stress plot and says the part is safe because no red areas appear. Give two checks you would ask for.",
+     "rubric": [
+      [
+       "mesh",
+       "converg",
+       "refine"
+      ],
+      [
+       "boundary",
+       "support",
+       "constraint",
+       "load",
+       "assumption"
+      ],
+      [
+       "valid",
+       "test",
+       "experiment",
+       "hand calc",
+       "verify",
+       "verification"
+      ],
+      [
+       "scale",
+       "legend",
+       "units",
+       "material",
+       "yield",
+       "safety factor"
+      ]
+     ],
+     "min": 2,
+     "model": "I would ask for a mesh convergence study and for the boundary conditions and loads to be justified. I would also want a hand calculation or test to validate the result, and check the colour scale against the yield stress with a safety factor.",
+     "why": "Plots are only as reliable as the model and its checks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each FEA term to its role.",
+     "pairs": [
+      [
+       "Node",
+       "Point where displacement is solved"
+      ],
+      [
+       "Boundary condition",
+       "Supports and constraints"
+      ],
+      [
+       "Convergence study",
+       "Checks mesh independence"
+      ],
+      [
+       "Von Mises stress",
+       "Yield criterion for ductile metals"
+      ]
+     ],
+     "why": "These are the building blocks of an FEA workflow.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A plate with a central hole has a nominal stress of 100 MPa and a stress concentration factor of about 3. What is the peak stress near the hole?",
+     "o": [
+      "About 300 MPa",
+      "About 33 MPa",
+      "About 100 MPa",
+      "About 103 MPa"
+     ],
+     "a": 0,
+     "why": "σmax = Kt × σnom = 3 × 100 = 300 MPa, which may exceed yield locally.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which loading case needs a nonlinear analysis rather than a linear static one?",
+     "o": [
+      "Large deflection or contact between parts",
+      "A small elastic bar pulled gently in tension",
+      "A stiff bracket under a small, steady load that barely moves it",
+      "A beam with a tiny elastic deflection only"
+     ],
+     "a": 0,
+     "why": "Contact, large deformation and plasticity make stiffness change during loading.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A simulation is used to certify a lifting hook. What is the responsible approach?",
+     "o": [
+      "Combine validated FEA with testing and code requirements",
+      "Rely on the colour plot, since it clearly shows the safe areas",
+      "Reduce the safety factor to match the model",
+      "Skip testing and save time"
+     ],
+     "a": 0,
+     "why": "Safety-critical decisions need independent validation, codes and margins.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How finite element analysis works and how far to trust it",
+    "model": "FEA splits a part into small elements joined at nodes. Each element has a known stiffness, and the computer solves K u = F for the displacements, then works out strains and stresses. The answer depends on the mesh, supports and loads, so you check convergence, compare with a hand calculation and validate with tests.",
+    "points": [
+     {
+      "k": [
+       "mesh",
+       "element",
+       "node",
+       "small",
+       "pieces"
+      ],
+      "ask": "What does the program do to the part?"
+     },
+     {
+      "k": [
+       "stiff",
+       "k u",
+       "solve",
+       "equation",
+       "displacement"
+      ],
+      "ask": "What does it solve?"
+     },
+     {
+      "k": [
+       "converg",
+       "refine",
+       "finer"
+      ],
+      "ask": "How do you check the mesh is good enough?"
+     },
+     {
+      "k": [
+       "validate",
+       "test",
+       "hand",
+       "boundary",
+       "trust",
+       "verify"
+      ],
+      "ask": "Why shouldn't I just trust the picture?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Computational fluid dynamics",
+   "icon": "🌬️",
+   "hook": "A simulation of air around a car shows a neat smooth flow, yet a wind-tunnel test shows a swirling wake. Which is right, and what did the simulation leave out?",
+   "explain": [
+    "Computational fluid dynamics (CFD) solves the equations of fluid flow numerically: conservation of mass, momentum (Navier–Stokes) and often energy. The flow domain is divided into small cells, and the equations are solved cell by cell for velocity, pressure and temperature.",
+    "The Reynolds number Re = ρ v D ÷ μ compares inertial and viscous effects. Water at 2 m/s in a 50 mm pipe (ρ = 1000 kg/m³, μ = 1 × 10⁻³ Pa s) has Re = 1 × 10⁵, which is turbulent, since pipe flow becomes turbulent above Re of about 4000. Air at 10 m/s over 0.1 m (ρ = 1.2 kg/m³, μ = 1.8 × 10⁻⁵ Pa s) has Re ≈ 66 700.",
+    "Turbulence has eddies over a huge range of sizes. Direct numerical simulation (DNS) resolves them all and is very costly. Large-eddy simulation (LES) resolves the large eddies and models the small. Reynolds-averaged Navier–Stokes (RANS) models all turbulence with a model such as k–ε or k–ω SST, and is the most common in industry. Near walls, the mesh must resolve the boundary layer, judged by the dimensionless wall distance y⁺.",
+    "For time-dependent explicit schemes, stability needs a Courant number C = u Δt ÷ Δx below about 1. With u = 10 m/s, Δx = 0.01 m and Δt = 0.0005 s, C = 0.5. Good practice: check mesh independence, verify with simple cases, validate against experiments and state the model's limits. CFD can mislead if boundary conditions, turbulence models or mesh are poor."
+   ],
+   "example": {
+    "q": "Air (ρ = 1.2 kg/m³, μ = 1.8 × 10⁻⁵ Pa s) flows at 10 m/s past a 0.1 m body. Find the Reynolds number and say whether the flow is likely laminar or turbulent.",
+    "steps": [
+     "Re = ρ v D ÷ μ = 1.2 × 10 × 0.1 ÷ 1.8 × 10⁻⁵.",
+     "= 1.2 ÷ 1.8 × 10⁻⁵ = 66 667.",
+     "Far above the transition range for most bodies, so the flow is likely turbulent."
+    ],
+    "a": "Re ≈ 66 700, likely turbulent"
+   },
+   "analogies": {
+    "home": "Weather forecasts divide the atmosphere into grid cells, as CFD does.",
+    "city": "Traffic simulations track vehicles in road cells with rules for flow and jams.",
+    "farm": "Simulating how irrigation water spreads over a sloping field.",
+    "sea": "Ship designers simulate flow around a hull to reduce drag before building."
+   },
+   "mnemonic": "Mesh the fluid, set the physics, solve, then check against reality.",
+   "terms": [
+    [
+     "Reynolds number",
+     "Ratio of inertial to viscous forces, ρ v D ÷ μ."
+    ],
+    [
+     "RANS",
+     "Averaged equations with a turbulence model for all eddies."
+    ],
+    [
+     "Courant number",
+     "u Δt ÷ Δx, a stability and accuracy guide for time stepping."
+    ],
+    [
+     "y⁺",
+     "Dimensionless distance of the first mesh cell from the wall."
+    ]
+   ],
+   "misc": {
+    "wrong": "A converged CFD solution means the flow prediction is correct.",
+    "right": "Convergence means the equations are solved to a tolerance. The result may still be wrong if the model, mesh or boundary conditions are poor."
+   },
+   "limits": "Turbulence models are approximations, and separated or transitional flow is hard to predict. Results need validation.",
+   "trip": {
+    "wiki": "Computational fluid dynamics",
+    "prompt": "Find an image of a CFD mesh around a body. Where is the mesh finest, and why?"
+   },
+   "sources": [
+    "Computational fluid dynamics",
+    "Reynolds number",
+    "Turbulence modeling"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the Reynolds number compare?",
+     "o": [
+      "Inertial forces with viscous forces",
+      "Pressure with temperature in the fluid",
+      "Mass with length of the body",
+      "Speed of the flow with the speed of sound in it"
+     ],
+     "a": 0,
+     "why": "Re = ρ v D ÷ μ, the ratio of inertial to viscous effects.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Water (ρ = 1000 kg/m³, μ = 0.001 Pa s) flows at 2 m/s in a 50 mm diameter pipe. What is the Reynolds number? Give your answer in thousands.",
+     "a": 100,
+     "tol": 1,
+     "unit": "thousand",
+     "why": "Re = 1000 × 2 × 0.05 ÷ 0.001 = 100 000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A flow solver uses u = 10 m/s, cell size Δx = 0.01 m and a time step Δt = 0.0005 s. What is the Courant number?",
+     "a": 0.5,
+     "tol": 0.005,
+     "why": "C = 10 × 0.0005 ÷ 0.01 = 0.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which turbulence approach resolves the largest eddies and models the smallest?",
+     "o": [
+      "Large-eddy simulation",
+      "RANS, which models all of the turbulence",
+      "DNS, which resolves every eddy down to the smallest",
+      "Laminar flow modelling with no eddies at all"
+     ],
+     "a": 0,
+     "why": "LES balances accuracy and cost.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A simulation predicts attached flow but a test shows separation behind a car. What is a likely cause?",
+     "o": [
+      "Turbulence model or mesh unable to capture separation",
+      "The car is not real, so no model can match it",
+      "The Reynolds number is zero in the test",
+      "Pressure is negative everywhere in the flow"
+     ],
+     "a": 0,
+     "why": "RANS models are weak for separated flow, and poor boundary layer meshing makes it worse.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A CFD run was stopped when residuals fell below 10⁻³ but lift was still changing. What should the analyst do?",
+     "o": [
+      "Monitor the physical quantity and run until it is steady",
+      "Accept the result, since residuals met the target",
+      "Stop at once and report the number",
+      "Ignore lift and watch only the residuals"
+     ],
+     "a": 0,
+     "why": "Residuals alone do not guarantee convergence of engineering quantities.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A time step is doubled until the Courant number is 3 in an explicit solver. What is the likely outcome?",
+     "o": [
+      "Instability or large errors",
+      "Better accuracy, since the steps are larger",
+      "Smaller cells in the mesh near the wall",
+      "No change in the result at all"
+     ],
+     "a": 0,
+     "why": "Explicit schemes need C near or below 1 for stability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the first mesh cell near a wall made very thin in many RANS models?",
+     "o": [
+      "To resolve the steep velocity gradient in the boundary layer",
+      "To reduce the cell count and save run time",
+      "To avoid walls in the flow",
+      "To increase the speed of the solver"
+     ],
+     "a": 0,
+     "why": "The wall layer controls drag and heat transfer, so it must be modelled well.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "List three steps that increase confidence in a CFD result before it is used for design.",
+     "rubric": [
+      [
+       "mesh",
+       "grid",
+       "independence",
+       "converge"
+      ],
+      [
+       "validate",
+       "experiment",
+       "wind tunnel",
+       "test",
+       "measurement"
+      ],
+      [
+       "verify",
+       "benchmark",
+       "known solution",
+       "simple case"
+      ],
+      [
+       "boundary",
+       "inlet",
+       "condition",
+       "model",
+       "turbulence",
+       "sensitivity"
+      ]
+     ],
+     "min": 3,
+     "model": "Check mesh independence, verify the solver against a simple known case, validate the model with experimental data and test the sensitivity to boundary conditions and the turbulence model.",
+     "why": "Confidence comes from verification and validation, not appearance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to what it measures or means.",
+     "pairs": [
+      [
+       "Re",
+       "Ratio of inertial to viscous effects"
+      ],
+      [
+       "C = u Δt ÷ Δx",
+       "Courant number"
+      ],
+      [
+       "DNS",
+       "Resolves all turbulent scales"
+      ],
+      [
+       "RANS",
+       "Models all turbulence"
+      ]
+     ],
+     "why": "These terms organise CFD choices.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A model of a small drone propeller needs fine mesh near the blade. Why not use that mesh density everywhere?",
+     "o": [
+      "Cost grows greatly, so refine only where gradients are large",
+      "Fine meshes are illegal in published work",
+      "Coarse meshes are always exact",
+      "It does not matter where the cells are placed"
+     ],
+     "a": 0,
+     "why": "Adaptive or local refinement saves computing effort.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a wind-tunnel test and a CFD run disagree by 20% on drag, what is the best engineering response?",
+     "o": [
+      "Investigate both the test and the model for errors",
+      "Trust CFD always, since the computer is precise",
+      "Trust tests always, since the model is only a guess",
+      "Ignore both results and use a rule of thumb"
+     ],
+     "a": 0,
+     "why": "Both can have errors, such as blockage in the tunnel or model error in CFD.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is CFD of a building fire smoke spread safety-relevant?",
+     "o": [
+      "It informs escape and ventilation design but needs validation",
+      "It replaces fire codes with a simple picture",
+      "It removes the need for fire exits in the building",
+      "It is always exact and needs no checking"
+     ],
+     "a": 0,
+     "why": "Simulation helps compare options, but results must be validated and used with codes.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What CFD does and why results need checking",
+    "model": "CFD splits the fluid into small cells and solves the equations for mass, momentum and energy in each. Turbulence is usually modelled, not resolved, which adds error. A run that has converged is not necessarily right, so engineers check the mesh, verify against simple cases and validate with experiments.",
+    "points": [
+     {
+      "k": [
+       "cell",
+       "mesh",
+       "grid",
+       "divide"
+      ],
+      "ask": "What does the software do to the flow region?"
+     },
+     {
+      "k": [
+       "equation",
+       "navier",
+       "mass",
+       "momentum",
+       "energy",
+       "solve"
+      ],
+      "ask": "What does it solve in each cell?"
+     },
+     {
+      "k": [
+       "turbulen",
+       "model",
+       "eddy",
+       "eddies"
+      ],
+      "ask": "What is the hard part?"
+     },
+     {
+      "k": [
+       "validate",
+       "experiment",
+       "test",
+       "check",
+       "verify"
+      ],
+      "ask": "How do you know the result is right?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Fatigue and fracture mechanics",
+   "icon": "💥",
+   "hook": "A steel axle carried its normal load for years, far below its yield strength, then snapped without warning. What was happening inside it all that time?",
+   "explain": [
+    "Fatigue is damage from repeated loading. A crack starts at a stress concentration such as a keyway, hole, scratch or weld toe, grows a tiny amount each cycle and finally the remaining section fails suddenly. Fatigue failures often show beach marks on the fracture face. Fatigue is a leading cause of failure of rotating and vibrating machinery.",
+    "The S–N curve plots stress amplitude against cycles to failure. Many steels have an endurance limit Se below which life is effectively infinite; aluminium does not, so a fatigue strength at a stated life (for example 10⁷ cycles) is used. Mean stress reduces allowable amplitude. The Goodman relation gives σₐ ÷ Se + σₘ ÷ Sᵤ = 1 ÷ n. With σₐ = 100 MPa, σₘ = 100 MPa, Se = 250 MPa and Sᵤ = 500 MPa: 0.4 + 0.2 = 0.6, so n = 1.67.",
+    "Miner's rule adds damage from different stress blocks: D = Σ nᵢ ÷ Nᵢ, with failure predicted at D = 1. 20 000 cycles where life is 100 000 contribute 0.2, and 50 000 cycles where life is 500 000 contribute 0.1, so D = 0.3.",
+    "Fracture mechanics treats the crack. The stress intensity factor is K = Y σ √(π a). Fracture occurs when K reaches the toughness Kᵢc. For σ = 100 MPa, a = 5 mm and Y = 1: K = 12.5 MPa√m. With Kᵢc = 50 MPa√m, the critical crack length is a_c = (1 ÷ π)(50 ÷ 100)² = 0.0796 m = 79.6 mm. Design responses: lower stress, add fillets, polish or shot-peen surfaces, choose tough materials and inspect on a schedule so cracks are found long before critical size."
+   ],
+   "example": {
+    "q": "A part has a 5 mm edge crack in a plate under 100 MPa stress. Using K = σ√(π a) with Y = 1, find K. If Kᵢc = 50 MPa√m, find the critical crack length.",
+    "steps": [
+     "K = 100 × √(π × 0.005) = 100 × 0.1253 = 12.5 MPa√m.",
+     "Critical: K = Kᵢc, so a_c = (1 ÷ π)(Kᵢc ÷ σ)².",
+     "a_c = (1 ÷ π)(0.5)² = 0.0796 m, about 80 mm."
+    ],
+    "a": "K ≈ 12.5 MPa√m; a_c ≈ 80 mm"
+   },
+   "analogies": {
+    "home": "Bending a paper clip back and forth breaks it far below the force that would snap it in one go.",
+    "city": "A bridge deck bears millions of vehicle passes. Tiny cracks can grow over years.",
+    "farm": "A tractor's spring tines flex constantly and can crack at welds.",
+    "sea": "Ship hulls flex with waves, so cracks may start at hatch corners."
+   },
+   "mnemonic": "Small loads, many times, crack from a flaw: inspect before it gets big.",
+   "terms": [
+    [
+     "Fatigue",
+     "Progressive damage from cyclic loading."
+    ],
+    [
+     "Endurance limit",
+     "Stress amplitude below which some steels survive indefinitely."
+    ],
+    [
+     "Stress intensity factor K",
+     "Crack-tip loading measure, Y σ √(π a)."
+    ],
+    [
+     "Fracture toughness",
+     "The critical K at which a crack grows unstably."
+    ]
+   ],
+   "misc": {
+    "wrong": "If the stress is below yield, the part will last forever.",
+    "right": "Repeated stress below yield can still grow cracks and cause failure, especially at stress concentrations."
+   },
+   "limits": "Fatigue life has large scatter, and effects such as corrosion, surface finish, size and temperature must be applied as correction factors.",
+   "trip": {
+    "wiki": "Fatigue (material)",
+    "prompt": "Find a picture of beach marks on a fatigue fracture. Where did the crack start?"
+   },
+   "sources": [
+    "Fatigue (material)",
+    "Fracture mechanics",
+    "S-N curve"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Where do fatigue cracks usually start?",
+     "o": [
+      "At stress concentrations like notches, holes and weld toes",
+      "At the smoothest, most polished part of the surface",
+      "At the neutral centre of the part",
+      "At the exact middle of a bar, far from the surface"
+     ],
+     "a": 0,
+     "why": "Local stress is highest there.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A load cycles between σmax = 200 MPa and σmin = 0. What is the stress amplitude in MPa?",
+     "a": 100,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "σa = (200 − 0) ÷ 2 = 100 MPa.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using Goodman with σa = 100 MPa, σm = 100 MPa, Se = 250 MPa and Su = 500 MPa, what is the fatigue safety factor n?",
+     "a": 1.67,
+     "tol": 0.03,
+     "why": "1/n = 100/250 + 100/500 = 0.6, so n = 1.67.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A part sees 20 000 cycles at a level where life is 100 000 cycles, and 50 000 cycles at a level where life is 500 000. Using Miner's rule, what is the damage sum D?",
+     "a": 0.3,
+     "tol": 0.005,
+     "why": "20 000 ÷ 100 000 + 50 000 ÷ 500 000 = 0.2 + 0.1 = 0.3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A crack in a plate grows from 5 mm to 10 mm at the same stress. What happens to K?",
+     "o": [
+      "It rises by a factor of √2",
+      "It doubles, in step with the crack length",
+      "It halves as the crack gets longer",
+      "It does not change at the same stress"
+     ],
+     "a": 0,
+     "why": "K ∝ √a, so doubling a multiplies K by about 1.41.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which action most directly lengthens fatigue life of a shaft with a shoulder?",
+     "o": [
+      "Add a generous fillet radius at the shoulder",
+      "Sharpen the shoulder to a tight corner",
+      "Add scratches to the surface for grip",
+      "Increase the vibration on the shaft"
+     ],
+     "a": 0,
+     "why": "A larger radius reduces the stress concentration factor.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A fracture surface shows beach marks and a small final rough zone. What does this indicate?",
+     "o": [
+      "Fatigue growth under low nominal stress",
+      "Overload at once from a single large force",
+      "Corrosion only, with no cyclic loading",
+      "A casting error only, from the time of manufacture"
+     ],
+     "a": 0,
+     "why": "A small final zone means the stress was low and the crack grew large before failure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Aeroplane skins are inspected on a schedule to find cracks. What principle is this?",
+     "o": [
+      "Damage tolerance: find cracks before they reach critical size",
+      "Safe-life only: replace parts after a fixed time without inspection",
+      "Ignore cracks until something fails",
+      "Crack growth never occurs in thin aeroplane skins"
+     ],
+     "a": 0,
+     "why": "Damage-tolerant design assumes cracks and ensures they are found and repaired in time.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why shot-peening a surface can extend fatigue life.",
+     "rubric": [
+      [
+       "compress",
+       "compressive",
+       "residual"
+      ],
+      [
+       "crack",
+       "initiat",
+       "start",
+       "nucleat"
+      ],
+      [
+       "tension",
+       "tensile",
+       "close",
+       "retard",
+       "delay"
+      ],
+      [
+       "surface"
+      ]
+     ],
+     "min": 2,
+     "model": "Peening leaves a layer of compressive residual stress at the surface. Cracks begin at the surface under tension, so the compressive layer makes them harder to start and slows their growth.",
+     "why": "Residual compression offsets applied tension at the surface.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its meaning.",
+     "pairs": [
+      [
+       "S–N curve",
+       "Stress amplitude versus life"
+      ],
+      [
+       "Miner's rule",
+       "Cumulative damage sum"
+      ],
+      [
+       "Fracture toughness",
+       "Resistance to unstable crack growth"
+      ],
+      [
+       "Beach marks",
+       "Stages of fatigue crack growth"
+      ]
+     ],
+     "why": "These are core fatigue and fracture ideas.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A crane hook is found with a 3 mm crack. The critical size is calculated as 80 mm. Should it continue in service?",
+     "o": [
+      "No: remove it, because growth rate and uncertainty make cracks unacceptable in lifting gear",
+      "Yes: 3 mm is much less than 80 mm, so there is plenty of margin",
+      "Yes: paint over the crack to hide it",
+      "Yes: for ten more years without checks"
+     ],
+     "a": 0,
+     "why": "Lifting equipment standards require withdrawal of cracked parts, and the crack growth is uncertain.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Aluminium has no true endurance limit. What does this mean for design?",
+     "o": [
+      "Use a fatigue strength at a stated life and assume failure eventually at any cyclic stress",
+      "There is infinite life below a stress threshold, as for steel",
+      "Fatigue is irrelevant for aluminium parts in service",
+      "Use the steel endurance numbers for aluminium instead"
+     ],
+     "a": 0,
+     "why": "Aluminium S–N curves keep sloping down.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a corrosive environment shorten fatigue life?",
+     "o": [
+      "Pits form stress raisers and corrosion helps crack growth",
+      "Corrosion strengthens the metal against cracks",
+      "It lowers the stress and so slows the cracks",
+      "It removes load cycles from the part and so saves life"
+     ],
+     "a": 0,
+     "why": "Corrosion fatigue combines both, with no safe endurance limit.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a part can break under a load far below its strength",
+    "model": "Repeated loading starts a tiny crack at a notch or flaw. Each cycle the crack grows a little, and the remaining metal gets weaker until it suddenly fails. So repeated stress below yield can still cause failure. Designers avoid sharp corners, reduce stress and inspect for cracks.",
+    "points": [
+     {
+      "k": [
+       "repeat",
+       "cycle",
+       "cyclic",
+       "many times"
+      ],
+      "ask": "What kind of load causes it?"
+     },
+     {
+      "k": [
+       "crack",
+       "flaw",
+       "notch",
+       "corner",
+       "start"
+      ],
+      "ask": "Where does it start?"
+     },
+     {
+      "k": [
+       "grow",
+       "each cycle",
+       "weaker",
+       "sudden"
+      ],
+      "ask": "What happens as time goes on?"
+     },
+     {
+      "k": [
+       "fillet",
+       "inspect",
+       "reduce",
+       "avoid",
+       "design",
+       "example"
+      ],
+      "ask": "How do engineers prevent it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Advanced machine design",
+   "icon": "🏎️",
+   "hook": "A bolted flange carries a pulsing load. Tighten the bolts more and the joint survives; tighten them too little and the bolts fail. Why does preload matter so much?",
+   "explain": [
+    "Advanced machine design combines the loads on several elements with failure theory. For gears, the tangential force at the pitch circle is Ft = T ÷ (d ÷ 2) and the radial force is Fr = Ft tan φ with pressure angle φ = 20°. A 100 N m torque on a pitch diameter of 0.1 m gives Ft = 2000 N and Fr = 2000 × 0.364 = 728 N. These loads bend the shaft and load the bearings, so shaft and bearings are designed together.",
+    "A shaft sees rotating bending and steady torque, so each point sees fully reversed bending stress. Design checks use fatigue criteria with stress concentration at keyways, shoulders and press fits, and also deflection and critical speed.",
+    "In a bolted joint, tightening gives the bolt a tensile preload Fi and clamps the members. An approximate tightening torque is T = K Fi d, with K about 0.2 for a lightly lubricated steel thread. For Fi = 30 kN and d = 12 mm, T = 0.2 × 30 000 × 0.012 = 72 N m. When an external tensile load P is applied, the bolt takes only a fraction C = kb ÷ (kb + km) of it, and the clamped members take the rest by unloading. With C = 0.25 and P = 20 kN, bolt load = 30 + 0.25 × 20 = 35 kN. A high preload keeps the amplitude seen by the bolt small, so fatigue life is long. If the external load exceeds the preload-limited limit the joint separates and the bolt takes all of the load.",
+    "Design decisions include choosing reliability targets, materials, lubrication, tolerances and fits, and ensuring safety through guards, torque-limiting couplings and overload protection. Typical failure causes are fatigue at stress raisers, under-tightened bolts, misalignment, lubrication loss and wrong assumptions about the load."
+   ],
+   "example": {
+    "q": "A spur gear has a pitch diameter of 0.1 m, transmits 100 N m, and has a 20° pressure angle. Find the tangential and radial tooth forces.",
+    "steps": [
+     "Pitch radius = 0.05 m, so Ft = T ÷ r = 100 ÷ 0.05 = 2000 N.",
+     "Fr = Ft × tan 20° = 2000 × 0.364.",
+     "Fr = 728 N."
+    ],
+    "a": "Ft = 2000 N; Fr ≈ 728 N"
+   },
+   "analogies": {
+    "home": "A tight jar lid grips by friction from preload; if loose, it rattles and slips.",
+    "city": "Bridge bolts are tightened to a set tension so that the plates clamp together.",
+    "farm": "A tractor wheel is held by tightened nuts; vibration can loosen them if they are not torqued correctly.",
+    "sport": "A bicycle's stem bolts must be tightened to a torque setting to avoid slipping or cracking."
+   },
+   "mnemonic": "Tighten to preload; the joint carries, the bolt sees only a fraction.",
+   "terms": [
+    [
+     "Preload",
+     "The tension put in a bolt by tightening."
+    ],
+    [
+     "Joint stiffness ratio C",
+     "Fraction of external load that the bolt carries, kb ÷ (kb + km)."
+    ],
+    [
+     "Pressure angle",
+     "Angle between tooth force direction and the pitch-circle tangent."
+    ],
+    [
+     "Stress raiser",
+     "Geometric feature that raises local stress."
+    ]
+   ],
+   "misc": {
+    "wrong": "A looser bolt is safer because it is not stressed as much.",
+    "right": "A properly preloaded bolt sees less variation in stress under pulsing load and resists fatigue and loosening."
+   },
+   "limits": "The torque-preload relation varies widely with friction, so critical bolts are tensioned by methods that control stretch or tension.",
+   "trip": {
+    "wiki": "Bolted joint",
+    "prompt": "Find a joint diagram showing preload and external load. Which part is compressed?"
+   },
+   "sources": [
+    "Bolted joint",
+    "Spur gear",
+    "Factor of safety"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A gear transmits 150 N m at a pitch diameter of 0.1 m. What is the tangential tooth force?",
+     "o": [
+      "3000 N",
+      "1500 N",
+      "15 000 N",
+      "300 N"
+     ],
+     "a": 0,
+     "why": "Ft = T ÷ r = 150 ÷ 0.05 = 3000 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With Ft = 2000 N and a 20° pressure angle (tan 20° = 0.364), what is the radial force in newtons?",
+     "a": 728,
+     "tol": 3,
+     "unit": "N",
+     "why": "Fr = 2000 × 0.364 = 728 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A bolt of d = 12 mm needs a preload of 30 kN. Using T = K Fi d with K = 0.2, what tightening torque is needed in N m?",
+     "a": 72,
+     "tol": 0.5,
+     "unit": "N m",
+     "why": "T = 0.2 × 30 000 × 0.012 = 72 N m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A joint has preload 30 kN, joint stiffness ratio C = 0.25 and an external load of 20 kN. What is the bolt load in kN?",
+     "a": 35,
+     "tol": 0.1,
+     "unit": "kN",
+     "why": "Fb = Fi + C P = 30 + 0.25 × 20 = 35 kN.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does high bolt preload improve fatigue life under a pulsing external load?",
+     "o": [
+      "The bolt sees only a small fraction of the load variation",
+      "The bolt carries the whole load variation as before",
+      "The bolt never stretches under any load",
+      "The joint is stiffer than steel itself and so carries nothing"
+     ],
+     "a": 0,
+     "why": "The clamped members take most of the cycle, so the alternating stress on the bolt is small.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A shaft carrying a gear fails at a keyway after months. What is the most likely mechanism?",
+     "o": [
+      "Fatigue from rotating bending at a stress raiser",
+      "Instant overload on the first turn of the shaft",
+      "Cooling of the shaft in operation",
+      "Corrosion only, with no cyclic stress"
+     ],
+     "a": 0,
+     "why": "Rotating bending makes each point see reversed stress every turn, and keyways concentrate stress.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A gearbox is rated at a safety factor of 1.2. What is the problem if the design load is uncertain by ±40%?",
+     "o": [
+      "The margin is too small to cover the uncertainty",
+      "The margin is too large and wastes material",
+      "Safety factors are irrelevant to uncertain loads",
+      "There is no problem at all with 1.2"
+     ],
+     "a": 0,
+     "why": "Safety factors must cover uncertainty in loads, materials and analysis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are some drives fitted with a torque limiter or shear pin?",
+     "o": [
+      "To protect against overload and limit damage",
+      "To increase the torque the drive can send",
+      "To raise the speed of the output shaft",
+      "To save paint on the guard"
+     ],
+     "a": 0,
+     "why": "A controlled weak link fails first and saves costly parts.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A flange bolt keeps loosening on a vibrating machine. Give two engineering measures to fix it and explain why they work.",
+     "rubric": [
+      [
+       "preload",
+       "tension",
+       "torque",
+       "tighten"
+      ],
+      [
+       "lock",
+       "nut",
+       "washer",
+       "thread locker",
+       "locking",
+       "adhesive"
+      ],
+      [
+       "stiff",
+       "clamp",
+       "member",
+       "joint",
+       "slip"
+      ],
+      [
+       "vibration",
+       "isolat",
+       "damp"
+      ]
+     ],
+     "min": 2,
+     "model": "Raise and control the preload with a torque or tension method so that friction under the head keeps the joint from slipping, and add a locking device such as a locknut or thread-locking adhesive. Reducing the vibration with isolation or damping also lowers the cycle load.",
+     "why": "Loosening happens when slip reduces the preload.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its meaning.",
+     "pairs": [
+      [
+       "Ft",
+       "Tangential tooth force"
+      ],
+      [
+       "Fr",
+       "Radial tooth force"
+      ],
+      [
+       "Fi",
+       "Bolt preload"
+      ],
+      [
+       "C",
+       "Fraction of external load taken by the bolt"
+      ]
+     ],
+     "why": "These quantities appear in gear and bolt calculations.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A critical bolt is tightened with an impact wrench to 'about right'. What is the risk?",
+     "o": [
+      "Large preload scatter from friction variation causes under- or over-tightening",
+      "A perfect preload every time",
+      "No risk at all, since the wrench is powerful",
+      "Bolts always self-adjust to the correct tension afterwards"
+     ],
+     "a": 0,
+     "why": "Friction scatter makes torque-based preload uncertain by ±25% or more, so critical joints use controlled methods.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Increasing the gear pressure angle from 14.5° to 25° tends to do what?",
+     "o": [
+      "Raise radial loads on shafts and bearings",
+      "Eliminate radial loads on the shafts completely",
+      "Reduce the thickness of the teeth at the root",
+      "Lower the torque the gears can transmit"
+     ],
+     "a": 0,
+     "why": "Fr = Ft tan φ grows with φ, although teeth become stronger.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer must choose between a design that is lighter and one that is easier to inspect for cracks. For a safety-critical part, what is a sound approach?",
+     "o": [
+      "Prefer a design with accessible, inspectable critical areas unless the lighter one is proven safe",
+      "Always take the lightest design, whatever the access",
+      "Never inspect parts that were designed carefully",
+      "Remove all margins once the design is calculated"
+     ],
+     "a": 0,
+     "why": "Damage-tolerant and maintainable design can outweigh small weight savings.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why bolts are preloaded",
+    "model": "Tightening a bolt stretches it and clamps the joint. When an external load pulls on the joint, the clamped parts give up some of their squeeze instead of the bolt taking all the load. The bolt therefore feels only a small fraction of the changing load, so it lasts much longer in fatigue.",
+    "points": [
+     {
+      "k": [
+       "tighten",
+       "stretch",
+       "preload",
+       "clamp"
+      ],
+      "ask": "What does tightening do?"
+     },
+     {
+      "k": [
+       "external",
+       "load",
+       "pull"
+      ],
+      "ask": "What happens when a load pulls on the joint?"
+     },
+     {
+      "k": [
+       "fraction",
+       "small",
+       "share",
+       "members",
+       "parts"
+      ],
+      "ask": "Who takes most of the load?"
+     },
+     {
+      "k": [
+       "fatigue",
+       "last",
+       "loosen",
+       "vibration",
+       "example"
+      ],
+      "ask": "Why does this help the bolt last?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Robotics and mechatronics",
+   "icon": "🤖",
+   "hook": "A robot arm must place a part to within a fraction of a millimetre, yet its motors only know how far their shafts have turned. How does it work out where its hand is?",
+   "explain": [
+    "Mechatronics combines mechanics, electronics, sensing, control and software. A robot is a mechatronic system: structure and joints, actuators (electric motors, hydraulics), sensors (encoders, force sensors, cameras), a controller and software.",
+    "Forward kinematics finds the hand position from joint angles. For a planar two-link arm with lengths l₁ = 0.5 m and l₂ = 0.3 m, joint angles θ₁ = 30° and θ₂ = 45° (relative), x = l₁ cos θ₁ + l₂ cos(θ₁ + θ₂) = 0.433 + 0.3 × 0.259 = 0.511 m and y = l₁ sin θ₁ + l₂ sin(θ₁ + θ₂) = 0.25 + 0.290 = 0.540 m. Inverse kinematics finds the angles for a given position and may have several solutions or none (outside the reach of 0.8 m).",
+    "Joint torques come from loads. With the arm horizontal and a 2 kg payload at 0.8 m, the static torque at the base is 2 × 9.8 × 0.8 = 15.7 N m (ignoring arm weight). A motor with 0.5 N m, a 50:1 gearbox and 80% efficiency delivers 0.5 × 50 × 0.8 = 20 N m. An encoder of 1000 lines per revolution gives 4000 counts per turn in quadrature; after the 50:1 gearbox the joint resolution is 360° ÷ (4000 × 50) = 0.0018°.",
+    "Safety is a design driver. Industrial robots are fenced or use safety-rated sensors; collaborative robots limit force and speed (ISO 10218 and ISO/TS 15066 give requirements). Emergency stops, safe torque off, risk assessment and training are needed. Failure causes include gear backlash, cable fatigue, sensor drift, software faults and singularities where the arm loses control in some direction."
+   ],
+   "example": {
+    "q": "A two-link arm has l₁ = 0.5 m and l₂ = 0.3 m with θ₁ = 30° and relative angle θ₂ = 45°. Find the x position of the hand.",
+    "steps": [
+     "Absolute angle of link 2 = 30° + 45° = 75°.",
+     "x = 0.5 cos 30° + 0.3 cos 75° = 0.5 × 0.866 + 0.3 × 0.2588.",
+     "= 0.433 + 0.0776 = 0.511 m."
+    ],
+    "a": "x ≈ 0.511 m"
+   },
+   "analogies": {
+    "home": "A human arm: you know where your hand is by sensing your joint angles and seeing it.",
+    "city": "A lift uses a sensor to know the floor, and a controller to stop there.",
+    "farm": "Milking robots use sensors and arms to attach to the animal safely.",
+    "tech": "A 3D printer's moving head is positioned by motors and encoders, a simple mechatronic system."
+   },
+   "mnemonic": "Sense, think, act: sensors, controller, actuators.",
+   "terms": [
+    [
+     "Forward kinematics",
+     "Computing hand position from joint angles."
+    ],
+    [
+     "Inverse kinematics",
+     "Computing joint angles for a desired hand position."
+    ],
+    [
+     "Encoder",
+     "Sensor that measures shaft angle."
+    ],
+    [
+     "Singularity",
+     "A configuration where the robot loses mobility in some direction."
+    ]
+   ],
+   "misc": {
+    "wrong": "A robot with a precise encoder is automatically precise at the hand.",
+    "right": "Link flexibility, backlash, thermal growth and calibration errors also affect hand accuracy."
+   },
+   "limits": "Rigid-body kinematics ignores flexibility and dynamics. High-speed or heavy tasks need dynamic models.",
+   "trip": {
+    "wiki": "Robot kinematics",
+    "prompt": "Find a two-link arm diagram. Mark the joint angles and the hand position."
+   },
+   "sources": [
+    "Robotics",
+    "Mechatronics",
+    "Forward kinematics"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which sensor measures the angle of a motor shaft?",
+     "o": [
+      "Encoder",
+      "Thermocouple",
+      "Strain gauge only",
+      "Microphone"
+     ],
+     "a": 0,
+     "why": "An encoder produces pulses as the shaft turns.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A two-link arm has l₁ = 0.5 m, l₂ = 0.3 m, θ₁ = 30° and relative angle θ₂ = 45°. What is the hand's y coordinate in metres? (sin 75° = 0.966)",
+     "a": 0.54,
+     "tol": 0.005,
+     "unit": "m",
+     "why": "y = 0.5 sin 30° + 0.3 sin 75° = 0.25 + 0.2898 = 0.540 m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 2 kg payload is held at 0.8 m horizontal from a joint. Use g = 9.8 m/s². What static torque is needed at the joint, in N m?",
+     "a": 15.68,
+     "tol": 0.1,
+     "unit": "N m",
+     "why": "τ = m g L = 2 × 9.8 × 0.8 = 15.68 N m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A motor gives 0.5 N m through a 50:1 gearbox of 80% efficiency. What output torque results, in N m?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "N m",
+     "why": "0.5 × 50 × 0.8 = 20 N m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the maximum reach of a planar two-link arm with lengths 0.5 m and 0.3 m?",
+     "o": [
+      "0.8 m",
+      "0.2 m",
+      "0.15 m",
+      "0.34 m"
+     ],
+     "a": 0,
+     "why": "The arm is fully stretched: 0.5 + 0.3 = 0.8 m.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A robot tries to reach a point 1.0 m away with a maximum reach of 0.8 m. What happens in inverse kinematics?",
+     "o": [
+      "There is no solution",
+      "Two solutions, with the elbow up or down",
+      "One solution, with the arm fully stretched",
+      "Infinitely many solutions, all reaching the point"
+     ],
+     "a": 0,
+     "why": "The point is outside the workspace.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A person works beside a collaborative robot. What design feature is most important?",
+     "o": [
+      "Limits on force, speed and safe stopping",
+      "Maximum speed to finish the job fast",
+      "No sensors, so it cannot be fooled",
+      "Removing the emergency stop so work is not interrupted"
+     ],
+     "a": 0,
+     "why": "Collaborative operation relies on limiting contact forces and stopping safely.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A robot arm slowly drifts from its target over the day while the encoders read correctly. What is a likely cause?",
+     "o": [
+      "Thermal expansion of links and calibration changes",
+      "Zero gravity acting on the arm during the day",
+      "Fewer encoder counts as the day goes on",
+      "The floor getting lighter as the factory warms"
+     ],
+     "a": 0,
+     "why": "Temperature changes dimensions, so the hand moves though joint readings are the same.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain what a kinematic singularity is and why it is a problem.",
+     "rubric": [
+      [
+       "lose",
+       "loss",
+       "cannot",
+       "unable",
+       "no"
+      ],
+      [
+       "direction",
+       "degree of freedom",
+       "mobility",
+       "motion",
+       "move"
+      ],
+      [
+       "joint",
+       "velocity",
+       "speed",
+       "large",
+       "infinite",
+       "torque"
+      ],
+      [
+       "stretch",
+       "aligned",
+       "straight",
+       "arm",
+       "configuration"
+      ]
+     ],
+     "min": 2,
+     "model": "A singularity is an arm configuration, such as a fully stretched arm, where the hand cannot move in some direction. Near it, small hand motions need very large joint speeds, so control becomes unreliable and the arm may behave dangerously.",
+     "why": "The Jacobian loses rank, so the mapping between joint and hand velocities breaks down.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each mechatronic element to its role.",
+     "pairs": [
+      [
+       "Sensor",
+       "Measures a physical quantity"
+      ],
+      [
+       "Controller",
+       "Decides commands"
+      ],
+      [
+       "Actuator",
+       "Produces motion or force"
+      ],
+      [
+       "Gearbox",
+       "Trades speed for torque"
+      ]
+     ],
+     "why": "These elements form a sense-think-act loop.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A 1000-line encoder in quadrature gives 4000 counts per turn. After a 50:1 gearbox on the joint, the counts per joint turn are?",
+     "o": [
+      "200 000",
+      "4000 counts, because the gearbox does not change the count",
+      "20 000 counts, from the ratio times five",
+      "80 counts, from dividing by the ratio"
+     ],
+     "a": 0,
+     "why": "4000 × 50 = 200 000, so the resolution is 360° ÷ 200 000 = 0.0018°.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Backlash in a gearbox causes a robot to do what?",
+     "o": [
+      "Overshoot or lose position when reversing direction",
+      "Increase torque at the joint when it reverses",
+      "Lower friction in the joint",
+      "Gain accuracy at the end of the arm"
+     ],
+     "a": 0,
+     "why": "The gap between teeth must be taken up on reversal.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Before an engineer enters a robot cell for maintenance, what must be done?",
+     "o": [
+      "Lock out and tag out the power and verify the stored energy is released",
+      "Switch off the lights only, so the cell is dark",
+      "Enter quickly while the robot is paused",
+      "Ask the robot to slow down while you work"
+     ],
+     "a": 0,
+     "why": "Lockout and verification prevent unexpected motion that could injure people.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a robot knows where its hand is",
+    "model": "A robot knows its joint angles from sensors called encoders. Using the lengths of its links and those angles, it calculates the hand position by trigonometry. This is forward kinematics. For a two-link arm of 0.5 m and 0.3 m at 30° and 45°, the hand is about 0.51 m across and 0.54 m up.",
+    "points": [
+     {
+      "k": [
+       "encoder",
+       "sensor",
+       "angle",
+       "measure"
+      ],
+      "ask": "What does the robot measure?"
+     },
+     {
+      "k": [
+       "length",
+       "link",
+       "arm"
+      ],
+      "ask": "What else does it need to know?"
+     },
+     {
+      "k": [
+       "trigonometry",
+       "sine",
+       "cosine",
+       "sin",
+       "cos",
+       "calculate",
+       "kinematics"
+      ],
+      "ask": "How does it combine them?"
+     },
+     {
+      "k": [
+       "error",
+       "backlash",
+       "calibrat",
+       "temperature",
+       "accuracy",
+       "example"
+      ],
+      "ask": "Can the answer still be wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Control systems",
+   "icon": "🎛️",
+   "hook": "A cruise control holds a steady speed uphill and downhill. What does it measure, what does it adjust, and why can it overshoot or oscillate?",
+   "explain": [
+    "A control system uses feedback: it measures the output, compares it with the desired value (the setpoint), and drives an actuator to reduce the error. Open-loop control has no measurement, so it cannot correct for disturbances.",
+    "A first-order process with gain and time constant τ responds to a step by approaching its final value exponentially: y(t) = y_final (1 − e^(−t ÷ τ)). At t = τ it reaches 63.2% and at 3τ it reaches 95.0%. With proportional control and loop gain K on a plant of DC gain 1 under unity feedback, the steady-state error to a step is 1 ÷ (1 + K): for K = 9 the output stops 10% short.",
+    "A PID controller sums three terms: proportional (present error), integral (accumulated error, which removes steady-state error) and derivative (rate of change, which adds damping). Too much gain gives oscillation and instability. Integral action can wind up when the actuator saturates, so anti-windup limits are added.",
+    "Second-order systems have damping ratio ζ. The overshoot is exp(−π ζ ÷ √(1 − ζ²)); for ζ = 0.5 it is 16.3%. Stability needs all closed-loop poles in the left half of the s-plane. Safety link: control systems for cranes, lifts and robots must fail safe, with limit switches, watchdog timers and independent emergency stops, because sensor failures and software bugs happen."
+   ],
+   "example": {
+    "q": "A proportional loop with unity feedback and loop gain K = 9 controls a plant with DC gain 1. What is the steady-state error to a unit step?",
+    "steps": [
+     "Steady-state error e = 1 ÷ (1 + K).",
+     "K = 9, so e = 1 ÷ 10.",
+     "= 0.1, or 10% of the setpoint."
+    ],
+    "a": "10%"
+   },
+   "analogies": {
+    "home": "A thermostat measures room temperature and switches the heater, a feedback loop.",
+    "city": "A traffic light controller adjusts timings based on sensor counts.",
+    "farm": "An automatic irrigation system waters when soil moisture falls below a setpoint.",
+    "sea": "An autopilot steers a ship back to its heading after waves push it off."
+   },
+   "mnemonic": "PID: Present, Integral accumulated past, Derivative predicted future.",
+   "terms": [
+    [
+     "Feedback",
+     "Using the measured output to adjust the input."
+    ],
+    [
+     "Setpoint",
+     "The desired value of the output."
+    ],
+    [
+     "Time constant",
+     "Time for a first-order response to reach 63.2% of its final value."
+    ],
+    [
+     "Damping ratio",
+     "A measure of how quickly oscillations die away."
+    ]
+   ],
+   "misc": {
+    "wrong": "Increasing controller gain always makes the system better.",
+    "right": "Higher gain reduces error and speeds response up to a point, but past that it causes overshoot, oscillation and instability."
+   },
+   "limits": "Linear models and PID tuning rules work near an operating point. Nonlinear plants, delays and noise need extra care.",
+   "trip": {
+    "wiki": "PID controller",
+    "prompt": "Find a step response with P, PI and PID. What does each add?"
+   },
+   "sources": [
+    "Control theory",
+    "PID controller",
+    "Feedback"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What distinguishes closed-loop from open-loop control?",
+     "o": [
+      "Closed loop measures the output and corrects errors",
+      "Open loop uses sensors to correct errors",
+      "Closed loop has no actuator at all",
+      "Open loop is always stable and never drifts"
+     ],
+     "a": 0,
+     "why": "Feedback lets the system respond to disturbances.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A first-order system with a time constant of 2 s is given a step. What percentage of the final value does it reach after 6 s? Give the answer to one decimal place.",
+     "a": 95,
+     "tol": 0.3,
+     "unit": "%",
+     "why": "At t = 3τ the output is 1 − e⁻³ = 0.950, or 95.0%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A proportional controller with loop gain K = 19 under unity feedback has what steady-state error for a unit step, as a percentage?",
+     "a": 5,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "1 ÷ (1 + 19) = 0.05, or 5%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A second-order system has damping ratio ζ = 0.5. Using overshoot = exp(−π ζ ÷ √(1 − ζ²)), what is the percentage overshoot?",
+     "a": 16.3,
+     "tol": 0.3,
+     "unit": "%",
+     "why": "exp(−1.5708 ÷ 0.866) = exp(−1.814) = 0.163 = 16.3%.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which PID term removes steady-state error?",
+     "o": [
+      "Integral",
+      "Proportional alone",
+      "Derivative",
+      "None"
+     ],
+     "a": 0,
+     "why": "The integral term keeps increasing the output until the error is zero.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A heater control oscillates around the setpoint with growing swings. What is the likely cause?",
+     "o": [
+      "Gain too high, making the loop unstable",
+      "Gain too low, so the heater is too slow",
+      "No heater is fitted to the control",
+      "Perfect tuning of every setting"
+     ],
+     "a": 0,
+     "why": "Excess gain with delay causes growing oscillation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A motor reaches its voltage limit while the integral term keeps growing, causing a huge overshoot later. What is this called?",
+     "o": [
+      "Integral windup",
+      "Derivative kick",
+      "Resonance",
+      "Cavitation"
+     ],
+     "a": 0,
+     "why": "Anti-windup limits the integrator when the actuator saturates.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a lift controller include independent limit switches and an overspeed governor?",
+     "o": [
+      "To remain safe if the main controller or sensor fails",
+      "To save money on the main controller",
+      "To make the lift go faster between floors",
+      "To remove the need for any sensors"
+     ],
+     "a": 0,
+     "why": "Safety functions must not rely only on the same software or sensor.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A cruise control holds speed on a flat road but sags on a long hill, then slowly recovers. Which control action fixes the sag permanently, and why?",
+     "rubric": [
+      [
+       "integral",
+       "integrator",
+       "i term",
+       "i action"
+      ],
+      [
+       "error"
+      ],
+      [
+       "accumulate",
+       "adds up",
+       "sum",
+       "over time",
+       "builds"
+      ],
+      [
+       "zero",
+       "eliminate",
+       "remove",
+       "steady-state",
+       "steady state"
+      ]
+     ],
+     "min": 2,
+     "model": "Integral action. It accumulates the error over time and keeps raising the throttle until the error is zero, so the sag is removed even when a constant disturbance like the hill remains.",
+     "why": "Proportional control alone leaves a steady-state error under constant load.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Setpoint",
+       "Desired output"
+      ],
+      [
+       "Error",
+       "Setpoint minus measured output"
+      ],
+      [
+       "Actuator",
+       "Device that applies the control action"
+      ],
+      [
+       "Sensor",
+       "Measures the output"
+      ]
+     ],
+     "why": "These are the elements of a feedback loop.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A sensor in a loop has a delay of 1 s while the plant time constant is 2 s. What happens if gain is raised high?",
+     "o": [
+      "The delay can destabilise the loop",
+      "The delay helps by smoothing the signal",
+      "Nothing changes whatever the gain",
+      "The delay removes noise from the measurement"
+     ],
+     "a": 0,
+     "why": "Delay adds phase lag, reducing the gain at which instability occurs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A temperature sensor fails and reads 20 °C permanently while the oven heats up. Which design protects against this?",
+     "o": [
+      "An independent over-temperature cut-out",
+      "A bigger heater so it heats up faster",
+      "Higher gain in the controller loop",
+      "A different setpoint for the oven"
+     ],
+     "a": 0,
+     "why": "Independent safety devices handle sensor failures.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The derivative term in a loop with noisy measurement makes the output jittery. What is a common remedy?",
+     "o": [
+      "Filter the derivative term",
+      "Increase the derivative gain further",
+      "Remove the sensor from the loop",
+      "Remove the integral term from the controller"
+     ],
+     "a": 0,
+     "why": "Derivative action amplifies noise, so a filter is standard.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How feedback control keeps a system on target",
+    "model": "A feedback controller measures the output, subtracts it from the target to get the error, and uses the error to change the actuator. A thermostat is one. A PID controller uses the present error, the accumulated error and its rate of change. Too much gain makes it overshoot or oscillate.",
+    "points": [
+     {
+      "k": [
+       "measure",
+       "sensor",
+       "output"
+      ],
+      "ask": "What does the controller start with?"
+     },
+     {
+      "k": [
+       "error",
+       "target",
+       "setpoint",
+       "difference",
+       "compare"
+      ],
+      "ask": "What does it compare?"
+     },
+     {
+      "k": [
+       "actuator",
+       "adjust",
+       "correct",
+       "heater",
+       "motor"
+      ],
+      "ask": "What does it do with the error?"
+     },
+     {
+      "k": [
+       "gain",
+       "oscillat",
+       "overshoot",
+       "unstable",
+       "tuning",
+       "example"
+      ],
+      "ask": "What can go wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Additive manufacturing",
+   "icon": "🖨️",
+   "hook": "A hollow lattice that cannot be cast or machined can be printed in one go. What does this freedom cost in speed, strength and quality?",
+   "explain": [
+    "Additive manufacturing (AM) builds parts layer by layer from a digital model. Main process families include material extrusion (FDM), vat photopolymerisation (SLA), powder bed fusion (SLS for polymers, SLM/DMLS for metals), binder jetting and directed energy deposition. The CAD model is sliced into layers, and the machine follows the toolpath.",
+    "Build time depends on height, layer thickness and time per layer. A 60 mm tall part with 0.2 mm layers needs 300 layers; at 40 s per layer that is 12 000 s, or 3.3 h. Thinner layers give finer surfaces but longer builds. Orientation affects surface finish, support needed and strength. Parts are often anisotropic: weaker between layers.",
+    "In laser powder bed fusion the volumetric energy density, VED = P ÷ (v h t), links laser power P, scan speed v, hatch spacing h and layer thickness t. For P = 200 W, v = 1000 mm/s, h = 0.1 mm and t = 0.03 mm, VED = 200 ÷ (1000 × 0.1 × 0.03) = 66.7 J/mm³. Too little energy leaves lack-of-fusion pores; too much creates keyhole pores and distortion. Residual stresses cause warping, so supports, stress-relief heat treatment and sometimes hot isostatic pressing are used.",
+    "Design for AM allows topology-optimised shapes, internal channels and part consolidation, but needs support planning, overhang limits and post-processing (support removal, machining of critical surfaces, inspection). Safety issues include fine metal powders (fire, explosion and inhalation risks), lasers, hot surfaces, resins that irritate skin and fumes, so ventilation, protective equipment and handling procedures are essential. AM is most economical for complex, low-volume or customised parts, not mass production of simple shapes."
+   ],
+   "example": {
+    "q": "A part 60 mm tall is printed in 0.2 mm layers, taking 40 s per layer. How long is the build?",
+    "steps": [
+     "Layers = 60 ÷ 0.2 = 300.",
+     "Time = 300 × 40 = 12 000 s.",
+     "12 000 ÷ 3600 = 3.33 h."
+    ],
+    "a": "About 3.3 hours"
+   },
+   "analogies": {
+    "home": "Making a cake by laying down thin layers of batter rather than cutting from a big block.",
+    "city": "Construction 3D printers extrude concrete in layers to build walls.",
+    "farm": "A farm repairs a bespoke part by printing a replacement instead of ordering a rare one.",
+    "tech": "Dental labs print custom aligners and crowns from scans."
+   },
+   "mnemonic": "Slice, lay, fuse, support, post-process, inspect.",
+   "terms": [
+    [
+     "Layer thickness",
+     "The height of each added layer."
+    ],
+    [
+     "Support structure",
+     "Temporary material that holds overhangs during a build."
+    ],
+    [
+     "Anisotropy",
+     "Properties that differ with direction."
+    ],
+    [
+     "Volumetric energy density",
+     "Laser energy delivered per unit volume of powder, P ÷ (v h t)."
+    ]
+   ],
+   "misc": {
+    "wrong": "3D printed metal parts are as good as wrought metal straight off the machine.",
+    "right": "As-built AM parts can have porosity, residual stress and rough surfaces; qualified processes, heat treatment and inspection are needed for critical use."
+   },
+   "limits": "AM properties depend strongly on machine, powder, settings and orientation, so values from one set-up may not transfer.",
+   "trip": {
+    "wiki": "3D printing",
+    "prompt": "Find the main AM process families. Which one uses a laser and metal powder?"
+   },
+   "sources": [
+    "3D printing",
+    "Selective laser melting",
+    "Fused filament fabrication"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which process uses a laser to fuse metal powder layer by layer?",
+     "o": [
+      "Laser powder bed fusion",
+      "FDM, which melts plastic filament",
+      "Injection moulding, which fills a mould",
+      "Forging, which hammers hot metal"
+     ],
+     "a": 0,
+     "why": "SLM/DMLS melts powder with a laser.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A part 45 mm tall is printed in layers of 0.15 mm. How many layers are needed?",
+     "a": 300,
+     "tol": 1,
+     "why": "45 ÷ 0.15 = 300.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In powder bed fusion P = 200 W, v = 1000 mm/s, h = 0.1 mm and t = 0.03 mm. What is the VED in J/mm³? Round to one decimal place.",
+     "a": 66.7,
+     "tol": 0.2,
+     "unit": "J/mm³",
+     "why": "VED = 200 ÷ (1000 × 0.1 × 0.03) = 200 ÷ 3 = 66.7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A build has 300 layers at 40 s per layer. How many hours does it take?",
+     "a": 3.33,
+     "tol": 0.03,
+     "unit": "h",
+     "why": "12 000 s ÷ 3600 = 3.33 h.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Halving the layer thickness (same height and time per layer) does what to the build time?",
+     "o": [
+      "Doubles it",
+      "Halves it",
+      "Leaves it unchanged",
+      "Quarters it"
+     ],
+     "a": 0,
+     "why": "Twice as many layers are needed.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A metal part warps and detaches from the plate during a build. What is the most likely cause?",
+     "o": [
+      "Residual thermal stress, so supports or strategy must change",
+      "Too much cooling of the part in space",
+      "Perfect fusion of every layer",
+      "The wrong colour of powder in the machine"
+     ],
+     "a": 0,
+     "why": "Thermal gradients create stresses that distort the part unless it is supported and anchored.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A printed bracket fails by splitting between layers under tension along the build direction. Which design change helps?",
+     "o": [
+      "Rotate it so the load runs along the layers",
+      "Add more layers in the weak direction",
+      "Print it faster with a larger nozzle",
+      "Lower the density of the infill"
+     ],
+     "a": 0,
+     "why": "Interlayer bonds are usually weaker, so orientation should put loads along the layers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are metal powders handled with special precautions?",
+     "o": [
+      "Fine powders can ignite or explode and be harmful to breathe",
+      "They are heavy and tire the hands",
+      "They are expensive only and need locking away",
+      "They are coloured and stain clothes"
+     ],
+     "a": 0,
+     "why": "Dust hazards require controls such as inert gas, grounding and respiratory protection.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "For which kinds of part is additive manufacturing usually more economical than casting or machining, and why?",
+     "rubric": [
+      [
+       "complex",
+       "intricate",
+       "internal",
+       "lattice",
+       "channel",
+       "geometry"
+      ],
+      [
+       "low volume",
+       "small batch",
+       "few",
+       "custom",
+       "one-off",
+       "prototype",
+       "low-volume"
+      ],
+      [
+       "tooling",
+       "mould",
+       "no tool",
+       "material waste",
+       "waste"
+      ]
+     ],
+     "min": 2,
+     "model": "AM suits complex or customised parts made in small numbers. It needs no mould or tooling and wastes little material, so the setup cost is low even though each part is slow to make.",
+     "why": "AM trades speed per part for freedom of shape and low tooling cost.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each AM issue to a remedy.",
+     "pairs": [
+      [
+       "Overhang sagging",
+       "Add supports"
+      ],
+      [
+       "Residual stress",
+       "Stress-relief heat treatment"
+      ],
+      [
+       "Internal porosity",
+       "Hot isostatic pressing"
+      ],
+      [
+       "Rough surface",
+       "Machining or polishing"
+      ]
+     ],
+     "why": "Post-processing deals with typical AM defects.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A cost model shows tooling of 40 000 units for casting at 5 units per part, and AM at 45 units per part without tooling. At what volume do they cost the same?",
+     "o": [
+      "1000 parts",
+      "8000 parts",
+      "500 parts",
+      "10 000 parts"
+     ],
+     "a": 0,
+     "why": "40 000 + 5n = 45n gives 40n = 40 000, so n = 1000.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A printed medical implant is to be used in patients. What is required beyond a good-looking part?",
+     "o": [
+      "Qualified process, validated properties, inspection and regulatory approval",
+      "Nothing special, if it looks good and fits",
+      "Only fast printing to reduce waiting",
+      "Only a low price for the hospital"
+     ],
+     "a": 0,
+     "why": "Critical applications need controlled, validated processes and traceability.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Topology optimisation produces an organic-looking bracket 40% lighter. Which concern must be checked before release?",
+     "o": [
+      "Fatigue, supports and inspection access for the printed shape",
+      "Only its beauty and how it looks to customers",
+      "The colour of the finished part",
+      "Nothing, since the computer proved it"
+     ],
+     "a": 0,
+     "why": "Optimised shapes can have rough surfaces and defects that dominate fatigue life.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "When and how additive manufacturing is useful",
+    "model": "Additive manufacturing builds a part layer by layer from a digital model, so it can make shapes that are hard to cast or machine, such as hollow lattices. It needs no mould, so it suits small numbers of complex parts. But it is slow, can leave pores and stresses, and needs post-processing and inspection.",
+    "points": [
+     {
+      "k": [
+       "layer",
+       "slice",
+       "add",
+       "build"
+      ],
+      "ask": "How is the part made?"
+     },
+     {
+      "k": [
+       "complex",
+       "shape",
+       "lattice",
+       "custom",
+       "hollow"
+      ],
+      "ask": "What can it do that other methods can't?"
+     },
+     {
+      "k": [
+       "mould",
+       "tool",
+       "low volume",
+       "small",
+       "few"
+      ],
+      "ask": "Why is it good for small batches?"
+     },
+     {
+      "k": [
+       "slow",
+       "pore",
+       "stress",
+       "inspect",
+       "post",
+       "limit"
+      ],
+      "ask": "What are its drawbacks?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Manufacturing optimisation",
+   "icon": "📈",
+   "hook": "Two factories have the same machines and the same staff, but one makes 30% more good parts per day with less stock in the warehouse. What is it doing differently?",
+   "explain": [
+    "Manufacturing optimisation raises output, quality and flexibility while cutting cost, time and waste. It starts with measurement. Takt time is the available production time divided by customer demand: 450 minutes for 225 units gives a takt time of 2 minutes per unit. A line must produce at least that rate.",
+    "Line balancing assigns tasks to stations so that each has a similar work content. Efficiency = total task time ÷ (number of stations × cycle time). With 9 minutes of work, 5 stations and a 2-minute cycle, efficiency = 9 ÷ 10 = 90%. Overall equipment effectiveness (OEE) multiplies availability, performance and quality: 0.90 × 0.95 × 0.98 = 83.8%.",
+    "Inventory trade-offs: the economic order quantity EOQ = √(2 D S ÷ H), where D is annual demand, S the cost per order and H the holding cost per unit per year. For D = 10 000, S = 50 and H = 2, EOQ = √(1 000 000 ÷ 2) = 707 units. Little's law links work in progress, throughput and lead time: WIP = throughput × lead time, so 20 units per hour with a 3-hour lead time means 60 units in progress. Reducing WIP shortens lead time.",
+    "Lean thinking removes waste such as waiting, over-production, defects and unnecessary motion. Constraints (bottlenecks) limit output, so improving a non-bottleneck gains nothing. Optimisation must respect safety and ethics: pushing speed or cutting maintenance can raise the risk of accidents and defects. Scheduling and simulation tools test options before changing the factory."
+   ],
+   "example": {
+    "q": "A factory works 450 minutes a day and customers want 225 units. Find the takt time. A line needs 9 minutes of work content per unit across 5 stations with a 2-minute cycle. Find the balance efficiency.",
+    "steps": [
+     "Takt time = 450 ÷ 225 = 2 minutes per unit.",
+     "Capacity of the stations = 5 × 2 = 10 minutes of station time.",
+     "Efficiency = 9 ÷ 10 = 90%."
+    ],
+    "a": "Takt time 2 min; efficiency 90%"
+   },
+   "analogies": {
+    "home": "Cooking a meal: you start the longest task first and prepare things in parallel to finish together.",
+    "city": "Traffic flows at the speed of the slowest junction, like a bottleneck.",
+    "farm": "At harvest, the speed of the slowest machine, such as the sorting line, sets the daily output.",
+    "sport": "In a relay, the team's time depends on all runners and baton passes."
+   },
+   "mnemonic": "Find the bottleneck, balance the line, cut the waste, keep it safe.",
+   "terms": [
+    [
+     "Takt time",
+     "Available time divided by demand."
+    ],
+    [
+     "OEE",
+     "Availability × performance × quality."
+    ],
+    [
+     "Bottleneck",
+     "The step that limits the whole system's output."
+    ],
+    [
+     "Little's law",
+     "WIP = throughput × lead time."
+    ]
+   ],
+   "misc": {
+    "wrong": "Keeping every machine busy all the time gives the best result.",
+    "right": "Running non-bottleneck machines flat out builds stock and lead time. The goal is smooth flow at the pace of demand."
+   },
+   "limits": "Models assume stable data. Variability, breakdowns and changing demand need buffers and simulation.",
+   "trip": {
+    "wiki": "Overall equipment effectiveness",
+    "prompt": "Find the three factors of OEE. Which one is hit by machine breakdowns?"
+   },
+   "sources": [
+    "Lean manufacturing",
+    "Overall equipment effectiveness",
+    "Little's law"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A shift has 480 minutes of available time and demand is 240 units. What is the takt time?",
+     "o": [
+      "2 minutes per unit",
+      "0.5 minutes per unit",
+      "240 minutes per unit",
+      "4 minutes per unit"
+     ],
+     "a": 0,
+     "why": "480 ÷ 240 = 2 minutes per unit.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A machine has availability 90%, performance 95% and quality 98%. What is the OEE in percent? Round to one decimal place.",
+     "a": 83.8,
+     "tol": 0.2,
+     "unit": "%",
+     "why": "0.90 × 0.95 × 0.98 = 0.8379, or 83.8%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A firm uses 10 000 units a year. Each order costs 50 and holding costs 2 per unit per year. What is the EOQ (to the nearest unit)?",
+     "a": 707,
+     "tol": 2,
+     "unit": "units",
+     "why": "√(2 × 10 000 × 50 ÷ 2) = √500 000 = 707.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A line has a throughput of 20 units per hour and a lead time of 3 hours. What is the average work in progress?",
+     "a": 60,
+     "tol": 0.5,
+     "unit": "units",
+     "why": "WIP = 20 × 3 = 60 units.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A line's slowest station takes 3 minutes, others 2 minutes. What limits output?",
+     "o": [
+      "The 3-minute station, which is the bottleneck",
+      "The 2-minute stations, since there are more of them",
+      "The average time of all stations",
+      "The first station on the line"
+     ],
+     "a": 0,
+     "why": "Output is set by the slowest step.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Reducing work in progress by half at constant throughput does what to the lead time, according to Little's law?",
+     "o": [
+      "Halves it",
+      "Doubles it",
+      "No change",
+      "Quarters it"
+     ],
+     "a": 0,
+     "why": "Lead time = WIP ÷ throughput.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A manager removes preventive maintenance to raise uptime this month. What is the likely consequence?",
+     "o": [
+      "Later breakdowns and safety risks that outweigh the gain",
+      "Permanently higher uptime for the plant",
+      "Higher quality of the products",
+      "No effect on the machines"
+     ],
+     "a": 0,
+     "why": "Cutting maintenance transfers cost and risk into the future.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The cost of improving a non-bottleneck machine's speed by 20% will increase total output by how much?",
+     "o": [
+      "Nothing, as the bottleneck still sets the pace",
+      "About 20%, as the machine runs faster",
+      "About 10%, half of the improvement",
+      "About 40%, twice the improvement"
+     ],
+     "a": 0,
+     "why": "Only improvements at the constraint change throughput.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a factory might choose smaller batches even though each changeover costs time.",
+     "rubric": [
+      [
+       "inventory",
+       "stock",
+       "wip",
+       "work in progress"
+      ],
+      [
+       "lead time",
+       "faster",
+       "flow",
+       "respond",
+       "flexib"
+      ],
+      [
+       "defect",
+       "quality",
+       "find",
+       "earlier",
+       "problem"
+      ],
+      [
+       "cash",
+       "cost",
+       "holding",
+       "waste"
+      ]
+     ],
+     "min": 2,
+     "model": "Smaller batches cut work in progress and lead time, so the factory responds faster to demand and ties up less cash and space. Defects are found sooner, so fewer bad parts are made, which can outweigh the changeover cost if changeovers are made quick.",
+     "why": "Smaller batches improve flow and quality, but need quick changeovers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each lean idea to its aim.",
+     "pairs": [
+      [
+       "Takt time",
+       "Pace of production to match demand"
+      ],
+      [
+       "Bottleneck",
+       "Step that limits output"
+      ],
+      [
+       "Poka-yoke",
+       "Error-proofing"
+      ],
+      [
+       "Kanban",
+       "Pull signal for replenishment"
+      ]
+     ],
+     "why": "These are core lean tools.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An assembly line with takt time 2 min has stations of 1.8, 2.2, 1.9 and 2.0 min. What is the problem?",
+     "o": [
+      "The 2.2 min station cannot keep pace with takt time",
+      "None, because the average station time is under 2 min",
+      "The 1.8 min station is too slow for the line",
+      "The line is too fast because most stations finish early"
+     ],
+     "a": 0,
+     "why": "A station longer than takt time becomes the bottleneck and cannot meet demand.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a risk of optimising only to cut cost per part?",
+     "o": [
+      "Quality, safety and resilience may suffer",
+      "Higher quality always, since cost cuts remove waste",
+      "Lower risk always, since parts are simpler",
+      "Faster delivery always, since the line is leaner"
+     ],
+     "a": 0,
+     "why": "Single-metric optimisation can shift costs elsewhere and cause hidden risks.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A simulation shows a new layout raising output by 15%. What should the factory do before changing everything?",
+     "o": [
+      "Pilot it and check the data and safety impact",
+      "Rebuild everything at once to gain the full 15%",
+      "Ignore it, since simulations are never useful",
+      "Stop all production while the plan is studied"
+     ],
+     "a": 0,
+     "why": "Models have assumptions, so pilot tests reduce risk.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why finding the bottleneck matters",
+    "model": "The slowest step in a production line limits what the whole line can make. Speeding up other steps does not raise output; it only piles up stock. So you measure each step, find the bottleneck, improve it, and then look for the next one.",
+    "points": [
+     {
+      "k": [
+       "slow",
+       "slowest",
+       "limit",
+       "constraint",
+       "bottleneck"
+      ],
+      "ask": "What sets the output of a line?"
+     },
+     {
+      "k": [
+       "other",
+       "non-bottleneck",
+       "pile",
+       "stock",
+       "inventory",
+       "wip"
+      ],
+      "ask": "What happens if I speed up other steps?"
+     },
+     {
+      "k": [
+       "measure",
+       "time",
+       "data"
+      ],
+      "ask": "How do I find it?"
+     },
+     {
+      "k": [
+       "improve",
+       "next",
+       "example",
+       "balance",
+       "repeat"
+      ],
+      "ask": "What do I do once it's fixed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Product lifecycle and reliability",
+   "icon": "♻️",
+   "hook": "A pump is rated to run for years, yet the company's warranty data show many fail in the first weeks, and more again after a decade. Why do failures bunch like that?",
+   "explain": [
+    "A product's lifecycle runs from concept and design through manufacture, use, maintenance and end of life. Product lifecycle management (PLM) tracks requirements, designs, changes and service data. Lifecycle assessment (LCA) counts energy, materials and emissions across all stages, so design can reduce the total impact, not just the cost to produce.",
+    "Reliability is the probability that a product performs its function for a stated time. For a constant failure rate λ, R(t) = e^(−λ t) and MTBF = 1 ÷ λ. With λ = 2 × 10⁻⁴ per hour, MTBF = 5000 h, and over 1000 h the reliability is R = e^(−0.2) = 0.819. Real failure rates follow a bathtub curve: high early failures (infant mortality from defects), a low steady period, then rising wear-out failures.",
+    "System reliability depends on layout. In series every part must work: R = 0.95 × 0.90 × 0.98 = 0.838. In parallel (redundant) the system works if either works: 1 − (1 − 0.9)² = 0.99. Availability for repairable equipment is A = MTBF ÷ (MTBF + MTTR); with MTBF = 500 h and MTTR = 10 h, A = 0.980.",
+    "Failure mode and effects analysis (FMEA) ranks risks by RPN = severity × occurrence × detection, such as 8 × 4 × 5 = 160, so effort goes to the highest risks. Maintenance strategies are run-to-failure, preventive (time-based), condition-based and predictive. End-of-life design asks: can the product be repaired, reused, remanufactured or recycled? Ethics and sustainability require honest reliability claims, safe disposal and fair labour across the supply chain."
+   ],
+   "example": {
+    "q": "A pump has a constant failure rate of 2 × 10⁻⁴ per hour. Find the MTBF and the probability it survives 1000 h.",
+    "steps": [
+     "MTBF = 1 ÷ λ = 1 ÷ (2 × 10⁻⁴) = 5000 h.",
+     "R(1000) = e^(−λ t) = e^(−0.2).",
+     "= 0.819."
+    ],
+    "a": "MTBF 5000 h; R(1000 h) ≈ 0.82"
+   },
+   "analogies": {
+    "home": "A light bulb often fails when switched on or when old, not in between, like a bathtub curve.",
+    "city": "Buses get regular servicing to avoid breakdowns on the road.",
+    "farm": "A combine harvester has a spare belt and is greased daily to avoid failure during harvest.",
+    "sea": "Ships carry spare parts and use twin engines for redundancy."
+   },
+   "mnemonic": "Early failures, steady life, wear-out: the bathtub.",
+   "terms": [
+    [
+     "MTBF",
+     "Mean time between failures, 1 ÷ λ for constant failure rate."
+    ],
+    [
+     "Redundancy",
+     "Extra components so the system works despite a failure."
+    ],
+    [
+     "FMEA",
+     "Method to rank failure modes by severity, occurrence and detection."
+    ],
+    [
+     "Lifecycle assessment",
+     "Accounting for impacts over all lifecycle stages."
+    ]
+   ],
+   "misc": {
+    "wrong": "A long MTBF means each unit will last that long.",
+    "right": "MTBF is an average for a population. With a constant failure rate, only 37% of units survive to the MTBF."
+   },
+   "limits": "The constant failure rate assumption fits only the flat part of the bathtub curve. Wear-out needs other distributions such as Weibull.",
+   "trip": {
+    "wiki": "Bathtub curve",
+    "prompt": "Find the bathtub curve. Mark infant mortality, useful life and wear-out."
+   },
+   "sources": [
+    "Reliability engineering",
+    "Failure mode and effects analysis",
+    "Life-cycle assessment"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which part of the bathtub curve is caused mainly by manufacturing defects?",
+     "o": [
+      "Early (infant mortality) failures",
+      "Useful life, when failures are random",
+      "Wear-out, at the end of the product's life",
+      "None of the stages, since defects never cause failure"
+     ],
+     "a": 0,
+     "why": "Defects show up soon after start-up.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A component has λ = 2 × 10⁻⁴ per hour. What is the probability it survives 1000 h? Give the answer to three decimal places.",
+     "a": 0.819,
+     "tol": 0.003,
+     "why": "e^(−0.2) = 0.8187.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Three parts in series have reliabilities 0.95, 0.90 and 0.98. What is the system reliability to three decimal places?",
+     "a": 0.838,
+     "tol": 0.003,
+     "why": "0.95 × 0.90 × 0.98 = 0.8379.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A machine has MTBF = 500 h and MTTR = 10 h. What is its availability? Give three decimal places.",
+     "a": 0.98,
+     "tol": 0.003,
+     "why": "500 ÷ 510 = 0.980.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two identical units of reliability 0.90 are placed in parallel. What is the system reliability?",
+     "o": [
+      "0.99",
+      "0.81",
+      "0.90",
+      "0.95"
+     ],
+     "a": 0,
+     "why": "1 − (0.1)² = 0.99.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "FMEA gives a failure mode severity 8, occurrence 4 and detection 5. What is the RPN?",
+     "o": [
+      "160",
+      "17, the sum of the three scores",
+      "32, from severity times occurrence",
+      "40, from occurrence times detection"
+     ],
+     "a": 0,
+     "why": "8 × 4 × 5 = 160.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A product's reliability test passes in 100 h but real failures occur after 5 years. What does this show?",
+     "o": [
+      "The test missed wear-out mechanisms",
+      "The product is perfect, since it passed the test",
+      "Testing is useless for any product",
+      "The MTBF of the product is zero"
+     ],
+     "a": 0,
+     "why": "Short tests may not capture long-term wear and fatigue; accelerated life testing helps.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which maintenance strategy uses measured vibration and oil data to decide when to repair?",
+     "o": [
+      "Condition-based maintenance",
+      "Run-to-failure, repairing only when it breaks",
+      "Calendar-only, repairing by the date",
+      "No maintenance until a person hears a noise"
+     ],
+     "a": 0,
+     "why": "Condition monitoring acts on the actual state of the equipment.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can a repairable design with a lower MTBF still give higher availability than one with a higher MTBF?",
+     "rubric": [
+      [
+       "repair",
+       "mttr",
+       "fix",
+       "maintain",
+       "restore"
+      ],
+      [
+       "quick",
+       "fast",
+       "short",
+       "less time",
+       "easy",
+       "modular"
+      ],
+      [
+       "availab",
+       "uptime",
+       "downtime"
+      ],
+      [
+       "mtbf",
+       "fewer failures"
+      ]
+     ],
+     "min": 2,
+     "model": "Availability depends on both MTBF and repair time: A = MTBF ÷ (MTBF + MTTR). A design that is quick and easy to repair has little downtime per failure, so it can be available more of the time despite failing more often.",
+     "why": "Downtime per failure matters as much as failure frequency.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "MTBF",
+       "Mean time between failures"
+      ],
+      [
+       "MTTR",
+       "Mean time to repair"
+      ],
+      [
+       "Redundancy",
+       "Backup components"
+      ],
+      [
+       "PLM",
+       "Managing product data across its life"
+      ]
+     ],
+     "why": "These are reliability and lifecycle terms.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A component with a constant failure rate has MTBF = 5000 h. About what fraction of units survive to 5000 h?",
+     "o": [
+      "37%",
+      "50%",
+      "63%",
+      "100%"
+     ],
+     "a": 0,
+     "why": "R = e⁻¹ = 0.368.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A safety-critical system uses two identical sensors in parallel. A single design flaw in the sensors can still disable both. What is this called?",
+     "o": [
+      "Common-cause failure",
+      "Random wear of one sensor at a time",
+      "Perfect redundancy of the two sensors",
+      "A delay in repair after failure"
+     ],
+     "a": 0,
+     "why": "Redundancy fails to protect against a shared cause, so diversity is used.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A company hides evidence of a recurring safety defect to protect its sales. Why is this an engineering ethics failure?",
+     "o": [
+      "It puts users at risk and breaches the duty to public safety",
+      "It increases reliability of the product over time",
+      "It is acceptable if profit is high enough",
+      "It is only a business choice, not an engineering matter"
+     ],
+     "a": 0,
+     "why": "Codes of engineering ethics place public safety first and require honest reporting.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What the bathtub curve says about failures",
+    "model": "Failures are common early on because of manufacturing defects, rare during the main useful life, and common again at the end from wear-out. This shape is called the bathtub curve. Engineers use burn-in tests to remove early failures and maintenance to catch wear-out before it causes harm.",
+    "points": [
+     {
+      "k": [
+       "early",
+       "defect",
+       "infant",
+       "start"
+      ],
+      "ask": "What happens at the start?"
+     },
+     {
+      "k": [
+       "steady",
+       "useful",
+       "low",
+       "random",
+       "middle"
+      ],
+      "ask": "What about the middle of life?"
+     },
+     {
+      "k": [
+       "wear",
+       "old",
+       "end",
+       "fatigue"
+      ],
+      "ask": "And at the end?"
+     },
+     {
+      "k": [
+       "test",
+       "burn",
+       "maintenance",
+       "inspect",
+       "replace",
+       "example"
+      ],
+      "ask": "How do engineers deal with this?"
+     }
+    ]
+   }
+  }
+ ]
+}

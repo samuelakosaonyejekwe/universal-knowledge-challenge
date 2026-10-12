@@ -1,0 +1,3017 @@
+{
+ "world": 1,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "General relativity and spacetime",
+   "icon": "🕳️",
+   "hook": "Satellite navigation would drift by roughly ten kilometres a day without corrections from both special and general relativity. What does gravity do to time?",
+   "explain": [
+    "General relativity (GR, Einstein 1915) replaces the Newtonian picture of a gravitational force by the idea that mass and energy curve spacetime, and free-falling bodies follow geodesics, the straightest possible paths in the curved geometry. It rests on the equivalence principle: locally, the effects of a uniform gravitational field cannot be distinguished from those of an accelerating frame, because inertial and gravitational mass are equal to high precision. The field equations are G_μν = (8πG ÷ c⁴) T_μν: spacetime curvature on the left, energy-momentum on the right.",
+    "For a non-rotating, uncharged spherical mass M the exterior solution is the Schwarzschild metric. Clocks at radius r tick slower than far-away clocks by the factor √(1 − 2GM ÷ rc²) ≈ 1 − GM ÷ rc² in the weak field, so lower clocks run slower and light climbing out is gravitationally redshifted. The Schwarzschild radius is R_s = 2GM ÷ c². Light passing the Sun's limb is deflected by 4GM ÷ (c²R) ≈ 1.75 arcseconds, twice the Newtonian value, confirmed by Eddington's 1919 eclipse expedition and later by radio interferometry. Mercury's perihelion advances by 43 arcseconds per century more than Newtonian planetary perturbations predict.",
+    "GPS satellites orbit at about 20 200 km altitude. Their clocks run faster than ground clocks by about 45.7 μs per day from weaker gravity and slower by about 7.2 μs per day from orbital speed (special relativity), a net gain of about 38.5 μs per day. Left uncorrected, this would give position errors growing by around 10 km per day. GR also predicts gravitational waves, black holes and the expansion of the universe, and it underpins modern cosmology."
+   ],
+   "example": {
+    "q": "Estimate how much faster a clock at GPS orbit radius (r = 2.657 × 10⁷ m) runs compared with one on Earth's surface (R = 6.371 × 10⁶ m) due to gravity alone, per day. Use GM = 3.986 × 10¹⁴ m³/s² and c = 2.998 × 10⁸ m/s, weak-field approximation.",
+    "steps": [
+     "Fractional difference = GM/c² × (1/R − 1/r).",
+     "GM/c² = 3.986 × 10¹⁴ ÷ 8.988 × 10¹⁶ = 4.435 × 10⁻³ m. (1/R − 1/r) = 1.5698 × 10⁻⁷ − 3.764 × 10⁻⁸ = 1.1934 × 10⁻⁷ m⁻¹.",
+     "Fraction = 4.435 × 10⁻³ × 1.1934 × 10⁻⁷ = 5.29 × 10⁻¹⁰. Per day: 86 400 × 5.29 × 10⁻¹⁰ = 4.57 × 10⁻⁵ s."
+    ],
+    "a": "About 45.7 μs per day faster"
+   },
+   "analogies": {
+    "tech": "A phone's map app silently applies relativistic corrections to every satellite clock.",
+    "sea": "A rubber sheet with a heavy ball makes marbles curve toward it, though no rope pulls them; spacetime plays the role of the sheet.",
+    "sport": "Two runners who start parallel on a curved Earth's surface drift together though neither turns: geodesics converge on a curved surface.",
+    "city": "A flight from Lagos to Tokyo follows a great circle, a geodesic, which looks curved on a flat map."
+   },
+   "mnemonic": "Matter tells spacetime how to curve; spacetime tells matter how to move.",
+   "terms": [
+    [
+     "Geodesic",
+     "The path of a freely falling body in curved spacetime."
+    ],
+    [
+     "Equivalence principle",
+     "Locally, free fall is indistinguishable from the absence of gravity."
+    ],
+    [
+     "Schwarzschild radius",
+     "R_s = 2GM ÷ c², the horizon radius of a non-rotating black hole."
+    ],
+    [
+     "Gravitational redshift",
+     "Light climbing out of a gravitational well loses energy and its wavelength increases."
+    ]
+   ],
+   "misc": {
+    "wrong": "Gravity in GR bends only space.",
+    "right": "It is spacetime that curves. In the weak-field limit near Earth, much of the gravitational effect on slow-moving bodies comes from the time part of the metric."
+   },
+   "limits": "GR is a classical theory and fails to be reconciled with quantum mechanics at the Planck scale, where singularities appear. The weak-field formulas here are approximations; strong fields need the full solutions.",
+   "trip": {
+    "wiki": "General relativity",
+    "prompt": "Find the list of classical tests and note each one's measured value."
+   },
+   "sources": [
+    "General relativity",
+    "Equivalence principle",
+    "Schwarzschild metric"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Find the Schwarzschild radius of a 10 solar-mass black hole in km. Use R_s = 2GM ÷ c², with R_s(Sun) = 2.95 km.",
+     "a": 29.5,
+     "tol": 0.3,
+     "unit": "km",
+     "why": "R_s scales linearly with mass: 10 × 2.95 = 29.5 km.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Light just grazes the Sun's limb (R = 6.957 × 10⁸ m). Using deflection α = 4GM ÷ (c²R), GM☉ = 1.327 × 10²⁰ m³/s² and c = 2.998 × 10⁸ m/s, find α in arcseconds (1 rad = 206 265″).",
+     "a": 1.75,
+     "tol": 0.03,
+     "unit": "″",
+     "why": "α = 4 × 1.327 × 10²⁰ ÷ (8.988 × 10¹⁶ × 6.957 × 10⁸) = 8.49 × 10⁻⁶ rad = 1.75″.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A clock on a mountaintop is compared with an identical clock at sea level. Which runs faster according to GR?",
+     "o": [
+      "The mountaintop clock",
+      "The sea-level clock",
+      "They agree exactly",
+      "It depends on the clock's mass"
+     ],
+     "a": 0,
+     "why": "Clocks higher in a gravitational potential tick faster relative to those lower down.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the main content of the equivalence principle?",
+     "o": [
+      "Locally, a uniform gravitational field is indistinguishable from uniform acceleration",
+      "Mass and energy are the same thing, so E = mc²",
+      "All stars are equivalent in how they evolve",
+      "The speed of light varies from place to place"
+     ],
+     "a": 0,
+     "why": "This is why free-fall and weightlessness feel the same, and why gravity can be treated as geometry.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Photons climbing out of Earth's gravitational field to a satellite are observed with...",
+     "o": [
+      "A slightly lower frequency",
+      "A slightly higher frequency",
+      "The same frequency",
+      "A lower speed"
+     ],
+     "a": 0,
+     "why": "They lose energy climbing out, so their frequency decreases (gravitational redshift) while their local speed remains c.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "GPS clocks gain 45.7 μs/day from gravity and lose 7.2 μs/day from speed. If light travels 3.0 × 10⁸ m/s, what daily position error would result from the net effect? ",
+     "o": [
+      "About 11.5 km",
+      "About 115 m",
+      "About 1.15 km",
+      "About 115 km"
+     ],
+     "a": 0,
+     "why": "Net 38.5 μs × 3.0 × 10⁸ m/s ≈ 1.15 × 10⁴ m ≈ 11.5 km.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "According to GR, why does a planet orbit the Sun?",
+     "o": [
+      "It follows a geodesic in spacetime curved by the Sun's mass",
+      "A force pulls it along a straight rope to the Sun",
+      "The Sun's light pushes it around the orbit",
+      "Space is empty so nothing acts on it"
+     ],
+     "a": 0,
+     "why": "In GR, free-fall paths are the straightest lines in curved spacetime, which appear as orbits.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each GR test to its observation.",
+     "pairs": [
+      [
+       "Mercury's perihelion",
+       "43 arcseconds per century extra precession"
+      ],
+      [
+       "1919 eclipse expedition",
+       "Starlight deflected near the Sun"
+      ],
+      [
+       "Pound–Rebka experiment",
+       "Gravitational redshift of gamma rays"
+      ],
+      [
+       "LIGO 2015",
+       "Direct detection of gravitational waves"
+      ]
+     ],
+     "why": "These are major observational confirmations.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why GPS needs both special and general relativistic corrections and why the two corrections have opposite signs.",
+     "rubric": [
+      [
+       "speed",
+       "velocity",
+       "orbital motion",
+       "moving",
+       "special relativity"
+      ],
+      [
+       "gravity",
+       "gravitational",
+       "weaker",
+       "altitude",
+       "general relativity",
+       "higher up"
+      ],
+      [
+       "slower",
+       "slow",
+       "lose",
+       "behind"
+      ],
+      [
+       "faster",
+       "gain",
+       "ahead",
+       "speed up",
+       "tick faster"
+      ]
+     ],
+     "min": 3,
+     "model": "Orbital speed makes satellite clocks run slower (special relativity, about −7 μs/day), while weaker gravity at altitude makes them run faster (general relativity, about +46 μs/day). The gravitational effect is larger, so the net is about +38 μs/day and must be corrected.",
+     "why": "The two effects act in opposite directions with different magnitudes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these by Schwarzschild radius, smallest first.",
+     "items": [
+      "Earth (about 9 mm)",
+      "Jupiter (about 2.8 m)",
+      "The Sun (about 2.95 km)",
+      "A 4-million-solar-mass black hole (about 1.2 × 10⁷ km)"
+     ],
+     "why": "R_s is proportional to mass: Earth is 3 × 10⁻⁶ M☉, Jupiter 9.5 × 10⁻⁴ M☉, the Sun 1 M☉.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student states: 'Because photons have no mass, gravity cannot affect them.' Which response is best?",
+     "o": [
+      "Light follows geodesics in curved spacetime, so it is deflected and redshifted by gravity",
+      "She is correct, since gravity needs mass to act on",
+      "Light is only affected by electric fields",
+      "Light has a small hidden mass that gravity pulls on"
+     ],
+     "a": 0,
+     "why": "In GR gravity is geometry, so all things including light follow the curved geometry, as confirmed by lensing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the Newtonian prediction of light deflection by the Sun half of the GR value?",
+     "rubric": [
+      [
+       "space",
+       "spatial",
+       "curvature",
+       "geometry"
+      ],
+      [
+       "time",
+       "temporal",
+       "both"
+      ],
+      [
+       "newton",
+       "only the time",
+       "only time",
+       "equivalence",
+       "acceleration",
+       "half"
+      ]
+     ],
+     "min": 2,
+     "model": "For slow bodies only the time part of the metric matters, which matches Newtonian gravity. For light both the time and space parts of the curvature contribute equally, giving twice the Newtonian deflection.",
+     "why": "Space curvature adds an equal contribution for light.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a singularity in a solution of GR (such as at r = 0 in the Schwarzschild solution) signal?",
+     "o": [
+      "The breakdown of the classical theory, where quantum gravity is expected to matter",
+      "It marks a proven point of truly infinite density",
+      "It marks a location where time runs fastest",
+      "It is only an arithmetic error in the algebra"
+     ],
+     "a": 0,
+     "why": "Curvature diverges there and the equations cease to apply, indicating the need for a quantum theory of gravity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why gravity slows clocks",
+    "model": "In general relativity mass curves spacetime, and clocks deeper in a gravitational well tick slower than clocks farther out. A GPS satellite clock runs about 46 microseconds a day faster than a ground clock because gravity is weaker up there, but about 7 microseconds slower because of its speed. The net is about 38 microseconds a day, which must be corrected.",
+    "points": [
+     {
+      "k": [
+       "mass",
+       "curve",
+       "spacetime"
+      ],
+      "ask": "What does mass do to spacetime?"
+     },
+     {
+      "k": [
+       "slower",
+       "slow",
+       "deeper",
+       "lower",
+       "tick"
+      ],
+      "ask": "What happens to clocks in a gravity well?"
+     },
+     {
+      "k": [
+       "gps",
+       "satellite",
+       "46",
+       "38",
+       "7",
+       "microsecond"
+      ],
+      "ask": "Where does this matter in daily life?"
+     },
+     {
+      "k": [
+       "speed",
+       "special",
+       "opposite",
+       "net",
+       "correct"
+      ],
+      "ask": "Is there any opposing effect?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Quantum mechanics and quantum systems",
+   "icon": "🌀",
+   "hook": "An electron meets a barrier it classically cannot climb, yet it sometimes appears on the other side. How can a particle get through a wall?",
+   "explain": [
+    "In quantum mechanics a system's state is a vector (wave function ψ) in a Hilbert space, observables are Hermitian operators, and measured values are their eigenvalues. Evolution follows the Schrödinger equation iħ ∂ψ/∂t = Ĥψ. The Born rule says |ψ|² is the probability density, so for a normalised state Σ|cᵢ|² = 1. Position and momentum operators do not commute, [x̂, p̂] = iħ, which leads to Δx Δp ≥ ħ/2.",
+    "Solvable systems include the infinite square well, E_n = n²π²ħ² ÷ (2mL²), and the harmonic oscillator, E_n = (n + ½)ħω, whose ground state has zero-point energy ½ħω. Hydrogen has E_n = −13.6 eV ÷ n². Spin-½ particles have two-component states; for a state (3/5)|↑⟩ + (4/5)|↓⟩ the probabilities of measuring up and down are 9/25 and 16/25. Measurement along one axis changes the state, and repeated identical preparations give a statistical spread.",
+    "Tunnelling occurs where the wave function decays within a classically forbidden region but remains non-zero after a finite barrier. For a rectangular barrier of height V and width L with E < V, T ≈ e^(−2κL) where κ = √(2m(V − E)) ÷ ħ. It powers nuclear fusion in stars, scanning tunnelling microscopes and tunnel diodes. Entangled states of two systems cannot be written as a product, and they show correlations exceeding the limits of local hidden-variable theories (Bell's theorem), as tested in experiments rewarded by the 2022 Nobel Prize in Physics. Interpretations of measurement (Copenhagen, many-worlds and others) differ, but they give the same predictions."
+   ],
+   "example": {
+    "q": "An electron (E = 1 eV) meets a barrier of V = 2 eV and width L = 0.5 nm. Estimate the transmission probability using T ≈ e^(−2κL). Use m = 9.11 × 10⁻³¹ kg, ħ = 1.055 × 10⁻³⁴ J·s and 1 eV = 1.602 × 10⁻¹⁹ J.",
+    "steps": [
+     "κ = √(2m(V − E)) ÷ ħ with V − E = 1 eV = 1.602 × 10⁻¹⁹ J: 2m(V − E) = 2.919 × 10⁻⁴⁹, √ = 5.40 × 10⁻²⁵.",
+     "κ = 5.40 × 10⁻²⁵ ÷ 1.055 × 10⁻³⁴ = 5.12 × 10⁹ m⁻¹.",
+     "2κL = 2 × 5.12 × 10⁹ × 0.5 × 10⁻⁹ = 5.12, so T ≈ e^(−5.12) ≈ 6 × 10⁻³."
+    ],
+    "a": "About 0.6%"
+   },
+   "analogies": {
+    "music": "A sound can be heard faintly through a thick wall, because the wave does not stop abruptly at the wall.",
+    "tech": "Flash memory stores data by letting electrons tunnel through thin insulators.",
+    "nature": "Sunlight exists because protons in the Sun's core tunnel through their electrical barrier to fuse.",
+    "sea": "A water wave striking a thin breakwater still lifts the water behind it."
+   },
+   "mnemonic": "State is a vector, observables are operators, outcomes are eigenvalues, probabilities are squared amplitudes.",
+   "terms": [
+    [
+     "Hermitian operator",
+     "An operator with real eigenvalues, representing an observable."
+    ],
+    [
+     "Born rule",
+     "Probability density is |ψ|²."
+    ],
+    [
+     "Tunnelling",
+     "Passage of a particle through a classically forbidden barrier."
+    ],
+    [
+     "Entanglement",
+     "Correlations of a composite state that cannot be written as a product of individual states."
+    ]
+   ],
+   "misc": {
+    "wrong": "The wave function collapses because a conscious observer looks.",
+    "right": "Measurement requires interaction with a measuring apparatus. Whether and how collapse occurs depends on the interpretation, and no theory requires consciousness."
+   },
+   "limits": "Non-relativistic quantum mechanics ignores particle creation, spin-orbit and other relativistic effects, which quantum field theory handles. The measurement problem remains interpretively unresolved.",
+   "trip": {
+    "wiki": "Quantum tunnelling",
+    "prompt": "Find the diagram of a wave function across a barrier and the list of applications."
+   },
+   "sources": [
+    "Quantum mechanics",
+    "Quantum tunnelling",
+    "Schrödinger equation"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "The ground-state energy of an electron in an infinite square well of width 1.0 nm is 0.376 eV. What is it in eV for a width of 0.50 nm (E₁ ∝ 1 ÷ L²)?",
+     "a": 1.5,
+     "tol": 0.03,
+     "unit": "eV",
+     "why": "Halving L multiplies E₁ by 4: 4 × 0.376 = 1.504 eV.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A harmonic oscillator has ω = 1.0 × 10¹⁴ rad/s. Find the energy spacing ħω in units of 10⁻²⁰ J, with ħ = 1.055 × 10⁻³⁴ J·s.",
+     "a": 1.055,
+     "tol": 0.01,
+     "unit": "× 10⁻²⁰ J",
+     "why": "ħω = 1.055 × 10⁻³⁴ × 1.0 × 10¹⁴ = 1.055 × 10⁻²⁰ J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A spin-½ particle is in the state (3/5)|↑⟩ + (4/5)|↓⟩. What is the probability of measuring spin down?",
+     "o": [
+      "16/25",
+      "4/5",
+      "9/25",
+      "3/5"
+     ],
+     "a": 0,
+     "why": "Probability is the squared magnitude of the amplitude: (4/5)² = 16/25 = 0.64.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The commutator [x̂, p̂] = iħ implies what?",
+     "o": [
+      "Position and momentum cannot both have sharp values simultaneously",
+      "Position and momentum are always equal in size",
+      "Momentum is always zero for a bound particle",
+      "Measurements can be made without disturbing the system at all"
+     ],
+     "a": 0,
+     "why": "Non-commuting observables have no common eigenstates, giving the uncertainty relation Δx Δp ≥ ħ/2.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A barrier is made twice as wide. The tunnelling probability T ≈ e^(−2κL) is then...",
+     "o": [
+      "Squared (much smaller)",
+      "Halved, since the probability is proportional to 1/L",
+      "Doubled, since it grows with the width",
+      "Unchanged, because the energy is the same"
+     ],
+     "a": 0,
+     "why": "Doubling L doubles the exponent, so T becomes T².",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about the ground state of a harmonic oscillator is correct?",
+     "o": [
+      "Its energy is ½ħω, not zero",
+      "Its energy is zero, so the oscillator is at rest",
+      "Its energy is ħω, one full quantum",
+      "It has no wave function until it is measured"
+     ],
+     "a": 0,
+     "why": "Zero-point energy ½ħω follows from E_n = (n + ½)ħω and the uncertainty principle.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A hydrogen atom is in an energy eigenstate. What will repeated energy measurements on the same state give?",
+     "o": [
+      "The same value each time",
+      "A random value each time",
+      "Zero",
+      "Values that always increase"
+     ],
+     "a": 0,
+     "why": "Measuring an observable on one of its eigenstates yields the corresponding eigenvalue with certainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantum concept with its description.",
+     "pairs": [
+      [
+       "Superposition",
+       "A state is a sum of basis states"
+      ],
+      [
+       "Eigenvalue",
+       "A possible measured result"
+      ],
+      [
+       "Entanglement",
+       "Non-separable correlated state"
+      ],
+      [
+       "Tunnelling",
+       "Passing through a classically forbidden barrier"
+      ]
+     ],
+     "why": "These are standard terms in quantum theory.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why Bell-test violations rule out local hidden-variable theories but do not allow faster-than-light messaging.",
+     "rubric": [
+      [
+       "correlat"
+      ],
+      [
+       "local",
+       "hidden variable",
+       "hidden-variable",
+       "bell inequality",
+       "inequalit"
+      ],
+      [
+       "random",
+       "no signal",
+       "cannot send",
+       "can't send",
+       "no information",
+       "no-signalling",
+       "no signalling",
+       "no communication"
+      ]
+     ],
+     "min": 3,
+     "model": "Entangled measurements show correlations stronger than any local hidden-variable theory can give, as in violations of Bell inequalities. But each party's individual outcomes are random, so no usable message is transmitted without a classical channel to compare results.",
+     "why": "Correlations are not controllable signals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps in a quantum measurement of spin along a chosen axis.",
+     "items": [
+      "Prepare the system in a state",
+      "Choose the measurement axis",
+      "Interact with the apparatus",
+      "Record one outcome (up or down)",
+      "Repeat many times to build a probability distribution"
+     ],
+     "why": "Quantum predictions are statistical, confirmed over many identical preparations.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says: 'Tunnelling means the particle borrows energy and breaks energy conservation.' What is the best reply?",
+     "o": [
+      "No: the particle's wave function extends into the barrier, and its total energy is well defined and conserved",
+      "Yes, it breaks the law for a very short time",
+      "Tunnelling is only a measurement error in the detector",
+      "Energy is not defined at all in quantum mechanics"
+     ],
+     "a": 0,
+     "why": "The energy eigenvalue is fixed; the classical notion of a particle with definite position and kinetic energy inside the barrier does not apply.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the probability of finding an electron at any location depend on |ψ|² and not on ψ?",
+     "rubric": [
+      [
+       "complex",
+       "phase",
+       "negative",
+       "sign"
+      ],
+      [
+       "probab",
+       "positive",
+       "real",
+       "non-negative"
+      ],
+      [
+       "born",
+       "square",
+       "squared",
+       "magnitude",
+       "modulus"
+      ]
+     ],
+     "min": 2,
+     "model": "ψ is generally complex-valued and may be negative, so it cannot be a probability. The squared magnitude |ψ|² is real and non-negative, and the Born rule identifies it as the probability density.",
+     "why": "Probabilities must be real and non-negative.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two electrons in a singlet state are measured along the same axis far apart. What is guaranteed?",
+     "o": [
+      "Opposite spin outcomes",
+      "Identical spin outcomes every time",
+      "Both spins always come out up",
+      "No correlation between the two outcomes"
+     ],
+     "a": 0,
+     "why": "The singlet has total spin zero, so measurements along the same axis give opposite results, although each is individually random.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Quantum tunnelling",
+    "model": "In quantum mechanics a particle is described by a wave function. Inside a barrier the wave does not drop to zero at once but fades away exponentially. If the barrier is thin enough, some of the wave reaches the other side, so there is a small chance of finding the particle there. For example, an electron meeting a 0.5 nm barrier has about a 0.6% chance of passing.",
+    "points": [
+     {
+      "k": [
+       "wave function",
+       "wave",
+       "ψ",
+       "probability"
+      ],
+      "ask": "How does quantum mechanics describe a particle?"
+     },
+     {
+      "k": [
+       "barrier",
+       "decay",
+       "fade",
+       "exponential",
+       "inside"
+      ],
+      "ask": "What happens to the wave inside a barrier?"
+     },
+     {
+      "k": [
+       "thin",
+       "width",
+       "narrow",
+       "some",
+       "other side",
+       "small chance"
+      ],
+      "ask": "What decides if it gets through?"
+     },
+     {
+      "k": [
+       "example",
+       "sun",
+       "fusion",
+       "microscope",
+       "flash",
+       "0.6"
+      ],
+      "ask": "Where does tunnelling matter in practice?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Cosmology and the early universe",
+   "icon": "💥",
+   "hook": "The sky glows faintly with microwaves from every direction at a temperature of 2.7 kelvin. What is this glow, and what does it say about the first few hundred thousand years?",
+   "explain": [
+    "The standard cosmological model (ΛCDM) is built on the cosmological principle, that on large scales the universe is homogeneous and isotropic, and on GR. The metric is Friedmann–Lemaître–Robertson–Walker, with scale factor a(t). Redshift measures expansion: 1 + z = a₀ ÷ a. Hubble's law v = H₀d holds at low redshift, with H₀ ≈ 67–73 km/s/Mpc (the measurements from the early universe and local distance ladder differ, the 'Hubble tension'). The Friedmann equation H² = (8πG ÷ 3)ρ − kc²/a² + Λc²/3 links expansion to content; the critical density is ρ_c = 3H² ÷ (8πG) ≈ 9 × 10⁻²⁷ kg/m³ for H₀ = 70 km/s/Mpc.",
+    "Observations show a flat universe made of about 5% ordinary matter, 27% dark matter and 68% dark energy. Evidence for a hot early phase includes the abundance of light elements from Big Bang nucleosynthesis (about 25% helium-4 by mass, formed in the first few minutes) and the cosmic microwave background (CMB). The CMB was released at recombination, when the universe was about 380 000 years old, at z ≈ 1100 and T ≈ 3000 K. It has since cooled as T = 2.725 K × (1 + z). Its tiny temperature fluctuations (about 10⁻⁵) record the seeds of galaxies.",
+    "Cosmic inflation, a brief epoch of exponential expansion in the first fraction of a second, is proposed to explain the flatness and horizon problems and to generate the primordial fluctuations; it is well motivated but not directly confirmed. The universe's age from the best fits is about 13.8 billion years; a rough estimate is 1 ÷ H₀, about 14 billion years for H₀ = 70."
+   ],
+   "example": {
+    "q": "Estimate the critical density for H₀ = 70 km/s/Mpc. Use 1 Mpc = 3.086 × 10²² m and G = 6.674 × 10⁻¹¹ N·m²/kg².",
+    "steps": [
+     "H₀ = 70 × 10³ ÷ 3.086 × 10²² = 2.268 × 10⁻¹⁸ s⁻¹.",
+     "H₀² = 5.145 × 10⁻³⁶ s⁻².",
+     "ρ_c = 3H₀² ÷ (8πG) = 1.543 × 10⁻³⁵ ÷ 1.677 × 10⁻⁹ = 9.2 × 10⁻²⁷ kg/m³."
+    ],
+    "a": "About 9 × 10⁻²⁷ kg/m³ (about 5 hydrogen atoms per cubic metre)"
+   },
+   "analogies": {
+    "home": "Raisins in a rising dough all move apart from one another, the farther ones faster.",
+    "sea": "Ripples spread out from a dropped stone while their wavelengths stretch.",
+    "tech": "A balloon being inflated stretches the wavelengths of a drawing of waves on its surface, as expansion redshifts light.",
+    "music": "The low hum of a loudspeaker is a leftover from the whole system's energy; the CMB is the leftover hiss of the early universe."
+   },
+   "mnemonic": "Expansion stretches light (1 + z = a₀/a), the sky glows with the afterglow of recombination, and H₀ sets the age scale.",
+   "terms": [
+    [
+     "Scale factor",
+     "a(t), the factor by which distances between comoving points grow."
+    ],
+    [
+     "Redshift",
+     "z = (λ_obs − λ_emit) ÷ λ_emit, 1 + z = a₀ ÷ a."
+    ],
+    [
+     "Critical density",
+     "The density for a spatially flat universe, 3H² ÷ 8πG."
+    ],
+    [
+     "Recombination",
+     "The epoch at about z ≈ 1100 when electrons and nuclei combined, making the universe transparent."
+    ]
+   ],
+   "misc": {
+    "wrong": "The Big Bang was an explosion at one place in space, and galaxies are flying away from a centre.",
+    "right": "Space itself expands everywhere. There is no centre and no edge in the standard model; every observer sees others recede."
+   },
+   "limits": "ΛCDM fits many data sets well, but the nature of dark matter and dark energy is unknown, the Hubble tension is unresolved, and inflation and the pre-inflation era are not directly tested.",
+   "trip": {
+    "wiki": "Cosmic microwave background",
+    "prompt": "Find the Planck temperature map and the angular power spectrum with its acoustic peaks."
+   },
+   "sources": [
+    "Lambda-CDM model",
+    "Cosmic microwave background",
+    "Big Bang nucleosynthesis"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using Hubble's law with H₀ = 70 km/s/Mpc, find the recession speed of a galaxy 100 Mpc away in km/s.",
+     "a": 7000,
+     "tol": 50,
+     "unit": "km/s",
+     "why": "v = H₀ d = 70 × 100 = 7000 km/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What was the temperature of the CMB at z = 1 (in K)? Use T = 2.725 × (1 + z) and give the answer to two decimal places.",
+     "a": 5.45,
+     "tol": 0.02,
+     "unit": "K",
+     "why": "T = 2.725 × 2 = 5.45 K.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A galaxy's light is observed with z = 1. What was the universe's size compared with now when the light was emitted?",
+     "o": [
+      "Half as large",
+      "Twice as large",
+      "The same",
+      "One tenth"
+     ],
+     "a": 0,
+     "why": "1 + z = a₀ ÷ a = 2, so a = a₀ ÷ 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A source emits a line at 500 nm and it is observed at 600 nm. What is z?",
+     "o": [
+      "0.2",
+      "1.2",
+      "0.5",
+      "0.83"
+     ],
+     "a": 0,
+     "why": "z = (600 − 500) ÷ 500 = 0.2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why was the universe opaque before recombination?",
+     "o": [
+      "Free electrons scattered photons constantly",
+      "There were no photons at that early time",
+      "Dark matter absorbed all the light",
+      "Space was completely empty back then"
+     ],
+     "a": 0,
+     "why": "In the hot ionised plasma, photon mean free paths were extremely short because of Thomson scattering.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which observation strongly supports a hot dense early universe?",
+     "o": [
+      "The helium abundance of about 25% by mass and the CMB",
+      "The existence of the Moon and its slow orbit",
+      "The number of planets in the Solar System",
+      "The speed of light in a vacuum"
+     ],
+     "a": 0,
+     "why": "Both are predicted by the hot Big Bang and measured with high accuracy.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A student says the Big Bang happened at a point in space. Which response is correct?",
+     "o": [
+      "The Big Bang happened everywhere; space itself has expanded",
+      "She is right, and the point is at the centre of the CMB",
+      "The Big Bang happened in the direction of the constellation Virgo",
+      "Space did not exist, so it had no location"
+     ],
+     "a": 0,
+     "why": "In the FLRW picture there is no centre; all comoving points moved apart from one another.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each epoch to the key event.",
+     "pairs": [
+      [
+       "First few minutes",
+       "Big Bang nucleosynthesis"
+      ],
+      [
+       "About 380 000 years",
+       "Recombination and release of the CMB"
+      ],
+      [
+       "Around a few hundred million years",
+       "First stars and galaxies"
+      ],
+      [
+       "Present day, 13.8 Gyr",
+       "Accelerated expansion dominated by dark energy"
+      ]
+     ],
+     "why": "These are major milestones of the standard model.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the CMB temperature is lower today than at recombination, and how redshift relates to this.",
+     "rubric": [
+      [
+       "expan",
+       "stretch"
+      ],
+      [
+       "wavelength",
+       "redshift",
+       "1 + z"
+      ],
+      [
+       "cool",
+       "cooled",
+       "lower",
+       "decrease",
+       "t ∝ 1/a",
+       "3000",
+       "2.7"
+      ]
+     ],
+     "min": 3,
+     "model": "As space expands, the photons' wavelengths stretch by the factor 1 + z ≈ 1100, so their blackbody temperature falls by the same factor from about 3000 K to 2.725 K.",
+     "why": "Wavelengths scale with a, so T ∝ 1/a.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the universe's eras from earliest to latest.",
+     "items": [
+      "Inflation",
+      "Big Bang nucleosynthesis",
+      "Recombination",
+      "Formation of the first stars",
+      "Dark-energy-dominated era"
+     ],
+     "why": "This is the standard timeline of the universe.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The Hubble tension refers to which situation?",
+     "o": [
+      "Local distance-ladder measurements give a higher H₀ than values inferred from the early-universe CMB",
+      "Hubble's space telescope has broken down",
+      "H₀ is found to equal zero",
+      "The universe is found not to be expanding"
+     ],
+     "a": 0,
+     "why": "The two methods disagree by several standard deviations, which may hint at new physics or unrecognised systematic errors.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do cosmologists use the CMB's tiny fluctuations of about 1 part in 10⁵ to infer the composition of the universe?",
+     "rubric": [
+      [
+       "acoustic",
+       "sound wave",
+       "oscillation",
+       "peaks",
+       "baryon"
+      ],
+      [
+       "angular",
+       "scale",
+       "pattern",
+       "power spectrum",
+       "peak heights",
+       "peak positions"
+      ],
+      [
+       "matter",
+       "dark matter",
+       "geometry",
+       "flat",
+       "composition",
+       "density"
+      ]
+     ],
+     "min": 2,
+     "model": "Before recombination, photons and baryons oscillated as sound waves in gravitational wells. The positions and heights of the acoustic peaks in the angular power spectrum depend on the geometry and on the densities of baryons, dark matter and dark energy.",
+     "why": "The fluctuation spectrum encodes the physics of the early plasma.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the universe's expansion rate were constant, 1/H₀ would give its age exactly. Why is the actual age (13.8 Gyr) slightly less than 1/H₀ ≈ 14 Gyr for H₀ = 70?",
+     "o": [
+      "Expansion decelerated in the matter-dominated era and then accelerated, so 1/H₀ is only approximate",
+      "The universe is shrinking, which reduces the age",
+      "H₀ is wrong by a factor of 2",
+      "Time does not flow uniformly, so no age can be found"
+     ],
+     "a": 0,
+     "why": "The history of H(t) differs from constant, so the exact age depends on the contents; for ΛCDM it comes out at about 0.96/H₀.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What the cosmic microwave background is",
+    "model": "About 380 000 years after the Big Bang the universe cooled enough for electrons and nuclei to form atoms, and light could finally travel freely. That light has been stretched by the expansion of space ever since, from about 3000 K to 2.725 K, so we see it today as microwaves from all directions. For example, its tiny ripples show where galaxies would later form.",
+    "points": [
+     {
+      "k": [
+       "380",
+       "recombination",
+       "atoms",
+       "cooled",
+       "transparent"
+      ],
+      "ask": "What happened when the light was released?"
+     },
+     {
+      "k": [
+       "expan",
+       "stretch",
+       "redshift",
+       "wavelength"
+      ],
+      "ask": "Why is it microwaves now?"
+     },
+     {
+      "k": [
+       "2.7",
+       "2.725",
+       "3000",
+       "1100",
+       "temperature"
+      ],
+      "ask": "What are the temperatures involved?"
+     },
+     {
+      "k": [
+       "ripple",
+       "fluctuation",
+       "galaxies",
+       "seed",
+       "structure"
+      ],
+      "ask": "What do the tiny differences tell us?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Black holes and gravitational waves",
+   "icon": "🌑",
+   "hook": "On 14 September 2015 two detectors in the United States registered a distortion only a few thousandths of a proton's width. What had they heard?",
+   "explain": [
+    "A black hole is a region from which nothing, not even light, can escape. In GR a non-rotating black hole is described by the Schwarzschild solution, with an event horizon at R_s = 2GM ÷ c² (2.95 km per solar mass). Rotating holes (Kerr) have an ergosphere and an innermost stable circular orbit (ISCO) that for a Schwarzschild hole lies at 6GM ÷ c² = 3R_s. Black holes are characterised by mass, spin and charge only (the no-hair idea). Stellar-mass holes form from collapsed massive stars; supermassive holes of 10⁶–10¹⁰ M☉ sit in galaxy centres, such as about 4 million M☉ at the centre of the Milky Way (Sagittarius A*) and 6.5 billion M☉ in M87.",
+    "Hawking showed that black holes radiate thermally with T = ħc³ ÷ (8πGMk_B), about 6 × 10⁻⁸ K for a solar mass, far colder than the CMB, so the effect is negligible for astrophysical holes. The Event Horizon Telescope produced the first image of a black hole's shadow in M87 (2019) and of Sagittarius A* (2022).",
+    "Accelerating masses emit gravitational waves, ripples of spacetime travelling at c. They carry energy, and the strain h is the fractional change in length. LIGO's 4 km arms detected GW150914, the merger of black holes of about 36 and 29 solar masses into one of about 62 solar masses, radiating about 3 solar masses of energy in a fraction of a second. For a binary, the gravitational wave frequency is twice the orbital frequency, and it rises as the orbit shrinks (a chirp). Neutron star mergers (GW170817) were seen in both gravitational waves and light, which led to measuring the speed of gravity and the origin of heavy elements."
+   ],
+   "example": {
+    "q": "A gravitational wave of strain h = 1.0 × 10⁻²¹ passes through a detector with arms of length 4.0 km. By how much does the difference in arm lengths change? Use ΔL = hL.",
+    "steps": [
+     "L = 4.0 × 10³ m.",
+     "ΔL = 1.0 × 10⁻²¹ × 4.0 × 10³.",
+     "ΔL = 4.0 × 10⁻¹⁸ m."
+    ],
+    "a": "About 4 × 10⁻¹⁸ m, a few thousandths of a proton's diameter"
+   },
+   "analogies": {
+    "sea": "Two heavy ships circling each other would make spreading ripples, as binary black holes make gravitational waves.",
+    "music": "The rising pitch of a chirp is like a siren climbing in frequency as the objects spiral closer.",
+    "tech": "LIGO's laser interferometer is a ruler made of light, sensitive to tiny length changes.",
+    "city": "A drain whirlpool speeds up as the water nears the centre, like a binary's orbit before merger."
+   },
+   "mnemonic": "Horizon at 2GM/c², waves from accelerating mass, chirp rises as the dance tightens.",
+   "terms": [
+    [
+     "Event horizon",
+     "The boundary beyond which nothing can return to the outside."
+    ],
+    [
+     "ISCO",
+     "The innermost stable circular orbit; 6GM ÷ c² for a non-rotating hole."
+    ],
+    [
+     "Gravitational wave",
+     "A ripple of spacetime curvature travelling at light speed."
+    ],
+    [
+     "Strain",
+     "h = ΔL ÷ L, the fractional change in length."
+    ]
+   ],
+   "misc": {
+    "wrong": "A black hole sucks in everything around it like a vacuum cleaner.",
+    "right": "Far from the horizon its gravity is like that of any object of the same mass. The Sun replaced by a black hole of one solar mass would leave planetary orbits unchanged."
+   },
+   "limits": "Classical GR predicts singularities, and the information loss paradox shows tension with quantum mechanics. Hawking radiation has not been observed.",
+   "trip": {
+    "wiki": "GW150914",
+    "prompt": "Find the waveform plot and identify the inspiral, merger and ringdown."
+   },
+   "sources": [
+    "Black hole",
+    "Gravitational wave",
+    "LIGO"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "What is the Schwarzschild radius of the supermassive black hole at the centre of M87 (6.5 × 10⁹ M☉) in astronomical units? Use R_s = 2.95 km per M☉ and 1 AU = 1.496 × 10⁸ km.",
+     "a": 128,
+     "tol": 3,
+     "unit": "AU",
+     "why": "R_s = 6.5 × 10⁹ × 2.95 km = 1.92 × 10¹⁰ km; ÷ 1.496 × 10⁸ = 128 AU.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The merger GW150914 radiated about 3 solar masses of energy. Using E = mc², with M☉ = 1.99 × 10³⁰ kg and c = 3.00 × 10⁸ m/s, find the energy in 10⁴⁷ J.",
+     "a": 5.4,
+     "tol": 0.1,
+     "unit": "× 10⁴⁷ J",
+     "why": "E = 3 × 1.99 × 10³⁰ × 9.0 × 10¹⁶ = 5.4 × 10⁴⁷ J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A binary black hole system orbits with a period of 0.020 s just before merger. What is the gravitational-wave frequency?",
+     "o": [
+      "100 Hz",
+      "50 Hz",
+      "25 Hz",
+      "200 Hz"
+     ],
+     "a": 0,
+     "why": "The GW frequency is twice the orbital frequency: 2 × (1 ÷ 0.020) = 100 Hz.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The Sun is replaced instantly by a black hole of the same mass. What happens to Earth's orbit?",
+     "o": [
+      "It is unchanged, apart from the loss of sunlight",
+      "Earth is pulled into the black hole at once",
+      "Earth flies away in a straight line",
+      "Earth orbits faster because of the stronger gravity"
+     ],
+     "a": 0,
+     "why": "Gravity depends on mass and distance, and the exterior spacetime of a spherical mass is the same whatever its size.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does the event horizon mean for an outside observer watching an astronaut fall in?",
+     "o": [
+      "Light from the astronaut is increasingly redshifted and fading as she nears the horizon",
+      "She speeds up beyond the speed of light and vanishes",
+      "She disappears instantly as she crosses",
+      "She bounces back off the horizon"
+     ],
+     "a": 0,
+     "why": "Signals from near the horizon take longer and lose energy, so the image fades and reddens.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true of Hawking radiation from a solar-mass black hole today?",
+     "o": [
+      "It is much colder than the CMB, so the hole gains more energy than it loses",
+      "It is hotter than the Sun, so the hole loses mass fast",
+      "It has been observed and measured directly",
+      "It does not depend on the mass of the hole"
+     ],
+     "a": 0,
+     "why": "T ≈ 6 × 10⁻⁸ K is far below 2.7 K, so absorption of CMB photons dominates.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A binary merger LIGO signal gets higher in both frequency and amplitude over time. What does this reflect?",
+     "o": [
+      "The orbit shrinks and speeds up as energy is radiated",
+      "The detector is drifting out of calibration",
+      "The black holes gain mass quickly as they merge",
+      "The distance to the source decreases rapidly"
+     ],
+     "a": 0,
+     "why": "Loss of energy to gravitational waves causes inspiral, which raises the orbital and gravitational-wave frequency (the chirp).",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each observation to what it showed.",
+     "pairs": [
+      [
+       "GW150914",
+       "First direct detection of gravitational waves from merging black holes"
+      ],
+      [
+       "GW170817",
+       "Neutron-star merger seen in gravitational waves and light"
+      ],
+      [
+       "EHT 2019",
+       "Image of the shadow of M87*"
+      ],
+      [
+       "Sagittarius A* orbits",
+       "Stars orbiting a compact object of about 4 million M☉"
+      ]
+     ],
+     "why": "These are landmark observations in black-hole astrophysics.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how an interferometer such as LIGO detects a gravitational wave and why the arms are so long.",
+     "rubric": [
+      [
+       "laser",
+       "light",
+       "interferometer",
+       "interference"
+      ],
+      [
+       "arm",
+       "length",
+       "stretch",
+       "squeeze",
+       "strain",
+       "differential"
+      ],
+      [
+       "fringe",
+       "phase",
+       "path difference",
+       "signal",
+       "interfere",
+       "pattern"
+      ],
+      [
+       "long",
+       "tiny",
+       "small",
+       "sensitiv",
+       "larger",
+       "proportional"
+      ]
+     ],
+     "min": 3,
+     "model": "A gravitational wave stretches one arm while squeezing the other. Laser beams travelling down the two arms recombine, and the tiny path-length change shifts the interference pattern. Because the change is ΔL = hL, a longer arm gives a bigger absolute change, which improves sensitivity to the very small strain.",
+     "why": "Interference converts a tiny differential length change into a measurable light signal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the phases of a binary black hole merger signal.",
+     "items": [
+      "Inspiral",
+      "Merger",
+      "Ringdown"
+     ],
+     "why": "The binary spirals together, merges, and the final hole settles with ringing.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Gravitational waves from GW170817 and a gamma-ray burst arrived within about 1.7 seconds after travelling about 130 million light-years. What does this show?",
+     "o": [
+      "Gravity travels at the speed of light to a precision of about 10⁻¹⁵",
+      "Gravity travels much faster than light",
+      "Light travels much faster than gravity",
+      "The two signals came from different events"
+     ],
+     "a": 0,
+     "why": "A time difference of order seconds over 10¹⁵ s of travel limits any difference in speed to roughly one part in 10¹⁵.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might the black-hole information paradox suggest that general relativity and quantum mechanics are in tension?",
+     "rubric": [
+      [
+       "hawking",
+       "radiat",
+       "evaporat"
+      ],
+      [
+       "information",
+       "pure state",
+       "unitar",
+       "quantum state"
+      ],
+      [
+       "lost",
+       "destroy",
+       "thermal",
+       "paradox",
+       "conflict",
+       "tension",
+       "violat"
+      ]
+     ],
+     "min": 2,
+     "model": "If a black hole evaporates entirely by thermal Hawking radiation, the information about what fell in seems to be lost, which would violate unitary evolution in quantum mechanics. Resolving this likely requires a quantum theory of gravity.",
+     "why": "Thermal radiation carries no information about the infalling matter's quantum state.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An observer far away measures the mass of a binary black hole system before merger as M₁ + M₂ = 65 M☉ and the final hole as 62 M☉. Where is the missing mass?",
+     "o": [
+      "Radiated as gravitational waves (E = mc²)",
+      "It was swallowed by a third black hole",
+      "It was never there, the numbers are wrong",
+      "It was converted into dark matter"
+     ],
+     "a": 0,
+     "why": "About 3 M☉c² of energy escaped as gravitational radiation, as measured by LIGO.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How gravitational waves are detected",
+    "model": "When massive objects like two black holes spiral together, they make ripples in spacetime that travel at the speed of light. The ripples stretch space in one direction and squeeze it in the perpendicular direction by a tiny fraction, about one part in 10²¹. LIGO uses laser light in two long perpendicular arms to measure that difference. For example, in 2015 it heard two black holes merging.",
+    "points": [
+     {
+      "k": [
+       "ripple",
+       "wave",
+       "spacetime",
+       "accelerat",
+       "merge",
+       "orbit"
+      ],
+      "ask": "What makes a gravitational wave?"
+     },
+     {
+      "k": [
+       "stretch",
+       "squeeze",
+       "length",
+       "strain",
+       "tiny",
+       "10⁻²¹",
+       "10^-21"
+      ],
+      "ask": "What does the wave do to space?"
+     },
+     {
+      "k": [
+       "laser",
+       "interferometer",
+       "arms",
+       "light",
+       "interference"
+      ],
+      "ask": "How can we measure such a tiny change?"
+     },
+     {
+      "k": [
+       "2015",
+       "ligo",
+       "black hole",
+       "example",
+       "merge",
+       "gw150914"
+      ],
+      "ask": "What was the first detection?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Dark matter and dark energy",
+   "icon": "🌫️",
+   "hook": "Everything we can see, from stars to gas, makes up only about 5% of the universe's energy budget. How do we know the rest is there?",
+   "explain": [
+    "Evidence for dark matter comes from several independent observations: flat galaxy rotation curves, velocity dispersions of galaxies in clusters (Zwicky 1933), gravitational lensing, the Bullet Cluster where the lensing mass is offset from the hot gas, the CMB acoustic peaks, and the formation of large-scale structure. A rough mass estimate for a bound system is M ≈ v²R ÷ G. Candidates include weakly interacting massive particles (WIMPs), axions and primordial black holes, but none has been detected despite sensitive underground experiments. Alternatives such as modified Newtonian dynamics (MOND) fit many rotation curves but struggle with clusters and the CMB.",
+    "Dark energy was discovered in 1998 when observations of distant Type Ia supernovae by two teams (Riess, Schmidt and Perlmutter received the 2011 Nobel Prize) showed that the expansion of the universe is accelerating. In the Friedmann acceleration equation, ä ÷ a = −(4πG ÷ 3)(ρ + 3p ÷ c²), acceleration requires a component with equation of state w = p ÷ (ρc²) < −1/3. The simplest candidate is the cosmological constant Λ, with w = −1 and constant energy density; others, such as quintessence, have w varying in time.",
+    "Components dilute differently as the universe expands: matter ρ ∝ a⁻³, radiation ρ ∝ a⁻⁴ and a cosmological constant ρ ∝ a⁰. This is why radiation dominated first, then matter, and dark energy now dominates, with Ω_m ≈ 0.31 and Ω_Λ ≈ 0.69 today (about 5%, 27% and 68% for ordinary matter, dark matter and dark energy respectively). If w = −1 holds, the universe will expand ever faster and structures outside gravitationally bound groups will recede beyond view. Whether Λ is truly constant is being tested by surveys such as DESI and Euclid."
+   ],
+   "example": {
+    "q": "A galaxy cluster has member galaxies with a typical speed of 1000 km/s within a radius of 1 Mpc. Estimate the mass using M ≈ v²R ÷ G. Use 1 Mpc = 3.086 × 10²² m, G = 6.674 × 10⁻¹¹ and M☉ = 1.99 × 10³⁰ kg.",
+    "steps": [
+     "v² = (10⁶ m/s)² = 10¹² m²/s².",
+     "M = 10¹² × 3.086 × 10²² ÷ 6.674 × 10⁻¹¹ = 4.6 × 10⁴⁴ kg.",
+     "In solar masses: 4.6 × 10⁴⁴ ÷ 1.99 × 10³⁰ ≈ 2.3 × 10¹⁴ M☉."
+    ],
+    "a": "About 2 × 10¹⁴ solar masses, far more than the visible stars supply"
+   },
+   "analogies": {
+    "sport": "Seeing a hidden player's effect on the ball's path tells you they are there, like inferring dark matter from its gravitational pull.",
+    "sea": "Currents reveal a hidden underwater ridge you cannot see on the surface.",
+    "tech": "A thermal camera shows heat invisible to the eye, as telescopes reveal matter we cannot see in visible light.",
+    "farm": "A river speeding up reveals a narrowing channel downstream, even if you cannot see it."
+   },
+   "mnemonic": "Dark matter clumps and dilutes as a⁻³; dark energy stays constant and wins late.",
+   "terms": [
+    [
+     "Dark matter",
+     "Non-luminous matter detected through its gravity."
+    ],
+    [
+     "Dark energy",
+     "A component causing the accelerating expansion, with w < −1/3."
+    ],
+    [
+     "Cosmological constant",
+     "A constant energy density of empty space, with w = −1."
+    ],
+    [
+     "Equation of state",
+     "w = p ÷ (ρc²), the ratio of pressure to energy density."
+    ]
+   ],
+   "misc": {
+    "wrong": "Dark matter is just ordinary matter we haven't seen, like faint planets and gas.",
+    "right": "Big Bang nucleosynthesis and the CMB limit ordinary (baryonic) matter to about 5% of the total. Most dark matter must be non-baryonic."
+   },
+   "limits": "Dark matter and dark energy are inferred from gravity alone. Modified gravity, new particles and systematic errors remain debated, and the value of Λ is vastly different from naive quantum-field estimates.",
+   "trip": {
+    "wiki": "Bullet Cluster",
+    "prompt": "Find the image that overlays lensing mass and X-ray gas and see how they differ."
+   },
+   "sources": [
+    "Dark matter",
+    "Dark energy",
+    "Bullet Cluster"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "If the universe doubles in linear size (a → 2a), by what factor does the matter density ρ_m ∝ a⁻³ fall?",
+     "a": 8,
+     "tol": 0.05,
+     "why": "ρ_m scales as a⁻³, so 2⁻³ = 1/8, a drop by a factor of 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A spiral galaxy's stars at R = 5 × 10²⁰ m orbit at 2.0 × 10⁵ m/s. Using M = v²R ÷ G with G = 6.674 × 10⁻¹¹, find the enclosed mass in units of 10⁴¹ kg.",
+     "a": 3,
+     "tol": 0.1,
+     "unit": "× 10⁴¹ kg",
+     "why": "M = 4.0 × 10¹⁰ × 5 × 10²⁰ ÷ 6.674 × 10⁻¹¹ = 3.0 × 10⁴¹ kg.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A cosmological constant has w = −1. How does its energy density change as the universe expands?",
+     "o": [
+      "It stays constant",
+      "It falls as a⁻³",
+      "It falls as a⁻⁴",
+      "It rises as a³"
+     ],
+     "a": 0,
+     "why": "ρ ∝ a^(−3(1+w)) = a⁰ for w = −1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Radiation has w = 1/3. How does its energy density scale with a?",
+     "o": [
+      "a⁻⁴",
+      "a⁻³",
+      "a⁻²",
+      "a⁰"
+     ],
+     "a": 0,
+     "why": "ρ ∝ a^(−3(1 + 1/3)) = a⁻⁴: number density dilutes as a⁻³ and each photon also loses energy as a⁻¹.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The Bullet Cluster merger shows gravitational lensing mass offset from the hot X-ray gas. Why is this evidence for dark matter?",
+     "o": [
+      "The bulk of the mass passed through without interacting like the gas did",
+      "The gas has no mass, so it cannot be weighed",
+      "Lensing cannot detect any gas at all",
+      "The cluster has no stars in it"
+     ],
+     "a": 0,
+     "why": "Gas, which holds most visible baryonic mass, was slowed by collisions, while the mass seen by lensing moved ahead, implying collisionless dark matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What did Type Ia supernova observations in 1998 show?",
+     "o": [
+      "Distant supernovae were fainter than expected, so the expansion is accelerating",
+      "The universe is shrinking, since stars are brighter",
+      "Supernovae do not occur at such distances",
+      "The Hubble constant is exactly zero"
+     ],
+     "a": 0,
+     "why": "They appeared dimmer and hence farther than a decelerating universe predicted.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "For cosmic acceleration (ä > 0), which condition must the dominant component satisfy?",
+     "o": [
+      "w < −1/3",
+      "w > 0",
+      "w = 1/3",
+      "w = 0"
+     ],
+     "a": 0,
+     "why": "ρ + 3p/c² < 0 requires pressure sufficiently negative, i.e. w < −1/3.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each cosmic component to how its density scales with a.",
+     "pairs": [
+      [
+       "Matter (dark and baryonic)",
+       "a⁻³"
+      ],
+      [
+       "Radiation",
+       "a⁻⁴"
+      ],
+      [
+       "Cosmological constant",
+       "Constant"
+      ],
+      [
+       "Spatial curvature term",
+       "a⁻²"
+      ]
+     ],
+     "why": "These scalings come from the Friedmann equation.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why MOND-type modifications to gravity face difficulties explaining the Bullet Cluster and CMB peaks.",
+     "rubric": [
+      [
+       "lensing",
+       "mass offset",
+       "separated",
+       "offset"
+      ],
+      [
+       "gas",
+       "baryons",
+       "visible matter",
+       "x-ray"
+      ],
+      [
+       "peak",
+       "cmb",
+       "acoustic",
+       "third peak",
+       "relativistic"
+      ],
+      [
+       "dark matter",
+       "collisionless",
+       "extra mass",
+       "unseen mass"
+      ]
+     ],
+     "min": 2,
+     "model": "In the Bullet Cluster the lensing mass is separated from the visible gas, which is hard to explain if gravity simply followed the visible matter. The CMB acoustic peaks, particularly the third peak, need a collisionless matter component. These fit dark matter better than simple modified gravity.",
+     "why": "Both observations point to a component that is not tied to ordinary matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the epochs of cosmic dominance from earliest to latest.",
+     "items": [
+      "Radiation-dominated",
+      "Matter-dominated",
+      "Dark-energy-dominated"
+     ],
+     "why": "Radiation dilutes fastest (a⁻⁴), then matter (a⁻³), leaving the constant dark-energy density to dominate.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says: 'Dark matter is proven to be WIMPs.' What is the best response?",
+     "o": [
+      "No particle candidate has been detected; WIMPs are one hypothesis among several",
+      "She is correct, WIMPs have been seen in detectors",
+      "Dark matter is proven to be neutrinos",
+      "Dark matter is proven to be ordinary faint stars"
+     ],
+     "a": 0,
+     "why": "Direct and indirect detection searches have found no confirmed signal so far, and axions or other candidates remain possible.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the nature of dark energy matter for the long-term fate of the universe?",
+     "rubric": [
+      [
+       "constant",
+       "w = −1",
+       "w=-1",
+       "cosmological constant",
+       "λ"
+      ],
+      [
+       "accelerat",
+       "expand forever",
+       "ever faster",
+       "exponential",
+       "big rip",
+       "fades"
+      ],
+      [
+       "w",
+       "time-varying",
+       "evolv",
+       "decrease",
+       "change",
+       "quintessence",
+       "phantom"
+      ]
+     ],
+     "min": 2,
+     "model": "If dark energy is a true cosmological constant (w = −1), expansion accelerates forever. If its density evolves, for example with w < −1 (phantom) or declining density, the universe could end in a Big Rip or slow down, so measuring w and its change in time is key.",
+     "why": "The fate depends on how the dark-energy density evolves.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The observed value of the cosmological constant is about 10¹²⁰ times smaller than a naive estimate from quantum field theory. What does this show?",
+     "o": [
+      "The problem of the cosmological constant remains unresolved",
+      "Quantum field theory is correct and complete as it stands",
+      "Dark energy does not exist at all",
+      "The universe is static and unchanging"
+     ],
+     "a": 0,
+     "why": "The enormous mismatch is a long-standing puzzle suggesting we do not understand how vacuum energy gravitates.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why scientists believe in dark matter",
+    "model": "Stars and galaxies move as if there were much more mass than we can see. Stars in the outskirts of galaxies orbit too fast, galaxy clusters hold together, and distant light bends more than visible matter explains. These independent clues all point to extra unseen mass, called dark matter, which makes up about 27% of the universe. We do not yet know what it is.",
+    "points": [
+     {
+      "k": [
+       "rotation",
+       "orbit",
+       "too fast",
+       "outer",
+       "stars"
+      ],
+      "ask": "What do we notice about stars in galaxies?"
+     },
+     {
+      "k": [
+       "lens",
+       "bend",
+       "cluster",
+       "bullet"
+      ],
+      "ask": "What other evidence is there?"
+     },
+     {
+      "k": [
+       "unseen",
+       "extra mass",
+       "dark",
+       "invisible"
+      ],
+      "ask": "So what is the conclusion?"
+     },
+     {
+      "k": [
+       "27",
+       "don't know",
+       "do not know",
+       "unknown",
+       "wimp",
+       "axion",
+       "not detected"
+      ],
+      "ask": "Do we know what it is made of?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Computational astrophysics",
+   "icon": "💻",
+   "hook": "No equation can predict the orbits of three stars for all time, yet astronomers simulate whole galaxies. How can a computer be trusted when it only gives approximations?",
+   "explain": [
+    "Most astrophysical problems have no closed-form solution, so we integrate the equations numerically. The simplest scheme is explicit (forward) Euler: x_{n+1} = x_n + v_nΔt, v_{n+1} = v_n + a_nΔt. It is first-order accurate, and for oscillating or orbiting systems it gradually adds energy (for a harmonic oscillator each step multiplies the energy by 1 + ω²Δt²). The leapfrog (Verlet) method is second-order and symplectic: it keeps the energy error bounded for long runs, which is why it is the standard in N-body codes.",
+    "Gravity between N bodies needs N(N − 1)/2 pair forces by direct summation, a cost of O(N²). Tree codes (Barnes–Hut) group distant particles and cost O(N log N), and particle-mesh methods use fast Fourier transforms. To avoid unphysically large forces in close encounters, a softening length ε replaces r² with r² + ε². The time step must resolve the shortest dynamical timescale, often by a fraction of the orbital period, and many codes use adaptive steps. Hydrodynamics uses grids (finite volume) or smoothed particles (SPH).",
+    "Good practice means verifying and validating. Verification checks that the code solves the equations correctly: test conserved quantities (energy, momentum, angular momentum), convergence when the step is reduced (error ∝ Δtᵖ for an order-p method), and known analytic cases such as a Kepler orbit. Validation compares with observations. Monte Carlo methods estimate integrals by random sampling with error ∝ 1/√N. Floating-point arithmetic has finite precision (double precision about 16 digits), so round-off errors accumulate, and reproducibility needs recorded software versions, random seeds and open data."
+   ],
+   "example": {
+    "q": "A harmonic oscillator (ω = 1) is integrated with explicit Euler and Δt = 0.1, starting at x = 1, v = 0. Each step multiplies the energy by (1 + ω²Δt²). What factor is the energy multiplied by after 10 steps?",
+    "steps": [
+     "Factor per step = 1 + (1)²(0.1)² = 1.01.",
+     "After 10 steps: 1.01¹⁰.",
+     "1.01¹⁰ ≈ 1.1046."
+    ],
+    "a": "About 1.10, i.e. a 10% energy gain (spurious)"
+   },
+   "analogies": {
+    "city": "Drawing a curved road as many short straight segments: shorter segments make a better road, as a smaller time step improves accuracy.",
+    "sport": "A coach reviewing a game frame by frame sees more detail than at one frame per minute.",
+    "music": "Digital audio samples a smooth sound wave thousands of times a second; too few samples distort it.",
+    "tech": "Weather forecasts run the same kind of simulations on a grid and rerun them with slightly different starts to test sensitivity."
+   },
+   "mnemonic": "Step small, check conserved quantities, test convergence, and record your seeds.",
+   "terms": [
+    [
+     "Symplectic integrator",
+     "A method that preserves the geometric structure of Hamiltonian dynamics, giving bounded energy errors."
+    ],
+    [
+     "Softening length",
+     "A small length added to avoid divergent forces in close encounters."
+    ],
+    [
+     "Convergence",
+     "The error falls as the step size is reduced."
+    ],
+    [
+     "Verification",
+     "Checking that the code correctly solves its equations."
+    ]
+   ],
+   "misc": {
+    "wrong": "A simulation that looks plausible must be correct.",
+    "right": "It must be tested against exact solutions, conserved quantities and convergence studies; a plausible-looking output can hide numerical artifacts."
+   },
+   "limits": "Chaotic systems (like three or more gravitating bodies) amplify tiny errors exponentially, so long-term individual trajectories are unreliable even with good methods, while statistical properties may be robust.",
+   "trip": {
+    "wiki": "Leapfrog integration",
+    "prompt": "Find the leapfrog update equations and compare them with Euler's method."
+   },
+   "sources": [
+    "N-body simulation",
+    "Leapfrog integration",
+    "Numerical integration"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "How many pairwise force calculations are needed for direct summation with N = 1000 particles?",
+     "a": 499500,
+     "tol": 0,
+     "why": "N(N − 1)/2 = 1000 × 999 ÷ 2 = 499 500.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A second-order method has error 4.0 × 10⁻⁴ with step Δt. What is the expected error if Δt is halved? Give the answer in units of 10⁻⁴.",
+     "a": 1,
+     "tol": 0.05,
+     "unit": "× 10⁻⁴",
+     "why": "Error ∝ Δt², so halving Δt gives a factor 1/4: 4.0 × 10⁻⁴ ÷ 4 = 1.0 × 10⁻⁴.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A Monte Carlo estimate uses N random samples. If you want to reduce the statistical error by a factor of 10, how many samples do you need?",
+     "o": [
+      "100 times as many",
+      "10 times as many",
+      "1000 times as many",
+      "The same number"
+     ],
+     "a": 0,
+     "why": "The error scales as 1/√N, so a factor 10 improvement needs 10² = 100 times more samples.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A simulated planet orbits and its orbit spirals outward over many orbits with Euler's method. What is the best explanation?",
+     "o": [
+      "Euler's method adds energy each step",
+      "The planet gains mass as it goes round",
+      "Gravity weakens slowly in the simulation",
+      "Computers cannot draw circles accurately"
+     ],
+     "a": 0,
+     "why": "Explicit Euler is not symplectic and systematically increases the energy of orbital motion.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a softening length used in N-body simulations?",
+     "o": [
+      "To avoid huge unphysical forces during very close encounters",
+      "To make particles heavier when they meet",
+      "To speed up the Fourier transform step",
+      "To stop the particles from moving"
+     ],
+     "a": 0,
+     "why": "Without softening, the force 1/r² diverges when two particles pass very close, forcing tiny time steps.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A Barnes–Hut tree code reduces the cost of gravity from O(N²) to roughly...",
+     "o": [
+      "O(N log N)",
+      "O(N³)",
+      "O(log N)",
+      "O(1)"
+     ],
+     "a": 0,
+     "why": "Distant groups of particles are treated as single sources, giving N log N scaling.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A simulation conserves energy to one part in 10¹⁰ but gives different results when the time step is halved. What does this tell you?",
+     "o": [
+      "Good energy conservation alone does not prove accuracy; convergence must also be tested",
+      "The code is perfect, so no further tests are needed",
+      "The time step does not matter for accuracy",
+      "Energy was not conserved by the code"
+     ],
+     "a": 0,
+     "why": "A symplectic scheme may conserve energy well while trajectories still depend on the step, so convergence tests are essential.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each numerical method to its property.",
+     "pairs": [
+      [
+       "Explicit Euler",
+       "First-order, energy drifts"
+      ],
+      [
+       "Leapfrog",
+       "Second-order, symplectic"
+      ],
+      [
+       "Barnes–Hut tree",
+       "O(N log N) gravity"
+      ],
+      [
+       "Monte Carlo integration",
+       "Error ∝ 1/√N"
+      ]
+     ],
+     "why": "These are standard properties of the methods.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Describe three checks you would perform to verify an N-body code before publishing results.",
+     "rubric": [
+      [
+       "energy",
+       "momentum",
+       "angular momentum",
+       "conserv"
+      ],
+      [
+       "convergence",
+       "time step",
+       "smaller step",
+       "halve",
+       "resolution"
+      ],
+      [
+       "analytic",
+       "kepler",
+       "known solution",
+       "test problem",
+       "benchmark",
+       "two-body"
+      ],
+      [
+       "seed",
+       "reproduc",
+       "version",
+       "compare",
+       "other code",
+       "independent"
+      ]
+     ],
+     "min": 3,
+     "model": "Check conserved quantities such as energy and angular momentum, run convergence tests by reducing the time step and softening, and compare with known analytic cases such as a two-body Kepler orbit. Also record software versions and seeds for reproducibility and, where possible, compare with an independent code.",
+     "why": "Verification is multi-pronged and reproducible.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these steps in a good computational study.",
+     "items": [
+      "State the physical model and equations",
+      "Implement the numerical method",
+      "Verify with tests and convergence studies",
+      "Run production simulations",
+      "Compare with observations and report uncertainties"
+     ],
+     "why": "Verification comes before production runs and comparison with data.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two simulations of the same three-body system, differing only in the 12th decimal digit of the initial position, end up in totally different configurations after a long time. What does this show?",
+     "o": [
+      "The system is chaotic and sensitive to initial conditions",
+      "One of the programs must have a bug in it",
+      "Three-body motion is truly random, not determined",
+      "Computers have faulty arithmetic in the 12th digit"
+     ],
+     "a": 0,
+     "why": "Exponential divergence of nearby trajectories is the signature of chaos, so individual long-term paths are not predictable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do astrophysicists often trust the statistics of a chaotic simulation even though individual trajectories are unreliable?",
+     "rubric": [
+      [
+       "statistic",
+       "distribution",
+       "average",
+       "ensemble",
+       "population"
+      ],
+      [
+       "robust",
+       "insensitive",
+       "same",
+       "stable",
+       "consistent",
+       "similar"
+      ],
+      [
+       "conserv",
+       "many runs",
+       "different initial",
+       "initial condition",
+       "shadow"
+      ]
+     ],
+     "min": 2,
+     "model": "Bulk quantities such as density profiles or energy distributions are often insensitive to the exact starting digits, and many runs with different initial conditions give consistent distributions. Conserved quantities and shadowing arguments support trusting the statistics.",
+     "why": "Chaos limits individual predictions, not necessarily ensemble properties.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A galaxy simulation uses 10⁹ particles. Direct summation per step would need about how many pair calculations?",
+     "o": [
+      "About 5 × 10¹⁷",
+      "About 10⁹",
+      "About 10¹²",
+      "About 10⁵"
+     ],
+     "a": 0,
+     "why": "N²/2 = 10¹⁸ ÷ 2 = 5 × 10¹⁷, which is why tree and mesh methods are essential.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why simulations need small time steps and checks",
+    "model": "A computer moves a system forward in small time steps, using the current forces to guess the next positions. If the steps are too big, errors build up, and some methods like simple Euler add energy and push orbits outward. Smaller steps and better methods like leapfrog help. We test by checking energy conservation and halving the step to see if the answer converges.",
+    "points": [
+     {
+      "k": [
+       "step",
+       "small",
+       "time step",
+       "increment"
+      ],
+      "ask": "How does a simulation move forward?"
+     },
+     {
+      "k": [
+       "error",
+       "build up",
+       "accumulate",
+       "energy",
+       "drift"
+      ],
+      "ask": "What goes wrong if steps are too large?"
+     },
+     {
+      "k": [
+       "leapfrog",
+       "symplectic",
+       "better method",
+       "second-order",
+       "verlet"
+      ],
+      "ask": "Is there a better method?"
+     },
+     {
+      "k": [
+       "check",
+       "convergence",
+       "halve",
+       "conserv",
+       "test",
+       "analytic"
+      ],
+      "ask": "How can we trust the results?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Advanced orbital dynamics",
+   "icon": "🛰️",
+   "hook": "To reach geostationary orbit a spacecraft needs far less speed change than to leave the Solar System. How can orbital energy tell us the cost of any transfer?",
+   "explain": [
+    "For a Keplerian orbit about a mass M with semi-major axis a, the specific orbital energy is ε = −GM ÷ 2a, which is negative for bound orbits. The vis-viva equation v² = GM(2/r − 1/a) gives the speed at any radius r. Circular orbits have r = a so v = √(GM/r); escape requires ε ≥ 0, so v_esc = √(2GM/r) = √2 v_circ. The orbital period is T = 2π√(a³ ÷ GM). For Earth GM = 3.986 × 10¹⁴ m³/s²; for the Sun GM = 1.327 × 10²⁰ m³/s².",
+    "A Hohmann transfer between coplanar circular orbits of radii r₁ and r₂ is an ellipse with a = (r₁ + r₂)/2 touching both. Two burns are needed: Δv₁ at r₁ to enter the ellipse and Δv₂ at r₂ to circularise, and the transfer lasts half the ellipse's period. From a 300 km low Earth orbit (r₁ = 6.678 × 10⁶ m) to geostationary orbit (r₂ = 4.216 × 10⁷ m), Δv₁ ≈ 2.43 km/s, Δv₂ ≈ 1.47 km/s, total ≈ 3.9 km/s and the transfer takes about 5.3 hours. Gravity assists exchange momentum with a planet: in the planet's frame the speed is unchanged but the direction changes, so in the Sun's frame the spacecraft can gain up to about twice the planet's orbital speed.",
+    "The two-body problem is exactly solvable, but three bodies are not in general. The restricted three-body problem has five Lagrange points. L1, L2 and L3 are saddle points (unstable), while L4 and L5 are stable for mass ratios below about 0.0385 (Earth–Sun, Earth–Moon, Sun–Jupiter pairs satisfy this). The Sun–Earth L1 and L2 lie about 1.5 million km from Earth and host solar observatories and the James Webb Space Telescope (L2). Real orbits are perturbed by Earth's oblateness (J₂), which causes nodal precession used by sun-synchronous orbits, by drag at low altitude, by third bodies and by solar radiation pressure."
+   ],
+   "example": {
+    "q": "Halley's comet has a = 17.8 AU and perihelion distance 0.587 AU. Find its speed at perihelion using vis-viva. Use GM☉ = 1.327 × 10²⁰ m³/s² and 1 AU = 1.496 × 10¹¹ m.",
+    "steps": [
+     "r = 0.587 × 1.496 × 10¹¹ = 8.78 × 10¹⁰ m; a = 17.8 × 1.496 × 10¹¹ = 2.663 × 10¹² m.",
+     "2/r − 1/a = 2.278 × 10⁻¹¹ − 3.76 × 10⁻¹³ = 2.240 × 10⁻¹¹ m⁻¹.",
+     "v² = 1.327 × 10²⁰ × 2.240 × 10⁻¹¹ = 2.973 × 10⁹, so v ≈ 5.45 × 10⁴ m/s."
+    ],
+    "a": "About 54.5 km/s"
+   },
+   "analogies": {
+    "sport": "A hammer thrower speeds up a hammer by swinging it; a gravity assist swings a spacecraft around a moving planet.",
+    "city": "A roundabout lets a car change direction smoothly without stopping, like the Hohmann ellipse between two circular roads.",
+    "sea": "A sailing boat tacks between two lines of travel using the wind, as spacecraft use gravity for efficient routes.",
+    "tech": "Mission designers use patched conic approximations: switch between two-body problems as a spacecraft passes from one planet's influence to another."
+   },
+   "mnemonic": "Vis-viva gives speed from position; energy is −GM/2a; Hohmann burns twice.",
+   "terms": [
+    [
+     "Vis-viva equation",
+     "v² = GM(2/r − 1/a)."
+    ],
+    [
+     "Hohmann transfer",
+     "A two-burn elliptical transfer between coplanar circular orbits."
+    ],
+    [
+     "Lagrange point",
+     "A position in a two-body system where a small body can keep fixed relative to both."
+    ],
+    [
+     "Delta-v (Δv)",
+     "The total change in velocity a spacecraft needs for a manoeuvre."
+    ]
+   ],
+   "misc": {
+    "wrong": "To catch up with a spacecraft ahead in the same orbit, simply speed up.",
+    "right": "Speeding up raises your orbit and slows your angular progress. You usually drop to a lower orbit first, which has a shorter period, then raise it again at the right moment."
+   },
+   "limits": "Two-body formulas ignore the Sun's and Moon's gravity, oblateness, drag, and radiation pressure. Patched conics are approximations to be refined by numerical integration.",
+   "trip": {
+    "wiki": "Hohmann transfer orbit",
+    "prompt": "Find the diagram of a Hohmann transfer and mark both burns."
+   },
+   "sources": [
+    "Orbital mechanics",
+    "Hohmann transfer orbit",
+    "Lagrangian point"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Find the circular orbital speed of Earth around the Sun in km/s. Use v = √(GM ÷ r), GM = 1.327 × 10²⁰ m³/s² and r = 1.496 × 10¹¹ m.",
+     "a": 29.8,
+     "tol": 0.1,
+     "unit": "km/s",
+     "why": "GM/r = 8.87 × 10⁸; the square root is 2.978 × 10⁴ m/s = 29.8 km/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A spacecraft in a low circular orbit of speed 7.73 km/s fires to enter a transfer orbit with perigee speed 10.15 km/s. What is the first Δv in km/s?",
+     "a": 2.42,
+     "tol": 0.05,
+     "unit": "km/s",
+     "why": "Δv₁ = 10.15 − 7.73 = 2.42 km/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "At escape speed at radius r the orbit's specific energy is...",
+     "o": [
+      "Zero",
+      "Negative",
+      "Positive and large",
+      "Infinite"
+     ],
+     "a": 0,
+     "why": "Escape speed gives parabolic orbit with ε = 0; bound orbits have ε < 0.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A satellite has a semi-major axis a. If a is multiplied by 4, its orbital period T = 2π√(a³ ÷ GM) is multiplied by...",
+     "o": [
+      "8",
+      "4",
+      "16",
+      "2"
+     ],
+     "a": 0,
+     "why": "T ∝ a^(3/2), and 4^(3/2) = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A spacecraft at the apogee of an elliptical orbit fires its engine along its velocity. What happens to the opposite side (perigee)?",
+     "o": [
+      "The perigee rises",
+      "The perigee falls",
+      "Nothing changes",
+      "The orbit becomes hyperbolic automatically"
+     ],
+     "a": 0,
+     "why": "A prograde burn at one point raises the altitude half an orbit later, because the point of the burn stays on the new orbit.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which Lagrange points are linearly stable for the Earth–Moon or Sun–Earth system?",
+     "o": [
+      "L4 and L5",
+      "L1 and L2",
+      "L1 and L3",
+      "L2 and L3"
+     ],
+     "a": 0,
+     "why": "L4 and L5 form equilateral triangles with the two bodies and are stable when the mass ratio is small enough.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A spacecraft approaching Jupiter at 10 km/s relative to Jupiter leaves at 10 km/s relative to Jupiter but in a changed direction. How can it gain speed relative to the Sun?",
+     "o": [
+      "Jupiter's own orbital velocity adds to the rotated velocity vector",
+      "Jupiter keeps pulling it along forever",
+      "Jupiter's mass decreases as the craft passes",
+      "It automatically burns more fuel near a planet"
+     ],
+     "a": 0,
+     "why": "In the Sun's frame the vector change in the planet frame adds Jupiter's velocity, so the speed can increase, while Jupiter loses a negligible amount of momentum.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each orbital perturbation to its main effect.",
+     "pairs": [
+      [
+       "Earth's oblateness (J₂)",
+       "Nodal precession"
+      ],
+      [
+       "Atmospheric drag",
+       "Orbit decay at low altitude"
+      ],
+      [
+       "Third-body gravity",
+       "Changes in eccentricity and inclination"
+      ],
+      [
+       "Solar radiation pressure",
+       "Small push on large light structures"
+      ]
+     ],
+     "why": "Each effect departs from the ideal Keplerian orbit.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a Hohmann transfer needs two burns and why it is fuel-efficient but slow.",
+     "rubric": [
+      [
+       "ellipse",
+       "elliptical",
+       "transfer orbit"
+      ],
+      [
+       "two",
+       "second",
+       "circularise",
+       "circularize",
+       "apogee",
+       "r₂"
+      ],
+      [
+       "tangent",
+       "efficient",
+       "minimum",
+       "least",
+       "lowest delta",
+       "lowest δv",
+       "lowest energy"
+      ],
+      [
+       "half",
+       "slow",
+       "long time",
+       "hours",
+       "months",
+       "years"
+      ]
+     ],
+     "min": 3,
+     "model": "The first burn puts the spacecraft on an ellipse that reaches the target radius; but there it would continue and fall back, so a second burn at the target circularises the orbit. Using tangential burns at the two apsides minimises the total Δv for two-impulse transfers, but the transfer takes half the ellipse's period, so it is slow.",
+     "why": "Efficient but slow, trading time for fuel.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps for transferring from a low Earth orbit to a geostationary orbit via a Hohmann transfer.",
+     "items": [
+      "Fire prograde at perigee in LEO",
+      "Coast along the transfer ellipse (about 5.3 hours)",
+      "Fire prograde at apogee at geostationary radius",
+      "Operate in circular geostationary orbit"
+     ],
+     "why": "Burn, coast, circularise, operate.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can't astronauts in the same circular orbit catch an object ahead by firing their thrusters forward?",
+     "o": [
+      "Speeding up raises the orbit and lengthens the period, so they fall behind",
+      "Thrusters do not work in the vacuum of space",
+      "Orbital mechanics does not follow Newton's laws",
+      "The object ahead is orbiting another planet"
+     ],
+     "a": 0,
+     "why": "A prograde burn increases the semi-major axis, so the period T ∝ a^(3/2) increases and the angular speed drops.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are the James Webb Space Telescope and many solar observatories placed near Sun–Earth L2 or L1?",
+     "rubric": [
+      [
+       "lagrange",
+       "l2",
+       "l1"
+      ],
+      [
+       "stay",
+       "fixed",
+       "same position",
+       "same relative",
+       "co-rotate",
+       "keep up"
+      ],
+      [
+       "sun",
+       "earth",
+       "shield",
+       "shade",
+       "cold",
+       "thermal",
+       "light",
+       "communicat"
+      ]
+     ],
+     "min": 2,
+     "model": "At L2 the telescope orbits the Sun with the same period as Earth, staying in a nearly fixed position relative to Earth. The Sun, Earth and Moon lie in the same direction, so one sunshield can protect it, and communication is easy. L1 gives a continuous view of the Sun.",
+     "why": "Lagrange points offer fixed geometry with little fuel for station keeping.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A comet has a perihelion of 0.1 AU and an aphelion of 9.9 AU. What is its semi-major axis?",
+     "o": [
+      "5.0 AU",
+      "10 AU",
+      "9.8 AU",
+      "2.5 AU"
+     ],
+     "a": 0,
+     "why": "a = (r_p + r_a)/2 = (0.1 + 9.9)/2 = 5.0 AU.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a spacecraft needs two burns to change between circular orbits",
+    "model": "A burn changes the speed at one point and the orbit then returns to that point. So after the first burn, which stretches the orbit into an ellipse, the spacecraft would come back to its starting radius. A second burn at the far end lifts the low point and makes the orbit circular. For example, going from a low Earth orbit to a geostationary orbit costs about 2.4 km/s then 1.5 km/s.",
+    "points": [
+     {
+      "k": [
+       "burn",
+       "speed up",
+       "thrust",
+       "engine"
+      ],
+      "ask": "What does the first burn do?"
+     },
+     {
+      "k": [
+       "ellipse",
+       "elliptical",
+       "stretch",
+       "transfer"
+      ],
+      "ask": "What shape is the orbit after that?"
+     },
+     {
+      "k": [
+       "return",
+       "same point",
+       "come back",
+       "pass through"
+      ],
+      "ask": "Why is that not enough?"
+     },
+     {
+      "k": [
+       "second",
+       "circular",
+       "apogee",
+       "far end",
+       "2.4",
+       "1.5",
+       "geostationary"
+      ],
+      "ask": "What does the second burn do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Astrophysical fluid dynamics",
+   "icon": "🌀",
+   "hook": "Interstellar gas is a million times thinner than the best laboratory vacuum on Earth, yet it still behaves as a fluid. When can we treat dust, gas and plasma as a continuous flow?",
+   "explain": [
+    "Astrophysical fluids obey the Euler or Navier–Stokes equations coupled to gravity: continuity ∂ρ/∂t + ∇·(ρv) = 0, momentum ρ(∂v/∂t + v·∇v) = −∇P − ρ∇Φ + viscous and magnetic terms, plus an energy equation. A fluid description holds when the mean free path is much shorter than the length scale of interest; in plasmas magnetic fields shorten the effective scale. In hydrostatic equilibrium dP/dr = −ρg, which sets the structure of stars and planetary atmospheres. The sound speed is c_s = √(γk_BT ÷ μm_H); for fully ionised hydrogen at 10⁴ K (γ = 5/3, μ = 0.5) it is about 16.6 km/s. A flow with Mach number M = v ÷ c_s greater than 1 is supersonic and develops shocks, as in supernova remnants.",
+    "The Reynolds number Re = ρvL ÷ μ measures inertia against viscosity; astrophysical flows have Re ≫ 1 and are turbulent. Gravitational collapse of a gas cloud occurs when it exceeds the Jeans length λ_J ≈ c_s √(π ÷ Gρ): larger clouds cannot be supported by pressure, which is how stars begin to form. In a magnetised plasma, the Alfvén speed v_A = B ÷ √(μ₀ρ) is the speed of magnetic waves; for B = 10⁻⁹ T (10 μG) and ρ = 1.67 × 10⁻²¹ kg/m³ (about 1 hydrogen atom per cm³) it is about 22 km/s. Magnetic fields are 'frozen in' to highly conducting plasma, and can twist, reconnect and release energy (as in solar flares).",
+    "Accretion powers many luminous sources. Matter with angular momentum forms a disc, and viscosity (probably from magnetorotational turbulence) transports angular momentum outwards so gas can fall inwards. The accretion luminosity is L = η ṁ c², where η ≈ 0.1 for black holes and about 0.2 in the best cases. Radiation pressure limits steady spherical accretion: the Eddington luminosity L_Edd = 4πGMm_pc ÷ σ_T ≈ 1.26 × 10³¹ W × (M/M☉), about 3 × 10⁴ L☉ per solar mass. Other instabilities include Rayleigh–Taylor (a heavy fluid above a light one), Kelvin–Helmholtz (shear) and convection when the temperature gradient is steeper than the adiabatic one."
+   ],
+   "example": {
+    "q": "Find the sound speed in fully ionised hydrogen gas at 10⁴ K. Use c_s = √(γk_BT ÷ μm_H) with γ = 5/3, μ = 0.5, k_B = 1.381 × 10⁻²³ J/K and m_H = 1.673 × 10⁻²⁷ kg.",
+    "steps": [
+     "γk_BT = (5/3) × 1.381 × 10⁻²³ × 10⁴ = 2.302 × 10⁻¹⁹ J.",
+     "μm_H = 0.5 × 1.673 × 10⁻²⁷ = 8.365 × 10⁻²⁸ kg.",
+     "c_s = √(2.302 × 10⁻¹⁹ ÷ 8.365 × 10⁻²⁸) = √(2.752 × 10⁸) ≈ 1.66 × 10⁴ m/s."
+    ],
+    "a": "About 16.6 km/s"
+   },
+   "analogies": {
+    "nature": "Smoke from a campfire rises in swirling convection currents like a hot gas plume in a star.",
+    "sea": "Ocean waves in shallow water move at a speed set by depth; sound waves in gas move at a speed set by temperature.",
+    "city": "Traffic jams propagate backwards as shocks when the flow is faster than the signal speed of the road.",
+    "sport": "A rope held tight carries waves along its tension; magnetic field lines carry Alfvén waves."
+   },
+   "mnemonic": "Mass, momentum, energy: conserve them in the flow; compare speeds to c_s and v_A.",
+   "terms": [
+    [
+     "Mach number",
+     "Flow speed divided by sound speed."
+    ],
+    [
+     "Jeans length",
+     "The scale above which a gas cloud collapses under its own gravity."
+    ],
+    [
+     "Alfvén speed",
+     "The speed of magnetic waves, B ÷ √(μ₀ρ)."
+    ],
+    [
+     "Eddington luminosity",
+     "The luminosity at which radiation pressure balances gravity on ionised hydrogen."
+    ]
+   ],
+   "misc": {
+    "wrong": "Space is empty, so fluid dynamics can't matter there.",
+    "right": "Even very low density gas behaves as a fluid when the length scales are huge or magnetic fields couple it, and fluid physics governs star formation, accretion and galactic winds."
+   },
+   "limits": "Continuum equations fail when the mean free path is comparable to the scale; collisionless plasmas need kinetic theory. Simple Eddington estimates assume spherical symmetry and pure ionised hydrogen.",
+   "trip": {
+    "wiki": "Magnetohydrodynamics",
+    "prompt": "Find the description of frozen-in magnetic flux and Alfvén waves."
+   },
+   "sources": [
+    "Fluid dynamics",
+    "Magnetohydrodynamics",
+    "Accretion disk"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Compute the Alfvén speed in km/s for B = 1.0 × 10⁻⁹ T and ρ = 1.67 × 10⁻²¹ kg/m³. Use μ₀ = 1.2566 × 10⁻⁶ N/A².",
+     "a": 21.8,
+     "tol": 0.3,
+     "unit": "km/s",
+     "why": "v_A = B ÷ √(μ₀ρ) = 10⁻⁹ ÷ √(2.099 × 10⁻²⁷) = 10⁻⁹ ÷ 4.58 × 10⁻¹⁴ = 2.18 × 10⁴ m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A shock moves at 1000 km/s into gas where the sound speed is 10 km/s. What is the Mach number?",
+     "a": 100,
+     "tol": 1,
+     "why": "M = 1000 ÷ 10 = 100.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A black hole accretes 10⁻⁸ M☉ per year with radiative efficiency η = 0.1. Using L = η ṁ c², with 1 M☉/yr = 6.3 × 10²² kg/s, about what luminosity is produced?",
+     "o": [
+      "About 6 × 10³⁰ W",
+      "About 6 × 10²⁴ W",
+      "About 6 × 10³⁶ W",
+      "About 6 × 10²⁷ W"
+     ],
+     "a": 0,
+     "why": "ṁ = 6.3 × 10¹⁴ kg/s; L = 0.1 × 6.3 × 10¹⁴ × 9 × 10¹⁶ = 5.7 × 10³⁰ W, about 1.5 × 10⁴ L☉.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A gas cloud has higher temperature, other things equal. What happens to its Jeans length?",
+     "o": [
+      "It increases, making collapse harder",
+      "It decreases, making collapse easier",
+      "It stays the same whatever the temperature",
+      "It becomes zero, so the cloud collapses at once"
+     ],
+     "a": 0,
+     "why": "λ_J ∝ c_s ∝ √T, so a hotter cloud needs more mass to collapse.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the Reynolds number of a flow with ρ = 1 kg/m³, v = 1 m/s, L = 1 m and viscosity μ = 10⁻⁵ Pa·s?",
+     "o": [
+      "10⁵",
+      "10⁻⁵",
+      "1",
+      "10"
+     ],
+     "a": 0,
+     "why": "Re = ρvL ÷ μ = 1 ÷ 10⁻⁵ = 10⁵, firmly in the turbulent regime.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In hydrostatic equilibrium in a star, what balances the inward gravitational pull?",
+     "o": [
+      "A pressure gradient pointing outward",
+      "Magnetic monopoles inside the star",
+      "Centrifugal force from the star's surface",
+      "Dark energy pushing from outside"
+     ],
+     "a": 0,
+     "why": "dP/dr = −ρg means pressure decreases outward with enough gradient to support the layer's weight.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does an accretion disc form around a compact object instead of gas falling straight in?",
+     "o": [
+      "Infalling gas has angular momentum and cannot fall in until that is transported outward",
+      "Gas is repelled by the compact object",
+      "The black hole has no gravity at all",
+      "Discs are only an artist's painting"
+     ],
+     "a": 0,
+     "why": "Conservation of angular momentum makes gas orbit; viscosity (turbulence) transfers angular momentum outward, allowing slow inflow.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each instability or process to its trigger.",
+     "pairs": [
+      [
+       "Rayleigh–Taylor",
+       "Heavy fluid above light fluid"
+      ],
+      [
+       "Kelvin–Helmholtz",
+       "Shear between two flows"
+      ],
+      [
+       "Convection",
+       "Temperature gradient steeper than adiabatic"
+      ],
+      [
+       "Jeans instability",
+       "Self-gravity exceeding pressure"
+      ]
+     ],
+     "why": "Each is a distinct source of instability in astrophysical flows.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how the Eddington luminosity arises and why it limits the brightness of steady spherical accretion.",
+     "rubric": [
+      [
+       "radiation pressure",
+       "photons push",
+       "outward force",
+       "radiation force"
+      ],
+      [
+       "gravity",
+       "gravitational",
+       "inward"
+      ],
+      [
+       "balance",
+       "equal",
+       "exceed",
+       "limit",
+       "blows",
+       "expel"
+      ],
+      [
+       "electron",
+       "thomson",
+       "scatter",
+       "ionised",
+       "ionized"
+      ]
+     ],
+     "min": 3,
+     "model": "Photons scatter off free electrons (Thomson scattering) and push the plasma outward. At the Eddington luminosity this outward radiation force balances the inward gravitational pull on protons and electrons. Above it, radiation would expel the infalling gas, limiting steady spherical accretion to L ≲ L_Edd.",
+     "why": "Both forces scale as 1/r², so the balance gives a luminosity depending only on mass.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these speeds in a molecular cloud complex from slowest to fastest.",
+     "items": [
+      "Sound speed in cold gas (0.2 km/s)",
+      "Gas turbulence (1 km/s)",
+      "Alfvén speed (about 2 km/s)",
+      "Supernova blast wave (1000 km/s)"
+     ],
+     "why": "Numerically, the sound speed 0.2 < turbulence 1 < Alfvén 2 < blast wave 1000 km/s.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The Alfvén speed is v_A = B ÷ √(μ₀ρ). If the density of a plasma is quadrupled at fixed B, v_A...",
+     "o": [
+      "Halves",
+      "Doubles",
+      "Quadruples",
+      "Stays the same"
+     ],
+     "a": 0,
+     "why": "v_A ∝ 1/√ρ, so quadrupling ρ halves it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does magnetic reconnection in the solar corona release energy quickly, even though a highly conducting plasma freezes field lines into the flow?",
+     "rubric": [
+      [
+       "resistiv",
+       "diffusion",
+       "break",
+       "breaks down",
+       "small scale",
+       "current sheet",
+       "thin"
+      ],
+      [
+       "field lines",
+       "topology",
+       "reconnect",
+       "rearrange",
+       "oppositely directed",
+       "oppositely"
+      ],
+      [
+       "energy",
+       "heat",
+       "flare",
+       "accelerate",
+       "released",
+       "kinetic"
+      ]
+     ],
+     "min": 2,
+     "model": "Where oppositely directed field lines are pushed together, thin current sheets form and the frozen-in condition breaks down locally. Field lines reconnect into a lower-energy configuration, releasing magnetic energy as heat, bulk flow and accelerated particles.",
+     "why": "Freezing-in fails in thin current sheets, allowing a change of topology.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A gas cloud has a sound speed of 0.2 km/s and a stirring speed of 2 km/s. What is the Mach number and its implication?",
+     "o": [
+      "10, supersonic turbulence that makes shocks and dense filaments",
+      "0.1, subsonic and smooth",
+      "1, exactly sonic with no shocks",
+      "100, a relativistic flow"
+     ],
+     "a": 0,
+     "why": "M = 2 ÷ 0.2 = 10; supersonic turbulence compresses gas into shocks and filaments where stars may form.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a cloud of gas in space can collapse to form stars",
+    "model": "Gas pressure pushes outward while gravity pulls inward. In a cold, dense and large enough cloud, gravity wins and the cloud collapses. The critical size is the Jeans length, which grows with the sound speed. So a cloud that is cooler, denser or heavier collapses more easily.",
+    "points": [
+     {
+      "k": [
+       "pressure",
+       "push outward",
+       "outward"
+      ],
+      "ask": "What resists the collapse?"
+     },
+     {
+      "k": [
+       "gravity",
+       "pull",
+       "inward",
+       "self-gravity"
+      ],
+      "ask": "What drives the collapse?"
+     },
+     {
+      "k": [
+       "jeans",
+       "critical",
+       "size",
+       "mass",
+       "length"
+      ],
+      "ask": "How do we know when gravity wins?"
+     },
+     {
+      "k": [
+       "cool",
+       "cold",
+       "dense",
+       "temperature",
+       "sound speed"
+      ],
+      "ask": "What helps a cloud collapse?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated cosmic research mission",
+   "icon": "🧑‍🚀",
+   "hook": "You lead a team that has just found a faint dip repeating every 10 days in the light of a nearby red dwarf. Which measurements, in what order, would turn that dip into a characterised world?",
+   "explain": [
+    "This capstone combines methods from the whole world: measurement and uncertainty, orbital mechanics, radiation, stellar physics, detection methods and communication. The target is a red dwarf with mass 0.40 M☉, radius 0.40 R☉ and temperature 3300 K. A transit of depth 1.00 ± 0.05% recurs every 10.0 days. Step one is stellar characterisation: from L = 4πR²σT⁴ in solar units, L ≈ (0.40)²(3300 ÷ 5772)⁴ L☉ ≈ 0.017 L☉.",
+    "Step two is the orbit: Kepler's third law in AU, years and solar masses gives a³ = M T², so a³ = 0.40 × (10.0 ÷ 365.25)² = 3.0 × 10⁻⁴ and a ≈ 0.067 AU. Step three is size: depth = (R_p ÷ R_*)², so R_p ÷ R_* = 0.100 and R_p = 0.040 R☉ ≈ 2.8 × 10⁷ m ≈ 4.4 R⊕ (a sub-Neptune size). Step four is thermal: T_eq = T_*√(R_* ÷ 2a)(1 − A)^¼; for A = 0 this gives about 390 K, far hotter than Earth's 255 K, so surface liquid water would need a very reflective atmosphere and cannot be judged without more data. Step five is mass from radial velocity, giving density and composition.",
+    "Throughout, scientific practice matters: propagate uncertainty (a 5% error on depth gives a 2.5% error on radius ratio because R_p ∝ √depth), check for false positives such as eclipsing binaries, verify with independent instruments, use blinded analysis where possible, share data and code, and allow peer review. Claims about habitability or life are claims about probability, and extraordinary claims need multiple independent lines of evidence. Communicating limits honestly is part of the science."
+   ],
+   "example": {
+    "q": "The star's flux measured at Earth is 1.0 × 10⁻¹¹ W/m² and L = 6.5 × 10²⁴ W. Find the distance in parsecs. Use d = √(L ÷ 4πF) and 1 pc = 3.086 × 10¹⁶ m.",
+    "steps": [
+     "L ÷ (4πF) = 6.5 × 10²⁴ ÷ (4π × 1.0 × 10⁻¹¹) = 6.5 × 10²⁴ ÷ 1.257 × 10⁻¹⁰ = 5.17 × 10³⁴ m².",
+     "d = √(5.17 × 10³⁴) = 2.27 × 10¹⁷ m.",
+     "d = 2.27 × 10¹⁷ ÷ 3.086 × 10¹⁶ ≈ 7.4 pc (a parallax of about 0.136 arcsec)."
+    ],
+    "a": "About 7.4 pc, about 24 light-years"
+   },
+   "analogies": {
+    "home": "Detectives combine fingerprints, timing and witness statements; a planet needs several independent measurements.",
+    "city": "City planners use traffic counts, maps and surveys together before a decision.",
+    "sea": "Navigators combine compass, speed and star sights, checking one method against another.",
+    "tech": "Engineers combine unit tests, integration tests and field trials before launching a product."
+   },
+   "mnemonic": "Characterise the star, find the orbit, size the planet, estimate temperature, weigh it, then challenge your own result.",
+   "terms": [
+    [
+     "Transit depth",
+     "The fractional dimming (R_p ÷ R_*)²."
+    ],
+    [
+     "Equilibrium temperature",
+     "The planet's temperature from the balance of absorbed and emitted radiation, ignoring greenhouse warming."
+    ],
+    [
+     "Error propagation",
+     "Calculating the uncertainty of a result from the uncertainties of its inputs."
+    ],
+    [
+     "False positive",
+     "A signal that mimics a planet but has another cause."
+    ]
+   ],
+   "misc": {
+    "wrong": "One dataset showing a promising feature establishes a discovery.",
+    "right": "Discovery claims need independent confirmation, careful treatment of uncertainty and exclusion of alternative explanations."
+   },
+   "limits": "Equilibrium temperature ignores the greenhouse effect, internal heat and atmospheric circulation, and masses from radial velocity are minimum masses unless inclination is known. Red dwarf planets may face flares and tidal locking.",
+   "trip": {
+    "wiki": "TRAPPIST-1",
+    "prompt": "Find how transit, timing and radial velocity data were combined to characterise the system's planets."
+   },
+   "sources": [
+    "Methods of detecting exoplanets",
+    "Habitable zone",
+    "Propagation of uncertainty"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using a³ = M T² (AU, years, solar masses), find the orbital distance in AU for a planet with a 10.0-day period around a 0.40 M☉ star. Give the answer to three decimal places.",
+     "a": 0.067,
+     "tol": 0.002,
+     "unit": "AU",
+     "why": "a³ = 0.40 × (10 ÷ 365.25)² = 3.0 × 10⁻⁴, so a = 0.0669 AU.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The transit depth is 1.00% with an uncertainty of 0.05% (absolute). What is the fractional uncertainty in the radius ratio R_p ÷ R_* = √depth, in percent?",
+     "a": 2.5,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "The depth has a 5% relative error; for a square root the relative error halves, giving 2.5%.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A star has R = 0.40 R☉ and T = 3300 K. Using L = R²T⁴ in solar units (T☉ = 5772 K), roughly what is L?",
+     "o": [
+      "0.017 L☉",
+      "0.16 L☉",
+      "1.7 L☉",
+      "0.0017 L☉"
+     ],
+     "a": 0,
+     "why": "L = 0.16 × (0.5717)⁴ = 0.16 × 0.1068 = 0.0171 L☉.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The transit depth is 1.0%. What is the planet's radius relative to its star's?",
+     "o": [
+      "0.10",
+      "0.01",
+      "1.0",
+      "0.0001"
+     ],
+     "a": 0,
+     "why": "R_p ÷ R_* = √0.010 = 0.10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A dip of 1% is seen, but later images show a faint eclipsing binary lying within the same pixel. What does this indicate?",
+     "o": [
+      "A possible false positive that must be ruled out",
+      "A confirmed planet, with no further checks needed",
+      "A satellite passing across the field of view",
+      "A calibration success for the telescope"
+     ],
+     "a": 0,
+     "why": "Blended eclipsing binaries can mimic transit signals and must be excluded by follow-up imaging and spectroscopy.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The planet has an equilibrium temperature of about 390 K for zero albedo. Which statement is best?",
+     "o": [
+      "Surface liquid water cannot be concluded without atmosphere and albedo data",
+      "It definitely has oceans on its surface",
+      "It definitely has no atmosphere around it",
+      "Temperature has no relation to liquid water"
+     ],
+     "a": 0,
+     "why": "Equilibrium temperature is a first estimate; actual conditions depend on albedo, atmosphere and pressure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A signal from a probe at 7.4 pc (about 24 light-years) is sent today. When can it be received?",
+     "o": [
+      "In about 24 years",
+      "In about 2.4 years",
+      "At once",
+      "In about 240 years"
+     ],
+     "a": 0,
+     "why": "Electromagnetic signals travel at c, so they take as many years as the distance in light-years.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each measurement to the quantity it provides.",
+     "pairs": [
+      [
+       "Transit depth",
+       "Planet-to-star radius ratio"
+      ],
+      [
+       "Transit period with Kepler's third law",
+       "Orbital distance"
+      ],
+      [
+       "Radial velocity amplitude",
+       "Minimum planet mass"
+      ],
+      [
+       "Flux and distance",
+       "Stellar luminosity"
+      ]
+     ],
+     "why": "Each is a step in characterising the system.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A colleague proposes announcing 'a habitable planet found' based on the equilibrium temperature alone. Write a short, critical evaluation using at least two scientific reasons.",
+     "rubric": [
+      [
+       "atmosphere",
+       "greenhouse",
+       "albedo",
+       "pressure"
+      ],
+      [
+       "mass",
+       "radius",
+       "density",
+       "rocky",
+       "size",
+       "gas"
+      ],
+      [
+       "uncertain",
+       "more data",
+       "confirm",
+       "independent",
+       "false positive",
+       "follow-up",
+       "peer review"
+      ],
+      [
+       "flare",
+       "tidal",
+       "radiation",
+       "red dwarf",
+       "habitab"
+      ]
+     ],
+     "min": 2,
+     "model": "Equilibrium temperature ignores atmosphere, albedo and greenhouse effects, so it cannot show liquid water. The planet's radius of about 4 Earth radii suggests a gas-rich sub-Neptune rather than a rocky planet, and mass and composition are unknown. The claim needs independent confirmation, follow-up atmospheric spectra and consideration of flares and tidal locking, so it is premature.",
+     "why": "Habitability claims need several lines of evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order a sensible sequence for this research programme.",
+     "items": [
+      "Detect a repeating transit signal",
+      "Rule out false positives with follow-up imaging and spectroscopy",
+      "Measure the star's properties",
+      "Derive orbit, radius and equilibrium temperature",
+      "Measure mass with radial velocities and plan atmospheric observations"
+     ],
+     "why": "Confirm the signal is real before interpreting it, then characterise step by step.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A reviewer asks you to show that your radius result does not depend on analysis choices. Which practice best addresses this?",
+     "o": [
+      "Repeat the analysis with different reasonable methods and report the spread, sharing data and code",
+      "Use only the method that gives the nicest answer",
+      "Delete outlying points without telling anyone",
+      "Cite your own previous work as proof"
+     ],
+     "a": 0,
+     "why": "Systematic uncertainty is tested by varying analysis choices transparently, and openness enables independent checks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the star's own radius uncertainty important when you quote the planet's radius?",
+     "rubric": [
+      [
+       "ratio",
+       "r_p ÷ r_*",
+       "r_p/r_*",
+       "depth gives"
+      ],
+      [
+       "stellar radius",
+       "star's radius",
+       "radius of the star"
+      ],
+      [
+       "propagat",
+       "uncertain",
+       "error",
+       "scale",
+       "multipl",
+       "depends"
+      ]
+     ],
+     "min": 2,
+     "model": "The transit gives only the ratio R_p ÷ R_*, so the planet's radius is that ratio times the stellar radius. Any error in the stellar radius carries straight into the planet radius and must be combined with the depth uncertainty.",
+     "why": "R_p = (R_p ÷ R_*) × R_*, so errors propagate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the planet were found to have a density of 1.6 g/cm³, which is closer to Neptune (1.6 g/cm³) than to Earth (5.5 g/cm³), what would you infer?",
+     "o": [
+      "A substantial volatile envelope, not a bare rocky world",
+      "A solid ball made mostly of iron",
+      "A pure rock planet like Earth",
+      "A small star"
+     ],
+     "a": 0,
+     "why": "Low bulk density needs a large fraction of light material such as hydrogen, helium or water.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to characterise a newly found transiting planet",
+    "model": "First measure the star: its radius, temperature and mass. The depth of the dip gives the planet's size relative to its star, and the time between dips gives its orbit using Kepler's third law. From the star's temperature and the distance we can estimate the planet's temperature. Then radial-velocity data give its mass. We always check for false positives and quote the uncertainties.",
+    "points": [
+     {
+      "k": [
+       "star",
+       "radius",
+       "temperature",
+       "mass"
+      ],
+      "ask": "What do you need to know first?"
+     },
+     {
+      "k": [
+       "depth",
+       "dip",
+       "size",
+       "ratio",
+       "square"
+      ],
+      "ask": "What does the dip tell you?"
+     },
+     {
+      "k": [
+       "period",
+       "kepler",
+       "orbit",
+       "distance",
+       "a³"
+      ],
+      "ask": "How do you find its orbit?"
+     },
+     {
+      "k": [
+       "false positive",
+       "uncertain",
+       "confirm",
+       "check",
+       "mass",
+       "radial velocity"
+      ],
+      "ask": "How do you make sure the result is right?"
+     }
+    ]
+   }
+  }
+ ]
+}

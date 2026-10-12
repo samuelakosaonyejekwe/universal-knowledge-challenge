@@ -1,0 +1,2894 @@
+{
+ "world": 17,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Deductive reasoning",
+   "icon": "🔒",
+   "hook": "All the lockers in the school are numbered. Locker 12 is blue. All even-numbered lockers are blue. Can you be sure about locker 12 without looking?",
+   "explain": [
+    "Deductive reasoning moves from general statements (premises) to a specific conclusion that must be true if the premises are. \"All mammals breathe air. Whales are mammals. So whales breathe air.\" If the premises are true and the form is valid, the conclusion is guaranteed.",
+    "Two key terms: an argument is valid if the conclusion follows necessarily from the premises, and sound if it is valid and the premises are actually true. A valid argument can have a false conclusion if a premise is false: \"All birds can fly. Penguins are birds. So penguins can fly\" is valid but unsound.",
+    "Useful forms: modus ponens (if P then Q; P; so Q) and modus tollens (if P then Q; not Q; so not P). Beware of the reverse: from \"if P then Q\" and \"Q\" you cannot conclude P. That error is called affirming the consequent."
+   ],
+   "example": {
+    "q": "If it is a square, it has four equal sides. Shape X does not have four equal sides. What follows?",
+    "steps": [
+     "Form: if P then Q, not Q.",
+     "Modus tollens gives: not P.",
+     "So X is not a square."
+    ],
+    "a": "Shape X is not a square."
+   },
+   "analogies": {
+    "home": "If the oven is on, the light is lit. The light is off, so the oven is not on (assuming the light works).",
+    "city": "If the bus is full, it does not stop. It stopped, so it was not full.",
+    "tech": "If the file is saved, it appears in the list. It is not in the list, so it was not saved."
+   },
+   "mnemonic": "Deduction is a lock: true premises and a valid form lock the conclusion in.",
+   "terms": [
+    [
+     "Premise",
+     "A statement taken as a starting point in an argument."
+    ],
+    [
+     "Valid",
+     "The conclusion follows necessarily if the premises are true."
+    ],
+    [
+     "Sound",
+     "Valid, with all premises true."
+    ],
+    [
+     "Modus tollens",
+     "If P then Q; not Q; so not P."
+    ]
+   ],
+   "misc": {
+    "wrong": "A valid argument always has a true conclusion.",
+    "right": "Validity is about the form. A valid argument with a false premise may have a false conclusion."
+   },
+   "limits": "Deduction does not create new information beyond what the premises contain, and real-life premises are often only probably true.",
+   "trip": {
+    "wiki": "Deductive reasoning",
+    "prompt": "Find the difference between deductive and inductive reasoning on the page."
+   },
+   "sources": [
+    "Deductive reasoning",
+    "Validity (logic)",
+    "Modus tollens"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which describes a deductive argument?",
+     "o": [
+      "The conclusion must be true if the premises are",
+      "The conclusion is only probable, never certain",
+      "It starts from a single example and then generalises",
+      "It always has premises that are false"
+     ],
+     "a": 0,
+     "why": "Deduction gives certainty from the premises.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If P then Q. P is true. What follows?",
+     "o": [
+      "Q",
+      "Not Q",
+      "Not P",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "This is modus ponens.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If it is a cat, it has whiskers. This animal has no whiskers. What follows?",
+     "o": [
+      "It is not a cat",
+      "It is a cat",
+      "It is a dog",
+      "Nothing can be said"
+     ],
+     "a": 0,
+     "why": "Modus tollens: not Q gives not P.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If it rained, the street is wet. The street is wet. What can you conclude for sure?",
+     "o": [
+      "Nothing certain about rain",
+      "It must have rained, since the street is wet",
+      "It certainly did not rain at all",
+      "The street cannot really be wet then"
+     ],
+     "a": 0,
+     "why": "Affirming the consequent is a fallacy. Other causes could wet the street.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which argument is valid but unsound?",
+     "o": [
+      "All fish can fly; a salmon is a fish; so a salmon can fly",
+      "All fish live in water; a salmon is a fish; so it lives in water",
+      "Some fish swim; so all swim",
+      "A salmon is a fish; so it is red"
+     ],
+     "a": 0,
+     "why": "The form is valid but the first premise is false.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What makes an argument sound?",
+     "o": [
+      "It is valid and has true premises",
+      "It is long and carefully written out",
+      "It uses big words and an expert tone",
+      "Its conclusion happens to be true, whatever the premises"
+     ],
+     "a": 0,
+     "why": "Both validity and true premises are needed.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "All 8 children in a team wear a number from 1 to 8, each different. Sana has the largest number that is even. What is her number?",
+     "a": 8,
+     "tol": 0,
+     "why": "The even numbers are 2, 4, 6, 8, and the largest is 8.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each form to its name.",
+     "pairs": [
+      [
+       "If P then Q; P; so Q",
+       "Modus ponens"
+      ],
+      [
+       "If P then Q; not Q; so not P",
+       "Modus tollens"
+      ],
+      [
+       "If P then Q; Q; so P",
+       "Affirming the consequent (invalid)"
+      ]
+     ],
+     "why": "Two forms are valid and one is a common error.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps in order for checking a deductive argument.",
+     "items": [
+      "Identify the premises and conclusion",
+      "Check if the conclusion follows from the form",
+      "Check if the premises are true",
+      "Judge if it is sound"
+     ],
+     "why": "Check validity first and truth after.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between a valid argument and a sound argument.",
+     "rubric": [
+      [
+       "valid",
+       "form",
+       "follow",
+       "logic",
+       "structure"
+      ],
+      [
+       "sound",
+       "true",
+       "premises",
+       "real",
+       "correct"
+      ],
+      [
+       "both",
+       "and",
+       "also",
+       "as well"
+      ]
+     ],
+     "min": 2,
+     "model": "A valid argument has a conclusion that follows from its premises. A sound argument is valid and also has premises that are actually true.",
+     "why": "Soundness adds true premises to validity.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "All members of the chess club are in Year 8. Ife is in Year 8. Is Ife in the club?",
+     "o": [
+      "Not necessarily",
+      "Yes",
+      "No",
+      "Only if she likes chess"
+     ],
+     "a": 0,
+     "why": "The premises do not say that everyone in Year 8 is in the club.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is \"Some students like maths; some like art; so some like both\" not valid?",
+     "rubric": [
+      [
+       "some",
+       "may",
+       "might",
+       "could",
+       "not necessarily",
+       "different"
+      ],
+      [
+       "same",
+       "overlap",
+       "both",
+       "different people",
+       "separate",
+       "no link",
+       "not given",
+       "not stated",
+       "group"
+      ]
+     ],
+     "min": 2,
+     "model": "The two groups could be different people, so the premises do not guarantee any student likes both.",
+     "why": "The premises leave the overlap open.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is deduction not enough to discover brand-new facts about nature?",
+     "o": [
+      "The conclusion only unpacks what the premises already contain",
+      "It is nearly always wrong in practice",
+      "It needs no premises to get started",
+      "It only ever relies on personal opinions"
+     ],
+     "a": 0,
+     "why": "Observation is needed for new facts.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Deductive reasoning",
+    "model": "Deductive reasoning goes from general statements to a conclusion that must be true if the premises are. It is valid if the conclusion follows by form. It is sound if it is valid and the premises are true. Beware of affirming the consequent.",
+    "points": [
+     {
+      "k": [
+       "premise",
+       "general",
+       "statement"
+      ],
+      "ask": "What do I start with?"
+     },
+     {
+      "k": [
+       "must",
+       "certain",
+       "follow",
+       "necessar"
+      ],
+      "ask": "How sure is the conclusion?"
+     },
+     {
+      "k": [
+       "valid",
+       "sound",
+       "true"
+      ],
+      "ask": "What are valid and sound?"
+     },
+     {
+      "k": [
+       "example",
+       "whale",
+       "mammal",
+       "square"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Inductive reasoning",
+   "icon": "🦢",
+   "hook": "Every swan you have ever seen is white. Does that prove all swans are white?",
+   "explain": [
+    "Inductive reasoning moves from specific observations to a general conclusion. After seeing many white swans, people in Europe concluded that all swans are white. Then black swans were found in Australia. The conclusion was only probable, not certain.",
+    "Inductive conclusions can be stronger or weaker. They are stronger with more observations, with varied and fair samples, and when the pattern has a known reason. A sample of three is weak. A large random sample is stronger. A biased sample, like asking only fans of a team who the best team is, misleads.",
+    "Induction is the basis of science and of everyday learning: the Sun has risen every day, so we expect it tomorrow. But it can never give certainty, and we should state conclusions with fitting caution, such as \"most\" or \"probably\"."
+   ],
+   "example": {
+    "q": "A farmer tests 20 randomly chosen eggs from a large crate and 19 are fine. What can she say about the crate?",
+    "steps": [
+     "Sample proportion: 19 out of 20 is 95%.",
+     "It was random, so it should represent the crate.",
+     "So about 95% of the eggs are probably fine, but not exactly."
+    ],
+    "a": "About 95% are probably fine, as an estimate and not a certainty."
+   },
+   "analogies": {
+    "farm": "After a few good harvests with a seed type, a farmer trusts it, but a drought can change that.",
+    "sport": "A coach sees a player score in every match and predicts she will score again.",
+    "nature": "You see ants come out before rain several times and guess it is a pattern."
+   },
+   "mnemonic": "Induction climbs from cases to a rule, and the rule is a probable tool.",
+   "terms": [
+    [
+     "Induction",
+     "Reasoning from examples to a general conclusion."
+    ],
+    [
+     "Sample",
+     "The part of a group that we examine."
+    ],
+    [
+     "Biased sample",
+     "A sample that does not fairly represent the group."
+    ],
+    [
+     "Generalisation",
+     "A broad conclusion from specific cases."
+    ]
+   ],
+   "misc": {
+    "wrong": "Many observations prove a general rule for sure.",
+    "right": "They make it more probable but never certain, as the black swan shows."
+   },
+   "limits": "Philosophers such as Hume pointed out that induction cannot be justified by deduction alone, which is called the problem of induction.",
+   "trip": {
+    "wiki": "Inductive reasoning",
+    "prompt": "Look for the black swan example and the idea of strong and weak inductions."
+   },
+   "sources": [
+    "Inductive reasoning",
+    "Problem of induction",
+    "Black swan theory"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is an example of inductive reasoning?",
+     "o": [
+      "Every crow I have seen is black, so crows are probably black",
+      "All crows are black, so this crow must be black",
+      "If it is a crow, then it has wings and feathers",
+      "Crows are black because I say they are"
+     ],
+     "a": 0,
+     "why": "It moves from cases to a general claim.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can an inductive conclusion be wrong?",
+     "o": [
+      "New cases may differ from past ones",
+      "Induction uses no data at all about the world",
+      "It always contains a hidden mistake somewhere",
+      "Its premises are always false at the start"
+     ],
+     "a": 0,
+     "why": "Unseen cases may break the pattern.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which sample is best for finding how much a town likes its park?",
+     "o": [
+      "A random selection of residents",
+      "Only the people who happen to be at the park",
+      "Only friends of the mayor who agree with her",
+      "Only the people you personally know"
+     ],
+     "a": 0,
+     "why": "Random sampling reduces bias.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A survey of 3 people finds all like tea. Which statement is best?",
+     "o": [
+      "It is too small to say much",
+      "Everyone in the world likes tea",
+      "Nobody anywhere dislikes tea",
+      "Tea is certainly the best drink there is"
+     ],
+     "a": 0,
+     "why": "Small samples give weak support.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase fits a good inductive conclusion?",
+     "o": [
+      "Probably",
+      "Definitely always",
+      "Impossible",
+      "Proved for ever"
+     ],
+     "a": 0,
+     "why": "Induction deals in probability.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "In a random sample of 40 students, 30 walk to school. If the school has 800 students, about how many walk (estimate)?",
+     "a": 600,
+     "tol": 40,
+     "unit": "students",
+     "why": "30 ÷ 40 = 0.75, and 0.75 × 800 = 600. It is an estimate.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Who is most likely to give a biased answer about the best phone?",
+     "o": [
+      "A survey of only the maker's employees",
+      "A mixed random group of local people",
+      "A group chosen by a fair lottery",
+      "A large and varied panel of volunteers"
+     ],
+     "a": 0,
+     "why": "The sample is not fair.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Sample",
+       "Part of the group studied"
+      ],
+      [
+       "Generalisation",
+       "Broad claim from cases"
+      ],
+      [
+       "Counterexample",
+       "A case that breaks the rule"
+      ]
+     ],
+     "why": "These are key ideas.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps of induction in order.",
+     "items": [
+      "Collect observations",
+      "Look for a pattern",
+      "State a general claim",
+      "Test it with new cases"
+     ],
+     "why": "Observe, find a pattern, claim, test.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why did the discovery of black swans change the claim that all swans are white?",
+     "rubric": [
+      [
+       "black",
+       "one",
+       "counter",
+       "example",
+       "exception"
+      ],
+      [
+       "all",
+       "general",
+       "disprove",
+       "wrong",
+       "false",
+       "break",
+       "probable",
+       "not certain"
+      ]
+     ],
+     "min": 2,
+     "model": "One black swan is a counterexample, so it showed that the general claim \"all swans are white\" was false.",
+     "why": "A single counterexample can refute a general claim.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A café asks 10 customers leaving a pizza shop whether they like pizza, and 9 say yes. What is the weakness?",
+     "o": [
+      "The sample is small and likely biased",
+      "Pizza is simply a bad food to ask about",
+      "Ten is a large enough sample for any shop",
+      "Customers always lie when they are asked"
+     ],
+     "a": 0,
+     "why": "People leaving a pizza shop tend to like pizza.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can we make an inductive conclusion stronger?",
+     "rubric": [
+      [
+       "more",
+       "larger",
+       "many",
+       "bigger",
+       "repeat"
+      ],
+      [
+       "random",
+       "varied",
+       "fair",
+       "different",
+       "test",
+       "mechanism",
+       "reason",
+       "explain",
+       "cases"
+      ]
+     ],
+     "min": 2,
+     "model": "Use more cases that are varied and fairly chosen, and look for a reason that explains the pattern.",
+     "why": "Strength comes from quantity, variety and explanation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The Sun has risen every day so far. Why is \"it will rise tomorrow\" still an inductive claim?",
+     "o": [
+      "It rests on past cases, not logical necessity",
+      "It is a deduction that must be certain",
+      "It has no evidence from past days at all",
+      "It is just an opinion without any basis"
+     ],
+     "a": 0,
+     "why": "We have strong evidence and physical reasons, but the claim is not logically guaranteed.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Inductive reasoning",
+    "model": "Induction goes from specific cases to a general conclusion. More, varied, fairly chosen cases make it stronger. It can never be completely certain, since a new case may break the rule, as black swans showed.",
+    "points": [
+     {
+      "k": [
+       "example",
+       "case",
+       "observation",
+       "specific"
+      ],
+      "ask": "What do I start with?"
+     },
+     {
+      "k": [
+       "general",
+       "rule",
+       "pattern"
+      ],
+      "ask": "What do I conclude?"
+     },
+     {
+      "k": [
+       "probable",
+       "not certain",
+       "maybe",
+       "might"
+      ],
+      "ask": "How sure am I?"
+     },
+     {
+      "k": [
+       "sample",
+       "random",
+       "bias",
+       "more"
+      ],
+      "ask": "How do I make it stronger?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Abductive reasoning",
+   "icon": "💡",
+   "hook": "You wake up and the garden is covered with small holes. What is the best explanation?",
+   "explain": [
+    "Abductive reasoning, also called inference to the best explanation, starts with an observation and asks what would best explain it. A doctor sees symptoms and suggests the most likely cause. A detective sees clues and suggests who did it.",
+    "It differs from the other two types. Deduction guarantees a conclusion from premises. Induction generalises from cases. Abduction picks the hypothesis that would, if true, explain the evidence best. It is uncertain, because other explanations might fit.",
+    "Good explanations fit all the evidence, are simple (do not need extra assumptions), explain more things, and can be tested. After abduction we should test the favoured explanation to see if it predicts more observations."
+   ],
+   "example": {
+    "q": "Wet footprints lead from the door to the kitchen on a dry day. Explanation A: someone was in the garden hose spray. Explanation B: the cat made them. Which fits?",
+    "steps": [
+     "Footprints have the shape of shoes, not paws.",
+     "They match explanation A better.",
+     "Test: look for wet shoes by the door."
+    ],
+    "a": "A person with wet shoes best explains the shoe-shaped footprints."
+   },
+   "analogies": {
+    "home": "The lights went out. Is it the bulb, the fuse or the power? You test the other lights to decide.",
+    "nature": "Fossil shells on a mountain suggest the land was once under the sea.",
+    "tech": "A phone will not charge. You try another cable to see if the cable is at fault."
+   },
+   "mnemonic": "Abduction: see the clue, then ask what story best fits it.",
+   "terms": [
+    [
+     "Abduction",
+     "Reasoning to the best explanation of the evidence."
+    ],
+    [
+     "Hypothesis",
+     "A proposed explanation that can be tested."
+    ],
+    [
+     "Parsimony",
+     "Preferring the simpler explanation when others fit equally well."
+    ],
+    [
+     "Rival explanation",
+     "Another explanation that could fit the same evidence."
+    ]
+   ],
+   "misc": {
+    "wrong": "The best explanation is always true.",
+    "right": "It is only the most likely given what we know, and new evidence may overturn it."
+   },
+   "limits": "Choosing \"best\" involves judgment, and people may disagree about simplicity or likelihood.",
+   "trip": {
+    "wiki": "Abductive reasoning",
+    "prompt": "Look for examples from medicine or detection on the page."
+   },
+   "sources": [
+    "Abductive reasoning",
+    "Occam's razor",
+    "Hypothesis"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which type of reasoning looks for the best explanation of evidence?",
+     "o": [
+      "Abductive",
+      "Deductive",
+      "Arithmetic",
+      "Memorising"
+     ],
+     "a": 0,
+     "why": "Abduction is inference to the best explanation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A plant wilts and the soil is dry. Which explanation is best?",
+     "o": [
+      "It needs water",
+      "It is bored",
+      "It is too tall",
+      "It dislikes the pot colour"
+     ],
+     "a": 0,
+     "why": "Dry soil fits wilting from lack of water.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What should you do after choosing a best explanation?",
+     "o": [
+      "Test it with new predictions",
+      "Stop there and never check it again",
+      "Hide the evidence that does not fit",
+      "Argue louder so others accept it"
+     ],
+     "a": 0,
+     "why": "Testing can support or reject it.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two explanations fit the evidence equally. One needs fewer extra assumptions. Which is usually preferred?",
+     "o": [
+      "The simpler one",
+      "The more complicated one",
+      "The more exciting one",
+      "The longer one"
+     ],
+     "a": 0,
+     "why": "This is parsimony (Occam's razor), a useful guide, not a proof.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is abduction uncertain?",
+     "o": [
+      "Other explanations might fit the same evidence",
+      "It uses no evidence of any kind",
+      "It always ends up with a false answer",
+      "It is really just a form of deduction"
+     ],
+     "a": 0,
+     "why": "The best available explanation may not be the truth.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is abduction?",
+     "o": [
+      "The room smells of smoke, so someone has been cooking",
+      "All cooks wear aprons, so this person wears one",
+      "Every pan I saw was hot, so every pan is hot",
+      "If food burns, then the room smells of it"
+     ],
+     "a": 0,
+     "why": "It proposes the best explanation of an observation.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A fossil of a sea creature is found high in the mountains. What best explains it?",
+     "o": [
+      "The area was once underwater",
+      "The creature climbed up the mountain itself",
+      "It fell from the sky during a storm",
+      "Someone made the fossil there for fun"
+     ],
+     "a": 0,
+     "why": "Geological uplift of former sea floor fits the evidence.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each type of reasoning to what it does.",
+     "pairs": [
+      [
+       "Deduction",
+       "Gives a guaranteed conclusion"
+      ],
+      [
+       "Induction",
+       "Generalises from cases"
+      ],
+      [
+       "Abduction",
+       "Picks the best explanation"
+      ]
+     ],
+     "why": "The three types do different jobs.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps of abductive reasoning in order.",
+     "items": [
+      "Observe something puzzling",
+      "List possible explanations",
+      "Compare how well each fits",
+      "Test the best one"
+     ],
+     "why": "Observe, list, compare, then test.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "You hear the doorbell and nobody is there. Give two possible explanations and say how you would decide.",
+     "rubric": [
+      [
+       "wind",
+       "prank",
+       "child",
+       "delivery",
+       "friend",
+       "electrical",
+       "fault",
+       "explanation",
+       "possible",
+       "someone",
+       "faulty"
+      ],
+      [
+       "check",
+       "look",
+       "test",
+       "camera",
+       "evidence",
+       "ask",
+       "find out",
+       "investigate",
+       "observe"
+      ]
+     ],
+     "min": 2,
+     "model": "It could be a child playing or a faulty bell. I would check for people, look at a camera or test the bell to see which fits.",
+     "why": "Several explanations are tested against evidence.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A detective finds muddy shoe prints and an open window. Why should she not decide on one suspect at once?",
+     "o": [
+      "Other explanations may fit the clues",
+      "Clues are always false in real cases",
+      "Windows cannot really be opened from outside",
+      "Mud is not evidence of anything at all"
+     ],
+     "a": 0,
+     "why": "Rival explanations must be ruled out.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare abduction with deduction in how certain the conclusion is.",
+     "rubric": [
+      [
+       "deduction",
+       "certain",
+       "guarantee",
+       "must",
+       "sure"
+      ],
+      [
+       "abduction",
+       "probable",
+       "likely",
+       "best",
+       "uncertain",
+       "may",
+       "might"
+      ]
+     ],
+     "min": 2,
+     "model": "In deduction the conclusion must be true if the premises are. In abduction the conclusion is only the most likely explanation and may be wrong.",
+     "why": "Abduction gives probable conclusions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which feature makes one explanation better than another?",
+     "o": [
+      "It fits more of the evidence and explains it with fewer assumptions",
+      "It is more surprising and dramatic to hear",
+      "It is told with great confidence by a speaker",
+      "It is older than the other explanation"
+     ],
+     "a": 0,
+     "why": "Fit and simplicity are key virtues.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Abductive reasoning",
+    "model": "Abduction means picking the best explanation for what you observe. List possible explanations, compare how well each fits the evidence and how simple it is, and then test the best one. It is probable, not certain.",
+    "points": [
+     {
+      "k": [
+       "observe",
+       "evidence",
+       "clue"
+      ],
+      "ask": "What do I begin with?"
+     },
+     {
+      "k": [
+       "explain",
+       "hypothes",
+       "possible"
+      ],
+      "ask": "What do I propose?"
+     },
+     {
+      "k": [
+       "best",
+       "fit",
+       "simple"
+      ],
+      "ask": "How do I choose?"
+     },
+     {
+      "k": [
+       "test",
+       "check"
+      ],
+      "ask": "What do I do next?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Logical fallacies",
+   "icon": "🚩",
+   "hook": "An advert says, \"Nine out of ten stars drink this juice, so you should too.\" Does that make the juice good?",
+   "explain": [
+    "A logical fallacy is a mistake in reasoning that makes an argument weaker than it looks, even when it sounds convincing. Fallacies are found in advertising, politics and everyday talk. Spotting them helps us judge arguments by their quality.",
+    "Common fallacies: ad hominem (attacking the person instead of their argument); straw man (twisting someone's view into a weaker version and attacking that); appeal to popularity (it is true because many believe it); false dilemma (only two options offered when more exist); slippery slope (claiming without evidence that one step leads to disaster); post hoc (A came before B, so A caused B); appeal to authority used badly (an expert outside their field, or a vague \"experts say\").",
+    "Naming a fallacy does not by itself make a conclusion false. It only shows the reasons given do not support it. The conclusion might still be true for other reasons."
+   ],
+   "example": {
+    "q": "\"Don't trust Maya's plan to recycle more. She forgot her lunch yesterday.\" Which fallacy?",
+    "steps": [
+     "Is the argument about the plan or the person?",
+     "It attacks Maya, not her plan.",
+     "That is ad hominem."
+    ],
+    "a": "Ad hominem"
+   },
+   "analogies": {
+    "city": "\"Everyone is buying this phone, so it must be good\" is a popularity appeal.",
+    "sport": "\"Either we win or the season is a disaster\" is a false dilemma.",
+    "home": "\"The rooster crowed, then the sun rose, so the rooster causes sunrise\" is post hoc."
+   },
+   "mnemonic": "Fallacy: a bridge that looks strong but has a plank missing.",
+   "terms": [
+    [
+     "Fallacy",
+     "A flaw in reasoning that weakens an argument."
+    ],
+    [
+     "Ad hominem",
+     "Attacking the person instead of the argument."
+    ],
+    [
+     "Straw man",
+     "Distorting a view to attack the weaker version."
+    ],
+    [
+     "False dilemma",
+     "Presenting two options when more exist."
+    ]
+   ],
+   "misc": {
+    "wrong": "If an argument contains a fallacy, its conclusion is false.",
+    "right": "The conclusion may still be true. The fallacy only means this argument does not support it."
+   },
+   "limits": "Some appeals, such as to a real expert, can be reasonable; whether something is a fallacy depends on context.",
+   "trip": {
+    "wiki": "List of fallacies",
+    "prompt": "Pick two fallacies and find an example of each."
+   },
+   "sources": [
+    "Fallacy",
+    "Ad hominem",
+    "Straw man"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "\"You can't trust his argument about road safety; he is a bad dancer.\" Which fallacy?",
+     "o": [
+      "Ad hominem",
+      "False dilemma",
+      "Slippery slope",
+      "Post hoc"
+     ],
+     "a": 0,
+     "why": "It attacks the person, not the argument.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"Either you support this law or you hate children.\" Which fallacy?",
+     "o": [
+      "False dilemma",
+      "Straw man",
+      "Appeal to popularity",
+      "Post hoc"
+     ],
+     "a": 0,
+     "why": "It offers only two options.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"If we allow phones in class, soon nobody will learn anything.\" What is missing?",
+     "o": [
+      "Evidence that one step leads to the extreme",
+      "A conclusion that follows from the premises",
+      "Some premises that support the claim",
+      "Nothing is missing from this argument"
+     ],
+     "a": 0,
+     "why": "That is a slippery slope claim with no evidence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"I wore my lucky socks and we won, so the socks caused it.\" Which fallacy?",
+     "o": [
+      "Post hoc",
+      "Ad hominem",
+      "Straw man",
+      "False dilemma"
+     ],
+     "a": 0,
+     "why": "After this, therefore because of this.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Lena says schools should have more art. Tom says, \"So you want to scrap maths?\" What is this?",
+     "o": [
+      "Straw man",
+      "Ad hominem",
+      "Valid reasoning",
+      "Appeal to popularity"
+     ],
+     "a": 0,
+     "why": "He distorted her view into an extreme version.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"A million people believe it, so it must be true.\" Which fallacy?",
+     "o": [
+      "Appeal to popularity",
+      "Ad hominem, attacking the speaker",
+      "False cause, mixing up what led to what",
+      "Straw man, twisting what was said"
+     ],
+     "a": 0,
+     "why": "Many believing a claim does not make it true.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If an argument is fallacious, what can we say?",
+     "o": [
+      "The conclusion is not supported by that argument",
+      "The conclusion is therefore false",
+      "The speaker is lying to us on purpose",
+      "The topic is now closed for discussion"
+     ],
+     "a": 0,
+     "why": "It may still be true on other grounds.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each fallacy to a short description.",
+     "pairs": [
+      [
+       "Ad hominem",
+       "Attack the person"
+      ],
+      [
+       "Straw man",
+       "Distort the view"
+      ],
+      [
+       "Post hoc",
+       "Confuse sequence with cause"
+      ],
+      [
+       "False dilemma",
+       "Offer only two options"
+      ]
+     ],
+     "why": "Each has a typical pattern.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps in order for dealing with a suspect argument.",
+     "items": [
+      "Find the conclusion",
+      "Find the reasons given",
+      "Ask if the reasons support the conclusion",
+      "Name any flaw you see"
+     ],
+     "why": "Identify parts before judging.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is calling something a fallacy not enough to show its conclusion is false?",
+     "rubric": [
+      [
+       "conclusion",
+       "claim",
+       "result"
+      ],
+      [
+       "still",
+       "may",
+       "might",
+       "could",
+       "true",
+       "other",
+       "reason",
+       "different",
+       "support",
+       "evidence"
+      ]
+     ],
+     "min": 2,
+     "model": "A fallacy only shows that the argument does not support the conclusion. The conclusion might still be true for other reasons.",
+     "why": "Bad reasoning does not prove a false conclusion.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "\"Dr Ade is a brilliant physicist, so her advice on the best pizza topping must be right.\" Which is the issue?",
+     "o": [
+      "Expertise in one field does not carry to another",
+      "Physicists never eat pizza, so she cannot judge",
+      "Pizza is not a field that anyone can study",
+      "Nothing is wrong with her advice at all"
+     ],
+     "a": 0,
+     "why": "Authority is limited to the field.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why straw man arguments are unfair.",
+     "rubric": [
+      [
+       "distort",
+       "twist",
+       "misrepresent",
+       "exaggerate",
+       "change",
+       "weak",
+       "fake",
+       "not what",
+       "false version"
+      ],
+      [
+       "view",
+       "position",
+       "argument",
+       "said",
+       "claim",
+       "opponent",
+       "real",
+       "actual"
+      ]
+     ],
+     "min": 2,
+     "model": "They distort what the other person said into a weaker or extreme version and attack that, so they do not answer the real argument.",
+     "why": "They attack something the person did not say.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best response to a false dilemma?",
+     "o": [
+      "Ask whether there are other options",
+      "Pick one of the two quickly",
+      "Say both are wrong without thinking",
+      "Ignore the problem"
+     ],
+     "a": 0,
+     "why": "Look for the middle or other options.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Logical fallacies",
+    "model": "A logical fallacy is a flaw in reasoning that makes an argument weaker than it seems. Examples are ad hominem, straw man, false dilemma, slippery slope and post hoc. Spotting a fallacy does not make the conclusion false; it only shows the reasoning does not support it.",
+    "points": [
+     {
+      "k": [
+       "flaw",
+       "mistake",
+       "weak",
+       "error"
+      ],
+      "ask": "What is a fallacy?"
+     },
+     {
+      "k": [
+       "ad hominem",
+       "straw",
+       "dilemma",
+       "post hoc",
+       "slippery",
+       "popular"
+      ],
+      "ask": "Can you name one?"
+     },
+     {
+      "k": [
+       "conclusion",
+       "still",
+       "true",
+       "support"
+      ],
+      "ask": "Does it make the conclusion wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Critical thinking",
+   "icon": "🔎",
+   "hook": "A post says: \"A new study proves chocolate makes you smarter.\" What questions should you ask before believing it?",
+   "explain": [
+    "Critical thinking means judging claims and arguments carefully instead of accepting them at once. It is not about being negative. It is about asking good questions and following the evidence, even when the answer is unwelcome.",
+    "Useful questions: What is the claim exactly? Who says it and what do they gain? What is the evidence and how was it gathered? Are there other explanations? Is something missing? What would change my mind? Also check your own biases: we tend to believe what fits our existing views.",
+    "Critical thinkers stay open-minded and humble. They can say \"I might be wrong\". They do not doubt everything, since that would be impossible. They give more trust where there is better evidence."
+   ],
+   "example": {
+    "q": "A drink advert says \"Scientists agree it boosts energy.\" What do you ask?",
+    "steps": [
+     "Which scientists, and what did they test?",
+     "Was it independent of the maker?",
+     "Is \"energy\" measured or just a feeling?"
+    ],
+    "a": "Ask who, what evidence, and whether it was independent and measured."
+   },
+   "analogies": {
+    "city": "A seller says \"Last two left!\" You ask if it is true and compare prices elsewhere.",
+    "tech": "A message says \"Click now to win.\" You stop and check the sender.",
+    "sport": "A fan claims a team is unbeatable. You look at the match results."
+   },
+   "mnemonic": "CLAIM, WHO, WHAT proof, WHAT else: four questions that guard the roof.",
+   "terms": [
+    [
+     "Critical thinking",
+     "Careful evaluation of claims and arguments using evidence and reason."
+    ],
+    [
+     "Bias",
+     "A tendency that tilts judgment in a certain direction."
+    ],
+    [
+     "Open-minded",
+     "Willing to change views when given good reasons."
+    ],
+    [
+     "Scepticism",
+     "Asking for evidence before accepting a claim."
+    ]
+   ],
+   "misc": {
+    "wrong": "Critical thinking means doubting everything.",
+    "right": "It means weighing evidence. We accept claims with good support, and doubt those without."
+   },
+   "limits": "Critical thinking has limits: no one can check everything, so we sometimes must trust good sources.",
+   "trip": {
+    "wiki": "Critical thinking",
+    "prompt": "Find a list of skills that critical thinkers use."
+   },
+   "sources": [
+    "Critical thinking",
+    "Skepticism",
+    "Cognitive bias"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Critical thinking is mainly about...",
+     "o": [
+      "Judging claims by the evidence",
+      "Rejecting every claim that anyone makes",
+      "Winning every argument that you start",
+      "Agreeing with whatever your friends say"
+     ],
+     "a": 0,
+     "why": "It is about evaluating well.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which question helps evaluate a claim?",
+     "o": [
+      "What is the evidence for it?",
+      "Who is shouting the loudest about it?",
+      "Is it a popular claim among many people?",
+      "Does it sound nice when said aloud?"
+     ],
+     "a": 0,
+     "why": "Evidence is central.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why check who benefits from a claim?",
+     "o": [
+      "They may have a reason to exaggerate",
+      "Rich people always lie about everything",
+      "It is simply a rule that we must follow",
+      "Benefit to someone makes a claim true"
+     ],
+     "a": 0,
+     "why": "Conflicts of interest can bias claims.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Zara notices she only reads articles she agrees with. What should she do?",
+     "o": [
+      "Read good sources with other views too",
+      "Stop reading the news altogether",
+      "Share only the ones that agree with her",
+      "Doubt every source that she meets"
+     ],
+     "a": 0,
+     "why": "Seeking other views reduces bias.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"Critics say it is flawed\" and \"I may be wrong\" show which quality?",
+     "o": [
+      "Open-mindedness",
+      "Stubbornness, refusing to ever change",
+      "Anger toward people who disagree",
+      "Luck, since the ideas just came"
+     ],
+     "a": 0,
+     "why": "Being willing to revise is a hallmark.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an example of evidence-based belief?",
+     "o": [
+      "I believe it because experiments repeated the result",
+      "I believe it because I really want it to be so",
+      "I believe it because the idea is very old",
+      "I believe it because a famous person said so"
+     ],
+     "a": 0,
+     "why": "Repeated tests give support.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A page offers a miracle cure with no source. What is the best response?",
+     "o": [
+      "Look for independent evidence",
+      "Buy it at once",
+      "Share it with friends",
+      "Believe it because it is hopeful"
+     ],
+     "a": 0,
+     "why": "Without evidence we hold back.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each question to what it checks.",
+     "pairs": [
+      [
+       "Who says this?",
+       "Source and motive"
+      ],
+      [
+       "What is the evidence?",
+       "Support for the claim"
+      ],
+      [
+       "What else could explain it?",
+       "Alternative explanations"
+      ]
+     ],
+     "why": "Each question probes a different weakness.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps in order for evaluating a claim.",
+     "items": [
+      "State the claim clearly",
+      "Check the source",
+      "Look at the evidence",
+      "Consider alternatives and decide"
+     ],
+     "why": "Clear claim, source, evidence, alternatives.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is critical thinking not the same as being negative or doubting everything?",
+     "rubric": [
+      [
+       "evidence",
+       "support",
+       "reason",
+       "good",
+       "weigh",
+       "judge",
+       "fair"
+      ],
+      [
+       "accept",
+       "trust",
+       "believe",
+       "agree",
+       "true",
+       "some",
+       "balance",
+       "open"
+      ]
+     ],
+     "min": 2,
+     "model": "Critical thinking weighs evidence, so it accepts claims that are well supported and doubts those that are not.",
+     "why": "It is balanced, not negative.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A headline says a food \"doubles your risk\" of a disease. What is a smart follow-up question?",
+     "o": [
+      "Doubles from what starting risk?",
+      "Which colour is the food in question?",
+      "Who wrote the headline for the paper?",
+      "Is the font of the headline large?"
+     ],
+     "a": 0,
+     "why": "Doubling a tiny risk may still be tiny.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it important to check your own biases when evaluating a claim?",
+     "rubric": [
+      [
+       "bias",
+       "prefer",
+       "want",
+       "already",
+       "agree",
+       "favour"
+      ],
+      [
+       "judge",
+       "see",
+       "notice",
+       "evidence",
+       "unfair",
+       "tilt",
+       "mislead",
+       "affect"
+      ]
+     ],
+     "min": 2,
+     "model": "We tend to accept claims that fit what we already believe and to doubt others, so checking our bias helps us judge fairly.",
+     "why": "Our biases affect how we weigh evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "When is it reasonable to trust a claim without checking it yourself?",
+     "o": [
+      "When it comes from a source with a good record and checks",
+      "When it is repeated often by many people",
+      "When it is printed in bold letters",
+      "When you happen to like what it says"
+     ],
+     "a": 0,
+     "why": "Good sources justify trust.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Critical thinking",
+    "model": "Critical thinking means judging claims carefully using evidence and reason. Ask what the claim is, who says it, what evidence there is, and what else could explain it. Stay open-minded and watch your own biases.",
+    "points": [
+     {
+      "k": [
+       "claim",
+       "evidence",
+       "support"
+      ],
+      "ask": "What do I check?"
+     },
+     {
+      "k": [
+       "source",
+       "who",
+       "motive",
+       "bias"
+      ],
+      "ask": "Who do I look at?"
+     },
+     {
+      "k": [
+       "alternative",
+       "other",
+       "else",
+       "explain"
+      ],
+      "ask": "What else should I think about?"
+     },
+     {
+      "k": [
+       "open",
+       "change",
+       "wrong"
+      ],
+      "ask": "What attitude helps?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Creative thinking",
+   "icon": "🎨",
+   "hook": "How many different uses can you think of for a paper clip in two minutes? What helps you think of more?",
+   "explain": [
+    "Creative thinking means producing ideas that are new and useful. It is not only for artists. Engineers, farmers, cooks and scientists all use it. Creativity can be practised.",
+    "Two modes work together. Divergent thinking produces many different ideas, with no judging at first: the more ideas, the better the chance of a good one. Convergent thinking then selects and improves the best ones. Mixing them up (judging too early) kills ideas.",
+    "Techniques include brainstorming, combining unlike things, asking \"what if?\", changing the viewpoint, working from limits, and lateral thinking, which approaches a problem from a sideways angle. Design thinking uses cycles of understanding people, making prototypes and testing them. Creativity also needs knowledge: you need to know a field to improve it."
+   ],
+   "example": {
+    "q": "How could you carry water across a market when you have no bucket? Use divergent then convergent thinking.",
+    "steps": [
+     "Diverge: a hat, a plastic bag, a hollow gourd, a large leaf, a bottle.",
+     "Converge: which is waterproof, available and strong?",
+     "Choose a bottle or gourd and test it."
+    ],
+    "a": "A bottle or gourd, chosen after listing many options and testing them."
+   },
+   "analogies": {
+    "home": "Turn an old jar into a pencil holder.",
+    "music": "A musician combines two styles to make a new sound.",
+    "nature": "Engineers copied the burrs on plants to invent hook-and-loop fasteners."
+   },
+   "mnemonic": "Spread wide, then pick well: divergent, then convergent, tell.",
+   "terms": [
+    [
+     "Divergent thinking",
+     "Generating many different ideas."
+    ],
+    [
+     "Convergent thinking",
+     "Choosing and refining the best idea."
+    ],
+    [
+     "Brainstorming",
+     "Listing ideas freely, without judging at first."
+    ],
+    [
+     "Prototype",
+     "A rough model used to test an idea."
+    ]
+   ],
+   "misc": {
+    "wrong": "Creative people are born, not made.",
+    "right": "Creativity can be built through practice, knowledge and good habits."
+   },
+   "limits": "Researchers disagree on how best to measure creativity, and scores on tests are only a rough guide.",
+   "trip": {
+    "wiki": "Creativity",
+    "prompt": "Look for techniques that help people have new ideas."
+   },
+   "sources": [
+    "Creativity",
+    "Divergent thinking",
+    "Brainstorming"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is divergent thinking?",
+     "o": [
+      "Producing many different ideas",
+      "Choosing one correct answer only",
+      "Memorising facts for a test",
+      "Copying someone else's idea exactly"
+     ],
+     "a": 0,
+     "why": "It broadens the options.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why delay judging ideas during brainstorming?",
+     "o": [
+      "Early judging stops ideas from forming",
+      "Judging ideas is rude to the thinkers",
+      "Ideas can never be judged at all",
+      "It simply makes the session go faster"
+     ],
+     "a": 0,
+     "why": "Judge later, in the convergent phase.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "After brainstorming 20 ideas, what is the next step?",
+     "o": [
+      "Select and improve the best ones",
+      "Throw all of them away and begin again",
+      "Add twenty more ideas and stop there",
+      "Hide the ideas in a drawer"
+     ],
+     "a": 0,
+     "why": "This is convergent thinking.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a technique to get new ideas?",
+     "o": [
+      "Combine two unrelated things",
+      "Do exactly what was done before",
+      "Stop thinking",
+      "Wait without trying"
+     ],
+     "a": 0,
+     "why": "Combining unlike things can give new ideas.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do experts often make more useful creative ideas?",
+     "o": [
+      "They know the field and its limits",
+      "They never fail at anything they try",
+      "They avoid all risks completely",
+      "They simply have more free time than others"
+     ],
+     "a": 0,
+     "why": "Knowledge supports creativity.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bridge-builder looks at a spider web for ideas. What is this called?",
+     "o": [
+      "Drawing inspiration from nature",
+      "Cheating by copying other builders",
+      "Convergent thinking only, with no new ideas",
+      "Memorising a bridge design by heart"
+     ],
+     "a": 0,
+     "why": "Nature often inspires design.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A group brainstorms 6 ideas per person. There are 5 people. How many ideas in total?",
+     "a": 30,
+     "tol": 0,
+     "unit": "ideas",
+     "why": "6 × 5 = 30.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its role.",
+     "pairs": [
+      [
+       "Brainstorm",
+       "List ideas freely"
+      ],
+      [
+       "Prototype",
+       "Make a rough model"
+      ],
+      [
+       "Converge",
+       "Pick the best idea"
+      ]
+     ],
+     "why": "Creative work uses all three.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the design steps in order.",
+     "items": [
+      "Understand the people and problem",
+      "Generate many ideas",
+      "Build a prototype",
+      "Test and improve"
+     ],
+     "why": "Understand, ideate, build, test.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why judging ideas too early can reduce creativity.",
+     "rubric": [
+      [
+       "judge",
+       "criticis",
+       "reject",
+       "evaluate",
+       "early",
+       "too soon"
+      ],
+      [
+       "idea",
+       "ideas",
+       "fewer",
+       "stop",
+       "afraid",
+       "fear",
+       "shut",
+       "limit",
+       "kill"
+      ]
+     ],
+     "min": 2,
+     "model": "If we judge ideas too early we reject unusual ones before they can grow, and people stop sharing ideas, so fewer options appear.",
+     "why": "Delay judgment to widen the options.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A school must reduce litter. Which approach shows the best creative process?",
+     "o": [
+      "Many ideas first, then test the best ones with students",
+      "One quick idea and no testing at all",
+      "Copy a poster from another school exactly",
+      "Wait for the teacher to solve the problem"
+     ],
+     "a": 0,
+     "why": "Diverge, then converge and test.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a limit, such as a small budget, sometimes helpful for creativity?",
+     "rubric": [
+      [
+       "limit",
+       "constraint",
+       "restrict",
+       "small",
+       "budget",
+       "rules"
+      ],
+      [
+       "focus",
+       "force",
+       "new",
+       "ideas",
+       "find",
+       "different",
+       "solve",
+       "inventive",
+       "narrow"
+      ]
+     ],
+     "min": 2,
+     "model": "Limits force people to find new ways around them and focus the search, which can lead to inventive solutions.",
+     "why": "Constraints can drive invention.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement best describes creativity?",
+     "o": [
+      "New and useful ideas can come from practice and knowledge",
+      "It is only for artists and musicians",
+      "It cannot be learned by anyone at all",
+      "It has no use in science or maths"
+     ],
+     "a": 0,
+     "why": "Creativity is broad and trainable.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Creative thinking",
+    "model": "Creative thinking produces ideas that are new and useful. First diverge: list many ideas without judging. Then converge: choose and improve the best ones. Knowledge, practice, limits and testing prototypes help.",
+    "points": [
+     {
+      "k": [
+       "many",
+       "diverge",
+       "brainstorm",
+       "lots"
+      ],
+      "ask": "What do I do first?"
+     },
+     {
+      "k": [
+       "choose",
+       "converge",
+       "select",
+       "best"
+      ],
+      "ask": "What next?"
+     },
+     {
+      "k": [
+       "prototype",
+       "test",
+       "improve"
+      ],
+      "ask": "How do I check the idea?"
+     },
+     {
+      "k": [
+       "example",
+       "bottle",
+       "nature",
+       "combine"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Scientific reasoning",
+   "icon": "🧪",
+   "hook": "Will a plant grow better with music? How could you find out fairly?",
+   "explain": [
+    "Scientific reasoning is a way of testing ideas against evidence. It starts with a question, then a hypothesis: a testable explanation or prediction. A hypothesis must be falsifiable, which means some possible result could show it is wrong.",
+    "A fair test changes one thing on purpose (the independent variable), measures the result (the dependent variable) and keeps everything else the same (control variables). A control group does not get the treatment, so we can compare. Repeating the test and using more samples reduces the effect of chance.",
+    "Results either support or fail to support the hypothesis. A single result rarely \"proves\" anything. Scientists share methods and results so others can repeat the work. Theories are well-tested explanations, not just guesses. Science also depends on honest reporting of surprising or negative results."
+   ],
+   "example": {
+    "q": "Test whether plants grow taller with fertiliser. How do you design it?",
+    "steps": [
+     "Independent variable: fertiliser or none.",
+     "Dependent variable: height after 4 weeks.",
+     "Control: same seeds, soil, light, water, pot size.",
+     "Use 10 plants per group and compare the average heights."
+    ],
+    "a": "Two groups differing only in fertiliser, with many plants and the same conditions."
+   },
+   "analogies": {
+    "farm": "A farmer plants two fields of the same crop but uses a new fertiliser on only one.",
+    "sport": "A coach tests a new warm-up with half the team and compares injuries.",
+    "home": "You test two laundry soaps on identical stains."
+   },
+   "mnemonic": "Change one, measure one, keep the rest the same: fair test is the name of the game.",
+   "terms": [
+    [
+     "Hypothesis",
+     "A testable explanation or prediction."
+    ],
+    [
+     "Variable",
+     "Something that can change in an experiment."
+    ],
+    [
+     "Control group",
+     "A comparison group that does not get the treatment."
+    ],
+    [
+     "Falsifiable",
+     "Able to be shown wrong by some possible evidence."
+    ]
+   ],
+   "misc": {
+    "wrong": "Science proves ideas to be true.",
+    "right": "Science tests ideas and builds support. Conclusions can be revised with new evidence."
+   },
+   "limits": "Real research is messier than a single method, and scientists debate how to design and interpret studies.",
+   "trip": {
+    "wiki": "Scientific method",
+    "prompt": "Find the steps and note where repeating results matters."
+   },
+   "sources": [
+    "Scientific method",
+    "Experiment",
+    "Falsifiability"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What makes a test fair?",
+     "o": [
+      "Only one variable is changed",
+      "Everything is changed at the same time",
+      "Nothing at all is measured",
+      "Only one sample is ever used"
+     ],
+     "a": 0,
+     "why": "Changing one thing isolates the effect.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the dependent variable in a fertiliser test?",
+     "o": [
+      "Plant height",
+      "Amount of fertiliser",
+      "Type of pot",
+      "Amount of sunlight"
+     ],
+     "a": 0,
+     "why": "It is what you measure.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a hypothesis?",
+     "o": [
+      "A testable explanation or prediction",
+      "A fact that is already known to be sure",
+      "An opinion with no way to test it",
+      "A conclusion reached after a test"
+     ],
+     "a": 0,
+     "why": "It must be testable.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why use a control group?",
+     "o": [
+      "To compare with the treated group",
+      "To waste some of the plants",
+      "To make the test less fair",
+      "To change everything at once"
+     ],
+     "a": 0,
+     "why": "The control shows what happens without the change.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which hypothesis is falsifiable?",
+     "o": [
+      "Plants given fertiliser will be taller after 4 weeks",
+      "Plants have feelings that no tool can detect",
+      "Magic helps plants grow in secret ways",
+      "Something may or may not happen to the plants"
+     ],
+     "a": 0,
+     "why": "It makes a specific, testable prediction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A test on 2 plants shows a small difference. What is best?",
+     "o": [
+      "Repeat with more plants",
+      "Say that it is now proven",
+      "Ignore the result and move on",
+      "Stop doing any research on it"
+     ],
+     "a": 0,
+     "why": "Small samples are affected by chance.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Group A plants have heights 10, 12, 14 and 16 cm. What is their mean height?",
+     "a": 13,
+     "tol": 0,
+     "unit": "cm",
+     "why": "(10 + 12 + 14 + 16) ÷ 4 = 52 ÷ 4 = 13.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its role.",
+     "pairs": [
+      [
+       "Independent variable",
+       "What you change"
+      ],
+      [
+       "Dependent variable",
+       "What you measure"
+      ],
+      [
+       "Control variable",
+       "What you keep the same"
+      ]
+     ],
+     "why": "These three are key to fair tests.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the scientific steps in order.",
+     "items": [
+      "Ask a question",
+      "Make a hypothesis",
+      "Run a fair test",
+      "Analyse the results"
+     ],
+     "why": "Question, hypothesis, test, analysis.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A student tests a new fertiliser on plants in sun and compares with plants in shade without fertiliser. What is wrong?",
+     "rubric": [
+      [
+       "sun",
+       "shade",
+       "light",
+       "two",
+       "more than one",
+       "different",
+       "also"
+      ],
+      [
+       "fair",
+       "unfair",
+       "variable",
+       "change",
+       "cannot",
+       "control",
+       "compare",
+       "tell"
+      ]
+     ],
+     "min": 2,
+     "model": "More than one thing differs (fertiliser and light), so we cannot tell which caused any difference; the test is not fair.",
+     "why": "Only one factor should differ.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A study finds no difference between two groups. What is a fair conclusion?",
+     "o": [
+      "Not enough evidence of a difference in this test",
+      "The treatment is proven useless forever",
+      "Science has failed completely here",
+      "The data must be wrong somehow"
+     ],
+     "a": 0,
+     "why": "Absence of evidence in one study is not proof of no effect.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do scientists repeat experiments and share methods?",
+     "rubric": [
+      [
+       "repeat",
+       "replicate",
+       "again",
+       "check",
+       "other",
+       "others"
+      ],
+      [
+       "chance",
+       "error",
+       "mistake",
+       "trust",
+       "reliable",
+       "confirm",
+       "verify",
+       "same result",
+       "confidence"
+      ]
+     ],
+     "min": 2,
+     "model": "Repeating and sharing lets others check the result, which reduces chance and error and builds trust.",
+     "why": "Replication guards against mistakes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is \"I believe my lucky charm works because I won\" a poor test?",
+     "o": [
+      "There is no comparison without the charm",
+      "Lucky charms are always bad ideas",
+      "Winning is not a good thing to measure",
+      "The test is too fair to mean anything"
+     ],
+     "a": 0,
+     "why": "A single case with no control is weak evidence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Scientific reasoning",
+    "model": "Scientific reasoning tests ideas with fair experiments. State a testable hypothesis, change one variable, measure the result and keep the rest the same. Use a control group and repeat the test. Results support or fail to support ideas; they rarely prove them.",
+    "points": [
+     {
+      "k": [
+       "hypothesis",
+       "question",
+       "prediction"
+      ],
+      "ask": "What do I start with?"
+     },
+     {
+      "k": [
+       "change",
+       "variable",
+       "one thing",
+       "fair"
+      ],
+      "ask": "How do I test?"
+     },
+     {
+      "k": [
+       "control",
+       "same",
+       "compare"
+      ],
+      "ask": "What do I compare with?"
+     },
+     {
+      "k": [
+       "repeat",
+       "again",
+       "more"
+      ],
+      "ask": "How do I trust the result?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Information evaluation",
+   "icon": "🗞️",
+   "hook": "You see a surprising claim online. How can you quickly find out whether it is trustworthy?",
+   "explain": [
+    "Information evaluation means judging how reliable a source and its claim are. Not all information is equal. Misinformation is false information shared by mistake. Disinformation is false information spread on purpose to deceive.",
+    "Useful checks: Who made it, and what is their expertise? What is their purpose (to inform, to sell, to persuade)? What evidence do they give, and can you find it? Is it recent enough? Do other independent reliable sources agree? A technique called lateral reading means leaving the page and checking what other sources say about the source.",
+    "Be careful of headlines that stir strong feeling, edited images, and claims with no source. Check an image with a reverse image search. Primary sources (original data, documents) are close to the facts, while secondary sources (summaries) depend on someone's interpretation. No source is perfect, so combine several."
+   ],
+   "example": {
+    "q": "A post claims a local lake is \"dry\". How do you check?",
+    "steps": [
+     "Who posted it and do they have a reason to exaggerate?",
+     "Search for local news or official notices.",
+     "Look for recent photos with dates, from different sources."
+    ],
+    "a": "Check the source, find independent reports, and look for dated evidence."
+   },
+   "analogies": {
+    "city": "A flyer says a shop has \"the lowest prices.\" You compare prices at three shops.",
+    "tech": "A message says your account is locked. You go to the official site, not the link in the message.",
+    "nature": "A video claims a rare animal appeared. You search for reports by wildlife experts."
+   },
+   "mnemonic": "SIFT: Stop, Investigate the source, Find better coverage, Trace the claim.",
+   "terms": [
+    [
+     "Misinformation",
+     "False information shared without intent to deceive."
+    ],
+    [
+     "Disinformation",
+     "False information spread deliberately."
+    ],
+    [
+     "Lateral reading",
+     "Leaving a page to check what others say about it."
+    ],
+    [
+     "Primary source",
+     "Original evidence such as data or a document."
+    ]
+   ],
+   "misc": {
+    "wrong": "If it is on the internet and looks professional, it is reliable.",
+    "right": "Looks are easy to fake. Check the source, evidence and other independent reports."
+   },
+   "limits": "Even experts and respected outlets make errors, and some topics have real expert disagreement.",
+   "trip": {
+    "wiki": "Fact-checking",
+    "prompt": "Find the methods fact-checkers use to check claims."
+   },
+   "sources": [
+    "Fact-checking",
+    "Misinformation",
+    "Disinformation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the difference between misinformation and disinformation?",
+     "o": [
+      "Disinformation is spread on purpose",
+      "Misinformation is always completely true",
+      "They mean exactly the same thing",
+      "Disinformation is only a type of true fact"
+     ],
+     "a": 0,
+     "why": "Intent separates them.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does lateral reading mean?",
+     "o": [
+      "Leaving the page to see what others say about the source",
+      "Reading a page sideways on the screen",
+      "Reading the page faster than usual",
+      "Reading the very last line first"
+     ],
+     "a": 0,
+     "why": "It checks the source from outside.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A message says \"Share before it is deleted!\" What is the sensible response?",
+     "o": [
+      "Pause and verify first",
+      "Share it at once with all your friends",
+      "Delete the message without a thought",
+      "Argue with the person who sent it"
+     ],
+     "a": 0,
+     "why": "Pressure to act quickly is a warning sign.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which source is likely most reliable for the population of a country?",
+     "o": [
+      "The national statistics office",
+      "A random comment under a video",
+      "An anonymous post on a forum",
+      "An advert for a travel company"
+     ],
+     "a": 0,
+     "why": "Official statistics offices collect data carefully.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An article is unsigned, has no sources and wants you to buy something. What does this suggest?",
+     "o": [
+      "Be cautious",
+      "It is surely true",
+      "It is a primary source",
+      "It is peer reviewed"
+     ],
+     "a": 0,
+     "why": "Missing sources and a selling motive raise doubts.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why check the date of information?",
+     "o": [
+      "It may be outdated",
+      "Dates are decoration",
+      "Old is always right",
+      "New is always right"
+     ],
+     "a": 0,
+     "why": "Facts and situations change.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A photo goes viral. How can you check if it was used before?",
+     "o": [
+      "Reverse image search",
+      "Look carefully at the colours in it",
+      "Ask your pet what it thinks",
+      "Zoom in once and look again"
+     ],
+     "a": 0,
+     "why": "It shows earlier uses.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each source type to an example.",
+     "pairs": [
+      [
+       "Primary source",
+       "A letter written at the time"
+      ],
+      [
+       "Secondary source",
+       "A textbook summary"
+      ],
+      [
+       "Opinion piece",
+       "A column arguing a view"
+      ]
+     ],
+     "why": "The types differ in distance from the events.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the SIFT steps in order.",
+     "items": [
+      "Stop",
+      "Investigate the source",
+      "Find better coverage",
+      "Trace the claim to the original"
+     ],
+     "why": "Stop first, trace last.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how you would check whether a surprising news story is true.",
+     "rubric": [
+      [
+       "source",
+       "who",
+       "author",
+       "site",
+       "outlet",
+       "website"
+      ],
+      [
+       "other",
+       "another",
+       "several",
+       "independent",
+       "compare",
+       "search",
+       "check",
+       "different"
+      ],
+      [
+       "evidence",
+       "original",
+       "date",
+       "trace",
+       "photo",
+       "data",
+       "official"
+      ]
+     ],
+     "min": 2,
+     "model": "I would check who published it, look for other independent reliable sources reporting the same, and trace it to the original evidence.",
+     "why": "Multiple independent checks give confidence.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two sites report the same fact, but both copied the same single press release. How strong is this agreement?",
+     "o": [
+      "Weaker, since they are not independent",
+      "Very strong, since two sites agree",
+      "Perfect, since they match word for word",
+      "It proves the fact beyond any doubt"
+     ],
+     "a": 0,
+     "why": "Independent confirmation matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why should you be careful about claims that make you feel very angry or excited?",
+     "rubric": [
+      [
+       "emotion",
+       "feel",
+       "anger",
+       "angry",
+       "excited",
+       "strong",
+       "emotional"
+      ],
+      [
+       "share",
+       "think",
+       "judge",
+       "pause",
+       "check",
+       "manipulate",
+       "sway",
+       "stop",
+       "quick",
+       "react",
+       "spread"
+      ]
+     ],
+     "min": 2,
+     "model": "Strong emotions make us react and share without checking, and false content often uses them to spread, so pause and verify.",
+     "why": "Emotional content spreads fast.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best sign a source is credible?",
+     "o": [
+      "Clear authors, evidence you can check, and corrections when wrong",
+      "Bright colours and an eye-catching design",
+      "Lots of ads around the page",
+      "A very confident tone of voice"
+     ],
+     "a": 0,
+     "why": "Transparency and accountability matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Evaluating information",
+    "model": "To judge information, ask who made it, why, what evidence they give and whether independent reliable sources agree. Leave the page to read about the source. Check dates and images. Pause when content stirs strong feelings.",
+    "points": [
+     {
+      "k": [
+       "source",
+       "who",
+       "author"
+      ],
+      "ask": "Who made it?"
+     },
+     {
+      "k": [
+       "evidence",
+       "proof",
+       "data"
+      ],
+      "ask": "What backs it up?"
+     },
+     {
+      "k": [
+       "other",
+       "independent",
+       "several",
+       "agree"
+      ],
+      "ask": "What do others say?"
+     },
+     {
+      "k": [
+       "date",
+       "recent",
+       "image",
+       "check"
+      ],
+      "ask": "What else can I check?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Problem decomposition",
+   "icon": "🧩",
+   "hook": "How would you organise a school sports day for 300 students? Where do you even start?",
+   "explain": [
+    "Problem decomposition means breaking a big, complex problem into smaller parts that are easier to understand and solve. It is a core idea in computational thinking, along with pattern recognition, abstraction and algorithms.",
+    "To decompose: state the goal, split it into sub-problems, check that each part is clear and small enough, work out how the parts depend on each other (what must be done first), solve the parts, and combine the results. Parts can sometimes be done at the same time by different people.",
+    "Good decomposition keeps parts mostly independent, so changing one does not break the others. It also helps teamwork, because each person can take a part. But if you split the wrong way, the pieces may not fit together, so check the whole at the end."
+   ],
+   "example": {
+    "q": "Plan a birthday party for 20 children. Decompose it.",
+    "steps": [
+     "Goal: a good party on Saturday.",
+     "Parts: guests and invitations, food, games, place, schedule, budget.",
+     "Order: set the date and budget first; food and games depend on numbers.",
+     "Combine: a timetable that links all the parts."
+    ],
+    "a": "Break into guests, food, games, place and budget, then order and combine them."
+   },
+   "analogies": {
+    "home": "Cleaning the house is easier room by room.",
+    "farm": "Running a farm splits into planting, watering, harvest and sales.",
+    "tech": "A game is built from art, sound, rules and levels, each made separately."
+   },
+   "mnemonic": "Chop the mountain into stones, solve each stone, then build the road.",
+   "terms": [
+    [
+     "Decomposition",
+     "Breaking a problem into smaller parts."
+    ],
+    [
+     "Sub-problem",
+     "A smaller problem that is part of a bigger one."
+    ],
+    [
+     "Dependency",
+     "When one task must be done before another."
+    ],
+    [
+     "Algorithm",
+     "A clear set of steps for solving a problem."
+    ]
+   ],
+   "misc": {
+    "wrong": "Splitting a problem always makes it easier.",
+    "right": "Good splits make parts clear and fit together. A poor split can create confusion."
+   },
+   "limits": "Some problems, such as those with many interacting parts, do not split cleanly, and we need to think about the whole system too.",
+   "trip": {
+    "wiki": "Computational thinking",
+    "prompt": "Find decomposition in the list of main ideas."
+   },
+   "sources": [
+    "Computational thinking",
+    "Decomposition (computer science)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is decomposition?",
+     "o": [
+      "Breaking a problem into smaller parts",
+      "Joining all the problems into one big one",
+      "Ignoring the parts that look hard",
+      "Memorising the whole problem by heart"
+     ],
+     "a": 0,
+     "why": "It makes problems manageable.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which task must come first when building a house?",
+     "o": [
+      "Foundations",
+      "Painting the walls",
+      "Moving in the furniture",
+      "Fixing the roof tiles"
+     ],
+     "a": 0,
+     "why": "The later steps depend on foundations.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You are planning a school trip. Which is a sub-problem?",
+     "o": [
+      "Booking transport",
+      "Actually having the trip itself",
+      "Being happy once it is over",
+      "Going home at the end of the day"
+     ],
+     "a": 0,
+     "why": "It is a specific smaller task.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why check how parts depend on each other?",
+     "o": [
+      "To do them in the right order",
+      "To make the task harder to do",
+      "To skip some of the tasks",
+      "To hide any problems from the group"
+     ],
+     "a": 0,
+     "why": "Order matters when tasks depend on each other.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Four friends each take a part of a project. What is a benefit of decomposition?",
+     "o": [
+      "Work can happen in parallel",
+      "There is more confusion in the group",
+      "There is less learning for everyone",
+      "There is no need for any planning"
+     ],
+     "a": 0,
+     "why": "Parts can be worked on at the same time.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A task has 5 parts. Each part takes 3 hours for one person. If 3 people share the work equally, how many hours does each person work?",
+     "a": 5,
+     "tol": 0,
+     "unit": "hours",
+     "why": "Total: 5 × 3 = 15 hours. 15 ÷ 3 = 5 hours each.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "After solving the parts, what must you do?",
+     "o": [
+      "Combine and check they fit together",
+      "Forget about the parts completely",
+      "Start the whole thing over again",
+      "Remove one part that does not fit"
+     ],
+     "a": 0,
+     "why": "The whole must work.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each thinking skill to its meaning.",
+     "pairs": [
+      [
+       "Decomposition",
+       "Break into parts"
+      ],
+      [
+       "Pattern recognition",
+       "Spot what repeats"
+      ],
+      [
+       "Abstraction",
+       "Ignore unneeded detail"
+      ],
+      [
+       "Algorithm",
+       "Step-by-step instructions"
+      ]
+     ],
+     "why": "These make up computational thinking.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the decomposition steps in order.",
+     "items": [
+      "State the goal",
+      "Split into sub-problems",
+      "Order them by dependency",
+      "Solve and combine"
+     ],
+     "why": "Goal, split, order, combine.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A friend says a huge project feels impossible. How can decomposition help?",
+     "rubric": [
+      [
+       "smaller",
+       "small",
+       "parts",
+       "pieces",
+       "steps",
+       "split",
+       "break",
+       "manageable",
+       "easier"
+      ],
+      [
+       "order",
+       "plan",
+       "one at a time",
+       "tackle",
+       "each",
+       "combine",
+       "list",
+       "tasks"
+      ]
+     ],
+     "min": 2,
+     "model": "Break the project into smaller parts, order them, and do them one at a time, so each is manageable and the whole gets done.",
+     "why": "Small parts reduce overwhelm.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A team splits a poster into text, pictures and layout but never meets. What risk is there?",
+     "o": [
+      "The parts may not fit together",
+      "The poster will be too perfect",
+      "Pictures disappear",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Parts must be combined and coordinated.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Which dependencies could exist when organising a sports day?",
+     "rubric": [
+      [
+       "venue",
+       "date",
+       "teams",
+       "equipment",
+       "permission",
+       "schedule",
+       "weather",
+       "budget",
+       "first",
+       "before",
+       "order"
+      ],
+      [
+       "depend",
+       "before",
+       "after",
+       "first",
+       "need",
+       "must",
+       "then",
+       "order"
+      ]
+     ],
+     "min": 2,
+     "model": "The date and venue must be set before the schedule, and teams must be chosen before events and equipment can be planned.",
+     "why": "Some tasks depend on others.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "When is decomposition less useful on its own?",
+     "o": [
+      "When parts strongly interact and need to be viewed together",
+      "When the tasks are simple and small",
+      "When you are working alone on it",
+      "It is never less useful"
+     ],
+     "a": 0,
+     "why": "Some systems need whole-system thinking too.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Problem decomposition",
+    "model": "Decomposition means breaking a big problem into smaller parts. Split it, order the parts by what depends on what, solve each, and combine them. It helps teamwork, but always check that the pieces fit together.",
+    "points": [
+     {
+      "k": [
+       "break",
+       "split",
+       "parts",
+       "smaller"
+      ],
+      "ask": "What do I do to a big problem?"
+     },
+     {
+      "k": [
+       "order",
+       "depend",
+       "first",
+       "before"
+      ],
+      "ask": "How do I organise the parts?"
+     },
+     {
+      "k": [
+       "combine",
+       "together",
+       "fit",
+       "check"
+      ],
+      "ask": "What happens at the end?"
+     }
+    ]
+   }
+  }
+ ]
+}

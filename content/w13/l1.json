@@ -1,0 +1,2430 @@
+{
+ "world": 13,
+ "level": 1,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Chessboard recognition",
+   "icon": "♟️",
+   "hook": "A chessboard looks like a checkered blanket. How many little squares do you think it has? Count them with your eyes!",
+   "explain": [
+    "A chessboard is a big square. It has 64 small squares. The squares are light and dark. They take turns, like stripes on a zebra.",
+    "The board has 8 rows and 8 columns. Columns are called files. They have letters from a to h. Rows are called ranks. They have numbers from 1 to 8.",
+    "Every square has a name. It is a letter and a number, like e4. The letter says which file. The number says which rank. Before you start, turn the board so each player has a light square at the bottom right."
+   ],
+   "example": {
+    "q": "Where is the square called c3?",
+    "steps": [
+     "The letter is c. Find the third file from the left.",
+     "The number is 3. Count up three rows from the bottom.",
+     "Where they meet is c3."
+    ],
+    "a": "Third file, third rank"
+   },
+   "analogies": {
+    "home": "A chessboard is like a tiled floor with light and dark tiles in turns.",
+    "city": "A square name is like a street and a house number. It tells you exactly where to go.",
+    "farm": "A field with 8 rows and 8 columns of crops is like a chessboard. You can name each plant by row and column.",
+    "sport": "A football pitch has no squares, but a grid of squares helps a coach say where players stand."
+   },
+   "mnemonic": "Letters go along the floor, numbers climb the wall: a-h across, 1-8 up.",
+   "terms": [
+    [
+     "Square",
+     "One small box on the board."
+    ],
+    [
+     "File",
+     "A column of squares, named a to h."
+    ],
+    [
+     "Rank",
+     "A row of squares, numbered 1 to 8."
+    ]
+   ],
+   "misc": {
+    "wrong": "A chessboard has 32 squares.",
+    "right": "It has 64 squares: 32 light and 32 dark."
+   },
+   "trip": {
+    "wiki": "Chess",
+    "prompt": "Look at a picture of a chessboard. Can you find the letters and the numbers around the edge?"
+   },
+   "sources": [
+    "Chessboard",
+    "Chess"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many squares are on a chessboard?",
+     "o": [
+      "64",
+      "32",
+      "16",
+      "100"
+     ],
+     "a": 0,
+     "why": "8 rows of 8 squares is 8 × 8 = 64.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What colours are the squares?",
+     "o": [
+      "Light and dark, in turns",
+      "All white",
+      "All dark",
+      "Red and green"
+     ],
+     "a": 0,
+     "why": "The squares alternate light and dark.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What do we call a row of squares that goes up and down?",
+     "o": [
+      "A file",
+      "A rank",
+      "A corner",
+      "A path"
+     ],
+     "a": 0,
+     "why": "Files go up and down and have letters. Ranks go side to side.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is the name of a square?",
+     "o": [
+      "e4",
+      "44",
+      "ee",
+      "4 4 4"
+     ],
+     "a": 0,
+     "why": "A square name is a letter then a number.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which letters name the files?",
+     "o": [
+      "a to h",
+      "a to z",
+      "1 to 8",
+      "a to e"
+     ],
+     "a": 0,
+     "why": "There are 8 files, so the letters stop at h.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How many squares are in one row?",
+     "a": 8,
+     "tol": 0,
+     "why": "Each row has 8 squares.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "You see a square called b2. Which part tells you the rank?",
+     "o": [
+      "The number 2",
+      "The letter b",
+      "Both of them",
+      "Neither of them"
+     ],
+     "a": 0,
+     "why": "The number is the rank. The letter is the file.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You set up the board. What should be at the bottom right corner for each player?",
+     "o": [
+      "A light square",
+      "A dark square",
+      "A red square",
+      "A hole"
+     ],
+     "a": 0,
+     "why": "Light on the right: each player has a light square at the bottom right.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the word to what it is.",
+     "pairs": [
+      [
+       "File",
+       "A column named by a letter"
+      ],
+      [
+       "Rank",
+       "A row named by a number"
+      ],
+      [
+       "Board",
+       "64 squares"
+      ]
+     ],
+     "why": "Files are columns with letters, ranks are rows with numbers.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two friends say \"Go to h8\". They stand at the same corner. Why can they find it?",
+     "o": [
+      "Every square has its own name",
+      "Every square looks different",
+      "The squares move",
+      "Only h8 is dark"
+     ],
+     "a": 0,
+     "why": "Square names are unique, like an address.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do we give squares letter and number names?",
+     "o": [
+      "So everyone can say exactly which square they mean",
+      "To make the board look nice",
+      "Because squares are tiny",
+      "So pieces cannot move"
+     ],
+     "a": 0,
+     "why": "Names give every square a clear address.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The square a1 is dark. What colour is the next square along the rank, b1?",
+     "o": [
+      "Light",
+      "Dark",
+      "Red",
+      "It has no colour"
+     ],
+     "a": 0,
+     "why": "The colours alternate, so b1 is light.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A board has 8 files and 8 ranks. Why is the total 64 and not 16?",
+     "o": [
+      "Each file has 8 squares, so we multiply 8 × 8",
+      "We add 8 + 8",
+      "Some squares are hidden",
+      "Only half are used"
+     ],
+     "a": 0,
+     "why": "Each of the 8 files contains 8 squares.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a chessboard is",
+    "model": "A chessboard is a square with 64 small squares. They are light and dark in turns. Letters a to h name the columns. Numbers 1 to 8 name the rows. So e4 is a square.",
+    "points": [
+     {
+      "k": [
+       "64",
+       "sixty",
+       "8 by 8",
+       "8 x 8"
+      ],
+      "ask": "How many squares are there?"
+     },
+     {
+      "k": [
+       "light",
+       "dark",
+       "colour",
+       "color"
+      ],
+      "ask": "What colours are the squares?"
+     },
+     {
+      "k": [
+       "letter",
+       "number",
+       "e4",
+       "name"
+      ],
+      "ask": "How do you name one square?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Names of chess pieces",
+   "icon": "👑",
+   "hook": "Every chess piece has a job and a shape. Which one do you think is the tallest?",
+   "explain": [
+    "There are six kinds of piece: king, queen, rook, bishop, knight and pawn. The king is tall with a cross. The queen has a crown. The rook looks like a castle tower. The bishop has a pointed hat with a slit. The knight is a horse head. The pawn is small and round.",
+    "Each player has 16 pieces: 1 king, 1 queen, 2 rooks, 2 bishops, 2 knights and 8 pawns. One player has white pieces. The other has black pieces.",
+    "At the start, the pieces stand in two rows on each side. Pawns are in the front row. The other pieces stand behind them."
+   ],
+   "example": {
+    "q": "How many pawns does one player have?",
+    "steps": [
+     "Pawns are the small round pieces.",
+     "Look at the front row.",
+     "Count them: there are 8."
+    ],
+    "a": "8"
+   },
+   "analogies": {
+    "home": "A family has a mum, dad, and kids. A chess side has a king, queen, and pawns, each with a role.",
+    "city": "A town has a mayor, guards and workers. Chess pieces are like that too.",
+    "farm": "The farm has one farmer (king) and many helpers (pawns).",
+    "sport": "A football team has a captain and a goalkeeper. Each player has a special job, like each chess piece."
+   },
+   "mnemonic": "K-Q-R-B-N-P: King, Queen, Rook, Bishop, kNight, Pawn.",
+   "terms": [
+    [
+     "King",
+     "The most important piece. If it is trapped, the game ends."
+    ],
+    [
+     "Pawn",
+     "The smallest piece. You have 8."
+    ],
+    [
+     "Knight",
+     "The piece shaped like a horse."
+    ]
+   ],
+   "misc": {
+    "wrong": "The knight looks like a castle.",
+    "right": "The rook looks like a castle. The knight is the horse."
+   },
+   "trip": {
+    "wiki": "Chess piece",
+    "prompt": "Look at a picture of a chess set. Can you name each piece by its shape?"
+   },
+   "sources": [
+    "Chess piece",
+    "Chess"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which piece looks like a horse?",
+     "o": [
+      "Knight",
+      "Rook",
+      "Bishop",
+      "Pawn"
+     ],
+     "a": 0,
+     "why": "The knight is the horse.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece looks like a castle tower?",
+     "o": [
+      "Rook",
+      "Queen",
+      "Knight",
+      "King"
+     ],
+     "a": 0,
+     "why": "The rook is the tower.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece is the smallest?",
+     "o": [
+      "Pawn",
+      "King",
+      "Queen",
+      "Rook"
+     ],
+     "a": 0,
+     "why": "Pawns are the smallest pieces.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece has a cross on top?",
+     "o": [
+      "King",
+      "Queen",
+      "Bishop",
+      "Pawn"
+     ],
+     "a": 0,
+     "why": "The king has a cross. The queen has a crown.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How many pawns does each player have at the start?",
+     "a": 8,
+     "tol": 0,
+     "why": "Each player has 8 pawns.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "How many pieces does each player have at the start?",
+     "a": 16,
+     "tol": 0,
+     "why": "8 pawns + 2 rooks + 2 knights + 2 bishops + queen + king = 16.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "There are 2 rooks, 2 bishops and 2 knights. Which piece do you have only one of, besides the king?",
+     "o": [
+      "Queen",
+      "Rook",
+      "Bishop",
+      "Knight"
+     ],
+     "a": 0,
+     "why": "Each side has just one queen and one king.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each piece to its look.",
+     "pairs": [
+      [
+       "Knight",
+       "A horse head"
+      ],
+      [
+       "Rook",
+       "A castle tower"
+      ],
+      [
+       "King",
+       "A cross on top"
+      ],
+      [
+       "Pawn",
+       "Small and round"
+      ]
+     ],
+     "why": "Shape helps you know each piece.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You see a piece with a pointed hat with a slit. What is it?",
+     "o": [
+      "Bishop",
+      "Rook",
+      "Pawn",
+      "Queen"
+     ],
+     "a": 0,
+     "why": "The bishop has a pointed top with a slit.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two players each have 16 pieces. How many pieces are on the board at the start?",
+     "o": [
+      "32",
+      "16",
+      "8",
+      "64"
+     ],
+     "a": 0,
+     "why": "16 + 16 = 32.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are the pieces different shapes?",
+     "o": [
+      "So we can tell them apart, because each moves differently",
+      "To make the game harder",
+      "Because the board is round",
+      "Only for decoration"
+     ],
+     "a": 0,
+     "why": "Different shapes show different jobs.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Your friend says there are 3 queens on the board at the start. What is wrong?",
+     "o": [
+      "Each side has only one queen, so there are 2",
+      "There are 4 queens",
+      "There are no queens",
+      "There is one for each pawn"
+     ],
+     "a": 0,
+     "why": "One queen for each side.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true?",
+     "o": [
+      "A side has more pawns than any other kind of piece",
+      "A side has more rooks than pawns",
+      "A side has more kings than queens",
+      "All pieces have equal counts"
+     ],
+     "a": 0,
+     "why": "8 pawns is the most of any kind.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The six chess pieces",
+    "model": "There are six kinds of piece. The king is tall with a cross. The queen has a crown. The rook is a castle. The bishop has a pointed hat. The knight is a horse. The pawn is small. Each side has 16 pieces.",
+    "points": [
+     {
+      "k": [
+       "king",
+       "queen"
+      ],
+      "ask": "Which pieces are the leaders?"
+     },
+     {
+      "k": [
+       "rook",
+       "bishop",
+       "knight",
+       "pawn"
+      ],
+      "ask": "What are the other pieces?"
+     },
+     {
+      "k": [
+       "16",
+       "sixteen",
+       "eight pawns",
+       "8 pawns"
+      ],
+      "ask": "How many pieces does one player have?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Pawn movement",
+   "icon": "🚶",
+   "hook": "The pawn is the smallest piece. It walks like a little soldier. Which way does it go: forwards or backwards?",
+   "explain": [
+    "A pawn moves forward. It moves one square at a time. It can never go backwards.",
+    "On its very first move, a pawn may move two squares forward. After that, only one.",
+    "A pawn does not capture the way it walks. It captures one square diagonally forward. If a piece is right in front of a pawn, the pawn is stuck and cannot move forward."
+   ],
+   "example": {
+    "q": "A white pawn is on e2. Where can it go on its first move?",
+    "steps": [
+     "White pawns move up the board.",
+     "From the start, it can go one or two squares.",
+     "One step is e3. Two steps is e4."
+    ],
+    "a": "e3 or e4"
+   },
+   "analogies": {
+    "home": "A pawn is like a child walking to school. It goes forward each day and does not walk back home in the middle.",
+    "city": "A one-way street lets cars go forward only. Pawns are like that.",
+    "farm": "A tractor ploughs one row from one end to the other. It keeps going forward, just like a pawn.",
+    "sport": "A runner in a race goes forward to the finish line. She does not run back."
+   },
+   "mnemonic": "Pawn: forward, forward, never back. Capture on the slant.",
+   "terms": [
+    [
+     "Forward",
+     "Towards the other side of the board."
+    ],
+    [
+     "Diagonal",
+     "A slanting line, corner to corner."
+    ],
+    [
+     "Blocked",
+     "Something is in the way so you cannot move."
+    ]
+   ],
+   "misc": {
+    "wrong": "A pawn can move backwards if it is in danger.",
+    "right": "A pawn can never move backwards."
+   },
+   "trip": {
+    "wiki": "Pawn (chess)",
+    "prompt": "Find a picture of pawns at the start. Which rank are the white pawns on?"
+   },
+   "sources": [
+    "Pawn (chess)",
+    "Chess"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which way can a pawn move?",
+     "o": [
+      "Forward",
+      "Backward",
+      "Sideways",
+      "In an L shape"
+     ],
+     "a": 0,
+     "why": "Pawns only go forward.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How far can a pawn go on its first move?",
+     "o": [
+      "One or two squares",
+      "Only three squares",
+      "Any number of squares",
+      "It cannot move"
+     ],
+     "a": 0,
+     "why": "First move: one or two squares.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How far can a pawn go after its first move?",
+     "o": [
+      "One square",
+      "Two squares",
+      "Three squares",
+      "Any number"
+     ],
+     "a": 0,
+     "why": "Later moves are one square at a time.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A pawn has a piece directly in front of it. What happens?",
+     "o": [
+      "The pawn cannot move forward",
+      "It jumps over",
+      "It takes the piece in front",
+      "It goes backward"
+     ],
+     "a": 0,
+     "why": "Pawns do not jump and cannot capture straight ahead.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How does a pawn capture?",
+     "o": [
+      "One square diagonally forward",
+      "Straight ahead",
+      "Backward",
+      "Two squares ahead"
+     ],
+     "a": 0,
+     "why": "A pawn captures on the slant.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put the moves in order. A white pawn starts on e2 and goes forward one square at a time.",
+     "items": [
+      "e2",
+      "e3",
+      "e4",
+      "e5"
+     ],
+     "why": "White pawns move up the board, so the rank number gets bigger.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A white pawn is on a2 and has not moved. How many squares can it go on its first move, at most?",
+     "a": 2,
+     "tol": 0,
+     "why": "The most is two squares.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A white pawn is on d4. Which square could it move to?",
+     "o": [
+      "d5",
+      "d3",
+      "c4",
+      "e4"
+     ],
+     "a": 0,
+     "why": "It moves forward one square: d5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A white pawn is on e4. A black piece is on f5. What can the pawn do?",
+     "o": [
+      "Capture it",
+      "Jump over it",
+      "Go backward",
+      "Nothing at all"
+     ],
+     "a": 0,
+     "why": "f5 is one square diagonally forward from e4, so the pawn can capture.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a pawn never go back?",
+     "o": [
+      "Its rule says forward only",
+      "It is too small",
+      "It is tired",
+      "It is afraid"
+     ],
+     "a": 0,
+     "why": "Pawns only move forward. That is the rule.",
+     "d": 1,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is a pawn blocked by a piece in front?",
+     "o": [
+      "It moves forward but cannot capture straight ahead",
+      "It is shy",
+      "It always jumps",
+      "It cannot see"
+     ],
+     "a": 0,
+     "why": "Pawns capture diagonally only.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A pawn walks to the last row of the board. Why is that exciting?",
+     "o": [
+      "It can turn into a stronger piece",
+      "It disappears",
+      "It becomes a king",
+      "It goes back to start"
+     ],
+     "a": 0,
+     "why": "This is called promotion.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a pawn could move backwards, what would be different?",
+     "o": [
+      "It would not be a pawn by the rules",
+      "Nothing",
+      "The board would be bigger",
+      "Pawns would be kings"
+     ],
+     "a": 0,
+     "why": "The no-backward rule is part of what makes pawns pawns.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a pawn moves",
+    "model": "A pawn walks forward one square. On its first move it can go two. It cannot go backwards. It captures one square diagonally forward.",
+    "points": [
+     {
+      "k": [
+       "forward"
+      ],
+      "ask": "Which way does it go?"
+     },
+     {
+      "k": [
+       "one",
+       "two",
+       "first"
+      ],
+      "ask": "How many squares?"
+     },
+     {
+      "k": [
+       "diagonal",
+       "slant",
+       "corner"
+      ],
+      "ask": "How does it take a piece?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Rook and bishop movement",
+   "icon": "🏰",
+   "hook": "One piece goes in straight lines. Another goes only in slanting lines. Can you guess which is which?",
+   "explain": [
+    "The rook moves in straight lines. It can go up, down, left or right. It can go as far as it likes, if nothing is in the way.",
+    "The bishop moves in slanting lines, called diagonals. It can go as far as it likes too, if the way is clear.",
+    "A bishop always stays on the same colour of square. A bishop that starts on a dark square only ever visits dark squares. Neither the rook nor the bishop can jump over other pieces."
+   ],
+   "example": {
+    "q": "A rook is on a1 with an empty board. Can it go to a8?",
+    "steps": [
+     "The rook goes in straight lines.",
+     "a1 to a8 is straight up the a file.",
+     "Nothing is in the way, so yes."
+    ],
+    "a": "Yes, a1 to a8 is a straight line"
+   },
+   "analogies": {
+    "home": "A rook is like a train on rails. It goes straight along the track.",
+    "city": "A bishop is like a path that cuts across a park from corner to corner.",
+    "farm": "A rook runs along the fence lines. A bishop would cut across the field in a slant.",
+    "sport": "A rook is like a sprinter on a straight track. A bishop is like a skier going down a slanted slope."
+   },
+   "mnemonic": "Rook goes straight like a rocket. Bishop goes slant like a slide.",
+   "terms": [
+    [
+     "Rook",
+     "The tower piece. It moves in straight lines."
+    ],
+    [
+     "Bishop",
+     "The pointed-hat piece. It moves on diagonals."
+    ],
+    [
+     "Diagonal",
+     "A slanting line of squares of the same colour."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bishop can move to a square of either colour.",
+    "right": "A bishop stays on one colour for the whole game."
+   },
+   "trip": {
+    "wiki": "Rook (chess)",
+    "prompt": "Look at pictures of a rook and a bishop. Which one fits the picture of straight lines?"
+   },
+   "sources": [
+    "Rook (chess)",
+    "Bishop (chess)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How does a rook move?",
+     "o": [
+      "In straight lines",
+      "In slanting lines",
+      "In an L shape",
+      "One step only"
+     ],
+     "a": 0,
+     "why": "Rooks go up, down, left and right.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How does a bishop move?",
+     "o": [
+      "On diagonals",
+      "In straight lines",
+      "In an L shape",
+      "Two steps forward"
+     ],
+     "a": 0,
+     "why": "Bishops move on slanting lines.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A bishop starts on a dark square. Where can it go?",
+     "o": [
+      "Only dark squares",
+      "Only light squares",
+      "Any square",
+      "Only the edges"
+     ],
+     "a": 0,
+     "why": "A bishop stays on its colour.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Can a rook jump over a pawn?",
+     "o": [
+      "No",
+      "Yes, always",
+      "Only on Tuesday",
+      "Yes, if it is black"
+     ],
+     "a": 0,
+     "why": "Rooks and bishops cannot jump.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A rook is alone on an empty board. How many squares can it reach in one move, from a1? (7 up and 7 along)",
+     "a": 14,
+     "tol": 0,
+     "why": "7 along the rank and 7 up the file make 14.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A rook is on d4. Which square can it reach on an empty board?",
+     "o": [
+      "d8",
+      "e5",
+      "f6",
+      "c3"
+     ],
+     "a": 0,
+     "why": "d8 is straight up the d file. The others are diagonal.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A bishop is on c1. Which square can it reach on an empty board?",
+     "o": [
+      "e3",
+      "c3",
+      "d1",
+      "e1"
+     ],
+     "a": 0,
+     "why": "c1 to d2 to e3 is a diagonal.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A rook has its own pawn right in front of it. What can it do?",
+     "o": [
+      "Move sideways or stay",
+      "Jump over the pawn",
+      "Take its own pawn",
+      "Go through the pawn"
+     ],
+     "a": 0,
+     "why": "The pawn blocks that line. The rook uses other lines.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the piece to its path.",
+     "pairs": [
+      [
+       "Rook",
+       "Straight lines"
+      ],
+      [
+       "Bishop",
+       "Diagonal lines"
+      ],
+      [
+       "Pawn",
+       "Forward one step"
+      ]
+     ],
+     "why": "Each piece has its own kind of path.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a bishop never meet another bishop of the opposite colour on a square?",
+     "o": [
+      "Each one stays on its own colour",
+      "Bishops are friends",
+      "They can jump",
+      "The board is small"
+     ],
+     "a": 0,
+     "why": "Bishops of different colours travel on different sets of squares.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why would a rook be happy on an open file?",
+     "o": [
+      "It has a long clear line to travel",
+      "It likes the colour",
+      "It can jump",
+      "It is safe from all pieces"
+     ],
+     "a": 0,
+     "why": "Rooks need open lines.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If your bishop is on a light square, which squares can your bishop never attack?",
+     "o": [
+      "Dark squares",
+      "Light squares",
+      "Squares on the same diagonal",
+      "No square"
+     ],
+     "a": 0,
+     "why": "It can only reach light squares.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A friend says the rook can move in an L. What do you say?",
+     "o": [
+      "No, the L is the knight and the rook goes straight",
+      "Yes, in a big L",
+      "Yes if it is black",
+      "Only on the edge"
+     ],
+     "a": 0,
+     "why": "The L-shaped mover is the knight.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How rooks and bishops move",
+    "model": "A rook moves in straight lines, as far as it likes. A bishop moves along diagonals. A bishop stays on its colour. Neither can jump.",
+    "points": [
+     {
+      "k": [
+       "straight",
+       "line",
+       "up",
+       "sideways"
+      ],
+      "ask": "How does the rook go?"
+     },
+     {
+      "k": [
+       "diagonal",
+       "slant"
+      ],
+      "ask": "How does the bishop go?"
+     },
+     {
+      "k": [
+       "colour",
+       "color",
+       "jump"
+      ],
+      "ask": "What is special about the bishop or what can they not do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Knight movement",
+   "icon": "🐴",
+   "hook": "This piece can jump over others! It moves in a shape like a letter. Which letter?",
+   "explain": [
+    "The knight is the horse. It moves in an L shape. It goes two squares one way, then one square to the side.",
+    "The knight is the only piece that can jump over other pieces. Its own pieces and enemy pieces cannot block it.",
+    "A knight always lands on a square of the opposite colour to the one it left. From the middle of the board it can reach up to 8 squares."
+   ],
+   "example": {
+    "q": "A white knight is on g1. Name two squares it can jump to.",
+    "steps": [
+     "Go two squares up and one to the side.",
+     "Up two from g1 is g3. One to the side is f3 or h3.",
+     "The squares f3 and h3 work."
+    ],
+    "a": "f3 and h3"
+   },
+   "analogies": {
+    "home": "Think of hopping over a toy on the floor. The knight hops over pieces.",
+    "city": "It is like a bus that jumps over traffic and lands in a new place.",
+    "farm": "A horse can jump a fence. The knight jumps over pieces.",
+    "sport": "A hurdler leaps over a barrier in one go. The knight leaps over pieces."
+   },
+   "mnemonic": "Knight: two and one, and the jump is fun.",
+   "terms": [
+    [
+     "Knight",
+     "The horse. It moves in an L and jumps."
+    ],
+    [
+     "L shape",
+     "Two squares in one direction, then one square to the side."
+    ],
+    [
+     "Jump",
+     "To move over other pieces."
+    ]
+   ],
+   "misc": {
+    "wrong": "A knight cannot jump over pieces.",
+    "right": "A knight is the only piece that can jump over others."
+   },
+   "trip": {
+    "wiki": "Knight (chess)",
+    "prompt": "Find the picture of the knight. Draw the L shape with your finger."
+   },
+   "sources": [
+    "Knight (chess)",
+    "Chess"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How does a knight move?",
+     "o": [
+      "In an L shape",
+      "In a straight line",
+      "On a diagonal",
+      "One square only"
+     ],
+     "a": 0,
+     "why": "Two squares then one to the side.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece can jump over others?",
+     "o": [
+      "The knight",
+      "The rook",
+      "The bishop",
+      "The pawn"
+     ],
+     "a": 0,
+     "why": "Only the knight jumps.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A knight is on a light square. After it moves, what colour is its new square?",
+     "o": [
+      "Dark",
+      "Light",
+      "Red",
+      "It can be either"
+     ],
+     "a": 0,
+     "why": "The L move always changes colour.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "How many squares can a knight reach from the middle of an empty board?",
+     "a": 8,
+     "tol": 0,
+     "why": "There are 8 L-shaped jumps.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A knight is on g1. Which square can it jump to?",
+     "o": [
+      "f3",
+      "g3",
+      "g2",
+      "h2"
+     ],
+     "a": 0,
+     "why": "f3 is two up and one left.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A knight on b1 has its own pawns on a2, b2, c2 and d2. Can it still move?",
+     "o": [
+      "Yes, by jumping to a3 or c3",
+      "No, it is trapped",
+      "Only if the pawns move first",
+      "Only backwards"
+     ],
+     "a": 0,
+     "why": "Knights jump over pieces. a3 and c3 are free.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A knight is on e4. Which square can it reach?",
+     "o": [
+      "f6",
+      "e6",
+      "f5",
+      "g6"
+     ],
+     "a": 0,
+     "why": "f6 is one right and two up, an L.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which move is not a knight move?",
+     "o": [
+      "Two squares straight up",
+      "Two up, one left",
+      "One up, two right",
+      "Two down, one right"
+     ],
+     "a": 0,
+     "why": "Two straight up has no side step.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the piece to how it moves.",
+     "pairs": [
+      [
+       "Knight",
+       "Jumps in an L"
+      ],
+      [
+       "Rook",
+       "Straight lines"
+      ],
+      [
+       "Bishop",
+       "Diagonals"
+      ],
+      [
+       "Pawn",
+       "Forward"
+      ]
+     ],
+     "why": "Knights are the jumpers.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the knight useful when the board is crowded?",
+     "o": [
+      "It jumps over other pieces",
+      "It is the strongest",
+      "It cannot be captured",
+      "It is the biggest"
+     ],
+     "a": 0,
+     "why": "Jumping lets it move when others are blocked.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a knight always change square colour?",
+     "o": [
+      "Each L move is three squares, an odd number, so the colour flips",
+      "It is magical",
+      "It copies the bishop",
+      "It is always on dark squares"
+     ],
+     "a": 0,
+     "why": "Two plus one is 3 steps of colour change, so the colour flips.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A knight is in the corner a1. How many squares can it go to?",
+     "o": [
+      "2",
+      "8",
+      "4",
+      "1"
+     ],
+     "a": 0,
+     "why": "From a1 only b3 and c2 exist.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rook is blocked by pawns but a knight is not. Why?",
+     "o": [
+      "The knight jumps",
+      "Knights are bigger",
+      "Rooks are slow",
+      "Pawns move away"
+     ],
+     "a": 0,
+     "why": "Only the knight jumps.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How the knight moves",
+    "model": "The knight moves in an L. Two squares one way, then one to the side. It jumps over pieces. Each jump lands on the other colour.",
+    "points": [
+     {
+      "k": [
+       "l shape",
+       "l-shape",
+       "two",
+       "one"
+      ],
+      "ask": "What shape does it move in?"
+     },
+     {
+      "k": [
+       "jump",
+       "hop",
+       "over"
+      ],
+      "ask": "What can it do that others cannot?"
+     },
+     {
+      "k": [
+       "colour",
+       "color",
+       "opposite"
+      ],
+      "ask": "What happens to the square colour?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Queen and king movement",
+   "icon": "👸",
+   "hook": "One piece is the strongest on the board. The other is the most important. Which is which?",
+   "explain": [
+    "The queen is the strongest piece. She moves like a rook and a bishop together. She can go in straight lines and diagonals, as far as she likes.",
+    "The king is the most important piece. He moves one square in any direction. If the king is trapped, the game is lost.",
+    "The king can never move to a square where he could be captured. The queen cannot jump over pieces."
+   ],
+   "example": {
+    "q": "A queen is on d1 with an empty board. Can she go to h5?",
+    "steps": [
+     "d1 to h5 is a slant: e2, f3, g4, h5.",
+     "The queen can move on diagonals.",
+     "The path is clear, so yes."
+    ],
+    "a": "Yes"
+   },
+   "analogies": {
+    "home": "The king is like a person in the house who must stay safe. The queen is like a helper who can run everywhere.",
+    "city": "The queen is a fast bus that goes everywhere. The king is the mayor who moves slowly.",
+    "farm": "The queen is like a farmer on a quad bike. The king walks one step at a time.",
+    "sport": "The queen is the star player who can run in many ways. The king is the one you must protect."
+   },
+   "mnemonic": "Queen = rook + bishop. King = one step, any way.",
+   "terms": [
+    [
+     "Queen",
+     "The strongest piece. Moves like a rook and a bishop."
+    ],
+    [
+     "King",
+     "The piece you must protect. Moves one square."
+    ],
+    [
+     "Direction",
+     "Up, down, sideways or diagonal."
+    ]
+   ],
+   "misc": {
+    "wrong": "The king can move many squares.",
+    "right": "The king moves only one square at a time."
+   },
+   "trip": {
+    "wiki": "King (chess)",
+    "prompt": "Look at a picture of a king and a queen. Which is taller?"
+   },
+   "sources": [
+    "Queen (chess)",
+    "King (chess)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which piece is the strongest?",
+     "o": [
+      "The queen",
+      "The king",
+      "The pawn",
+      "The knight"
+     ],
+     "a": 0,
+     "why": "The queen moves like a rook plus a bishop.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How far can the king move?",
+     "o": [
+      "One square",
+      "As far as he likes",
+      "Two squares",
+      "Three squares"
+     ],
+     "a": 0,
+     "why": "The king moves one square at a time.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In which directions can the queen move?",
+     "o": [
+      "Straight and diagonal",
+      "Only straight",
+      "Only diagonal",
+      "Only L shape"
+     ],
+     "a": 0,
+     "why": "She has the rook and bishop moves.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece must you always keep safe?",
+     "o": [
+      "The king",
+      "The queen",
+      "A pawn",
+      "A rook"
+     ],
+     "a": 0,
+     "why": "If the king is trapped, you lose.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A king is on e1. Which square can he go to?",
+     "o": [
+      "e2",
+      "e3",
+      "e4",
+      "g1"
+     ],
+     "a": 0,
+     "why": "One step up is e2. The others are too far.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A king stands in the middle of an empty board. How many squares can he step to?",
+     "a": 8,
+     "tol": 0,
+     "why": "One step in each of 8 directions.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A queen is on a1 on an empty board. Which square can she reach?",
+     "o": [
+      "h8",
+      "b3",
+      "c2",
+      "h7"
+     ],
+     "a": 0,
+     "why": "a1 to h8 is the long diagonal.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Can the queen jump over a pawn?",
+     "o": [
+      "No",
+      "Yes",
+      "Only sometimes",
+      "Only at the start"
+     ],
+     "a": 0,
+     "why": "Only the knight jumps.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the piece to what it is like.",
+     "pairs": [
+      [
+       "Queen",
+       "Rook plus bishop"
+      ],
+      [
+       "King",
+       "One step any way"
+      ],
+      [
+       "Knight",
+       "Jumps in an L"
+      ]
+     ],
+     "why": "Each piece has its own power.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the king the most important piece even though the queen is stronger?",
+     "o": [
+      "Losing the king means losing the game",
+      "The king is taller",
+      "The king is faster",
+      "The queen cannot move"
+     ],
+     "a": 0,
+     "why": "The goal of chess is to trap the king.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can the king not step next to the other king?",
+     "o": [
+      "The kings would attack each other, and a king cannot move to danger",
+      "Kings dislike each other",
+      "Their crowns would bump",
+      "The board is too small"
+     ],
+     "a": 0,
+     "why": "A king may not move to an attacked square.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A queen is on an open board at d4. About how many squares can she reach?",
+     "o": [
+      "27",
+      "14",
+      "8",
+      "64"
+     ],
+     "a": 0,
+     "why": "13 diagonal and 14 straight squares.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If you had to give up the queen or the king, which can you not give up?",
+     "o": [
+      "The king",
+      "The queen",
+      "Both are the same",
+      "Neither matters"
+     ],
+     "a": 0,
+     "why": "You cannot lose the king and keep playing.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Queen and king",
+    "model": "The queen moves like a rook and a bishop. The king moves one square any way. You must keep the king safe.",
+    "points": [
+     {
+      "k": [
+       "queen",
+       "strong",
+       "rook",
+       "bishop"
+      ],
+      "ask": "Who is the strongest?"
+     },
+     {
+      "k": [
+       "one",
+       "step",
+       "square"
+      ],
+      "ask": "How does the king move?"
+     },
+     {
+      "k": [
+       "safe",
+       "protect",
+       "important",
+       "lose"
+      ],
+      "ask": "Why does the king matter?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Capturing pieces",
+   "icon": "⚔️",
+   "hook": "In chess you can take the other side's pieces. How do you think you do it?",
+   "explain": [
+    "To capture, move your piece onto a square where an enemy piece stands. Take the enemy piece off the board. Your piece stays on that square.",
+    "Most pieces capture the same way they move. The rook captures along straight lines. The bishop captures along diagonals. The knight captures where it lands. Only the pawn is different: it moves straight but captures on the slant.",
+    "You can never capture your own pieces. And you cannot capture the king: when the king is trapped, the game is over."
+   ],
+   "example": {
+    "q": "A white rook is on a1. A black pawn is on a5. Nothing is between. Can the rook capture it?",
+    "steps": [
+     "The rook goes straight up the a file.",
+     "The pawn is on the same file, a5, with nothing in between.",
+     "The rook can move to a5 and take the pawn."
+    ],
+    "a": "Yes, Rxa5"
+   },
+   "analogies": {
+    "home": "Capturing is like taking a toy off a game square when you land there.",
+    "city": "Think of a bus taking over a stop. The other bus must leave.",
+    "farm": "It is like moving a sheep into a pen spot. The one already there is taken out.",
+    "sport": "In a tag game, you touch someone and they are out of the round."
+   },
+   "mnemonic": "Land on it, lift it off, leave it there.",
+   "terms": [
+    [
+     "Capture",
+     "To take an enemy piece by moving onto its square."
+    ],
+    [
+     "Trade",
+     "When each side takes a piece."
+    ],
+    [
+     "Value",
+     "How strong a piece is: pawn 1, knight 3, bishop 3, rook 5, queen 9."
+    ]
+   ],
+   "misc": {
+    "wrong": "You can take your own piece.",
+    "right": "You can only take enemy pieces."
+   },
+   "trip": {
+    "wiki": "Glossary of chess",
+    "prompt": "Look at the list of chess words. Find the word \"capture\"."
+   },
+   "sources": [
+    "Chess",
+    "Glossary of chess"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How do you capture a piece?",
+     "o": [
+      "Move onto its square",
+      "Jump near it",
+      "Push it",
+      "Skip a turn"
+     ],
+     "a": 0,
+     "why": "Your piece lands on the square and the enemy piece is removed.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece captures differently from how it moves?",
+     "o": [
+      "The pawn",
+      "The rook",
+      "The bishop",
+      "The queen"
+     ],
+     "a": 0,
+     "why": "Pawns move straight but capture diagonally.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Can you capture your own piece?",
+     "o": [
+      "No",
+      "Yes",
+      "Only pawns can",
+      "Only the king can"
+     ],
+     "a": 0,
+     "why": "Only enemy pieces can be captured.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is worth more?",
+     "o": [
+      "A rook",
+      "A pawn",
+      "A knight",
+      "A bishop"
+     ],
+     "a": 0,
+     "why": "Rook 5, knight 3, bishop 3, pawn 1.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A queen is worth 9 points. A pawn is worth 1. How many points do you gain if a pawn takes a queen?",
+     "a": 9,
+     "tol": 0,
+     "why": "You gain the queen: 9 points.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Your rook can take a pawn, but the pawn is guarded and you would lose your rook. What is the best choice?",
+     "o": [
+      "Not to take it",
+      "Take it anyway",
+      "Skip all turns",
+      "Give up the king"
+     ],
+     "a": 0,
+     "why": "A rook (5) for a pawn (1) is a bad trade.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A white pawn is on e4. A black knight is on d5. Can the pawn capture it?",
+     "o": [
+      "Yes",
+      "No, it is a knight",
+      "Only if the knight moves",
+      "Only backwards"
+     ],
+     "a": 0,
+     "why": "d5 is one step diagonally forward from e4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A bishop on c1 sees a black pawn on f4 along c1-d2-e3-f4, with nothing between. Can it capture?",
+     "o": [
+      "Yes",
+      "No",
+      "Only the next turn",
+      "Only backwards"
+     ],
+     "a": 0,
+     "why": "The diagonal is clear.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the piece to its value.",
+     "pairs": [
+      [
+       "Pawn",
+       "1"
+      ],
+      [
+       "Knight",
+       "3"
+      ],
+      [
+       "Rook",
+       "5"
+      ],
+      [
+       "Queen",
+       "9"
+      ]
+     ],
+     "why": "These numbers help to decide on trades.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why do players count piece values?",
+     "o": [
+      "To decide if a trade is good or bad",
+      "To count the squares",
+      "To pick colours",
+      "To tell who is older"
+     ],
+     "a": 0,
+     "why": "Values show what you win or lose in a trade.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You can take a bishop with a pawn. Why is it usually good?",
+     "o": [
+      "A pawn is worth 1 and a bishop is worth 3",
+      "Pawns are bigger",
+      "Bishops cannot move",
+      "It ends the game"
+     ],
+     "a": 0,
+     "why": "You win 2 points of value.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a king never be captured?",
+     "o": [
+      "The game ends before that, when it is trapped",
+      "It is too heavy",
+      "It is the biggest",
+      "It is on the edge"
+     ],
+     "a": 0,
+     "why": "Checkmate ends the game.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rook takes a knight and then is taken by a pawn. Who wins in value?",
+     "o": [
+      "The pawn side: 3 for 5",
+      "The rook side",
+      "It is equal",
+      "Nobody"
+     ],
+     "a": 0,
+     "why": "Knight (3) is gained, rook (5) is lost, so the rook side is down 2.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Capturing in chess",
+    "model": "To capture, you move your piece onto an enemy piece's square. The enemy piece comes off. Most pieces capture as they move. Pawns capture on the slant. You cannot capture your own pieces.",
+    "points": [
+     {
+      "k": [
+       "move onto",
+       "land",
+       "square",
+       "take"
+      ],
+      "ask": "How do you capture?"
+     },
+     {
+      "k": [
+       "pawn",
+       "slant",
+       "diagonal"
+      ],
+      "ask": "What is different about a pawn?"
+     },
+     {
+      "k": [
+       "own",
+       "enemy",
+       "other side"
+      ],
+      "ask": "Which pieces can you take?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Check and basic checkmate",
+   "icon": "🏁",
+   "hook": "The aim of chess is not to take everything. It is to trap one piece. Which one?",
+   "explain": [
+    "When the king is attacked, we say \"check\". The king is in danger. The player must fix it right away.",
+    "There are three ways to get out of check: move the king to a safe square, put a piece in the way (block), or capture the piece that gives the check.",
+    "If there is no way out, it is \"checkmate\". The game is over and the player who gave checkmate wins."
+   ],
+   "example": {
+    "q": "A white rook gives check to the black king on the same rank. A black knight can jump in between. Is that a good answer?",
+    "steps": [
+     "Check means the king is attacked.",
+     "A block puts a piece between the rook and the king.",
+     "The knight blocks the line, so yes (for a straight-line attack)."
+    ],
+    "a": "Yes, it blocks the check"
+   },
+   "analogies": {
+    "home": "Check is like someone shouting \"Watch out!\". You must step away.",
+    "city": "Checkmate is like being in a street with every road closed.",
+    "farm": "A fox corners a hen in the coop with no exit. That is checkmate.",
+    "sport": "Check is like a warning in a game. Checkmate is the final whistle."
+   },
+   "mnemonic": "Check: Watch out! Mate: No way out!",
+   "terms": [
+    [
+     "Check",
+     "The king is attacked."
+    ],
+    [
+     "Checkmate",
+     "The king is attacked and cannot escape. The game ends."
+    ],
+    [
+     "Block",
+     "To put a piece between the attacker and the king."
+    ]
+   ],
+   "misc": {
+    "wrong": "In check, you can ignore it and play anything.",
+    "right": "In check, you must stop the check at once."
+   },
+   "trip": {
+    "wiki": "Checkmate",
+    "prompt": "Look at the pictures of simple checkmates. Count the king's escape squares in one."
+   },
+   "sources": [
+    "Check (chess)",
+    "Checkmate"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does \"check\" mean?",
+     "o": [
+      "The king is attacked",
+      "The king is captured",
+      "The game is a draw",
+      "A pawn is promoted"
+     ],
+     "a": 0,
+     "why": "Check is a warning that the king is under attack.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is checkmate?",
+     "o": [
+      "The king is attacked and cannot escape",
+      "The queen is lost",
+      "A pawn reaches the end",
+      "A rook moves"
+     ],
+     "a": 0,
+     "why": "It ends the game.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many ways are there to get out of check?",
+     "o": [
+      "Three: move, block or capture",
+      "One",
+      "Two",
+      "Four"
+     ],
+     "a": 0,
+     "why": "Move the king, block, or capture the attacker.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Your king is in check from a bishop. Your rook can take that bishop. What can you do?",
+     "o": [
+      "Capture the bishop with the rook",
+      "Ignore the check",
+      "Move a pawn far away",
+      "Resign at once"
+     ],
+     "a": 0,
+     "why": "Capturing the attacker ends the check.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Can you leave your king in check at the end of your move?",
+     "o": [
+      "No",
+      "Yes",
+      "Only once",
+      "Only with the queen"
+     ],
+     "a": 0,
+     "why": "You must always fix the check.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from calm to the end of the game.",
+     "items": [
+      "The king is safe",
+      "The king is in check",
+      "The king cannot escape",
+      "Checkmate: the game is over"
+     ],
+     "why": "The game ends when the king cannot escape.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Black king h8, white king g6, white rook a8 gives check. Black to move. Can black escape?",
+     "o": [
+      "No, it is checkmate",
+      "Yes, Kg7",
+      "Yes, Kh7",
+      "Yes, Kxa8"
+     ],
+     "a": 0,
+     "why": "g8 and the rank are covered by the rook. g7 and h7 are covered by the white king.",
+     "d": 3,
+     "k": "reason",
+     "fen": "R6k/8/6K1/8/8/8/8/8 b - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Your friend says you win when you take the king. What is the right rule?",
+     "o": [
+      "You win by checkmate; the king is not taken",
+      "You must take the king",
+      "You win with 3 captures",
+      "You win when you promote"
+     ],
+     "a": 0,
+     "why": "The king is trapped, never captured.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A king is in check and has an empty safe square next to him. Is that checkmate?",
+     "o": [
+      "No, he can step there",
+      "Yes",
+      "Only if it is dark",
+      "Only if it is light"
+     ],
+     "a": 0,
+     "why": "If there is a way out, it is only check.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we shout or say \"check\"?",
+     "o": [
+      "To tell the other player the king is in danger",
+      "To win a point",
+      "To end the game",
+      "To pick the colour"
+     ],
+     "a": 0,
+     "why": "It is a polite warning.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A king is attacked by two pieces at once. Why is blocking not enough?",
+     "o": [
+      "Blocking stops only one attacker",
+      "Blocks are not allowed",
+      "Two pieces cannot attack",
+      "The queen must block"
+     ],
+     "a": 0,
+     "why": "Double check needs the king to move.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the difference between check and checkmate?",
+     "o": [
+      "In checkmate there is no escape",
+      "Checkmate is smaller",
+      "Check is a draw",
+      "There is no difference"
+     ],
+     "a": 0,
+     "why": "In check, a move can fix it. In checkmate none can.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the king can capture the checking piece safely, is it mate?",
+     "o": [
+      "No, because capturing is a way out",
+      "Yes",
+      "Only if it is a pawn",
+      "Only if it is a queen"
+     ],
+     "a": 0,
+     "why": "The king may capture an unprotected attacker.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Check and checkmate",
+    "model": "Check means the king is attacked. You must get out: move, block or capture. If you cannot, it is checkmate and the game ends.",
+    "points": [
+     {
+      "k": [
+       "attack",
+       "danger",
+       "threat"
+      ],
+      "ask": "What is check?"
+     },
+     {
+      "k": [
+       "move",
+       "block",
+       "capture"
+      ],
+      "ask": "How do you get out of check?"
+     },
+     {
+      "k": [
+       "no way",
+       "cannot escape",
+       "game over",
+       "ends",
+       "win"
+      ],
+      "ask": "What is checkmate?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Simple logic and pattern puzzles",
+   "icon": "🧩",
+   "hook": "Puzzles are like little games for the brain. Can you spot what comes next in 2, 4, 6, 8, ...?",
+   "explain": [
+    "A pattern is something that repeats. A red block, a blue block, a red block, a blue block, ... What comes next? Red!",
+    "Logic means thinking in steps. If all knights are horses on the board, and this is a knight, then it is a horse. We use clues to find the answer.",
+    "Chess uses patterns and logic. A knight always makes an L. A bishop stays on its colour. We use these facts to find the best move."
+   ],
+   "example": {
+    "q": "What comes next? 2, 4, 6, 8, ?",
+    "steps": [
+     "Look at the gap between numbers.",
+     "2 to 4 is +2, 4 to 6 is +2, 6 to 8 is +2.",
+     "Add 2 to 8."
+    ],
+    "a": "10"
+   },
+   "analogies": {
+    "home": "A pattern is like stripes on a sock. Stripe, stripe, plain, stripe, stripe, plain.",
+    "city": "Traffic lights repeat: red, amber, green, then again.",
+    "farm": "Rows of corn and beans, corn and beans, show a pattern.",
+    "sport": "A drumbeat or a team chant repeats."
+   },
+   "mnemonic": "Spot the rule, then use it.",
+   "terms": [
+    [
+     "Pattern",
+     "Something that repeats in a rule."
+    ],
+    [
+     "Rule",
+     "What makes the pattern work."
+    ],
+    [
+     "Clue",
+     "A piece of information that helps you solve."
+    ]
+   ],
+   "misc": {
+    "wrong": "A guess is as good as a rule.",
+    "right": "A rule that works every time is better than a guess."
+   },
+   "trip": {
+    "wiki": "Pattern",
+    "prompt": "Look at the pictures of patterns. Find one that repeats."
+   },
+   "sources": [
+    "Pattern",
+    "Logic"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What comes next? red, blue, red, blue, ?",
+     "o": [
+      "red",
+      "blue",
+      "green",
+      "yellow"
+     ],
+     "a": 0,
+     "why": "The colours take turns.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "What comes next? 2, 4, 6, 8, ?",
+     "a": 10,
+     "tol": 0,
+     "why": "Add 2 each time.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What comes next? 5, 10, 15, 20, ?",
+     "a": 25,
+     "tol": 0,
+     "why": "Add 5 each time.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the odd one out: rook, bishop, knight, apple?",
+     "o": [
+      "Apple",
+      "Rook",
+      "Bishop",
+      "Knight"
+     ],
+     "a": 0,
+     "why": "The others are chess pieces.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which shape comes next: circle, square, circle, square, ?",
+     "o": [
+      "Circle",
+      "Square",
+      "Triangle",
+      "Star"
+     ],
+     "a": 0,
+     "why": "They take turns: circle, square.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A bishop is on a light square. Is it still on a light square after it moves?",
+     "o": [
+      "Yes",
+      "No",
+      "Sometimes",
+      "Only at the end"
+     ],
+     "a": 0,
+     "why": "A bishop never changes colour.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "All pawns move forward. This piece is a pawn. What do we know?",
+     "o": [
+      "It moves forward",
+      "It moves backward",
+      "It jumps",
+      "It is a king"
+     ],
+     "a": 0,
+     "why": "The first fact applies to every pawn.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these numbers in order from smallest to biggest.",
+     "items": [
+      "2",
+      "5",
+      "9",
+      "12"
+     ],
+     "why": "Smaller numbers come first.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "There are 8 pawns and 8 other pieces on one side. How many pieces is that in all?",
+     "a": 16,
+     "tol": 0,
+     "why": "8 + 8 = 16.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What comes next? A, B, A, B, A, ?",
+     "o": [
+      "B",
+      "A",
+      "C",
+      "D"
+     ],
+     "a": 0,
+     "why": "The letters take turns.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A box has 3 rooks and 3 bishops. You pick without looking. What is sure?",
+     "o": [
+      "You will get a chess piece",
+      "You will get a rook",
+      "You will get a bishop",
+      "You will get a pawn"
+     ],
+     "a": 0,
+     "why": "Every item is a piece.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The pattern is 1, 2, 4, 8, ... Which rule fits?",
+     "o": [
+      "Double each time",
+      "Add 1",
+      "Add 2",
+      "Add 4"
+     ],
+     "a": 0,
+     "why": "1×2=2, 2×2=4, 4×2=8, so next is 16.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is spotting the rule better than guessing?",
+     "o": [
+      "A rule works every time",
+      "Guessing is rude",
+      "Rules are shorter",
+      "Guessing is not allowed"
+     ],
+     "a": 0,
+     "why": "A rule can be checked.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Patterns and logic",
+    "model": "A pattern repeats by a rule. Find the rule and use it to find what comes next. Logic means thinking in steps from clues.",
+    "points": [
+     {
+      "k": [
+       "repeat",
+       "again",
+       "same"
+      ],
+      "ask": "What is a pattern?"
+     },
+     {
+      "k": [
+       "rule"
+      ],
+      "ask": "How do I find what comes next?"
+     },
+     {
+      "k": [
+       "clue",
+       "step",
+       "think"
+      ],
+      "ask": "What is logic?"
+     }
+    ]
+   }
+  }
+ ]
+}

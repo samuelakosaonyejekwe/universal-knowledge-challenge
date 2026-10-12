@@ -1,0 +1,2716 @@
+{
+ "world": 12,
+ "level": 1,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Needs and wants",
+   "icon": "🍞",
+   "hook": "You are hungry and you also want a new toy. Which one do you really need today?",
+   "explain": [
+    "A need is something we must have to live. Food, water, a safe place to sleep and clothes are needs.",
+    "A want is something nice to have. A toy, a sweet or a game is a want. We can live without wants.",
+    "Money is often not enough for everything. So we think: needs first, then wants."
+   ],
+   "example": {
+    "q": "Ama has 5 coins. Bread costs 3 coins. A toy costs 4 coins. What should she buy first?",
+    "steps": [
+     "Bread is food. Food is a need.",
+     "The toy is a want.",
+     "Buy the need first: bread, 3 coins.",
+     "She has 2 coins left. That is not enough for the toy."
+    ],
+    "a": "The bread, because it is a need."
+   },
+   "analogies": {
+    "home": "Dinner on the table is a need. A new picture book is a want.",
+    "farm": "A farmer needs water for the plants. A bright new hat is only a want.",
+    "nature": "A bird needs food and a nest. It does not need shiny things.",
+    "city": "A bus ticket to school is a need. A fun balloon on the street is a want."
+   },
+   "mnemonic": "Need = Never go without. Want = Would be nice.",
+   "terms": [
+    [
+     "Need",
+     "Something you must have to live."
+    ],
+    [
+     "Want",
+     "Something nice to have but not a must."
+    ],
+    [
+     "Choose",
+     "To pick one thing instead of another."
+    ]
+   ],
+   "misc": {
+    "wrong": "If I really want something, it is a need.",
+    "right": "A strong wish does not make something a need. Needs keep us alive and healthy."
+   },
+   "limits": "People sometimes disagree about what is a need. A warm coat is a need in a cold place but less so in a hot place.",
+   "trip": {
+    "wiki": "Basic needs",
+    "prompt": "Look for the things every person needs to live."
+   },
+   "sources": [
+    "Basic needs",
+    "Want"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which one is a need?",
+     "o": [
+      "Water",
+      "A toy robot",
+      "Sweets",
+      "A kite"
+     ],
+     "a": 0,
+     "why": "We must drink water to live. The others are wants.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which one is a want?",
+     "o": [
+      "A video game",
+      "Food",
+      "A bed",
+      "A warm coat in snow"
+     ],
+     "a": 0,
+     "why": "We can live without a game, so it is a want.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A need is something you...",
+     "o": [
+      "must have to live",
+      "something you like a lot",
+      "something you saw on TV",
+      "something your friends all have"
+     ],
+     "a": 0,
+     "why": "Needs are the things that keep us alive and well.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Kofi is cold and it is raining. What does he need most?",
+     "o": [
+      "A warm dry coat",
+      "A new red ball to play with",
+      "A shiny sticker",
+      "A toy drum"
+     ],
+     "a": 0,
+     "why": "Staying warm and dry keeps him well, so the coat is a need.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Lina has only a few coins. She needs lunch and wants a comic. What is a wise choice?",
+     "o": [
+      "Buy lunch first",
+      "Buy the comic first",
+      "Buy nothing",
+      "Buy two comics"
+     ],
+     "a": 0,
+     "why": "Needs come first. If coins are left, she can think about wants.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is a bicycle always a want?",
+     "o": [
+      "No. It can be a need if it is the only way to get to school",
+      "Yes, because a bicycle is only ever for fun and games",
+      "Yes, always",
+      "No, because a bicycle is a kind of food"
+     ],
+     "a": 0,
+     "why": "What is a need can change with where and how we live.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each thing to need or want.",
+     "pairs": [
+      [
+       "Bread",
+       "A need, because it is food"
+      ],
+      [
+       "Toy car",
+       "A want, because it is for fun"
+      ],
+      [
+       "Clean water",
+       "A need, because we must drink"
+      ],
+      [
+       "Sweets",
+       "A treat we could live without"
+      ]
+     ],
+     "why": "Bread and water keep us alive. A toy and sweets are nice but not needed.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we think about needs first?",
+     "o": [
+      "Because we need them to stay alive and well",
+      "Because wants cost much more than needs do",
+      "Because wants are bad",
+      "Because shops always sell them first of all"
+     ],
+     "a": 0,
+     "why": "Wants are not bad. Needs simply matter first for our health and safety.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Ama has 10 coins. A meal (a need) costs 6 coins. How many coins are left for wants?",
+     "a": 4,
+     "tol": 0,
+     "unit": "coins",
+     "why": "10 − 6 = 4 coins are left.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order: what Ama should do first to last.",
+     "items": [
+      "Look at what she needs",
+      "Pay for the need",
+      "Look at coins left",
+      "Think about a want"
+     ],
+     "why": "Cover needs first, then see what is left for wants.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two children disagree: one says a phone is a need, the other says it is a want. What is the best response?",
+     "o": [
+      "It can depend on the person and place, so give reasons",
+      "The first child is wrong and the second is right, so no reasons are needed",
+      "Phones are always needs",
+      "Phones are never needs"
+     ],
+     "a": 0,
+     "why": "Some things are needs for some people, for example to call for help. Good thinkers give reasons.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it hard to buy every want we have?",
+     "rubric": [
+      [
+       "money",
+       "coins",
+       "afford",
+       "cost",
+       "price"
+      ],
+      [
+       "not enough",
+       "limited",
+       "only",
+       "run out",
+       "few"
+      ],
+      [
+       "choose",
+       "pick",
+       "choice",
+       "need first"
+      ]
+     ],
+     "min": 2,
+     "model": "We do not have enough money for everything, so we must choose, usually needs first.",
+     "why": "Money is limited, so we choose.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A family has little money. Which choice shows careful thinking?",
+     "o": [
+      "Pay for food and school things, then wants if any money is left",
+      "Buy toys and treats first, then food only if some money is left",
+      "Buy only sweets",
+      "Spend all the money on one big want"
+     ],
+     "a": 0,
+     "why": "Careful thinkers cover needs before wants.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The difference between a need and a want",
+    "model": "A need is something you must have to live, like food and water. A want is nice to have, like a toy. We think about needs first. For example, bread is a need but a toy is a want.",
+    "points": [
+     {
+      "k": [
+       "need",
+       "must",
+       "live",
+       "survive"
+      ],
+      "ask": "What is a need?"
+     },
+     {
+      "k": [
+       "want",
+       "nice",
+       "toy",
+       "like"
+      ],
+      "ask": "What is a want, then?"
+     },
+     {
+      "k": [
+       "first",
+       "before",
+       "choose",
+       "pick"
+      ],
+      "ask": "Which one do we pick first?"
+     },
+     {
+      "k": [
+       "example",
+       "bread",
+       "food",
+       "water",
+       "toy"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Money and its uses",
+   "icon": "🪙",
+   "hook": "Long ago people had no coins. How did they get what they wanted? Why do we use money now?",
+   "explain": [
+    "Money is what we use to pay for things. It can be coins, paper notes or a card.",
+    "Money helps us buy what we need. It also lets us keep value for later, when we save it.",
+    "Every country has its own money. A shop will give you things when you give the right amount of money."
+   ],
+   "example": {
+    "q": "Tariq gives the baker 5 coins for a loaf of bread. What is the money used for?",
+    "steps": [
+     "Tariq wants bread.",
+     "The baker will take coins.",
+     "The coins pay for the bread."
+    ],
+    "a": "The money pays for the bread."
+   },
+   "analogies": {
+    "home": "A jar of coins at home can pay for milk later.",
+    "city": "At the market, coins turn into fruit.",
+    "farm": "A farmer sells eggs and gets coins. Then the coins buy seeds.",
+    "tech": "A card or phone can pay too, but it is still money."
+   },
+   "mnemonic": "Money is a magic ticket: give it, get something.",
+   "terms": [
+    [
+     "Money",
+     "What we use to pay for things."
+    ],
+    [
+     "Coin",
+     "A small round piece of metal money."
+    ],
+    [
+     "Price",
+     "How much money something costs."
+    ],
+    [
+     "Note",
+     "A paper piece of money."
+    ]
+   ],
+   "misc": {
+    "wrong": "Money is only coins and notes.",
+    "right": "Money can also be digital, like numbers on a card or phone."
+   },
+   "limits": "In the past people also used shells, salt and other things as money. What counts as money has changed over time.",
+   "trip": {
+    "wiki": "Money",
+    "prompt": "Find pictures of money from different times and places."
+   },
+   "sources": [
+    "Money",
+    "Coin"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is money used for?",
+     "o": [
+      "To pay for things",
+      "To eat it",
+      "To wear it on your head",
+      "To sleep on at night"
+     ],
+     "a": 0,
+     "why": "We give money so we can get things.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which one is money?",
+     "o": [
+      "A coin",
+      "A leaf from a tree",
+      "A cup",
+      "A shoe"
+     ],
+     "a": 0,
+     "why": "Coins are money. The others are not used to pay.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Price means...",
+     "o": [
+      "how much money something costs",
+      "how many days it takes to get to you",
+      "how heavy something is",
+      "what colour it is"
+     ],
+     "a": 0,
+     "why": "The price tells us how many coins to pay.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is money useful when we save it?",
+     "o": [
+      "We can use it later",
+      "It turns into food",
+      "It grows by itself in a pocket",
+      "It makes us taller"
+     ],
+     "a": 0,
+     "why": "Saved money keeps its value so we can buy things later.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Mina sells apples and gets coins. What can she do with the coins?",
+     "o": [
+      "Buy things she needs",
+      "Nothing at all, coins are useless",
+      "Only look at them",
+      "Plant them in the garden to grow more"
+     ],
+     "a": 0,
+     "why": "Money from selling can buy other things.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pear costs 2 coins. Ben buys 3 pears. How many coins does he pay?",
+     "a": 6,
+     "tol": 0,
+     "unit": "coins",
+     "why": "3 × 2 = 6 coins.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Ana has 10 coins. She buys a book for 7 coins. How many coins are left?",
+     "a": 3,
+     "tol": 0,
+     "unit": "coins",
+     "why": "10 − 7 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it easier to use money than to swap goods?",
+     "o": [
+      "Everyone can accept money for anything",
+      "Money is heavy and hard to carry about",
+      "Money is a kind of food",
+      "Money is free and anyone can take it"
+     ],
+     "a": 0,
+     "why": "With swapping, both people must want what the other has. Money works for every trade.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the word to its meaning.",
+     "pairs": [
+      [
+       "Coin",
+       "A round piece of metal money"
+      ],
+      [
+       "Note",
+       "A paper piece of money"
+      ],
+      [
+       "Price",
+       "How much something costs"
+      ]
+     ],
+     "why": "These are the basic money words.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A shop in a new country does not take your coins. What is the likely reason?",
+     "o": [
+      "Each country uses its own money",
+      "The coins are fake",
+      "Shops in new places hate coins",
+      "Coins are too small to be seen there"
+     ],
+     "a": 0,
+     "why": "Countries have different kinds of money.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might shells or salt have been used as money long ago?",
+     "o": [
+      "People agreed they were worth something and could swap them",
+      "They were handed out free by the town each morning",
+      "They were made by banks",
+      "Nobody wanted them at all"
+     ],
+     "a": 0,
+     "why": "Money works when people trust it and accept it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do we trust a coin to buy bread when a plain stone cannot?",
+     "rubric": [
+      [
+       "agree",
+       "accept",
+       "trust",
+       "everyone"
+      ],
+      [
+       "money",
+       "coin",
+       "official",
+       "made",
+       "country"
+      ],
+      [
+       "worth",
+       "value",
+       "pay"
+      ]
+     ],
+     "min": 2,
+     "model": "Everyone agrees that coins are worth something, but a stone is not accepted as payment.",
+     "why": "Money works because people accept it.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we keep some money for later?",
+     "o": [
+      "We may need things we cannot yet predict",
+      "Money goes bad if you hold it for too long",
+      "Shops close for ever each year",
+      "Coins fall apart after a day"
+     ],
+     "a": 0,
+     "why": "Saving helps with future needs.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What money is for",
+    "model": "Money is what we use to pay for things like bread. A price tells how much money something costs. We can also save money to use later. For example, I give coins and I get a toy.",
+    "points": [
+     {
+      "k": [
+       "pay",
+       "buy",
+       "use",
+       "spend"
+      ],
+      "ask": "What do we do with money?"
+     },
+     {
+      "k": [
+       "coin",
+       "note",
+       "card",
+       "cash"
+      ],
+      "ask": "What does money look like?"
+     },
+     {
+      "k": [
+       "save",
+       "later",
+       "keep"
+      ],
+      "ask": "Can we keep it for later?"
+     },
+     {
+      "k": [
+       "example",
+       "bread",
+       "toy",
+       "shop",
+       "like"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Buying and selling",
+   "icon": "🛒",
+   "hook": "At a market, one person gives food and the other gives coins. Who is the buyer and who is the seller?",
+   "explain": [
+    "A buyer gives money to get something. A seller gives something and gets money.",
+    "The price is the number of coins the seller asks. The buyer can say yes or no.",
+    "A shop sells things. People buy them. Both can be happy with a fair deal."
+   ],
+   "example": {
+    "q": "A seller sells 4 mangoes at 2 coins each. How many coins does the buyer pay?",
+    "steps": [
+     "Each mango costs 2 coins.",
+     "There are 4 mangoes.",
+     "4 × 2 = 8."
+    ],
+    "a": "8 coins"
+   },
+   "analogies": {
+    "farm": "A farmer sells milk. A family buys it.",
+    "city": "A baker sells bread. A student buys it.",
+    "sea": "A fisher sells fish at the harbour.",
+    "sport": "At a match, a seller offers drinks and fans buy them."
+   },
+   "mnemonic": "Buyer pays, seller gets paid.",
+   "terms": [
+    [
+     "Buyer",
+     "A person who pays to get something."
+    ],
+    [
+     "Seller",
+     "A person who gives something and gets paid."
+    ],
+    [
+     "Shop",
+     "A place that sells things."
+    ],
+    [
+     "Change",
+     "Money given back when you pay too much."
+    ]
+   ],
+   "misc": {
+    "wrong": "Only the seller gains from a sale.",
+    "right": "Both can gain. The buyer gets something useful and the seller gets money."
+   },
+   "limits": "Sometimes prices are not fair, or people feel pushed to buy. Careful shoppers compare before they buy.",
+   "trip": {
+    "wiki": "Market (place)",
+    "prompt": "Look at pictures of markets. Who are the buyers and sellers?"
+   },
+   "sources": [
+    "Market (place)",
+    "Retail"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Who pays money in a sale?",
+     "o": [
+      "The buyer",
+      "The seller",
+      "The shop",
+      "The bus"
+     ],
+     "a": 0,
+     "why": "The buyer pays and the seller is paid.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Who gets the money?",
+     "o": [
+      "The seller",
+      "The buyer",
+      "Nobody",
+      "The customer"
+     ],
+     "a": 0,
+     "why": "The seller gets money for what is sold.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Sita gives 3 coins for a banana. Sita is the...",
+     "o": [
+      "buyer",
+      "seller",
+      "farmer",
+      "baker"
+     ],
+     "a": 0,
+     "why": "She pays, so she is the buyer.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is change?",
+     "o": [
+      "Money given back when you pay too much",
+      "A new shop that opens up in the town",
+      "The price written on a label",
+      "A coin that you have lost on the road"
+     ],
+     "a": 0,
+     "why": "If you pay more than the price, the seller gives change.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Each toy costs 3 coins. Leo buys 2 toys. How many coins does he pay?",
+     "a": 6,
+     "tol": 0,
+     "unit": "coins",
+     "why": "2 × 3 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Zara pays 10 coins for a snack that costs 7 coins. How many coins of change does she get?",
+     "a": 3,
+     "tol": 0,
+     "unit": "coins",
+     "why": "10 − 7 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A seller asks 5 coins for a hat. You think it is too much. What can you do?",
+     "o": [
+      "Say no or look in another shop",
+      "You must buy it, no matter what",
+      "Take it without paying",
+      "Cry until the seller gives it away"
+     ],
+     "a": 0,
+     "why": "Buyers can choose not to buy at that price.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each person to what they do.",
+     "pairs": [
+      [
+       "Buyer",
+       "Pays money"
+      ],
+      [
+       "Seller",
+       "Gives goods and gets money"
+      ],
+      [
+       "Shop",
+       "Place where things are sold"
+      ]
+     ],
+     "why": "These are the parts of a sale.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a sale be good for both people?",
+     "o": [
+      "The buyer gets what they want and the seller gets money",
+      "Only the buyer gains, because they take the thing home",
+      "Only the seller gains",
+      "Nobody gains at all"
+     ],
+     "a": 0,
+     "why": "Each person gets something they value more than what they give.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put the sale in order.",
+     "items": [
+      "Choose something",
+      "Ask the price",
+      "Pay the seller",
+      "Take it home"
+     ],
+     "why": "First choose, then learn the price, then pay, then take the item.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A seller has many apples that no one wants to buy. What might the seller do?",
+     "o": [
+      "Lower the price",
+      "Raise the price a lot",
+      "Throw away all coins",
+      "Hide the apples"
+     ],
+     "a": 0,
+     "why": "A lower price may bring buyers, though the seller must still cover costs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why should a buyer ask the price before paying?",
+     "rubric": [
+      [
+       "know",
+       "enough",
+       "afford",
+       "cost"
+      ],
+      [
+       "money",
+       "coins",
+       "pay"
+      ],
+      [
+       "compare",
+       "choose",
+       "decide",
+       "too much",
+       "fair"
+      ]
+     ],
+     "min": 2,
+     "model": "The buyer needs to know the cost, to see whether they have enough money and decide if it is fair.",
+     "why": "Knowing the price helps us decide.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two shops sell the same bread. One costs 3 coins, one costs 4. What is a careful choice?",
+     "o": [
+      "Compare and buy the cheaper one if quality is the same",
+      "Always buy the dearer one because it must be better",
+      "Buy both loaves",
+      "Buy none and go home"
+     ],
+     "a": 0,
+     "why": "Comparing helps save money when other things are equal.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Buying and selling",
+    "model": "A buyer pays money to get something. A seller gives the thing and gets the money. The price says how much to pay. For example, I pay 2 coins to the baker and get bread.",
+    "points": [
+     {
+      "k": [
+       "buyer",
+       "pay",
+       "pays"
+      ],
+      "ask": "What does a buyer do?"
+     },
+     {
+      "k": [
+       "seller",
+       "sell",
+       "sells",
+       "gets money"
+      ],
+      "ask": "What does a seller do?"
+     },
+     {
+      "k": [
+       "price",
+       "cost",
+       "coins"
+      ],
+      "ask": "How do we know how much to pay?"
+     },
+     {
+      "k": [
+       "example",
+       "bread",
+       "baker",
+       "shop",
+       "like"
+      ],
+      "ask": "Can you show me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Saving money",
+   "icon": "🐷",
+   "hook": "You get 5 coins today. If you spend all of them, what will you have tomorrow?",
+   "explain": [
+    "Saving means keeping some money and not spending it now.",
+    "We save for something big, or for a day when we need money.",
+    "A piggy bank, a jar or a bank can keep savings safe. Saving a little each week adds up."
+   ],
+   "example": {
+    "q": "Omar saves 2 coins each week. How many coins does he have after 4 weeks?",
+    "steps": [
+     "He saves 2 coins each week.",
+     "There are 4 weeks.",
+     "4 × 2 = 8."
+    ],
+    "a": "8 coins"
+   },
+   "analogies": {
+    "home": "A jar on a shelf holds coins for later.",
+    "nature": "A squirrel keeps nuts for winter. That is like saving.",
+    "farm": "A farmer keeps some grain to plant next year.",
+    "tech": "A phone wallet can show how much you have saved."
+   },
+   "mnemonic": "Save a little, grow a lot: drop a coin in the pot.",
+   "terms": [
+    [
+     "Save",
+     "Keep money for later instead of spending it."
+    ],
+    [
+     "Savings",
+     "The money you have saved."
+    ],
+    [
+     "Bank",
+     "A safe place that keeps money."
+    ],
+    [
+     "Goal",
+     "Something you want to reach."
+    ]
+   ],
+   "misc": {
+    "wrong": "Saving means never spending.",
+    "right": "Saving means spending wisely and keeping some for later."
+   },
+   "limits": "Some families cannot save much because they must spend on needs first. Saving is hard when money is short.",
+   "trip": {
+    "wiki": "Saving",
+    "prompt": "Find ways people keep savings safe."
+   },
+   "sources": [
+    "Saving",
+    "Piggy bank"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does it mean to save money?",
+     "o": [
+      "Keep it for later",
+      "Lose it on purpose",
+      "Give it all away today",
+      "Eat it for lunch"
+     ],
+     "a": 0,
+     "why": "Saving is keeping money to use later.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Where can money be kept safe?",
+     "o": [
+      "A bank or a piggy bank",
+      "On the street",
+      "In the rain",
+      "Under a tree for anyone"
+     ],
+     "a": 0,
+     "why": "Banks and piggy banks are safer places.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why might Nia save her coins?",
+     "o": [
+      "To buy a bicycle later",
+      "To lose them",
+      "To hide from friends and not play",
+      "To make the coins grow smaller"
+     ],
+     "a": 0,
+     "why": "Saving helps us reach a goal.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Pia saves 3 coins each week. How many coins does she have after 3 weeks?",
+     "a": 9,
+     "tol": 0,
+     "unit": "coins",
+     "why": "3 × 3 = 9.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A toy costs 12 coins. Sam has saved 7 coins. How many more coins does he need?",
+     "a": 5,
+     "tol": 0,
+     "unit": "coins",
+     "why": "12 − 7 = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is saving?",
+     "o": [
+      "Putting 2 of your 5 coins in a jar",
+      "Spending all 5 coins on sweets now",
+      "Giving all 5 coins away",
+      "Losing 5 coins"
+     ],
+     "a": 0,
+     "why": "Saving means keeping some money.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A squirrel stores nuts for winter. How is this like saving?",
+     "o": [
+      "It keeps food for later",
+      "It eats every nut right now",
+      "It gives all the nuts away",
+      "It forgets where the nuts are"
+     ],
+     "a": 0,
+     "why": "Both keep something for a later time.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The roof leaks and the family needs coins quickly. How does saving help?",
+     "o": [
+      "There is money ready for the problem",
+      "The roof mends itself if you wait long enough",
+      "Saving makes the rain stop falling",
+      "It does not help"
+     ],
+     "a": 0,
+     "why": "Savings can pay for surprises.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the words.",
+     "pairs": [
+      [
+       "Save",
+       "Keep money for later"
+      ],
+      [
+       "Bank",
+       "Safe place for money"
+      ],
+      [
+       "Goal",
+       "Something you want to reach"
+      ]
+     ],
+     "why": "These are the saving words.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which plan helps you reach a 20-coin goal?",
+     "o": [
+      "Put a few coins away each week",
+      "Spend all your coins at once and hope for more",
+      "Wait for new coins to just appear",
+      "Never count your coins"
+     ],
+     "a": 0,
+     "why": "Small steady savings add up.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Some people cannot save much. Which is the best explanation?",
+     "o": [
+      "Needs may use up all their money",
+      "They do not like coins and so give them away",
+      "They are lazy",
+      "Banks are always closed"
+     ],
+     "a": 0,
+     "why": "When needs cost almost all income, there is little to save. It is not about character.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it good to have a goal when you save?",
+     "rubric": [
+      [
+       "goal",
+       "target",
+       "aim",
+       "plan"
+      ],
+      [
+       "know",
+       "keep going",
+       "motivate",
+       "reach",
+       "buy"
+      ],
+      [
+       "how much",
+       "amount",
+       "enough"
+      ]
+     ],
+     "min": 2,
+     "model": "A goal tells you what you are saving for and how much you need, so you keep going until you reach it.",
+     "why": "A goal gives saving a purpose.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If you spend now and save nothing, what is a possible problem?",
+     "o": [
+      "Nothing left for later needs",
+      "You will have too much money",
+      "Coins vanish",
+      "Shops close"
+     ],
+     "a": 0,
+     "why": "Spending everything leaves no money for later.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why we save money",
+    "model": "Saving means keeping some money for later instead of spending it all. We save for a goal or for a day when we need money. For example, I put coins in a jar to buy a bicycle.",
+    "points": [
+     {
+      "k": [
+       "keep",
+       "later",
+       "not spend",
+       "put away"
+      ],
+      "ask": "What does saving mean?"
+     },
+     {
+      "k": [
+       "goal",
+       "buy",
+       "need",
+       "want"
+      ],
+      "ask": "Why would someone save?"
+     },
+     {
+      "k": [
+       "jar",
+       "bank",
+       "piggy",
+       "safe"
+      ],
+      "ask": "Where can I keep it?"
+     },
+     {
+      "k": [
+       "example",
+       "bicycle",
+       "toy",
+       "like"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Goods and services",
+   "icon": "💇",
+   "hook": "A baker makes a loaf. A barber cuts hair. One you can hold. Which one?",
+   "explain": [
+    "Goods are things you can touch, like bread, shoes and books.",
+    "Services are jobs people do for you, like cutting hair, driving a bus or teaching.",
+    "We buy both. Goods are made. Services are done."
+   ],
+   "example": {
+    "q": "Is a haircut a good or a service?",
+    "steps": [
+     "Can you hold a haircut in your hand? No.",
+     "It is something a person does for you.",
+     "So it is a service."
+    ],
+    "a": "A service"
+   },
+   "analogies": {
+    "city": "A bus ride is a service. The bus ticket you hold is a paper good.",
+    "farm": "Eggs are goods. A vet who helps a sick cow gives a service.",
+    "sport": "A football is a good. A coach who trains you gives a service.",
+    "home": "A chair is a good. A plumber who fixes a tap gives a service."
+   },
+   "mnemonic": "Goods you hold. Services are done for you.",
+   "terms": [
+    [
+     "Good",
+     "A thing you can touch and buy."
+    ],
+    [
+     "Service",
+     "Work someone does for you."
+    ],
+    [
+     "Producer",
+     "A person who makes goods or gives services."
+    ],
+    [
+     "Customer",
+     "A person who buys."
+    ]
+   ],
+   "misc": {
+    "wrong": "Only things you can hold are worth paying for.",
+    "right": "Services such as teaching, healing or driving are worth paying for too."
+   },
+   "limits": "Some things mix both, like a restaurant meal that is food (a good) and being served (a service).",
+   "trip": {
+    "wiki": "Goods and services",
+    "prompt": "Find examples of goods and services."
+   },
+   "sources": [
+    "Goods and services",
+    "Service (economics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a good?",
+     "o": [
+      "A pair of shoes",
+      "A haircut",
+      "A bus ride",
+      "A lesson at school"
+     ],
+     "a": 0,
+     "why": "Shoes are things you can touch.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a service?",
+     "o": [
+      "A doctor checking you",
+      "A loaf of warm bread from the baker",
+      "A ball",
+      "A book"
+     ],
+     "a": 0,
+     "why": "A doctor does work for you.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A teacher teaches. This is a...",
+     "o": [
+      "service",
+      "good",
+      "coin",
+      "need only"
+     ],
+     "a": 0,
+     "why": "Teaching is work done for others.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A farmer grows rice. Rice is a...",
+     "o": [
+      "good",
+      "service",
+      "job",
+      "price"
+     ],
+     "a": 0,
+     "why": "Rice is a thing you can touch.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each to good or service.",
+     "pairs": [
+      [
+       "Apple",
+       "A food you can hold"
+      ],
+      [
+       "Taxi ride",
+       "A trip someone drives for you"
+      ],
+      [
+       "Table",
+       "Furniture you can touch"
+      ],
+      [
+       "Haircut",
+       "Work a barber does for you"
+      ]
+     ],
+     "why": "Goods are things. Services are work done for you.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Who gives a service?",
+     "o": [
+      "A bus driver",
+      "A cow in the field",
+      "A chair",
+      "A cup"
+     ],
+     "a": 0,
+     "why": "A driver does work to carry people.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A cook sells you a hot meal. Why is it both a good and a service?",
+     "o": [
+      "You get food, and the cook does work for you",
+      "Food is not a good, and the cook does no work for you",
+      "It has no price and is free",
+      "It is a service only"
+     ],
+     "a": 0,
+     "why": "Some things mix a thing and work.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A haircut costs 4 coins and a comb costs 2 coins. How much for both?",
+     "a": 6,
+     "tol": 0,
+     "unit": "coins",
+     "why": "4 + 2 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Can a service be stored in a box for later?",
+     "o": [
+      "No, it happens when the work is done",
+      "Yes, you can keep it in a box until you want it",
+      "Yes, just like bread",
+      "Only at night"
+     ],
+     "a": 0,
+     "why": "A service is an action, not a thing.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A toy shop sells toys. A repair person fixes your bike. Which is the service?",
+     "o": [
+      "Fixing the bike",
+      "Selling the toys",
+      "The toys themselves",
+      "The door of the shop"
+     ],
+     "a": 0,
+     "why": "Fixing is work done for you.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A video lesson online is not something you can touch. Is it a good or a service?",
+     "o": [
+      "Usually a service, since someone does teaching work",
+      "A good, since you can keep it in a bag",
+      "A coin you can hold",
+      "A shoe"
+     ],
+     "a": 0,
+     "why": "Digital things can be hard to classify, but a lesson is mostly teaching work.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do towns need people who give services as well as people who make goods?",
+     "rubric": [
+      [
+       "need",
+       "help",
+       "useful"
+      ],
+      [
+       "services",
+       "teach",
+       "doctor",
+       "drive",
+       "repair",
+       "clean"
+      ],
+      [
+       "goods",
+       "things",
+       "make",
+       "together"
+      ]
+     ],
+     "min": 2,
+     "model": "People need things such as food and also help such as healing and teaching, so towns need both.",
+     "why": "Both meet needs.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A repair shop fixes a broken radio. Which is the service?",
+     "o": [
+      "The fixing work",
+      "The radio itself",
+      "The shop sign",
+      "The screws"
+     ],
+     "a": 0,
+     "why": "The fixing is the work done for you.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Goods and services",
+    "model": "Goods are things you can touch, like bread and shoes. Services are jobs people do for you, like cutting hair. We buy both. For example, a ball is a good and a coach is a service.",
+    "points": [
+     {
+      "k": [
+       "goods",
+       "thing",
+       "touch",
+       "hold"
+      ],
+      "ask": "What are goods?"
+     },
+     {
+      "k": [
+       "service",
+       "work",
+       "do",
+       "job",
+       "help"
+      ],
+      "ask": "What are services?"
+     },
+     {
+      "k": [
+       "buy",
+       "pay",
+       "both"
+      ],
+      "ask": "Do we pay for both?"
+     },
+     {
+      "k": [
+       "example",
+       "bread",
+       "haircut",
+       "like"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Jobs and earnings",
+   "icon": "👩‍🔧",
+   "hook": "Where do grown-ups get money from? What do they do all day?",
+   "explain": [
+    "A job is work that a person does, and they are paid for it. The money they get is called earnings or pay.",
+    "Farmers, nurses, drivers, builders and teachers all have jobs. Each job helps other people.",
+    "People use their earnings to pay for needs and wants. Some earn more per hour, some less, depending on the work and where they live."
+   ],
+   "example": {
+    "q": "Kim earns 3 coins for each hour. She works 4 hours. How much does she earn?",
+    "steps": [
+     "Pay per hour is 3 coins.",
+     "She works 4 hours.",
+     "4 × 3 = 12."
+    ],
+    "a": "12 coins"
+   },
+   "analogies": {
+    "farm": "A farmer is paid when the crop is sold.",
+    "city": "A bus driver is paid for carrying people.",
+    "sea": "A fisher is paid for fish caught and sold.",
+    "home": "A parent who works earns money for the family's food."
+   },
+   "mnemonic": "Work, earn, spend, save.",
+   "terms": [
+    [
+     "Job",
+     "Work that you are paid for."
+    ],
+    [
+     "Earn",
+     "Get money for work."
+    ],
+    [
+     "Pay",
+     "The money given for work."
+    ],
+    [
+     "Worker",
+     "A person who does a job."
+    ]
+   ],
+   "misc": {
+    "wrong": "Only jobs where you are paid are real work.",
+    "right": "Caring for family at home is real, valuable work even if it is unpaid."
+   },
+   "limits": "Pay is not always fair. People with similar skills can be paid differently, and people argue about why.",
+   "trip": {
+    "wiki": "Occupation",
+    "prompt": "Look for jobs from different countries and what they do."
+   },
+   "sources": [
+    "Employment",
+    "Wage"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a job?",
+     "o": [
+      "Work that you are paid for",
+      "A kind of toy that you can play with",
+      "A game for two",
+      "A place to sleep"
+     ],
+     "a": 0,
+     "why": "A job is work for pay.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Money you get for work is called...",
+     "o": [
+      "earnings",
+      "a need",
+      "a service",
+      "change"
+     ],
+     "a": 0,
+     "why": "Earnings are what a worker gets paid.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which person has a job helping sick people?",
+     "o": [
+      "Nurse",
+      "Baker",
+      "Driver",
+      "Builder"
+     ],
+     "a": 0,
+     "why": "A nurse cares for people who are sick.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Tom earns 5 coins an hour. He works 3 hours. How many coins does he earn?",
+     "a": 15,
+     "tol": 0,
+     "unit": "coins",
+     "why": "3 × 5 = 15.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Rosa earned 20 coins and spent 8 coins on food. How many coins are left?",
+     "a": 12,
+     "tol": 0,
+     "unit": "coins",
+     "why": "20 − 8 = 12.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do people go to work?",
+     "o": [
+      "To earn money for what they need",
+      "Because coins drop from the sky each day",
+      "To stay away from food",
+      "Because the shops are shut"
+     ],
+     "a": 0,
+     "why": "Pay buys the needs of the family.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the worker to what they do.",
+     "pairs": [
+      [
+       "Farmer",
+       "Grows food"
+      ],
+      [
+       "Teacher",
+       "Helps people learn"
+      ],
+      [
+       "Driver",
+       "Carries people or goods"
+      ],
+      [
+       "Builder",
+       "Makes houses"
+      ]
+     ],
+     "why": "Each job helps other people.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a town need many different jobs?",
+     "o": [
+      "People need many different things done",
+      "Everyone wants to do the same job in town",
+      "Jobs are toys",
+      "Only one job pays"
+     ],
+     "a": 0,
+     "why": "No one can do everything alone, so different jobs help each other.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is helping at home a kind of work?",
+     "o": [
+      "Yes, even when nobody pays money",
+      "No, only paid work counts as work",
+      "No, it is only play",
+      "Yes, but only grown-ups can do it"
+     ],
+     "a": 0,
+     "why": "Unpaid work such as caring and cooking is still useful.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put this in order.",
+     "items": [
+      "Do the work",
+      "Get paid",
+      "Buy food",
+      "Save what is left"
+     ],
+     "why": "Work comes first, then pay, then spending and saving.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two workers do the same job in two different countries and get different pay. Which is a good thought?",
+     "o": [
+      "Prices and living costs may differ, so we must look closer",
+      "The worker in the poorer country must be cheating the boss",
+      "Pay is always the same everywhere",
+      "Pay never matters to anyone"
+     ],
+     "a": 0,
+     "why": "Pay and prices differ across places, so we compare carefully.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a baker need a farmer, and a farmer need a baker?",
+     "rubric": [
+      [
+       "flour",
+       "wheat",
+       "grain",
+       "bread"
+      ],
+      [
+       "need",
+       "depend",
+       "help",
+       "each other",
+       "swap",
+       "buy"
+      ],
+      [
+       "money",
+       "pay",
+       "earn",
+       "sell"
+      ]
+     ],
+     "min": 2,
+     "model": "The baker needs grain from the farmer, and the farmer buys bread, so each earns money from the other's work.",
+     "why": "Jobs depend on one another.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might someone learn a new skill?",
+     "o": [
+      "It may help them find a job or earn more",
+      "It makes your coins vanish when you use it",
+      "It stops all work for ever",
+      "It is against the rules"
+     ],
+     "a": 0,
+     "why": "Skills can lead to jobs, though no skill guarantees pay.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Jobs and earnings",
+    "model": "A job is work that you are paid for. The money you get is your earnings. People use earnings to pay for what they need. For example, a farmer grows food, sells it and earns coins.",
+    "points": [
+     {
+      "k": [
+       "job",
+       "work"
+      ],
+      "ask": "What is a job?"
+     },
+     {
+      "k": [
+       "earn",
+       "paid",
+       "pay",
+       "money"
+      ],
+      "ask": "What do people get for work?"
+     },
+     {
+      "k": [
+       "buy",
+       "spend",
+       "need",
+       "food"
+      ],
+      "ask": "What do they do with it?"
+     },
+     {
+      "k": [
+       "example",
+       "farmer",
+       "teacher",
+       "driver",
+       "like"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Scarcity and choice",
+   "icon": "🍰",
+   "hook": "There is one cake and four hungry friends. What can they do?",
+   "explain": [
+    "Scarcity means there is not enough of something for everyone to have all they want.",
+    "Because of scarcity, we must choose. If we pick one thing, we give up another.",
+    "What you give up is called the cost of your choice. Thinking about it helps us choose wisely."
+   ],
+   "example": {
+    "q": "Jo has 5 coins. A kite costs 5 coins and a ball costs 5 coins. What happens if Jo buys the kite?",
+    "steps": [
+     "Jo has 5 coins only.",
+     "The kite uses all 5 coins.",
+     "So Jo cannot buy the ball."
+    ],
+    "a": "Jo gets the kite but gives up the ball."
+   },
+   "analogies": {
+    "home": "One last cookie: if you eat it, your sister cannot.",
+    "farm": "A field can grow maize or beans this year, not both in the same spot.",
+    "sport": "A team can pick only some players for the match.",
+    "city": "A city has money for a new park or a new road, but maybe not both."
+   },
+   "mnemonic": "Scarce means not enough, so choose and let go.",
+   "terms": [
+    [
+     "Scarcity",
+     "Not enough for everyone to have all they want."
+    ],
+    [
+     "Choice",
+     "Picking one thing instead of another."
+    ],
+    [
+     "Give up",
+     "Not take the other thing."
+    ],
+    [
+     "Share",
+     "Let others use some too."
+    ]
+   ],
+   "misc": {
+    "wrong": "Scarcity only happens to poor people.",
+    "right": "Everyone faces scarcity, because time and money are limited for all."
+   },
+   "limits": "People may choose differently and both can be sensible, because they value things differently.",
+   "trip": {
+    "wiki": "Scarcity",
+    "prompt": "Find an example of something that is scarce."
+   },
+   "sources": [
+    "Scarcity",
+    "Opportunity cost"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Scarcity means...",
+     "o": [
+      "there is not enough for everyone to have all they want",
+      "there is far too much of everything to ever use up",
+      "everything is free",
+      "nobody wants anything"
+     ],
+     "a": 0,
+     "why": "Scarce things are limited.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If you buy a kite with all your coins, what happens?",
+     "o": [
+      "You cannot buy something else with those coins",
+      "You get more coins to buy other things as well",
+      "Nothing changes at all",
+      "The coins come back to you"
+     ],
+     "a": 0,
+     "why": "You give up other choices.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "There are 2 slices of cake and 3 children. This is...",
+     "o": [
+      "scarcity",
+      "plenty for all",
+      "a job",
+      "a price on a label"
+     ],
+     "a": 0,
+     "why": "There is not enough for each to have one.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Mina has time for TV or for a bike ride, not both. This shows...",
+     "o": [
+      "a choice",
+      "a price",
+      "an earning",
+      "a savings"
+     ],
+     "a": 0,
+     "why": "Time is limited so she must choose.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "You have 10 coins. A hat costs 6 coins. How many coins are left to spend on something else?",
+     "a": 4,
+     "tol": 0,
+     "unit": "coins",
+     "why": "10 − 6 = 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A cake is cut into 8 equal slices. 4 friends share it equally. How many slices does each get?",
+     "a": 2,
+     "tol": 0,
+     "unit": "slices",
+     "why": "8 ÷ 4 = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Does a rich person also face scarcity?",
+     "o": [
+      "Yes, time and some things are still limited",
+      "No, because having lots of money fixes every limit",
+      "Only on Sundays",
+      "Only children do"
+     ],
+     "a": 0,
+     "why": "Everyone has limited time, and some things cannot be bought.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the idea to its meaning.",
+     "pairs": [
+      [
+       "Scarcity",
+       "Not enough for all wants"
+      ],
+      [
+       "Choice",
+       "Picking one thing over another"
+      ],
+      [
+       "Share",
+       "Let others use some too"
+      ]
+     ],
+     "why": "These words fit together.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A town has coins for a school or a pool. Which is a fair way to choose?",
+     "o": [
+      "Talk about what people need most and why",
+      "Pick without asking anyone",
+      "Flip a coin and never think about it again",
+      "Build neither and say nothing"
+     ],
+     "a": 0,
+     "why": "Fair choices think about needs and listen to people.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does thinking about what we give up help us?",
+     "o": [
+      "It helps us pick the better choice",
+      "It makes things free",
+      "It stops scarcity from ever happening",
+      "It is not useful"
+     ],
+     "a": 0,
+     "why": "Knowing the cost of a choice helps us decide wisely.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Can scarcity ever be fully removed?",
+     "o": [
+      "Unlikely, because people can always want more than exists",
+      "Yes, if everyone agrees to stop wanting things for good",
+      "Yes, by just saying it is gone",
+      "Yes, if we count coins faster"
+     ],
+     "a": 0,
+     "why": "Wants are very large and resources are limited, so choices remain.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Two friends want the last toy. Give one fair way to decide.",
+     "rubric": [
+      [
+       "take turns",
+       "turn",
+       "share",
+       "swap"
+      ],
+      [
+       "ask",
+       "talk",
+       "agree",
+       "discuss"
+      ],
+      [
+       "draw",
+       "toss",
+       "lots",
+       "fair",
+       "coin"
+      ]
+     ],
+     "min": 1,
+     "model": "They can take turns, share, or talk and agree on a fair way such as drawing lots.",
+     "why": "Fair ways let both feel respected.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A family can pay for a trip or a new bed. Which statement is wisest?",
+     "o": [
+      "It depends on their needs; talk and decide together",
+      "The trip is always the better choice, so just book it",
+      "The bed is always right",
+      "They should buy both"
+     ],
+     "a": 0,
+     "why": "Different families value things differently. Good choices weigh needs.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Scarcity and choice",
+    "model": "Scarcity means there is not enough for everyone to have all they want. So we must choose. When we pick one thing, we give up another. For example, with 5 coins I can buy a kite or a ball, not both.",
+    "points": [
+     {
+      "k": [
+       "scarce",
+       "not enough",
+       "limited",
+       "little"
+      ],
+      "ask": "What is scarcity?"
+     },
+     {
+      "k": [
+       "choose",
+       "choice",
+       "pick"
+      ],
+      "ask": "What must we do then?"
+     },
+     {
+      "k": [
+       "give up",
+       "other",
+       "lose",
+       "instead"
+      ],
+      "ask": "What happens to the other thing?"
+     },
+     {
+      "k": [
+       "example",
+       "kite",
+       "ball",
+       "cake",
+       "like"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Sharing and exchanging",
+   "icon": "🤝",
+   "hook": "You have an apple. Your friend has an orange. Can you both end up with something you like more?",
+   "explain": [
+    "Sharing means letting others use or have some of what you have.",
+    "Exchanging, or swapping, means giving something to get something else. Long ago people mostly swapped. This is called barter.",
+    "A swap is good when both people feel they got something they like more than what they gave."
+   ],
+   "example": {
+    "q": "Ali has 2 bananas. Bea has 2 pears. They swap 1 for 1. What does each have?",
+    "steps": [
+     "Ali gives 1 banana and gets 1 pear.",
+     "Bea gives 1 pear and gets 1 banana.",
+     "Each now has 1 banana and 1 pear."
+    ],
+    "a": "Each has 1 banana and 1 pear."
+   },
+   "analogies": {
+    "home": "Siblings share the toy box and swap stickers.",
+    "farm": "A rice farmer swaps with a fisher: rice for fish.",
+    "sea": "Two boats swap salt and fish at the dock.",
+    "sport": "Cards are swapped between fans to finish a set."
+   },
+   "mnemonic": "Give one, get one, both have fun.",
+   "terms": [
+    [
+     "Share",
+     "Let others use or have some of yours."
+    ],
+    [
+     "Exchange",
+     "Give something to get something else."
+    ],
+    [
+     "Barter",
+     "Swapping goods without using money."
+    ],
+    [
+     "Fair",
+     "Treating everyone with respect and equally."
+    ]
+   ],
+   "misc": {
+    "wrong": "A swap only helps one person.",
+    "right": "In a willing swap, both people can feel better off."
+   },
+   "limits": "Barter can be hard because each person must want what the other has. That is one reason money is useful.",
+   "trip": {
+    "wiki": "Barter",
+    "prompt": "Find a place or time where people used barter."
+   },
+   "sources": [
+    "Barter",
+    "Trade"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is barter?",
+     "o": [
+      "Swapping things without money",
+      "Buying things in a shop with coins",
+      "Saving coins in a jar",
+      "Making new coins at home"
+     ],
+     "a": 0,
+     "why": "Barter is swapping goods for goods.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Sharing means...",
+     "o": [
+      "letting others have some too",
+      "keeping it all for yourself alone",
+      "hiding it",
+      "selling it"
+     ],
+     "a": 0,
+     "why": "Sharing gives others a part.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Kaya has extra rice. Ben has extra fish. They swap. Why is this good?",
+     "o": [
+      "Each gets something they want",
+      "Nobody gets anything",
+      "Only Kaya gains from it",
+      "Rice is better than fish, so Ben loses"
+     ],
+     "a": 0,
+     "why": "A willing swap lets each gain what they like more.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What makes a swap fair?",
+     "o": [
+      "Both agree and feel it is a good deal",
+      "One person makes the other agree, even if it hurts",
+      "Nobody speaks a word",
+      "One takes both things"
+     ],
+     "a": 0,
+     "why": "Fair swaps are agreed freely.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "One hen is swapped for 6 eggs. How many eggs for 2 hens at the same rate?",
+     "a": 12,
+     "tol": 0,
+     "unit": "eggs",
+     "why": "2 × 6 = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A basket has 9 mangoes. 3 friends share them equally. How many does each get?",
+     "a": 3,
+     "tol": 0,
+     "unit": "mangoes",
+     "why": "9 ÷ 3 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Mo wants beans, but the bean seller does not want his fish. What is the problem?",
+     "o": [
+      "Barter needs both people to want what the other has",
+      "Beans cost nothing, so nobody needs to swap at all",
+      "Fish is money",
+      "The seller is wrong"
+     ],
+     "a": 0,
+     "why": "Barter needs a match of wants. Money solves that.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each word to its meaning.",
+     "pairs": [
+      [
+       "Barter",
+       "Swap without money"
+      ],
+      [
+       "Share",
+       "Let others have some"
+      ],
+      [
+       "Exchange",
+       "Give to get something"
+      ]
+     ],
+     "why": "These are ways people give and get.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How does money help swaps?",
+     "o": [
+      "It can be used to buy from anyone",
+      "It makes goods go bad faster when carried",
+      "It is very heavy to carry",
+      "It stops people from trading"
+     ],
+     "a": 0,
+     "why": "Money is accepted by everyone, so no matching of wants is needed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put a fair swap in order.",
+     "items": [
+      "Each shows what they have",
+      "They talk and agree",
+      "They swap",
+      "They say thank you"
+     ],
+     "why": "Agree first, then swap.",
+     "d": 1,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Is it always better to share everything?",
+     "o": [
+      "Sharing is kind, but people also need to keep what they need",
+      "Yes, always give away every single thing you own",
+      "No, never share anything",
+      "Only share toys, never food"
+     ],
+     "a": 0,
+     "why": "Sharing is good, yet people must also care for their own needs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a swap make both people happier?",
+     "rubric": [
+      [
+       "want",
+       "need",
+       "like",
+       "value"
+      ],
+      [
+       "different",
+       "other",
+       "more",
+       "less"
+      ],
+      [
+       "both",
+       "each",
+       "gain",
+       "happy",
+       "better"
+      ]
+     ],
+     "min": 2,
+     "model": "Each person values what they get more than what they give, so both gain.",
+     "why": "People value things differently.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A village with lots of fish and a village with lots of grain swap. What good thing happens?",
+     "o": [
+      "Both villages have more kinds of food",
+      "One village ends up with less food than before",
+      "Nobody eats at all",
+      "Food disappears on the road"
+     ],
+     "a": 0,
+     "why": "Trade gives both more choice.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Sharing and swapping",
+    "model": "Sharing means letting others have some of what you have. Swapping, or barter, means giving one thing to get another. A swap is good when both agree and both are happy. For example, I swap my apple for your orange.",
+    "points": [
+     {
+      "k": [
+       "share",
+       "sharing",
+       "some"
+      ],
+      "ask": "What is sharing?"
+     },
+     {
+      "k": [
+       "swap",
+       "exchange",
+       "barter",
+       "trade"
+      ],
+      "ask": "What is swapping?"
+     },
+     {
+      "k": [
+       "both",
+       "agree",
+       "fair",
+       "happy"
+      ],
+      "ask": "When is a swap good?"
+     },
+     {
+      "k": [
+       "example",
+       "apple",
+       "orange",
+       "fish",
+       "like"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Simple personal budgeting",
+   "icon": "📒",
+   "hook": "You get 10 coins each week. How can you plan so you do not run out before the week ends?",
+   "explain": [
+    "A budget is a plan for your money. It says how much comes in and how much goes out.",
+    "A simple budget has three parts: needs, wants and savings. Needs come first.",
+    "Write down the plan, then check it at the end of the week. If money is left, it can go to savings."
+   ],
+   "example": {
+    "q": "Dara has 10 coins. She plans 5 for needs, 3 for wants and the rest for savings. How many coins does she save?",
+    "steps": [
+     "Total: 10 coins.",
+     "Needs and wants: 5 + 3 = 8.",
+     "Savings: 10 − 8 = 2."
+    ],
+    "a": "2 coins"
+   },
+   "analogies": {
+    "home": "A family writes a list: food first, then fun, then a little for the jar.",
+    "farm": "A farmer keeps some grain for food, some to sell and some for seeds.",
+    "city": "A bus pass is bought first; then a snack if coins remain.",
+    "tech": "A phone app can show where your coins went."
+   },
+   "mnemonic": "Plan, spend, check, save.",
+   "terms": [
+    [
+     "Budget",
+     "A plan for how to use money."
+    ],
+    [
+     "Income",
+     "Money that comes in."
+    ],
+    [
+     "Spending",
+     "Money that goes out."
+    ],
+    [
+     "Savings",
+     "Money kept for later."
+    ]
+   ],
+   "misc": {
+    "wrong": "A budget is a rule that stops all fun.",
+    "right": "A budget is a plan that helps you pay for needs, enjoy some wants and save."
+   },
+   "limits": "A budget is a plan, and surprises happen. Plans may need to change when prices or needs change.",
+   "trip": {
+    "wiki": "Budget",
+    "prompt": "Look at how a simple budget is laid out."
+   },
+   "sources": [
+    "Budget",
+    "Personal finance"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A budget is...",
+     "o": [
+      "a plan for your money",
+      "a special coin you keep in a box",
+      "a shop in town",
+      "a toy for kids"
+     ],
+     "a": 0,
+     "why": "A budget plans how money is used.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Money that comes in is called...",
+     "o": [
+      "income",
+      "spending",
+      "change",
+      "scarcity"
+     ],
+     "a": 0,
+     "why": "Income is money received.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In a simple budget, what should be paid first?",
+     "o": [
+      "Needs",
+      "Wants",
+      "Sweets",
+      "Games"
+     ],
+     "a": 0,
+     "why": "Needs come before wants.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "You get 12 coins. You plan 6 for needs, 4 for wants. How many coins are left to save?",
+     "a": 2,
+     "tol": 0,
+     "unit": "coins",
+     "why": "12 − 6 − 4 = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Kito saves 2 coins a week. How many coins after 5 weeks?",
+     "a": 10,
+     "tol": 0,
+     "unit": "coins",
+     "why": "5 × 2 = 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Lia has 15 coins. She spends 9. How many are left?",
+     "a": 6,
+     "tol": 0,
+     "unit": "coins",
+     "why": "15 − 9 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Sam spent all his coins on Monday and needs lunch on Friday. What went wrong?",
+     "o": [
+      "He did not plan for the whole week",
+      "He saved too many coins on Monday and had none for fun",
+      "Lunch is always free",
+      "Coins are heavy"
+     ],
+     "a": 0,
+     "why": "A budget spreads money across the week.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why check your budget at the end of the week?",
+     "o": [
+      "To see what worked and what to change",
+      "To lose some coins and start over again",
+      "To skip saving for good",
+      "Because shops ask to see it"
+     ],
+     "a": 0,
+     "why": "Checking helps us learn and plan better.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the part of a budget.",
+     "pairs": [
+      [
+       "Income",
+       "Money that comes in"
+      ],
+      [
+       "Spending",
+       "Money that goes out"
+      ],
+      [
+       "Savings",
+       "Money kept for later"
+      ]
+     ],
+     "why": "A budget shows all three.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these budget steps in order.",
+     "items": [
+      "Count your coins",
+      "Plan needs, wants and savings",
+      "Spend by the plan",
+      "Check at the end"
+     ],
+     "why": "Know your money, plan, follow it, then review.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Prices rise in the middle of the week. What is a sensible response?",
+     "o": [
+      "Change the plan and keep needs first",
+      "Ignore the new price and keep the old plan exactly",
+      "Spend more on wants",
+      "Stop counting"
+     ],
+     "a": 0,
+     "why": "Budgets can be adjusted. Needs still come first.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a budget useful even if you have only a few coins?",
+     "rubric": [
+      [
+       "plan",
+       "list",
+       "write"
+      ],
+      [
+       "need",
+       "important",
+       "first"
+      ],
+      [
+       "waste",
+       "run out",
+       "enough",
+       "last",
+       "save"
+      ]
+     ],
+     "min": 2,
+     "model": "With few coins every coin matters, so a plan helps pay for needs and avoids running out.",
+     "why": "Planning matters most when money is tight.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two children plan differently: one saves more, one spends more on fun. Which statement is fair?",
+     "o": [
+      "Both can be sensible if needs are covered",
+      "Only the saver is right, and the spender is not",
+      "Only the spender is right",
+      "Neither can plan"
+     ],
+     "a": 0,
+     "why": "People value things differently. A good plan still covers needs.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "A simple budget",
+    "model": "A budget is a plan for your money. It shows what comes in and what you spend. You pay for needs first, then wants, and put some aside to save. For example, with 10 coins I plan 5 for food, 3 for fun and 2 for the jar.",
+    "points": [
+     {
+      "k": [
+       "plan",
+       "budget"
+      ],
+      "ask": "What is a budget?"
+     },
+     {
+      "k": [
+       "need",
+       "first",
+       "food"
+      ],
+      "ask": "What do I pay first?"
+     },
+     {
+      "k": [
+       "save",
+       "savings",
+       "jar",
+       "later"
+      ],
+      "ask": "What about what is left?"
+     },
+     {
+      "k": [
+       "example",
+       "10",
+       "coins",
+       "like"
+      ],
+      "ask": "Can you show me an example?"
+     }
+    ]
+   }
+  }
+ ]
+}

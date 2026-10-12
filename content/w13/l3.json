@@ -1,0 +1,2681 @@
+{
+ "world": 13,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Forks",
+   "icon": "🍴",
+   "hook": "One move, two targets, and your opponent can only save one. How can you set that up on purpose rather than by luck?",
+   "explain": [
+    "A fork is a move in which one piece attacks two or more enemy pieces at once. Because the opponent has only one move, they usually cannot save everything. The attacker wins material. Any piece can fork, but knights are special: their L-shaped attack cannot be blocked, and they are often not attacked by the pieces they fork.",
+    "The most powerful fork is a check combined with an attack on another piece, because the opponent must answer the check first. A knight that checks the king and attacks a queen is a \"royal fork\". Queens fork too, and even pawns: a pawn that advances to attack two pieces is hard to answer.",
+    "To find forks, look for squares that attack two targets and are safe from capture. Ask: can an enemy piece capture my forking piece? And are the targets protected? A fork on protected pieces still wins material if the forker is worth less than the targets."
+   ],
+   "example": {
+    "q": "White knight on e4, Black king g8, Black queen d7, White king g1 and a white pawn on a2. White to move. What wins the queen?",
+    "steps": [
+     "Look for a knight move that checks the king and attacks the queen.",
+     "Nf6+ attacks g8 (check) and d7 (queen) at once.",
+     "The king moves out of check and the knight captures the queen: Nxd7."
+    ],
+    "a": "Nf6+ followed by Nxd7"
+   },
+   "analogies": {
+    "home": "A parent shouting at two children across the room is a fork: they can only run to one.",
+    "city": "A single police car blocking a junction can stop two roads at once.",
+    "farm": "A fox that threatens two hens at once can catch at least one.",
+    "sport": "A striker running between two defenders forces one to choose whom to mark."
+   },
+   "mnemonic": "Fork = a fork on the table: two prongs, two pieces on one stab.",
+   "terms": [
+    [
+     "Fork",
+     "A move by one piece that attacks two or more enemy pieces."
+    ],
+    [
+     "Royal fork",
+     "A knight fork on the king and queen."
+    ],
+    [
+     "Check",
+     "An attack on the king that must be answered first."
+    ]
+   ],
+   "misc": {
+    "wrong": "A fork only works with knights.",
+    "right": "Queens, rooks, bishops and pawns can fork too."
+   },
+   "limits": "A fork only wins material if the forking piece cannot simply be captured and the targets cannot both be defended or moved by one reply.",
+   "trip": {
+    "wiki": "Fork (chess)",
+    "prompt": "Find the diagrams of forks. Which piece does the forking in each, and what does it attack?"
+   },
+   "sources": [
+    "Fork (chess)",
+    "Chess tactic"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a fork?",
+     "o": [
+      "One piece attacks two or more enemy pieces at once",
+      "Two pieces attack one enemy piece at the same time",
+      "A pawn captures en passant",
+      "A move that blocks a check from a rook"
+     ],
+     "a": 0,
+     "why": "A fork gives the opponent too many problems for one move.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "White knight e4, Black king g8, Black queen d7, White pawn a2, White king g1. Which move wins the queen?",
+     "o": [
+      "Nf6+",
+      "Ng5",
+      "Nd6",
+      "Ng3"
+     ],
+     "a": 0,
+     "why": "Nf6 checks the king and attacks the queen on d7.",
+     "d": 2,
+     "k": "apply",
+     "fen": "6k1/3q4/8/8/4N3/8/P7/6K1 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a fork with check especially strong?",
+     "o": [
+      "The opponent must answer the check first",
+      "Checks capture a piece automatically",
+      "A check gives the attacker an extra move",
+      "A check cannot be seen by the opponent"
+     ],
+     "a": 0,
+     "why": "The king must be saved, so the other target falls.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A knight forks a rook and a queen. The queen is protected by a pawn, but the knight is not attacked. What is the result?",
+     "o": [
+      "White wins at least the exchange or the queen for the knight",
+      "Nothing happens because the queen is protected",
+      "The knight is captured by the pawn",
+      "The game is a draw by repetition"
+     ],
+     "a": 0,
+     "why": "Even if the target is protected, a knight (3) for a queen (9) is a big gain.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A knight forks a queen (9) and a rook (5). The opponent saves the queen. How many points do you win?",
+     "a": 5,
+     "tol": 0,
+     "why": "You take the rook, worth 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which piece is hardest to block when forking?",
+     "o": [
+      "The knight",
+      "The rook",
+      "The bishop",
+      "The queen"
+     ],
+     "a": 0,
+     "why": "Its jump cannot be blocked.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Name two things to check before playing a fork.",
+     "rubric": [
+      [
+       "capture",
+       "safe",
+       "attacked",
+       "take",
+       "protected"
+      ],
+      [
+       "target",
+       "protected",
+       "unprotected",
+       "defended",
+       "value"
+      ],
+      [
+       "reply",
+       "answer",
+       "response",
+       "check"
+      ]
+     ],
+     "min": 2,
+     "model": "Check that the forking piece cannot be captured, and that the opponent cannot save both targets with a single reply.",
+     "why": "Forks fail when the forker is lost or both targets are covered.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A pawn move attacks a bishop and a knight at once. What is this called?",
+     "o": [
+      "A pawn fork",
+      "A skewer",
+      "A stalemate",
+      "Castling"
+     ],
+     "a": 0,
+     "why": "Any piece, including a pawn, can fork.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps for finding a fork.",
+     "items": [
+      "List the enemy pieces that are weak or valuable",
+      "Find a square that attacks two of them",
+      "Check that the square is safe",
+      "Play the move"
+     ],
+     "why": "First targets, then square, then safety.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "After a fork, the opponent plays a counter-check instead. What does that show?",
+     "o": [
+      "Forcing moves can interrupt a fork",
+      "The fork was illegal from the start",
+      "The fork cannot be answered by any move",
+      "A fork always wins material by force"
+     ],
+     "a": 0,
+     "why": "Always look at the opponent's forcing replies.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Your knight can fork a king and a rook, but the knight lands on a square attacked by a pawn. What should you do?",
+     "o": [
+      "Do not play it unless you win more than the knight",
+      "Play it anyway, because forks always win material",
+      "Resign, since the knight is lost anyway",
+      "Move the king first and fork later"
+     ],
+     "a": 0,
+     "why": "A fork loses if the forking piece is captured for free.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a knight check be a fork that is hard to meet?",
+     "rubric": [
+      [
+       "block",
+       "blocked",
+       "cannot be blocked",
+       "jump"
+      ],
+      [
+       "move",
+       "capture",
+       "king"
+      ],
+      [
+       "check",
+       "attack"
+      ]
+     ],
+     "min": 1,
+     "model": "A knight check cannot be blocked, so the king must move or the knight must be captured, and the knight's other target is left alone.",
+     "why": "Knight checks cannot be blocked.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If the forked pieces are a king and a pawn, is the fork useful?",
+     "o": [
+      "Only if the pawn is worth winning",
+      "Always, because a fork always wins a king",
+      "Never, because pawns are worthless",
+      "Only when the fork is on the edge of the board"
+     ],
+     "a": 0,
+     "why": "The fork gains whatever the second target is worth.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Chess forks",
+    "model": "A fork is one move that attacks two enemy pieces at once. The opponent can only save one. Knights are great at it, and a fork with check is strongest.",
+    "points": [
+     {
+      "k": [
+       "two",
+       "both",
+       "attack"
+      ],
+      "ask": "What does a fork do?"
+     },
+     {
+      "k": [
+       "knight",
+       "jump"
+      ],
+      "ask": "Which piece is best?"
+     },
+     {
+      "k": [
+       "check",
+       "king"
+      ],
+      "ask": "When is it strongest?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Pins and skewers",
+   "icon": "📌",
+   "hook": "A piece stands still, not because it is blocked, but because moving would be a disaster. How can an attacker freeze a piece without touching it?",
+   "explain": [
+    "A pin happens when an attacking bishop, rook or queen attacks a piece that has another more valuable piece (or the king) behind it on the same line. If the pinned piece moves, the piece behind it is exposed. An absolute pin is a pin against the king: the pinned piece cannot legally move off the line. A relative pin is against a lesser piece: the move is legal but costs material.",
+    "A skewer is the reverse. The more valuable piece is in front and is attacked. When it moves away, the piece behind it is captured. For example, a rook gives check to a king, and a queen stands behind the king on the same line.",
+    "To exploit a pin, attack the pinned piece again, with a pawn if possible. To break a pin, move the piece behind, block, or capture the pinner."
+   ],
+   "example": {
+    "q": "Black king d4, Black queen g4, White pawn b3, White rook a1, White king h1. White to move. What wins the queen?",
+    "steps": [
+     "The king and queen are on the same rank: d4 then g4.",
+     "Ra4+ attacks the king; the queen stands behind it on the same line.",
+     "The king must leave, and then Rxg4 takes the queen."
+    ],
+    "a": "Ra4+ and then Rxg4"
+   },
+   "analogies": {
+    "home": "A cat sitting on your shoelace pins your foot: you cannot move without tripping.",
+    "city": "A bus lane blocked by a van pins the cars behind it.",
+    "farm": "A gate held by a heavy sack pins the sheep inside.",
+    "sport": "A defender marking a striker pins him against the touchline."
+   },
+   "mnemonic": "Pin: the little one cannot move. Skewer: the big one must run.",
+   "terms": [
+    [
+     "Pin",
+     "A piece cannot move without exposing a more valuable piece behind it."
+    ],
+    [
+     "Absolute pin",
+     "A pin against the king: moving the piece is illegal."
+    ],
+    [
+     "Skewer",
+     "An attack on a valuable piece that, when it moves, loses the piece behind it."
+    ]
+   ],
+   "misc": {
+    "wrong": "A pinned piece can never move.",
+    "right": "Only an absolute pin (against the king) makes moving illegal; a relative pin is just costly."
+   },
+   "trip": {
+    "wiki": "Pin (chess)",
+    "prompt": "Find the picture of a pin. What is the pinned piece protecting?"
+   },
+   "sources": [
+    "Pin (chess)",
+    "Skewer (chess)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a pin?",
+     "o": [
+      "A piece cannot move without exposing something more valuable behind it",
+      "One piece attacks two enemy pieces at once",
+      "A pawn reaches the last rank",
+      "A king that has no legal moves"
+     ],
+     "a": 0,
+     "why": "The pinned piece shields the target behind.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Black to move: White bishop b5 attacks the black knight c6, which blocks the line to the king on e8. Can the knight move?",
+     "o": [
+      "No, the pin is against the king",
+      "Yes, it can move anywhere because it is a knight",
+      "Yes, but only to d4",
+      "Yes, but only to a5"
+     ],
+     "a": 0,
+     "why": "An absolute pin makes the knight's move illegal.",
+     "d": 2,
+     "k": "apply",
+     "fen": "4k3/8/2n5/1B6/8/8/8/4K3 b - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Black king d4, Black queen g4, White pawn b3, White rook a1, White king h1. Which move wins the queen?",
+     "o": [
+      "Ra4+",
+      "Rd1+",
+      "Ra3",
+      "Rc1"
+     ],
+     "a": 0,
+     "why": "Ra4+ is a skewer: the king moves and the rook takes the queen.",
+     "d": 3,
+     "k": "apply",
+     "fen": "8/8/8/8/3k2q1/1P6/8/R6K w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "How does a skewer differ from a pin?",
+     "o": [
+      "The more valuable piece is in front",
+      "The pieces form a circle around the king",
+      "It is made only with pawns",
+      "It can only be played by knights"
+     ],
+     "a": 0,
+     "why": "In a skewer the valuable piece must move, exposing the one behind.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which pieces can pin or skewer?",
+     "o": [
+      "Bishops, rooks and queens",
+      "Knights and pawns",
+      "Kings only",
+      "Pawns only"
+     ],
+     "a": 0,
+     "why": "They attack along lines.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How can you attack a piece that is pinned to the king?",
+     "o": [
+      "Attack it again, maybe with a pawn",
+      "Ignore it, since a pinned piece is harmless",
+      "Move your king next to it",
+      "Trade queens to remove the pin"
+     ],
+     "a": 0,
+     "why": "It cannot run away, so an extra attack wins it.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a pinned piece to the king cannot move.",
+     "rubric": [
+      [
+       "king",
+       "check"
+      ],
+      [
+       "illegal",
+       "not allowed",
+       "cannot",
+       "rule",
+       "rules"
+      ],
+      [
+       "expose",
+       "exposes",
+       "attacked",
+       "line",
+       "attack"
+      ]
+     ],
+     "min": 2,
+     "model": "If it moved, the king would be in check from the pinning piece, and a move that leaves your own king in check is illegal.",
+     "why": "The rule protects the king.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order a pin tactic.",
+     "items": [
+      "Find a piece in line with a more valuable one",
+      "Place a bishop, rook or queen on the line",
+      "Attack the pinned piece again",
+      "Win the pinned piece"
+     ],
+     "why": "Aim at the line, then pile on.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rook pins a knight (worth 3) to a queen (worth 9). How many more points is the queen worth than the knight?",
+     "a": 6,
+     "tol": 0,
+     "why": "9 − 3 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which move breaks a pin?",
+     "o": [
+      "Capture the pinning piece",
+      "Move the pinned piece anyway",
+      "Resign",
+      "Promote the pawn"
+     ],
+     "a": 0,
+     "why": "Take, block or move the piece behind.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "What makes a skewer succeed even when the front piece is protected?",
+     "o": [
+      "The front piece is forced away and the one behind is lost",
+      "The back piece is the stronger one and moves first",
+      "The front piece may still move freely without any loss",
+      "The defender is not allowed to move at all"
+     ],
+     "a": 0,
+     "why": "Protecting the front piece does not help the piece behind.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a pin often combined with an attack by a pawn?",
+     "rubric": [
+      [
+       "pawn",
+       "less valuable",
+       "cheap",
+       "worth less",
+       "value"
+      ],
+      [
+       "cannot move",
+       "pinned",
+       "trapped",
+       "stuck",
+       "move away"
+      ],
+      [
+       "win",
+       "wins",
+       "capture",
+       "take"
+      ]
+     ],
+     "min": 2,
+     "model": "A pinned piece cannot run, and a pawn is worth less, so the pawn can attack it and win it.",
+     "why": "Cheap attackers on a stuck piece.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bishop is pinned against its king by an enemy bishop along a diagonal. Can it capture the pinning bishop?",
+     "o": [
+      "Yes, moving along the line of the pin is legal",
+      "No, a pinned piece can never move at all",
+      "Only if it is a queen",
+      "Only on the first move of the game"
+     ],
+     "a": 0,
+     "why": "The king stays shielded because the pinned piece remains on the line.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Pins and skewers",
+    "model": "A pin freezes a piece because moving would expose something more valuable behind it. A skewer attacks the valuable piece first, so it has to move and the piece behind it is lost.",
+    "points": [
+     {
+      "k": [
+       "pin",
+       "frozen",
+       "cannot move"
+      ],
+      "ask": "What is a pin?"
+     },
+     {
+      "k": [
+       "skewer",
+       "valuable",
+       "front"
+      ],
+      "ask": "What is a skewer?"
+     },
+     {
+      "k": [
+       "bishop",
+       "rook",
+       "queen",
+       "line"
+      ],
+      "ask": "Which pieces make them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Discovered attacks",
+   "icon": "🎭",
+   "hook": "A magician moves the curtain and reveals something behind it. Can a chess piece move out of the way and reveal an attack?",
+   "explain": [
+    "A discovered attack happens when you move a piece and uncover an attack by another piece behind it. Two things now happen at once: the moved piece does one job, and the uncovered piece does another. The opponent cannot deal with both.",
+    "A discovered check is the strongest kind. The moved piece uncovers a check on the king, so the opponent must answer the check, and the moved piece can then capture something or make a threat for free. When the moving piece itself also gives check, this is called a double check, and the king must move.",
+    "To find discovered attacks, look for a long-range piece (bishop, rook, queen) with one of your own pieces in front. Ask: where can the front piece go with gain? Take a piece, attack a queen, or create a fork."
+   ],
+   "example": {
+    "q": "White rook e1, White knight e5, White king g1. Black king e8, Black queen d8. White to move. What wins the queen?",
+    "steps": [
+     "The knight on e5 blocks the rook on the e-file to the black king.",
+     "Any knight move uncovers check, so choose one that attacks the queen safely.",
+     "Nc6+ is a discovered check and also attacks the queen on d8. Then Nxd8."
+    ],
+    "a": "Nc6+, then Nxd8"
+   },
+   "analogies": {
+    "home": "You open a curtain and the sun hits the room: moving the curtain reveals the light.",
+    "city": "A bus pulls away, and a cyclist behind it is revealed to traffic.",
+    "farm": "The gate opens and the dog behind it runs out.",
+    "sport": "A forward steps aside and the striker behind him takes the shot."
+   },
+   "mnemonic": "Move the front, reveal the back, double the damage.",
+   "terms": [
+    [
+     "Discovered attack",
+     "Moving one piece to uncover an attack by another."
+    ],
+    [
+     "Discovered check",
+     "A discovered attack on the enemy king."
+    ],
+    [
+     "Double check",
+     "Two pieces give check at once. The king must move."
+    ]
+   ],
+   "misc": {
+    "wrong": "Discovered attacks only work with queens.",
+    "right": "Bishops, rooks and queens can be the hidden attacker, and any piece may be the one that moves."
+   },
+   "trip": {
+    "wiki": "Discovered attack",
+    "prompt": "Find a picture of a discovered check. Which piece moves and which piece gives check?"
+   },
+   "sources": [
+    "Discovered attack",
+    "Double check"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a discovered attack?",
+     "o": [
+      "Moving a piece reveals an attack by another piece",
+      "A pawn promotes to a queen on the last rank",
+      "A king captures an unprotected piece",
+      "A piece is blocked by its own pawn"
+     ],
+     "a": 0,
+     "why": "Two threats in one move.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "White rook e1, knight e5, king g1. Black king e8, queen d8. Which move wins the queen?",
+     "o": [
+      "Nc6+",
+      "Nd7",
+      "Nf3",
+      "Ng4+"
+     ],
+     "a": 0,
+     "why": "Nc6+ is a discovered check and attacks the queen.",
+     "d": 3,
+     "k": "apply",
+     "fen": "3qk3/8/8/4N3/8/8/8/4R1K1 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a discovered check powerful?",
+     "o": [
+      "The opponent must answer the check, so the moving piece is free to do damage",
+      "The check can be answered by ignoring it for one move",
+      "It captures two pieces at the same time",
+      "It ends the game as soon as it is played"
+     ],
+     "a": 0,
+     "why": "The moved piece is not threatened until the check is dealt with.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two pieces give check at once. What is this?",
+     "o": [
+      "Double check",
+      "Stalemate",
+      "Fork",
+      "Skewer"
+     ],
+     "a": 0,
+     "why": "A double check can only be met by moving the king.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can only a king move in a double check?",
+     "o": [
+      "Blocking or capturing deals with only one checker",
+      "Pawns cannot move when a double check is given",
+      "Kings are faster than the other pieces in that case",
+      "It is a special rule that applies to queens only"
+     ],
+     "a": 0,
+     "why": "You cannot stop two attackers with one move, except by moving the king.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A bishop moves with discovered check and captures a rook (5). The opponent then takes the bishop (3). What is the net gain in points for the bishop's side?",
+     "a": 2,
+     "tol": 0,
+     "why": "5 − 3 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of using a discovered check.",
+     "items": [
+      "Spot a long-range piece behind your own piece",
+      "Choose a front-piece move that threatens something",
+      "Play it, giving check",
+      "Win the target next"
+     ],
+     "why": "The check is the forcing part.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is it hard to defend against a discovered attack?",
+     "rubric": [
+      [
+       "two",
+       "both",
+       "double"
+      ],
+      [
+       "threat",
+       "attack",
+       "threats"
+      ],
+      [
+       "one move",
+       "only one",
+       "cannot",
+       "check"
+      ]
+     ],
+     "min": 2,
+     "model": "It creates two threats at once: the uncovered attack and the threat from the moved piece, and the opponent has only one move.",
+     "why": "Two problems, one reply.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A discovered attack is set up with your bishop in front of your rook. What does the rook need?",
+     "o": [
+      "An open line to the target",
+      "A pawn in front",
+      "A knight",
+      "A promoted pawn"
+     ],
+     "a": 0,
+     "why": "The line from rook to target must be clear once the bishop moves.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which front-piece move is best in a discovered check?",
+     "o": [
+      "One that also captures or attacks something valuable",
+      "A random move that hides the rook from view",
+      "A move that blocks the line again at once",
+      "A move by the king to the nearest safe square"
+     ],
+     "a": 0,
+     "why": "Use the free move well.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A knight gives discovered check and lands on a square attacking the queen. What must Black do first?",
+     "o": [
+      "Answer the check",
+      "Move the queen",
+      "Capture the knight with a pawn at once",
+      "Ignore it"
+     ],
+     "a": 0,
+     "why": "A check must be answered before anything else, so the queen is left to fall.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "What is the difference between a discovered check and a double check?",
+     "rubric": [
+      [
+       "one",
+       "two"
+      ],
+      [
+       "move",
+       "king"
+      ],
+      [
+       "block",
+       "capture",
+       "move the king"
+      ]
+     ],
+     "min": 2,
+     "model": "In a discovered check one piece reveals another piece's check. In a double check both the moved piece and the revealed piece give check, so only a king move can help.",
+     "why": "Double means two checkers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is a discovered attack only about checks?",
+     "o": [
+      "No, it can uncover an attack on any piece",
+      "Yes, a discovered attack is always a check",
+      "Only when the hidden piece is a queen",
+      "Only when the target is a pawn"
+     ],
+     "a": 0,
+     "why": "A discovered attack may also threaten a queen or a rook.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Discovered attacks",
+    "model": "A discovered attack moves one piece out of the way and uncovers an attack by another. A discovered check is the strongest, as the opponent must answer the check first.",
+    "points": [
+     {
+      "k": [
+       "move",
+       "uncover",
+       "reveal"
+      ],
+      "ask": "What do you do?"
+     },
+     {
+      "k": [
+       "check",
+       "king"
+      ],
+      "ask": "Why is a check strong?"
+     },
+     {
+      "k": [
+       "double",
+       "two"
+      ],
+      "ask": "What is a double check?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Double attacks",
+   "icon": "✌️",
+   "hook": "You attack your opponent's queen and, with the same move, threaten checkmate. Can they stop both?",
+   "explain": [
+    "A double attack is a single move that creates two threats at once. The threats can be against two pieces, or against a piece and a checkmate, or against a piece and a pawn promotion. A fork is a double attack made by one piece; a double attack can also come from two pieces, for example when a discovered attack uncovers a second threat.",
+    "Why does it work? The opponent has one move. If both threats are real, and no single reply meets them both, you win something. A reply that handles both is possible only if there is a move that, for example, captures the attacker, checks you, or defends both targets at once.",
+    "Before you play a double attack, find the best defence for your opponent. Look at forcing replies: checks, captures and counter-threats. A double attack that allows a counter-check can fail."
+   ],
+   "example": {
+    "q": "Your queen attacks an undefended rook and also threatens mate in one. Your opponent can stop only one. What do you win?",
+    "steps": [
+     "List the two threats: capture the rook, and mate.",
+     "Stopping the mate leaves the rook, so a rook can fall.",
+     "If you stop the rook, you give mate. So the opponent must stop the mate and lose the rook."
+    ],
+    "a": "The rook (worth 5)"
+   },
+   "analogies": {
+    "home": "A parent who warns two children at the same time can only be answered by one at once.",
+    "city": "A tax collector visiting two shops on one trip catches the owners off guard.",
+    "farm": "A farmer fencing two fields at once saves time.",
+    "sport": "A pass that threatens a shot and a through ball confuses a defender."
+   },
+   "mnemonic": "Two threats, one move, no time.",
+   "terms": [
+    [
+     "Double attack",
+     "One move that creates two separate threats."
+    ],
+    [
+     "Threat",
+     "A move you plan to play that would win something."
+    ],
+    [
+     "Counter-threat",
+     "A reply that creates a bigger threat of your own."
+    ]
+   ],
+   "misc": {
+    "wrong": "A double attack always wins material.",
+    "right": "It wins only if no single reply meets both threats, so check the opponent's best defence."
+   },
+   "trip": {
+    "wiki": "Chess tactic",
+    "prompt": "Find the double attack section on the page. Which two threats are shown?"
+   },
+   "sources": [
+    "Chess tactic",
+    "Fork (chess)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a double attack?",
+     "o": [
+      "A move that makes two threats at once",
+      "A pawn that moves two squares",
+      "Two moves made in a row",
+      "A move that gives check twice"
+     ],
+     "a": 0,
+     "why": "Each move is one turn, but there are two threats.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Your queen attacks a rook and a bishop, both undefended. The opponent saves the rook. What do you win?",
+     "o": [
+      "The bishop",
+      "The rook",
+      "Nothing",
+      "The queen"
+     ],
+     "a": 0,
+     "why": "You take the piece that was left.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How is a fork different from a general double attack?",
+     "o": [
+      "A fork is made by one piece",
+      "A fork uses a pawn only",
+      "A fork is a draw",
+      "A fork needs a king"
+     ],
+     "a": 0,
+     "why": "A double attack may come from two pieces.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A double attack: you threaten mate in one and the capture of a rook. The opponent stops the mate. What next?",
+     "o": [
+      "Take the rook",
+      "Resign",
+      "Move the king",
+      "Offer a draw"
+     ],
+     "a": 0,
+     "why": "Their move stopped only one threat.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which defence can refute a double attack?",
+     "o": [
+      "A check that wins time",
+      "Passing",
+      "Moving a pawn on the edge",
+      "Resigning"
+     ],
+     "a": 0,
+     "why": "A forcing reply can change the situation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A queen attacks a rook (5) and a knight (3), both undefended. The opponent saves the rook. How many points do you win?",
+     "a": 3,
+     "tol": 0,
+     "why": "You capture the knight, worth 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why should you look at the opponent's forcing replies before playing a double attack?",
+     "rubric": [
+      [
+       "check",
+       "capture",
+       "forcing",
+       "counter"
+      ],
+      [
+       "refute",
+       "defend",
+       "stop",
+       "fail",
+       "defence",
+       "defense"
+      ],
+      [
+       "lose",
+       "win",
+       "time",
+       "threat"
+      ]
+     ],
+     "min": 2,
+     "model": "The opponent may answer with a check, a capture or a stronger threat, which can stop both of your threats. Always look at forcing replies.",
+     "why": "Forcing moves can break a double attack.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the thinking for a double attack.",
+     "items": [
+      "Find two weak targets",
+      "Find a move that threatens both",
+      "Check the best replies of the opponent",
+      "Play the move"
+     ],
+     "why": "First targets, then move, then safety.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is a double attack by two different pieces?",
+     "o": [
+      "A discovered attack that also attacks something",
+      "A single pawn move to the fourth rank",
+      "Castling on the queenside",
+      "A resignation by the opponent"
+     ],
+     "a": 0,
+     "why": "The uncovered piece and the moved piece each attack a target.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A queen move attacks two pieces, but the queen can be captured by a pawn. What happens?",
+     "o": [
+      "The double attack fails",
+      "It still works",
+      "It wins automatically",
+      "It is mate"
+     ],
+     "a": 0,
+     "why": "A piece that can be captured for free cannot make a double attack.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can one reply sometimes stop two threats?",
+     "o": [
+      "A single move can capture the attacker or defend both targets",
+      "The rules allow a player to make two moves in that case",
+      "Pawns can jump over the attacking piece to safety",
+      "The two threats cancel each other out"
+     ],
+     "a": 0,
+     "why": "This is why a double attack must be checked.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can a threat of mate combine with a threat to a piece?",
+     "rubric": [
+      [
+       "mate",
+       "checkmate"
+      ],
+      [
+       "piece",
+       "queen",
+       "rook",
+       "capture"
+      ],
+      [
+       "cannot",
+       "both",
+       "two",
+       "one move"
+      ]
+     ],
+     "min": 2,
+     "model": "The opponent must stop the mate, and then you capture the piece, because they have only one move to answer two threats.",
+     "why": "The mate threat is forcing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A double attack where one target is a king is a...",
+     "o": [
+      "Check combined with another attack",
+      "A pawn promotion with check",
+      "A stalemate position",
+      "A draw by agreement"
+     ],
+     "a": 0,
+     "why": "The check forces an answer.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Double attacks",
+    "model": "A double attack is a move that creates two threats at once. The opponent has only one reply, so you win something, unless they have a forcing counter. Always check their best reply.",
+    "points": [
+     {
+      "k": [
+       "two",
+       "both",
+       "threat"
+      ],
+      "ask": "What is a double attack?"
+     },
+     {
+      "k": [
+       "one move",
+       "only one",
+       "cannot"
+      ],
+      "ask": "Why does it work?"
+     },
+     {
+      "k": [
+       "check",
+       "capture",
+       "counter",
+       "forcing"
+      ],
+      "ask": "How can it fail?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Tactical combinations",
+   "icon": "🧨",
+   "hook": "A player gives up their queen on purpose and ends up winning. How can a sacrifice be the best move?",
+   "explain": [
+    "A combination is a forcing series of moves, usually with a sacrifice, that leads to a gain. The moves are forcing: checks, captures and threats that the opponent must answer. Because the replies are forced, you can calculate the whole line to the end.",
+    "Common themes inside combinations are deflection (forcing a defender away), decoy (luring a piece onto a bad square), removing the defender, and back-rank mate. A sacrifice gives up material for a bigger gain, such as checkmate or more material back.",
+    "To find a combination, look for weaknesses: an exposed king, an undefended piece or a piece that guards something. Then ask: what forcing move can I make, and what must the opponent reply?"
+   ],
+   "example": {
+    "q": "White queen d3, rook d1, king g1. Black queen d8, rook e8, king g8, pawns f7 g7 h7. White to move. What wins?",
+    "steps": [
+     "Find a forcing capture: Qxd8 takes the queen, and attacks the rook on e8.",
+     "If Black recaptures Rxd8, then Rxd8 is checkmate along the 8th rank (pawns block the king).",
+     "If Black does not recapture, White is a queen ahead."
+    ],
+    "a": "Qxd8, and if Rxd8 then Rxd8#"
+   },
+   "analogies": {
+    "home": "You give a friend your good sweets so they will leave the big prize for you.",
+    "city": "A chess club gives up one court to win a bigger tournament.",
+    "farm": "A farmer lets some sheep go to the lower field so the rest are safe.",
+    "sport": "A team gives up a corner to score a decisive goal."
+   },
+   "mnemonic": "Check, capture, threaten: calculate each forced reply.",
+   "terms": [
+    [
+     "Combination",
+     "A forcing series of moves, often with a sacrifice, that wins."
+    ],
+    [
+     "Sacrifice",
+     "Giving up material to get a bigger advantage."
+    ],
+    [
+     "Deflection",
+     "Forcing a defending piece away from its job."
+    ]
+   ],
+   "misc": {
+    "wrong": "Sacrifices are just risky guesses.",
+    "right": "A good sacrifice is calculated: forcing moves make it predictable."
+   },
+   "trip": {
+    "wiki": "Combination (chess)",
+    "prompt": "Find an example of a famous combination. What was sacrificed, and what did it win?"
+   },
+   "sources": [
+    "Combination (chess)",
+    "Sacrifice (chess)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "White queen d3, rook d1, king g1. Black queen d8, rook e8, king g8, pawns f7 g7 h7. Which move wins?",
+     "o": [
+      "Qxd8",
+      "Qf3",
+      "Rd2",
+      "Qc2"
+     ],
+     "a": 0,
+     "why": "Qxd8 wins the queen, and if Rxd8 then Rxd8 is checkmate.",
+     "d": 3,
+     "k": "apply",
+     "fen": "3qr1k1/5ppp/8/8/8/3Q4/8/3R2K1 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "What is a combination?",
+     "o": [
+      "A forcing series of moves that wins something",
+      "A pawn structure with three pawns in a chain",
+      "A way of castling on both sides",
+      "A type of draw by repetition"
+     ],
+     "a": 0,
+     "why": "Forcing moves make it calculable.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a sacrifice in chess?",
+     "o": [
+      "Giving up material for a bigger gain",
+      "Losing a piece by accident",
+      "Offering a draw to the opponent",
+      "Moving the king to a safe corner"
+     ],
+     "a": 0,
+     "why": "It is deliberate and usually forcing.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can forcing moves be calculated?",
+     "o": [
+      "The opponent has few replies",
+      "The moves are chosen at random",
+      "Players never lose a forcing line",
+      "Forcing moves are illegal to calculate"
+     ],
+     "a": 0,
+     "why": "Checks and captures limit the replies.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is deflection?",
+     "o": [
+      "Forcing a defending piece away from its job",
+      "Moving a pawn to the fourth rank",
+      "Giving a check with the queen",
+      "Castling to protect the king"
+     ],
+     "a": 0,
+     "why": "The piece that guarded something is dragged away.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "You sacrifice a queen (worth 9) and then win a rook (5) and a bishop (3). By how many points are you down in material afterwards?",
+     "a": 1,
+     "tol": 0,
+     "why": "9 − (5 + 3) = 1 point down, which can still be fine if the attack continues.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a queen sacrifice can be a good idea.",
+     "rubric": [
+      [
+       "mate",
+       "checkmate",
+       "win",
+       "winning"
+      ],
+      [
+       "material",
+       "gain",
+       "more",
+       "return",
+       "back"
+      ],
+      [
+       "king",
+       "attack",
+       "forced",
+       "forcing"
+      ]
+     ],
+     "min": 1,
+     "model": "If the sacrifice leads to checkmate or wins more material than it costs, it is good. The calculation matters more than the piece count.",
+     "why": "The result counts.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order a back-rank combination.",
+     "items": [
+      "White plays Qxd8",
+      "Black recaptures Rxd8",
+      "White plays Rxd8",
+      "Checkmate"
+     ],
+     "why": "Each move is forced.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which weakness is common in combinations?",
+     "o": [
+      "An exposed king",
+      "A knight in the centre",
+      "A castled king with luft",
+      "A closed centre"
+     ],
+     "a": 0,
+     "why": "The king is the usual target.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You see a sacrifice that seems to win but you cannot see the end. What should you do?",
+     "o": [
+      "Calculate the forced replies before playing it",
+      "Play it anyway, because sacrifices usually work",
+      "Resign before it is too late",
+      "Offer a draw at once"
+     ],
+     "a": 0,
+     "why": "Do not sacrifice without calculation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are checks useful in combinations?",
+     "o": [
+      "They limit the opponent's replies",
+      "They always win automatically",
+      "They end the game on the spot",
+      "They give the attacker an extra move"
+     ],
+     "a": 0,
+     "why": "The king must be saved.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "In the line Qxd8 Rxd8 Rxd8#, what makes the final move mate?",
+     "rubric": [
+      [
+       "pawn",
+       "pawns",
+       "f7",
+       "g7",
+       "h7"
+      ],
+      [
+       "king",
+       "escape",
+       "trapped",
+       "no square"
+      ],
+      [
+       "rook",
+       "back rank",
+       "rank",
+       "8th"
+      ]
+     ],
+     "min": 2,
+     "model": "The pawns on f7, g7 and h7 block the king, and the rook on d8 attacks along the back rank, so the king has no escape.",
+     "why": "This is a back-rank mate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "When is a combination a mistake?",
+     "o": [
+      "When the opponent has a defence you did not see",
+      "When it uses a queen and a rook together",
+      "When it begins with a check on the king",
+      "When it sacrifices only a single pawn"
+     ],
+     "a": 0,
+     "why": "Always check the best defence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Tactical combinations",
+    "model": "A combination is a forcing series of moves, often including a sacrifice. Because checks and captures limit replies, you can calculate to the end. Look for exposed kings and loose pieces.",
+    "points": [
+     {
+      "k": [
+       "forcing",
+       "check",
+       "capture"
+      ],
+      "ask": "What kind of moves are used?"
+     },
+     {
+      "k": [
+       "sacrifice",
+       "give up"
+      ],
+      "ask": "What is sacrificed?"
+     },
+     {
+      "k": [
+       "calculate",
+       "forced",
+       "end"
+      ],
+      "ask": "How do you know it works?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Pawn structures",
+   "icon": "🧱",
+   "hook": "Pawns can never go backwards, so each pawn move is a promise for the rest of the game. How do the pawns shape the whole plan?",
+   "explain": [
+    "Pawn structure is the arrangement of pawns. It is important because pawns cannot move backwards, so changes are permanent. Good structure supports your pieces and leaves your opponent targets.",
+    "Some common features: a doubled pawn means two pawns of the same colour on one file; an isolated pawn has no friendly pawns on the neighbouring files; a backward pawn is behind its neighbours and cannot safely advance; a passed pawn has no enemy pawns ahead of it on its file or on neighbouring files, so it can run to promotion. A pawn chain is a diagonal line of pawns protecting each other. Pawn islands are groups of pawns separated by files with no friendly pawns.",
+    "Weak pawns create weak squares in front of them. Strong structures, such as a pawn chain or a protected passed pawn, are advantages. Good players try to give their opponent weak pawns and keep their own healthy."
+   ],
+   "example": {
+    "q": "White pawns on a2, c2, c3, f2, g2, h2. Find the doubled pawns and count the pawn islands.",
+    "steps": [
+     "Two pawns on the c file, c2 and c3, are doubled.",
+     "The a pawn stands alone (no pawn on the b file), the c pawns are alone (no b or d pawns), and f, g and h are together.",
+     "That gives three groups: a, c and f-g-h."
+    ],
+    "a": "Doubled c pawns; 3 pawn islands"
+   },
+   "analogies": {
+    "home": "Pawns are like walls in a house: once built, you cannot move them back.",
+    "city": "Roads once laid cannot be undone, so the plan of a city shapes later building.",
+    "farm": "Fences, once built, decide which fields can be used.",
+    "sport": "A team formation changes how the game flows for a long time."
+   },
+   "mnemonic": "Doubled, isolated, passed, backward: know your pawn tribes.",
+   "terms": [
+    [
+     "Doubled pawns",
+     "Two pawns of the same colour on the same file."
+    ],
+    [
+     "Isolated pawn",
+     "A pawn with no friendly pawns on adjacent files."
+    ],
+    [
+     "Passed pawn",
+     "A pawn with no enemy pawn blocking or attacking its way to promotion."
+    ],
+    [
+     "Pawn island",
+     "A group of connected pawns with empty files on either side."
+    ]
+   ],
+   "misc": {
+    "wrong": "Doubled pawns are always terrible.",
+    "right": "They are often a weakness, but can give open lines or other benefits; it depends on the position."
+   },
+   "limits": "Evaluating a structure depends on the whole position: an isolated pawn can be strong when it supports an attack.",
+   "trip": {
+    "wiki": "Pawn structure",
+    "prompt": "Find the diagrams of doubled, isolated and passed pawns on the page."
+   },
+   "sources": [
+    "Pawn structure",
+    "Passed pawn"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What are doubled pawns?",
+     "o": [
+      "Two pawns of the same colour on the same file",
+      "Two pawns of the same colour on the same rank",
+      "Two pawns that have both moved twice",
+      "Two pawns that are both passed pawns"
+     ],
+     "a": 0,
+     "why": "They block each other.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is an isolated pawn?",
+     "o": [
+      "A pawn with no friendly pawns on the neighbouring files",
+      "A pawn that stands on the edge of the board",
+      "A pawn that is attacked by an enemy piece",
+      "A pawn on the seventh rank"
+     ],
+     "a": 0,
+     "why": "It cannot be protected by pawns.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "White pawn on e5; the black pawns are on a7, b7, g7, h7. Is the e5 pawn a passed pawn?",
+     "o": [
+      "Yes, there are no black pawns on the d, e or f files",
+      "No, because there are black pawns on the board",
+      "Only if it is on the seventh rank",
+      "Only if it is protected by another pawn"
+     ],
+     "a": 0,
+     "why": "No black pawns are on its file or neighbouring files.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "White pawns on a2, c2, c3, f2, g2, h2. How many pawn islands does White have?",
+     "a": 3,
+     "tol": 0,
+     "why": "Groups: a; c (c2 and c3); f-g-h. That is 3 islands.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a pawn chain?",
+     "o": [
+      "Pawns on a diagonal protecting each other",
+      "Pawns standing next to each other on one rank",
+      "Pawns that have all been captured",
+      "Pawns on the second rank only"
+     ],
+     "a": 0,
+     "why": "Each pawn protects the next.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why do pawn structure changes last a long time?",
+     "o": [
+      "Pawns cannot move backwards",
+      "Pawns are heavier than the other pieces",
+      "Pawns are slower than the other pieces",
+      "Pawns can be promoted on any rank"
+     ],
+     "a": 0,
+     "why": "A pawn move is permanent.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a passed pawn dangerous for the defender?",
+     "rubric": [
+      [
+       "promote",
+       "promotion",
+       "queen",
+       "last rank",
+       "eighth",
+       "8th"
+      ],
+      [
+       "no pawn",
+       "nothing",
+       "cannot",
+       "blocked",
+       "stop",
+       "pawns"
+      ],
+      [
+       "run",
+       "advance",
+       "far",
+       "forward",
+       "tie",
+       "pieces"
+      ]
+     ],
+     "min": 2,
+     "model": "No enemy pawn can stop or capture it, so it can advance to promotion and the defender must tie up pieces to stop it.",
+     "why": "Passed pawns are strong in the endgame.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the pawn term to its meaning.",
+     "pairs": [
+      [
+       "Doubled",
+       "Two on one file"
+      ],
+      [
+       "Isolated",
+       "No friendly pawn on neighbouring files"
+      ],
+      [
+       "Passed",
+       "No enemy pawn can stop it by capture or block"
+      ],
+      [
+       "Chain",
+       "A diagonal line of mutual protection"
+      ]
+     ],
+     "why": "Each term describes a structure.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A pawn is behind its neighbours and the square in front is controlled by an enemy pawn. What is it called?",
+     "o": [
+      "A backward pawn",
+      "A passed pawn",
+      "A pawn island",
+      "A doubled pawn"
+     ],
+     "a": 0,
+     "why": "It cannot safely advance.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You have an isolated pawn. A good plan is to...",
+     "o": [
+      "Keep it protected by pieces and use the active play it gives",
+      "Ignore it and hope the opponent does not notice",
+      "Trade off all the pieces at once",
+      "Sacrifice it for nothing"
+     ],
+     "a": 0,
+     "why": "An isolated pawn can be a strength or a weakness.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can an isolated pawn be a weakness in the endgame?",
+     "o": [
+      "Only pieces can protect it",
+      "It is too small to be defended by a piece",
+      "It cannot move once it is isolated",
+      "It blocks its own king from escaping"
+     ],
+     "a": 0,
+     "why": "Pieces are tied to its defence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A pawn chain points toward the opponent's side. Where do you attack the chain?",
+     "rubric": [
+      [
+       "base",
+       "bottom",
+       "back",
+       "rear"
+      ],
+      [
+       "chain",
+       "pawn",
+       "protect"
+      ],
+      [
+       "weak",
+       "weakest",
+       "undefended"
+      ]
+     ],
+     "min": 1,
+     "model": "Attack the base of the chain, because the front pawns are protected by the one behind and the base has no pawn protecting it.",
+     "why": "The base is the weak link.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is a doubled pawn always bad?",
+     "o": [
+      "No, it may open a file or control squares",
+      "Yes, doubled pawns are always lost",
+      "Only for White",
+      "Only for Black"
+     ],
+     "a": 0,
+     "why": "It depends on the position.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Pawn structures",
+    "model": "Pawn structure is how the pawns are arranged. Doubled pawns, isolated pawns and backward pawns can be weak. Passed pawns and pawn chains are strengths. Pawns cannot go back, so the structure lasts.",
+    "points": [
+     {
+      "k": [
+       "doubled",
+       "isolated",
+       "backward"
+      ],
+      "ask": "What are weak pawns?"
+     },
+     {
+      "k": [
+       "passed",
+       "promote"
+      ],
+      "ask": "What is a strong pawn?"
+     },
+     {
+      "k": [
+       "cannot go back",
+       "permanent",
+       "backward",
+       "last"
+      ],
+      "ask": "Why does it matter for a long time?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Positional evaluation",
+   "icon": "⚖️",
+   "hook": "Two positions have the same pieces, but one side is clearly better. What do strong players see that a piece count does not show?",
+   "explain": [
+    "To evaluate a position, count material first: pawn 1, knight 3, bishop 3, rook 5, queen 9. Then look at other factors: king safety, piece activity (how many squares pieces control), pawn structure, control of the centre and open files, and space. Having the two bishops against a bishop and a knight (the bishop pair) is often a small plus, especially in open positions.",
+    "Material is not everything. A rook is worth about five pawns, but a rook locked behind its own pawns may be less useful than an active knight. A passed pawn or an attack on the king can be worth more than material. On the other hand, a material lead usually wins if you stay safe and trade pieces.",
+    "A good method: compare both kings, then the pieces, then the pawns. Ask: Whose king is safer? Whose pieces are more active? Who has the better pawn structure? Then choose a plan that improves your worst piece."
+   ],
+   "example": {
+    "q": "White: queen, 2 rooks, bishop, knight, 5 pawns. Black: queen, 2 rooks, 2 bishops, 4 pawns. Who leads in material?",
+    "steps": [
+     "White: 9 + 5 + 5 + 3 + 3 + 5 = 30.",
+     "Black: 9 + 5 + 5 + 3 + 3 + 4 = 29.",
+     "White leads by 1 point, but Black has the bishop pair."
+    ],
+    "a": "White by 1 point"
+   },
+   "analogies": {
+    "home": "Judging a room is not just counting furniture; it is how comfortable it is to live in.",
+    "city": "A city is rich not only for its size but for its roads, services and safety.",
+    "farm": "A farm's value is the land, the water, the tools and the health of the animals, not just the number of animals.",
+    "sport": "A team is rated not just by its number of stars but how well they play together."
+   },
+   "mnemonic": "Count the pieces, then weigh the things you cannot count: king, activity, pawns, space.",
+   "terms": [
+    [
+     "Material",
+     "The total value of the pieces and pawns."
+    ],
+    [
+     "Activity",
+     "How many squares and targets your pieces control."
+    ],
+    [
+     "Bishop pair",
+     "Having both bishops while the opponent does not."
+    ],
+    [
+     "Space",
+     "The area of the board your pawns and pieces control."
+    ]
+   ],
+   "misc": {
+    "wrong": "The side with more material is always winning.",
+    "right": "Material usually matters most, but king safety, activity and structure can outweigh a small lead."
+   },
+   "limits": "Piece values are guides, not exact: they change with the position, and engines give slightly different values.",
+   "trip": {
+    "wiki": "Chess strategy",
+    "prompt": "Find the section on evaluating a position. Which factors are listed besides material?"
+   },
+   "sources": [
+    "Chess strategy",
+    "Chess piece relative value"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is the usual value of a rook?",
+     "o": [
+      "5 points",
+      "3 points",
+      "9 points",
+      "1 point"
+     ],
+     "a": 0,
+     "why": "Pawn 1, knight 3, bishop 3, rook 5, queen 9.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "White has a queen, 2 rooks, a bishop, a knight and 5 pawns. Black has a queen, 2 rooks, 2 bishops and 4 pawns. By how many points does White lead in material? (Use 1, 3, 3, 5, 9; give White minus Black.)",
+     "a": 1,
+     "tol": 0,
+     "why": "White 30, Black 29. Difference: 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor is NOT part of positional evaluation?",
+     "o": [
+      "The colour of the chessboard",
+      "The safety of the king",
+      "The activity of the pieces",
+      "The structure of the pawns"
+     ],
+     "a": 0,
+     "why": "Board colour does not matter.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can an active knight be better than a passive rook?",
+     "o": [
+      "It controls more squares and makes threats",
+      "Knights are always worth more than rooks",
+      "Rooks cannot move once they are locked in",
+      "Knights cannot be captured by pawns"
+     ],
+     "a": 0,
+     "why": "Activity matters more than the number alone.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You are a pawn down but your opponent's king is exposed to an attack. What should you consider?",
+     "o": [
+      "The attack may be worth more than the pawn",
+      "Resign immediately because a pawn is lost",
+      "Trade queens as soon as you can",
+      "Ignore the exposed king"
+     ],
+     "a": 0,
+     "why": "King safety can outweigh a small material gap.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the bishop pair?",
+     "o": [
+      "Having both bishops while the opponent has fewer bishops",
+      "Two bishops standing on squares of one colour",
+      "A bishop and a pawn on adjacent squares",
+      "Two bishops that have just been traded off"
+     ],
+     "a": 0,
+     "why": "The pair covers squares of both colours.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why trading pieces helps the side that is ahead in material.",
+     "rubric": [
+      [
+       "simpler",
+       "simplify",
+       "fewer",
+       "less",
+       "trade"
+      ],
+      [
+       "ahead",
+       "advantage",
+       "lead",
+       "more material"
+      ],
+      [
+       "bigger",
+       "proportion",
+       "king",
+       "endgame",
+       "pawn",
+       "promote"
+      ]
+     ],
+     "min": 2,
+     "model": "With fewer pieces the extra material is more important and the opponent has fewer ways to attack, so the leader can reach a winning endgame.",
+     "why": "Trade when ahead.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in a sensible order for evaluating a position.",
+     "items": [
+      "Count material",
+      "Compare king safety",
+      "Compare piece activity",
+      "Compare pawn structure",
+      "Choose a plan"
+     ],
+     "why": "First what you can count, then the rest, then act.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which side has more space?",
+     "o": [
+      "The side whose pawns and pieces control more squares in the other half of the board",
+      "The side whose king stands in the centre of the board",
+      "The side that has fewer pawns on the board",
+      "The side that moves first, in every game"
+     ],
+     "a": 0,
+     "why": "Space is control of territory.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You can win a pawn but your rook will be locked out of the game. Is it always right to take?",
+     "o": [
+      "No, activity can matter more",
+      "Yes, a pawn is always worth taking",
+      "Yes, if the piece is a knight",
+      "Only on the third move"
+     ],
+     "a": 0,
+     "why": "A pawn is not worth losing your coordination.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two positions have equal material. What decides who is better?",
+     "o": [
+      "King safety, activity and structure",
+      "The colour of the pieces",
+      "The number of moves played so far",
+      "The names of the players"
+     ],
+     "a": 0,
+     "why": "These are the positional factors.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a rook (5) be worth less than a bishop and knight (6) together in some positions?",
+     "rubric": [
+      [
+       "two",
+       "more pieces",
+       "two pieces",
+       "pair"
+      ],
+      [
+       "coordinate",
+       "active",
+       "attack",
+       "help",
+       "work together",
+       "mate"
+      ],
+      [
+       "rook",
+       "locked",
+       "closed",
+       "blocked"
+      ]
+     ],
+     "min": 1,
+     "model": "Two minor pieces can cooperate and attack from many sides, while a rook needs open files and may be blocked.",
+     "why": "Values depend on the position.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a good reason to give up a pawn?",
+     "o": [
+      "To get a lasting initiative or attack",
+      "To lose a game",
+      "To open the rook's file by accident",
+      "No reason"
+     ],
+     "a": 0,
+     "why": "A sacrifice can pay off in activity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Positional evaluation",
+    "model": "To judge a position, count material, then compare king safety, piece activity, pawn structure, space and the centre. Material usually matters, but not always.",
+    "points": [
+     {
+      "k": [
+       "material",
+       "count",
+       "points"
+      ],
+      "ask": "What do I count first?"
+     },
+     {
+      "k": [
+       "king",
+       "safety",
+       "safe"
+      ],
+      "ask": "What next?"
+     },
+     {
+      "k": [
+       "activity",
+       "active",
+       "pawn",
+       "space",
+       "structure"
+      ],
+      "ask": "What else matters?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Basic endgames",
+   "icon": "👑",
+   "hook": "When most pieces are gone, a lone king can suddenly be a fighter. How do you win a game with just a king and one or two pieces?",
+   "explain": [
+    "The endgame is the stage with few pieces. The king becomes a strong piece, so bring it to the centre. Key winning ideas: promote a pawn, and checkmate with a queen or rook. A king and queen can force checkmate against a lone king; a king and rook can too. A lone king against king and pawn depends on opposition: kings face each other with one square between them, and the player who does not have to move has the opposition and can force the other king aside.",
+    "Not every extra piece wins. King and bishop, or king and knight, against a lone king is a draw because mate is not possible. Two knights cannot force checkmate against a lone king. Beware of stalemate: when you are far ahead, make sure the enemy king has a legal move or is in check.",
+    "In pawn endings, a passed pawn far from the enemy king is strong. A rook pawn (a or h file) is a special case: the defending king can sometimes reach the corner in front of the pawn and draw."
+   ],
+   "example": {
+    "q": "White king f6, queen g2. Black king h8. White to move. Find mate in one.",
+    "steps": [
+     "Black king on h8 has two squares to go: g8 and h7.",
+     "Qg7 attacks both squares and is protected by the king on f6.",
+     "The black king cannot capture the queen, so Qg7 is checkmate."
+    ],
+    "a": "Qg7#"
+   },
+   "analogies": {
+    "home": "In a small room with just two people, each person matters more.",
+    "city": "On a quiet street the policeman can go anywhere, so a lone officer can catch a thief.",
+    "farm": "With only a few animals left, the farmer himself must help with all the work.",
+    "sport": "In a last-minute game with few players left, everyone has to run."
+   },
+   "mnemonic": "Bring the king, make a passed pawn, watch for stalemate.",
+   "terms": [
+    [
+     "Endgame",
+     "The stage of the game with few pieces left."
+    ],
+    [
+     "Opposition",
+     "Kings face each other with one square between; the player not to move has it."
+    ],
+    [
+     "Zugzwang",
+     "A position where any move makes things worse."
+    ],
+    [
+     "Rook pawn",
+     "A pawn on the a or h file."
+    ]
+   ],
+   "misc": {
+    "wrong": "King and bishop against a king can win.",
+    "right": "Neither king and bishop nor king and knight can checkmate a lone king."
+   },
+   "limits": "Endgames have many exact results found by computers (tablebases); these are guides for the simple cases only.",
+   "trip": {
+    "wiki": "Chess endgame",
+    "prompt": "Find the diagram of a basic checkmate. How many pieces deliver it?"
+   },
+   "sources": [
+    "Chess endgame",
+    "Opposition (chess)",
+    "Stalemate"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "White king f6, queen g2, Black king h8. Which move is mate?",
+     "o": [
+      "Qg7#",
+      "Qg8+",
+      "Qh2+",
+      "Qg6"
+     ],
+     "a": 0,
+     "why": "The queen on g7 is protected by the king and covers g8 and h7.",
+     "d": 2,
+     "k": "apply",
+     "fen": "7k/8/5K2/8/8/8/6Q1/8 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Which cannot checkmate a lone king?",
+     "o": [
+      "King and knight",
+      "King and queen",
+      "King and rook",
+      "King, bishop and knight"
+     ],
+     "a": 0,
+     "why": "Mate needs more than one minor piece.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the opposition?",
+     "o": [
+      "Kings face each other with one square between them",
+      "Kings standing on adjacent squares",
+      "Kings standing on squares of the same colour",
+      "Kings standing on the edge of the board"
+     ],
+     "a": 0,
+     "why": "The player not to move has the opposition.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why should the king come to the centre in the endgame?",
+     "o": [
+      "There are few pieces to attack it, and it can help pawns",
+      "It is a rule of the game once the queens leave",
+      "The queen asks the king to come forward",
+      "It is always safer on the edge, even in the endgame"
+     ],
+     "a": 0,
+     "why": "The king becomes active.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You have a queen against a lone king and your opponent has no legal move but is not in check. What is the result?",
+     "o": [
+      "A draw by stalemate",
+      "A win for you",
+      "A win for the opponent",
+      "Play continues"
+     ],
+     "a": 0,
+     "why": "Stalemate is a draw.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a rook pawn often draw?",
+     "o": [
+      "The defending king can reach the corner in front of the pawn",
+      "Rook pawns cannot promote at all",
+      "Rook pawns are worth less than other pawns",
+      "Kings are not allowed to capture rook pawns"
+     ],
+     "a": 0,
+     "why": "The corner square is a safe haven.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why two knights cannot force mate against a lone king.",
+     "rubric": [
+      [
+       "cannot",
+       "not",
+       "impossible"
+      ],
+      [
+       "force",
+       "forced",
+       "trap",
+       "corner"
+      ],
+      [
+       "king",
+       "escape",
+       "draw"
+      ]
+     ],
+     "min": 2,
+     "model": "The lone king can always avoid being cornered by two knights, because the knights cannot take away enough squares by force. The mate only happens if the defender blunders.",
+     "why": "It is a known result in endgame theory.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order a winning plan with a passed pawn.",
+     "items": [
+      "Bring the king to the centre",
+      "Support the passed pawn with the king",
+      "Push the pawn",
+      "Promote it to a queen"
+     ],
+     "why": "Use the king as a helper.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "White king on e5, Black king on e7, Black to move, no other pieces. Who has the opposition?",
+     "o": [
+      "White, because Black has to move",
+      "Black, because Black is moving",
+      "Neither king",
+      "Both kings"
+     ],
+     "a": 0,
+     "why": "One square (e6) separates the kings on the same file; the side not to move has the opposition.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which should you do before making a move in a won endgame?",
+     "o": [
+      "Check that you do not stalemate the opponent",
+      "Hurry before the opponent finds a defence",
+      "Give up the queen to simplify",
+      "Move the king as far away as possible"
+     ],
+     "a": 0,
+     "why": "Careless play wastes a win.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is the player who does not have to move said to \"have the opposition\"?",
+     "o": [
+      "The other king must give way",
+      "They own the squares",
+      "They win a pawn",
+      "It is a rule of notation"
+     ],
+     "a": 0,
+     "why": "The side to move is in zugzwang-like trouble.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is stalemate such a common defensive resource in endgames?",
+     "rubric": [
+      [
+       "no move",
+       "cannot move",
+       "no legal"
+      ],
+      [
+       "draw",
+       "tie",
+       "saves",
+       "save"
+      ],
+      [
+       "not in check",
+       "king"
+      ]
+     ],
+     "min": 2,
+     "model": "If the weaker side has no legal move but is not in check, the game is a draw. Defenders use it to save lost positions.",
+     "why": "The stronger side must avoid it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is true about king and rook against king?",
+     "o": [
+      "It is a win with correct technique",
+      "It is always a draw, whatever the position",
+      "It is a loss for the side with the rook",
+      "It needs an extra pawn to win"
+     ],
+     "a": 0,
+     "why": "The rook helps cut off and mate the king.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basic endgames",
+    "model": "In the endgame the king is strong. A queen or a rook with a king can force checkmate. King and a single minor piece cannot. Watch for stalemate and use opposition.",
+    "points": [
+     {
+      "k": [
+       "king",
+       "centre",
+       "center",
+       "active"
+      ],
+      "ask": "What does the king do?"
+     },
+     {
+      "k": [
+       "queen",
+       "rook",
+       "mate"
+      ],
+      "ask": "What can force mate?"
+     },
+     {
+      "k": [
+       "stalemate",
+       "opposition"
+      ],
+      "ask": "What must I watch?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Multi-step reasoning and calculation",
+   "icon": "🔢",
+   "hook": "To choose a good move you often need to look several moves ahead. How can you keep it all in your head without getting lost?",
+   "explain": [
+    "Calculation means looking at sequences of moves in your head. A good method is to list candidate moves, then check forcing moves first: checks, captures and threats. For each, picture the position after your move, then the best reply, then your next move. Count material at the end of the line.",
+    "When counting a sequence of captures, add what you win and subtract what you lose, from your side. For example: your knight (3) takes a pawn (1), a pawn takes your knight, and your queen takes that pawn. You gained 1 + 1 = 2 and lost 3, so the net is −1. Recount at the end.",
+    "Multi-step reasoning also applies to distances and races. A king moves one square in any direction, so it needs as many moves as the larger of the file or rank difference. Pawns in a race: count the moves each needs to promote, and remember who moves first."
+   ],
+   "example": {
+    "q": "A white knight takes a pawn. A black pawn takes the knight. A white queen takes that pawn. What is the net material change for White? (pawn = 1, knight = 3)",
+    "steps": [
+     "White gains a pawn: +1.",
+     "White loses the knight: −3, so the running total is −2.",
+     "White gains the pawn on the recapture: +1, so the total is −1."
+    ],
+    "a": "−1 point"
+   },
+   "analogies": {
+    "home": "Planning your route to school in your head: first the road, then the corner, then the gate.",
+    "city": "A taxi driver plans several turns before starting the trip.",
+    "farm": "A farmer plans the order of the jobs: first plough, then sow, then water.",
+    "sport": "A snooker player thinks several shots ahead."
+   },
+   "mnemonic": "Candidates, forcing first, picture the end, count the score.",
+   "terms": [
+    [
+     "Candidate move",
+     "A move worth considering."
+    ],
+    [
+     "Forcing move",
+     "A check, capture or threat that limits the replies."
+    ],
+    [
+     "Horizon",
+     "How far ahead you can calculate."
+    ]
+   ],
+   "misc": {
+    "wrong": "Calculating means looking at every possible move.",
+    "right": "Good calculation looks at the forcing and sensible moves, not all moves."
+   },
+   "trip": {
+    "wiki": "Computer chess",
+    "prompt": "Find out roughly how many moves ahead computers look compared with the strong human idea of candidates."
+   },
+   "sources": [
+    "Chess",
+    "Computer chess"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A king is on a1. What is the smallest number of king moves to reach h8 on an empty board?",
+     "a": 7,
+     "tol": 0,
+     "why": "The king moves one step diagonally each time, 7 steps across and 7 up, so 7 moves.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A knight takes a pawn (1), a pawn takes the knight (3), and the queen takes that pawn (1). What is the net material change for the side that began?",
+     "o": [
+      "−1 point",
+      "+1 point",
+      "−3 points",
+      "+3 points"
+     ],
+     "a": 0,
+     "why": "+1 − 3 + 1 = −1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A rook is on a1 on an empty board. How many moves does a rook need to reach h8?",
+     "o": [
+      "2",
+      "1",
+      "3",
+      "4"
+     ],
+     "a": 0,
+     "why": "a1 to a8 (or h1), then to h8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A bishop on c1 wants to reach d1 in a single move. Why can it not?",
+     "o": [
+      "d1 is a light square and the bishop stays on dark squares",
+      "Bishops cannot move sideways because they are pinned",
+      "d1 is always occupied",
+      "A bishop can move only two squares"
+     ],
+     "a": 0,
+     "why": "c1 is dark and d1 is light; a bishop never changes colour. (Also, d1 is a straight step, not a diagonal.)",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In which order should you look at moves?",
+     "o": [
+      "Checks, captures and threats first",
+      "Quiet moves first, since they are safer",
+      "Pawn moves first, since they are cheap",
+      "King moves first, since the king is important"
+     ],
+     "a": 0,
+     "why": "Forcing moves limit the replies.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "White pawn on h2 and black pawn on a7, racing on opposite sides of the board with nothing in the way. White moves first. How many moves does White need to promote? (Use the pawn's double step.)",
+     "a": 5,
+     "tol": 0,
+     "why": "h2-h4, h5, h6, h7, h8 is 5 moves.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Same pawn race. Black pawn on a7 needs 5 moves to reach a1 (a5, a4, a3, a2, a1). Who promotes first if White moves first?",
+     "o": [
+      "White",
+      "Black",
+      "They promote together",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "White makes its 5th move before Black makes its 5th.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Describe a method for calculating a tactic.",
+     "rubric": [
+      [
+       "candidate",
+       "options",
+       "list"
+      ],
+      [
+       "forcing",
+       "check",
+       "capture",
+       "threat"
+      ],
+      [
+       "reply",
+       "response",
+       "opponent",
+       "best defence",
+       "best defense"
+      ],
+      [
+       "count",
+       "material",
+       "end",
+       "result"
+      ]
+     ],
+     "min": 3,
+     "model": "List candidate moves, start with forcing ones, picture the opponent's best reply, repeat, and count the material at the end.",
+     "why": "This keeps calculation organised.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the calculation steps.",
+     "items": [
+      "List candidate moves",
+      "Check forcing moves first",
+      "Consider the best reply",
+      "Count the result"
+     ],
+     "why": "A clear process avoids mistakes.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A knight needs at least how many moves to go from a1 to h8 on an empty board?",
+     "a": 6,
+     "tol": 0,
+     "why": "The corner-to-corner knight trip needs 6 moves.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is \"seeing the end\" important in calculation?",
+     "o": [
+      "A line can look good in the middle but lose at the end",
+      "Only the end of a line counts under the rules",
+      "The middle of a line does not matter at all",
+      "It is just a custom among strong players"
+     ],
+     "a": 0,
+     "why": "Always count material at the end of the line.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do strong players avoid calculating every possible move?",
+     "rubric": [
+      [
+       "too many",
+       "impossible",
+       "time",
+       "large",
+       "huge"
+      ],
+      [
+       "candidate",
+       "sensible",
+       "forcing",
+       "relevant",
+       "prune",
+       "filter"
+      ],
+      [
+       "focus",
+       "best",
+       "good"
+      ]
+     ],
+     "min": 2,
+     "model": "There are far too many possible lines, so they focus on candidate moves, especially forcing ones, and ignore hopeless moves.",
+     "why": "Selective search saves time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You calculate a line and find a refutation on the last move. What do you do?",
+     "o": [
+      "Look for a better candidate",
+      "Play it anyway, because the line may still work",
+      "Resign the game at once",
+      "Offer a draw to avoid the risk"
+     ],
+     "a": 0,
+     "why": "Do not play an unsound line.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Multi-step reasoning",
+    "model": "To calculate, list candidate moves, look at forcing moves first, imagine the opponent's best reply, and count the result at the end. Keep material counts as you go.",
+    "points": [
+     {
+      "k": [
+       "candidate",
+       "list"
+      ],
+      "ask": "Where do I start?"
+     },
+     {
+      "k": [
+       "forcing",
+       "check",
+       "capture",
+       "threat"
+      ],
+      "ask": "What do I look at first?"
+     },
+     {
+      "k": [
+       "count",
+       "material",
+       "end"
+      ],
+      "ask": "How do I judge the line?"
+     }
+    ]
+   }
+  }
+ ]
+}

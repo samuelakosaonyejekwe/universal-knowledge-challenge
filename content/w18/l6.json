@@ -1,0 +1,2852 @@
+{
+ "world": 18,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced clinical reasoning",
+   "icon": "🧠",
+   "hook": "A test is positive. Does that make the disease likely? The answer depends on what you believed before the test. How should a result move your belief?",
+   "explain": [
+    "Good reasoning is probabilistic. Start with a pre-test probability from the patient's story, risk factors and local disease frequency. A test result updates it. The likelihood ratio (LR) summarises how much: LR+ = sensitivity ÷ (1 − specificity); LR− = (1 − sensitivity) ÷ specificity. Using odds: post-test odds = pre-test odds × LR, where odds = p ÷ (1 − p).",
+    "Clinicians also use thresholds. If probability is below the test threshold, no test is needed; between the test and treatment thresholds, testing is useful; above the treatment threshold, treat. The thresholds are lower when the disease is dangerous and treatment is safe, and higher when treatment is risky.",
+    "Reasoning errors arise from heuristics (anchoring, availability, premature closure, base-rate neglect), from system factors (fatigue, interruptions, poor handover) and from information problems. Strategies include a diagnostic time-out, asking what else it could be, a pre-mortem ('if I am wrong, how?'), cognitive forcing, second opinions, and following up uncertain cases with safety-netting (clear advice on what to watch for and when to return)."
+   ],
+   "example": {
+    "q": "Pre-test probability of a disease is 20%. A test has LR+ of 8 and is positive. What is the post-test probability?",
+    "steps": [
+     "Pre-test odds = 0.20 ÷ 0.80 = 0.25.",
+     "Post-test odds = 0.25 × 8 = 2.",
+     "Probability = odds ÷ (1 + odds) = 2 ÷ 3 ≈ 0.67."
+    ],
+    "a": "About 67%"
+   },
+   "analogies": {
+    "home": "A smoke alarm in a kitchen that is frequently smoky means less than one in a quiet bedroom.",
+    "sport": "A referee's call matters more when the play was already close.",
+    "tech": "An error alert is more meaningful on a server that rarely fails.",
+    "sea": "A storm warning matters more at sea in storm season than at a harbour in calm weather."
+   },
+   "mnemonic": "Prior odds × likelihood ratio = posterior odds.",
+   "terms": [
+    [
+     "Pre-test probability",
+     "The estimated chance of disease before a test result."
+    ],
+    [
+     "Likelihood ratio",
+     "How much a test result changes the odds of disease."
+    ],
+    [
+     "Base-rate neglect",
+     "Ignoring how common a condition is when judging a test result."
+    ],
+    [
+     "Safety-netting",
+     "Giving clear advice about warning signs and when to seek help."
+    ]
+   ],
+   "misc": {
+    "wrong": "A positive test means the patient has the disease.",
+    "right": "A positive test raises the probability; how far depends on the pre-test probability and the likelihood ratio."
+   },
+   "limits": "Probabilities are estimates, and published sensitivities and specificities may not transfer to a different population or setting.",
+   "trip": {
+    "wiki": "Likelihood ratios in diagnostic testing",
+    "prompt": "Work through the odds method with a nomogram or an example."
+   },
+   "sources": [
+    "Likelihood ratios in diagnostic testing",
+    "Pre- and post-test probability",
+    "Cognitive bias"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Pre-test probability is 50% and LR+ is 4 for a positive test. What is the post-test probability as a percentage to the nearest whole number?",
+     "a": 80,
+     "tol": 1,
+     "unit": "%",
+     "why": "Odds 1 × 4 = 4; probability 4 ÷ 5 = 0.8 = 80%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A test has sensitivity 90% and specificity 95%. What is LR+ (sensitivity ÷ (1 − specificity))?",
+     "a": 18,
+     "tol": 0.1,
+     "why": "0.90 ÷ 0.05 = 18.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A test has sensitivity 80% and specificity 90%. What is LR− = (1 − sensitivity) ÷ specificity, to two decimal places?",
+     "a": 0.22,
+     "tol": 0.01,
+     "why": "0.20 ÷ 0.90 ≈ 0.22.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about LR+ > 10 is correct?",
+     "o": [
+      "A positive result substantially raises the probability of disease",
+      "A positive result excludes the disease completely",
+      "The test is useless for any clinical decision",
+      "It lowers the odds of disease after a positive result"
+     ],
+     "a": 0,
+     "why": "Large LR+ values shift probability considerably.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A rare dangerous disease has a safe, effective treatment. How does that affect the treatment threshold?",
+     "o": [
+      "It is lower, so we treat at lower probabilities",
+      "It is higher, so we treat only at high probabilities",
+      "It disappears, so no threshold applies",
+      "It is irrelevant to the decision to treat"
+     ],
+     "a": 0,
+     "why": "When harm of missing is high and treatment is safe, act earlier.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A clinician sees a rare tropical disease in a patient who never travelled and has no exposure. Which error is to be avoided?",
+     "o": [
+      "Overweighting a vivid but unlikely diagnosis (ignoring base rates)",
+      "Considering common causes of the symptoms first",
+      "Taking a careful history from the patient",
+      "Asking a senior for a second opinion early on"
+     ],
+     "a": 0,
+     "why": "Base-rate neglect.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of a pre-mortem in clinical reasoning?",
+     "o": [
+      "Imagine being wrong to uncover weaknesses in the plan",
+      "Review a death after it has occurred, to assign blame",
+      "Replace the history and examination altogether",
+      "Choose the cheapest test for each possible diagnosis"
+     ],
+     "a": 0,
+     "why": "Imagining failure in advance helps expose hidden assumptions and biases.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the Bayesian steps.",
+     "items": [
+      "Estimate pre-test probability",
+      "Convert to odds",
+      "Multiply by the likelihood ratio",
+      "Convert back to a probability"
+     ],
+     "why": "Pre-test odds × LR = post-test odds.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient with a low pre-test probability has a mildly positive screening test. The best next step is...",
+     "o": [
+      "Consider confirmatory testing before acting on it",
+      "Treat immediately regardless of the probability",
+      "Ignore all tests from now on",
+      "Repeat the same screening test endlessly until it changes"
+     ],
+     "a": 0,
+     "why": "Low prior means many positives are false.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain how pre-test probability and the test result combine to give the post-test probability.",
+     "rubric": [
+      [
+       "pre-test",
+       "prior",
+       "before",
+       "baseline",
+       "prevalence"
+      ],
+      [
+       "likelihood",
+       "result",
+       "test",
+       "sensitiv",
+       "specific"
+      ],
+      [
+       "update",
+       "combine",
+       "odds",
+       "change",
+       "post-test"
+      ]
+     ],
+     "min": 3,
+     "model": "You start with the pre-test probability, convert it to odds and multiply by the likelihood ratio of the result to get the post-test odds, which you convert back into a probability.",
+     "why": "Bayes' rule applied clinically.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A highly sensitive test is negative in a patient with a very high pre-test probability of a dangerous disease. What should the clinician do?",
+     "o": [
+      "Remain cautious and consider further testing or senior review",
+      "Rule out the disease completely and discharge",
+      "Stop thinking about the dangerous diagnosis",
+      "Treat the patient as healthy from now on"
+     ],
+     "a": 0,
+     "why": "Even a small LR− may leave a considerable post-test probability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the strongest reason a model's accuracy may drop in a new hospital?",
+     "o": [
+      "Different population and disease prevalence",
+      "Different colours of paint on the hospital walls",
+      "A longer corridor between wards and theatres",
+      "Different uniforms worn by the staff"
+     ],
+     "a": 0,
+     "why": "Spectrum and prevalence change test performance and predictive values.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is safety-netting a core part of managing diagnostic uncertainty?",
+     "rubric": [
+      [
+       "uncertain",
+       "unsure",
+       "evolve",
+       "change",
+       "develop",
+       "not yet clear"
+      ],
+      [
+       "warning",
+       "red flag",
+       "watch",
+       "return",
+       "advice"
+      ],
+      [
+       "safe",
+       "early",
+       "miss",
+       "harm",
+       "deteriorat"
+      ]
+     ],
+     "min": 2,
+     "model": "When the diagnosis is uncertain and may evolve, telling the patient what to watch for and when to return catches deterioration early and reduces the risk of harm from a missed diagnosis.",
+     "why": "Uncertainty is managed, not hidden.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Updating belief with test results",
+    "model": "Before a test you have a pre-test probability. A test result changes the odds by its likelihood ratio, giving the post-test probability. Rare diseases need strong evidence, and dangerous diseases are not dismissed lightly. Safety-netting protects patients when we are uncertain.",
+    "points": [
+     {
+      "k": [
+       "pre-test",
+       "prior",
+       "before",
+       "prevalence",
+       "base rate"
+      ],
+      "ask": "What do we start from?"
+     },
+     {
+      "k": [
+       "likelihood ratio",
+       "odds",
+       "update",
+       "multiply"
+      ],
+      "ask": "How does a test change the probability?"
+     },
+     {
+      "k": [
+       "safety",
+       "return",
+       "red flag",
+       "uncertain"
+      ],
+      "ask": "What if we are still unsure?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Multisystem disease assessment",
+   "icon": "🕸️",
+   "hook": "A single infection can affect lungs, kidneys, blood pressure and consciousness. How do clinicians keep track of many organs at once?",
+   "explain": [
+    "Many diseases involve more than one organ system: sepsis, diabetes, vasculitis, systemic lupus erythematosus, heart failure with kidney and liver involvement, and cancer. A multisystem assessment reviews each system systematically, looks for patterns across systems, and asks whether one process explains several findings or whether several processes coexist.",
+    "Sepsis is life-threatening organ dysfunction caused by a dysregulated host response to infection. Bedside tools such as qSOFA flag higher risk when two or more are present: respiratory rate of 22 or more per minute, altered mentation, systolic blood pressure of 100 mmHg or less. These are screening aids, not diagnoses; clinical concern always counts. Organ dysfunction can be tracked with scores such as SOFA, which combines breathing, clotting, liver, circulation, brain and kidney measures.",
+    "Look for organ-by-organ clues: brain (confusion, Glasgow Coma Scale), lungs (oxygen level, breathing rate), circulation (blood pressure, lactate, capillary refill), kidneys (urine output, creatinine), liver (bilirubin), and blood (platelets). Early recognition, prompt treatment of the cause (for example controlling the source of infection), supporting organs and frequent reassessment improve outcomes. Chronic multisystem disease demands coordinated care by several specialties to avoid conflicting advice."
+   ],
+   "example": {
+    "q": "A fictional adult with pneumonia has RR 28, new confusion and systolic BP 90 mmHg. What is the qSOFA score and what does it suggest?",
+    "steps": [
+     "RR ≥ 22: 1 point.",
+     "Altered mentation: 1 point.",
+     "Systolic BP ≤ 100: 1 point, so total 3. A score of 2 or more flags high risk of poor outcome; escalate urgently for sepsis management."
+    ],
+    "a": "qSOFA 3, high risk; treat as possible sepsis and escalate urgently"
+   },
+   "analogies": {
+    "city": "A power cut can stop trains, hospitals and traffic lights at once; a single cause with many effects.",
+    "home": "A blocked main drain can flood several rooms.",
+    "tech": "A failing network core affects many applications.",
+    "sea": "A hull breach floods several compartments."
+   },
+   "mnemonic": "Brain, Lungs, Circulation, Kidneys, Liver, Blood: check each organ.",
+   "terms": [
+    [
+     "Multisystem disease",
+     "A condition that involves several organ systems."
+    ],
+    [
+     "Sepsis",
+     "Life-threatening organ dysfunction due to a dysregulated response to infection."
+    ],
+    [
+     "qSOFA",
+     "A quick bedside screen using breathing rate, mental state and systolic blood pressure."
+    ],
+    [
+     "Organ dysfunction",
+     "Failure of an organ to perform its normal function."
+    ]
+   ],
+   "misc": {
+    "wrong": "If qSOFA is below 2, sepsis is excluded.",
+    "right": "qSOFA is a screening aid with limits. A patient with clinical concern still needs full assessment."
+   },
+   "limits": "Scores and thresholds differ between guidelines and are updated as evidence changes; patient context always comes first.",
+   "trip": {
+    "wiki": "Sepsis",
+    "prompt": "Find how sepsis is defined and which organs can be affected."
+   },
+   "sources": [
+    "Sepsis",
+    "Systemic lupus erythematosus",
+    "Sequential organ failure assessment"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A fictional patient has respiratory rate 24, normal mental state and systolic BP 90 mmHg. Using qSOFA (RR ≥ 22, altered mentation, SBP ≤ 100), what is the score?",
+     "a": 2,
+     "tol": 0,
+     "why": "RR 1 point + SBP 1 point = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A qSOFA of 2 or more suggests...",
+     "o": [
+      "Higher risk of poor outcome needing escalation",
+      "A healthy patient needing no review",
+      "A simple viral cold at home",
+      "An allergy to a medicine"
+     ],
+     "a": 0,
+     "why": "It flags patients likely to be seriously unwell.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Sepsis is best described as...",
+     "o": [
+      "Life-threatening organ dysfunction due to infection",
+      "Any fever, however brief and mild",
+      "A skin rash from an allergy",
+      "A mild cough with a runny nose"
+     ],
+     "a": 0,
+     "why": "It is a dysregulated host response causing organ dysfunction.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient has fever, a low blood pressure, confusion and little urine. Which organs may be affected?",
+     "o": [
+      "Circulation, brain and kidneys",
+      "Only the skin on the arms",
+      "Only the eyes and the optic nerves",
+      "Only the bones of the legs"
+     ],
+     "a": 0,
+     "why": "Multi-organ dysfunction.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the organ to a bedside indicator of dysfunction.",
+     "pairs": [
+      [
+       "Brain",
+       "Reduced Glasgow Coma Scale"
+      ],
+      [
+       "Lungs",
+       "Low oxygen saturation or fast breathing"
+      ],
+      [
+       "Circulation",
+       "Low blood pressure, slow capillary refill"
+      ],
+      [
+       "Kidneys",
+       "Low urine output, raised creatinine"
+      ]
+     ],
+     "why": "Organ-by-organ review.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "Glasgow Coma Scale: eye opening 3, verbal response 4, motor response 5. What is the total GCS (range 3 to 15)?",
+     "a": 12,
+     "tol": 0,
+     "why": "3 + 4 + 5 = 12.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A patient with long-standing diabetes and kidney disease develops a heart problem. Why involve several specialties?",
+     "o": [
+      "Treatments for one condition can affect others, so coordination is needed",
+      "To increase cost for the hospital",
+      "To delay care while teams discuss",
+      "Because each specialist should always work alone"
+     ],
+     "a": 0,
+     "why": "Coordinated plans avoid conflicting advice.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the approach to a suspected sepsis case.",
+     "items": [
+      "Recognise the risk and escalate",
+      "Obtain samples and start treatment of the cause promptly",
+      "Support failing organs",
+      "Reassess frequently"
+     ],
+     "why": "Time-sensitive and iterative.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional elderly patient is only a little drowsy and has a mild fever but the family says 'she is not herself'. What is wise?",
+     "o": [
+      "Take it seriously; older people can show subtle signs of sepsis",
+      "Dismiss the family's worry as over-anxious",
+      "Wait a week and review in clinic",
+      "Assume it is only normal age and do nothing"
+     ],
+     "a": 0,
+     "why": "Atypical presentations are common in the elderly.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it useful to ask whether one process or several processes explain a patient's findings?",
+     "rubric": [
+      [
+       "one",
+       "single",
+       "unify",
+       "same cause"
+      ],
+      [
+       "several",
+       "multiple",
+       "more than one",
+       "coexist",
+       "comorbid"
+      ],
+      [
+       "treatment",
+       "plan",
+       "miss",
+       "manage",
+       "diagnos"
+      ]
+     ],
+     "min": 2,
+     "model": "A single cause such as sepsis can explain findings across systems, but patients may also have several coexisting conditions, and recognising which applies guides treatment and avoids missing problems.",
+     "why": "Integrated reasoning.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fictional patient with lupus has a new rash, joint pain and foamy urine. Why check the kidneys?",
+     "o": [
+      "Lupus can inflame the kidneys",
+      "Rashes always affect kidneys",
+      "Foamy urine is meaningless",
+      "Joint pain causes kidney failure"
+     ],
+     "a": 0,
+     "why": "Lupus nephritis is a major organ involvement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Normal blood pressure does not exclude shock in a young fit person. Why?",
+     "o": [
+      "Compensation can maintain pressure until late",
+      "Blood pressure is meaningless in every patient",
+      "Young people cannot ever develop shock",
+      "Blood pressure machines are always broken"
+     ],
+     "a": 0,
+     "why": "Look at perfusion signs and trends.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why frequent reassessment matters in a multisystem illness.",
+     "rubric": [
+      [
+       "change",
+       "evolve",
+       "deteriorat",
+       "worse",
+       "improve",
+       "dynamic"
+      ],
+      [
+       "response",
+       "treatment",
+       "working",
+       "adjust"
+      ],
+      [
+       "early",
+       "catch",
+       "organ",
+       "trend"
+      ]
+     ],
+     "min": 2,
+     "model": "Multisystem illness can change quickly, so frequent reassessment shows whether treatment is working and detects deterioration early so the plan can be adjusted.",
+     "why": "Trends guide action.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Assessing illness that affects many organs",
+    "model": "In multisystem illness we check each organ system: brain, lungs, circulation, kidneys, liver and blood. Sepsis is organ dysfunction due to infection, and screening tools like qSOFA help flag risk. Early action and frequent reassessment improve safety.",
+    "points": [
+     {
+      "k": [
+       "organ",
+       "system",
+       "each",
+       "brain",
+       "kidney",
+       "lung"
+      ],
+      "ask": "How do we check many organs?"
+     },
+     {
+      "k": [
+       "sepsis",
+       "infection",
+       "organ dysfunction"
+      ],
+      "ask": "What is sepsis?"
+     },
+     {
+      "k": [
+       "reassess",
+       "escalat",
+       "early",
+       "frequent"
+      ],
+      "ask": "What do we do next?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Critical care and emergency decision-making",
+   "icon": "🚨",
+   "hook": "In a resuscitation, seconds matter and information is incomplete. How do teams make safe decisions under pressure?",
+   "explain": [
+    "Critical care supports failing organs while the cause is treated. Shock is inadequate tissue perfusion. Main types: hypovolaemic (loss of volume, such as bleeding), cardiogenic (pump failure), distributive (widened vessels, as in sepsis or anaphylaxis) and obstructive (blockage, such as a large pulmonary embolism or tension pneumothorax). Treatment targets the type, so identifying it matters.",
+    "Respiratory failure may be type 1 (low oxygen) or type 2 (high carbon dioxide). The ratio PaO₂/FiO₂ describes oxygenation: for example, PaO₂ 60 mmHg on 50% oxygen (FiO₂ 0.5) is 120, which is markedly impaired (normal is above about 400). Support can range from oxygen by mask to non-invasive ventilation to mechanical ventilation, which carries risks and requires careful sedation and monitoring.",
+    "Decision-making in emergencies uses structured approaches (ABCDE, team roles with a clear leader, closed-loop communication, SBAR), anticipates deterioration, and includes ethical thought: patients' prior wishes, capacity, and treatment-limitation decisions such as do-not-attempt-resuscitation orders, which are made through communication with patient and family in advance where possible. Human factors such as fatigue, hierarchy that stops juniors speaking up, and fixation errors are common causes of harm; speaking up and debriefing improve safety."
+   ],
+   "example": {
+    "q": "After a road accident a fictional patient has pulse 135, BP 75/40, cold skin and a distended abdomen. Which type of shock and what priority?",
+    "steps": [
+     "Trauma with a fast pulse, low BP and cold skin suggests bleeding.",
+     "This is hypovolaemic shock from loss of blood volume.",
+     "Priority: call the trauma team, control bleeding, restore circulating volume with blood, and get urgent surgical control."
+    ],
+    "a": "Hypovolaemic (haemorrhagic) shock; call the trauma team and control bleeding urgently"
+   },
+   "analogies": {
+    "sea": "A ship's captain, with clear roles and repeated-back orders, handles a storm.",
+    "sport": "A relay team practises passing the baton cleanly under pressure.",
+    "tech": "An emergency response team follows runbooks and calls back each command.",
+    "home": "In a house fire, everyone has a role and knows the exit."
+   },
+   "mnemonic": "Name the shock: Volume, Pump, Pipes, Blockage. Say it, repeat it, check it: closed-loop talk.",
+   "terms": [
+    [
+     "Shock",
+     "Inadequate perfusion of the tissues, often with low blood pressure."
+    ],
+    [
+     "Distributive shock",
+     "Shock from widened blood vessels, as in sepsis or anaphylaxis."
+    ],
+    [
+     "PaO₂/FiO₂ ratio",
+     "A measure of how well the lungs oxygenate the blood."
+    ],
+    [
+     "Closed-loop communication",
+     "A request is repeated back and its completion confirmed."
+    ]
+   ],
+   "misc": {
+    "wrong": "In an emergency the most senior person should be silent and everyone must obey without questions.",
+    "right": "Leaders direct, but anyone may speak up about a safety concern, and structured communication prevents errors."
+   },
+   "limits": "This stage describes concepts. Local protocols and resources determine actual management, and no doses or regimens are given.",
+   "trip": {
+    "wiki": "Shock (circulatory)",
+    "prompt": "Compare the four types of shock and a sign for each."
+   },
+   "sources": [
+    "Shock (circulatory)",
+    "Intensive care medicine",
+    "Respiratory failure"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "PaO₂ is 80 mmHg on 40% oxygen (FiO₂ 0.4). What is the PaO₂/FiO₂ ratio?",
+     "a": 200,
+     "tol": 1,
+     "why": "80 ÷ 0.4 = 200, which is markedly reduced.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which shock type is caused by widened blood vessels in sepsis?",
+     "o": [
+      "Distributive",
+      "Hypovolaemic",
+      "Cardiogenic",
+      "Obstructive"
+     ],
+     "a": 0,
+     "why": "Vasodilation and leaky vessels.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient after a heart attack has cold skin, a low BP and fluid in the lungs. Which shock type?",
+     "o": [
+      "Cardiogenic",
+      "Hypovolaemic",
+      "Distributive",
+      "Obstructive"
+     ],
+     "a": 0,
+     "why": "The pump has failed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the shock type to a cause.",
+     "pairs": [
+      [
+       "Hypovolaemic",
+       "Severe bleeding"
+      ],
+      [
+       "Cardiogenic",
+       "Large heart attack"
+      ],
+      [
+       "Distributive",
+       "Anaphylaxis or sepsis"
+      ],
+      [
+       "Obstructive",
+       "Large pulmonary embolism"
+      ]
+     ],
+     "why": "Identify the type to direct treatment.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is type 2 respiratory failure?",
+     "o": [
+      "High carbon dioxide with or without low oxygen",
+      "Only low oxygen with a normal carbon dioxide",
+      "Only high oxygen with a normal carbon dioxide level",
+      "Only a fast pulse with a normal oxygen level"
+     ],
+     "a": 0,
+     "why": "Ventilatory failure.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A junior notices the team leader is about to give a medicine to which the patient is allergic. What should the junior do?",
+     "o": [
+      "Speak up clearly and immediately",
+      "Stay silent out of respect for the hierarchy",
+      "Leave the room and find someone else",
+      "Wait until later to mention it to the team"
+     ],
+     "a": 0,
+     "why": "Speaking up prevents harm.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order a closed-loop communication.",
+     "items": [
+      "Leader gives a clear instruction",
+      "Team member repeats it back",
+      "Team member carries it out",
+      "Team member confirms completion"
+     ],
+     "why": "The loop is closed when completion is confirmed.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why discuss resuscitation preferences in advance when possible?",
+     "o": [
+      "It respects the patient's wishes and avoids rushed decisions",
+      "To delay care until the family agrees",
+      "To save money for the hospital",
+      "Because the law does not allow it to be discussed"
+     ],
+     "a": 0,
+     "why": "Advance planning respects autonomy.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient has sudden severe breathlessness, tracheal deviation and absent breath sounds on one side after an injury. What is the suspicion?",
+     "o": [
+      "Tension pneumothorax, an obstructive emergency",
+      "Asthma with a wheeze",
+      "Indigestion after a meal",
+      "A common cold with a cough"
+     ],
+     "a": 0,
+     "why": "Needs immediate decompression by trained staff.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why is identifying the type of shock important?",
+     "rubric": [
+      [
+       "type",
+       "cause",
+       "mechanism"
+      ],
+      [
+       "treatment",
+       "different",
+       "target",
+       "specific"
+      ],
+      [
+       "harm",
+       "wrong",
+       "worse",
+       "fluid",
+       "pump"
+      ]
+     ],
+     "min": 2,
+     "model": "Each type of shock has a different cause and needs a different treatment, so giving the wrong therapy, such as large volumes of fluid in cardiogenic shock, could make the patient worse.",
+     "why": "Correct diagnosis drives therapy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A family asks for everything to be done for a patient with advanced illness, while the team feels more treatment would cause suffering without benefit. What is the best approach?",
+     "o": [
+      "Communicate openly, explore goals and values, involve senior and ethics support if needed",
+      "Withdraw care secretly without telling the family",
+      "Ignore the family's wishes completely and decide alone",
+      "Continue treatment indefinitely without any further discussion"
+     ],
+     "a": 0,
+     "why": "Shared decisions and transparency.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After a resuscitation, a debrief is held. What is its purpose?",
+     "o": [
+      "Learn what went well and what to improve, without blame",
+      "Find someone to blame for any problems",
+      "Delay writing up the documentation",
+      "Avoid learning anything from the event"
+     ],
+     "a": 0,
+     "why": "Team learning improves safety.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how fatigue and hierarchy can lead to harm in emergency care and one way to reduce it.",
+     "rubric": [
+      [
+       "fatigue",
+       "tired",
+       "stress",
+       "workload"
+      ],
+      [
+       "hierarch",
+       "afraid",
+       "speak up",
+       "senior",
+       "junior"
+      ],
+      [
+       "checklist",
+       "communication",
+       "closed-loop",
+       "debrief",
+       "team",
+       "culture"
+      ]
+     ],
+     "min": 2,
+     "model": "Fatigue impairs attention and hierarchy can stop juniors voicing concerns, so errors go unchallenged; structured communication, checklists and a culture where anyone can speak up reduce the risk.",
+     "why": "Human factors cause harm.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Deciding under pressure",
+    "model": "Shock means tissues are not getting enough blood flow, and its type decides treatment: bleeding, pump failure, widened vessels or blockage. Teams use ABCDE, clear leadership and closed-loop talk, and anyone can speak up about safety.",
+    "points": [
+     {
+      "k": [
+       "shock",
+       "perfusion",
+       "blood flow"
+      ],
+      "ask": "What is shock?"
+     },
+     {
+      "k": [
+       "bleeding",
+       "pump",
+       "vessel",
+       "block",
+       "type"
+      ],
+      "ask": "What types are there?"
+     },
+     {
+      "k": [
+       "team",
+       "leader",
+       "speak up",
+       "communicat"
+      ],
+      "ask": "How do teams stay safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Clinical pharmacology and treatment evaluation",
+   "icon": "⚗️",
+   "hook": "Two patients take the same medicine. One has too little effect and the other has side effects. Why does the same drug act differently in different people?",
+   "explain": [
+    "Pharmacokinetics (what the body does to the drug) shows that clearance and volume of distribution determine half-life: the time for the drug concentration to fall by half. Steady state with repeated dosing is reached after about 4 to 5 half-lives. After one half-life, 50% remains; after two, 25%; after three, 12.5%. Oral drugs may undergo first-pass metabolism in the liver, reducing the amount reaching the circulation.",
+    "Pharmacodynamics (what the drug does to the body) includes receptor binding, efficacy, potency and the dose-response relationship. Differences between people arise from age, weight, kidney and liver function, genetics (pharmacogenomics), other medicines (enzyme inhibition or induction), pregnancy, and adherence. Narrow-therapeutic-index drugs may need blood-level monitoring.",
+    "Evaluating treatment asks whether a medicine achieves what matters to patients (clinical outcomes such as fewer strokes rather than only a lab number), at what harm and cost. Surrogate outcomes may mislead. Post-marketing surveillance detects rare harms that trials miss, and clinicians report suspected adverse reactions. Prescribing should follow indication, review and stopping rules; deprescribing is part of good care. This game gives no doses or regimens."
+   ],
+   "example": {
+    "q": "A drug has a half-life of 6 hours. The level at one time is 80 units. What is it 18 hours later?",
+    "steps": [
+     "18 hours ÷ 6 hours = 3 half-lives.",
+     "Level halves three times: 80 → 40 → 20 → 10.",
+     "So it is 10 units."
+    ],
+    "a": "10 units"
+   },
+   "analogies": {
+    "home": "A bath that drains and refills reaches a steady level when inflow matches outflow, like steady state.",
+    "city": "Traffic through a road depends on inflow and outflow; clogged exits raise the level.",
+    "farm": "A trough topped up while animals drink settles at a steady level.",
+    "tech": "A cache fills until adds equal removals."
+   },
+   "mnemonic": "Half-life: halve, halve, halve. Steady state: about five half-lives.",
+   "terms": [
+    [
+     "Half-life",
+     "The time for the drug concentration to fall by half."
+    ],
+    [
+     "Steady state",
+     "When drug input equals elimination, reached after about 4 to 5 half-lives."
+    ],
+    [
+     "First-pass metabolism",
+     "Breakdown of an oral drug in the liver before it reaches the general circulation."
+    ],
+    [
+     "Surrogate outcome",
+     "A test or measure used in place of a clinical outcome, such as a lab value."
+    ],
+    [
+     "Pharmacovigilance",
+     "Monitoring the safety of medicines after they are marketed."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a lab value improves on a drug, the drug must help patients live longer.",
+    "right": "Surrogate improvements do not always translate into better clinical outcomes; trials of patient-important outcomes are needed."
+   },
+   "limits": "Simple half-life models assume first-order elimination; real drugs can show different behaviour, and individualisation follows professional guidance.",
+   "trip": {
+    "wiki": "Biological half-life",
+    "prompt": "Plot how much of a drug remains after each half-life."
+   },
+   "sources": [
+    "Pharmacokinetics",
+    "Biological half-life",
+    "Pharmacovigilance"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A drug has a half-life of 4 hours and starts at 64 units. How many units remain after 12 hours?",
+     "a": 8,
+     "tol": 0,
+     "unit": "units",
+     "why": "12 ÷ 4 = 3 half-lives: 64 → 32 → 16 → 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A drug with half-life 8 hours is given regularly. About how many hours until steady state, using 5 half-lives?",
+     "a": 40,
+     "tol": 0,
+     "unit": "hours",
+     "why": "5 × 8 = 40 hours.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What percentage of a drug remains after 3 half-lives?",
+     "a": 12.5,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "100 → 50 → 25 → 12.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does first-pass metabolism do?",
+     "o": [
+      "Reduces the amount of an oral drug reaching the circulation",
+      "Increases absorption of a drug through the skin",
+      "Speeds up the work of the kidneys",
+      "Stops all metabolism in the liver"
+     ],
+     "a": 0,
+     "why": "The liver breaks down part of the drug first.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient with reduced kidney function takes a drug cleared by the kidneys. What may happen?",
+     "o": [
+      "The drug may accumulate and cause toxicity",
+      "The drug becomes weaker over time",
+      "Nothing changes in drug levels",
+      "Clearance of the drug rises"
+     ],
+     "a": 0,
+     "why": "Reduced clearance prolongs half-life.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Pharmacogenomics is the study of...",
+     "o": [
+      "How a person's genes affect their response to drugs",
+      "How drugs are packaged and labelled",
+      "How fast drugs are made in factories",
+      "How doctors are trained to prescribe"
+     ],
+     "a": 0,
+     "why": "Genetic differences in enzymes and targets change drug response.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A drug lowers a blood test value but a large trial shows no reduction in deaths or strokes. What does this show?",
+     "o": [
+      "Surrogate improvement does not guarantee clinical benefit",
+      "The drug is perfect and should be given to all",
+      "The trial is irrelevant to the question",
+      "The blood test must be wrong"
+     ],
+     "a": 0,
+     "why": "Prefer patient-important outcomes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A new drug is started and a patient develops a rash. What is the right step?",
+     "o": [
+      "Assess for allergy or adverse reaction and report as required",
+      "Ignore the rash as it is probably minor",
+      "Double the dose to build tolerance",
+      "Hide it from the team to avoid trouble"
+     ],
+     "a": 0,
+     "why": "Report suspected adverse reactions.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the fall in concentration for a drug with a constant half-life, starting at 100.",
+     "items": [
+      "100",
+      "50",
+      "25",
+      "12.5"
+     ],
+     "why": "Each half-life halves the amount.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can two people on the same drug and the same dose have very different effects?",
+     "rubric": [
+      [
+       "age",
+       "weight",
+       "size",
+       "kidney",
+       "liver",
+       "organ function"
+      ],
+      [
+       "gene",
+       "genetic",
+       "enzyme",
+       "metabolis",
+       "pharmacogenom"
+      ],
+      [
+       "interaction",
+       "other medicine",
+       "adherence",
+       "pregnan",
+       "disease"
+      ]
+     ],
+     "min": 2,
+     "model": "Differences in age, organ function, genes affecting drug metabolism, interacting medicines, adherence and illness change how much drug reaches the body and how strongly it acts.",
+     "why": "Variability needs individualised care.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A medicine strongly inhibits the liver enzyme that breaks down another drug the patient takes. What is the risk?",
+     "o": [
+      "Higher levels of the second drug and more side effects",
+      "Lower levels of the second drug and no effect",
+      "No change in the levels of either drug",
+      "An immediate cure of the underlying illness"
+     ],
+     "a": 0,
+     "why": "Enzyme inhibition raises levels.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A company promotes a drug using only relative risk reduction. What should an evaluator ask?",
+     "o": [
+      "What are the absolute effects, harms and outcomes that matter to patients?",
+      "Nothing, since a relative figure is enough",
+      "Whether the packaging looks nice",
+      "How big the advert is in the journal"
+     ],
+     "a": 0,
+     "why": "Critical appraisal needs absolute numbers and harms.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is deprescribing a legitimate part of good prescribing?",
+     "rubric": [
+      [
+       "harm",
+       "side effect",
+       "interaction",
+       "polypharmacy",
+       "burden"
+      ],
+      [
+       "benefit",
+       "no longer",
+       "need",
+       "review",
+       "goal"
+      ],
+      [
+       "safer",
+       "improve",
+       "reduce",
+       "stop"
+      ]
+     ],
+     "min": 2,
+     "model": "Some medicines no longer give benefit or carry more harm than gain, so regular review and stopping them can reduce side effects and interactions and improve safety.",
+     "why": "Balance of benefit and harm changes over time.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How drugs behave in different people",
+    "model": "Half-life is the time for a drug level to halve, and steady state takes about five half-lives. Age, kidney and liver function, genes and other medicines change drug effects. We judge treatments by patient outcomes and harms, not just lab numbers.",
+    "points": [
+     {
+      "k": [
+       "half-life",
+       "halve",
+       "half"
+      ],
+      "ask": "What is half-life?"
+     },
+     {
+      "k": [
+       "kidney",
+       "liver",
+       "gene",
+       "age",
+       "interaction"
+      ],
+      "ask": "Why do people respond differently?"
+     },
+     {
+      "k": [
+       "outcome",
+       "harm",
+       "benefit",
+       "surrogate"
+      ],
+      "ask": "How do we judge if a treatment is good?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Advanced diagnostic interpretation",
+   "icon": "📉",
+   "hook": "A blood gas shows pH 7.25, low bicarbonate and fast deep breathing. What story do the numbers tell?",
+   "explain": [
+    "Arterial blood gases are read in steps: Is the pH acidic (below 7.35) or alkaline (above 7.45)? Is the primary change in carbon dioxide (respiratory) or bicarbonate (metabolic)? Is there compensation? Reference values used here: pH 7.35 to 7.45, PaCO₂ 35 to 45 mmHg, bicarbonate 22 to 26 mmol/L. Low pH with low bicarbonate means metabolic acidosis; low pH with high PaCO₂ means respiratory acidosis.",
+    "The anion gap = sodium − (chloride + bicarbonate); a typical range is about 8 to 12 mmol/L (laboratories vary). A raised gap points to added acids, such as lactate or ketones. Lactate rises when tissues lack oxygen. In metabolic acidosis the lungs compensate by breathing faster and deeper to blow off CO₂.",
+    "Other interpretation skills: reading the ECG systematically (rate, rhythm, axis, P waves, PR interval, QRS, ST segments, T waves), noticing ST elevation as a sign of an acute artery blockage, and the chest X-ray (airway, breathing, circulation, diaphragm, everything else). Always combine investigations with the patient: an abnormal result in a well person and a normal result in a very sick one both need careful thought. Request, check, and act on critical results, and document your reasoning."
+   ],
+   "example": {
+    "q": "pH 7.25, PaCO₂ 25 mmHg, bicarbonate 10 mmol/L, Na 138, Cl 100. What is the acid-base pattern and anion gap?",
+    "steps": [
+     "pH is low: acidaemia. Bicarbonate is low, so the primary problem is metabolic acidosis.",
+     "PaCO₂ is low: the lungs are compensating by blowing off CO₂.",
+     "Anion gap = 138 − (100 + 10) = 28, which is raised; think of lactate or ketones."
+    ],
+    "a": "Metabolic acidosis with respiratory compensation and a raised anion gap of 28"
+   },
+   "analogies": {
+    "home": "A cooker's smoke alarm shows a problem; the blood gas shows whether the body's acid balance is off.",
+    "tech": "Reading logs: first the error type, then the source, then the compensating process.",
+    "sea": "A ship's list is corrected by shifting ballast, like compensation.",
+    "music": "An ECG is a line of notes; you read it in a fixed order to hear every bar."
+   },
+   "mnemonic": "pH first, then CO₂ or HCO₃, then compensation, then the gap.",
+   "terms": [
+    [
+     "Acidosis",
+     "A process that lowers blood pH."
+    ],
+    [
+     "Compensation",
+     "A response by another system that moves pH back toward normal."
+    ],
+    [
+     "Anion gap",
+     "Na − (Cl + HCO₃), used to find the cause of metabolic acidosis."
+    ],
+    [
+     "ST elevation",
+     "A rise of the ST segment on an ECG that suggests an acute blocked coronary artery."
+    ]
+   ],
+   "misc": {
+    "wrong": "A normal pH means there is nothing wrong with acid-base balance.",
+    "right": "Mixed or fully compensated disorders can leave pH near normal, so look at CO₂ and bicarbonate too."
+   },
+   "limits": "Reference values differ between laboratories, and interpretation needs the clinical context; this stage offers a simplified method.",
+   "trip": {
+    "wiki": "Arterial blood gas test",
+    "prompt": "Practise the stepwise approach on a worked example."
+   },
+   "sources": [
+    "Arterial blood gas test",
+    "Anion gap",
+    "Electrocardiography"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Na 140, Cl 104, HCO₃ 12 (all mmol/L). What is the anion gap?",
+     "a": 24,
+     "tol": 0,
+     "unit": "mmol/L",
+     "why": "140 − (104 + 12) = 24.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Na 138, Cl 104, HCO₃ 24 (mmol/L). What is the anion gap?",
+     "a": 10,
+     "tol": 0,
+     "unit": "mmol/L",
+     "why": "138 − (104 + 24) = 10, within the typical range.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "pH 7.28, PaCO₂ 60 mmHg, HCO₃ 26 mmol/L. What is the primary disorder?",
+     "o": [
+      "Respiratory acidosis",
+      "Metabolic acidosis",
+      "Respiratory alkalosis",
+      "Metabolic alkalosis"
+     ],
+     "a": 0,
+     "why": "Low pH with high CO₂.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "pH 7.50, PaCO₂ 28 mmHg in an anxious breathless person. What is the pattern?",
+     "o": [
+      "Respiratory alkalosis",
+      "Respiratory acidosis",
+      "Metabolic acidosis",
+      "A normal blood gas result"
+     ],
+     "a": 0,
+     "why": "High pH and low CO₂ from over-breathing.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A raised anion gap metabolic acidosis suggests...",
+     "o": [
+      "Added acids such as lactate or ketones",
+      "Excess bicarbonate and alkali in the blood",
+      "Low CO₂ on its own",
+      "Normal physiology with no cause"
+     ],
+     "a": 0,
+     "why": "Unmeasured acids raise the gap.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a patient in metabolic acidosis breathe fast and deeply?",
+     "o": [
+      "To blow off CO₂ and raise pH",
+      "To raise CO₂",
+      "Because they are anxious only",
+      "To cool down"
+     ],
+     "a": 0,
+     "why": "Respiratory compensation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of blood gas interpretation.",
+     "items": [
+      "Look at pH",
+      "Identify respiratory or metabolic primary change",
+      "Check compensation",
+      "Calculate the anion gap and consider causes"
+     ],
+     "why": "A systematic method.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the finding to its meaning.",
+     "pairs": [
+      [
+       "ST elevation with chest pain",
+       "Possible acute coronary artery blockage"
+      ],
+      [
+       "Raised lactate",
+       "Tissue oxygen shortage or hypoperfusion"
+      ],
+      [
+       "Low pH and low bicarbonate",
+       "Metabolic acidosis"
+      ],
+      [
+       "Low pH and high CO₂",
+       "Respiratory acidosis"
+      ]
+     ],
+     "why": "Pattern recognition.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient has chest pain and an ECG with ST elevation. What should the junior do?",
+     "o": [
+      "Activate the emergency heart attack pathway and call a senior",
+      "Wait for a repeat ECG in the morning",
+      "Send home with advice to rest",
+      "Ignore the ECG as an old finding"
+     ],
+     "a": 0,
+     "why": "Time-critical emergency.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why should abnormal investigations always be interpreted with the patient rather than alone?",
+     "rubric": [
+      [
+       "context",
+       "patient",
+       "clinical",
+       "story",
+       "picture"
+      ],
+      [
+       "error",
+       "variation",
+       "false",
+       "normal",
+       "healthy",
+       "misleading"
+      ],
+      [
+       "treat",
+       "patient not",
+       "decision",
+       "act"
+      ]
+     ],
+     "min": 2,
+     "model": "Results can be affected by error or normal variation and may be misleading, so decisions are based on the whole clinical picture, treating the patient rather than the number.",
+     "why": "Context guides interpretation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A blood gas shows pH 7.40, PaCO₂ 60 mmHg and HCO₃ 36 mmol/L in a long-term lung patient. What does this suggest?",
+     "o": [
+      "Chronic CO₂ retention with kidney compensation",
+      "Normal physiology in a healthy person",
+      "Acute respiratory failure only, with no compensation",
+      "Metabolic acidosis from a kidney problem"
+     ],
+     "a": 0,
+     "why": "Compensation can normalise pH.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A critical potassium result arrives by phone. What is the best action?",
+     "o": [
+      "Read back, document, act promptly and inform the responsible senior",
+      "Write it on paper and wait for the next round",
+      "Ignore it as probably a lab error",
+      "Forget it until the morning handover"
+     ],
+     "a": 0,
+     "why": "Critical results need rapid closed-loop handling.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a lactic acidosis from shock leads to fast breathing.",
+     "rubric": [
+      [
+       "lactate",
+       "acid",
+       "oxygen",
+       "perfusion",
+       "shock"
+      ],
+      [
+       "ph",
+       "acidity",
+       "low",
+       "blood"
+      ],
+      [
+       "breath",
+       "co2",
+       "carbon dioxide",
+       "compensat",
+       "lung"
+      ]
+     ],
+     "min": 2,
+     "model": "In shock, tissues without enough oxygen make lactic acid, lowering blood pH; the brainstem senses this and drives faster, deeper breathing to blow off CO₂ and raise the pH.",
+     "why": "Compensation links metabolism to ventilation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading a blood gas",
+    "model": "First look at pH. Then decide if the main change is in CO₂ (respiratory) or bicarbonate (metabolic), and see if the body is compensating. The anion gap helps find the cause of metabolic acidosis. Always match results to the patient.",
+    "points": [
+     {
+      "k": [
+       "ph",
+       "acid",
+       "alkaline"
+      ],
+      "ask": "What do I look at first?"
+     },
+     {
+      "k": [
+       "co2",
+       "bicarbonate",
+       "respiratory",
+       "metabolic"
+      ],
+      "ask": "How do I find the main problem?"
+     },
+     {
+      "k": [
+       "compensat",
+       "breath",
+       "lung",
+       "kidney"
+      ],
+      "ask": "What is compensation?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Public health and epidemiology",
+   "icon": "🌍",
+   "hook": "A new infection appears. Each case infects two others, then four, then eight. How do public health teams decide what to do, and when can an outbreak stop?",
+   "explain": [
+    "Epidemiology studies how often disease occurs and why. Incidence is the number of new cases in a population at risk over a time period; prevalence is the proportion with the disease at a time. A rate allows fair comparison between populations of different sizes. Descriptive epidemiology uses person, place and time; analytic studies (cohort, case-control, trials) test causes.",
+    "The basic reproduction number R₀ is the average number of people one case infects in a fully susceptible population. If R₀ > 1 an outbreak grows. The herd immunity threshold is approximately 1 − 1/R₀: with R₀ = 4, about 75% need to be immune. The effective reproduction number R takes account of immunity and control measures; control aims to push R below 1.",
+    "Public health acts at three levels: primary prevention (before disease occurs, such as vaccination, clean water, tobacco control), secondary prevention (early detection, such as screening) and tertiary prevention (reducing the impact of established disease, such as rehabilitation). Surveillance, contact tracing, outbreak investigation and clear communication are core tools. Social determinants such as income, education, housing, and access to services strongly shape health, so equity is a key aim. Screening must weigh benefits against false positives and overdiagnosis."
+   ],
+   "example": {
+    "q": "A disease has R₀ = 5. What proportion of the population needs to be immune for herd immunity (assuming a simple model)?",
+    "steps": [
+     "Threshold = 1 − 1/R₀.",
+     "1/5 = 0.2, so 1 − 0.2 = 0.8.",
+     "So about 80% need to be immune."
+    ],
+    "a": "About 80%"
+   },
+   "analogies": {
+    "home": "A rumour that every listener passes to two others spreads quickly, but if most people do not pass it on, it fades.",
+    "farm": "A fence between pastures stops disease jumping to another herd.",
+    "sea": "Quarantine and lookouts at ports protect a country.",
+    "city": "A city's water and sanitation works protect thousands without anyone noticing."
+   },
+   "mnemonic": "R above 1 grows, R below 1 fades; threshold 1 − 1/R₀.",
+   "terms": [
+    [
+     "Incidence",
+     "New cases in a population at risk over a time period."
+    ],
+    [
+     "Prevalence",
+     "The proportion of a population with a condition at a given time."
+    ],
+    [
+     "R₀",
+     "Average number of people one case infects in a fully susceptible population."
+    ],
+    [
+     "Surveillance",
+     "Ongoing collection and analysis of health data for action."
+    ],
+    [
+     "Social determinants of health",
+     "Conditions in which people live and work that shape health."
+    ]
+   ],
+   "misc": {
+    "wrong": "Public health is just about treating sick people.",
+    "right": "Public health focuses on preventing disease and protecting health across populations, including clean water, vaccination and fair access to care."
+   },
+   "limits": "The 1 − 1/R₀ threshold assumes homogeneous mixing and perfect immunity; real populations are more complex and R₀ varies by setting.",
+   "trip": {
+    "wiki": "Basic reproduction number",
+    "prompt": "Compare R₀ values for several infections and think about control measures."
+   },
+   "sources": [
+    "Epidemiology",
+    "Basic reproduction number",
+    "Public health"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A town of 20,000 people at risk has 60 new cases of a disease in a year. What is the incidence per 1000 people per year?",
+     "a": 3,
+     "tol": 0.05,
+     "unit": "per 1000",
+     "why": "60 ÷ 20,000 = 0.003 = 3 per 1000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "R₀ = 4. What percentage must be immune for herd immunity, using 1 − 1/R₀?",
+     "a": 75,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "1 − 0.25 = 0.75 = 75%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "R₀ = 2. What percentage must be immune for herd immunity, using 1 − 1/R₀?",
+     "a": 50,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "1 − 0.5 = 0.5 = 50%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If R is below 1...",
+     "o": [
+      "The outbreak declines",
+      "The outbreak grows faster",
+      "Nothing changes at all",
+      "Everyone in the community is infected"
+     ],
+     "a": 0,
+     "why": "Each case infects fewer than one other person on average.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Screening for a disease in people without symptoms is an example of...",
+     "o": [
+      "Secondary prevention",
+      "Primary prevention before any disease starts",
+      "Tertiary prevention after complications",
+      "Treatment of established disease only"
+     ],
+     "a": 0,
+     "why": "Early detection.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Rehabilitation after a stroke to reduce disability is an example of...",
+     "o": [
+      "Tertiary prevention",
+      "Primary prevention",
+      "Secondary prevention",
+      "Screening"
+     ],
+     "a": 0,
+     "why": "Tertiary prevention reduces the impact of established disease.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Prevalence differs from incidence because it...",
+     "o": [
+      "Counts all existing cases at a time, not only new ones",
+      "Counts only the deaths in a year",
+      "Counts only new cases in a period",
+      "Measures the cost of care to the system"
+     ],
+     "a": 0,
+     "why": "Long diseases have higher prevalence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional village has a surge of diarrhoea after flooding. What is a first public health step?",
+     "o": [
+      "Ensure safe water and sanitation, and investigate the outbreak",
+      "Ignore it until more people are ill",
+      "Close all clinics in the district",
+      "Stop surveillance to save resources"
+     ],
+     "a": 0,
+     "why": "Break the water-borne chain and gather data.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order an outbreak investigation.",
+     "items": [
+      "Confirm the diagnosis and the outbreak",
+      "Describe cases by person, place and time",
+      "Form and test hypotheses on the cause",
+      "Implement control measures and communicate"
+     ],
+     "why": "A standard sequence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why social determinants such as housing and income matter for health.",
+     "rubric": [
+      [
+       "housing",
+       "income",
+       "education",
+       "poverty",
+       "living",
+       "work"
+      ],
+      [
+       "health",
+       "disease",
+       "illness",
+       "outcome",
+       "risk"
+      ],
+      [
+       "access",
+       "equity",
+       "inequal",
+       "unfair",
+       "service"
+      ]
+     ],
+     "min": 2,
+     "model": "Housing, income and education shape exposure to risks and access to care, so inequality produces unfair differences in illness, which is why public health works on these conditions as well as on medical services.",
+     "why": "Health is socially determined.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A screening test finds many early abnormalities that would never have caused harm. What is the problem?",
+     "o": [
+      "Overdiagnosis, leading to unnecessary worry and treatment",
+      "More benefits for everyone screened",
+      "No effect on anyone at all",
+      "A cure for the cancers found"
+     ],
+     "a": 0,
+     "why": "Screening has harms as well as benefits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A community has low trust in health services. Which approach is most likely to improve vaccination uptake?",
+     "o": [
+      "Listen, work with community leaders and give clear honest information",
+      "Shame people into attending clinics",
+      "Force vaccination on everyone",
+      "Remove services from the community"
+     ],
+     "a": 0,
+     "why": "Trust-building communication works better than coercion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can R differ between places or times even for the same infection?",
+     "rubric": [
+      [
+       "contact",
+       "crowd",
+       "behaviour",
+       "density",
+       "mixing"
+      ],
+      [
+       "immunity",
+       "vaccin",
+       "susceptible",
+       "control",
+       "measure"
+      ],
+      [
+       "season",
+       "setting",
+       "condition",
+       "time",
+       "place"
+      ]
+     ],
+     "min": 2,
+     "model": "R depends on how people mix, how many are immune and what control measures are in place, so it changes between places and over time even if the microbe is the same.",
+     "why": "R is not a fixed property of a microbe.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How outbreaks grow and stop",
+    "model": "R₀ is how many people one case infects. If it is above 1, the outbreak grows. Vaccines and control measures reduce spread, and the herd immunity threshold is about 1 − 1/R₀. Public health also works on clean water, screening and fair access to care.",
+    "points": [
+     {
+      "k": [
+       "r0",
+       "reproduction",
+       "infects",
+       "spread"
+      ],
+      "ask": "What is R₀?"
+     },
+     {
+      "k": [
+       "vaccin",
+       "immun",
+       "herd",
+       "threshold"
+      ],
+      "ask": "How does vaccination stop an outbreak?"
+     },
+     {
+      "k": [
+       "prevent",
+       "screen",
+       "water",
+       "equity",
+       "determinant"
+      ],
+      "ask": "What else does public health do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Clinical research and biostatistics",
+   "icon": "📊",
+   "hook": "Two studies of the same drug disagree. One finds a benefit, the other finds none. How can both be honest work?",
+   "explain": [
+    "Research questions are framed with PICO: Population, Intervention, Comparison, Outcome. Designs include randomised controlled trials (strongest for treatments), cohort studies (follow groups forward), case-control studies (compare people with and without a disease looking back), cross-sectional surveys and qualitative studies. Phases of drug trials: phase 1 (safety), phase 2 (early efficacy and side effects), phase 3 (large comparison), phase 4 (post-marketing).",
+    "Bias is a systematic error (selection, measurement, reporting); chance is random error. Confounding makes an apparent link appear. Sample size and power determine the chance of detecting a true effect. A 95% confidence interval is a range that, across many repeated studies, would contain the true value in about 95% of them; approximate 95% CI = estimate ± 1.96 × standard error. A p-value is the probability of data at least this extreme if there were truly no effect; p < 0.05 does not prove the effect is real or important, and p > 0.05 does not prove no effect.",
+    "Survival analysis (Kaplan-Meier curves, hazard ratios) handles time-to-event data. Multiple testing, subgroup fishing and stopping early inflate false positives. Research ethics requires independent review, informed consent, minimising harm, honest reporting, trial registration, and fair inclusion. Systematic reviews and meta-analyses pool trials, but combine good evidence only if the included trials are sound ('garbage in, garbage out')."
+   ],
+   "example": {
+    "q": "A trial estimates a mean drop of 10 mmHg in blood pressure with standard error 2 mmHg. What is the approximate 95% confidence interval?",
+    "steps": [
+     "95% CI ≈ estimate ± 1.96 × SE.",
+     "1.96 × 2 = 3.92.",
+     "10 − 3.92 = 6.08 and 10 + 3.92 = 13.92."
+    ],
+    "a": "About 6.1 to 13.9 mmHg"
+   },
+   "analogies": {
+    "sport": "A coin tossed ten times may show seven heads by chance, whereas a thousand tosses give a steadier answer.",
+    "home": "Weighing a bag of rice once may be off; averaging many weighings is steadier.",
+    "city": "A poll of ten people tells less than a well-chosen sample of thousands.",
+    "tech": "A single test run can fail by chance; many runs show the true pattern."
+   },
+   "mnemonic": "PICO to ask, random to compare, CI to show precision, ethics to protect.",
+   "terms": [
+    [
+     "PICO",
+     "Population, Intervention, Comparison, Outcome: a way to frame a research question."
+    ],
+    [
+     "Confidence interval",
+     "A range of values consistent with the data, showing precision."
+    ],
+    [
+     "p-value",
+     "Probability of results at least this extreme if there were truly no effect."
+    ],
+    [
+     "Power",
+     "The chance a study detects a real effect of a given size."
+    ],
+    [
+     "Hazard ratio",
+     "Relative rate of an event over time in one group compared with another."
+    ]
+   ],
+   "misc": {
+    "wrong": "A p-value of 0.03 means there is a 97% chance the treatment works.",
+    "right": "The p-value is about the data if there were no effect; it does not give the probability that the treatment works."
+   },
+   "limits": "Frequentist and Bayesian approaches interpret probability differently, and statisticians disagree about the best way to report results.",
+   "trip": {
+    "wiki": "Confidence interval",
+    "prompt": "Find how the width of a confidence interval changes with sample size."
+   },
+   "sources": [
+    "Clinical trial",
+    "Confidence interval",
+    "P-value"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Estimate 5 and standard error 1.5. Using 1.96 × SE, what is the upper limit of the approximate 95% CI, to one decimal place?",
+     "a": 7.9,
+     "tol": 0.05,
+     "why": "1.96 × 1.5 = 2.94; 5 + 2.94 = 7.94 ≈ 7.9.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In a cohort, 30 of 200 exposed people and 10 of 200 unexposed people develop disease. What is the relative risk?",
+     "a": 3,
+     "tol": 0.05,
+     "why": "Risk exposed 0.15; unexposed 0.05; RR = 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A 95% CI for a risk ratio is 0.8 to 1.3. What does this suggest?",
+     "o": [
+      "The data are consistent with no effect (1.0 is inside)",
+      "Strong benefit from the treatment",
+      "Strong harm from the treatment",
+      "An impossible result that must be an error"
+     ],
+     "a": 0,
+     "why": "A CI including 1 for a ratio means no clear difference.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which design is generally the strongest for testing a treatment?",
+     "o": [
+      "Randomised controlled trial",
+      "A single case report from one hospital",
+      "Expert opinion alone",
+      "A patient anecdote"
+     ],
+     "a": 0,
+     "why": "Randomisation reduces confounding.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A larger sample size generally leads to...",
+     "o": [
+      "A narrower confidence interval",
+      "A wider confidence interval",
+      "More bias in the result",
+      "No change at all in the interval"
+     ],
+     "a": 0,
+     "why": "More data gives greater precision.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the phase to its main aim.",
+     "pairs": [
+      [
+       "Phase 1",
+       "Safety and tolerability"
+      ],
+      [
+       "Phase 2",
+       "Early efficacy and dosing questions"
+      ],
+      [
+       "Phase 3",
+       "Large comparison with standard care"
+      ],
+      [
+       "Phase 4",
+       "Post-marketing safety monitoring"
+      ]
+     ],
+     "why": "Stages of drug development.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A study tests 40 subgroups and reports the one with p = 0.03 as a finding. What is the concern?",
+     "o": [
+      "Multiple testing makes chance findings likely",
+      "None, since the finding is significant",
+      "Subgroups are always valid evidence",
+      "p < 0.05 always proves that the treatment works"
+     ],
+     "a": 0,
+     "why": "With many tests, some will be falsely significant.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of a typical clinical trial.",
+     "items": [
+      "Frame the question (PICO)",
+      "Register the protocol and get ethics approval",
+      "Recruit, randomise and follow up",
+      "Analyse and report all outcomes"
+     ],
+     "why": "Good practice from question to honest report.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A trial stops early after a favourable interim result. What is a concern?",
+     "o": [
+      "It may overestimate the effect",
+      "It always underestimates the harms of treatment",
+      "It is always better than a full trial",
+      "There is no concern at all"
+     ],
+     "a": 0,
+     "why": "Early stopping for benefit can exaggerate effect sizes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why p > 0.05 does not prove that a treatment has no effect.",
+     "rubric": [
+      [
+       "sample",
+       "small",
+       "underpower",
+       "power",
+       "not enough"
+      ],
+      [
+       "absence",
+       "not prove",
+       "no evidence",
+       "inconclusive",
+       "chance",
+       "miss"
+      ],
+      [
+       "confidence interval",
+       "effect",
+       "wide",
+       "benefit",
+       "possible"
+      ]
+     ],
+     "min": 2,
+     "model": "A non-significant result may come from a small, underpowered study, so absence of evidence is not evidence of absence; the confidence interval shows which effects are still plausible.",
+     "why": "Interpret with precision and power.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A meta-analysis pools twenty small trials, most of poor quality. How reliable is the result?",
+     "o": [
+      "Limited, since pooling poor studies does not remove their bias",
+      "Perfect, because the pooling adds many patients",
+      "Always correct, as the results are combined",
+      "Unaffected by the quality of the trials"
+     ],
+     "a": 0,
+     "why": "Garbage in, garbage out.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A trial excludes older people and pregnant women. What is a consequence for guidelines?",
+     "o": [
+      "Results may not apply to those groups",
+      "Results apply equally to every group",
+      "Nothing changes for the guidelines",
+      "Guidelines become perfect for all people"
+     ],
+     "a": 0,
+     "why": "External validity is limited.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must trials be registered and all outcomes reported?",
+     "rubric": [
+      [
+       "bias",
+       "selective",
+       "hide",
+       "cherry",
+       "publication"
+      ],
+      [
+       "register",
+       "protocol",
+       "pre-specified",
+       "transparent",
+       "honest"
+      ],
+      [
+       "evidence",
+       "harm",
+       "decision",
+       "patient",
+       "trust"
+      ]
+     ],
+     "min": 2,
+     "model": "Registration with pre-specified outcomes and full reporting prevents selective publication of positive results, so evidence reflects all the data and decisions about patients are not distorted.",
+     "why": "Transparency protects patients.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading a clinical study",
+    "model": "Frame the question with PICO, compare groups fairly with randomisation, and look at the confidence interval to judge precision. A p-value is not the chance that a treatment works. Small or biased studies can mislead, so transparent reporting and ethics matter.",
+    "points": [
+     {
+      "k": [
+       "pico",
+       "question",
+       "population",
+       "intervention"
+      ],
+      "ask": "How is a research question framed?"
+     },
+     {
+      "k": [
+       "random",
+       "compare",
+       "bias",
+       "control"
+      ],
+      "ask": "Why compare groups?"
+     },
+     {
+      "k": [
+       "confidence",
+       "p-value",
+       "precision",
+       "interval"
+      ],
+      "ask": "How do I read the numbers?"
+     },
+     {
+      "k": [
+       "ethic",
+       "consent",
+       "register",
+       "report",
+       "honest"
+      ],
+      "ask": "What makes research trustworthy?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Healthcare technology and medical AI",
+   "icon": "🤖",
+   "hook": "An AI reads chest X-rays as well as a specialist in testing. Does that mean it is ready to be used in every hospital tomorrow?",
+   "explain": [
+    "Healthcare technology includes electronic health records, telemedicine, wearable sensors, medical devices, robotic surgery, laboratory automation, imaging systems and clinical decision-support. Benefits are access, speed, consistency and better information; risks are errors, alert fatigue, workflow disruption, security breaches and inequity of access.",
+    "Medical AI, usually machine learning, finds patterns in data, such as signs of disease in images. Performance is described with sensitivity, specificity, AUC and predictive values, which depend on prevalence. A tool must be validated on data that were not used for training, ideally externally in different hospitals and populations and prospectively in real use. Models can fail when data shift (different scanners, patient groups or practices), when training data reflect bias or are unrepresentative, or when they learn shortcuts (for example a hospital label on an image rather than the disease).",
+    "Safe use requires human oversight with clear responsibility (the clinician remains accountable), transparency about limitations, monitoring after deployment, privacy and data protection, informed consent for data use where appropriate, and regulation of medical devices and software. Explainability helps trust but does not replace validation. Automation bias, over-reliance on a machine's output, is a real risk, as is under-use where the tool would help. Digital tools can widen inequity if some groups lack access, so design and testing should include diverse users. AI should support, not replace, communication and care."
+   ],
+   "example": {
+    "q": "An AI tool has 95% sensitivity and 95% specificity for a disease with 1% prevalence. In 10,000 screened people, how many true positives and false positives?",
+    "steps": [
+     "Diseased: 100. True positives: 95% of 100 = 95.",
+     "Healthy: 9,900. False positives: 5% of 9,900 = 495.",
+     "So among 590 positives, only 95 (about 16%) are true: low positive predictive value because the disease is rare."
+    ],
+    "a": "95 true positives and 495 false positives, so most positive flags are false"
+   },
+   "analogies": {
+    "home": "A smoke detector tuned to detect every fire will also go off at toast.",
+    "tech": "A model trained on one camera may fail on another.",
+    "sport": "An analyst's tool trained on one league may misjudge another.",
+    "city": "Traffic software tuned for one city may fail in another with different roads."
+   },
+   "mnemonic": "Validate outside, watch for shift, keep a human accountable.",
+   "terms": [
+    [
+     "Machine learning",
+     "Computer methods that learn patterns from data."
+    ],
+    [
+     "External validation",
+     "Testing a model on data from different sites that were not used to build it."
+    ],
+    [
+     "Data shift",
+     "A change in the data after deployment that lowers performance."
+    ],
+    [
+     "Automation bias",
+     "Over-trusting a machine's output."
+    ],
+    [
+     "Telemedicine",
+     "Providing care at a distance using communication technology."
+    ]
+   ],
+   "misc": {
+    "wrong": "If an AI is accurate in a test, it is safe everywhere.",
+    "right": "Performance may fall with different patients, equipment or prevalence, so local validation, monitoring and human oversight are needed."
+   },
+   "limits": "AI methods and regulation change quickly; this stage describes principles rather than particular products.",
+   "trip": {
+    "wiki": "Artificial intelligence in healthcare",
+    "prompt": "Find one benefit and one risk of AI in healthcare."
+   },
+   "sources": [
+    "Artificial intelligence in healthcare",
+    "Telehealth",
+    "Electronic health record"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "An AI tool has 90% sensitivity and 90% specificity. It screens 1,000 people, of whom 100 have the disease. How many false positives are there?",
+     "a": 90,
+     "tol": 0,
+     "why": "Healthy people: 900; 10% of 900 = 90 false positives.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With 90% sensitivity and 90% specificity in 1,000 people with 100 diseased, there are 90 true positives and 90 false positives. What is the positive predictive value as a percentage?",
+     "a": 50,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "90 ÷ (90 + 90) = 0.5 = 50%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "External validation means...",
+     "o": [
+      "Testing the model on different sites not used for training",
+      "Testing the model again on its training data",
+      "Using more training data only",
+      "Asking the developers if it is correct"
+     ],
+     "a": 0,
+     "why": "It shows whether performance generalises.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "An AI trained mostly on images from one scanner performs worse at a hospital with a different scanner. This is...",
+     "o": [
+      "Data shift",
+      "Automation bias",
+      "Consent",
+      "Encryption"
+     ],
+     "a": 0,
+     "why": "Input data differ from training data.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A clinician accepts an AI's result without checking despite a contradictory clinical picture. This is...",
+     "o": [
+      "Automation bias",
+      "Good practice in a busy clinic",
+      "Randomisation of the patients",
+      "Blinding of the assessor"
+     ],
+     "a": 0,
+     "why": "Over-trust of the machine.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the risk to a safeguard.",
+     "pairs": [
+      [
+       "Biased training data",
+       "Diverse data and subgroup testing"
+      ],
+      [
+       "Data shift",
+       "Monitoring after deployment"
+      ],
+      [
+       "Privacy breach",
+       "Strong security and data governance"
+      ],
+      [
+       "Over-reliance",
+       "Training and clinician oversight"
+      ]
+     ],
+     "why": "Each risk needs a specific safeguard.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A skin-lesion AI was trained mostly on light skin. What is the concern?",
+     "o": [
+      "It may perform worse on darker skin, increasing inequity",
+      "It will perform better on all skin types",
+      "There is no concern about this",
+      "It will be cheaper to run"
+     ],
+     "a": 0,
+     "why": "Unrepresentative data cause unequal performance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the safe adoption of a medical AI tool.",
+     "items": [
+      "Define the clinical need",
+      "Validate on independent data",
+      "Pilot with clinician oversight and monitoring",
+      "Review performance and harms over time"
+     ],
+     "why": "Lifecycle approach.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A telemedicine consultation reveals chest pain with breathlessness. What is the safest action?",
+     "o": [
+      "Advise urgent emergency care and arrange it",
+      "Reassure and end the call quickly",
+      "Book a routine visit next week",
+      "Ignore it as a telephone problem"
+     ],
+     "a": 0,
+     "why": "Remote care must recognise when in-person emergency care is needed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why should a clinician remain accountable when using an AI recommendation?",
+     "rubric": [
+      [
+       "responsib",
+       "accountab",
+       "duty"
+      ],
+      [
+       "error",
+       "wrong",
+       "limit",
+       "fail",
+       "bias"
+      ],
+      [
+       "judgement",
+       "oversight",
+       "check",
+       "patient",
+       "context"
+      ]
+     ],
+     "min": 2,
+     "model": "AI can be wrong or biased, so the clinician remains responsible for judging its output in the context of the patient and for overseeing its use.",
+     "why": "Human oversight and accountability.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A hospital wants to use patient records to train an AI. Which is the most important ethical step?",
+     "o": [
+      "Ensure legal basis, privacy protection, governance and appropriate consent or approval",
+      "Share the records openly with other companies",
+      "Skip approvals to save time",
+      "Sell the data to cover the project costs"
+     ],
+     "a": 0,
+     "why": "Privacy and trust are essential.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A sepsis alert fires hundreds of times a day and most are false. What is the risk?",
+     "o": [
+      "Alert fatigue leads staff to ignore real alerts",
+      "Better care because of the extra warnings",
+      "No risk because alerts are harmless",
+      "Staff become more careful with every alert"
+     ],
+     "a": 0,
+     "why": "Too many false alerts cause desensitisation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a model's high accuracy on a test dataset does not guarantee safety in practice.",
+     "rubric": [
+      [
+       "different",
+       "shift",
+       "new",
+       "other hospital",
+       "population",
+       "prevalence"
+      ],
+      [
+       "validation",
+       "external",
+       "prospective",
+       "monitor",
+       "real"
+      ],
+      [
+       "bias",
+       "shortcut",
+       "fail",
+       "limit",
+       "unrepresentative"
+      ]
+     ],
+     "min": 2,
+     "model": "A model may perform differently on new populations, equipment or prevalence, or may have learned shortcuts, so external, prospective validation and ongoing monitoring are needed.",
+     "why": "Generalisation must be shown.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Using AI safely in healthcare",
+    "model": "Medical AI finds patterns in data, but it can fail on new patients or equipment. It must be tested on independent data, monitored, and used with human oversight. Privacy, fairness and clear responsibility matter.",
+    "points": [
+     {
+      "k": [
+       "pattern",
+       "data",
+       "learn",
+       "machine"
+      ],
+      "ask": "What does medical AI do?"
+     },
+     {
+      "k": [
+       "validate",
+       "test",
+       "independent",
+       "shift",
+       "new"
+      ],
+      "ask": "Why test it elsewhere?"
+     },
+     {
+      "k": [
+       "human",
+       "oversight",
+       "responsib",
+       "accountab"
+      ],
+      "ask": "Who is responsible?"
+     },
+     {
+      "k": [
+       "privacy",
+       "fair",
+       "bias",
+       "equity"
+      ],
+      "ask": "What other risks exist?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated virtual hospital case-management project",
+   "icon": "🏥",
+   "hook": "A fictional patient arrives in your emergency department with several problems at once. Can you bring together everything you have learned to keep her safe?",
+   "explain": [
+    "This capstone brings together history, examination, reasoning, investigations, treatment principles, communication and ethics in one fictional case. Case: Mrs A, 72, with type 2 diabetes, high blood pressure and mild chronic kidney disease, presents with 3 days of cough, fever and increasing breathlessness, and now new confusion. Observations: RR 26, SpO₂ 89% on air, HR 118, BP 92/55, temperature 38.9 °C. She takes several regular medicines. This is a simulation, not advice.",
+    "Step by step: (1) Recognise she is seriously unwell: ABCDE, give oxygen as indicated, get IV access and call a senior early. (2) Think: likely pneumonia with sepsis and possible organ dysfunction; also consider heart failure, pulmonary embolism, and diabetic problems; keep dangerous causes on the differential. (3) Investigate: blood tests (count, kidney function and electrolytes, glucose, lactate, cultures before antibiotics where it does not delay treatment), blood gas, ECG, chest X-ray. (4) Treat the cause and support organs promptly, review medicines that may be unsafe with kidney injury, and reassess often.",
+    "Alongside, practise good care: explain in plain words, check what matters to her and her family, assess capacity (confusion may affect it), act in her best interests if she lacks capacity, respect confidentiality, document clearly, hand over with SBAR, report any error or near miss, and plan safe discharge or ongoing care with follow-up. Reflect afterwards: what went well, what you were unsure about, and what you will learn next. Acting safely means knowing your limits and asking for help."
+   ],
+   "example": {
+    "q": "In the case above, which three findings most strongly signal a need for immediate senior escalation?",
+    "steps": [
+     "Low oxygen (SpO₂ 89%) with a fast breathing rate of 26 shows respiratory compromise.",
+     "Low blood pressure with a fast pulse and new confusion suggest shock and brain involvement; qSOFA is 3.",
+     "Fever with a chest source suggests sepsis. Together these need immediate senior help."
+    ],
+    "a": "Respiratory compromise (SpO₂ 89%, RR 26), low BP with fast pulse, and new confusion with fever"
+   },
+   "analogies": {
+    "sport": "A match is won by teamwork, planning and adapting, not one star play.",
+    "sea": "Navigating a ship needs charts, instruments, a crew and a captain willing to change course.",
+    "tech": "A complex system needs monitoring, backups and clear communication between teams.",
+    "city": "A city emergency response coordinates fire, ambulance, hospitals and communication."
+   },
+   "mnemonic": "Recognise, Resuscitate, Reason, Result-check, Reassess, Respect, Record, Reflect.",
+   "terms": [
+    [
+     "Capstone",
+     "A final project that brings together everything learned."
+    ],
+    [
+     "Escalation",
+     "Calling a more senior clinician for help."
+    ],
+    [
+     "Best interests",
+     "A decision-making standard for patients who lack capacity."
+    ],
+    [
+     "Handover",
+     "Passing key information to the next team using a clear structure."
+    ]
+   ],
+   "misc": {
+    "wrong": "Competent doctors manage the hardest cases alone.",
+    "right": "Competent doctors know their limits, work in teams and escalate early."
+   },
+   "limits": "A simulation cannot capture every real-world complexity; actual management follows local guidelines and senior clinicians, and no doses or regimens are given here.",
+   "trip": {
+    "wiki": "Pneumonia",
+    "prompt": "Find how pneumonia can lead to sepsis and how it is assessed."
+   },
+   "sources": [
+    "Pneumonia",
+    "Sepsis",
+    "Clinical decision-making"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Mrs A (fictional) has SpO₂ 89%, RR 26, BP 92/55, HR 118 and new confusion. What is the first priority?",
+     "o": [
+      "Immediate ABCDE assessment and call for senior help",
+      "Complete a long written history before anything else",
+      "Send her to the waiting room until a bed is free",
+      "Book an outpatient scan for next week"
+     ],
+     "a": 0,
+     "why": "She is critically ill, so resuscitation and escalation come first.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Mrs A has RR 26, altered mentation and systolic BP 92. What is her qSOFA score (RR ≥ 22, altered mentation, SBP ≤ 100)?",
+     "a": 3,
+     "tol": 0,
+     "why": "All three criteria are met.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which diagnosis best unifies her fever, cough, low oxygen and shock?",
+     "o": [
+      "Pneumonia with sepsis",
+      "A simple cold with a sore throat",
+      "Hay fever with watery eyes",
+      "A sprained ankle from a fall"
+     ],
+     "a": 0,
+     "why": "A chest infection causing a systemic response.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which other dangerous causes should remain on the differential?",
+     "o": [
+      "Pulmonary embolism and heart failure",
+      "Tonsillitis only, with no other cause",
+      "Back strain from lifting",
+      "Sunburn from the day before"
+     ],
+     "a": 0,
+     "why": "They can also cause breathlessness and low oxygen.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why check kidney function and review her regular medicines early?",
+     "o": [
+      "Sepsis can injure the kidneys and some medicines become unsafe",
+      "To fill time while waiting for a bed",
+      "Kidneys do not matter in an acute illness",
+      "Medicines never change in safety during illness"
+     ],
+     "a": 0,
+     "why": "Medication safety depends on organ function.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order a sensible approach to Mrs A.",
+     "items": [
+      "Recognise she is critically ill and call for help",
+      "Assess and support ABCDE",
+      "Take samples and investigations, then treat the cause promptly",
+      "Reassess and communicate with her and family"
+     ],
+     "why": "Recognise, stabilise, investigate and treat, reassess.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the investigation to the question it answers.",
+     "pairs": [
+      [
+       "Chest X-ray",
+       "Is there pneumonia or fluid?"
+      ],
+      [
+       "Blood cultures",
+       "Which germ is in the blood?"
+      ],
+      [
+       "Blood gas and lactate",
+       "How severe is the acid-base and perfusion problem?"
+      ],
+      [
+       "ECG",
+       "Is there a rhythm problem or ischaemia?"
+      ]
+     ],
+     "why": "Tests answer specific questions.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Mrs A is confused and refuses a procedure. What is the correct first step?",
+     "o": [
+      "Assess her capacity for this decision and act in her best interests if she lacks it",
+      "Do the procedure by force",
+      "Ignore her wishes and proceed",
+      "Ask a stranger in the corridor to decide"
+     ],
+     "a": 0,
+     "why": "Capacity assessment, then best interests.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A nurse notices that a prescribed medicine may be unsafe given her kidney results. What is best?",
+     "o": [
+      "Pause and discuss with the prescriber and pharmacist",
+      "Give it anyway as it was prescribed",
+      "Hide the chart until the doctor returns",
+      "Wait for the next day to raise it"
+     ],
+     "a": 0,
+     "why": "Speaking up prevents harm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Describe how you would hand over Mrs A to the night team using SBAR.",
+     "rubric": [
+      [
+       "situation",
+       "who",
+       "problem",
+       "sepsis",
+       "pneumonia"
+      ],
+      [
+       "background",
+       "diabetes",
+       "kidney",
+       "history",
+       "medicine"
+      ],
+      [
+       "assessment",
+       "observation",
+       "unwell",
+       "oxygen",
+       "blood pressure"
+      ],
+      [
+       "recommend",
+       "review",
+       "plan",
+       "escalat",
+       "monitor"
+      ]
+     ],
+     "min": 3,
+     "model": "Situation: Mrs A, 72, with pneumonia and sepsis. Background: diabetes, hypertension and mild kidney disease. Assessment: low oxygen, fast breathing, low BP and confusion. Recommendation: frequent observations, early senior and critical care review, and reassessment of treatment and kidney function.",
+     "why": "SBAR structures clear information.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Mrs A improves, but a junior realises they gave wrong information to the family earlier. What should they do?",
+     "o": [
+      "Correct it honestly, tell the senior and report the error",
+      "Say nothing and hope it is forgotten",
+      "Blame the family for misunderstanding",
+      "Hide the record of what was said"
+     ],
+     "a": 0,
+     "why": "Honesty and learning from error.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The family asks if she is 'going to die'. Her outcome is uncertain. What is the best response?",
+     "o": [
+      "Be honest about the seriousness and uncertainty, show compassion and offer regular updates",
+      "Promise that she will definitely be fine",
+      "Refuse to speak to the family about it",
+      "Give a false certainty to reassure them"
+     ],
+     "a": 0,
+     "why": "Honest, kind communication supports trust.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Reflect: name one thing you would do differently to reduce diagnostic error in a complex case like Mrs A's.",
+     "rubric": [
+      [
+       "pause",
+       "time-out",
+       "second opinion",
+       "senior",
+       "checklist",
+       "reconsider",
+       "differential"
+      ],
+      [
+       "bias",
+       "anchor",
+       "miss",
+       "error",
+       "alternative",
+       "reflect"
+      ]
+     ],
+     "min": 2,
+     "model": "I would keep a broad differential, pause for a diagnostic time-out to check for anchoring, and seek senior input so that dangerous alternatives are not missed.",
+     "why": "Reflection reduces repeat errors.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Managing a complex case safely",
+    "model": "In a seriously unwell patient, recognise danger, check ABCDE, call a senior early, think about dangerous causes, investigate and treat the cause, and reassess often. Communicate honestly, respect the patient's choices, hand over clearly and learn from errors.",
+    "points": [
+     {
+      "k": [
+       "recognise",
+       "unwell",
+       "danger",
+       "abcde"
+      ],
+      "ask": "What comes first?"
+     },
+     {
+      "k": [
+       "senior",
+       "help",
+       "escalat",
+       "call"
+      ],
+      "ask": "What should a junior do?"
+     },
+     {
+      "k": [
+       "investigat",
+       "test",
+       "cause",
+       "treat",
+       "reassess"
+      ],
+      "ask": "Then what?"
+     },
+     {
+      "k": [
+       "communicat",
+       "honest",
+       "respect",
+       "capacity",
+       "family"
+      ],
+      "ask": "How do we care for the person?"
+     }
+    ]
+   }
+  }
+ ]
+}

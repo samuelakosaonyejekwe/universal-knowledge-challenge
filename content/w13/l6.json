@@ -1,0 +1,2820 @@
+{
+ "world": 13,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced chess opening theory",
+   "icon": "📖",
+   "hook": "Opening theory is a body of knowledge that no one person holds in full, and it keeps being revised. How is it organised, and how should a serious player use it?",
+   "explain": [
+    "Opening theory is the accumulated knowledge about the first moves, built from game results, human analysis and, increasingly, engine analysis. The Encyclopaedia of Chess Openings (ECO) classifies openings into five volumes by letter: A (flank and irregular openings such as 1.c4 and 1.Nf3), B (semi-open games after 1.e4, such as the Sicilian and Caro-Kann), C (open games 1.e4 e5 and the French), D (closed and semi-closed games such as the Queen's Gambit) and E (Indian defences such as the King's Indian and Nimzo-Indian). Within each letter, numbers identify variations; for example the Najdorf Sicilian is in B90-B99 and the Ruy Lopez in C60-C99.",
+    "A tabiya is a standard position reached by many move orders and used as a reference point. Move-order flexibility, transpositions and novelties shape modern practice. Players often think in terms of structures (such as the Hedgehog, Maroczy Bind, IQP or Carlsbad) and plans rather than isolated lines, and use engines to test concrete lines to great depth. Theory also changes: lines once thought refuted can be revived with a new idea, and popular lines can be neutralised.",
+    "A repertoire is a strategic choice: sharp openings give winning chances but require more memorisation and more risk; solid ones reduce risk but may offer fewer chances; flexible ones keep options open. Good theory work always asks: what are the typical plans and pawn breaks, what endgames arise, and what happens when the opponent deviates?"
+   ],
+   "example": {
+    "q": "Classify by ECO volume: (a) 1.e4 c5 Najdorf, (b) 1.c4 English, (c) 1.d4 Nf6 2.c4 g6 King's Indian, (d) 1.e4 e5 2.Nf3 Nc6 3.Bb5 Ruy Lopez.",
+    "steps": [
+     "1.e4 c5 is a semi-open game: volume B.",
+     "The English (1.c4) is a flank opening: volume A.",
+     "The King's Indian is an Indian defence: volume E, and the Ruy Lopez comes from an open game 1.e4 e5: volume C."
+    ],
+    "a": "B, A, E, C"
+   },
+   "analogies": {
+    "home": "A recipe book gets revised: cooks find better methods, and old rules are dropped.",
+    "city": "A map of roads is updated as new roads are built and old ones close.",
+    "farm": "Farming methods are refined over generations as people test new seeds and tools.",
+    "sport": "Tactics in football evolve as coaches find answers to new formations."
+   },
+   "mnemonic": "ECO: A flank, B semi-open, C open, D closed, E Indian.",
+   "terms": [
+    [
+     "ECO",
+     "Encyclopaedia of Chess Openings: a classification by codes A00-E99."
+    ],
+    [
+     "Tabiya",
+     "A standard reference position of an opening."
+    ],
+    [
+     "Novelty",
+     "A new move in a known position."
+    ],
+    [
+     "Transposition",
+     "Reaching a known position by a different move order."
+    ]
+   ],
+   "misc": {
+    "wrong": "Opening theory is fixed and complete.",
+    "right": "It evolves with new ideas, results and engine analysis."
+   },
+   "limits": "The boundaries between opening systems are conventions; many positions can be classified in more than one way.",
+   "trip": {
+    "wiki": "Encyclopaedia of Chess Openings",
+    "prompt": "Find the table of ECO volumes. Which letter covers the Queen's Gambit?"
+   },
+   "sources": [
+    "Encyclopaedia of Chess Openings",
+    "Chess opening theory",
+    "Sicilian Defence"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which ECO volume covers the Sicilian Defence?",
+     "o": [
+      "B",
+      "A",
+      "C",
+      "E"
+     ],
+     "a": 0,
+     "why": "B covers 1.e4 other than 1...e5 and 1...e6 (the Sicilian, Caro-Kann, Pirc and others).",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which ECO volume covers the King's Indian Defence?",
+     "o": [
+      "E",
+      "A",
+      "B",
+      "D"
+     ],
+     "a": 0,
+     "why": "E covers the Indian defences after 1.d4 Nf6 2.c4 and ... g6/e6.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which ECO volume covers 1.c4, the English Opening?",
+     "o": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "a": 0,
+     "why": "A covers flank and irregular openings.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which ECO volume covers the Ruy Lopez?",
+     "o": [
+      "C",
+      "A",
+      "B",
+      "E"
+     ],
+     "a": 0,
+     "why": "C covers 1.e4 e5 and the French.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a tabiya?",
+     "o": [
+      "A standard reference position reached by many move orders",
+      "A drawn position that both sides can force by repetition",
+      "A castling rule that applies only in the Sicilian Defence",
+      "A checkmate pattern that arises from the Italian Game"
+     ],
+     "a": 0,
+     "why": "It is a landmark in opening theory.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do strong players study pawn structures rather than only lines?",
+     "o": [
+      "Structures guide plans when the opponent leaves the known line",
+      "Pawn structures are always shorter to learn than move lists",
+      "Memorised lines are forbidden once the opponent leaves the book",
+      "Engines always prefer structures to concrete lines"
+     ],
+     "a": 0,
+     "why": "Ideas transfer between positions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does opening theory change over time?",
+     "rubric": [
+      [
+       "new",
+       "idea",
+       "ideas",
+       "novelty",
+       "novelties",
+       "discover"
+      ],
+      [
+       "engine",
+       "analysis",
+       "computer",
+       "results",
+       "games",
+       "study"
+      ],
+      [
+       "refute",
+       "revive",
+       "improve",
+       "neutralise",
+       "neutralize",
+       "change",
+       "deeper"
+      ]
+     ],
+     "min": 2,
+     "model": "New ideas, game results and deeper engine analysis can refute, revive or improve lines, so theory is continually revised.",
+     "why": "Theory is a living body of knowledge.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the opening to its ECO volume.",
+     "pairs": [
+      [
+       "Queen's Gambit",
+       "D"
+      ],
+      [
+       "Caro-Kann",
+       "B"
+      ],
+      [
+       "Nimzo-Indian",
+       "E"
+      ],
+      [
+       "Italian Game",
+       "C"
+      ]
+     ],
+     "why": "Volumes group openings by first moves.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the work of building an opening line.",
+     "items": [
+      "Choose the structure and plans",
+      "Learn the key lines",
+      "Test with engine and games",
+      "Revise after real results"
+     ],
+     "why": "From ideas to detail to testing.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A line you rely on is refuted by a new idea. What is a sound response?",
+     "o": [
+      "Study the new idea and adapt, perhaps with a different move order",
+      "Ignore the new idea and keep playing the same moves as before",
+      "Play the same moves faster so the opponent has less time to prepare",
+      "Give up the opening completely and switch to a different system"
+     ],
+     "a": 0,
+     "why": "Prepared players update.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can a \"refuted\" line return to practice?",
+     "o": [
+      "Players find new improvements that change the evaluation",
+      "The rules for the opening are officially revised each year",
+      "Engines forget their own analysis between versions",
+      "Time controls change how the opening is evaluated"
+     ],
+     "a": 0,
+     "why": "Refutation is not permanent.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How should a repertoire balance risk and winning chances?",
+     "rubric": [
+      [
+       "sharp",
+       "risk",
+       "solid",
+       "safe",
+       "balance"
+      ],
+      [
+       "goal",
+       "style",
+       "situation",
+       "opponent",
+       "tournament",
+       "need"
+      ],
+      [
+       "win",
+       "draw",
+       "chances",
+       "results"
+      ]
+     ],
+     "min": 1,
+     "model": "Choose sharper lines when you need winning chances and solid ones when you want to limit risk, depending on your style and the event's situation.",
+     "why": "Strategy shapes theory choices.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a danger of copying an engine's opening line without understanding?",
+     "o": [
+      "You may not know the plans when the opponent deviates",
+      "The engine's line is illegal in tournaments",
+      "The moves are always too slow",
+      "The line cannot be played over the board"
+     ],
+     "a": 0,
+     "why": "Understanding is needed beyond the line.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Opening theory",
+    "model": "Opening theory is knowledge built from games and analysis. ECO classifies openings from A to E. Tabiyas are reference positions, and theory keeps changing with novelties and engine work.",
+    "points": [
+     {
+      "k": [
+       "eco",
+       "classification",
+       "a to e"
+      ],
+      "ask": "How are openings classified?"
+     },
+     {
+      "k": [
+       "tabiya",
+       "position",
+       "reference"
+      ],
+      "ask": "What is a tabiya?"
+     },
+     {
+      "k": [
+       "change",
+       "novelty",
+       "engine",
+       "new"
+      ],
+      "ask": "Does theory change?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Grandmaster positional concepts",
+   "icon": "🏛️",
+   "hook": "Grandmasters often explain a move by what it prevents or by which piece it improves, not by what it threatens. What concepts lie behind such quiet moves?",
+   "explain": [
+    "Grandmaster positional play rests on a handful of ideas developed over a century. Steinitz held that advantages should be accumulated and attacks launched only with an advantage. Nimzowitsch (in My System) emphasised prophylaxis, overprotection of key points, restriction of the opponent's pieces and blockade of passed pawns. Petrosian was famous for prophylaxis and exchange sacrifices. Modern writers such as Silman organise play around imbalances: minor pieces, pawn structure, space, material, control of key files or squares, development lead and initiative.",
+    "Useful concepts: static advantages (such as a better structure or a bishop pair) that last, versus dynamic ones (such as initiative or development lead) that fade if not used. Piece quality matters more than counting: a bad bishop, a poor knight on the rim, a passive rook. The \"worst piece\" principle is to improve the worst-placed piece. Colour complexes, outposts and weak squares guide where to put pieces. Space can be an advantage or a liability: a space advantage helps when opponents have fewer places to put their pieces, so the cramped side wants to trade pieces.",
+    "Positional thinking is always checked by concrete calculation: a plan that ignores tactics fails. The best players combine the two, switching between general principles and exact variations."
+   ],
+   "example": {
+    "q": "You have more space and the opponent is cramped. Should you offer or avoid trades?",
+    "steps": [
+     "A cramped side benefits from trades because it has more room afterwards.",
+     "So the side with more space usually avoids unnecessary trades.",
+     "Instead, maintain tension and improve pieces."
+    ],
+    "a": "Avoid unnecessary trades; keep the opponent cramped"
+   },
+   "analogies": {
+    "home": "A small flat with fewer people is more comfortable; a crowded one is cramped.",
+    "city": "A congested city centre is eased by removing cars; space is valuable.",
+    "farm": "A farmer with less land must use each field carefully.",
+    "sport": "A team with the ball in midfield controls the space and forces the opponent into mistakes."
+   },
+   "mnemonic": "Quality over count; static lasts, dynamic fades; check with calculation.",
+   "terms": [
+    [
+     "Overprotection",
+     "Protecting a key point more than it seems necessary, to free pieces."
+    ],
+    [
+     "Blockade",
+     "Placing a piece in front of a pawn to stop it."
+    ],
+    [
+     "Static advantage",
+     "A lasting plus such as better structure."
+    ],
+    [
+     "Dynamic advantage",
+     "A temporary plus such as initiative."
+    ]
+   ],
+   "misc": {
+    "wrong": "Positional play ignores tactics.",
+    "right": "Positional play depends on tactics: plans are checked by calculation."
+   },
+   "limits": "Chess writers sometimes disagree on how to weigh imbalances, and engines reveal exceptions to many classical rules.",
+   "trip": {
+    "wiki": "My System",
+    "prompt": "Find the main chapter topics. Which are about restriction and prophylaxis?"
+   },
+   "sources": [
+    "My System",
+    "Wilhelm Steinitz",
+    "Tigran Petrosian"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Who emphasised prophylaxis, blockade and overprotection in My System?",
+     "o": [
+      "Aron Nimzowitsch",
+      "Wilhelm Steinitz",
+      "Bobby Fischer",
+      "Garry Kasparov"
+     ],
+     "a": 0,
+     "why": "Nimzowitsch's book My System developed these ideas.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a static advantage?",
+     "o": [
+      "A lasting plus such as a better pawn structure",
+      "A temporary initiative that the opponent can soon neutralise",
+      "A check on the enemy king that is repeated",
+      "A lead in development that disappears after castling"
+     ],
+     "a": 0,
+     "why": "Static advantages remain over time.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a dynamic advantage?",
+     "o": [
+      "A plus such as initiative that may fade",
+      "A better pawn structure that lasts for the whole game",
+      "A fortress that the opponent cannot break",
+      "A drawn endgame with opposite-coloured bishops"
+     ],
+     "a": 0,
+     "why": "Dynamic factors must be used quickly.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the cramped side often want trades?",
+     "o": [
+      "Fewer pieces give it more room",
+      "Trades win pawns by force",
+      "Trades promote pawns",
+      "Trades end the game at once"
+     ],
+     "a": 0,
+     "why": "Space is shared among fewer pieces.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is overprotection?",
+     "o": [
+      "Protecting a key point more than seems necessary to free the other pieces",
+      "Protecting only the king so the other pieces can move",
+      "A kind of pin that holds a defender in place",
+      "A kind of skewer that wins the piece behind"
+     ],
+     "a": 0,
+     "why": "It makes the point solid and the other pieces flexible.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the \"worst piece\" principle?",
+     "o": [
+      "Improve your worst-placed piece",
+      "Trade your best piece for a pawn",
+      "Move the king out of the corner",
+      "Ignore the pieces and push pawns"
+     ],
+     "a": 0,
+     "why": "The weakest link limits the position.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between static and dynamic advantages and why it matters.",
+     "rubric": [
+      [
+       "static",
+       "lasting",
+       "permanent",
+       "long-term",
+       "structure"
+      ],
+      [
+       "dynamic",
+       "temporary",
+       "initiative",
+       "fade",
+       "lead",
+       "time"
+      ],
+      [
+       "use",
+       "quickly",
+       "convert",
+       "act",
+       "before",
+       "timing"
+      ]
+     ],
+     "min": 2,
+     "model": "Static advantages like structure last, while dynamic ones like the initiative or a development lead fade, so they must be used quickly.",
+     "why": "Know which kind you hold.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the thinker to an idea.",
+     "pairs": [
+      [
+       "Steinitz",
+       "Accumulating small advantages"
+      ],
+      [
+       "Nimzowitsch",
+       "Prophylaxis and blockade"
+      ],
+      [
+       "Petrosian",
+       "Prophylaxis and exchange sacrifices"
+      ],
+      [
+       "Silman",
+       "Imbalances"
+      ]
+     ],
+     "why": "Each contributed to positional theory.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Your plan is positionally sound but allows a tactic. What should you do?",
+     "o": [
+      "Revise the plan, since concrete tactics override general ideas",
+      "Play it anyway, since positional principles come before calculation",
+      "Ignore the tactic and hope the opponent does not notice",
+      "Offer a draw so the plan is never tested"
+     ],
+     "a": 0,
+     "why": "Calculation checks every plan.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor is a typical imbalance?",
+     "o": [
+      "Minor pieces (bishop vs knight)",
+      "The colour of the squares your pawns stand on",
+      "The move number at which the game ends",
+      "The brand of clock used in the event"
+     ],
+     "a": 0,
+     "why": "Piece types create imbalances.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can a bishop pair be an enduring advantage?",
+     "o": [
+      "Together they control squares of both colours, especially in open positions",
+      "Bishops cannot be captured by pawns in an open position",
+      "Bishops move like queens when two of them are on the board",
+      "They protect pawns better than rooks do in any structure"
+     ],
+     "a": 0,
+     "why": "The pair is strong when lines are open.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must positional ideas be checked by calculation?",
+     "rubric": [
+      [
+       "tactic",
+       "tactical",
+       "concrete",
+       "variation",
+       "calculate",
+       "line"
+      ],
+      [
+       "plan",
+       "idea",
+       "general",
+       "principle",
+       "positional"
+      ],
+      [
+       "fail",
+       "refute",
+       "wrong",
+       "overlook",
+       "ignore",
+       "miss"
+      ]
+     ],
+     "min": 2,
+     "model": "A positional plan can be refuted by a tactic, so general principles must be tested against concrete variations.",
+     "why": "Principle and calculation go together.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A static advantage is best exploited by...",
+     "o": [
+      "Taking time to improve the position without rushing",
+      "A fast attack with all the pieces, whatever the position",
+      "Sacrificing material at once to keep the initiative",
+      "Resigning when the advantage cannot be used quickly"
+     ],
+     "a": 0,
+     "why": "Static advantages do not fade.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Grandmaster positional concepts",
+    "model": "Positional play uses accumulation of advantages, prophylaxis, blockade, overprotection and the worst-piece principle. Static advantages last, dynamic ones fade, and calculation always checks the plan.",
+    "points": [
+     {
+      "k": [
+       "prophylaxis",
+       "blockade",
+       "overprotection"
+      ],
+      "ask": "What ideas are key?"
+     },
+     {
+      "k": [
+       "static",
+       "dynamic"
+      ],
+      "ask": "What kinds of advantage exist?"
+     },
+     {
+      "k": [
+       "calculate",
+       "tactics",
+       "check"
+      ],
+      "ask": "How do I check a plan?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Complex middlegame strategy",
+   "icon": "🌐",
+   "hook": "Middlegames seem endless in variety, but strong players reduce them to a few questions. What are those questions?",
+   "explain": [
+    "Complex middlegame strategy involves balancing attack, defence, structure and timing. Key themes: the timing of pawn breaks (a central break such as ...c5 or e4-e5 is correct only when the pieces are ready), the choice between opening and closing the position, the transition to an endgame, and the interplay of material, space and king safety. Opposite-coloured bishops in the middlegame favour the attacker, since the defender cannot challenge the bishop on its colour; in endings they favour the defender.",
+    "When kings castle on opposite sides, a race develops: pawn storms against the king and rapid opening of files. Speed and accuracy matter: each tempo counts. When kings castle on the same side, the attack is slower, with piece manoeuvres and sacrifices on the kingside; the defender seeks counterplay in the centre. A central break often refutes a flank attack, because a flank attack is justified only if the centre is closed or stable.",
+    "Dynamic assessments use concepts of initiative, tempo and piece activity. A strong planner asks: which side of the board is most promising, which break will change the structure in my favour, and which piece trades help me? The plan is revised when the opponent finds counterplay."
+   ],
+   "example": {
+    "q": "Kings are castled on opposite sides and you have the first strike. Which is more important: a slow improving move or opening a file against the enemy king?",
+    "steps": [
+     "In opposite-side castling, tempo decides.",
+     "Opening files and attacking with pawns takes priority.",
+     "So open the file against the king, unless you need one defensive move."
+    ],
+    "a": "Open the file; tempo is decisive"
+   },
+   "analogies": {
+    "home": "In a race to finish chores, speed matters; do the quickest useful job first.",
+    "city": "Two builders working on opposite sides of a river race to finish their bridge.",
+    "farm": "A farmer harvests the crop that will spoil first, not the one that can wait.",
+    "sport": "In a sprint finish, you save your effort for the final moments."
+   },
+   "mnemonic": "Break at the right time; attack where you are strong; centre beats flank.",
+   "terms": [
+    [
+     "Pawn storm",
+     "Advancing pawns against the enemy king."
+    ],
+    [
+     "Central break",
+     "A pawn move in the centre that changes the structure."
+    ],
+    [
+     "Opposite-coloured bishops",
+     "Bishops that move on different colours."
+    ],
+    [
+     "Counterplay",
+     "Active play by the defender that creates threats."
+    ]
+   ],
+   "misc": {
+    "wrong": "A flank attack always works if you have more pieces.",
+    "right": "A flank attack is justified only if the centre is stable; a central counterattack can refute it."
+   },
+   "trip": {
+    "wiki": "Middlegame",
+    "prompt": "Find the part about attacking the king. Which factors are listed?"
+   },
+   "sources": [
+    "Middlegame (chess)",
+    "Chess strategy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Kings are castled on opposite sides. What is typical?",
+     "o": [
+      "A race of attacks, with pawn storms",
+      "Immediate draws by agreement before the middlegame",
+      "A quiet manoeuvring game with few pawn moves",
+      "A game in which the kings stay in the centre"
+     ],
+     "a": 0,
+     "why": "Speed matters.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a central break refute a flank attack?",
+     "o": [
+      "A flank attack is justified only if the centre is closed or stable",
+      "The centre holds no pieces, so a break cannot be made",
+      "Flank attacks are not permitted before move 20",
+      "Pawns cannot move in the centre once both kings have castled"
+     ],
+     "a": 0,
+     "why": "A central counter hits the attacker's unstable centre.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Opposite-coloured bishops in the middlegame usually favour...",
+     "o": [
+      "The attacker",
+      "The defender",
+      "Neither",
+      "The player ahead in time"
+     ],
+     "a": 0,
+     "why": "The defender cannot challenge the attacking bishop on its colour.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Opposite-coloured bishops in the endgame usually favour...",
+     "o": [
+      "The defender",
+      "The attacker",
+      "Neither",
+      "The side with the queen"
+     ],
+     "a": 0,
+     "why": "They tend to produce draws.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What should you consider before a central pawn break?",
+     "o": [
+      "Whether your pieces are ready to support it",
+      "Whether the pawn is on a light or dark square",
+      "Whether the opponent has castled on the same side",
+      "Whether you have more pawns than the opponent"
+     ],
+     "a": 0,
+     "why": "Timing matters.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Both sides castle kingside. What is a typical plan for the defender?",
+     "o": [
+      "Counterplay in the centre",
+      "Resigning",
+      "Moving the king to the queenside",
+      "Giving up the queen"
+     ],
+     "a": 0,
+     "why": "A central counter reduces the attack.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain how you decide which side of the board to attack on.",
+     "rubric": [
+      [
+       "strength",
+       "strong",
+       "space",
+       "advantage",
+       "more pieces",
+       "majority"
+      ],
+      [
+       "weak",
+       "weakness",
+       "king",
+       "target",
+       "opponent"
+      ],
+      [
+       "centre",
+       "center",
+       "stable",
+       "closed",
+       "break"
+      ]
+     ],
+     "min": 2,
+     "model": "Attack where you have more force or space, where the opponent has weaknesses, and when the centre is stable enough that the flank attack cannot be refuted.",
+     "why": "Strength, weakness, stability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the thinking for a middlegame plan.",
+     "items": [
+      "Assess king safety on both sides",
+      "Identify imbalances",
+      "Choose the side and the break",
+      "Calculate the key lines"
+     ],
+     "why": "General to specific.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Each tempo matters most in...",
+     "o": [
+      "Opposite-side castling races",
+      "Closed positions where the pawn chains are locked",
+      "Drawn endings with opposite-coloured bishops",
+      "Simple piece trades that lead to an early endgame"
+     ],
+     "a": 0,
+     "why": "Time decides who attacks first.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A strong planner revises the plan when...",
+     "o": [
+      "The opponent finds counterplay",
+      "The clock ticks past a time limit",
+      "A pawn moves on the board",
+      "The board is turned round"
+     ],
+     "a": 0,
+     "why": "Plans must adapt.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can closing the position help the side with less space?",
+     "o": [
+      "It removes the opponent's open lines and attacking routes",
+      "It wins pawns by force through a central break",
+      "It promotes pieces to queens on the back rank",
+      "It ends the game by forcing a draw by repetition"
+     ],
+     "a": 0,
+     "why": "Closed structures reduce the effect of space.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How do you decide whether to open or close the centre?",
+     "rubric": [
+      [
+       "pieces",
+       "bishops",
+       "knights",
+       "king",
+       "structure",
+       "advantage"
+      ],
+      [
+       "open",
+       "close",
+       "closed",
+       "open files",
+       "lines"
+      ],
+      [
+       "benefit",
+       "favour",
+       "favor",
+       "suit",
+       "help",
+       "strength"
+      ]
+     ],
+     "min": 1,
+     "model": "Open it if your pieces and king are more active or better placed; keep it closed if the opponent's pieces would benefit from open lines.",
+     "why": "Depends on the imbalances.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a pawn storm risk?",
+     "o": [
+      "Weakening your own king if it fails",
+      "Nothing, since pawns can move back",
+      "Stalemate in the endgame",
+      "A forced win for the attacker"
+     ],
+     "a": 0,
+     "why": "Advanced pawns cannot return.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex middlegame strategy",
+    "model": "Middlegame strategy is about timing breaks, choosing where to attack, and balancing attack and defence. Opposite-side castling means a race; same-side castling favours piece play and central counterplay.",
+    "points": [
+     {
+      "k": [
+       "break",
+       "timing"
+      ],
+      "ask": "What matters for pawn moves?"
+     },
+     {
+      "k": [
+       "opposite",
+       "race",
+       "storm"
+      ],
+      "ask": "What happens when kings castle on opposite sides?"
+     },
+     {
+      "k": [
+       "centre",
+       "counterplay"
+      ],
+      "ask": "How does the defender fight back?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Advanced defensive techniques",
+   "icon": "🧗",
+   "hook": "Down material, in a worse position, many players resign too early. What techniques allow a defender to survive or even turn the game?",
+   "explain": [
+    "Advanced defence begins with realism: assess the position honestly, identify the opponent's main threats, and find the most resilient set-up. Principles: eliminate attacking pieces by trading them, keep the king safe by removing or blocking open lines, use counterattack when passive defence will lose, and look for resources such as a perpetual check, a fortress or a stalemate trick.",
+    "A perpetual check is a series of checks that the attacker cannot escape, resulting in a draw by repetition. A fortress is a position where the stronger side cannot make progress, such as a wrong-coloured bishop with a rook pawn when the defending king reaches the corner. A stalemate trick forces a draw by leaving the defender with no legal move while not in check. A well-known example: White king on g6, pawn on h6, Black king on h8; if White plays h7 it is stalemate, and White must be careful.",
+    "Practical defence also includes psychological methods: complicating the position, setting traps that need accuracy to avoid, and using time pressure. But do not rely on traps; prefer solid resistance with active chances. Know which trades help: when defending, exchange the opponent's most active pieces."
+   ],
+   "example": {
+    "q": "White king g6, White pawn h6, Black king h8, White to move. Which pawn move is a stalemate?",
+    "steps": [
+     "The pawn on h6 can advance to h7.",
+     "After h7, Black's king on h8 has no legal move: g8 is attacked by the pawn, g7 by the king.",
+     "Black is not in check, so it is stalemate and the game is drawn."
+    ],
+    "a": "h7 is stalemate (a draw)"
+   },
+   "analogies": {
+    "home": "When a leak starts, you first stop the water, then fix the pipe.",
+    "city": "A city defends against flood by building walls where the water is strongest.",
+    "farm": "A farmer protects the crop from frost by covering the most exposed plants first.",
+    "sport": "A goalkeeper makes the key save, then the team clears the danger."
+   },
+   "mnemonic": "Trade the attackers, find the checks, seek the fortress.",
+   "terms": [
+    [
+     "Perpetual check",
+     "Endless checks forcing a draw by repetition."
+    ],
+    [
+     "Fortress",
+     "A set-up the stronger side cannot break."
+    ],
+    [
+     "Stalemate trick",
+     "A defence that forces stalemate and a draw."
+    ],
+    [
+     "Counterattack",
+     "Defending by making your own threats."
+    ]
+   ],
+   "misc": {
+    "wrong": "Defence means only waiting.",
+    "right": "Active defence with counterplay often saves more games than passive waiting."
+   },
+   "limits": "Drawing mechanisms depend on exact positions; a one-square difference can change a draw into a loss.",
+   "trip": {
+    "wiki": "Perpetual check",
+    "prompt": "Find an example. Which pieces give the repeated checks?"
+   },
+   "sources": [
+    "Perpetual check",
+    "Fortress (chess)",
+    "Stalemate"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "White Kg6, Ph6; Black Kh8; White to move. Which move is stalemate?",
+     "o": [
+      "h7",
+      "Kf6",
+      "Kh5",
+      "Kf7"
+     ],
+     "a": 0,
+     "why": "After h7 the black king has no legal move and is not in check.",
+     "d": 3,
+     "k": "apply",
+     "fen": "7k/8/6KP/8/8/8/8/8 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "What is a perpetual check?",
+     "o": [
+      "Endless checks that force a draw by repetition",
+      "A check on move one that forces the king to move",
+      "A discovered attack that wins the queen",
+      "A pin against the queen along a diagonal"
+     ],
+     "a": 0,
+     "why": "The attacker cannot escape the checks.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a fortress?",
+     "o": [
+      "A set-up the stronger side cannot break",
+      "A special type of castling used in endings",
+      "A forced mate in several moves",
+      "An opening system that avoids theory"
+     ],
+     "a": 0,
+     "why": "The defender holds despite less material.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which trades help the defender?",
+     "o": [
+      "Trading the opponent's most active attacking pieces",
+      "Trading your own defenders to simplify the position",
+      "Trading all of the pawns so the king is exposed",
+      "Trading the king for the opponent's best piece"
+     ],
+     "a": 0,
+     "why": "Reduce the attack.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does passive defence often lose?",
+     "o": [
+      "The attacker can add more pressure unchecked",
+      "The rules forbid waiting moves in the middlegame",
+      "Pieces lose strength when they are not moved",
+      "Time stops running for the attacker"
+     ],
+     "a": 0,
+     "why": "Active defence keeps the opponent busy.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A defender has a rook pawn against him and the attacker's bishop does not control the promotion corner. What is the drawing idea?",
+     "o": [
+      "Bring the king to the promotion corner",
+      "Sacrifice the pawn at once to simplify the position",
+      "Trade the bishop for a pawn and run to the centre",
+      "Run the king to the centre and leave the corner"
+     ],
+     "a": 0,
+     "why": "The corner fortress cannot be broken.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Describe three resources a defender can use in a worse position.",
+     "rubric": [
+      [
+       "perpetual",
+       "checks",
+       "check"
+      ],
+      [
+       "fortress",
+       "blockade",
+       "hold"
+      ],
+      [
+       "stalemate",
+       "trick"
+      ],
+      [
+       "counterattack",
+       "counterplay",
+       "counter",
+       "trade",
+       "complicate",
+       "trap"
+      ]
+     ],
+     "min": 3,
+     "model": "A defender can seek a perpetual check, build a fortress, set a stalemate trick, or create counterplay and trade attacking pieces.",
+     "why": "Resourcefulness saves games.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order a defender's thought process.",
+     "items": [
+      "Assess the position honestly",
+      "Identify the opponent's main threats",
+      "Find the most resilient set-up",
+      "Look for counterplay or drawing resources"
+     ],
+     "why": "Realism first.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why must a stronger side be careful about stalemate?",
+     "o": [
+      "A careless move can turn a win into a draw",
+      "It automatically wins the game for the player with more pieces",
+      "It always loses material for the attacker",
+      "It ends the match at once as a draw"
+     ],
+     "a": 0,
+     "why": "Check the opponent's legal moves.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "When is it reasonable to set a trap?",
+     "o": [
+      "As a supplement to solid resistance, not a replacement",
+      "Never, because traps are against the spirit of the game",
+      "Always instead of solid defence, since traps work best",
+      "Only in the opening, before move ten"
+     ],
+     "a": 0,
+     "why": "Prefer sound resistance with traps as a bonus.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can complicating the position be a defensive method?",
+     "o": [
+      "It increases the chance of the opponent erring",
+      "It guarantees the opponent will agree to a draw",
+      "It wins material by force for the defender",
+      "It stops the opponent's clock"
+     ],
+     "a": 0,
+     "why": "Complexity can create practical chances.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How does a fortress differ from a perpetual check?",
+     "rubric": [
+      [
+       "fortress",
+       "static",
+       "solid",
+       "cannot break",
+       "hold"
+      ],
+      [
+       "perpetual",
+       "checks",
+       "repetition",
+       "repeat"
+      ],
+      [
+       "draw",
+       "both",
+       "equal",
+       "different"
+      ]
+     ],
+     "min": 2,
+     "model": "A fortress is a static set-up the opponent cannot break, while a perpetual check is a repeated sequence of checks forcing repetition; both lead to a draw.",
+     "why": "Different mechanisms, same result.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A defender should avoid...",
+     "o": [
+      "Giving up resistance before the position is truly lost",
+      "Calculating deeply before replying to threats",
+      "Using the clock to think about the opponent's plan",
+      "Trading the opponent's most dangerous attackers"
+     ],
+     "a": 0,
+     "why": "Resilience saves games.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced defensive techniques",
+    "model": "A defender should assess honestly, trade the attacking pieces, keep the king safe, and look for counterplay, perpetual check, fortresses and stalemate tricks.",
+    "points": [
+     {
+      "k": [
+       "trade",
+       "attacking",
+       "pieces"
+      ],
+      "ask": "What trades help?"
+     },
+     {
+      "k": [
+       "perpetual",
+       "fortress",
+       "stalemate"
+      ],
+      "ask": "What drawing resources exist?"
+     },
+     {
+      "k": [
+       "counter",
+       "active",
+       "complicate"
+      ],
+      "ask": "How do I fight back?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Deep calculation and candidate moves",
+   "icon": "🌳",
+   "hook": "Of the dozens of legal moves, grandmasters examine only a handful in depth. How do they choose which ones, and how do they avoid missing the winning one?",
+   "explain": [
+    "Deep calculation is a search problem under limits of time and memory. The average position has about 30 to 35 legal moves, so a full search to even four moves each is impossible by hand. A calculator therefore generates candidate moves with a mixture of pattern recognition and systematic checks: all checks, all captures, all threats, all moves that change the pawn structure, and all \"quiet\" moves that improve the worst piece or restrict the opponent. Candidates are then pruned by quick tests.",
+    "Alexander Kotov's method, from \"Think Like a Grandmaster\", is to list the candidate moves, then analyse each variation once, noting the evaluation, and only then choose. Errors to avoid: going back and forth between lines (loss of time), stopping on an unstable position (a check or capture still pending), forgetting the opponent's best reply, and falling for an attractive but flawed idea. Check for quiet moves: a move such as a king step that removes the opponent's defence (a waiting move) can be the key, as in positions with zugzwang.",
+    "Useful aids are the blunder check (does my move leave something hanging or allow a check?), the use of intermediate evaluation points, and visualisation training by playing out lines in the mind. In long variations, evaluate at stable points, remember the chosen line's final position and compare it to the best alternative. If two lines are close, choose the one with less risk, or the one that keeps more options."
+   ],
+   "example": {
+    "q": "White: Kg5, Qg1. Black: Kh8. White to move. Find a mate in two, which begins with a quiet move.",
+    "steps": [
+     "Direct checks fail: Qg7+ is met by Kxg7 because the white king on g5 does not guard g7.",
+     "The quiet Kf6 guards g7 and takes squares away. Black's only move is Kh7 (Qg1 covers g8).",
+     "Then Qg7 is mate: the queen is protected by the king."
+    ],
+    "a": "Kf6, then Qg7#"
+   },
+   "analogies": {
+    "home": "Packing a bag: you think about what you need before choosing, not after.",
+    "city": "A navigator tests a few main routes against traffic reports before setting out.",
+    "farm": "A farmer tests the likeliest fields first, not every plot.",
+    "sport": "A chess clock player, like a pit-crew, decides which checks to do first in a short time."
+   },
+   "mnemonic": "Checks, captures, threats, then the quiet one. One look per line.",
+   "terms": [
+    [
+     "Candidate move",
+     "A move selected for deeper analysis."
+    ],
+    [
+     "Quiet move",
+     "A move that is not a check or capture but has a strong point."
+    ],
+    [
+     "Blunder check",
+     "A final test that a move does not leave something hanging."
+    ],
+    [
+     "Zugzwang",
+     "A position in which any move worsens one's situation."
+    ]
+   ],
+   "misc": {
+    "wrong": "The best move is always a check or capture.",
+    "right": "Quiet moves are often the key, so they must be in the candidate list."
+   },
+   "trip": {
+    "wiki": "Think Like a Grandmaster",
+    "prompt": "Find the summary of the analysis tree. What is the mistake the book warns about?"
+   },
+   "sources": [
+    "Think Like a Grandmaster",
+    "Alexander Kotov",
+    "Zugzwang"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "White Kg5, Qg1; Black Kh8; White to move. Which move forces mate in two?",
+     "o": [
+      "Kf6",
+      "Qg7+",
+      "Qh2+",
+      "Kg6"
+     ],
+     "a": 0,
+     "why": "Kf6 guards g7 and leaves Black only Kh7, after which Qg7 is mate.",
+     "d": 3,
+     "k": "apply",
+     "fen": "7k/8/8/6K1/8/8/8/6Q1 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Qg7+ fail in that position?",
+     "o": [
+      "The king on g5 does not guard g7, so Kxg7",
+      "Qg7+ is an illegal move because the king stands on g5",
+      "Qg7+ leads to stalemate for Black at once",
+      "The queen on g1 is pinned along the file"
+     ],
+     "a": 0,
+     "why": "The queen would be captured.",
+     "d": 3,
+     "k": "reason",
+     "fen": "7k/8/8/6K1/8/8/8/6Q1 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "What is a quiet move?",
+     "o": [
+      "A move that is not a check or capture but has a strong point",
+      "A move made without touching the piece for long",
+      "A king move that avoids all pawn exchanges",
+      "A pawn move made on the edge of the board"
+     ],
+     "a": 0,
+     "why": "Quiet moves can be decisive.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "You have 4 candidate moves, each with 3 sensible replies, and for each reply you have 2 sensible continuations. How many lines is that?",
+     "a": 24,
+     "tol": 0,
+     "why": "4 × 3 × 2 = 24.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What mistake did Kotov warn about?",
+     "o": [
+      "Re-examining the same lines again and again",
+      "Looking at too few candidate moves to begin with",
+      "Using the king too actively during analysis",
+      "Playing the first move that comes to mind"
+     ],
+     "a": 0,
+     "why": "Analyse each variation once and decide.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What should you check at the end of a variation?",
+     "o": [
+      "That the position is stable",
+      "That the number of pawns on each side is equal",
+      "That the move number is above forty",
+      "That the clock shows more than ten minutes"
+     ],
+     "a": 0,
+     "why": "Pending checks and captures can change the result.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Describe how you generate candidate moves.",
+     "rubric": [
+      [
+       "check",
+       "checks"
+      ],
+      [
+       "capture",
+       "captures",
+       "take"
+      ],
+      [
+       "threat",
+       "threats",
+       "threaten"
+      ],
+      [
+       "quiet",
+       "improve",
+       "structure",
+       "restrict",
+       "worst piece"
+      ]
+     ],
+     "min": 3,
+     "model": "List all checks, captures and threats, then quiet moves that improve a piece, change the structure or restrict the opponent.",
+     "why": "Systematic generation reduces oversights.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order a careful calculation.",
+     "items": [
+      "Generate candidate moves",
+      "Analyse each variation once",
+      "Evaluate stable end positions",
+      "Choose and run a blunder check"
+     ],
+     "why": "Systematic process.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two lines both seem to win. How to choose?",
+     "o": [
+      "The one with less risk and more options",
+      "The longer one, as it shows deeper calculation",
+      "The more complicated one, to confuse the opponent",
+      "Either one, chosen at random"
+     ],
+     "a": 0,
+     "why": "Safety and flexibility are valuable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a blunder check?",
+     "o": [
+      "A final test that your move does not leave something hanging or allow a check",
+      "An offer of a draw made after a long think",
+      "A check of the clock before pressing it",
+      "A promotion of a pawn to a knight"
+     ],
+     "a": 0,
+     "why": "It catches oversights.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do strong players include quiet moves among candidates?",
+     "o": [
+      "Quiet moves can create decisive zugzwang or remove defenders",
+      "Quiet moves are always faster to calculate than checks",
+      "The rules require one quiet move in each variation",
+      "Quiet moves are always checks in disguise"
+     ],
+     "a": 0,
+     "why": "Not all strong moves are forcing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can you reduce the chance of missing the opponent's best reply?",
+     "rubric": [
+      [
+       "checks",
+       "captures",
+       "threats",
+       "forcing"
+      ],
+      [
+       "ask",
+       "consider",
+       "check",
+       "look",
+       "opponent",
+       "reply"
+      ],
+      [
+       "every",
+       "each",
+       "all",
+       "systematic",
+       "method"
+      ]
+     ],
+     "min": 2,
+     "model": "At each node ask which checks, captures and threats the opponent has, so their forcing replies are examined before yours continue.",
+     "why": "Look from their side.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is full-width search impossible for humans?",
+     "o": [
+      "The tree grows very fast with depth",
+      "The pieces on the board are too many to count",
+      "The rules vary between events and arbiters",
+      "Time is infinite in correspondence play"
+     ],
+     "a": 0,
+     "why": "About 30 moves per position gives enormous numbers.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Calculation and candidate moves",
+    "model": "Generate candidates systematically: checks, captures, threats, then quiet moves. Analyse each line once, evaluate stable end positions, and run a blunder check before moving.",
+    "points": [
+     {
+      "k": [
+       "check",
+       "capture",
+       "threat",
+       "quiet"
+      ],
+      "ask": "How do I choose moves to look at?"
+     },
+     {
+      "k": [
+       "once",
+       "each",
+       "tree"
+      ],
+      "ask": "How do I analyse?"
+     },
+     {
+      "k": [
+       "stable",
+       "blunder check",
+       "end"
+      ],
+      "ask": "How do I finish?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Advanced technical endgames",
+   "icon": "🏁",
+   "hook": "A single pawn and two kings can still be a deep mathematical problem. What are the technical rules that decide such endings?",
+   "explain": [
+    "Advanced technical endgames require exact knowledge. In king and pawn endings, the key squares and opposition rules give results: with the king on the sixth rank in front of a pawn on the fifth, the attacker wins whoever has the move (this does not hold for a rook pawn). The Vancura position is a drawing technique for the defender in rook endings with a rook pawn: the defending rook attacks the pawn from the side and keeps checking options along the file. Queen against rook is generally a win for the queen, but it needs technique using forks and the skewering of king and rook, and some fortress positions exist. Rook against a minor piece is often a draw with correct defence, because the defender can set up a fortress.",
+    "King, bishop and knight against king is a forced win with the right technique, driving the king to a corner of the bishop's colour, with a maximum of 33 moves. Two knights cannot force mate. Opposite-coloured bishops draw even when a pawn or two down. The fifty-move rule says a player can claim a draw if 50 moves by each side pass without a pawn move or capture; in a few endings, tablebase analysis shows that more than 50 moves may be needed to win, but in practice play follows the rules of the event.",
+    "Tablebases (from Nalimov to Syzygy) contain perfect results for all positions with up to seven pieces. They have corrected old books, found very long mates, and shown which positions are fortress draws. Humans still study patterns and principles, because tablebases do not explain why and cannot be consulted in a game."
+   ],
+   "example": {
+    "q": "White king e6, pawn e5, Black king e8. Does White win if Black is to move? And if White is to move?",
+    "steps": [
+     "The white king is on the sixth rank directly in front of its pawn.",
+     "With this setup the attacker wins regardless of who has the move.",
+     "So White wins in both cases."
+    ],
+    "a": "Yes, White wins in both cases"
+   },
+   "analogies": {
+    "home": "Fitting the last pieces in a jigsaw: you know exactly which piece must go where.",
+    "city": "A traffic signal plan at a junction must be exactly timed or it jams.",
+    "farm": "Irrigation must be timed exactly for each row; a few minutes can change the harvest.",
+    "sport": "A sprint finish is decided by centimetres, as an endgame is by a single tempo."
+   },
+   "mnemonic": "King on the sixth: win. Corner and wrong bishop: draw. Know the exact cases.",
+   "terms": [
+    [
+     "Vancura position",
+     "A rook-ending draw technique against a rook pawn."
+    ],
+    [
+     "Tablebase",
+     "A database of perfect results for positions with few pieces."
+    ],
+    [
+     "Fifty-move rule",
+     "A draw can be claimed after 50 moves without a capture or pawn move."
+    ],
+    [
+     "Wrong-coloured bishop",
+     "A bishop that does not control the promotion corner."
+    ]
+   ],
+   "misc": {
+    "wrong": "Two knights can mate a lone king by force.",
+    "right": "They cannot; the mate only occurs if the defender errs."
+   },
+   "limits": "Tablebases give exact results, but practical play also depends on time and tournament rules such as the fifty-move rule.",
+   "trip": {
+    "wiki": "Endgame tablebase",
+    "prompt": "Find how many pieces are covered. What does it say about the longest mates?"
+   },
+   "sources": [
+    "Endgame tablebase",
+    "Fifty-move rule",
+    "Vancura position"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "White Ke6, Pe5; Black Ke8; Black to move. What is the result?",
+     "o": [
+      "A win for White",
+      "A draw",
+      "A win for Black",
+      "Unclear"
+     ],
+     "a": 0,
+     "why": "King on the sixth rank in front of the pawn wins whoever moves.",
+     "d": 3,
+     "k": "apply",
+     "fen": "4k3/8/4K3/4P3/8/8/8/8 b - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Same position, White to move. What is the result?",
+     "o": [
+      "A win for White",
+      "A draw",
+      "A win for Black",
+      "Unclear"
+     ],
+     "a": 0,
+     "why": "The result is the same either way.",
+     "d": 3,
+     "k": "apply",
+     "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1"
+    },
+    {
+     "t": "mc",
+     "q": "Can two knights force checkmate against a lone king?",
+     "o": [
+      "No",
+      "Yes, always",
+      "Only on the edge",
+      "Only with a pawn"
+     ],
+     "a": 0,
+     "why": "Mate can only happen if the defender errs.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How many moves at most does king, bishop and knight against king need to force mate?",
+     "o": [
+      "33",
+      "10",
+      "50",
+      "100"
+     ],
+     "a": 0,
+     "why": "The longest forced mate is 33 moves with best play.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the fifty-move rule allow?",
+     "o": [
+      "A draw claim after 50 moves without a capture or pawn move",
+      "A win for the player with more pawns after 50 moves",
+      "A rematch with the colours reversed",
+      "A rest break for both players"
+     ],
+     "a": 0,
+     "why": "Each player makes 50 moves.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What do tablebases provide?",
+     "o": [
+      "Perfect results for positions up to seven pieces",
+      "Opening advice for the first twenty moves",
+      "A rating list of all players in the database",
+      "The best sacrifices from famous games"
+     ],
+     "a": 0,
+     "why": "They are exact for those positions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why opposite-coloured bishop endings are so drawish.",
+     "rubric": [
+      [
+       "bishop",
+       "bishops"
+      ],
+      [
+       "colour",
+       "color",
+       "different",
+       "opposite"
+      ],
+      [
+       "block",
+       "blockade",
+       "cannot",
+       "attack",
+       "attack each other",
+       "defend",
+       "fortress"
+      ]
+     ],
+     "min": 2,
+     "model": "The bishops cannot attack each other, so the defender can blockade and defend squares of its own colour, building a fortress.",
+     "why": "Colour of squares matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps to convert king, bishop and knight against king.",
+     "items": [
+      "Drive the king to the edge",
+      "Steer it to the corner of the bishop's colour",
+      "Use the W-manoeuvre with the knight",
+      "Deliver checkmate"
+     ],
+     "why": "Technique requires the correct corner.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why are tablebases not available during a game?",
+     "o": [
+      "Rules forbid outside help, and players must rely on their own knowledge",
+      "They are too heavy to carry into the playing hall",
+      "They do not exist for any chess endings",
+      "They sometimes give wrong results in simple positions"
+     ],
+     "a": 0,
+     "why": "Fair play rules prohibit outside assistance.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Queen against rook is generally...",
+     "o": [
+      "A win for the queen with correct technique",
+      "A draw, since the queen cannot make progress",
+      "A win for the rook, since it is better protected",
+      "A stalemate in nearly all positions"
+     ],
+     "a": 0,
+     "why": "Fortress positions are exceptions.",
+     "d": 3,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do endgame principles still matter when tablebases exist?",
+     "o": [
+      "They help players make decisions in new positions",
+      "Tablebases are mostly wrong in practical play",
+      "Principles alone are enough and no study is needed",
+      "Computers cannot calculate endings at all"
+     ],
+     "a": 0,
+     "why": "Humans cannot memorise tablebases.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can the fifty-move rule affect theory?",
+     "rubric": [
+      [
+       "fifty",
+       "50",
+       "moves",
+       "rule"
+      ],
+      [
+       "draw",
+       "claim",
+       "stop",
+       "limit",
+       "time"
+      ],
+      [
+       "win",
+       "long",
+       "longer",
+       "exceed",
+       "more than"
+      ]
+     ],
+     "min": 1,
+     "model": "Some wins need more than 50 moves without a capture or pawn move, so the rule can turn a theoretical win into a draw in practice.",
+     "why": "Rules shape what is practical.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a fortress in endgames?",
+     "o": [
+      "A position the stronger side cannot break",
+      "A winning attack against the king",
+      "A draw offer made by the stronger side",
+      "A checkmate pattern with two rooks"
+     ],
+     "a": 0,
+     "why": "It is a drawing resource.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Technical endgames",
+    "model": "Endings rely on exact rules: key squares, opposition, the Vancura draw, bishop and knight mate, and fortresses. Tablebases give perfect results up to seven pieces but not understanding.",
+    "points": [
+     {
+      "k": [
+       "opposition",
+       "key",
+       "square"
+      ],
+      "ask": "How are pawn endings decided?"
+     },
+     {
+      "k": [
+       "fortress",
+       "draw",
+       "vancura"
+      ],
+      "ask": "What draws?"
+     },
+     {
+      "k": [
+       "tablebase",
+       "seven",
+       "pieces"
+      ],
+      "ask": "What do computers add?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Chess engines and computer-assisted analysis",
+   "icon": "🤖",
+   "hook": "In 1997 a computer beat the world champion in a match. Today a phone engine is stronger than any human. How do engines work, and how should people use them?",
+   "explain": [
+    "A classical engine searches a tree of moves with alpha-beta pruning and an evaluation function. If a position has about 30 legal moves, a search of depth 4 has 30⁴ = 810,000 leaf positions without pruning; alpha-beta pruning can cut the work enormously when moves are well ordered. Modern engines like Stockfish use a very fast search with an efficiently updatable neural network evaluation (NNUE, adopted in 2020). Another approach, shown by AlphaZero (DeepMind, 2017) and followed by Leela Chess Zero, uses a neural network trained by self-play and Monte Carlo tree search. Deep Blue, which beat Garry Kasparov in a match in 1997, searched many millions of positions per second with specialised hardware.",
+    "Engine scores are in centipawns: +100 is about one pawn's advantage for White. Scores depend on search depth, and engines have a horizon problem: they can miss consequences beyond the depth. Engines do not explain; they output best lines. Tablebases supply exact results in endings with up to seven pieces.",
+    "Good computer-assisted analysis means forming your own opinion first, using the engine to check critical lines and to look for alternatives, studying the ideas behind the engine's moves, and keeping a record of lessons. Engines have changed opening theory and attacking styles, but fair-play rules ban their use during competition."
+   ],
+   "example": {
+    "q": "A position has 30 legal moves, and a plain minimax search goes four plies deep. About how many leaf positions are examined without pruning?",
+    "steps": [
+     "Each ply multiplies the leaves by 30.",
+     "The number is 30 × 30 × 30 × 30.",
+     "30⁴ = 810,000."
+    ],
+    "a": "810,000"
+   },
+   "analogies": {
+    "home": "A calculator does arithmetic faster than you; you still need to know what question to ask.",
+    "city": "A GPS finds the fastest route, but you decide whether to trust it in a closed road.",
+    "farm": "A weather model gives forecasts, but the farmer decides when to plant.",
+    "sport": "Video analysis shows where a pass went wrong; the coach explains why."
+   },
+   "mnemonic": "Engine proposes, human understands, and fair play rules apply.",
+   "terms": [
+    [
+     "Alpha-beta pruning",
+     "A search method that skips branches that cannot change the result."
+    ],
+    [
+     "NNUE",
+     "A neural-network evaluation that updates quickly during search."
+    ],
+    [
+     "Centipawn",
+     "One hundredth of a pawn, the unit of engine evaluation."
+    ],
+    [
+     "Horizon effect",
+     "Missing effects beyond the search depth."
+    ]
+   ],
+   "misc": {
+    "wrong": "An engine's evaluation is the truth.",
+    "right": "It is a depth-dependent estimate; understanding still needs a human."
+   },
+   "limits": "Engine scores vary between programs and settings; the claim \"engine = truth\" applies only to solved positions such as tablebases.",
+   "trip": {
+    "wiki": "Stockfish (chess)",
+    "prompt": "Find how it evaluates positions. What is NNUE?"
+   },
+   "sources": [
+    "Computer chess",
+    "Stockfish (chess)",
+    "AlphaZero"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A position has 30 legal moves. How many leaf positions are there at depth 4 without pruning?",
+     "a": 810000,
+     "tol": 0,
+     "why": "30 × 30 × 30 × 30 = 810,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does +1.50 mean in an engine display?",
+     "o": [
+      "White is better by about one and a half pawns",
+      "White has one and a half extra pawns",
+      "Black is better",
+      "The game is a draw"
+     ],
+     "a": 0,
+     "why": "Centipawns are 100 per pawn.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What did Deep Blue achieve in 1997?",
+     "o": [
+      "It beat the world champion Garry Kasparov in a match",
+      "It solved chess completely and showed that White wins",
+      "It won the first official computer world cup",
+      "It invented the first tablebases"
+     ],
+     "a": 0,
+     "why": "It was the first time a computer beat a reigning world champion under match conditions.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is AlphaZero known for?",
+     "o": [
+      "Learning chess by self-play with a neural network",
+      "Being the first chess computer to beat a human",
+      "Using only opening books instead of search",
+      "Using tablebases rather than search"
+     ],
+     "a": 0,
+     "why": "It combined neural networks with Monte Carlo tree search.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the horizon effect?",
+     "o": [
+      "Missing consequences beyond the search depth",
+      "A kind of opening trap in the Sicilian",
+      "A castling rule for engines",
+      "A mating pattern with two rooks"
+     ],
+     "a": 0,
+     "why": "Search depth is finite.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the best way to use an engine for your own game?",
+     "o": [
+      "Analyse yourself first, then check with the engine",
+      "Ask the engine first, then try to understand its choice",
+      "Never use an engine, since it harms your thinking",
+      "Copy its moves in games to save time"
+     ],
+     "a": 0,
+     "why": "It trains your own thinking.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why can't you rely on an engine alone to learn from a game?",
+     "rubric": [
+      [
+       "explain",
+       "understand",
+       "reason",
+       "why",
+       "idea",
+       "plan"
+      ],
+      [
+       "move",
+       "line",
+       "output",
+       "evaluation",
+       "number",
+       "score"
+      ],
+      [
+       "human",
+       "you",
+       "own",
+       "yourself",
+       "think",
+       "learn"
+      ]
+     ],
+     "min": 2,
+     "model": "Engines show the best moves and a number but do not explain the ideas, so you must work out the plans and reasons yourself.",
+     "why": "Understanding is a human task.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of computer-assisted analysis.",
+     "items": [
+      "Play through the game yourself",
+      "Mark critical moments and your reasoning",
+      "Run the engine on those moments",
+      "Study the ideas behind its lines"
+     ],
+     "why": "Think first, then check.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do fair-play rules ban engines during games?",
+     "o": [
+      "Outside help changes who is playing",
+      "Engines are too slow to use at the board",
+      "Engines are weaker than strong human players",
+      "Boards are too small to run engines on"
+     ],
+     "a": 0,
+     "why": "Competition measures the players' own ability.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What do tablebases cover?",
+     "o": [
+      "All positions with up to seven pieces",
+      "All opening positions after ten moves",
+      "All middlegame positions with queens on the board",
+      "Only positions with just the two kings"
+     ],
+     "a": 0,
+     "why": "They give exact results in small endings.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can alpha-beta pruning be so effective?",
+     "o": [
+      "It skips branches that cannot affect the final choice",
+      "It guesses which moves look best without checking them",
+      "It plays moves at random and keeps the best",
+      "It reduces the number of pieces on the board"
+     ],
+     "a": 0,
+     "why": "Good move ordering increases the savings.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How have engines changed chess practice?",
+     "rubric": [
+      [
+       "opening",
+       "theory",
+       "preparation",
+       "novelty"
+      ],
+      [
+       "style",
+       "attack",
+       "defence",
+       "defense",
+       "sacrifice",
+       "endgame",
+       "evaluation",
+       "assumptions"
+      ],
+      [
+       "analysis",
+       "study",
+       "training",
+       "learn"
+      ]
+     ],
+     "min": 1,
+     "model": "Engines have deepened opening preparation, revised ideas about attack and defence, and become a routine tool for analysis and training.",
+     "why": "They changed practice but not the aim.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the claim \"chess is solved\" not true?",
+     "o": [
+      "Only positions up to seven pieces have exact results",
+      "Chess has no fixed rules that a program can follow",
+      "Engines are still weaker than the best humans",
+      "The board is too small to hold a solution"
+     ],
+     "a": 0,
+     "why": "The full game tree is far too large.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Chess engines",
+    "model": "Engines search move trees with pruning and evaluate positions, or use neural networks trained by self-play. Scores are in centipawns. Use them after your own analysis, and remember the rules ban their use in games.",
+    "points": [
+     {
+      "k": [
+       "search",
+       "tree",
+       "prun"
+      ],
+      "ask": "How do classic engines work?"
+     },
+     {
+      "k": [
+       "neural",
+       "network",
+       "self-play",
+       "nnue"
+      ],
+      "ask": "What newer methods exist?"
+     },
+     {
+      "k": [
+       "own",
+       "first",
+       "understand"
+      ],
+      "ask": "How should I use them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Chess psychology and decision-making",
+   "icon": "🧠",
+   "hook": "You are winning, but your hand shakes and you stop calculating, and the win slips away. Why does the mind behave this way, and how can players train it?",
+   "explain": [
+    "Chess psychology studies how thinking, emotion and bias affect decisions. Research since De Groot and Chase and Simon found that masters recall real game positions far better than novices by recognising chunks of familiar patterns, but have little advantage with randomly placed pieces. Expertise is therefore largely pattern knowledge built through experience, supported by calculation.",
+    "Common biases: confirmation bias (looking only for evidence that supports your plan), anchoring (sticking to your first impression), loss aversion (taking bad risks to avoid a loss), overconfidence, and the Einstellung effect, in which a familiar solution blocks you from seeing a better one. Emotional states like tilt (playing badly after a setback) and time pressure reduce the quality of decisions. Daniel Kahneman's distinction between fast, intuitive \"System 1\" thinking and slow, deliberate \"System 2\" thinking is a useful way to talk about the interplay of intuition and calculation.",
+    "Practical methods: use a decision routine (blunder check before each move), manage the clock, reset after errors by focusing on the next move, keep physical routines (sleep, food, breaks), and review games to see patterns. Note that evidence that chess training improves general intelligence or school results is mixed and contested; chess is valuable on its own terms as a skill and a pleasure."
+   ],
+   "example": {
+    "q": "You find a strong plan, then notice a line that refutes it, but you keep looking for ways to defend your plan. Which bias is this, and what is the fix?",
+    "steps": [
+     "You are favouring evidence for your plan and ignoring the refutation.",
+     "This is confirmation bias (anchoring to your first idea).",
+     "The fix: deliberately look for the opponent's best reply and for alternatives."
+    ],
+    "a": "Confirmation bias; actively seek refutations"
+   },
+   "analogies": {
+    "home": "You keep looking for your keys in the same spot because you were sure they were there.",
+    "city": "A driver follows the same route even when the road is blocked.",
+    "farm": "A farmer plants the same crop every year even when the soil would suit another.",
+    "sport": "A player who missed a penalty plays the rest of the game anxiously."
+   },
+   "mnemonic": "Check yourself: what am I ignoring? Reset after each error.",
+   "terms": [
+    [
+     "Chunking",
+     "Remembering patterns of pieces as single units."
+    ],
+    [
+     "Confirmation bias",
+     "Favouring evidence that supports what you already believe."
+    ],
+    [
+     "Tilt",
+     "Playing worse because of emotion after a setback."
+    ],
+    [
+     "Einstellung effect",
+     "A familiar solution blocking a better one."
+    ]
+   ],
+   "misc": {
+    "wrong": "Masters remember all positions better because of better memory.",
+    "right": "They remember meaningful positions better because of pattern knowledge; for random positions the advantage is small."
+   },
+   "limits": "Evidence that chess training transfers to general intelligence or academic skills is mixed, so no strong claim is made.",
+   "trip": {
+    "wiki": "Chunking (psychology)",
+    "prompt": "Find how chess masters were used in studies of memory. What did the random-position tests show?"
+   },
+   "sources": [
+    "Chunking (psychology)",
+    "Cognitive bias",
+    "Einstellung effect"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What did early research find about masters' memory?",
+     "o": [
+      "They recall real game positions much better, but not random ones",
+      "They remember all positions better, including random ones",
+      "They have a photographic memory for any arrangement",
+      "They forget real game positions faster than novices"
+     ],
+     "a": 0,
+     "why": "Pattern knowledge, not general memory, explains the difference.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is confirmation bias?",
+     "o": [
+      "Favouring evidence that supports what you already believe",
+      "Checking every line before making a decision",
+      "Playing too fast under time pressure",
+      "Offering a draw when the position is unclear"
+     ],
+     "a": 0,
+     "why": "It blinds you to refutations.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the Einstellung effect?",
+     "o": [
+      "A familiar solution blocking a better one",
+      "A kind of opening trap that surprises the opponent",
+      "A time rule used in rapid chess",
+      "A king move that avoids check"
+     ],
+     "a": 0,
+     "why": "It narrows your search.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is tilt?",
+     "o": [
+      "Playing worse because of emotion after a setback",
+      "A type of castling used in blitz games",
+      "A drop in rating after several losses",
+      "A pin that cannot be broken"
+     ],
+     "a": 0,
+     "why": "Reset to the next move.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which thinking system is slow and deliberate in Kahneman's terms?",
+     "o": [
+      "System 2",
+      "System 1",
+      "System 3",
+      "System 0"
+     ],
+     "a": 0,
+     "why": "System 1 is fast and intuitive.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Does evidence clearly show chess raises general intelligence?",
+     "o": [
+      "No, the evidence is mixed and contested",
+      "Yes, strongly, in nearly every study carried out",
+      "Yes, in all studies, for every age group",
+      "No, and it has been fully disproved"
+     ],
+     "a": 0,
+     "why": "Claims of transfer should be careful.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Suggest two strategies to cope with time pressure.",
+     "rubric": [
+      [
+       "plan",
+       "budget",
+       "allocate",
+       "manage",
+       "schedule"
+      ],
+      [
+       "simple",
+       "routine",
+       "candidate",
+       "fewer",
+       "forcing",
+       "safe",
+       "quick"
+      ],
+      [
+       "practice",
+       "train",
+       "preparation",
+       "practise"
+      ]
+     ],
+     "min": 2,
+     "model": "Plan the clock in advance and use simpler, familiar lines; in time trouble focus on candidate moves and a quick blunder check.",
+     "why": "Prepare the process, not only the moves.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order a mental reset after a mistake.",
+     "items": [
+      "Notice the emotion",
+      "Accept the error",
+      "Refocus on the current position",
+      "Run a blunder check before the next move"
+     ],
+     "why": "Reset to the present.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A player takes a risky line to avoid a loss they fear. Which bias is it?",
+     "o": [
+      "Loss aversion",
+      "Anchoring",
+      "Chunking",
+      "Pattern recognition"
+     ],
+     "a": 0,
+     "why": "Avoiding a loss can lead to bigger risks.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do players use a fixed pre-move checklist?",
+     "o": [
+      "It guards against bias and oversight",
+      "It is a rule in most tournaments",
+      "It saves time on the clock",
+      "It is a tradition handed down from old masters"
+     ],
+     "a": 0,
+     "why": "Routines reduce errors.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does a meaningful position give masters a memory advantage but random ones not?",
+     "o": [
+      "Memory is organised by learned patterns",
+      "Masters cheat by looking at the board longer",
+      "Random positions are easier to remember",
+      "The board looks bigger to novices"
+     ],
+     "a": 0,
+     "why": "Chunking depends on familiar structure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why should you review your wins as well as your losses?",
+     "rubric": [
+      [
+       "mistake",
+       "mistakes",
+       "errors",
+       "weakness",
+       "flaw"
+      ],
+      [
+       "opponent",
+       "missed",
+       "unpunished",
+       "luck",
+       "lucky"
+      ],
+      [
+       "learn",
+       "improve",
+       "pattern",
+       "habit"
+      ]
+     ],
+     "min": 1,
+     "model": "A win can hide mistakes that the opponent did not punish, and learning from them improves your play.",
+     "why": "Don't mistake a result for quality.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which practice helps with tilt?",
+     "o": [
+      "Focusing on the next move rather than the last",
+      "Playing faster to recover the lost time",
+      "Ignoring the clock for a few moves",
+      "Seeking revenge on the opponent in the next game"
+     ],
+     "a": 0,
+     "why": "Reset to the present.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Chess psychology",
+    "model": "Masters recognise meaningful patterns (chunking). Biases such as confirmation bias and the Einstellung effect narrow thinking, and emotion or time pressure hurts decisions. Use routines, clock planning and resets.",
+    "points": [
+     {
+      "k": [
+       "pattern",
+       "chunk",
+       "recognise"
+      ],
+      "ask": "How do experts see so much?"
+     },
+     {
+      "k": [
+       "bias",
+       "confirmation",
+       "einstellung"
+      ],
+      "ask": "What goes wrong?"
+     },
+     {
+      "k": [
+       "routine",
+       "reset",
+       "clock"
+      ],
+      "ask": "How can I help myself?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Championship simulation and annotated game analysis",
+   "icon": "🏆",
+   "hook": "Imagine you are a finalist in a world championship match. How do you plan twelve games, read an annotated game, and judge a masterpiece?",
+   "explain": [
+    "A championship match is played over a fixed number of classical games, with one point for a win and half a point for a draw. The first to a majority wins; if tied, tiebreaks with faster time controls decide. Strategy therefore includes scheduling: choosing when to take risks, using rest days and preparing specific opening surprises. A 12-game match needs 6.5 points to win outright; a 14-game match needs 7.5.",
+    "Annotated game analysis reads a game as a story: the opening choice, the plans each side pursues, the critical moments, the tactics and the technique that convert. One famous example is the \"Opera Game\", played in Paris in 1858 by Paul Morphy against the Duke of Brunswick and Count Isouard (1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 Bxf3 5.Qxf3 dxe5 6.Bc4 Nf6 7.Qb3 Qe7 8.Nc3 c6 9.Bg5 b5 10.Nxb5 cxb5 11.Bxb5+ Nbd7 12.O-O-O Rd8 13.Rxd7 Rxd7 14.Rd1 Qe6 15.Bxd7+ Nxd7 16.Qb8+ Nxb8 17.Rd8#). It illustrates a lead in development: White's pieces enter the game quickly while Black's remain passive, and the final queen sacrifice leads to a checkmate.",
+    "To write annotations, state the ideas rather than only variations: why a move was played, what it threatened, and what the opponent might have done instead. Check every claim concretely, mark critical moments with the usual symbols, and end with a lesson. A simulation of a championship combines all strands of this world: preparation, structure, tactics, endgames, engines, psychology and honest review."
+   ],
+   "example": {
+    "q": "In a 12-game match, the score is 5-5 with two games to play. How many points does a player on 5 need from these two games to win the match outright?",
+    "steps": [
+     "The total is 12 points available, so 6.5 wins the match.",
+     "A player on 5 needs at least 1.5 more points to reach 6.5.",
+     "So 1.5 points: a win and a draw, or two wins."
+    ],
+    "a": "1.5 points"
+   },
+   "analogies": {
+    "home": "Telling the story of a day: what happened first, the turning point, and how it ended.",
+    "city": "A reporter describes a match: the early moves, the turning point and the winning goal.",
+    "farm": "A farmer reviews the year: planting, the storm, the harvest.",
+    "sport": "A commentator explains a tennis final with its key points."
+   },
+   "mnemonic": "Opening, plan, critical moment, conversion, lesson.",
+   "terms": [
+    [
+     "Classical game",
+     "A game with a long time control."
+    ],
+    [
+     "Tiebreak",
+     "Faster games used to decide a tied match."
+    ],
+    [
+     "Annotation",
+     "Written comments explaining a game."
+    ],
+    [
+     "Lead in development",
+     "Having more pieces active than the opponent."
+    ]
+   ],
+   "misc": {
+    "wrong": "Annotations are just lists of moves.",
+    "right": "Good annotations explain ideas and key decisions, not only lines."
+   },
+   "trip": {
+    "wiki": "Opera Game",
+    "prompt": "Look at the game and its final position. Which pieces deliver the mate?"
+   },
+   "sources": [
+    "Opera Game",
+    "World Chess Championship"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "White to move, with this position from the Opera Game. Which move forces checkmate in two?",
+     "o": [
+      "Qb8+",
+      "Rxd7",
+      "Qb7",
+      "Bf6"
+     ],
+     "a": 0,
+     "why": "16.Qb8+ Nxb8 17.Rd8# is checkmate.",
+     "d": 3,
+     "k": "apply",
+     "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16"
+    },
+    {
+     "t": "mc",
+     "q": "Why is 16.Qb8+ possible?",
+     "o": [
+      "It forces Nxb8, which blocks the knight's defence and allows Rd8#",
+      "The black king cannot move, so any check is mate",
+      "It wins a pawn and opens the b-file",
+      "It threatens a knight fork on the next move"
+     ],
+     "a": 0,
+     "why": "The queen sacrifice removes the defender and the rook delivers mate.",
+     "d": 3,
+     "k": "reason",
+     "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16"
+    },
+    {
+     "t": "num",
+     "q": "How many points does a player need to win a 12-game match outright?",
+     "a": 6.5,
+     "tol": 0,
+     "why": "More than half of 12 is 6.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many points does a player need to win a 14-game match outright?",
+     "a": 7.5,
+     "tol": 0,
+     "why": "More than half of 14 is 7.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a tiebreak in a match?",
+     "o": [
+      "Faster games used to decide a tied match",
+      "A draw offer made before the match begins",
+      "A rating adjustment after the match",
+      "A prize awarded to the winner"
+     ],
+     "a": 0,
+     "why": "It resolves equal scores.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What was the main theme of the Opera Game?",
+     "o": [
+      "A lead in development and a king attack",
+      "A long endgame won by technique",
+      "A queen trade followed by a pawn race",
+      "A fortress that cannot be broken"
+     ],
+     "a": 0,
+     "why": "White's pieces entered quickly while Black's lagged.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Describe what a good annotation includes.",
+     "rubric": [
+      [
+       "idea",
+       "ideas",
+       "plan",
+       "reason",
+       "why"
+      ],
+      [
+       "critical",
+       "key",
+       "turning point",
+       "moment"
+      ],
+      [
+       "alternative",
+       "variation",
+       "line",
+       "other",
+       "instead"
+      ],
+      [
+       "lesson",
+       "conclusion",
+       "summary",
+       "learn"
+      ]
+     ],
+     "min": 3,
+     "model": "A good annotation explains the ideas and plans, marks the critical moments, checks alternatives concretely and ends with a lesson.",
+     "why": "It tells the story of the game.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the elements of an annotated game.",
+     "items": [
+      "Opening choice and plans",
+      "Critical moment",
+      "Conversion or finish",
+      "Lesson learned"
+     ],
+     "why": "A narrative structure.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a match tied after the classical games, what usually happens?",
+     "o": [
+      "Faster tiebreak games are played",
+      "The title is shared between both players",
+      "The match is annulled and replayed later",
+      "The older player wins the title"
+     ],
+     "a": 0,
+     "why": "It is part of the regulations of the event.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does match strategy differ from a single game?",
+     "o": [
+      "Scores across games affect how much risk to take",
+      "The rules of chess differ from match to match",
+      "The boards used in matches are different",
+      "Time is unlimited in championship games"
+     ],
+     "a": 0,
+     "why": "The overall result matters.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You lead a short match by half a point with one game left. Which approach is sensible?",
+     "o": [
+      "Choose a solid approach that limits risk but keep fighting",
+      "Always play the riskiest line to force a result",
+      "Resign the game to save energy",
+      "Refuse to play and ask for a draw"
+     ],
+     "a": 0,
+     "why": "The match situation guides risk.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is checking claims concretely essential in annotations?",
+     "rubric": [
+      [
+       "wrong",
+       "mistake",
+       "error",
+       "false",
+       "unsound",
+       "refute"
+      ],
+      [
+       "check",
+       "verify",
+       "calculate",
+       "test",
+       "analysis"
+      ],
+      [
+       "reader",
+       "mislead",
+       "misleading",
+       "trust",
+       "accurate"
+      ]
+     ],
+     "min": 1,
+     "model": "Unchecked claims can mislead readers and may be wrong; verifying variations keeps the annotations accurate.",
+     "why": "Accuracy matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the best way to learn from a famous game?",
+     "o": [
+      "Replay it, find the critical moments and explain each plan",
+      "Memorise the moves only and move on",
+      "Read the result only and skip the rest",
+      "Skip the middlegame and look at the endgame"
+     ],
+     "a": 0,
+     "why": "Understanding beats memorising.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Championship play and annotation",
+    "model": "A match is played over a fixed number of games with tiebreaks if tied. Annotate games by explaining ideas, critical moments and alternatives, and end with a lesson. Famous games like the Opera Game show a lead in development.",
+    "points": [
+     {
+      "k": [
+       "match",
+       "games",
+       "points",
+       "half"
+      ],
+      "ask": "How is a match scored?"
+     },
+     {
+      "k": [
+       "idea",
+       "critical",
+       "alternative"
+      ],
+      "ask": "What do annotations contain?"
+     },
+     {
+      "k": [
+       "development",
+       "lead",
+       "king",
+       "attack"
+      ],
+      "ask": "What does the Opera Game teach?"
+     }
+    ]
+   }
+  }
+ ]
+}

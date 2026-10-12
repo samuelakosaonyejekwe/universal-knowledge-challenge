@@ -1,0 +1,2790 @@
+{
+ "world": 7,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced climatology",
+   "icon": "☀️",
+   "hook": "Why would Earth be about 33 °C colder with an atmosphere that only lets in sunlight and does not slow heat leaving?",
+   "explain": [
+    "The simplest climate model balances energy. Earth intercepts sunlight over a disc of area πR² but has a surface of 4πR², so average incoming solar energy per square metre is S₀/4. With S₀ ≈ 1361 W/m² and planetary albedo α ≈ 0.30, absorbed energy is S₀(1 − α)/4 ≈ 238 W/m².",
+    "A blackbody radiating 238 W/m² has temperature T = (238 ÷ σ)^¼, with σ = 5.67 × 10⁻⁸ W/m²/K⁴. This gives about 255 K (−18 °C). The observed mean is about 288 K (+15 °C); the difference of about 33 K is the natural greenhouse effect.",
+    "The extra forcing from added CO₂ is roughly ΔF = 5.35 ln(C/C₀) W/m². Doubling CO₂ gives about 3.7 W/m². Equilibrium climate sensitivity is the long-term warming for doubled CO₂; the IPCC assesses a likely range of about 2.5 to 4 °C. Feedbacks (water vapour, ice albedo, clouds) amplify or damp the direct response.",
+    "Climate also varies through modes such as ENSO, volcanic eruptions (sulfate aerosols cool for a year or two) and orbital cycles over tens of thousands of years (Milankovitch cycles). Separating natural variability from human influence relies on attribution studies comparing models with and without human forcing."
+   ],
+   "example": {
+    "q": "Calculate the effective radiating temperature if absorbed energy is 238 W/m² and σ = 5.67 × 10⁻⁸ W/m²/K⁴.",
+    "steps": [
+     "T⁴ = 238 ÷ (5.67 × 10⁻⁸) ≈ 4.20 × 10⁹.",
+     "T = (4.20 × 10⁹)^¼.",
+     "√ gives about 64,800; √ again gives about 255 K."
+    ],
+    "a": "About 255 K, or −18 °C"
+   },
+   "analogies": {
+    "home": "A thermos slows heat loss; a blanket raises the temperature you feel without adding heat.",
+    "city": "Dark roofs absorb more sunlight; white roofs reflect it, changing local energy balance.",
+    "sea": "Oceans store most of the added heat, delaying surface warming.",
+    "tech": "Climate models are energy-balance equations solved on a three-dimensional grid."
+   },
+   "mnemonic": "In minus out sets the temperature: S₀(1−α)/4.",
+   "terms": [
+    [
+     "Albedo",
+     "Fraction of incoming sunlight reflected."
+    ],
+    [
+     "Radiative forcing",
+     "A change in net energy flow at the top of the atmosphere, in W/m²."
+    ],
+    [
+     "Climate sensitivity",
+     "Equilibrium warming for a doubling of CO₂."
+    ],
+    [
+     "Attribution",
+     "Statistical assignment of observed change to causes."
+    ]
+   ],
+   "misc": {
+    "wrong": "Because CO₂ is only a tiny fraction of the air, it cannot affect climate.",
+    "right": "Radiative effect depends on absorption properties, not volume share; trace gases like CO₂ strongly absorb infrared."
+   },
+   "limits": "Cloud feedbacks remain the biggest uncertainty in sensitivity estimates; ranges, not single values, are reported.",
+   "trip": {
+    "wiki": "Climate sensitivity",
+    "prompt": "Find the energy budget diagram. Which flows are largest and which are changed by greenhouse gases?"
+   },
+   "sources": [
+    "Earth's energy budget",
+    "Climate sensitivity",
+    "Radiative forcing"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why is average incoming solar energy S₀/4 and not S₀?",
+     "o": [
+      "Earth intercepts a disc but has a surface four times larger",
+      "Earth reflects 75 percent of the energy that reaches it, so only a quarter is left",
+      "The Sun is dim at night, so the average is much lower",
+      "Earth is so cold that it absorbs only a quarter of sunlight"
+     ],
+     "a": 0,
+     "why": "πR² versus 4πR².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What causes the ~33 °C difference between 255 K and 288 K?",
+     "o": [
+      "The natural greenhouse effect",
+      "Ice albedo reflecting sunlight back to space",
+      "Ocean currents carrying heat from the equator to poles",
+      "The pull of the Moon on the atmosphere"
+     ],
+     "a": 0,
+     "why": "Greenhouse gases return infrared heat.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a positive feedback in climate?",
+     "o": [
+      "Melting ice reducing albedo",
+      "Clouds always cooling the surface by shading it",
+      "Plants removing all CO₂ from the air as they grow",
+      "Volcanoes erupting and blocking sunlight for a while"
+     ],
+     "a": 0,
+     "why": "More absorption leads to more warming.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do volcanic sulfate aerosols usually do?",
+     "o": [
+      "Cool the surface for a year or two",
+      "Warm the surface for centuries afterwards",
+      "Remove oxygen from the air above the volcano",
+      "Make El Niño events begin every year"
+     ],
+     "a": 0,
+     "why": "They reflect sunlight.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Doubling CO₂ gives forcing of about...",
+     "o": [
+      "3.7 W/m²",
+      "37 W/m²",
+      "0.037 W/m²",
+      "370 W/m²"
+     ],
+     "a": 0,
+     "why": "ΔF = 5.35 × ln 2 ≈ 3.7.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can attribution studies compare models with and without human forcing?",
+     "o": [
+      "To see which reproduces observed change",
+      "To remove data that does not fit the story",
+      "To avoid using any physics in the work",
+      "To fix the brightness of the Sun in the model"
+     ],
+     "a": 0,
+     "why": "The comparison isolates causes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the climate response to forcing delayed?",
+     "o": [
+      "Oceans have large heat capacity",
+      "Air is heavy and slow to respond to heat",
+      "Clouds hide the change from satellites for years",
+      "Rain slows the effect by washing out gases"
+     ],
+     "a": 0,
+     "why": "Heat uptake by water takes time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Compute 5.35 × ln(2) to find the forcing from doubled CO₂ in W/m². (ln 2 = 0.693)",
+     "a": 3.7,
+     "tol": 0.1,
+     "unit": "W/m²",
+     "why": "5.35 × 0.693 = 3.71.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "If albedo rose from 0.30 to 0.31 with S₀ = 1361 W/m², what is the new absorbed flux S₀(1−α)/4 in W/m² (to the nearest whole number)?",
+     "a": 235,
+     "tol": 1,
+     "unit": "W/m²",
+     "why": "1361 × 0.69 ÷ 4 = 234.8.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why an increase in CO₂ warms the surface even though CO₂ does not absorb sunlight strongly.",
+     "rubric": [
+      [
+       "infrared",
+       "outgoing",
+       "longwave",
+       "thermal",
+       "heat"
+      ],
+      [
+       "absorb",
+       "trap",
+       "re-emit",
+       "emit",
+       "back down",
+       "return"
+      ],
+      [
+       "escape",
+       "less",
+       "surface",
+       "lower atmosphere",
+       "warm",
+       "balance"
+      ]
+     ],
+     "min": 2,
+     "model": "CO₂ is largely transparent to incoming shortwave sunlight but absorbs and re-emits outgoing infrared. More CO₂ means less heat escapes to space until the planet warms enough to restore balance.",
+     "why": "Selective absorption causes the effect.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A stronger La Niña year coincides with slightly cooler global temperature. Which statement is sound?",
+     "o": [
+      "Natural variability can temporarily mask the long-term trend",
+      "It disproves global warming over the long term",
+      "It shows there is no forcing acting on climate",
+      "It resets the climate to the state of the past"
+     ],
+     "a": 0,
+     "why": "Trends are judged over decades.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is climate sensitivity given as a range rather than a single number?",
+     "rubric": [
+      [
+       "feedback",
+       "cloud",
+       "uncertain",
+       "uncertainty"
+      ],
+      [
+       "model",
+       "observation",
+       "evidence",
+       "paleoclimate",
+       "estimate"
+      ],
+      [
+       "range",
+       "likely",
+       "probab",
+       "different"
+      ]
+     ],
+     "min": 2,
+     "model": "Feedbacks, particularly clouds, are not perfectly known, and different evidence lines (models, observations, past climates) give slightly different values, so scientists give a likely range.",
+     "why": "Uncertainty is quantified.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do dark soot particles on snow accelerate melt?",
+     "o": [
+      "They lower albedo",
+      "They add cold",
+      "They reflect more",
+      "They freeze water"
+     ],
+     "a": 0,
+     "why": "More sunlight is absorbed.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Climate energy balance",
+    "model": "Earth absorbs about 238 W/m² and must emit as much, which would give 255 K. The greenhouse effect raises it to about 288 K. More CO₂ adds forcing, and feedbacks decide the response.",
+    "points": [
+     {
+      "k": [
+       "energy",
+       "balance",
+       "absorb",
+       "emit",
+       "238"
+      ],
+      "ask": "What balances?"
+     },
+     {
+      "k": [
+       "greenhouse",
+       "infrared",
+       "trap"
+      ],
+      "ask": "Why is Earth warmer than 255 K?"
+     },
+     {
+      "k": [
+       "forcing",
+       "co2",
+       "double"
+      ],
+      "ask": "What does extra CO₂ do?"
+     },
+     {
+      "k": [
+       "feedback",
+       "ice",
+       "cloud",
+       "uncertain"
+      ],
+      "ask": "What makes the response uncertain?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Environmental change and sustainability",
+   "icon": "♻️",
+   "hook": "If every person on Earth lived like the average person in your country, how many Earths would we need?",
+   "explain": [
+    "Environmental change includes climate change, land-use change, biodiversity loss, pollution and freshwater stress. The planetary boundaries framework identifies limits within which humanity can operate safely, including climate, biosphere integrity, land use, freshwater, nitrogen and phosphorus cycles, and ocean acidification.",
+    "Sustainability balances environmental, social and economic needs. The 2015 UN Sustainable Development Goals set 17 goals. The IPAT identity, Impact = Population × Affluence × Technology, shows that impact depends on how many people, how much each consumes and how efficiently resources are used.",
+    "Ecological footprint compares human demand with the biosphere's regenerative capacity (biocapacity), both measured in global hectares. Footprints vary widely: per-person consumption in high-income countries is several times that of low-income countries, while total impact depends also on population.",
+    "Mitigation reduces emissions or enhances sinks; adaptation adjusts to impacts. Tools include renewable energy, efficiency, nature-based solutions such as mangrove restoration, carbon pricing and circular economy design. Trade-offs matter: biofuel crops can compete with food, and dams affect river ecosystems and communities."
+   ],
+   "example": {
+    "q": "Impact = P × A × T. A country doubles population, keeps per-person consumption the same, and halves resource use per unit consumed (T). What happens to total impact?",
+    "steps": [
+     "P doubles: × 2.",
+     "A unchanged: × 1.",
+     "T halves: × 0.5.",
+     "Total = 2 × 1 × 0.5 = 1."
+    ],
+    "a": "Impact is unchanged (× 1)"
+   },
+   "analogies": {
+    "home": "A household budget: income equals biocapacity, spending equals footprint.",
+    "farm": "Agroforestry combines crops and trees to protect soil and store carbon.",
+    "city": "Cities cut footprints by compact design, public transport and efficient buildings.",
+    "tech": "Satellite data monitors deforestation and ocean heat."
+   },
+   "mnemonic": "Population times Affluence times Technology.",
+   "terms": [
+    [
+     "Planetary boundaries",
+     "Limits within which humanity can operate safely in Earth system terms."
+    ],
+    [
+     "Ecological footprint",
+     "Measure of human demand on nature."
+    ],
+    [
+     "Mitigation",
+     "Reducing emissions or increasing carbon sinks."
+    ],
+    [
+     "Adaptation",
+     "Adjusting to actual or expected climate effects."
+    ]
+   ],
+   "misc": {
+    "wrong": "Sustainability only concerns the environment.",
+    "right": "It also includes social equity and economic wellbeing; the three are linked."
+   },
+   "limits": "Footprint accounting uses assumptions about land equivalence and does not capture all impacts, such as toxic pollution.",
+   "trip": {
+    "wiki": "Planetary boundaries",
+    "prompt": "Look at the planetary boundaries diagram. Which boundaries are described as exceeded?"
+   },
+   "sources": [
+    "Planetary boundaries",
+    "Ecological footprint",
+    "Sustainable Development Goals"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does IPAT stand for?",
+     "o": [
+      "Impact = Population × Affluence × Technology",
+      "Income plus age, times the tax a household pays",
+      "Industry, production and trade across a nation",
+      "Inflation, prices and taxes in the economy"
+     ],
+     "a": 0,
+     "why": "A simple impact identity.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is adaptation?",
+     "o": [
+      "Building sea walls",
+      "Installing solar panels",
+      "Planting forests only to store carbon",
+      "Using electric cars"
+     ],
+     "a": 0,
+     "why": "It adjusts to impacts.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is mitigation?",
+     "o": [
+      "Switching to renewable electricity",
+      "Raising a flood wall along the river",
+      "Planting drought-resistant crops in dry fields",
+      "Moving a village away from the coast"
+     ],
+     "a": 0,
+     "why": "It cuts emissions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How many Sustainable Development Goals are there?",
+     "o": [
+      "17",
+      "8",
+      "12",
+      "30"
+     ],
+     "a": 0,
+     "why": "Adopted in 2015.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does biocapacity measure?",
+     "o": [
+      "Nature's ability to regenerate resources and absorb waste",
+      "The number of species living in a country",
+      "The amount of rainfall a region receives each year",
+      "The height of the sea level along its coast"
+     ],
+     "a": 0,
+     "why": "It is compared against footprint.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A biofuel policy raises food prices. This illustrates...",
+     "o": [
+      "A sustainability trade-off",
+      "A perfect solution with no downsides",
+      "A mitigation measure that has no cost at all",
+      "No relationship between fuels and food"
+     ],
+     "a": 0,
+     "why": "Land used for fuel is not used for food.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a small-population country still have a large footprint?",
+     "o": [
+      "High consumption per person",
+      "More rain falls on its land every year",
+      "It has many mountains in its territory",
+      "It has few cities in its territory"
+     ],
+     "a": 0,
+     "why": "Affluence matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A country has biocapacity of 1.2 global hectares per person and a footprint of 3.6 global hectares per person. By what factor does demand exceed capacity?",
+     "a": 3,
+     "tol": 0.05,
+     "unit": "×",
+     "why": "3.6 ÷ 1.2 = 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a sustainability assessment.",
+     "items": [
+      "Define goals and boundaries",
+      "Measure impacts",
+      "Identify options and trade-offs",
+      "Implement and monitor"
+     ],
+     "why": "Evidence then action then review.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why using only technology fixes may not reduce total impact (rebound effect).",
+     "rubric": [
+      [
+       "efficien",
+       "cheaper",
+       "saves money",
+       "lower cost"
+      ],
+      [
+       "consume more",
+       "use more",
+       "increase demand",
+       "more use",
+       "rebound",
+       "growth"
+      ],
+      [
+       "total",
+       "overall",
+       "net",
+       "offset",
+       "cancel"
+      ]
+     ],
+     "min": 2,
+     "model": "Efficiency can lower costs, which may lead people to use more, offsetting some or all of the savings, so total impact may not fall.",
+     "why": "Behaviour and scale matter.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city plants mangroves along its coast. What are the benefits?",
+     "o": [
+      "Coastal protection, carbon storage and fish habitat",
+      "Only tourism income for the coastal hotels",
+      "Only new land for building along the sea",
+      "No benefit at all to people or nature"
+     ],
+     "a": 0,
+     "why": "Nature-based solutions give multiple benefits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do planetary boundaries matter even when no single national limit is exceeded?",
+     "o": [
+      "Earth system processes are global and interlinked",
+      "Borders block them from crossing between countries",
+      "Only the seas matter for Earth systems",
+      "They are legal limits that every country has signed"
+     ],
+     "a": 0,
+     "why": "Climate and biodiversity cross borders.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is equity central to climate policy?",
+     "rubric": [
+      [
+       "historic",
+       "past",
+       "emit",
+       "responsib",
+       "cause"
+      ],
+      [
+       "vulnerab",
+       "poor",
+       "least",
+       "harm",
+       "impact",
+       "affect"
+      ],
+      [
+       "capacity",
+       "afford",
+       "fair",
+       "justice",
+       "equity",
+       "share"
+      ]
+     ],
+     "min": 2,
+     "model": "Countries that emitted least are often most vulnerable and have least capacity to adapt, so fairness questions affect who should cut emissions and who should pay.",
+     "why": "Responsibility and vulnerability differ.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Environmental change and sustainability",
+    "model": "Human pressures push Earth systems toward limits. IPAT shows impact depends on population, consumption and technology. Mitigation cuts emissions, adaptation prepares for effects, and fair, balanced solutions are needed.",
+    "points": [
+     {
+      "k": [
+       "population",
+       "affluence",
+       "technology",
+       "ipat"
+      ],
+      "ask": "What controls impact?"
+     },
+     {
+      "k": [
+       "footprint",
+       "biocapacity"
+      ],
+      "ask": "How can we measure demand?"
+     },
+     {
+      "k": [
+       "mitigat",
+       "adapt"
+      ],
+      "ask": "What responses are there?"
+     },
+     {
+      "k": [
+       "equity",
+       "fair",
+       "trade-off"
+      ],
+      "ask": "What makes it hard?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Population modelling",
+   "icon": "📈",
+   "hook": "The world's population grew from 1 billion around 1800 to over 8 billion in 2022. Will it keep growing forever?",
+   "explain": [
+    "Demography models population by births, deaths and migration. Crude birth rate (CBR) and crude death rate (CDR) are per 1,000 people per year. Natural increase = (CBR − CDR) ÷ 10, expressed as a percentage. Total fertility rate (TFR) is the average number of children per woman; replacement level is about 2.1 in low-mortality countries.",
+    "Exponential growth follows N(t) = N₀e^(rt), with doubling time ≈ 70 ÷ (growth rate in percent) years. Real populations show logistic or other patterns when constraints apply, but human populations mainly change through falling fertility rather than a fixed carrying capacity.",
+    "The demographic transition model describes shifts from high birth and death rates (stage 1) through falling death rates and rapid growth (stage 2), falling birth rates (stage 3), and low rates (stage 4), with possible decline (stage 5). Age-sex pyramids show structure: wide bases mean young populations; narrow bases mean ageing. Population momentum means growth continues for decades after fertility falls because many young adults reach childbearing age.",
+    "The dependency ratio compares dependents (under 15 and over 64) with the working-age population (15–64). Projections, such as those from the United Nations, use scenarios; most show global population peaking later this century, but regional paths differ greatly."
+   ],
+   "example": {
+    "q": "A population grows at 2 percent a year. Estimate its doubling time.",
+    "steps": [
+     "Use the rule of 70: doubling time ≈ 70 ÷ r.",
+     "70 ÷ 2 = 35."
+    ],
+    "a": "About 35 years"
+   },
+   "analogies": {
+    "home": "Interest on savings grows like population: each year's growth is a share of a larger amount.",
+    "farm": "Yields and land set food supply limits that can change with technology.",
+    "city": "Ageing cities need more care services, younger ones need schools.",
+    "tech": "Projection models run scenarios with different fertility assumptions."
+   },
+   "mnemonic": "Seventy over rate gives doubling date.",
+   "terms": [
+    [
+     "Total fertility rate",
+     "Average number of children per woman."
+    ],
+    [
+     "Demographic transition",
+     "Shift from high to low birth and death rates."
+    ],
+    [
+     "Population momentum",
+     "Continued growth after fertility falls due to a young age structure."
+    ],
+    [
+     "Dependency ratio",
+     "Dependents per working-age person."
+    ]
+   ],
+   "misc": {
+    "wrong": "Once fertility is at replacement level, population stops growing immediately.",
+    "right": "Because of momentum, populations with many young people keep growing for decades."
+   },
+   "limits": "Projections depend on assumptions about fertility, mortality and migration, and revise as data change.",
+   "trip": {
+    "wiki": "Demographic transition",
+    "prompt": "Compare the population pyramids of a young and an ageing country."
+   },
+   "sources": [
+    "Demographic transition",
+    "Total fertility rate",
+    "Population pyramid"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is replacement-level fertility in low-mortality countries?",
+     "o": [
+      "About 2.1 children per woman",
+      "About 1.0 children per woman",
+      "About 3.5 children per woman",
+      "About 5.0 children per woman"
+     ],
+     "a": 0,
+     "why": "Slightly above two accounts for mortality and sex ratio.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which stage has rapidly falling death rates and high birth rates?",
+     "o": [
+      "Stage 2",
+      "Stage 1",
+      "Stage 4",
+      "Stage 5"
+     ],
+     "a": 0,
+     "why": "Rapid growth.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A pyramid with a wide base shows...",
+     "o": [
+      "A young population",
+      "An ageing population",
+      "No births",
+      "Zero growth"
+     ],
+     "a": 0,
+     "why": "Many children.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is population momentum?",
+     "o": [
+      "Growth continues due to many young adults",
+      "Growth stops at once when fertility falls",
+      "Fertility rises as the population ages",
+      "Death rates rise as the young grow up"
+     ],
+     "a": 0,
+     "why": "Age structure drives growth.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A country has CBR 12 and CDR 10 per 1,000, with no migration. Its growth rate is...",
+     "o": [
+      "0.2 percent a year",
+      "2 percent a year",
+      "12 percent a year",
+      "1.2 percent a year"
+     ],
+     "a": 0,
+     "why": "(12−10)/10 = 0.2%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does a high dependency ratio imply?",
+     "o": [
+      "Many dependents for each worker",
+      "There are no workers in the country",
+      "There are no children in the country",
+      "There are no old people in the country"
+     ],
+     "a": 0,
+     "why": "It strains public budgets.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can falling fertility lower the dependency ratio at first?",
+     "o": [
+      "Fewer children per working adult",
+      "More elders per working adult at once",
+      "More deaths among the young",
+      "Higher births in the next few years"
+     ],
+     "a": 0,
+     "why": "A demographic dividend can result.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A population of 40 million grows at 1.5 percent a year. Estimate its doubling time in years using the rule of 70.",
+     "a": 46.7,
+     "tol": 1,
+     "unit": "years",
+     "why": "70 ÷ 1.5 ≈ 46.7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A population of 10 million grows at 3 percent per year. Using N = N₀ × 1.03^t, what is the population after 10 years in millions? (1.03^10 = 1.344)",
+     "a": 13.44,
+     "tol": 0.1,
+     "unit": "million",
+     "why": "10 × 1.344 = 13.44.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the demographic transition leads to rapid growth in stage 2.",
+     "rubric": [
+      [
+       "death rate",
+       "mortality",
+       "deaths"
+      ],
+      [
+       "fall",
+       "fall",
+       "decline",
+       "drop",
+       "medicine",
+       "sanitation",
+       "healthcare",
+       "food"
+      ],
+      [
+       "birth rate",
+       "fertility",
+       "births"
+      ],
+      [
+       "high",
+       "remain",
+       "still",
+       "slow to",
+       "lag"
+      ]
+     ],
+     "min": 3,
+     "model": "Medicine, sanitation and food supply reduce death rates first, while birth rates stay high for some time, so births greatly exceed deaths and the population grows quickly.",
+     "why": "The gap between falling deaths and still-high births drives growth.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two countries both have TFR 2.1. One has a much younger structure. Which will grow more in the coming decades?",
+     "o": [
+      "The younger one",
+      "The older one, with more people past childbearing",
+      "The two grow by exactly the same amount",
+      "Neither will grow at all"
+     ],
+     "a": 0,
+     "why": "Momentum.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are population projections presented as scenarios, not predictions?",
+     "rubric": [
+      [
+       "assum",
+       "uncertain",
+       "unknown",
+       "depends"
+      ],
+      [
+       "fertility",
+       "mortality",
+       "migration",
+       "births"
+      ],
+      [
+       "scenario",
+       "range",
+       "vary",
+       "different",
+       "future"
+      ]
+     ],
+     "min": 2,
+     "model": "They depend on assumptions about fertility, mortality and migration, which cannot be known exactly, so several scenarios show a range of possible futures.",
+     "why": "Uncertainty grows with time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a falling birth rate not immediately cause shrinkage?",
+     "o": [
+      "Large young cohorts still enter reproductive ages",
+      "Deaths fall to zero as soon as births fall",
+      "Migration always dominates population change",
+      "The maths of population growth fails"
+     ],
+     "a": 0,
+     "why": "Momentum again.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Population modelling",
+    "model": "Population changes through births, deaths and migration. Exponential growth doubles in about 70 divided by the rate. The demographic transition describes falling death rates then birth rates. Age structure creates momentum.",
+    "points": [
+     {
+      "k": [
+       "birth",
+       "death",
+       "migration"
+      ],
+      "ask": "What changes a population?"
+     },
+     {
+      "k": [
+       "70",
+       "doubling",
+       "exponential"
+      ],
+      "ask": "How can growth be estimated?"
+     },
+     {
+      "k": [
+       "transition",
+       "stage",
+       "fall"
+      ],
+      "ask": "How do rates change over time?"
+     },
+     {
+      "k": [
+       "age",
+       "momentum",
+       "young",
+       "pyramid"
+      ],
+      "ask": "Why does growth continue?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Urban systems and spatial planning",
+   "icon": "🏘️",
+   "hook": "Why do cities in many countries show one very large city and then a steady drop in size?",
+   "explain": [
+    "Urban systems are networks of cities linked by flows of people, goods and information. The rank-size rule says the nth largest city has about 1/n the population of the largest. Some countries fit this; others have a primate city that is far larger than the next (for instance Bangkok in Thailand, or Paris in France).",
+    "Central place theory (Walter Christaller) explains hierarchies of settlements: small places offer low-order goods bought often; larger centres offer high-order goods bought rarely and have bigger market areas. Gravity models predict interaction between two places: I ∝ (P₁ × P₂) ÷ dᵏ, where k is often near 2.",
+    "Spatial planning guides land use, transport and services. Tools include zoning, urban growth boundaries, transit-oriented development and green infrastructure. Compact cities cut travel distances but need affordable housing; sprawl consumes farmland and raises car dependence. Informal settlements house over a billion people worldwide and need upgrading, secure tenure and services rather than only clearance.",
+    "Smart-city and 15-minute city ideas aim at reachable daily needs. Planners evaluate accessibility, for example the share of people within 500 m of a bus stop, using GIS network analysis."
+   ],
+   "example": {
+    "q": "If the largest city has 12 million people, what does the rank-size rule predict for the 4th largest?",
+    "steps": [
+     "Rank-size: P_n = P₁ ÷ n.",
+     "P₄ = 12 ÷ 4 = 3 million."
+    ],
+    "a": "3 million"
+   },
+   "analogies": {
+    "home": "Corner shops serve nearby people; a big hospital serves a whole region, like central place hierarchies.",
+    "city": "Bus lines meeting at interchanges concentrate flows, like network nodes.",
+    "farm": "Market towns in farming regions are spaced so farmers can travel to them in a day.",
+    "tech": "Network analysis finds the shortest route and service areas for ambulances."
+   },
+   "mnemonic": "Small places sell often-needed things; big places sell rare things.",
+   "terms": [
+    [
+     "Primate city",
+     "A city far larger than any other in its country."
+    ],
+    [
+     "Central place",
+     "A settlement providing goods and services to surrounding areas."
+    ],
+    [
+     "Gravity model",
+     "A model where interaction rises with size and falls with distance."
+    ],
+    [
+     "Zoning",
+     "Rules separating land uses by area."
+    ]
+   ],
+   "misc": {
+    "wrong": "Planners can design a city perfectly in advance.",
+    "right": "Cities evolve through many decisions, so planning is iterative and must adapt to change."
+   },
+   "limits": "Rank-size and central place models are simplified; real urban systems are shaped by history, politics, geography and trade.",
+   "trip": {
+    "wiki": "Central place theory",
+    "prompt": "Search for an example of a primate city. What factors made it dominate?"
+   },
+   "sources": [
+    "Central place theory",
+    "Rank-size distribution",
+    "Urban planning"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a primate city?",
+     "o": [
+      "A city much larger than the second largest",
+      "A city by the sea with a big port",
+      "A capital city only, whatever its size",
+      "A city of exactly 1 million people"
+     ],
+     "a": 0,
+     "why": "It dominates the urban system.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In central place theory, which goods are high-order?",
+     "o": [
+      "Bought rarely, such as specialist services",
+      "Bread bought every day in the local shop",
+      "Milk bought several times a week",
+      "Newspapers bought daily from the corner shop"
+     ],
+     "a": 0,
+     "why": "They need larger market areas.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In a gravity model, interaction between two cities falls if...",
+     "o": [
+      "Distance increases",
+      "Both cities grow larger in size",
+      "Both cities are equal in size",
+      "Roads between them get shorter"
+     ],
+     "a": 0,
+     "why": "Distance decay.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which planning tool limits sprawl?",
+     "o": [
+      "Urban growth boundary",
+      "Free parking for every worker in the centre",
+      "Wider highways into the countryside",
+      "Removing bus lines from the suburbs"
+     ],
+     "a": 0,
+     "why": "It directs growth inward.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do planners favour upgrading informal settlements?",
+     "o": [
+      "It improves services while keeping communities and livelihoods",
+      "It builds nothing new and leaves slums as they are",
+      "It stops migration from the countryside to cities",
+      "It removes cities from the national plan"
+     ],
+     "a": 0,
+     "why": "Clearance can destroy livelihoods.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does transit-oriented development do?",
+     "o": [
+      "Concentrates housing and jobs near public transport",
+      "Moves public transport away from where people live",
+      "Bans housing near the stations",
+      "Reduces the density of homes near the stops"
+     ],
+     "a": 0,
+     "why": "It cuts car dependence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do hospitals tend to be in larger towns?",
+     "o": [
+      "They need a large market area to be viable",
+      "Small towns are full of sick people",
+      "Towns are closer to the sea than the villages",
+      "Hospitals dislike being near farms"
+     ],
+     "a": 0,
+     "why": "High-order services need bigger thresholds.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Using the rank-size rule with a largest city of 20 million, what is the predicted population in millions of the 5th city?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "million",
+     "why": "20 ÷ 5 = 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two cities have populations of 2 million and 3 million and are 100 km apart. Using I = P₁P₂/d², with P in millions and d in km, calculate I (answer in units of 10⁻⁴ ×).",
+     "a": 6,
+     "tol": 0.01,
+     "unit": "×10⁻⁴",
+     "why": "2 × 3 ÷ 10,000 = 0.0006 = 6 × 10⁻⁴.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Evaluate one advantage and one disadvantage of a compact city.",
+     "rubric": [
+      [
+       "short",
+       "shorter",
+       "less travel",
+       "walk",
+       "public transport",
+       "efficient",
+       "less land",
+       "emission"
+      ],
+      [
+       "housing",
+       "cost",
+       "expensive",
+       "crowd",
+       "congest",
+       "price",
+       "green space",
+       "affordab",
+       "density"
+      ],
+      [
+       "advantage",
+       "disadvantage",
+       "however",
+       "but",
+       "trade-off"
+      ]
+     ],
+     "min": 2,
+     "model": "A compact city shortens trips and makes transit viable, cutting emissions and land use, but high density can raise housing costs and crowding unless affordable housing and green space are planned.",
+     "why": "Planning means trade-offs.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A country has one huge capital and weak regional cities. What policy may help?",
+     "o": [
+      "Investing in regional transport and services",
+      "Closing roads to the smaller towns",
+      "Centralising even more services in the capital",
+      "Banning people from moving to other cities"
+     ],
+     "a": 0,
+     "why": "It spreads opportunity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a 15-minute city design reduce emissions?",
+     "o": [
+      "Daily needs can be reached by walking or cycling",
+      "More cars on the roads at busy times",
+      "Longer trips to reach shops and schools",
+      "Fewer shops and services in each area"
+     ],
+     "a": 0,
+     "why": "It cuts travel demand.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must planners consider flood zones when zoning?",
+     "o": [
+      "To avoid placing people and assets in hazardous areas",
+      "Rain is rare there, so flooding does not matter",
+      "Floods are profitable, so building there pays",
+      "Zoning is optional and can be ignored"
+     ],
+     "a": 0,
+     "why": "Land use controls exposure.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Urban systems and spatial planning",
+    "model": "Cities form networks. Rank-size and central place theory describe size patterns and service hierarchies. Gravity models predict links. Planners use zoning, transit-oriented design and GIS to manage growth.",
+    "points": [
+     {
+      "k": [
+       "rank",
+       "size",
+       "primate"
+      ],
+      "ask": "How do city sizes pattern?"
+     },
+     {
+      "k": [
+       "central place",
+       "hierarchy",
+       "service",
+       "market"
+      ],
+      "ask": "Why do bigger places offer more?"
+     },
+     {
+      "k": [
+       "gravity",
+       "distance",
+       "interaction"
+      ],
+      "ask": "What predicts links?"
+     },
+     {
+      "k": [
+       "plan",
+       "zoning",
+       "transit",
+       "compact"
+      ],
+      "ask": "How do planners guide growth?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Economic and regional development",
+   "icon": "⚖️",
+   "hook": "Why do regions that start slightly ahead often pull further ahead, and what can break the cycle?",
+   "explain": [
+    "Regional development differs because of resources, location, history, institutions and investment. Gunnar Myrdal described cumulative causation: advantages such as skilled workers, infrastructure and markets attract more investment, which reinforces the advantage. Backwash effects draw resources from the periphery to the core; spread effects pass benefits outward.",
+    "Albert Hirschman argued that growth appears first in some places and spreads through trickle-down. Growth poles, clusters and special economic zones try to seed growth. Industrial clusters, such as Silicon Valley or the Pearl River Delta, gain from shared suppliers, labour and knowledge (agglomeration economies).",
+    "Measuring inequality: the Gini coefficient ranges from 0 (perfect equality) to 1 (one person has all). The location quotient LQ = (regional share of an industry) ÷ (national share) shows specialisation: LQ above 1 means the region is more specialised than the nation.",
+    "Policies include infrastructure investment, education, regional funds (such as the EU's cohesion funds), trade agreements and decentralisation. Development outcomes depend on governance, not just money. Different paths exist: export-led manufacturing in East Asia, resource-based growth in some economies, services-led growth elsewhere."
+   ],
+   "example": {
+    "q": "In a region, 20% of jobs are in a certain industry, while nationally only 10% of jobs are in that industry. Find the location quotient.",
+    "steps": [
+     "LQ = regional share ÷ national share.",
+     "Regional share = 20%, national share = 10%.",
+     "20 ÷ 10 = 2."
+    ],
+    "a": "LQ = 2, the region is specialised in the industry"
+   },
+   "analogies": {
+    "home": "A well-stocked kitchen makes cooking easier and attracts guests, as advantages attract more investment.",
+    "city": "Tech clusters pull in workers, which attract more firms.",
+    "farm": "Co-operatives pool farmers to gain markets and bargaining power.",
+    "tech": "Digital infrastructure lets small towns join global markets."
+   },
+   "mnemonic": "Advantage attracts advantage: cumulative causation.",
+   "terms": [
+    [
+     "Cumulative causation",
+     "Self-reinforcing growth in advantaged regions."
+    ],
+    [
+     "Agglomeration economies",
+     "Benefits from firms locating near each other."
+    ],
+    [
+     "Gini coefficient",
+     "Measure of inequality from 0 to 1."
+    ],
+    [
+     "Location quotient",
+     "Ratio comparing regional and national industry shares."
+    ]
+   ],
+   "misc": {
+    "wrong": "Market forces always equalise regions.",
+    "right": "Without policy, advantages can accumulate and gaps may widen, though spread effects can also help."
+   },
+   "limits": "Evidence is mixed on whether regional gaps close; outcomes vary with institutions and context.",
+   "trip": {
+    "wiki": "Cumulative causation",
+    "prompt": "Pick one industrial cluster. What local advantages explain it?"
+   },
+   "sources": [
+    "Regional development",
+    "Gini coefficient",
+    "Agglomeration economies"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is cumulative causation?",
+     "o": [
+      "Advantages reinforce themselves over time",
+      "Random growth with no pattern at all",
+      "Equalisation of places over time",
+      "Falling output as places lose firms"
+     ],
+     "a": 0,
+     "why": "Myrdal's idea.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A Gini coefficient of 0 means...",
+     "o": [
+      "Perfect equality",
+      "Perfect inequality",
+      "Average wealth",
+      "No data"
+     ],
+     "a": 0,
+     "why": "Everyone has the same.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What are agglomeration economies?",
+     "o": [
+      "Gains from firms clustering",
+      "Taxes charged on cities by governments",
+      "Tourism gains for coastal towns only",
+      "Farming subsidies paid in the countryside"
+     ],
+     "a": 0,
+     "why": "Shared labour, suppliers and knowledge.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which describes backwash effects?",
+     "o": [
+      "Resources flow from periphery to core",
+      "Core investment flowing into the periphery",
+      "Growth spreads out from the core to other places",
+      "Taxes fall in the periphery"
+     ],
+     "a": 0,
+     "why": "Talent and capital leave.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A location quotient of 0.5 means...",
+     "o": [
+      "The region is less specialised than the nation in that industry",
+      "The region is twice as specialised as the nation",
+      "The region has no industry of that kind at all",
+      "The region and nation are exactly equal"
+     ],
+     "a": 0,
+     "why": "Regional share is half the national share.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do special economic zones aim to help?",
+     "o": [
+      "Offering incentives to attract investment and jobs",
+      "Raising tariffs on goods from outside",
+      "Banning firms from operating inside the zone",
+      "Closing ports to ships from abroad"
+     ],
+     "a": 0,
+     "why": "They can seed growth.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do institutions matter for development?",
+     "o": [
+      "They shape property rights, trust and public services",
+      "They fix the climate of a country over time",
+      "They make rivers flow where needed",
+      "They remove borders between countries"
+     ],
+     "a": 0,
+     "why": "Governance affects outcomes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A region has 30% of its workers in an industry; nationally the share is 12%. Find the location quotient.",
+     "a": 2.5,
+     "tol": 0.01,
+     "unit": "",
+     "why": "30 ÷ 12 = 2.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its meaning.",
+     "pairs": [
+      [
+       "Spread effects",
+       "Benefits move outward from the core"
+      ],
+      [
+       "Backwash effects",
+       "Resources drain from the periphery"
+      ],
+      [
+       "Growth pole",
+       "A centre of industry meant to stimulate regional growth"
+      ]
+     ],
+     "why": "Models of regional interaction.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a government might reduce regional inequality without only giving money.",
+     "rubric": [
+      [
+       "infrastructure",
+       "road",
+       "rail",
+       "broadband",
+       "transport",
+       "connect"
+      ],
+      [
+       "education",
+       "skills",
+       "training",
+       "school",
+       "health"
+      ],
+      [
+       "decentral",
+       "governance",
+       "institution",
+       "invest",
+       "jobs",
+       "industry",
+       "cluster",
+       "incentive"
+      ]
+     ],
+     "min": 2,
+     "model": "It can invest in transport and digital links, improve education and skills, and support local industry and institutions so that regions can create their own growth.",
+     "why": "Capabilities beat handouts.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A new rail line reaches a remote region. Which outcome is plausible?",
+     "o": [
+      "Both new opportunities and increased outflow of workers",
+      "Only gains for the region, with no losses",
+      "Only losses for the region, with no gains",
+      "No change at all in jobs or movement"
+     ],
+     "a": 0,
+     "why": "Connectivity can cut both ways.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can Gini coefficients mislead without context?",
+     "o": [
+      "Different distributions give the same value",
+      "They are secret figures kept by governments",
+      "They are random numbers that change daily",
+      "They are fixed values that never change"
+     ],
+     "a": 0,
+     "why": "The number summarises one aspect only.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do clusters last even when costs rise?",
+     "o": [
+      "Networks and shared knowledge are hard to move",
+      "Firms are trapped in place by their contracts",
+      "Laws forbid firms from leaving the region",
+      "Rents fall as costs rise, so firms stay"
+     ],
+     "a": 0,
+     "why": "Agglomeration benefits persist.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Economic and regional development",
+    "model": "Regions start unequal and advantage can accumulate through cumulative causation. Clusters give agglomeration benefits. Gini and location quotient measure inequality and specialisation. Policy targets infrastructure, skills and institutions.",
+    "points": [
+     {
+      "k": [
+       "advantage",
+       "accumulate",
+       "cumulative",
+       "reinforce"
+      ],
+      "ask": "Why do gaps persist?"
+     },
+     {
+      "k": [
+       "cluster",
+       "agglomerat",
+       "near"
+      ],
+      "ask": "Why do firms group together?"
+     },
+     {
+      "k": [
+       "gini",
+       "location quotient",
+       "measure"
+      ],
+      "ask": "How do we measure it?"
+     },
+     {
+      "k": [
+       "policy",
+       "infrastructure",
+       "education",
+       "institution"
+      ],
+      "ask": "What can reduce gaps?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Disaster risk and vulnerability mapping",
+   "icon": "⚠️",
+   "hook": "Two cities suffer the same earthquake. One has few deaths and the other thousands. What changed between hazard and disaster?",
+   "explain": [
+    "Natural hazards (earthquakes, floods, cyclones, droughts) become disasters when they hit vulnerable people. A common framework is Risk = Hazard × Exposure × Vulnerability ÷ Capacity. Hazard is the probability and intensity of an event, exposure is who or what is in harm's way, vulnerability is susceptibility to damage, and capacity is the ability to prepare, respond and recover.",
+    "Return period T is the average interval between events of a given size: annual probability p = 1/T. The chance of at least one event in n years is 1 − (1 − p)ⁿ. A \"100-year flood\" has a 1 percent chance each year, and about a 26 percent chance of happening at least once in 30 years.",
+    "Vulnerability mapping combines layers: hazard zones, population density, building quality, poverty, age, access to hospitals and evacuation routes. Indices such as a social vulnerability index weight indicators, but weights are subjective and should be tested for sensitivity.",
+    "Disaster risk reduction (DRR) includes early warning systems, building codes, land-use planning, ecosystem protection and community preparedness. The Sendai Framework (2015–2030) guides global DRR. Cyclone shelters and warning systems in Bangladesh cut cyclone deaths dramatically over decades, showing that vulnerability can be reduced."
+   ],
+   "example": {
+    "q": "What is the probability that a 50-year flood occurs at least once in a 10-year period?",
+    "steps": [
+     "p = 1/50 = 0.02 per year.",
+     "Probability of no flood in 10 years = 0.98¹⁰ ≈ 0.817.",
+     "At least one = 1 − 0.817 = 0.183."
+    ],
+    "a": "About 18 percent"
+   },
+   "analogies": {
+    "home": "A home with smoke alarms and a plan is less vulnerable to a fire than one without.",
+    "city": "Buildings with strict codes sway but stand in earthquakes.",
+    "farm": "Diverse crops and savings help farmers survive a drought year.",
+    "tech": "Satellite rain data feed early warning systems for floods."
+   },
+   "mnemonic": "Hazard plus people plus weakness, minus preparedness, equals disaster.",
+   "terms": [
+    [
+     "Hazard",
+     "A potentially damaging event or process."
+    ],
+    [
+     "Exposure",
+     "People and assets in hazard zones."
+    ],
+    [
+     "Vulnerability",
+     "Susceptibility to harm."
+    ],
+    [
+     "Return period",
+     "Average time between events of a given size."
+    ]
+   ],
+   "misc": {
+    "wrong": "Natural disasters are caused only by nature.",
+    "right": "Disasters arise from the interaction of natural hazards with exposure and vulnerability, which are shaped by society."
+   },
+   "limits": "Return periods rest on limited records and may change as climate and land use change.",
+   "trip": {
+    "wiki": "Disaster risk reduction",
+    "prompt": "Find a hazard map. Which groups live in the most exposed areas?"
+   },
+   "sources": [
+    "Natural disaster",
+    "Vulnerability",
+    "Sendai Framework for Disaster Risk Reduction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which defines exposure?",
+     "o": [
+      "People and assets in hazard areas",
+      "The strength of the hazard event itself",
+      "The speed of recovery after the event",
+      "The weather on the day of the event"
+     ],
+     "a": 0,
+     "why": "Exposure is about presence.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A 100-year flood has what annual probability?",
+     "o": [
+      "1 percent",
+      "10 percent",
+      "0.1 percent",
+      "100 percent"
+     ],
+     "a": 0,
+     "why": "p = 1/T.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why do two equal earthquakes cause different deaths?",
+     "o": [
+      "Vulnerability and capacity differ",
+      "Earth chooses where to cause the most harm",
+      "The magnitudes differ in secret",
+      "Waves behave differently in each town"
+     ],
+     "a": 0,
+     "why": "Society shapes outcomes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which reduces vulnerability?",
+     "o": [
+      "Enforcing building codes",
+      "Building on flood plains",
+      "Removing warnings",
+      "Increasing density in hazard zones"
+     ],
+     "a": 0,
+     "why": "Structures withstand shaking.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why must vulnerability index weights be tested?",
+     "o": [
+      "They are subjective and affect rankings",
+      "They are fixed by nature and cannot be changed",
+      "They are random numbers drawn from a hat",
+      "They are written into law and so are exact"
+     ],
+     "a": 0,
+     "why": "Sensitivity analysis checks robustness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does the Sendai Framework cover?",
+     "o": [
+      "Global disaster risk reduction 2015–2030",
+      "Ocean law and the rights of ships at sea",
+      "Trade tariffs between countries",
+      "Space travel and satellite launches"
+     ],
+     "a": 0,
+     "why": "It sets targets for DRR.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which group is often more vulnerable in evacuations?",
+     "o": [
+      "People with limited mobility",
+      "Marathon runners who train for races",
+      "Young adults only, who are strong and fast",
+      "Pilots who fly planes"
+     ],
+     "a": 0,
+     "why": "Access and assistance matter.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "What is the probability (as a percentage, to the nearest whole number) that a 25-year flood occurs at least once in 5 years? (0.96^5 = 0.815)",
+     "a": 19,
+     "tol": 1,
+     "unit": "%",
+     "why": "1 − 0.815 = 0.185, about 19%.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the disaster risk management cycle.",
+     "items": [
+      "Prevention and mitigation",
+      "Preparedness",
+      "Response",
+      "Recovery"
+     ],
+     "why": "Cycle continues back to prevention.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why hazard maps alone are not enough to plan for disaster.",
+     "rubric": [
+      [
+       "people",
+       "population",
+       "exposure",
+       "who lives",
+       "assets",
+       "buildings"
+      ],
+      [
+       "vulnerab",
+       "poor",
+       "elderly",
+       "weak",
+       "capacity"
+      ],
+      [
+       "combine",
+       "layer",
+       "overlay",
+       "risk",
+       "together",
+       "also need"
+      ]
+     ],
+     "min": 2,
+     "model": "A hazard map shows where events can occur but not who is exposed or how vulnerable they are. Overlaying population, building quality and capacity layers shows actual risk.",
+     "why": "Risk needs several layers.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A town builds a levee. Over time more homes are built behind it. What effect might occur?",
+     "o": [
+      "Exposure rises, so risk may not fall",
+      "Risk is zero once the levee is built",
+      "The hazard disappears completely",
+      "Flooding stops for ever in the area"
+     ],
+     "a": 0,
+     "why": "The levee effect: false security.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can early warning without evacuation plans fail?",
+     "o": [
+      "People may not know how or where to go",
+      "Warnings are loud, so people stay inside",
+      "Sirens break and no one hears them",
+      "The weather changes during the warning"
+     ],
+     "a": 0,
+     "why": "Warnings must be actionable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are informal settlements often at higher risk?",
+     "o": [
+      "They are placed on hazardous land with weaker buildings",
+      "They are newer and so are better built",
+      "They are larger and so have more room",
+      "They have more services than other areas"
+     ],
+     "a": 0,
+     "why": "Poverty drives exposure.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Disaster risk and vulnerability mapping",
+    "model": "Risk combines hazard, exposure and vulnerability, reduced by capacity. Return periods give probabilities. Maps overlay hazard with people and weakness to show who is at risk. Preparedness lowers losses.",
+    "points": [
+     {
+      "k": [
+       "hazard",
+       "exposure",
+       "vulnerab"
+      ],
+      "ask": "What makes risk?"
+     },
+     {
+      "k": [
+       "return period",
+       "probab",
+       "chance"
+      ],
+      "ask": "How is frequency described?"
+     },
+     {
+      "k": [
+       "map",
+       "overlay",
+       "layer"
+      ],
+      "ask": "How do maps help?"
+     },
+     {
+      "k": [
+       "prepare",
+       "warning",
+       "code",
+       "capacity"
+      ],
+      "ask": "How is risk reduced?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Geospatial data analysis",
+   "icon": "📊",
+   "hook": "A map shows disease cases clustered in one district. How do you decide whether this is real clustering or just chance?",
+   "explain": [
+    "Geospatial data analysis uses statistics tailored to location. The first law of geography (Waldo Tobler, 1970) states that near things are more related than distant things. This spatial autocorrelation violates the independence assumption of many ordinary statistics.",
+    "Point pattern analysis compares the observed mean nearest-neighbour distance to the expected distance under randomness: Rn = d_obs ÷ d_exp, with d_exp = 0.5 ÷ √(n/A). Rn near 1 is random, below 1 clustered, above 1 dispersed. Moran's I measures spatial autocorrelation from −1 to +1.",
+    "Interpolation estimates values at unsampled places. Inverse distance weighting uses nearby points more; kriging models spatial correlation using a variogram. Correlation of mapped variables is not causation, and ecological fallacy occurs when group-level relationships are wrongly applied to individuals. The modifiable areal unit problem (MAUP) means results change with how areas are drawn.",
+    "Good practice: define the question, check data quality and coordinate systems, choose a method, test significance, check sensitivity to scale and boundaries, and present uncertainty."
+   ],
+   "example": {
+    "q": "25 points lie in an area of 100 km². The observed mean nearest-neighbour distance is 0.6 km. Is the pattern clustered?",
+    "steps": [
+     "Density n/A = 25 ÷ 100 = 0.25 per km².",
+     "d_exp = 0.5 ÷ √0.25 = 0.5 ÷ 0.5 = 1.0 km.",
+     "Rn = 0.6 ÷ 1.0 = 0.6, below 1."
+    ],
+    "a": "Rn = 0.6, so the pattern is clustered"
+   },
+   "analogies": {
+    "home": "Houses on a street are more alike than houses in different cities, because nearby places share influences.",
+    "city": "Crime or disease mapping looks for hot spots.",
+    "farm": "Soil samples at points are interpolated into a fertility map.",
+    "tech": "GIS software calculates statistics like Moran's I automatically."
+   },
+   "mnemonic": "Near is related; clusters are not chance.",
+   "terms": [
+    [
+     "Spatial autocorrelation",
+     "Similarity of values at nearby places."
+    ],
+    [
+     "Interpolation",
+     "Estimating values between measured points."
+    ],
+    [
+     "MAUP",
+     "Results depend on how areas are defined."
+    ],
+    [
+     "Ecological fallacy",
+     "Wrongly applying group patterns to individuals."
+    ]
+   ],
+   "misc": {
+    "wrong": "If two maps look similar, one variable causes the other.",
+    "right": "Similar patterns may arise from shared drivers or chance; correlation is not causation."
+   },
+   "limits": "Statistical tests assume models; results change with scale and area definitions, so conclusions should be tested.",
+   "trip": {
+    "wiki": "Spatial analysis",
+    "prompt": "Find an example of a hot-spot map. What data and area units were used?"
+   },
+   "sources": [
+    "Spatial analysis",
+    "Tobler's first law of geography",
+    "Spatial autocorrelation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does Tobler's first law say?",
+     "o": [
+      "Near things are more related than distant things",
+      "Everything is related equally, near or far",
+      "Distance is irrelevant to how places relate",
+      "Maps are exact copies of the real world"
+     ],
+     "a": 0,
+     "why": "It underlies spatial analysis.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "An Rn value of 1.8 suggests a pattern that is...",
+     "o": [
+      "Dispersed",
+      "Clustered",
+      "Random",
+      "Impossible"
+     ],
+     "a": 0,
+     "why": "Above 1 means more regular spacing.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Moran's I close to +1 indicates...",
+     "o": [
+      "Strong positive spatial autocorrelation",
+      "A random pattern with no clustering",
+      "A perfectly dispersed, even pattern",
+      "No data are present in the study"
+     ],
+     "a": 0,
+     "why": "Similar values cluster.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the MAUP?",
+     "o": [
+      "Results vary with how areas are drawn",
+      "A map projection that flattens the globe",
+      "A GIS file type used to store points",
+      "A satellite that measures the land"
+     ],
+     "a": 0,
+     "why": "Boundaries affect statistics.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an interpolation method?",
+     "o": [
+      "Kriging",
+      "Buffering",
+      "Georeferencing",
+      "Digitising"
+     ],
+     "a": 0,
+     "why": "It uses spatial correlation.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can spatial autocorrelation harm ordinary regression?",
+     "o": [
+      "Observations are not independent",
+      "The data are too small to be analysed",
+      "Maps are flat and so cannot be used",
+      "The points on the map are drawn in blue"
+     ],
+     "a": 0,
+     "why": "Errors are correlated.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A district-level map shows high income and high health. What fallacy might arise?",
+     "o": [
+      "Assuming every individual follows the district pattern",
+      "A projection bias in the map",
+      "A scale error in the data",
+      "A rounding error in the figures"
+     ],
+     "a": 0,
+     "why": "Ecological fallacy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "30 points lie in 120 km². Compute the expected mean nearest-neighbour distance (km) using 0.5/√(n/A).",
+     "a": 1,
+     "tol": 0.01,
+     "unit": "km",
+     "why": "n/A = 0.25; √0.25 = 0.5; 0.5 ÷ 0.5 = 1.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "If observed mean distance is 1.4 km and expected 1.0 km, what is Rn?",
+     "a": 1.4,
+     "tol": 0.01,
+     "unit": "",
+     "why": "1.4 ÷ 1.0 = 1.4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why must you test the sensitivity of a spatial result to the choice of area boundaries?",
+     "rubric": [
+      [
+       "maup",
+       "boundary",
+       "area",
+       "zone",
+       "unit"
+      ],
+      [
+       "change",
+       "different",
+       "vary",
+       "alter",
+       "depend"
+      ],
+      [
+       "result",
+       "conclusion",
+       "pattern",
+       "statistic",
+       "scale"
+      ]
+     ],
+     "min": 2,
+     "model": "Because of the MAUP, the same data aggregated into different zones can give different patterns or statistics, so conclusions should hold under alternative boundaries before being trusted.",
+     "why": "Robustness matters.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Sampled rainfall points are sparse in mountains. What risk exists when interpolating there?",
+     "o": [
+      "Large uncertainty where data are few",
+      "There is no risk, since data are always enough",
+      "Perfect accuracy where the mountains are",
+      "Colours on the map fade where data are few"
+     ],
+     "a": 0,
+     "why": "Interpolation depends on sample density.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a hot-spot test better than just looking at a map?",
+     "o": [
+      "It judges whether clusters exceed chance",
+      "It is faster to print on a map",
+      "It removes data points that do not fit",
+      "It changes the scale of the map"
+     ],
+     "a": 0,
+     "why": "Visual impressions can mislead.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must data use the same coordinate reference system before analysis?",
+     "o": [
+      "Different systems shift positions",
+      "They change the colours of the map",
+      "They remove points from the dataset",
+      "They add noise to the data randomly"
+     ],
+     "a": 0,
+     "why": "Misalignment causes errors.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Geospatial data analysis",
+    "model": "Spatial data show autocorrelation: nearby places are alike. Methods such as nearest-neighbour index, Moran's I and interpolation analyse patterns. Results depend on scale and boundaries, and correlation is not causation.",
+    "points": [
+     {
+      "k": [
+       "autocorrelation",
+       "near",
+       "related",
+       "tobler"
+      ],
+      "ask": "Why is spatial data special?"
+     },
+     {
+      "k": [
+       "cluster",
+       "random",
+       "dispersed",
+       "nearest",
+       "moran"
+      ],
+      "ask": "How do we test patterns?"
+     },
+     {
+      "k": [
+       "interpolat",
+       "estimate",
+       "kriging"
+      ],
+      "ask": "How do we fill gaps?"
+     },
+     {
+      "k": [
+       "maup",
+       "scale",
+       "boundary",
+       "causation",
+       "uncertain"
+      ],
+      "ask": "What are the pitfalls?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Land-use modelling",
+   "icon": "🧱",
+   "hook": "If you know how land was used last decade and why it changes, can you predict the map in 2040?",
+   "explain": [
+    "Land-use models describe and predict how land cover changes. Von Thünen's model of agricultural location shows rent falling with distance from the market. Economic rent R = Y(p − c) − Y·f·d, where Y is yield, p price, c production cost, f transport cost per unit per km and d distance. Land goes to the use with the highest rent at each distance, forming rings of land use.",
+    "Markov chain models predict change using a transition matrix of probabilities. If P is the matrix and x₀ the current shares, then x₁ = x₀P. Cellular automata update each cell by neighbours and rules, and agent-based models simulate decisions by farmers, firms and households. Combined models often include suitability layers, constraints (protected areas) and drivers (roads, slope, distance to cities).",
+    "Models need calibration (fitting to past data) and validation (testing against independent data). Accuracy metrics include the confusion matrix, overall accuracy and the Kappa coefficient. Scenarios, such as business as usual and strong protection, explore alternatives rather than forecast one future.",
+    "Land-use change drives deforestation, urban expansion and loss of habitat. In the Brazilian Amazon, roads and cattle and soy expansion have been major drivers, while protected areas and enforcement have slowed clearing in some periods."
+   ],
+   "example": {
+    "q": "Today the land is 60% forest and 40% farmland. Each decade, 10% of forest becomes farmland and 20% of farmland becomes forest. What are the shares after one decade?",
+    "steps": [
+     "Forest next = 0.6 × 0.9 + 0.4 × 0.2 = 0.54 + 0.08 = 0.62.",
+     "Farmland next = 0.6 × 0.1 + 0.4 × 0.8 = 0.06 + 0.32 = 0.38.",
+     "Check: 0.62 + 0.38 = 1."
+    ],
+    "a": "62% forest, 38% farmland"
+   },
+   "analogies": {
+    "home": "Rooms in a house are used where they suit: kitchen near the pantry. Land uses where rents are highest.",
+    "city": "Shops pay high rents in the centre, houses less, farms least.",
+    "farm": "Perishable crops are grown near towns to save transport.",
+    "tech": "Land-change models run on satellite-based land-cover maps."
+   },
+   "mnemonic": "Rent falls with distance, so rings of use form.",
+   "terms": [
+    [
+     "Bid rent",
+     "The rent a use will pay for land at a location."
+    ],
+    [
+     "Transition matrix",
+     "Probabilities of change between land-cover classes."
+    ],
+    [
+     "Cellular automaton",
+     "A model updating cells from neighbours using rules."
+    ],
+    [
+     "Calibration",
+     "Fitting a model to past data."
+    ]
+   ],
+   "misc": {
+    "wrong": "A good model can predict one exact future.",
+    "right": "Models explore scenarios under assumptions; uncertainty grows with time."
+   },
+   "limits": "Markov models assume constant transition rates, which real land-use change rarely keeps, and they have no explicit causes.",
+   "trip": {
+    "wiki": "Von Thünen model",
+    "prompt": "Compare the von Thünen rings with a modern map around a city. What is similar or different?"
+   },
+   "sources": [
+    "Land use",
+    "Von Thünen model",
+    "Markov chain"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In the von Thünen model, which land use is closest to the market?",
+     "o": [
+      "Perishable, heavy or high-value goods like dairy and vegetables",
+      "Forest and woodland, used for timber",
+      "Ranching on wide open grassland",
+      "Wilderness with no use at all"
+     ],
+     "a": 0,
+     "why": "High transport costs favour locations nearby.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does a transition matrix hold?",
+     "o": [
+      "Probabilities of change between land covers",
+      "Rainfall data for each month of the year",
+      "Slope values for every cell in the grid",
+      "The names of cities in the study"
+     ],
+     "a": 0,
+     "why": "Rows give from-class shares.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is calibration?",
+     "o": [
+      "Adjusting a model to fit past data",
+      "Printing a map on paper for a report",
+      "Testing a model on completely new data",
+      "Choosing a map projection for the study"
+     ],
+     "a": 0,
+     "why": "Parameters are tuned.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is validation?",
+     "o": [
+      "Testing the model against independent data",
+      "Naming the classes in a map legend",
+      "Digitising lines from an old paper map",
+      "Zooming in and out of the layer"
+     ],
+     "a": 0,
+     "why": "It checks predictive skill.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why use scenarios in land-use planning?",
+     "o": [
+      "Futures depend on choices and uncertain drivers",
+      "To predict the future exactly as it will be",
+      "To avoid using any model at all",
+      "To remove roads from the planning area"
+     ],
+     "a": 0,
+     "why": "Scenarios compare alternatives.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor is often a driver of deforestation?",
+     "o": [
+      "Road building into forest",
+      "Moonlight shining on the forest at night",
+      "The tides along the coast",
+      "Snowfall in winter on the high ground"
+     ],
+     "a": 0,
+     "why": "Access increases clearing.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the Kappa coefficient assess?",
+     "o": [
+      "Agreement beyond chance in classification",
+      "The amount of cloud cover over the area",
+      "The distance between two places",
+      "The temperature at the weather station"
+     ],
+     "a": 0,
+     "why": "It adjusts for chance agreement.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "With the transition rates in the worked example, start with 50% forest and 50% farmland. What percentage is forest after one decade? (forest: 90% stay, farmland: 20% become forest)",
+     "a": 55,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "0.5 × 0.9 + 0.5 × 0.2 = 0.45 + 0.10 = 0.55.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A crop yields 10 tonnes per ha, sells at 50 dollars/tonne, costs 20 dollars/tonne to produce, and transport is 0.5 dollars per tonne per km. Rent per ha at 30 km? Use R = Y(p − c) − Y·f·d.",
+     "a": 150,
+     "tol": 1,
+     "unit": "dollars/ha",
+     "why": "10 × 30 − 10 × 0.5 × 30 = 300 − 150 = 150.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the von Thünen rings are only a starting point for real land use.",
+     "rubric": [
+      [
+       "assum",
+       "simple",
+       "flat",
+       "uniform",
+       "isolated",
+       "one market"
+      ],
+      [
+       "road",
+       "river",
+       "transport",
+       "terrain",
+       "soil",
+       "variation",
+       "differ",
+       "real"
+      ],
+      [
+       "technology",
+       "policy",
+       "multiple",
+       "cities",
+       "today",
+       "change"
+      ]
+     ],
+     "min": 2,
+     "model": "The model assumes a flat, uniform plain and a single market. Real land has varied soils, rivers, roads, policies and many markets, and technology changes transport costs.",
+     "why": "A useful but simplified model.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A calibrated model fits past data perfectly but fails new data. What is the likely problem?",
+     "o": [
+      "Overfitting",
+      "Underfitting",
+      "Projection error",
+      "Legend error"
+     ],
+     "a": 0,
+     "why": "It memorised noise.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why would a protected-area layer be a constraint in a model?",
+     "o": [
+      "It stops conversion in those cells",
+      "It adds new roads across the protected land",
+      "It changes the climate of the area",
+      "It deletes the cells from the grid"
+     ],
+     "a": 0,
+     "why": "Constraints exclude change.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can Markov models mislead over decades?",
+     "o": [
+      "Rates may not stay constant",
+      "Cells vanish from the map over time",
+      "The maths changes after a few steps",
+      "Areas always expand at the same speed"
+     ],
+     "a": 0,
+     "why": "Policies and markets shift.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Land-use modelling",
+    "model": "Models explain and predict land change. Von Thünen links land use to rent and distance. Markov models use transition probabilities, and cellular models use neighbour rules. Calibration, validation and scenarios keep predictions honest.",
+    "points": [
+     {
+      "k": [
+       "rent",
+       "distance",
+       "market",
+       "von thünen",
+       "ring"
+      ],
+      "ask": "Why do rings of land use form?"
+     },
+     {
+      "k": [
+       "markov",
+       "transition",
+       "probabilit"
+      ],
+      "ask": "How can change be predicted?"
+     },
+     {
+      "k": [
+       "calibrat",
+       "validat",
+       "test"
+      ],
+      "ask": "How do we trust a model?"
+     },
+     {
+      "k": [
+       "scenario",
+       "uncertain",
+       "assum"
+      ],
+      "ask": "Is a model a crystal ball?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Regional comparative geography",
+   "icon": "🌍",
+   "hook": "Choose any two continents. What do their physical and human geographies really tell us about how they differ and what they share?",
+   "explain": [
+    "Africa (about 30.4 million km², roughly 1.4 billion people) straddles the equator and has the Sahara, the Congo basin, the Ethiopian Highlands and the Rift Valley. It is the youngest in median age. Asia (about 44.6 million km², over 4.7 billion people) contains Earth's highest mountains, the Tibetan Plateau, monsoon river basins and over half of humanity. Europe (about 10 million km²) is a peninsula-rich continent with a long coastline, dense networks of cities and the European Union as a regional bloc.",
+    "North America (about 24.7 million km²) has the Rockies, the Great Plains, the Great Lakes and a mix of high-income and middle-income economies. South America (about 17.8 million km²) has the Andes, the Amazon basin and the Atacama Desert. Oceania (about 8.5 million km² of land, including Australia, New Zealand and Pacific islands) mixes an arid continental interior, a coastal population and thousands of islands vulnerable to sea-level rise. Antarctica (about 14.2 million km²) has an ice sheet over 4 km thick in places, holds about 90 percent of the world's ice, has no permanent residents and is governed by the Antarctic Treaty (1959).",
+    "Comparative geography looks for patterns and causes. Relief and climate shape settlement; history, colonialism, trade routes and institutions shape economies; resource distribution shapes trade. Regional integration (EU, ASEAN, African Union, Mercosur) shows different models of cooperation.",
+    "Comparison needs care: choose indicators carefully, adjust for scale (per capita, per area) and avoid ranking cultures. Within every continent diversity is huge, and generalisations hide this."
+   ],
+   "example": {
+    "q": "Asia has about 44.6 million km² and 4.7 billion people. Africa has about 30.4 million km² and 1.4 billion people. Which has the higher population density and what are the densities?",
+    "steps": [
+     "Asia: 4.7 billion ÷ 44.6 million km² ≈ 105 per km².",
+     "Africa: 1.4 billion ÷ 30.4 million ≈ 46 per km².",
+     "Asia is more than twice as dense."
+    ],
+    "a": "Asia: about 105 per km²; Africa: about 46 per km². Asia is denser"
+   },
+   "analogies": {
+    "home": "Rooms differ in size and use, as continents do, but share a house, Earth.",
+    "city": "Great cities appear on every inhabited continent, from Lagos to Tokyo to São Paulo.",
+    "farm": "Rice paddies in Asia, wheat on North American prairies, cattle in South America and sheep in Oceania show climate-based farming.",
+    "nature": "Rainforests of the Amazon and Congo share similar climates and ecology on different continents."
+   },
+   "mnemonic": "Compare by per-person, per-area and per-cause, not by pride.",
+   "terms": [
+    [
+     "Comparative geography",
+     "Studying differences and similarities between places."
+    ],
+    [
+     "Regional integration",
+     "States cooperating through shared institutions."
+    ],
+    [
+     "Antarctic Treaty",
+     "1959 agreement reserving Antarctica for peaceful science."
+    ],
+    [
+     "Per capita",
+     "Per person."
+    ]
+   ],
+   "misc": {
+    "wrong": "Continents are uniform within themselves.",
+    "right": "Each continent contains deserts, mountains, rainforests, rich and poor areas, and many cultures."
+   },
+   "limits": "The number of continents and their boundaries is a convention; population and area figures are approximate and change slowly.",
+   "trip": {
+    "wiki": "Continent",
+    "prompt": "Pick two continents and compare their largest rivers, mountain ranges and populations."
+   },
+   "sources": [
+    "Continent",
+    "Regional integration",
+    "Antarctic Treaty System"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which continent has no permanent residents?",
+     "o": [
+      "Antarctica",
+      "Oceania, with its many island nations",
+      "Europe, which has many villages",
+      "Africa, which has many large cities"
+     ],
+     "a": 0,
+     "why": "Only researchers stay temporarily.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which continent holds about 90 percent of the world's ice?",
+     "o": [
+      "Antarctica",
+      "Asia",
+      "North America",
+      "Europe"
+     ],
+     "a": 0,
+     "why": "Its ice sheet is vast.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which continent includes the Atacama Desert and the Amazon?",
+     "o": [
+      "South America",
+      "Africa, which has deserts of its own",
+      "Asia, with its great plains and rivers",
+      "Europe, with its many countries and ports"
+     ],
+     "a": 0,
+     "why": "Both are in South America.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The African Union is an example of...",
+     "o": [
+      "Regional integration",
+      "A mountain range with high peaks",
+      "A climate zone with hot and dry weather",
+      "A river basin shared by many states"
+     ],
+     "a": 0,
+     "why": "States cooperate through shared institutions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which pair is on the same continent?",
+     "o": [
+      "Kilimanjaro and the Rift Valley",
+      "The Andes and the Himalaya mountain ranges",
+      "The Alps and the Rockies mountain ranges",
+      "The Mekong and the Danube river systems"
+     ],
+     "a": 0,
+     "why": "Both are in Africa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why compare per capita and per area?",
+     "o": [
+      "To adjust for size differences",
+      "To hide the data from readers",
+      "To simplify maps by removing detail",
+      "To ignore the people who live in each place"
+     ],
+     "a": 0,
+     "why": "Raw totals mislead.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do small island states in Oceania face special risks?",
+     "o": [
+      "Low-lying land and exposure to sea-level rise",
+      "They are too large to be at risk",
+      "They lack any sea around them",
+      "They are inland and far from the coast"
+     ],
+     "a": 0,
+     "why": "Sea level matters most there.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Europe has about 10.2 million km² and about 745 million people. What is its approximate density (people per km²)?",
+     "a": 73,
+     "tol": 3,
+     "unit": "people/km²",
+     "why": "745 ÷ 10.2 ≈ 73.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each feature to its continent.",
+     "pairs": [
+      [
+       "Tibetan Plateau",
+       "Asia"
+      ],
+      [
+       "Congo basin",
+       "Africa"
+      ],
+      [
+       "Great Plains",
+       "North America"
+      ],
+      [
+       "Murray-Darling basin",
+       "Oceania"
+      ]
+     ],
+     "why": "Major regional features.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Compare one similarity and one difference between two continents of your choice, using geographic reasoning.",
+     "rubric": [
+      [
+       "similar",
+       "both",
+       "share",
+       "same",
+       "also"
+      ],
+      [
+       "differ",
+       "whereas",
+       "while",
+       "but",
+       "unlike",
+       "contrast"
+      ],
+      [
+       "climate",
+       "relief",
+       "mountain",
+       "river",
+       "population",
+       "economy",
+       "resource",
+       "history",
+       "desert",
+       "rainforest"
+      ]
+     ],
+     "min": 2,
+     "model": "For example, Africa and South America both have large equatorial rainforest basins (the Congo and Amazon), but South America's Andes form a long western mountain wall, while Africa's main highlands are the Rift Valley and Ethiopian plateau.",
+     "why": "Compare with evidence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can colonial-era borders be linked to present challenges in parts of Africa?",
+     "o": [
+      "Some boundaries cut across communities and economies",
+      "They follow the rainfall patterns exactly",
+      "They match every language and culture",
+      "They were chosen by local people"
+     ],
+     "a": 0,
+     "why": "Historical decisions leave legacies.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is Europe's dense city network helped by its coastline?",
+     "o": [
+      "Many ports and short distances ease trade",
+      "It is landlocked, so ships cannot arrive",
+      "It has no rivers, so goods cannot move",
+      "It has no ports along its coast"
+     ],
+     "a": 0,
+     "why": "Access to sea and rivers supports exchange.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do generalisations about a whole continent fail?",
+     "o": [
+      "Great internal variation in climate, cultures and wealth",
+      "Continents are all the same inside",
+      "The data for each continent are exact",
+      "The borders of continents are fixed for ever"
+     ],
+     "a": 0,
+     "why": "Diversity is high.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Comparing the seven continents",
+    "model": "Each continent has its own mix of relief, climate, people and history: Africa straddles the equator, Asia holds most people, Europe has dense cities, the Americas have long mountain chains, Oceania is mostly sea and islands, and Antarctica is ice. Compare fairly using per capita and per area figures.",
+    "points": [
+     {
+      "k": [
+       "africa",
+       "asia",
+       "europe",
+       "america",
+       "oceania",
+       "australia",
+       "antarctica"
+      ],
+      "ask": "Which continents will you compare?"
+     },
+     {
+      "k": [
+       "climate",
+       "mountain",
+       "relief",
+       "river"
+      ],
+      "ask": "What physical features differ?"
+     },
+     {
+      "k": [
+       "population",
+       "economy",
+       "history",
+       "city"
+      ],
+      "ask": "What human differences matter?"
+     },
+     {
+      "k": [
+       "per capita",
+       "per area",
+       "fair",
+       "density",
+       "not uniform"
+      ],
+      "ask": "How do you compare fairly?"
+     }
+    ]
+   }
+  }
+ ]
+}

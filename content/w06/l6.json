@@ -1,0 +1,2931 @@
+{
+ "world": 6,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Computational reactor physics",
+   "icon": "💻",
+   "hook": "A reactor core has billions of neutron histories per second. How can a computer predict k to within a few tens of pcm?",
+   "explain": [
+    "Computational reactor physics solves the neutron transport equation numerically. Deterministic codes discretise space, angle and energy (often into tens of energy groups) and solve the resulting linear system. The multiplication factor k is the dominant eigenvalue of the problem, found by power iteration: guess a fission source, solve for the flux, compute a new source, and repeat until the source and k stop changing. At each step k_new = k_old × (new fission source) ÷ (old fission source).",
+    "Monte Carlo codes follow individual neutron histories with random sampling from evaluated nuclear data libraries (ENDF, JEFF, JENDL). They treat geometry and energy dependence with little approximation, but the statistical uncertainty falls only as 1/√N, where N is the number of histories. To reduce the error by a factor of 10, you need 100 times as many histories. Source convergence must be checked before tallies are accumulated, since a poorly converged source biases the result.",
+    "Practical analysis often uses two steps: a detailed lattice calculation of a fuel assembly produces few-group cross-sections (homogenised, self-shielded and corrected for resonances), and a coarse whole-core nodal calculation uses them. Doppler broadening, where thermal motion widens resonances, must be included because it provides prompt negative feedback.",
+    "Credibility rests on verification (solving the equations correctly, e.g. against analytic benchmarks) and validation (solving the right equations, against experiments), together with uncertainty quantification that propagates nuclear data and manufacturing uncertainties through the model."
+   ],
+   "example": {
+    "q": "A Monte Carlo run with 2 × 10⁶ histories gives a standard error on k of 40 pcm. How many histories are needed for a standard error of 10 pcm?",
+    "steps": [
+     "Error ∝ 1/√N.",
+     "To reduce the error by a factor of 4 (40 → 10), N must increase by 4² = 16.",
+     "N = 16 × 2 × 10⁶ = 3.2 × 10⁷."
+    ],
+    "a": "3.2 × 10⁷ histories"
+   },
+   "analogies": {
+    "sport": "Polling a stadium: sampling four times as many people halves the margin of error.",
+    "city": "A weather model on a grid: finer grids need more computing.",
+    "tech": "Rendering a picture with ray tracing: more rays means less noise.",
+    "music": "Adjusting an instrument repeatedly until the beats between strings vanish is like iterating to convergence."
+   },
+   "mnemonic": "Guess, solve, update, repeat: power iteration; error falls as one over root N.",
+   "terms": [
+    [
+     "Power iteration",
+     "Repeated solving to find the dominant eigenvalue k."
+    ],
+    [
+     "Multigroup",
+     "Dividing neutron energy into discrete groups."
+    ],
+    [
+     "Evaluated nuclear data",
+     "Recommended cross-section libraries from measurement and theory."
+    ],
+    [
+     "Verification",
+     "Checking that equations are solved correctly."
+    ],
+    [
+     "Validation",
+     "Checking the model against real experiments."
+    ]
+   ],
+   "misc": {
+    "wrong": "A Monte Carlo result with a small statistical error must be accurate.",
+    "right": "Statistical error measures precision only. Bias from nuclear data, geometry errors or poor source convergence is not captured."
+   },
+   "limits": "Computational results depend on nuclear data and modelling assumptions, so uncertainty quantification and validation against experiments are essential.",
+   "trip": {
+    "wiki": "Monte Carlo N-particle transport code",
+    "prompt": "Find how particle histories are sampled and what a tally is."
+   },
+   "sources": [
+    "Neutron transport",
+    "Monte Carlo method",
+    "Power iteration"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A Monte Carlo calculation with 10⁶ histories gives a standard error of 30 pcm. Roughly what error would you expect with 9 × 10⁶ histories (pcm)?",
+     "a": 10,
+     "tol": 0.5,
+     "unit": "pcm",
+     "why": "9 times more histories gives √9 = 3 times smaller error: 30 ÷ 3 = 10 pcm.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In a power iteration, k_old = 1.0000, the old fission source sum is 500 and the new sum is 505. What is k_new?",
+     "a": 1.01,
+     "tol": 0.0005,
+     "why": "k_new = 1.0000 × 505 ÷ 500 = 1.010.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "To halve the statistical error, by what factor must the number of histories increase?",
+     "a": 4,
+     "tol": 0,
+     "why": "Error ∝ 1/√N, so halving requires N × 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In power iteration, what does k converge to?",
+     "o": [
+      "The dominant eigenvalue of the transport problem",
+      "The smallest eigenvalue of the transport problem",
+      "The spatially averaged flux over the whole core",
+      "The number of energy groups used in the model"
+     ],
+     "a": 0,
+     "why": "The iteration drives the source toward the fundamental mode.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What distinguishes verification from validation?",
+     "o": [
+      "Verification checks the equations are solved correctly; validation checks the model against experiments",
+      "They are the same thing under two different names",
+      "Validation uses only computers, never experiments",
+      "Verification checks the model against experiments; validation checks the equations are solved"
+     ],
+     "a": 0,
+     "why": "Solving the equations right versus solving the right equations.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why must the fission source be converged before tallying in Monte Carlo criticality calculations?",
+     "o": [
+      "An unconverged source biases the results",
+      "It makes the code run faster in later cycles",
+      "It sets the cross-sections used in the tallies",
+      "It removes the statistical error from the answer"
+     ],
+     "a": 0,
+     "why": "Early cycles reflect the initial guess, not the true mode.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Doppler broadening matter for reactor stability?",
+     "o": [
+      "It increases resonance absorption as fuel heats, giving prompt negative feedback",
+      "It speeds up the neutrons as the fuel heats",
+      "It cools the fuel by carrying heat away from it",
+      "It reduces leakage from the core as the fuel heats"
+     ],
+     "a": 0,
+     "why": "Hotter fuel absorbs more in resonances of uranium-238.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to its main feature.",
+     "pairs": [
+      [
+       "Deterministic transport",
+       "Solves discretised equations on a grid"
+      ],
+      [
+       "Monte Carlo",
+       "Samples random particle histories"
+      ],
+      [
+       "Lattice calculation",
+       "Produces homogenised few-group data"
+      ],
+      [
+       "Nodal core solver",
+       "Fast whole-core calculation"
+      ]
+     ],
+     "why": "Two-step methods combine them.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A code gives k = 1.0012 ± 0.0003 for an experiment that measured k = 1.0000. Discuss whether the code is good and what else you would check.",
+     "rubric": [
+      [
+       "bias",
+       "systematic",
+       "difference",
+       "discrepan",
+       "120 pcm",
+       "0.0012",
+       "12 pcm"
+      ],
+      [
+       "nuclear data",
+       "cross-section",
+       "geometry",
+       "model",
+       "materials",
+       "uncertaint"
+      ],
+      [
+       "validate",
+       "benchmark",
+       "other experiments",
+       "compare",
+       "more cases",
+       "uncertainty quantification"
+      ]
+     ],
+     "min": 2,
+     "model": "The statistical error is small, so the difference of about 120 pcm is a bias from nuclear data, geometry or material uncertainty rather than noise. I would check the experimental uncertainty, the nuclear data and geometry, and compare against other benchmarks before judging the code.",
+     "why": "Validation needs multiple cases and uncertainty analysis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "For an assembly with strong absorbing rods, which feature of a diffusion-based nodal code needs care?",
+     "o": [
+      "Local flux changes sharply, so homogenisation and corrections are needed",
+      "Nothing needs care, since diffusion codes always work",
+      "The flux is flat near the rods, so no correction is needed",
+      "Rods have no cross-section in a nodal calculation"
+     ],
+     "a": 0,
+     "why": "Strongly absorbing regions violate diffusion assumptions.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A regulator receives two codes with different k results for a benchmark. What is the most responsible step?",
+     "o": [
+      "Investigate causes with verification and independent calculations before relying on either",
+      "Average the two results and report the mean as the answer",
+      "Choose the cheaper code, since the results are close anyway",
+      "Choose the one with the smaller error bar and use it alone"
+     ],
+     "a": 0,
+     "why": "Independent checks identify errors.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the statistical error in Monte Carlo fall slowly, and what techniques reduce computing cost?",
+     "rubric": [
+      [
+       "1/√n",
+       "root n",
+       "square root",
+       "√n",
+       "inverse square root",
+       "slow"
+      ],
+      [
+       "variance reduction",
+       "importance",
+       "weight",
+       "splitting",
+       "roulette",
+       "parallel",
+       "biasing",
+       "acceler"
+      ]
+     ],
+     "min": 2,
+     "model": "Error scales as 1/√N, so each extra digit of precision costs 100 times more histories. Variance reduction (importance weighting, splitting and Russian roulette), acceleration methods and parallel computing reduce the cost.",
+     "why": "The scaling comes from the central limit theorem.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is documenting assumptions and uncertainties part of professional ethics in simulation?",
+     "o": [
+      "Users and the public rely on results for safety decisions",
+      "It makes reports longer and so looks more thorough",
+      "It lowers the accuracy of the results shown",
+      "It is optional and depends on the preference of the analyst"
+     ],
+     "a": 0,
+     "why": "Honest reporting supports safe decisions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How reactor codes find k",
+    "model": "Computer codes find k as the dominant eigenvalue by power iteration: guess the fission source, solve for the flux, update the source and repeat. Monte Carlo codes follow random neutron histories and their error falls only as one over root N. Results must be verified, validated against experiments and given uncertainties.",
+    "points": [
+     {
+      "k": [
+       "eigenvalue",
+       "iterat",
+       "converge",
+       "source"
+      ],
+      "ask": "How is k found?"
+     },
+     {
+      "k": [
+       "monte carlo",
+       "random",
+       "history",
+       "histories"
+      ],
+      "ask": "What is Monte Carlo?"
+     },
+     {
+      "k": [
+       "1/√n",
+       "root",
+       "square root",
+       "error"
+      ],
+      "ask": "How does its error behave?"
+     },
+     {
+      "k": [
+       "verif",
+       "validat",
+       "benchmark",
+       "uncertaint"
+      ],
+      "ask": "How do we trust the result?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Multiphysics nuclear simulations",
+   "icon": "🧩",
+   "hook": "Power heats the fuel, heat changes cross-sections, cross-sections change power. How do you solve a loop where everything depends on everything?",
+   "explain": [
+    "A nuclear reactor couples several physical phenomena: neutronics (power distribution), thermal-hydraulics (temperatures and densities), fuel behaviour (heat conduction, swelling, gap changes), structural mechanics and chemistry. Each affects the others through feedback. For example, fuel temperature changes the Doppler effect, and coolant density changes moderation.",
+    "Feedback is quantified by reactivity coefficients, such as the fuel temperature coefficient α_f in pcm per kelvin. A temperature change ΔT produces a reactivity change Δρ = α × ΔT. A negative total coefficient gives inherent stability. Coolant void and moderator coefficients can be of either sign depending on design, which is why they are carefully assessed.",
+    "Numerical coupling can be loose (operator splitting: each solver runs in turn and passes data) or tight (Picard iteration or Newton methods that converge the combined system within each time step). Tight coupling is more robust and accurate but costs more. A major difficulty is the range of timescales, from prompt neutrons of microseconds to xenon changes over hours and fuel ageing over years, which makes the equations stiff.",
+    "Results carry uncertainties from nuclear data, material properties and models. Uncertainty quantification and sensitivity analysis, such as sampling inputs many times, are therefore part of multiphysics work, and code coupling frameworks must also be verified, validated and carefully documented."
+   ],
+   "example": {
+    "q": "A fuel temperature coefficient is −2.5 pcm/K. The fuel temperature rises by 200 K. What is the reactivity change?",
+    "steps": [
+     "Δρ = α × ΔT.",
+     "Δρ = (−2.5) × 200.",
+     "Δρ = −500 pcm."
+    ],
+    "a": "−500 pcm"
+   },
+   "analogies": {
+    "home": "A thermostat and a heater feed back on each other: heat changes the sensor and the sensor changes the heat.",
+    "city": "Traffic, signals and navigation apps influence each other.",
+    "nature": "Predator and prey populations are coupled.",
+    "sport": "A rally where each shot depends on the last."
+   },
+   "mnemonic": "Neutrons, Heat, Fuel, Structure: all feed back, solve the loop.",
+   "terms": [
+    [
+     "Multiphysics",
+     "Simulation of several coupled physical phenomena together."
+    ],
+    [
+     "Reactivity coefficient",
+     "Reactivity change per unit change of a variable."
+    ],
+    [
+     "Operator splitting",
+     "Solving each physics in turn."
+    ],
+    [
+     "Picard iteration",
+     "Repeating solves until coupled variables converge."
+    ],
+    [
+     "Stiff",
+     "Having very different timescales that make numerics hard."
+    ]
+   ],
+   "misc": {
+    "wrong": "Loosely coupled codes are always fine if each code is validated.",
+    "right": "Validated components can still give inaccurate or unstable results when coupled loosely, so the coupling scheme itself needs verification."
+   },
+   "limits": "Coupling reduces approximations but raises complexity and the amount of data needed to validate the result.",
+   "trip": {
+    "wiki": "Multiphysics",
+    "prompt": "Find a nuclear example of coupled simulation and list the physics involved."
+   },
+   "sources": [
+    "Multiphysics",
+    "Reactivity",
+    "Doppler broadening"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A moderator temperature coefficient is −15 pcm/K. The moderator warms by 8 K. What is the reactivity change in pcm?",
+     "a": -120,
+     "tol": 0.5,
+     "unit": "pcm",
+     "why": "−15 × 8 = −120 pcm.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The fuel coefficient is −2 pcm/K and the moderator coefficient is −10 pcm/K. A transient raises the fuel by 150 K and the moderator by 10 K. What is the total reactivity change in pcm?",
+     "a": -400,
+     "tol": 0.5,
+     "unit": "pcm",
+     "why": "(−2 × 150) + (−10 × 10) = −300 − 100 = −400.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A power excursion adds +300 pcm. The total temperature feedback is −1.5 pcm per K of core average temperature rise. At what temperature rise (K) does feedback cancel the insertion?",
+     "a": 200,
+     "tol": 1,
+     "unit": "K",
+     "why": "300 ÷ 1.5 = 200 K.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A negative overall temperature coefficient means...",
+     "o": [
+      "Rising temperature reduces reactivity, stabilising the core",
+      "Rising temperature increases reactivity and so drives the power higher",
+      "Temperature has no effect on the reactivity at all",
+      "The reactor is subcritical whenever it is running"
+     ],
+     "a": 0,
+     "why": "Negative feedback is self-limiting.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a multiphysics problem often 'stiff'?",
+     "o": [
+      "Its processes act on very different timescales",
+      "All of its processes are slow and act on the same timescale",
+      "It has one variable and one equation to solve",
+      "It has no feedback between the different physics"
+     ],
+     "a": 0,
+     "why": "Microsecond neutron effects couple with hour-long xenon effects.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Tight coupling compared with operator splitting is generally...",
+     "o": [
+      "More robust and accurate but more expensive",
+      "Cheaper and quicker, but less accurate in every case",
+      "Impossible to use in practice for reactor problems",
+      "Unnecessary, since splitting is always just as accurate"
+     ],
+     "a": 0,
+     "why": "Iterating to convergence within a step improves accuracy.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each physics to what it provides.",
+     "pairs": [
+      [
+       "Neutronics",
+       "Power distribution"
+      ],
+      [
+       "Thermal-hydraulics",
+       "Coolant temperature and density"
+      ],
+      [
+       "Fuel performance",
+       "Pellet temperature and gap behaviour"
+      ],
+      [
+       "Structural mechanics",
+       "Stresses and deformation"
+      ]
+     ],
+     "why": "Each feeds the others.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why Doppler feedback is called prompt and why this is important for safety.",
+     "rubric": [
+      [
+       "fuel temperature",
+       "fuel heats",
+       "resonance",
+       "absorption",
+       "broaden"
+      ],
+      [
+       "immediate",
+       "instant",
+       "no delay",
+       "fast",
+       "directly",
+       "prompt"
+      ],
+      [
+       "power",
+       "reactivity",
+       "stabil",
+       "excursion",
+       "limit",
+       "negative"
+      ]
+     ],
+     "min": 2,
+     "model": "Doppler broadening responds immediately to fuel temperature because the fuel heats as soon as power rises. The extra resonance absorption reduces reactivity at once, limiting power excursions before slower feedback or operator action can act.",
+     "why": "Prompt negative feedback is a key inherent safety feature.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A coupled calculation changes answer when the time step is halved. What does this suggest?",
+     "o": [
+      "Time discretisation or coupling error is significant",
+      "The reactor itself changed when the step was altered",
+      "The physics in the model is perfect, so any change is real",
+      "The units in the input are wrong and must be corrected"
+     ],
+     "a": 0,
+     "why": "A converged result should not depend strongly on the step.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A boiling water reactor has a strongly negative void coefficient. As steam fraction rises, what happens?",
+     "o": [
+      "Reactivity falls",
+      "Reactivity rises",
+      "Fuel melts",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Less liquid moderator means fewer thermal neutrons.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is uncertainty quantification part of the multiphysics workflow?",
+     "o": [
+      "Many inputs are uncertain and their effect on safety margins must be known",
+      "It removes all of the uncertainty from the inputs",
+      "It replaces validation, so no experiments are required",
+      "It slows the simulation down for its own sake"
+     ],
+     "a": 0,
+     "why": "Margins must be assessed against input uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare loose and tight coupling in terms of accuracy, stability and cost.",
+     "rubric": [
+      [
+       "loose",
+       "operator splitting",
+       "sequential"
+      ],
+      [
+       "tight",
+       "iterat",
+       "picard",
+       "newton",
+       "converge"
+      ],
+      [
+       "cost",
+       "expensive",
+       "cheap",
+       "stable",
+       "stability",
+       "accura",
+       "robust"
+      ]
+     ],
+     "min": 3,
+     "model": "Loose coupling (operator splitting) is cheap but can lose accuracy and become unstable for strong feedback. Tight coupling iterates within each step so it is more accurate and stable, but costs more computing time.",
+     "why": "Method choice depends on feedback strength.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Reactivity coefficients are measured in a plant start-up and used to check models. Why?",
+     "o": [
+      "It validates the predicted feedback against reality",
+      "It changes the coefficients so they match the model",
+      "It heats the reactor to the intended power level",
+      "It is a formality that does not test the model"
+     ],
+     "a": 0,
+     "why": "Start-up testing validates predictions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Coupled reactor simulation",
+    "model": "In a reactor, power heats the fuel and coolant, which changes neutron absorption and moderation, which changes power. Simulations couple neutronics, thermal-hydraulics and fuel behaviour, either loosely in turn or tightly with iteration. Reactivity coefficients measure the feedback, and negative ones make the reactor stable.",
+    "points": [
+     {
+      "k": [
+       "neutronics",
+       "thermal",
+       "fuel",
+       "couple",
+       "physics"
+      ],
+      "ask": "Which physics are linked?"
+     },
+     {
+      "k": [
+       "feedback",
+       "coefficient",
+       "pcm"
+      ],
+      "ask": "How is feedback measured?"
+     },
+     {
+      "k": [
+       "loose",
+       "tight",
+       "iterat",
+       "splitting"
+      ],
+      "ask": "How are the solvers coupled?"
+     },
+     {
+      "k": [
+       "stiff",
+       "timescale",
+       "uncertain",
+       "validate"
+      ],
+      "ask": "What makes it difficult?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Advanced reactor thermal hydraulics",
+   "icon": "🌊",
+   "hook": "When water boils in a channel, bubbles make the fluid lighter and faster. How do you model something that is part liquid and part vapour?",
+   "explain": [
+    "Two-phase flow involves liquid and vapour moving together. Key quantities are the void fraction α (the vapour volume fraction) and the quality x (the vapour mass fraction). The mixture density is ρ_m = α ρ_g + (1 − α) ρ_l. Models range from the homogeneous equilibrium model, which treats the mixture as one fluid, to drift-flux models that allow slip between phases, to the two-fluid model with separate equations for each phase.",
+    "Single-phase heat transfer in turbulent pipe flow is often estimated with correlations such as Dittus–Boelter: Nu = 0.023 Re^0.8 Pr^0.4, where Nu = hD ÷ k is the Nusselt number, Re the Reynolds number and Pr the Prandtl number. Liquid metals have low Prandtl numbers, so heat conduction is relatively strong and different correlations apply.",
+    "Natural circulation is driven by a density difference between hot and cold legs: Δp = Δρ × g × H, where H is the elevation difference. This pressure balances friction losses, and so sets the flow rate in passive systems. Instabilities, such as density-wave oscillations in boiling channels, must be avoided.",
+    "Computational fluid dynamics (CFD) resolves turbulent flow in detail, using RANS (averaged) models or the more expensive large-eddy simulation. System codes such as RELAP-type tools model the entire plant with one-dimensional components, and are validated against integral experiments. Coupling both gives multi-scale analysis of safety transients."
+   ],
+   "example": {
+    "q": "A channel has void fraction α = 0.4, with ρ_g = 40 kg/m³ and ρ_l = 700 kg/m³. What is the mixture density?",
+    "steps": [
+     "ρ_m = α ρ_g + (1 − α) ρ_l.",
+     "ρ_m = 0.4 × 40 + 0.6 × 700.",
+     "ρ_m = 16 + 420 = 436 kg/m³."
+    ],
+    "a": "436 kg/m³"
+   },
+   "analogies": {
+    "home": "A boiling kettle: bubbles rise faster than the water around them.",
+    "nature": "A hot air balloon rising in cold air is natural circulation.",
+    "city": "A chimney draws air because hot air is lighter.",
+    "sea": "A river with a mix of fast surface and slow deep water shows slip between layers."
+   },
+   "mnemonic": "Void and quality; Nu, Re, Pr; hot leg lighter drives the loop.",
+   "terms": [
+    [
+     "Void fraction",
+     "Fraction of volume occupied by vapour."
+    ],
+    [
+     "Quality",
+     "Fraction of mass that is vapour."
+    ],
+    [
+     "Drift-flux model",
+     "A model allowing relative motion of the phases."
+    ],
+    [
+     "Nusselt number",
+     "A dimensionless heat transfer coefficient, hD/k."
+    ],
+    [
+     "Density-wave oscillation",
+     "A flow instability in boiling channels."
+    ]
+   ],
+   "misc": {
+    "wrong": "Void fraction and quality are the same thing.",
+    "right": "Void fraction is a volume fraction, quality is a mass fraction. Because vapour is much less dense, a small quality can mean a large void fraction."
+   },
+   "limits": "Two-phase closure relations are empirical and valid in tested ranges, so extrapolation requires care.",
+   "trip": {
+    "wiki": "Two-phase flow",
+    "prompt": "Find the flow regimes (bubbly, slug, annular) and sketch them."
+   },
+   "sources": [
+    "Multiphase flow",
+    "Natural circulation",
+    "Computational fluid dynamics"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Void fraction α = 0.5, ρ_g = 30 kg/m³ and ρ_l = 710 kg/m³. What is the mixture density in kg/m³?",
+     "a": 370,
+     "tol": 1,
+     "unit": "kg/m³",
+     "why": "0.5 × 30 + 0.5 × 710 = 15 + 355 = 370.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Re = 10⁵ and Pr = 1. Using Dittus–Boelter Nu = 0.023 Re^0.8 Pr^0.4, find Nu. (Re^0.8 = 10⁴ for Re = 10⁵.)",
+     "a": 230,
+     "tol": 1,
+     "why": "0.023 × 10⁴ × 1 = 230.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Nu = 230, fluid conductivity k = 0.6 W/mK and D = 0.02 m. What is h in W/m²K?",
+     "a": 6900,
+     "tol": 10,
+     "unit": "W/m²K",
+     "why": "h = Nu k ÷ D = 230 × 0.6 ÷ 0.02 = 6900.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Cold leg density 740 kg/m³, hot leg density 700 kg/m³, elevation difference 5 m and g = 9.81 m/s². What is the driving pressure in Pa?",
+     "a": 1962,
+     "tol": 5,
+     "unit": "Pa",
+     "why": "40 × 9.81 × 5 = 1962 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a small quality correspond to a large void fraction at low pressure?",
+     "o": [
+      "Vapour is far less dense than liquid, so a little mass occupies much volume",
+      "Vapour is heavier than liquid, so a little mass fills a large volume",
+      "Quality is a ratio of volumes, not a ratio of masses",
+      "Liquid is highly compressible, so it shrinks at low pressure"
+     ],
+     "a": 0,
+     "why": "Density ratio between phases is large.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a drift-flux model add compared with a homogeneous model?",
+     "o": [
+      "Relative motion between the phases",
+      "A third phase, such as solid fuel, in the mixture",
+      "Zero viscosity, so the phases slide without drag",
+      "Solid fuel that moves along with the coolant"
+     ],
+     "a": 0,
+     "why": "It captures slip.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In passive natural circulation, flow rate is set by the balance of...",
+     "o": [
+      "Buoyancy driving pressure and friction losses",
+      "Pump head and neutron flux in the core",
+      "Quality and temperature, with no friction effects",
+      "Dose and activity in the primary loop"
+     ],
+     "a": 0,
+     "why": "Δp_drive equals Δp_friction.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which tool resolves detailed turbulent flow fields in a component?",
+     "o": [
+      "Computational fluid dynamics (CFD)",
+      "A one-dimensional system code for the whole plant",
+      "A homogeneous equilibrium model of the two phases",
+      "A dosimeter placed beside the component"
+     ],
+     "a": 0,
+     "why": "CFD resolves local flow detail; system codes model the whole plant in one dimension.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why are density-wave oscillations a design concern in boiling channels, and how can they be reduced?",
+     "rubric": [
+      [
+       "oscillat",
+       "unstable",
+       "instabilit",
+       "flow varies",
+       "fluctuat"
+      ],
+      [
+       "feedback",
+       "density",
+       "pressure drop",
+       "flow and void",
+       "delay"
+      ],
+      [
+       "inlet",
+       "orifice",
+       "restrict",
+       "throttl",
+       "damp",
+       "design",
+       "avoid",
+       "increase"
+      ]
+     ],
+     "min": 2,
+     "model": "Delays between flow, void generation and pressure drop can feed back to make flow oscillate, which can cause premature dryout or power-flow oscillation. Adding inlet restrictions (orifices) increases single-phase pressure drop and damps the instability.",
+     "why": "Stability analysis is part of design.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A model validated for steady tests is used for a rapid blowdown. What is the main concern?",
+     "o": [
+      "Closure relations may be invalid outside their tested range",
+      "Nothing is a concern, since a validated model is always valid",
+      "The model has too few cells to run a blowdown at all",
+      "The units are fixed by the code, so they cannot be wrong"
+     ],
+     "a": 0,
+     "why": "Validation domain matters.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is CFD often coupled to system codes?",
+     "o": [
+      "System codes give plant boundary conditions while CFD resolves local detail",
+      "CFD replaces experiments, so system codes are not needed",
+      "System codes are three-dimensional and so resolve local detail",
+      "The coupling is used to reduce the amount of validation"
+     ],
+     "a": 0,
+     "why": "Scales complement each other.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why liquid metals need different heat transfer correlations from water.",
+     "rubric": [
+      [
+       "prandtl",
+       "pr",
+       "low"
+      ],
+      [
+       "conduct",
+       "thermal conductivity",
+       "diffus"
+      ],
+      [
+       "correlation",
+       "different",
+       "nusselt",
+       "boundary layer",
+       "heat transfer"
+      ]
+     ],
+     "min": 2,
+     "model": "Liquid metals have very low Prandtl numbers because their thermal conductivity is high compared with their momentum diffusion, so heat diffuses much faster than momentum and the thermal boundary layer is thicker. Correlations built for water do not capture this.",
+     "why": "Property ratios change the heat transfer.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about passive cooling is accurate?",
+     "o": [
+      "It can function without power but depends on small driving forces and needs careful stability analysis",
+      "It is always stronger than pumps and so needs no backup",
+      "It needs no analysis, since gravity does the work",
+      "It cannot work at all without a source of power"
+     ],
+     "a": 0,
+     "why": "Small driving forces mean sensitivity to losses.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Two-phase flow and natural circulation",
+    "model": "In boiling flow, the void fraction tells how much of the volume is vapour, and the mixture is lighter than liquid. Models range from homogeneous to two-fluid. In natural circulation, the density difference between hot and cold legs gives a pressure that balances friction and sets the flow. CFD and system codes together describe local and global behaviour.",
+    "points": [
+     {
+      "k": [
+       "void",
+       "vapour",
+       "quality"
+      ],
+      "ask": "What is void fraction?"
+     },
+     {
+      "k": [
+       "mixture",
+       "density",
+       "weighted",
+       "formula"
+      ],
+      "ask": "How do we find mixture density?"
+     },
+     {
+      "k": [
+       "natural circulation",
+       "density difference",
+       "buoyan",
+       "height"
+      ],
+      "ask": "What drives passive flow?"
+     },
+     {
+      "k": [
+       "cfd",
+       "system code",
+       "validate",
+       "correlation"
+      ],
+      "ask": "How are these analysed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Advanced reactor concepts",
+   "icon": "🔭",
+   "hook": "What if a reactor were small enough to build in a factory, and so safe by design that it could shut itself down without power?",
+   "explain": [
+    "Many advanced designs aim to improve safety, economics, waste management and flexibility. Small modular reactors (SMRs, typically up to about 300 MWe each) seek lower upfront capital, factory fabrication and simplified, often passive, safety systems, but the economics depend on learning and series production.",
+    "Generation IV concepts include sodium-cooled fast reactors, lead-cooled fast reactors, high-temperature gas-cooled reactors, molten salt reactors, supercritical water reactors and gas-cooled fast reactors. Fast reactors can use neutron economy to burn actinides and extend uranium use in closed fuel cycles. High-temperature gas reactors use robust coated-particle fuel and can supply process heat for industry, as well as electricity.",
+    "Higher outlet temperatures raise thermodynamic efficiency (the Carnot limit rises with T_hot) and open uses such as hydrogen production and industrial heat. Different coolants bring trade-offs: sodium has excellent heat transfer but reacts with water and air; lead is chemically inert but dense and corrosive; molten salts operate near atmospheric pressure but pose chemistry and materials challenges.",
+    "Economics is often compared with the levelised cost of electricity, LCOE = total lifetime costs ÷ total lifetime energy (discounted). Fuel is a small part of nuclear costs, while capital and financing dominate. Public acceptance, licensing readiness, non-proliferation features and supply chains also determine which concepts succeed."
+   ],
+   "example": {
+    "q": "Illustrative: annualised capital cost $200 million, operation and maintenance $50 million, fuel $30 million per year. A 1000 MWe plant runs at 90% capacity factor. What is the LCOE in $/MWh? (8760 h per year)",
+    "steps": [
+     "Annual cost = 200 + 50 + 30 = $280 million.",
+     "Annual energy = 1000 MW × 0.9 × 8760 h = 7 884 000 MWh.",
+     "LCOE = 280 000 000 ÷ 7 884 000 ≈ $35.5/MWh."
+    ],
+    "a": "About $35.5 per MWh (illustrative)"
+   },
+   "analogies": {
+    "home": "Buying a solar lamp versus a generator: upfront cost versus running cost.",
+    "city": "Modular housing built in a factory and assembled on site.",
+    "sea": "Small ships built in series are cheaper per unit than one-off giants.",
+    "tech": "Smartphone production learning curves lower cost with volume."
+   },
+   "mnemonic": "Small, safe, hot, fast, closed: SSHFC for advanced concepts.",
+   "terms": [
+    [
+     "Small modular reactor",
+     "A reactor of modest size built in modules, often factory-made."
+    ],
+    [
+     "Fast reactor",
+     "A reactor without a moderator that uses fast neutrons."
+    ],
+    [
+     "TRISO fuel",
+     "Coated fuel particles with several ceramic layers."
+    ],
+    [
+     "Molten salt reactor",
+     "A reactor using molten salt as coolant or fuel carrier."
+    ],
+    [
+     "LCOE",
+     "Levelised cost of electricity."
+    ]
+   ],
+   "misc": {
+    "wrong": "Smaller reactors are automatically cheaper per unit of electricity.",
+    "right": "Smaller units lose economies of scale and need series production, standardisation and supply chains to compete."
+   },
+   "limits": "Many concepts are at demonstration or design stage, so claims about cost, schedule and safety need independent evaluation.",
+   "trip": {
+    "wiki": "Generation IV reactor",
+    "prompt": "Find the six concepts and choose one to compare with a pressurised water reactor."
+   },
+   "sources": [
+    "Generation IV reactor",
+    "Small modular reactor",
+    "Levelized cost of electricity"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Illustrative: a plant has total annual costs of $240 million and produces 6 000 000 MWh per year. What is the LCOE in $/MWh?",
+     "a": 40,
+     "tol": 0.5,
+     "unit": "$/MWh",
+     "why": "240 000 000 ÷ 6 000 000 = 40.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A helium-cooled reactor delivers heat at 750 °C and rejects heat at 27 °C. What is the Carnot efficiency limit in percent? (Add 273 to each.)",
+     "a": 70.6,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "T_hot = 1023 K, T_cold = 300 K: 1 − 300/1023 = 0.7068, or 70.7%. Both 70.6 and 70.7 are within tolerance.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 300 MWe SMR runs at 85% capacity factor for a year of 8760 hours. How many GWh does it generate? Round to the nearest GWh.",
+     "a": 2234,
+     "tol": 2,
+     "unit": "GWh",
+     "why": "300 × 0.85 × 8760 = 2 233 800 MWh = 2234 GWh.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which coolant reacts violently with water and air?",
+     "o": [
+      "Sodium",
+      "Lead",
+      "Helium",
+      "Molten fluoride salt"
+     ],
+     "a": 0,
+     "why": "Sodium needs isolation from water and air.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why are fast reactors associated with closed fuel cycles?",
+     "o": [
+      "Fast neutrons can fission or transmute actinides and make better use of uranium",
+      "They need no fuel, because they breed all they use",
+      "They have no waste, since they burn everything they make",
+      "They cannot use uranium and so need other fuels"
+     ],
+     "a": 0,
+     "why": "Neutron economy at fast energies supports actinide management.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do molten salt reactors operate at low pressure?",
+     "o": [
+      "Salts have high boiling points",
+      "They run cold, and so have no need of pressure",
+      "They contain no heat, and so need no cooling",
+      "They have no coolant, as the fuel carries its own heat"
+     ],
+     "a": 0,
+     "why": "No need to suppress boiling at high temperature.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to a characteristic.",
+     "pairs": [
+      [
+       "High-temperature gas reactor",
+       "Coated-particle fuel and high outlet temperature"
+      ],
+      [
+       "Sodium-cooled fast reactor",
+       "Excellent heat transfer, reactive coolant"
+      ],
+      [
+       "Lead-cooled fast reactor",
+       "Inert but dense and corrosive coolant"
+      ],
+      [
+       "Molten salt reactor",
+       "Low pressure, liquid salt"
+      ]
+     ],
+     "why": "Each has trade-offs.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Discuss one potential advantage and one challenge of small modular reactors.",
+     "rubric": [
+      [
+       "factory",
+       "modular",
+       "series",
+       "lower upfront",
+       "financ",
+       "passive",
+       "flexible",
+       "smaller"
+      ],
+      [
+       "economies of scale",
+       "licens",
+       "cost",
+       "unproven",
+       "first of a kind",
+       "supply chain",
+       "per unit",
+       "demonstrat"
+      ]
+     ],
+     "min": 2,
+     "model": "Advantages include factory production, smaller upfront capital, simpler passive safety and siting flexibility. Challenges include losing economies of scale, the need for many units to benefit from learning, licensing of new designs and building supply chains.",
+     "why": "A balanced evaluation needs both.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does fuel cost have a small effect on nuclear LCOE?",
+     "o": [
+      "Fuel is energy-dense, so capital and financing dominate",
+      "Fuel is free, so it adds nothing to the cost",
+      "Nuclear has no capital costs, only operating ones",
+      "Operation is the largest cost, because staff are numerous"
+     ],
+     "a": 0,
+     "why": "Capital-intensive plants have low fuel share.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A technology developer claims 'inherently safe'. What is a professional response?",
+     "o": [
+      "Ask for evidence, analysis and independent review of the specific claims",
+      "Accept it, since a developer knows the design best",
+      "Reject it without looking at any of the evidence",
+      "Ignore it, because all such claims are just marketing"
+     ],
+     "a": 0,
+     "why": "Claims need independent scrutiny.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does the choice of coolant influence the whole plant design?",
+     "o": [
+      "It sets operating temperature, pressure, materials, safety systems and maintenance needs",
+      "It affects only the colour of the pipes in the plant",
+      "It changes nothing, since all coolants behave alike",
+      "It affects only the control room layout and its displays"
+     ],
+     "a": 0,
+     "why": "Coolant properties cascade into design.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Argue for or against the claim that advanced reactors should be prioritised over improving existing reactors. State your evidence needs.",
+     "rubric": [
+      [
+       "existing",
+       "proven",
+       "current",
+       "fleet",
+       "operating"
+      ],
+      [
+       "advanced",
+       "new",
+       "innov",
+       "potential",
+       "future"
+      ],
+      [
+       "evidence",
+       "cost",
+       "timescale",
+       "safety",
+       "demonstrat",
+       "data",
+       "deploy"
+      ]
+     ],
+     "min": 2,
+     "model": "Existing reactors are proven and can be deployed now at known cost, while advanced reactors promise improvements in safety, waste or flexibility but are less demonstrated. A decision needs evidence on costs, deployment timelines, safety performance and system needs, and could include both.",
+     "why": "Balanced policy uses evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A country with a small grid considers a very large reactor. Which factor is a concern?",
+     "o": [
+      "Losing a large unit could destabilise the grid",
+      "Large reactors have no cost, so size does not matter",
+      "Small grids need more power, so a large unit is ideal",
+      "Grids do not matter for the choice of reactor size"
+     ],
+     "a": 0,
+     "why": "Unit size must fit grid capacity.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced reactor concepts",
+    "model": "Advanced reactors aim for better safety, cost, waste and flexibility. Small modular reactors are factory-built and often passively safe; fast reactors can burn actinides; high-temperature reactors give higher efficiency and process heat. Each has trade-offs, and many are not yet proven, so independent evidence matters.",
+    "points": [
+     {
+      "k": [
+       "small",
+       "modular",
+       "factory",
+       "smr"
+      ],
+      "ask": "What are SMRs?"
+     },
+     {
+      "k": [
+       "fast",
+       "actinide",
+       "closed",
+       "sodium",
+       "lead"
+      ],
+      "ask": "What are fast reactors for?"
+     },
+     {
+      "k": [
+       "high-temperature",
+       "efficien",
+       "process heat",
+       "hydrogen",
+       "gas"
+      ],
+      "ask": "Why use higher temperatures?"
+     },
+     {
+      "k": [
+       "cost",
+       "lcoe",
+       "evidence",
+       "trade-off",
+       "licens"
+      ],
+      "ask": "How do we judge them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Fusion plasma fundamentals",
+   "icon": "✨",
+   "hook": "Nuclei repel each other with huge force at close range. How do they ever fuse at only tens of millions of degrees?",
+   "explain": [
+    "Fusion needs nuclei to overcome Coulomb repulsion. The classical barrier is hundreds of keV, but the plasma temperature of 10 to 20 keV (over 100 million kelvin) suffices because quantum tunnelling allows fusion at lower energy, and because the fast tail of the Maxwellian velocity distribution contributes most reactions.",
+    "A charged particle in a magnetic field B gyrates with angular frequency ω_c = qB ÷ m and gyroradius r = m v⊥ ÷ (q B), where v⊥ is the speed perpendicular to the field. Strong fields therefore confine charged particles to small spirals around field lines, but they can still stream along them, so field lines are bent into closed surfaces (toroidal confinement).",
+    "Key plasma parameters: the Debye length (the distance over which charge is screened), the plasma parameter (number of particles in a Debye sphere, large for fusion plasmas), and β, the ratio of plasma pressure to magnetic pressure B² ÷ 2μ₀. Power balance involves heating (alpha particles, external heating) against losses (transport, radiation including bremsstrahlung). The energy confinement time is τ_E = W ÷ P_loss, where W is stored thermal energy.",
+    "Plasma physics also involves instabilities and disruptions, where confinement is suddenly lost, and turbulence, which drives heat loss across the field. Improved confinement regimes (such as the high-confinement H-mode) and control methods are active research topics, alongside tritium breeding and materials."
+   ],
+   "example": {
+    "q": "A deuteron has mass 3.34 × 10⁻²⁷ kg, charge 1.60 × 10⁻¹⁹ C, perpendicular speed 9.8 × 10⁵ m/s, in a 5.0 T field. Find the gyroradius.",
+    "steps": [
+     "r = m v⊥ ÷ (q B).",
+     "r = (3.34 × 10⁻²⁷ × 9.8 × 10⁵) ÷ (1.60 × 10⁻¹⁹ × 5.0).",
+     "Numerator ≈ 3.27 × 10⁻²¹; denominator = 8.0 × 10⁻¹⁹; r ≈ 4.1 × 10⁻³ m."
+    ],
+    "a": "About 4 mm"
+   },
+   "analogies": {
+    "sport": "A ball spinning on a string: the faster it moves, the larger the circle.",
+    "nature": "A river held between banks, which can still flow along its length.",
+    "home": "Water held in a bowl by a spinning motion.",
+    "music": "Resonance: particles circle at a frequency set by the field."
+   },
+   "mnemonic": "Gyroradius grows with speed and mass, shrinks with charge and field.",
+   "terms": [
+    [
+     "Gyroradius",
+     "Radius of a charged particle's spiral in a magnetic field."
+    ],
+    [
+     "Debye length",
+     "Distance over which charges are screened."
+    ],
+    [
+     "Plasma beta (β)",
+     "Plasma pressure over magnetic pressure."
+    ],
+    [
+     "Energy confinement time",
+     "Stored energy divided by power loss."
+    ],
+    [
+     "Disruption",
+     "A sudden loss of plasma confinement."
+    ]
+   ],
+   "misc": {
+    "wrong": "Fusion plasmas must reach the full Coulomb barrier energy.",
+    "right": "Quantum tunnelling and the fast tail of the distribution mean 10 to 20 keV is enough."
+   },
+   "limits": "Simple formulas give scalings only. Turbulence and instabilities are studied with complex simulations and experiments.",
+   "trip": {
+    "wiki": "Plasma (physics)",
+    "prompt": "Find the definitions of Debye length and plasma beta."
+   },
+   "sources": [
+    "Plasma (physics)",
+    "Lawson criterion",
+    "Tokamak"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A plasma stores 300 MJ of thermal energy and loses 100 MW. What is the energy confinement time in seconds?",
+     "a": 3,
+     "tol": 0.05,
+     "unit": "s",
+     "why": "τ_E = W ÷ P = 300 ÷ 100 = 3 s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Magnetic pressure is B² ÷ (2μ₀). For B = 5 T and μ₀ = 4π × 10⁻⁷, what is the pressure in MPa? Round to the nearest MPa.",
+     "a": 10,
+     "tol": 0.2,
+     "unit": "MPa",
+     "why": "25 ÷ (2 × 1.2566 × 10⁻⁶) = 9.95 × 10⁶ Pa ≈ 10 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plasma has pressure 3.2 × 10⁵ Pa in a field whose magnetic pressure is 1.0 × 10⁷ Pa. What is β as a percentage?",
+     "a": 3.2,
+     "tol": 0.05,
+     "unit": "%",
+     "why": "3.2 × 10⁵ ÷ 10⁷ = 0.032, or 3.2%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A proton's gyroradius is r at speed v. If the magnetic field doubles at the same speed, what is the new gyroradius as a multiple of r?",
+     "a": 0.5,
+     "tol": 0.01,
+     "why": "r ∝ 1/B, so doubling B halves r.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why can fusion occur at 10 to 20 keV although the Coulomb barrier is far higher?",
+     "o": [
+      "Quantum tunnelling and the high-energy tail of the distribution",
+      "The barrier does not exist at fusion temperatures",
+      "Nuclei attract each other at long range",
+      "Neutrons carry the charge and carry the nuclei across"
+     ],
+     "a": 0,
+     "why": "Both effects allow reactions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A magnetic field confines charged particles perpendicular to the field. Why must the field lines in a fusion device be closed or twisted?",
+     "o": [
+      "Particles can stream freely along the field, so open ends would let them escape",
+      "Fields repel the neutrons produced in the reaction",
+      "Field lines carry current that heats the plasma",
+      "To cool the particles as they circle the device"
+     ],
+     "a": 0,
+     "why": "Toroidal geometry avoids end losses.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A larger plasma parameter (many particles in a Debye sphere) means...",
+     "o": [
+      "Collective behaviour dominates over individual collisions",
+      "Particles are neutral and so do not interact with each other",
+      "The plasma is cold and the particles are bound in atoms",
+      "Charges are unscreened and act only on near neighbours"
+     ],
+     "a": 0,
+     "why": "Collective effects characterise a plasma.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does the energy confinement time τ_E represent?",
+     "o": [
+      "Stored thermal energy divided by power loss",
+      "Time for one fusion reaction",
+      "The time a particle spends in the vessel wall",
+      "The pulse repetition time"
+     ],
+     "a": 0,
+     "why": "τ_E = W ÷ P_loss.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a disruption is a concern in a tokamak.",
+     "rubric": [
+      [
+       "sudden",
+       "rapid",
+       "quickly",
+       "loss of confinement",
+       "loses"
+      ],
+      [
+       "energy",
+       "heat",
+       "wall",
+       "current",
+       "forces",
+       "damage",
+       "load",
+       "runaway"
+      ]
+     ],
+     "min": 2,
+     "model": "A disruption is a sudden loss of confinement where the plasma energy and current are dumped quickly, producing large heat loads and electromagnetic forces on the wall and structures, and possibly runaway electrons. Avoiding and mitigating disruptions is essential for reactor-scale devices.",
+     "why": "Disruptions can damage components.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "At the same temperature, a deuteron has a larger gyroradius than an electron in the same field because...",
+     "o": [
+      "It is much more massive",
+      "It has less charge",
+      "It is neutral",
+      "The field is weaker for deuterons"
+     ],
+     "a": 0,
+     "why": "At equal temperature r ∝ √(m T)/(qB), so the much heavier ion has a gyroradius about √(m_d/m_e) ≈ 60 times larger.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does higher β in a fusion device matter economically?",
+     "o": [
+      "More plasma pressure for the same magnetic field means more fusion power per unit of expensive magnet",
+      "Pressure is irrelevant to how much fusion power is made",
+      "It lowers the temperature, which makes the plant cheaper",
+      "It removes the need for a vessel around the plasma"
+     ],
+     "a": 0,
+     "why": "Fusion power scales with pressure squared, so β is a cost driver.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare magnetic confinement and inertial confinement in terms of the main physical idea and challenge of each.",
+     "rubric": [
+      [
+       "magnetic",
+       "field",
+       "tokamak",
+       "stellarator"
+      ],
+      [
+       "inertial",
+       "laser",
+       "compress",
+       "implosion",
+       "pellet"
+      ],
+      [
+       "challenge",
+       "stability",
+       "turbulence",
+       "symmetry",
+       "repetition",
+       "rate",
+       "energy gain",
+       "efficien",
+       "instabilit"
+      ]
+     ],
+     "min": 3,
+     "model": "Magnetic confinement holds a low-density plasma with fields for seconds or longer; its challenges include turbulence and instabilities. Inertial confinement compresses a tiny pellet so rapidly with lasers that fusion occurs before it disperses; its challenges include symmetric compression, laser efficiency and a high repetition rate.",
+     "why": "Different routes satisfy the Lawson criterion.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a fair statement about the timeline of fusion power?",
+     "o": [
+      "It is uncertain and depends on engineering, materials and funding as well as physics",
+      "It is certain to arrive within five years, if enough is spent",
+      "It is impossible, because the physics forbids a net gain",
+      "It depends only on reaching a high enough temperature"
+     ],
+     "a": 0,
+     "why": "Many challenges remain.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Fusion plasma basics",
+    "model": "Fusion plasmas are at tens of keV so that tunnelling and fast particles allow nuclei to fuse despite repulsion. Magnetic fields make charged particles spiral with a gyroradius that shrinks as the field grows. Engineers balance heating against losses, described by the energy confinement time, and manage instabilities and disruptions.",
+    "points": [
+     {
+      "k": [
+       "temperature",
+       "kev",
+       "million",
+       "tunnel"
+      ],
+      "ask": "How does fusion happen despite repulsion?"
+     },
+     {
+      "k": [
+       "magnetic",
+       "gyro",
+       "spiral",
+       "radius"
+      ],
+      "ask": "How do fields hold particles?"
+     },
+     {
+      "k": [
+       "confinement time",
+       "energy",
+       "loss",
+       "heating"
+      ],
+      "ask": "What is the power balance?"
+     },
+     {
+      "k": [
+       "instabilit",
+       "disrupt",
+       "turbulen"
+      ],
+      "ask": "What goes wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Nuclear safety and risk assessment",
+   "icon": "🛡️",
+   "hook": "A risk analysis says an accident is a one-in-a-hundred-thousand-years event. How should we use such a number, and how far should we trust it?",
+   "explain": [
+    "Probabilistic safety assessment (PSA) is carried out at three levels. Level 1 estimates core damage frequency (CDF) from initiating events and system failures. Level 2 analyses containment performance and radioactive release (large release frequency). Level 3 estimates off-site consequences. Safety goals have been proposed internationally, such as a CDF below 10⁻⁴ per reactor-year for existing plants and 10⁻⁵ for future plants.",
+    "A key lesson is that redundancy is limited by dependency. If two trains each fail on demand with probability Q = 10⁻², independent failure of both would be 10⁻⁴. With a common-cause fraction β = 0.1, the common-cause contribution is about β × Q = 10⁻³, which is ten times larger. Human reliability and organisational factors are modelled too, but are hard to quantify.",
+    "Importance measures rank contributors to risk. The Fussell–Vesely measure gives the fraction of risk involving a component, and the risk achievement worth (RAW) is the risk if the component is assumed failed divided by the baseline risk, showing which components are most important to keep working.",
+    "PSA results come with uncertainty, often with wide ranges, and incomplete knowledge (unmodelled events). Defence in depth, safety culture, operating experience and learning from accidents such as Three Mile Island (1979), Chernobyl (1986) and Fukushima Daiichi (2011) complement the numbers. Risk-informed decisions weigh PSA with deterministic analysis, ethics and public values."
+   ],
+   "example": {
+    "q": "Baseline CDF is 2 × 10⁻⁵ per year. Assuming a pump is failed, CDF becomes 1 × 10⁻⁴ per year. Calculate the RAW.",
+    "steps": [
+     "RAW = risk with component failed ÷ baseline risk.",
+     "RAW = (1 × 10⁻⁴) ÷ (2 × 10⁻⁵).",
+     "RAW = 5."
+    ],
+    "a": "RAW = 5"
+   },
+   "analogies": {
+    "home": "Two smoke detectors on one circuit: one fault can disable both.",
+    "city": "Backup bridges are less useful if the same flood closes both.",
+    "sea": "Two lifeboats stored in one locker.",
+    "sport": "Insurance for players does not remove injury risk."
+   },
+   "mnemonic": "Level 1 core, Level 2 containment, Level 3 consequences; beta bites redundancy.",
+   "terms": [
+    [
+     "Core damage frequency",
+     "Estimated frequency of fuel damage per reactor-year."
+    ],
+    [
+     "Large release frequency",
+     "Frequency of large radioactive releases."
+    ],
+    [
+     "Common-cause failure",
+     "A shared cause failing multiple components."
+    ],
+    [
+     "Risk achievement worth",
+     "Risk increase if a component is assumed failed."
+    ],
+    [
+     "Fussell–Vesely",
+     "Fraction of risk involving a component."
+    ]
+   ],
+   "misc": {
+    "wrong": "A very low computed frequency proves an accident cannot happen.",
+    "right": "It is a model-based estimate with uncertainties and gaps. It guides decisions but does not guarantee safety."
+   },
+   "limits": "Rare external events, organisational failures and unknown unknowns are hard to model, so PSA complements, not replaces, defence in depth.",
+   "trip": {
+    "wiki": "Probabilistic risk assessment",
+    "prompt": "Find the three PSA levels and the typical outputs of each."
+   },
+   "sources": [
+    "Probabilistic risk assessment",
+    "Defence in depth",
+    "Fukushima nuclear accident"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Two trains each fail on demand with probability 0.02. With a common-cause fraction β = 0.1, estimate the common-cause failure probability βQ.",
+     "a": 0.002,
+     "tol": 0.0001,
+     "why": "0.1 × 0.02 = 0.002.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Compare with the independent double failure of those two trains (0.02 × 0.02). How many times larger is βQ (0.002) than the independent probability?",
+     "a": 5,
+     "tol": 0.05,
+     "why": "0.02 × 0.02 = 0.0004; 0.002 ÷ 0.0004 = 5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Baseline CDF is 4 × 10⁻⁶ per year. Assuming valve V is failed, CDF is 2 × 10⁻⁵ per year. What is the RAW?",
+     "a": 5,
+     "tol": 0.05,
+     "why": "(2 × 10⁻⁵) ÷ (4 × 10⁻⁶) = 5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A fleet of 100 reactors operates for 30 years with an average CDF of 10⁻⁵ per reactor-year. What is the expected number of core damage events?",
+     "a": 0.03,
+     "tol": 0.001,
+     "why": "3000 reactor-years × 10⁻⁵ = 0.03.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does a Level 2 PSA analyse?",
+     "o": [
+      "Containment response and radioactive release",
+      "Off-site economic costs and the cost of clean-up",
+      "Only the initiating events that begin an accident",
+      "Dose to the workers inside the plant"
+     ],
+     "a": 0,
+     "why": "Level 2 links core damage to release.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A component has a high RAW. What does this tell designers?",
+     "o": [
+      "It is important to keep reliable, since its failure raises risk a lot",
+      "It is unimportant, and so can be left out of the model",
+      "It should be removed, since it adds so much risk",
+      "It carries no risk of its own, even when it fails"
+     ],
+     "a": 0,
+     "why": "RAW highlights components whose failure matters.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is PSA output usually given as ranges or distributions?",
+     "o": [
+      "Inputs and models are uncertain",
+      "Computers are imprecise and so cannot give single numbers",
+      "To confuse readers and make the study hard to check",
+      "The numbers are secret and so only ranges are shown"
+     ],
+     "a": 0,
+     "why": "Uncertainty propagates through the model.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which accident is most associated with extreme external hazards (earthquake and tsunami) and loss of cooling?",
+     "o": [
+      "Fukushima Daiichi (2011)",
+      "Three Mile Island (1979)",
+      "Chernobyl (1986)",
+      "None of these"
+     ],
+     "a": 0,
+     "why": "Fukushima Daiichi began with a major earthquake and tsunami.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A manager says 'our PSA shows risk is tiny, so we can reduce staff training'. Critique this statement.",
+     "rubric": [
+      [
+       "uncertain",
+       "model",
+       "assumption",
+       "incomplete",
+       "not guarantee",
+       "unknown"
+      ],
+      [
+       "human",
+       "training",
+       "culture",
+       "people",
+       "operator",
+       "organis"
+      ],
+      [
+       "defence in depth",
+       "layers",
+       "assume",
+       "depends on",
+       "reliability",
+       "credit"
+      ]
+     ],
+     "min": 2,
+     "model": "PSA results depend on assumptions about human and organisational performance, including training. Reducing training would undermine those assumptions and raise the real risk, and PSA has uncertainties and gaps. Safety depends on defence in depth and culture, not on a single number.",
+     "why": "Numbers rely on the practices they assume.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A design has no 'cliff-edge' effect when conditions exceed design basis. What does that mean?",
+     "o": [
+      "Safety degrades gradually rather than failing abruptly",
+      "It cannot be exceeded in any accident, however severe",
+      "It has no safety systems and so nothing can fail",
+      "The risk is zero and so no analysis is needed"
+     ],
+     "a": 0,
+     "why": "Graceful degradation gives time to respond.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is public participation relevant to a risk assessment of a proposed plant?",
+     "o": [
+      "Acceptable risk involves values, not only calculation",
+      "Public input changes the laws of physics for the plant",
+      "Experts are never wrong, so no input is required",
+      "It is only a legal formality that has no effect on the result"
+     ],
+     "a": 0,
+     "why": "Risk acceptability is a social judgement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain two ways in which Fukushima-style events led to changes in safety practice worldwide.",
+     "rubric": [
+      [
+       "backup power",
+       "power supply",
+       "battery",
+       "generator"
+      ],
+      [
+       "flood",
+       "tsunami",
+       "external hazard",
+       "earthquake",
+       "site"
+      ],
+      [
+       "stress test",
+       "review",
+       "portable",
+       "mobile",
+       "cooling",
+       "emergency",
+       "beyond design",
+       "regulator",
+       "reassess"
+      ]
+     ],
+     "min": 2,
+     "model": "After Fukushima, countries carried out stress tests and re-evaluated external hazards such as floods and earthquakes, and plants added extra backup power, portable equipment and ways of cooling the fuel if normal systems were lost, with greater emphasis on beyond-design-basis events.",
+     "why": "Learning from events is a core safety principle.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Safety goals such as 10⁻⁵ per reactor-year for new plants are best seen as...",
+     "o": [
+      "Targets for improvement that guide design and regulation",
+      "Guarantees that no accident will ever occur",
+      "Meaningless numbers with no use in design",
+      "A form of legal immunity for the plant operator"
+     ],
+     "a": 0,
+     "why": "They guide, not guarantee.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Using risk assessment responsibly",
+    "model": "Probabilistic safety assessment estimates how often fuel damage and releases could occur, in three levels. Redundancy can be defeated by common causes, and importance measures show which components matter most. Results are uncertain, so they are used with defence in depth, safety culture and public values.",
+    "points": [
+     {
+      "k": [
+       "level",
+       "core damage",
+       "containment",
+       "consequence"
+      ],
+      "ask": "What are the PSA levels?"
+     },
+     {
+      "k": [
+       "common cause",
+       "beta",
+       "shared",
+       "redundan"
+      ],
+      "ask": "Why can redundancy fail?"
+     },
+     {
+      "k": [
+       "raw",
+       "importance",
+       "fussell",
+       "rank"
+      ],
+      "ask": "How do we rank components?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "defence in depth",
+       "culture",
+       "judg",
+       "values"
+      ],
+      "ask": "How far should we trust the numbers?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Advanced nuclear materials research",
+   "icon": "🔬",
+   "hook": "How do you learn what 40 years of neutron irradiation does to a metal when you cannot wait 40 years?",
+   "explain": [
+    "Materials research links atomic-scale processes to component behaviour. Radiation creates point defects (vacancies and interstitials) whose clustering drives hardening, embrittlement, swelling and creep. The damage dose in dpa is flux × displacement cross-section × time. Helium and hydrogen produced by transmutation add further effects, especially for fusion neutrons.",
+    "Because reactor testing is slow and expensive, researchers use surrogates. Ion irradiation can reach many dpa in days at high damage rates, but with differences in damage rate and no transmutation, so results must be interpreted carefully. Test reactors, post-irradiation examination with electron microscopy and atom probe tomography, and in-situ methods fill the gap.",
+    "Thermally activated processes such as creep and diffusion follow an Arrhenius law: rate ∝ exp(−Q ÷ RT), where Q is the activation energy, R the gas constant (8.314 J/mol K) and T the temperature in kelvin. A small temperature rise can therefore change rates by large factors.",
+    "Modern programmes develop accident-tolerant fuels (for example chromium-coated zirconium cladding, FeCrAl steels and silicon carbide composites) to slow oxidation and hydrogen production at very high temperatures, and radiation-tolerant alloys for advanced and fusion systems. Multiscale modelling links quantum-mechanical calculations, molecular dynamics, kinetic Monte Carlo and continuum models, and must be validated against experiments."
+   ],
+   "example": {
+    "q": "A material receives damage at 5 × 10⁻⁸ dpa per second. How many dpa accumulate in one year (3.15 × 10⁷ s)?",
+    "steps": [
+     "dpa = rate × time.",
+     "dpa = 5 × 10⁻⁸ × 3.15 × 10⁷.",
+     "= 1.575 ≈ 1.6 dpa."
+    ],
+    "a": "About 1.6 dpa"
+   },
+   "analogies": {
+    "home": "Cooking: food cooks much faster at higher temperature, in an exponential way.",
+    "city": "A road tested by simulated traffic cycles to predict years of wear.",
+    "sport": "Training in a wind tunnel to predict race conditions.",
+    "tech": "Accelerated life tests for batteries."
+   },
+   "mnemonic": "Defects cluster, rates are Arrhenius, test fast, check against reality.",
+   "terms": [
+    [
+     "Point defect",
+     "A vacancy or interstitial atom in a crystal."
+    ],
+    [
+     "dpa",
+     "Displacements per atom."
+    ],
+    [
+     "Activation energy",
+     "Energy barrier for a thermally activated process."
+    ],
+    [
+     "Accident-tolerant fuel",
+     "Fuel designs that withstand loss of cooling for longer."
+    ],
+    [
+     "Post-irradiation examination",
+     "Detailed testing of materials after exposure."
+    ]
+   ],
+   "misc": {
+    "wrong": "Ion irradiation reproduces reactor irradiation exactly.",
+    "right": "Ions reproduce displacement damage but differ in damage rate, depth and transmutation, so results need correction and validation."
+   },
+   "limits": "Extrapolating accelerated tests to decades of service carries uncertainty, so conservative design margins remain necessary.",
+   "trip": {
+    "wiki": "Radiation damage",
+    "prompt": "Find how defects form and what swelling is."
+   },
+   "sources": [
+    "Radiation damage",
+    "Arrhenius equation",
+    "Accident-tolerant fuel"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Damage accumulates at 1 × 10⁻⁷ dpa/s. How many dpa after 10⁷ seconds?",
+     "a": 1,
+     "tol": 0.01,
+     "unit": "dpa",
+     "why": "1 × 10⁻⁷ × 10⁷ = 1 dpa.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using rate ∝ exp(−Q/RT) with Q = 300 kJ/mol and R = 8.314 J/mol K, by what factor does a creep rate increase from 600 K to 650 K? Round to the nearest whole number.",
+     "a": 102,
+     "tol": 4,
+     "why": "Q/R = 36 084 K; (1/600 − 1/650) = 1.282 × 10⁻⁴; product = 4.626; e^4.626 ≈ 102.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An ion beam gives 10⁻³ dpa/s. How many seconds to reach 10 dpa?",
+     "a": 10000,
+     "tol": 1,
+     "unit": "s",
+     "why": "10 ÷ 10⁻³ = 10⁴ s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a vacancy?",
+     "o": [
+      "A missing atom in a crystal lattice",
+      "An extra atom squeezed between lattice sites",
+      "A neutron trapped within the crystal",
+      "A crack running through the crystal"
+     ],
+     "a": 0,
+     "why": "Vacancies are point defects.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is ion irradiation used as a surrogate for neutron irradiation?",
+     "o": [
+      "It reaches high dpa quickly and produces little radioactivity",
+      "It reproduces every effect of neutron damage exactly",
+      "It is cheaper than any computer simulation",
+      "It avoids damage to the sample altogether"
+     ],
+     "a": 0,
+     "why": "But it differs in rate, depth and transmutation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are helium and hydrogen produced by 14 MeV neutrons a special concern in fusion materials?",
+     "o": [
+      "They can form bubbles and embrittle metals",
+      "They cool the metal and make it more ductile",
+      "They make steel stronger by filling the gaps",
+      "They are inert and so stay harmlessly in place"
+     ],
+     "a": 0,
+     "why": "Transmutation gas production is much higher than in fission spectra.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each technique to its purpose.",
+     "pairs": [
+      [
+       "Atom probe tomography",
+       "3D chemical mapping at near-atomic scale"
+      ],
+      [
+       "Molecular dynamics",
+       "Simulating defect cascades"
+      ],
+      [
+       "Test reactor irradiation",
+       "Neutron exposure of samples"
+      ],
+      [
+       "Ion irradiation",
+       "Rapid damage accumulation"
+      ]
+     ],
+     "why": "Complementary approaches.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Chromium-coated zirconium cladding is proposed as an accident-tolerant option. Explain the motivation and one question researchers must still answer.",
+     "rubric": [
+      [
+       "oxid",
+       "steam",
+       "hydrogen",
+       "high temperature",
+       "accident",
+       "loss of cooling"
+      ],
+      [
+       "coating",
+       "adhesion",
+       "durability",
+       "neutron",
+       "cost",
+       "manufactur",
+       "irradiat",
+       "fretting",
+       "wear",
+       "performance",
+       "normal operation"
+      ]
+     ],
+     "min": 2,
+     "model": "The coating slows oxidation and hydrogen production in steam at very high temperature, giving more time in a loss-of-cooling accident. Researchers must show it stays intact and adherent during normal operation and irradiation, and assess neutron absorption, manufacturing and cost.",
+     "why": "Benefits must be balanced with normal performance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A multiscale model predicts swelling lower than an experiment shows. What is the best next step?",
+     "o": [
+      "Examine model assumptions and refine with more data",
+      "Ignore the experiment, since the model is more reliable",
+      "Trust the model and repeat the prediction",
+      "Stop modelling, since it has failed once"
+     ],
+     "a": 0,
+     "why": "Models are corrected by evidence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the Arrhenius form imply that small temperature differences in a component can cause large differences in creep?",
+     "o": [
+      "Rate depends exponentially on 1/T",
+      "Rate is linear in T, so small differences have small effects",
+      "Temperature does not matter for creep at all",
+      "Rate is constant above a certain temperature"
+     ],
+     "a": 0,
+     "why": "Exponential sensitivity.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A new alloy performs well in ion tests. Why is a neutron irradiation test still needed before use in a reactor?",
+     "o": [
+      "Ions differ in damage rate, depth and transmutation effects",
+      "Ions are harmless to alloys, so the test is not needed",
+      "Neutron tests are cheaper than ion tests and so are preferred",
+      "Alloys do not change under radiation, so any test would do"
+     ],
+     "a": 0,
+     "why": "Surrogates have limits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how multiscale modelling and experiments support each other in developing radiation-tolerant materials.",
+     "rubric": [
+      [
+       "model",
+       "simulation",
+       "predict",
+       "atomic",
+       "scale"
+      ],
+      [
+       "experiment",
+       "test",
+       "validate",
+       "measure",
+       "data"
+      ],
+      [
+       "guide",
+       "improve",
+       "calibrate",
+       "refine",
+       "link",
+       "feedback"
+      ]
+     ],
+     "min": 3,
+     "model": "Models at different scales predict how defects form and evolve and can guide which alloys to test. Experiments supply data to validate and calibrate the models, which are then refined. Together they reduce time and cost.",
+     "why": "Iteration improves reliability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A research group finds a result that contradicts the leading theory. The most scientific response is...",
+     "o": [
+      "Replicate and examine carefully, then publish honestly",
+      "Hide it, because it contradicts the leading theory",
+      "Alter the data until they agree with the theory",
+      "Ignore it, since the leading theory must be right"
+     ],
+     "a": 0,
+     "why": "Scientific integrity.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Researching radiation damage",
+    "model": "Radiation knocks atoms out of place, creating defects that cluster and change a metal's strength, shape and toughness. Because real irradiation takes decades, researchers use ion beams, test reactors and computer models, and check them against each other. Rates depend exponentially on temperature, so small differences matter.",
+    "points": [
+     {
+      "k": [
+       "defect",
+       "vacancy",
+       "interstitial",
+       "displace"
+      ],
+      "ask": "What does radiation do to a crystal?"
+     },
+     {
+      "k": [
+       "swell",
+       "brittle",
+       "creep",
+       "harden"
+      ],
+      "ask": "What are the effects?"
+     },
+     {
+      "k": [
+       "ion",
+       "surrogate",
+       "test reactor",
+       "model"
+      ],
+      "ask": "How can we study it faster?"
+     },
+     {
+      "k": [
+       "arrhenius",
+       "exponential",
+       "temperature",
+       "validate"
+      ],
+      "ask": "What else must we be careful about?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Decommissioning and environmental protection",
+   "icon": "🌍",
+   "hook": "When a nuclear plant ends its life, what happens to the site, the metal, the concrete and the people who live nearby?",
+   "explain": [
+    "Decommissioning is the set of administrative and technical actions to take a facility out of service and reduce regulatory control, ending with site release for unrestricted or restricted use. Common strategies are immediate dismantling, deferred dismantling after a period of safe enclosure, and, in limited cases, entombment. Safe enclosure uses radioactive decay: shorter-lived activation products such as cobalt-60 (half-life 5.27 years) fall substantially in a few decades.",
+    "Planning begins in design and continues through operation. Characterisation determines which materials are contaminated or activated. Techniques include decontamination, remote cutting and robotics to reduce worker dose. Materials are sorted: much can be cleared for reuse or recycling when activity is below clearance levels, while the rest is managed as radioactive waste. Funding is secured in advance through decommissioning funds, following a polluter-pays principle.",
+    "Environmental protection covers operation as well as end of life. Facilities have discharge authorisations for gaseous and liquid effluents, and operators monitor air, water, soil and food. Assessments consider exposure pathways and a representative person from the most exposed 'critical group', and international guidance also asks about protection of non-human species. Environmental impact assessment and public consultation are part of licensing.",
+    "Decommissioning raises ethical issues: responsibility for costs, protection of future generations, fairness for host communities, and honesty about uncertainty. Experience from completed projects is shared internationally to lower costs and doses."
+   ],
+   "example": {
+    "q": "Cobalt-60 has a half-life of 5.27 years. By what fraction does its activity fall after 5 half-lives (about 26 years)?",
+    "steps": [
+     "Fraction remaining = (1/2)⁵ = 1/32.",
+     "Fraction decayed = 1 − 1/32 = 31/32.",
+     "That is about 97%."
+    ],
+    "a": "It falls to 1/32, a reduction of about 97%"
+   },
+   "analogies": {
+    "home": "Moving out of a house: remove, clean, test, return the keys.",
+    "city": "Demolishing a factory and cleaning the land before building again.",
+    "nature": "Restoring a quarry to a lake or woodland.",
+    "farm": "Soil tests before fields are returned to use."
+   },
+   "mnemonic": "Plan early, characterise, cut safely, sort, fund and monitor.",
+   "terms": [
+    [
+     "Decommissioning",
+     "Taking a nuclear facility out of service and reducing regulatory control."
+    ],
+    [
+     "Clearance level",
+     "Activity below which material can be released from control."
+    ],
+    [
+     "Safe enclosure",
+     "Deferring dismantling while radioactivity decays."
+    ],
+    [
+     "Critical group",
+     "The people most exposed through realistic pathways."
+    ],
+    [
+     "Polluter pays",
+     "The principle that the operator is responsible for costs."
+    ]
+   ],
+   "misc": {
+    "wrong": "Decommissioning means waiting for everything to become non-radioactive.",
+    "right": "Decay helps but is combined with decontamination, dismantling and waste management to meet release criteria."
+   },
+   "limits": "Costs and durations vary widely and are uncertain. Different countries choose different strategies.",
+   "trip": {
+    "wiki": "Nuclear decommissioning",
+    "prompt": "Find the strategies and compare their advantages and disadvantages."
+   },
+   "sources": [
+    "Nuclear decommissioning",
+    "Cobalt-60",
+    "Environmental impact assessment"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Cobalt-60 has a half-life of about 5.27 years. After 15.81 years, what fraction of the activity remains? Give a decimal.",
+     "a": 0.125,
+     "tol": 0.002,
+     "why": "15.81 ÷ 5.27 = 3 half-lives: (1/2)³ = 0.125.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A component has a dose rate of 640 µSv/h dominated by an isotope with half-life 5 years. After 30 years, what is the dose rate in µSv/h (assuming the same isotope dominates)?",
+     "a": 10,
+     "tol": 0.2,
+     "unit": "µSv/h",
+     "why": "30 ÷ 5 = 6 half-lives: 640 ÷ 64 = 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A project removes 5000 tonnes of material. 90% is cleared for recycling. How many tonnes remain to be managed as radioactive waste?",
+     "a": 500,
+     "tol": 0,
+     "unit": "tonnes",
+     "why": "10% of 5000 = 500.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a benefit of deferred dismantling?",
+     "o": [
+      "Radioactive decay lowers dose rates and worker exposure",
+      "It avoids all costs, since nothing needs to be done for years",
+      "It removes the need for any waste management",
+      "It is always cheaper than immediate dismantling"
+     ],
+     "a": 0,
+     "why": "Decay reduces activity, though long delays carry other burdens.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of clearance levels?",
+     "o": [
+      "To allow materials with very low activity to be released from regulatory control",
+      "To increase the volume of waste that is stored",
+      "To prevent all recycling of metal from the site",
+      "To classify high-level waste into its separate types"
+     ],
+     "a": 0,
+     "why": "Avoiding unnecessary waste conserves repository space.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a decommissioning fund collected during operation?",
+     "o": [
+      "So the cost is covered by the polluter and not passed to future taxpayers",
+      "To fund the fuel that the plant will use over its life",
+      "To reduce the price of electricity for customers today",
+      "To buy the land that the plant will stand on"
+     ],
+     "a": 0,
+     "why": "Polluter-pays and intergenerational fairness.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does 'characterisation' mean at the start of decommissioning?",
+     "o": [
+      "Determining which materials are contaminated or activated",
+      "Dismantling the reactor building piece by piece",
+      "Releasing the site for any use without further checks",
+      "Raising the funds that the work will need"
+     ],
+     "a": 0,
+     "why": "Planning depends on knowing what is where.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A community near a plant being decommissioned worries about dust and transport of waste. Describe how operators and regulators can address these concerns.",
+     "rubric": [
+      [
+       "monitor",
+       "measure",
+       "sample",
+       "sensor"
+      ],
+      [
+       "limit",
+       "authoris",
+       "permit",
+       "regulat",
+       "licen",
+       "inspect"
+      ],
+      [
+       "inform",
+       "consult",
+       "communicat",
+       "transparen",
+       "meeting",
+       "publish",
+       "share"
+      ],
+      [
+       "dust",
+       "suppress",
+       "contain",
+       "filter",
+       "ventilat",
+       "transport",
+       "package",
+       "route",
+       "safe"
+      ]
+     ],
+     "min": 3,
+     "model": "Operators control dust with containment, ventilation and filtration, and transport waste in approved packages along planned routes. Regulators set limits and inspect. Both monitor emissions and publish results, and they consult and inform the community openly.",
+     "why": "Trust relies on evidence and openness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A site is released with restrictions on land use. When is this reasonable?",
+     "o": [
+      "When residual contamination is low but not suited to unrestricted use, with controls maintained",
+      "Never, since a site must always be released without limits",
+      "When no assessment of the site has been made at all",
+      "Only when the site holds high-level waste"
+     ],
+     "a": 0,
+     "why": "Restricted release is a regulated option with institutional control.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the main phases.",
+     "items": [
+      "Planning and characterisation",
+      "Decontamination and dismantling",
+      "Waste management and clearance",
+      "Final survey and site release"
+     ],
+     "why": "Each phase builds on the one before.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which approach best respects intergenerational fairness?",
+     "o": [
+      "Securing funds and plans now so future generations are not burdened",
+      "Leaving everything to the future to sort out",
+      "Hiding the costs so that the plant looks cheaper",
+      "Ignoring waste until a better method is found"
+     ],
+     "a": 0,
+     "why": "Planning and funding in advance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare immediate dismantling with deferred dismantling: give one advantage of each.",
+     "rubric": [
+      [
+       "immediate",
+       "now",
+       "soon"
+      ],
+      [
+       "knowledge",
+       "staff",
+       "workforce",
+       "expertise",
+       "memory",
+       "certain",
+       "avoid",
+       "long-term",
+       "liabilit",
+       "site reuse",
+       "land"
+      ],
+      [
+       "deferred",
+       "later",
+       "wait",
+       "delay"
+      ],
+      [
+       "decay",
+       "lower dose",
+       "less radioactiv",
+       "less exposure",
+       "cheaper",
+       "technolog",
+       "robot"
+      ]
+     ],
+     "min": 2,
+     "model": "Immediate dismantling uses the experienced workforce and plant knowledge and frees the site sooner, avoiding long-term liabilities. Deferred dismantling lets radioactive decay reduce dose rates and worker exposure and may allow better technology, but knowledge and funding must be preserved.",
+     "why": "Each strategy has trade-offs.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why should environmental monitoring data be published openly?",
+     "o": [
+      "Open data supports public trust and independent checking",
+      "It reduces safety by giving away sensitive details",
+      "It is unnecessary, since regulators already check it",
+      "It increases the emissions from the plant"
+     ],
+     "a": 0,
+     "why": "Transparency supports legitimacy.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Ending the life of a nuclear facility",
+    "model": "Decommissioning takes a plant out of service step by step: planning, characterising contamination, decontaminating and dismantling, managing waste and clearing the site. Radioactive decay helps, especially with deferred dismantling. Funds are collected in advance, discharges and the environment are monitored, and the community is informed.",
+    "points": [
+     {
+      "k": [
+       "plan",
+       "characteris",
+       "survey"
+      ],
+      "ask": "Where does it start?"
+     },
+     {
+      "k": [
+       "dismantl",
+       "decontaminat",
+       "remote",
+       "robot"
+      ],
+      "ask": "How is the plant taken apart?"
+     },
+     {
+      "k": [
+       "decay",
+       "half-life",
+       "defer",
+       "wait"
+      ],
+      "ask": "How does time help?"
+     },
+     {
+      "k": [
+       "fund",
+       "monitor",
+       "communit",
+       "polluter",
+       "ethic"
+      ],
+      "ask": "Who pays and who is protected?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated nuclear energy safety and sustainability project",
+   "icon": "🌱",
+   "hook": "You are asked to advise a government on whether to include nuclear power in its energy plan. What would you need to know, and whose voices would you include?",
+   "explain": [
+    "An integrated assessment brings together technical, environmental, economic, social and ethical criteria. For nuclear energy, key topics are: life-cycle greenhouse gas emissions, safety and accident risk, waste and decommissioning, security and non-proliferation, costs and financing, reliability and grid fit, land and water use, and public acceptance and justice.",
+    "Life-cycle assessment compares sources over their entire chains. Using approximate median values from the IPCC's 2014 assessment, life-cycle emissions are roughly 820 gCO₂-eq/kWh for coal, 490 for natural gas, 48 for utility-scale solar PV, 12 for nuclear and 11 for onshore wind. Values vary by technology, location and study. To compare options, energy output is computed from capacity × capacity factor × hours.",
+    "No source is free of trade-offs. Nuclear offers low-carbon, firm power with small land use but needs strong regulation, waste solutions, high upfront capital and public trust. Wind and solar are low-carbon and increasingly cheap but variable, needing storage, grids or backup. Fossil sources are dispatchable but cause emissions and air pollution. Most scenario studies find several low-carbon sources used together, with the mix depending on local resources and values.",
+    "Good decision-making uses multi-criteria analysis with transparent weights, assesses uncertainties, includes affected communities and considers fairness between regions and generations. Professionals have a duty to be honest about what is known and unknown, to put safety first and to avoid overstating either benefits or risks."
+   ],
+   "example": {
+    "q": "A 1000 MWe plant runs at 90% capacity factor for a year (8760 h). Replacing gas (490 gCO₂-eq/kWh) with nuclear (12 g/kWh) avoids how many million tonnes of CO₂-eq per year?",
+    "steps": [
+     "Energy = 1000 MW × 0.9 × 8760 h = 7 884 000 MWh = 7.884 × 10⁹ kWh.",
+     "Difference = 490 − 12 = 478 g/kWh.",
+     "Avoided = 7.884 × 10⁹ × 478 g = 3.77 × 10¹² g = 3.77 million tonnes."
+    ],
+    "a": "About 3.8 million tonnes of CO₂-eq per year"
+   },
+   "analogies": {
+    "home": "Choosing a family car: price, running cost, safety, comfort and environment all matter.",
+    "city": "Planning a transport network with trains, buses and roads, each with strengths and weaknesses.",
+    "farm": "A farm uses several crops to balance risks.",
+    "sea": "A fleet uses ships of different types for different routes."
+   },
+   "mnemonic": "Safety, Waste, Climate, Cost, Security, Society: a six-point check.",
+   "terms": [
+    [
+     "Life-cycle assessment",
+     "Evaluation of impacts across the whole chain from construction to disposal."
+    ],
+    [
+     "Capacity factor",
+     "Actual output divided by maximum possible output."
+    ],
+    [
+     "Multi-criteria analysis",
+     "A structured way of weighing several criteria."
+    ],
+    [
+     "Intergenerational justice",
+     "Fairness between present and future generations."
+    ],
+    [
+     "Dispatchable",
+     "Able to be turned up or down on demand."
+    ]
+   ],
+   "misc": {
+    "wrong": "A single metric, such as cost or emissions, is enough to decide on an energy mix.",
+    "right": "Decisions involve several criteria and values, so different reasonable people can reach different conclusions from the same evidence."
+   },
+   "limits": "Estimates vary among studies, and projections of costs and technology are uncertain. Value judgements about risk and fairness cannot be settled by data alone.",
+   "trip": {
+    "wiki": "Life-cycle greenhouse gas emissions of energy sources",
+    "prompt": "Find the comparison table and note how wide the ranges are."
+   },
+   "sources": [
+    "Life-cycle greenhouse gas emissions of energy sources",
+    "Nuclear power",
+    "Capacity factor"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A 600 MWe plant has a 90% capacity factor. How many GWh does it generate in a year of 8760 hours? Round to the nearest GWh.",
+     "a": 4730,
+     "tol": 5,
+     "unit": "GWh",
+     "why": "600 × 0.9 × 8760 = 4 730 400 MWh = 4730 GWh.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wind farm has capacity 300 MW and a capacity factor of 35%. What is its average output in MW?",
+     "a": 105,
+     "tol": 0.5,
+     "unit": "MW",
+     "why": "300 × 0.35 = 105 MW.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using 820 g/kWh for coal and 12 g/kWh for nuclear, how many grams of CO₂-eq per kWh are avoided by switching?",
+     "a": 808,
+     "tol": 0.5,
+     "unit": "g/kWh",
+     "why": "820 − 12 = 808.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plant produces 5 × 10⁹ kWh per year. At 12 g/kWh, what are its life-cycle emissions in tonnes CO₂-eq per year? (1 tonne = 10⁶ g)",
+     "a": 60000,
+     "tol": 10,
+     "unit": "tonnes",
+     "why": "5 × 10⁹ × 12 = 6 × 10¹⁰ g = 60 000 tonnes.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about life-cycle emissions values is most accurate?",
+     "o": [
+      "They are approximate medians that vary with technology, place and study",
+      "They are exact constants that never change",
+      "They exclude construction and fuel supply",
+      "They are the same for all sources of energy"
+     ],
+     "a": 0,
+     "why": "Ranges are wide.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is 'dispatchable' power valuable in a grid with a lot of wind and solar?",
+     "o": [
+      "It can provide electricity when variable sources are low",
+      "It is always cheaper than variable sources",
+      "It never fails, so the grid never needs backup",
+      "It produces no waste of any kind"
+     ],
+     "a": 0,
+     "why": "Grid reliability requires matching supply and demand.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A country with large hydropower and little land chooses its mix. Which factor is most specific to its context?",
+     "o": [
+      "Local resources, geography, grid and values",
+      "A single best source that suits every country",
+      "The colour of the reactors in the fleet",
+      "Only world fuel prices at the time"
+     ],
+     "a": 0,
+     "why": "Context shapes the best mix.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which criterion asks who bears the risks and who receives the benefits of an energy choice?",
+     "o": [
+      "Equity",
+      "Capacity factor",
+      "Efficiency",
+      "Voltage"
+     ],
+     "a": 0,
+     "why": "Equity concerns fair distribution of risks and benefits.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "You are asked to compare nuclear power with a mix of wind, solar and storage for a country. Outline a fair evaluation approach, naming at least three criteria and how you would handle uncertainty and disagreement.",
+     "rubric": [
+      [
+       "emission",
+       "carbon",
+       "climate",
+       "life-cycle"
+      ],
+      [
+       "cost",
+       "economic",
+       "financ",
+       "price"
+      ],
+      [
+       "safety",
+       "waste",
+       "security",
+       "reliab",
+       "grid",
+       "land",
+       "justice",
+       "equity"
+      ],
+      [
+       "uncertain",
+       "scenario",
+       "sensitivity",
+       "range"
+      ],
+      [
+       "consult",
+       "participat",
+       "stakeholder",
+       "public",
+       "transparen",
+       "weights",
+       "values"
+      ]
+     ],
+     "min": 4,
+     "model": "I would compare options on life-cycle emissions, cost, safety, waste, reliability and grid fit, land use and equity, using transparent data. I would test scenarios and sensitivity to show uncertainty, and use multi-criteria analysis with weights agreed through public consultation, so that disagreements about values are visible.",
+     "why": "A fair evaluation is transparent, multi-criteria and participatory.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An engineer is asked to present only the favourable data on a project. What is the professional response?",
+     "o": [
+      "Present the evidence honestly, including limitations and risks",
+      "Do as asked, since the manager decides what is shown",
+      "Resign silently without telling anyone why",
+      "Alter some of the data to make it look better"
+     ],
+     "a": 0,
+     "why": "Honesty is fundamental.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might two well-informed groups disagree about nuclear power even with the same data?",
+     "o": [
+      "They weigh risks, costs, fairness and trust differently",
+      "One group must have the physics wrong",
+      "The data are secret, so groups cannot see them",
+      "Disagreement is impossible when the data are the same"
+     ],
+     "a": 0,
+     "why": "Value judgements differ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Draw together ideas from this world: explain how defence in depth, waste management and decommissioning each contribute to the sustainability of nuclear energy, and name one remaining challenge.",
+     "rubric": [
+      [
+       "defence in depth",
+       "layers",
+       "safety",
+       "barrier",
+       "redundan"
+      ],
+      [
+       "waste",
+       "repository",
+       "storage",
+       "isolat"
+      ],
+      [
+       "decommission",
+       "fund",
+       "dismantl",
+       "site",
+       "polluter"
+      ],
+      [
+       "challenge",
+       "trust",
+       "cost",
+       "long-term",
+       "uncertain",
+       "siting",
+       "public",
+       "consent"
+      ]
+     ],
+     "min": 3,
+     "model": "Defence in depth reduces the likelihood and consequences of accidents, waste management isolates long-lived radioactive material, and funded decommissioning returns sites to use without leaving burdens. Challenges remain in public trust, siting of repositories, cost and the very long-term uncertainty.",
+     "why": "Sustainability links safety, waste and responsibility across generations.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which approach best supports fairness between generations in energy planning?",
+     "o": [
+      "Planning and funding waste and decommissioning now, and keeping options open",
+      "Deferring all decisions until the problems are solved",
+      "Ignoring long-term impacts and focusing on the near term",
+      "Using only the cheapest option available today"
+     ],
+     "a": 0,
+     "why": "Current choices must account for future burdens.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Weighing nuclear energy fairly",
+    "model": "To judge nuclear energy, compare it with other options on several criteria: emissions over the whole life cycle, safety, waste and decommissioning, cost, reliability, security and fairness. Each source has trade-offs, so decisions depend on local conditions and values. Evidence should be honest about uncertainty, and affected people should have a voice.",
+    "points": [
+     {
+      "k": [
+       "emission",
+       "carbon",
+       "life-cycle",
+       "climate"
+      ],
+      "ask": "What about the climate?"
+     },
+     {
+      "k": [
+       "safety",
+       "waste",
+       "decommission",
+       "security"
+      ],
+      "ask": "What are the risks to manage?"
+     },
+     {
+      "k": [
+       "cost",
+       "reliab",
+       "grid",
+       "variable",
+       "firm"
+      ],
+      "ask": "What about cost and reliability?"
+     },
+     {
+      "k": [
+       "values",
+       "fair",
+       "public",
+       "participat",
+       "uncertain",
+       "trade-off"
+      ],
+      "ask": "Why do people disagree?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2689 @@
+{
+ "world": 11,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Systems biology",
+   "icon": "🕸️",
+   "hook": "A bacterium swims up a nutrient gradient with a few thousand proteins and no brain. Why can a network of simple interactions behave in ways no single component predicts?",
+   "explain": [
+    "Systems biology studies how interacting components (genes, proteins, metabolites) give rise to behaviour of the whole. Models describe networks with ordinary differential equations. For a protein made at rate k_syn and degraded with first-order rate constant k_deg, dX/dt = k_syn − k_deg·X. The steady state is X_ss = k_syn ÷ k_deg, and the half-life is ln 2 ÷ k_deg.",
+    "Network motifs recur in biology. Negative feedback stabilises levels and speeds responses; with delay it can produce oscillations (circadian clocks). Positive feedback with cooperativity can produce bistability and switch-like decisions with hysteresis, as in cell-fate choices. Feed-forward loops filter out brief noisy inputs. Cooperative binding is often described by a Hill function: response = Sⁿ ÷ (Kⁿ + Sⁿ), where n measures steepness.",
+    "Genome-scale metabolic models use flux balance analysis: at steady state, the stoichiometric matrix S times flux vector v equals zero (S·v = 0), and a linear programme finds fluxes that optimise an objective such as growth. Stochastic effects matter when molecules are few: gene expression is noisy even in genetically identical cells. Models need data to constrain parameters and are tested by predicting new experiments."
+   ],
+   "example": {
+    "q": "A protein is made at 10 nM/min and degraded with k_deg = 0.2 per min. Find the steady-state concentration and half-life.",
+    "steps": [
+     "X_ss = k_syn ÷ k_deg = 10 ÷ 0.2 = 50 nM.",
+     "Half-life = ln 2 ÷ k_deg = 0.693 ÷ 0.2 ≈ 3.5 min."
+    ],
+    "a": "50 nM; about 3.5 min"
+   },
+   "analogies": {
+    "city": "Traffic jams emerge from the interactions of many cars, though no single car causes them.",
+    "tech": "A thermostat plus heater is a negative feedback loop, and a latching switch is a bistable circuit.",
+    "music": "A chord is more than its notes: the interactions give the harmony."
+   },
+   "mnemonic": "Parts list is not the machine: connections create behaviour.",
+   "terms": [
+    [
+     "Steady state",
+     "A state where production and removal balance so concentrations stay constant."
+    ],
+    [
+     "Bistability",
+     "Existence of two stable states for the same conditions."
+    ],
+    [
+     "Hill coefficient",
+     "A parameter describing the steepness of a cooperative response."
+    ],
+    [
+     "Flux balance analysis",
+     "Method predicting metabolic fluxes under a steady-state constraint."
+    ]
+   ],
+   "misc": {
+    "wrong": "A model that fits the data is therefore correct.",
+    "right": "Several different models can fit the same data; a model gains credibility by correctly predicting new, independent experiments."
+   },
+   "limits": "Parameters are often poorly measured, and models omit most of the cell's components, so predictions beyond the tested range are uncertain.",
+   "trip": {
+    "wiki": "Systems biology",
+    "prompt": "Find an example of a genetic oscillator and say what feedback produces the cycle."
+   },
+   "sources": [
+    "Systems biology",
+    "Flux balance analysis",
+    "Network motif"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which network feature is required for a cell-fate decision to remember its past state (hysteresis)?",
+     "o": [
+      "Positive feedback with ultrasensitivity",
+      "Pure negative feedback with fast decay",
+      "A simple linear pathway with no loops",
+      "No feedback of any kind in the network"
+     ],
+     "a": 0,
+     "why": "Positive feedback produces bistability and memory.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A negative feedback loop with a long delay is most likely to produce:",
+     "o": [
+      "Oscillations",
+      "A permanent switch",
+      "No dynamics",
+      "Linear growth"
+     ],
+     "a": 0,
+     "why": "Delayed negative feedback overshoots and oscillates.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A protein is produced at 6 nM/min and degraded with k_deg = 0.03 per min. What is the steady-state concentration in nM?",
+     "a": 200,
+     "tol": 0.5,
+     "unit": "nM",
+     "why": "6 ÷ 0.03 = 200 nM.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using response = Sⁿ ÷ (Kⁿ + Sⁿ) with n = 2 and K = 10, find the response at S = 20 (as a fraction).",
+     "a": 0.8,
+     "tol": 0.005,
+     "why": "400 ÷ (100 + 400) = 0.8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A feed-forward loop requires both direct and indirect (delayed) activation to turn on a gene. What does it filter out?",
+     "o": [
+      "Brief spurious input pulses",
+      "Sustained signals lasting a long time",
+      "All signals, including brief ones, without delay",
+      "Transcription of every gene in the network"
+     ],
+     "a": 0,
+     "why": "The delay means only persistent input activates the target.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In flux balance analysis, which assumption lets the system be solved as S·v = 0?",
+     "o": [
+      "Metabolite concentrations are at steady state",
+      "All the fluxes in the network are equal",
+      "All the enzymes are fully saturated",
+      "There is no growth in any of the cells"
+     ],
+     "a": 0,
+     "why": "Steady state means production equals consumption for each internal metabolite.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the cycle of building and testing a systems model.",
+     "items": [
+      "Define components and interactions",
+      "Write equations and set parameters",
+      "Simulate and compare with data",
+      "Predict a new experiment",
+      "Test and revise the model"
+     ],
+     "why": "Models are iterated against experiments.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each motif to its typical function.",
+     "pairs": [
+      [
+       "Negative feedback",
+       "Stabilises levels or produces oscillations"
+      ],
+      [
+       "Positive feedback",
+       "Switch-like bistability"
+      ],
+      [
+       "Feed-forward loop",
+       "Filters brief inputs"
+      ],
+      [
+       "Cooperative binding",
+       "Steep dose–response"
+      ]
+     ],
+     "why": "Motifs have characteristic behaviours.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Two genetically identical bacteria in the same medium show very different levels of a protein. Give two reasons.",
+     "rubric": [
+      [
+       "noise",
+       "stochastic",
+       "random",
+       "chance",
+       "few molecules"
+      ],
+      [
+       "bistab",
+       "switch",
+       "feedback"
+      ],
+      [
+       "epigenetic",
+       "history",
+       "state",
+       "cell cycle",
+       "age"
+      ],
+      [
+       "microenvironment",
+       "local",
+       "gradient"
+      ]
+     ],
+     "min": 2,
+     "model": "Gene expression is stochastic when few molecules are involved, so identical cells vary by chance. Positive feedback can also lock cells into different stable states, and cell-cycle stage or history may differ.",
+     "why": "Noise and bistability create cell-to-cell variation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Genetically identical bacteria in the same medium show different protein levels. Which feature of gene expression best explains this?",
+     "o": [
+      "Stochastic fluctuations when few molecules are involved",
+      "A new mutation arises in every cell",
+      "The cells have different genomes",
+      "Transcription is completely absent in some of them"
+     ],
+     "a": 0,
+     "why": "Randomness in transcription and translation causes cell-to-cell variability.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A model with 15 free parameters fits the training data perfectly but fails on new data. This is probably:",
+     "o": [
+      "Overfitting",
+      "Underfitting",
+      "A correct model",
+      "A deterministic result"
+     ],
+     "a": 0,
+     "why": "Too much flexibility captures noise rather than mechanism.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A drug targets one enzyme in a pathway, but the cell compensates through an alternative route. Which concept is shown?",
+     "o": [
+      "Network robustness and redundancy",
+      "A feed-forward loop that filters brief pulses",
+      "Enzyme saturation at high substrate",
+      "Mass action kinetics in solution"
+     ],
+     "a": 0,
+     "why": "Redundant routes buffer against single-node perturbations.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Doubling the degradation rate constant of a protein at constant synthesis rate will:",
+     "o": [
+      "Halve the steady-state level and halve the half-life",
+      "Double the steady-state level and halve the half-life",
+      "Not change the level or the half-life at all",
+      "Halve the steady-state level but double the half-life"
+     ],
+     "a": 0,
+     "why": "X_ss = k_syn ÷ k_deg falls by half; t½ = ln 2 ÷ k_deg also halves.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why feedback matters in cell networks",
+    "model": "Negative feedback makes an output push itself back toward a set level, which stabilises it, and with a delay it can make regular oscillations. Positive feedback amplifies a change, so a system can flip between two stable states, like a switch that remembers. Many cell decisions rely on these loops.",
+    "points": [
+     {
+      "k": [
+       "negative",
+       "stabil",
+       "set level",
+       "oppose"
+      ],
+      "ask": "What does negative feedback do?"
+     },
+     {
+      "k": [
+       "positive",
+       "amplif",
+       "switch",
+       "bistab"
+      ],
+      "ask": "What about positive feedback?"
+     },
+     {
+      "k": [
+       "oscillat",
+       "delay",
+       "memory",
+       "decision",
+       "clock"
+      ],
+      "ask": "Can you give an example of a behaviour that results?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Advanced molecular biology",
+   "icon": "🔬",
+   "hook": "The same gene can make several different proteins, and a short RNA can silence a gene. How does a cell control information after the DNA is written?",
+   "explain": [
+    "Gene expression is regulated at many levels. In bacteria, operons are controlled by repressors and activators: the lac operon is induced when lactose is present and glucose is low, because the repressor is released from the operator by allolactose and the activator CAP–cAMP promotes transcription. In eukaryotes, enhancers bind transcription factors that recruit the Mediator complex and RNA polymerase II to the promoter. Chromatin state matters: DNA wraps about 1.65 times around histone octamers, about 147 bp per nucleosome, and histone acetylation generally opens chromatin while certain methylation marks compact it.",
+    "RNA processing adds a 5′ cap and a poly-A tail and splices introns. Alternative splicing allows one gene to produce multiple mRNA variants. Non-coding RNAs regulate: microRNAs and siRNAs guide the RNA-induced silencing complex to complementary mRNAs, causing degradation or translational repression (RNA interference). Translation is controlled at initiation, and protein stability is controlled by ubiquitin tagging and the proteasome.",
+    "Methods: RT-qPCR measures RNA with the cycle threshold (Ct), the cycle at which fluorescence passes a threshold; a lower Ct means more starting template. With efficiency near 100%, fold change = 2^(−ΔΔCt). ChIP-seq maps DNA–protein binding; RNA-seq measures transcripts; CRISPR screens test gene function at scale."
+   ],
+   "example": {
+    "q": "In qPCR, a treated sample has ΔCt (target − reference) of 2.0 and the control has ΔCt of 5.0. What is the fold change in target expression, treated versus control?",
+    "steps": [
+     "ΔΔCt = 2.0 − 5.0 = −3.0.",
+     "Fold change = 2^(−ΔΔCt) = 2³ = 8."
+    ],
+    "a": "8-fold higher in treated"
+   },
+   "analogies": {
+    "tech": "Splicing is video editing: the same footage can be cut into different versions.",
+    "city": "Enhancers are like distant billboards that recruit crowds to a shop.",
+    "music": "RNA interference is a mute button on a particular instrument."
+   },
+   "mnemonic": "Cap, cut, tail, test: 5′ cap, splice, poly-A tail, then quality control.",
+   "terms": [
+    [
+     "Enhancer",
+     "A DNA element that increases transcription of a gene, sometimes from far away."
+    ],
+    [
+     "Alternative splicing",
+     "Joining exons in different combinations to make different mRNAs."
+    ],
+    [
+     "RNA interference",
+     "Gene silencing by small RNAs guided to complementary mRNAs."
+    ],
+    [
+     "Ct value",
+     "The cycle at which qPCR fluorescence crosses a threshold."
+    ]
+   ],
+   "misc": {
+    "wrong": "One gene makes one protein.",
+    "right": "Alternative splicing, alternative promoters and processing let one gene encode many protein variants; in humans most multi-exon genes are alternatively spliced."
+   },
+   "limits": "Correlation of RNA and protein levels is often moderate, so mRNA abundance alone is an imperfect proxy for protein activity.",
+   "trip": {
+    "wiki": "Lac operon",
+    "prompt": "Find the conditions under which the lac operon is on, and say what the repressor and CAP each do."
+   },
+   "sources": [
+    "Lac operon",
+    "Alternative splicing",
+    "RNA interference"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The lac operon is transcribed at a high rate when:",
+     "o": [
+      "Lactose is present and glucose is absent",
+      "Lactose and glucose are both abundant in the medium",
+      "Glucose is present and lactose is absent",
+      "Neither sugar is present in the medium"
+     ],
+     "a": 0,
+     "why": "Allolactose releases the repressor and low glucose raises cAMP, activating CAP.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A mutation prevents the lac repressor from binding the operator. What is the result?",
+     "o": [
+      "Constitutive expression of the operon",
+      "No expression of the operon, ever",
+      "Expression only when glucose is present",
+      "Loss of the lac genes from the DNA"
+     ],
+     "a": 0,
+     "why": "Without the repressor, RNA polymerase is not blocked.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the main outcome when siRNA binds a perfectly complementary mRNA in RISC?",
+     "o": [
+      "The mRNA is cleaved",
+      "The DNA is mutated",
+      "The ribosome is duplicated",
+      "The mRNA is capped"
+     ],
+     "a": 0,
+     "why": "Argonaute cleaves target RNA with high complementarity.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "In qPCR, ΔCt for treated cells is 3 and for control cells is 6. By what fold is the target higher in treated cells (2^(−ΔΔCt))?",
+     "a": 8,
+     "tol": 0.05,
+     "unit": "-fold",
+     "why": "ΔΔCt = −3; 2³ = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A haploid human genome has 3.2 × 10⁹ bp. If nucleosomes are spaced every 200 bp, about how many nucleosomes are there (in millions)?",
+     "a": 16,
+     "tol": 0.5,
+     "unit": "million",
+     "why": "3.2 × 10⁹ ÷ 200 = 1.6 × 10⁷ = 16 million.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Histone acetylation at a promoter generally leads to:",
+     "o": [
+      "More open chromatin and higher transcription",
+      "Gene deletion from the chromosome",
+      "Higher DNA methylation at the promoter",
+      "Lower splicing of the mRNA in the nucleus"
+     ],
+     "a": 0,
+     "why": "Acetylation neutralises positive charge on histones, loosening DNA contact.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps from gene to functional protein in a eukaryote.",
+     "items": [
+      "Transcription by RNA polymerase II",
+      "5′ capping, splicing and poly-A addition",
+      "Export from the nucleus",
+      "Translation on ribosomes",
+      "Folding and modification"
+     ],
+     "why": "mRNA processing precedes export and translation.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each technique to what it measures.",
+     "pairs": [
+      [
+       "RT-qPCR",
+       "Amount of a specific RNA"
+      ],
+      [
+       "ChIP-seq",
+       "Where a protein binds DNA"
+      ],
+      [
+       "RNA-seq",
+       "Transcriptome-wide RNA levels"
+      ],
+      [
+       "Western blot",
+       "Amount of a specific protein"
+      ]
+     ],
+     "why": "Each method answers a different question.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A gene's mRNA level doubles after treatment, but its protein level does not change. Give two possible explanations.",
+     "rubric": [
+      [
+       "translation",
+       "translational"
+      ],
+      [
+       "degrad",
+       "stability",
+       "turnover",
+       "proteasome",
+       "ubiquitin"
+      ],
+      [
+       "microrna",
+       "mirna",
+       "repress"
+      ],
+      [
+       "delay",
+       "time",
+       "later",
+       "not yet"
+      ],
+      [
+       "feedback",
+       "compensat"
+      ]
+     ],
+     "min": 2,
+     "model": "Translation may be repressed (for example by microRNAs), or the protein may be degraded faster via ubiquitin–proteasome. It could also be a timing delay, or feedback offsetting the change.",
+     "why": "mRNA level is only one control point.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An mRNA with a poly-A tail and 5′ cap is exported to the cytoplasm. Which role do these features mainly serve?",
+     "o": [
+      "Stability and efficient translation",
+      "Cutting introns out of the pre-mRNA",
+      "Starting DNA replication in the nucleus",
+      "Opening up the chromatin around the gene"
+     ],
+     "a": 0,
+     "why": "The cap and tail protect mRNA from degradation and help ribosome recruitment.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Enhancers can act at a distance of tens of kilobases. What structural feature explains this?",
+     "o": [
+      "DNA looping brings them close to the promoter",
+      "RNA carries signals along the DNA strand",
+      "Enhancers are translated into proteins that travel",
+      "DNA is perfectly straight, so they simply slide"
+     ],
+     "a": 0,
+     "why": "Chromatin looping allows distant elements to contact promoters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tumour suppresses a microRNA that normally represses an oncogene mRNA. What is expected?",
+     "o": [
+      "Higher oncogene protein levels",
+      "Lower oncogene protein levels in the cell",
+      "No change in the oncogene protein",
+      "Deletion of the oncogene from the genome"
+     ],
+     "a": 0,
+     "why": "Loss of repression increases translation or stability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why must qPCR use a reference gene?",
+     "o": [
+      "To normalise for differences in input RNA and efficiency",
+      "To amplify the target gene more strongly",
+      "To replace the primers during the run",
+      "To count the number of nucleosomes present"
+     ],
+     "a": 0,
+     "why": "Normalisation controls for sample-to-sample variation.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a cell controls gene expression after transcription",
+    "model": "A new RNA is capped, spliced and given a poly-A tail. Alternative splicing can make different proteins from one gene. Small RNAs such as microRNAs can bind mRNAs and block translation or cause degradation. Finally, proteins can be tagged with ubiquitin and destroyed by the proteasome.",
+    "points": [
+     {
+      "k": [
+       "splic",
+       "cap",
+       "tail",
+       "process"
+      ],
+      "ask": "What happens to the RNA first?"
+     },
+     {
+      "k": [
+       "microrna",
+       "sirna",
+       "interference",
+       "silenc"
+      ],
+      "ask": "How can small RNAs regulate genes?"
+     },
+     {
+      "k": [
+       "protein",
+       "degrad",
+       "ubiquitin",
+       "proteasome",
+       "translation"
+      ],
+      "ask": "How is protein level controlled?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Structural biology",
+   "icon": "🧊",
+   "hook": "A protein chain of 300 amino acids folds into one precise shape in milliseconds to seconds, though it could adopt astronomically many shapes. How do we see that shape, and why does it matter?",
+   "explain": [
+    "Protein structure has four levels: primary (amino acid sequence), secondary (α-helices and β-sheets stabilised by backbone hydrogen bonds), tertiary (overall 3D fold) and quaternary (arrangement of several chains). Folding is driven largely by the hydrophobic effect, which buries nonpolar side chains in the core, with hydrogen bonds, ionic interactions, van der Waals forces and disulfide bonds adding stability. Levinthal's paradox notes that a random search of all conformations would take too long, so folding must follow guided pathways down an energy funnel. Chaperones help some proteins fold.",
+    "X-ray crystallography passes X-rays through a crystal; diffraction follows Bragg's law: nλ = 2d·sin θ. Electron density maps are built from diffraction intensities, but the phase problem must be solved. Cryo-electron microscopy images flash-frozen molecules and now reaches near-atomic resolution for large complexes without crystals. NMR gives structures in solution for small proteins and reveals dynamics. Resolution is quoted in ångström (1 Å = 0.1 nm).",
+    "Computational methods such as AlphaFold predict structures from sequence with high accuracy for many proteins, but predictions can be unreliable for flexible regions, complexes and the effects of mutations. Structure explains function: the active site of an enzyme, the binding pocket for a drug, the misfolding in prion and amyloid diseases. Intrinsically disordered regions function without a fixed structure."
+   ],
+   "example": {
+    "q": "X-rays of wavelength 1.54 Å diffract at θ = 30° (first order, n = 1). What is the lattice spacing d?",
+    "steps": [
+     "Bragg's law: λ = 2d·sin θ.",
+     "sin 30° = 0.5, so d = λ ÷ (2 × 0.5) = 1.54 ÷ 1.",
+     "d = 1.54 Å."
+    ],
+    "a": "d = 1.54 Å"
+   },
+   "analogies": {
+    "tech": "Folding is like water running down a funnel: many starting points, one low point.",
+    "home": "Origami: a flat paper (sequence) folded along set creases gives one shape.",
+    "city": "Crystallography is like reconstructing a building from the shadows cast from many angles."
+   },
+   "mnemonic": "Primary line, secondary coil and sheet, tertiary fold, quaternary team.",
+   "terms": [
+    [
+     "Hydrophobic effect",
+     "Tendency of nonpolar groups to cluster away from water, driving folding."
+    ],
+    [
+     "Secondary structure",
+     "Local regular patterns such as α-helix and β-sheet."
+    ],
+    [
+     "Cryo-EM",
+     "Electron microscopy of frozen, hydrated molecules."
+    ],
+    [
+     "Chaperone",
+     "Protein that helps others fold correctly."
+    ]
+   ],
+   "misc": {
+    "wrong": "A protein structure is a single rigid shape.",
+    "right": "Proteins are dynamic; crystal or cryo-EM structures show an average or a snapshot, and some regions are intrinsically disordered."
+   },
+   "limits": "Crystals may favour one conformation, and predictions give a single model, so they may miss alternative functional states.",
+   "trip": {
+    "wiki": "Protein structure",
+    "prompt": "Find an example of an α-helix and a β-sheet in a ribbon diagram of a protein."
+   },
+   "sources": [
+    "Protein structure",
+    "X-ray crystallography",
+    "Cryogenic electron microscopy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which force chiefly drives the burying of nonpolar residues in a protein core?",
+     "o": [
+      "Hydrophobic effect",
+      "Covalent peptide bonding",
+      "Ionic bonding",
+      "Nuclear forces"
+     ],
+     "a": 0,
+     "why": "Water excludes nonpolar groups, favouring their clustering.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which bonds stabilise α-helices and β-sheets?",
+     "o": [
+      "Hydrogen bonds between backbone groups",
+      "Disulfide bonds between side chains far apart",
+      "Peptide bonds along the chain itself",
+      "Phosphodiester bonds in the backbone"
+     ],
+     "a": 0,
+     "why": "Backbone N–H···O=C hydrogen bonds form the secondary structures.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "X-rays with λ = 1.54 Å diffract in first order from planes with d = 3.08 Å. Find sin θ.",
+     "a": 0.25,
+     "tol": 0.005,
+     "why": "sin θ = λ ÷ 2d = 1.54 ÷ 6.16 = 0.25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A structure has a resolution of 2.5 Å. Express this in nanometres.",
+     "a": 0.25,
+     "tol": 0.001,
+     "unit": "nm",
+     "why": "1 Å = 0.1 nm, so 2.5 Å = 0.25 nm.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Cryo-EM is especially valuable for proteins that are hard to:",
+     "o": [
+      "Crystallise",
+      "Sequence by standard methods",
+      "Translate in the cell",
+      "Denature by heating"
+     ],
+     "a": 0,
+     "why": "It needs no crystals.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A single amino acid substitution in the core replaces a nonpolar residue with a charged one. The likely effect is:",
+     "o": [
+      "Destabilisation or misfolding",
+      "Increased stability, always, in every case",
+      "No effect on any protein whatever",
+      "Conversion of the protein into DNA"
+     ],
+     "a": 0,
+     "why": "A buried charge is energetically unfavourable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Levinthal's paradox is resolved by the idea that:",
+     "o": [
+      "Folding proceeds down an energy landscape via guided pathways",
+      "Proteins try every possible conformation in turn",
+      "Folding takes many years in the cell",
+      "Proteins never fold on their own at all"
+     ],
+     "a": 0,
+     "why": "Funnel-shaped landscapes limit the search.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the levels of protein structure from simplest to most complex.",
+     "items": [
+      "Primary",
+      "Secondary",
+      "Tertiary",
+      "Quaternary"
+     ],
+     "why": "Each level builds on the previous one.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to what it is best suited for.",
+     "pairs": [
+      [
+       "X-ray crystallography",
+       "High-resolution structures from crystals"
+      ],
+      [
+       "Cryo-EM",
+       "Large complexes without crystals"
+      ],
+      [
+       "NMR",
+       "Small proteins and dynamics in solution"
+      ],
+      [
+       "AlphaFold-type prediction",
+       "Model from sequence, to be validated"
+      ]
+     ],
+     "why": "Methods complement each other.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a mutation far from the active site can still reduce an enzyme's activity.",
+     "rubric": [
+      [
+       "fold",
+       "stabil",
+       "misfold",
+       "shape",
+       "structure"
+      ],
+      [
+       "allosteric",
+       "long-range",
+       "distant",
+       "conformation",
+       "dynamics"
+      ],
+      [
+       "active site",
+       "binding",
+       "pocket"
+      ],
+      [
+       "disrupt",
+       "alter",
+       "change",
+       "distort"
+      ]
+     ],
+     "min": 3,
+     "model": "A distant mutation can destabilise the fold or alter the dynamics and conformation, so the active site shape or flexibility changes, reducing activity.",
+     "why": "Function depends on the whole 3D structure and its dynamics.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A predicted structure has high confidence for a domain but low confidence for a linker. What is the best interpretation?",
+     "o": [
+      "The linker may be flexible or disordered",
+      "The linker does not exist in the real protein",
+      "The domain prediction must be wrong",
+      "The prediction is always right everywhere"
+     ],
+     "a": 0,
+     "why": "Low confidence often signals disorder or alternative states.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Amyloid diseases involve proteins forming:",
+     "o": [
+      "Cross-β fibrils from misfolded proteins",
+      "New DNA strands made by the cell",
+      "Membrane pumps in the cell wall",
+      "Normal enzymes that work faster than usual"
+     ],
+     "a": 0,
+     "why": "Misfolded proteins can aggregate into ordered fibrils.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A drug binds into a pocket of a viral protease and blocks its function. Why is a high-resolution structure useful?",
+     "o": [
+      "It lets designers fit molecules to the pocket",
+      "It reads out the sequence of the virus",
+      "It removes the pocket from the protein",
+      "It makes the drug cheaper to produce automatically"
+     ],
+     "a": 0,
+     "why": "Structure-based drug design relies on geometry of the binding site.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why proteins fold into a specific shape",
+    "model": "A protein's amino acid sequence determines how it folds. Nonpolar side chains tuck inside, away from water, and hydrogen bonds form helices and sheets. The chain follows an energy funnel to a stable shape, and that shape determines what the protein can do.",
+    "points": [
+     {
+      "k": [
+       "sequence",
+       "amino acid"
+      ],
+      "ask": "What decides the shape?"
+     },
+     {
+      "k": [
+       "hydrophobic",
+       "nonpolar",
+       "water",
+       "inside",
+       "core"
+      ],
+      "ask": "What drives folding?"
+     },
+     {
+      "k": [
+       "function",
+       "active site",
+       "shape",
+       "stable"
+      ],
+      "ask": "Why does the shape matter?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Synthetic biology",
+   "icon": "🧰",
+   "hook": "Engineers build circuits from wires and chips. Could we build circuits from genes and proteins inside a living cell, and what should we worry about?",
+   "explain": [
+    "Synthetic biology applies engineering principles of standard parts, abstraction and design–build–test–learn cycles to living systems. Parts such as promoters, ribosome binding sites, coding sequences and terminators are combined into genetic circuits. Early landmark circuits were the toggle switch and the repressilator, both reported in 2000. The toggle switch is a bistable circuit of two mutually repressing genes; the repressilator is a ring of three repressors that produces oscillations.",
+    "Circuits can implement logic. A NOR gate gives output 1 only when both inputs are 0, and NOR is functionally complete, so any logic can be built from NOR gates. Challenges include context dependence, burden on the host, noise, mutation and evolution of circuits. Cell-free systems and genome-scale projects push further: the JCVI-syn3.0 minimal cell was built with a synthetic genome of 473 genes. Applications include biosensors, biomanufacturing of drugs and materials, and engineered cells for therapy.",
+    "Biosafety and ethics are central: containment strategies, kill switches and dependence on synthetic nutrients; screening of DNA synthesis orders; dual-use research that could be misused; open-source and equitable access; and public engagement. Release of engineered organisms such as gene drives requires careful risk assessment and community consent."
+   ],
+   "example": {
+    "q": "A cell has two NOR gates in series: gate 1 takes inputs (0, 0); its output goes to both inputs of gate 2 (a NOR with tied inputs acts as NOT). What is the final output?",
+    "steps": [
+     "Gate 1: NOR(0,0) = 1.",
+     "Gate 2 inputs both 1: NOR(1,1) = 0."
+    ],
+    "a": "0"
+   },
+   "analogies": {
+    "tech": "BioBricks are like standard electronic components that plug together.",
+    "home": "A kill switch is like a circuit breaker that cuts the power when something goes wrong.",
+    "farm": "Biosensors in microbes can change colour when they detect a contaminant in water."
+   },
+   "mnemonic": "Design, Build, Test, Learn: repeat, with safety at every step.",
+   "terms": [
+    [
+     "Genetic circuit",
+     "Interconnected genes and regulators performing a designed function."
+    ],
+    [
+     "Toggle switch",
+     "A bistable circuit of two mutually repressing genes."
+    ],
+    [
+     "Repressilator",
+     "A synthetic ring of three repressors that oscillates."
+    ],
+    [
+     "Kill switch",
+     "An engineered safeguard that causes cell death under defined conditions."
+    ]
+   ],
+   "misc": {
+    "wrong": "Engineered cells behave exactly like electronic circuits.",
+    "right": "Biological parts are noisy, interact with the host and evolve, so designs must be tested in context and may change over time."
+   },
+   "limits": "Reliable prediction of circuit behaviour is still hard; many designs need extensive tuning in each host.",
+   "trip": {
+    "wiki": "Synthetic biology",
+    "prompt": "Find the toggle switch or repressilator and explain how feedback produces its behaviour."
+   },
+   "sources": [
+    "Synthetic biology",
+    "Synthetic genetic circuit",
+    "Minimal genome"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which synthetic circuit was designed to oscillate?",
+     "o": [
+      "Repressilator",
+      "Toggle switch",
+      "A simple promoter",
+      "A kill switch"
+     ],
+     "a": 0,
+     "why": "Three repressors in a ring produce oscillations.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A toggle switch has two mutually repressing genes. How many stable states does it have?",
+     "o": [
+      "Two",
+      "One",
+      "Three",
+      "None"
+     ],
+     "a": 0,
+     "why": "Either gene A or gene B is on, giving bistability.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A plasmid has a copy number of 50 per cell. How many copies are in a culture of 2 × 10⁹ cells?",
+     "a": 100000000000,
+     "tol": 1000000000,
+     "why": "50 × 2 × 10⁹ = 1 × 10¹¹.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A circuit adds a metabolic burden that slows growth by 20%. A control doubles every 40 minutes. Assuming growth rate scales by 0.8, how long does the engineered strain take to double, in minutes?",
+     "a": 50,
+     "tol": 0.5,
+     "unit": "min",
+     "why": "Rate falls to 0.8, so doubling time = 40 ÷ 0.8 = 50 min.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "NOR is called functionally complete because:",
+     "o": [
+      "Any logic function can be built from NOR gates",
+      "It has only one input, so it is simple",
+      "It always outputs 1 whatever the input",
+      "It needs no inputs to work at all"
+     ],
+     "a": 0,
+     "why": "NOT, OR and AND can all be made from NOR.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do engineered organisms often lose a burdensome circuit over generations?",
+     "o": [
+      "Mutants that drop the burden grow faster and take over",
+      "Circuits are erased by light in the lab",
+      "DNA cannot be copied by the cells",
+      "Selection does not act on microbes in culture"
+     ],
+     "a": 0,
+     "why": "Evolution favours faster-growing variants.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a design–build–test–learn cycle.",
+     "items": [
+      "Specify the function",
+      "Design the genetic parts and circuit",
+      "Build the DNA and insert it into cells",
+      "Measure performance",
+      "Use results to improve the design"
+     ],
+     "why": "Iteration improves the design.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each safeguard to its aim.",
+     "pairs": [
+      [
+       "Kill switch",
+       "Cell death outside permitted conditions"
+      ],
+      [
+       "Auxotrophy for a synthetic nutrient",
+       "Dependence on a supplied compound"
+      ],
+      [
+       "DNA synthesis screening",
+       "Flags dangerous sequence orders"
+      ],
+      [
+       "Physical containment",
+       "Prevents escape from the lab"
+      ]
+     ],
+     "why": "Layered safeguards reduce risk.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give two reasons why releasing an engineered organism into the environment demands more caution than using it in a closed fermenter.",
+     "rubric": [
+      [
+       "spread",
+       "escape",
+       "reproduce",
+       "cannot recall",
+       "cannot be recalled",
+       "irreversible"
+      ],
+      [
+       "ecosystem",
+       "wild",
+       "native",
+       "ecological"
+      ],
+      [
+       "gene transfer",
+       "horizontal",
+       "transfer",
+       "gene flow"
+      ],
+      [
+       "evolve",
+       "mutat"
+      ],
+      [
+       "consent",
+       "community",
+       "regulat"
+      ]
+     ],
+     "min": 2,
+     "model": "Released organisms can reproduce, spread and cannot be recalled, interact with native species and ecosystems, may pass genes to wild relatives or microbes, and can evolve. Communities should also be consulted.",
+     "why": "Environmental release is hard to reverse.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which engineered safeguard makes a strain unable to survive without a compound not found in nature?",
+     "o": [
+      "Synthetic auxotrophy",
+      "Antibiotic resistance",
+      "Overexpression",
+      "Plasmid copy number increase"
+     ],
+     "a": 0,
+     "why": "The cell depends on a supplied synthetic nutrient, limiting survival outside the lab.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A gene drive spreads an allele through a population faster than normal inheritance. Which governance step is most appropriate before a field release?",
+     "o": [
+      "Staged testing, risk assessment and community consent",
+      "Immediate release into the wild",
+      "Secrecy about the whole project",
+      "Releasing without any monitoring afterwards"
+     ],
+     "a": 0,
+     "why": "Gene drives can be irreversible, so careful oversight is needed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A biosensor strain turns red when it detects arsenic in groundwater. Which factor is most important for use in villages?",
+     "o": [
+      "Low cost, reliability and safe containment",
+      "Complexity that few people understand",
+      "Using the most expensive reagents available",
+      "Secrecy about how the strain works"
+     ],
+     "a": 0,
+     "why": "Practical deployment needs reliability, affordability and safety.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The minimal cell JCVI-syn3.0 still has some genes of unknown function. What does this show?",
+     "o": [
+      "Our understanding of even a minimal cell is incomplete",
+      "Genes are unnecessary for a cell to live",
+      "All of the functions are now known",
+      "The cell is not alive at all"
+     ],
+     "a": 0,
+     "why": "A substantial fraction of essential genes lacked known function.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a genetic toggle switch works",
+    "model": "A toggle switch has two genes that each repress the other. If gene A is on, it shuts off gene B, which keeps A on. If B is on, it keeps A off. So the cell has two stable states, and a brief signal can flip it from one to the other and it will remember.",
+    "points": [
+     {
+      "k": [
+       "two genes",
+       "repress",
+       "each other",
+       "mutual"
+      ],
+      "ask": "How is the circuit wired?"
+     },
+     {
+      "k": [
+       "stable",
+       "two states",
+       "bistab",
+       "memory",
+       "remember"
+      ],
+      "ask": "What behaviour results?"
+     },
+     {
+      "k": [
+       "flip",
+       "signal",
+       "switch",
+       "pulse",
+       "inducer"
+      ],
+      "ask": "How do you change its state?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Regenerative biology",
+   "icon": "🦎",
+   "hook": "A salamander regrows a whole limb; a human regrows only a fingertip in children and heals others with a scar. What do regenerating animals do that we mostly do not?",
+   "explain": [
+    "Regeneration restores lost tissue. Planarian flatworms regenerate from neoblasts, pluripotent stem cells found throughout the body. Axolotls form a blastema, a mass of progenitor cells at the wound that rebuilds the limb with the correct pattern. Mammals regenerate some tissues well (liver, intestinal lining, blood) but heal many others with scar tissue. Wound healing proceeds through haemostasis, inflammation, proliferation and remodelling.",
+    "Stem cells self-renew and differentiate. Embryonic stem cells are pluripotent. Induced pluripotent stem cells (iPSCs) were made in 2006 by Shinya Yamanaka by introducing four transcription factors (Oct4, Sox2, Klf4 and c-Myc) into mouse fibroblasts, with human iPSCs following in 2007. Organoids are three-dimensional tissue-like structures grown from stem cells; they model development and disease and help test drugs. Tissue engineering combines cells, scaffolds and signals.",
+    "Challenges include controlling differentiation, preventing tumours from undifferentiated cells (teratomas), immune rejection, delivering cells to the right place, scale-up and cost. Regulation and ethics address embryo use, informed consent for donated cells, and unproven clinics that sell untested treatments."
+   ],
+   "example": {
+    "q": "A culture of 1 × 10⁶ iPSCs doubles every 24 hours. How many cells after 7 days, ignoring limits?",
+    "steps": [
+     "7 days = 7 doublings.",
+     "2⁷ = 128.",
+     "1 × 10⁶ × 128 = 1.28 × 10⁸."
+    ],
+    "a": "1.28 × 10⁸ cells"
+   },
+   "analogies": {
+    "tech": "iPSC reprogramming is like restoring a computer to factory settings.",
+    "farm": "Pruning a plant triggers new shoots from buds, which is a regeneration strategy from stem cell-like zones.",
+    "city": "A blastema is a temporary building site with a blueprint for what to rebuild."
+   },
+   "mnemonic": "Wound, Clot, Cleanse, Cover, Remodel: haemostasis, inflammation, proliferation, remodelling.",
+   "terms": [
+    [
+     "Blastema",
+     "Mass of progenitor cells that rebuilds a lost structure."
+    ],
+    [
+     "iPSC",
+     "Stem cell made by reprogramming a specialised cell."
+    ],
+    [
+     "Organoid",
+     "A 3D culture that resembles an organ in structure and function."
+    ],
+    [
+     "Teratoma",
+     "A tumour containing multiple tissue types, from undifferentiated stem cells."
+    ]
+   ],
+   "misc": {
+    "wrong": "Stem cell clinics offering cures are all proven treatments.",
+    "right": "Only a few stem cell therapies, such as bone marrow transplants, are well established; many clinics sell unproven treatments with real risks."
+   },
+   "limits": "Findings from axolotls and planarians do not automatically transfer to mammals; mammals have different immune and scarring responses.",
+   "trip": {
+    "wiki": "Induced pluripotent stem cell",
+    "prompt": "Find the four reprogramming factors and say what iPSCs can be used for."
+   },
+   "sources": [
+    "Regeneration (biology)",
+    "Induced pluripotent stem cell",
+    "Organoid"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which cells enable whole-body regeneration in planarians?",
+     "o": [
+      "Neoblasts",
+      "Neurons",
+      "Red blood cells",
+      "Osteoclasts"
+     ],
+     "a": 0,
+     "why": "Neoblasts are pluripotent stem cells.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A blastema in a regenerating limb is:",
+     "o": [
+      "A mass of progenitor cells at the wound",
+      "A scar left over after the wound closes",
+      "A bone formed in the stump",
+      "A blood clot that seals the cut"
+     ],
+     "a": 0,
+     "why": "It rebuilds the lost structure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "iPSCs from a patient are used to make cells for that same patient. A major advantage is:",
+     "o": [
+      "Reduced risk of immune rejection",
+      "No risk of tumours",
+      "No cost",
+      "They are always younger than the patient"
+     ],
+     "a": 0,
+     "why": "Autologous cells are genetically matched, although risks remain.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A culture of 2 × 10⁵ cells doubles every 24 hours. How many cells after 5 days (ignoring limits)?",
+     "a": 6400000,
+     "tol": 1000,
+     "why": "5 doublings: 2 × 10⁵ × 32 = 6.4 × 10⁶.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A patient needs 4 × 10⁸ cells. If each iPSC culture flask yields 5 × 10⁷ cells, how many flasks are needed?",
+     "a": 8,
+     "tol": 0,
+     "why": "4 × 10⁸ ÷ 5 × 10⁷ = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do undifferentiated pluripotent cells risk forming tumours when transplanted?",
+     "o": [
+      "They can proliferate and form many tissue types uncontrollably",
+      "They are dead cells that cannot function in the body",
+      "They lack DNA, so they cannot be controlled",
+      "They cannot divide, so they stay small in the body"
+     ],
+     "a": 0,
+     "why": "Remaining undifferentiated cells can form teratomas.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the phases of wound healing.",
+     "items": [
+      "Haemostasis (clotting)",
+      "Inflammation",
+      "Proliferation",
+      "Remodelling"
+     ],
+     "why": "Healing moves from clotting to tissue rebuilding.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each approach to its description.",
+     "pairs": [
+      [
+       "Organoids",
+       "3D mini-organs from stem cells"
+      ],
+      [
+       "Tissue engineering",
+       "Cells plus scaffold plus signals"
+      ],
+      [
+       "Reprogramming",
+       "Turning specialised cells into iPSCs"
+      ],
+      [
+       "Bone marrow transplant",
+       "Established stem cell therapy"
+      ]
+     ],
+     "why": "Different strategies in regenerative medicine.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can a salamander regrow a limb while a human forms a scar?",
+     "rubric": [
+      [
+       "blastema",
+       "progenitor",
+       "dedifferent",
+       "stem"
+      ],
+      [
+       "scar",
+       "fibrosis",
+       "fibroblast",
+       "collagen"
+      ],
+      [
+       "immune",
+       "inflammat",
+       "macrophage"
+      ],
+      [
+       "pattern",
+       "positional",
+       "signal"
+      ]
+     ],
+     "min": 3,
+     "model": "Salamanders form a blastema by dedifferentiating cells and use positional signals to rebuild the pattern, with a regenerative immune response. Mammals tend to seal wounds with fibrotic scar tissue and lack a blastema-based programme.",
+     "why": "Differences in cell plasticity, signalling and immune response underlie regeneration.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which cell types did Yamanaka's original 2006 experiment reprogram to iPSCs?",
+     "o": [
+      "Mouse fibroblasts",
+      "Human neurons grown in a dish",
+      "Red blood cells from an adult",
+      "Sperm cells from a male mouse"
+     ],
+     "a": 0,
+     "why": "The first iPSCs were derived from mouse fibroblasts with four factors; human cells followed in 2007.",
+     "d": 3,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A clinic offers an expensive stem cell injection for a wide range of conditions with no published trial. What is the best response?",
+     "o": [
+      "Ask for trial evidence and regulatory approval",
+      "Accept testimonials from past patients as proof",
+      "Pay in advance to secure a place",
+      "Assume it is safe because it is a clinic"
+     ],
+     "a": 0,
+     "why": "Unproven interventions can cause harm, so evidence is needed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Brain organoids are used to study development. Which ethical issue is discussed?",
+     "o": [
+      "Whether complex organoids could gain features of consciousness or need protections",
+      "Whether they are alive when left in the sun",
+      "Whether they are really plants",
+      "None, since they contain only DNA and nothing else"
+     ],
+     "a": 0,
+     "why": "As organoid complexity grows, ethics boards consider limits.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do liver cells regenerate better than heart muscle cells after injury in humans?",
+     "o": [
+      "Hepatocytes can re-enter the cell cycle, whereas adult cardiomyocytes divide very little",
+      "The liver is bigger, so it has more cells to spare",
+      "Hearts have no cells that can be damaged",
+      "Livers have no blood supply that can be hurt"
+     ],
+     "a": 0,
+     "why": "Cell-cycle capacity differs between tissues.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What iPSCs are and why they are useful",
+    "model": "Induced pluripotent stem cells are made by adding a few transcription factors to a specialised cell, such as a skin cell, which resets it to a stem cell state. These cells can become many tissues, so scientists can study diseases, test drugs, and possibly grow replacement cells matched to a patient.",
+    "points": [
+     {
+      "k": [
+       "reprogram",
+       "transcription factor",
+       "reset",
+       "skin cell"
+      ],
+      "ask": "How are they made?"
+     },
+     {
+      "k": [
+       "pluripotent",
+       "any tissue",
+       "many cell types",
+       "differentiat"
+      ],
+      "ask": "What can they become?"
+     },
+     {
+      "k": [
+       "disease",
+       "drug",
+       "patient",
+       "transplant",
+       "model"
+      ],
+      "ask": "What are they used for?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Computational biology",
+   "icon": "🖥️",
+   "hook": "A diagnostic test is 90% sensitive and 95% specific, yet a positive result may be wrong most of the time. How can computation and probability reveal why?",
+   "explain": [
+    "Computational biology builds and tests models of biological data. Algorithms use dynamic programming for sequence alignment: the Needleman–Wunsch algorithm finds the best global alignment by filling a matrix with scores for matches, mismatches and gaps. Smith–Waterman does the same for local alignments. Scoring example: match +1, mismatch −1, gap −2.",
+    "Dynamic systems are simulated by numerical integration. Euler's method updates X(t + Δt) = X(t) + Δt × f(X); it is simple but accurate only for small steps. Stochastic simulation (the Gillespie algorithm) models random reaction events, important for small molecule numbers. Hidden Markov models predict genes and protein domains by modelling hidden states that emit observed symbols. Machine learning classifies samples, but needs separate training and test sets, cross-validation and caution about overfitting and bias in training data.",
+    "Probability thinking is essential. Bayes' theorem: P(disease | positive) = sensitivity × prevalence ÷ [sensitivity × prevalence + (1 − specificity) × (1 − prevalence)]. When prevalence is low, even good tests give many false positives. Reproducible code, version control and open data allow others to check the analysis."
+   ],
+   "example": {
+    "q": "A disease has prevalence 1%. A test has sensitivity 90% and specificity 95%. What is the probability that a person with a positive test has the disease?",
+    "steps": [
+     "True positives = 0.90 × 0.01 = 0.009.",
+     "False positives = 0.05 × 0.99 = 0.0495.",
+     "P = 0.009 ÷ (0.009 + 0.0495) = 0.009 ÷ 0.0585 ≈ 0.154."
+    ],
+    "a": "About 15%"
+   },
+   "analogies": {
+    "tech": "Dynamic programming reuses solved sub-problems, like caching in a program.",
+    "city": "A GPS finds the best route by combining shortest segments, as alignment combines best sub-alignments.",
+    "sport": "Predicting a match from few games is risky; models need enough data and honest testing."
+   },
+   "mnemonic": "Prior matters: low prevalence means many false alarms.",
+   "terms": [
+    [
+     "Dynamic programming",
+     "Solving a problem by combining solutions to overlapping sub-problems."
+    ],
+    [
+     "Euler's method",
+     "A simple numerical step for solving differential equations."
+    ],
+    [
+     "Sensitivity",
+     "Proportion of true cases that test positive."
+    ],
+    [
+     "Cross-validation",
+     "Repeatedly testing a model on data not used for training."
+    ]
+   ],
+   "misc": {
+    "wrong": "A test with 95% specificity means a positive result is 95% likely to be correct.",
+    "right": "The chance a positive is correct depends also on prevalence; with low prevalence, most positives can be false."
+   },
+   "limits": "Models depend on assumptions and training data; high accuracy on one population may not hold on another.",
+   "trip": {
+    "wiki": "Needleman–Wunsch algorithm",
+    "prompt": "Find the example matrix and trace the alignment back from the final cell."
+   },
+   "sources": [
+    "Computational biology",
+    "Needleman–Wunsch algorithm",
+    "Bayes' theorem"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Score this alignment with match +1, mismatch −1, gap −2:  ACGT over A-GT (the gap is the dash).",
+     "a": 1,
+     "tol": 0,
+     "why": "A/A +1, C/gap −2, G/G +1, T/T +1: total = 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Euler's method for dX/dt = 2 − 0.5X with X(0) = 0 and Δt = 1. What is X after 2 steps?",
+     "a": 3,
+     "tol": 0.01,
+     "why": "Step 1: X = 0 + 1 × 2 = 2. Step 2: X = 2 + 1 × (2 − 1) = 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A test has sensitivity 80%, specificity 90%, and prevalence 10%. Out of 1000 people, how many true positives are expected?",
+     "a": 80,
+     "tol": 0.5,
+     "why": "100 have the disease; 80% of 100 = 80.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Same test (sensitivity 80%, specificity 90%, prevalence 10%). Out of 1000 people, about how many false positives are expected?",
+     "o": [
+      "90",
+      "10",
+      "100",
+      "900"
+     ],
+     "a": 0,
+     "why": "900 healthy people; 10% test positive = 90.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Using those numbers (80 true positives, 90 false positives), what fraction of positives are true cases?",
+     "o": [
+      "About 47%",
+      "About 80%",
+      "About 90%",
+      "About 10%"
+     ],
+     "a": 0,
+     "why": "80 ÷ 170 ≈ 0.47.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does dynamic programming make Needleman–Wunsch practical?",
+     "o": [
+      "It avoids recomputing the same sub-alignments",
+      "It tests all possible alignments one by one",
+      "It guesses the alignment randomly each time",
+      "It ignores gaps so the alignment is faster"
+     ],
+     "a": 0,
+     "why": "Reusing sub-problem results turns an exponential search into a polynomial one.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A classifier achieves 99% accuracy on its training set but 70% on new data. This suggests:",
+     "o": [
+      "Overfitting",
+      "Underfitting",
+      "Perfect generalisation",
+      "Biased test data only"
+     ],
+     "a": 0,
+     "why": "It memorised the training data.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The Gillespie algorithm is preferred over ODEs when:",
+     "o": [
+      "Molecule numbers are small and randomness matters",
+      "Molecule numbers are huge and averages work",
+      "No reactions occur in the system",
+      "Time is irrelevant to the model"
+     ],
+     "a": 0,
+     "why": "Discrete random events matter at low copy number.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order a sound machine-learning workflow.",
+     "items": [
+      "Split data into training and test sets",
+      "Train the model on the training set",
+      "Tune using validation",
+      "Evaluate once on the held-out test set"
+     ],
+     "why": "The test set must stay unseen until the end.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why screening a very rare disease with a good test can still produce mostly false positives.",
+     "rubric": [
+      [
+       "prevalence",
+       "rare",
+       "few people",
+       "low"
+      ],
+      [
+       "healthy",
+       "most people",
+       "many people",
+       "large number"
+      ],
+      [
+       "false positive",
+       "false alarm",
+       "wrongly"
+      ],
+      [
+       "specificity",
+       "error rate",
+       "small percentage"
+      ]
+     ],
+     "min": 3,
+     "model": "When prevalence is low, the great majority of people are healthy, so even a small false-positive rate on this large group yields more false positives than the true positives from the few diseased people.",
+     "why": "Bayes' theorem links prevalence to predictive value.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A genomic classifier is trained mostly on data from one ancestry group. What risk follows?",
+     "o": [
+      "Lower accuracy for under-represented groups",
+      "Higher accuracy for every group",
+      "No risk follows from the training set",
+      "Perfect fairness is guaranteed by the model"
+     ],
+     "a": 0,
+     "why": "Training bias reduces performance on other populations.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Increasing the Euler step size too much usually causes:",
+     "o": [
+      "Numerical error or instability",
+      "Perfect accuracy of the simulation",
+      "Faster biology in the model",
+      "Lower memory use and fewer steps"
+     ],
+     "a": 0,
+     "why": "Big steps misrepresent changing rates.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why share code and data along with a paper?",
+     "o": [
+      "So others can reproduce and check the results",
+      "To make the papers longer to read",
+      "To hide errors in the analysis",
+      "It is never useful to anyone"
+     ],
+     "a": 0,
+     "why": "Reproducibility is central to scientific credibility.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a positive test can still be probably wrong",
+    "model": "If a disease is rare, most people tested are healthy. Even a small error rate on that large healthy group produces many false positives. These can outnumber the true positives from the few sick people, so a positive result is often wrong. The calculation is Bayes' theorem.",
+    "points": [
+     {
+      "k": [
+       "rare",
+       "prevalence",
+       "few",
+       "healthy"
+      ],
+      "ask": "Who is mostly being tested?"
+     },
+     {
+      "k": [
+       "false positive",
+       "error",
+       "specificity"
+      ],
+      "ask": "What happens with a small error rate?"
+     },
+     {
+      "k": [
+       "bayes",
+       "compare",
+       "true positive",
+       "outnumber",
+       "probability"
+      ],
+      "ask": "How do you work it out?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Advanced evolutionary genetics",
+   "icon": "🧬",
+   "hook": "The sickle cell allele is harmful in two copies, yet common where malaria has been prevalent. How can natural selection maintain a harmful allele, and how can genomes reveal the history of selection?",
+   "explain": [
+    "Population genetics tracks allele frequencies. Selection with relative fitnesses w acts on heritable variation. With heterozygote advantage, fitness of AA = 1 − s, Aa = 1 and aa = 1 − t, the allele frequency settles at a stable equilibrium p̂ = t ÷ (s + t) for allele A. Directional selection raises a beneficial allele; purifying selection removes deleterious ones; balancing selection maintains variation.",
+    "Drift dominates in small populations. A new neutral mutation in a diploid population of size N has fixation probability 1 ÷ (2N). Heterozygosity declines by a factor of (1 − 1/(2N)) per generation. The effective population size Nₑ is often much smaller than the census size. Gene flow homogenises populations; the fixation index F_ST measures differentiation between them. Under the neutral theory, the substitution rate equals the mutation rate, which underlies the molecular clock: T ≈ d ÷ (2μ) for two lineages diverging with d substitutions per site and per-lineage rate μ.",
+    "Signatures of selection include an excess of nonsynonymous over synonymous changes (dN/dS > 1), reduced diversity around a recently swept allele (selective sweep), and high differentiation. Coalescent theory looks backward: for two lineages in a diploid population of constant size N, the expected time to a common ancestor is about 2N generations. Human genetic variation is mostly within rather than between continental groups, about 85–90% of total diversity, which is why race is not a biologically sharp category."
+   ],
+   "example": {
+    "q": "With heterozygote advantage, AA has fitness 0.9 (s = 0.1) and aa has fitness 0.6 (t = 0.4). Find the equilibrium frequency of A.",
+    "steps": [
+     "p̂ = t ÷ (s + t).",
+     "= 0.4 ÷ (0.1 + 0.4) = 0.4 ÷ 0.5.",
+     "= 0.8."
+    ],
+    "a": "p̂ = 0.8"
+   },
+   "analogies": {
+    "sport": "Drift is like a short series of coin flips deciding who wins: small samples swing widely.",
+    "city": "A mutation's fixation chance is like one lottery ticket among 2N tickets.",
+    "music": "The molecular clock is a metronome of mutations, ticking at an approximately regular rate."
+   },
+   "mnemonic": "Small N, big drift; heterozygote advantage balances; sweeps erase variation.",
+   "terms": [
+    [
+     "Effective population size",
+     "Size of an idealised population with the same genetic drift as the real one."
+    ],
+    [
+     "Selective sweep",
+     "Loss of nearby variation as a beneficial allele spreads."
+    ],
+    [
+     "dN/dS",
+     "Ratio of nonsynonymous to synonymous substitution rates."
+    ],
+    [
+     "Coalescent",
+     "Backward-in-time model of how lineages merge in common ancestors."
+    ]
+   ],
+   "misc": {
+    "wrong": "Natural selection always removes harmful alleles completely.",
+    "right": "Recessive harmful alleles persist at low frequency, and heterozygote advantage can maintain them at high frequency."
+   },
+   "limits": "Molecular clocks need calibration and rates vary among lineages, so divergence dates are estimates with uncertainty.",
+   "trip": {
+    "wiki": "Population genetics",
+    "prompt": "Find the sickle cell example of heterozygote advantage and the geography of malaria."
+   },
+   "sources": [
+    "Population genetics",
+    "Molecular clock",
+    "Coalescent theory"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "AA has fitness 0.8 (s = 0.2) and aa has fitness 0.2 (t = 0.8); Aa has fitness 1. What is the equilibrium frequency of A, p̂ = t ÷ (s + t)?",
+     "a": 0.8,
+     "tol": 0.005,
+     "why": "0.8 ÷ (0.2 + 0.8) = 0.8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A new neutral mutation arises in a diploid population of N = 500 individuals. What is its probability of eventually fixing (1 ÷ 2N)?",
+     "o": [
+      "0.001",
+      "0.002",
+      "0.01",
+      "0.5"
+     ],
+     "a": 0,
+     "why": "1 ÷ 1000 = 0.001.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two species differ by d = 0.06 substitutions per site and the per-lineage substitution rate is 1 × 10⁻⁹ per site per year. Using T = d ÷ (2μ), how many million years ago did they diverge?",
+     "a": 30,
+     "tol": 0.5,
+     "unit": "Myr",
+     "why": "0.06 ÷ 2 × 10⁻⁹ = 3 × 10⁷ years = 30 million.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A gene shows dN/dS = 3 across many species. The most likely interpretation is:",
+     "o": [
+      "Positive (diversifying) selection on amino acid changes",
+      "Strong purifying selection removing changes",
+      "Neutral evolution with no selection at all",
+      "No mutation in the gene across species"
+     ],
+     "a": 0,
+     "why": "dN/dS > 1 indicates amino acid changes are favoured.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A population crashes to 20 breeding individuals and recovers. What happens to genetic diversity?",
+     "o": [
+      "It declines because of drift in the bottleneck",
+      "It rises because of the bottleneck itself",
+      "It is unaffected by the crash in numbers",
+      "It converts to RNA in the survivors"
+     ],
+     "a": 0,
+     "why": "Small populations lose alleles by chance.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A region of the genome has very low diversity in one population but normal diversity elsewhere. What explanation is plausible?",
+     "o": [
+      "A recent selective sweep",
+      "Higher mutation everywhere",
+      "Random mating",
+      "Gene duplication only"
+     ],
+     "a": 0,
+     "why": "Hitchhiking removes diversity around a swept allele.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the effective population size usually smaller than the census size?",
+     "o": [
+      "Unequal reproduction, uneven sex ratios and fluctuations reduce it",
+      "Census counts are always wrong by a fixed amount",
+      "Nₑ counts only the males in the population",
+      "Drift never acts in real populations"
+     ],
+     "a": 0,
+     "why": "Variance in reproductive success lowers Nₑ.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a selective sweep.",
+     "items": [
+      "A beneficial mutation arises",
+      "Selection raises its frequency",
+      "Linked neutral variants hitchhike along",
+      "Diversity drops around the site"
+     ],
+     "why": "Hitchhiking reduces nearby variation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each force to its main effect on allele frequencies.",
+     "pairs": [
+      [
+       "Mutation",
+       "Introduces new alleles"
+      ],
+      [
+       "Genetic drift",
+       "Random change, strongest in small populations"
+      ],
+      [
+       "Gene flow",
+       "Reduces differences between populations"
+      ],
+      [
+       "Balancing selection",
+       "Maintains variation"
+      ]
+     ],
+     "why": "Evolutionary forces act in different ways.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the sickle cell allele can be common in regions with endemic malaria even though two copies cause disease.",
+     "rubric": [
+      [
+       "heterozygote",
+       "carrier",
+       "one copy",
+       "hbas",
+       "sickle trait"
+      ],
+      [
+       "resist",
+       "protect",
+       "malaria",
+       "advantage"
+      ],
+      [
+       "homozygous",
+       "two copies",
+       "disease",
+       "anaemia",
+       "cost"
+      ],
+      [
+       "balance",
+       "equilibrium",
+       "balancing",
+       "maintain"
+      ]
+     ],
+     "min": 3,
+     "model": "Carriers with one copy are partly protected against severe malaria, giving heterozygote advantage, while people with two copies suffer sickle cell disease. Balancing selection maintains the allele at an intermediate frequency where malaria is common.",
+     "why": "Heterozygote advantage maintains a deleterious allele.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "About 85–90% of human genetic variation lies within populations rather than between continental groups. What does this imply?",
+     "o": [
+      "Individuals within a group are often more different than average group differences",
+      "Groups are genetically distinct species",
+      "There is almost no variation in humans at all",
+      "Variation is only caused by the environment"
+     ],
+     "a": 0,
+     "why": "Most diversity is shared across populations.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mutation rate estimated from pedigrees disagrees with the rate implied by fossils. What should researchers do?",
+     "o": [
+      "Examine assumptions such as generation time and calibration, and report uncertainty",
+      "Discard the fossils and keep only the pedigree rate",
+      "Ignore the pedigree data and keep the fossil rate",
+      "Pick whichever rate they like better and move on"
+     ],
+     "a": 0,
+     "why": "Different clocks rely on different assumptions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a harmful recessive allele persist at low frequency?",
+     "o": [
+      "Selection acts weakly on heterozygotes that carry it",
+      "It is never selected against in any case",
+      "Mutation does not occur in that gene",
+      "It persists because it is a dominant allele"
+     ],
+     "a": 0,
+     "why": "Most copies are hidden in carriers.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How genetic drift differs from natural selection",
+    "model": "Natural selection is non-random: alleles that improve survival or reproduction become more common. Genetic drift is random change in allele frequencies from chance in who reproduces. Drift matters most in small populations, where chance can even remove helpful alleles or fix harmful ones.",
+    "points": [
+     {
+      "k": [
+       "selection",
+       "survival",
+       "reproduc",
+       "non-random",
+       "fitness"
+      ],
+      "ask": "What does selection do?"
+     },
+     {
+      "k": [
+       "random",
+       "chance",
+       "drift"
+      ],
+      "ask": "What is different about drift?"
+     },
+     {
+      "k": [
+       "small",
+       "population size",
+       "bottleneck",
+       "founder"
+      ],
+      "ask": "When does drift matter most?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Integrative neuroscience",
+   "icon": "🧠",
+   "hook": "We can describe a neuron in exact equations but cannot yet say how billions of them make a thought. How do neuroscientists connect molecules, circuits and behaviour?",
+   "explain": [
+    "Neuronal signalling can be modelled. Passive membrane properties give the length constant λ, so a subthreshold voltage decays with distance as V(x) = V₀·e^(−x/λ). Synaptic inputs are integrated over space and time; a neuron fires when depolarisation at the axon initial segment reaches threshold. Conduction velocity is roughly 1 m/s in unmyelinated thin axons and up to about 100 m/s in large myelinated ones.",
+    "Plasticity underlies learning. Long-term potentiation (LTP) depends on NMDA receptors acting as coincidence detectors: they open when glutamate is bound and the postsynaptic cell is depolarised, letting Ca²⁺ in. Spike-timing-dependent plasticity strengthens synapses when presynaptic spikes precede postsynaptic ones. Dopamine neurons signal reward prediction error: firing increases for unexpected reward and dips when an expected reward is omitted. Neural oscillations coordinate activity across brain regions.",
+    "Methods differ in scale and resolution: patch clamp (single cell, ms), electrophysiology, calcium imaging and optogenetics (cell-type control with light), fMRI (whole brain, seconds, measures blood oxygenation, an indirect signal) and EEG (millisecond timing, poor spatial resolution). The neural basis of consciousness is a contested area with several competing theories. Findings from animals must be interpreted carefully, and human studies need informed consent and privacy protections."
+   ],
+   "example": {
+    "q": "A subthreshold depolarisation of 10 mV at a synapse decays with length constant λ = 1 mm. What is the amplitude 2 mm along the dendrite?",
+    "steps": [
+     "V = V₀·e^(−x/λ) = 10 × e^(−2).",
+     "e^(−2) ≈ 0.135.",
+     "V ≈ 1.35 mV."
+    ],
+    "a": "About 1.35 mV"
+   },
+   "analogies": {
+    "tech": "An NMDA receptor is an AND gate: it needs glutamate and depolarisation together.",
+    "music": "Oscillations work like a conductor's beat that synchronises players across the orchestra.",
+    "city": "fMRI is like measuring a city's electricity use to infer activity, rather than watching people directly."
+   },
+   "mnemonic": "Cells that fire together wire together (Hebb), and timing decides the direction.",
+   "terms": [
+    [
+     "Length constant",
+     "Distance over which a passive voltage falls to about 37% (1/e) of its initial value."
+    ],
+    [
+     "LTP",
+     "Lasting increase in synaptic strength after activity."
+    ],
+    [
+     "Reward prediction error",
+     "Difference between actual and expected reward."
+    ],
+    [
+     "Optogenetics",
+     "Controlling neurons with light-sensitive proteins."
+    ]
+   ],
+   "misc": {
+    "wrong": "fMRI shows neurons firing directly.",
+    "right": "fMRI measures blood-oxygen-level-dependent signals, which are an indirect, slower correlate of neural activity."
+   },
+   "limits": "Correlations between brain activity and behaviour do not show that a region is necessary; lesion or stimulation studies are needed for causal claims.",
+   "trip": {
+    "wiki": "Long-term potentiation",
+    "prompt": "Find the role of NMDA receptors in LTP and explain why they are coincidence detectors."
+   },
+   "sources": [
+    "Long-term potentiation",
+    "Reward prediction error",
+    "Optogenetics"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A signal travels 1.2 m along a myelinated axon at 80 m/s. How long does it take in milliseconds?",
+     "a": 15,
+     "tol": 0.1,
+     "unit": "ms",
+     "why": "1.2 ÷ 80 = 0.015 s = 15 ms.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Resting potential is −70 mV and threshold is −55 mV. If each simultaneous EPSP adds 0.5 mV (linear summation), how many EPSPs are needed to reach threshold?",
+     "a": 30,
+     "tol": 0,
+     "why": "15 mV ÷ 0.5 mV = 30.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "NMDA receptors are called coincidence detectors because they require:",
+     "o": [
+      "Glutamate binding plus postsynaptic depolarisation",
+      "Only GABA binding plus chloride entry",
+      "Only calcium inside the cell, nothing else",
+      "Only presynaptic spikes, with no glutamate"
+     ],
+     "a": 0,
+     "why": "Depolarisation relieves the Mg²⁺ block.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A monkey expects juice after a cue but receives none. Dopamine neurons:",
+     "o": [
+      "Decrease firing below baseline",
+      "Fire strongly, as if the juice arrived",
+      "Do not change at all from baseline",
+      "Stop firing permanently from then on"
+     ],
+     "a": 0,
+     "why": "A negative prediction error is signalled by a dip.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A researcher turns on neurons in a specific region with light and the mouse's behaviour changes. Which method is this?",
+     "o": [
+      "Optogenetics",
+      "fMRI",
+      "EEG",
+      "Western blot"
+     ],
+     "a": 0,
+     "why": "Light-sensitive channels allow causal control.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A study finds that region X is active during a memory task. A causal claim would be best supported by:",
+     "o": [
+      "Showing that disrupting X impairs the memory",
+      "More fMRI scans of the same task, repeated many times",
+      "A larger correlation between activity and memory",
+      "A prettier figure with clearer colours"
+     ],
+     "a": 0,
+     "why": "Intervention shows necessity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the events of NMDA-receptor-dependent LTP.",
+     "items": [
+      "Glutamate is released",
+      "Postsynaptic cell is depolarised",
+      "NMDA receptors unblock and Ca²⁺ enters",
+      "Signalling cascades strengthen the synapse"
+     ],
+     "why": "Coincidence of glutamate and depolarisation triggers LTP.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to what it provides.",
+     "pairs": [
+      [
+       "Patch clamp",
+       "Currents from a single cell"
+      ],
+      [
+       "EEG",
+       "Millisecond timing, coarse location"
+      ],
+      [
+       "fMRI",
+       "Whole-brain blood-oxygen signal"
+      ],
+      [
+       "Calcium imaging",
+       "Activity of many neurons in a region"
+      ]
+     ],
+     "why": "Methods trade off resolution and coverage.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a reward prediction error is more useful for learning than the reward itself.",
+     "rubric": [
+      [
+       "expect",
+       "predict"
+      ],
+      [
+       "surprise",
+       "unexpected",
+       "error",
+       "difference"
+      ],
+      [
+       "update",
+       "adjust",
+       "learn",
+       "change behaviour"
+      ],
+      [
+       "already",
+       "fully predicted",
+       "no need",
+       "nothing to learn"
+      ]
+     ],
+     "min": 3,
+     "model": "Learning needs to know when outcomes differ from expectation. The prediction error signals surprise and drives updating of values or behaviour, whereas a fully predicted reward carries no new information.",
+     "why": "Error signals drive learning in reinforcement models.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Myelination speeds conduction mainly because it:",
+     "o": [
+      "Increases membrane resistance and restricts channels to nodes",
+      "Adds sodium to the axon to speed it",
+      "Makes axons shorter so impulses arrive sooner",
+      "Makes neurotransmitter work faster at synapses"
+     ],
+     "a": 0,
+     "why": "Insulation reduces current leak so the impulse jumps between nodes.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A theory claims that a particular brain region 'is' the seat of consciousness. A cautious scientist says:",
+     "o": [
+      "Theories of consciousness are contested and need testing with converging evidence",
+      "The question is now fully solved by this one finding",
+      "Consciousness is just the same as an fMRI image",
+      "Nobody is able to study consciousness scientifically"
+     ],
+     "a": 0,
+     "why": "This remains an open scientific and philosophical problem.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A long dendrite has a short length constant. What consequence follows for distant synapses?",
+     "o": [
+      "Their inputs are strongly attenuated at the soma",
+      "They are amplified on the way to the soma",
+      "They have no effect on the membrane at all",
+      "They always trigger a spike at the soma"
+     ],
+     "a": 0,
+     "why": "Voltage decays exponentially with distance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Brain-imaging data can reveal sensitive information about individuals. Which protection is appropriate?",
+     "o": [
+      "Informed consent and data privacy safeguards",
+      "Publishing the identities of all the participants",
+      "No oversight by any ethics committee",
+      "Sharing the scans without any consent"
+     ],
+     "a": 0,
+     "why": "Neuroethics requires respect for privacy and autonomy.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How synapses can strengthen with learning",
+    "model": "At some synapses, an NMDA receptor opens only when glutamate is bound and the receiving cell is already depolarised. Calcium then flows in and starts signals that make the synapse stronger, which is long-term potentiation. So connections that are active together become stronger, which is a basis for learning and memory.",
+    "points": [
+     {
+      "k": [
+       "nmda",
+       "glutamate",
+       "depolaris",
+       "together",
+       "coincidence"
+      ],
+      "ask": "What has to happen at the same time?"
+     },
+     {
+      "k": [
+       "calcium",
+       "ca"
+      ],
+      "ask": "What enters the cell?"
+     },
+     {
+      "k": [
+       "stronger",
+       "ltp",
+       "potentiation",
+       "learning",
+       "memory"
+      ],
+      "ask": "What is the result?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated life-sciences research project",
+   "icon": "📝",
+   "hook": "You are given a research question: does a new fertiliser boost crop yield, and is the effect worth the cost? How do you design, run, analyse and report a study people can trust?",
+   "explain": [
+    "A research project begins with a focused, testable question and a hypothesis, followed by a literature review. Design choices include controls, randomisation, blinding, replication and sample size. Statistical power is the probability of detecting a true effect; for comparing two means with equal groups, n per group ≈ 2(z_α/2 + z_β)² σ² ÷ δ², where σ is the standard deviation and δ the difference to detect. With α = 0.05 (z = 1.96) and power 80% (z = 0.84), (1.96 + 0.84)² ≈ 7.84.",
+    "Analysis should be planned in advance (preregistration) to avoid p-hacking and selective reporting. Report effect sizes and confidence intervals: the standard error is σ ÷ √n, and an approximate 95% interval is mean ± 1.96 × SE. For 2×2 outcomes, relative risk compares probabilities, and the odds ratio compares odds. Correct for multiple comparisons, check assumptions, and distinguish statistical from practical significance. Reproducibility depends on clear methods, shared data and code, and transparent reporting of negative results.",
+    "Ethics and safety are integral: animal research follows the 3Rs (replace, reduce, refine); human research needs informed consent, independent ethical review and privacy protection; biosafety levels (BSL-1 to BSL-4) set containment for pathogens; dual-use risks and environmental impacts are assessed. Fair authorship, honest data handling, and inclusion of local and Indigenous knowledge and communities where relevant are marks of research integrity. Conclusions should match the evidence and state limitations."
+   ],
+   "example": {
+    "q": "To detect a difference of δ = 5 units with σ = 10, α = 0.05 and 80% power, how many subjects per group are needed?",
+    "steps": [
+     "Use n = 2(1.96 + 0.84)² σ² ÷ δ².",
+     "= 2 × 7.84 × 100 ÷ 25.",
+     "= 1568 ÷ 25 = 62.7, so round up to 63."
+    ],
+    "a": "63 per group"
+   },
+   "analogies": {
+    "farm": "Several field plots with random assignment give a fairer test of a fertiliser than comparing two fields.",
+    "tech": "Version control and open code are like keeping a lab notebook everyone can read.",
+    "sport": "An honest referee: preregistering the rules before the match prevents changing them after seeing the score."
+   },
+   "mnemonic": "Question, Design, Power, Preregister, Analyse, Report, Reflect.",
+   "terms": [
+    [
+     "Statistical power",
+     "Probability of detecting an effect of a given size if it exists."
+    ],
+    [
+     "Preregistration",
+     "Publicly recording a study plan before collecting data."
+    ],
+    [
+     "Confidence interval",
+     "A range of plausible values for a parameter given the data."
+    ],
+    [
+     "3Rs",
+     "Replacement, reduction and refinement in animal research."
+    ]
+   ],
+   "misc": {
+    "wrong": "If p < 0.05 the effect is real and important.",
+    "right": "A small p-value shows incompatibility with the null model, not that an effect is large, important or replicable; look at effect size, design quality and replication."
+   },
+   "limits": "Power calculations depend on assumed effect sizes and variability, which are uncertain before the study is done.",
+   "trip": {
+    "wiki": "Replication crisis",
+    "prompt": "Find two practices that make research more reproducible and explain why they help."
+   },
+   "sources": [
+    "Statistical power",
+    "Replication crisis",
+    "Research ethics"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Use n = 2(z_α/2 + z_β)² σ² ÷ δ² with (z_α/2 + z_β)² = 7.84, σ = 8 and δ = 4. How many per group (rounded up)?",
+     "a": 63,
+     "tol": 0.6,
+     "why": "2 × 7.84 × 64 ÷ 16 = 62.72, rounded up to 63.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Mean = 50 and SE = 2. What is the lower bound of the approximate 95% confidence interval (mean − 1.96 × SE)?",
+     "a": 46.08,
+     "tol": 0.05,
+     "why": "50 − 3.92 = 46.08.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a trial, 20 of 100 treated and 10 of 100 control patients have the outcome. What is the relative risk?",
+     "o": [
+      "2.0",
+      "0.5",
+      "10",
+      "1.0"
+     ],
+     "a": 0,
+     "why": "0.20 ÷ 0.10 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which practice best reduces bias in a drug trial?",
+     "o": [
+      "Random allocation with blinding",
+      "Letting patients choose their group",
+      "Using only healthy volunteers",
+      "Stopping when the result looks good"
+     ],
+     "a": 0,
+     "why": "Randomisation and blinding reduce selection and expectation bias.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A researcher tries 20 analyses and reports only the one with p = 0.03. This is:",
+     "o": [
+      "p-hacking (selective reporting)",
+      "Good practice that gives reliable results",
+      "Preregistration of the study plan",
+      "A power calculation before the study"
+     ],
+     "a": 0,
+     "why": "Multiple unreported tests inflate false positives.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a justified conclusion from a small pilot study with p = 0.04 and a wide confidence interval?",
+     "o": [
+      "The result is suggestive and needs replication with a larger sample",
+      "The effect is definitely real and also large",
+      "The treatment is safe for all patients",
+      "The null hypothesis has now been proven true"
+     ],
+     "a": 0,
+     "why": "Wide intervals show imprecision.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Under the 3Rs, using cell cultures instead of animals when possible is called:",
+     "o": [
+      "Replacement",
+      "Reduction",
+      "Refinement",
+      "Randomisation"
+     ],
+     "a": 0,
+     "why": "Replacement avoids animal use where an alternative exists.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of a research project.",
+     "items": [
+      "Formulate a question and hypothesis",
+      "Design the study and obtain ethical approval",
+      "Collect and analyse data as planned",
+      "Interpret results and state limitations",
+      "Report openly and share data"
+     ],
+     "why": "A plan is made and approved before data collection.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its definition.",
+     "pairs": [
+      [
+       "Power",
+       "Chance of detecting a true effect"
+      ],
+      [
+       "Effect size",
+       "Magnitude of a difference"
+      ],
+      [
+       "Confounder",
+       "A third variable linked to both cause and outcome"
+      ],
+      [
+       "Reproducibility",
+       "Others can obtain the same results from the same data and methods"
+      ]
+     ],
+     "why": "Key research concepts.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A fertiliser trial finds a statistically significant 1% yield increase. The fertiliser costs 10% of the crop's value. Evaluate the result.",
+     "rubric": [
+      [
+       "practical",
+       "cost",
+       "economic",
+       "worth"
+      ],
+      [
+       "effect size",
+       "small",
+       "tiny",
+       "1%"
+      ],
+      [
+       "significant",
+       "p-value",
+       "statistical"
+      ],
+      [
+       "not",
+       "unlikely",
+       "wouldn't",
+       "doesn't"
+      ]
+     ],
+     "min": 3,
+     "model": "The result may be statistically significant but the 1% effect is small and does not cover the 10% cost, so it has no practical or economic value. Significance does not mean importance.",
+     "why": "Distinguish statistical from practical significance.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A study uses data from a community that is not told how it will be used. What ethical principle is breached?",
+     "o": [
+      "Informed consent and respect for the community",
+      "Randomisation of the people into groups",
+      "Blinding of the researchers to the groups",
+      "Replication of the study by others"
+     ],
+     "a": 0,
+     "why": "Participants and communities must understand and agree to uses of data and samples.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lab wants to study a pathogen that causes serious airborne disease with no vaccine. Which containment level is appropriate?",
+     "o": [
+      "High containment, such as BSL-3 or BSL-4 as assessed",
+      "BSL-1 open bench work with gloves only",
+      "No containment, as the lab is clean",
+      "Any cupboard that can be locked is enough"
+     ],
+     "a": 0,
+     "why": "Containment must match the risk of the agent.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A result fails to replicate in an independent lab. What is the most scientific response?",
+     "o": [
+      "Investigate differences in methods and sample, and update beliefs",
+      "Hide the failure so the paper stays cited",
+      "Blame the other lab without checking their methods",
+      "Delete the original data so nobody can compare"
+     ],
+     "a": 0,
+     "why": "Failed replication is information about the claim and its conditions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to plan a trustworthy experiment",
+    "model": "Start with a clear question and hypothesis. Use a control group, randomise who gets which treatment and, where possible, blind participants and analysts. Decide the sample size with a power calculation and the analysis before collecting data. Then report the effect size and uncertainty honestly, share methods and data, and follow ethical rules.",
+    "points": [
+     {
+      "k": [
+       "question",
+       "hypothesis",
+       "control",
+       "random"
+      ],
+      "ask": "How do you set up the comparison fairly?"
+     },
+     {
+      "k": [
+       "sample size",
+       "power",
+       "plan",
+       "preregist"
+      ],
+      "ask": "What do you decide before you start?"
+     },
+     {
+      "k": [
+       "effect size",
+       "uncertain",
+       "interval",
+       "share",
+       "ethic",
+       "honest"
+      ],
+      "ask": "How should you report it?"
+     }
+    ]
+   }
+  }
+ ]
+}

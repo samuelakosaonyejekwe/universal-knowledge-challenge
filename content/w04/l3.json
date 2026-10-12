@@ -1,0 +1,2816 @@
+{
+ "world": 4,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Aerodynamic coefficients",
+   "icon": "📊",
+   "hook": "Engineers test a small model wing in a wind tunnel and then predict the lift of a full-size wing. How can results from a small model apply to a big aircraft?",
+   "explain": [
+    "Instead of quoting forces directly, engineers divide them by a reference: the dynamic pressure q = ½ρv² multiplied by a reference area S. The lift coefficient is C_L = L ÷ (q S), and the drag coefficient is C_D = D ÷ (q S). These numbers have no units, so they describe the shape and angle of the wing, not the size or the speed.",
+    "The coefficients let a model result be scaled to the real aircraft, as long as the flows are similar (for example, similar Reynolds number and Mach number). The ratio L/D = C_L ÷ C_D measures aerodynamic efficiency: a glider may reach 30 or more, and a typical airliner is in the region of 15 to 20.",
+    "C_L rises roughly in proportion to angle of attack until the airflow begins to separate from the upper surface. After that C_L falls: this is the stall. A drag polar plots C_L against C_D and shows how the two are related."
+   ],
+   "example": {
+    "q": "A wing of area 16 m² flies at 50 m/s at sea level (ρ = 1.225 kg/m³) and makes 19 600 N of lift. Find C_L.",
+    "steps": [
+     "q = ½ρv² = 0.5 × 1.225 × 2500 = 1531.25 Pa.",
+     "q S = 1531.25 × 16 = 24 500 N.",
+     "C_L = L ÷ (q S) = 19 600 ÷ 24 500 = 0.8."
+    ],
+    "a": "C_L = 0.8"
+   },
+   "analogies": {
+    "city": "Fuel use is quoted in litres per 100 km so cars of different sizes and trips can be compared. Coefficients do the same for wings.",
+    "sport": "A batting average divides hits by chances, so players with different numbers of games can be compared.",
+    "home": "A recipe scales by ratio, not by quantity: the proportions stay the same when you cook more.",
+    "tech": "A scale model of a car in a wind tunnel can predict the full-size car if the flow is matched."
+   },
+   "mnemonic": "Force over q S: lift gives C_L, drag gives C_D, and L/D tells how smooth the flight.",
+   "terms": [
+    [
+     "Dynamic pressure",
+     "q = ½ρv², the pressure of the moving flow."
+    ],
+    [
+     "Lift coefficient",
+     "C_L = L ÷ (qS), a pure number."
+    ],
+    [
+     "Drag coefficient",
+     "C_D = D ÷ (qS), a pure number."
+    ],
+    [
+     "Lift-to-drag ratio",
+     "L/D, a measure of efficiency."
+    ],
+    [
+     "Drag polar",
+     "A graph relating C_L and C_D."
+    ]
+   ],
+   "misc": {
+    "wrong": "A wing has one fixed lift coefficient.",
+    "right": "C_L changes with angle of attack, flap setting, Reynolds number and Mach number, and it falls after the stall."
+   },
+   "limits": "Model tests only match the real aircraft if the flow is dynamically similar. Differences in Reynolds number or compressibility can make coefficients differ.",
+   "trip": {
+    "wiki": "Lift coefficient",
+    "prompt": "Find a graph of C_L against angle of attack. At about what angle does the curve peak?"
+   },
+   "sources": [
+    "Lift coefficient",
+    "Drag coefficient",
+    "Lift-to-drag ratio"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What are the units of the lift coefficient C_L?",
+     "o": [
+      "It has no units",
+      "Newtons",
+      "Pascals",
+      "Metres per second"
+     ],
+     "a": 0,
+     "why": "C_L is a ratio of force to force, so it is dimensionless.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1.225 kg/m³. What is the dynamic pressure q = ½ρv² at v = 50 m/s, in pascals?",
+     "a": 1531.25,
+     "tol": 1,
+     "unit": "Pa",
+     "why": "q = 0.5 × 1.225 × 50² = 0.6125 × 2500 = 1531.25 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wing of area 16 m² flies at 50 m/s at sea level (ρ = 1.225 kg/m³) and makes 19 600 N of lift. What is C_L?",
+     "a": 0.8,
+     "tol": 0.01,
+     "why": "C_L = L ÷ (qS) = 19 600 ÷ (1531.25 × 16) = 19 600 ÷ 24 500 = 0.8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The same wing makes 735 N of drag. What is its lift-to-drag ratio (L/D)? Give one decimal.",
+     "a": 26.7,
+     "tol": 0.2,
+     "why": "L/D = 19 600 ÷ 735 = 26.67.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do engineers use coefficients rather than raw forces?",
+     "o": [
+      "They compare wings of different size and speed fairly",
+      "Forces cannot be measured in a wind tunnel at all",
+      "Coefficients are always equal to exactly 1 for every wing",
+      "Raw forces are not allowed in engineering reports"
+     ],
+     "a": 0,
+     "why": "Dividing by qS removes size and speed, leaving shape and angle effects.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Aircraft A has L/D = 18 and aircraft B has L/D = 12. Which needs less thrust for steady flight at the same weight?",
+     "o": [
+      "A",
+      "B",
+      "Both the same",
+      "Neither needs thrust"
+     ],
+     "a": 0,
+     "why": "In steady level flight, thrust = drag = weight ÷ (L/D), so higher L/D needs less thrust.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After the stall angle of attack, C_L",
+     "o": [
+      "Drops because the flow separates",
+      "Keeps rising steadily for ever as the angle grows",
+      "Becomes exactly 1 and then stays fixed",
+      "Becomes equal to the drag coefficient C_D"
+     ],
+     "a": 0,
+     "why": "Separated flow cannot keep making lift.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each symbol to its meaning.",
+     "pairs": [
+      [
+       "q",
+       "Dynamic pressure"
+      ],
+      [
+       "C_L",
+       "Lift coefficient"
+      ],
+      [
+       "C_D",
+       "Drag coefficient"
+      ],
+      [
+       "L/D",
+       "Aerodynamic efficiency"
+      ]
+     ],
+     "why": "These are the core aerodynamic quantities.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A model wing is tested in a wind tunnel. Explain why coefficients allow engineers to predict the real wing's forces.",
+     "rubric": [
+      [
+       "coefficient",
+       "dimensionless",
+       "no units",
+       "ratio"
+      ],
+      [
+       "scale",
+       "size",
+       "speed",
+       "similar",
+       "same shape",
+       "dynamic pressure",
+       "q"
+      ],
+      [
+       "predict",
+       "real",
+       "full",
+       "full-size"
+      ]
+     ],
+     "min": 2,
+     "model": "Coefficients remove the effects of size and speed by dividing forces by qS. If the flow is similar, the same coefficient applies to the full-size wing, so force = coefficient × q × S for the real values.",
+     "why": "Coefficients are dimensionless and transfer between sizes when the flow is similar.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which aircraft type typically has the highest L/D?",
+     "o": [
+      "A high-performance glider",
+      "A solid brick dropped from a height",
+      "A large cargo airliner full of freight",
+      "A rocket sitting on the launch pad"
+     ],
+     "a": 0,
+     "why": "Gliders can exceed L/D = 30, airliners reach roughly 15 to 20, and a brick has almost no useful L/D.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "At the same C_L and altitude, a pilot doubles the speed. By what factor does the lift change?",
+     "o": [
+      "4",
+      "2",
+      "1",
+      "8"
+     ],
+     "a": 0,
+     "why": "L = qSC_L and q ∝ v², so doubling speed gives 4 times the lift.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A drag polar shows C_D = C_D0 + k C_L². Which part grows when the wing carries more lift?",
+     "o": [
+      "The k C_L² term (lift-induced drag)",
+      "The C_D0 term (zero-lift drag)",
+      "The air density in front of the wing",
+      "The wing area, which is fixed in flight"
+     ],
+     "a": 0,
+     "why": "Drag due to lift grows with the square of C_L, while C_D0 is fixed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the best L/D point a good speed to glide for maximum distance in still air?",
+     "rubric": [
+      [
+       "most distance",
+       "farthest",
+       "furthest",
+       "longest",
+       "maximum range",
+       "glide ratio"
+      ],
+      [
+       "drag",
+       "l/d",
+       "lift to drag",
+       "lift-to-drag",
+       "efficient",
+       "height"
+      ]
+     ],
+     "min": 2,
+     "model": "At the speed for maximum L/D, drag is smallest for the lift needed, so each metre of height lost gives the greatest forward distance. Glide distance equals height times L/D.",
+     "why": "Glide ratio equals L/D.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a lift coefficient tells us",
+    "model": "A lift coefficient is lift divided by dynamic pressure and wing area. It has no units, so it describes the shape and tilt of the wing, not its size or speed. Engineers use it to predict a real wing from a model.",
+    "points": [
+     {
+      "k": [
+       "divide",
+       "ratio",
+       "divided",
+       "dynamic pressure",
+       "q"
+      ],
+      "ask": "How do you work out a coefficient?"
+     },
+     {
+      "k": [
+       "no units",
+       "dimensionless",
+       "pure number"
+      ],
+      "ask": "What units does it have?"
+     },
+     {
+      "k": [
+       "model",
+       "tunnel",
+       "predict",
+       "scale"
+      ],
+      "ask": "Why is that useful?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Subsonic airflow",
+   "icon": "🌀",
+   "hook": "When a river narrows, the water speeds up. Does air do the same when it flows past a wing or through a narrowing duct?",
+   "explain": [
+    "Subsonic means slower than the speed of sound. At sea level in standard air the speed of sound is about 340 m/s. Mach number M = v ÷ a, where a is the speed of sound. For low speeds (below about M 0.3) air density hardly changes, so the flow is treated as incompressible.",
+    "For incompressible flow, mass is conserved: A₁v₁ = A₂v₂ (continuity). A narrower passage means faster flow. Bernoulli's equation says that along a streamline in steady, inviscid flow, p + ½ρv² stays constant. Faster flow therefore goes with lower pressure.",
+    "Bernoulli's principle links speed and pressure but is not a full explanation of lift on its own; the flow is shaped by the wing turning the air. Real air also has viscosity, so a thin boundary layer forms next to the surface."
+   ],
+   "example": {
+    "q": "Air (ρ = 1.225 kg/m³) flows at 20 m/s through a duct of area 0.5 m² into a section of area 0.25 m². Find the speed and the pressure drop (Bernoulli).",
+    "steps": [
+     "Continuity: 0.5 × 20 = 0.25 × v₂, so v₂ = 40 m/s.",
+     "Δp = ½ρ(v₂² − v₁²) = 0.5 × 1.225 × (1600 − 400).",
+     "0.6125 × 1200 = 735 Pa."
+    ],
+    "a": "40 m/s; pressure drops by 735 Pa"
+   },
+   "analogies": {
+    "sea": "A river speeds up through a narrow gorge.",
+    "home": "Put your thumb over the end of a garden hose and the water shoots out faster.",
+    "city": "Traffic funnelled into one lane has to move forward at a higher rate to keep the same flow.",
+    "nature": "Wind speeds up between two tall buildings or mountains."
+   },
+   "mnemonic": "Narrow means fast; fast means low pressure (along a streamline).",
+   "terms": [
+    [
+     "Mach number",
+     "Speed divided by the local speed of sound."
+    ],
+    [
+     "Continuity",
+     "Mass flow stays the same: A × v is constant for incompressible flow."
+    ],
+    [
+     "Streamline",
+     "A line showing the direction of the flow."
+    ],
+    [
+     "Bernoulli's equation",
+     "p + ½ρv² is constant along a streamline in ideal flow."
+    ],
+    [
+     "Viscosity",
+     "The stickiness of a fluid."
+    ]
+   ],
+   "misc": {
+    "wrong": "Bernoulli's principle alone proves the equal transit time explanation of lift.",
+    "right": "Bernoulli connects speed and pressure, but it does not say air above must meet air below. The flow speeds are set by the wing shape and angle, and the air above arrives first."
+   },
+   "limits": "Bernoulli's equation as written assumes steady, inviscid, incompressible flow. At higher Mach numbers, compressibility must be included.",
+   "trip": {
+    "wiki": "Bernoulli's principle",
+    "prompt": "Find the section on common misconceptions about lift. What does it say about equal transit time?"
+   },
+   "sources": [
+    "Bernoulli's principle",
+    "Mach number",
+    "Continuity equation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does subsonic mean?",
+     "o": [
+      "Slower than the speed of sound",
+      "Faster than the speed of sound",
+      "Exactly at rest",
+      "Underwater"
+     ],
+     "a": 0,
+     "why": "Subsonic flow has Mach number below 1.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "The speed of sound is 340 m/s. An aircraft flies at 170 m/s. What is its Mach number?",
+     "a": 0.5,
+     "tol": 0.01,
+     "why": "M = 170 ÷ 340 = 0.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Air flows at 20 m/s through a duct of area 0.5 m² that narrows to 0.25 m². What is the speed in the narrow part, in m/s?",
+     "a": 40,
+     "tol": 0.2,
+     "unit": "m/s",
+     "why": "Continuity: 0.5 × 20 = 0.25 × v, so v = 40 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1.225 kg/m³ and Bernoulli. What is the pressure drop in pascals when air speeds up from 20 m/s to 40 m/s?",
+     "a": 735,
+     "tol": 2,
+     "unit": "Pa",
+     "why": "Δp = ½ρ(40² − 20²) = 0.6125 × 1200 = 735 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a narrowing duct of incompressible air, what happens to the speed?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "It reverses"
+     ],
+     "a": 0,
+     "why": "The same volume per second must pass through a smaller area.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pitot tube on an aircraft measures",
+     "o": [
+      "Airspeed, using the pressure difference",
+      "Temperature of the outside air only",
+      "Altitude only, by sending a radio signal",
+      "The amount of fuel left in the tanks"
+     ],
+     "a": 0,
+     "why": "It compares total (stagnation) pressure with static pressure; the difference is ½ρv².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "At what point is air speed zero in the flow around a wing's leading edge?",
+     "o": [
+      "At the stagnation point",
+      "At the wingtip",
+      "At the trailing edge only",
+      "Nowhere"
+     ],
+     "a": 0,
+     "why": "At the stagnation point the flow divides and its speed relative to the wing is zero.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which flight has the highest Mach number (speed of sound 340 m/s)?",
+     "o": [
+      "A fighter at 400 m/s",
+      "An airliner at 250 m/s",
+      "A light aircraft at 60 m/s",
+      "A runner at 5 m/s"
+     ],
+     "a": 0,
+     "why": "M = v ÷ 340 gives 1.18, 0.74, 0.18 and 0.015.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does air speed up when a duct narrows?",
+     "rubric": [
+      [
+       "same",
+       "constant",
+       "conserved",
+       "continuity"
+      ],
+      [
+       "flow",
+       "mass",
+       "volume",
+       "air"
+      ],
+      [
+       "area",
+       "narrow",
+       "smaller",
+       "less space",
+       "squeeze"
+      ]
+     ],
+     "min": 2,
+     "model": "The same amount of air must pass each point every second. When the area gets smaller, the air has to move faster to carry the same volume through.",
+     "why": "This is conservation of mass: A × v is constant for incompressible flow.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each idea to what it says.",
+     "pairs": [
+      [
+       "Continuity",
+       "Narrower passage, faster flow"
+      ],
+      [
+       "Bernoulli",
+       "Faster flow, lower pressure"
+      ],
+      [
+       "Mach number",
+       "Speed divided by speed of sound"
+      ],
+      [
+       "Viscosity",
+       "Stickiness of the fluid"
+      ]
+     ],
+     "why": "These four ideas describe subsonic flow.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Someone says: 'The air over the top is faster because it has further to go to meet the air under the wing.' What is the best reply?",
+     "o": [
+      "The equal transit time idea is wrong; the top air arrives before the lower air",
+      "That is exactly right, since the top path is longer",
+      "Air does not actually move over wings at all in flight",
+      "Both flows have the same speed all along a wing"
+     ],
+     "a": 0,
+     "why": "Measured flow shows the upper stream gets to the trailing edge first, so the explanation fails.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "At what Mach number is the assumption of incompressible flow commonly said to start to fail?",
+     "o": [
+      "Above about M 0.3",
+      "Above about M 0.003, which is a crawl",
+      "Only above M 5, in hypersonic flight",
+      "It never fails at any speed in air"
+     ],
+     "a": 0,
+     "why": "At M 0.3 density changes are near 5%, so compressibility begins to matter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can Bernoulli's equation not be applied directly across the boundary layer to the surface of a wing?",
+     "rubric": [
+      [
+       "viscous",
+       "viscosity",
+       "friction",
+       "sticky",
+       "boundary layer"
+      ],
+      [
+       "energy",
+       "loss",
+       "losses",
+       "slows",
+       "slow",
+       "stick",
+       "no-slip",
+       "no slip",
+       "zero speed"
+      ]
+     ],
+     "min": 1,
+     "model": "Bernoulli assumes inviscid flow with no energy loss. Close to the surface viscosity slows the air to zero speed at the wall and dissipates energy, so the equation does not hold along streamlines inside the boundary layer.",
+     "why": "Viscosity is neglected in Bernoulli's equation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why narrow means fast in air flow",
+    "model": "The same amount of air must pass every second, so when a duct gets narrower the air speeds up. By Bernoulli's principle, faster air has lower pressure. This is the basis for measuring airspeed and understanding how air moves past wings.",
+    "points": [
+     {
+      "k": [
+       "same",
+       "constant",
+       "conserved",
+       "mass"
+      ],
+      "ask": "What stays the same through the duct?"
+     },
+     {
+      "k": [
+       "narrow",
+       "smaller",
+       "area"
+      ],
+      "ask": "What happens when the duct narrows?"
+     },
+     {
+      "k": [
+       "pressure",
+       "bernoulli",
+       "lower"
+      ],
+      "ask": "What happens to the pressure when air speeds up?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Airfoil pressure distribution",
+   "icon": "🌡️",
+   "hook": "If you could put tiny pressure gauges all around a wing, where would the pressure be lowest, and what would that do?",
+   "explain": [
+    "The pressure on an airfoil is different at every point on its surface. We usually write it as a pressure coefficient C_p = (p − p∞) ÷ q∞, where p∞ is the free-stream pressure and q∞ = ½ρv∞². For incompressible flow, C_p = 1 − (v ÷ v∞)², with v the local speed at the surface.",
+    "At the stagnation point v = 0, so C_p = 1, the highest value. Where the air is faster than the free stream, C_p is negative: the pressure is below ambient. On a lifting airfoil the upper surface has strongly negative C_p near the leading edge (suction), and the lower surface has C_p close to zero or positive. The area between the two curves gives the lift.",
+    "The net force is found by adding up pressure times area all over the surface. Because pressure acts at right angles to the surface, the net force on a tilted wing has a part at right angles to the free stream (lift) and a part along it (pressure drag). The pressure also gives a pitching moment about the wing."
+   ],
+   "example": {
+    "q": "Air passes a point on an airfoil at 1.2 times the free-stream speed. Find C_p there, and the pressure difference from ambient if v∞ = 60 m/s, ρ = 1.225 kg/m³.",
+    "steps": [
+     "C_p = 1 − 1.2² = 1 − 1.44 = −0.44.",
+     "q∞ = 0.5 × 1.225 × 3600 = 2205 Pa.",
+     "p − p∞ = C_p × q∞ = −0.44 × 2205 = −970.2 Pa."
+    ],
+    "a": "C_p = −0.44; about 970 Pa below ambient"
+   },
+   "analogies": {
+    "sea": "A sailing boat's sail has a low-pressure side on the curved side which pulls it forward.",
+    "home": "A shower curtain blows inward when water runs: faster moving air or water gives lower pressure.",
+    "city": "A map with high- and low-pressure areas shows where the weather pushes. A pressure plot on a wing is similar.",
+    "tech": "Engineers put tiny holes (pressure taps) on a model wing and connect them to sensors."
+   },
+   "mnemonic": "Fast flow, negative C_p; stagnation, C_p = 1.",
+   "terms": [
+    [
+     "Pressure coefficient",
+     "C_p = (p − p∞) ÷ q∞."
+    ],
+    [
+     "Stagnation point",
+     "Where the flow speed relative to the body is zero."
+    ],
+    [
+     "Suction peak",
+     "The most negative pressure near the leading edge of the upper surface."
+    ],
+    [
+     "Free stream",
+     "The undisturbed air far from the body."
+    ]
+   ],
+   "misc": {
+    "wrong": "Lift comes only from the pressure on the bottom of the wing pushing up.",
+    "right": "Most of the lift usually comes from lower pressure on the top surface as well as higher pressure underneath."
+   },
+   "limits": "The C_p = 1 − (v/v∞)² formula assumes incompressible, inviscid flow. Real flow includes viscous effects and, at higher Mach numbers, compressibility.",
+   "trip": {
+    "wiki": "Pressure coefficient",
+    "prompt": "Find a plot of C_p over an airfoil. Which curve is the upper surface?"
+   },
+   "sources": [
+    "Pressure coefficient",
+    "Airfoil",
+    "Stagnation point"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the value of C_p at a stagnation point in incompressible flow?",
+     "o": [
+      "1",
+      "0",
+      "−1",
+      "Infinity"
+     ],
+     "a": 0,
+     "why": "v = 0 gives C_p = 1 − 0 = 1.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "The local air speed on an airfoil is 1.5 times the free-stream speed. What is C_p (incompressible)? Use C_p = 1 − (v/v∞)².",
+     "a": -1.25,
+     "tol": 0.01,
+     "why": "C_p = 1 − 1.5² = 1 − 2.25 = −1.25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Free-stream speed is 60 m/s and ρ = 1.225 kg/m³. What is q∞ in pascals?",
+     "a": 2205,
+     "tol": 2,
+     "unit": "Pa",
+     "why": "q∞ = 0.5 × 1.225 × 60² = 0.6125 × 3600 = 2205 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The average pressure on the lower surface of a wing is 500 Pa higher than on the upper surface, and the wing area is 10 m². What is the lift in newtons (treat the surfaces as flat)?",
+     "a": 5000,
+     "tol": 5,
+     "unit": "N",
+     "why": "Lift ≈ Δp × area = 500 × 10 = 5000 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A negative C_p on the upper surface means the pressure there is",
+     "o": [
+      "Lower than the free-stream pressure",
+      "Higher than the free-stream pressure",
+      "Zero",
+      "Unknown"
+     ],
+     "a": 0,
+     "why": "C_p < 0 means p < p∞.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Where is the speed of flow highest on a typical lifting airfoil?",
+     "o": [
+      "Near the upper surface close to the leading edge",
+      "At the stagnation point on the very front of the wing",
+      "Along the bottom surface near the trailing edge",
+      "In the air far away from the wing"
+     ],
+     "a": 0,
+     "why": "The suction peak occurs where the flow speeds up most over the upper surface.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does increasing angle of attack usually make the suction peak stronger?",
+     "o": [
+      "The flow turns more sharply around the leading edge",
+      "The wing gets lighter as it tilts more",
+      "The air gets denser as the wing tilts",
+      "Lift becomes unrelated to the pressure on the wing"
+     ],
+     "a": 0,
+     "why": "A larger angle turns the air more and speeds it up on the upper surface.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "On a lifting airfoil, which location has the highest C_p?",
+     "o": [
+      "The stagnation point",
+      "The upper-surface suction peak",
+      "The free stream far away",
+      "The wingtip vortex"
+     ],
+     "a": 0,
+     "why": "C_p = 1 at the stagnation point, about 0 in the free stream, and strongly negative at the suction peak.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain how pressure differences over the surface of a wing produce a lift force.",
+     "rubric": [
+      [
+       "pressure"
+      ],
+      [
+       "upper",
+       "top",
+       "above"
+      ],
+      [
+       "lower",
+       "bottom",
+       "below",
+       "underneath"
+      ],
+      [
+       "area",
+       "sum",
+       "add up",
+       "integrate",
+       "all over",
+       "net",
+       "push",
+       "perpendicular",
+       "right angles"
+      ]
+     ],
+     "min": 3,
+     "model": "The pressure on the upper surface is lower than on the lower surface. Pressure acts at right angles to the surface over its area, and the sum of all these small forces gives a net upward force, the lift.",
+     "why": "Lift is the net result of surface pressure integrated over the wing.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each point on an airfoil to its pressure behaviour.",
+     "pairs": [
+      [
+       "Stagnation point",
+       "C_p = 1"
+      ],
+      [
+       "Suction peak",
+       "Strongly negative C_p"
+      ],
+      [
+       "Free stream far away",
+       "C_p = 0"
+      ],
+      [
+       "Lower surface",
+       "Usually near zero or positive"
+      ]
+     ],
+     "why": "These describe a typical lifting airfoil.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student claims lift comes from the pressure underneath alone. Which fact disproves this?",
+     "o": [
+      "Pressure measurements show the upper surface suction contributes most of the lift",
+      "The bottom surface of a wing is found to have no pressure at all",
+      "Wings have no top surface for air to flow over",
+      "Air above a wing is completely still in flight, so no suction exists"
+     ],
+     "a": 0,
+     "why": "On most airfoils, the upper surface carries the larger share of the lift.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A wing tested at a higher speed has a bigger pressure difference. If C_p stays the same shape, why?",
+     "o": [
+      "Pressure differences scale with q∞ = ½ρv²",
+      "C_p changes to zero at higher speeds",
+      "Air becomes denser everywhere on the wing at once",
+      "Wings get lighter when they move faster"
+     ],
+     "a": 0,
+     "why": "Δp = ΔC_p × q∞, and q∞ rises as v².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the area between the upper and lower C_p curves a measure of lift?",
+     "rubric": [
+      [
+       "pressure",
+       "c_p",
+       "cp"
+      ],
+      [
+       "difference",
+       "between",
+       "net"
+      ],
+      [
+       "area",
+       "integral",
+       "sum",
+       "integrate",
+       "chord",
+       "along"
+      ],
+      [
+       "lift",
+       "force",
+       "normal"
+      ]
+     ],
+     "min": 3,
+     "model": "The C_p difference between lower and upper surface is the net pressure pushing up at each point. Adding this over the chord (the area between the curves) gives the net force per unit span, which is the lift to a good approximation.",
+     "why": "Lift coefficient ≈ integral of (C_p,lower − C_p,upper) along the chord, for small angles.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How the pressure around a wing gives lift",
+    "model": "Air moves faster over the top of a lifting wing, so the pressure there is lower than ambient. Underneath, the pressure is closer to ambient or higher. Pressure pushes at right angles to the surface, and the sum of the differences gives an upward force.",
+    "points": [
+     {
+      "k": [
+       "pressure",
+       "low",
+       "lower"
+      ],
+      "ask": "What is the pressure like on the top?"
+     },
+     {
+      "k": [
+       "below",
+       "underneath",
+       "bottom",
+       "higher"
+      ],
+      "ask": "What about underneath?"
+     },
+     {
+      "k": [
+       "add",
+       "sum",
+       "net",
+       "difference",
+       "overall"
+      ],
+      "ask": "How do those combine into lift?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Aircraft performance",
+   "icon": "📈",
+   "hook": "Why can a small aircraft take off from a short grass strip but a heavy airliner needs a long runway?",
+   "explain": [
+    "Performance describes what an aircraft can do: how fast, how high, how far, and how steeply it can climb. In level flight lift equals weight, so L = ½ρv²SC_L = W. Solving for speed gives v = √(2W ÷ (ρ S C_L)). The lowest speed that can be flown is the stall speed, found by using the maximum lift coefficient C_L,max: v_s = √(2W ÷ (ρ S C_L,max)).",
+    "Heavier aircraft, thinner air (high or hot airfields) and smaller wing area all raise the stall speed. Flaps raise C_L,max so landing and take-off speeds are lower. Take-off and landing distances are longer if the speeds are higher.",
+    "Range and endurance depend on engine fuel use and on L/D. In still air, a glider with glide ratio L/D going down a height h can travel a distance about h × (L/D). Airliners cruise high where thin air gives lower drag at high speed."
+   ],
+   "example": {
+    "q": "A 1000 kg aircraft has S = 16 m² and C_L,max = 1.6. Find its stall speed at sea level (ρ = 1.225 kg/m³, g = 9.81 m/s²).",
+    "steps": [
+     "W = 1000 × 9.81 = 9810 N.",
+     "v_s² = 2W ÷ (ρ S C_L,max) = 19 620 ÷ (1.225 × 16 × 1.6) = 19 620 ÷ 31.36 ≈ 625.6.",
+     "v_s = √625.6 ≈ 25.0 m/s."
+    ],
+    "a": "About 25 m/s"
+   },
+   "analogies": {
+    "sport": "A heavier sprinter needs a longer run to reach take-off speed in the long jump.",
+    "city": "A loaded truck takes longer to reach speed than an empty one.",
+    "farm": "A tractor with a heavier load needs a longer start to get going.",
+    "sea": "A loaded cargo ship needs a longer distance to stop."
+   },
+   "mnemonic": "Heavier, hotter, higher: stall speed rises, runway grows.",
+   "terms": [
+    [
+     "Stall speed",
+     "The lowest speed at which level flight can be kept."
+    ],
+    [
+     "C_L,max",
+     "The greatest lift coefficient before the wing stalls."
+    ],
+    [
+     "Glide ratio",
+     "Distance travelled forward per unit of height lost (about L/D)."
+    ],
+    [
+     "Wing loading",
+     "Weight divided by wing area, W/S."
+    ],
+    [
+     "Range",
+     "The distance an aircraft can fly on its fuel."
+    ]
+   ],
+   "misc": {
+    "wrong": "A plane stalls only when its engine stops.",
+    "right": "A stall is when the wing's angle of attack is too high and airflow separates. It can happen at any speed or power setting, though it is most likely at low speed."
+   },
+   "limits": "These are simple formulas for steady flight in still air. Real performance includes engine limits, weather, runway slope and safety margins. The game is educational, not pilot training.",
+   "trip": {
+    "wiki": "Stall (fluid dynamics)",
+    "prompt": "Find the part on stall speed. What changes the stall speed of an aircraft?"
+   },
+   "sources": [
+    "Stall (fluid dynamics)",
+    "Wing loading",
+    "Glide ratio"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which change would raise an aircraft's stall speed?",
+     "o": [
+      "Carrying more weight",
+      "Extending flaps",
+      "Flying in denser air",
+      "Increasing wing area"
+     ],
+     "a": 0,
+     "why": "Stall speed grows with the square root of weight; the other options lower it.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A 1000 kg aircraft has S = 16 m² and C_L,max = 1.6. Use ρ = 1.225 kg/m³ and g = 9.81 m/s². What is its stall speed in m/s?",
+     "a": 25,
+     "tol": 0.3,
+     "unit": "m/s",
+     "why": "v_s = √(2 × 9810 ÷ (1.225 × 16 × 1.6)) = √625.6 ≈ 25.0 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A glider with a glide ratio of 20 starts at 1500 m above flat ground in still air. How far, in metres, can it glide?",
+     "a": 30000,
+     "tol": 100,
+     "unit": "m",
+     "why": "Distance ≈ height × glide ratio = 1500 × 20 = 30 000 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An aircraft weighs 9810 N and has wing area 14 m². What is its wing loading in N/m²?",
+     "a": 700.7,
+     "tol": 1,
+     "unit": "N/m²",
+     "why": "W/S = 9810 ÷ 14 ≈ 700.7 N/m².",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does extending flaps lower the stall speed?",
+     "o": [
+      "They raise C_L,max",
+      "They reduce weight",
+      "They increase air density",
+      "They shorten the wing"
+     ],
+     "a": 0,
+     "why": "A larger C_L,max in v_s = √(2W/(ρSC_L,max)) lowers v_s.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do planes need longer runways at high, hot airports?",
+     "o": [
+      "Thinner air means a higher speed is needed to make enough lift",
+      "Runways melt a little in hot weather and grip less",
+      "Gravity is larger at high, hot places, so planes weigh more",
+      "Planes have no engines at such airports"
+     ],
+     "a": 0,
+     "why": "Lower density raises the required speed, so the take-off run is longer.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two gliders start from the same height. Glider A has L/D 25 and B has 35. Which goes further in still air?",
+     "o": [
+      "B",
+      "A",
+      "They go equally far",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "Glide distance ≈ height × L/D.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If only the mass changes, which aircraft has the highest stall speed?",
+     "o": [
+      "1500 kg",
+      "800 kg",
+      "1000 kg",
+      "1200 kg"
+     ],
+     "a": 0,
+     "why": "Stall speed grows with √W, so the heaviest aircraft stalls at the highest speed.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A pilot stalls the wing during a steep turn even though the airspeed is fairly high. Explain why this can happen.",
+     "rubric": [
+      [
+       "load",
+       "g-force",
+       "g force",
+       "load factor",
+       "more lift",
+       "extra lift"
+      ],
+      [
+       "angle of attack",
+       "angle",
+       "stall",
+       "separat"
+      ],
+      [
+       "turn",
+       "bank",
+       "steep"
+      ]
+     ],
+     "min": 2,
+     "model": "In a steep turn the wing must make more lift, so its angle of attack rises. If it passes the critical angle, the airflow separates and the wing stalls, even at a higher airspeed. Stall speed also rises with load factor.",
+     "why": "A stall depends on angle of attack, not on speed alone.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Stall speed",
+       "Lowest speed for level flight"
+      ],
+      [
+       "Wing loading",
+       "Weight divided by wing area"
+      ],
+      [
+       "Glide ratio",
+       "Distance forward per height lost"
+      ],
+      [
+       "Range",
+       "Distance flown on fuel"
+      ]
+     ],
+     "why": "These are performance terms.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If a plane's weight is 4 times larger with everything else the same, by what factor does the stall speed change?",
+     "o": [
+      "2",
+      "4",
+      "16",
+      "1"
+     ],
+     "a": 0,
+     "why": "v_s ∝ √W, so √4 = 2.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do airliners cruise at high altitude despite thin air giving less lift?",
+     "o": [
+      "Lower density reduces drag, so they fly faster for the same fuel; they make up lift with higher true speed",
+      "Gravity is much smaller up there, so far less lift is needed and fuel is saved",
+      "Engines work much better in thick air than in thin air",
+      "There is no air up there at all to slow the aircraft down"
+     ],
+     "a": 0,
+     "why": "Drag falls with density, so high flight is more efficient; the wing keeps lift by flying at a higher true airspeed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it correct that a stall can happen at any airspeed?",
+     "rubric": [
+      [
+       "angle of attack",
+       "angle",
+       "critical"
+      ],
+      [
+       "separat",
+       "flow",
+       "air"
+      ],
+      [
+       "speed",
+       "airspeed",
+       "not",
+       "any"
+      ]
+     ],
+     "min": 2,
+     "model": "A stall occurs when the angle of attack exceeds the critical value and the flow separates from the upper surface. The wing can reach that angle at any speed, for example in a steep pull-up.",
+     "why": "The cause of a stall is angle of attack.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What stall speed is",
+    "model": "The stall speed is the slowest speed at which the wing can still make lift equal to the weight. A heavier plane needs a higher speed. Flaps make the wing better at making lift, so the stall speed is lower.",
+    "points": [
+     {
+      "k": [
+       "slowest",
+       "lowest",
+       "minimum"
+      ],
+      "ask": "Which speed is the stall speed?"
+     },
+     {
+      "k": [
+       "weight",
+       "heavier",
+       "heavy"
+      ],
+      "ask": "How does weight change it?"
+     },
+     {
+      "k": [
+       "flap",
+       "flaps",
+       "lift coefficient"
+      ],
+      "ask": "What can lower it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Flight mechanics",
+   "icon": "🧮",
+   "hook": "Climbing needs power, turning tilts the lift, and diving can be exciting. How can we describe all of these using the same four forces?",
+   "explain": [
+    "Flight mechanics applies Newton's laws to aircraft. In a steady climb at angle γ, the forces along the flight path are thrust, drag and the component of weight W sin γ. The rate of climb is the vertical speed: for small angles, ROC ≈ (T − D) v ÷ W, which means excess power divided by weight.",
+    "In a steady, level, banked turn at bank angle φ, the vertical component of lift balances weight: L cos φ = W, so L = W ÷ cos φ. The load factor n = L ÷ W = 1 ÷ cos φ, and at 60° bank n = 2, a 'two g' turn. The horizontal component L sin φ gives the centripetal force, so the turn radius is R = v² ÷ (g tan φ).",
+    "Because load factor rises quickly at steep banks, stall speed also rises in a turn, by a factor √n. These simple equations assume steady motion and a straight horizontal or nearly horizontal path, and they are the basis for performance charts."
+   ],
+   "example": {
+    "q": "An aircraft in level flight at 50 m/s banks at 45° in a steady level turn. Find the turn radius (g = 9.81 m/s²).",
+    "steps": [
+     "R = v² ÷ (g tan φ).",
+     "v² = 2500; tan 45° = 1.",
+     "R = 2500 ÷ 9.81 ≈ 254.8 m."
+    ],
+    "a": "About 255 m"
+   },
+   "analogies": {
+    "sport": "A cyclist leans into a corner so the ground pushes toward the centre of the turn.",
+    "city": "Roads are banked on tight curves so the car's weight helps it turn.",
+    "sea": "A boat heels over in a turn as the sail and water forces change.",
+    "tech": "An amusement park ride that tilts and swings gives riders extra apparent weight in a turn."
+   },
+   "mnemonic": "Bank more, load goes up: n = 1 ÷ cos φ.",
+   "terms": [
+    [
+     "Rate of climb",
+     "Vertical speed, in m/s."
+    ],
+    [
+     "Bank angle",
+     "How far the wings are tilted from level."
+    ],
+    [
+     "Load factor",
+     "Lift divided by weight, n = L/W."
+    ],
+    [
+     "Turn radius",
+     "The radius of the circle flown, R = v²/(g tan φ)."
+    ]
+   ],
+   "misc": {
+    "wrong": "In a turn the lift always stays equal to the weight.",
+    "right": "Lift must be larger than weight in a banked level turn, because only the vertical component L cos φ balances the weight."
+   },
+   "limits": "These formulas apply to steady turns and climbs with small flight path angles. Real aircraft also need control inputs, and the game is educational, not pilot training.",
+   "trip": {
+    "wiki": "Banked turn",
+    "prompt": "Find the diagram of forces in a banked turn. Which force points toward the centre of the turn?"
+   },
+   "sources": [
+    "Banked turn",
+    "Rate of climb",
+    "Load factor (aeronautics)"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "An aircraft has thrust 8000 N, drag 6000 N, speed 60 m/s and weight 20 000 N. Estimate its rate of climb with ROC = (T − D)v/W, in m/s.",
+     "a": 6,
+     "tol": 0.1,
+     "unit": "m/s",
+     "why": "ROC = (8000 − 6000) × 60 ÷ 20 000 = 120 000 ÷ 20 000 = 6 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the load factor n in a steady level turn at a 60° bank? (n = 1/cos φ)",
+     "a": 2,
+     "tol": 0.02,
+     "why": "cos 60° = 0.5, so n = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A steady level turn is flown at 50 m/s and a 45° bank. Use g = 9.81 m/s². What is the turn radius in metres?",
+     "a": 254.8,
+     "tol": 1,
+     "unit": "m",
+     "why": "R = v² ÷ (g tan φ) = 2500 ÷ 9.81 = 254.8 m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a level banked turn, which force provides the centripetal force?",
+     "o": [
+      "The horizontal component of lift",
+      "The weight of the aircraft acting straight down",
+      "The thrust from the engines pushing forward",
+      "The drag on the fuselage pulling backward"
+     ],
+     "a": 0,
+     "why": "L sin φ points toward the centre of the turn.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pilot banks without adding any lift (no change in angle of attack). What happens?",
+     "o": [
+      "The aircraft descends because the vertical lift is less than weight",
+      "It climbs because the lift tilts upward",
+      "It stays perfectly level during the turn",
+      "It stops turning and flies straight again"
+     ],
+     "a": 0,
+     "why": "Vertical lift L cos φ is less than W, so there is a net downward force.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Compared with level flight, the stall speed in a 60° banked turn is",
+     "o": [
+      "About 1.41 times larger",
+      "Half as large as in level flight",
+      "The same as in level flight",
+      "Zero while the plane is banked"
+     ],
+     "a": 0,
+     "why": "v_s rises by √n = √2 ≈ 1.41.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What gives an aircraft a positive rate of climb at a steady speed?",
+     "o": [
+      "Thrust greater than drag",
+      "Lift smaller than weight",
+      "Drag greater than thrust",
+      "Zero thrust"
+     ],
+     "a": 0,
+     "why": "Excess thrust (excess power) is used to gain height.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which bank angle gives the largest load factor in a level turn?",
+     "o": [
+      "60°",
+      "0°",
+      "30°",
+      "45°"
+     ],
+     "a": 0,
+     "why": "n = 1/cos φ = 2 at 60°, 1.41 at 45°, 1.15 at 30° and 1 at 0°.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does the lift have to increase when an aircraft flies a level turn?",
+     "rubric": [
+      [
+       "tilt",
+       "tilted",
+       "bank",
+       "banked",
+       "component",
+       "angle"
+      ],
+      [
+       "vertical",
+       "weight",
+       "height",
+       "upward"
+      ],
+      [
+       "more",
+       "larger",
+       "greater",
+       "increase"
+      ]
+     ],
+     "min": 2,
+     "model": "In a bank the lift is tilted, so only part of it (L cos φ) acts upward. The lift must be larger than the weight so the vertical part still balances weight and the aircraft keeps its height.",
+     "why": "L cos φ = W gives L = W/cos φ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each formula to what it gives.",
+     "pairs": [
+      [
+       "n = 1/cos φ",
+       "Load factor in a level turn"
+      ],
+      [
+       "R = v²/(g tan φ)",
+       "Turn radius"
+      ],
+      [
+       "ROC = (T − D)v/W",
+       "Rate of climb"
+      ],
+      [
+       "L = W/cos φ",
+       "Lift needed in a level turn"
+      ]
+     ],
+     "why": "These are the basic equations of steady climbs and turns.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If speed is doubled at the same bank angle, the turn radius",
+     "o": [
+      "Becomes 4 times bigger",
+      "Doubles, since radius is proportional to speed",
+      "Halves, because faster flight turns more tightly",
+      "Stays the same at any speed"
+     ],
+     "a": 0,
+     "why": "R ∝ v².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a very steep bank dangerous for a light aircraft?",
+     "o": [
+      "Load factor and stall speed rise quickly",
+      "The wings fall off as soon as the bank passes 1°",
+      "Gravity increases when the wings are tilted",
+      "The engine turns off when the plane is banked"
+     ],
+     "a": 0,
+     "why": "n = 1/cos φ grows fast near 90°, and v_s grows with √n.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a climbing aircraft needs more thrust than drag, using forces.",
+     "rubric": [
+      [
+       "weight",
+       "component",
+       "w sin",
+       "along the path",
+       "gravity pulls back"
+      ],
+      [
+       "thrust"
+      ],
+      [
+       "drag"
+      ],
+      [
+       "more",
+       "greater",
+       "excess",
+       "extra"
+      ]
+     ],
+     "min": 3,
+     "model": "When climbing, part of the weight acts backward along the flight path. Thrust must overcome both drag and that component of weight, so thrust has to be greater than drag.",
+     "why": "T = D + W sin γ in a steady climb.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a banked turn needs extra lift",
+    "model": "In a bank the lift is tilted. The upward part must still hold up the weight, and the sideways part pulls the plane round the turn. So the total lift has to be larger than the weight, and the steeper the bank, the larger it must be.",
+    "points": [
+     {
+      "k": [
+       "tilt",
+       "tilted",
+       "bank",
+       "angle"
+      ],
+      "ask": "What does banking do to the lift?"
+     },
+     {
+      "k": [
+       "upward",
+       "vertical",
+       "weight",
+       "height"
+      ],
+      "ask": "What must the upward part do?"
+     },
+     {
+      "k": [
+       "sideways",
+       "horizontal",
+       "turn",
+       "centre"
+      ],
+      "ask": "What does the sideways part do?"
+     },
+     {
+      "k": [
+       "more",
+       "larger",
+       "greater",
+       "increase"
+      ],
+      "ask": "So how big must the total lift be?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Aircraft structural components",
+   "icon": "🏗️",
+   "hook": "A wing has to hold a whole aircraft up in the air, yet it is thin and light. How is it built so it does not snap?",
+   "explain": [
+    "An aircraft's skeleton is called the airframe. The fuselage carries people and cargo and is built from rings called frames and long strips called stringers, covered by a thin skin. The wing has long beams called spars, running from root to tip, and ribs, which give the airfoil shape and support the skin.",
+    "Loads come from lift, weight, the engines and gusts. Stress is force per area: σ = F ÷ A, in pascals. A structure must carry its design loads with a safety margin. Aircraft are designed for a limit load factor (for example 2.5 g for many transport aircraft) and are checked for a larger ultimate load.",
+    "Materials need high strength for little mass. Many aircraft use aluminium alloys, and newer ones use composites such as carbon fibre in plastic, which are strong and light. Cycles of loading can cause fatigue cracks, so aircraft are inspected regularly. Cabins are pressurised, which adds a load on the fuselage."
+   ],
+   "example": {
+    "q": "A rod carries a 50 kN pull and has a cross-section of 0.0005 m². What is the stress?",
+    "steps": [
+     "F = 50 kN = 50 000 N.",
+     "σ = F ÷ A = 50 000 ÷ 0.0005.",
+     "σ = 100 000 000 Pa = 100 MPa."
+    ],
+    "a": "100 MPa"
+   },
+   "analogies": {
+    "city": "A bridge has main beams (spars) and cross-supports (ribs) like a wing.",
+    "nature": "A bird's bones are hollow and light but strong.",
+    "home": "A cardboard tube is stiff for its weight, like a fuselage skin on frames.",
+    "sport": "A tennis racket uses a light frame to take big impacts."
+   },
+   "mnemonic": "Spars run long, ribs go across, skin covers all, stress is force over area.",
+   "terms": [
+    [
+     "Spar",
+     "A main beam running along the wing."
+    ],
+    [
+     "Rib",
+     "A cross piece that gives the wing its airfoil shape."
+    ],
+    [
+     "Stringer",
+     "A long stiffener along the fuselage or wing skin."
+    ],
+    [
+     "Stress",
+     "Force divided by area, in pascals."
+    ],
+    [
+     "Fatigue",
+     "Damage from many repeated loads."
+    ]
+   ],
+   "misc": {
+    "wrong": "A stronger material is always the best choice for aircraft.",
+    "right": "Aircraft need a high ratio of strength to mass, not strength alone. A very strong but heavy material wastes fuel."
+   },
+   "limits": "Real structural design uses detailed computer models and extensive tests. This level shows only the basic parts and simple stress calculations.",
+   "trip": {
+    "wiki": "Aircraft fuselage",
+    "prompt": "Find the image of the frames and stringers. What shape do the frames have?"
+   },
+   "sources": [
+    "Aircraft fuselage",
+    "Spar (aeronautics)",
+    "Stress (mechanics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What runs along a wing from root to tip to carry the main bending load?",
+     "o": [
+      "Spar",
+      "Rib",
+      "Rudder",
+      "Flap"
+     ],
+     "a": 0,
+     "why": "Spars are the main beams of a wing.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What gives a wing its airfoil shape from the inside?",
+     "o": [
+      "Ribs",
+      "Spars",
+      "Landing gear",
+      "Seats"
+     ],
+     "a": 0,
+     "why": "Ribs set the cross-section shape and support the skin.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A bar carries a 50 kN pull and has a cross-section of 0.0005 m². What is the stress in megapascals (MPa)?",
+     "a": 100,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "σ = 50 000 ÷ 0.0005 = 1×10⁸ Pa = 100 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An aircraft of mass 5000 kg is designed for a limit load factor of 2.5. Use g = 9.81 m/s². What lift force must the wings be able to carry at the limit, in newtons?",
+     "a": 122625,
+     "tol": 20,
+     "unit": "N",
+     "why": "Limit lift = n × W = 2.5 × 5000 × 9.81 = 122 625 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why are many modern aircraft made with carbon-fibre composites?",
+     "o": [
+      "High strength for low mass",
+      "They are cheaper than steel in all cases",
+      "They never crack",
+      "They are heavier"
+     ],
+     "a": 0,
+     "why": "Composites give high strength-to-weight and stiffness-to-weight.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are aircraft inspected for tiny cracks regularly?",
+     "o": [
+      "Fatigue cracks can grow under repeated loads",
+      "Cracks are only there as a kind of decoration",
+      "Paint hides every crack so none can form",
+      "Wings are made of glass and break easily"
+     ],
+     "a": 0,
+     "why": "Repeated loading can start and grow cracks, so inspections find them early.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A hollow tube is nearly as stiff in bending as a solid rod of the same outer size, but much lighter. Why?",
+     "o": [
+      "Material far from the centre does most of the resisting",
+      "Air inside the tube carries most of the load",
+      "Hollow tubes are always stronger than solid rods",
+      "Mass does not matter in aircraft design at all"
+     ],
+     "a": 0,
+     "why": "Bending stiffness depends mostly on material placed far from the neutral axis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order from the outside of a fuselage to the inside.",
+     "items": [
+      "Skin",
+      "Stringers",
+      "Frames",
+      "Cabin"
+     ],
+     "why": "The skin is outermost, supported by stringers and frames, and the cabin is inside.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a pressurised cabin put extra load on the fuselage?",
+     "rubric": [
+      [
+       "pressure",
+       "pressurised",
+       "pressurized",
+       "inside"
+      ],
+      [
+       "outside",
+       "higher",
+       "difference",
+       "push",
+       "outward",
+       "expand",
+       "balloon",
+       "hoop",
+       "stress"
+      ]
+     ],
+     "min": 2,
+     "model": "The air pressure inside the cabin is higher than the thin air outside, so it pushes outward on the skin like a balloon. The fuselage must carry this extra stress, and pressurising and depressurising each flight repeats the loading.",
+     "why": "Pressure difference acts across the skin area and loads the frames.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each part to its job.",
+     "pairs": [
+      [
+       "Spar",
+       "Carries wing bending"
+      ],
+      [
+       "Rib",
+       "Shapes the wing section"
+      ],
+      [
+       "Stringer",
+       "Stiffens the skin"
+      ],
+      [
+       "Frame",
+       "Gives the fuselage its cross-section shape"
+      ]
+     ],
+     "why": "These are the main parts of the airframe.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If the force on a rod stays the same but its cross-section area is halved, the stress",
+     "o": [
+      "Doubles",
+      "Halves",
+      "Stays the same",
+      "Falls to zero"
+     ],
+     "a": 0,
+     "why": "σ = F/A, so halving A doubles σ.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do designers apply a safety factor, such as 1.5, between limit and ultimate load?",
+     "o": [
+      "To allow for uncertainty and damage",
+      "To make the aircraft heavier on purpose",
+      "Because the law of physics says so",
+      "To use up materials"
+     ],
+     "a": 0,
+     "why": "Safety margins cover errors in loads, material variation and damage.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does reducing the mass of the structure matter for an aircraft?",
+     "rubric": [
+      [
+       "fuel",
+       "payload",
+       "passengers",
+       "cargo",
+       "range"
+      ],
+      [
+       "less",
+       "lower",
+       "save",
+       "reduce",
+       "more",
+       "carry"
+      ],
+      [
+       "weight",
+       "mass",
+       "lift"
+      ]
+     ],
+     "min": 2,
+     "model": "Less structural mass means less weight to lift, so the aircraft uses less fuel or can carry more passengers and cargo for the same lift.",
+     "why": "Weight is a direct cost in lift and fuel.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a wing is built",
+    "model": "A wing has strong beams called spars that run along its length. Ribs across them give it the airfoil shape, and a thin skin covers the frame. Stress is the force on each unit of area, and designers keep it below what the material can take.",
+    "points": [
+     {
+      "k": [
+       "spar",
+       "spars",
+       "beam"
+      ],
+      "ask": "What carries the main load?"
+     },
+     {
+      "k": [
+       "rib",
+       "ribs",
+       "shape"
+      ],
+      "ask": "What gives it its shape?"
+     },
+     {
+      "k": [
+       "stress",
+       "force",
+       "area"
+      ],
+      "ask": "What is stress?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Jet engine fundamentals",
+   "icon": "🔥",
+   "hook": "A jet engine takes in air at the front and throws out a roaring stream at the back. What happens in between to make that stream so much faster?",
+   "explain": [
+    "A gas turbine (turbojet) works in four steps: intake, compression, combustion and exhaust. A compressor squeezes the air, fuel is burned in a combustor, and the hot gas expands through a turbine that drives the compressor, then leaves through a nozzle. The gas leaves faster than the air came in.",
+    "Thrust is the change in momentum of the air per second: F = ṁ(v_e − v₀), with ṁ the mass flow rate, v_e the exhaust speed and v₀ the speed of the aircraft. A turbofan has a large fan driven by the core, and most of its thrust comes from air that bypasses the core. The bypass ratio compares bypass air to core air.",
+    "Bypass air is accelerated by only a little, which is more efficient at airliner speeds and quieter. Pure turbojets suit very high speeds. Engines lose power at height because thin air carries less mass flow, so thrust falls as altitude rises."
+   ],
+   "example": {
+    "q": "An engine takes in 100 kg of air per second and the exhaust leaves at 500 m/s relative to an aircraft flying at 250 m/s. Ignoring the added fuel mass, find the thrust.",
+    "steps": [
+     "F = ṁ(v_e − v₀).",
+     "F = 100 × (500 − 250).",
+     "F = 100 × 250 = 25 000 N."
+    ],
+    "a": "25 000 N (25 kN)"
+   },
+   "analogies": {
+    "sea": "A water jet-ski sucks water in and shoots it out of the back faster.",
+    "home": "A hairdryer takes in air and blows it out faster and hotter.",
+    "sport": "A sprinter pushes off the blocks with a big push backward on the ground.",
+    "tech": "A bicycle pump compresses air in the same way a compressor does."
+   },
+   "mnemonic": "Suck, squeeze, bang, blow.",
+   "terms": [
+    [
+     "Compressor",
+     "Squeezes the incoming air to a higher pressure."
+    ],
+    [
+     "Combustor",
+     "The chamber where fuel burns in the compressed air."
+    ],
+    [
+     "Turbine",
+     "Wheel turned by the hot gas, driving the compressor and fan."
+    ],
+    [
+     "Bypass ratio",
+     "Mass flow of bypass air divided by core air."
+    ],
+    [
+     "Nozzle",
+     "The exit that speeds up the exhaust jet."
+    ]
+   ],
+   "misc": {
+    "wrong": "A jet engine pushes against the air behind it.",
+    "right": "Thrust is the reaction to speeding up air through the engine. It works by changing the momentum of the air, not by pushing against outside air."
+   },
+   "limits": "The thrust formula ignores the added fuel mass and pressure thrust at the nozzle. Real engines are far more complex, with many compressor and turbine stages.",
+   "trip": {
+    "wiki": "Turbofan",
+    "prompt": "Find the labelled diagram. Where is the high-pressure compressor, and where is the combustor?"
+   },
+   "sources": [
+    "Turbojet",
+    "Turbofan",
+    "Gas turbine"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In which order does air pass through a basic jet engine?",
+     "o": [
+      "Intake, compressor, combustor, turbine, nozzle",
+      "Nozzle, turbine, combustor, compressor, intake",
+      "Combustor, intake, nozzle, turbine, compressor",
+      "Turbine, intake, nozzle, combustor, compressor"
+     ],
+     "a": 0,
+     "why": "The air is compressed, heated by burning, expanded through a turbine and then exhausted.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "An engine passes 100 kg/s of air. The exhaust leaves at 500 m/s relative to the engine and the aircraft flies at 250 m/s. Ignoring fuel mass, what is the thrust in newtons?",
+     "a": 25000,
+     "tol": 50,
+     "unit": "N",
+     "why": "F = ṁ(v_e − v₀) = 100 × (500 − 250) = 25 000 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A turbofan has a core mass flow of 20 kg/s and a bypass mass flow of 120 kg/s. What is its bypass ratio?",
+     "a": 6,
+     "tol": 0.05,
+     "why": "Bypass ratio = 120 ÷ 20 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What drives the compressor in a jet engine?",
+     "o": [
+      "The turbine, driven by hot gas",
+      "A battery carried inside the engine",
+      "The landing gear as it retracts",
+      "Wind blowing through the intake"
+     ],
+     "a": 0,
+     "why": "The turbine takes energy from the hot gas and turns a shaft connected to the compressor.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a turbofan suit airliners better than a pure turbojet?",
+     "o": [
+      "It moves more air by a smaller speed change, which is more efficient and quieter",
+      "It burns no fuel at all while it cruises along",
+      "It weighs nothing compared with a turbojet",
+      "It makes no thrust from its core, only from the fan, which saves fuel"
+     ],
+     "a": 0,
+     "why": "Large bypass flow gives thrust with less wasted kinetic energy in the jet.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does engine thrust fall as altitude increases?",
+     "o": [
+      "Thinner air means less mass flow through the engine",
+      "Gravity gets stronger as the aircraft climbs",
+      "The fuel becomes heavy in the cold",
+      "The nozzle shrinks as the air cools"
+     ],
+     "a": 0,
+     "why": "Thrust depends on mass flow, which falls with air density.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a jet engine not work in space?",
+     "o": [
+      "It needs atmospheric air to burn its fuel",
+      "It is too small to work outside the atmosphere",
+      "Space is too hot for the engine to survive",
+      "It needs a supply of water to run"
+     ],
+     "a": 0,
+     "why": "Jet engines take oxygen from the air. Rockets carry their own oxidiser.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these energy conversions in the order they happen in a gas turbine.",
+     "items": [
+      "Air is compressed",
+      "Fuel burns and heats the gas",
+      "Gas expands through the turbine",
+      "Gas leaves as a fast jet"
+     ],
+     "why": "Compression, heating, expansion and then exhaust is the Brayton cycle sequence.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain, using momentum, how a jet engine produces thrust.",
+     "rubric": [
+      [
+       "momentum",
+       "speed up",
+       "accelerate",
+       "faster"
+      ],
+      [
+       "air",
+       "gas",
+       "mass"
+      ],
+      [
+       "backward",
+       "out of the back",
+       "exhaust",
+       "rear",
+       "behind"
+      ],
+      [
+       "reaction",
+       "third law",
+       "forward",
+       "equal and opposite"
+      ]
+     ],
+     "min": 3,
+     "model": "The engine takes in air and accelerates it so it leaves faster than it came in. The change in momentum of the air per second equals the force on it, and the reaction pushes the engine forward.",
+     "why": "Thrust is the rate of change of momentum of the air.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each engine part to its job.",
+     "pairs": [
+      [
+       "Compressor",
+       "Squeezes the air"
+      ],
+      [
+       "Combustor",
+       "Burns fuel in the air"
+      ],
+      [
+       "Turbine",
+       "Drives the compressor"
+      ],
+      [
+       "Nozzle",
+       "Accelerates the exhaust"
+      ]
+     ],
+     "why": "These parts form the core of a gas turbine.",
+     "d": 1,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two engines give the same thrust. Engine A throws 200 kg/s of air with a 50 m/s speed increase; engine B throws 50 kg/s with 200 m/s. Which wastes less kinetic energy in the jet?",
+     "o": [
+      "A",
+      "B",
+      "Both equal",
+      "Neither makes thrust"
+     ],
+     "a": 0,
+     "why": "Both give 10 000 N, but kinetic energy added is ½ṁΔv², which is smaller with a small Δv and big ṁ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A jet flies faster, so v₀ increases while v_e and ṁ stay the same. The thrust",
+     "o": [
+      "Falls",
+      "Rises",
+      "Stays the same",
+      "Doubles"
+     ],
+     "a": 0,
+     "why": "F = ṁ(v_e − v₀); a larger v₀ gives a smaller difference.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a jet engine's thrust be changed by adding more fuel without changing air flow?",
+     "rubric": [
+      [
+       "hotter",
+       "temperature",
+       "heat",
+       "expand",
+       "energy"
+      ],
+      [
+       "faster",
+       "speed",
+       "velocity",
+       "exhaust"
+      ],
+      [
+       "thrust",
+       "force",
+       "more"
+      ]
+     ],
+     "min": 2,
+     "model": "Burning more fuel heats the gas more, so it expands through the turbine and nozzle with more energy and leaves the nozzle faster. A bigger exhaust speed gives a larger thrust.",
+     "why": "Extra heat raises the exhaust speed v_e.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a jet engine makes thrust",
+    "model": "A jet engine sucks in air, squeezes it, burns fuel in it and lets the hot gas rush out of the back. The gas leaves faster than the air came in, so the engine pushes it back and the gas pushes the engine forward.",
+    "points": [
+     {
+      "k": [
+       "suck",
+       "intake",
+       "takes in",
+       "sucks"
+      ],
+      "ask": "Where does the air come from?"
+     },
+     {
+      "k": [
+       "squeeze",
+       "compress",
+       "compressor"
+      ],
+      "ask": "What happens to the air next?"
+     },
+     {
+      "k": [
+       "burn",
+       "fuel",
+       "combust"
+      ],
+      "ask": "What do we add?"
+     },
+     {
+      "k": [
+       "exhaust",
+       "back",
+       "faster",
+       "nozzle",
+       "push"
+      ],
+      "ask": "How does that make thrust?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Helicopter rotor aerodynamics",
+   "icon": "🚁",
+   "hook": "A helicopter blade moves forward on one side and backward on the other when the helicopter flies ahead. Why doesn't it roll over?",
+   "explain": [
+    "Each rotor blade is a small wing. As it spins, it makes lift, and the sum of the lift from all blades gives rotor thrust. In a hover, thrust equals weight: T = W. The rotor disk area is A = πR², and disk loading is T ÷ A. A larger rotor spreads the push over more air, which needs less power.",
+    "In hover the rotor accelerates air downward. A simple momentum model gives the induced velocity v_i = √(T ÷ (2ρA)). The torque from the rotor turns the helicopter body the other way, so a tail rotor (or another main rotor) provides a balancing torque.",
+    "When flying forward, the advancing blade moves through air at speed Ωr plus the aircraft speed, and the retreating blade at Ωr minus it. This would make the advancing side lift far more. Blades flap up on the advancing side and down on the retreating side, which changes their angle of attack and balances the lift. This is called dissymmetry of lift and is a key limit on a helicopter's top speed."
+   ],
+   "example": {
+    "q": "A helicopter of mass 1200 kg hovers with a rotor of radius 5 m. Find the disk loading (g = 9.81 m/s²).",
+    "steps": [
+     "T = W = 1200 × 9.81 = 11 772 N.",
+     "A = π × 5² = 78.54 m².",
+     "Disk loading = 11 772 ÷ 78.54 ≈ 149.9 N/m²."
+    ],
+    "a": "About 150 N/m²"
+   },
+   "analogies": {
+    "home": "A ceiling fan pushes air down; a helicopter rotor does it with enough force to lift.",
+    "sea": "A propeller on a boat pushes water; a rotor pushes air.",
+    "sport": "A rower on one side of a boat would turn it, so rowers balance each side. A tail rotor balances torque.",
+    "nature": "A hovering hummingbird pushes air down to stay in place."
+   },
+   "mnemonic": "Thrust equals weight in a hover; air goes down so the helicopter stays up.",
+   "terms": [
+    [
+     "Disk loading",
+     "Rotor thrust divided by rotor disk area."
+    ],
+    [
+     "Induced velocity",
+     "The downward speed given to the air through the rotor."
+    ],
+    [
+     "Advancing blade",
+     "The blade moving in the same direction as the helicopter's flight."
+    ],
+    [
+     "Dissymmetry of lift",
+     "Unequal lift between advancing and retreating sides."
+    ],
+    [
+     "Tail rotor",
+     "A small rotor that stops the body from spinning."
+    ]
+   ],
+   "misc": {
+    "wrong": "A helicopter hovers because its rotor blades lift it like a fan holding it up in a vacuum.",
+    "right": "The rotor throws a stream of air downward, and the reaction holds the helicopter up. It cannot hover without air."
+   },
+   "limits": "The momentum model gives only the ideal minimum power. Real rotors need more power for friction on the blades and other losses. The game is educational, not pilot training.",
+   "trip": {
+    "wiki": "Helicopter rotor",
+    "prompt": "Find the part on dissymmetry of lift. How do the blades change their angle?"
+   },
+   "sources": [
+    "Helicopter rotor",
+    "Disk loading",
+    "Dissymmetry of lift"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A helicopter of mass 1200 kg hovers. Use g = 9.81 m/s². What rotor thrust is needed in newtons?",
+     "a": 11772,
+     "tol": 5,
+     "unit": "N",
+     "why": "In a hover T = W = 1200 × 9.81 = 11 772 N.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rotor has radius 5 m. What is its disk area in m²? Use π = 3.1416.",
+     "a": 78.54,
+     "tol": 0.1,
+     "unit": "m²",
+     "why": "A = πR² = 3.1416 × 25 = 78.54 m².",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The helicopter needs 11 772 N of thrust and the disk area is 78.54 m². What is the disk loading in N/m²?",
+     "a": 149.9,
+     "tol": 0.5,
+     "unit": "N/m²",
+     "why": "11 772 ÷ 78.54 ≈ 149.9 N/m².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use v_i = √(T/(2ρA)) with T = 11 772 N, ρ = 1.225 kg/m³, A = 78.54 m². What is the induced velocity in m/s?",
+     "a": 7.82,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "2ρA = 192.4. T ÷ 192.4 = 61.18. Square root ≈ 7.82 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a helicopter with a single main rotor need a tail rotor?",
+     "o": [
+      "To cancel the torque that would spin the body",
+      "To make extra lift for the rotor",
+      "To cool the engine in the hover",
+      "To make the helicopter look balanced"
+     ],
+     "a": 0,
+     "why": "The rotor turning one way twists the body the other way.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "When a helicopter flies forward, which blade meets the faster air?",
+     "o": [
+      "The advancing blade",
+      "The retreating blade",
+      "Both are equal",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "The advancing blade's speed is Ωr plus the aircraft speed.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a helicopter with a larger rotor need less power to hover?",
+     "o": [
+      "It accelerates a larger mass of air by a smaller speed",
+      "It weighs much less than a small rotor",
+      "The air near a large rotor is heavier",
+      "Larger rotors spin backward in the hover"
+     ],
+     "a": 0,
+     "why": "For the same thrust, a bigger disk gives lower induced velocity and wastes less kinetic energy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor limits the top speed of a conventional helicopter?",
+     "o": [
+      "Dissymmetry of lift and retreating-blade stall",
+      "The colour of the tail and body of the helicopter",
+      "The length of the runway it uses",
+      "The noise made by the engine while it flies"
+     ],
+     "a": 0,
+     "why": "At high forward speeds the retreating blade sees too little airspeed and stalls.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two helicopters of equal mass have rotor radii of 3 m and 8 m. Which has the higher disk loading?",
+     "o": [
+      "The 3 m rotor",
+      "The 8 m rotor",
+      "They are equal",
+      "Neither can hover"
+     ],
+     "a": 0,
+     "why": "Disk loading is T/(πR²), which is larger for a smaller disk.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why would a helicopter be unable to hover on the Moon using its rotor?",
+     "rubric": [
+      [
+       "air",
+       "atmosphere"
+      ],
+      [
+       "no",
+       "not",
+       "almost no",
+       "vacuum",
+       "thin"
+      ],
+      [
+       "push",
+       "throw",
+       "downward",
+       "reaction",
+       "thrust",
+       "lift"
+      ]
+     ],
+     "min": 2,
+     "model": "There is almost no atmosphere on the Moon. A rotor works by pushing air down, so with no air there is no reaction force to hold the helicopter up.",
+     "why": "Rotors need air to push.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If the rotor thrust is doubled in a hover with the same rotor, the induced velocity changes by a factor of",
+     "o": [
+      "√2",
+      "2√2",
+      "1/√2",
+      "4"
+     ],
+     "a": 0,
+     "why": "v_i ∝ √T.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A rescue helicopter hovers at a high mountain where the air is thin. What happens to power needed?",
+     "o": [
+      "It rises, because the rotor must move more air faster",
+      "It falls to zero, since thin air needs no effort",
+      "It stays the same at any height",
+      "It is not related to air density at all"
+     ],
+     "a": 0,
+     "why": "v_i = √(T/2ρA) rises when ρ falls, and ideal power T v_i rises too.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how blade flapping helps a helicopter in forward flight.",
+     "rubric": [
+      [
+       "advancing"
+      ],
+      [
+       "flap",
+       "flaps",
+       "rise",
+       "rises",
+       "up",
+       "upward"
+      ],
+      [
+       "angle of attack",
+       "angle",
+       "lift",
+       "reduce",
+       "less",
+       "balance",
+       "equal"
+      ]
+     ],
+     "min": 2,
+     "model": "The advancing blade meets faster air and tends to make more lift, so it flaps upward. This reduces its angle of attack and lift, while the retreating blade flaps down to increase its angle, so the lift on both sides is balanced.",
+     "why": "Flapping equalises lift between advancing and retreating sides.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a helicopter hovers",
+    "model": "A helicopter's blades are spinning wings. They push a column of air downward, and the reaction holds the helicopter up. To hover, the upward thrust must equal the weight. A tail rotor stops the body from spinning the other way.",
+    "points": [
+     {
+      "k": [
+       "blade",
+       "blades",
+       "wing",
+       "wings"
+      ],
+      "ask": "What are the rotor blades like?"
+     },
+     {
+      "k": [
+       "air",
+       "down",
+       "downward",
+       "push"
+      ],
+      "ask": "What do they do to the air?"
+     },
+     {
+      "k": [
+       "equal",
+       "weight",
+       "thrust"
+      ],
+      "ask": "What must be true for a hover?"
+     },
+     {
+      "k": [
+       "tail",
+       "torque",
+       "spin"
+      ],
+      "ask": "What does the tail rotor do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Satellite orbit fundamentals",
+   "icon": "🛰️",
+   "hook": "The International Space Station travels at about 7.7 km/s, so a trip around Earth takes only about 90 minutes. Why that speed, and not faster or slower?",
+   "explain": [
+    "A satellite in a circular orbit is in free fall around the planet. Gravity provides the centripetal force: GMm ÷ r² = mv² ÷ r. Cancelling m gives the orbital speed v = √(GM ÷ r). For Earth, GM = 3.986 × 10¹⁴ m³/s². Here r is measured from Earth's centre, not the surface (Earth's mean radius is 6371 km).",
+    "A larger orbit means lower speed and a longer period. The period is T = 2πr ÷ v. A low orbit at 400 km altitude has r = 6771 km, giving v ≈ 7.67 km/s and T ≈ 92 minutes. A geostationary orbit has a period matching Earth's rotation (about 23 h 56 min) at radius about 42 164 km, about 35 786 km above the equator, and appears fixed in the sky.",
+    "The orbit does not depend on the satellite's mass. Moving into a higher orbit takes energy, but the satellite then travels more slowly. Drag from the thin upper atmosphere slowly lowers very low orbits, so such satellites need occasional boosts."
+   ],
+   "example": {
+    "q": "Find the orbital speed at 400 km altitude. (GM = 3.986×10¹⁴ m³/s²; Earth radius 6371 km.)",
+    "steps": [
+     "r = 6371 + 400 = 6771 km = 6.771×10⁶ m.",
+     "v² = GM ÷ r = 3.986×10¹⁴ ÷ 6.771×10⁶ ≈ 5.887×10⁷.",
+     "v = √(5.887×10⁷) ≈ 7673 m/s."
+    ],
+    "a": "About 7.67 km/s"
+   },
+   "analogies": {
+    "sport": "A hammer thrower whirls the hammer on a rope; the rope pulls inward like gravity.",
+    "sea": "Swinging a bucket on a rope in a circle: the rope's pull keeps it on the path.",
+    "home": "A ball on a string being whirled overhead is like a satellite on gravity's string.",
+    "tech": "Navigation satellites are in high orbits so many can be seen from the ground."
+   },
+   "mnemonic": "Higher means slower and longer: v = √(GM/r).",
+   "terms": [
+    [
+     "Orbital speed",
+     "The speed for a circular orbit: v = √(GM/r)."
+    ],
+    [
+     "Period",
+     "The time for one full orbit: T = 2πr/v."
+    ],
+    [
+     "Low Earth orbit",
+     "An orbit a few hundred kilometres above the surface."
+    ],
+    [
+     "Geostationary orbit",
+     "An orbit with a 24-hour (sidereal) period above the equator."
+    ],
+    [
+     "Free fall",
+     "Motion under gravity alone."
+    ]
+   ],
+   "misc": {
+    "wrong": "Satellites in orbit are beyond Earth's gravity.",
+    "right": "Gravity at the ISS is still about 90% of its value on the ground. Satellites orbit because they fall around Earth while moving sideways fast."
+   },
+   "limits": "This level treats circular orbits around a spherical Earth with no air drag. Real orbits are slightly elliptical and are disturbed by Earth's shape, the Moon and the Sun.",
+   "trip": {
+    "wiki": "Low Earth orbit",
+    "prompt": "Find the range of heights for low Earth orbit. Where is the International Space Station?"
+   },
+   "sources": [
+    "Orbital speed",
+    "Low Earth orbit",
+    "Geostationary orbit"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Use GM = 3.986×10¹⁴ m³/s² and r = 6.771×10⁶ m. What is the circular orbital speed v = √(GM/r) in m/s?",
+     "a": 7673,
+     "tol": 10,
+     "unit": "m/s",
+     "why": "v = √(3.986×10¹⁴ ÷ 6.771×10⁶) = √(5.887×10⁷) ≈ 7673 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A satellite moves at 7673 m/s on a circle of radius 6.771×10⁶ m. Use T = 2πr/v. What is the period in seconds? (2π = 6.2832)",
+     "a": 5545,
+     "tol": 15,
+     "unit": "s",
+     "why": "T = 6.2832 × 6.771×10⁶ ÷ 7673 ≈ 5545 s, about 92 minutes.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A satellite orbits at 6371 km (Earth's radius) plus 600 km altitude. What is its orbit radius r from Earth's centre in km?",
+     "a": 6971,
+     "tol": 1,
+     "unit": "km",
+     "why": "r = 6371 + 600 = 6971 km.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What provides the centripetal force on a satellite?",
+     "o": [
+      "Gravity",
+      "Engine thrust",
+      "Air pressure",
+      "Magnetism"
+     ],
+     "a": 0,
+     "why": "Gravity pulls the satellite toward the centre of its orbit.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Does a satellite's orbital speed at a given radius depend on its mass?",
+     "o": [
+      "No",
+      "Yes, heavier is faster",
+      "Yes, heavier is slower",
+      "Only for large ones"
+     ],
+     "a": 0,
+     "why": "Mass cancels in GMm/r² = mv²/r.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A satellite moves to a higher circular orbit. What happens to its speed?",
+     "o": [
+      "It decreases",
+      "It increases",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "v = √(GM/r), so larger r gives lower v.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a geostationary satellite appear fixed in the sky?",
+     "o": [
+      "Its orbital period matches Earth's rotation and it orbits above the equator",
+      "It has no gravity acting on it at that height",
+      "It never moves at all, even compared with space",
+      "It is held up by a very long cable from the ground"
+     ],
+     "a": 0,
+     "why": "It completes one orbit in the time Earth completes one turn, so it stays above the same point.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A very low satellite slowly loses height. What is the main cause?",
+     "o": [
+      "Drag from the thin upper atmosphere",
+      "The Moon switching off its pull on it",
+      "Magnetism between the satellite and Earth",
+      "Light pressure from the stars only"
+     ],
+     "a": 0,
+     "why": "Even thin air removes energy, so the orbit shrinks over time.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these orbits in order from the shortest period to the longest.",
+     "items": [
+      "ISS at 400 km",
+      "GPS-type orbit at about 20 200 km",
+      "Geostationary orbit",
+      "The Moon's orbit"
+     ],
+     "why": "Period increases with orbit radius: about 1.5 h, 12 h, 24 h, 27 days.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why astronauts on the space station float even though gravity is still strong there.",
+     "rubric": [
+      [
+       "free fall",
+       "falling",
+       "fall"
+      ],
+      [
+       "same",
+       "together",
+       "both",
+       "station and"
+      ],
+      [
+       "orbit",
+       "around",
+       "sideways",
+       "fast"
+      ]
+     ],
+     "min": 2,
+     "model": "The station and the astronauts are both in free fall around Earth. They fall together, so there is no push between them and the floor, and the astronauts feel weightless even though gravity is still about 90% of its ground value.",
+     "why": "Weightlessness is free fall, not an absence of gravity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A satellite must move to a faster orbit around Earth by lowering its altitude. What does a lower orbit do to the period?",
+     "o": [
+      "Shortens it",
+      "Lengthens it",
+      "No change",
+      "Makes it infinite"
+     ],
+     "a": 0,
+     "why": "Lower orbit means a smaller radius and a shorter path at higher speed, so the period gets shorter.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a satellite is slowed by firing its rocket backward (retrograde), it",
+     "o": [
+      "Drops into a lower orbit",
+      "Climbs higher at once forever",
+      "Stops in space",
+      "Leaves Earth at once"
+     ],
+     "a": 0,
+     "why": "Slowing down reduces the orbit height. The satellite then speeds up as it falls to the lower orbit.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do geostationary satellites need to orbit so far out, about 35 786 km above the equator?",
+     "rubric": [
+      [
+       "period",
+       "24 hours",
+       "24 h",
+       "one day",
+       "rotation",
+       "once a day"
+      ],
+      [
+       "radius",
+       "height",
+       "far",
+       "higher",
+       "distance",
+       "larger orbit"
+      ]
+     ],
+     "min": 2,
+     "model": "The period of an orbit increases with radius. Only at about 42 164 km from Earth's centre does the period equal one sidereal day, so the satellite stays above the same point.",
+     "why": "T = 2π√(r³/GM) fixes the radius for a 24-hour period.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why satellites stay in orbit",
+    "model": "A satellite keeps falling toward Earth, but it moves sideways so fast that the Earth curves away below it. Gravity provides the pull that bends its path into a circle. A higher orbit means a slower speed and a longer trip around.",
+    "points": [
+     {
+      "k": [
+       "fall",
+       "falling",
+       "gravity"
+      ],
+      "ask": "What is pulling the satellite?"
+     },
+     {
+      "k": [
+       "sideways",
+       "fast",
+       "speed",
+       "moving"
+      ],
+      "ask": "Why doesn't it hit the ground?"
+     },
+     {
+      "k": [
+       "curve",
+       "curves",
+       "circle",
+       "around"
+      ],
+      "ask": "What shape is its path?"
+     },
+     {
+      "k": [
+       "higher",
+       "slower",
+       "longer"
+      ],
+      "ask": "What changes in a higher orbit?"
+     }
+    ]
+   }
+  }
+ ]
+}

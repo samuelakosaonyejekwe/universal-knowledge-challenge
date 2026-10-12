@@ -1,0 +1,2648 @@
+{
+ "world": 2,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced physical chemistry",
+   "icon": "📊",
+   "hook": "A battery's voltage and an equilibrium constant look like different worlds. Is there a single equation that links them?",
+   "explain": [
+    "Thermodynamics, equilibrium and electrochemistry are linked by the Gibbs free energy. For a reaction at standard conditions, ΔG° = −RT ln K, where R = 8.314 J/mol/K and T is in kelvin. A large K means ΔG° is strongly negative. For a cell, ΔG° = −nFE°, with F = 96 500 C/mol, so a positive E° corresponds to K > 1.",
+    "Away from standard conditions the reaction quotient Q replaces K: ΔG = ΔG° + RT ln Q, and for cells the Nernst equation E = E° − (RT/nF) ln Q. At 298 K this becomes E = E° − (0.0592/n) log₁₀ Q. At equilibrium Q = K, ΔG = 0 and E = 0, which is why a battery goes flat.",
+    "Temperature dependence follows the van 't Hoff relation: for an endothermic reaction K increases with T, and for an exothermic reaction K decreases. Ideal gases obey PV = nRT, with real-gas deviations at high pressure and low temperature."
+   ],
+   "example": {
+    "q": "Find ΔG° at 298 K for K = 10. (R = 8.314 J/mol/K; ln 10 = 2.303)",
+    "steps": [
+     "ΔG° = −RT ln K.",
+     "= −8.314 × 298 × 2.303.",
+     "≈ −5700 J = −5.7 kJ/mol."
+    ],
+    "a": "About −5.7 kJ/mol"
+   },
+   "analogies": {
+    "home": "A hot cup of tea cools until it matches the room: equilibrium is the end of the drive.",
+    "city": "Traffic flows from busy to quiet streets until balanced, like Q moving towards K.",
+    "tech": "A phone battery's voltage falls as it discharges towards zero driving force.",
+    "sea": "Water flows downhill until the level is the same, as reactions run until ΔG = 0."
+   },
+   "mnemonic": "Gibbs links three: K for equilibrium, E for volts, and ΔG for the drive.",
+   "terms": [
+    [
+     "Reaction quotient Q",
+     "Same expression as K but with current concentrations."
+    ],
+    [
+     "Nernst equation",
+     "Cell potential as a function of Q."
+    ],
+    [
+     "Standard state",
+     "1 bar, 1 mol/L, stated temperature (usually 298 K)."
+    ],
+    [
+     "Van 't Hoff relation",
+     "How K changes with temperature."
+    ]
+   ],
+   "misc": {
+    "wrong": "E° of a cell changes when you change concentrations.",
+    "right": "E° is a fixed standard value. The actual E changes with Q according to the Nernst equation."
+   },
+   "limits": "Concentrations should be replaced by activities for real solutions, especially at high ionic strength.",
+   "trip": {
+    "wiki": "Nernst equation",
+    "prompt": "Find the worked example and check how E changes as Q increases."
+   },
+   "sources": [
+    "Nernst equation",
+    "Gibbs free energy",
+    "Equilibrium constant"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A cell has n = 2 and E° = 1.10 V. Calculate ΔG° in kJ/mol using F = 96 500 C/mol.",
+     "a": -212.3,
+     "tol": 0.5,
+     "unit": "kJ/mol",
+     "why": "ΔG° = −nFE° = −2 × 96 500 × 1.10 = −212 300 J.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For Zn + Cu²⁺ → Zn²⁺ + Cu, E° = 1.10 V, n = 2, at 298 K with Q = 10. Using E = E° − (0.0592/n) log Q, find E in volts.",
+     "a": 1.07,
+     "tol": 0.005,
+     "unit": "V",
+     "why": "E = 1.10 − 0.0296 × 1 = 1.0704 V.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is ΔG at equilibrium?",
+     "o": [
+      "Zero",
+      "Negative",
+      "Positive",
+      "Equal to ΔG°"
+     ],
+     "a": 0,
+     "why": "At equilibrium there is no net drive.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If K > 1 at 298 K, then ΔG° is:",
+     "o": [
+      "Negative",
+      "Positive",
+      "Zero",
+      "Undefined"
+     ],
+     "a": 0,
+     "why": "ΔG° = −RT ln K.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "An exothermic reaction is heated. K will:",
+     "o": [
+      "Decrease",
+      "Increase",
+      "Stay the same",
+      "Become infinite"
+     ],
+     "a": 0,
+     "why": "Equilibrium shifts towards reactants for exothermic reactions on heating.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A cell's Q equals its K. What is its voltage?",
+     "o": [
+      "0 V",
+      "E°",
+      "Infinite",
+      "Negative E°"
+     ],
+     "a": 0,
+     "why": "At equilibrium E = 0.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If Q is less than K for a reaction, it will proceed:",
+     "o": [
+      "Forwards, towards products",
+      "Backwards, towards the reactants",
+      "In neither direction, it is at equilibrium",
+      "In a random direction each time"
+     ],
+     "a": 0,
+     "why": "ΔG is negative when Q < K.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each relation to what it links.",
+     "pairs": [
+      [
+       "ΔG° = −RT ln K",
+       "Free energy and equilibrium"
+      ],
+      [
+       "ΔG° = −nFE°",
+       "Free energy and cell voltage"
+      ],
+      [
+       "E = E° − (RT/nF) ln Q",
+       "Voltage and composition"
+      ],
+      [
+       "PV = nRT",
+       "Pressure, volume and temperature of ideal gas"
+      ]
+     ],
+     "why": "Four core relations.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the reaction by K, smallest first: ΔG° = +20, 0, −10, −40 kJ/mol at 298 K.",
+     "items": [
+      "ΔG° = +20 kJ/mol",
+      "ΔG° = 0",
+      "ΔG° = −10 kJ/mol",
+      "ΔG° = −40 kJ/mol"
+     ],
+     "why": "More negative ΔG° means larger K.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does a battery's voltage drop to zero as it is used up?",
+     "rubric": [
+      [
+       "q",
+       "quotient",
+       "concentration",
+       "composition"
+      ],
+      [
+       "equilibrium",
+       "k",
+       "reactants",
+       "products"
+      ],
+      [
+       "no driving force",
+       "e = 0",
+       "zero",
+       "flat",
+       "nernst"
+      ]
+     ],
+     "min": 2,
+     "model": "As the cell reacts, Q moves towards K. At equilibrium ΔG = 0 and by the Nernst equation E = 0, so there is no driving force.",
+     "why": "Nernst equation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why must T be in kelvin in ΔG° = −RT ln K?",
+     "o": [
+      "R is defined with absolute temperature",
+      "Celsius is an outdated unit that no one uses",
+      "K in the equation just stands for kelvin",
+      "It avoids having any negative numbers in the answer"
+     ],
+     "a": 0,
+     "why": "T is a proportional factor from absolute zero.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A large K (such as 10⁶) means the reaction is:",
+     "o": [
+      "Thermodynamically favourable but may still be slow",
+      "Very fast, because the position favours products",
+      "Impossible, because K is only a ratio",
+      "At equilibrium the moment the reactants mix"
+     ],
+     "a": 0,
+     "why": "K is thermodynamic, not kinetic.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In the Nernst equation, increasing the reactant concentration of a cell reaction (Q falls):",
+     "o": [
+      "Increases E",
+      "Decreases E",
+      "Has no effect",
+      "Changes E°"
+     ],
+     "a": 0,
+     "why": "E = E° − (0.0592/n) log Q, so smaller Q gives larger E.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How free energy links equilibrium and cell voltage",
+    "model": "Free energy change tells how far a reaction is from equilibrium. ΔG° = −RT ln K links it to the equilibrium constant and ΔG° = −nFE° to the cell voltage. The Nernst equation shows how voltage changes with concentrations, reaching zero at equilibrium.",
+    "points": [
+     {
+      "k": [
+       "gibbs",
+       "free energy",
+       "δg",
+       "drive"
+      ],
+      "ask": "What does ΔG tell us?"
+     },
+     {
+      "k": [
+       "equilibrium",
+       "k",
+       "constant",
+       "ln"
+      ],
+      "ask": "How is it linked to K?"
+     },
+     {
+      "k": [
+       "voltage",
+       "nernst",
+       "cell",
+       "e°",
+       "potential"
+      ],
+      "ask": "How does it link to voltage?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Reaction mechanisms and chemical kinetics",
+   "icon": "🔬",
+   "hook": "The overall equation for a reaction is simple, but the rate may depend on only one step. How can experiments reveal the hidden steps?",
+   "explain": [
+    "A rate law links rate to concentrations: rate = k[A]ᵐ[B]ⁿ. The orders m and n must be found from experiments, not from the balanced equation. If doubling [A] quadruples the rate, the reaction is second order in A. The overall order is m + n.",
+    "For a first-order reaction, ln[A] = ln[A]₀ − kt, and the half-life is t½ = 0.693 ÷ k, independent of concentration. The Arrhenius equation k = A e^(−Ea/RT) explains why rates rise quickly with temperature; plotting ln k against 1/T gives a line with slope −Ea/R.",
+    "A mechanism is a sequence of elementary steps. The slowest, the rate-determining step, controls the rate; the molecularity of an elementary step gives its rate law directly. Example: SN2 substitution is one step with rate = k[RX][Nu⁻], while SN1 has a slow ionisation step so rate = k[RX]. Intermediates form and are used up, whereas catalysts are used and regenerated."
+   ],
+   "example": {
+    "q": "A first-order reaction has k = 0.0231 s⁻¹. Find its half-life.",
+    "steps": [
+     "t½ = 0.693 ÷ k.",
+     "= 0.693 ÷ 0.0231.",
+     "= 30.0 s."
+    ],
+    "a": "30 s"
+   },
+   "analogies": {
+    "home": "A queue at a single checkout: the slowest cashier controls the whole flow, like the rate-determining step.",
+    "city": "A road with one narrow bridge limits traffic however wide the rest is.",
+    "sport": "A relay team is held up by its slowest runner.",
+    "tech": "A computer pipeline limited by its slowest stage."
+   },
+   "mnemonic": "Orders from experiment, not equation; the slow step sets the pace.",
+   "terms": [
+    [
+     "Rate law",
+     "Equation linking rate to concentrations."
+    ],
+    [
+     "Half-life",
+     "Time for the concentration to halve."
+    ],
+    [
+     "Rate-determining step",
+     "The slowest elementary step."
+    ],
+    [
+     "Intermediate",
+     "A species formed and consumed during a mechanism."
+    ]
+   ],
+   "misc": {
+    "wrong": "The order with respect to a reactant equals its coefficient in the balanced equation.",
+    "right": "Orders are measured experimentally; they equal coefficients only for elementary steps."
+   },
+   "limits": "A rate law can be consistent with more than one mechanism, so experiments can rule mechanisms out but not prove one.",
+   "trip": {
+    "wiki": "Rate equation",
+    "prompt": "Find the integrated rate laws and note which plot is linear for first order."
+   },
+   "sources": [
+    "Rate equation",
+    "Arrhenius equation",
+    "Reaction mechanism"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A first-order reaction has k = 0.0231 s⁻¹. What is the half-life in seconds? (t½ = 0.693 ÷ k)",
+     "a": 30,
+     "tol": 0.2,
+     "unit": "s",
+     "why": "0.693 ÷ 0.0231 = 30.0 s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A first-order reaction has half-life 10 min. From 80 g, how many grams remain after 30 min?",
+     "a": 10,
+     "tol": 0.1,
+     "unit": "g",
+     "why": "Three half-lives: 80 → 40 → 20 → 10 g.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Doubling [A] quadruples the rate. The reaction is:",
+     "o": [
+      "Second order in A",
+      "First order in A, so the rate doubles",
+      "Zero order in A, so there is no change",
+      "Third order in A, so the rate is eightfold"
+     ],
+     "a": 0,
+     "why": "2ⁿ = 4 gives n = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In SN2, rate = k[RX][Nu⁻]. What is the overall order?",
+     "o": [
+      "2",
+      "1",
+      "0",
+      "3"
+     ],
+     "a": 0,
+     "why": "1 + 1.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which does a plot of ln k against 1/T give?",
+     "o": [
+      "A line with slope −Ea/R",
+      "A line with slope +Ea",
+      "A curve with no fixed slope",
+      "A line whose slope is always zero"
+     ],
+     "a": 0,
+     "why": "Arrhenius.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The rate-determining step is:",
+     "o": [
+      "The slowest step in the mechanism",
+      "The fastest step in the mechanism",
+      "The very last step in the mechanism",
+      "The step with no intermediates formed"
+     ],
+     "a": 0,
+     "why": "It limits the overall rate.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A species formed in step 1 and used up in step 2 is:",
+     "o": [
+      "An intermediate",
+      "A catalyst",
+      "A final product",
+      "A spectator ion"
+     ],
+     "a": 0,
+     "why": "Not in overall equation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Zero-order kinetics means the rate is:",
+     "o": [
+      "Independent of that reactant's concentration",
+      "Proportional to the reactant's concentration",
+      "Proportional to the square of its concentration",
+      "Always equal to zero"
+     ],
+     "a": 0,
+     "why": "Rate = k.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each relationship to the reaction order.",
+     "pairs": [
+      [
+       "Rate = k",
+       "Zero order"
+      ],
+      [
+       "Rate = k[A]",
+       "First order"
+      ],
+      [
+       "Rate = k[A]²",
+       "Second order in A"
+      ],
+      [
+       "Rate = k[A][B]",
+       "First order in each, second overall"
+      ]
+     ],
+     "why": "Count the exponents.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a small rise in temperature can greatly increase a reaction rate.",
+     "rubric": [
+      [
+       "activation energy",
+       "ea",
+       "barrier"
+      ],
+      [
+       "fraction",
+       "more molecules",
+       "proportion",
+       "boltzmann",
+       "exponential",
+       "energetic"
+      ]
+     ],
+     "min": 2,
+     "model": "A larger fraction of molecules has energy exceeding the activation energy, and since this fraction depends exponentially on 1/T, the rate rises sharply.",
+     "why": "Arrhenius.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The reaction 2NO₂ → 2NO + O₂ is second order in NO₂. Can you deduce the mechanism?",
+     "o": [
+      "No, a rate law alone cannot prove a mechanism",
+      "Yes, it must happen in a single step",
+      "Yes, because the rate is fast",
+      "No, because it cannot be second order"
+     ],
+     "a": 0,
+     "why": "Several mechanisms may fit.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A catalyst lowers Ea. What does it change in the Arrhenius equation?",
+     "o": [
+      "It raises k at a given temperature",
+      "It lowers k",
+      "It changes the equilibrium constant",
+      "It changes ΔH"
+     ],
+     "a": 0,
+     "why": "Smaller Ea gives a larger k.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "For a first-order decay, how long to fall to 25% of the initial amount?",
+     "o": [
+      "Two half-lives",
+      "One half-life",
+      "Four half-lives",
+      "Three half-lives"
+     ],
+     "a": 0,
+     "why": "100 → 50 → 25.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Rate laws and mechanisms",
+    "model": "A rate law, found by experiment, links rate to concentrations. A mechanism is a series of steps; the slowest step controls the rate. Half-life and the Arrhenius equation describe how fast and how temperature changes it.",
+    "points": [
+     {
+      "k": [
+       "rate law",
+       "order",
+       "concentration",
+       "experiment"
+      ],
+      "ask": "What is a rate law?"
+     },
+     {
+      "k": [
+       "slow",
+       "rate-determining",
+       "step",
+       "mechanism"
+      ],
+      "ask": "What sets the speed?"
+     },
+     {
+      "k": [
+       "arrhenius",
+       "temperature",
+       "activation energy",
+       "half-life"
+      ],
+      "ask": "How does temperature matter?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Polymer chemistry",
+   "icon": "🧵",
+   "hook": "Polyethylene bags and Kevlar vests both start as small molecules joined into long chains. Why do their properties differ so much?",
+   "explain": [
+    "Polymers are long molecules built by joining many monomers. In addition polymerisation the C=C bonds of monomers like ethene open and link, with no by-product. In condensation polymerisation two functional groups react and release a small molecule, usually water. Nylon forms from a diamine and a diacid, and PET (polyester) from a diol and a diacid.",
+    "Chain length is measured by the degree of polymerisation, DP = M(polymer) ÷ M(monomer). Real samples have a distribution, so we quote Mn (number average) and Mw (weight average); the dispersity Đ = Mw ÷ Mn is 1 for identical chains and larger otherwise. Properties depend on chain length, branching, crystallinity and cross-linking.",
+    "Thermoplastics soften when heated because chains are not cross-linked. Thermosets (like epoxy resins) have cross-links and cannot be remelted. Elastomers such as rubber have lightly cross-linked, coiled chains that stretch and return. The glass transition temperature Tg is where an amorphous polymer changes from hard and glassy to soft and rubbery."
+   ],
+   "example": {
+    "q": "A polyethylene sample has M = 28 000 g/mol. The monomer ethene C₂H₄ has M = 28 g/mol. Find DP.",
+    "steps": [
+     "DP = M(polymer) ÷ M(monomer).",
+     "= 28 000 ÷ 28.",
+     "= 1000."
+    ],
+    "a": "DP = 1000"
+   },
+   "analogies": {
+    "home": "Paper clips joined in a long chain: monomers become a polymer.",
+    "farm": "Rubber trees give latex whose chains are cross-linked into tough rubber.",
+    "city": "Plastic pipes and bags are polymers chosen for their toughness and flexibility.",
+    "tech": "Cables and phone cases use polymers as insulators and protective coatings."
+   },
+   "mnemonic": "Addition adds all, condensation drops water.",
+   "terms": [
+    [
+     "Monomer",
+     "A small molecule that links to form a polymer."
+    ],
+    [
+     "Degree of polymerisation",
+     "Number of repeat units per chain."
+    ],
+    [
+     "Glass transition temperature",
+     "Temperature of change between glassy and rubbery behaviour."
+    ],
+    [
+     "Cross-link",
+     "A bond joining two polymer chains."
+    ]
+   ],
+   "misc": {
+    "wrong": "All plastics melt when heated.",
+    "right": "Thermosets are cross-linked and decompose or char instead of melting."
+   },
+   "limits": "Simple chain models ignore tacticity, entanglements and processing history, which also change properties.",
+   "trip": {
+    "wiki": "Polymer",
+    "prompt": "Find polyethylene, nylon and rubber and note whether each is addition or condensation, thermoplastic or thermoset."
+   },
+   "sources": [
+    "Polymer",
+    "Polymerization",
+    "Glass transition"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A polymer has Mw = 120 000 g/mol and Mn = 80 000 g/mol. What is its dispersity Đ = Mw ÷ Mn?",
+     "a": 1.5,
+     "tol": 0.01,
+     "why": "120 000 ÷ 80 000 = 1.5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Poly(vinyl chloride) has repeat unit C₂H₃Cl (M = 62.5 g/mol). A chain has M = 62 500 g/mol. What is its DP?",
+     "a": 1000,
+     "tol": 1,
+     "why": "62 500 ÷ 62.5 = 1000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which type of polymerisation releases water as a by-product?",
+     "o": [
+      "Condensation",
+      "Addition",
+      "Radical addition",
+      "Ionic addition"
+     ],
+     "a": 0,
+     "why": "Condensation releases a small molecule.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why can thermoplastics be remelted?",
+     "o": [
+      "Chains are not chemically cross-linked",
+      "They are metals that can be melted again",
+      "They contain water that evaporates on heating",
+      "They are made of ions that move when hot"
+     ],
+     "a": 0,
+     "why": "Weak intermolecular forces allow flow.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a thermoset?",
+     "o": [
+      "Epoxy resin",
+      "Polyethylene",
+      "Polystyrene foam",
+      "PET"
+     ],
+     "a": 0,
+     "why": "Cross-linked network.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Vulcanisation of rubber:",
+     "o": [
+      "Adds sulfur cross-links",
+      "Breaks the chains into shorter pieces",
+      "Removes carbon from the polymer",
+      "Adds metal atoms between the chains"
+     ],
+     "a": 0,
+     "why": "Improves elasticity and strength.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Below Tg an amorphous polymer is:",
+     "o": [
+      "Hard and glassy",
+      "Soft and rubbery",
+      "Liquid",
+      "Gaseous"
+     ],
+     "a": 0,
+     "why": "Chain motion is frozen.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each polymer to its monomer or building units.",
+     "pairs": [
+      [
+       "Polyethylene",
+       "Ethene"
+      ],
+      [
+       "PVC",
+       "Chloroethene"
+      ],
+      [
+       "Nylon-6,6",
+       "Diamine and diacid"
+      ],
+      [
+       "PET",
+       "Diol and terephthalic acid"
+      ]
+     ],
+     "why": "Monomers define the polymer.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by increasing cross-link density.",
+     "items": [
+      "Thermoplastic",
+      "Lightly cross-linked rubber",
+      "Heavily cross-linked rigid thermoset"
+     ],
+     "why": "More links give more rigidity.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a higher degree of crystallinity usually make a polymer stiffer and less transparent?",
+     "rubric": [
+      [
+       "ordered",
+       "packed",
+       "aligned",
+       "regions",
+       "crystalline"
+      ],
+      [
+       "scatter",
+       "light",
+       "opaque",
+       "stiff",
+       "stronger",
+       "forces",
+       "dense"
+      ]
+     ],
+     "min": 2,
+     "model": "Crystalline regions pack chains tightly with stronger intermolecular forces, making the polymer stiffer, while the crystal boundaries scatter light.",
+     "why": "Structure sets properties.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is the condensation polymer yield sensitive to exact 1 : 1 stoichiometry?",
+     "o": [
+      "Excess of one monomer caps chain ends and limits chain length",
+      "It makes the plastic come out coloured",
+      "It changes the density of the polymer only",
+      "It always makes the chains longer"
+     ],
+     "a": 0,
+     "why": "Carothers equation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Biodegradable polymers like PLA differ from polyethylene because they:",
+     "o": [
+      "Contain ester links that can be hydrolysed",
+      "Have no carbon atoms in their chains",
+      "Are metals that corrode away",
+      "Are held together by ionic bonds"
+     ],
+     "a": 0,
+     "why": "Cleavable bonds.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Adding a plasticiser to PVC makes it flexible by:",
+     "o": [
+      "Lowering Tg by spacing chains",
+      "Increasing the number of cross-links",
+      "Making the polymer more crystalline",
+      "Turning the polymer into a metal"
+     ],
+     "a": 0,
+     "why": "Small molecules increase chain mobility.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How polymers are made and why properties vary",
+    "model": "Polymers are long chains of repeating monomers. Addition polymers form by opening double bonds; condensation polymers release small molecules like water. Chain length, crystallinity and cross-links decide whether a polymer is a rigid plastic, a flexible film or a rubber.",
+    "points": [
+     {
+      "k": [
+       "monomer",
+       "chain",
+       "repeat",
+       "long"
+      ],
+      "ask": "What is a polymer?"
+     },
+     {
+      "k": [
+       "addition",
+       "condensation",
+       "water",
+       "double bond"
+      ],
+      "ask": "How are they made?"
+     },
+     {
+      "k": [
+       "cross-link",
+       "crystallin",
+       "properties",
+       "thermoset",
+       "thermoplastic"
+      ],
+      "ask": "Why do properties differ?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Biochemistry",
+   "icon": "🧬",
+   "hook": "Your cells run thousands of reactions at 37 °C that would need extreme heat in a flask. What makes this possible?",
+   "explain": [
+    "The four main classes of biomolecules are carbohydrates, lipids, proteins and nucleic acids. Proteins are chains of amino acids joined by peptide bonds, formed by condensation (water lost). Protein shape has levels: primary (sequence), secondary (α-helix, β-sheet), tertiary (3D fold) and quaternary (several chains). Shape is held by hydrogen bonds, ionic interactions, hydrophobic effects and disulfide bridges.",
+    "Enzymes are protein catalysts that bind a substrate at an active site and lower the activation energy. Michaelis–Menten kinetics gives v = Vmax[S] ÷ (Km + [S]). When [S] = Km the rate is half of Vmax, so a small Km means strong binding. Extreme temperature or pH denatures the enzyme by disrupting its shape.",
+    "Energy flows through coupled reactions. ATP hydrolysis releases about 30 kJ/mol under standard conditions and drives non-spontaneous steps. Glucose (C₆H₁₂O₆, 180 g/mol) is oxidised in respiration: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O. DNA stores information in base sequences, with A pairing with T and G with C by hydrogen bonds."
+   ],
+   "example": {
+    "q": "An enzyme has Vmax = 100 µmol/min and Km = 2 mM. Find the rate at [S] = 8 mM.",
+    "steps": [
+     "v = Vmax[S] ÷ (Km + [S]).",
+     "= 100 × 8 ÷ (2 + 8).",
+     "= 800 ÷ 10 = 80 µmol/min."
+    ],
+    "a": "80 µmol/min"
+   },
+   "analogies": {
+    "home": "A key (substrate) fits only its lock (enzyme active site).",
+    "farm": "Fermentation of grapes into wine uses yeast enzymes.",
+    "sport": "Muscles use ATP like fuel for sprinting.",
+    "tech": "DNA is a code, like binary, read to build proteins."
+   },
+   "mnemonic": "Enzyme = lock and key; Km half-way to Vmax; ATP is the cell's coin.",
+   "terms": [
+    [
+     "Enzyme",
+     "A biological catalyst, usually a protein."
+    ],
+    [
+     "Substrate",
+     "The molecule an enzyme acts on."
+    ],
+    [
+     "Denaturation",
+     "Loss of a protein's shape."
+    ],
+    [
+     "ATP",
+     "The cell's energy currency molecule."
+    ]
+   ],
+   "misc": {
+    "wrong": "Enzymes are used up in the reactions they catalyse.",
+    "right": "They are regenerated and can act again and again."
+   },
+   "limits": "Michaelis–Menten kinetics assumes a single substrate and steady-state conditions, which real cells may not meet.",
+   "trip": {
+    "wiki": "Enzyme",
+    "prompt": "Find the active-site diagram and describe how the substrate fits."
+   },
+   "sources": [
+    "Enzyme",
+    "Protein structure",
+    "Michaelis–Menten kinetics"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Vmax = 100 µmol/min, Km = 2 mM, [S] = 8 mM. What is v in µmol/min?",
+     "a": 80,
+     "tol": 0.5,
+     "unit": "µmol/min",
+     "why": "100 × 8 ÷ 10 = 80.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many moles are in 90 g of glucose (C₆H₁₂O₆)? (C 12, H 1, O 16)",
+     "a": 0.5,
+     "tol": 0.005,
+     "unit": "mol",
+     "why": "M = 180 g/mol; 90 ÷ 180 = 0.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which bond links amino acids in a protein?",
+     "o": [
+      "Peptide bond",
+      "Glycosidic bond",
+      "Phosphodiester bond",
+      "Ionic bond"
+     ],
+     "a": 0,
+     "why": "Amide link by condensation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "At [S] = Km the rate is:",
+     "o": [
+      "Vmax ÷ 2",
+      "Vmax",
+      "0",
+      "2 × Vmax"
+     ],
+     "a": 0,
+     "why": "By definition of Km.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A high temperature destroys an enzyme's activity because:",
+     "o": [
+      "Its 3D shape unfolds (denatures)",
+      "The substrate evaporates at high temperature",
+      "The enzyme is newly created by the heat",
+      "It turns into a lipid"
+     ],
+     "a": 0,
+     "why": "Active site shape lost.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which base pairs with guanine in DNA?",
+     "o": [
+      "Cytosine",
+      "Thymine, which pairs with adenine",
+      "Adenine, which pairs with thymine",
+      "Uracil, which is found only in RNA"
+     ],
+     "a": 0,
+     "why": "G–C with three hydrogen bonds.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A competitive inhibitor:",
+     "o": [
+      "Binds the active site and raises apparent Km",
+      "Lowers the Vmax only and leaves Km alone",
+      "Is itself a substrate that gets used up",
+      "Denatures the enzyme permanently"
+     ],
+     "a": 0,
+     "why": "Competes with substrate.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each biomolecule to its monomer.",
+     "pairs": [
+      [
+       "Protein",
+       "Amino acid"
+      ],
+      [
+       "Polysaccharide",
+       "Monosaccharide"
+      ],
+      [
+       "Nucleic acid",
+       "Nucleotide"
+      ],
+      [
+       "Triglyceride",
+       "Glycerol and fatty acids"
+      ]
+     ],
+     "why": "Building blocks.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the levels of protein structure.",
+     "items": [
+      "Primary (sequence)",
+      "Secondary (helix or sheet)",
+      "Tertiary (3D fold)",
+      "Quaternary (multiple chains)"
+     ],
+     "why": "Increasing complexity.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why enzymes are specific for their substrates.",
+     "rubric": [
+      [
+       "active site",
+       "shape",
+       "fit",
+       "complementary",
+       "pocket"
+      ],
+      [
+       "substrate",
+       "bind",
+       "interactions",
+       "charge",
+       "hydrogen"
+      ]
+     ],
+     "min": 2,
+     "model": "The active site has a particular shape and distribution of charges and groups that fit only the right substrate, so only it binds.",
+     "why": "Structure gives specificity.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does ATP hydrolysis drive unfavourable reactions?",
+     "o": [
+      "Coupling makes the overall ΔG negative",
+      "It creates energy from nothing",
+      "It heats the cell until reactions occur",
+      "It removes the enzymes that block the reaction"
+     ],
+     "a": 0,
+     "why": "Coupled reactions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mutation changes one amino acid far from the active site, yet the enzyme fails. Why?",
+     "o": [
+      "Folding and overall shape may change",
+      "Active sites do not matter for enzyme function",
+      "The substrate changes into something else",
+      "Mutations always delete the whole enzyme"
+     ],
+     "a": 0,
+     "why": "Shape effects propagate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Hydrophobic residues in a soluble protein tend to:",
+     "o": [
+      "Cluster in the interior",
+      "Face the surrounding water",
+      "Form ions with the solvent",
+      "Leave the protein altogether"
+     ],
+     "a": 0,
+     "why": "Hydrophobic effect.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Proteins and enzymes",
+    "model": "Proteins are chains of amino acids that fold into a shape. Enzymes use their shape to bind a substrate and speed a reaction by lowering activation energy. High temperature or wrong pH can unfold them and stop them working.",
+    "points": [
+     {
+      "k": [
+       "amino acid",
+       "protein",
+       "chain",
+       "peptide"
+      ],
+      "ask": "What is a protein?"
+     },
+     {
+      "k": [
+       "enzyme",
+       "catalyst",
+       "active site",
+       "substrate"
+      ],
+      "ask": "What does an enzyme do?"
+     },
+     {
+      "k": [
+       "denatur",
+       "temperature",
+       "ph",
+       "shape"
+      ],
+      "ask": "What damages it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Metallurgy and heat treatment",
+   "icon": "🔥",
+   "hook": "A blacksmith heats a blade red-hot and plunges it into water. Why does this make steel harder, but also more brittle?",
+   "explain": [
+    "Steel is iron with up to about 2 wt% carbon. In the iron–carbon diagram, at the eutectoid composition of 0.76 wt% C and 727 °C, austenite (γ, FCC, dissolves up to 2.1% C) transforms into pearlite: alternating layers of ferrite (α, BCC, at most 0.022% C) and cementite (Fe₃C, 6.67% C). Alloys below 0.76% C are hypoeutectoid.",
+    "Heat treatments exploit this. Annealing (slow cooling) gives soft, ductile pearlite and ferrite. Rapid quenching from austenite traps carbon, forming martensite, a hard, brittle body-centred tetragonal phase. Tempering reheats martensite to a moderate temperature to trade some hardness for toughness. Hardenability describes how deep quenching works, and alloying elements such as chromium and molybdenum improve it.",
+    "The lever rule gives phase fractions. For a 0.40 wt% C steel just below 727 °C, the fraction of pearlite = (0.40 − 0.022) ÷ (0.76 − 0.022) = 0.51, and the rest is proeutectoid ferrite. Other methods include work hardening, precipitation hardening (as in aluminium alloys) and solid-solution strengthening."
+   ],
+   "example": {
+    "q": "In eutectoid steel (0.76 wt% C) just below 727 °C, what mass fraction is cementite? (ferrite 0.022, cementite 6.67 wt% C)",
+    "steps": [
+     "Fraction cementite = (0.76 − 0.022) ÷ (6.67 − 0.022).",
+     "= 0.738 ÷ 6.648.",
+     "≈ 0.111."
+    ],
+    "a": "About 11%"
+   },
+   "analogies": {
+    "home": "Cooling glass slowly or fast gives different strengths, as with tempered glass.",
+    "farm": "A hoe or blade is hardened at the edge and left tough inside.",
+    "sport": "A sword or skate blade needs hardness and toughness together.",
+    "city": "Rails and girders are heat treated for strength."
+   },
+   "mnemonic": "Slow cool = soft pearlite; fast quench = hard martensite; temper to tame.",
+   "terms": [
+    [
+     "Austenite",
+     "FCC iron phase that dissolves carbon."
+    ],
+    [
+     "Pearlite",
+     "Layered ferrite and cementite."
+    ],
+    [
+     "Martensite",
+     "Hard supersaturated phase from rapid quenching."
+    ],
+    [
+     "Tempering",
+     "Reheating martensite to improve toughness."
+    ]
+   ],
+   "misc": {
+    "wrong": "Harder steel is always better.",
+    "right": "Very hard steel is brittle; engineers balance hardness and toughness."
+   },
+   "limits": "The Fe–Fe₃C diagram describes equilibrium; real steels with alloying and fast cooling need TTT or CCT diagrams.",
+   "trip": {
+    "wiki": "Iron–carbon phase diagram",
+    "prompt": "Find the eutectoid point and identify the phases on each side."
+   },
+   "sources": [
+    "Iron–carbon phase diagram",
+    "Martensite",
+    "Heat treating"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A 0.40 wt% C steel is just below 727 °C. Using the lever rule with ferrite 0.022 and eutectoid 0.76 wt% C, what mass fraction is pearlite (to two decimals)?",
+     "a": 0.51,
+     "tol": 0.01,
+     "why": "(0.40 − 0.022) ÷ (0.76 − 0.022) = 0.378 ÷ 0.738 = 0.512.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At the eutectoid composition, austenite transforms below which temperature in °C?",
+     "a": 727,
+     "tol": 2,
+     "unit": "°C",
+     "why": "The eutectoid temperature of the Fe–C system.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Martensite is formed by:",
+     "o": [
+      "Rapid quenching of austenite",
+      "Slow cooling of austenite in a furnace",
+      "Heating ferrite until it melts",
+      "Melting the steel and then casting it"
+     ],
+     "a": 0,
+     "why": "No time for carbon to diffuse.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The purpose of tempering is:",
+     "o": [
+      "Improve toughness of martensite",
+      "To increase the hardness of martensite further",
+      "To melt the steel for casting",
+      "To add more carbon to the surface"
+     ],
+     "a": 0,
+     "why": "Reheating relieves stress and precipitates carbides.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which phase of iron is FCC?",
+     "o": [
+      "Austenite",
+      "Ferrite",
+      "Cementite",
+      "Martensite"
+     ],
+     "a": 0,
+     "why": "γ-iron.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Cementite is:",
+     "o": [
+      "Fe₃C, hard and brittle",
+      "Pure iron, soft and ductile",
+      "A gas given off during heating",
+      "Soft, ductile and low in carbon"
+     ],
+     "a": 0,
+     "why": "Iron carbide.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does martensite have a distorted (BCT) structure?",
+     "o": [
+      "Carbon atoms are trapped and cannot diffuse out",
+      "It contains no carbon at all",
+      "It has partly melted",
+      "It has too few atoms in each cell"
+     ],
+     "a": 0,
+     "why": "Supersaturated.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each treatment to its outcome.",
+     "pairs": [
+      [
+       "Annealing",
+       "Soft, ductile structure"
+      ],
+      [
+       "Quenching",
+       "Hard, brittle martensite"
+      ],
+      [
+       "Tempering",
+       "Tougher martensite"
+      ],
+      [
+       "Carburising",
+       "Carbon-rich hard surface"
+      ]
+     ],
+     "why": "Heat-treatment aims.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps to make a hardened and tempered tool.",
+     "items": [
+      "Heat to austenite",
+      "Quench to form martensite",
+      "Reheat at moderate temperature",
+      "Cool to room temperature"
+     ],
+     "why": "Standard sequence.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does quenching make steel harder but more brittle?",
+     "rubric": [
+      [
+       "martensite",
+       "carbon trapped",
+       "supersaturated",
+       "distort",
+       "strain"
+      ],
+      [
+       "dislocation",
+       "brittle",
+       "hard",
+       "restrict",
+       "strain",
+       "stress"
+      ]
+     ],
+     "min": 2,
+     "model": "Fast cooling traps carbon in a distorted lattice (martensite) that blocks dislocation motion, giving high hardness but little ability to deform, so it is brittle.",
+     "why": "Strengthening mechanism.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can't diffusion-based transformations like pearlite form during a very fast quench?",
+     "o": [
+      "Carbon atoms have no time to move",
+      "The steel is far too cold for atoms to move",
+      "Austenite turns into a liquid when quenched",
+      "Cementite is a gas that escapes quickly"
+     ],
+     "a": 0,
+     "why": "Diffusion is time dependent.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tool is made of 1.0 wt% C steel. It is hypereutectoid. What forms first on cooling from austenite?",
+     "o": [
+      "Proeutectoid cementite",
+      "Proeutectoid ferrite",
+      "Martensite, in every case",
+      "Liquid iron"
+     ],
+     "a": 0,
+     "why": "Above the eutectoid, cementite precipitates first.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Alloying with chromium in stainless steel mainly gives:",
+     "o": [
+      "A passive oxide film for corrosion resistance",
+      "A lower density than ordinary steel",
+      "Extra carbon in the steel",
+      "Magnetism at all temperatures"
+     ],
+     "a": 0,
+     "why": "Cr₂O₃ film.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Heat treating steel",
+    "model": "Steel is iron with carbon. Cooling slowly gives soft pearlite; quenching quickly traps carbon in hard, brittle martensite; tempering then restores some toughness. The iron–carbon phase diagram predicts the phases.",
+    "points": [
+     {
+      "k": [
+       "steel",
+       "carbon",
+       "iron"
+      ],
+      "ask": "What is steel?"
+     },
+     {
+      "k": [
+       "quench",
+       "martensite",
+       "rapid",
+       "hard"
+      ],
+      "ask": "What does quenching do?"
+     },
+     {
+      "k": [
+       "temper",
+       "tough",
+       "brittle",
+       "reheat"
+      ],
+      "ask": "Why temper it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Ceramic and composite materials",
+   "icon": "🪨",
+   "hook": "A ceramic knife stays sharp for ages but shatters if dropped, while a carbon fibre rod is light yet tougher than steel for its weight. Why?",
+   "explain": [
+    "Ceramics have strong ionic and covalent bonds, giving high hardness, high melting points and chemical stability, but they have almost no plastic deformation, so they are brittle. Glass is an amorphous ceramic. Strength is limited by tiny flaws: Griffith's idea gives fracture stress σ ∝ 1/√c, where c is the flaw size. A flaw four times larger lowers the strength by half.",
+    "Toughening strategies include reducing flaw sizes, using fine grains and transformation toughening: in zirconia (ZrO₂) a crack triggers a phase change that squeezes the crack shut. Ceramics are used for tiles, cutting tools, insulators, implants and engine parts.",
+    "Composites combine a reinforcement (fibres or particles) with a matrix. With fibres aligned in the load direction, the rule of mixtures gives modulus E = VfEf + VmEm, where Vf and Vm are volume fractions. Carbon fibre in epoxy gives a high stiffness-to-weight ratio, vital in aircraft and bicycles. Interfaces transfer load between matrix and fibre, so good bonding matters."
+   ],
+   "example": {
+    "q": "A composite has 60% by volume carbon fibre (E = 230 GPa) in epoxy (E = 3 GPa). Find the modulus along the fibres.",
+    "steps": [
+     "E = VfEf + VmEm.",
+     "= 0.6 × 230 + 0.4 × 3.",
+     "= 138 + 1.2 = 139.2 GPa."
+    ],
+    "a": "About 139 GPa"
+   },
+   "analogies": {
+    "home": "Reinforced concrete is like biscuits (brittle) held together by steel bars.",
+    "farm": "Straw in mud bricks stops them cracking.",
+    "sport": "Carbon-fibre rackets and bikes are light and stiff.",
+    "tech": "A phone screen is a hard glass ceramic with surface compression."
+   },
+   "mnemonic": "Ceramics are hard but flaw-prone; composites mix the best of both.",
+   "terms": [
+    [
+     "Ceramic",
+     "Inorganic non-metallic solid, usually hard and brittle."
+    ],
+    [
+     "Matrix",
+     "The continuous phase in a composite."
+    ],
+    [
+     "Reinforcement",
+     "Fibres or particles that carry load in a composite."
+    ],
+    [
+     "Rule of mixtures",
+     "Property as a volume-weighted average."
+    ]
+   ],
+   "misc": {
+    "wrong": "Ceramics are weak.",
+    "right": "Ceramics are very strong in compression; they fail in tension because flaws grow into cracks."
+   },
+   "limits": "The rule of mixtures gives an upper bound for fibres loaded along their length; transverse loads and poor bonding give lower values.",
+   "trip": {
+    "wiki": "Composite material",
+    "prompt": "Find an example of a fibre composite and name the fibre and matrix."
+   },
+   "sources": [
+    "Ceramic",
+    "Composite material",
+    "Fracture mechanics"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A composite is 60% carbon fibre (230 GPa) and 40% epoxy (3 GPa) by volume. Using the rule of mixtures, what is its modulus in GPa?",
+     "a": 139.2,
+     "tol": 0.5,
+     "unit": "GPa",
+     "why": "0.6 × 230 + 0.4 × 3 = 139.2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Carbon fibre is 1.8 g/cm³ and epoxy is 1.2 g/cm³. What is the density of a 60:40 (by volume) composite in g/cm³?",
+     "a": 1.56,
+     "tol": 0.01,
+     "unit": "g/cm³",
+     "why": "0.6 × 1.8 + 0.4 × 1.2 = 1.08 + 0.48 = 1.56.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If the flaw size in a ceramic is quadrupled, its fracture strength (σ ∝ 1/√c) becomes:",
+     "o": [
+      "Half",
+      "Double",
+      "A quarter",
+      "Unchanged"
+     ],
+     "a": 0,
+     "why": "√4 = 2.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why are ceramics brittle?",
+     "o": [
+      "Bonds are strong but dislocations hardly move",
+      "They have no bonds between their atoms",
+      "They are metals with free electrons",
+      "They are gases at room temperature"
+     ],
+     "a": 0,
+     "why": "No plastic flow.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Transformation toughening in zirconia works by:",
+     "o": [
+      "A phase change that closes cracks",
+      "Melting the crack until it closes",
+      "Adding water to the crack",
+      "Making the grains much larger"
+     ],
+     "a": 0,
+     "why": "Volume expansion creates compression.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In a fibre composite, the fibres mainly:",
+     "o": [
+      "Carry the load",
+      "Colour the matrix",
+      "Cool the matrix",
+      "Make it conduct heat"
+     ],
+     "a": 0,
+     "why": "Stiff reinforcement.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a ceramic?",
+     "o": [
+      "Alumina (Al₂O₃)",
+      "Aluminium metal",
+      "Polyethylene",
+      "Steel"
+     ],
+     "a": 0,
+     "why": "Oxide ceramic.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each composite to its fibre or particle and matrix.",
+     "pairs": [
+      [
+       "Fibreglass",
+       "Glass fibres in polymer"
+      ],
+      [
+       "Reinforced concrete",
+       "Steel bars in cement"
+      ],
+      [
+       "Carbon fibre composite",
+       "Carbon fibres in epoxy"
+      ],
+      [
+       "Cermet",
+       "Ceramic particles in metal"
+      ]
+     ],
+     "why": "Reinforcement plus matrix.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by stiffness along the fibre direction (high to low) for 60 vol% fibre in epoxy.",
+     "items": [
+      "Carbon fibre (about 230 GPa)",
+      "Aramid fibre (about 130 GPa)",
+      "Glass fibre (about 72 GPa)",
+      "Plain epoxy (about 3 GPa)"
+     ],
+     "why": "Fibre moduli dominate.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a ceramic fail in tension at stresses far below its theoretical strength?",
+     "rubric": [
+      [
+       "flaw",
+       "crack",
+       "defect",
+       "pore",
+       "scratch"
+      ],
+      [
+       "stress concentrat",
+       "grow",
+       "propagat",
+       "tip",
+       "brittle"
+      ]
+     ],
+     "min": 2,
+     "model": "Tiny flaws concentrate stress at their tips; with no plastic flow to blunt them, cracks spread suddenly.",
+     "why": "Griffith theory.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is concrete reinforced with steel?",
+     "o": [
+      "Concrete is weak in tension and steel carries it",
+      "Concrete is itself a type of metal",
+      "Steel is a ceramic like concrete",
+      "The steel is added only for colour"
+     ],
+     "a": 0,
+     "why": "Complementary strengths.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A composite loaded across the fibres is much weaker than along them. This is because it is:",
+     "o": [
+      "Anisotropic",
+      "Isotropic, with equal strength in every direction",
+      "Amorphous, with no ordered structure inside",
+      "Ionic, with charged particles in the lattice"
+     ],
+     "a": 0,
+     "why": "Properties depend on direction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are ceramics chosen for furnace linings?",
+     "o": [
+      "High melting point and chemical stability",
+      "Low cost and nothing else at all",
+      "Magnetism at high temperature",
+      "Flexibility under repeated stress"
+     ],
+     "a": 0,
+     "why": "They survive heat.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Ceramics and composites",
+    "model": "Ceramics are hard, heat resistant and brittle because flaws grow into cracks. Composites combine a strong reinforcement such as fibres with a matrix to get properties neither has alone, and the rule of mixtures estimates them.",
+    "points": [
+     {
+      "k": [
+       "ceramic",
+       "hard",
+       "brittle",
+       "flaw",
+       "crack"
+      ],
+      "ask": "What are ceramics like?"
+     },
+     {
+      "k": [
+       "composite",
+       "fibre",
+       "matrix",
+       "reinforce"
+      ],
+      "ask": "What is a composite?"
+     },
+     {
+      "k": [
+       "rule of mixtures",
+       "volume fraction",
+       "average",
+       "stiff"
+      ],
+      "ask": "How can we estimate its properties?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Semiconductor materials",
+   "icon": "💡",
+   "hook": "Pure silicon barely conducts, yet adding a few atoms of phosphorus per million makes it conduct well. How?",
+   "explain": [
+    "In a solid, electron energy levels form bands. In a semiconductor there is a filled valence band, an empty conduction band and a band gap Eg between them. Silicon has Eg = 1.12 eV and gallium arsenide 1.42 eV. At higher temperature more electrons are excited across the gap, so the conductivity of semiconductors rises with temperature, unlike metals.",
+    "Doping adds impurities. Phosphorus (group 15) donates an extra electron, giving n-type silicon. Boron (group 13) leaves a missing electron, a hole, giving p-type silicon. Joining p- and n-type forms a p–n junction, which allows current in one direction (a diode) and underlies transistors, solar cells and LEDs.",
+    "Light and the band gap are related by E = hc/λ, or λ (nm) ≈ 1240 ÷ E (eV). A material with Eg = 2.48 eV emits or absorbs near 500 nm. Silicon (1.12 eV) absorbs light up to about 1100 nm, suiting solar cells. Chips are made from ultrapure single-crystal silicon grown by the Czochralski process."
+   ],
+   "example": {
+    "q": "What wavelength corresponds to a band gap of 1.12 eV? (λ = 1240 ÷ E in nm)",
+    "steps": [
+     "λ = 1240 ÷ 1.12.",
+     "≈ 1107 nm.",
+     "This is in the near-infrared."
+    ],
+    "a": "About 1100 nm"
+   },
+   "analogies": {
+    "home": "A light switch: a band gap is the energy needed to flick it on.",
+    "city": "A diode is a one-way street for electrons.",
+    "tech": "Transistors are tiny switches, billions in a phone.",
+    "nature": "Leaves capture light energy like a solar cell."
+   },
+   "mnemonic": "n adds a negative electron, p makes a positive hole; the junction is a one-way gate.",
+   "terms": [
+    [
+     "Band gap",
+     "Energy gap between valence and conduction bands."
+    ],
+    [
+     "Doping",
+     "Adding impurity atoms to control conduction."
+    ],
+    [
+     "Hole",
+     "The absence of an electron, acting like a positive charge."
+    ],
+    [
+     "p–n junction",
+     "Interface between p-type and n-type material."
+    ]
+   ],
+   "misc": {
+    "wrong": "Semiconductors are just poor conductors.",
+    "right": "Their conductivity can be controlled by doping, temperature and light, which is what makes them useful."
+   },
+   "limits": "Simple band diagrams ignore many-body effects and the indirect/direct gap difference that matters for light emission.",
+   "trip": {
+    "wiki": "Semiconductor",
+    "prompt": "Find the band diagram for a metal, semiconductor and insulator."
+   },
+   "sources": [
+    "Semiconductor",
+    "Band gap",
+    "P–n junction"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using λ(nm) = 1240 ÷ E(eV), what wavelength in nm corresponds to a band gap of 2.48 eV?",
+     "a": 500,
+     "tol": 1,
+     "unit": "nm",
+     "why": "1240 ÷ 2.48 = 500.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Gallium arsenide has Eg = 1.42 eV. Using λ(nm) = 1240 ÷ E(eV), what is the cut-off wavelength in nm (nearest whole number)?",
+     "a": 873,
+     "tol": 2,
+     "unit": "nm",
+     "why": "1240 ÷ 1.42 ≈ 873.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Phosphorus-doped silicon is:",
+     "o": [
+      "n-type",
+      "p-type",
+      "An insulator",
+      "Intrinsic"
+     ],
+     "a": 0,
+     "why": "Extra electron donors.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to the conductivity of a semiconductor as temperature rises?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays fixed",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "More carriers are excited across the gap.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A hole in a semiconductor is:",
+     "o": [
+      "A missing electron acting as a positive carrier",
+      "A tunnel running through the silicon crystal",
+      "A neutron stuck in the crystal lattice",
+      "A scratch in the surface of the wafer"
+     ],
+     "a": 0,
+     "why": "Conducts by electrons filling the gap.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A larger band gap means the material is:",
+     "o": [
+      "A better insulator at a given temperature",
+      "A better metal at that temperature",
+      "Always a conductor of electricity",
+      "Always black in colour"
+     ],
+     "a": 0,
+     "why": "Fewer thermally excited carriers.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which dopant makes p-type silicon?",
+     "o": [
+      "Boron",
+      "Phosphorus",
+      "Arsenic",
+      "Antimony"
+     ],
+     "a": 0,
+     "why": "Group 13 has one fewer valence electron.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each device to its operating idea.",
+     "pairs": [
+      [
+       "Diode",
+       "Current in one direction"
+      ],
+      [
+       "Solar cell",
+       "Light creates electron–hole pairs"
+      ],
+      [
+       "LED",
+       "Electron–hole recombination emits light"
+      ],
+      [
+       "Transistor",
+       "Small signal switches a larger current"
+      ]
+     ],
+     "why": "All depend on p–n junction physics.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order by band gap, smallest first.",
+     "items": [
+      "Germanium (0.67 eV)",
+      "Silicon (1.12 eV)",
+      "Gallium arsenide (1.42 eV)",
+      "Diamond (about 5.5 eV)"
+     ],
+     "why": "Increasing gap.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why does the conductivity of a metal drop on heating while that of a semiconductor rises?",
+     "rubric": [
+      [
+       "metal"
+      ],
+      [
+       "scatter",
+       "vibrat",
+       "collision",
+       "resist"
+      ],
+      [
+       "carriers",
+       "excite",
+       "band gap",
+       "more electrons",
+       "conduction band"
+      ]
+     ],
+     "min": 2,
+     "model": "In a metal, heating increases lattice vibrations that scatter electrons, so resistivity rises. In a semiconductor, heat excites many more carriers across the gap, outweighing the extra scattering.",
+     "why": "Carrier density versus mobility.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why must the silicon for chips be ultrapure, with impurities of parts per billion?",
+     "o": [
+      "Unwanted impurities change carrier numbers unpredictably",
+      "Impurities are heavier and weigh down the chip",
+      "Pure silicon is a metal",
+      "Silicon is radioactive and must be cleaned"
+     ],
+     "a": 0,
+     "why": "Control of doping.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A red LED has a gap near 1.9 eV. What colour would a 2.7 eV LED emit?",
+     "o": [
+      "Blue-violet (shorter wavelength)",
+      "Infrared light (longer wavelength)",
+      "Red light, the same as before",
+      "No light at all"
+     ],
+     "a": 0,
+     "why": "Larger gap gives shorter wavelength.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a p–n junction block current in reverse bias?",
+     "o": [
+      "The depletion region widens",
+      "The metal contacts melt",
+      "The electrons run out",
+      "The wire breaks"
+     ],
+     "a": 0,
+     "why": "Carriers are pulled away from the junction.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Semiconductors and doping",
+    "model": "Semiconductors have a small band gap between filled and empty energy bands. Doping adds extra electrons (n-type) or holes (p-type). Joining them makes a p–n junction, a one-way gate used in diodes, LEDs, solar cells and transistors.",
+    "points": [
+     {
+      "k": [
+       "band gap",
+       "band",
+       "energy"
+      ],
+      "ask": "What is a band gap?"
+     },
+     {
+      "k": [
+       "dop",
+       "n-type",
+       "p-type",
+       "impurity"
+      ],
+      "ask": "What is doping?"
+     },
+     {
+      "k": [
+       "junction",
+       "diode",
+       "transistor",
+       "led",
+       "solar"
+      ],
+      "ask": "What can we build?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Nanomaterials",
+   "icon": "🔭",
+   "hook": "Gold is yellow, but gold nanoparticles in water can look ruby red. Why does making something tiny change its properties?",
+   "explain": [
+    "Nanomaterials have at least one dimension between about 1 and 100 nm. One nanometre is 10⁻⁹ m. At this size two effects dominate. First, the surface area to volume ratio is huge: for a sphere it is 3 ÷ r, so smaller particles have more of their atoms on the surface, making them more reactive and useful as catalysts. Second, quantum effects appear.",
+    "Quantum confinement means the band gap of a semiconductor nanocrystal (a quantum dot) rises as its size falls, so small dots emit blue and larger dots red. In gold and silver nanoparticles, electrons oscillate collectively (plasmon resonance), giving strong colours. Carbon nanomaterials include graphene (a single sheet of carbon atoms in a hexagonal lattice), carbon nanotubes and fullerenes.",
+    "Nanomaterials appear in sunscreens, catalysts, displays, medicine delivery and batteries. Approaches are top-down (carving or milling) and bottom-up (growing from atoms or molecules). Because small particles can enter the body and the environment in new ways, safety testing, regulation and responsible use are important parts of nanotechnology."
+   ],
+   "example": {
+    "q": "Compare surface-area-to-volume ratios (3 ÷ r) of spheres of radius 50 nm and 5 nm.",
+    "steps": [
+     "50 nm: 3 ÷ 50 = 0.06 nm⁻¹.",
+     "5 nm: 3 ÷ 5 = 0.6 nm⁻¹.",
+     "The smaller sphere has ten times the ratio."
+    ],
+    "a": "The 5 nm sphere has 10 times the ratio"
+   },
+   "analogies": {
+    "home": "Crushing a sugar cube into powder makes it dissolve far faster.",
+    "farm": "Finely ground flour reacts faster than whole grain.",
+    "tech": "Pixels in a quantum-dot screen glow in different colours by size.",
+    "sea": "Fine sand has far more surface than a boulder of equal mass."
+   },
+   "mnemonic": "Smaller means more surface and a bigger gap: colours change with size.",
+   "terms": [
+    [
+     "Nanometre",
+     "One billionth of a metre."
+    ],
+    [
+     "Quantum dot",
+     "A semiconductor crystal a few nanometres wide."
+    ],
+    [
+     "Graphene",
+     "A single layer of carbon atoms in a hexagonal pattern."
+    ],
+    [
+     "Plasmon resonance",
+     "Collective oscillation of electrons giving colour."
+    ]
+   ],
+   "misc": {
+    "wrong": "Nanoparticles are just smaller bits of the same material with the same properties.",
+    "right": "Size alters properties through surface area and quantum effects."
+   },
+   "limits": "Properties can depend on shape, coating and aggregation, and long-term health effects of some nanomaterials are still being studied.",
+   "trip": {
+    "wiki": "Nanomaterials",
+    "prompt": "Find a picture of quantum dots of different sizes glowing in different colours."
+   },
+   "sources": [
+    "Nanomaterials",
+    "Quantum dot",
+    "Graphene"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A sphere has radius 5 nm. Using surface area ÷ volume = 3 ÷ r, what is the ratio in nm⁻¹?",
+     "a": 0.6,
+     "tol": 0.01,
+     "unit": "nm⁻¹",
+     "why": "3 ÷ 5 = 0.6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A cube of side 1 cm is cut into cubes of side 1 mm. By what factor does the total surface area increase?",
+     "a": 10,
+     "tol": 0.1,
+     "why": "SA/V = 6/a, and a is 10 times smaller, so total area is 10 times larger.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which range defines the nanoscale?",
+     "o": [
+      "About 1–100 nm",
+      "About 1–100 µm",
+      "About 1–100 mm",
+      "About 1–100 m"
+     ],
+     "a": 0,
+     "why": "Nano means 10⁻⁹ m.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "As a quantum dot gets smaller, its emitted light shifts towards:",
+     "o": [
+      "Blue",
+      "Red",
+      "Infrared",
+      "No change"
+     ],
+     "a": 0,
+     "why": "Band gap increases.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are nanoparticles good catalysts?",
+     "o": [
+      "A large fraction of atoms lie on the surface",
+      "They are heavier than bulk material",
+      "They are larger and expose less area",
+      "They stop reactions from taking place"
+     ],
+     "a": 0,
+     "why": "High surface-to-volume ratio.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Graphene is:",
+     "o": [
+      "A single layer of carbon atoms",
+      "A polymer made of long chains",
+      "A salt made of ions",
+      "A metal alloy of carbon and iron"
+     ],
+     "a": 0,
+     "why": "Hexagonal lattice.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A top-down approach to nanofabrication:",
+     "o": [
+      "Removes material from bulk to make small features",
+      "Builds structures from atoms upward",
+      "Grows materials from vapour only",
+      "Uses no tools at all"
+     ],
+     "a": 0,
+     "why": "Contrast with bottom-up.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each nanomaterial to a typical property or use.",
+     "pairs": [
+      [
+       "Gold nanoparticles",
+       "Colour from plasmon resonance"
+      ],
+      [
+       "Quantum dots",
+       "Size-tunable emission"
+      ],
+      [
+       "Carbon nanotubes",
+       "Very high tensile strength"
+      ],
+      [
+       "Titanium dioxide nanoparticles",
+       "UV absorbing in sunscreens"
+      ]
+     ],
+     "why": "Properties from size and structure.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by size, smallest first.",
+     "items": [
+      "Hydrogen atom (about 0.1 nm)",
+      "Quantum dot (about 5 nm)",
+      "Bacterium (about 2000 nm)",
+      "Human hair (about 70 000 nm)"
+     ],
+     "why": "Increasing length scales.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why nanoparticles of a reactive substance such as a metal powder can ignite more easily than a bulk piece.",
+     "rubric": [
+      [
+       "surface"
+      ],
+      [
+       "area",
+       "ratio",
+       "exposed",
+       "atoms"
+      ],
+      [
+       "react",
+       "oxygen",
+       "faster",
+       "oxid"
+      ]
+     ],
+     "min": 2,
+     "model": "Nanoparticles have a much larger surface area per volume, so more atoms are exposed to oxygen and react quickly, which can generate heat faster than it escapes.",
+     "why": "Surface area controls reactivity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is safety research important for nanomaterials?",
+     "o": [
+      "Small particles may behave differently in the body and environment",
+      "They are always harmful to every living thing",
+      "They are not made of matter",
+      "They are large enough to be seen by eye"
+     ],
+     "a": 0,
+     "why": "New behaviours need evidence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Quantum confinement occurs when:",
+     "o": [
+      "The particle size approaches the electron's wavelength",
+      "The particle melts at a low temperature",
+      "The particles are made very hot",
+      "The material becomes magnetic"
+     ],
+     "a": 0,
+     "why": "Electron energies become quantised.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Nanoparticles often clump together (aggregate). Why is this a problem?",
+     "o": [
+      "It removes their size-specific properties",
+      "It makes them bigger and so safer",
+      "It cools them down",
+      "It makes them coloured"
+     ],
+     "a": 0,
+     "why": "Effective size increases.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why nanomaterials are special",
+    "model": "Nanomaterials are 1 to 100 nm in size. They have a large surface area compared to volume, so they are very reactive, and quantum effects change their colour and electronic properties. Size can tune how they glow, such as quantum dots.",
+    "points": [
+     {
+      "k": [
+       "nano",
+       "small",
+       "size",
+       "100"
+      ],
+      "ask": "What is a nanomaterial?"
+     },
+     {
+      "k": [
+       "surface",
+       "area",
+       "reactive",
+       "catalyst"
+      ],
+      "ask": "Why are they more reactive?"
+     },
+     {
+      "k": [
+       "quantum",
+       "colour",
+       "band gap",
+       "dot",
+       "glow"
+      ],
+      "ask": "Why do the colours change?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Materials characterisation",
+   "icon": "🔎",
+   "hook": "How do engineers find out what a mystery metal part is made of, what its grains look like and where it will crack, without guessing?",
+   "explain": [
+    "Microscopy shows structure. Optical microscopes resolve about 200 nm. The Rayleigh limit is d ≈ 0.61λ ÷ NA, so for λ = 500 nm and numerical aperture 1.4, d ≈ 218 nm. Electrons have much shorter wavelengths, so scanning electron microscopy (SEM) shows surface topography down to a few nanometres, and transmission electron microscopy (TEM) can resolve atomic columns. Atomic force microscopy (AFM) feels a surface with a tiny tip.",
+    "Diffraction and spectroscopy reveal structure and composition. X-ray diffraction (XRD) uses Bragg's law nλ = 2d sinθ to identify crystal phases, and the Scherrer equation D = Kλ ÷ (β cosθ) estimates crystallite size from peak broadening, where β is the peak width in radians and K ≈ 0.9. Energy-dispersive X-ray spectroscopy (EDS) identifies elements, and X-ray photoelectron spectroscopy (XPS) probes surface chemistry.",
+    "Thermal and mechanical tests complete the picture. Differential scanning calorimetry (DSC) measures heat flow to find melting points and glass transitions. Thermogravimetric analysis (TGA) tracks mass change with temperature. Tensile, hardness and impact tests give strength, hardness and toughness. Choosing a technique means matching what is measured with the scale of the question."
+   ],
+   "example": {
+    "q": "XRD with λ = 0.154 nm, peak at θ = 30°, β = 0.010 rad, K = 0.9. Find the crystallite size.",
+    "steps": [
+     "D = Kλ ÷ (β cosθ).",
+     "cos 30° = 0.866; denominator = 0.010 × 0.866 = 0.00866.",
+     "D = 0.9 × 0.154 ÷ 0.00866 ≈ 16 nm."
+    ],
+    "a": "About 16 nm"
+   },
+   "analogies": {
+    "home": "A magnifying glass, a microscope and a scale each tell you different things about one object.",
+    "city": "A map, a satellite image and a street view each show a city at different scales.",
+    "sport": "Video replay shows the same match from several angles.",
+    "tech": "A doctor uses X-rays, scans and blood tests; engineers use many techniques too."
+   },
+   "mnemonic": "Look (microscopy), diffract (XRD), name (EDS), heat (DSC/TGA), pull (tensile).",
+   "terms": [
+    [
+     "Resolution",
+     "Smallest separation that can be distinguished."
+    ],
+    [
+     "Diffraction",
+     "Scattering of waves by regular structures."
+    ],
+    [
+     "DSC",
+     "Technique measuring heat flow in a sample."
+    ],
+    [
+     "Characterisation",
+     "Measuring a material's structure and properties."
+    ]
+   ],
+   "misc": {
+    "wrong": "A more powerful microscope can see anything if it magnifies enough.",
+    "right": "Resolution is limited by wavelength; magnifying beyond it only enlarges blur."
+   },
+   "limits": "Techniques can alter the sample (electron beams damage polymers) and often probe only the surface or a tiny region.",
+   "trip": {
+    "wiki": "Materials science",
+    "prompt": "Find an SEM or TEM image and note what feature is being shown."
+   },
+   "sources": [
+    "Scanning electron microscope",
+    "X-ray diffraction",
+    "Differential scanning calorimetry"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using d = 0.61λ ÷ NA with λ = 500 nm and NA = 1.4, what is the optical resolution in nm (nearest whole number)?",
+     "a": 218,
+     "tol": 2,
+     "unit": "nm",
+     "why": "0.61 × 500 ÷ 1.4 = 217.9.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Scherrer equation D = Kλ ÷ (β cosθ) with K = 0.9, λ = 0.154 nm, β = 0.010 rad and θ = 30° (cos θ = 0.866). What is D in nm?",
+     "a": 16,
+     "tol": 0.3,
+     "unit": "nm",
+     "why": "0.9 × 0.154 ÷ 0.00866 ≈ 16.0.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which technique identifies crystal phases?",
+     "o": [
+      "X-ray diffraction",
+      "Tensile test",
+      "Thermogravimetry",
+      "Optical microscopy"
+     ],
+     "a": 0,
+     "why": "Diffraction patterns are fingerprints.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does electron microscopy resolve finer detail than optical microscopy?",
+     "o": [
+      "Electrons have a much shorter wavelength",
+      "Electrons are much heavier than light",
+      "Electrons are brighter than visible light",
+      "Glass lenses are worse than metal ones"
+     ],
+     "a": 0,
+     "why": "Resolution scales with wavelength.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "TGA measures:",
+     "o": [
+      "Mass change with temperature",
+      "Heat flow into a sample only",
+      "The hardness of a sample",
+      "The colour of a sample"
+     ],
+     "a": 0,
+     "why": "Used for decomposition and moisture.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "EDS is used to:",
+     "o": [
+      "Find which elements are present",
+      "Measure the hardness of a sample",
+      "Measure the toughness of a sample",
+      "Measure the density of a sample"
+     ],
+     "a": 0,
+     "why": "Characteristic X-rays.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A DSC trace shows a step in the baseline for an amorphous polymer. This is likely:",
+     "o": [
+      "The glass transition",
+      "Melting",
+      "Combustion",
+      "Crystallisation always"
+     ],
+     "a": 0,
+     "why": "Heat capacity changes.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each technique to what it mainly gives.",
+     "pairs": [
+      [
+       "SEM",
+       "Surface images at nanoscale"
+      ],
+      [
+       "XRD",
+       "Crystal phase and structure"
+      ],
+      [
+       "DSC",
+       "Melting and glass transitions"
+      ],
+      [
+       "Tensile test",
+       "Strength and ductility"
+      ]
+     ],
+     "why": "Pick the right tool.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by typical resolution, finest first.",
+     "items": [
+      "TEM (atomic scale)",
+      "SEM (a few nm)",
+      "Optical microscope (about 200 nm)",
+      "Unaided eye (about 0.1 mm)"
+     ],
+     "why": "Shorter wavelength gives finer detail.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A broken metal bridge bolt is to be analysed. Name two techniques you would use and say what each would reveal.",
+     "rubric": [
+      [
+       "sem",
+       "microscop",
+       "fractograph"
+      ],
+      [
+       "edx",
+       "eds",
+       "composition",
+       "xrd",
+       "hardness",
+       "tensile",
+       "metallograph"
+      ],
+      [
+       "fatigue",
+       "crack",
+       "grain",
+       "phase",
+       "failure",
+       "defect",
+       "inclusion",
+       "element"
+      ]
+     ],
+     "min": 2,
+     "model": "Use SEM to examine the fracture surface for fatigue or brittle features, and EDS or XRD to check composition and phases, and a hardness test to confirm the heat treatment.",
+     "why": "Combine techniques.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Broader XRD peaks usually indicate:",
+     "o": [
+      "Smaller crystallites or strain",
+      "Larger crystals",
+      "No crystal structure at all",
+      "A liquid sample"
+     ],
+     "a": 0,
+     "why": "Scherrer broadening.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are non-conductive samples coated with a thin conductive layer for SEM?",
+     "o": [
+      "To prevent charging by the electron beam",
+      "To give them a bright colour",
+      "To heat them up",
+      "To hide them from the beam"
+     ],
+     "a": 0,
+     "why": "Charge build-up distorts images.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use several techniques on one sample?",
+     "o": [
+      "Each probes a different property or length scale",
+      "One technique always gives all the information",
+      "The techniques cancel each other's errors",
+      "They are cheaper when used together"
+     ],
+     "a": 0,
+     "why": "Complementary information.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How we study materials",
+    "model": "Characterisation uses microscopes to see structure, diffraction to find crystal phases, spectroscopy to find elements, and thermal and mechanical tests for behaviour. Resolution depends on wavelength, so electron microscopes see finer detail than light.",
+    "points": [
+     {
+      "k": [
+       "microscop",
+       "see",
+       "image",
+       "sem",
+       "tem"
+      ],
+      "ask": "How do we look at structure?"
+     },
+     {
+      "k": [
+       "diffraction",
+       "xrd",
+       "x-ray",
+       "phase",
+       "crystal"
+      ],
+      "ask": "How do we find the crystal structure?"
+     },
+     {
+      "k": [
+       "thermal",
+       "dsc",
+       "tensile",
+       "strength",
+       "test",
+       "hardness"
+      ],
+      "ask": "How do we measure behaviour?"
+     }
+    ]
+   }
+  }
+ ]
+}

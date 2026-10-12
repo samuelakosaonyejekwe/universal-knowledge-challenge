@@ -1,0 +1,2626 @@
+{
+ "world": 11,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Molecular biology",
+   "icon": "🧬",
+   "hook": "Your cells hold a molecule over 2 metres long if stretched out, yet it fits in a nucleus a few micrometres wide. How is information stored in it, and how is it used?",
+   "explain": [
+    "DNA is a double helix of two antiparallel strands. Each strand is a chain of nucleotides: a sugar (deoxyribose), a phosphate and one of four bases: adenine (A), thymine (T), guanine (G) and cytosine (C). The strands are held together by hydrogen bonds between complementary bases: A pairs with T and G pairs with C. Hence in double-stranded DNA, %A = %T and %G = %C.",
+    "The central dogma describes the flow of information: DNA is transcribed into RNA, and RNA is translated into protein. RNA differs from DNA: it has ribose, it is usually single-stranded, and it uses uracil (U) in place of thymine. Proteins are chains of amino acids folded into shapes that determine their function.",
+    "In eukaryotes DNA is wound around histone proteins and packaged into chromosomes, which makes it compact. Humans have 46 chromosomes in most body cells (23 pairs)."
+   ],
+   "example": {
+    "q": "A double-stranded DNA sample is 28% adenine. What percentage is guanine?",
+    "steps": [
+     "A pairs with T, so T is also 28%.",
+     "A + T = 56%, leaving 44% for G + C.",
+     "G pairs with C, so G = C = 22%."
+    ],
+    "a": "22%"
+   },
+   "analogies": {
+    "tech": "DNA is like a hard drive using a four-letter code; RNA is a working copy printed out for the factory floor.",
+    "home": "A recipe book stays on the shelf; you copy a recipe to the kitchen and make the dish.",
+    "music": "DNA is the full score, mRNA is the part sheet and the protein is the played music."
+   },
+   "mnemonic": "A-T and G-C: Apples in Trees, Cars in Garages.",
+   "terms": [
+    [
+     "Nucleotide",
+     "Building block of nucleic acids: sugar, phosphate and base."
+    ],
+    [
+     "Complementary base pairing",
+     "A with T (U in RNA), G with C."
+    ],
+    [
+     "Transcription",
+     "Making an RNA copy of a gene."
+    ],
+    [
+     "Translation",
+     "Making a protein from an mRNA sequence."
+    ]
+   ],
+   "misc": {
+    "wrong": "DNA makes proteins directly.",
+    "right": "DNA is transcribed into RNA, which ribosomes translate into protein. Proteins are made by ribosomes, not by DNA."
+   },
+   "limits": "The central dogma has exceptions, such as retroviruses that copy RNA into DNA, and many RNAs that are never translated.",
+   "trip": {
+    "wiki": "DNA",
+    "prompt": "Find the diagram of base pairing and count the hydrogen bonds in A-T and G-C pairs."
+   },
+   "sources": [
+    "DNA",
+    "RNA",
+    "Central dogma of molecular biology"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which base is found in RNA but not in DNA?",
+     "o": [
+      "Uracil",
+      "Thymine",
+      "Cytosine",
+      "Adenine"
+     ],
+     "a": 0,
+     "why": "RNA uses uracil in place of thymine.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which bonds hold the two DNA strands together?",
+     "o": [
+      "Hydrogen bonds between bases",
+      "Covalent bonds between bases",
+      "Ionic bonds between sugars",
+      "Peptide bonds"
+     ],
+     "a": 0,
+     "why": "Complementary bases pair by hydrogen bonds.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A double-stranded DNA sample is 30% adenine. What percentage of the bases are cytosine?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "T = 30%, so A + T = 60%. G + C = 40%, each 20%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A DNA molecule has 1000 base pairs, and 380 of its bases are guanine. How many bases are adenine?",
+     "a": 620,
+     "tol": 0,
+     "why": "G = C = 380, so G + C = 760. Total bases = 2000, so A + T = 1240 and A = 620.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A DNA template strand reads TACGGT. What is the mRNA sequence copied from it?",
+     "o": [
+      "AUGCCA",
+      "ATGCCA",
+      "UACGGU",
+      "TACGGT"
+     ],
+     "a": 0,
+     "why": "Pair T-A, A-U, C-G, G-C, G-C, T-A: AUGCCA.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the flow of genetic information.",
+     "items": [
+      "DNA",
+      "Transcription",
+      "mRNA",
+      "Translation",
+      "Protein"
+     ],
+     "why": "DNA is transcribed into mRNA, which is translated into protein.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each molecule to a feature.",
+     "pairs": [
+      [
+       "DNA",
+       "Double-stranded, contains thymine"
+      ],
+      [
+       "mRNA",
+       "Single-stranded, carries a gene copy"
+      ],
+      [
+       "tRNA",
+       "Brings amino acids to the ribosome"
+      ],
+      [
+       "Protein",
+       "Chain of amino acids"
+      ]
+     ],
+     "why": "Each molecule has a different role.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is RNA a suitable messenger rather than DNA itself?",
+     "o": [
+      "It lets the master copy of DNA stay safe in the nucleus",
+      "RNA is much more stable than DNA, so it lasts longer",
+      "DNA cannot be read by any enzyme in the cell",
+      "RNA contains thymine, which DNA lacks"
+     ],
+     "a": 0,
+     "why": "Making short disposable copies protects the original.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the base sequence of a gene determines the structure of a protein.",
+     "rubric": [
+      [
+       "codon",
+       "triplet",
+       "three bases",
+       "3 bases"
+      ],
+      [
+       "amino acid"
+      ],
+      [
+       "sequence",
+       "order"
+      ],
+      [
+       "fold",
+       "shape",
+       "structure"
+      ]
+     ],
+     "min": 3,
+     "model": "Each triplet of bases (codon) codes for an amino acid. The order of bases sets the order of amino acids, and that sequence determines how the chain folds into a specific three-dimensional shape.",
+     "why": "Sequence determines amino acid order, which determines shape and function.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A sample of nucleic acid contains uracil. What can you conclude?",
+     "o": [
+      "It is RNA",
+      "It is DNA",
+      "It is a protein",
+      "It is a lipid"
+     ],
+     "a": 0,
+     "why": "Uracil occurs in RNA only.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A virus sample has 20% A, 30% U, 25% G, 25% C and is single-stranded. Why do the percentages of A and U differ?",
+     "o": [
+      "Single-stranded RNA does not need to have equal A and U",
+      "A mistake must exist in the measurements",
+      "A always equals G in every nucleic acid",
+      "RNA has no uracil, so the data is wrong"
+     ],
+     "a": 0,
+     "why": "The base-pairing equality rule applies to double-stranded nucleic acids only.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it important that the two strands of DNA are complementary?",
+     "o": [
+      "Each strand can serve as a template to rebuild the other",
+      "It makes the whole molecule heavier and stronger",
+      "It stops mutations from ever happening in the cell",
+      "It removes the need for any enzymes in copying"
+     ],
+     "a": 0,
+     "why": "Complementarity allows accurate copying and repair.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cell has all its histones removed from DNA. What is the most likely effect?",
+     "o": [
+      "DNA would not be packaged compactly",
+      "DNA would turn into RNA inside the nucleus",
+      "Mitochondria would vanish from the cytoplasm",
+      "Ribosomes would turn into new DNA strands"
+     ],
+     "a": 0,
+     "why": "Histones help coil and compact DNA.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How genetic information flows from DNA to protein",
+    "model": "DNA holds the instructions as a sequence of four bases. A gene is copied into mRNA by transcription. Ribosomes then read the mRNA in groups of three bases, each coding an amino acid, and join them into a protein by translation.",
+    "points": [
+     {
+      "k": [
+       "dna",
+       "gene",
+       "base"
+      ],
+      "ask": "Where is the information stored?"
+     },
+     {
+      "k": [
+       "transcri",
+       "mrna",
+       "rna",
+       "copy"
+      ],
+      "ask": "What happens first?"
+     },
+     {
+      "k": [
+       "translat",
+       "ribosome",
+       "amino",
+       "protein",
+       "codon",
+       "three"
+      ],
+      "ask": "How is the protein made?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "DNA replication and gene expression",
+   "icon": "🧬",
+   "hook": "Before a cell divides it must copy 3 billion base pairs with about one error per billion bases. How can such accurate copying happen?",
+   "explain": [
+    "DNA replication is semi-conservative: each new DNA molecule has one old strand and one new strand. Helicase unwinds the helix and breaks hydrogen bonds. DNA polymerase adds nucleotides to each template by complementary base pairing, building new strands only in the 5' to 3' direction. Ligase seals gaps. Polymerases proofread and repair errors, which keeps the error rate very low.",
+    "Gene expression has two steps. In transcription, RNA polymerase reads the template strand of a gene and builds mRNA. In eukaryotes, introns are spliced out and exons joined. In translation, ribosomes read mRNA codons (three bases each). tRNA molecules with matching anticodons bring amino acids. AUG is the start codon and also codes for methionine. UAA, UAG and UGA are stop codons.",
+    "Not all genes are active in every cell. Gene regulation turns genes on and off, for instance by transcription factors binding near a gene, so a muscle cell and a nerve cell use the same DNA but make different proteins. Mutations change the DNA sequence: substitutions may be silent, missense or nonsense, while insertions or deletions that are not multiples of three cause frameshifts."
+   ],
+   "example": {
+    "q": "An mRNA reads AUG GCU UUU UAA. Which amino acids are added, given that GCU is alanine (Ala), UUU is phenylalanine (Phe) and AUG is methionine (Met)?",
+    "steps": [
+     "AUG = Met (start).",
+     "GCU = Ala.",
+     "UUU = Phe.",
+     "UAA is a stop codon, so no amino acid is added."
+    ],
+    "a": "Met–Ala–Phe, then stop"
+   },
+   "analogies": {
+    "tech": "Replication is photocopying a whole book; transcription is photocopying one chapter to take to the workshop.",
+    "home": "Reading a recipe three ingredients at a time is like reading codons.",
+    "music": "Splicing is like editing out the pauses of a recording and joining the good parts."
+   },
+   "mnemonic": "Replication: Helicase unzips, Polymerase builds, Ligase seals (HPL).",
+   "terms": [
+    [
+     "Semi-conservative replication",
+     "Each new DNA molecule keeps one original strand."
+    ],
+    [
+     "Codon",
+     "Three mRNA bases that code for one amino acid or a stop signal."
+    ],
+    [
+     "Intron",
+     "Non-coding part of a gene removed before translation."
+    ],
+    [
+     "Frameshift",
+     "Mutation that shifts the reading frame of codons."
+    ]
+   ],
+   "misc": {
+    "wrong": "A mutation always harms the organism.",
+    "right": "Many mutations are silent or neutral. Some are harmful and a few are beneficial."
+   },
+   "trip": {
+    "wiki": "DNA replication",
+    "prompt": "Find an animation of the replication fork. Identify the enzyme that unwinds and the one that builds."
+   },
+   "sources": [
+    "DNA replication",
+    "Transcription (biology)",
+    "Translation (biology)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which enzyme joins new nucleotides during replication?",
+     "o": [
+      "DNA polymerase",
+      "Helicase enzyme",
+      "Amylase enzyme",
+      "Catalase enzyme"
+     ],
+     "a": 0,
+     "why": "DNA polymerase builds the new strand.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the start codon?",
+     "o": [
+      "AUG",
+      "UAA",
+      "GCU",
+      "UUU"
+     ],
+     "a": 0,
+     "why": "AUG codes for methionine and starts translation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A coding sequence has 300 nucleotides, not counting the stop codon. How many amino acids does the protein have?",
+     "a": 100,
+     "tol": 0,
+     "why": "300 ÷ 3 = 100 codons, each coding an amino acid.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A single DNA molecule replicates 3 times. How many DNA molecules result?",
+     "a": 8,
+     "tol": 0,
+     "why": "Each round doubles: 2³ = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "After 3 replications of one DNA molecule (semi-conservative), how many of the resulting molecules contain one of the original two strands?",
+     "a": 2,
+     "tol": 0,
+     "why": "The two original strands each end up in a different molecule, so only 2 of 8 contain an original strand.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mutation changes CAG to CAA, and both code for glutamine. What kind of mutation is it?",
+     "o": [
+      "Silent",
+      "Missense",
+      "Nonsense",
+      "Frameshift"
+     ],
+     "a": 0,
+     "why": "The amino acid is unchanged.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A deletion of one base from the middle of a gene most likely causes:",
+     "o": [
+      "A frameshift altering all following codons",
+      "No effect at all on the protein made",
+      "Just one changed amino acid in the chain",
+      "A longer protein every time"
+     ],
+     "a": 0,
+     "why": "The reading frame shifts after the deletion.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the events at a replication fork.",
+     "items": [
+      "Helicase unwinds the DNA",
+      "Strands act as templates",
+      "DNA polymerase adds complementary nucleotides",
+      "Ligase seals gaps",
+      "Two identical DNA molecules form"
+     ],
+     "why": "Unwinding comes first, then template-based building and sealing.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which mutation changes one amino acid into a different one?",
+     "o": [
+      "Missense",
+      "Silent",
+      "Nonsense",
+      "Frameshift only"
+     ],
+     "a": 0,
+     "why": "A missense substitution changes the codon to one for a different amino acid.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Muscle cells and nerve cells in one person contain the same DNA but make different proteins. Explain how.",
+     "rubric": [
+      [
+       "regulat",
+       "switch",
+       "turn on",
+       "turned on",
+       "express"
+      ],
+      [
+       "gene"
+      ],
+      [
+       "transcription factor",
+       "transcription",
+       "different genes",
+       "some genes",
+       "certain genes"
+      ],
+      [
+       "same dna",
+       "same genes",
+       "same genome"
+      ]
+     ],
+     "min": 2,
+     "model": "Each cell type switches on a different set of genes. Transcription factors control which genes are transcribed, so different mRNAs and proteins are made even though the DNA is identical.",
+     "why": "Differential gene expression explains cell specialisation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does semi-conservative replication reduce errors?",
+     "o": [
+      "Each old strand acts as a template, so the sequence is copied faithfully",
+      "It uses no enzymes, so no mistakes can be made at all",
+      "It removes the old strand and replaces it with RNA",
+      "It makes RNA instead of DNA, which is easier to copy"
+     ],
+     "a": 0,
+     "why": "Template copying with proofreading keeps the sequence accurate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A mutation in an intron is often harmless. Why?",
+     "o": [
+      "Introns are removed from mRNA and not translated",
+      "Introns code for stop codons only, so they are not needed",
+      "Introns are always silent, whatever happens to them",
+      "Introns do not contain any DNA bases at all"
+     ],
+     "a": 0,
+     "why": "Introns are spliced out, although some mutations at splice sites can still be harmful.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A nonsense mutation near the start of a gene is likely to cause:",
+     "o": [
+      "A very short, usually non-functional protein",
+      "A longer protein with extra amino acids at the end",
+      "A completely normal protein with no change",
+      "A new DNA molecule instead of a protein"
+     ],
+     "a": 0,
+     "why": "Translation stops early.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How DNA is copied accurately",
+    "model": "Helicase unwinds the DNA. Each strand is a template. DNA polymerase adds complementary nucleotides, A with T and G with C, to make a new strand. Each new molecule has one old and one new strand. Proofreading fixes most mistakes.",
+    "points": [
+     {
+      "k": [
+       "unwind",
+       "helicase",
+       "unzip",
+       "separate"
+      ],
+      "ask": "What happens first?"
+     },
+     {
+      "k": [
+       "template",
+       "complement",
+       "polymerase",
+       "base pair"
+      ],
+      "ask": "How are the new strands built?"
+     },
+     {
+      "k": [
+       "semi",
+       "one old",
+       "one new",
+       "proofread",
+       "accura"
+      ],
+      "ask": "What does each new molecule look like?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Enzymes and metabolism",
+   "icon": "⚙️",
+   "hook": "Starch in your mouth turns to sugar within minutes, but in a test tube without saliva it takes years. What does saliva contain that changes the speed?",
+   "explain": [
+    "Enzymes are protein catalysts that speed up reactions by lowering the activation energy. Each enzyme has an active site whose shape fits its substrate, so enzymes are specific. The induced-fit model says the active site changes shape slightly as the substrate binds.",
+    "Rate depends on conditions. Raising temperature increases collisions until the optimum; beyond it the enzyme denatures (its shape changes irreversibly). Each enzyme has an optimum pH; pepsin works in acid, amylase near neutral. More substrate raises the rate until all active sites are busy, giving a plateau at Vmax. Inhibitors reduce activity: competitive inhibitors bind to the active site, non-competitive ones bind elsewhere and change its shape.",
+    "Metabolism is all of the chemical reactions in a cell. Catabolic reactions break molecules down and release energy; anabolic reactions build molecules and use energy. Pathways are controlled by feedback inhibition, where an end product inhibits an early enzyme."
+   ],
+   "example": {
+    "q": "An enzyme has Vmax = 100 µmol/min and Km = 5 mM (v = Vmax × [S] ÷ (Km + [S])). What is v at [S] = 15 mM?",
+    "steps": [
+     "Add Km and [S]: 5 + 15 = 20.",
+     "Divide [S] by that: 15 ÷ 20 = 0.75.",
+     "Multiply by Vmax: 0.75 × 100 = 75."
+    ],
+    "a": "75 µmol/min"
+   },
+   "analogies": {
+    "tech": "A key (substrate) fits a lock (active site), and a lock can be jammed by the wrong key (inhibitor).",
+    "farm": "A mill has a limited number of grinders: adding more grain no longer increases flour per hour.",
+    "city": "A thermostat in a factory: feedback inhibition shuts off a production line when the shelves are full."
+   },
+   "mnemonic": "Enzyme = Edit speed, not result: it lowers the hill, not the end point.",
+   "terms": [
+    [
+     "Active site",
+     "The part of an enzyme where the substrate binds."
+    ],
+    [
+     "Denaturation",
+     "Loss of an enzyme's shape, usually by heat or extreme pH."
+    ],
+    [
+     "Activation energy",
+     "Energy needed to start a reaction."
+    ],
+    [
+     "Competitive inhibitor",
+     "A molecule that blocks the active site."
+    ]
+   ],
+   "misc": {
+    "wrong": "Enzymes are used up in the reactions they catalyse.",
+    "right": "Enzymes are not changed by the reaction; one enzyme molecule can catalyse many reactions."
+   },
+   "limits": "The lock-and-key model is a simplification, which is why induced fit is preferred.",
+   "trip": {
+    "wiki": "Enzyme",
+    "prompt": "Find a graph of enzyme rate against temperature. Mark the optimum and the denaturing region."
+   },
+   "sources": [
+    "Enzyme",
+    "Michaelis–Menten kinetics",
+    "Metabolism"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What do enzymes do to activation energy?",
+     "o": [
+      "Lower it",
+      "Raise it",
+      "Remove it",
+      "Double it"
+     ],
+     "a": 0,
+     "why": "Catalysts lower the activation energy barrier.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to most enzymes at very high temperatures?",
+     "o": [
+      "They denature",
+      "They speed up forever",
+      "They become DNA",
+      "They divide"
+     ],
+     "a": 0,
+     "why": "The 3D shape is lost.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Using v = Vmax × [S] ÷ (Km + [S]) with Vmax = 80 and Km = 4 mM, what is v at [S] = 4 mM?",
+     "a": 40,
+     "tol": 0.1,
+     "why": "When [S] = Km, v = Vmax ÷ 2 = 40.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An enzyme's rate doubles for every 10 °C rise (below its optimum). The rate at 20 °C is 3 units/min. What is the rate at 40 °C?",
+     "a": 12,
+     "tol": 0.1,
+     "unit": "units/min",
+     "why": "20 to 40 is two 10 °C steps: 3 × 2 × 2 = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Adding more substrate no longer increases the rate of a reaction. Why?",
+     "o": [
+      "All active sites are occupied",
+      "The enzyme has been denatured by the heat",
+      "The substrate has evaporated away",
+      "The pH has dropped to zero"
+     ],
+     "a": 0,
+     "why": "The enzyme is saturated and Vmax is reached.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Pepsin works best at pH 2, but amylase works best near pH 7. Why is this useful?",
+     "o": [
+      "Each works in its own part of the digestive tract",
+      "They are really the same enzyme in two forms",
+      "pH does not matter for how enzymes work",
+      "Amylase is made in the stomach, where it works"
+     ],
+     "a": 0,
+     "why": "Pepsin works in the acidic stomach, amylase in the mouth and small intestine.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Anabolic",
+       "Builds molecules using energy"
+      ],
+      [
+       "Catabolic",
+       "Breaks molecules down"
+      ],
+      [
+       "Substrate",
+       "Molecule the enzyme acts on"
+      ],
+      [
+       "Product",
+       "Molecule formed"
+      ]
+     ],
+     "why": "These terms describe metabolism.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of enzyme action.",
+     "items": [
+      "Substrate binds the active site",
+      "Enzyme–substrate complex forms",
+      "Substrate is converted",
+      "Product is released"
+     ],
+     "why": "Enzymes bind, convert and release.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a competitive inhibitor can be overcome by adding more substrate, but a non-competitive inhibitor cannot.",
+     "rubric": [
+      [
+       "compet"
+      ],
+      [
+       "active site",
+       "same site"
+      ],
+      [
+       "more substrate",
+       "high substrate",
+       "outcompete",
+       "outnumber"
+      ],
+      [
+       "elsewhere",
+       "different site",
+       "shape",
+       "allosteric"
+      ]
+     ],
+     "min": 3,
+     "model": "A competitive inhibitor fights for the active site, so more substrate outcompetes it. A non-competitive inhibitor binds elsewhere and changes the enzyme's shape, so extra substrate cannot restore the active site.",
+     "why": "Binding site determines whether more substrate helps.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fever rising to 41 °C is dangerous partly because:",
+     "o": [
+      "Some enzymes begin to lose their shape",
+      "DNA turns into RNA when the body is hot",
+      "Oxygen disappears from the blood completely",
+      "Cells stop being cells and break apart at once"
+     ],
+     "a": 0,
+     "why": "Human enzymes work near 37 °C and can denature if too hot.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An end product of a pathway inhibits the first enzyme. Why is this efficient?",
+     "o": [
+      "It stops the cell wasting resources when enough product exists",
+      "It makes even more product than the cell needs",
+      "It destroys the enzyme so it cannot be used again",
+      "It speeds up respiration to use the extra product"
+     ],
+     "a": 0,
+     "why": "Negative feedback prevents overproduction.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Lactose-intolerant people lack lactase. Which is most likely to happen to lactose in their gut?",
+     "o": [
+      "It stays undigested",
+      "It becomes protein",
+      "It is absorbed whole",
+      "It becomes starch"
+     ],
+     "a": 0,
+     "why": "Without the enzyme, lactose is not broken into glucose and galactose.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Cooling an enzyme to 4 °C slows its reaction. Is the enzyme denatured?",
+     "o": [
+      "No, cold slows it but usually does not denature it",
+      "Yes, cold always denatures enzymes in the same way",
+      "Yes, and the change is permanent in cold",
+      "It becomes a substrate for other enzymes in the cell"
+     ],
+     "a": 0,
+     "why": "Low temperature lowers collisions, and activity returns on warming.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why enzyme activity changes with temperature",
+    "model": "Warmth makes molecules move faster and collide more, so the reaction speeds up. At the optimum temperature it is fastest. Beyond that the enzyme's shape is destroyed, so the substrate no longer fits the active site and the rate falls sharply.",
+    "points": [
+     {
+      "k": [
+       "collision",
+       "faster",
+       "move",
+       "kinetic"
+      ],
+      "ask": "Why does heat speed things up at first?"
+     },
+     {
+      "k": [
+       "optimum",
+       "best"
+      ],
+      "ask": "Is hotter always better?"
+     },
+     {
+      "k": [
+       "denatur",
+       "shape",
+       "active site"
+      ],
+      "ask": "What happens when it is too hot?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Immunology",
+   "icon": "🛡️",
+   "hook": "A vaccine can contain a harmless piece of a germ yet protect for years. How does the body learn from a pretend attack?",
+   "explain": [
+    "The body has layers of defence. Physical and chemical barriers (skin, mucus, stomach acid) are non-specific. Phagocytes engulf pathogens. The adaptive immune system is specific: each pathogen carries antigens, and lymphocytes recognise them. B cells make antibodies that bind a specific antigen; helper T cells coordinate the response; killer T cells destroy infected cells.",
+    "After first exposure, memory cells remain. On a second exposure the response is faster and stronger (secondary response). Vaccines expose the body to a harmless form of an antigen so memory cells form without illness. Herd immunity occurs when enough people are immune that spread is limited. The threshold is about 1 − 1/R₀, where R₀ is the average number of people one case infects in a fully susceptible population.",
+    "Antibiotics treat bacterial infections only. Autoimmune diseases occur when the immune system attacks the body's own cells. Allergies are over-reactions to harmless antigens."
+   ],
+   "example": {
+    "q": "For a disease with R₀ = 4, what fraction of the population needs to be immune for herd immunity?",
+    "steps": [
+     "Threshold = 1 − 1/R₀.",
+     "1/4 = 0.25.",
+     "1 − 0.25 = 0.75."
+    ],
+    "a": "75%"
+   },
+   "analogies": {
+    "city": "Phagocytes are police on patrol, antibodies are guided missiles with one target, memory cells are wanted-posters kept on file.",
+    "sport": "Watching a replay of the opposing team's moves prepares a team for the next match, as a vaccine does.",
+    "tech": "Antivirus software keeps signatures of past threats and reacts faster to known ones."
+   },
+   "mnemonic": "B cells make antiBodies; T cells Target infected cells.",
+   "terms": [
+    [
+     "Antigen",
+     "A molecule that triggers an immune response."
+    ],
+    [
+     "Antibody",
+     "A protein that binds a specific antigen."
+    ],
+    [
+     "Memory cell",
+     "A long-lived lymphocyte that gives a faster second response."
+    ],
+    [
+     "Herd immunity",
+     "Protection of a population when enough people are immune."
+    ]
+   ],
+   "misc": {
+    "wrong": "Vaccines give you a mild version of the disease.",
+    "right": "Most vaccines use dead or weakened pathogens, parts of them or instructions to make an antigen, and they train the immune system without causing the disease."
+   },
+   "limits": "Real herd-immunity thresholds depend on vaccine effectiveness, mixing patterns and variants, so 1 − 1/R₀ is an estimate.",
+   "trip": {
+    "wiki": "Adaptive immune system",
+    "prompt": "Find the diagram of primary versus secondary antibody response. Say why the second peak is higher."
+   },
+   "sources": [
+    "Immune system",
+    "Vaccine",
+    "Herd immunity"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which cells make antibodies?",
+     "o": [
+      "B lymphocytes",
+      "Red blood cells",
+      "Platelets",
+      "Phagocytes"
+     ],
+     "a": 0,
+     "why": "B cells differentiate into plasma cells that secrete antibodies.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is an antigen?",
+     "o": [
+      "A molecule that triggers an immune response",
+      "A type of antibiotic used to treat disease",
+      "A white blood cell that eats germs",
+      "A drug that lowers a fever in the body"
+     ],
+     "a": 0,
+     "why": "Antigens are recognised by the immune system.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "R₀ for a disease is 5. Using threshold = 1 − 1/R₀, what percentage of the population must be immune for herd immunity?",
+     "a": 80,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "1 − 1/5 = 0.8 = 80%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A town has 20 000 people. If 85% are immune, how many are not?",
+     "a": 3000,
+     "tol": 0,
+     "why": "15% of 20 000 = 3000.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A second exposure to a pathogen produces a faster and stronger antibody response. Why?",
+     "o": [
+      "Memory cells already exist",
+      "Antibodies are stored in blood unchanged",
+      "Pathogens are weaker",
+      "The skin kills them"
+     ],
+     "a": 0,
+     "why": "Memory B and T cells respond rapidly.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of an adaptive immune response.",
+     "items": [
+      "Pathogen antigen is detected",
+      "Helper T cells activate B cells",
+      "B cells make antibodies",
+      "Memory cells remain"
+     ],
+     "why": "Recognition leads to activation, then antibodies and memory.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each cell to its role.",
+     "pairs": [
+      [
+       "Phagocyte",
+       "Engulfs pathogens"
+      ],
+      [
+       "B cell",
+       "Makes antibodies"
+      ],
+      [
+       "Killer T cell",
+       "Destroys infected cells"
+      ],
+      [
+       "Memory cell",
+       "Gives a rapid second response"
+      ]
+     ],
+     "why": "Different immune cells have specialised roles.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A child has a bacterial ear infection. Why might a doctor prescribe an antibiotic but not for a viral cold?",
+     "o": [
+      "Antibiotics target bacteria, not viruses",
+      "Antibiotics cure all diseases, bacterial or viral",
+      "Colds are caused by bacteria, so they are treated the same way",
+      "Antibiotics are really vaccines in a different form"
+     ],
+     "a": 0,
+     "why": "Viruses lack the targets antibiotics attack.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a vaccine gives protection without causing the disease.",
+     "rubric": [
+      [
+       "antigen",
+       "harmless",
+       "weakened",
+       "dead",
+       "inactive",
+       "part of"
+      ],
+      [
+       "memory",
+       "remember"
+      ],
+      [
+       "antibod",
+       "lymphocyte",
+       "immune response",
+       "b cell"
+      ],
+      [
+       "faster",
+       "quick",
+       "later",
+       "future",
+       "second",
+       "if infect"
+      ]
+     ],
+     "min": 3,
+     "model": "A vaccine contains a harmless form or piece of the pathogen. It triggers antibody production and creates memory cells. If the real pathogen appears later, the response is faster and stronger.",
+     "why": "Vaccines train the immune system safely.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "People who cannot be vaccinated for medical reasons are partly protected if most others are. This is called:",
+     "o": [
+      "Herd immunity",
+      "Autoimmunity in the body",
+      "An allergy to the vaccine",
+      "Inflammation of tissues"
+     ],
+     "a": 0,
+     "why": "High coverage limits spread.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Flu vaccines are updated each year. Why?",
+     "o": [
+      "The virus mutates, so antigens change",
+      "The vaccine goes off after a year in storage",
+      "People forget to take the older vaccine",
+      "Antibodies disappear in a day, so a new one is needed"
+     ],
+     "a": 0,
+     "why": "Antigenic drift requires new vaccine strains.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In an autoimmune disease, what is the immune system doing wrongly?",
+     "o": [
+      "Attacking the body's own cells",
+      "Failing to make any white cells at all",
+      "Killing only bacteria and ignoring viruses",
+      "Making too many red cells in the bone marrow"
+     ],
+     "a": 0,
+     "why": "Self-tolerance fails.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the herd immunity threshold rise as R₀ rises?",
+     "o": [
+      "Each case infects more people, so more must be immune to stop spread",
+      "More people dislike vaccines when R₀ is high, so more must have them",
+      "Antibodies get weaker when R₀ rises, so more are needed",
+      "The formula is random and does not depend on spread of the disease"
+     ],
+     "a": 0,
+     "why": "A larger R₀ needs a larger immune fraction to bring effective R below 1.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How vaccination works",
+    "model": "A vaccine shows the immune system a harmless form of a pathogen's antigen. B cells make antibodies and memory cells are stored. If the real pathogen arrives, memory cells respond quickly, so the person is protected or only mildly ill.",
+    "points": [
+     {
+      "k": [
+       "antigen",
+       "harmless",
+       "weak",
+       "dead"
+      ],
+      "ask": "What is in a vaccine?"
+     },
+     {
+      "k": [
+       "antibod",
+       "b cell",
+       "lymphocyte"
+      ],
+      "ask": "What does the body do with it?"
+     },
+     {
+      "k": [
+       "memory",
+       "faster",
+       "later",
+       "protect"
+      ],
+      "ask": "Why is the person protected later?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Human physiology",
+   "icon": "🩺",
+   "hook": "After a sugary snack your blood glucose barely changes much, but it can change a lot in untreated diabetes. What is controlling it?",
+   "explain": [
+    "Homeostasis keeps internal conditions within narrow limits using negative feedback: a receptor detects a change, a control centre processes it and an effector acts to reverse the change. Blood glucose is controlled by the pancreas: insulin lowers it by promoting uptake and storage as glycogen, and glucagon raises it by releasing glucose from glycogen. In type 1 diabetes the pancreas makes too little insulin; in type 2, cells respond poorly to insulin.",
+    "The nervous system sends rapid electrical impulses along neurons. A reflex arc is receptor → sensory neuron → relay neuron → motor neuron → effector. Hormones act more slowly through the blood and last longer. The heart's output is cardiac output = heart rate × stroke volume.",
+    "The kidneys filter blood in nephrons, reabsorb useful substances and excrete urea in urine. ADH from the pituitary gland increases water reabsorption when the body is dehydrated, so urine becomes more concentrated."
+   ],
+   "example": {
+    "q": "A person's heart rate is 70 beats per minute and stroke volume is 70 mL. What is cardiac output?",
+    "steps": [
+     "Cardiac output = heart rate × stroke volume.",
+     "70 × 70 = 4900 mL/min.",
+     "That is 4.9 L/min."
+    ],
+    "a": "4900 mL/min (4.9 L/min)"
+   },
+   "analogies": {
+    "home": "A thermostat turns the heating on when cold and off when warm: negative feedback.",
+    "city": "A reflex is like a fire alarm connected straight to the sprinklers, bypassing the manager.",
+    "tech": "Cruise control adjusts the throttle to keep a steady speed."
+   },
+   "mnemonic": "Insulin Instructs cells to take sugar In; glucagon Gets glucose Going out.",
+   "terms": [
+    [
+     "Homeostasis",
+     "Keeping internal conditions steady."
+    ],
+    [
+     "Negative feedback",
+     "A change triggers a response that reverses it."
+    ],
+    [
+     "Insulin",
+     "Hormone that lowers blood glucose."
+    ],
+    [
+     "Stroke volume",
+     "Volume of blood pumped by the ventricle per beat."
+    ]
+   ],
+   "misc": {
+    "wrong": "The body keeps conditions exactly constant.",
+    "right": "Conditions fluctuate around a set point within narrow limits."
+   },
+   "trip": {
+    "wiki": "Homeostasis",
+    "prompt": "Find a feedback loop diagram for blood glucose. Name the receptor and the effectors."
+   },
+   "sources": [
+    "Homeostasis",
+    "Diabetes",
+    "Nephron"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which hormone lowers blood glucose?",
+     "o": [
+      "Insulin",
+      "Glucagon",
+      "ADH",
+      "Adrenaline"
+     ],
+     "a": 0,
+     "why": "Insulin promotes glucose uptake.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which organ makes insulin?",
+     "o": [
+      "Pancreas",
+      "Liver",
+      "Kidney",
+      "Stomach lining"
+     ],
+     "a": 0,
+     "why": "Beta cells in the pancreas make insulin.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Heart rate is 75 beats/min and stroke volume is 80 mL. What is cardiac output in mL/min?",
+     "a": 6000,
+     "tol": 0,
+     "unit": "mL/min",
+     "why": "75 × 80 = 6000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A person's cardiac output is 5 L/min and heart rate is 100 beats/min. What is stroke volume in mL?",
+     "a": 50,
+     "tol": 0.1,
+     "unit": "mL",
+     "why": "5000 mL ÷ 100 = 50 mL.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which neuron carries the signal from the spinal cord to the effector in a reflex arc?",
+     "o": [
+      "Motor neuron",
+      "Sensory neuron",
+      "Relay neuron",
+      "Receptor cell"
+     ],
+     "a": 0,
+     "why": "The motor neuron carries impulses to the effector (muscle or gland).",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the negative feedback after a rise in blood glucose.",
+     "items": [
+      "Glucose rises",
+      "Pancreas releases insulin",
+      "Cells and liver take up glucose",
+      "Glucose falls to normal"
+     ],
+     "why": "Insulin reverses the rise.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A person has not drunk water for hours on a hot day. What happens to ADH and urine?",
+     "o": [
+      "More ADH and less, more concentrated urine",
+      "Less ADH and more dilute urine is made",
+      "No change in ADH or in urine",
+      "More ADH and also more dilute urine"
+     ],
+     "a": 0,
+     "why": "ADH increases water reabsorption.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each organ to its homeostatic role.",
+     "pairs": [
+      [
+       "Pancreas",
+       "Releases insulin and glucagon"
+      ],
+      [
+       "Kidney",
+       "Controls water and removes urea"
+      ],
+      [
+       "Skin",
+       "Sweating to cool"
+      ],
+      [
+       "Hypothalamus",
+       "Monitors body temperature"
+      ]
+     ],
+     "why": "Different organs regulate different variables.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why type 2 diabetes can occur even when the pancreas makes insulin.",
+     "rubric": [
+      [
+       "cells",
+       "tissue",
+       "receptor",
+       "liver",
+       "muscle"
+      ],
+      [
+       "respond",
+       "resist",
+       "insensitive",
+       "not respond",
+       "ignore"
+      ],
+      [
+       "insulin"
+      ],
+      [
+       "glucose",
+       "sugar"
+      ]
+     ],
+     "min": 3,
+     "model": "In type 2 diabetes the body's cells become less responsive to insulin, so they take up less glucose from the blood and blood glucose stays high even though insulin is present.",
+     "why": "Insulin resistance prevents glucose uptake.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a reflex faster than a conscious decision?",
+     "o": [
+      "The relay neuron connects to the motor neuron without going through the brain's decision areas",
+      "Reflexes use hormones, which act more quickly than nerves",
+      "The brain is faster than the spinal cord in all cases",
+      "Reflexes use the blood to carry messages quickly to muscles"
+     ],
+     "a": 0,
+     "why": "A reflex path is short and automatic.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Positive feedback is less common in physiology. Why?",
+     "o": [
+      "It amplifies change and does not maintain stability",
+      "It is not real in any living organism",
+      "It keeps things steady in the body",
+      "It needs no hormones or nerves to work at all"
+     ],
+     "a": 0,
+     "why": "Negative feedback keeps steady states, though positive feedback occurs in processes such as blood clotting.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does exercise raise breathing rate?",
+     "o": [
+      "Rising CO₂ in blood is detected, and the brain increases breathing",
+      "The lungs get colder, so breathing speeds up to warm them",
+      "Muscles stop respiring, so the person pants for air",
+      "Blood loses all of its oxygen in the first minute"
+     ],
+     "a": 0,
+     "why": "CO₂ drives the breathing rate through chemoreceptors.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A person with kidney failure cannot remove urea. What happens?",
+     "o": [
+      "Urea accumulates in the blood",
+      "Urea turns into glucose in the blood",
+      "Insulin increases to remove the urea",
+      "Heart rate falls to zero as urea builds up"
+     ],
+     "a": 0,
+     "why": "Kidneys are the main route for urea excretion.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How negative feedback controls blood glucose",
+    "model": "After a meal blood glucose rises. The pancreas releases insulin, which makes cells and the liver take up glucose, so the level falls back. If glucose falls too low, glucagon makes the liver release glucose. Each response reverses the change, which is negative feedback.",
+    "points": [
+     {
+      "k": [
+       "pancreas",
+       "insulin"
+      ],
+      "ask": "What happens when blood glucose is high?"
+     },
+     {
+      "k": [
+       "glucagon",
+       "liver",
+       "low",
+       "release"
+      ],
+      "ask": "What if it gets too low?"
+     },
+     {
+      "k": [
+       "reverse",
+       "negative",
+       "feedback",
+       "steady",
+       "normal"
+      ],
+      "ask": "Why is this called negative feedback?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Microbiology",
+   "icon": "🧫",
+   "hook": "A single bacterium on a petri dish becomes a visible colony overnight. How fast do bacteria grow, and what limits them?",
+   "explain": [
+    "Bacteria are prokaryotes with a cell wall made of peptidoglycan, DNA in a nucleoid region, and often plasmids (small rings of DNA). They reproduce by binary fission. In ideal conditions the number doubles every generation time, so growth is exponential: N = N₀ × 2ⁿ, where n is the number of generations.",
+    "A growth curve in a closed culture has four phases: lag (adjusting), log (exponential), stationary (growth equals death, as nutrients run out and wastes build up) and death. Gram staining separates bacteria into Gram-positive (thick wall, purple) and Gram-negative (thin wall with outer membrane, pink), which helps in choosing treatment.",
+    "Bacteria exchange genes by conjugation, transformation and transduction. Plasmids can carry antibiotic resistance genes, so resistance can spread between bacteria. Viruses are not cells: they have a protein coat around genetic material and need a host to replicate. Aseptic technique prevents contamination in cultures."
+   ],
+   "example": {
+    "q": "A culture has 1000 bacteria with a generation time of 20 minutes. How many bacteria after 2 hours (ideal conditions)?",
+    "steps": [
+     "2 hours = 120 min; generations = 120 ÷ 20 = 6.",
+     "N = 1000 × 2⁶ = 1000 × 64.",
+     "= 64 000."
+    ],
+    "a": "64 000 bacteria"
+   },
+   "analogies": {
+    "tech": "Exponential growth is like a chain message forwarded to two friends each time.",
+    "farm": "Fermenting yogurt: warm milk lets bacteria grow quickly, then acid builds up and slows them.",
+    "city": "A city grows fast until space and food run out: the stationary phase."
+   },
+   "mnemonic": "Lag, Log, Stationary, Death: Large Lizards Sleep Deeply.",
+   "terms": [
+    [
+     "Binary fission",
+     "Splitting of one bacterial cell into two."
+    ],
+    [
+     "Plasmid",
+     "Small ring of DNA that can carry extra genes."
+    ],
+    [
+     "Generation time",
+     "Time for a population to double."
+    ],
+    [
+     "Gram stain",
+     "A staining test that groups bacteria by their cell wall."
+    ]
+   ],
+   "misc": {
+    "wrong": "Bacteria in a closed culture grow exponentially forever.",
+    "right": "Growth slows and stops when nutrients run out and waste builds up."
+   },
+   "trip": {
+    "wiki": "Bacterial growth",
+    "prompt": "Find the growth curve and label the four phases."
+   },
+   "sources": [
+    "Bacteria",
+    "Bacterial growth",
+    "Plasmid"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How do bacteria reproduce?",
+     "o": [
+      "Binary fission",
+      "Mitosis",
+      "Meiosis",
+      "Budding of spores only"
+     ],
+     "a": 0,
+     "why": "One cell divides into two.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which phase of a growth curve shows the fastest increase?",
+     "o": [
+      "Log (exponential)",
+      "Lag phase",
+      "Stationary phase",
+      "Death phase"
+     ],
+     "a": 0,
+     "why": "In the log phase the population doubles each generation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Starting with 500 bacteria and a generation time of 30 minutes, how many bacteria after 2 hours, assuming exponential growth?",
+     "a": 8000,
+     "tol": 0,
+     "why": "4 generations: 500 × 2⁴ = 500 × 16 = 8000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A student spreads 0.1 mL of a 10⁻⁴ dilution and counts 45 colonies. How many colony-forming units per mL were in the original culture? Give your answer in millions (×10⁶).",
+     "a": 4.5,
+     "tol": 0.05,
+     "unit": "×10⁶ per mL",
+     "why": "45 ÷ 0.1 = 450 per mL in the dilution; × 10⁴ = 4.5 × 10⁶.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the phases of bacterial growth.",
+     "items": [
+      "Lag",
+      "Log",
+      "Stationary",
+      "Death"
+     ],
+     "why": "Cells adjust, grow exponentially, plateau and decline.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the method of gene transfer.",
+     "pairs": [
+      [
+       "Conjugation",
+       "Direct transfer between two cells"
+      ],
+      [
+       "Transformation",
+       "Uptake of free DNA"
+      ],
+      [
+       "Transduction",
+       "Transfer by a virus"
+      ],
+      [
+       "Binary fission",
+       "Cell division, no gene exchange"
+      ]
+     ],
+     "why": "Bacteria share genes in several ways.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A Gram-positive bacterium stains:",
+     "o": [
+      "Purple",
+      "Pink",
+      "Green",
+      "Colourless"
+     ],
+     "a": 0,
+     "why": "Thick peptidoglycan retains crystal violet.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A hospital finds an infection resistant to several antibiotics. Which mechanism could spread resistance quickly?",
+     "o": [
+      "A plasmid carrying resistance genes passed between bacteria",
+      "Mitosis in the human cells of the patient",
+      "Sunlight shining through the ward windows",
+      "Antibodies passed between the bacteria"
+     ],
+     "a": 0,
+     "why": "Plasmids move horizontally between cells.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a bacterial culture in a closed flask stop growing, even though it started exponentially?",
+     "rubric": [
+      [
+       "nutrient",
+       "food",
+       "run out",
+       "used up"
+      ],
+      [
+       "waste",
+       "toxin",
+       "acid",
+       "poison"
+      ],
+      [
+       "space",
+       "oxygen"
+      ],
+      [
+       "stationary",
+       "plateau",
+       "death"
+      ]
+     ],
+     "min": 2,
+     "model": "Nutrients become depleted and waste products accumulate, so growth slows until births equal deaths (stationary phase) and then deaths exceed births.",
+     "why": "Limited resources constrain growth.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is aseptic technique important in a microbiology lab?",
+     "o": [
+      "To avoid contaminating cultures and to protect the worker",
+      "To make bacteria grow faster in the dish",
+      "To kill all the useful bacteria in the room",
+      "To change the DNA of the cultures on purpose"
+     ],
+     "a": 0,
+     "why": "It prevents unwanted microorganisms from entering or leaving.",
+     "d": 1,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why are antibiotics that target peptidoglycan synthesis relatively safe for humans?",
+     "o": [
+      "Human cells do not have peptidoglycan walls",
+      "Humans are immune to every kind of antibiotic",
+      "Humans are really a type of bacteria",
+      "They also kill human cells just as well as bacteria"
+     ],
+     "a": 0,
+     "why": "The target is specific to bacteria.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A virus has no ribosomes. What does this mean for its protein production?",
+     "o": [
+      "It must use a host's ribosomes",
+      "It cannot be made at all outside a cell",
+      "It makes its own ribosomes inside the capsid",
+      "It needs no proteins to reproduce"
+     ],
+     "a": 0,
+     "why": "Viruses hijack host machinery.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A food manufacturer wants to slow bacterial growth. Which method is expected to help?",
+     "o": [
+      "Refrigeration",
+      "Warm storage",
+      "Adding nutrients",
+      "Adding water and warmth"
+     ],
+     "a": 0,
+     "why": "Low temperatures slow enzymes and growth.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a bacterial population grows",
+    "model": "Each bacterium divides into two by binary fission, so the population doubles every generation time. That is exponential growth. In a closed culture it slows and stops when nutrients run out and wastes build up.",
+    "points": [
+     {
+      "k": [
+       "divide",
+       "fission",
+       "double",
+       "two"
+      ],
+      "ask": "How do bacteria multiply?"
+     },
+     {
+      "k": [
+       "exponential",
+       "2",
+       "generation",
+       "quick",
+       "fast"
+      ],
+      "ask": "What does the growth look like?"
+     },
+     {
+      "k": [
+       "nutrient",
+       "run out",
+       "waste",
+       "stop",
+       "limit",
+       "plateau"
+      ],
+      "ask": "Why can't it go on forever?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Ecology and population dynamics",
+   "icon": "🌳",
+   "hook": "Rabbits introduced to a new continent had no predators and spread rapidly. What decides how big a population can get?",
+   "explain": [
+    "A population is a group of the same species in one area. Its size changes by births and immigration (adding) and deaths and emigration (removing). Under ideal conditions growth is exponential, but resources are limited, so growth slows near the carrying capacity (K), the maximum population the environment can support, giving an S-shaped (logistic) curve.",
+    "Limiting factors can be density-dependent (competition, predation, disease) or density-independent (fire, floods, severe weather). Predator and prey numbers often rise and fall in linked cycles. Ecologists estimate populations by quadrats for plants and slow animals, and by mark–release–recapture for mobile animals: N = (M × C) ÷ R, where M is the number marked first, C the second catch and R the number of marked animals recaptured.",
+    "Energy flows through ecosystems: usually only about 10% passes to the next trophic level, the rest is lost in respiration, waste and heat. This limits the length of food chains. Nutrients such as carbon and nitrogen cycle between organisms and the environment."
+   ],
+   "example": {
+    "q": "40 fish are marked and released. Later 50 are caught, of which 10 are marked. Estimate the population.",
+    "steps": [
+     "N = (M × C) ÷ R.",
+     "M = 40, C = 50, R = 10.",
+     "N = 2000 ÷ 10 = 200."
+    ],
+    "a": "About 200 fish"
+   },
+   "analogies": {
+    "farm": "A field can feed only so many cows before the grass is overgrazed: carrying capacity.",
+    "city": "A city's growth slows when housing and jobs run short.",
+    "sea": "Overfishing removes more fish than births can replace."
+   },
+   "mnemonic": "BIDE: Births + Immigration − Deaths − Emigration.",
+   "terms": [
+    [
+     "Carrying capacity",
+     "Maximum population size an environment can sustain."
+    ],
+    [
+     "Limiting factor",
+     "A resource or condition that restricts population growth."
+    ],
+    [
+     "Trophic level",
+     "A feeding position in a food chain."
+    ],
+    [
+     "Quadrat",
+     "A square frame used to sample organisms in an area."
+    ]
+   ],
+   "misc": {
+    "wrong": "A population can keep increasing exponentially for a long time.",
+    "right": "Resource limits eventually slow growth, usually leading to a plateau near the carrying capacity."
+   },
+   "trip": {
+    "wiki": "Carrying capacity",
+    "prompt": "Find an S-shaped growth curve and mark where growth is fastest."
+   },
+   "sources": [
+    "Population dynamics",
+    "Carrying capacity",
+    "Mark and recapture"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does carrying capacity mean?",
+     "o": [
+      "The maximum population an environment can support",
+      "The number of births per year in a population",
+      "The total weight of all the animals in a population",
+      "The total number of species in the whole world"
+     ],
+     "a": 0,
+     "why": "It is set by resources and other limits.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "30 animals are marked. A second sample of 60 contains 6 marked animals. Estimate the population size.",
+     "a": 300,
+     "tol": 0,
+     "why": "N = (30 × 60) ÷ 6 = 300.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Producers contain 20 000 kJ of energy. Assuming 10% transfer at each level, how much reaches secondary consumers (two transfers)?",
+     "a": 200,
+     "tol": 0.5,
+     "unit": "kJ",
+     "why": "20 000 × 0.1 = 2000, then × 0.1 = 200 kJ.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which method is most suitable for estimating the number of a slow-moving or fixed species such as daisies in a field?",
+     "o": [
+      "Random quadrat sampling",
+      "Mark–release–recapture",
+      "Radio tracking",
+      "Counting every one by satellite"
+     ],
+     "a": 0,
+     "why": "Quadrats sample fixed or slow organisms; mark–recapture suits mobile animals.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A population of 500 grows by 10% each year. What is its size after 2 years?",
+     "a": 605,
+     "tol": 0.5,
+     "why": "500 × 1.1 × 1.1 = 605.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a density-dependent factor?",
+     "o": [
+      "Disease spreading among crowded animals",
+      "A volcanic eruption destroying a habitat",
+      "A flood sweeping through a valley",
+      "A frost killing the plants in winter"
+     ],
+     "a": 0,
+     "why": "Disease spreads faster at higher density.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which organisms are the primary consumers in a grassland?",
+     "o": [
+      "Grass-eating animals such as zebra",
+      "Grass and other green plants",
+      "Lions and other big hunters",
+      "Fungi that break down dead matter"
+     ],
+     "a": 0,
+     "why": "Primary consumers eat producers.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the phases of an S-shaped growth curve.",
+     "items": [
+      "Slow start",
+      "Rapid exponential growth",
+      "Slowing growth",
+      "Plateau at carrying capacity"
+     ],
+     "why": "Growth accelerates, then slows as limits act.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A mark–recapture study releases marked animals that then die at a higher rate because the mark makes them visible to predators. How would this affect the estimate?",
+     "o": [
+      "It would overestimate the population",
+      "It would underestimate the population",
+      "No effect",
+      "It would equal zero"
+     ],
+     "a": 0,
+     "why": "Fewer marked animals are recaptured (R smaller), so N = (M × C) ÷ R is too large.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are food chains rarely longer than four or five links?",
+     "rubric": [
+      [
+       "energy"
+      ],
+      [
+       "lost",
+       "loss",
+       "10%",
+       "ten percent",
+       "wasted"
+      ],
+      [
+       "respiration",
+       "heat",
+       "waste",
+       "movement"
+      ],
+      [
+       "not enough",
+       "too little",
+       "too small",
+       "little left",
+       "top"
+      ]
+     ],
+     "min": 3,
+     "model": "Only about 10% of energy passes to the next level because most is lost as heat from respiration and in waste, so by the fourth or fifth level there is too little energy left to support another level.",
+     "why": "Energy loss limits food chain length.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A predator's numbers rise after its prey increases. What happens next in a typical cycle?",
+     "o": [
+      "Prey then fall as predators eat more",
+      "Prey then rise forever without any limit",
+      "Predators vanish at once from the area",
+      "Nothing changes in either population"
+     ],
+     "a": 0,
+     "why": "Predator–prey cycles are linked and lagged.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do invasive species often spread quickly in a new habitat?",
+     "o": [
+      "They may lack natural predators and diseases",
+      "They have no DNA, so they cannot be controlled",
+      "They are always larger than local species",
+      "The new habitat is empty of everything else"
+     ],
+     "a": 0,
+     "why": "Release from natural enemies lets numbers grow.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Where does most of the biomass of an ecosystem lie?",
+     "o": [
+      "In producers",
+      "In top predators",
+      "In decomposers only",
+      "In the air"
+     ],
+     "a": 0,
+     "why": "A pyramid of biomass narrows toward higher levels.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why populations level off at a carrying capacity",
+    "model": "A population grows fast at first because resources are plentiful. As it grows, food, space and other resources become limited, and disease and competition increase. Births fall and deaths rise until the population levels off at the carrying capacity.",
+    "points": [
+     {
+      "k": [
+       "fast",
+       "exponential",
+       "plentiful",
+       "resources"
+      ],
+      "ask": "How does it start?"
+     },
+     {
+      "k": [
+       "limit",
+       "food",
+       "space",
+       "compet",
+       "disease"
+      ],
+      "ask": "What slows it down?"
+     },
+     {
+      "k": [
+       "carrying capacity",
+       "level",
+       "plateau",
+       "stable",
+       "balance"
+      ],
+      "ask": "Where does it end up?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Evolutionary biology",
+   "icon": "🦎",
+   "hook": "Finches on separate Galápagos islands have beaks of different shapes, yet are closely related. What can separate one species into two?",
+   "explain": [
+    "Evolution by natural selection requires heritable variation, differences in survival or reproduction, and time. Other mechanisms change allele frequencies too: genetic drift (random change, strongest in small populations), gene flow (migration between populations) and mutation (the source of new alleles). The founder effect and bottlenecks are cases of drift.",
+    "A species is often defined as a group whose members can interbreed and produce fertile offspring. Speciation happens when populations become reproductively isolated. In allopatric speciation a geographic barrier separates populations, which then diverge by selection and drift. Reproductive barriers include different breeding times, courtship signals and hybrid sterility.",
+    "Evidence for evolution includes the fossil record, homologous structures (similar structure from common ancestry, like the limb bones of bats and whales), molecular similarity (DNA and proteins), biogeography, and observed evolution such as antibiotic resistance. Phylogenetic trees show inferred relationships: closely related species share a recent common ancestor."
+   ],
+   "example": {
+    "q": "In a population, 4% of individuals show a recessive trait (q² = 0.04). Using Hardy–Weinberg (p + q = 1), what is the frequency of heterozygotes (2pq)?",
+    "steps": [
+     "q = √0.04 = 0.2.",
+     "p = 1 − 0.2 = 0.8.",
+     "2pq = 2 × 0.8 × 0.2 = 0.32."
+    ],
+    "a": "0.32 (32%)"
+   },
+   "analogies": {
+    "nature": "Islands are like separate laboratories where populations evolve apart.",
+    "sport": "Two teams that never play each other develop different tactics over the years.",
+    "tech": "Software forks start from the same code and diverge as separate teams modify them."
+   },
+   "mnemonic": "Mutation makes it, selection sorts it, drift shuffles it, isolation splits it.",
+   "terms": [
+    [
+     "Genetic drift",
+     "Random change in allele frequencies, strongest in small populations."
+    ],
+    [
+     "Allopatric speciation",
+     "Formation of new species after geographic separation."
+    ],
+    [
+     "Homologous structures",
+     "Similar structures from a common ancestor."
+    ],
+    [
+     "Fitness",
+     "An organism's relative success at surviving and reproducing."
+    ]
+   ],
+   "misc": {
+    "wrong": "Evolution is a ladder towards more advanced organisms.",
+    "right": "Evolution is a branching process with no goal. Organisms are adapted to their environment, not 'more advanced'."
+   },
+   "limits": "Species definitions fail for asexual organisms and for groups that sometimes hybridise, so biologists use several concepts.",
+   "trip": {
+    "wiki": "Speciation",
+    "prompt": "Find an example of allopatric speciation and name the barrier that separated the populations."
+   },
+   "sources": [
+    "Evolution",
+    "Speciation",
+    "Hardy–Weinberg principle"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the original source of new alleles?",
+     "o": [
+      "Mutation",
+      "Natural selection",
+      "Genetic drift",
+      "Migration"
+     ],
+     "a": 0,
+     "why": "Mutations create new alleles.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Bat wings and whale flippers share a similar bone arrangement. This is evidence of:",
+     "o": [
+      "Common ancestry (homologous structures)",
+      "Convergent evolution from identical genes",
+      "Chance alone producing similar bones",
+      "Direct inheritance of acquired traits"
+     ],
+     "a": 0,
+     "why": "Homology points to a common ancestor.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "In a population, 16% show a recessive trait (q² = 0.16). What is the frequency of the recessive allele q?",
+     "a": 0.4,
+     "tol": 0.005,
+     "why": "q = √0.16 = 0.4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In a population of 100 individuals, 36 show a recessive trait (q² = 0.36). How many individuals are expected to be heterozygous?",
+     "a": 48,
+     "tol": 0.5,
+     "why": "q = 0.6, p = 0.4, 2pq = 0.48, so 48 of 100.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The frequency of allele A is 0.7 in a population in Hardy–Weinberg equilibrium. What is the frequency of genotype AA?",
+     "a": 0.49,
+     "tol": 0.005,
+     "why": "p² = 0.7² = 0.49.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which process moves alleles between populations?",
+     "o": [
+      "Gene flow",
+      "Mutation",
+      "Genetic drift",
+      "Speciation"
+     ],
+     "a": 0,
+     "why": "Migration of individuals carries alleles between populations.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps in allopatric speciation.",
+     "items": [
+      "A population is split by a barrier",
+      "Populations experience different selection and drift",
+      "Populations diverge genetically",
+      "Reproductive isolation arises",
+      "Two species exist"
+     ],
+     "why": "Isolation leads to divergence and eventual reproductive barriers.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A storm leaves just ten birds of a species on a small island. Their allele frequencies differ from the original population by chance. This is:",
+     "o": [
+      "The founder effect",
+      "Natural selection for fitness",
+      "Gene flow",
+      "Mutation"
+     ],
+     "a": 0,
+     "why": "A small founding group is not a representative sample.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A student says 'the giraffe evolved a long neck because it needed to reach leaves'. Rewrite the explanation using natural selection.",
+     "rubric": [
+      [
+       "variation",
+       "varied",
+       "differ"
+      ],
+      [
+       "longer neck",
+       "long neck",
+       "taller"
+      ],
+      [
+       "surviv",
+       "more food",
+       "reproduc",
+       "offspring",
+       "fitness"
+      ],
+      [
+       "inherit",
+       "allele",
+       "gene",
+       "pass on",
+       "generations"
+      ]
+     ],
+     "min": 3,
+     "model": "Giraffes varied in neck length. Those with longer necks reached more food, survived and reproduced more, passing on the alleles for longer necks, so over generations long necks became common. Need did not cause the change.",
+     "why": "Selection acts on heritable variation, not on need.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is genetic drift more important in small populations than large ones?",
+     "o": [
+      "Chance events have a larger relative effect on allele frequencies",
+      "Small populations do not mutate at all, so drift is stronger",
+      "Selection never acts in small populations",
+      "They have no alleles to change"
+     ],
+     "a": 0,
+     "why": "Sampling error is larger with few individuals.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does hybrid sterility (like mules) help keep species distinct?",
+     "o": [
+      "Hybrids cannot pass genes between the two species",
+      "Hybrids are bigger and so stronger than parents",
+      "Hybrids cannot walk or move around properly",
+      "It increases mutation in both species"
+     ],
+     "a": 0,
+     "why": "Blocking gene flow maintains species boundaries.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A bacterium evolving antibiotic resistance during a patient's treatment is an example of:",
+     "o": [
+      "Observed natural selection",
+      "Lamarckian inheritance of acquired traits",
+      "Speciation happening in a few minutes",
+      "Genetic drift acting alone"
+     ],
+     "a": 0,
+     "why": "Antibiotics select for resistant variants already present or arising by mutation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A phylogenetic tree shows A and B branching from a common point more recently than C. Which is true?",
+     "o": [
+      "A and B are more closely related to each other than to C",
+      "C is the common ancestor of A and B",
+      "B evolved directly from A in the past",
+      "All three are equally closely related to each other"
+     ],
+     "a": 0,
+     "why": "Closeness is measured by the most recent common ancestor.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a new species can form",
+    "model": "A population is split by a barrier such as a sea or mountain. The two groups no longer interbreed, so selection, drift and mutation make them different over time. Eventually they can no longer interbreed even if they meet again, so they are separate species.",
+    "points": [
+     {
+      "k": [
+       "barrier",
+       "separat",
+       "isolat",
+       "split"
+      ],
+      "ask": "What starts the process?"
+     },
+     {
+      "k": [
+       "selection",
+       "drift",
+       "mutation",
+       "diverge",
+       "different"
+      ],
+      "ask": "What makes them change?"
+     },
+     {
+      "k": [
+       "interbreed",
+       "reproduc",
+       "fertile",
+       "species"
+      ],
+      "ask": "How do we know they are now different species?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Experimental biology and biostatistics",
+   "icon": "📊",
+   "hook": "A tablet group improved by 12% and a placebo group by 9%. Is the tablet working, or is it chance?",
+   "explain": [
+    "A good experiment tests one independent variable, measures a dependent variable and controls other variables. A control group gives a baseline and random allocation reduces bias. Repeating measurements and using larger samples reduces the effect of chance. Reliable results can be repeated; valid results actually measure what was intended.",
+    "Descriptive statistics summarise data: the mean (sum ÷ number), median (middle value) and range. Standard deviation measures spread. Percentage change = (new − old) ÷ old × 100. Correlation does not prove causation: two variables can change together because of a third factor.",
+    "Hypothesis testing asks whether a result could easily happen by chance. A chi-squared test compares observed with expected counts: χ² = Σ (O − E)² ÷ E. With one degree of freedom, a value above 3.84 gives p < 0.05, so the difference is called statistically significant. A p-value is the probability of results at least this extreme if the null hypothesis is true; it is not the probability the hypothesis is true."
+   ],
+   "example": {
+    "q": "A cross is expected to give a 3:1 ratio. From 100 offspring you observe 78 dominant and 22 recessive. Calculate χ² and decide if it fits at p = 0.05 (critical value 3.84, df = 1).",
+    "steps": [
+     "Expected: 75 and 25.",
+     "(78−75)²÷75 = 9÷75 = 0.12; (22−25)²÷25 = 9÷25 = 0.36.",
+     "χ² = 0.12 + 0.36 = 0.48.",
+     "0.48 < 3.84, so the difference is not significant."
+    ],
+    "a": "χ² = 0.48, consistent with 3:1"
+   },
+   "analogies": {
+    "sport": "A coin that lands heads 6 out of 10 times is not necessarily unfair; chance alone can give it.",
+    "farm": "Testing a new fertiliser on one plot proves little; testing several plots with random assignment is stronger.",
+    "tech": "A/B tests compare two versions of a website with random visitors."
+   },
+   "mnemonic": "Change one, measure one, keep the rest the same.",
+   "terms": [
+    [
+     "Independent variable",
+     "The factor you deliberately change."
+    ],
+    [
+     "Dependent variable",
+     "The factor you measure."
+    ],
+    [
+     "Null hypothesis",
+     "The claim that there is no effect or difference."
+    ],
+    [
+     "Statistical significance",
+     "A result unlikely to be explained by chance alone."
+    ]
+   ],
+   "misc": {
+    "wrong": "A small p-value proves the hypothesis is true.",
+    "right": "It shows the data would be unlikely if the null hypothesis were true; it does not give the probability that the hypothesis is true or show the size of an effect."
+   },
+   "limits": "Statistical significance depends on sample size, so a tiny effect can be significant in a huge sample, and a real effect can be missed in a tiny one.",
+   "trip": {
+    "wiki": "Chi-squared test",
+    "prompt": "Find the example of a chi-squared test and check how the expected values were calculated."
+   },
+   "sources": [
+    "Design of experiments",
+    "Chi-squared test",
+    "Standard deviation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In an experiment on how light intensity affects plant growth, what is the dependent variable?",
+     "o": [
+      "Plant growth",
+      "Light intensity",
+      "Temperature",
+      "Pot size"
+     ],
+     "a": 0,
+     "why": "Growth is what is measured.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Plant heights (cm): 12, 15, 11, 14, 13. Which is the median?",
+     "o": [
+      "13",
+      "12",
+      "14",
+      "65"
+     ],
+     "a": 0,
+     "why": "Sorted: 11, 12, 13, 14, 15; the middle value is 13.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A yield rises from 40 to 50 kg per plot. What is the percentage increase?",
+     "a": 25,
+     "tol": 0.1,
+     "unit": "%",
+     "why": "(50 − 40) ÷ 40 × 100 = 25%.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A genetic cross is expected to give 3:1. From 200 offspring, 160 are dominant and 40 recessive. Calculate χ² (expected 150 and 50).",
+     "a": 2.67,
+     "tol": 0.02,
+     "why": "(160−150)²÷150 = 0.667; (40−50)²÷50 = 2. Total = 2.67.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "With χ² = 2.67, df = 1 and critical value 3.84 at p = 0.05, the conclusion is:",
+     "o": [
+      "The difference is not significant",
+      "The difference is significant at p = 0.05",
+      "The cross is impossible to carry out",
+      "The sample is invalid and should be thrown away"
+     ],
+     "a": 0,
+     "why": "2.67 is below 3.84, so chance could explain the difference.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a control group needed in a drug trial?",
+     "o": [
+      "It gives a baseline to compare with",
+      "It receives the best new treatment on offer",
+      "It makes the trial shorter and cheaper",
+      "It removes the need for any statistics"
+     ],
+     "a": 0,
+     "why": "Without a baseline, change cannot be attributed to the drug.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of a scientific investigation.",
+     "items": [
+      "Ask a question",
+      "Form a testable hypothesis",
+      "Collect data in a controlled experiment",
+      "Analyse results",
+      "Draw a conclusion"
+     ],
+     "why": "Investigations move from question to conclusion.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A result that can be repeated by others under the same conditions is:",
+     "o": [
+      "Reliable",
+      "Valid",
+      "Biased",
+      "Random"
+     ],
+     "a": 0,
+     "why": "Reliability is repeatability.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Ice cream sales and sunburn cases rise together. What is the best interpretation?",
+     "o": [
+      "A third factor, hot sunny weather, may drive both",
+      "Ice cream causes sunburn directly",
+      "Sunburn causes more ice cream to be sold",
+      "They are completely unrelated and it is chance only"
+     ],
+     "a": 0,
+     "why": "Correlation does not prove causation; a confounding variable explains it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student tests a fertiliser on one plant treated and one untreated. Explain two flaws and how to fix them.",
+     "rubric": [
+      [
+       "one plant",
+       "small sample",
+       "sample size",
+       "repeat",
+       "more plants",
+       "replicate"
+      ],
+      [
+       "control",
+       "same",
+       "other variables",
+       "light",
+       "water",
+       "temperature",
+       "fair"
+      ],
+      [
+       "random",
+       "bias"
+      ],
+      [
+       "average",
+       "mean",
+       "statistic"
+      ]
+     ],
+     "min": 2,
+     "model": "One plant per group is too small, so chance could explain the difference; use many plants and compare means. Other variables like light and water must be kept the same, and plants should be allocated to groups at random.",
+     "why": "Replication and control improve reliability and validity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A study of 20 000 people finds p = 0.03 for a tiny 0.1% difference. How should this be read?",
+     "o": [
+      "Statistically significant but possibly not important in practice",
+      "Proof of a very large effect in people",
+      "Evidence of no effect whatever in the population",
+      "Invalid, because p is too small to count"
+     ],
+     "a": 0,
+     "why": "Large samples can detect very small differences, so effect size matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a double-blind design used in drug trials?",
+     "o": [
+      "Neither participants nor researchers know who gets the treatment, which reduces bias",
+      "To save money by using fewer patients overall",
+      "To remove the control group from the trial",
+      "To make the results look bigger than they are"
+     ],
+     "a": 0,
+     "why": "Blinding reduces expectation effects.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Results from three trials are 10, 11 and 30. Which is a better measure of the typical value?",
+     "o": [
+      "Median, since the 30 is an outlier",
+      "Range, which shows how spread out the values are",
+      "Mean always, since it uses every value",
+      "Maximum, because it is the largest value"
+     ],
+     "a": 0,
+     "why": "The median is less affected by an outlier, though the outlier should be investigated.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to design a fair test",
+    "model": "Change only one factor, the independent variable, and measure the result, the dependent variable. Keep everything else the same. Use a control group for comparison, repeat the measurements and use enough samples, then use a statistical test to see if the difference could be chance.",
+    "points": [
+     {
+      "k": [
+       "one",
+       "independent",
+       "change"
+      ],
+      "ask": "What do you change?"
+     },
+     {
+      "k": [
+       "same",
+       "control",
+       "constant",
+       "fair"
+      ],
+      "ask": "What do you keep the same?"
+     },
+     {
+      "k": [
+       "repeat",
+       "sample",
+       "statistic",
+       "chance",
+       "mean"
+      ],
+      "ask": "How do you know it isn't chance?"
+     }
+    ]
+   }
+  }
+ ]
+}

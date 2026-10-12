@@ -1,0 +1,2743 @@
+{
+ "world": 5,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Floating platform dynamics",
+   "icon": "🛳️",
+   "hook": "A semi-submersible and a spar both float in the same storm, but the spar barely heaves. What design choice makes one platform so much calmer?",
+   "explain": [
+    "A floating platform is a rigid body with six degrees of freedom. For small motions each one obeys (M + A) ẍ + B ẋ + C x = F(t), where M is mass, A is hydrodynamic added mass, B is damping (wave radiation plus viscous), C is hydrostatic restoring stiffness and F is the wave, wind and current force. The natural period is T_n = 2π√((M + A)/C).",
+    "In heave the restoring stiffness comes from the waterplane area A_wp: C₃₃ = ρ g A_wp, since each extra metre of draught adds a buoyancy ρ g A_wp. Designers want T_n above the energetic wave periods (about 5 to 20 s). A deep draught, small waterplane area and large added mass push T_n up: a spar has a heave period of 25 to 30 s. In roll and pitch, stiffness is C₅₅ = ρ g V GM, so GM matters as in ship stability.",
+    "Motions also include slow-drift surge from low-frequency wave forces, the mooring stiffness and wind loads, and coupling with risers and moorings. Wave-frequency motions are handled by RAOs, but because platforms are lightly damped near resonance, viscous damping from columns, heave plates and risers is critical. Heave plates add added mass and damping. Safe operation requires enough air gap (the clearance between the deck and the wave crests) to avoid wave impact on the deck."
+   ],
+   "example": {
+    "q": "A semi-submersible has four columns each of diameter 15 m through the waterplane, mass M = 4.0×10⁷ kg and heave added mass A = 2.4×10⁷ kg. Find C₃₃ and the heave natural period. (ρ = 1025 kg/m³, g = 9.81 m/s²)",
+    "steps": [
+     "A_wp = 4 × π × 7.5² = 706.9 m².",
+     "C₃₃ = 1025 × 9.81 × 706.9 = 7.11×10⁶ N/m.",
+     "T_n = 2π√(6.4×10⁷ ÷ 7.11×10⁶) = 2π × 3.00 = 18.9 s."
+    ],
+    "a": "C₃₃ ≈ 7.11 MN/m; T_n ≈ 18.9 s"
+   },
+   "analogies": {
+    "sport": "A buoy on a long line bobs slowly; a small cork bobs fast. Mass and stiffness set the pace.",
+    "home": "A heavy mattress on a soft spring bounces slowly, like a large mass on small stiffness.",
+    "music": "A long string gives a low note: a spar's very low natural frequency sits below the wave frequencies.",
+    "tech": "A shock absorber's damping stops a car bouncing. Heave plates act as the damper for a platform."
+   },
+   "mnemonic": "Deep and thin: low waterplane, long period. T = 2π√((M+A)/ρgA).",
+   "terms": [
+    [
+     "Added mass",
+     "The effective extra mass of water accelerated with the body."
+    ],
+    [
+     "Waterplane area",
+     "Area of the hull cut by the still water surface."
+    ],
+    [
+     "Heave plate",
+     "A horizontal plate that adds damping and added mass."
+    ],
+    [
+     "Air gap",
+     "Vertical clearance between the deck and the wave crest."
+    ]
+   ],
+   "misc": {
+    "wrong": "A heavier platform always moves less in waves.",
+    "right": "Motion depends on the ratio of wave force to the restoring and inertia terms and on how close T_n is to the wave period. Added mass and a small waterplane can matter more than the structural mass."
+   },
+   "limits": "Linear equations ignore viscous drag nonlinearity, mooring nonlinearities and green water. Final design uses coupled time-domain analysis and model tests.",
+   "trip": {
+    "wiki": "Semi-submersible",
+    "prompt": "Compare a semi-submersible and a spar picture. Estimate which has the smaller waterplane area."
+   },
+   "sources": [
+    "Semi-submersible",
+    "Spar (platform)",
+    "Added mass"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What provides heave restoring stiffness for a floating platform?",
+     "o": [
+      "Change of buoyancy with draught, ρ g A_wp",
+      "The mooring chain weight only, hanging below the hull",
+      "Wind",
+      "The deck height"
+     ],
+     "a": 0,
+     "why": "More draught gives more displaced volume and extra upward force proportional to waterplane area.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A designer reduces the waterplane area of a hull. What happens to the heave natural period?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "No change",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "C₃₃ falls, so T_n = 2π√((M+A)/C) rises.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a heave natural period of 25 s helpful for a spar?",
+     "o": [
+      "It lies above most wave periods, so resonance is rarely excited",
+      "It is equal to typical wave periods, so waves push the spar at resonance",
+      "It lowers GM",
+      "It increases draught"
+     ],
+     "a": 0,
+     "why": "The energetic waves have periods up to about 20 s, so the platform responds weakly.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are heave plates attached to spar and semi-submersible columns?",
+     "o": [
+      "They add damping and added mass, reducing resonant heave",
+      "They hold the mooring lines and fairleads in place on the column",
+      "They increase wave height",
+      "They store oil"
+     ],
+     "a": 0,
+     "why": "Flow separation at the plate edges dissipates energy and increases effective mass.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A storm surge and large waves reduce the air gap under a deck to zero. What is the main danger?",
+     "o": [
+      "Wave impact (slamming) on the deck",
+      "Fewer waves reach the structure, reducing the loads",
+      "A lighter platform",
+      "Less drag"
+     ],
+     "a": 0,
+     "why": "Wave-in-deck loads are high and not designed for in normal conditions.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Four circular columns each of diameter 15 m pierce the waterplane. Find the total waterplane area in m² (nearest whole number).",
+     "a": 707,
+     "tol": 1,
+     "unit": "m²",
+     "why": "4 × π × 7.5² = 706.9 m².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³, g = 9.81 m/s² and A_wp = 707 m². Find the heave stiffness C₃₃ in MN/m (2 decimal places).",
+     "a": 7.11,
+     "tol": 0.02,
+     "unit": "MN/m",
+     "why": "1025 × 9.81 × 707 = 7.109×10⁶ N/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With M + A = 6.4×10⁷ kg and C₃₃ = 7.11×10⁶ N/m, find the heave natural period in seconds (1 decimal place).",
+     "a": 18.9,
+     "tol": 0.1,
+     "unit": "s",
+     "why": "T = 2π√(6.4×10⁷ ÷ 7.11×10⁶) = 2π × 3.00 = 18.9 s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its role in the equation of motion.",
+     "pairs": [
+      [
+       "M + A",
+       "Inertia"
+      ],
+      [
+       "B",
+       "Damping"
+      ],
+      [
+       "C",
+       "Hydrostatic restoring stiffness"
+      ],
+      [
+       "F(t)",
+       "Wave, wind and current forcing"
+      ]
+     ],
+     "why": "Each term in (M+A)ẍ + Bẋ + Cx = F has a physical meaning.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A semi-submersible's heave natural period is 18.9 s, and a severe storm has peak periods around 16 to 18 s. Explain the concern and one design change that addresses it.",
+     "rubric": [
+      [
+       "resonance",
+       "close",
+       "near",
+       "match",
+       "amplif"
+      ],
+      [
+       "heave",
+       "motion",
+       "response",
+       "air gap",
+       "riser",
+       "mooring"
+      ],
+      [
+       "waterplane",
+       "draught",
+       "damping",
+       "heave plate",
+       "column",
+       "mass",
+       "increase",
+       "reduce"
+      ]
+     ],
+     "min": 2,
+     "model": "The natural period is close to the energetic wave periods, so resonant heave could be large, stressing risers and reducing air gap. Reducing the waterplane area, deepening the draught or adding heave plates for damping and added mass would move or damp the resonance.",
+     "why": "Design aims to move T_n away from wave periods or add damping.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Doubling the waterplane area, with M + A unchanged, changes the heave period by a factor of...",
+     "o": [
+      "1/√2 (about 0.71)",
+      "2, since the period is proportional to the stiffness",
+      "1/2",
+      "√2"
+     ],
+     "a": 0,
+     "why": "T ∝ 1/√C and C ∝ A_wp.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A floating platform's vertical riser tensioners reach their stroke limit in a big heave. Which action protects the system?",
+     "o": [
+      "Reduce operations and disconnect the riser if limits will be exceeded",
+      "Ignore",
+      "Add weight",
+      "Increase stroke demand"
+     ],
+     "a": 0,
+     "why": "Exceeding riser limits risks overload and loss of containment.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does wind affect floater design as much as waves in some regions?",
+     "o": [
+      "Wind gives large steady and slowly varying forces and heeling moments",
+      "Wind has no force",
+      "Wind lowers waves",
+      "Wind adds buoyancy"
+     ],
+     "a": 0,
+     "why": "Tall topsides and turbines catch wind, causing offset and heel.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why some floating platforms heave less",
+    "model": "A floating platform bounces on the sea like a mass on a spring. The spring stiffness comes from how much water-plane area it has, and the mass includes extra water dragged with it. A small waterplane makes the bounce slow, so waves, which are quicker, do not make it resonate.",
+    "points": [
+     {
+      "k": [
+       "spring",
+       "bounce",
+       "mass",
+       "stiffness"
+      ],
+      "ask": "How does a floating platform behave in heave?"
+     },
+     {
+      "k": [
+       "waterplane",
+       "area",
+       "buoyancy",
+       "draught"
+      ],
+      "ask": "Where does the stiffness come from?"
+     },
+     {
+      "k": [
+       "period",
+       "slow",
+       "longer",
+       "natural"
+      ],
+      "ask": "What does a small waterplane do to the period?"
+     },
+     {
+      "k": [
+       "resonance",
+       "wave period",
+       "damping",
+       "heave plate"
+      ],
+      "ask": "Why is that good, and what else helps?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "In-place offshore structural analysis",
+   "icon": "🔬",
+   "hook": "A jacket must carry its own weight, the equipment on top, and a 100-year storm at the same time. How do engineers check every steel tube is strong enough?",
+   "explain": [
+    "In-place analysis checks a structure in its working position under combined loads. Load cases include dead (self-weight), live (equipment and personnel), environmental (wave, current, wind) and accidental (ship impact, dropped objects). They are combined with factors and applied to a finite-element frame model of tubular members. The global result gives base shear, overturning moment and member forces: axial force, bending moments and shear.",
+    "A member passes if its utilisation (unity check) UC = demand ÷ capacity ≤ 1.0. For axial compression the capacity is limited either by yielding (squash load) P_y = f_y A or, in slender members, by buckling. The Euler load is P_cr = π² E I ÷ (K L)², where K is the effective length factor. The lower of the two governs, and design codes also apply material factors and combined axial-bending interaction equations. Tubes may fail locally too (local buckling of thin walls, characterised by D/t).",
+    "Joints (nodes) where braces meet chords are checked for punching shear and have stress concentration factors for fatigue. Results must satisfy strength under extreme storm loads, serviceability, and fatigue (separately). Analysis is repeated for installation, transportation and in-service damage cases, such as a missing brace. A structure is not safe merely because the numbers pass: models need correct assumptions, good data on loads, soil, marine growth and corrosion."
+   ],
+   "example": {
+    "q": "A tubular brace has D = 0.80 m and wall t = 0.025 m (inner d = 0.75 m), length 12 m, pinned both ends (K = 1), E = 210 GPa and f_y = 355 MPa. Find the Euler load and the squash load.",
+    "steps": [
+     "I = π/64 (0.80⁴ − 0.75⁴) = 0.004575 m⁴; A = π/4 (0.80² − 0.75²) = 0.06087 m².",
+     "P_cr = π² × 210×10⁹ × 0.004575 ÷ 12² = 65.8 MN.",
+     "P_y = 355×10⁶ × 0.06087 = 21.6 MN. The smaller, 21.6 MN, governs."
+    ],
+    "a": "P_cr ≈ 65.8 MN, P_y ≈ 21.6 MN; yielding governs, so the member is stocky"
+   },
+   "analogies": {
+    "home": "A thin ruler pushed from both ends bows out suddenly; a thick one crushes instead.",
+    "city": "A skyscraper's frame carries weight, wind and earthquake loads together.",
+    "farm": "A barn frame must withstand the weight of snow and gusts of wind at the same moment.",
+    "sport": "A climbing rope has strength rated far above a typical fall, like a safety factor."
+   },
+   "mnemonic": "UC = demand ÷ capacity ≤ 1. Slender buckles (Euler), stocky yields.",
+   "terms": [
+    [
+     "Unity check",
+     "Ratio of load effect to capacity; must be ≤ 1."
+    ],
+    [
+     "Euler load",
+     "Elastic buckling load P_cr = π²EI/(KL)²."
+    ],
+    [
+     "Base shear",
+     "Total horizontal force at the base of the structure."
+    ],
+    [
+     "Punching shear",
+     "Failure of a chord wall at a brace connection."
+    ]
+   ],
+   "misc": {
+    "wrong": "If the unity checks all pass, the structure is certainly safe.",
+    "right": "Checks only prove safety within the assumed loads and model. Wrong loads, soil data, corrosion or missing members can make passing results misleading."
+   },
+   "limits": "Codes differ (API, ISO, Eurocode) in factors and formulas. Linear analysis misses large-displacement and plastic effects, so extreme or accident cases may need nonlinear methods.",
+   "trip": {
+    "wiki": "Euler's critical load",
+    "prompt": "Find the effective length factors for different end conditions and compare them."
+   },
+   "sources": [
+    "Buckling",
+    "Finite element method",
+    "Jacket (oil platform)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does a unity check of 0.85 mean?",
+     "o": [
+      "The demand is 85% of the capacity",
+      "The member has lost 85% of its steel to corrosion",
+      "The load is 85 kN",
+      "The member fails"
+     ],
+     "a": 0,
+     "why": "UC = demand ÷ capacity; below 1.0 passes.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If the effective length of a column doubles, its Euler load becomes...",
+     "o": [
+      "One quarter",
+      "Half, since Euler load falls in proportion to length",
+      "Double",
+      "Unchanged"
+     ],
+     "a": 0,
+     "why": "P_cr ∝ 1/(KL)².",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which failure is more likely in a short, thick tube loaded in compression?",
+     "o": [
+      "Yielding (crushing)",
+      "Euler buckling, as in a long slender strut",
+      "Fatigue only",
+      "Corrosion"
+     ],
+     "a": 0,
+     "why": "Stocky members reach yield before elastic buckling.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A missing brace case is analysed. Why?",
+     "o": [
+      "To confirm the structure survives damage with redundancy",
+      "To check the protective paint coating still adheres after repair",
+      "To reduce weight",
+      "To reduce waves"
+     ],
+     "a": 0,
+     "why": "Damage cases verify robustness.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Marine growth thickens a leg. What is the effect on in-place analysis?",
+     "o": [
+      "Larger diameter and roughness increase wave loads",
+      "No effect, since marine growth is only a thin soft layer",
+      "Reduces loads",
+      "Increases buoyancy only"
+     ],
+     "a": 0,
+     "why": "Greater D and C_D raise the Morison force.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A tube has outer D = 0.80 m, inner d = 0.75 m. Find the steel area A = π/4 (D² − d²) in m² (3 decimal places).",
+     "a": 0.061,
+     "tol": 0.001,
+     "unit": "m²",
+     "why": "π/4 × (0.64 − 0.5625) = 0.06087 m².",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the squash load P_y = f_y A with f_y = 355 MPa and A = 0.0609 m², in MN (1 decimal place).",
+     "a": 21.6,
+     "tol": 0.1,
+     "unit": "MN",
+     "why": "355 × 0.0609 = 21.6 MN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A brace has an axial demand of 15 MN and a capacity of 21.6 MN. Find the unity check (2 decimal places).",
+     "a": 0.69,
+     "tol": 0.01,
+     "unit": "",
+     "why": "15 ÷ 21.6 = 0.694.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each load type to an example.",
+     "pairs": [
+      [
+       "Dead",
+       "Weight of the steel structure"
+      ],
+      [
+       "Live",
+       "Equipment and personnel"
+      ],
+      [
+       "Environmental",
+       "Wave, current and wind"
+      ],
+      [
+       "Accidental",
+       "Supply boat impact"
+      ]
+     ],
+     "why": "Load categories used in design.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A routine inspection shows a leg member has lost 3 mm of its 25 mm wall to corrosion. Explain how you would decide if it is still safe.",
+     "rubric": [
+      [
+       "capacity",
+       "strength",
+       "area",
+       "section",
+       "thickness",
+       "reduced"
+      ],
+      [
+       "recalculate",
+       "reanalys",
+       "unity check",
+       "assess",
+       "uc",
+       "check"
+      ],
+      [
+       "load",
+       "demand",
+       "storm",
+       "margin",
+       "repair",
+       "monitor",
+       "safe"
+      ]
+     ],
+     "min": 2,
+     "model": "Update the section properties with the reduced thickness, recompute the capacity and unity check under the design load cases, and compare it with 1.0 with an adequate margin. If it fails, repair or reduce loads; otherwise monitor the corrosion rate.",
+     "why": "Fitness-for-service uses reduced capacity against the demand.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A bracing member fails in an extreme storm; the structure survives. This shows...",
+     "o": [
+      "Redundancy and load redistribution",
+      "Poor design only, a good design never loses a member",
+      "No loads",
+      "Perfect safety"
+     ],
+     "a": 0,
+     "why": "Redundant frames let loads find other paths.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A designer finds UC = 0.98 under the extreme case. What question matters most?",
+     "o": [
+      "How uncertain are the loads and the capacity?",
+      "Is it painted well enough to protect the steel here?",
+      "Can it be taller?",
+      "Is the UC at least 1?"
+     ],
+     "a": 0,
+     "why": "A near-1 value leaves no margin for uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are fatigue and extreme strength checked separately?",
+     "o": [
+      "Different failure mechanisms depend on different load histories",
+      "They are the same",
+      "Fatigue is never needed",
+      "Strength is optional"
+     ],
+     "a": 0,
+     "why": "Extreme strength depends on peak loads; fatigue on cumulative cycles.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How engineers check a platform is strong enough",
+    "model": "They calculate the forces in every member from weight, equipment and storm waves, then compare each with the member's capacity as a unity check, which must stay below one. Slender members may buckle and stocky ones yield. Damage and corrosion cases are checked too.",
+    "points": [
+     {
+      "k": [
+       "load",
+       "wave",
+       "weight",
+       "force"
+      ],
+      "ask": "What loads do they consider?"
+     },
+     {
+      "k": [
+       "capacity",
+       "unity",
+       "ratio",
+       "demand"
+      ],
+      "ask": "How do they judge a member?"
+     },
+     {
+      "k": [
+       "buckle",
+       "yield",
+       "slender",
+       "euler"
+      ],
+      "ask": "How can a compressed member fail?"
+     },
+     {
+      "k": [
+       "damage",
+       "corrosion",
+       "redundan",
+       "inspect"
+      ],
+      "ask": "What else do they check?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Offshore foundation engineering",
+   "icon": "📍",
+   "hook": "A jacket leg is pinned to the sea bed by a steel pile 1.5 m wide. How deep must it go so the platform does not pull out or sink in?",
+   "explain": [
+    "Piles transfer loads to the soil by shaft friction (skin friction) along the pile and end bearing at the tip: Q_ult = Q_s + Q_p. In clay a total-stress approach uses the adhesion f = α s_u with α about 0.5 to 1 (here 0.5 for a stated example) and end bearing q_p = 9 s_u. In sand capacity depends on effective stress and the friction angle. Shaft area is π D L.",
+    "The allowable load is Q_ult divided by a safety factor (2 for compression, or larger according to codes) and the pile must resist tension (uplift) under overturning moments, which is often critical for jackets, since end bearing does not help in tension. Piles are driven by hammer, drilled and grouted, or installed with suction. Driveability analysis checks that the pile can be driven to depth without being overstressed.",
+    "Lateral loads are resisted by the soil through nonlinear p-y curves. Cyclic loading from storms degrades clay strength, and scour removes soil around the pile, which reduces capacity and stiffness. Large suction caissons (buckets) and gravity bases are alternatives. Pile driving noise can harm marine life, so mitigation, such as bubble curtains and soft-start procedures, is part of the engineering."
+   ],
+   "example": {
+    "q": "A pile of diameter 1.5 m is 40 m long in clay with s_u = 60 kPa. Use α = 0.5 for shaft friction and q_p = 9 s_u for the closed end. Find Q_s, Q_p and the allowable load with a safety factor 2.",
+    "steps": [
+     "Q_s = α s_u π D L = 0.5 × 60 × π × 1.5 × 40 = 5655 kN.",
+     "Q_p = 9 × 60 × π/4 × 1.5² = 954 kN.",
+     "Q_ult = 6609 kN; allowable = 6609 ÷ 2 = 3305 kN."
+    ],
+    "a": "Q_s ≈ 5655 kN, Q_p ≈ 954 kN, allowable ≈ 3300 kN"
+   },
+   "analogies": {
+    "home": "A nail holds in wood by friction along its length, like shaft friction.",
+    "farm": "A fence post set deep in clay resists a pull because the soil grips its sides.",
+    "sport": "A tent peg in wet sand pulls out easily, but in firm clay it holds well.",
+    "tech": "A screw anchor in a wall works by thread friction, like a pile's skin friction."
+   },
+   "mnemonic": "Shaft friction + tip bearing = ultimate; divide by the safety factor for the allowable.",
+   "terms": [
+    [
+     "Shaft friction",
+     "Soil resistance along the pile surface."
+    ],
+    [
+     "End bearing",
+     "Resistance at the pile tip."
+    ],
+    [
+     "p-y curve",
+     "Nonlinear relation between lateral soil resistance and pile deflection."
+    ],
+    [
+     "Scour",
+     "Loss of sea bed soil near a structure due to flow."
+    ]
+   ],
+   "misc": {
+    "wrong": "End bearing carries most of the load in every pile.",
+    "right": "In long piles in clay, shaft friction often carries most of the capacity, and in tension only the shaft helps."
+   },
+   "limits": "α and the soil strength are uncertain and depend on layering and cyclic loading. Codes give detailed factors, and load tests or monitoring can improve confidence.",
+   "trip": {
+    "wiki": "Deep foundation",
+    "prompt": "Find the difference between driven piles and suction caissons."
+   },
+   "sources": [
+    "Deep foundation",
+    "Pile driving",
+    "Suction anchor"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In tension, which part of a pile's capacity helps resist uplift?",
+     "o": [
+      "Shaft friction",
+      "End bearing at the pile tip, which only resists compression",
+      "Wave energy",
+      "Pile top"
+     ],
+     "a": 0,
+     "why": "End bearing is lost when the pile is pulled up.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Scour around a pile reduces which properties?",
+     "o": [
+      "Lateral stiffness and axial capacity",
+      "Steel strength only, as the pile steel corrodes away",
+      "Water depth",
+      "Pile mass"
+     ],
+     "a": 0,
+     "why": "Less soil cover reduces confinement and friction.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a common mitigation for harmful underwater noise during pile driving?",
+     "o": [
+      "Bubble curtain and soft-start",
+      "A louder hammer to drive piles faster",
+      "Ignoring animals",
+      "Night work only"
+     ],
+     "a": 0,
+     "why": "Bubble curtains reduce noise; soft-start lets animals move away.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Cyclic storm loading weakens a clay around a pile. What does that do to shaft friction?",
+     "o": [
+      "It decreases",
+      "It increases",
+      "It stays constant",
+      "It disappears forever"
+     ],
+     "a": 0,
+     "why": "Repeated shearing degrades clay strength near the pile.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A jacket on soft clay shows an uplift demand on a leg larger than the allowable tension capacity. What are sensible options?",
+     "o": [
+      "Lengthen or enlarge the pile or add piles",
+      "Shorten the pile so that less soil is disturbed",
+      "Remove soil",
+      "Reduce friction"
+     ],
+     "a": 0,
+     "why": "More shaft area increases uplift capacity.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pile has D = 1.5 m and L = 40 m. Find its shaft surface area π D L in m² (nearest whole number).",
+     "a": 188,
+     "tol": 1,
+     "unit": "m²",
+     "why": "π × 1.5 × 40 = 188.5 m².",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using α = 0.5, s_u = 60 kPa and shaft area 188.5 m², find the shaft capacity in kN (nearest 10).",
+     "a": 5655,
+     "tol": 20,
+     "unit": "kN",
+     "why": "0.5 × 60 × 188.5 = 5655 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The ultimate capacity is 6609 kN. With a safety factor of 2, what is the allowable load in kN (nearest 10)?",
+     "a": 3305,
+     "tol": 15,
+     "unit": "kN",
+     "why": "6609 ÷ 2 = 3304.5 kN.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each foundation type to its feature.",
+     "pairs": [
+      [
+       "Driven pile",
+       "Hammered into the sea bed"
+      ],
+      [
+       "Suction caisson",
+       "Bucket sealed by pumped-out water"
+      ],
+      [
+       "Gravity base",
+       "Relies on its own weight"
+      ],
+      [
+       "Drilled and grouted pile",
+       "Cemented into a drilled hole"
+      ]
+     ],
+     "why": "Different installation and resistance mechanisms.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why might a long pile in soft clay be preferred to a short wide one for a jacket subject to overturning?",
+     "rubric": [
+      [
+       "uplift",
+       "tension",
+       "pull out",
+       "overturning"
+      ],
+      [
+       "friction",
+       "shaft",
+       "length",
+       "deeper",
+       "skin"
+      ],
+      [
+       "stiffer",
+       "strong",
+       "layer",
+       "soft",
+       "capacity",
+       "resist"
+      ]
+     ],
+     "min": 2,
+     "model": "Overturning creates uplift on the windward leg, which only shaft friction can resist, and soft near-surface clay gives little. A long pile mobilises more shaft area and reaches stronger deeper layers.",
+     "why": "Uplift capacity depends on shaft friction along length.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A driving record shows the pile suddenly runs through 3 m with no blow count, then stops. What is a plausible cause?",
+     "o": [
+      "It passed through a very soft layer or void",
+      "The hammer energy suddenly doubled for those 3 m",
+      "The hammer is perfect",
+      "Water vanished"
+     ],
+     "a": 0,
+     "why": "Soft layers give little resistance; engineers should investigate the reason.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Marine mammal observers report whales approaching a piling site. What should the contractor do?",
+     "o": [
+      "Pause hammering until animals leave the safety zone",
+      "Hammer harder so the piling finishes before they arrive",
+      "Remove the observers",
+      "Ignore"
+     ],
+     "a": 0,
+     "why": "Underwater noise can injure marine mammals.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A suction caisson installation in clay stops before reaching its design penetration. Why might that happen?",
+     "o": [
+      "Stiff layers or increased tip resistance exceed the available suction",
+      "The sea is too deep for water",
+      "Caissons float",
+      "The clay becomes sand"
+     ],
+     "a": 0,
+     "why": "Suction is limited by water depth and the soil's stiffness.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a steel pile holds a platform to the sea bed",
+    "model": "A pile holds by friction along its sides and by pushing on the soil at its tip. Adding the two gives ultimate capacity, and dividing by a safety factor gives the allowable load. Under uplift only the side friction helps, so long piles are used. Noise from driving must be controlled to protect marine life.",
+    "points": [
+     {
+      "k": [
+       "friction",
+       "side",
+       "shaft",
+       "skin"
+      ],
+      "ask": "What are the two ways a pile holds?"
+     },
+     {
+      "k": [
+       "tip",
+       "end",
+       "bearing"
+      ],
+      "ask": "What is the other?"
+     },
+     {
+      "k": [
+       "safety factor",
+       "divide",
+       "allowable",
+       "margin"
+      ],
+      "ask": "How do you get a safe design load?"
+     },
+     {
+      "k": [
+       "noise",
+       "whale",
+       "marine",
+       "bubble"
+      ],
+      "ask": "What effect on the ocean must be managed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Mudmat and on-bottom stability",
+   "icon": "🟫",
+   "hook": "A 6 m wide steel frame is lowered onto very soft clay at 800 m depth and left to support a manifold. How do you know it will not sink or slide?",
+   "explain": [
+    "Subsea structures on soft seabed sediment rest on mudmats: wide, shallow footings that spread loads. Checks include vertical bearing capacity, sliding, overturning, and settlement. The structure's weight is its submerged weight (buoyancy deducted), and horizontal loads come from current, pipeline pull and ROV interface loads, plus snag loads from fishing gear in some areas.",
+    "For vertical bearing on undrained clay, the capacity is q_u = N_c s_u with N_c about 5.14 for a strip, and shape factors for rectangles: N_c ≈ 5.14(1 + 0.2 B/L), so about 6.2 for a square. Eccentric loading (vertical force V and moment M) gives an eccentricity e = M/V; the effective width is B' = B − 2e, and eccentricity must stay within the middle third (e ≤ B/6) to avoid tension at the edges (uplift). Sliding resistance is mainly s_u A in clay, which is the base adhesion over the contact area.",
+    "Skirts around the edge penetrate the soil, add sliding resistance, confine soft soil and reduce scour. During installation a structure can sink with a 'splash zone' dynamic increase, so soft layers are checked for penetration. Long-term, consolidation causes settlement, and tilt must stay within limits of the equipment. Strength is highly uncertain in very soft clay, so site surveys use cone penetration tests and samples."
+   ],
+   "example": {
+    "q": "A 6 m × 6 m mudmat carries V = 800 kN submerged weight and a horizontal load H = 150 kN acting 4 m above the base. Soil s_u = 10 kPa. Find e, effective width B', and the sliding factor of safety using s_u A.",
+    "steps": [
+     "M = H × h = 150 × 4 = 600 kNm; e = M/V = 600 ÷ 800 = 0.75 m (< B/6 = 1.0 m).",
+     "B' = 6 − 2 × 0.75 = 4.5 m.",
+     "Sliding resistance = s_u A = 10 × 36 = 360 kN; FoS = 360 ÷ 150 = 2.4."
+    ],
+    "a": "e = 0.75 m, B' = 4.5 m, sliding FoS = 2.4"
+   },
+   "analogies": {
+    "home": "Snow-shoes spread your weight so you do not sink; a mudmat does this for equipment.",
+    "farm": "A tractor with wide tyres sinks less in wet fields than one with narrow tyres.",
+    "city": "A raft foundation under a building spreads the load.",
+    "sport": "A sprinter's spikes grip the track like skirts grip clay."
+   },
+   "mnemonic": "Wide to spread, skirts to grip; keep the load within the middle third.",
+   "terms": [
+    [
+     "Mudmat",
+     "A wide foundation on soft sea bed soil."
+    ],
+    [
+     "Eccentricity",
+     "Offset of the resultant load from the centre of the base, e = M/V."
+    ],
+    [
+     "Effective width",
+     "Reduced width B' = B − 2e used in bearing calculations."
+    ],
+    [
+     "Skirt",
+     "A thin wall around the base edge that penetrates the soil."
+    ]
+   ],
+   "misc": {
+    "wrong": "A heavier structure is always less stable on the sea bed.",
+    "right": "Weight increases friction and resists sliding and overturning but also increases bearing pressure. Stability depends on balancing both with the footing area."
+   },
+   "limits": "Very soft clay strength is hard to measure, rate effects and disturbance change it, and consolidation increases strength over time. Results need sensitivity checks.",
+   "trip": {
+    "wiki": "Shallow foundation",
+    "prompt": "Find the bearing capacity equation and note which terms apply to clay."
+   },
+   "sources": [
+    "Shallow foundation",
+    "Bearing capacity",
+    "Undrained shear strength"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the main purpose of a mudmat?",
+     "o": [
+      "To spread the load on soft sea bed soil",
+      "To attract fish and encourage marine habitat growth",
+      "To increase weight",
+      "To store fluids"
+     ],
+     "a": 0,
+     "why": "A wide base lowers bearing pressure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does skirt penetration do?",
+     "o": [
+      "Increases sliding resistance and confines soil",
+      "Raises buoyancy by trapping air beneath the whole base",
+      "Reduces weight",
+      "Removes soil"
+     ],
+     "a": 0,
+     "why": "Skirts engage deeper soil and resist movement.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If eccentricity e exceeds B/6, what happens at one edge of the base?",
+     "o": [
+      "Contact pressure goes to zero (uplift)",
+      "Pressure doubles across the whole base area at once",
+      "It sinks faster",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "The resultant lies outside the middle third, so part of the base lifts.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A jumper pipeline pulls horizontally on a mudmat, adding load. What check is most affected?",
+     "o": [
+      "Sliding",
+      "Corrosion",
+      "Buoyancy",
+      "Fatigue of coating"
+     ],
+     "a": 0,
+     "why": "Horizontal load directly increases sliding demand.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A mudmat is designed with an undrained strength of 10 kPa but testing shows 6 kPa. What follows?",
+     "o": [
+      "Capacity and sliding resistance fall by about 40%",
+      "Nothing, because the design safety margin absorbs any shortfall",
+      "Capacity increases",
+      "The footing floats"
+     ],
+     "a": 0,
+     "why": "Both capacities scale with s_u: 6/10 = 0.6.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "H = 150 kN acts at 4 m above the base and V = 800 kN. Find the eccentricity e = H h / V in metres.",
+     "a": 0.75,
+     "tol": 0.01,
+     "unit": "m",
+     "why": "600 ÷ 800 = 0.75 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A footing has B = 6 m and e = 0.75 m. Find the effective width B' = B − 2e in metres.",
+     "a": 4.5,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "6 − 1.5 = 4.5 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Base area is 36 m², s_u = 10 kPa and H = 150 kN. Find the sliding factor of safety, s_u A ÷ H (1 decimal place).",
+     "a": 2.4,
+     "tol": 0.05,
+     "unit": "",
+     "why": "360 ÷ 150 = 2.4.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the checks for a mudmat on soft clay.",
+     "items": [
+      "Determine submerged weight and loads",
+      "Check vertical bearing capacity",
+      "Check sliding",
+      "Check settlement and tilt"
+     ],
+     "why": "Loads are found first, then ultimate checks, then serviceability.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a mudmat designed for static loads may still be at risk during installation.",
+     "rubric": [
+      [
+       "dynamic",
+       "motion",
+       "wave",
+       "lowering",
+       "swing",
+       "impact",
+       "landing"
+      ],
+      [
+       "penetrate",
+       "sink",
+       "sink in",
+       "settle",
+       "tilt",
+       "overshoot",
+       "load"
+      ],
+      [
+       "soft",
+       "clay",
+       "soil",
+       "layer",
+       "strength"
+      ]
+     ],
+     "min": 2,
+     "model": "While being lowered from a moving vessel, the structure can land with extra dynamic load or swing, punch deeper into soft clay, tilt, or trap soil under skirts. Installation checks include landing speed and penetration limits.",
+     "why": "Landing loads can exceed the static design weight.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A base is 9 m × 4 m with the weight acting at its centre. Overturning about which edge needs the smaller horizontal force?",
+     "o": [
+      "A long edge, where the restoring lever arm is only 2 m",
+      "A short edge, where the lever arm is 4.5 m",
+      "Both need the same force",
+      "Neither can overturn"
+     ],
+     "a": 0,
+     "why": "Restoring moment = weight × distance from centre to the edge. That is 2 m about a long edge and 4.5 m about a short edge, so the long edge tips more easily.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a developer choose a smaller number of larger structures on the sea bed in a reef area?",
+     "o": [
+      "Less habitat disturbance overall",
+      "Reefs are loud and disturb the equipment",
+      "It costs more",
+      "It reduces buoyancy"
+     ],
+     "a": 0,
+     "why": "Fewer, well-sited footprints can limit damage.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A seabed survey finds a very soft top layer 1.5 m thick over stiff clay. The design uses short skirts. What is the concern?",
+     "o": [
+      "Skirts may not reach the stiff clay and capacity will depend on the soft layer",
+      "Skirts float",
+      "No concern",
+      "Stiff clay is dangerous"
+     ],
+     "a": 0,
+     "why": "Capacity depends on the soil engaged by the footing.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How equipment stays put on soft sea bed mud",
+    "model": "A wide mudmat spreads the weight so the soft mud can carry it. Engineers check the weight pressure against soil strength, the sliding resistance against sideways loads, and that the load stays within the middle third so the edge does not lift. Skirts add grip.",
+    "points": [
+     {
+      "k": [
+       "wide",
+       "spread",
+       "area",
+       "mudmat"
+      ],
+      "ask": "Why make the base wide?"
+     },
+     {
+      "k": [
+       "bearing",
+       "strength",
+       "soil",
+       "pressure"
+      ],
+      "ask": "What do they compare the pressure with?"
+     },
+     {
+      "k": [
+       "slid",
+       "friction",
+       "skirt",
+       "grip",
+       "sideways"
+      ],
+      "ask": "What stops sideways movement?"
+     },
+     {
+      "k": [
+       "middle third",
+       "eccentric",
+       "tilt",
+       "lift",
+       "overturn"
+      ],
+      "ask": "What else could go wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Flexible risers and umbilicals",
+   "icon": "🪢",
+   "hook": "A steel pipe would snap if bent into a loop, yet a flexible riser curls gracefully in the current. How is it built to bend and still hold 300 bar?",
+   "explain": [
+    "A flexible pipe is a composite of layers, each with its own job. An inner carcass (interlocked steel) resists collapse from external pressure; a polymer pressure sheath keeps fluid inside; a pressure armour (interlocked wires) carries hoop stress; two tensile armour layers of helical wires carry axial tension; and an outer sheath keeps seawater out. Layers can slide on each other, so the pipe is flexible in bending but strong in tension and pressure.",
+    "Flexibles are limited by a minimum bend radius (MBR), the tightest curve they can safely take; bending tighter can damage layers. Common configurations are free hanging, lazy wave (buoyancy modules make an S-shape that absorbs floater motion) and steep wave. Failure modes include gas permeation into the annulus that can corrode armour wires, fatigue of tensile armour at the hang-off, bird-caging (wires opening under compression), and external sheath damage that floods the annulus. Operators monitor the annulus and inspect regularly.",
+    "An umbilical is a bundle of hydraulic hoses, steel tubes, electrical power cables, signal cables and fibre optics that controls subsea equipment and delivers chemicals. It must also resist tension, crushing and fatigue, and its steel tubes are often protected by armour. External pressure at depth matters: at 1000 m, p = ρ g h ≈ 10.06 MPa, so a collapse-resistant carcass is needed. Selection between flexible and steel risers depends on motions, depth, fluid properties, cost and track record."
+   ],
+   "example": {
+    "q": "A lazy-wave section needs 360 kN of extra net uplift. Each buoyancy module gives 12 kN net. How many modules are needed, and what is the minimum bend radius check if curvature reaches 0.25 m⁻¹ and MBR is 3.5 m?",
+    "steps": [
+     "Modules = 360 ÷ 12 = 30.",
+     "Bend radius R = 1/κ = 1 ÷ 0.25 = 4 m.",
+     "4 m > 3.5 m, so the bend is within the MBR (margin 4/3.5 = 1.14)."
+    ],
+    "a": "30 modules; R = 4 m, which exceeds MBR 3.5 m, so acceptable but with a thin margin"
+   },
+   "analogies": {
+    "home": "A garden hose is flexible but strong; layered like a flexible riser.",
+    "sport": "A climbing rope bends easily yet carries large tension through twisted strands, like helical armour.",
+    "farm": "A milking-machine hose bundles supply lines in one flexible sleeve, like an umbilical.",
+    "tech": "A USB cable has insulated cores in a sleeve, like power and signal in an umbilical."
+   },
+   "mnemonic": "Carcass, sheath, pressure armour, tensile armour, outer sheath: each layer has one job.",
+   "terms": [
+    [
+     "Minimum bend radius",
+     "Smallest radius to which a flexible can be bent safely."
+    ],
+    [
+     "Lazy wave",
+     "S-shaped riser with buoyancy modules to absorb motion."
+    ],
+    [
+     "Annulus",
+     "The space between sheaths where armour wires lie."
+    ],
+    [
+     "Umbilical",
+     "Bundle of hoses, tubes and cables for subsea control."
+    ]
+   ],
+   "misc": {
+    "wrong": "Flexible risers cannot fail because they bend easily.",
+    "right": "They fail by fatigue of wires, annulus flooding and corrosion, overbending and sheath damage, so they are monitored and replaced when needed."
+   },
+   "limits": "Flexible pipe fatigue is hard to predict with friction between layers, and designs rely on supplier tests. Not all fluids (e.g. high-CO₂ or high-temperature) suit polymers.",
+   "trip": {
+    "wiki": "Flexible pipe",
+    "prompt": "Find a cutaway picture of a flexible pipe and name each layer."
+   },
+   "sources": [
+    "Flexible riser",
+    "Umbilical (subsea)",
+    "Riser (drilling)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does the carcass of a flexible pipe resist?",
+     "o": [
+      "Collapse from external pressure",
+      "Heat loss through the pipe wall to the sea",
+      "Corrosion",
+      "Gas"
+     ],
+     "a": 0,
+     "why": "The interlocked steel carcass supports the inner sheath against external pressure.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What do tensile armour wires carry?",
+     "o": [
+      "Axial tension",
+      "Hoop stress only",
+      "Light",
+      "Chemicals"
+     ],
+     "a": 0,
+     "why": "Helical wires are oriented along the pipe to carry tension.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a lazy-wave configuration help?",
+     "o": [
+      "The S-shape absorbs floater motion before it reaches the touchdown",
+      "It floats the pipe at the top only",
+      "It makes the pipe shorter",
+      "It removes buoyancy"
+     ],
+     "a": 0,
+     "why": "Buoyancy modules form a compliant section that decouples motion.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The annulus of a riser is found to be flooded with seawater. What is the risk?",
+     "o": [
+      "Corrosion fatigue of armour wires",
+      "Higher buoyancy because the annulus fills with water",
+      "Lower pressure",
+      "No risk"
+     ],
+     "a": 0,
+     "why": "Seawater in the annulus corrodes armour and can shorten fatigue life.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A flexible riser goes into compression near the touchdown during a large wave trough. Which failure can occur?",
+     "o": [
+      "Bird-caging of armour wires",
+      "Increase in weight that bends the riser",
+      "Rusting only",
+      "Melting"
+     ],
+     "a": 0,
+     "why": "Compression can make tensile armour wires buckle outward.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³, g = 9.81 m/s². Find external pressure at 1000 m depth in MPa (2 decimal places).",
+     "a": 10.06,
+     "tol": 0.05,
+     "unit": "MPa",
+     "why": "1025 × 9.81 × 1000 = 10.06 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Each buoyancy module gives 12 kN net uplift. How many modules provide 360 kN?",
+     "a": 30,
+     "tol": 0.5,
+     "unit": "",
+     "why": "360 ÷ 12 = 30.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A riser is bent to a curvature of 0.25 m⁻¹. What is its bend radius in metres?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "m",
+     "why": "R = 1/κ = 4 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each layer to its job.",
+     "pairs": [
+      [
+       "Carcass",
+       "Resists collapse"
+      ],
+      [
+       "Pressure sheath",
+       "Contains the fluid"
+      ],
+      [
+       "Tensile armour",
+       "Carries axial load"
+      ],
+      [
+       "Outer sheath",
+       "Keeps seawater out"
+      ]
+     ],
+     "why": "Layered design separates functions.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why are umbilicals often supported by fatigue-resistant hang-off bend stiffeners at the floater?",
+     "rubric": [
+      [
+       "bend",
+       "bending",
+       "curvature",
+       "stiffener",
+       "radius"
+      ],
+      [
+       "fatigue",
+       "cycles",
+       "motion",
+       "wave",
+       "repeated"
+      ],
+      [
+       "protect",
+       "limit",
+       "reduce",
+       "damage",
+       "overbend",
+       "transition"
+      ]
+     ],
+     "min": 2,
+     "model": "At the hang-off the line is subject to repeated bending from platform motion. A bend stiffener spreads the curvature over a longer length, so the cyclic bending strain and fatigue damage are reduced and overbending is prevented.",
+     "why": "Stiffeners limit curvature at the stiff-to-flexible transition.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A supplier's test shows an armour wire fatigue life below the design requirement. Which decision is sound?",
+     "o": [
+      "Change design or reduce loads before installation",
+      "Install anyway because the shortfall is small",
+      "Ignore the test",
+      "Remove inspection"
+     ],
+     "a": 0,
+     "why": "Insufficient life must be corrected before use.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A control umbilical leaks hydraulic fluid. What is the preferred type of fluid for environmental protection?",
+     "o": [
+      "Low-toxicity, water-based or biodegradable fluid",
+      "Any mineral oil, since the leaked volume is small",
+      "Heavy metal fluid",
+      "Strong acid"
+     ],
+     "a": 0,
+     "why": "Subsea control fluids are chosen to limit harm if released.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are hydrogen sulphide (H₂S) services a challenge for steel tensile armour?",
+     "o": [
+      "It can cause cracking of high-strength steel",
+      "It floats the armour wires up and out of the pipe",
+      "It cools wire",
+      "It paints the sheath"
+     ],
+     "a": 0,
+     "why": "Sour service causes sulphide stress cracking in susceptible steels.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a flexible riser can bend and still hold high pressure",
+    "model": "It is made of layers: an inner steel carcass, a plastic sheath that keeps the fluid in, wire layers that hold pressure and pull, and an outer sheath. The layers can slide, so it bends, but it must not be bent tighter than its minimum bend radius.",
+    "points": [
+     {
+      "k": [
+       "layer",
+       "sheath",
+       "armour",
+       "carcass"
+      ],
+      "ask": "How is a flexible pipe built?"
+     },
+     {
+      "k": [
+       "slide",
+       "bend",
+       "flex"
+      ],
+      "ask": "Why can it bend?"
+     },
+     {
+      "k": [
+       "radius",
+       "mbr",
+       "tight",
+       "overbend"
+      ],
+      "ask": "What limit applies to bending?"
+     },
+     {
+      "k": [
+       "fatigue",
+       "corrosion",
+       "annulus",
+       "monitor"
+      ],
+      "ask": "How can it fail over time?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Multiphase pipeline flow",
+   "icon": "💧",
+   "hook": "Oil, gas and water travel together in one pipe. Why does the pressure drop depend not just on how much flows, but on how the phases arrange themselves?",
+   "explain": [
+    "Multiphase flow means more than one phase (oil, gas, water) flowing together. The superficial velocity of a phase is its volume flow rate divided by the whole pipe area: U_sl = Q_l/A and U_sg = Q_g/A. The mixture velocity is U_m = U_sl + U_sg. Liquid holdup H_L is the fraction of pipe volume occupied by liquid; it is greater than the no-slip fraction λ_L = Q_l/(Q_l + Q_g) because gas moves faster than liquid.",
+    "Flow patterns depend on velocities, fluid properties, pipe inclination and diameter. In horizontal pipes common patterns are stratified (low flows), slug (intermittent liquid plugs and gas pockets), annular (gas core, liquid film) and dispersed bubble (high liquid, lower gas). The pattern changes friction, holdup and stability, so a flow-pattern map predicts which occurs for given U_sl and U_sg.",
+    "Pressure drop has three parts: gravity (elevation) ρ_m g h, friction, and acceleration. In risers the gravity term dominates: a riser of height h with mixture density ρ_m has Δp ≈ ρ_m g h. As pressure falls along a pipe, gas expands and speeds up, so flow patterns change along the line. Steady-state models (e.g. mechanistic models) and transient simulators are used to size pipelines and predict slugging, liquid volumes and arrival rates."
+   ],
+   "example": {
+    "q": "A pipe has D = 0.30 m (A = 0.0707 m²). Liquid flow is 0.05 m³/s and gas flow is 0.10 m³/s at line conditions. Find U_sl, U_sg, U_m and the no-slip liquid fraction.",
+    "steps": [
+     "U_sl = 0.05 ÷ 0.0707 = 0.707 m/s; U_sg = 0.10 ÷ 0.0707 = 1.415 m/s.",
+     "U_m = 0.707 + 1.415 = 2.122 m/s.",
+     "λ_L = 0.05 ÷ (0.05 + 0.10) = 0.333."
+    ],
+    "a": "U_sl = 0.71 m/s, U_sg = 1.41 m/s, U_m = 2.12 m/s, λ_L = 0.33"
+   },
+   "analogies": {
+    "home": "Water and bubbles in a drinking straw gurgle in plugs.",
+    "city": "Cars and buses share a road. How they bunch up depends on the speeds.",
+    "farm": "A pipe carrying water and air to a drinker spits air pockets before the water.",
+    "sport": "Runners in a marathon spread out or bunch up, like phases in a pipe."
+   },
+   "mnemonic": "Superficial = Q over A. Mixture = sum. Gravity wins in the riser.",
+   "terms": [
+    [
+     "Superficial velocity",
+     "Phase volume flow rate divided by total pipe area."
+    ],
+    [
+     "Holdup",
+     "Fraction of pipe volume occupied by liquid."
+    ],
+    [
+     "Slip",
+     "Difference in actual velocity between gas and liquid."
+    ],
+    [
+     "Flow pattern map",
+     "Chart predicting the regime from phase velocities."
+    ]
+   ],
+   "misc": {
+    "wrong": "Gas and liquid travel at the same speed in a pipe.",
+    "right": "Gas is lighter and usually moves faster, so liquid holdup is greater than the inlet liquid fraction."
+   },
+   "limits": "Flow-pattern maps and correlations were developed from limited fluids and pipe sizes, and results can be off for waxy, viscous or foaming fluids. Transient simulation is needed in complex terrain.",
+   "trip": {
+    "wiki": "Two-phase flow",
+    "prompt": "Find a flow pattern map and locate the slug flow region."
+   },
+   "sources": [
+    "Two-phase flow",
+    "Slug flow",
+    "Multiphase flow"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is superficial velocity?",
+     "o": [
+      "Phase flow rate divided by the full pipe area",
+      "The real local speed of that phase inside the pipe",
+      "Sound speed",
+      "Mixture density"
+     ],
+     "a": 0,
+     "why": "It is what the speed would be if that phase flowed alone.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is liquid holdup usually larger than the no-slip liquid fraction?",
+     "o": [
+      "Gas moves faster than liquid",
+      "Liquid is lighter than the gas so it rises",
+      "Gas is heavier",
+      "Pipes are sticky"
+     ],
+     "a": 0,
+     "why": "Gas slips ahead, so liquid spends more time in the pipe and accumulates.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which regime has intermittent plugs of liquid separated by gas pockets?",
+     "o": [
+      "Slug flow",
+      "Annular flow",
+      "Stratified flow",
+      "Single-phase"
+     ],
+     "a": 0,
+     "why": "Slug flow alternates liquid slugs and gas bubbles.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In a tall riser, which term dominates the pressure drop?",
+     "o": [
+      "Gravity (static head)",
+      "Acceleration of the flowing fluid",
+      "Wall roughness",
+      "Surface tension"
+     ],
+     "a": 0,
+     "why": "Δp ≈ ρ_m g h over hundreds of metres is large.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "As pressure drops along a long pipe, what happens to the gas velocity?",
+     "o": [
+      "It increases as the gas expands",
+      "It decreases because the pipe gets wider",
+      "It stays constant",
+      "It becomes liquid"
+     ],
+     "a": 0,
+     "why": "Lower pressure means greater gas volume at the same mass flow.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A pipe has D = 0.30 m so A = 0.0707 m². Liquid flow is 0.05 m³/s. Find U_sl in m/s (2 decimal places).",
+     "a": 0.71,
+     "tol": 0.01,
+     "unit": "m/s",
+     "why": "0.05 ÷ 0.0707 = 0.707 m/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Gas flow is 0.10 m³/s in the same pipe (A = 0.0707 m²). Find the mixture velocity U_m with U_sl = 0.707 m/s (2 decimal places).",
+     "a": 2.12,
+     "tol": 0.02,
+     "unit": "m/s",
+     "why": "U_sg = 1.415; U_m = 0.707 + 1.415 = 2.12 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A riser 1000 m high contains a mixture of density 400 kg/m³. Use g = 9.81 m/s². Find the gravity pressure drop in MPa (2 decimal places).",
+     "a": 3.92,
+     "tol": 0.03,
+     "unit": "MPa",
+     "why": "400 × 9.81 × 1000 = 3.924 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each flow pattern to its description.",
+     "pairs": [
+      [
+       "Stratified",
+       "Liquid below, gas above"
+      ],
+      [
+       "Slug",
+       "Liquid plugs and gas pockets"
+      ],
+      [
+       "Annular",
+       "Gas core with liquid film"
+      ],
+      [
+       "Dispersed bubble",
+       "Small gas bubbles in liquid"
+      ]
+     ],
+     "why": "Common patterns in pipes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a flow regime that is stable in a flat pipeline may change in an uphill section.",
+     "rubric": [
+      [
+       "gravity",
+       "uphill",
+       "incline",
+       "elevation",
+       "slope",
+       "up"
+      ],
+      [
+       "liquid",
+       "accumulat",
+       "holdup",
+       "fall back",
+       "pool",
+       "collect"
+      ],
+      [
+       "slug",
+       "pattern",
+       "regime",
+       "velocity",
+       "gas",
+       "change"
+      ]
+     ],
+     "min": 2,
+     "model": "On an uphill section gravity pulls liquid back, so it accumulates and holdup increases, which can turn stratified flow into slug flow. Higher holdup also raises the pressure drop.",
+     "why": "Inclination changes the balance of gravity and drag between phases.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Production rate doubles in a gas-liquid line. How does the pressure drop generally change?",
+     "o": [
+      "More than double, as friction rises with velocity squared",
+      "Halves, because friction depends only on pipe length and not on rate",
+      "Same",
+      "Becomes zero"
+     ],
+     "a": 0,
+     "why": "Friction scales roughly with velocity² and the regime can change.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A slug catcher is sized from the largest slug volume. Why use the volume rather than the average liquid rate?",
+     "o": [
+      "Slugs arrive as large pulses that can overload separators",
+      "Averages are better because slugs even out over long periods",
+      "Gas is heavier",
+      "Slugs never happen"
+     ],
+     "a": 0,
+     "why": "Peak surges matter for equipment design and safety.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A line shows increased pressure drop over months with the same flow. One cause could be...",
+     "o": [
+      "Wax or scale reducing the effective diameter",
+      "Cooler weather on deck changing the line pressure",
+      "A larger pipe",
+      "Less friction"
+     ],
+     "a": 0,
+     "why": "Deposits narrow the bore and increase friction.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why gas, oil and water in one pipe is tricky",
+    "model": "Each phase has a superficial velocity, its flow divided by the pipe area. Gas moves faster so liquid piles up, giving a liquid holdup bigger than the inlet fraction. Depending on speeds the flow can be stratified, slug or annular, and in tall risers the weight of the mixture gives most of the pressure drop.",
+    "points": [
+     {
+      "k": [
+       "superficial",
+       "velocity",
+       "area",
+       "divide"
+      ],
+      "ask": "How do you measure each phase's speed?"
+     },
+     {
+      "k": [
+       "gas",
+       "faster",
+       "slip",
+       "holdup"
+      ],
+      "ask": "Why does liquid pile up?"
+     },
+     {
+      "k": [
+       "slug",
+       "stratified",
+       "annular",
+       "pattern",
+       "regime"
+      ],
+      "ask": "What patterns can occur?"
+     },
+     {
+      "k": [
+       "riser",
+       "gravity",
+       "weight",
+       "static",
+       "head"
+      ],
+      "ask": "What drives the pressure drop in a riser?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Hydrodynamic slugging",
+   "icon": "🌩️",
+   "hook": "A production riser sits quiet for minutes, then violently ejects a mass of liquid that trips the separator. What builds up, and why does it let go all at once?",
+   "explain": [
+    "Slugging is intermittent flow of liquid plugs and gas. Three main types are hydrodynamic slugging (from waves on the interface growing in stratified flow, a Kelvin-Helmholtz type instability), terrain slugging (liquid accumulating in low points of an undulating seabed) and severe (riser-induced) slugging. Hydrodynamic slugs are relatively short, typically tens of pipe diameters (e.g. 20 to 40 D), and frequent.",
+    "Severe slugging happens when a downward-sloping pipeline meets a long riser at low flow rate. The cycle is: (1) liquid blocks the riser base and gas is trapped upstream; (2) the riser fills with liquid and upstream pressure rises toward ρ_l g h; (3) the gas reaches the riser base and the liquid column is blown out in a violent slug; (4) pressure falls and liquid falls back, restarting the cycle. Slugs can be hundreds of metres long and cause pressure swings, flooding of the separator, compressor trips and pipe vibration.",
+    "A translating slug moves at about U_t ≈ 1.2 U_m + 0.35√(g D) in a vertical pipe (Nicklin). Mitigation includes increasing flow velocity to leave the severe slugging region, topside choking, gas lift injection at the riser base, slug catchers, active control with fast valves, and designs such as small-diameter risers. Operators must avoid unsafe conditions: sudden slug arrival is a process safety hazard, so alarms and trip systems are set conservatively."
+   ],
+   "example": {
+    "q": "In a 0.30 m vertical riser the mixture velocity is 2.0 m/s. Find the slug translational velocity from U_t = 1.2 U_m + 0.35√(g D), and the hydrostatic pressure rise at the riser base if a 300 m riser fills with liquid of density 800 kg/m³.",
+    "steps": [
+     "√(9.81 × 0.30) = 1.716; 0.35 × 1.716 = 0.60 m/s; 1.2 × 2.0 = 2.40; U_t = 3.00 m/s.",
+     "Δp = ρ g h = 800 × 9.81 × 300 = 2.354 MPa.",
+     "That pressure must build up behind the blockage before the slug is expelled."
+    ],
+    "a": "U_t ≈ 3.0 m/s; Δp ≈ 2.35 MPa"
+   },
+   "analogies": {
+    "home": "Tipping a ketchup bottle: nothing, then a big gush with air burping.",
+    "sport": "A water gun with a blocked nozzle builds pressure and then squirts.",
+    "city": "A blocked drain backs up, then bursts through with a surge.",
+    "nature": "A geyser fills, builds pressure, then erupts and drains."
+   },
+   "mnemonic": "Block, build, blow, fall back. Higher flow or gas lift breaks the cycle.",
+   "terms": [
+    [
+     "Hydrodynamic slug",
+     "A liquid plug formed by interface waves in stratified flow."
+    ],
+    [
+     "Terrain slugging",
+     "Slugs caused by liquid collecting in low points."
+    ],
+    [
+     "Severe slugging",
+     "Cyclical blockage and blow-out in a riser system."
+    ],
+    [
+     "Slug catcher",
+     "A large vessel to receive and buffer slugs."
+    ]
+   ],
+   "misc": {
+    "wrong": "Slugging is just a nuisance and does not affect safety.",
+    "right": "Large slugs can overfill separators, cause vibration and fatigue, trip compressors and in extreme cases lead to loss of containment."
+   },
+   "limits": "Slug prediction needs transient simulators with uncertain closure laws. Mitigation methods have limits and costs, and the severe slugging region depends on pipe geometry.",
+   "trip": {
+    "wiki": "Slug flow",
+    "prompt": "Find the diagram of a severe slugging cycle. Identify which stage has the highest pressure."
+   },
+   "sources": [
+    "Slug flow",
+    "Kelvin-Helmholtz instability",
+    "Gas lift"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which slugging type involves liquid accumulating at low points on the sea bed?",
+     "o": [
+      "Terrain slugging",
+      "Hydrodynamic slugging",
+      "Annular slugging",
+      "Pigging"
+     ],
+     "a": 0,
+     "why": "Undulating terrain traps liquid until gas breaks through.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In the severe slugging cycle, what happens right after the riser fills with liquid?",
+     "o": [
+      "Gas reaches the riser base and blows out the liquid column",
+      "The pipe cools rapidly and the slug dissipates along the line",
+      "The slug disappears slowly",
+      "Pressure falls first"
+     ],
+     "a": 0,
+     "why": "Back pressure peaks, then gas penetrates and expels the liquid.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Gas lift at the riser base reduces slugging mainly because...",
+     "o": [
+      "It lightens the liquid column and increases velocity",
+      "It cools the fluid so gas dissolves into the liquid",
+      "It adds water",
+      "It stops gas"
+     ],
+     "a": 0,
+     "why": "Lower mixture density and higher velocity break the blocking cycle.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A field late in life has lower flow rates and starts to experience severe slugging. Why?",
+     "o": [
+      "Low velocities are insufficient to sweep liquid from the riser base",
+      "Pipes are older",
+      "Wax melts",
+      "Water gets saltier"
+     ],
+     "a": 0,
+     "why": "Severe slugging is more likely at low flow.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A large slug is predicted to arrive at the topside separator in 10 minutes and its volume exceeds buffer capacity. What is the safest action?",
+     "o": [
+      "Reduce inflow by choking and prepare to shut in",
+      "Increase flow to push the slug through quickly",
+      "Ignore it",
+      "Open the vent to sea"
+     ],
+     "a": 0,
+     "why": "Reducing flow protects equipment; venting liquid is unsafe and harmful.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use U_t = 1.2 U_m + 0.35√(gD) with g = 9.81 m/s², D = 0.30 m and U_m = 2.0 m/s. Find U_t in m/s (1 decimal place).",
+     "a": 3,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "2.4 + 0.35 × 1.716 = 3.0 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 300 m riser fills with liquid of density 800 kg/m³. Find the hydrostatic pressure in MPa (2 decimal places). Use g = 9.81 m/s².",
+     "a": 2.35,
+     "tol": 0.03,
+     "unit": "MPa",
+     "why": "800 × 9.81 × 300 = 2.354 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A hydrodynamic slug length is 30 pipe diameters and D = 0.30 m. What is the slug length in metres?",
+     "a": 9,
+     "tol": 0.1,
+     "unit": "m",
+     "why": "30 × 0.30 = 9 m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of a severe slugging cycle.",
+     "items": [
+      "Liquid blocks the riser base",
+      "Riser fills and upstream pressure rises",
+      "Gas penetrates and blows the liquid out",
+      "Liquid falls back and the cycle restarts"
+     ],
+     "why": "Blockage, pressure build-up, blow-out, fallback.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give two mitigation methods for severe slugging and explain how one of them works.",
+     "rubric": [
+      [
+       "choke",
+       "choking",
+       "valve",
+       "gas lift",
+       "slug catcher",
+       "injection",
+       "control",
+       "increase velocity",
+       "flow rate"
+      ],
+      [
+       "pressure",
+       "back pressure",
+       "lighter",
+       "density",
+       "velocity",
+       "buffer",
+       "volume",
+       "store",
+       "stabilise"
+      ],
+      [
+       "liquid",
+       "slug",
+       "riser",
+       "gas",
+       "separator"
+      ]
+     ],
+     "min": 2,
+     "model": "Topside choking raises back pressure and reduces gas expansion so the riser does not fill and blow out, while gas lift injects gas at the riser base to lighten the column and raise velocity. A slug catcher buffers the surge.",
+     "why": "Mitigation changes pressure, density or velocity, or buffers the slug.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A designer reduces riser diameter. What is the likely effect on severe slugging?",
+     "o": [
+      "Higher velocities, so slugging is less likely",
+      "More slugging because the flow becomes much faster",
+      "No change",
+      "Higher buoyancy"
+     ],
+     "a": 0,
+     "why": "A smaller diameter increases mixture velocity at the same flow rate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A slug-induced vibration shakes a riser at its natural frequency. What risk is created?",
+     "o": [
+      "Fatigue of the pipe and supports",
+      "Lower flow because vibration blocks the line",
+      "Better mixing only",
+      "Hydrate formation"
+     ],
+     "a": 0,
+     "why": "Repeated forcing near resonance leads to fatigue.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A process engineer proposes venting excess slug gas to the atmosphere to relieve pressure. What is the main concern?",
+     "o": [
+      "Safety and environmental harm from flammable gas and emissions",
+      "It is free",
+      "It cools gas",
+      "It makes more oil"
+     ],
+     "a": 0,
+     "why": "Venting hydrocarbons creates fire hazards and emissions; controlled flaring or process measures are used.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a riser can suddenly spit liquid",
+    "model": "At low flow, liquid blocks the base of the riser. Gas behind it builds up pressure until it pushes through and blows the whole liquid column out in one violent slug. Then liquid falls back and it repeats. Raising velocity, lightening the liquid with gas lift, choking at the top or using a slug catcher helps.",
+    "points": [
+     {
+      "k": [
+       "block",
+       "liquid",
+       "base",
+       "riser"
+      ],
+      "ask": "What starts the cycle?"
+     },
+     {
+      "k": [
+       "pressure",
+       "build",
+       "gas",
+       "behind"
+      ],
+      "ask": "What builds up?"
+     },
+     {
+      "k": [
+       "blow",
+       "push",
+       "expel",
+       "violent",
+       "slug"
+      ],
+      "ask": "How does it end?"
+     },
+     {
+      "k": [
+       "gas lift",
+       "choke",
+       "velocity",
+       "catcher"
+      ],
+      "ask": "How can it be reduced?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Gas hydrate formation and prevention",
+   "icon": "❄️",
+   "hook": "Methane and water are both fluids, yet together in a cold deep pipe they form a solid. What holds the gas inside a cage of water?",
+   "explain": [
+    "Gas hydrates are crystalline solids in which hydrogen-bonded water molecules form cages that trap small gas molecules like methane, ethane or CO₂. They form when free water and gas are present at high pressure and low temperature, outside the stability boundary (the hydrate equilibrium curve on a pressure-temperature plot). Subcooling is the difference between the equilibrium temperature at the line pressure and the actual temperature: ΔT_sub = T_eq − T. The larger the subcooling, the faster hydrates grow.",
+    "Prevention by thermodynamic means: keep the fluid warm (insulation, heated pipe), remove water (dehydration), lower the pressure (depressurisation during shutdown), or add thermodynamic hydrate inhibitors (THIs) such as methanol or MEG that shift the equilibrium curve to lower temperature. The Hammerschmidt equation gives an estimate: ΔT = K W ÷ [M (100 − W)], with K = 1297 for temperature in °C, W the weight % of inhibitor in the water phase and M its molar mass (methanol 32.04, MEG 62.07). Low-dosage inhibitors (kinetic inhibitors and anti-agglomerants) delay or disperse crystals instead.",
+    "Plug remediation is hazardous: hydrate plugs can be porous and contain pressurised gas, and when one side is depressurised the pressure difference can accelerate the plug like a projectile, or release gas violently. Standard practice is to depressurise from both sides slowly and equally, avoid being in line of the pipe, and use controlled, planned operations. Dissociation absorbs heat, so the plug can re-freeze with cooling by gas expansion. Chemicals injected are treated and recovered where possible, because MEG and methanol are polluting at the sea, so MEG is often regenerated and reused."
+   ],
+   "example": {
+    "q": "Use Hammerschmidt with K = 1297 (°C basis). Find the hydrate temperature depression with 20 wt% methanol (M = 32.04) in the water phase.",
+    "steps": [
+     "ΔT = 1297 × 20 ÷ [32.04 × (100 − 20)].",
+     "= 25 940 ÷ 2563.2.",
+     "= 10.1 °C."
+    ],
+    "a": "About 10.1 °C"
+   },
+   "analogies": {
+    "home": "Salt on an icy path lowers the freezing point; inhibitors lower the hydrate temperature in a similar way.",
+    "sport": "Slush in a sports drink is a mix of ice and water crystals. Hydrate slush can plug a line.",
+    "farm": "Anti-freeze in a tractor radiator stops ice forming, like MEG in a pipeline.",
+    "nature": "Frost on a window forms where cold air and moisture meet, like gas and water at cold pipe walls."
+   },
+   "mnemonic": "Gas + Water + Cold + Pressure. Remove one, or lower the curve with inhibitors.",
+   "terms": [
+    [
+     "Hydrate",
+     "Crystalline water cage solid containing gas molecules."
+    ],
+    [
+     "Subcooling",
+     "Equilibrium temperature minus actual temperature."
+    ],
+    [
+     "THI",
+     "Thermodynamic hydrate inhibitor such as methanol or MEG."
+    ],
+    [
+     "Anti-agglomerant",
+     "A chemical that keeps hydrate crystals small and flowing."
+    ]
+   ],
+   "misc": {
+    "wrong": "A line above 0 °C cannot form hydrates.",
+    "right": "At high pressure hydrates can form at temperatures well above 0 °C, which is why deepwater lines are at risk even in moderate-temperature water."
+   },
+   "limits": "Hydrate prediction depends on accurate fluid composition and salinity. Inhibitor equations are approximate, and kinetic effects (induction time) mean hydrates may not form instantly, but should not be relied on for safety.",
+   "trip": {
+    "wiki": "Clathrate hydrate",
+    "prompt": "Find the pressure-temperature diagram for methane hydrate and read how the equilibrium temperature changes with pressure."
+   },
+   "sources": [
+    "Clathrate hydrate",
+    "Hammerschmidt equation",
+    "Flow assurance"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which combination is necessary for hydrate formation?",
+     "o": [
+      "Water, gas, low temperature and high pressure",
+      "Oil and heat, with no free water or gas needed",
+      "Dry gas and low pressure",
+      "Sand and water"
+     ],
+     "a": 0,
+     "why": "All four conditions must occur together.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a larger subcooling mean?",
+     "o": [
+      "Stronger driving force for hydrates to form",
+      "Safer, because the fluid is further from trouble",
+      "Hotter fluid",
+      "No hydrates"
+     ],
+     "a": 0,
+     "why": "More subcooling means the fluid is further inside the hydrate region.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A line is shut in for 3 days and the fluid cools to 4 °C at 150 bar. The hydrate temperature is 17 °C. What is the immediate concern?",
+     "o": [
+      "Hydrate risk because it is far inside the hydrate region",
+      "Corrosion only",
+      "Wax melts",
+      "Low pressure"
+     ],
+     "a": 0,
+     "why": "The subcooling is 13 °C, a strong driving force.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A crew plans to clear a suspected hydrate plug by raising the pressure from one end. Why is this unsafe?",
+     "o": [
+      "A pressure difference across the plug can launch it at high speed",
+      "It cools the plug",
+      "It makes plugs larger",
+      "It stops flow"
+     ],
+     "a": 0,
+     "why": "Pressure on one side accelerates the plug; always depressurise from both sides.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is MEG often regenerated and reused offshore?",
+     "o": [
+      "It reduces cost and prevents chemical discharge to the sea",
+      "It tastes good",
+      "It makes more gas",
+      "It is rare in nature"
+     ],
+     "a": 0,
+     "why": "Recycling cuts chemical use and ocean pollution.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Equilibrium temperature at line pressure is 18 °C and the fluid is at 6 °C. Find the subcooling in °C.",
+     "a": 12,
+     "tol": 0.1,
+     "unit": "°C",
+     "why": "18 − 6 = 12 °C.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using ΔT = 1297 W / [M (100 − W)], find the depression for 20 wt% methanol (M = 32.04), in °C (1 decimal place).",
+     "a": 10.1,
+     "tol": 0.1,
+     "unit": "°C",
+     "why": "25 940 ÷ (32.04 × 80) = 10.12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using the same equation, find the depression for 40 wt% MEG (M = 62.07), in °C (1 decimal place).",
+     "a": 13.9,
+     "tol": 0.1,
+     "unit": "°C",
+     "why": "51 880 ÷ (62.07 × 60) = 13.93.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to how it prevents hydrates.",
+     "pairs": [
+      [
+       "Insulation",
+       "Keeps the fluid warm"
+      ],
+      [
+       "Dehydration",
+       "Removes free water"
+      ],
+      [
+       "Depressurisation",
+       "Moves out of the hydrate region"
+      ],
+      [
+       "MEG injection",
+       "Shifts the equilibrium curve"
+      ]
+     ],
+     "why": "Each removes one of the necessary conditions or shifts the boundary.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A hydrate plug is suspected in a subsea flowline. Describe a safe approach to remove it and explain one hazard.",
+     "rubric": [
+      [
+       "depressurise",
+       "depressurize",
+       "pressure"
+      ],
+      [
+       "both sides",
+       "both ends",
+       "equal",
+       "slowly",
+       "gradual"
+      ],
+      [
+       "projectile",
+       "gas",
+       "plug",
+       "move",
+       "rupture",
+       "freeze",
+       "refreeze",
+       "hazard",
+       "danger"
+      ]
+     ],
+     "min": 2,
+     "model": "Depressurise slowly from both sides of the plug so there is no pressure difference to drive it, and keep people clear. The hazard is that the plug can be shot along the pipe as a projectile or trapped gas can be released violently; dissociation cooling can also re-freeze the line.",
+     "why": "Balanced controlled depressurisation prevents plug acceleration.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A long shutdown is planned. Which strategy best reduces hydrate risk?",
+     "o": [
+      "Displace the line with inhibited fluid or depressurise to safe pressure",
+      "Leave it cold and pressurised",
+      "Stop all monitoring",
+      "Add water"
+     ],
+     "a": 0,
+     "why": "Remove the conditions before the line cools.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can kinetic inhibitors not be relied on at very high subcooling?",
+     "o": [
+      "They only delay nucleation and growth, and fail at high driving force",
+      "They are heavy",
+      "They create wax",
+      "They cool fluid"
+     ],
+     "a": 0,
+     "why": "KHIs work at moderate subcooling for limited time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Methane hydrate in sea-floor sediments holds a lot of gas. Why is it not simply exploited and burned as a clean fuel?",
+     "o": [
+      "Extraction is hard and methane is a potent greenhouse gas if released",
+      "Methane is not flammable",
+      "It is illegal everywhere",
+      "It is too hot"
+     ],
+     "a": 0,
+     "why": "Releasing methane would harm the climate and slope stability, so risks are significant.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why hydrates plug cold deep pipelines and how to stop them",
+    "model": "Hydrates are ice-like solids where water cages trap gas, forming at high pressure and low temperature. Engineers keep the fluid warm, remove water, lower pressure or inject inhibitors like MEG that lower the formation temperature. If a plug forms, depressurise slowly from both sides so it does not shoot along the pipe.",
+    "points": [
+     {
+      "k": [
+       "water",
+       "gas",
+       "cage",
+       "cold",
+       "pressure"
+      ],
+      "ask": "What do hydrates need?"
+     },
+     {
+      "k": [
+       "warm",
+       "insulat",
+       "remove water",
+       "depressur"
+      ],
+      "ask": "How can heat or water be managed?"
+     },
+     {
+      "k": [
+       "inhibitor",
+       "meg",
+       "methanol",
+       "lower"
+      ],
+      "ask": "What chemicals help?"
+     },
+     {
+      "k": [
+       "both sides",
+       "slowly",
+       "projectile",
+       "safe"
+      ],
+      "ask": "How is a plug cleared safely?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Offshore installation and integrity engineering",
+   "icon": "🧰",
+   "hook": "A structure that was safely installed 20 years ago is now thinner, cracked in places and carrying new equipment. How do engineers decide whether it can stay in service?",
+   "explain": [
+    "Installation engineering plans every marine operation: load-out, transport, lifting, launching, upending, pile driving, float-over and pipelay. Lift analysis finds the sling loads from the centre of gravity (CoG): for a load W on two lift points A and B a distance L apart with the CoG at a from A, R_A = W (L − a)/L and R_B = W a/L. Dynamic effects are covered by a DAF, and the splash zone is checked for slamming force F_s = ½ ρ C_s A v², where C_s is a slamming coefficient (about 5 as a stated typical value), A the projected area and v the impact velocity.",
+    "Integrity management keeps a structure safe through its life. The cycle is: identify threats (corrosion, fatigue, impact, scour, marine growth), assess risk, inspect (visual, ROV, ultrasonic thickness, magnetic particle and monitoring sensors), evaluate anomalies, and mitigate (repair, replace, change operations). Risk-based inspection puts effort where likelihood and consequence are highest. Fitness-for-service assessments decide whether a flaw is acceptable.",
+    "For corrosion, remaining life = (t_actual − t_required) ÷ corrosion rate. For fatigue, remaining life uses the accumulated damage and inspections of critical joints. Life extension needs evidence of condition, updated loads and sensitive checks. Digital twins and structural health monitoring combine models and sensor data, but data quality limits their value. Ethical and environmental duties include safe decommissioning, avoiding spills, and managing waste, since integrity failures harm both people and the ocean."
+   ],
+   "example": {
+    "q": "A 2000 kN module is lifted at two points 10 m apart with its CoG 4 m from lift point A. Find the sling reactions. Then a leg wall has t = 18 mm, required t = 12 mm and corrosion rate 0.3 mm/yr: find the remaining life.",
+    "steps": [
+     "R_A = 2000 × (10 − 4)/10 = 1200 kN; R_B = 2000 × 4/10 = 800 kN. (sum = 2000 kN)",
+     "Margin = 18 − 12 = 6 mm.",
+     "Remaining life = 6 ÷ 0.3 = 20 years."
+    ],
+    "a": "R_A = 1200 kN, R_B = 800 kN; remaining life 20 years"
+   },
+   "analogies": {
+    "home": "Carrying a long plank, the person closer to the middle weight takes more load, like the lift point nearer the CoG.",
+    "city": "A bridge gets regular inspections and load limits as it ages.",
+    "sport": "Athletes get health checks to decide if they can keep competing; structures get integrity checks.",
+    "tech": "A car's service history and sensors help decide when to repair or replace parts."
+   },
+   "mnemonic": "Closer to the CoG, bigger the load. Inspect, assess, mitigate, repeat.",
+   "terms": [
+    [
+     "Centre of gravity (CoG)",
+     "Point through which the weight of a lifted object acts."
+    ],
+    [
+     "Fitness-for-service",
+     "Assessment of whether a flawed item can stay in service."
+    ],
+    [
+     "Risk-based inspection",
+     "Planning inspection by likelihood and consequence of failure."
+    ],
+    [
+     "Remaining life",
+     "How long until a component reaches its limit."
+    ]
+   ],
+   "misc": {
+    "wrong": "If an inspection finds no problem, no further inspection is needed.",
+    "right": "Degradation continues and inspections also have limits in detection, so periodic and risk-based re-inspection is required."
+   },
+   "limits": "Corrosion rates are not constant, and fatigue life estimates are uncertain. A linear extrapolation is only a first estimate and needs margins, monitoring and expert review.",
+   "trip": {
+    "wiki": "Asset integrity management",
+    "prompt": "Find a flow diagram of an integrity management cycle and describe each stage."
+   },
+   "sources": [
+    "Asset integrity",
+    "Fitness for service",
+    "Offshore construction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In a two-point lift the CoG is closer to point A. Which point carries more load?",
+     "o": [
+      "A",
+      "B",
+      "Equal",
+      "Neither"
+     ],
+     "a": 0,
+     "why": "The support nearer the CoG carries a larger share.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is risk-based inspection?",
+     "o": [
+      "Planning inspection effort based on likelihood and consequence of failure",
+      "Inspecting at random",
+      "Inspecting only after failure",
+      "Inspecting only new items"
+     ],
+     "a": 0,
+     "why": "It prioritises items with higher risk.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A thickness survey shows the wall loss rate has doubled compared with last year. What should the engineer do?",
+     "o": [
+      "Recalculate remaining life and consider earlier repair or mitigation",
+      "Assume the old rate",
+      "Ignore it",
+      "Lower inspection frequency"
+     ],
+     "a": 0,
+     "why": "A new higher rate shortens life.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does slamming force depend on the square of impact velocity?",
+     "o": [
+      "Pressure from momentum change scales with v²",
+      "Water gets heavier as the body moves faster through it",
+      "Area shrinks",
+      "It does not"
+     ],
+     "a": 0,
+     "why": "F_s = ½ ρ C_s A v².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A lift needs a 6-hour weather window, but forecast confidence beyond 4 hours is low. What is the best choice?",
+     "o": [
+      "Wait for a more reliable forecast or shorten the operation",
+      "Start anyway",
+      "Skip checks",
+      "Increase speed"
+     ],
+     "a": 0,
+     "why": "Marine operations must stay inside limits with margins for uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A 2000 kN module on two lift points 10 m apart has its CoG 4 m from A. Find the load at A in kN.",
+     "a": 1200,
+     "tol": 1,
+     "unit": "kN",
+     "why": "R_A = W (L − a)/L = 2000 × 6/10 = 1200 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Wall thickness is 18 mm, minimum required is 12 mm and corrosion rate is 0.3 mm/year. Find the remaining life in years.",
+     "a": 20,
+     "tol": 0.2,
+     "unit": "years",
+     "why": "(18 − 12) ÷ 0.3 = 20 years.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use F_s = ½ ρ C_s A v² with ρ = 1025 kg/m³, C_s = 5, A = 24 m² and v = 1.0 m/s. Find F_s in kN (nearest whole number).",
+     "a": 61,
+     "tol": 1,
+     "unit": "kN",
+     "why": "0.5 × 1025 × 5 × 24 × 1 = 61 500 N = 61.5 kN.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of the integrity management cycle.",
+     "items": [
+      "Identify threats",
+      "Assess risk",
+      "Inspect",
+      "Evaluate anomalies",
+      "Mitigate and repair"
+     ],
+     "why": "Threats are identified and assessed before inspection and action; results feed back.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "An old platform is proposed for life extension. List two kinds of evidence an engineer would need before agreeing.",
+     "rubric": [
+      [
+       "inspection",
+       "survey",
+       "condition",
+       "thickness",
+       "crack",
+       "data"
+      ],
+      [
+       "fatigue",
+       "remaining life",
+       "assessment",
+       "analysis",
+       "calculation",
+       "updated",
+       "load"
+      ],
+      [
+       "repair",
+       "monitor",
+       "corrosion",
+       "history",
+       "records",
+       "sensor",
+       "margin"
+      ]
+     ],
+     "min": 2,
+     "model": "Recent inspection data showing the condition of corrosion, cracks and marine growth, and an updated structural and fatigue assessment with current loads and remaining life. Maintenance records and monitoring data support the decision.",
+     "why": "Life extension relies on condition evidence plus re-analysis.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A lift point is found to be 6 m from the CoG on a 10 m spreader. What is the sling share?",
+     "o": [
+      "Point near the CoG carries 60% of weight",
+      "50%, because the sling shares load equally",
+      "40%",
+      "Zero"
+     ],
+     "a": 0,
+     "why": "The support nearer the CoG takes the larger share: here the point 4 m from the CoG carries 6/10 = 60% of the weight.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A monitoring system shows rising vibration at a joint. Which action is most prudent?",
+     "o": [
+      "Inspect the joint and reassess the fatigue life",
+      "Ignore the sensors until the next planned survey",
+      "Add vibration",
+      "Paint it"
+     ],
+     "a": 0,
+     "why": "Early warning should lead to investigation.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "At the end of field life, why is complete removal of structures sometimes not chosen?",
+     "o": [
+      "Some parts may form habitat or removal may cause more harm; decisions weigh environment, safety and cost",
+      "Removal is impossible",
+      "Fish do not use structures",
+      "Regulators ban removal"
+     ],
+     "a": 0,
+     "why": "Decommissioning options are assessed against safety and environmental criteria and rules vary by region.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How engineers keep offshore structures safe for decades",
+    "model": "They plan lifts so each sling load is known and allow for motion. In service they inspect, measure corrosion and cracks, and use risk to decide where to look. They calculate remaining life from thickness and corrosion rate and repair or replace before limits are reached.",
+    "points": [
+     {
+      "k": [
+       "lift",
+       "sling",
+       "load",
+       "cog",
+       "centre of gravity"
+      ],
+      "ask": "How is a lift planned?"
+     },
+     {
+      "k": [
+       "inspect",
+       "survey",
+       "monitor",
+       "sensor"
+      ],
+      "ask": "How do they check the structure in service?"
+     },
+     {
+      "k": [
+       "corrosion",
+       "rate",
+       "remaining life",
+       "thickness"
+      ],
+      "ask": "How do they predict how long it lasts?"
+     },
+     {
+      "k": [
+       "repair",
+       "replace",
+       "risk",
+       "mitigate"
+      ],
+      "ask": "What do they do with the findings?"
+     }
+    ]
+   }
+  }
+ ]
+}

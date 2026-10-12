@@ -1,0 +1,2926 @@
+{
+ "world": 19,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced urban systems modelling",
+   "icon": "🧮",
+   "hook": "A model predicts that a new rail line will cut car trips by 12%. How much should a council trust that number, and what would you check first?",
+   "explain": [
+    "Urban systems models represent cities as interacting subsystems: land use, population, transport, economy, housing and environment. Types include system dynamics (stocks, flows and feedback loops), spatial interaction models such as the gravity model, discrete-choice models of travel behaviour, and agent-based models in which many simulated actors follow rules. Each answers different questions and makes different simplifications.",
+    "In system dynamics, a stock changes by inflows minus outflows: population(t + 1) = population(t) + births + in-migration − deaths − out-migration. Reinforcing feedback loops amplify change, while balancing loops dampen it; delays can cause overshoot. In the gravity model, expected trips between zones i and j are T = k × Pᵢ × Pⱼ ÷ d², where P is size, d is distance and k is a calibrated constant. Growth at rate g gives P(t) = P₀ × (1 + g)ᵗ.",
+    "Model use requires discipline. Calibration fits parameters to observed data; validation tests predictions on data not used in fitting. Sensitivity and scenario analysis show how conclusions change with assumptions; uncertainty is reported, not hidden. Models can embed values in the choice of objectives and data, so assumptions, code and data should be documented and open to challenge. A model supports a decision; it does not make it."
+   ],
+   "example": {
+    "q": "A city has 100,000 people. Each year, births plus in-migration add 3,200 and deaths plus out-migration remove 1,700. Population after 5 years, assuming constant flows? And at constant growth of 2% a year for 10 years?",
+    "steps": [
+     "Net flow = 3,200 − 1,700 = 1,500 per year; after 5 years: 100,000 + 7,500 = 107,500.",
+     "Growth model: 100,000 × 1.02¹⁰ with 1.02¹⁰ ≈ 1.2190.",
+     "= about 121,900."
+    ],
+    "a": "107,500 under constant net flow; about 121,900 under 2% compound growth."
+   },
+   "analogies": {
+    "home": "A bath fills from the tap (inflow) and drains through the plughole (outflow); the water level is the stock.",
+    "nature": "Predator and prey populations rise and fall in linked cycles, a classic feedback system.",
+    "sea": "Fish stocks respond to catch and breeding; setting quotas without feedback can overshoot.",
+    "tech": "A flight simulator is trusted only after testing against real flights."
+   },
+   "mnemonic": "Stocks, flows, feedback; fit, test, doubt: S-F-F then F-T-D.",
+   "terms": [
+    [
+     "Stock and flow",
+     "A quantity accumulated over time, and the rates that change it."
+    ],
+    [
+     "Feedback loop",
+     "A cycle in which a change influences itself, amplifying or dampening."
+    ],
+    [
+     "Calibration",
+     "Adjusting parameters so a model matches observed data."
+    ],
+    [
+     "Validation",
+     "Testing a model on data not used to build it."
+    ]
+   ],
+   "misc": {
+    "wrong": "A more detailed model is always more accurate.",
+    "right": "Extra detail can add uncertainty and hide assumptions; fit the model to the question and test it."
+   },
+   "limits": "All models simplify. Cities involve human behaviour and institutions that change, so long-run forecasts have wide uncertainty.",
+   "trip": {
+    "wiki": "System dynamics",
+    "prompt": "Find an example of a stock-and-flow diagram and identify one reinforcing and one balancing loop."
+   },
+   "sources": [
+    "System dynamics",
+    "Gravity model of trade",
+    "Agent-based model"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In a stock-and-flow model of population, which is a stock?",
+     "o": [
+      "Number of residents",
+      "Number of births recorded per year in the city",
+      "Number of deaths recorded per year in the city",
+      "Rate of migration into the city each year"
+     ],
+     "a": 0,
+     "why": "A stock is an accumulated quantity; births and deaths are flows.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A reinforcing feedback loop is one in which...",
+     "o": [
+      "Change in a variable tends to amplify itself",
+      "Changes always die out on their own over time",
+      "Nothing in the model is connected to anything else",
+      "The model is invalid and should be rebuilt"
+     ],
+     "a": 0,
+     "why": "Reinforcing loops amplify; balancing loops dampen.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why validate a model on data not used for calibration?",
+     "o": [
+      "To test whether it predicts rather than merely fits",
+      "To lower its accuracy on purpose before use",
+      "To hide errors from the people who read it",
+      "To reduce the size of the sample being studied"
+     ],
+     "a": 0,
+     "why": "A model can fit past data by construction yet fail on new data.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A model of a new road predicts a permanent fall in congestion because it assumes fixed travel demand. What is the most important critique?",
+     "o": [
+      "It ignores induced demand, which may refill the capacity",
+      "It is too cheap to be taken seriously by planners",
+      "It uses numbers that residents cannot easily follow",
+      "It was written in computer code that few people read"
+     ],
+     "a": 0,
+     "why": "Behavioural response can offset the effect.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "When is an agent-based model especially useful?",
+     "o": [
+      "When outcomes arise from interactions of many heterogeneous actors",
+      "When there is a single aggregate equation that explains the whole system",
+      "When no data exist about any actors",
+      "When the decisions of people are irrelevant to results"
+     ],
+     "a": 0,
+     "why": "ABMs capture emergent behaviour from local rules.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two models disagree on the effect of congestion pricing: −8% versus −15% traffic. What is the best next step?",
+     "o": [
+      "Compare assumptions, test with data and report a range with sensitivity analysis",
+      "Pick the one with the nicer-looking graphs and charts",
+      "Average them quietly and publish only the single result",
+      "Ignore both models and rely on instinct"
+     ],
+     "a": 0,
+     "why": "Understand why they differ and communicate uncertainty.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In a gravity model T = k × Pᵢ × Pⱼ ÷ d², with k = 2 × 10⁻⁶, Pᵢ = 50,000, Pⱼ = 20,000 and d = 5 km, how many trips are expected?",
+     "a": 80,
+     "tol": 0.1,
+     "unit": "trips",
+     "why": "2×10⁻⁶ × 1,000,000,000 = 2,000; 2,000 ÷ 25 = 80.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city of 100,000 grows at 2% a year (compound). Using 1.02¹⁰ = 1.2190, what is the population after 10 years, to the nearest thousand?",
+     "a": 122000,
+     "tol": 500,
+     "unit": "people",
+     "why": "100,000 × 1.2190 = 121,900, about 122,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps in building and using a model responsibly.",
+     "items": [
+      "Define the question and boundaries",
+      "Build the model from documented assumptions",
+      "Calibrate and validate against data",
+      "Run scenarios and sensitivity tests",
+      "Report results with uncertainty"
+     ],
+     "why": "The question defines the model; validation precedes use; uncertainty is reported.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain how delays in a feedback loop can cause overshoot in a city system such as housing construction.",
+     "rubric": [
+      [
+       "delay",
+       "lag",
+       "time",
+       "slow",
+       "years",
+       "late"
+      ],
+      [
+       "overshoot",
+       "oversupply",
+       "shortage",
+       "boom",
+       "bust",
+       "cycle",
+       "oscillat",
+       "too much",
+       "too many",
+       "correct"
+      ]
+     ],
+     "min": 2,
+     "model": "Housing takes years to plan and build, so supply responds late to price signals. Builders may add too much after a long shortage, causing oversupply and a bust, then too little, creating cycles.",
+     "why": "Delays cause oscillation and overshoot in balancing loops.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A consultancy supplies a transport model but will not release code or assumptions, citing commercial confidentiality. What is the most defensible position for the city?",
+     "o": [
+      "Require independent review of assumptions and key code under confidentiality terms before relying on it",
+      "Accept the results without any review, since the consultancy is expert",
+      "Reject all modelling of this kind as unreliable by nature",
+      "Use only the supplier's own summary of the findings"
+     ],
+     "a": 0,
+     "why": "Decisions need verifiable evidence; confidentiality can be managed through controlled review.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it risky to present a single forecast number to decision-makers? Suggest an alternative.",
+     "rubric": [
+      [
+       "uncertain",
+       "false precision",
+       "range",
+       "wrong",
+       "assum",
+       "error",
+       "variab"
+      ],
+      [
+       "scenario",
+       "interval",
+       "range",
+       "sensitiv",
+       "probab",
+       "band",
+       "report"
+      ]
+     ],
+     "min": 2,
+     "model": "A single number implies false precision and hides assumptions and uncertainty. Presenting scenarios, ranges or probability intervals with sensitivity analysis lets decision-makers judge risk.",
+     "why": "Communicating uncertainty is part of responsible modelling.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A model is tuned until it perfectly reproduces the last 10 years of data. What is the main concern?",
+     "o": [
+      "Overfitting: it may predict new conditions poorly",
+      "It is certainly correct, since it matches the data so well",
+      "It has too few parameters to describe the system properly",
+      "It cannot be validated by any method at all"
+     ],
+     "a": 0,
+     "why": "Perfect fit to history can capture noise rather than structure.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Urban systems models",
+    "model": "Urban models simplify a city into connected parts to test what might happen. System dynamics tracks stocks like population with flows like births and migration and feedback loops. Models are fitted to data, tested on new data and used with scenarios, because every forecast is uncertain.",
+    "points": [
+     {
+      "k": [
+       "stock",
+       "flow",
+       "feedback",
+       "loop",
+       "population"
+      ],
+      "ask": "How do system models work?"
+     },
+     {
+      "k": [
+       "calibrat",
+       "fit",
+       "validat",
+       "test",
+       "data"
+      ],
+      "ask": "How do we know a model is any good?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "scenario",
+       "range",
+       "sensitiv",
+       "assum"
+      ],
+      "ask": "How should results be reported?"
+     },
+     {
+      "k": [
+       "support",
+       "decision",
+       "not decide",
+       "judgement",
+       "values"
+      ],
+      "ask": "What role should a model play?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Strategic metropolitan planning",
+   "icon": "🌐",
+   "hook": "Twelve municipalities share one labour market, one river and one rail network, but each sets its own rules. What goes wrong, and what are the options for fixing it?",
+   "explain": [
+    "Metropolitan areas often cross many local jurisdictions. Fragmentation can cause spillovers (one municipality's decisions affect others), free-riding on shared services, competition to attract firms, and mismatches between where jobs and homes are located. Options include a metropolitan-wide authority, regional councils with limited powers, joint agreements for single services, or financial incentives from higher levels. No form is universally best; trade-offs include democratic closeness, scale economies and coordination costs.",
+    "The Tiebout hypothesis argues that residents sort among jurisdictions according to preferred bundles of taxes and services, promoting efficiency under strict assumptions. In practice, mobility is limited, which makes sorting unequal and may concentrate disadvantage. The principle of subsidiarity places decisions at the lowest level that can handle them effectively, with higher levels for spillovers and scale.",
+    "Strategic metropolitan plans set long-term spatial structure: growth areas, transit corridors, protected land, regional infrastructure and housing targets. Land value capture charges part of the land value created by public investment, such as a new station, to help pay for it. Indicators include the jobs-housing ratio (jobs ÷ homes) in sub-areas, average commute time, and the share of homes within walking distance of frequent transit. Governance choices should be assessed on stated criteria: effectiveness, accountability, equity and cost."
+   ],
+   "example": {
+    "q": "A new station raises the value of nearby land from 30 million to 50 million luns. A land value capture charge takes 40% of the increase. How much is raised? A sub-area has 180,000 jobs and 150,000 homes: what is the jobs-housing ratio?",
+    "steps": [
+     "Increase = 50 − 30 = 20 million.",
+     "Captured = 0.40 × 20 = 8 million.",
+     "Ratio = 180,000 ÷ 150,000 = 1.2."
+    ],
+    "a": "8 million luns; jobs-housing ratio 1.2 (jobs exceed homes, implying in-commuting)."
+   },
+   "analogies": {
+    "home": "Housemates who each decide separately how to use the shared kitchen end up with chaos unless they agree rules.",
+    "farm": "Farms along one river must coordinate water use or downstream farms suffer.",
+    "sea": "Ports in one bay competing on rates can all lose, while coordination can raise total efficiency.",
+    "tech": "Different systems need shared standards to interconnect."
+   },
+   "mnemonic": "Spill, Scale, Subsidiarity, Share (the costs): the four S's of metropolitan governance.",
+   "terms": [
+    [
+     "Spillover",
+     "An effect of one jurisdiction's decisions on another."
+    ],
+    [
+     "Subsidiarity",
+     "Deciding at the lowest level able to do it effectively."
+    ],
+    [
+     "Land value capture",
+     "Recovering part of the land value created by public action."
+    ],
+    [
+     "Jobs-housing ratio",
+     "Number of jobs divided by number of homes in an area."
+    ]
+   ],
+   "misc": {
+    "wrong": "A single metropolitan government is always better than many local ones.",
+    "right": "Consolidation can improve coordination but may reduce local responsiveness; evidence is mixed and context-dependent."
+   },
+   "limits": "Empirical findings on consolidation, competition and sorting are contested, and institutional history shapes what is feasible.",
+   "trip": {
+    "wiki": "Metropolitan area",
+    "prompt": "Find two metropolitan areas with different governance arrangements and compare them."
+   },
+   "sources": [
+    "Metropolitan area",
+    "Land value tax",
+    "Subsidiarity"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a spillover in metropolitan governance?",
+     "o": [
+      "An effect of one jurisdiction's decisions on residents of another",
+      "A flood that spreads across a boundary after heavy rain",
+      "A type of tax that is shared between two councils",
+      "A shortage of staff caused by a recruitment freeze"
+     ],
+     "a": 0,
+     "why": "Spillovers justify coordination.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The principle of subsidiarity says decisions should be taken...",
+     "o": [
+      "At the lowest level that can address them effectively",
+      "Always at the national level, whatever the issue",
+      "Always locally, regardless of the scale of the issue",
+      "By the largest firm that is affected by the issue"
+     ],
+     "a": 0,
+     "why": "Higher levels act where scale or spillovers require.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Municipalities compete by cutting developer fees to attract firms and all end up with less infrastructure revenue. This is an example of...",
+     "o": [
+      "A race to the bottom due to uncoordinated competition",
+      "Perfect efficiency in how the region uses its resources",
+      "Land value capture from rising property prices",
+      "Subsidiarity in action between several levels of government"
+     ],
+     "a": 0,
+     "why": "Competition can erode revenue needed for shared services.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about consolidating municipalities is best supported?",
+     "o": [
+      "Effects on cost and responsiveness vary with context and design",
+      "It always lowers costs, because there are fewer offices",
+      "It always raises costs, because the areas are larger",
+      "It has no effect on anything in the region"
+     ],
+     "a": 0,
+     "why": "Evidence is mixed.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A sub-area has a jobs-housing ratio of 3.0. What does this suggest?",
+     "o": [
+      "Heavy in-commuting and possible housing shortage near jobs",
+      "Too many homes in the area for the number of jobs",
+      "A balanced mix of homes and jobs in the sub-area",
+      "No traffic at all on the area's roads"
+     ],
+     "a": 0,
+     "why": "Many more jobs than homes implies workers live elsewhere.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A light-rail extension is planned. Which approach best finances part of it fairly?",
+     "o": [
+      "Land value capture from properties that gain from the new station",
+      "Taxing only people who never ride the new line",
+      "A secret charge placed on all passengers",
+      "No financing plan, with the cost left to be found later"
+     ],
+     "a": 0,
+     "why": "Charging beneficiaries is a recognised principle, though design matters.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A station raises nearby land value from 30 million to 50 million luns. A 40% value-capture charge applies to the increase. How much is raised in million luns?",
+     "a": 8,
+     "tol": 0,
+     "unit": "million luns",
+     "why": "0.4 × 20 = 8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A sub-area has 180,000 jobs and 150,000 homes. What is the jobs-housing ratio?",
+     "a": 1.2,
+     "tol": 0.01,
+     "why": "180,000 ÷ 150,000 = 1.2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the governance option to its main trade-off.",
+     "pairs": [
+      [
+       "Metropolitan authority",
+       "Better coordination but more distant from residents"
+      ],
+      [
+       "Joint service agreements",
+       "Flexible but limited to specific services"
+      ],
+      [
+       "Voluntary regional council",
+       "Low cost but limited power"
+      ],
+      [
+       "Higher-level incentives",
+       "Can steer action but depends on external funding"
+      ]
+     ],
+     "why": "Each option trades coordination, flexibility, power and accountability.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A region has twelve municipalities that each set their own parking and transport rules. Give one benefit and one cost of keeping this fragmented arrangement.",
+     "rubric": [
+      [
+       "local",
+       "responsive",
+       "close",
+       "choice",
+       "tailor",
+       "diversity",
+       "accountab",
+       "innovat"
+      ],
+      [
+       "spillover",
+       "coordinat",
+       "duplicat",
+       "inconsisten",
+       "free-rid",
+       "compet",
+       "cost",
+       "scale",
+       "mismatch"
+      ]
+     ],
+     "min": 2,
+     "model": "Benefit: local rules can respond to local preferences and stay close to residents. Cost: spillovers and poor coordination across boundaries, duplicated administration and inconsistent rules for people who travel across the region.",
+     "why": "A balanced answer names a benefit and a cost; neither is automatically decisive.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A metropolitan region considers a single transit authority versus separate municipal operators. Which evaluation is most defensible?",
+     "o": [
+      "Compare options on service coverage, cost, accountability and equity using evidence from comparable regions",
+      "Choose the authority because a bigger body is always better",
+      "Choose separate operators because local control is always better",
+      "Decide by tradition, as the current set-up has worked so far"
+     ],
+     "a": 0,
+     "why": "Stated criteria and comparative evidence beat ideology.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can the Tiebout sorting of residents among jurisdictions produce inequality, even if each jurisdiction is well run?",
+     "rubric": [
+      [
+       "sort",
+       "move",
+       "choose",
+       "afford",
+       "wealth",
+       "income",
+       "rich",
+       "poor"
+      ],
+      [
+       "tax base",
+       "service",
+       "segregat",
+       "concentrat",
+       "disadvantage",
+       "unequal",
+       "gap",
+       "revenue",
+       "inequal"
+      ]
+     ],
+     "min": 2,
+     "model": "Higher-income households can afford to move to jurisdictions with better services, leaving lower-income households concentrated in places with weaker tax bases, so service quality and opportunity diverge, which regional revenue sharing can offset.",
+     "why": "Sorting can reinforce disparities in tax base.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is a major risk of regional bodies with power but weak accountability?",
+     "o": [
+      "Decisions may be distant from residents and hard to challenge",
+      "Too much transparency for the public to follow",
+      "Too many local votes on every decision",
+      "Lower coordination in every case, whatever the structure"
+     ],
+     "a": 0,
+     "why": "Design must pair power with accountability.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Metropolitan planning",
+    "model": "A metropolitan area often has many local governments, so decisions in one place affect others. Regions can coordinate through a single authority, shared agreements or incentives. Each option trades coordination against closeness to residents, so choices should be judged against criteria like effectiveness, accountability and equity.",
+    "points": [
+     {
+      "k": [
+       "many",
+       "several",
+       "municipalit",
+       "jurisdiction",
+       "local governments"
+      ],
+      "ask": "Why is governance complicated?"
+     },
+     {
+      "k": [
+       "spillover",
+       "affect",
+       "others",
+       "shared",
+       "coordinat"
+      ],
+      "ask": "What problem arises?"
+     },
+     {
+      "k": [
+       "authority",
+       "agreement",
+       "incentive",
+       "council",
+       "option"
+      ],
+      "ask": "What can be done?"
+     },
+     {
+      "k": [
+       "trade-off",
+       "criteria",
+       "accountab",
+       "equity",
+       "effective"
+      ],
+      "ask": "How do we choose?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Public finance optimisation",
+   "icon": "⚙️",
+   "hook": "You have 10 million luns and four projects. How can you prove you chose the best combination, and what would 'best' even mean?",
+   "explain": [
+    "Public finance optimisation chooses taxes, spending and financing to achieve objectives subject to constraints. Objectives might include total welfare, access to services or equity; constraints include budget, legal rules and political feasibility. The method is: define objectives and weights, list options, estimate benefits and costs with uncertainty, and choose the combination with best value within constraints. In small cases, enumeration or a knapsack formulation works; larger problems use linear or integer programming.",
+    "Efficiency principles include equalising marginal benefit per luns across programmes at the optimum and minimising deadweight loss, the lost value when taxes distort behaviour. For a tax t that reduces quantity by ΔQ in a linear market, deadweight loss ≈ ½ × t × ΔQ. Tax incidence tells us who bears a tax regardless of who legally pays it, depending on relative elasticities. Equity concerns may justify departing from pure efficiency, and societies weigh these differently, so weights should be explicit.",
+    "Optimisation depends on the quality of inputs. Benefit estimates are uncertain, so robust choices test sensitivity and consider risk. Fiscal equalisation transfers help poorer jurisdictions provide comparable services. Optimisation is a decision aid: constraints and objectives are political choices that should be made openly."
+   ],
+   "example": {
+    "q": "Budget 10 million luns. Projects (cost, benefit): A (4, 7), B (3, 5), C (5, 8), D (2, 3), in millions. Which combination within budget maximises total benefit?",
+    "steps": [
+     "List feasible combinations: A+B+D = 9 cost, 15 benefit; A+C = 9, 15; B+C+D = 10, 16; A+B = 7, 12.",
+     "B+C+D uses exactly 10 and gives 5 + 8 + 3 = 16.",
+     "No combination within 10 exceeds 16."
+    ],
+    "a": "B+C+D with total benefit 16 million luns."
+   },
+   "analogies": {
+    "home": "Packing a suitcase with a weight limit means choosing the items that give the most value for their weight.",
+    "farm": "Allocating fertiliser across fields so the last kilo gives the same extra yield everywhere.",
+    "sport": "A coach allocates limited training minutes to where marginal improvement is greatest.",
+    "tech": "A team chooses features for a release within a fixed number of developer-days."
+   },
+   "mnemonic": "Objective, Options, Obstacles (constraints), Optimum, Open to challenge.",
+   "terms": [
+    [
+     "Constraint",
+     "A limit the solution must respect, such as a budget."
+    ],
+    [
+     "Deadweight loss",
+     "Value lost when a tax or distortion stops beneficial trades."
+    ],
+    [
+     "Tax incidence",
+     "Who ultimately bears the burden of a tax."
+    ],
+    [
+     "Fiscal equalisation",
+     "Transfers that reduce differences in ability to fund services."
+    ]
+   ],
+   "misc": {
+    "wrong": "The mathematically optimal solution removes the need for political judgement.",
+    "right": "The objective, weights and constraints encode values and must be chosen and justified openly."
+   },
+   "limits": "Optimisation depends on uncertain estimates, and aggregate welfare maximisation may conflict with fairness or rights-based criteria.",
+   "trip": {
+    "wiki": "Knapsack problem",
+    "prompt": "Find how the knapsack problem relates to choosing projects within a budget."
+   },
+   "sources": [
+    "Knapsack problem",
+    "Deadweight loss",
+    "Tax incidence"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is deadweight loss?",
+     "o": [
+      "Value lost when a distortion prevents beneficial trades",
+      "Revenue gathered by a government from a tax",
+      "A type of loan with a very long repayment time",
+      "The cost of administration only, in running a tax"
+     ],
+     "a": 0,
+     "why": "A tax can reduce trade below the efficient level.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "At an efficient allocation across programmes, what is equalised at the margin?",
+     "o": [
+      "Marginal benefit per luns",
+      "Total spending in each of the programmes",
+      "The number of staff in each programme",
+      "The average cost of each programme"
+     ],
+     "a": 0,
+     "why": "If one programme gave more benefit per luns, moving money there would improve value.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Tax incidence analysis says the burden of a tax depends mainly on...",
+     "o": [
+      "Relative elasticities of supply and demand",
+      "Who is legally required to hand the tax to the government",
+      "The name that the tax is given in law",
+      "The rank of the person who collects the tax"
+     ],
+     "a": 0,
+     "why": "The less elastic side bears more of the tax.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A project ranking gives top scores to projects in wealthier districts because benefits are valued by willingness to pay. Which adjustment is consistent with stated equity criteria?",
+     "o": [
+      "Add explicit distributional weights or equity criteria and show their effect",
+      "Ignore the issue, since the scores are objective",
+      "Remove all of the low-cost projects from the list",
+      "Hide the scores of projects in wealthier districts"
+     ],
+     "a": 0,
+     "why": "Explicit weights make value judgements transparent.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why test the sensitivity of an optimal choice?",
+     "o": [
+      "Inputs are uncertain and the best option may change",
+      "To lengthen the analysis so it looks more serious",
+      "To confuse readers who are not experts",
+      "Because optimisation is invalid in public decisions"
+     ],
+     "a": 0,
+     "why": "Robustness matters when inputs are estimates.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Fiscal equalisation transfers are mainly intended to...",
+     "o": [
+      "Reduce differences in ability to provide comparable services",
+      "Increase inequality between richer and poorer areas",
+      "Eliminate local government in favour of a national body",
+      "Cut all taxes paid by residents"
+     ],
+     "a": 0,
+     "why": "They help poorer jurisdictions with weaker tax bases.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "With a budget of 10 million luns and projects A (cost 4, benefit 7), B (3, 5), C (5, 8), D (2, 3), what is the maximum total benefit achievable in million luns?",
+     "a": 16,
+     "tol": 0,
+     "unit": "million luns",
+     "why": "B+C+D costs 10 and yields 16, the best feasible.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A tax of 4 luns per unit reduces quantity from 1,000 to 900 in a linear market. Using DWL ≈ ½ × t × ΔQ, what is the deadweight loss in luns?",
+     "a": 200,
+     "tol": 0,
+     "unit": "luns",
+     "why": "½ × 4 × 100 = 200.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps of a constrained project selection.",
+     "items": [
+      "State objectives and weights",
+      "List options and estimate benefits and costs",
+      "Apply the budget constraint and compare combinations",
+      "Test sensitivity to assumptions",
+      "Publish the choice with reasons"
+     ],
+     "why": "Objectives and options come before solving; testing and disclosure follow.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a cost-benefit ranking may differ from a ranking based on need or equity, and how a council should handle the difference.",
+     "rubric": [
+      [
+       "willing",
+       "wealth",
+       "income",
+       "market",
+       "aggregate",
+       "total",
+       "efficien",
+       "benefit"
+      ],
+      [
+       "need",
+       "equity",
+       "distribut",
+       "fair",
+       "weight",
+       "criteria",
+       "explicit",
+       "transparen",
+       "separate",
+       "poor"
+      ]
+     ],
+     "min": 2,
+     "model": "Cost-benefit analysis sums values often reflecting ability to pay, so it can favour wealthier areas, whereas need or equity criteria may favour disadvantaged groups. A council should state both criteria, apply explicit weights or report distributional effects, and explain the final choice.",
+     "why": "Transparent weighting reconciles efficiency and equity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The optimal package changes when one benefit estimate is lowered by 20%. What should analysts report?",
+     "o": [
+      "That the result is sensitive, with alternatives and the range of conditions where each is best",
+      "Only the original result, since the new estimate is doubtful",
+      "Only the new result, without mention of the earlier one",
+      "No result at all, until the estimates are certain"
+     ],
+     "a": 0,
+     "why": "Sensitivity information supports robust decisions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give one argument for and one against funding a municipality's services partly by transfers from other jurisdictions.",
+     "rubric": [
+      [
+       "equal",
+       "equity",
+       "fair",
+       "comparable",
+       "spillover",
+       "capacity",
+       "tax base",
+       "poor"
+      ],
+      [
+       "incentive",
+       "dependen",
+       "accountab",
+       "efficien",
+       "local",
+       "cost",
+       "distort",
+       "effort"
+      ]
+     ],
+     "min": 2,
+     "model": "For: transfers help places with weak tax bases provide comparable services and address spillovers. Against: they can weaken local accountability and incentives to raise revenue or manage costs unless well designed.",
+     "why": "A balanced answer weighs equity and incentives.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement best captures the role of optimisation in public decisions?",
+     "o": [
+      "It structures choices given stated objectives and constraints but does not replace democratic judgement",
+      "It produces the one correct policy that everyone must accept",
+      "It makes values and judgement unnecessary in public choices",
+      "It only works for tiny budgets with a handful of options"
+     ],
+     "a": 0,
+     "why": "Optimisation supports, not replaces, deliberation.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Optimising public spending",
+    "model": "Optimisation picks the best combination of projects and taxes given a goal and limits such as the budget. At the best point, an extra luns gives the same extra benefit everywhere. Taxes cause deadweight loss when they stop useful trades. Results depend on uncertain inputs and on value choices, so they must be tested and explained.",
+    "points": [
+     {
+      "k": [
+       "goal",
+       "objective",
+       "budget",
+       "constraint",
+       "limit"
+      ],
+      "ask": "What do you need to start?"
+     },
+     {
+      "k": [
+       "marginal",
+       "extra",
+       "benefit per",
+       "equal"
+      ],
+      "ask": "What is true at the best allocation?"
+     },
+     {
+      "k": [
+       "deadweight",
+       "distort",
+       "tax",
+       "loss",
+       "incidence"
+      ],
+      "ask": "What do taxes cost?"
+     },
+     {
+      "k": [
+       "uncertain",
+       "sensitiv",
+       "values",
+       "weights",
+       "explain",
+       "transparen"
+      ],
+      "ask": "What are the limits of the answer?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Integrated infrastructure governance",
+   "icon": "🔗",
+   "hook": "Water, power, transport and telecoms depend on each other. Who is responsible when a single failure in one brings down the rest?",
+   "explain": [
+    "Infrastructure networks are interdependent: pumps need electricity, power plants need water for cooling or fuel by road, telecoms need power, and emergency services need all of them. Integrated governance coordinates planning, regulation, investment and operation across sectors, often among multiple agencies and private operators, and looks at system-wide risk rather than only single assets.",
+    "Some networks are natural monopolies because duplicating them is wasteful, such as water pipes. Regulators then control prices and service quality. In price-cap regulation, allowed price changes follow a formula such as inflation minus an efficiency factor X, and the revenue requirement covers operating costs, depreciation and a return on the regulatory asset base (RAB): revenue = opex + depreciation + (RAB × allowed rate of return). Design must balance affordability, investment and financial viability.",
+    "Governance risks include regulatory capture (the regulator serving the industry), short-term budgeting that starves maintenance, and misaligned incentives in contracts. Good practice includes standards for asset management, independent regulators with transparent processes, whole-life cost assessment, stress testing for interdependent failures, shared data across agencies, and public reporting. Ownership models vary — public, private, mixed or community — and evidence suggests that governance quality matters more than ownership label alone."
+   ],
+   "example": {
+    "q": "A water utility has operating costs of 20 million luns, depreciation of 6 million, a RAB of 200 million and an allowed return of 5%. What is the revenue requirement? If inflation is 4% and X = 1.5%, by how much may prices rise?",
+    "steps": [
+     "Return = 0.05 × 200 = 10 million.",
+     "Revenue = 20 + 6 + 10 = 36 million.",
+     "Allowed rise = 4% − 1.5% = 2.5%."
+    ],
+    "a": "36 million luns; prices may rise 2.5%."
+   },
+   "analogies": {
+    "home": "A house with an electric water pump has no water when the power fails.",
+    "farm": "Irrigation depends on pumps, fuel and roads to the market all at once.",
+    "sea": "A port needs cranes (power), roads, customs data and tugs working together.",
+    "tech": "Cloud services depend on networks, power and cooling; a failure in any one affects all."
+   },
+   "mnemonic": "Map the links, Set the rules, Share the data, Stress-test the system.",
+   "terms": [
+    [
+     "Interdependency",
+     "When the operation of one system depends on another."
+    ],
+    [
+     "Natural monopoly",
+     "A market where one provider is most efficient, such as water pipes."
+    ],
+    [
+     "Regulatory asset base",
+     "The value of assets on which a regulated firm may earn a return."
+    ],
+    [
+     "Regulatory capture",
+     "When a regulator acts in the interest of the industry it regulates."
+    ]
+   ],
+   "misc": {
+    "wrong": "Private ownership of infrastructure always makes it more efficient.",
+    "right": "Outcomes depend on regulation, competition where possible, contracts and oversight, whatever the ownership."
+   },
+   "limits": "Evidence on ownership and regulation is mixed and context-specific, and modelling interdependent systems is difficult.",
+   "trip": {
+    "wiki": "Infrastructure",
+    "prompt": "Find an example where failure in one infrastructure system caused failures in others."
+   },
+   "sources": [
+    "Critical infrastructure",
+    "Natural monopoly",
+    "Regulatory capture"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why is a water network often treated as a natural monopoly?",
+     "o": [
+      "Duplicating pipes is wasteful so one provider is efficient",
+      "Water is illegal to sell to the public in most places",
+      "Pipes are cheap enough that anyone can lay them",
+      "Customers dislike having a choice of supplier"
+     ],
+     "a": 0,
+     "why": "High fixed costs make competition in the network inefficient.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is regulatory capture?",
+     "o": [
+      "A regulator serving the regulated industry's interests rather than the public's",
+      "A tax that is charged on every utility",
+      "A competitive bid that the regulator opens",
+      "A shutdown of a utility ordered by the regulator"
+     ],
+     "a": 0,
+     "why": "It undermines accountability to the public.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A city plans pump stations without checking power resilience. What risk does this ignore?",
+     "o": [
+      "Interdependency between water and electricity systems",
+      "Zoning rules for the land around the stations",
+      "Tax incidence among the customers of the utility",
+      "Land value capture from nearby property owners"
+     ],
+     "a": 0,
+     "why": "Pumps fail when electricity fails.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which safeguard best reduces regulatory capture risk?",
+     "o": [
+      "Transparent processes, public consultation and independent appointments",
+      "Closed meetings without public notice or minutes",
+      "Advisory panels made up of people from the industry only",
+      "No published decisions or reasons from the regulator"
+     ],
+     "a": 0,
+     "why": "Transparency and independence help resist capture.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A price cap formula allows 'inflation minus X'. What does X represent?",
+     "o": [
+      "An expected efficiency improvement passed on to customers",
+      "A tax that is added to every customer's bill",
+      "A tariff on goods imported by the utility",
+      "A random number chosen by the regulator"
+     ],
+     "a": 0,
+     "why": "X forces sharing of productivity gains.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about public versus private operation of water utilities is best supported?",
+     "o": [
+      "Results vary with regulation, contracts and governance quality",
+      "Private operation is always better than public operation",
+      "Public operation is always better than private operation",
+      "There is no difference between the two anywhere"
+     ],
+     "a": 0,
+     "why": "Evidence shows context dependence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A regulated utility has operating costs of 20 million luns, depreciation of 6 million, a RAB of 200 million and an allowed return of 5%. What is its revenue requirement in million luns?",
+     "a": 36,
+     "tol": 0,
+     "unit": "million luns",
+     "why": "20 + 6 + 0.05 × 200 = 36.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Inflation is 4% and the efficiency factor X is 1.5%. What is the permitted real price change formula result, inflation minus X, in percent?",
+     "a": 2.5,
+     "tol": 0.01,
+     "unit": "%",
+     "why": "4 − 1.5 = 2.5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each failure to a likely dependent system affected.",
+     "pairs": [
+      [
+       "Power outage",
+       "Water pumping"
+      ],
+      [
+       "Telecom outage",
+       "Emergency dispatch"
+      ],
+      [
+       "Road closure",
+       "Fuel deliveries to generators"
+      ],
+      [
+       "Water loss",
+       "Power plant cooling"
+      ]
+     ],
+     "why": "Dependencies link sectors.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain two reasons why governance may need to cut across infrastructure sectors rather than treating each separately.",
+     "rubric": [
+      [
+       "interdepend",
+       "depend",
+       "cascad",
+       "link",
+       "connected",
+       "knock-on",
+       "one failure"
+      ],
+      [
+       "coordinat",
+       "shared",
+       "joint",
+       "system",
+       "risk",
+       "plan",
+       "data",
+       "efficien",
+       "duplicat",
+       "cost"
+      ]
+     ],
+     "min": 2,
+     "model": "Sectors depend on each other, so one failure can cascade, and system-wide risk is missed if each agency looks only at its own assets. Coordinated planning, shared data and joint stress tests also avoid duplicated works and reduce costs.",
+     "why": "Integration addresses interdependency and efficiency.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A regulator must set a price cap. The utility argues for higher prices to fund renewal; consumer groups argue for lower prices. What is a defensible approach?",
+     "o": [
+      "Use independent evidence on costs and asset condition, publish the method and test affordability for low-income customers",
+      "Accept the utility's figures without any independent review",
+      "Set prices by the vote of consumer groups only",
+      "Delay the decision indefinitely, until both sides agree"
+     ],
+     "a": 0,
+     "why": "Transparent evidence-based regulation balances investment and affordability.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can short budget cycles undermine infrastructure resilience, and what governance fix helps?",
+     "rubric": [
+      [
+       "short",
+       "annual",
+       "election",
+       "cycle",
+       "year",
+       "near-term",
+       "quick"
+      ],
+      [
+       "maintenance",
+       "renewal",
+       "deferred",
+       "backlog",
+       "long",
+       "ring-fenc",
+       "asset management",
+       "multi-year",
+       "reserve",
+       "plan"
+      ]
+     ],
+     "min": 2,
+     "model": "Annual or electoral budget cycles favour visible new projects and delay maintenance, which builds a backlog and raises failure risk. Multi-year asset management plans, ring-fenced renewal funds and independent condition reporting help.",
+     "why": "Incentives and structures shape maintenance outcomes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a good indicator of infrastructure system resilience?",
+     "o": [
+      "Time to restore service after stress tests and real events",
+      "The number of reports printed about the system",
+      "The length of the contracts with suppliers",
+      "The number of meetings held with the public"
+     ],
+     "a": 0,
+     "why": "Recovery performance reflects resilience.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Integrated infrastructure governance",
+    "model": "Water, power, transport and communications depend on each other, so a failure can spread. Integrated governance coordinates agencies, shares data, tests the system under stress and uses independent, transparent regulation for monopoly networks. Good governance matters more than ownership alone.",
+    "points": [
+     {
+      "k": [
+       "depend",
+       "interdepend",
+       "link",
+       "connected",
+       "cascad"
+      ],
+      "ask": "Why are the networks linked?"
+     },
+     {
+      "k": [
+       "monopoly",
+       "regulat",
+       "price",
+       "cap",
+       "independent"
+      ],
+      "ask": "How are monopoly networks controlled?"
+     },
+     {
+      "k": [
+       "maintain",
+       "renewal",
+       "long",
+       "asset",
+       "budget"
+      ],
+      "ask": "What is a common weakness?"
+     },
+     {
+      "k": [
+       "share",
+       "data",
+       "test",
+       "stress",
+       "coordinat",
+       "transparen"
+      ],
+      "ask": "What does integration involve?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Environmental and social impact assessment",
+   "icon": "📋",
+   "hook": "A new port would bring 2,000 jobs, but it would also affect a fishing community and a wetland. How should the benefits and harms be weighed, and who gets to speak?",
+   "explain": [
+    "Environmental and social impact assessment (ESIA) is a structured process that predicts and evaluates the effects of a proposed project or plan before decisions are made. Typical stages are screening (is an assessment needed?), scoping (what matters?), baseline studies, impact prediction and significance evaluation, mitigation, public participation, reporting, decision, and monitoring. Legal requirements and thresholds differ across countries.",
+    "The mitigation hierarchy orders responses: avoid impacts, minimise them, restore or rehabilitate, and as a last resort offset residual impacts. Cumulative impact assessment considers combined effects with other projects. Social assessment covers livelihoods, health, culture, displacement and gender; where Indigenous peoples are affected, international standards stress free, prior and informed consent. Noise adds logarithmically: two equal sources of L dB give L + 10 log₁₀(2) ≈ L + 3 dB.",
+    "Valuation methods can express some effects in money, but not all values are readily monetised, and distribution matters: gains may fall on different people than losses. Distributional weights can make equity explicit. Good practice is early consultation, independent review, accessible reports, clear commitments with monitoring, grievance mechanisms and compensation that is fair and timely. Assessments are often criticised when done late or as box-ticking; effectiveness depends on their influence on design and decisions."
+   ],
+   "example": {
+    "q": "Two noise sources each produce 70 dB at a house. What is the combined level? Net benefits: high-income group +10 million luns, low-income group −4 million; with distributional weights 1 and 2, what is the weighted net benefit?",
+    "steps": [
+     "Combined = 70 + 10 × log₁₀(2) ≈ 70 + 3.0 = 73 dB.",
+     "Weighted: 1 × 10 + 2 × (−4) = 10 − 8 = 2.",
+     "Unweighted would be 6 million; weighting shows losses to the poorer group matter more."
+    ],
+    "a": "About 73 dB; weighted net benefit +2 million luns (unweighted +6 million)."
+   },
+   "analogies": {
+    "home": "Before adding a room, you check the foundations, the neighbours' light and your budget.",
+    "farm": "A farmer considers soil, water and neighbours before planting a new crop near a stream.",
+    "sea": "A harbour dredging plan checks fish breeding seasons and currents first.",
+    "nature": "A river's ecosystem responds to small changes upstream, which must be anticipated."
+   },
+   "mnemonic": "Screen, Scope, Study, Weigh, Mitigate, Monitor.",
+   "terms": [
+    [
+     "Mitigation hierarchy",
+     "Avoid, minimise, restore, offset, in that order."
+    ],
+    [
+     "Cumulative impact",
+     "Combined effect of a project with other past, present and future activities."
+    ],
+    [
+     "Baseline",
+     "The existing conditions against which change is measured."
+    ],
+    [
+     "Free, prior and informed consent",
+     "The right of affected Indigenous peoples to give or withhold agreement before a project."
+    ]
+   ],
+   "misc": {
+    "wrong": "An ESIA is just a form to get approval.",
+    "right": "A good ESIA shapes design and decisions, with commitments that are monitored and enforced."
+   },
+   "limits": "Predictions are uncertain, monetary valuation cannot capture every value, and requirements vary by jurisdiction.",
+   "trip": {
+    "wiki": "Environmental impact assessment",
+    "prompt": "Find the stages of an EIA and which stage allows the public to comment."
+   },
+   "sources": [
+    "Environmental impact assessment",
+    "Social impact assessment",
+    "Mitigation hierarchy"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In the mitigation hierarchy, which comes first?",
+     "o": [
+      "Avoid",
+      "Offset",
+      "Restore",
+      "Compensate afterwards"
+     ],
+     "a": 0,
+     "why": "Avoidance is preferred over later fixes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of a baseline study?",
+     "o": [
+      "To establish existing conditions against which change is measured",
+      "To justify approval of the project that is already planned",
+      "To estimate the costs of the project only",
+      "To avoid the need for consultation with residents"
+     ],
+     "a": 0,
+     "why": "Without a baseline, impacts cannot be measured.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A project's assessment ignores two other nearby projects affecting the same river. What is missing?",
+     "o": [
+      "Cumulative impact assessment",
+      "Screening of projects to decide if a study is required",
+      "Monitoring of effects after the project is built",
+      "A baseline study of existing conditions"
+     ],
+     "a": 0,
+     "why": "Combined effects can be significant even if each is small.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A fishing community will lose access to a fishing ground but receives one-time cash compensation. Which concern is most relevant?",
+     "o": [
+      "Livelihood restoration and the long-term fairness of the compensation",
+      "Only the price of fish at the local market",
+      "Only the speed at which the project is finished",
+      "Nothing, since cash compensation settles the matter"
+     ],
+     "a": 0,
+     "why": "Social assessment looks at livelihoods, not only one-off payments.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does early consultation improve an ESIA?",
+     "o": [
+      "It can shape the design and scope before decisions are fixed",
+      "It slows everything down for no good reason",
+      "It replaces the studies that the assessment requires",
+      "It hides the impacts from the people affected"
+     ],
+     "a": 0,
+     "why": "Early input can avoid problems and identify issues.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement about monetary valuation of impacts is most accurate?",
+     "o": [
+      "It can inform choices but cannot capture all values, and distribution matters",
+      "It captures every value that people place on nature and ways of life",
+      "It is illegal in most countries",
+      "It never helps decisions in any case"
+     ],
+     "a": 0,
+     "why": "Some values are hard to monetise; equity needs separate attention.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Two equal noise sources each produce 70 dB. Using combined level = 70 + 10 × log₁₀(2) and log₁₀(2) = 0.301, what is the combined level in dB?",
+     "a": 73,
+     "tol": 0.1,
+     "unit": "dB",
+     "why": "70 + 3.01 = 73.01.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A project gives +12 million luns to a group with distributional weight 1 and −5 million luns to a group with weight 2. What is the weighted net benefit in million luns?",
+     "a": 2,
+     "tol": 0,
+     "unit": "million luns",
+     "why": "12 − 10 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the usual stages of an impact assessment.",
+     "items": [
+      "Screening",
+      "Scoping",
+      "Baseline and impact prediction",
+      "Mitigation and public review",
+      "Decision and monitoring"
+     ],
+     "why": "Assessment moves from deciding whether to assess to monitoring after the decision.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A developer proposes to offset wetland loss by creating a wetland elsewhere. Give two questions an assessor should ask.",
+     "rubric": [
+      [
+       "avoid",
+       "minimi",
+       "first",
+       "alternative",
+       "hierarchy",
+       "could it be"
+      ],
+      [
+       "equivalent",
+       "like-for-like",
+       "function",
+       "time",
+       "success",
+       "monitor",
+       "local",
+       "communit",
+       "uncertain",
+       "guarantee"
+      ]
+     ],
+     "min": 2,
+     "model": "Ask whether the impact can be avoided or reduced first, as offsets are last resort, and whether the new wetland will be ecologically equivalent, delivered in time, near the affected community, monitored and legally guaranteed.",
+     "why": "Offsets are uncertain and must follow the hierarchy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An assessment paid for by the developer concludes impacts are minor. Which safeguard best builds trust?",
+     "o": [
+      "Independent review, public access to data and methods, and a mechanism for affected people to comment and complain",
+      "Keep the data confidential, so that others cannot challenge it",
+      "Accept the conclusion, since the developer is an expert",
+      "Skip the review to save time on the project"
+     ],
+     "a": 0,
+     "why": "Independence and transparency reduce bias.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why might a project with a positive overall benefit-cost ratio still be unacceptable on social grounds? Suggest how decision rules could address this.",
+     "rubric": [
+      [
+       "distribut",
+       "few",
+       "group",
+       "harm",
+       "displac",
+       "unfair",
+       "rights",
+       "concentrat",
+       "bear"
+      ],
+      [
+       "safeguard",
+       "consent",
+       "compensat",
+       "minimum",
+       "threshold",
+       "standard",
+       "redesign",
+       "criteria",
+       "rights",
+       "reject",
+       "weights"
+      ]
+     ],
+     "min": 2,
+     "model": "Total benefits can hide that costs fall heavily on vulnerable people or breach rights. Decision rules can set minimum safeguards or consent requirements, require fair compensation or redesign, and use distributional criteria alongside the ratio.",
+     "why": "Efficiency does not settle distribution or rights.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What makes monitoring commitments credible?",
+     "o": [
+      "Published targets, independent verification and consequences for non-compliance",
+      "Verbal promises made by officials at public meetings",
+      "Secret files held by the project team",
+      "Annual slogans printed in the project newsletter"
+     ],
+     "a": 0,
+     "why": "Enforcement and transparency make commitments real.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Impact assessment",
+    "model": "An impact assessment predicts the environmental and social effects of a project before it is approved. It starts with a baseline, consults affected people, tries first to avoid harm, then to reduce, restore and only last to offset it. Results should shape the design, and the promises should be monitored.",
+    "points": [
+     {
+      "k": [
+       "predict",
+       "effects",
+       "impact",
+       "before"
+      ],
+      "ask": "What does an assessment do?"
+     },
+     {
+      "k": [
+       "baseline",
+       "existing",
+       "current",
+       "conditions"
+      ],
+      "ask": "What do you compare with?"
+     },
+     {
+      "k": [
+       "avoid",
+       "minimi",
+       "restore",
+       "offset",
+       "hierarchy"
+      ],
+      "ask": "How is harm handled?"
+     },
+     {
+      "k": [
+       "consult",
+       "affected",
+       "people",
+       "monitor",
+       "fair"
+      ],
+      "ask": "Who is involved and what follows?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Complex emergency management",
+   "icon": "🌀",
+   "hook": "A flood arrives during a heatwave, with a cyber attack on the dispatch system and a nearby chemical plant at risk. How do you plan for several things going wrong at once?",
+   "explain": [
+    "Complex emergencies combine hazards, failures and social stresses: compound events (such as flood plus heat), cascading failures across infrastructure, and long recovery periods. Planning moves from single-hazard plans to all-hazards, capability-based planning, in which cities build general capacities (command, warning, evacuation, shelter, medical surge, logistics, communication) usable across scenarios.",
+    "Risk analysis combines likelihood and consequence. Expected annual loss = annual probability × loss if the event occurs. For infrequent but catastrophic events, expected values can understate the need for protection, so planners also consider worst-case and robustness. Evacuation planning uses clearance time: time = number of vehicles ÷ road capacity. Queueing ideas show why systems collapse when demand exceeds capacity even briefly, so surge capacity and mutual aid agreements matter.",
+    "Governance challenges include coordination among many agencies, clear authority and information sharing. Equity is central: people in poverty, with disabilities, without cars or language access suffer more. Legal frameworks for emergency powers vary, but good practice includes proportionality, time limits and review. Recovery should aim to reduce future risk, restore livelihoods and involve communities, and after-action reviews should lead to tracked change. Trust built before a crisis matters during it."
+   ],
+   "example": {
+    "q": "60,000 residents must evacuate by car, averaging 3 per vehicle. Two lanes can each move 1,800 vehicles per hour. What is the clearance time? And if a flood has a 1% annual chance and would cause 500 million luns of loss, what is the expected annual loss?",
+    "steps": [
+     "Vehicles = 60,000 ÷ 3 = 20,000.",
+     "Capacity = 2 × 1,800 = 3,600 per hour; time = 20,000 ÷ 3,600 ≈ 5.56 hours.",
+     "EAL = 0.01 × 500 million = 5 million luns."
+    ],
+    "a": "About 5.6 hours; expected annual loss 5 million luns."
+   },
+   "analogies": {
+    "home": "A family emergency kit with a plan for different problems works better than a plan for one specific event.",
+    "farm": "A farm prepares for drought, flood and disease by keeping reserves and flexible equipment.",
+    "sea": "A ship drills for fire, flooding and abandon-ship, since any may occur.",
+    "tech": "Systems designed to degrade gracefully keep core functions when parts fail."
+   },
+   "mnemonic": "All hazards, core capabilities, equity, review: A-C-E-R.",
+   "terms": [
+    [
+     "Compound event",
+     "Two or more hazards occurring together or in sequence, amplifying impact."
+    ],
+    [
+     "Capability-based planning",
+     "Building general capacities rather than separate plans for each hazard."
+    ],
+    [
+     "Expected annual loss",
+     "Annual probability of an event times its loss."
+    ],
+    [
+     "Surge capacity",
+     "Ability to expand services rapidly when demand spikes."
+    ]
+   ],
+   "misc": {
+    "wrong": "Expected loss alone tells us how much protection a rare disaster deserves.",
+    "right": "Catastrophic, irreversible harm may justify more protection than expected values suggest, so robustness and equity also count."
+   },
+   "limits": "Probabilities for rare compound events are hard to estimate, and assumptions about behaviour in crises are uncertain.",
+   "trip": {
+    "wiki": "Emergency management",
+    "prompt": "Find the difference between hazard-specific planning and all-hazards planning."
+   },
+   "sources": [
+    "Emergency management",
+    "Compound event",
+    "Resilience (engineering)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is capability-based planning?",
+     "o": [
+      "Building general capacities usable across many scenarios",
+      "Writing a separate plan for each single hazard only",
+      "Buying equipment for the plan and nothing else",
+      "Avoiding drills, as they use up resources"
+     ],
+     "a": 0,
+     "why": "Core capabilities support flexibility.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can expected annual loss mislead for rare catastrophic events?",
+     "o": [
+      "It averages over time and may understate the need for protection against irreversible, extreme harm",
+      "It is always too high to be used in a plan",
+      "It ignores probability altogether, and uses only the damage",
+      "It is illegal to calculate for public planning"
+     ],
+     "a": 0,
+     "why": "Averages hide tail risk.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A hospital receives double its normal patients for a week. Which concept is most relevant?",
+     "o": [
+      "Surge capacity",
+      "Land value capture",
+      "Subsidiarity",
+      "Discounting"
+     ],
+     "a": 0,
+     "why": "Surge capacity addresses sudden demand spikes.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Residents without cars are unlikely to evacuate unaided. Which plan is most appropriate?",
+     "o": [
+      "Provide transport, pickup points and accessible information in several languages",
+      "Assume everyone drives, and plan only for roads",
+      "Tell them to find their own way when the time comes",
+      "Cancel the evacuation for areas with fewer cars"
+     ],
+     "a": 0,
+     "why": "Equity requires planning for those with fewer options.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Mutual aid agreements with neighbouring cities primarily help by...",
+     "o": [
+      "Providing additional resources when local capacity is overwhelmed",
+      "Reducing coordination between neighbouring cities",
+      "Eliminating the risk of hazards in the region",
+      "Increasing paperwork only, with no real aid"
+     ],
+     "a": 0,
+     "why": "They extend capacity in surges.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "After a flood the city plans to rebuild exactly as before. What opportunity is missed?",
+     "o": [
+      "Reducing future risk through improved design and location",
+      "Using the same contractor who built it before",
+      "Keeping records of the damage for the files",
+      "Paying the staff who help with the rebuilding"
+     ],
+     "a": 0,
+     "why": "Recovery can reduce vulnerability.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "60,000 residents evacuate at 3 per vehicle through two lanes each moving 1,800 vehicles per hour. What is the clearance time in hours (to one decimal place)?",
+     "a": 5.6,
+     "tol": 0.1,
+     "unit": "hours",
+     "why": "20,000 vehicles ÷ 3,600 per hour = 5.56.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A flood has a 1% annual chance and would cause 500 million luns of loss. What is the expected annual loss in million luns?",
+     "a": 5,
+     "tol": 0,
+     "unit": "million luns",
+     "why": "0.01 × 500 = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the capability to an example.",
+     "pairs": [
+      [
+       "Warning",
+       "Alerts in several languages and formats"
+      ],
+      [
+       "Evacuation",
+       "Transport for people without cars"
+      ],
+      [
+       "Medical surge",
+       "Temporary beds and staff plans"
+      ],
+      [
+       "Logistics",
+       "Pre-arranged supply of water and fuel"
+      ]
+     ],
+     "why": "Capabilities are general functions needed in many emergencies.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Describe two ways a city can prepare for compound events such as a heatwave during a power outage.",
+     "rubric": [
+      [
+       "cooling",
+       "shelter",
+       "heat",
+       "vulnerable",
+       "check on",
+       "elderly",
+       "water"
+      ],
+      [
+       "backup",
+       "power",
+       "generator",
+       "communicat",
+       "plan",
+       "drill",
+       "scenario",
+       "coordinat",
+       "mutual",
+       "agreement",
+       "exercise",
+       "resilien"
+      ]
+     ],
+     "min": 2,
+     "model": "Plan scenarios that combine hazards and exercise them, provide backup power at cooling centres and critical sites, set up door-to-door checks for vulnerable residents, and arrange mutual aid and communications that work without grid power.",
+     "why": "Compound events require joint scenarios and general capacities.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city has funds to harden either an electricity substation serving many critical sites or to expand shelters for an existing hazard. How should it decide?",
+     "o": [
+      "Use risk analysis that includes dependencies, severity, equity and cost, and consider combinations",
+      "Choose the cheaper one, since cost is the only fair test",
+      "Choose the one favoured by the largest group of residents",
+      "Choose by random draw, so that nobody can complain"
+     ],
+     "a": 0,
+     "why": "System-wide criteria improve choices.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do emergency powers raise accountability concerns, and what safeguards can address them?",
+     "rubric": [
+      [
+       "rights",
+       "abuse",
+       "power",
+       "concentrat",
+       "liberty",
+       "restrict",
+       "overreach"
+      ],
+      [
+       "time",
+       "limit",
+       "review",
+       "oversight",
+       "court",
+       "legislat",
+       "proportion",
+       "transparen",
+       "sunset",
+       "report"
+      ]
+     ],
+     "min": 2,
+     "model": "Emergency powers can restrict rights and concentrate authority, risking overreach. Safeguards include time limits, proportionality, oversight by the legislature or courts, and public reporting and after-action review.",
+     "why": "Even in crises, power needs checks.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which finding from an after-action review is most useful?",
+     "o": [
+      "Specific, assigned, trackable recommendations",
+      "General praise for everyone who took part in the response",
+      "A list of complaints, with no owners named",
+      "A recording of the speeches given at the review"
+     ],
+     "a": 0,
+     "why": "Action items with owners drive change.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex emergency management",
+    "model": "Complex emergencies combine several hazards or failures at once. Cities prepare general capabilities such as command, warning, evacuation and medical surge, assess risk using likelihood and consequence, plan for people who need extra help, and review what happened so the lessons are acted on. Emergency powers must be limited and checked.",
+    "points": [
+     {
+      "k": [
+       "compound",
+       "several",
+       "multiple",
+       "cascad",
+       "at once"
+      ],
+      "ask": "What makes an emergency complex?"
+     },
+     {
+      "k": [
+       "capabilit",
+       "general",
+       "command",
+       "warning",
+       "evacuat",
+       "surge"
+      ],
+      "ask": "How do cities prepare?"
+     },
+     {
+      "k": [
+       "likelihood",
+       "consequence",
+       "probab",
+       "loss",
+       "risk"
+      ],
+      "ask": "How is risk assessed?"
+     },
+     {
+      "k": [
+       "equity",
+       "vulnerable",
+       "review",
+       "limited",
+       "checks",
+       "accountab"
+      ],
+      "ask": "What principles guide it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Institutional accountability and governance reform",
+   "icon": "🏛️",
+   "hook": "Many countries have rewritten their local government laws, yet some reforms changed the rules on paper without changing behaviour. What separates reforms that stick from those that do not?",
+   "explain": [
+    "Accountability exists when those with power must explain and justify their actions to others and can face consequences. Institutional design combines answerability (information and justification), enforceability (sanctions or rewards) and channels (elections, courts, audit bodies, oversight committees, media and citizens). Principal-agent analysis shows that accountability needs information, incentives and capacity to act on that information.",
+    "Reform strategies include decentralisation, civil service reform, open data, participatory budgeting, performance management and anti-corruption agencies. Evidence is mixed and context-dependent. Reforms that copy the form of another country's institutions without the supporting incentives or capacity may fail, sometimes called isomorphic mimicry. Political economy matters: reforms create winners and losers, and those who lose may block them. Sequencing, coalitions, windows of opportunity and credible enforcement affect success.",
+    "Deterrence reasoning illustrates incentives: a person is deterred if the expected penalty (probability of detection times penalty) exceeds the expected gain from wrongdoing. Raising penalties without raising detection may do little; better detection can matter more. Evaluating reforms requires pilots, comparison groups and attention to unintended effects. Legitimacy and fairness of procedures also influence compliance, so reforms should be transparent and inclusive."
+   ],
+   "example": {
+    "q": "A person could gain 100,000 luns from a corrupt act. The chance of detection is 20%. The penalty is 400,000 luns. Is the person deterred (on expected value)? What penalty would just deter at 20% detection?",
+    "steps": [
+     "Expected penalty = 0.20 × 400,000 = 80,000.",
+     "80,000 < 100,000, so not deterred.",
+     "Required penalty F: 0.20 × F = 100,000 → F = 500,000."
+    ],
+    "a": "Not deterred; a 500,000 luns penalty is needed at 20% detection."
+   },
+   "analogies": {
+    "home": "A household rule without a way to notice breaches or consequences is rarely followed.",
+    "sport": "A referee with video review and a disciplinary panel creates stronger accountability than a lone referee.",
+    "tech": "A system with logs, alerts and an owner who acts on alerts is accountable; logs nobody reads are not.",
+    "farm": "A co-operative's accounts are audited and shown to members, who can replace managers."
+   },
+   "mnemonic": "Answer, Enforce, Channel: three parts of accountability.",
+   "terms": [
+    [
+     "Answerability",
+     "The duty to explain and justify decisions."
+    ],
+    [
+     "Enforceability",
+     "The ability to apply consequences."
+    ],
+    [
+     "Isomorphic mimicry",
+     "Adopting the form of an institution without its function."
+    ],
+    [
+     "Political economy",
+     "How power, interests and incentives shape policy and reform."
+    ]
+   ],
+   "misc": {
+    "wrong": "Passing a stricter law is enough to reform an institution.",
+    "right": "Reform needs capacity, incentives, enforcement and political support, not just new rules."
+   },
+   "limits": "Evidence on reforms is often context-specific, and causal identification is hard, so lessons should be applied with care.",
+   "trip": {
+    "wiki": "Accountability",
+    "prompt": "Find the difference between vertical and horizontal accountability and examples of each."
+   },
+   "sources": [
+    "Accountability",
+    "Principal–agent problem",
+    "Decentralization"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which combination makes accountability effective?",
+     "o": [
+      "Information, ability to sanction, and capacity to act",
+      "Rules alone, written down in clear language",
+      "Speeches that officials give each year",
+      "Longer terms of office for the elected leaders"
+     ],
+     "a": 0,
+     "why": "Answerability and enforceability both matter.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A country copies another's anti-corruption agency law exactly but gives the agency no budget or independence. What is likely to happen?",
+     "o": [
+      "The agency exists on paper with little effect",
+      "It will certainly succeed, since the law is proven elsewhere",
+      "Corruption will vanish as soon as the law passes",
+      "It will become independent on its own over time"
+     ],
+     "a": 0,
+     "why": "Form without function is a typical reform failure.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Vertical accountability refers to...",
+     "o": [
+      "Citizens holding officials to account, e.g. through elections",
+      "Courts holding agencies to account, and nothing else",
+      "One agency monitoring another agency",
+      "Internal staff reviews, and nothing else"
+     ],
+     "a": 0,
+     "why": "Vertical links connect citizens and officials; horizontal links are among state bodies.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why might a reform that creates strong losers fail without political support?",
+     "o": [
+      "Those who lose can organise to block or weaken it",
+      "Winners always dominate, so they need no support",
+      "Reform affects no one in the political system",
+      "Opposition never matters to the success of a reform"
+     ],
+     "a": 0,
+     "why": "Political economy shapes reform outcomes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which evidence best shows a participatory budgeting reform improved outcomes?",
+     "o": [
+      "Comparison of service outcomes in participating and similar non-participating areas",
+      "Counting the number of meetings that were held",
+      "Positive press releases from the city",
+      "The number of ideas proposed by the residents"
+     ],
+     "a": 0,
+     "why": "Comparison groups help identify effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A reform raises fines tenfold but audits remain rare. What is the likely effect on deterrence?",
+     "o": [
+      "Limited, as expected penalty depends on detection chance as well",
+      "Large, because the fines are now so much higher",
+      "Complete deterrence, since nobody wants a fine",
+      "Detection of cheats rises automatically with the fines"
+     ],
+     "a": 0,
+     "why": "Expected penalty = probability × fine.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The gain from wrongdoing is 100,000 luns, the detection probability is 20% and the penalty is 400,000 luns. What is the expected penalty in luns?",
+     "a": 80000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "0.2 × 400,000 = 80,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With detection probability 20% and gain 100,000 luns, what is the minimum penalty that makes the expected penalty equal to the gain?",
+     "a": 500000,
+     "tol": 0,
+     "unit": "luns",
+     "why": "F = 100,000 ÷ 0.20 = 500,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the reform tool to what it mainly strengthens.",
+     "pairs": [
+      [
+       "Open contracting data",
+       "Answerability to the public"
+      ],
+      [
+       "Independent audit office",
+       "Horizontal oversight"
+      ],
+      [
+       "Whistleblower protection",
+       "Detection of wrongdoing"
+      ],
+      [
+       "Merit recruitment",
+       "Capacity and impartiality"
+      ]
+     ],
+     "why": "Reform tools target different parts of accountability.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Give two reasons why a reform that copies another country's institutions might not work in a new setting.",
+     "rubric": [
+      [
+       "context",
+       "different",
+       "capacity",
+       "fit",
+       "local",
+       "history",
+       "resource",
+       "staff",
+       "budget"
+      ],
+      [
+       "incentive",
+       "political",
+       "enforce",
+       "support",
+       "norms",
+       "interest",
+       "opposition",
+       "independence",
+       "law"
+      ]
+     ],
+     "min": 2,
+     "model": "The new setting may lack the capacity or budget to run the institution, and the incentives, political support and enforcement that made it work elsewhere may be missing, so it may exist only on paper.",
+     "why": "Institutions depend on supporting incentives and capacity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A city wants to evaluate a new performance-management reform. Which design is most credible?",
+     "o": [
+      "Pilot in some departments with matched comparison departments and pre-agreed indicators",
+      "Apply it everywhere and compare with the past only",
+      "Ask the managers whether they think it worked",
+      "Publish only the success stories from the departments"
+     ],
+     "a": 0,
+     "why": "Comparison and pre-specified indicators reduce bias.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does legitimacy of procedures matter for compliance with new rules, even when penalties exist?",
+     "rubric": [
+      [
+       "fair",
+       "legitimate",
+       "trust",
+       "respect",
+       "justif",
+       "accept",
+       "voice",
+       "consult"
+      ],
+      [
+       "comply",
+       "follow",
+       "cooperat",
+       "enforce",
+       "cost",
+       "willing",
+       "evasion",
+       "resist",
+       "support"
+      ]
+     ],
+     "min": 2,
+     "model": "If people regard a process as fair and inclusive they are more willing to comply voluntarily, which lowers enforcement costs; if it seems arbitrary they may resist or evade even when penalties exist.",
+     "why": "Procedural fairness supports compliance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement best reflects balanced reasoning about decentralisation?",
+     "o": [
+      "It can improve responsiveness but may weaken capacity or equity without supporting institutions",
+      "It always improves accountability in every case",
+      "It always worsens accountability in every case",
+      "It has no effect on either responsiveness or equity"
+     ],
+     "a": 0,
+     "why": "Outcomes depend on design and capacity.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Accountability and reform",
+    "model": "Accountability means officials must explain their actions and can face consequences. It needs information, enforcement and capacity. Reforms often fail if they copy forms without incentives, funding or political support. Deterrence depends on both the chance of being caught and the size of the penalty. Reforms should be tested and evaluated.",
+    "points": [
+     {
+      "k": [
+       "explain",
+       "answer",
+       "justif",
+       "consequence",
+       "sanction"
+      ],
+      "ask": "What is accountability?"
+     },
+     {
+      "k": [
+       "information",
+       "enforce",
+       "capacity",
+       "incentive",
+       "channel"
+      ],
+      "ask": "What does it need?"
+     },
+     {
+      "k": [
+       "copy",
+       "paper",
+       "form",
+       "support",
+       "political",
+       "mimic",
+       "fail"
+      ],
+      "ask": "Why do reforms fail?"
+     },
+     {
+      "k": [
+       "detect",
+       "probab",
+       "penalty",
+       "evaluate",
+       "pilot",
+       "compar"
+      ],
+      "ask": "How do we judge them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Long-term economic and demographic planning",
+   "icon": "👥",
+   "hook": "By 2050 a city's over-65 population may double while its working-age population barely grows. What must change in schools, health care, housing and the tax base?",
+   "explain": [
+    "Demographic planning uses population projections to anticipate needs. The cohort-component method projects each age-sex group forward using fertility, mortality and migration assumptions. Key indicators include the old-age dependency ratio (65+ ÷ aged 15–64), the youth dependency ratio, total fertility rate and net migration. Compound growth gives P(t) = P₀ × (1 + g)ᵗ, and the rule of 70 approximates doubling time as 70 ÷ growth rate in percent.",
+    "Projections are conditional, not predictions: results depend on assumptions about fertility, longevity and migration, which can shift quickly. Planners use scenarios (low, medium, high) and track which decisions are robust across them. Demographic change affects demand for services (child care, schools, long-term care), the labour force, housing size mix and public finance: an ageing population may raise health and pension costs while reducing the share of workers paying taxes, though productivity growth, labour participation and migration can offset this.",
+    "Long-term economic planning links to demography through skills, jobs and productivity. Cities consider diversification, education and training, infrastructure and land supply. Because long horizons magnify uncertainty, flexible, staged investment that keeps options open can be preferable to large irreversible commitments. Distribution matters: ageing and migration affect neighbourhoods unevenly, and decisions should be consulted on and reviewed regularly."
+   ],
+   "example": {
+    "q": "A city has 400,000 residents growing at 1.5% a year. Using 1.015²⁰ ≈ 1.3469, what is the population after 20 years? Also, if the working-age population is 120,000 and there are 24,000 people aged 65+, what is the old-age dependency ratio?",
+    "steps": [
+     "400,000 × 1.3469 = 538,760.",
+     "Dependency ratio = 24,000 ÷ 120,000 = 0.20.",
+     "So 20 older people per 100 working-age."
+    ],
+    "a": "About 538,800 people; old-age dependency ratio 20%."
+   },
+   "analogies": {
+    "home": "Planning a house for a growing family means considering bedrooms now and ground-floor access later.",
+    "farm": "A farmer plants orchards that mature in 10 years, so must plan for future markets and climate.",
+    "sea": "A shipbuilder designs vessels to last decades despite changing cargoes.",
+    "tech": "Platform designers keep modular options so they can adapt to changing user numbers."
+   },
+   "mnemonic": "Count, Project, Scenario, Stage: C-P-S-S.",
+   "terms": [
+    [
+     "Cohort-component method",
+     "Projecting population by age group using births, deaths and migration."
+    ],
+    [
+     "Old-age dependency ratio",
+     "Number of people 65+ per 100 aged 15–64."
+    ],
+    [
+     "Total fertility rate",
+     "Average number of children per woman over her lifetime at current rates."
+    ],
+    [
+     "Robust decision",
+     "A choice that performs acceptably across many scenarios."
+    ]
+   ],
+   "misc": {
+    "wrong": "Population projections tell us what will happen.",
+    "right": "They show what follows from stated assumptions; actual outcomes depend on changing behaviour and events."
+   },
+   "limits": "Long-term projections are uncertain, and migration and fertility can change rapidly with policy and conditions.",
+   "trip": {
+    "wiki": "Population projection",
+    "prompt": "Find how a projection method treats fertility, mortality and migration."
+   },
+   "sources": [
+    "Population projection",
+    "Dependency ratio",
+    "Demographic transition"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The old-age dependency ratio is calculated as...",
+     "o": [
+      "Population 65+ divided by population aged 15–64",
+      "Population under age 15 divided by the total population",
+      "Total population divided by the area of the city",
+      "Working population divided by the number of jobs"
+     ],
+     "a": 0,
+     "why": "It compares older people with the working-age population.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a population projection show?",
+     "o": [
+      "The result of stated assumptions about fertility, mortality and migration",
+      "A guaranteed future that is certain to happen",
+      "The past only, with no look ahead",
+      "The preferences of voters in the next election"
+     ],
+     "a": 0,
+     "why": "Projections are conditional.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A city must choose between building 3 large care homes now or a flexible phased programme. Under high demographic uncertainty, which logic favours phasing?",
+     "o": [
+      "It keeps options open and avoids stranded assets if demand differs",
+      "It always costs less, whatever the demand turns out to be",
+      "It ignores demand altogether",
+      "It prevents any care from being provided"
+     ],
+     "a": 0,
+     "why": "Staged investment reduces regret under uncertainty.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A falling number of school-age children in some neighbourhoods and rising numbers in others suggests...",
+     "o": [
+      "Reallocating school capacity and reviewing catchment areas using small-area projections",
+      "Building new schools everywhere in the city",
+      "Closing all of the schools in the city",
+      "Ignoring the data and keeping every school as it is"
+     ],
+     "a": 0,
+     "why": "Demographic change is uneven spatially.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which factor could offset the fiscal pressure of an ageing population?",
+     "o": [
+      "Higher labour-force participation and productivity",
+      "Fewer workers paying into the system",
+      "Lower levels of education among the young",
+      "Less investment in the economy"
+     ],
+     "a": 0,
+     "why": "Higher output per worker and participation expand the tax base.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A city's growth forecast assumes net migration stays at a record high. What is the sensible response?",
+     "o": [
+      "Test low and medium migration scenarios and see which plans are robust",
+      "Assume the record rate will continue, since it has so far",
+      "Ignore migration, since it is hard to measure",
+      "Delete the forecast and plan without one"
+     ],
+     "a": 0,
+     "why": "Scenarios handle uncertain drivers.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A city of 400,000 grows at 1.5% a year. Using 1.015²⁰ = 1.3469, what is its population after 20 years, to the nearest thousand?",
+     "a": 539000,
+     "tol": 1000,
+     "unit": "people",
+     "why": "400,000 × 1.3469 = 538,760, about 539,000.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A city has 24,000 people aged 65+ and 120,000 aged 15–64. What is the old-age dependency ratio per 100 working-age people?",
+     "a": 20,
+     "tol": 0,
+     "unit": "per 100",
+     "why": "24,000 ÷ 120,000 × 100 = 20.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use the rule of 70 to estimate the doubling time in years for a population growing at 2% a year.",
+     "a": 35,
+     "tol": 0.5,
+     "unit": "years",
+     "why": "70 ÷ 2 = 35.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why planning only for the 'most likely' population projection can be risky, and what to do instead.",
+     "rubric": [
+      [
+       "uncertain",
+       "wrong",
+       "assum",
+       "change",
+       "vary",
+       "miss",
+       "single",
+       "one"
+      ],
+      [
+       "scenario",
+       "range",
+       "robust",
+       "flexible",
+       "stage",
+       "option",
+       "review",
+       "update",
+       "low",
+       "high"
+      ]
+     ],
+     "min": 2,
+     "model": "Projections depend on assumptions that can change, so a single projection may prove wrong and leave the city with too much or too little capacity. Using scenarios, choosing robust or staged investments and reviewing regularly manages the risk.",
+     "why": "Uncertainty calls for scenario-based, flexible planning.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A planner argues for investing mainly in services for older residents because the 65+ share is growing fastest. Another argues children's services should keep priority because early investment pays off for decades. Which approach is the most defensible?",
+     "o": [
+      "Weigh need, outcomes, cost and fairness across ages using evidence, and avoid framing it as a contest",
+      "Pick the age group that has more votes at the next election",
+      "Pick the cheaper option, whoever it helps",
+      "Cut both services until the argument is settled"
+     ],
+     "a": 0,
+     "why": "Multi-criteria evidence-based allocation is non-partisan.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How can migration affect a city's long-term budget, and why do estimates vary?",
+     "rubric": [
+      [
+       "tax",
+       "workers",
+       "labour",
+       "revenue",
+       "contribut",
+       "fill",
+       "skills"
+      ],
+      [
+       "service",
+       "cost",
+       "housing",
+       "school",
+       "integrat",
+       "uncertain",
+       "vary",
+       "depend",
+       "age",
+       "skill",
+       "assum"
+      ]
+     ],
+     "min": 2,
+     "model": "Migrants can add workers and tax revenue and fill skills gaps, but also raise demand for housing and services; net effects depend on age, skills, employment and policy, so estimates vary with assumptions.",
+     "why": "Effects depend on composition and context.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why use small-area projections for facility planning?",
+     "o": [
+      "Demand changes unevenly across neighbourhoods",
+      "City totals are always accurate for every neighbourhood",
+      "They are cheaper to produce, which is their only benefit",
+      "Facilities serve the whole city equally"
+     ],
+     "a": 0,
+     "why": "Local demand determines facility needs.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Demographic and economic planning",
+    "model": "Cities project population by age using births, deaths and migration to see future needs for schools, health care, housing and jobs. Projections depend on assumptions, so planners use scenarios and favour flexible, staged investments. Ageing changes costs and the tax base, but productivity and participation can help.",
+    "points": [
+     {
+      "k": [
+       "age",
+       "births",
+       "deaths",
+       "migration",
+       "population",
+       "cohort"
+      ],
+      "ask": "How is population projected?"
+     },
+     {
+      "k": [
+       "assum",
+       "scenario",
+       "uncertain",
+       "range"
+      ],
+      "ask": "How certain is it?"
+     },
+     {
+      "k": [
+       "school",
+       "health",
+       "housing",
+       "care",
+       "tax",
+       "workers"
+      ],
+      "ask": "What does it affect?"
+     },
+     {
+      "k": [
+       "flexible",
+       "stage",
+       "robust",
+       "option",
+       "review"
+      ],
+      "ask": "How should investments be designed?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated smart-city governance simulation",
+   "icon": "🎛️",
+   "hook": "You are the new mayor of Kestrel Bay: limited budget, ageing pipes, a growing population, a data-sharing offer from a tech firm and a heatwave forecast. How do you combine everything from this world into one defensible plan?",
+   "explain": [
+    "This capstone brings together planning, finance, infrastructure, services, ethics and crisis management. A multi-criteria decision analysis (MCDA) scores options against criteria with weights, for example fiscal sustainability, access to services, resilience, transparency and environmental impact. Weighted score = Σ (weight × score). Because weights encode values, they should be set openly, preferably after consulting residents, and sensitivity tests show whether the ranking changes when weights change.",
+    "Good integrated governance links the parts: budget decisions follow priorities set by evidence; capital projects are tested with cost-benefit analysis and risk; procurement is open; data projects follow privacy rules and avoid lock-in; resilience is tested across interdependent systems; and results are evaluated with indicators, published, and fed back into the next plan. Decisions under uncertainty can use real-options thinking: staged commitments that preserve flexibility have value when the future is unclear.",
+    "Systems differ across countries, and so do powers, so a plan must be adapted to the legal framework. There are usually several defensible strategies. The task is not to find a hidden single correct answer, but to choose transparently, justify with stated criteria and evidence, protect rights and fairness, and be willing to review. Mistakes are expected; accountability means learning from them openly."
+   ],
+   "example": {
+    "q": "Criteria weights: cost 0.3, access 0.4, environment 0.3. Option A scores (70, 60, 80); Option B scores (80, 70, 50). Which scores higher? If weights change to cost 0.5, access 0.2, environment 0.3, does the ranking change?",
+    "steps": [
+     "A: 0.3×70 + 0.4×60 + 0.3×80 = 21 + 24 + 24 = 69. B: 24 + 28 + 15 = 67. A wins.",
+     "New weights: A: 35 + 12 + 24 = 71. B: 40 + 14 + 15 = 69.",
+     "A still wins in both cases, so the ranking is robust to this change."
+    ],
+    "a": "A scores 69 vs 67, then 71 vs 69; A wins under both weightings."
+   },
+   "analogies": {
+    "home": "Planning a household move means weighing cost, schools, commute and space, and checking if the choice still holds when priorities shift.",
+    "sea": "A navigator combines weather, fuel, crew and schedule to choose a route and keeps alternatives ready.",
+    "sport": "A manager balances attack, defence, fitness and budget over a season, adjusting after each match.",
+    "tech": "A systems architect balances performance, cost, security and flexibility, testing alternatives."
+   },
+   "mnemonic": "Criteria, Weights, Scores, Sensitivity, Say why: C-W-S-S-S.",
+   "terms": [
+    [
+     "Multi-criteria decision analysis",
+     "Scoring options against several weighted criteria."
+    ],
+    [
+     "Sensitivity analysis",
+     "Checking whether conclusions hold when inputs change."
+    ],
+    [
+     "Real option",
+     "The value of keeping flexibility by staging a decision."
+    ],
+    [
+     "Integrated governance",
+     "Coordinating planning, finance, services, data and risk across agencies."
+    ]
+   ],
+   "misc": {
+    "wrong": "There is one correct plan that any expert would find.",
+    "right": "Several strategies can be defensible; good governance means transparent criteria, evidence, fairness and willingness to review."
+   },
+   "limits": "Weights and scores involve judgement, and the process can be gamed if criteria are chosen after seeing results.",
+   "trip": {
+    "wiki": "Multiple-criteria decision analysis",
+    "prompt": "Find how weights are chosen in MCDA and why sensitivity analysis is used."
+   },
+   "sources": [
+    "Multiple-criteria decision analysis",
+    "Smart city",
+    "Real options valuation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Why set evaluation criteria and weights before scoring options?",
+     "o": [
+      "It prevents tailoring the criteria to favour a preferred option",
+      "It makes the scoring harder for the reviewers",
+      "It is a legal formality with no practical effect",
+      "It guarantees that the best choice will be found"
+     ],
+     "a": 0,
+     "why": "Pre-commitment reduces bias.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Sensitivity analysis in MCDA shows...",
+     "o": [
+      "Whether the ranking changes when weights or scores change",
+      "The best possible set of weights for the criteria",
+      "The option that is cheapest to build",
+      "The option that is the most popular with the public"
+     ],
+     "a": 0,
+     "why": "It tests robustness.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A data-sharing offer would give a firm access to resident data in return for free sensors. Which governance step is most important before accepting?",
+     "o": [
+      "Assess privacy, purpose limitation, ownership, exit and lock-in terms, and consult residents",
+      "Sign immediately, since free sensors save the city money",
+      "Hide the contract from the public to avoid argument",
+      "Accept the offer without reading the small print"
+     ],
+     "a": 0,
+     "why": "Data governance must protect rights and flexibility.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A heatwave plan relies on a cooling centre that is powered by the same grid line as the hospital. What should the integrated review flag?",
+     "o": [
+      "A common-cause dependency that can disable both",
+      "Nothing, since a shared grid line is normal practice",
+      "Excess redundancy in the plan",
+      "Too many cooling centres in the area"
+     ],
+     "a": 0,
+     "why": "Interdependencies concentrate risk.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Staging a large investment so that a decision can be revisited when demand is clearer is an example of...",
+     "o": [
+      "Preserving real-option value",
+      "Ignoring uncertainty about future demand",
+      "Poor planning that delays the investment",
+      "A tax on the new investment"
+     ],
+     "a": 0,
+     "why": "Flexibility has value under uncertainty.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two defensible strategies exist with different values. What is the best way for leaders to proceed?",
+     "o": [
+      "Choose transparently using stated criteria, evidence and consultation, and commit to review",
+      "Claim that one of them is obviously correct and drop the other",
+      "Avoid deciding, so that no group is upset",
+      "Pick the cheaper one without any further analysis"
+     ],
+     "a": 0,
+     "why": "Non-partisan decisions rest on explicit criteria and evidence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Weights: cost 0.3, access 0.4, environment 0.3. Option A scores 70, 60 and 80. What is its weighted score?",
+     "a": 69,
+     "tol": 0.01,
+     "why": "21 + 24 + 24 = 69.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With weights changed to cost 0.5, access 0.2, environment 0.3, Option B scores 80, 70 and 50. What is its weighted score?",
+     "a": 69,
+     "tol": 0.01,
+     "why": "40 + 14 + 15 = 69.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps in an integrated, evidence-based decision.",
+     "items": [
+      "Define goals and criteria with residents",
+      "Gather evidence and estimate costs, benefits and risks",
+      "Score options and test sensitivity",
+      "Decide, publish reasons and commit to monitoring",
+      "Evaluate and adjust"
+     ],
+     "why": "Criteria precede scoring; decisions are published; evaluation feeds back.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A council's plan scores best on cost but worst on equity. Explain how it should handle this openly.",
+     "rubric": [
+      [
+       "weight",
+       "criteria",
+       "trade-off",
+       "explain",
+       "show",
+       "transparen",
+       "publish",
+       "sensitiv"
+      ],
+      [
+       "equity",
+       "fair",
+       "access",
+       "redesign",
+       "mitigat",
+       "adjust",
+       "consult",
+       "combine",
+       "alternative",
+       "safeguard"
+      ]
+     ],
+     "min": 2,
+     "model": "It should show the scores and weights openly, test how the ranking changes with different weights, consider redesigning or adding measures to mitigate the equity gap, consult residents, and publish the reasons for its final choice.",
+     "why": "Transparency and mitigation address trade-offs.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An external adviser says: 'The numbers show there is only one rational choice.' What is the most appropriate reply?",
+     "o": [
+      "Ask which objectives, weights and assumptions produce that result and test alternatives",
+      "Accept it, since numbers always give a single answer",
+      "Ignore the numbers and use judgement alone",
+      "Dismiss the adviser for using numbers"
+     ],
+     "a": 0,
+     "why": "Numbers rest on value-laden inputs that should be examined.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Pick two parts of this world (for example budgeting, procurement, ethics, crisis planning) and explain how a failure in one can undermine the other.",
+     "rubric": [
+      [
+       "budget",
+       "procure",
+       "finance",
+       "money",
+       "fund",
+       "cost",
+       "contract"
+      ],
+      [
+       "ethic",
+       "corrupt",
+       "crisis",
+       "emergency",
+       "trust",
+       "accountab",
+       "maintenance",
+       "resilien",
+       "service",
+       "transparen"
+      ]
+     ],
+     "min": 2,
+     "model": "For example, a weak procurement process can waste budget and lower the quality of emergency equipment, which undermines crisis response; likewise a budget that skips maintenance raises the risk of failures during emergencies, and corruption erodes trust needed for compliance.",
+     "why": "Governance functions are interlinked.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which final deliverable best supports accountability for a city plan?",
+     "o": [
+      "A published plan with criteria, evidence, indicators, owners and a review date",
+      "A slogan that sums up the plan in a few words",
+      "A private memo for the council leaders",
+      "A list of names of those who worked on the plan"
+     ],
+     "a": 0,
+     "why": "Clear commitments allow public scrutiny.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Integrated city governance",
+    "model": "A well-governed city links planning, budgeting, infrastructure, services, data and crisis plans. It chooses between defensible options using stated criteria and weights, tests whether the choice holds when assumptions change, keeps flexibility under uncertainty, protects rights and fairness, publishes its reasons and reviews the results.",
+    "points": [
+     {
+      "k": [
+       "criteria",
+       "weights",
+       "score",
+       "compare",
+       "option"
+      ],
+      "ask": "How do you compare options?"
+     },
+     {
+      "k": [
+       "sensitiv",
+       "assum",
+       "test",
+       "change",
+       "robust"
+      ],
+      "ask": "How do you know the answer is solid?"
+     },
+     {
+      "k": [
+       "link",
+       "integrat",
+       "budget",
+       "infrastructure",
+       "data",
+       "crisis",
+       "together"
+      ],
+      "ask": "Why link the parts?"
+     },
+     {
+      "k": [
+       "transparen",
+       "publish",
+       "review",
+       "fair",
+       "rights",
+       "accountab"
+      ],
+      "ask": "What makes it legitimate?"
+     }
+    ]
+   }
+  }
+ ]
+}

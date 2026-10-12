@@ -1,0 +1,2964 @@
+{
+ "world": 14,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced harmony",
+   "icon": "🧮",
+   "hook": "A progression leaves its key for four bars, then returns, and listeners feel the journey without knowing any theory. What tools make that possible?",
+   "explain": [
+    "Functional harmony groups chords by role: tonic (I, vi) is stable, subdominant (IV, ii) moves away, and dominant (V, vii°) creates tension that resolves to the tonic. A secondary dominant is a dominant chord of a chord other than the tonic: in C major, D7 (D F♯ A C) is V7/V because it leads to G. Modal mixture borrows chords from the parallel minor, such as the A♭ major (♭VI) or F minor (iv) chord in C major.",
+    "Seventh and extended chords add colour. Built on C: Cmaj7 (C E G B), C7 (C E G B♭), Cm7 (C E♭ G B♭), Cø7 (C E♭ G♭ B♭) and the diminished seventh (C E♭ G♭ B♭♭). Adding the 9th, 11th or 13th (stacking more thirds) gives Cmaj9 and so on. The tritone substitution replaces V7 with the dominant seventh a tritone away: D♭7 for G7 in C, because both contain the same tritone (B/C♭ and F), resolving by half-step bass motion to C.",
+    "Modulation changes key. A pivot chord that belongs to both keys smooths it: A minor is vi in C and ii in G, so it can pivot from C to G. Chromatic chords such as the Neapolitan (♭II, first inversion, in C: D♭ F A♭ with F in the bass) and the augmented sixth (in C minor: A♭ C F♯ resolving outward to G) intensify cadences. These ideas come from European classical practice and are also used in jazz, pop and film music."
+   ],
+   "example": {
+    "q": "Find a pivot chord to modulate from C major to G major.",
+    "steps": [
+     "List chords of C: C Dm Em F G Am Bdim.",
+     "List chords of G: G Am Bm C D Em F♯dim.",
+     "Am (vi in C, ii in G) and C (I in C, IV in G) are shared."
+    ],
+    "a": "Am (vi in C = ii in G) or C (I in C = IV in G)"
+   },
+   "analogies": {
+    "home": "A door between two rooms works as a pivot: part of both spaces.",
+    "city": "A tram stop where two lines meet is where you switch routes.",
+    "sport": "A midfielder links defence and attack.",
+    "tech": "A shared function used by two programs."
+   },
+   "mnemonic": "Tonic home, sub away, dominant pull, secondary dominant a detour.",
+   "terms": [
+    [
+     "Secondary dominant",
+     "A dominant chord that leads to a chord other than the tonic."
+    ],
+    [
+     "Pivot chord",
+     "A chord shared by two keys, used to modulate."
+    ],
+    [
+     "Tritone substitution",
+     "Replacing V7 with the dominant seventh a tritone away."
+    ],
+    [
+     "Modal mixture",
+     "Borrowing chords from the parallel major or minor."
+    ]
+   ],
+   "misc": {
+    "wrong": "Chord function depends only on the chord's name.",
+    "right": "Function depends on context. Am is tonic-like in C but subdominant (ii) in G."
+   },
+   "trip": {
+    "wiki": "Secondary chord",
+    "prompt": "Find the example of V7/V and identify each note."
+   },
+   "sources": [
+    "Secondary chord",
+    "Pivot chord",
+    "Tritone substitution"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In C major, which chord is V7/V?",
+     "o": [
+      "G7",
+      "D7",
+      "A7",
+      "E7"
+     ],
+     "a": 1,
+     "why": "D7 is the dominant seventh of G, which is V.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which notes form Cmaj7?",
+     "o": [
+      "C E G B",
+      "C E G B♭",
+      "C E♭ G B♭",
+      "C E♭ G♭ B♭"
+     ],
+     "a": 0,
+     "why": "A major triad plus a major seventh.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       [
+        60,
+        64,
+        67,
+        71
+       ]
+      ],
+      "dur": 1.2
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Which chord quality is this?",
+     "o": [
+      "Major seventh",
+      "Minor seventh",
+      "Half-diminished seventh",
+      "Dominant seventh"
+     ],
+     "a": 3,
+     "why": "The semitones from the root are 0, 4, 7, 10.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       [
+        60,
+        64,
+        67,
+        70
+       ]
+      ],
+      "dur": 1.2
+     }
+    },
+    {
+     "t": "mc",
+     "q": "Now listen to this one. Which chord quality is it?",
+     "o": [
+      "Dominant seventh",
+      "Major seventh",
+      "Minor seventh",
+      "Diminished seventh"
+     ],
+     "a": 2,
+     "why": "0, 3, 7, 10 semitones.",
+     "d": 2,
+     "k": "apply",
+     "au": {
+      "notes": [
+       [
+        60,
+        63,
+        67,
+        70
+       ]
+      ],
+      "dur": 1.2
+     }
+    },
+    {
+     "t": "mc",
+     "q": "What is a tritone substitution for G7 in C?",
+     "o": [
+      "E7",
+      "D♭7",
+      "F7",
+      "A♭7"
+     ],
+     "a": 1,
+     "why": "D♭7 shares the tritone of G7.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which function does the V chord usually have?",
+     "o": [
+      "Dominant, creating tension",
+      "Tonic, giving stability and rest",
+      "Subdominant, leaving the home key",
+      "Modulating, with a neutral effect"
+     ],
+     "a": 0,
+     "why": "V resolves to I.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the chord to its notes in C.",
+     "pairs": [
+      [
+       "Cmaj7",
+       "C E G B"
+      ],
+      [
+       "C7",
+       "C E G B♭"
+      ],
+      [
+       "Cm7",
+       "C E♭ G B♭"
+      ],
+      [
+       "Cø7",
+       "C E♭ G♭ B♭"
+      ]
+     ],
+     "why": "Seventh chord qualities differ by third, fifth and seventh.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many semitones is a minor seventh above the root?",
+     "a": 10,
+     "tol": 0,
+     "why": "A minor seventh is two semitones below the octave: 12 − 2 = 10.",
+     "d": 2,
+     "k": "apply",
+     "unit": "semitones"
+    },
+    {
+     "t": "order",
+     "q": "Put these in the order of a C to G modulation using the pivot chord Am.",
+     "items": [
+      "C major established",
+      "Am as vi in C",
+      "Am reinterpreted as ii in G",
+      "D7 then G confirms the new key"
+     ],
+     "why": "Pivot reinterprets the chord, then dominant–tonic confirms.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does the Neapolitan chord intensify a cadence?",
+     "rubric": [
+      [
+       "chromatic",
+       "flat",
+       "♭ii",
+       "lowered",
+       "unexpected",
+       "colour",
+       "color"
+      ],
+      [
+       "dominant",
+       "cadence",
+       "resolve",
+       "tonic",
+       "half step",
+       "semitone",
+       "leads"
+      ]
+     ],
+     "min": 2,
+     "model": "It introduces a chromatic lowered second degree that pulls strongly down to the tonic note in the dominant, adding colour and tension before the cadence.",
+     "why": "Chromatic colour leads into the dominant.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can D♭7 replace G7 before C?",
+     "o": [
+      "Their roots are the same note exactly",
+      "They are enharmonic spellings of one chord",
+      "D♭7 is the dominant chord of C major",
+      "Both contain the same tritone and D♭7 resolves by half step"
+     ],
+     "a": 3,
+     "why": "The shared tritone B/C♭ and F creates the same pull to C.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does Am work as a pivot chord from C major to G major?",
+     "rubric": [
+      [
+       "vi",
+       "ii",
+       "both",
+       "shared",
+       "common",
+       "belongs"
+      ],
+      [
+       "key",
+       "keys",
+       "c",
+       "g"
+      ]
+     ],
+     "min": 2,
+     "model": "Am is vi in C and ii in G, so it belongs to both keys and the ear can reinterpret it as part of G.",
+     "why": "A shared chord bridges keys.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A song in C major suddenly uses an A♭ major chord and returns to C. What technique is it?",
+     "o": [
+      "Modulation to the key of G major",
+      "Tritone substitution of the dominant",
+      "Modal mixture (borrowing from C minor)",
+      "A pedal point under the whole phrase"
+     ],
+     "a": 2,
+     "why": "♭VI comes from the parallel minor.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced harmony",
+    "model": "Chords have functions: tonic is stable, subdominant moves away and dominant creates tension. Secondary dominants lead to other chords, borrowed chords add colour, and pivot chords help move between keys. Seventh and extended chords add richness.",
+    "points": [
+     {
+      "k": [
+       "tonic",
+       "dominant",
+       "subdominant",
+       "function"
+      ],
+      "ask": "What are chord functions?"
+     },
+     {
+      "k": [
+       "secondary",
+       "v7/v",
+       "d7"
+      ],
+      "ask": "What is a secondary dominant?"
+     },
+     {
+      "k": [
+       "pivot",
+       "modulat",
+       "shared",
+       "key"
+      ],
+      "ask": "How do you change key?"
+     },
+     {
+      "k": [
+       "seventh",
+       "extended",
+       "ninth",
+       "colour"
+      ],
+      "ask": "What do extensions do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Advanced composition",
+   "icon": "🏗️",
+   "hook": "A 30-minute symphony can grow from four notes. How do composers turn tiny ideas into large structures?",
+   "explain": [
+    "Large works depend on development: taking a motif and varying it by changing its rhythm, intervals, harmony, register, instrumentation or by fragmenting, inverting or lengthening it. Beethoven's Fifth Symphony (1808) builds a huge movement from a short four-note rhythmic motif.",
+    "Forms organise large-scale time. Sonata form has an exposition (themes in the tonic and a contrasting key, usually the dominant or relative major), a development (themes are transformed through many keys) and a recapitulation (themes return in the tonic). Rondo alternates a returning refrain with contrasting episodes (ABACA). Theme and variations changes one theme repeatedly. A fugue builds from imitation of a subject.",
+    "Twentieth-century composers extended these ideas. Arnold Schoenberg developed twelve-tone technique in the 1920s, using all twelve pitches in a row before any repeats. Minimalists such as Steve Reich and Philip Glass build music from small repeating patterns that change gradually. Composers in every tradition shape tension and release, plan climaxes and balance unity and variety."
+   ],
+   "example": {
+    "q": "Name the three main sections of sonata form and what key the second theme is in.",
+    "steps": [
+     "Exposition presents themes.",
+     "Development transforms them.",
+     "Recapitulation returns them in the tonic; in the exposition the second theme is in the dominant (or relative major in a minor piece)."
+    ],
+    "a": "Exposition, development, recapitulation; second theme in the dominant or relative major in the exposition"
+   },
+   "analogies": {
+    "home": "A story with a setup, complication and resolution.",
+    "city": "An urban plan: central square, side streets, return to the square.",
+    "nature": "A seed grows into a tree by repeating a simple pattern.",
+    "sport": "A match develops through phases and climaxes."
+   },
+   "mnemonic": "Show, change, return home.",
+   "terms": [
+    [
+     "Development",
+     "Varying and transforming musical material."
+    ],
+    [
+     "Sonata form",
+     "A structure of exposition, development and recapitulation."
+    ],
+    [
+     "Rondo",
+     "A form with a recurring theme alternated with contrasts."
+    ],
+    [
+     "Tone row",
+     "An ordering of all twelve pitches in twelve-tone music."
+    ]
+   ],
+   "misc": {
+    "wrong": "Form is a rigid template.",
+    "right": "Forms are flexible plans. Composers adapt them freely."
+   },
+   "limits": "Textbook forms describe general tendencies. Many works bend or mix them.",
+   "trip": {
+    "wiki": "Sonata form",
+    "prompt": "Find a diagram of a sonata-form movement and mark the keys."
+   },
+   "sources": [
+    "Sonata form",
+    "Rondo",
+    "Twelve-tone technique"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What are the three main sections of sonata form?",
+     "o": [
+      "Verse, chorus, bridge",
+      "Exposition, development, recapitulation",
+      "Intro, theme, coda",
+      "Aria, recitative, chorus"
+     ],
+     "a": 1,
+     "why": "Sonata form is based on these three sections.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In the recapitulation, where do the main themes return?",
+     "o": [
+      "In the tonic key",
+      "In the dominant only",
+      "In a random key",
+      "They do not return"
+     ],
+     "a": 0,
+     "why": "The recapitulation resolves the tonal tension.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which form follows the pattern ABACA?",
+     "o": [
+      "Sonata form",
+      "Fugue",
+      "Twelve-tone row",
+      "Rondo"
+     ],
+     "a": 3,
+     "why": "A is the recurring refrain.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does twelve-tone technique use?",
+     "o": [
+      "A single major scale of seven notes",
+      "A long drone under the melody",
+      "A row containing all twelve pitches",
+      "Only the black keys of a piano"
+     ],
+     "a": 2,
+     "why": "Schoenberg's method organised all twelve pitches.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A composer repeats a theme but changes its rhythm and key. What is this process?",
+     "o": [
+      "Recapitulation",
+      "Development",
+      "Cadence",
+      "Transcription"
+     ],
+     "a": 1,
+     "why": "Varying material is development.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is a minimalist composer?",
+     "o": [
+      "Philip Glass",
+      "Antonio Vivaldi",
+      "Gioachino Rossini",
+      "Joseph Haydn"
+     ],
+     "a": 0,
+     "why": "Glass and Reich are associated with minimalism.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the form with a feature.",
+     "pairs": [
+      [
+       "Rondo",
+       "Returning refrain with episodes"
+      ],
+      [
+       "Theme and variations",
+       "One theme repeatedly altered"
+      ],
+      [
+       "Fugue",
+       "Imitation of a subject"
+      ],
+      [
+       "Sonata form",
+       "Exposition, development, recapitulation"
+      ]
+     ],
+     "why": "These forms organise time differently.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the parts of sonata form in order.",
+     "items": [
+      "Exposition",
+      "Development",
+      "Recapitulation",
+      "Coda"
+     ],
+     "why": "The coda follows the recapitulation.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is development a source of tension in a sonata-form movement?",
+     "rubric": [
+      [
+       "unstable",
+       "tension",
+       "key",
+       "keys",
+       "modulat",
+       "remote"
+      ],
+      [
+       "fragment",
+       "transform",
+       "vary",
+       "develop",
+       "conflict",
+       "change",
+       "journey"
+      ],
+      [
+       "return",
+       "recap",
+       "resolve",
+       "home",
+       "tonic"
+      ]
+     ],
+     "min": 2,
+     "model": "The development moves through unstable keys and breaks up the themes. The return of the tonic in the recapitulation then resolves the tension.",
+     "why": "Instability followed by resolution.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In the exposition of a major-key sonata, where is the second theme usually?",
+     "o": [
+      "The tonic key",
+      "The subdominant key",
+      "A twelve-tone row",
+      "The dominant key"
+     ],
+     "a": 3,
+     "why": "Dominant contrast is standard in major keys.",
+     "d": 3,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does Beethoven's Fifth work as an example of motivic development?",
+     "o": [
+      "It has no melody in it at all",
+      "It is built on a twelve-tone row",
+      "A short motif generates much of the movement",
+      "It is a rondo with returning themes"
+     ],
+     "a": 2,
+     "why": "The four-note motif recurs and transforms.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do many minimalist works feel hypnotic?",
+     "rubric": [
+      [
+       "repeat",
+       "repetit",
+       "pattern",
+       "loop",
+       "cycle"
+      ],
+      [
+       "gradual",
+       "slowly",
+       "slow",
+       "small",
+       "change",
+       "process"
+      ],
+      [
+       "pulse",
+       "steady",
+       "rhythm",
+       "groove"
+      ]
+     ],
+     "min": 2,
+     "model": "Constant repeating patterns on a steady pulse change gradually, which creates a trance-like focus on small differences.",
+     "why": "Process music rewards close listening.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tone row is played in reverse. What is this called?",
+     "o": [
+      "Inversion",
+      "Retrograde",
+      "Augmentation",
+      "Sequence"
+     ],
+     "a": 1,
+     "why": "Retrograde means backwards.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Large-scale composition",
+    "model": "Composers grow big works from small motifs by developing them: changing rhythm, key and instrumentation. Forms like sonata form, rondo and theme and variations give a plan. The balance of unity and variety keeps listeners interested.",
+    "points": [
+     {
+      "k": [
+       "motif",
+       "develop",
+       "vary",
+       "change"
+      ],
+      "ask": "How do small ideas grow?"
+     },
+     {
+      "k": [
+       "sonata",
+       "exposition",
+       "development",
+       "recapitulation"
+      ],
+      "ask": "What is sonata form?"
+     },
+     {
+      "k": [
+       "rondo",
+       "variations",
+       "fugue"
+      ],
+      "ask": "What other forms are there?"
+     },
+     {
+      "k": [
+       "unity",
+       "variety",
+       "tension",
+       "release"
+      ],
+      "ask": "What do forms balance?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Orchestration",
+   "icon": "🎻",
+   "hook": "Ravel's Boléro repeats one melody and one rhythm for about fifteen minutes, yet it never gets dull. What changes?",
+   "explain": [
+    "Orchestration is choosing instruments for musical ideas. Each instrument has a range, a timbre (tone colour) that changes with register, and dynamics that depend on pitch. Doubling a line with several instruments blends or brightens it; the same melody sounds different on flute, oboe or cello.",
+    "Know the transpositions. A B♭ clarinet or trumpet sounds a major second lower than written; an F horn sounds a perfect fifth lower; an E♭ alto saxophone sounds a major sixth lower; a piccolo sounds an octave higher and a double bass an octave lower than written. To get a concert pitch you must adjust each part.",
+    "Balance depends on register and numbers. Lower instruments need more weight to be heard; a solo flute can be covered by a tutti. Strings form the core of the orchestra, woodwinds colour, brass add power and percussion add rhythm and accent. Maurice Ravel's Boléro (1928) shows orchestration as the central interest: the same tune is passed among instruments and combinations while the volume grows. Orchestration is also essential in film scoring, brass band and big band writing."
+   ],
+   "example": {
+    "q": "A B♭ trumpet part is written as C. What concert pitch sounds?",
+    "steps": [
+     "The B♭ trumpet sounds a major second lower than written.",
+     "A major second below C is B♭.",
+     "So written C sounds B♭."
+    ],
+    "a": "B♭"
+   },
+   "analogies": {
+    "home": "Cooking with the same ingredient in different ways: baked, fried, raw.",
+    "city": "A skyline lit in different colours at night.",
+    "nature": "A single bird call sounds different in forest, field and canyon.",
+    "tech": "The same image displayed on different screens."
+   },
+   "mnemonic": "Range, colour, balance, transposition.",
+   "terms": [
+    [
+     "Timbre",
+     "The tone colour that distinguishes one instrument from another."
+    ],
+    [
+     "Doubling",
+     "Having two or more instruments play the same line."
+    ],
+    [
+     "Transposing instrument",
+     "An instrument whose written pitch differs from its sounding pitch."
+    ],
+    [
+     "Tutti",
+     "All instruments playing together."
+    ]
+   ],
+   "misc": {
+    "wrong": "All instruments are written at concert pitch.",
+    "right": "Many instruments are transposing. Parts must be transposed from the score."
+   },
+   "trip": {
+    "wiki": "Orchestration",
+    "prompt": "Find a table of transposing instruments and read off the clarinet and horn intervals."
+   },
+   "sources": [
+    "Orchestration",
+    "Transposing instrument",
+    "Boléro"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A B♭ clarinet plays a written C. What concert pitch sounds?",
+     "o": [
+      "B♭",
+      "A♭",
+      "D♭",
+      "E♭"
+     ],
+     "a": 0,
+     "why": "It sounds a major second lower.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An F horn plays a written C. What concert pitch sounds?",
+     "o": [
+      "G",
+      "D",
+      "B♭",
+      "F"
+     ],
+     "a": 3,
+     "why": "It sounds a perfect fifth lower, F.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A piccolo sounds",
+     "o": [
+      "An octave lower than it is written",
+      "The same pitch as it is written",
+      "An octave higher than written",
+      "A fifth higher than it is written"
+     ],
+     "a": 2,
+     "why": "The piccolo is written an octave lower than it sounds.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A double bass sounds",
+     "o": [
+      "An octave higher than it is written",
+      "An octave lower than written",
+      "A fifth higher than it is written",
+      "The same pitch as it is written"
+     ],
+     "a": 1,
+     "why": "Written to avoid many ledger lines.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does timbre mean?",
+     "o": [
+      "The tone colour of a sound",
+      "How loud or soft a sound is",
+      "How fast the sound repeats",
+      "How long a sound lasts in time"
+     ],
+     "a": 0,
+     "why": "Timbre distinguishes instruments of the same pitch.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A flute melody is doubled by oboe in unison. What is the effect?",
+     "o": [
+      "Silence from both instruments",
+      "A much lower pitch than either",
+      "A faster tempo for the melody",
+      "A blended, more distinct tone"
+     ],
+     "a": 3,
+     "why": "Doubling combines timbres.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which work by Ravel is built on one repeating melody and growing orchestration?",
+     "o": [
+      "La Valse",
+      "Daphnis et Chloé",
+      "Boléro",
+      "Pavane for a Dead Princess"
+     ],
+     "a": 2,
+     "why": "Boléro (1928) is famous for this design.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "An E♭ alto saxophone plays a written C (MIDI 60 sounding if untransposed). It sounds a major sixth (9 semitones) lower. What MIDI note sounds?",
+     "a": 51,
+     "tol": 0,
+     "why": "60 − 9 = 51, which is E♭.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the instrument to how it transposes (sounds relative to written).",
+     "pairs": [
+      [
+       "B♭ trumpet",
+       "Major second lower"
+      ],
+      [
+       "F horn",
+       "Perfect fifth lower"
+      ],
+      [
+       "Piccolo",
+       "Octave higher"
+      ],
+      [
+       "Double bass",
+       "Octave lower"
+      ]
+     ],
+     "why": "These are standard transpositions.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why do orchestrators give a solo melody to a higher or louder instrument rather than a very low one?",
+     "rubric": [
+      [
+       "balance",
+       "heard",
+       "audible",
+       "cover",
+       "mask",
+       "project"
+      ],
+      [
+       "accompan",
+       "texture",
+       "orchestra",
+       "tutti",
+       "loud",
+       "register",
+       "range"
+      ]
+     ],
+     "min": 1,
+     "model": "Low instruments are easily covered by the rest of the orchestra, so for the line to be heard it needs a suitable register, dynamics and not too much competing sound.",
+     "why": "Balance depends on register.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might a composer choose a clarinet rather than a flute for a dark melody?",
+     "o": [
+      "A flute is unable to play any melody",
+      "The clarinet's low register has a darker timbre",
+      "A clarinet is always louder than a flute",
+      "A clarinet and flute sound identical"
+     ],
+     "a": 1,
+     "why": "Register changes timbre.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must parts be transposed for B♭ instruments?",
+     "rubric": [
+      [
+       "sound",
+       "concert",
+       "pitch",
+       "written",
+       "different"
+      ],
+      [
+       "same fingering",
+       "fingering",
+       "tuned",
+       "tradition",
+       "family",
+       "read"
+      ]
+     ],
+     "min": 1,
+     "model": "A B♭ instrument sounds a different pitch from what is written, so a part is written higher so that the sounding pitch matches the score.",
+     "why": "Written and sounding pitch differ.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The same melody is repeated, with new instrument combinations each time. What does this show?",
+     "o": [
+      "Orchestration can create variety without changing notes",
+      "The music has no form to speak of",
+      "The tune must have been written wrongly",
+      "It can only be done by improvising"
+     ],
+     "a": 0,
+     "why": "Boléro shows this.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Orchestration",
+    "model": "Orchestration means choosing instruments for musical ideas. Each has its own range and timbre, and doubling changes the colour. Many instruments transpose, so written and sounding pitch differ. Balance depends on register and dynamics.",
+    "points": [
+     {
+      "k": [
+       "range",
+       "timbre",
+       "colour",
+       "color"
+      ],
+      "ask": "What does an orchestrator consider?"
+     },
+     {
+      "k": [
+       "double",
+       "doubling",
+       "blend"
+      ],
+      "ask": "What does doubling do?"
+     },
+     {
+      "k": [
+       "transpos",
+       "sounding",
+       "written",
+       "b♭",
+       "clarinet"
+      ],
+      "ask": "What are transposing instruments?"
+     },
+     {
+      "k": [
+       "balance",
+       "loud",
+       "register",
+       "heard"
+      ],
+      "ask": "How do you ensure a line is heard?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Music production and recording",
+   "icon": "🎚️",
+   "hook": "A voice recorded in a cupboard can sound better than one in a big room. What does a producer actually control?",
+   "explain": [
+    "Recording turns sound into signal. A microphone converts air pressure into an electrical signal; a preamp raises it; an audio interface converts it to digital by sampling. The sample rate is how many measurements per second (44.1 kHz for CDs, 48 kHz in video), and the bit depth is how finely each is measured (16-bit gives 65,536 levels, about 96 dB of dynamic range; 24-bit gives about 144 dB).",
+    "The Nyquist theorem says that a sample rate can capture frequencies up to half its value. So 44.1 kHz can capture up to 22.05 kHz, above the range of human hearing (about 20 Hz to 20 kHz). Gain staging means setting levels so the signal is strong but never clips (distorts at the maximum level).",
+    "In a digital audio workstation (DAW), tracks are edited and mixed. Mixing tools: EQ shapes frequency balance, compression reduces dynamic range, reverb adds space, panning places sounds left to right, and automation changes settings over time. Mastering is the final polish for consistent level and sound across platforms. MIDI is not audio but data about notes, so a sound can be changed afterwards. Producers work in all genres, from hip hop beat-making to orchestral film scoring."
+   ],
+   "example": {
+    "q": "What is the highest frequency a 48 kHz recording can represent?",
+    "steps": [
+     "Nyquist: highest frequency = half the sample rate.",
+     "48 ÷ 2 = 24.",
+     "So up to 24 kHz."
+    ],
+    "a": "24 kHz"
+   },
+   "analogies": {
+    "home": "A phone camera: resolution is like bit depth, frame rate like sample rate.",
+    "city": "A radio station's broadcast equipment adjusts levels so the music is not too loud.",
+    "tech": "Photo editing adjusts brightness, contrast and layers, like mixing.",
+    "music": "Panning places a guitar on the left like seats on a stage."
+   },
+   "mnemonic": "Sample, edit, mix, master: never clip.",
+   "terms": [
+    [
+     "Sample rate",
+     "The number of audio measurements taken per second."
+    ],
+    [
+     "Bit depth",
+     "How many bits describe each sample."
+    ],
+    [
+     "Clipping",
+     "Distortion from signals exceeding the maximum level."
+    ],
+    [
+     "EQ",
+     "Equalisation, adjusting the balance of frequencies."
+    ]
+   ],
+   "misc": {
+    "wrong": "Higher sample rates always make audio sound better to listeners.",
+    "right": "Above the needed rate for human hearing, gains are small. Good microphones, rooms and mixing matter far more."
+   },
+   "trip": {
+    "wiki": "Sound recording and reproduction",
+    "prompt": "Find a diagram of a typical recording signal chain."
+   },
+   "sources": [
+    "Digital audio",
+    "Audio mixing (recorded music)",
+    "Nyquist–Shannon sampling theorem"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A 44.1 kHz recording can capture frequencies up to what maximum, in kHz?",
+     "a": 22.05,
+     "tol": 0.01,
+     "why": "Nyquist: half of 44.1 = 22.05 kHz.",
+     "d": 2,
+     "k": "apply",
+     "unit": "kHz"
+    },
+    {
+     "t": "mc",
+     "q": "How many amplitude levels can 16-bit audio represent?",
+     "o": [
+      "16,777,216",
+      "4,096",
+      "1,048,576",
+      "65,536"
+     ],
+     "a": 3,
+     "why": "Each bit doubles the levels: 2^16 = 65,536.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How many bits per second does CD-quality stereo have (44,100 samples/s × 16 bits × 2 channels)?",
+     "a": 1411200,
+     "tol": 0,
+     "why": "44,100 × 16 × 2 = 1,411,200.",
+     "d": 3,
+     "k": "apply",
+     "unit": "bits/s"
+    },
+    {
+     "t": "mc",
+     "q": "What does clipping do?",
+     "o": [
+      "Makes the whole sound quieter",
+      "Removes only the background noise",
+      "Distorts the sound when the level exceeds maximum",
+      "Changes the key of the recording"
+     ],
+     "a": 2,
+     "why": "Clipping cuts off peaks.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which tool reduces the difference between loud and quiet parts?",
+     "o": [
+      "Equaliser",
+      "Compressor",
+      "Reverb unit",
+      "Stereo panner"
+     ],
+     "a": 1,
+     "why": "Compression reduces dynamic range.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which tool adjusts the balance of bass, mid and treble?",
+     "o": [
+      "EQ",
+      "Compressor",
+      "Reverb",
+      "MIDI"
+     ],
+     "a": 0,
+     "why": "Equalisation shapes frequency balance.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does MIDI data contain?",
+     "o": [
+      "Recorded sound waves of the music",
+      "Only the lyrics to a song",
+      "Only the tempo of the song",
+      "Note and performance information, not audio"
+     ],
+     "a": 3,
+     "why": "MIDI controls instruments.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the tool to its use.",
+     "pairs": [
+      [
+       "Reverb",
+       "Adds sense of space"
+      ],
+      [
+       "Panning",
+       "Positions left to right"
+      ],
+      [
+       "Compression",
+       "Controls dynamics"
+      ],
+      [
+       "Mastering",
+       "Final polish for release"
+      ]
+     ],
+     "why": "These are standard production tools.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put the basic digital recording chain in order.",
+     "items": [
+      "Microphone",
+      "Preamp",
+      "Analogue-to-digital converter",
+      "DAW"
+     ],
+     "why": "Sound goes from mic to digital audio workstation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is a good recording space important even if you can fix things later in software?",
+     "rubric": [
+      [
+       "noise",
+       "echo",
+       "reflection",
+       "room",
+       "reverb"
+      ],
+      [
+       "fix",
+       "hard",
+       "cannot",
+       "impossible",
+       "remove",
+       "difficult",
+       "source",
+       "quality"
+      ]
+     ],
+     "min": 1,
+     "model": "Unwanted noise and reflections recorded with the sound are hard to remove later, so a good source and room give a better result.",
+     "why": "Good input beats later repair.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A mix sounds muddy. Which step would help most?",
+     "o": [
+      "Raise every fader on the desk",
+      "Add more reverb to every track",
+      "Cut clashing low frequencies with EQ",
+      "Raise the sample rate of the project"
+     ],
+     "a": 2,
+     "why": "Competing low frequencies cause mud.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a producer set recording levels with headroom?",
+     "rubric": [
+      [
+       "clip",
+       "distort",
+       "peak",
+       "overload"
+      ],
+      [
+       "headroom",
+       "margin",
+       "room",
+       "space",
+       "safe",
+       "loud",
+       "unexpected"
+      ]
+     ],
+     "min": 1,
+     "model": "Headroom prevents clipping when sudden loud peaks occur, because distortion cannot be removed later.",
+     "why": "Leave margin below the maximum.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do 44.1 kHz recordings suffice for human hearing?",
+     "o": [
+      "Humans hear all the way up to 40 kHz",
+      "Humans hear to about 20 kHz, below the 22.05 kHz limit",
+      "Sampling is not needed for hearing",
+      "Digital sound has no frequency limits"
+     ],
+     "a": 1,
+     "why": "Nyquist covers the audible range.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Recording and mixing",
+    "model": "A microphone turns sound into an electrical signal, which is sampled into digital audio. Sample rate and bit depth set the quality. In a DAW you edit and mix using EQ, compression, reverb and panning, then master. Avoid clipping.",
+    "points": [
+     {
+      "k": [
+       "microphone",
+       "signal",
+       "convert",
+       "sample"
+      ],
+      "ask": "How is sound recorded?"
+     },
+     {
+      "k": [
+       "sample rate",
+       "bit depth",
+       "44.1",
+       "16"
+      ],
+      "ask": "What sets the quality?"
+     },
+     {
+      "k": [
+       "eq",
+       "compress",
+       "reverb",
+       "pan"
+      ],
+      "ask": "What do you do in mixing?"
+     },
+     {
+      "k": [
+       "clip",
+       "level",
+       "headroom",
+       "master"
+      ],
+      "ask": "What do you avoid?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Jazz improvisation",
+   "icon": "🎷",
+   "hook": "A jazz soloist improvises over chord changes at high speed. What is going through their mind?",
+   "explain": [
+    "The most common jazz building block is the ii–V–I progression. In C major it is Dm7 – G7 – Cmaj7. Players imagine a scale or mode for each chord: D Dorian over Dm7, G Mixolydian over G7 and C Ionian (major) over Cmaj7. Often they just use the same C major notes, but they target the chord tones.",
+    "Guide tones, the thirds and sevenths of each chord, show the harmony most clearly. In ii–V–I, the 7th of Dm7 (C) falls by half step to the 3rd of G7 (B), and the 7th of G7 (F) falls by half step to the 3rd of Cmaj7 (E). Bebop players added chromatic passing notes and arpeggios outlining chords, as heard in Charlie Parker's playing. Other tools: altered scales over dominant chords, tritone substitution, motivic development, rhythmic displacement and quoting.",
+    "Comping (accompanying) means chords and rhythms that support the soloist; rhythm sections respond to the soloist in real time. The swing feel treats paired eighth notes unequally. Great improvisers combine technical vocabulary, ear training and a sense of narrative. The same skills of listening and responding occur in other improvisational traditions."
+   ],
+   "example": {
+    "q": "Write the guide tones for ii–V–I in C (third and seventh of each chord).",
+    "steps": [
+     "Dm7: third F, seventh C.",
+     "G7: third B, seventh F.",
+     "Cmaj7: third E, seventh B."
+    ],
+    "a": "F–C, B–F, E–B; the 7th of each resolves by half step to the 3rd of the next"
+   },
+   "analogies": {
+    "home": "A conversation: you know the topic, but not the exact words in advance.",
+    "sport": "A point guard reads the defence and passes in the moment.",
+    "city": "A taxi driver choosing routes in traffic using local knowledge.",
+    "music": "A solo is a story told over a known road map."
+   },
+   "mnemonic": "Target the thirds; resolve by half step.",
+   "terms": [
+    [
+     "ii–V–I",
+     "A common jazz cadence: Dm7, G7, Cmaj7 in C."
+    ],
+    [
+     "Guide tone",
+     "The third or seventh of a chord, defining its quality."
+    ],
+    [
+     "Comping",
+     "Accompanying chords and rhythms behind a soloist."
+    ],
+    [
+     "Bebop",
+     "A 1940s jazz style with fast tempos and complex harmonic improvisation."
+    ]
+   ],
+   "misc": {
+    "wrong": "Jazz improvisers play whatever notes they feel.",
+    "right": "They use deep knowledge of harmony and style to choose notes quickly."
+   },
+   "trip": {
+    "wiki": "Jazz improvisation",
+    "prompt": "Find the discussion of ii–V–I and play or sing the guide tones."
+   },
+   "sources": [
+    "Jazz improvisation",
+    "Ii–V–I progression",
+    "Bebop"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In C, what are the chords of a ii–V–I?",
+     "o": [
+      "Dm7, G7, Cmaj7",
+      "C7, F7, G7",
+      "Am7, D7, Gmaj7",
+      "Em7, A7, Dmaj7"
+     ],
+     "a": 0,
+     "why": "ii = Dm7, V = G7, I = Cmaj7.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which mode is commonly played over the V7 chord (G7)?",
+     "o": [
+      "G Dorian, a minor mode",
+      "G Lydian, with a raised fourth",
+      "G Locrian, with a flat fifth",
+      "G Mixolydian"
+     ],
+     "a": 3,
+     "why": "Dominant sevenths fit Mixolydian.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which note is the third of G7?",
+     "o": [
+      "D",
+      "F",
+      "B",
+      "A"
+     ],
+     "a": 2,
+     "why": "G7 is G B D F.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How does the 7th of Dm7 (C) move to the 3rd of G7?",
+     "o": [
+      "Up a whole step to D",
+      "Down a half step to B",
+      "It stays right where it is on C",
+      "Down a fifth to F"
+     ],
+     "a": 1,
+     "why": "C falls to B.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is comping?",
+     "o": [
+      "Accompanying chords and rhythms behind a soloist",
+      "A fast scale played at speed",
+      "A drum fill between sections",
+      "A type of mute for a trumpet"
+     ],
+     "a": 0,
+     "why": "Comping supports solos.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which bebop pioneer is known for fast saxophone improvisation?",
+     "o": [
+      "Louis Armstrong",
+      "Ella Fitzgerald",
+      "Chet Baker",
+      "Charlie Parker"
+     ],
+     "a": 3,
+     "why": "Parker was a bebop pioneer.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the chord to its guide tones (third and seventh).",
+     "pairs": [
+      [
+       "Dm7",
+       "F and C"
+      ],
+      [
+       "G7",
+       "B and F"
+      ],
+      [
+       "Cmaj7",
+       "E and B"
+      ],
+      [
+       "Am7",
+       "C and G"
+      ]
+     ],
+     "why": "Third and seventh of each chord.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the ii–V–I chords in order.",
+     "items": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+     ],
+     "why": "ii, then V, then I.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why are guide tones important for a soloist?",
+     "rubric": [
+      [
+       "third",
+       "seventh",
+       "3rd",
+       "7th",
+       "chord tone"
+      ],
+      [
+       "harmony",
+       "clear",
+       "define",
+       "outline",
+       "quality",
+       "changes"
+      ],
+      [
+       "voice",
+       "smooth",
+       "half step",
+       "connect",
+       "resolve"
+      ]
+     ],
+     "min": 2,
+     "model": "Thirds and sevenths define a chord's quality, so targeting them makes the harmony clear, and they connect smoothly by half steps.",
+     "why": "They make the changes audible.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A soloist plays an Eb over G7. Which colour is it?",
+     "o": [
+      "Always just a wrong note",
+      "The root of the chord",
+      "A chromatic altered note that adds tension",
+      "A guide tone of the chord"
+     ],
+     "a": 2,
+     "why": "E♭ is the flat 13 of G7, a tension.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do beginners practise ii–V–I in all keys?",
+     "o": [
+      "Because it is the only chord in jazz",
+      "Because the pattern appears everywhere in jazz",
+      "Because it is very easy to play",
+      "Because it never resolves at all"
+     ],
+     "a": 1,
+     "why": "Fluency in keys is essential.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How does a rhythm section respond to a soloist?",
+     "rubric": [
+      [
+       "listen",
+       "respond",
+       "react",
+       "follow",
+       "interact"
+      ],
+      [
+       "dynamic",
+       "intensity",
+       "comp",
+       "rhythm",
+       "chord",
+       "drum",
+       "space"
+      ]
+     ],
+     "min": 1,
+     "model": "They listen and change dynamics, intensity and comping rhythms in real time to support or challenge the soloist.",
+     "why": "Jazz is interactive.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is jazz improvisation called a conversation?",
+     "o": [
+      "Players respond to each other in real time",
+      "They talk to each other during solos",
+      "Nobody plays at all",
+      "The music is written out note for note"
+     ],
+     "a": 0,
+     "why": "Mutual response is central.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Jazz improvisation",
+    "model": "Jazz players improvise over chord changes such as ii–V–I (Dm7, G7, Cmaj7 in C). They target the thirds and sevenths, or guide tones, which move by half steps. The rhythm section comps and responds in real time.",
+    "points": [
+     {
+      "k": [
+       "ii",
+       "v",
+       "i",
+       "dm7",
+       "g7",
+       "cmaj7"
+      ],
+      "ask": "What is a common progression?"
+     },
+     {
+      "k": [
+       "guide",
+       "third",
+       "seventh"
+      ],
+      "ask": "What notes are targeted?"
+     },
+     {
+      "k": [
+       "half step",
+       "resolve",
+       "smooth"
+      ],
+      "ask": "How do they connect?"
+     },
+     {
+      "k": [
+       "comping",
+       "rhythm section",
+       "listen",
+       "respond"
+      ],
+      "ask": "What does the rhythm section do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Classical composition and interpretation",
+   "icon": "🎹",
+   "hook": "Ten pianists can play the same notes by Chopin and sound entirely different. What decisions create the difference?",
+   "explain": [
+    "Interpretation is how a performer realises a score. The notation tells pitches and approximate durations, but not everything: how much rubato (flexible tempo), how to shape a phrase, which voice to bring out, how to articulate and pedal. Interpretation begins with understanding structure, harmony, style and the composer's era.",
+    "Style matters. Baroque performance often uses ornaments (trills, mordents), dance rhythms and lighter articulation; historically informed performance uses period instruments and sources. In the Classical period balance and clarity matter. Romantic music asks for expressive tempo flexibility, large dynamic contrasts and rich tone. Editions differ, and an urtext edition aims to present the composer's own text with minimal editing.",
+    "Composition and interpretation work together. Beethoven's symphonies use motivic development; Berlioz's Symphonie fantastique (1830) is programme music, telling a story; Florence Price's Symphony in E minor was performed by the Chicago Symphony Orchestra in 1933. Performers study scores, listen to recordings critically, decide on a plan, and then respond to the room and audience. Interpretation can differ without being wrong when it is grounded in the score and style."
+   ],
+   "example": {
+    "q": "A Romantic slow melody is played with the beat slightly stretched at the phrase peak and then pulled back. What is the technique?",
+    "steps": [
+     "Tempo is flexible at expressive points.",
+     "The overall pulse is kept.",
+     "This is called rubato."
+    ],
+    "a": "Rubato"
+   },
+   "analogies": {
+    "home": "Reading a story aloud: the words are fixed, but the voice and pauses are yours.",
+    "city": "A play directed differently each season from the same script.",
+    "sport": "The same playbook used with different skills by different teams.",
+    "tech": "Different apps interpreting the same data."
+   },
+   "mnemonic": "Score says what; interpreter decides how.",
+   "terms": [
+    [
+     "Rubato",
+     "Flexible tempo for expressive effect."
+    ],
+    [
+     "Urtext",
+     "An edition that tries to present the composer's text without editorial additions."
+    ],
+    [
+     "Programme music",
+     "Instrumental music that tells a story or paints a picture."
+    ],
+    [
+     "Ornament",
+     "A decoration of a note, such as a trill."
+    ]
+   ],
+   "misc": {
+    "wrong": "A faithful performance plays only what is on the page.",
+    "right": "Scores leave many choices. Informed interpretation uses style and structure to fill them."
+   },
+   "trip": {
+    "wiki": "Musical interpretation",
+    "prompt": "Compare two recordings of the same piece and note three differences."
+   },
+   "sources": [
+    "Interpretation (music)",
+    "Rubato",
+    "Programme music"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is rubato?",
+     "o": [
+      "A very fast tempo throughout",
+      "A loud ending to a piece",
+      "A type of ornament on a note",
+      "Flexible tempo for expression"
+     ],
+     "a": 3,
+     "why": "Rubato means stolen time.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does an urtext edition try to do?",
+     "o": [
+      "Add many extra fingerings",
+      "Rewrite the music in a new way",
+      "Present the composer's text without editorial changes",
+      "Simplify the piece for beginners"
+     ],
+     "a": 2,
+     "why": "It prioritises the composer's own notation.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is an ornament?",
+     "o": [
+      "A key signature",
+      "A trill",
+      "A bar line",
+      "A time signature"
+     ],
+     "a": 1,
+     "why": "A trill alternates two adjacent notes.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is programme music?",
+     "o": [
+      "Instrumental music that tells a story",
+      "Music with a printed list of its tunes",
+      "Only music used in films",
+      "Music that has no melody"
+     ],
+     "a": 0,
+     "why": "Programme music depicts non-musical ideas.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Who wrote the Symphonie fantastique (1830)?",
+     "o": [
+      "Franz Schubert",
+      "Johannes Brahms",
+      "Pyotr Tchaikovsky",
+      "Hector Berlioz"
+     ],
+     "a": 3,
+     "why": "Berlioz composed it in 1830.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which period often uses historically informed performance with period instruments?",
+     "o": [
+      "Contemporary pop",
+      "Jazz",
+      "Baroque",
+      "Electronic"
+     ],
+     "a": 2,
+     "why": "Period instruments are common for Baroque repertoire.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A performer plays a Baroque dance very heavily and with lots of pedal. What is the issue?",
+     "o": [
+      "It is correct for that period",
+      "It may ignore the style of the period",
+      "It has too many bars in it",
+      "It is written in the wrong clef"
+     ],
+     "a": 1,
+     "why": "Stylistic awareness shapes decisions.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the period to a performance concern.",
+     "pairs": [
+      [
+       "Baroque",
+       "Ornaments and dance rhythm"
+      ],
+      [
+       "Classical",
+       "Clarity and balance"
+      ],
+      [
+       "Romantic",
+       "Expressive rubato and wide dynamics"
+      ]
+     ],
+     "why": "Style guides interpretation.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these interpretation steps in order.",
+     "items": [
+      "Study the score",
+      "Understand structure and style",
+      "Make a plan for phrasing",
+      "Respond in performance"
+     ],
+     "why": "Preparation comes before performance decisions.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can two different interpretations both be valid?",
+     "rubric": [
+      [
+       "score",
+       "notation",
+       "leaves",
+       "choices",
+       "ambigu"
+      ],
+      [
+       "style",
+       "structure",
+       "informed",
+       "evidence",
+       "convincing",
+       "musical",
+       "justified"
+      ]
+     ],
+     "min": 2,
+     "model": "Scores leave many decisions open, so different readings can both be grounded in the score and style and be musically convincing.",
+     "why": "Informed choices, not one single correct answer.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A conductor takes the first movement much slower than the usual marking. What question should a critic ask?",
+     "o": [
+      "Does it make musical sense and respect the score and style?",
+      "Is it automatically wrong for being different?",
+      "Is it automatically better for being different?",
+      "Is the composer a good person or a bad one?"
+     ],
+     "a": 0,
+     "why": "Judge interpretations by evidence and effect.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is context about the composer's era useful to a performer?",
+     "rubric": [
+      [
+       "style",
+       "period",
+       "era",
+       "history",
+       "convention"
+      ],
+      [
+       "instrument",
+       "notation",
+       "ornament",
+       "practice",
+       "tempo",
+       "perform"
+      ]
+     ],
+     "min": 1,
+     "model": "It tells how notation was understood, which instruments and conventions existed and what ornaments or tempos were expected.",
+     "why": "Notation was shaped by its time.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why did Florence Price's 1933 performance matter?",
+     "o": [
+      "It was the only piece she ever wrote down",
+      "It was an opera staged in Chicago",
+      "It was a jazz concert in a club",
+      "A major US orchestra performed her symphony, a landmark for an African American woman composer"
+     ],
+     "a": 3,
+     "why": "It was a significant milestone.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Interpreting classical scores",
+    "model": "A score leaves many choices: rubato, phrasing, articulation and balance. Good interpretation studies the structure and style of the period and then makes convincing musical decisions. Different valid interpretations can exist.",
+    "points": [
+     {
+      "k": [
+       "rubato",
+       "phrasing",
+       "articulation",
+       "balance"
+      ],
+      "ask": "What do scores not tell you?"
+     },
+     {
+      "k": [
+       "style",
+       "period",
+       "baroque",
+       "romantic",
+       "era"
+      ],
+      "ask": "How does style matter?"
+     },
+     {
+      "k": [
+       "structure",
+       "harmony",
+       "study",
+       "analy"
+      ],
+      "ask": "What do you study first?"
+     },
+     {
+      "k": [
+       "different",
+       "valid",
+       "several",
+       "many"
+      ],
+      "ask": "Is there only one correct way?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Opera and vocal performance",
+   "icon": "🎭",
+   "hook": "Why does a Wagner soprano sound different from a Mozart soprano, even singing the same note?",
+   "explain": [
+    "Opera singing demands a voice that carries over an orchestra without amplification. This depends on breath support, a relaxed larynx, vowel shaping and resonance, including the \"singer's formant\", a cluster of strong overtones around 3 kHz that helps the voice cut through. Vibrato is a regular small variation in pitch and loudness that gives richness.",
+    "Voices are classified by range, weight and colour (Fach). Sopranos can be coloratura (agile, high), lyric or dramatic (heavier). Male voices include tenor, baritone and bass; mezzo-soprano and contralto are lower female voices. Singers move between registers at passages called the passaggio, which needs technique to smooth.",
+    "Opera styles vary. Italian bel canto emphasises beautiful, agile line. Mozart's The Marriage of Figaro (1786) blends comedy and ensemble writing. Richard Wagner's works use leitmotifs, recurring musical themes tied to characters or ideas, and aim at a Gesamtkunstwerk, a total work of art. Bizet's Carmen (1875) is French. Beijing opera classifies roles as sheng (male), dan (female), jing (painted face) and chou (clown). Singers must also act, learn languages and work with directors and conductors; surtitles help audiences follow the text."
+   ],
+   "example": {
+    "q": "A singer sings very high, agile, ornamented lines. Which voice category is likely?",
+    "steps": [
+     "High, agile and ornamental describes coloratura.",
+     "Coloratura belongs to the soprano range.",
+     "So coloratura soprano."
+    ],
+    "a": "Coloratura soprano"
+   },
+   "analogies": {
+    "home": "A shout across a field needs breath and clear vowels.",
+    "city": "Concert halls are shaped to carry unamplified sound.",
+    "sport": "A sprinter and a marathoner need different training, like different Fachs.",
+    "nature": "A bird's song carries by using a pitch that cuts through background noise."
+   },
+   "mnemonic": "Breath, space, resonance; Fach fits the voice.",
+   "terms": [
+    [
+     "Fach",
+     "The classification of a voice by range, weight and colour."
+    ],
+    [
+     "Leitmotif",
+     "A recurring theme associated with a character or idea."
+    ],
+    [
+     "Passaggio",
+     "The transition zone between vocal registers."
+    ],
+    [
+     "Bel canto",
+     "An Italian style stressing beautiful, agile singing."
+    ]
+   ],
+   "misc": {
+    "wrong": "Opera singers just sing as loudly as possible.",
+    "right": "They use efficient technique and resonance to project, not force."
+   },
+   "limits": "Voice classification is a guide; many singers change Fach over their careers, and traditions of vocal technique differ.",
+   "trip": {
+    "wiki": "Voice type",
+    "prompt": "Find a chart of opera voice types and the roles written for each."
+   },
+   "sources": [
+    "Opera",
+    "Voice type",
+    "Leitmotif"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A composer plays the same short tune each time a certain character appears on stage. What is this technique called?",
+     "o": [
+      "Recitative",
+      "Bel canto",
+      "Leitmotif",
+      "Passaggio"
+     ],
+     "a": 2,
+     "why": "Wagner developed leitmotifs, recurring themes tied to characters or ideas.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which voice type is the lowest male?",
+     "o": [
+      "Tenor",
+      "Bass",
+      "Baritone",
+      "Countertenor"
+     ],
+     "a": 1,
+     "why": "Bass is lowest.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which voice type is between tenor and bass?",
+     "o": [
+      "Baritone",
+      "Alto",
+      "Soprano",
+      "Contralto"
+     ],
+     "a": 0,
+     "why": "Baritone is the middle male voice.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which opera is by Bizet?",
+     "o": [
+      "La bohème",
+      "The Marriage of Figaro",
+      "Aida",
+      "Carmen"
+     ],
+     "a": 3,
+     "why": "Bizet composed Carmen in 1875.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which role type in Beijing opera is the clown?",
+     "o": [
+      "Sheng",
+      "Dan",
+      "Chou",
+      "Jing"
+     ],
+     "a": 2,
+     "why": "Chou are comic roles.",
+     "d": 3,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the passaggio?",
+     "o": [
+      "A very fast passage of notes",
+      "The transition between vocal registers",
+      "The entrance to the stage",
+      "A type of costume for singers"
+     ],
+     "a": 1,
+     "why": "Singers train to smooth it.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the composer to a work.",
+     "pairs": [
+      [
+       "Mozart",
+       "The Marriage of Figaro"
+      ],
+      [
+       "Wagner",
+       "Der Ring des Nibelungen"
+      ],
+      [
+       "Bizet",
+       "Carmen"
+      ],
+      [
+       "Verdi",
+       "La traviata"
+      ]
+     ],
+     "why": "Each work is by that composer.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A singer's voice cuts through a loud orchestra thanks to",
+     "o": [
+      "The singer's formant and good resonance",
+      "A microphone placed near the singer",
+      "A bigger stage in the hall",
+      "Shouting as loudly as possible"
+     ],
+     "a": 0,
+     "why": "Resonance around 3 kHz helps projection.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must an opera singer train breath support rather than just loudness?",
+     "rubric": [
+      [
+       "breath",
+       "air",
+       "support"
+      ],
+      [
+       "project",
+       "carry",
+       "orchestra",
+       "hall",
+       "without",
+       "microphone",
+       "sustain",
+       "phrase"
+      ],
+      [
+       "strain",
+       "health",
+       "long",
+       "career",
+       "tone",
+       "control"
+      ]
+     ],
+     "min": 2,
+     "model": "Breath support lets the voice project over the orchestra without a microphone and sustain long phrases without strain, protecting the voice.",
+     "why": "Efficiency beats force.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these voice types from highest to lowest.",
+     "items": [
+      "Soprano",
+      "Mezzo-soprano",
+      "Tenor",
+      "Baritone",
+      "Bass"
+     ],
+     "why": "Typical ranges descend in this order for the listed voices.",
+     "d": 3,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is Fach useful for casting?",
+     "o": [
+      "It decides the salaries of singers",
+      "It chooses the costumes for roles",
+      "It sets the tempos of arias",
+      "It matches roles to a voice's natural range and colour"
+     ],
+     "a": 3,
+     "why": "Matching roles protects the voice.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "How does a leitmotif help an audience follow a long opera?",
+     "rubric": [
+      [
+       "recur",
+       "return",
+       "repeat",
+       "again",
+       "theme"
+      ],
+      [
+       "character",
+       "idea",
+       "link",
+       "associat",
+       "remind",
+       "signal",
+       "hint",
+       "memory"
+      ]
+     ],
+     "min": 2,
+     "model": "A theme recurs whenever its character or idea is present, reminding listeners and even hinting at things not shown on stage.",
+     "why": "Music gives dramatic information.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are surtitles used?",
+     "o": [
+      "To hide the singers from the crowd",
+      "To change the language of the music",
+      "To help the audience follow the sung text",
+      "To help tune the orchestra"
+     ],
+     "a": 2,
+     "why": "Operas are often sung in original languages.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Opera singing",
+    "model": "Opera singers use breath support, relaxed technique and resonance to project over an orchestra without microphones. Voices are classified such as soprano, tenor and bass. Composers like Wagner use leitmotifs to link themes to characters.",
+    "points": [
+     {
+      "k": [
+       "breath",
+       "support",
+       "resonance",
+       "project"
+      ],
+      "ask": "How do they project?"
+     },
+     {
+      "k": [
+       "soprano",
+       "tenor",
+       "bass",
+       "baritone",
+       "fach"
+      ],
+      "ask": "How are voices classified?"
+     },
+     {
+      "k": [
+       "leitmotif",
+       "theme",
+       "wagner"
+      ],
+      "ask": "What is a leitmotif?"
+     },
+     {
+      "k": [
+       "act",
+       "language",
+       "drama",
+       "stage"
+      ],
+      "ask": "What else must singers do?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Global musical traditions",
+   "icon": "🌍",
+   "hook": "Music in Lagos, Rio, Chennai, Cairo and Beijing can all be called \"popular\" or \"classical\". What do these traditions share, and what is unique?",
+   "explain": [
+    "Africa: highlife grew in Ghana and Nigeria from local rhythms, brass bands and guitar; Nigerian bandleader Fela Kuti created Afrobeat in the late 1960s and 1970s by combining highlife, jazz, funk and Yoruba traditions, with long grooves and political lyrics. Afrobeats (with an s) is a newer pop sound from Nigeria and Ghana in the 2000s and 2010s. West African drumming often uses interlocking rhythms (polyrhythm) and call and response, which also shaped gospel, blues and hip hop in the Americas.",
+    "Americas: hip hop began in the Bronx, New York, in the 1970s with DJs such as DJ Kool Herc, MCs, breaking and graffiti. Salsa was shaped in New York by Cuban and Puerto Rican musicians from Afro-Cuban styles. Samba is central to Brazilian carnival; bossa nova arose in Rio in the late 1950s with João Gilberto and Antônio Carlos Jobim. Flamenco comes from Andalusia in southern Spain, with song (cante), guitar (toque), dance (baile) and handclaps (palmas). Indigenous North American music includes powwow drumming and song; Aboriginal Australian music includes songlines and the didgeridoo (yidaki).",
+    "Asia and the Middle East: Indian classical music has Hindustani and Carnatic traditions, built on raga (melodic framework) and tala (rhythmic cycle). Arabic maqam and Turkish makam use modes with intervals smaller than a semitone. Chinese music has traditional instruments such as the erhu and guzheng; Japanese traditional music includes gagaku (court music), koto and shakuhachi. Polynesia has chants, dance and log drums. Electronic dance music spans the world and its history includes Detroit techno and Chicago house in the 1980s."
+   ],
+   "example": {
+    "q": "What two ideas organise Hindustani and Carnatic music?",
+    "steps": [
+     "Melody is organised as a raga.",
+     "Time is organised as a tala, a repeating cycle.",
+     "Performers improvise within these."
+    ],
+    "a": "Raga (melody) and tala (rhythmic cycle)"
+   },
+   "analogies": {
+    "home": "Family recipes: each has its own ingredients and methods.",
+    "city": "A global city shows many music cultures on a single street.",
+    "farm": "Harvest songs in many regions mark the season.",
+    "sea": "Island chants and drums carry across the water."
+   },
+   "mnemonic": "Every region: scale, rhythm, voice, story.",
+   "terms": [
+    [
+     "Raga",
+     "An Indian melodic framework with rules for notes and mood."
+    ],
+    [
+     "Tala",
+     "An Indian rhythmic cycle."
+    ],
+    [
+     "Maqam",
+     "A system of melodic modes in Arabic music."
+    ],
+    [
+     "Polyrhythm",
+     "Several contrasting rhythms played together."
+    ]
+   ],
+   "misc": {
+    "wrong": "Non-Western music is simple or primitive.",
+    "right": "Many traditions have sophisticated theory and training, often passed on orally."
+   },
+   "limits": "These summaries simplify very diverse traditions, and genres overlap and evolve.",
+   "trip": {
+    "wiki": "World music",
+    "prompt": "Choose two traditions from different continents and compare their rhythm and instruments."
+   },
+   "sources": [
+    "World music",
+    "Afrobeat",
+    "Hindustani classical music"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A Nigerian bandleader mixes highlife, jazz, funk and Yoruba traditions into long political grooves. Which genre did he create?",
+     "o": [
+      "Reggae, by Bob Marley",
+      "Afrobeat, by Fela Kuti",
+      "Bossa nova, by João Gilberto",
+      "Samba, by a carnival school"
+     ],
+     "a": 1,
+     "why": "Fela Kuti created Afrobeat in the late 1960s and 1970s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Where did hip hop begin?",
+     "o": [
+      "The Bronx, New York",
+      "Kingston, Jamaica",
+      "Lagos, Nigeria",
+      "Rio de Janeiro, Brazil"
+     ],
+     "a": 0,
+     "why": "Hip hop began in the Bronx in the 1970s.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which region does flamenco come from?",
+     "o": [
+      "Catalonia, Spain",
+      "Lisbon, Portugal",
+      "Mexico City",
+      "Andalusia, Spain"
+     ],
+     "a": 3,
+     "why": "Flamenco is rooted in Andalusia.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a tala?",
+     "o": [
+      "A melodic mode used in Indian music",
+      "A type of drum used in Indian music",
+      "A rhythmic cycle in Indian music",
+      "The name of a single note"
+     ],
+     "a": 2,
+     "why": "Tala organises time.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which genre arose in Rio de Janeiro in the late 1950s?",
+     "o": [
+      "Salsa",
+      "Bossa nova",
+      "Highlife",
+      "Reggae style"
+     ],
+     "a": 1,
+     "why": "Bossa nova blended samba and jazz.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which instrument belongs to Aboriginal Australian music?",
+     "o": [
+      "Didgeridoo",
+      "Sitar",
+      "Koto",
+      "Erhu"
+     ],
+     "a": 0,
+     "why": "Also called yidaki in some communities.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the tradition to its place.",
+     "pairs": [
+      [
+       "Gagaku",
+       "Japan"
+      ],
+      [
+       "Highlife",
+       "Ghana and Nigeria"
+      ],
+      [
+       "Maqam",
+       "Arab world"
+      ],
+      [
+       "Samba",
+       "Brazil"
+      ]
+     ],
+     "why": "Each is rooted in a region.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match the instrument to its country.",
+     "pairs": [
+      [
+       "Erhu",
+       "China"
+      ],
+      [
+       "Sitar",
+       "India"
+      ],
+      [
+       "Koto",
+       "Japan"
+      ],
+      [
+       "Kora",
+       "West Africa"
+      ]
+     ],
+     "why": "These are widely recognised instruments.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why do Hindustani and Carnatic musicians improvise within a raga rather than ignore its rules?",
+     "rubric": [
+      [
+       "rule",
+       "framework",
+       "scale",
+       "notes",
+       "mood",
+       "structure",
+       "grammar"
+      ],
+      [
+       "express",
+       "creative",
+       "tradition",
+       "skill",
+       "improvis",
+       "explore"
+      ]
+     ],
+     "min": 1,
+     "model": "A raga is a framework with rules for notes and mood, so improvisation explores it creatively while keeping the character of the raga, like a language with grammar.",
+     "why": "Rules enable meaningful improvisation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A drum ensemble has several players each repeating different cycles that overlap. Which concept is this?",
+     "o": [
+      "Monophony",
+      "Rubato",
+      "Modulation",
+      "Polyrhythm"
+     ],
+     "a": 3,
+     "why": "Interlocking cycles are polyrhythm.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do many modern genres share African-derived features such as call and response?",
+     "o": [
+      "It is simply a coincidence",
+      "Only the instruments cause the sharing",
+      "Music travelled with people and influenced new styles",
+      "Because of the use of written notation"
+     ],
+     "a": 2,
+     "why": "Cultural exchange shaped gospel, blues, jazz and hip hop.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can quarter-tone intervals in maqam not be played on a standard piano?",
+     "rubric": [
+      [
+       "piano",
+       "keyboard",
+       "fixed",
+       "semitone",
+       "tuned",
+       "twelve",
+       "12"
+      ],
+      [
+       "between",
+       "smaller",
+       "quarter",
+       "microton",
+       "cannot",
+       "pitches",
+       "notes"
+      ]
+     ],
+     "min": 1,
+     "model": "A piano has fixed semitone pitches, so intervals between them such as quarter-tones are not available.",
+     "why": "Instrument design limits available pitches.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is fairest?",
+     "o": [
+      "Only written music can be advanced",
+      "Every tradition has its own sophisticated systems",
+      "One tradition is better than the rest",
+      "Oral music has no theory behind it"
+     ],
+     "a": 1,
+     "why": "Oral traditions have rich theories.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "World music traditions",
+    "model": "Music around the world has its own systems. Indian music uses raga and tala. Arabic and Turkish music use maqam and makam with small intervals. West African music uses polyrhythm and call and response. Hip hop, salsa, samba and flamenco grew in different regions.",
+    "points": [
+     {
+      "k": [
+       "raga",
+       "tala",
+       "india"
+      ],
+      "ask": "What organises Indian music?"
+     },
+     {
+      "k": [
+       "maqam",
+       "makam",
+       "arab",
+       "turk",
+       "quarter"
+      ],
+      "ask": "What about Arabic and Turkish music?"
+     },
+     {
+      "k": [
+       "polyrhythm",
+       "call and response",
+       "africa"
+      ],
+      "ask": "What is typical of West African music?"
+     },
+     {
+      "k": [
+       "hip hop",
+       "salsa",
+       "samba",
+       "flamenco",
+       "region"
+      ],
+      "ask": "Can you name styles from the Americas or Spain?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Advanced instrumental or vocal performance",
+   "icon": "🏆",
+   "hook": "Why do elite performers practise one bar for twenty minutes instead of playing the whole piece again and again?",
+   "explain": [
+    "Effective practice is deliberate: set a specific goal, work on the hardest passages slowly, correct errors immediately, and test the result. Short, focused sessions with breaks beat long, unfocused ones. Slow practice builds accurate motor patterns; gradual speed-up uses a metronome. Record yourself and listen back critically.",
+    "Intonation and tone are core skills. In equal temperament the octave is divided into 12 equal semitones, each with frequency ratio 2^(1/12) ≈ 1.0595. If A4 = 440 Hz, E5 (seven semitones higher) is 440 × 2^(7/12) ≈ 659.3 Hz. A pure fifth (3:2) would be 660 Hz, close but slightly different. Singers and string and wind players adjust pitch by ear to blend. A cent is 1/100 of a semitone.",
+    "Performing also involves managing nerves, memory and stagecraft. Techniques include rehearsing in performance conditions, visualising, controlled breathing, reframing nerves as energy, and having a memory plan (harmonic, visual, and muscle memory). Ergonomics and warm-ups prevent injury; stop if you feel pain. Great performance combines technique, musical understanding and communication with the audience, whether in a concert hall, a village festival or a studio."
+   ],
+   "example": {
+    "q": "A = 440 Hz. What is A5, one octave higher?",
+    "steps": [
+     "An octave doubles the frequency.",
+     "440 × 2 = 880.",
+     "So A5 = 880 Hz."
+    ],
+    "a": "880 Hz"
+   },
+   "analogies": {
+    "home": "Learning a recipe step by step, then cooking for guests.",
+    "sport": "An athlete drills a weak skill rather than only playing matches.",
+    "tech": "Debugging one function rather than rerunning the whole program.",
+    "city": "A dress rehearsal before opening night."
+   },
+   "mnemonic": "Slow, specific, test, repeat.",
+   "terms": [
+    [
+     "Deliberate practice",
+     "Focused practice targeting specific weaknesses with feedback."
+    ],
+    [
+     "Intonation",
+     "Accuracy of pitch."
+    ],
+    [
+     "Cent",
+     "One hundredth of a semitone."
+    ],
+    [
+     "Equal temperament",
+     "A tuning system that divides the octave into 12 equal semitones."
+    ]
+   ],
+   "misc": {
+    "wrong": "Playing the whole piece repeatedly is the best way to improve.",
+    "right": "Targeted slow work on difficult passages is usually more efficient."
+   },
+   "trip": {
+    "wiki": "Equal temperament",
+    "prompt": "Find the frequency ratio of a semitone and compute one note."
+   },
+   "sources": [
+    "Equal temperament",
+    "Practice (learning method)",
+    "Cent (music)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In equal temperament, how many cents are in an octave?",
+     "o": [
+      "1200",
+      "100",
+      "120",
+      "1000"
+     ],
+     "a": 0,
+     "why": "12 semitones × 100 cents = 1200.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A4 = 440 Hz. What is A5 in hertz?",
+     "a": 880,
+     "tol": 0,
+     "why": "An octave doubles the frequency.",
+     "d": 1,
+     "k": "apply",
+     "unit": "Hz"
+    },
+    {
+     "t": "num",
+     "q": "A4 = 440 Hz. Using 2^(7/12) ≈ 1.4983, what is E5 in hertz to the nearest 0.1 Hz?",
+     "a": 659.3,
+     "tol": 0.2,
+     "why": "440 × 1.4983 ≈ 659.3.",
+     "d": 3,
+     "k": "apply",
+     "unit": "Hz"
+    },
+    {
+     "t": "mc",
+     "q": "What is the frequency ratio of a pure perfect fifth?",
+     "o": [
+      "2:1",
+      "4:3",
+      "5:4",
+      "3:2"
+     ],
+     "a": 3,
+     "why": "The pure fifth is 3:2.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is deliberate practice?",
+     "o": [
+      "Playing the whole piece through quickly",
+      "Practising only the parts you like",
+      "Focused work on specific weaknesses with feedback",
+      "Practising for hours without any stops"
+     ],
+     "a": 2,
+     "why": "It targets weaknesses.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why practise difficult passages slowly?",
+     "o": [
+      "To avoid ever learning the notes",
+      "To build accurate patterns before speed",
+      "To make them easier forever after",
+      "Because slow playing is just a rule"
+     ],
+     "a": 1,
+     "why": "Accuracy first, then speed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A player feels pain in the hand while practising. What is best?",
+     "o": [
+      "Stop and rest, and seek advice if it continues",
+      "Practise through the pain to toughen up",
+      "Play louder to hide the pain",
+      "Play for longer to loosen the hand"
+     ],
+     "a": 0,
+     "why": "Pain is a warning sign.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the term to its meaning.",
+     "pairs": [
+      [
+       "Intonation",
+       "Accuracy of pitch"
+      ],
+      [
+       "Cent",
+       "One hundredth of a semitone"
+      ],
+      [
+       "Rubato",
+       "Flexible tempo"
+      ],
+      [
+       "Metronome",
+       "Device that clicks the beat"
+      ]
+     ],
+     "why": "Core performance vocabulary.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Put these in an effective practice order.",
+     "items": [
+      "Set a specific goal",
+      "Work the hard bars slowly",
+      "Speed up gradually with a metronome",
+      "Record and review"
+     ],
+     "why": "Goal, slow work, speed, feedback.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Give two strategies for managing performance nerves.",
+     "rubric": [
+      [
+       "breath",
+       "breathe",
+       "breathing"
+      ],
+      [
+       "prepare",
+       "rehears",
+       "practi",
+       "simulate",
+       "run through"
+      ],
+      [
+       "visuali",
+       "reframe",
+       "energy",
+       "positive",
+       "excite",
+       "focus"
+      ]
+     ],
+     "min": 2,
+     "model": "Rehearse in performance conditions, use slow breathing, visualise success and reframe nervous energy as excitement.",
+     "why": "Preparation and calm help.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do string players sometimes play a slightly different C♯ than a piano?",
+     "o": [
+      "Because string players are always out of tune",
+      "Because strings cannot play C♯ at all",
+      "Because pianos can bend their notes",
+      "They adjust pitch by ear to blend, not fixed like piano tuning"
+     ],
+     "a": 3,
+     "why": "Flexible-pitch instruments adapt intonation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is memory best supported by more than finger memory?",
+     "rubric": [
+      [
+       "harmonic",
+       "harmony",
+       "structure",
+       "analysis",
+       "visual",
+       "aural",
+       "ear",
+       "understand"
+      ],
+      [
+       "muscle",
+       "finger",
+       "hands",
+       "motor",
+       "backup",
+       "plan",
+       "safety",
+       "lost"
+      ]
+     ],
+     "min": 1,
+     "model": "Understanding harmony and structure, and hearing the music, gives backups if muscle memory fails.",
+     "why": "Multiple memory routes make performance secure.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does equal temperament compromise pure intervals?",
+     "o": [
+      "It makes every interval perfectly pure",
+      "It avoids using certain frequencies",
+      "It lets music be played in every key",
+      "It uses only five notes in an octave"
+     ],
+     "a": 2,
+     "why": "Equal temperament spreads small errors evenly to allow all keys.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Advanced performance practice",
+    "model": "Good practice is deliberate: set a goal, work on hard passages slowly, correct errors and test. Intonation matters, and equal temperament gives each semitone a ratio of 2^(1/12). Manage nerves with preparation, breathing and mindset.",
+    "points": [
+     {
+      "k": [
+       "goal",
+       "slow",
+       "specific",
+       "deliberate",
+       "metronome"
+      ],
+      "ask": "How should I practise?"
+     },
+     {
+      "k": [
+       "intonation",
+       "pitch",
+       "tuning",
+       "cent",
+       "semitone"
+      ],
+      "ask": "What about playing in tune?"
+     },
+     {
+      "k": [
+       "nerves",
+       "breath",
+       "prepare",
+       "rehears",
+       "visuali"
+      ],
+      "ask": "How do I handle nerves?"
+     },
+     {
+      "k": [
+       "rest",
+       "pain",
+       "warm",
+       "injur",
+       "health"
+      ],
+      "ask": "How do I stay healthy?"
+     }
+    ]
+   }
+  }
+ ]
+}

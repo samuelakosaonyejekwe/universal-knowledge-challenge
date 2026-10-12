@@ -1,0 +1,2854 @@
+{
+ "world": 1,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Vectors and motion in two dimensions",
+   "icon": "🧭",
+   "hook": "A boat steers straight across a river, yet it lands far downstream. Why does it not arrive directly opposite its start?",
+   "explain": [
+    "A scalar has only size (mass, time, speed). A vector has size and direction (displacement, velocity, force). We draw a vector as an arrow: the length shows the size and the arrowhead shows the direction.",
+    "Vectors add head-to-tail. Perpendicular vectors form the two shorter sides of a right-angled triangle, so the resultant size is found with Pythagoras: R = √(a² + b²). A vector can also be split into perpendicular components, for example horizontal and vertical.",
+    "Motion in two dimensions can be handled by treating each direction separately. The sideways and forward motions of the boat are independent, and the resultant velocity combines them. Relative velocity works the same way: the boat's velocity relative to the ground is its velocity through the water plus the water's velocity."
+   ],
+   "example": {
+    "q": "A swimmer swims 3 m/s straight across a river. The current flows at 4 m/s along the bank. What is the swimmer's speed relative to the bank?",
+    "steps": [
+     "The two velocities are perpendicular.",
+     "Resultant = √(3² + 4²) = √(9 + 16).",
+     "√25 = 5."
+    ],
+    "a": "5 m/s, angled downstream"
+   },
+   "analogies": {
+    "sea": "A ship sailing north in an eastward current ends up drifting north-east.",
+    "city": "Walking 3 blocks east then 4 blocks north brings you 5 blocks in a straight line from where you started.",
+    "sport": "A footballer kicks a ball forward while running sideways, so the ball's path is at an angle.",
+    "tech": "A drone flying in crosswind must point slightly into the wind to fly straight."
+   },
+   "mnemonic": "Vectors are arrows: add them tip to tail, and use Pythagoras for right angles.",
+   "terms": [
+    [
+     "Scalar",
+     "A quantity with size only."
+    ],
+    [
+     "Vector",
+     "A quantity with size and direction."
+    ],
+    [
+     "Resultant",
+     "The single vector equal to the sum of others."
+    ],
+    [
+     "Component",
+     "The part of a vector along one chosen direction."
+    ]
+   ],
+   "misc": {
+    "wrong": "Speeds in different directions simply add up, like 3 + 4 = 7.",
+    "right": "Vectors add with direction in mind. Perpendicular 3 and 4 give 5, not 7."
+   },
+   "limits": "Adding by Pythagoras works for perpendicular vectors; other angles need trigonometry. Newtonian velocity addition fails close to the speed of light.",
+   "trip": {
+    "wiki": "Euclidean vector",
+    "prompt": "Find an animation of head-to-tail vector addition."
+   },
+   "sources": [
+    "Euclidean vector",
+    "Scalar (physics)",
+    "Relative velocity"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which of these is a vector?",
+     "o": [
+      "Velocity",
+      "Mass",
+      "Time",
+      "Temperature"
+     ],
+     "a": 0,
+     "why": "Velocity has size and direction. The others have size only.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A person walks 6 m east then 6 m west. What is the size of the displacement?",
+     "o": [
+      "0 m",
+      "12 m",
+      "6 m",
+      "36 m"
+     ],
+     "a": 0,
+     "why": "The vectors cancel exactly, so the resultant is zero.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A hiker walks 6 km east and then 8 km north. How far is she from the start in a straight line?",
+     "a": 10,
+     "tol": 0.05,
+     "unit": "km",
+     "why": "R = √(6² + 8²) = √100 = 10 km.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A plane flies at 120 m/s through the air in still air heading north, but the wind blows east at 50 m/s. What is its speed relative to the ground in m/s?",
+     "a": 130,
+     "tol": 0.5,
+     "unit": "m/s",
+     "why": "√(120² + 50²) = √(14400 + 2500) = √16900 = 130 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A ball is thrown at 10 m/s at 30° above the horizontal. What is the vertical component? Use sin 30° = 0.5.",
+     "o": [
+      "5 m/s",
+      "10 m/s",
+      "8.7 m/s",
+      "20 m/s"
+     ],
+     "a": 0,
+     "why": "Vertical component = 10 × sin 30° = 10 × 0.5 = 5 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two forces of 10 N pull on a box in opposite directions. What is the resultant force?",
+     "o": [
+      "0 N",
+      "20 N",
+      "10 N",
+      "100 N"
+     ],
+     "a": 0,
+     "why": "Equal opposite forces cancel.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to scalar or vector.",
+     "pairs": [
+      [
+       "Speed",
+       "Scalar"
+      ],
+      [
+       "Displacement",
+       "Vector"
+      ],
+      [
+       "Force",
+       "Vector with direction"
+      ],
+      [
+       "Time",
+       "Scalar with size only"
+      ]
+     ],
+     "why": "Speed and time have size only. Displacement and force need a direction too.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A boat aims straight across a river. Compared with still water, how does the current change the time to cross?",
+     "o": [
+      "It does not change it, it only carries the boat downstream",
+      "It shortens the crossing time because the water helps the boat",
+      "It lengthens the crossing time because the boat is pushed sideways",
+      "The boat can't cross"
+     ],
+     "a": 0,
+     "why": "The across-river motion is independent of the along-river motion, so crossing time depends only on width and the boat's across speed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A pilot wants to fly due north in a crosswind blowing from the west. Explain how the plane should be pointed.",
+     "rubric": [
+      [
+       "west",
+       "into the wind",
+       "against the wind",
+       "toward the wind",
+       "towards the wind"
+      ],
+      [
+       "cancel",
+       "balance",
+       "offset",
+       "compensate",
+       "counter"
+      ],
+      [
+       "resultant",
+       "ground",
+       "component",
+       "sideways"
+      ]
+     ],
+     "min": 2,
+     "model": "The pilot should point the nose slightly west, into the wind, so the plane's sideways component cancels the wind's push to the east and the resultant motion over the ground is north.",
+     "why": "Components in the east-west direction must cancel.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these steps in order for finding a resultant of two perpendicular vectors.",
+     "items": [
+      "Draw the first vector as an arrow",
+      "Draw the second from the tip of the first",
+      "Draw the resultant from start to final tip",
+      "Use Pythagoras for the size"
+     ],
+     "why": "Head-to-tail drawing comes first, then the resultant arrow, then calculation.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A vector of size 10 has components of 6 and 8 on perpendicular axes. A student says the vector could be 14. What is the best response?",
+     "o": [
+      "No, the size is √(36 + 64) = 10, not the sum",
+      "Yes, because components of a vector are always added together",
+      "No, the size is 2, found by subtracting 6 from 8",
+      "Yes, since the sum of the components is always correct"
+     ],
+     "a": 0,
+     "why": "Sizes of perpendicular components combine by Pythagoras.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is average speed not always the size of the average velocity?",
+     "rubric": [
+      [
+       "direction"
+      ],
+      [
+       "path",
+       "distance",
+       "total length",
+       "route"
+      ],
+      [
+       "displacement",
+       "straight",
+       "cancel",
+       "return",
+       "back to start"
+      ]
+     ],
+     "min": 2,
+     "model": "Speed uses the whole path length, while velocity uses displacement, which has direction and may cancel. A round trip has non-zero average speed but zero average velocity.",
+     "why": "Distance counts every part of the path; displacement counts only the net change.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A swimmer can swim at 2 m/s in still water and the river flows at 1 m/s. If she points directly at the opposite bank, which statement is correct?",
+     "o": [
+      "She lands downstream of the target point",
+      "She lands directly opposite the point she aimed at",
+      "She lands upstream of the target point",
+      "She does not move across the river at all"
+     ],
+     "a": 0,
+     "why": "The current carries her downstream while she crosses.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to add vectors",
+    "model": "A vector has a size and a direction, like a velocity of 3 m/s east. To add vectors, draw them as arrows tip to tail. If the arrows are at right angles, the resultant size comes from Pythagoras. For example, 3 m/s across a river with a 4 m/s current gives 5 m/s.",
+    "points": [
+     {
+      "k": [
+       "size",
+       "direction",
+       "arrow"
+      ],
+      "ask": "What is a vector compared with an ordinary number?"
+     },
+     {
+      "k": [
+       "tip",
+       "head",
+       "tail",
+       "end to end"
+      ],
+      "ask": "How do I draw the sum of two vectors?"
+     },
+     {
+      "k": [
+       "pythagoras",
+       "square",
+       "right angle",
+       "√",
+       "triangle"
+      ],
+      "ask": "How do I find the size when they are at right angles?"
+     },
+     {
+      "k": [
+       "example",
+       "river",
+       "boat",
+       "3",
+       "4",
+       "5"
+      ],
+      "ask": "Can you give me a numerical example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Acceleration and projectile motion",
+   "icon": "🏀",
+   "hook": "A ball rolls off a table at the same moment another is dropped from the same height. Which lands first?",
+   "explain": [
+    "Acceleration is the rate of change of velocity: a = (v − u) ÷ t. For constant acceleration the equations of motion are v = u + at, s = ut + ½at² and v² = u² + 2as, where u is starting velocity, v is final velocity and s is displacement.",
+    "A projectile is an object moving only under gravity (air resistance ignored). Its horizontal velocity stays constant because no horizontal force acts, while its vertical motion has constant downward acceleration g ≈ 9.8 m/s² (we use 10 m/s² in many sums).",
+    "Because horizontal and vertical motions are independent, the ball rolling off the table and the dropped ball hit the floor together. The path of a projectile is a parabola, and the time in the air depends only on vertical motion."
+   ],
+   "example": {
+    "q": "A stone is dropped from rest from a bridge 20 m high. How long does it take to hit the water? Use g = 10 m/s², no air resistance.",
+    "steps": [
+     "Use s = ut + ½at² with u = 0, a = 10, s = 20.",
+     "20 = ½ × 10 × t² = 5t².",
+     "t² = 4, so t = 2."
+    ],
+    "a": "2 s"
+   },
+   "analogies": {
+    "sport": "A basketball shot follows an arch: it moves forward at constant speed horizontally while gravity pulls it down.",
+    "farm": "Water from a hose arches in a curve before landing.",
+    "city": "A cyclist freewheeling downhill gains speed steadily.",
+    "tech": "A game developer models a thrown object with a constant sideways speed and a falling speed that grows."
+   },
+   "mnemonic": "Sideways steady, down by g: two motions that never disturb each other.",
+   "terms": [
+    [
+     "Acceleration",
+     "Change in velocity per second, in m/s²."
+    ],
+    [
+     "Projectile",
+     "An object moving through the air under gravity alone."
+    ],
+    [
+     "Free fall",
+     "Motion with gravity as the only force."
+    ],
+    [
+     "Trajectory",
+     "The curved path of a projectile."
+    ]
+   ],
+   "misc": {
+    "wrong": "A fast sideways ball takes longer to fall than a dropped ball.",
+    "right": "Sideways speed does not affect fall time. Both reach the ground at the same moment."
+   },
+   "limits": "We ignored air resistance. For light or fast objects, such as a shuttlecock, drag changes the path a lot.",
+   "trip": {
+    "wiki": "Projectile motion",
+    "prompt": "Find the diagram showing horizontal and vertical components along a parabolic path."
+   },
+   "sources": [
+    "Projectile motion",
+    "Acceleration",
+    "Equations of motion"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A car speeds up from 5 m/s to 20 m/s in 5 s. What is its acceleration?",
+     "o": [
+      "3 m/s²",
+      "15 m/s²",
+      "5 m/s²",
+      "1.5 m/s²"
+     ],
+     "a": 0,
+     "why": "a = (20 − 5) ÷ 5 = 3 m/s².",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A ball is dropped from rest. How fast is it going after 3 s? Use g = 10 m/s² and ignore air.",
+     "a": 30,
+     "tol": 0.2,
+     "unit": "m/s",
+     "why": "v = u + at = 0 + 10 × 3 = 30 m/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A ball is thrown horizontally from a cliff at 8 m/s and takes 3 s to land. How far from the base of the cliff does it land? Ignore air.",
+     "a": 24,
+     "tol": 0.2,
+     "unit": "m",
+     "why": "Horizontal speed is constant, so distance = 8 × 3 = 24 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "How high is a cliff if a stone dropped from rest takes 3 s to reach the ground? Use g = 10 m/s², no air resistance.",
+     "a": 45,
+     "tol": 0.5,
+     "unit": "m",
+     "why": "s = ½ × 10 × 3² = 45 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "At the highest point of a ball thrown straight up, what is its acceleration?",
+     "o": [
+      "About 10 m/s² downwards",
+      "Zero, because the ball is momentarily at rest",
+      "10 m/s² upwards, carrying it on towards the top",
+      "It depends on the mass of the ball"
+     ],
+     "a": 0,
+     "why": "Gravity still acts, so the acceleration is g downwards even though the velocity is momentarily zero.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A ball is thrown horizontally. Which quantity stays constant if air resistance is ignored?",
+     "o": [
+      "Its horizontal velocity",
+      "Its vertical velocity",
+      "Its total speed",
+      "Its vertical position"
+     ],
+     "a": 0,
+     "why": "No horizontal force acts, so horizontal velocity is constant.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A velocity-time graph shows a straight line sloping upwards from the origin. What does the slope represent?",
+     "o": [
+      "Acceleration",
+      "Distance travelled",
+      "Mass of the object",
+      "Force on the object"
+     ],
+     "a": 0,
+     "why": "The gradient of a velocity-time graph is acceleration.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A cannonball and a marble are dropped from the same height in a vacuum. Which hits first?",
+     "o": [
+      "They hit together",
+      "The cannonball",
+      "The marble",
+      "It depends on their colour"
+     ],
+     "a": 0,
+     "why": "Acceleration under gravity does not depend on mass.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Two balls leave the edge of a table at the same instant: one is dropped and the other rolls off horizontally. Which lands first, and why?",
+     "rubric": [
+      [
+       "same time",
+       "together",
+       "both land",
+       "at the same moment",
+       "simultaneous"
+      ],
+      [
+       "independent",
+       "vertical",
+       "downward",
+       "gravity"
+      ],
+      [
+       "horizontal",
+       "sideways"
+      ]
+     ],
+     "min": 2,
+     "model": "They land at the same time. Vertical motion is independent of horizontal motion, and both start with zero vertical speed and fall with the same acceleration, so the sideways speed does not change the fall time.",
+     "why": "Horizontal and vertical motions are independent.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put the phases of a ball thrown vertically upward in order.",
+     "items": [
+      "Leaves the hand with highest upward speed",
+      "Slows as it rises",
+      "Momentarily stops at the top",
+      "Speeds up as it falls back down"
+     ],
+     "why": "Gravity slows it going up, stops it for an instant at the top, then speeds it up as it falls.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A ball thrown at 45° goes farther than one thrown at 80° with the same speed, ignoring air. Why?",
+     "o": [
+      "At 45° the horizontal and vertical components balance for maximum range",
+      "Gravity is weaker when the ball is thrown at 45°",
+      "At 80° the ball has less mass than at 45°",
+      "At 45° the ball has no vertical motion at all"
+     ],
+     "a": 0,
+     "why": "Range depends on both time in the air and horizontal speed, and the product is greatest at 45° (without drag, at equal launch and landing height).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student says, 'If the sideways speed is increased, the projectile stays in the air longer.' Evaluate this statement.",
+     "rubric": [
+      [
+       "not",
+       "no",
+       "wrong",
+       "incorrect",
+       "false"
+      ],
+      [
+       "vertical",
+       "height",
+       "gravity",
+       "fall"
+      ],
+      [
+       "independent",
+       "same time",
+       "only depends"
+      ]
+     ],
+     "min": 2,
+     "model": "That is wrong. Time in the air depends only on the vertical motion, which gravity controls. A faster sideways speed just carries the object farther before it lands.",
+     "why": "Horizontal and vertical motion are independent, so time in the air stays the same.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "On the Moon, where g ≈ 1.6 m/s², a ball is dropped from 2 m. Compared with Earth (g ≈ 9.8 m/s²), the fall takes...",
+     "o": [
+      "About 2.5 times longer",
+      "The same time as on Earth",
+      "About 6 times longer",
+      "Half as long"
+     ],
+     "a": 0,
+     "why": "t = √(2h/g), so the time scales with 1/√g. √(9.8/1.6) ≈ 2.5.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a thrown ball follows a curved path",
+    "model": "Gravity pulls the ball down at about 10 m/s², so it speeds up downwards. Nothing pushes it sideways, so its sideways speed stays the same. The two motions together make a curve called a parabola. For example, a ball rolling off a table lands at the same time as a dropped one.",
+    "points": [
+     {
+      "k": [
+       "gravity",
+       "pull",
+       "down",
+       "accelerat"
+      ],
+      "ask": "What does gravity do to the ball?"
+     },
+     {
+      "k": [
+       "sideways",
+       "horizontal",
+       "constant",
+       "same speed",
+       "steady"
+      ],
+      "ask": "What about its sideways motion?"
+     },
+     {
+      "k": [
+       "curve",
+       "parabola",
+       "arc",
+       "path"
+      ],
+      "ask": "So what shape is the path?"
+     },
+     {
+      "k": [
+       "example",
+       "table",
+       "dropped",
+       "basketball",
+       "hose"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Momentum and collisions",
+   "icon": "🎱",
+   "hook": "A pool ball hits another pool ball head-on and stops dead while the second ball rolls away. Where did the motion go?",
+   "explain": [
+    "Momentum is mass times velocity: p = m × v, measured in kg·m/s. It is a vector. A heavy slow lorry and a light fast bullet can have a similar momentum.",
+    "A force that acts for a time changes momentum. Impulse = F × Δt = change in momentum. Crumple zones, airbags and soft landings make Δt longer, which reduces the average force for the same momentum change.",
+    "In a closed system with no external forces, the total momentum before a collision equals the total after. In an elastic collision kinetic energy is also conserved. In an inelastic collision some kinetic energy becomes heat, sound or deformation, but momentum is still conserved."
+   ],
+   "example": {
+    "q": "A 2 kg trolley moving at 3 m/s hits a stationary 1 kg trolley and they stick together. What is their common speed?",
+    "steps": [
+     "Momentum before = 2 × 3 + 1 × 0 = 6 kg·m/s.",
+     "Momentum after = (2 + 1) × v = 3v.",
+     "3v = 6, so v = 2."
+    ],
+    "a": "2 m/s"
+   },
+   "analogies": {
+    "sport": "A rugby player tackling a smaller opponent barely slows down because of his large momentum.",
+    "city": "Airbags make the stopping time longer so the force on a driver is smaller.",
+    "sea": "A big ship moving slowly has a huge momentum, so it needs a long distance to stop.",
+    "tech": "A rocket moves forward as it throws exhaust gas backwards: total momentum stays the same."
+   },
+   "mnemonic": "Momentum is mass in motion: p = m v, and in a collision the total stays put.",
+   "terms": [
+    [
+     "Momentum",
+     "Mass times velocity (kg·m/s)."
+    ],
+    [
+     "Impulse",
+     "Force times time, equal to the change in momentum."
+    ],
+    [
+     "Elastic collision",
+     "A collision in which kinetic energy is conserved."
+    ],
+    [
+     "Inelastic collision",
+     "A collision in which kinetic energy is not conserved."
+    ]
+   ],
+   "misc": {
+    "wrong": "In an inelastic collision momentum is lost.",
+    "right": "Momentum is always conserved in an isolated system. It is kinetic energy that is lost in inelastic collisions."
+   },
+   "limits": "We assume a closed system with no external force such as friction. Real collisions involve small outside forces over short times.",
+   "trip": {
+    "wiki": "Momentum",
+    "prompt": "Look for a diagram of a collision and note the total momentum before and after."
+   },
+   "sources": [
+    "Momentum",
+    "Collision",
+    "Impulse (physics)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the momentum of a 1200 kg car moving at 15 m/s?",
+     "o": [
+      "18 000 kg·m/s",
+      "80 kg·m/s",
+      "1215 kg·m/s",
+      "9000 kg·m/s"
+     ],
+     "a": 0,
+     "why": "p = m × v = 1200 × 15 = 18 000 kg·m/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 0.15 kg ball moving at 20 m/s is stopped by a glove in 0.01 s. What average force in newtons does the glove apply?",
+     "a": 300,
+     "tol": 2,
+     "unit": "N",
+     "why": "Impulse = change in momentum = 0.15 × 20 = 3 kg·m/s. F = 3 ÷ 0.01 = 300 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 4 kg cart at 5 m/s collides with and sticks to a 1 kg cart at rest. What is their combined speed?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "20 = (4 + 1) × v, so v = 4 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A cyclist falls onto a thick mat instead of concrete. Why is the mat safer?",
+     "o": [
+      "It increases the stopping time, reducing the force",
+      "It reduces the mass of the cyclist as they land",
+      "It makes the momentum drop to zero instantly with no force",
+      "It gives extra energy back to the cyclist"
+     ],
+     "a": 0,
+     "why": "The momentum change is the same, but F = Δp ÷ Δt is smaller for a longer Δt.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which quantity is conserved in every collision in an isolated system?",
+     "o": [
+      "Momentum",
+      "Kinetic energy only",
+      "Speed",
+      "Velocity of each object"
+     ],
+     "a": 0,
+     "why": "Total momentum is conserved whatever the type of collision.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A moving ball hits an identical stationary ball head-on in an elastic collision, and stops. What happens to the second ball?",
+     "o": [
+      "It moves off with the first ball's original velocity",
+      "It stays still while the first ball rolls on",
+      "It moves off at half the speed of the first ball",
+      "It moves backwards, away from the first ball"
+     ],
+     "a": 0,
+     "why": "Momentum and kinetic energy are both conserved only if the second ball takes all the velocity.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cannon fires a ball forward. What happens to the cannon?",
+     "o": [
+      "It recoils backwards",
+      "It moves forward",
+      "It stays perfectly still",
+      "It spins on the spot"
+     ],
+     "a": 0,
+     "why": "Total momentum was zero, so the cannon gets equal and opposite momentum.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each safety feature to how it works.",
+     "pairs": [
+      [
+       "Airbag",
+       "Lengthens stopping time"
+      ],
+      [
+       "Crumple zone",
+       "Absorbs energy by deforming"
+      ],
+      [
+       "Seat belt",
+       "Spreads the force over the body"
+      ]
+     ],
+     "why": "Each reduces harmful peak force on the passenger.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A heavy truck and a small car move at the same speed and hit a wall. Explain why stopping the truck needs a greater impulse.",
+     "rubric": [
+      [
+       "mass",
+       "heavier",
+       "heavy"
+      ],
+      [
+       "momentum",
+       "p = m",
+       "mv"
+      ],
+      [
+       "impulse",
+       "change in momentum",
+       "force",
+       "time"
+      ]
+     ],
+     "min": 2,
+     "model": "The truck has more mass, so at the same speed it has more momentum. The impulse needed to stop it equals its change in momentum, which is larger.",
+     "why": "Impulse equals change in momentum, which grows with mass at the same speed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these by momentum from smallest to largest.",
+     "items": [
+      "A 0.05 kg tennis ball at 40 m/s (2 kg·m/s)",
+      "A 60 kg runner at 5 m/s (300 kg·m/s)",
+      "A 1000 kg car at 10 m/s (10 000 kg·m/s)",
+      "A 10 000 kg lorry at 20 m/s (200 000 kg·m/s)"
+     ],
+     "why": "Compare the momentum values computed from m × v.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two skaters at rest on ice push off each other. A 60 kg skater moves at 2 m/s one way. What is the speed of the 40 kg skater?",
+     "o": [
+      "3 m/s the opposite way",
+      "2 m/s the opposite way",
+      "3 m/s the same way",
+      "1 m/s the opposite way"
+     ],
+     "a": 0,
+     "why": "Total momentum stays zero: 60 × 2 = 40 × v, so v = 3 m/s opposite.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student says, 'In a perfectly inelastic collision, everything is lost, even momentum.' Correct this.",
+     "rubric": [
+      [
+       "momentum"
+      ],
+      [
+       "conserved",
+       "kept",
+       "same",
+       "not lost",
+       "stays"
+      ],
+      [
+       "kinetic",
+       "energy",
+       "heat",
+       "sound",
+       "deform"
+      ]
+     ],
+     "min": 2,
+     "model": "Momentum is conserved. What is lost is kinetic energy, which becomes heat, sound and deformation, so the objects move together afterwards with the same total momentum.",
+     "why": "Momentum is conserved in all collisions of isolated systems.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do ball-catching coaches tell players to move their hands backwards while catching?",
+     "o": [
+      "It lengthens the stopping time and lowers the force",
+      "It adds extra momentum to the ball for the catch",
+      "It makes the ball heavier in the hands",
+      "It reduces the mass of the ball"
+     ],
+     "a": 0,
+     "why": "A longer stopping time lowers the average force for the same change of momentum.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Momentum and how it is conserved",
+    "model": "Momentum is mass times velocity. When objects collide in an isolated system, the total momentum before equals the total after. For example, a 2 kg trolley at 3 m/s that sticks to a stationary 1 kg trolley gives a total mass of 3 kg moving at 2 m/s.",
+    "points": [
+     {
+      "k": [
+       "mass",
+       "velocity",
+       "times",
+       "×",
+       "m v",
+       "mv"
+      ],
+      "ask": "How do I calculate momentum?"
+     },
+     {
+      "k": [
+       "total",
+       "before",
+       "after",
+       "same",
+       "conserved"
+      ],
+      "ask": "What stays the same in a collision?"
+     },
+     {
+      "k": [
+       "isolated",
+       "no outside",
+       "no external",
+       "closed",
+       "friction"
+      ],
+      "ask": "When does that rule work?"
+     },
+     {
+      "k": [
+       "example",
+       "trolley",
+       "ball",
+       "car",
+       "stick"
+      ],
+      "ask": "Can you show me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Rotational motion and torque",
+   "icon": "🔧",
+   "hook": "Why is it easier to open a door by pushing near the handle than near the hinges?",
+   "explain": [
+    "Rotating objects turn about an axis. Angular speed ω is the angle turned per second, measured in radians per second; one full turn is 2π radians. If a wheel completes one turn in a time T (the period), then ω = 2π ÷ T. Frequency f = 1 ÷ T.",
+    "The turning effect of a force is called torque (moment). Torque = force × perpendicular distance from the pivot, so τ = F × d, measured in newton-metres (N·m). A longer lever arm gives a greater torque for the same force.",
+    "An object is in rotational balance (equilibrium) when the clockwise torques equal the anticlockwise torques. A seesaw balances when F₁ × d₁ = F₂ × d₂. Mass spread far from the axis is harder to start turning: this resistance is called moment of inertia."
+   ],
+   "example": {
+    "q": "A 400 N child sits 1.5 m from the pivot of a seesaw. Where must a 300 N child sit on the other side to balance?",
+    "steps": [
+     "Clockwise torque = anticlockwise torque.",
+     "400 × 1.5 = 600 N·m.",
+     "300 × d = 600, so d = 2."
+    ],
+    "a": "2 m from the pivot"
+   },
+   "analogies": {
+    "home": "A long spanner makes loosening a bolt easy because the distance from the bolt is large.",
+    "sport": "A gymnast spinning slowly tucks in her arms and spins faster.",
+    "farm": "A long-handled well pump needs less force than a short-handled one.",
+    "city": "A revolving door moves easily if you push at the outer edge."
+   },
+   "mnemonic": "Torque is force times arm: far from the pivot, a small push turns a lot.",
+   "terms": [
+    [
+     "Torque",
+     "The turning effect of a force, in N·m."
+    ],
+    [
+     "Pivot",
+     "The point or axis about which something turns."
+    ],
+    [
+     "Angular speed",
+     "The angle turned per second, in rad/s."
+    ],
+    [
+     "Moment of inertia",
+     "How strongly an object resists changes in its rotation."
+    ]
+   ],
+   "misc": {
+    "wrong": "Only the size of a force decides how well it turns something.",
+    "right": "Torque depends on both the force and its distance from the pivot, measured perpendicular to the force."
+   },
+   "limits": "These sums assume a rigid body and a force at right angles to the lever arm. If the push is at an angle, only the perpendicular part counts.",
+   "trip": {
+    "wiki": "Torque",
+    "prompt": "Find the diagram of a wrench and see how force, distance and angle are labelled."
+   },
+   "sources": [
+    "Torque",
+    "Angular velocity",
+    "Moment of inertia"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A force of 50 N acts at right angles to a spanner 0.4 m long. What is the torque in N·m?",
+     "a": 20,
+     "tol": 0.1,
+     "unit": "N·m",
+     "why": "τ = 50 × 0.4 = 20 N·m.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A wheel turns once every 0.5 s. What is its angular speed in rad/s? Use π = 3.14 and give the answer to one decimal place.",
+     "a": 12.6,
+     "tol": 0.1,
+     "unit": "rad/s",
+     "why": "ω = 2π ÷ T = 6.28 ÷ 0.5 = 12.56 ≈ 12.6 rad/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 200 N weight is 3 m from the pivot on one side of a plank. What weight at 2 m from the pivot on the other side would balance the plank?",
+     "a": 300,
+     "tol": 1,
+     "unit": "N",
+     "why": "200 × 3 = 600 N·m, so F × 2 = 600 and F = 300 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A bolt is tight. Which choice makes it easiest to turn?",
+     "o": [
+      "A longer spanner",
+      "A shorter spanner",
+      "A lighter spanner",
+      "A spanner with a smaller handle"
+     ],
+     "a": 0,
+     "why": "A longer lever arm gives more torque for the same force.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which unit is used for torque?",
+     "o": [
+      "Newton-metre (N·m)",
+      "Watt (W)",
+      "Kilogram (kg)",
+      "Pascal (Pa)"
+     ],
+     "a": 0,
+     "why": "Force in newtons times distance in metres gives N·m.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A figure skater pulls her arms in while spinning. What happens to her spin rate?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "She stops"
+     ],
+     "a": 0,
+     "why": "Her moment of inertia decreases, so with angular momentum conserved she spins faster.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A balanced seesaw has two children of different weights. What must be true?",
+     "o": [
+      "The heavier child sits closer to the pivot",
+      "The heavier child sits farther from the pivot",
+      "Both sit the same distance away",
+      "The seesaw can not balance"
+     ],
+     "a": 0,
+     "why": "Equal torques need a smaller distance for a larger force.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its unit.",
+     "pairs": [
+      [
+       "Torque",
+       "N·m"
+      ],
+      [
+       "Angular speed",
+       "rad/s"
+      ],
+      [
+       "Period",
+       "s"
+      ],
+      [
+       "Frequency",
+       "Hz"
+      ]
+     ],
+     "why": "These units follow from the definitions of the quantities.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why are door handles placed far from the hinges and not close to them?",
+     "rubric": [
+      [
+       "torque",
+       "turning effect",
+       "moment",
+       "turning force"
+      ],
+      [
+       "distance",
+       "far",
+       "lever",
+       "arm",
+       "longer"
+      ],
+      [
+       "less force",
+       "smaller force",
+       "easier",
+       "little force",
+       "small force"
+      ]
+     ],
+     "min": 2,
+     "model": "Torque equals force times distance from the hinge. Placing the handle far away gives a larger torque for the same push, so a smaller force opens the door.",
+     "why": "A longer lever arm gives a larger turning effect.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A merry-go-round turns once in 4 s. What is the frequency?",
+     "o": [
+      "0.25 Hz",
+      "4 Hz",
+      "0.5 Hz",
+      "8 Hz"
+     ],
+     "a": 0,
+     "why": "f = 1 ÷ T = 1 ÷ 4 = 0.25 Hz.",
+     "d": 2,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two identical hoops and discs of the same mass and radius roll down a slope. Why does the disc usually arrive first?",
+     "o": [
+      "The disc has less moment of inertia, so more energy goes to forward speed",
+      "The disc is heavier, so gravity pulls it down faster",
+      "The hoop has no friction with the slope at all",
+      "Discs get more torque from the slope than hoops do"
+     ],
+     "a": 0,
+     "why": "A hoop has more mass far from its axis, so more energy is tied up in rotation and less in moving down the slope.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A student pushes a door at the hinge side with 30 N and gets no motion, but 5 N near the handle opens it. Explain.",
+     "rubric": [
+      [
+       "torque",
+       "moment",
+       "turning effect"
+      ],
+      [
+       "distance",
+       "far",
+       "lever",
+       "arm",
+       "hinge"
+      ],
+      [
+       "small",
+       "close",
+       "near zero",
+       "almost zero",
+       "little"
+      ]
+     ],
+     "min": 2,
+     "model": "Torque is force times distance from the hinge. Near the hinge the distance is almost zero, so even 30 N gives a tiny torque, while 5 N at the handle has a large distance and a larger torque.",
+     "why": "Torque depends on distance as well as force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A tightrope walker carries a long pole. How does it help?",
+     "o": [
+      "It raises her moment of inertia and slows any tipping",
+      "It reduces her mass so she is lighter on the rope",
+      "It stops gravity from pulling her down",
+      "It increases friction between her feet and the rope"
+     ],
+     "a": 0,
+     "why": "The pole puts mass far from her centre, so rotation starts more slowly, giving time to correct.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What torque is",
+    "model": "Torque is the turning effect of a force. It equals the force times the distance from the pivot. A longer lever means more torque for the same push. For example, a 50 N push on a 0.4 m spanner gives 20 N·m.",
+    "points": [
+     {
+      "k": [
+       "turning",
+       "turn",
+       "rotate",
+       "twist"
+      ],
+      "ask": "What does torque do?"
+     },
+     {
+      "k": [
+       "force",
+       "push"
+      ],
+      "ask": "What does it depend on besides distance?"
+     },
+     {
+      "k": [
+       "distance",
+       "pivot",
+       "lever",
+       "arm",
+       "far"
+      ],
+      "ask": "Why does distance matter?"
+     },
+     {
+      "k": [
+       "example",
+       "spanner",
+       "door",
+       "seesaw",
+       "20"
+      ],
+      "ask": "Do you have an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Conservation laws",
+   "icon": "♻️",
+   "hook": "A roller coaster never gets taller than its first hill, yet it still speeds through the loops. Why can it never climb higher than it began?",
+   "explain": [
+    "A conservation law says that a total quantity stays constant in a closed system. Three major ones are conservation of energy, momentum and angular momentum. They hold even when the details of a process are too messy to follow.",
+    "Energy cannot be created or destroyed; it only changes form. A falling object loses gravitational potential energy mgh and gains kinetic energy ½mv². With negligible friction, mgh = ½mv², so v = √(2gh). With friction, some energy is converted to thermal energy, but the total is the same.",
+    "Angular momentum, L = I × ω, is conserved when no external torque acts. A skater who pulls in her arms lowers I and so ω increases. Momentum conservation explains why a rocket speeds up as it expels gas."
+   ],
+   "example": {
+    "q": "A ball is dropped from a height of 5 m. What is its speed just before it hits the ground? Use g = 10 m/s², no air resistance.",
+    "steps": [
+     "mgh = ½mv², so v² = 2gh.",
+     "v² = 2 × 10 × 5 = 100.",
+     "v = 10."
+    ],
+    "a": "10 m/s"
+   },
+   "analogies": {
+    "sport": "A skateboarder at the top of a ramp has lots of height energy, which turns into speed at the bottom.",
+    "city": "A bank account where money moves between accounts but the total stays the same.",
+    "sea": "A pendulum buoy swings, trading height energy for speed energy over and over.",
+    "tech": "A battery stores chemical energy that becomes electrical, then light and heat in a torch."
+   },
+   "mnemonic": "Nothing is lost, only moved: energy, momentum, spin.",
+   "terms": [
+    [
+     "Conservation",
+     "A total quantity staying constant over time."
+    ],
+    [
+     "Closed system",
+     "A system with no energy or matter crossing its boundary."
+    ],
+    [
+     "Angular momentum",
+     "A measure of rotation, I × ω, conserved without external torque."
+    ],
+    [
+     "Dissipation",
+     "Energy spreading into less useful forms such as heat."
+    ]
+   ],
+   "misc": {
+    "wrong": "Energy conservation means we can never run out of useful energy.",
+    "right": "Total energy is conserved, but it spreads out as heat that is hard to use again, so useful energy can run out."
+   },
+   "limits": "Each law holds exactly in a closed system. In practice we must account for friction, air resistance and heat, and in relativity mass itself counts as energy.",
+   "trip": {
+    "wiki": "Conservation law",
+    "prompt": "Find the link between conservation laws and symmetry in the article."
+   },
+   "sources": [
+    "Conservation of energy",
+    "Conservation of momentum",
+    "Angular momentum"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A ball is dropped from 20 m. How fast is it going just before landing? Use g = 10 m/s², no air resistance.",
+     "o": [
+      "20 m/s",
+      "10 m/s",
+      "40 m/s",
+      "200 m/s"
+     ],
+     "a": 0,
+     "why": "v = √(2gh) = √(2 × 10 × 20) = √400 = 20 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 2 kg ball is thrown straight up at 10 m/s. What maximum height does it reach? Use g = 10 m/s², no air resistance.",
+     "a": 5,
+     "tol": 0.1,
+     "unit": "m",
+     "why": "½mv² = mgh gives h = v² ÷ 2g = 100 ÷ 20 = 5 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 70 kg astronaut at rest throws a 2 kg tool at 7 m/s. What is her recoil speed?",
+     "a": 0.2,
+     "tol": 0.01,
+     "unit": "m/s",
+     "why": "2 × 7 = 70 × v, so v = 14 ÷ 70 = 0.2 m/s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A pendulum swings. At its lowest point, which statement is true?",
+     "o": [
+      "Kinetic energy is greatest",
+      "Potential energy is greatest",
+      "Total energy is zero",
+      "Speed is zero"
+     ],
+     "a": 0,
+     "why": "Height is lowest and speed highest at the bottom, so kinetic energy is at its maximum.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A rolling ball slows to a stop on grass. Where has its kinetic energy gone?",
+     "o": [
+      "Into thermal energy of the ball and grass",
+      "It has simply vanished from the universe",
+      "It became extra mass in the ball and grass",
+      "It became light only"
+     ],
+     "a": 0,
+     "why": "Friction converts kinetic energy into heat. The total energy is conserved.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which of these is conserved when no external torque acts?",
+     "o": [
+      "Angular momentum",
+      "Speed",
+      "Kinetic energy only",
+      "Linear velocity"
+     ],
+     "a": 0,
+     "why": "Without external torque, L = Iω stays constant.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A diver tucks into a ball mid-air and spins faster. What explains this?",
+     "o": [
+      "Conservation of angular momentum",
+      "Conservation of mass of her body",
+      "Gravity pulls harder on her when she tucks",
+      "Air pushes her around and makes her spin"
+     ],
+     "a": 0,
+     "why": "Tucking reduces her moment of inertia, so ω rises to keep L constant.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each conserved quantity to a situation that shows it.",
+     "pairs": [
+      [
+       "Energy",
+       "Pendulum swinging"
+      ],
+      [
+       "Momentum",
+       "Cannon recoil"
+      ],
+      [
+       "Angular momentum",
+       "Skater pulling in her arms"
+      ]
+     ],
+     "why": "Each example is a classic demonstration of its law.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A student says a perpetual motion machine can run forever and power a house. Explain using conservation of energy why this is impossible.",
+     "rubric": [
+      [
+       "friction",
+       "heat",
+       "lost",
+       "wasted",
+       "dissipat",
+       "air resistance"
+      ],
+      [
+       "energy"
+      ],
+      [
+       "input",
+       "supply",
+       "no new energy",
+       "cannot create",
+       "can't create",
+       "created"
+      ]
+     ],
+     "min": 2,
+     "model": "A machine always loses some energy to friction and heat, so it slows down unless new energy is supplied. Energy cannot be created, so it cannot give out more energy than it takes in.",
+     "why": "Real machines cannot be 100% efficient, and extra energy cannot appear from nowhere.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the energy changes for a ball dropped onto the floor that bounces a little.",
+     "items": [
+      "Gravitational potential energy at the top",
+      "Kinetic energy while falling",
+      "Stored elastic energy while squashed",
+      "Kinetic energy again as it bounces",
+      "Heat and sound"
+     ],
+     "why": "The ball falls, squashes, rebounds, and some energy spreads as heat and sound.",
+     "d": 3,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A bouncing ball reaches a lower height each time. Does this break conservation of energy?",
+     "o": [
+      "No, the missing energy went into heat and sound",
+      "Yes, because energy really disappears in each bounce",
+      "Yes, because momentum is destroyed in each bounce",
+      "No, because the ball gets lighter on each bounce"
+     ],
+     "a": 0,
+     "why": "Some kinetic energy becomes thermal energy in the ball and floor and sound waves in the air, so the total is the same.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Two identical cars crash head-on at equal speeds and stop. Explain what happened to the momentum and to the kinetic energy.",
+     "rubric": [
+      [
+       "momentum"
+      ],
+      [
+       "zero",
+       "cancel",
+       "equal and opposite",
+       "equal but opposite",
+       "balanced"
+      ],
+      [
+       "kinetic",
+       "energy",
+       "heat",
+       "deform",
+       "crumple",
+       "sound"
+      ]
+     ],
+     "min": 2,
+     "model": "The total momentum was zero before and stays zero after because the two momenta were equal and opposite. The kinetic energy was converted into deformation, heat and sound.",
+     "why": "Momentum is conserved. Kinetic energy is changed into other forms.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A 1 kg mass falls 10 m. Another 4 kg mass falls 10 m. If air resistance is ignored, how do their speeds just before landing compare?",
+     "o": [
+      "They are equal",
+      "The 4 kg is twice as fast",
+      "The 4 kg is four times as fast",
+      "The 1 kg is twice as fast"
+     ],
+     "a": 0,
+     "why": "v = √(2gh) does not depend on mass.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a conservation law means",
+    "model": "A conservation law says a total amount stays the same. Energy only changes form, such as height energy turning into movement energy when a ball falls. Momentum and spin are also conserved when nothing outside pushes or twists the system. For example, a skater spins faster when pulling in her arms.",
+    "points": [
+     {
+      "k": [
+       "same",
+       "constant",
+       "stays",
+       "total",
+       "conserved"
+      ],
+      "ask": "What does conservation mean?"
+     },
+     {
+      "k": [
+       "energy",
+       "form",
+       "change",
+       "transfer"
+      ],
+      "ask": "How does energy fit?"
+     },
+     {
+      "k": [
+       "momentum",
+       "spin",
+       "angular"
+      ],
+      "ask": "What else is conserved?"
+     },
+     {
+      "k": [
+       "example",
+       "skater",
+       "pendulum",
+       "ball",
+       "roller coaster"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Fluid mechanics and buoyancy",
+   "icon": "⚓",
+   "hook": "A huge ship made of steel floats, but a small steel ball sinks. What decides whether something floats?",
+   "explain": [
+    "A fluid is a liquid or a gas. Pressure in a fluid increases with depth: p = ρ × g × h, where ρ is density (kg/m³), g is 10 N/kg (about 9.8) and h is depth in metres. Pressure acts equally in all directions at a point in a fluid. Pascal's principle says a pressure change applied to a confined fluid is passed on through the fluid, which is how hydraulic jacks work.",
+    "Buoyancy is an upward force on an object in a fluid. Archimedes' principle: the buoyant force equals the weight of the fluid displaced. So F = ρ × g × V, where V is the volume submerged. An object floats if the buoyant force can equal its weight, which means its average density is less than the fluid's.",
+    "A floating object displaces a weight of fluid equal to its own weight. A ship floats because its hollow hull displaces a large volume of water. Cargo makes it sink deeper because more water must be displaced."
+   ],
+   "example": {
+    "q": "What pressure from the water acts on a diver at 10 m depth in fresh water? Use ρ = 1000 kg/m³ and g = 10 N/kg. Ignore the air above.",
+    "steps": [
+     "p = ρ g h.",
+     "= 1000 × 10 × 10.",
+     "= 100 000 Pa."
+    ],
+    "a": "100 000 Pa (about 1 atmosphere extra)"
+   },
+   "analogies": {
+    "sea": "A cargo ship sits deeper in the water when fully loaded.",
+    "home": "A hydraulic car jack lifts a car with a small push on a small piston.",
+    "nature": "Fish can control their depth using a gas-filled swim bladder.",
+    "city": "Water towers are placed high so that water pressure at taps is large."
+   },
+   "mnemonic": "Deeper means more pressure; floating means push up equals weight.",
+   "terms": [
+    [
+     "Fluid",
+     "A liquid or gas, which can flow."
+    ],
+    [
+     "Buoyant force",
+     "The upward force of a fluid on an object in it."
+    ],
+    [
+     "Archimedes' principle",
+     "Buoyant force equals the weight of fluid displaced."
+    ],
+    [
+     "Displace",
+     "To push aside a volume of fluid."
+    ]
+   ],
+   "misc": {
+    "wrong": "Heavy things sink and light things float.",
+    "right": "It is density that matters. A big, heavy ship floats because its average density is below that of water."
+   },
+   "limits": "These sums treat fluids as non-moving and incompressible. Gases are compressible, so pressure in the atmosphere does not rise in the same simple way.",
+   "trip": {
+    "wiki": "Archimedes' principle",
+    "prompt": "Find the diagram of an object in a tank with displaced water."
+   },
+   "sources": [
+    "Buoyancy",
+    "Pressure",
+    "Pascal's law"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the pressure due to water at a depth of 5 m? Use ρ = 1000 kg/m³ and g = 10 N/kg.",
+     "o": [
+      "50 000 Pa",
+      "500 Pa",
+      "5000 Pa",
+      "500 000 Pa"
+     ],
+     "a": 0,
+     "why": "p = ρgh = 1000 × 10 × 5 = 50 000 Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A fully submerged object has a volume of 0.002 m³. What is the buoyant force in fresh water? Use ρ = 1000 kg/m³ and g = 10 N/kg.",
+     "a": 20,
+     "tol": 0.2,
+     "unit": "N",
+     "why": "F = ρ g V = 1000 × 10 × 0.002 = 20 N.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A hydraulic press has pistons of 0.01 m² and 0.5 m². A force of 100 N is applied to the small piston. What force acts on the large piston?",
+     "a": 5000,
+     "tol": 10,
+     "unit": "N",
+     "why": "Pressure is the same: 100 ÷ 0.01 = 10 000 Pa. F = 10 000 × 0.5 = 5000 N.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "An object has a density of 800 kg/m³. In fresh water (1000 kg/m³), it will...",
+     "o": [
+      "Float",
+      "Sink",
+      "Stay at the bottom",
+      "Rise and fall"
+     ],
+     "a": 0,
+     "why": "Density below the fluid's density means it floats.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does Archimedes' principle say?",
+     "o": [
+      "The upward force equals the weight of fluid displaced",
+      "Pressure is the same at all depths of a fluid",
+      "Heavy things always sink in any fluid",
+      "A fluid can never be pushed or squeezed"
+     ],
+     "a": 0,
+     "why": "This is the statement of the principle.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A boat moves from a river into the salty sea (denser water). What happens to how deep it sits?",
+     "o": [
+      "It sits higher in the water",
+      "It sits lower in the water",
+      "It sinks to the bottom",
+      "It does not change its depth"
+     ],
+     "a": 0,
+     "why": "Denser water supports the same weight with less volume displaced.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A diver goes deeper. What happens to the pressure from the water on her?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "p = ρgh increases with depth.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each device to the principle it uses.",
+     "pairs": [
+      [
+       "Hydraulic jack",
+       "Pascal's principle"
+      ],
+      [
+       "Ship floating",
+       "Archimedes' principle"
+      ],
+      [
+       "Dam wall thicker at the bottom",
+       "Pressure rises with depth"
+      ]
+     ],
+     "why": "Each device applies a different fluid idea.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A solid steel block sinks, but a steel boat of the same mass floats. Explain.",
+     "rubric": [
+      [
+       "shape",
+       "hollow",
+       "air",
+       "spread"
+      ],
+      [
+       "displace",
+       "volume",
+       "more water"
+      ],
+      [
+       "density",
+       "average density",
+       "less dense",
+       "buoyant"
+      ]
+     ],
+     "min": 2,
+     "model": "The boat is shaped with a hollow hull full of air, so it displaces much more water than the block. Its average density is less than water's, and the buoyant force can equal its weight.",
+     "why": "Floating depends on average density, which depends on shape.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these materials by density from least dense to most dense.",
+     "items": [
+      "Air",
+      "Cork",
+      "Water",
+      "Aluminium",
+      "Gold"
+     ],
+     "why": "Air is about 1.2 kg/m³, cork about 240, water 1000, aluminium about 2700 and gold about 19 300 kg/m³.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A block of ice floats in a glass of water with its top just above the surface. When the ice melts, what happens to the water level?",
+     "o": [
+      "It stays the same",
+      "It rises and the glass may begin to overflow",
+      "It falls because the ice was taking up space",
+      "It overflows"
+     ],
+     "a": 0,
+     "why": "Floating ice displaces its own weight of water, which is exactly the volume the melted water takes up.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a dam wall need to be thicker at the bottom than at the top?",
+     "rubric": [
+      [
+       "pressure"
+      ],
+      [
+       "depth",
+       "deeper",
+       "bottom",
+       "increase"
+      ],
+      [
+       "force",
+       "push",
+       "stronger",
+       "greater"
+      ]
+     ],
+     "min": 2,
+     "model": "Pressure increases with depth, so the water pushes with a larger force on the bottom of the wall. The wall must be thicker and stronger there.",
+     "why": "p = ρgh rises with depth.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A person floats more easily in the Dead Sea than in a swimming pool. Why?",
+     "o": [
+      "The very salty water is denser",
+      "The Dead Sea is much warmer than a pool",
+      "Gravity is smaller at the Dead Sea",
+      "People have less mass there"
+     ],
+     "a": 0,
+     "why": "Denser water gives a larger buoyant force for each volume displaced.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why things float or sink",
+    "model": "A fluid pushes up on an object with a force equal to the weight of the fluid the object displaces. If the object is less dense than the fluid, this upward push can balance its weight and it floats. For example, a hollow steel ship floats, but a solid steel ball sinks.",
+    "points": [
+     {
+      "k": [
+       "push up",
+       "upward",
+       "buoyan",
+       "up force"
+      ],
+      "ask": "What force acts upwards on an object in water?"
+     },
+     {
+      "k": [
+       "displace",
+       "weight of",
+       "water pushed"
+      ],
+      "ask": "What decides how big it is?"
+     },
+     {
+      "k": [
+       "density",
+       "less dense",
+       "denser"
+      ],
+      "ask": "How does density decide floating?"
+     },
+     {
+      "k": [
+       "example",
+       "ship",
+       "hollow",
+       "ball",
+       "wood"
+      ],
+      "ask": "Can you give me an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Electricity and simple circuits",
+   "icon": "💡",
+   "hook": "A torch has a battery, a bulb and a switch. Why does the bulb light only when the switch is closed and the loop is complete?",
+   "explain": [
+    "Electric current is a flow of charge, measured in amperes (A). In metals it is the movement of electrons. Voltage (potential difference) is the energy given to each coulomb of charge by a source, in volts (V). Resistance is how much a component opposes current, in ohms (Ω).",
+    "Ohm's law: V = I × R. Power: P = V × I, in watts. In a series circuit there is one path, the current is the same everywhere and resistances add: R = R₁ + R₂. In a parallel circuit there are several paths, the voltage across each branch is the same and the currents add. Two equal resistors in parallel have half the resistance of one.",
+    "Current needs a complete loop, called a circuit. A switch breaks the loop to stop the current. Household electricity is often alternating current (AC), whose direction reverses many times a second, and mains voltage is about 230 V in many countries and 120 V in others. Fuses and circuit breakers cut off dangerously large currents. Only adults should work on mains electricity."
+   ],
+   "example": {
+    "q": "A 12 V battery is connected across a 4 Ω resistor. What current flows?",
+    "steps": [
+     "V = I × R, so I = V ÷ R.",
+     "I = 12 ÷ 4.",
+     "I = 3."
+    ],
+    "a": "3 A"
+   },
+   "analogies": {
+    "home": "Water in a pipe loop: the pump is the battery, the pipe's narrowness is the resistance.",
+    "city": "Cars on a ring road: the flow rate is like current and a narrow road is like resistance.",
+    "tech": "A phone charger converts mains voltage to a small safe voltage.",
+    "farm": "An electric fence works only when its loop is complete through the animal and the ground, which is why it gives a warning shock."
+   },
+   "mnemonic": "V = I R: Voltage is Current times Resistance.",
+   "terms": [
+    [
+     "Current",
+     "Flow of electric charge, in amperes."
+    ],
+    [
+     "Voltage",
+     "Energy per unit charge supplied, in volts."
+    ],
+    [
+     "Resistance",
+     "Opposition to current, in ohms."
+    ],
+    [
+     "Series circuit",
+     "A circuit with a single path for the current."
+    ]
+   ],
+   "misc": {
+    "wrong": "Current is used up as it goes round a circuit.",
+    "right": "Current is the same all round a series loop. It is energy, not charge, that is transferred to the components."
+   },
+   "limits": "Ohm's law holds for many metals at constant temperature but not for all components, such as diodes or light bulbs whose resistance changes as they warm.",
+   "trip": {
+    "wiki": "Electrical network",
+    "prompt": "Find circuit symbols for a cell, a switch, a bulb and a resistor."
+   },
+   "sources": [
+    "Electric current",
+    "Ohm's law",
+    "Series and parallel circuits"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A 9 V battery drives current through a 3 Ω resistor. What is the current?",
+     "o": [
+      "3 A",
+      "27 A",
+      "12 A",
+      "0.33 A"
+     ],
+     "a": 0,
+     "why": "I = V ÷ R = 9 ÷ 3 = 3 A.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two resistors of 2 Ω and 3 Ω are connected in series. What is the total resistance?",
+     "a": 5,
+     "tol": 0.02,
+     "unit": "Ω",
+     "why": "In series the resistances add: 2 + 3 = 5 Ω.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two 6 Ω resistors are connected in parallel. What is the combined resistance?",
+     "a": 3,
+     "tol": 0.05,
+     "unit": "Ω",
+     "why": "1/R = 1/6 + 1/6 = 2/6, so R = 3 Ω.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An appliance on a 230 V supply draws 2 A. What is its power?",
+     "a": 460,
+     "tol": 1,
+     "unit": "W",
+     "why": "P = V × I = 230 × 2 = 460 W.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a series circuit with two bulbs, one bulb breaks and its filament snaps. What happens to the other?",
+     "o": [
+      "It goes out because the loop is broken",
+      "It gets brighter because it gets all the current",
+      "It stays on because it has its own battery",
+      "It turns into a fuse"
+     ],
+     "a": 0,
+     "why": "There is only one path, so a break stops the current everywhere.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are household lamps wired in parallel and not in series?",
+     "o": [
+      "Each lamp gets the full voltage and works independently",
+      "Series wiring would be cheaper to install",
+      "Parallel wiring uses less electricity overall",
+      "Series wiring would make every bulb brighter"
+     ],
+     "a": 0,
+     "why": "In parallel each branch has the same voltage, and one lamp failing does not stop the others.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the SI unit of resistance?",
+     "o": [
+      "Ohm",
+      "Volt",
+      "Ampere",
+      "Watt"
+     ],
+     "a": 0,
+     "why": "Resistance is measured in ohms (Ω).",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to the instrument that measures it.",
+     "pairs": [
+      [
+       "Current",
+       "Ammeter, connected in series"
+      ],
+      [
+       "Voltage",
+       "Voltmeter, connected in parallel"
+      ],
+      [
+       "Resistance",
+       "Ohmmeter"
+      ]
+     ],
+     "why": "An ammeter is in line with the component, a voltmeter across it.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a short circuit can be dangerous.",
+     "rubric": [
+      [
+       "low resistance",
+       "very little resistance",
+       "no resistance",
+       "small resistance",
+       "zero resistance"
+      ],
+      [
+       "large current",
+       "huge current",
+       "big current",
+       "high current",
+       "very large current",
+       "too much current"
+      ],
+      [
+       "heat",
+       "fire",
+       "overheat",
+       "hot",
+       "burn"
+      ]
+     ],
+     "min": 2,
+     "model": "A short circuit gives the current a path of very low resistance, so by I = V ÷ R the current becomes very large, and the wires can overheat and cause fires. Fuses and breakers cut the current.",
+     "why": "Low R means high I, and high I causes heating.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A 6 V cell is connected to two identical bulbs in series. What is the voltage across each bulb?",
+     "o": [
+      "3 V",
+      "6 V",
+      "12 V",
+      "1.5 V"
+     ],
+     "a": 0,
+     "why": "In series the voltage divides between identical components, so each gets 3 V.",
+     "d": 3,
+     "k": "apply"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student says: 'The bulb nearest the battery in a series circuit uses up current, so the second bulb gets less.' What is the best correction?",
+     "o": [
+      "Current is the same everywhere; each bulb takes energy from the charges",
+      "She is right, the current gets used up along the way",
+      "Current rises along the circuit after each bulb",
+      "Only the second bulb in the circuit has current"
+     ],
+     "a": 0,
+     "why": "Charge is conserved, so the current is the same at all points in the loop; the energy each coulomb carries is shared.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does adding more resistors in parallel decrease the total resistance of a circuit?",
+     "rubric": [
+      [
+       "more paths",
+       "extra path",
+       "another path",
+       "additional path",
+       "more routes",
+       "extra route",
+       "more branches"
+      ],
+      [
+       "current"
+      ],
+      [
+       "easier",
+       "more current",
+       "flow more",
+       "easier for current",
+       "lower"
+      ]
+     ],
+     "min": 2,
+     "model": "Each added branch gives the current another path, so more current can flow at the same voltage. By V = IR, a larger current for the same voltage means lower total resistance.",
+     "why": "More paths allow more total current.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fuse labelled 13 A is placed in a plug for a 2300 W heater on 230 V. Is it suitable?",
+     "o": [
+      "Yes, the heater draws 10 A",
+      "No, the heater draws 100 A",
+      "No, the heater draws 0.1 A",
+      "Yes, the heater draws 20 A"
+     ],
+     "a": 0,
+     "why": "I = P ÷ V = 2300 ÷ 230 = 10 A, which is below 13 A.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Voltage, current and resistance",
+    "model": "Current is the flow of charge. Voltage is the push from the battery. Resistance is how much a part holds the flow back. They are linked by V = I × R. For example, a 12 V battery across a 4 Ω resistor gives 3 A.",
+    "points": [
+     {
+      "k": [
+       "current",
+       "flow",
+       "charge",
+       "electron"
+      ],
+      "ask": "What is current?"
+     },
+     {
+      "k": [
+       "voltage",
+       "push",
+       "battery",
+       "energy"
+      ],
+      "ask": "What does voltage do?"
+     },
+     {
+      "k": [
+       "resistance",
+       "hold back",
+       "oppos",
+       "ohm"
+      ],
+      "ask": "And resistance?"
+     },
+     {
+      "k": [
+       "v = i",
+       "v=ir",
+       "example",
+       "12",
+       "divide",
+       "times"
+      ],
+      "ask": "How do they link? Can you give me numbers?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Magnetism and electromagnetic phenomena",
+   "icon": "🧲",
+   "hook": "A compass needle always settles to point roughly north. What is pulling on it?",
+   "explain": [
+    "Every magnet has two poles, north and south. Like poles repel and unlike poles attract. Magnets are surrounded by a magnetic field, drawn as lines that leave the north pole and enter the south pole. Closer lines mean a stronger field. Earth acts like a giant bar magnet, which is why a compass needle lines up with its field.",
+    "Moving charges create magnetic fields. A current in a wire has a circular field around it, and a coil (solenoid) with an iron core makes a strong, switchable electromagnet. A wire carrying a current in a magnetic field feels a force, which is how electric motors turn.",
+    "The reverse also happens: changing the magnetic field through a coil induces a voltage, which is the principle of generators. A transformer uses this to change AC voltages: Vs ÷ Vp = Ns ÷ Np. Electricity, magnetism and light are all linked parts of electromagnetism."
+   ],
+   "example": {
+    "q": "A transformer has 500 turns on its primary coil and 50 on the secondary. If the primary is connected to 230 V AC, what is the secondary voltage?",
+    "steps": [
+     "Vs ÷ Vp = Ns ÷ Np.",
+     "Vs ÷ 230 = 50 ÷ 500 = 0.1.",
+     "Vs = 23."
+    ],
+    "a": "23 V"
+   },
+   "analogies": {
+    "nature": "Migrating birds and sea turtles are thought to sense Earth's magnetic field to find their way.",
+    "tech": "Headphones and loudspeakers use a coil in a magnetic field to vibrate a cone.",
+    "city": "Cranes in scrap yards use huge electromagnets that can be switched off to drop the metal.",
+    "sea": "Sailors used compasses to find north long before satellites."
+   },
+   "mnemonic": "Like poles push, unlike poles pull; moving charge makes magnets.",
+   "terms": [
+    [
+     "Magnetic field",
+     "The region around a magnet where it exerts force."
+    ],
+    [
+     "Electromagnet",
+     "A magnet made by passing current through a coil."
+    ],
+    [
+     "Induction",
+     "Creating voltage by changing a magnetic field in a conductor."
+    ],
+    [
+     "Transformer",
+     "A device that changes the voltage of AC using two coils."
+    ]
+   ],
+   "misc": {
+    "wrong": "A magnet attracts all metals.",
+    "right": "Magnets attract only a few materials, such as iron, nickel and cobalt. Aluminium and copper are not attracted."
+   },
+   "limits": "Field lines are a drawing tool, not real threads. A transformer only works with changing current (AC), not steady DC.",
+   "trip": {
+    "wiki": "Magnetic field",
+    "prompt": "Find the picture of iron filings showing the field of a bar magnet."
+   },
+   "sources": [
+    "Magnet",
+    "Electromagnetism",
+    "Transformer"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Two north poles are brought near each other. What happens?",
+     "o": [
+      "They repel",
+      "They attract",
+      "Nothing",
+      "They swap poles"
+     ],
+     "a": 0,
+     "why": "Like poles repel.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which material is attracted by a magnet?",
+     "o": [
+      "Iron",
+      "Copper",
+      "Aluminium",
+      "Plastic"
+     ],
+     "a": 0,
+     "why": "Iron is a magnetic material. Copper, aluminium and plastic are not.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "A transformer has 200 turns on the primary coil and 800 on the secondary. If the primary voltage is 12 V AC, what is the secondary voltage?",
+     "a": 48,
+     "tol": 0.2,
+     "unit": "V",
+     "why": "Vs = 12 × 800 ÷ 200 = 48 V.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A transformer reduces 230 V to 11.5 V. The primary coil has 2000 turns. How many turns does the secondary coil have?",
+     "a": 100,
+     "tol": 1,
+     "unit": "turns",
+     "why": "Ns = Np × Vs ÷ Vp = 2000 × 11.5 ÷ 230 = 100.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How can you make an electromagnet stronger?",
+     "o": [
+      "Add more coil turns, more current or an iron core",
+      "Use less current in the coil",
+      "Remove the coil and keep the core",
+      "Use a plastic core instead of iron"
+     ],
+     "a": 0,
+     "why": "More turns, more current and an iron core each strengthen the field.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A compass needle's north end points to Earth's geographic north. Which is true of Earth's magnetic pole near the geographic North Pole?",
+     "o": [
+      "It is a magnetic south pole",
+      "It is a magnetic north pole",
+      "It has no polarity",
+      "It is a plastic pole"
+     ],
+     "a": 0,
+     "why": "The compass's north pole is attracted to the opposite type, so the pole near Earth's north is magnetically a south pole.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A magnet is pushed into a coil connected to a voltmeter, and a reading appears. What process is this?",
+     "o": [
+      "Electromagnetic induction",
+      "Conduction",
+      "Convection",
+      "Static charging"
+     ],
+     "a": 0,
+     "why": "A changing magnetic field through a coil induces a voltage.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each device to its main use of electromagnetism.",
+     "pairs": [
+      [
+       "Electric motor",
+       "Force on current in a field"
+      ],
+      [
+       "Generator",
+       "Induced voltage from rotation"
+      ],
+      [
+       "Transformer",
+       "Changes AC voltage"
+      ],
+      [
+       "Electromagnet",
+       "Switchable magnetic field"
+      ]
+     ],
+     "why": "Each device uses a different electromagnetic effect.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why does a transformer not work with a steady direct current (DC) battery?",
+     "rubric": [
+      [
+       "changing",
+       "varying",
+       "change",
+       "alternating"
+      ],
+      [
+       "field",
+       "magnetic flux",
+       "flux"
+      ],
+      [
+       "induce",
+       "voltage",
+       "secondary"
+      ]
+     ],
+     "min": 2,
+     "model": "A transformer needs a changing magnetic field to induce a voltage in the secondary coil. A steady DC produces a steady field, so nothing is induced.",
+     "why": "Induction requires a changing magnetic field.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps showing how a simple generator produces electricity.",
+     "items": [
+      "A coil is turned in a magnetic field",
+      "The magnetic flux through the coil changes",
+      "A voltage is induced in the coil",
+      "A current flows in the circuit"
+     ],
+     "why": "Turning changes the flux, which induces a voltage and drives a current.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A bar magnet is cut in half. What do you get?",
+     "o": [
+      "Two smaller magnets, each with a north and a south pole",
+      "One north-only piece and one south-only piece",
+      "Two pieces that are no longer magnetic",
+      "One magnet and one plain iron bar"
+     ],
+     "a": 0,
+     "why": "No single magnetic pole has been found in isolation, so every piece has two poles.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why are electricity pylons carrying power over long distances run at very high voltage?",
+     "rubric": [
+      [
+       "current"
+      ],
+      [
+       "lower",
+       "smaller",
+       "less",
+       "reduce"
+      ],
+      [
+       "heat",
+       "loss",
+       "waste",
+       "power loss",
+       "i²r",
+       "energy loss"
+      ]
+     ],
+     "min": 2,
+     "model": "For a given power, a higher voltage means a smaller current, and the heat loss in the wires depends on the current squared, so energy loss is much smaller. Transformers step the voltage up and down.",
+     "why": "Losses are I²R, so lower current means lower loss.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A current-carrying wire in a magnetic field feels a force. If the current is reversed, what happens to the force?",
+     "o": [
+      "It reverses direction",
+      "It doubles in size",
+      "It disappears completely",
+      "It stays the same"
+     ],
+     "a": 0,
+     "why": "The force direction depends on the direction of current relative to the field.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How magnets and electricity are linked",
+    "model": "Magnets have north and south poles; like poles push apart and unlike poles pull together. A current in a coil makes an electromagnet. Moving a magnet near a coil makes a voltage, which is how generators work. For example, a transformer changes 230 V to 23 V by using a coil with ten times fewer turns.",
+    "points": [
+     {
+      "k": [
+       "pole",
+       "north",
+       "south",
+       "attract",
+       "repel"
+      ],
+      "ask": "How do two magnets behave together?"
+     },
+     {
+      "k": [
+       "current",
+       "coil",
+       "electromagnet"
+      ],
+      "ask": "How can electricity make a magnet?"
+     },
+     {
+      "k": [
+       "moving",
+       "changing",
+       "induce",
+       "voltage",
+       "generator"
+      ],
+      "ask": "And how can a magnet make electricity?"
+     },
+     {
+      "k": [
+       "example",
+       "transformer",
+       "motor",
+       "compass"
+      ],
+      "ask": "Do you have a real example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Planetary motion and Kepler's laws",
+   "icon": "🪐",
+   "hook": "Earth is closest to the Sun in early January, during Northern Hemisphere winter. Does that mean it moves faster then?",
+   "explain": [
+    "For centuries people tried to predict planet paths. Johannes Kepler, using careful observations by Tycho Brahe, found three laws in the early 1600s. They describe how planets move, and Newton later explained why using gravity.",
+    "First law: every planet orbits the Sun in an ellipse, with the Sun at one focus. Second law: a line from the Sun to a planet sweeps equal areas in equal times, so a planet moves faster when nearer the Sun. Third law: the square of the orbital period is proportional to the cube of the average distance, T² ∝ a³.",
+    "With T in years and a in astronomical units (1 AU = Earth–Sun distance, about 150 million km), the third law is T² = a³. Earth has T = 1 year and a = 1 AU. A planet at 4 AU takes T² = 64, so T = 8 years. The seasons on Earth are caused by axial tilt, not by distance from the Sun."
+   ],
+   "example": {
+    "q": "An asteroid orbits the Sun with an average distance of 4 AU. Find its period in years.",
+    "steps": [
+     "Use T² = a³ with T in years and a in AU.",
+     "a³ = 4³ = 64.",
+     "T = √64 = 8."
+    ],
+    "a": "8 years"
+   },
+   "analogies": {
+    "sport": "A runner speeds up on the short side of an oval track and slows on the long side, like a planet near and far from the Sun.",
+    "music": "A swing sweeps faster at the bottom of the arc and slower at the top.",
+    "sea": "Water going down a whirlpool spins faster as it nears the centre.",
+    "tech": "A satellite in a close orbit completes a lap in much less time than a distant one."
+   },
+   "mnemonic": "Ellipse, equal areas, T squared equals a cubed.",
+   "terms": [
+    [
+     "Ellipse",
+     "An oval shape with two foci."
+    ],
+    [
+     "Orbital period",
+     "The time for one full orbit."
+    ],
+    [
+     "Astronomical unit (AU)",
+     "The average Earth–Sun distance, about 1.5 × 10¹¹ m."
+    ],
+    [
+     "Perihelion",
+     "The point in an orbit closest to the Sun."
+    ]
+   ],
+   "misc": {
+    "wrong": "Earth's orbit is a very elongated oval and seasons are caused by distance.",
+    "right": "Earth's orbit is almost circular. Seasons come from the tilt of its axis."
+   },
+   "limits": "Kepler's laws are descriptions that work very well for planets orbiting the Sun. They omit the small pulls of planets on each other, and precise predictions need Newton's gravity or general relativity.",
+   "trip": {
+    "wiki": "Kepler's laws of planetary motion",
+    "prompt": "Find the animation of the equal-area law and note where the planet is moving fastest."
+   },
+   "sources": [
+    "Kepler's laws of planetary motion",
+    "Johannes Kepler",
+    "Orbital period"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A planet orbits the Sun at an average distance of 9 AU. What is its orbital period? Use T² = a³.",
+     "o": [
+      "27 years",
+      "81 years",
+      "9 years",
+      "3 years"
+     ],
+     "a": 0,
+     "why": "T² = 9³ = 729, so T = 27 years.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Mars orbits at 1.52 AU on average. Using T² = a³, estimate its period in years to one decimal place.",
+     "a": 1.9,
+     "tol": 0.1,
+     "unit": "years",
+     "why": "1.52³ ≈ 3.51, so T ≈ 1.87, about 1.9 years.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A comet has a period of 64 years. What is its average distance from the Sun in AU? Use T² = a³.",
+     "a": 16,
+     "tol": 0.1,
+     "unit": "AU",
+     "why": "a³ = 64² = 4096, and 16³ = 4096, so a = 16 AU.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What shape is a planet's orbit according to Kepler's first law?",
+     "o": [
+      "An ellipse with the Sun at one focus",
+      "A perfect circle with the Sun at the centre",
+      "A straight line",
+      "A spiral"
+     ],
+     "a": 0,
+     "why": "Kepler found orbits are ellipses with the Sun at one focus.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "According to Kepler's second law, when is a planet moving fastest?",
+     "o": [
+      "When it is closest to the Sun",
+      "When it is farthest from the Sun",
+      "At a constant rate always",
+      "When it is at the middle distance only"
+     ],
+     "a": 0,
+     "why": "To sweep equal areas in equal times, it must move faster when nearer the Sun.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which planet should have the shortest orbital period?",
+     "o": [
+      "Mercury",
+      "Earth",
+      "Jupiter",
+      "Neptune"
+     ],
+     "a": 0,
+     "why": "Closer planets have shorter periods. Mercury's is about 88 days.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Earth is nearest the Sun in early January. What is the best explanation of the cold weather in the Northern Hemisphere then?",
+     "o": [
+      "Earth's axial tilt points the Northern Hemisphere away from the Sun",
+      "Earth is farthest from the Sun in January",
+      "The Sun shines less brightly in January",
+      "The Moon blocks sunlight from the north"
+     ],
+     "a": 0,
+     "why": "Seasons depend on tilt, not distance. Earth is actually closest to the Sun in early January.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each of Kepler's laws to its idea.",
+     "pairs": [
+      [
+       "First law",
+       "Orbits are ellipses"
+      ],
+      [
+       "Second law",
+       "Equal areas in equal times"
+      ],
+      [
+       "Third law",
+       "T² is proportional to a³"
+      ]
+     ],
+     "why": "These are the three laws.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a planet speeds up as it moves closer to the Sun.",
+     "rubric": [
+      [
+       "equal area",
+       "equal areas",
+       "second law",
+       "sweeps"
+      ],
+      [
+       "gravity",
+       "pull",
+       "attract",
+       "energy",
+       "potential"
+      ],
+      [
+       "closer",
+       "nearer",
+       "faster",
+       "speeds up"
+      ]
+     ],
+     "min": 2,
+     "model": "A planet sweeps out equal areas in equal times, so when it is nearer the Sun it must move faster along its path. Gravity does work on it as it falls inward, turning potential energy into kinetic energy.",
+     "why": "This follows from Kepler's second law and conservation of angular momentum and energy.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order these planets by orbital period from shortest to longest.",
+     "items": [
+      "Mercury",
+      "Earth",
+      "Mars",
+      "Jupiter"
+     ],
+     "why": "Their periods are about 88 days, 1 year, 1.9 years and 11.9 years.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If a planet's distance from the Sun were four times Earth's, how would its orbital period compare with Earth's?",
+     "o": [
+      "8 times longer",
+      "4 times longer",
+      "16 times longer",
+      "2 times longer"
+     ],
+     "a": 0,
+     "why": "T² = a³ = 64, so T = 8 years.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Kepler described how planets move, while Newton explained why. What is the difference between a description and an explanation here?",
+     "rubric": [
+      [
+       "gravity",
+       "force",
+       "inverse square",
+       "attract"
+      ],
+      [
+       "describe",
+       "pattern",
+       "observation",
+       "data",
+       "law"
+      ],
+      [
+       "explain",
+       "cause",
+       "why",
+       "reason",
+       "derive"
+      ]
+     ],
+     "min": 2,
+     "model": "Kepler's laws are patterns found in observations of how planets move. Newton showed that a gravitational pull falling off as the inverse square of distance causes these patterns, so the laws could be derived from one force law.",
+     "why": "A description summarises patterns; an explanation gives their cause.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A satellite orbits Earth. Which Kepler law can also describe its motion?",
+     "o": [
+      "All three, with the Earth at the focus",
+      "None, because they only work for the Sun",
+      "Only the first law applies to satellites",
+      "Only the third law applies to satellites"
+     ],
+     "a": 0,
+     "why": "The laws apply to any body orbiting a much heavier body under gravity, though the constant in the third law changes.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Kepler's three laws",
+    "model": "Planets move in ovals called ellipses with the Sun at one focus. They move faster when closer to the Sun and slower when farther away. Planets farther out take much longer to orbit: the period squared equals the distance cubed. For example, a planet at 4 AU takes 8 years.",
+    "points": [
+     {
+      "k": [
+       "ellipse",
+       "oval"
+      ],
+      "ask": "What shape is an orbit?"
+     },
+     {
+      "k": [
+       "faster",
+       "closer",
+       "equal area",
+       "nearer"
+      ],
+      "ask": "Does a planet always move at the same speed?"
+     },
+     {
+      "k": [
+       "period",
+       "squared",
+       "cubed",
+       "t²",
+       "a³",
+       "farther",
+       "longer"
+      ],
+      "ask": "How are orbit time and distance related?"
+     },
+     {
+      "k": [
+       "example",
+       "4",
+       "8 years",
+       "earth",
+       "mars",
+       "au"
+      ],
+      "ask": "Can you show an example with numbers?"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2664 @@
+{
+ "world": 2,
+ "level": 6,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Computational chemistry",
+   "icon": "💻",
+   "hook": "Experiments on a new drug molecule can take months. Could a computer predict its shape, energy and reactivity first, and how far can we trust it?",
+   "explain": [
+    "Computational chemistry solves approximations of the Schrödinger equation. The Born–Oppenheimer approximation treats the heavy nuclei as fixed while electrons adjust, giving a potential energy surface E(R). Hartree–Fock (HF) treats each electron in the average field of the others and misses electron correlation. Post-HF methods (MP2, CCSD(T)) add correlation, and density functional theory (DFT) uses the electron density with an approximate exchange–correlation functional.",
+    "Accuracy costs time. A basis set is the set of functions used to build orbitals; larger sets are more accurate but costlier. Formal scaling with the number of basis functions N is about N⁴ for HF, N³–N⁴ for typical DFT, N⁵ for MP2 and N⁷ for CCSD(T). By the variational principle, the energy from a trial wavefunction is never below the true ground-state energy.",
+    "Geometry optimisation seeks a stationary point where forces vanish. A minimum has all real vibrational frequencies and a transition state has exactly one imaginary frequency. Energies come in hartree: 1 Eh = 27.21 eV = 2625.5 kJ/mol. Results must be validated against experiment or higher-level benchmarks, since errors differ by method."
+   ],
+   "example": {
+    "q": "A conformer energy gap is 0.020 Eh. Express it in kJ/mol (1 Eh = 2625.5 kJ/mol).",
+    "steps": [
+     "Multiply: 0.020 × 2625.5.",
+     "= 52.51 kJ/mol.",
+     "A difference this large favours the lower conformer overwhelmingly at room temperature."
+    ],
+    "a": "About 52.5 kJ/mol"
+   },
+   "analogies": {
+    "home": "A recipe app estimates taste before you cook, but a taste test is final.",
+    "city": "Traffic simulations model a city cheaply, with limits that depend on the model.",
+    "sport": "A coach's video analysis predicts plays but real matches differ.",
+    "tech": "Weather models: finer grids give better forecasts at greater computing cost."
+   },
+   "mnemonic": "Bigger basis, better method: slower run. Always check against an experiment.",
+   "terms": [
+    [
+     "Born–Oppenheimer approximation",
+     "Nuclei are treated as fixed while electrons are solved."
+    ],
+    [
+     "Basis set",
+     "Mathematical functions used to describe orbitals."
+    ],
+    [
+     "DFT",
+     "Method using electron density and an approximate functional."
+    ],
+    [
+     "Transition state",
+     "A saddle point with one imaginary frequency."
+    ]
+   ],
+   "misc": {
+    "wrong": "A computed result is exact if the computer is big enough.",
+    "right": "Every method has built-in approximations. More computing power reduces numerical error but not the error of the method."
+   },
+   "limits": "Dispersion forces, strongly correlated systems and solvent effects are challenging, and different functionals can give different answers.",
+   "trip": {
+    "wiki": "Computational chemistry",
+    "prompt": "Find the table of methods and compare their cost and accuracy."
+   },
+   "sources": [
+    "Computational chemistry",
+    "Density functional theory",
+    "Hartree–Fock method"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A method scales as N⁷. If the number of basis functions doubles, by what factor does the cost grow?",
+     "a": 128,
+     "tol": 0,
+     "why": "2⁷ = 128.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Convert 0.020 Eh to kJ/mol using 1 Eh = 2625.5 kJ/mol. Give your answer to one decimal place.",
+     "a": 52.5,
+     "tol": 0.1,
+     "unit": "kJ/mol",
+     "why": "0.020 × 2625.5 = 52.51.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does the variational principle guarantee?",
+     "o": [
+      "A trial wavefunction's energy is at or above the true ground-state energy",
+      "The trial energy equals the exact energy",
+      "The trial energy is always below the true value",
+      "The trial energy is zero for any function"
+     ],
+     "a": 0,
+     "why": "Lower energy means a better wavefunction.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is missing in Hartree–Fock theory?",
+     "o": [
+      "Electron correlation",
+      "Electron spin",
+      "The nuclear charge",
+      "The Pauli principle"
+     ],
+     "a": 0,
+     "why": "Each electron feels only an average field.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A computed vibration analysis gives one imaginary frequency. The structure is a:",
+     "o": [
+      "Transition state",
+      "A minimum",
+      "A free atom",
+      "A radical"
+     ],
+     "a": 0,
+     "why": "One negative curvature direction.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The Born–Oppenheimer approximation is justified because:",
+     "o": [
+      "Nuclei are much heavier and move more slowly than electrons",
+      "Nuclei carry no electric charge at all",
+      "Electrons are much heavier than nuclei",
+      "Both nuclei and electrons move at the same speed"
+     ],
+     "a": 0,
+     "why": "Mass ratio at least 1836.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why might DFT with a common functional underestimate London dispersion binding?",
+     "o": [
+      "The functional lacks long-range correlation unless corrected",
+      "DFT contains no electrons in its description",
+      "Dispersion forces do not really exist",
+      "The basis set is always too large in DFT"
+     ],
+     "a": 0,
+     "why": "Add empirical dispersion corrections.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to its main feature.",
+     "pairs": [
+      [
+       "Hartree–Fock",
+       "Mean-field, no correlation"
+      ],
+      [
+       "MP2",
+       "Perturbative correlation"
+      ],
+      [
+       "CCSD(T)",
+       "High-accuracy benchmark"
+      ],
+      [
+       "DFT",
+       "Electron density approach"
+      ]
+     ],
+     "why": "Cost–accuracy ladder.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by increasing formal cost scaling.",
+     "items": [
+      "DFT (about N³)",
+      "HF (about N⁴)",
+      "MP2 (about N⁵)",
+      "CCSD(T) (about N⁷)"
+     ],
+     "why": "Higher powers grow faster.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why should computed reaction barriers be benchmarked rather than trusted blindly?",
+     "rubric": [
+      [
+       "approximat",
+       "error",
+       "functional",
+       "method",
+       "basis"
+      ],
+      [
+       "experiment",
+       "benchmark",
+       "compare",
+       "validate",
+       "higher-level",
+       "accuracy"
+      ]
+     ],
+     "min": 2,
+     "model": "Every method has systematic errors that vary between systems, so results are validated against experiment or higher-level calculations before being trusted.",
+     "why": "Quantifying uncertainty is part of the method.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A calculation using a very small basis set gives a bond length 5% too long. Most likely cause?",
+     "o": [
+      "Basis set incompleteness",
+      "The nuclei are held fixed in the calculation",
+      "The electrons are treated as heavy particles",
+      "The temperature was set too low"
+     ],
+     "a": 0,
+     "why": "Systematic basis error.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are hybrid functionals more costly than pure GGA functionals?",
+     "o": [
+      "They include a portion of exact exchange",
+      "They contain many more atoms in the system",
+      "They need a magnetic field to be applied",
+      "They use classical mechanics for the electrons"
+     ],
+     "a": 0,
+     "why": "Exact exchange is expensive.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The potential energy surface is a function of:",
+     "o": [
+      "Nuclear coordinates",
+      "The colour of the electrons",
+      "Time alone",
+      "Pressure alone"
+     ],
+     "a": 0,
+     "why": "Born–Oppenheimer surface.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What computational chemistry can and cannot do",
+    "model": "Computational chemistry approximately solves quantum equations to predict energies and structures. Methods trade accuracy for cost: Hartree–Fock is cheap but misses correlation, DFT is a good compromise, and coupled cluster is accurate but costly. Results need validating.",
+    "points": [
+     {
+      "k": [
+       "schrödinger",
+       "schrodinger",
+       "quantum",
+       "wavefunction",
+       "approximat"
+      ],
+      "ask": "What problem is being solved?"
+     },
+     {
+      "k": [
+       "accuracy",
+       "cost",
+       "method",
+       "dft",
+       "basis"
+      ],
+      "ask": "What is the trade-off?"
+     },
+     {
+      "k": [
+       "validate",
+       "experiment",
+       "benchmark",
+       "error"
+      ],
+      "ask": "How do we trust the answer?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Quantum chemistry",
+   "icon": "🌀",
+   "hook": "Why do hydrogen atoms emit light only at particular colours, and why does a molecule like O₂ hold together while He₂ does not?",
+   "explain": [
+    "Quantum chemistry describes electrons by wavefunctions ψ, with |ψ|² the probability density. The time-independent Schrödinger equation Ĥψ = Eψ gives quantised energies. For a particle in a one-dimensional box of length L, Eₙ = n²h² ÷ (8mL²), so energy rises as n² and falls as the box widens.",
+    "For the hydrogen atom, Eₙ = −13.6 eV ÷ n². A transition from n = 3 to n = 2 releases 13.6 × (1/4 − 1/9) = 1.89 eV, a photon of λ = 1240 ÷ 1.89 ≈ 656 nm (the red Balmer line). Orbitals (s, p, d, f) are characterised by quantum numbers n, l and mₗ; electrons fill them according to the Aufbau principle, the Pauli exclusion principle and Hund's rule.",
+    "Molecular orbital theory builds MOs from atomic orbitals: bonding MOs lower energy, antibonding raise it. Bond order = (bonding electrons − antibonding electrons) ÷ 2. For N₂ the value is 3, for O₂ it is 2 with two unpaired electrons (paramagnetism), and for He₂ it is 0, so no stable molecule."
+   ],
+   "example": {
+    "q": "Compute the photon energy for the n = 2 → n = 1 transition in hydrogen (Eₙ = −13.6/n² eV).",
+    "steps": [
+     "E₂ = −13.6 ÷ 4 = −3.40 eV; E₁ = −13.6 eV.",
+     "ΔE = −3.40 − (−13.6) = 10.2 eV.",
+     "λ = 1240 ÷ 10.2 ≈ 122 nm (ultraviolet)."
+    ],
+    "a": "10.2 eV, about 122 nm"
+   },
+   "analogies": {
+    "music": "A guitar string fixed at both ends supports only certain notes, like electrons in a box.",
+    "home": "A staircase has only certain heights, like energy levels.",
+    "sport": "A ball on a stair can rest only on a step, not between them.",
+    "tech": "A digital signal has discrete levels rather than a continuum."
+   },
+   "mnemonic": "Confinement quantises: shorter box, bigger gaps. Bond order = (bonding − antibonding) over two.",
+   "terms": [
+    [
+     "Wavefunction",
+     "A function whose square gives the probability density."
+    ],
+    [
+     "Quantum number",
+     "A label for an allowed state."
+    ],
+    [
+     "Bond order",
+     "(bonding − antibonding electrons) ÷ 2."
+    ],
+    [
+     "Pauli exclusion principle",
+     "No two electrons share all four quantum numbers."
+    ]
+   ],
+   "misc": {
+    "wrong": "Electrons orbit the nucleus like planets.",
+    "right": "Electrons occupy orbitals, which are probability distributions rather than paths."
+   },
+   "limits": "Exact solutions exist only for one-electron systems. Everything else uses approximations.",
+   "trip": {
+    "wiki": "Molecular orbital theory",
+    "prompt": "Find the MO diagram for O₂ and count the unpaired electrons."
+   },
+   "sources": [
+    "Quantum chemistry",
+    "Molecular orbital theory",
+    "Particle in a box"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "What is the energy of the hydrogen n = 3 → n = 2 transition in eV? (Eₙ = −13.6/n²; give two decimals)",
+     "a": 1.89,
+     "tol": 0.02,
+     "unit": "eV",
+     "why": "13.6 × (1/4 − 1/9) = 13.6 × 5/36 = 1.889.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the bond order of O₂ if it has 8 bonding and 4 antibonding valence electrons?",
+     "a": 2,
+     "tol": 0,
+     "why": "(8 − 4) ÷ 2 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a particle in a box, doubling the box length L (same mass) changes the ground-state energy by:",
+     "o": [
+      "A factor of 1/4",
+      "A factor of 1/2",
+      "A factor of 4",
+      "A factor of 2"
+     ],
+     "a": 0,
+     "why": "E ∝ 1/L².",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is He₂ not stable?",
+     "o": [
+      "Bond order is zero",
+      "It has too many protons",
+      "It has no electrons",
+      "It is radioactive"
+     ],
+     "a": 0,
+     "why": "Two bonding and two antibonding electrons.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "O₂ is paramagnetic because:",
+     "o": [
+      "It has two unpaired electrons in π* orbitals",
+      "It has no electrons in its outer shell",
+      "It is a metal with free electrons",
+      "It has a triple bond with all electrons paired"
+     ],
+     "a": 0,
+     "why": "MO theory explanation, which valence bond theory misses.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The Pauli principle implies that an orbital holds at most:",
+     "o": [
+      "Two electrons with opposite spins",
+      "One electron with either spin",
+      "Four electrons with two spin pairs",
+      "Eight electrons with mixed spins"
+     ],
+     "a": 0,
+     "why": "Spin up and down.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Hund's rule says that electrons in degenerate orbitals:",
+     "o": [
+      "Occupy separate orbitals with parallel spins first",
+      "Pair up in one orbital first",
+      "Take opposite spins before spreading out",
+      "Avoid the degenerate orbitals entirely"
+     ],
+     "a": 0,
+     "why": "Lower electron repulsion and exchange energy.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each molecule to its bond order.",
+     "pairs": [
+      [
+       "N₂",
+       "3"
+      ],
+      [
+       "O₂",
+       "2"
+      ],
+      [
+       "F₂",
+       "1"
+      ],
+      [
+       "He₂",
+       "0"
+      ]
+     ],
+     "why": "MO filling.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the hydrogen transitions by photon energy, smallest first.",
+     "items": [
+      "n = 3 → 2",
+      "n = 4 → 2",
+      "n = 2 → 1",
+      "n = ∞ → 1"
+     ],
+     "why": "Energies 1.89, 2.55, 10.2, 13.6 eV.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why hydrogen emits light only at discrete wavelengths.",
+     "rubric": [
+      [
+       "quantis",
+       "discrete",
+       "fixed",
+       "specific",
+       "allowed",
+       "levels"
+      ],
+      [
+       "energy level",
+       "transition",
+       "jump",
+       "drop",
+       "photon",
+       "difference"
+      ]
+     ],
+     "min": 2,
+     "model": "Electron energies are quantised, so a transition between two allowed levels releases a photon with exactly the energy difference, giving discrete wavelengths.",
+     "why": "Spectral lines.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The Schrödinger equation for helium cannot be solved exactly because of:",
+     "o": [
+      "Electron–electron repulsion",
+      "The charge of the helium nucleus",
+      "The spin of each electron",
+      "The mass of the electron"
+     ],
+     "a": 0,
+     "why": "Three-body problem.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A node in a wavefunction is where:",
+     "o": [
+      "The probability density is zero",
+      "The electron is most likely to be found",
+      "The nucleus sits at that point",
+      "The energy of the electron is infinite"
+     ],
+     "a": 0,
+     "why": "ψ = 0.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A conjugated dye absorbs at longer wavelength as its conjugated chain grows. This resembles a particle in a box because:",
+     "o": [
+      "A longer box lowers the energy gaps",
+      "A longer box raises the energy gaps",
+      "The gaps do not depend on the length",
+      "Photons grow larger in a longer box"
+     ],
+     "a": 0,
+     "why": "ΔE ∝ 1/L².",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Quantised energies and molecular orbitals",
+    "model": "Electrons are described by wavefunctions with only certain allowed energies. Light is absorbed or emitted when electrons jump between levels. In molecules, atomic orbitals combine into bonding and antibonding orbitals, and bond order shows whether a bond forms.",
+    "points": [
+     {
+      "k": [
+       "quantis",
+       "level",
+       "discrete",
+       "wavefunction"
+      ],
+      "ask": "What is quantisation?"
+     },
+     {
+      "k": [
+       "photon",
+       "transition",
+       "jump",
+       "spectrum",
+       "line"
+      ],
+      "ask": "How does light come out?"
+     },
+     {
+      "k": [
+       "bond order",
+       "bonding",
+       "antibonding",
+       "molecular orbital"
+      ],
+      "ask": "How do we tell if a bond forms?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Advanced materials thermodynamics",
+   "icon": "♨️",
+   "hook": "Why do some alloys mix completely while others separate on cooling, and why does every real crystal contain missing atoms?",
+   "explain": [
+    "For an ideal solution of components A and B with mole fractions x and 1 − x, the entropy of mixing is ΔSmix = −R[x ln x + (1 − x) ln(1 − x)] and ΔGmix = RT[x ln x + (1 − x) ln(1 − x)]. At x = 0.5 and 1000 K, ΔGmix = 8.314 × 1000 × (ln 0.5) = −5763 J/mol. Mixing is always favourable for an ideal solution.",
+    "Real alloys have an enthalpy of mixing. In the regular solution model ΔHmix = Ωx(1 − x). If Ω is positive, a miscibility gap opens below a critical temperature Tc = Ω ÷ 2R. For Ω = 20 kJ/mol, Tc ≈ 1203 K. Below Tc the free-energy curve has two minima and the alloy separates into two phases, which is also the basis for precipitation hardening.",
+    "Defects are thermodynamically stable above 0 K because they raise entropy. The equilibrium vacancy fraction is n/N = exp(−Q ÷ kT), with k = 8.617 × 10⁻⁵ eV/K. For Q = 1.0 eV at 1000 K, n/N ≈ 9.1 × 10⁻⁶. Chemical potential μᵢ = (∂G/∂nᵢ) drives diffusion and phase equilibrium: at equilibrium μ of each component is equal in all coexisting phases."
+   ],
+   "example": {
+    "q": "Find ΔGmix for x = 0.5 at 1000 K (R = 8.314 J/mol/K, ln 0.5 = −0.693).",
+    "steps": [
+     "ΔGmix = RT[x ln x + (1 − x) ln(1 − x)].",
+     "= 8.314 × 1000 × (0.5 × −0.693 + 0.5 × −0.693).",
+     "= 8314 × (−0.693) ≈ −5763 J/mol."
+    ],
+    "a": "About −5.76 kJ/mol"
+   },
+   "analogies": {
+    "home": "Shuffling two colours of beads: there are far more mixed arrangements than separate ones.",
+    "city": "A crowd tends to spread out over a plaza, a picture of entropy.",
+    "sport": "Teams at half-time mingle in a hall, unless they dislike each other (positive Ω).",
+    "tech": "Data on a disk drifts into more random states unless refreshed."
+   },
+   "mnemonic": "Entropy loves mixing; enthalpy can veto it; defects are the price of temperature.",
+   "terms": [
+    [
+     "Chemical potential",
+     "Free energy change per mole of a component added."
+    ],
+    [
+     "Regular solution",
+     "Model with ideal entropy and ΔH = Ωx(1 − x)."
+    ],
+    [
+     "Miscibility gap",
+     "Region where a solution separates into two phases."
+    ],
+    [
+     "Vacancy",
+     "An empty lattice site."
+    ]
+   ],
+   "misc": {
+    "wrong": "A perfect crystal is the most stable state at any temperature.",
+    "right": "Above 0 K a small concentration of vacancies lowers the free energy by raising entropy."
+   },
+   "limits": "The regular solution model is symmetric and ignores short-range order and strain, so it is only semi-quantitative.",
+   "trip": {
+    "wiki": "Regular solution",
+    "prompt": "Find the free energy curves of a regular solution above and below the critical temperature."
+   },
+   "sources": [
+    "Regular solution",
+    "Entropy of mixing",
+    "Vacancy defect"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using ΔGmix = RT[x ln x + (1 − x) ln(1 − x)] with x = 0.5, T = 1000 K and R = 8.314 J/mol/K (ln 0.5 = −0.6931), find ΔGmix in J/mol (nearest whole number).",
+     "a": -5763,
+     "tol": 5,
+     "unit": "J/mol",
+     "why": "8314 × (−0.6931) = −5762.6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For a regular solution with Ω = 20 kJ/mol, find the critical temperature Tc = Ω ÷ 2R in kelvin (R = 8.314 J/mol/K; nearest whole number).",
+     "a": 1203,
+     "tol": 3,
+     "unit": "K",
+     "why": "20 000 ÷ 16.628 = 1202.8.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The vacancy fraction exp(−Q/kT) for Q = 1.0 eV, k = 8.617 × 10⁻⁵ eV/K and T = 1000 K is about 9.1 × 10⁻⁶. What is this fraction when expressed as the number of vacancies per million sites?",
+     "a": 9.1,
+     "tol": 0.3,
+     "why": "9.1 × 10⁻⁶ per site is 9.1 per million.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is ΔSmix always positive for an ideal solution?",
+     "o": [
+      "There are more possible arrangements when mixed",
+      "The atoms grow bigger when they mix",
+      "Mixing always releases heat",
+      "The atoms vanish when they mix"
+     ],
+     "a": 0,
+     "why": "Configurational entropy.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A positive Ω makes a regular solution:",
+     "o": [
+      "Tend to unmix below Tc",
+      "Always mix completely at every temperature",
+      "Boil off at low temperature",
+      "Become fully ionic"
+     ],
+     "a": 0,
+     "why": "Unlike neighbours are unfavourable.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "At equilibrium between two coexisting phases, each component has:",
+     "o": [
+      "Equal chemical potential in both phases",
+      "Equal concentration in both phases",
+      "Zero chemical potential in both phases",
+      "Different chemical potentials in each phase"
+     ],
+     "a": 0,
+     "why": "Condition for phase equilibrium.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The vacancy concentration:",
+     "o": [
+      "Increases exponentially with temperature",
+      "Decreases as the temperature rises",
+      "Does not depend on temperature",
+      "Is always exactly zero"
+     ],
+     "a": 0,
+     "why": "exp(−Q/kT).",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does vacancy concentration matter for diffusion in solids?",
+     "o": [
+      "Atoms hop into vacant sites",
+      "Vacancies are heavy",
+      "Vacancies block diffusion entirely",
+      "They remove atoms from the crystal"
+     ],
+     "a": 0,
+     "why": "Substitutional diffusion is vacancy-mediated.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its meaning.",
+     "pairs": [
+      [
+       "μᵢ",
+       "Free energy per mole of component i"
+      ],
+      [
+       "ΔSmix",
+       "Configurational entropy gain on mixing"
+      ],
+      [
+       "Ω",
+       "Interaction parameter"
+      ],
+      [
+       "Q",
+       "Activation energy to form a defect"
+      ]
+     ],
+     "why": "Thermodynamic vocabulary.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a solution with positive enthalpy of mixing can be stable at high temperature but separate on cooling.",
+     "rubric": [
+      [
+       "entropy",
+       "tδs",
+       "ts",
+       "disorder",
+       "configurational"
+      ],
+      [
+       "temperature",
+       "high",
+       "cooling",
+       "dominates",
+       "outweigh",
+       "enthalpy",
+       "δg"
+      ]
+     ],
+     "min": 2,
+     "model": "At high T the −TΔSmix term outweighs the positive ΔHmix so mixing lowers G. On cooling, the entropy term shrinks and ΔHmix wins, so separation into two phases lowers G.",
+     "why": "Competition of ΔH and TΔS.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Doubling temperature roughly changes the vacancy fraction exp(−Q/kT) by:",
+     "o": [
+      "Raising it a lot, since the exponent halves",
+      "Doubling it exactly",
+      "Halving it",
+      "Leaving it unchanged"
+     ],
+     "a": 0,
+     "why": "Exponential dependence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The common tangent construction on a free energy curve gives:",
+     "o": [
+      "Compositions of coexisting phases",
+      "The melting point of the pure metal",
+      "The hardness of the alloy",
+      "The density of each phase"
+     ],
+     "a": 0,
+     "why": "Equal chemical potentials.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which alloy design idea uses a miscibility gap?",
+     "o": [
+      "Precipitation hardening",
+      "Galvanising",
+      "Anodising",
+      "Carburising"
+     ],
+     "a": 0,
+     "why": "Fine second-phase particles strengthen metal.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why alloys mix, separate and contain defects",
+    "model": "Free energy balances enthalpy and entropy. Mixing raises entropy so ideal solutions mix at any temperature. A positive enthalpy of mixing can cause separation below a critical temperature. Defects like vacancies exist in equilibrium because they raise entropy.",
+    "points": [
+     {
+      "k": [
+       "entropy",
+       "disorder",
+       "mixing"
+      ],
+      "ask": "Why does mixing happen?"
+     },
+     {
+      "k": [
+       "enthalpy",
+       "separate",
+       "miscib",
+       "critical"
+      ],
+      "ask": "Why might they separate?"
+     },
+     {
+      "k": [
+       "vacanc",
+       "defect",
+       "temperature",
+       "exp"
+      ],
+      "ask": "Why do crystals have defects?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Materials modelling and simulation",
+   "icon": "🖥️",
+   "hook": "A turbine blade must survive years of heat and stress. No single computer model covers everything from atoms to the whole blade. How do engineers cope?",
+   "explain": [
+    "Modelling covers many length and time scales. Quantum methods (DFT) handle electrons for a few hundred atoms over femtoseconds. Molecular dynamics (MD) integrates Newton's laws for millions of atoms using interatomic potentials, with time steps of about 1–2 fs, so a 2 ns run with a 2 fs step needs 10⁶ steps. Monte Carlo (MC) samples configurations using the Metropolis rule: accept a move with probability min[1, exp(−ΔE/kT)].",
+    "At larger scales, phase-field and kinetic Monte Carlo describe microstructure evolution, crystal plasticity models describe grains and the finite element method (FEM) solves continuum equations for stress and heat in real components. Multiscale modelling passes information upward, such as elastic constants from DFT into FEM.",
+    "Diffusion can be extracted from MD through the mean squared displacement (MSD): in three dimensions MSD = 6Dt. Machine-learned interatomic potentials trained on DFT data offer near-DFT accuracy at much lower cost, but only within their training domain. Any model must be verified (solving the equations correctly) and validated (matching reality)."
+   ],
+   "example": {
+    "q": "A Metropolis move raises the energy by 0.050 eV at 300 K (kT = 0.02585 eV). What is the acceptance probability?",
+    "steps": [
+     "ΔE ÷ kT = 0.050 ÷ 0.02585 = 1.934.",
+     "P = exp(−1.934).",
+     "P ≈ 0.14."
+    ],
+    "a": "About 14%"
+   },
+   "analogies": {
+    "home": "A house plan, a room plan and a brick drawing each use a different scale.",
+    "city": "A traffic simulation can track each car or only the flow, depending on the question.",
+    "sport": "Analysts model one player's motion or the whole tournament, never both at once.",
+    "tech": "A phone camera zooms by combining multiple lenses at different scales."
+   },
+   "mnemonic": "Electrons, atoms, grains, parts: pass the numbers up the scales.",
+   "terms": [
+    [
+     "Molecular dynamics",
+     "Simulation by integrating Newton's equations for atoms."
+    ],
+    [
+     "Monte Carlo",
+     "Sampling configurations using random moves."
+    ],
+    [
+     "Finite element method",
+     "Solving continuum equations over a mesh."
+    ],
+    [
+     "Verification and validation",
+     "Checking the solution is correct and the model matches reality."
+    ]
+   ],
+   "misc": {
+    "wrong": "A simulation with more atoms is automatically more accurate.",
+    "right": "Accuracy depends on the model's physics and inputs, not only on size."
+   },
+   "limits": "MD timescales (ns–µs) are far below real process times, so rare events need special sampling methods.",
+   "trip": {
+    "wiki": "Molecular dynamics",
+    "prompt": "Find an MD simulation image and note the system size and timescale."
+   },
+   "sources": [
+    "Molecular dynamics",
+    "Monte Carlo method",
+    "Finite element method"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "How many time steps are needed for a 2 ns MD run with a 2 fs time step? (1 ns = 10⁻⁹ s, 1 fs = 10⁻¹⁵ s)",
+     "a": 1000000,
+     "tol": 1,
+     "why": "2 × 10⁻⁹ ÷ 2 × 10⁻¹⁵ = 10⁶.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Metropolis acceptance for ΔE = 0.050 eV at 300 K (kT = 0.02585 eV) is exp(−ΔE/kT). Give it to two decimals.",
+     "a": 0.14,
+     "tol": 0.01,
+     "why": "exp(−1.934) = 0.1446.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The mean squared displacement in 3D is related to diffusion by:",
+     "o": [
+      "MSD = 6Dt",
+      "MSD = Dt/6",
+      "MSD = D/t",
+      "MSD = 3D/t"
+     ],
+     "a": 0,
+     "why": "Einstein relation.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which method is best for stress in a whole aircraft part?",
+     "o": [
+      "Finite element method",
+      "Density functional theory",
+      "Quantum Monte Carlo",
+      "Hartree–Fock theory"
+     ],
+     "a": 0,
+     "why": "Continuum scale.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why are MD time steps about 1–2 fs?",
+     "o": [
+      "To resolve the fastest atomic vibrations",
+      "To save computer memory",
+      "Because atoms move very slowly",
+      "Because of a fixed law of physics"
+     ],
+     "a": 0,
+     "why": "Integration stability.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A machine-learned potential trained on iron at low temperature is used for molten iron. The main risk is:",
+     "o": [
+      "Extrapolation outside the training domain",
+      "Using too little computer memory",
+      "The potential being far too accurate",
+      "The wrong force constant for hydrogen"
+     ],
+     "a": 0,
+     "why": "Models fail outside training data.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Model validation means:",
+     "o": [
+      "Comparing predictions with experiment",
+      "Checking the code for typing errors",
+      "Reducing the mesh size",
+      "Running the simulation for longer"
+     ],
+     "a": 0,
+     "why": "Verification and validation differ.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to its typical scale.",
+     "pairs": [
+      [
+       "DFT",
+       "Electrons, hundreds of atoms"
+      ],
+      [
+       "MD",
+       "Millions of atoms, nanoseconds"
+      ],
+      [
+       "Phase-field",
+       "Microstructure, micrometres"
+      ],
+      [
+       "FEM",
+       "Components, metres"
+      ]
+     ],
+     "why": "Multiscale hierarchy.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by increasing length scale of typical application.",
+     "items": [
+      "DFT calculation",
+      "Molecular dynamics",
+      "Phase-field microstructure",
+      "Finite element component"
+     ],
+     "why": "Increasing system size.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why can't we simply use DFT for a whole turbine blade?",
+     "rubric": [
+      [
+       "too many",
+       "atoms",
+       "scale",
+       "size",
+       "cost",
+       "expensive",
+       "time"
+      ],
+      [
+       "continuum",
+       "fem",
+       "multiscale",
+       "coarse",
+       "approximation",
+       "hierarchy"
+      ]
+     ],
+     "min": 1,
+     "model": "The cost of DFT grows steeply with atoms, and the blade contains vastly too many atoms and requires long times, so coarser models like FEM are used with inputs from smaller scales.",
+     "why": "Computational cost.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "The Metropolis rule ensures that long-run sampling follows:",
+     "o": [
+      "The Boltzmann distribution",
+      "A uniform distribution over all states",
+      "The Gaussian of the atomic mass",
+      "The zero-point energy"
+     ],
+     "a": 0,
+     "why": "Detailed balance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Halving the mesh size in FEM generally:",
+     "o": [
+      "Reduces discretisation error but costs more",
+      "Increases the error in the result",
+      "Changes the physics being modelled",
+      "Has no effect on the result"
+     ],
+     "a": 0,
+     "why": "Mesh convergence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are rare events like nucleation hard for plain MD?",
+     "o": [
+      "They occur on timescales far longer than MD can run",
+      "They break Newton's laws of motion",
+      "They need no energy at all",
+      "They happen only in a vacuum"
+     ],
+     "a": 0,
+     "why": "Enhanced sampling needed.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Multiscale modelling",
+    "model": "Different methods suit different scales: DFT for electrons, molecular dynamics for atoms, phase-field for microstructure, finite elements for parts. Information from small scales feeds larger ones, and every model needs verification and validation.",
+    "points": [
+     {
+      "k": [
+       "scale",
+       "multiscale",
+       "length",
+       "time"
+      ],
+      "ask": "Why use more than one model?"
+     },
+     {
+      "k": [
+       "molecular dynamics",
+       "atoms",
+       "newton",
+       "monte carlo",
+       "dft"
+      ],
+      "ask": "What do atomic models do?"
+     },
+     {
+      "k": [
+       "validate",
+       "verification",
+       "experiment",
+       "check"
+      ],
+      "ask": "How do we know a model is right?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Functional and smart materials",
+   "icon": "🧠",
+   "hook": "A spectacle frame bent flat springs back to shape when warmed. How can a material remember and respond?",
+   "explain": [
+    "Smart materials change a property in response to a stimulus. Shape memory alloys such as nickel–titanium (nitinol) switch between a low-temperature martensite phase, easily deformed, and a high-temperature austenite phase. Heating drives the reversal to the original shape. Superelasticity lets nitinol recover several percent of strain when the load is removed.",
+    "Piezoelectric materials like PZT ceramics and quartz generate charge when stressed and change shape when a voltage is applied. The direct effect is Q = d₃₃F, and the strain is S = d₃₃E for field E. With d₃₃ = 400 pC/N, a force of 10 N gives 4 nC. Piezoelectrics are used in sensors, ultrasound and precision positioners. They require a crystal structure without a centre of symmetry.",
+    "Other functional materials include ferroelectrics (switchable polarisation), magnetostrictive alloys, photochromic and thermochromic dyes, electrochromic windows and self-healing polymers with embedded capsules or reversible bonds. Magnetic materials lose their ferromagnetism above the Curie temperature. Design uses the coupling between mechanical, thermal, electrical, magnetic and optical properties."
+   ],
+   "example": {
+    "q": "A piezoelectric ceramic has d₃₃ = 400 pC/N. What charge appears under a 10 N force?",
+    "steps": [
+     "Q = d₃₃ × F.",
+     "= 400 pC/N × 10 N.",
+     "= 4000 pC = 4 nC."
+    ],
+    "a": "4 nC"
+   },
+   "analogies": {
+    "home": "A thermostat's bimetal strip bends when warm and switches the heater off.",
+    "city": "Photochromic lenses darken in bright sun and lighten indoors.",
+    "sport": "Running shoes with responsive foam stiffen under impact.",
+    "tech": "Phone speakers and touch sensors use piezoelectric parts."
+   },
+   "mnemonic": "Stimulus in, property out: heat remembers shape, stress makes charge.",
+   "terms": [
+    [
+     "Shape memory alloy",
+     "Alloy that returns to a set shape when heated."
+    ],
+    [
+     "Piezoelectric",
+     "Produces charge under stress and deforms under voltage."
+    ],
+    [
+     "Ferroelectric",
+     "Has a switchable spontaneous polarisation."
+    ],
+    [
+     "Curie temperature",
+     "Temperature above which ferro-ordering disappears."
+    ]
+   ],
+   "misc": {
+    "wrong": "Shape memory alloys melt and reform.",
+    "right": "They change crystal structure in the solid state, between martensite and austenite."
+   },
+   "limits": "Smart materials degrade with cycling (fatigue), have hysteresis and often cost more than conventional options.",
+   "trip": {
+    "wiki": "Shape-memory alloy",
+    "prompt": "Find the phase transformation diagram of nitinol and mark the heating and cooling transformation."
+   },
+   "sources": [
+    "Shape-memory alloy",
+    "Piezoelectricity",
+    "Smart material"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A piezoelectric element has d₃₃ = 400 pC/N and carries a force of 25 N. What charge in nC does it generate?",
+     "a": 10,
+     "tol": 0.1,
+     "unit": "nC",
+     "why": "400 × 25 = 10 000 pC = 10 nC.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Strain S = d₃₃E with d₃₃ = 400 × 10⁻¹² m/V and E = 1.0 × 10⁶ V/m. What is S in units of 10⁻⁴?",
+     "a": 4,
+     "tol": 0.05,
+     "unit": "×10⁻⁴",
+     "why": "400 × 10⁻¹² × 10⁶ = 4 × 10⁻⁴.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Shape recovery in nitinol on heating involves:",
+     "o": [
+      "Martensite to austenite transformation",
+      "Melting of the alloy",
+      "Rusting of its surface",
+      "A chemical reaction with the air"
+     ],
+     "a": 0,
+     "why": "A solid-state phase change.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A material can be piezoelectric only if its crystal structure:",
+     "o": [
+      "Lacks a centre of symmetry",
+      "Has a centre of symmetry",
+      "Is amorphous glass",
+      "Is a liquid"
+     ],
+     "a": 0,
+     "why": "Symmetry condition.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A photochromic lens darkens because:",
+     "o": [
+      "Light causes a reversible change in dye molecule structure",
+      "The lens melts in strong sunlight",
+      "The lens rusts when it is exposed",
+      "The lens gets thicker in the light"
+     ],
+     "a": 0,
+     "why": "Reversible isomerisation.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A permanent magnet is heated above its Curie temperature. What happens?",
+     "o": [
+      "It loses ferromagnetism",
+      "It becomes stronger",
+      "It becomes superconducting",
+      "Nothing"
+     ],
+     "a": 0,
+     "why": "Thermal energy destroys alignment.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A self-healing polymer with microcapsules repairs a crack by:",
+     "o": [
+      "Releasing a healing agent that polymerises in the crack",
+      "Melting the whole part back into shape",
+      "Reversing time at the crack",
+      "Growing new fibres across the crack"
+     ],
+     "a": 0,
+     "why": "Crack ruptures capsules.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each material to a typical application.",
+     "pairs": [
+      [
+       "Nitinol",
+       "Medical stents and eyeglass frames"
+      ],
+      [
+       "PZT ceramic",
+       "Ultrasound transducer"
+      ],
+      [
+       "Electrochromic oxide",
+       "Dimmable window"
+      ],
+      [
+       "Magnetostrictive alloy",
+       "Sonar actuator"
+      ]
+     ],
+     "why": "Coupled properties.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of a shape-memory cycle.",
+     "items": [
+      "Austenite at high temperature",
+      "Cool to martensite",
+      "Deform the martensite",
+      "Heat to recover the original shape"
+     ],
+     "why": "Cycle.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do smart materials often show hysteresis and fatigue, and why does this matter for design?",
+     "rubric": [
+      [
+       "hysteresis",
+       "lag",
+       "path",
+       "energy loss",
+       "lost"
+      ],
+      [
+       "fatigue",
+       "cycling",
+       "repeated",
+       "degrade",
+       "wear",
+       "fail",
+       "life"
+      ]
+     ],
+     "min": 2,
+     "model": "Transformations follow different paths on loading and unloading, wasting energy, and repeated cycling accumulates damage, so designers must account for lifetime and control accuracy.",
+     "why": "Practical limits.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A piezoelectric buzzer is driven by an AC voltage. It works because:",
+     "o": [
+      "The crystal vibrates as the field alternates",
+      "The voltage heats the crystal until it hums",
+      "The crystal rusts slightly each cycle",
+      "The crystal melts and then re-forms"
+     ],
+     "a": 0,
+     "why": "Converse effect.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are ferroelectric materials used in memory?",
+     "o": [
+      "Their polarisation can be switched and retained",
+      "They are cheap and nothing else",
+      "They are magnetic and store bits as magnets",
+      "They are very light in weight"
+     ],
+     "a": 0,
+     "why": "Two stable states.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Superelastic nitinol recovers large strain mostly because:",
+     "o": [
+      "A stress-induced phase transformation reverses on unloading",
+      "Its bonds stretch like rubber",
+      "It heats up and softens",
+      "It melts slightly and then re-freezes"
+     ],
+     "a": 0,
+     "why": "Reversible transformation.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Smart and functional materials",
+    "model": "Functional materials link one property to another. Shape memory alloys change structure with temperature, piezoelectrics turn stress into voltage, and photochromic dyes respond to light. They are useful in sensors and actuators but have limits such as fatigue.",
+    "points": [
+     {
+      "k": [
+       "shape memory",
+       "nitinol",
+       "martensite",
+       "austenite",
+       "remember"
+      ],
+      "ask": "How does a shape memory alloy work?"
+     },
+     {
+      "k": [
+       "piezo",
+       "stress",
+       "voltage",
+       "charge",
+       "crystal"
+      ],
+      "ask": "What is piezoelectricity?"
+     },
+     {
+      "k": [
+       "limit",
+       "fatigue",
+       "hysteresis",
+       "cost",
+       "cycl"
+      ],
+      "ask": "What are the drawbacks?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Advanced composites",
+   "icon": "✈️",
+   "hook": "Modern airliners are about half composite by weight. How do you design a material whose strength depends on direction?",
+   "explain": [
+    "Fibre-reinforced polymers use stiff, strong fibres (carbon, glass, aramid) in a polymer matrix. They are anisotropic. Along the fibres the rule of mixtures gives E₁ = VfEf + VmEm, and across them the inverse rule 1/E₂ = Vf/Ef + Vm/Em. For 60% carbon fibre (230 GPa) in epoxy (3 GPa): E₁ ≈ 139 GPa but E₂ = 1 ÷ (0.6/230 + 0.4/3) ≈ 7.4 GPa.",
+    "Laminates stack plies at chosen angles, for example [0/±45/90]s. A quasi-isotropic layup has nearly equal in-plane stiffness in all directions. Classical lamination theory predicts laminate stiffness from ply properties. Load transfer between fibre and matrix occurs through shear at the interface, with critical fibre length lc = σf·d ÷ (2τ): for σf = 3000 MPa, d = 7 µm and τ = 30 MPa, lc = 350 µm.",
+    "Failure modes include fibre breakage, matrix cracking, fibre–matrix debonding and delamination between plies. Delamination is a particular concern after impact. Ceramic-matrix composites (e.g. SiC/SiC) serve in hot engine parts, and metal-matrix composites add stiffness to light alloys. Manufacturing methods include autoclave curing, resin transfer moulding and automated fibre placement. Recycling thermoset composites remains a challenge."
+   ],
+   "example": {
+    "q": "Find the transverse modulus for Vf = 0.6, Ef = 230 GPa, Em = 3 GPa (inverse rule of mixtures).",
+    "steps": [
+     "1/E₂ = 0.6/230 + 0.4/3.",
+     "= 0.002609 + 0.13333 = 0.13594 GPa⁻¹.",
+     "E₂ = 1 ÷ 0.13594 ≈ 7.36 GPa."
+    ],
+    "a": "About 7.4 GPa"
+   },
+   "analogies": {
+    "home": "Plywood alternates grain direction so it resists warping in every direction.",
+    "farm": "Straw bales stacked in alternating layers form a stable wall.",
+    "sport": "A fishing rod or vaulting pole is strongest along its length.",
+    "tech": "A carbon-fibre bicycle frame uses different layups in different tubes."
+   },
+   "mnemonic": "Along: add (rule of mixtures). Across: inverse. Stack plies to balance directions.",
+   "terms": [
+    [
+     "Anisotropic",
+     "Properties depend on direction."
+    ],
+    [
+     "Laminate",
+     "A stack of plies bonded together."
+    ],
+    [
+     "Delamination",
+     "Separation between plies."
+    ],
+    [
+     "Critical fibre length",
+     "Minimum length at which a fibre can be loaded to fracture."
+    ]
+   ],
+   "misc": {
+    "wrong": "A composite is as strong in every direction as along the fibres.",
+    "right": "Across the fibres, stiffness is controlled by the weak matrix and is far lower."
+   },
+   "limits": "Real laminates have voids, misalignment and residual stresses, so predictions are checked by testing.",
+   "trip": {
+    "wiki": "Fibre-reinforced plastic",
+    "prompt": "Find a laminate layup diagram and see how fibre angles change by layer."
+   },
+   "sources": [
+    "Fibre-reinforced plastic",
+    "Composite material",
+    "Delamination"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using 1/E₂ = Vf/Ef + Vm/Em with Vf = 0.6, Ef = 230 GPa and Em = 3 GPa, what is E₂ in GPa? Give your answer to one decimal place.",
+     "a": 7.4,
+     "tol": 0.1,
+     "unit": "GPa",
+     "why": "1 ÷ 0.13594 = 7.36 ≈ 7.4.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Critical fibre length lc = σf·d ÷ (2τ). For σf = 3000 MPa, d = 7 µm and τ = 30 MPa, what is lc in µm?",
+     "a": 350,
+     "tol": 1,
+     "unit": "µm",
+     "why": "3000 × 7 ÷ 60 = 350.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a [0/90]s laminate different from a unidirectional one?",
+     "o": [
+      "It has balanced stiffness in two directions",
+      "It is isotropic in every direction",
+      "It has no fibres in it at all",
+      "It is weaker along both directions"
+     ],
+     "a": 0,
+     "why": "Cross-ply layup.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Delamination is:",
+     "o": [
+      "Separation between plies",
+      "Breakage of the fibres",
+      "Melting of the matrix",
+      "Corrosion of the fibres"
+     ],
+     "a": 0,
+     "why": "Interlaminar failure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A quasi-isotropic laminate typically uses plies at:",
+     "o": [
+      "0°, ±45° and 90°",
+      "Only 0°",
+      "Only 90°",
+      "Random angles with no plan"
+     ],
+     "a": 0,
+     "why": "Balanced angles.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Fibres shorter than the critical length:",
+     "o": [
+      "Cannot be loaded to their full strength",
+      "Are stronger than long ones",
+      "Break instantly under any load",
+      "Bend freely without carrying load"
+     ],
+     "a": 0,
+     "why": "Insufficient load transfer.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are ceramic-matrix composites used in jet engines?",
+     "o": [
+      "They tolerate higher temperatures than metals",
+      "They are cheaper than metals",
+      "They are softer than metals",
+      "They are magnetic at high heat"
+     ],
+     "a": 0,
+     "why": "Heat resistance.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each failure mode to its description.",
+     "pairs": [
+      [
+       "Fibre breakage",
+       "Fibres fracture under tension"
+      ],
+      [
+       "Matrix cracking",
+       "Cracks run through the polymer"
+      ],
+      [
+       "Debonding",
+       "Fibre pulls away from matrix"
+      ],
+      [
+       "Delamination",
+       "Plies separate"
+      ]
+     ],
+     "why": "Composite failure modes.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by modulus along the fibres (high to low) for 60 vol% fibre.",
+     "items": [
+      "Carbon/epoxy",
+      "Aramid/epoxy",
+      "Glass/epoxy",
+      "Neat epoxy"
+     ],
+     "why": "Fibre modulus decreases in that order.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why composite laminates often fail gradually rather than suddenly, unlike a monolithic ceramic.",
+     "rubric": [
+      [
+       "fibre",
+       "pull-out",
+       "bridge",
+       "debond",
+       "energy",
+       "absorb"
+      ],
+      [
+       "crack",
+       "deflect",
+       "tough",
+       "gradual",
+       "progressive",
+       "matrix"
+      ]
+     ],
+     "min": 2,
+     "model": "Cracks are deflected at fibre–matrix interfaces and fibres bridge or pull out, absorbing energy so that failure is progressive rather than sudden.",
+     "why": "Toughening mechanisms.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is the transverse modulus far below the longitudinal one?",
+     "o": [
+      "The matrix, in series with fibres, controls stiffness",
+      "The fibres are weaker across their width",
+      "The fibres are shorter in the transverse direction",
+      "The resin is stiffer than the fibres"
+     ],
+     "a": 0,
+     "why": "Series (inverse) model.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a recycling challenge for carbon-fibre epoxy parts?",
+     "o": [
+      "The thermoset matrix cannot be remelted",
+      "Carbon fibres dissolve in ordinary solvents",
+      "Epoxy is a metal and cannot be separated",
+      "The parts are too light to collect"
+     ],
+     "a": 0,
+     "why": "Cross-linked polymer.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are the outer plies of a laminate often at ±45°?",
+     "o": [
+      "They improve shear and torsion stiffness",
+      "They make the surface look black",
+      "They make the laminate softer",
+      "They shorten the length of the part"
+     ],
+     "a": 0,
+     "why": "Off-axis plies resist shear.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Designing with fibre composites",
+    "model": "Fibre composites are much stiffer along the fibres than across. Engineers stack plies at several angles to tune stiffness and strength. Failure modes include fibre breakage, matrix cracking and delamination, and load transfer needs a good fibre–matrix bond.",
+    "points": [
+     {
+      "k": [
+       "fibre",
+       "matrix",
+       "stiff",
+       "reinforce"
+      ],
+      "ask": "What do fibre and matrix do?"
+     },
+     {
+      "k": [
+       "anisotropic",
+       "direction",
+       "ply",
+       "layup",
+       "angle",
+       "laminate"
+      ],
+      "ask": "Why stack plies at angles?"
+     },
+     {
+      "k": [
+       "delamination",
+       "failure",
+       "crack",
+       "debond"
+      ],
+      "ask": "How can they fail?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Surface engineering",
+   "icon": "🛡️",
+   "hook": "A drop of water beads up on a lotus leaf but spreads on glass. Many failures start at a surface. Can we change only the outer micrometres to make a part last?",
+   "explain": [
+    "Surfaces decide wetting, friction, wear, corrosion and fatigue life. Young's equation gives the contact angle of a liquid drop: cosθ = (γSV − γSL) ÷ γLV, where the γ values are surface energies. For γSV = 50, γSL = 20 and γLV = 72.8 mN/m, cosθ = 0.41, so θ ≈ 66°, a partly wetting surface. A contact angle above 90° is hydrophobic.",
+    "Archard's wear law is V = K F s ÷ H, where V is worn volume, K a wear coefficient, F load, s sliding distance and H hardness. Increasing hardness reduces wear. For K = 10⁻⁴, F = 10 N, s = 1000 m and H = 10⁹ Pa, V = 10⁻⁹ m³, which is 1 mm³.",
+    "Techniques include PVD and CVD thin films (TiN, DLC), anodising of aluminium, nitriding and carburising steels, thermal spray coatings and shot peening, which introduces compressive residual stress that slows fatigue cracks. In Langmuir adsorption, coverage θ = KP ÷ (1 + KP), important for catalysis and corrosion inhibitors. Coatings must adhere well and match thermal expansion to the substrate."
+   ],
+   "example": {
+    "q": "Using Archard's law V = K F s ÷ H, find V for K = 10⁻⁴, F = 10 N, s = 1000 m, H = 10⁹ Pa.",
+    "steps": [
+     "K F s = 10⁻⁴ × 10 × 1000 = 1.",
+     "V = 1 ÷ 10⁹ = 10⁻⁹ m³.",
+     "10⁻⁹ m³ = 1 mm³."
+    ],
+    "a": "1 mm³"
+   },
+   "analogies": {
+    "home": "A non-stick pan is an ordinary pan with a special surface.",
+    "farm": "A plough blade has a hardened edge while the body stays tough.",
+    "sport": "Ski bases are waxed to reduce friction.",
+    "tech": "Phone screens get a coating to resist fingerprints and scratches."
+   },
+   "mnemonic": "Surface first: wet, wear, corrode, crack. Coat, harden, peen.",
+   "terms": [
+    [
+     "Contact angle",
+     "Angle between a liquid drop and the surface it touches."
+    ],
+    [
+     "Wear",
+     "Gradual loss of material from sliding surfaces."
+    ],
+    [
+     "Shot peening",
+     "Impact treatment introducing compressive stress."
+    ],
+    [
+     "Nitriding",
+     "Diffusing nitrogen into steel to form a hard case."
+    ]
+   ],
+   "misc": {
+    "wrong": "A thicker coating is always better.",
+    "right": "Thick coatings may crack or peel because of stress or thermal mismatch. Adhesion and matching are key."
+   },
+   "limits": "Archard's law is a simple model: real wear depends on lubrication, oxide films and changing conditions.",
+   "trip": {
+    "wiki": "Surface engineering",
+    "prompt": "Find a table of coatings and note which are hard and which are corrosion resistant."
+   },
+   "sources": [
+    "Surface engineering",
+    "Contact angle",
+    "Archard equation"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Using Young's equation cosθ = (γSV − γSL) ÷ γLV with γSV = 50, γSL = 20 and γLV = 72.8 mN/m, find cosθ to two decimals.",
+     "a": 0.41,
+     "tol": 0.01,
+     "why": "30 ÷ 72.8 = 0.412.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Archard's law: K = 10⁻⁴, F = 10 N, s = 1000 m, H = 10⁹ Pa. What is the wear volume in mm³? (1 m³ = 10⁹ mm³)",
+     "a": 1,
+     "tol": 0.02,
+     "unit": "mm³",
+     "why": "10⁻⁹ m³ = 1 mm³.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A contact angle of 120° means the surface is:",
+     "o": [
+      "Hydrophobic",
+      "Hydrophilic",
+      "Superconducting",
+      "Magnetic"
+     ],
+     "a": 0,
+     "why": "Greater than 90°.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Shot peening improves fatigue life because it:",
+     "o": [
+      "Introduces compressive residual stress",
+      "Adds carbon to the surface layer",
+      "Melts a thin layer of the surface",
+      "Removes all the surface defects"
+     ],
+     "a": 0,
+     "why": "Cracks cannot open in compression.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Anodising aluminium forms:",
+     "o": [
+      "A thicker oxide layer",
+      "A layer of zinc",
+      "A polymer coating",
+      "A layer of nitride"
+     ],
+     "a": 0,
+     "why": "Electrochemical oxide growth.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A hard TiN coating on a drill bit mainly reduces:",
+     "o": [
+      "Wear",
+      "Density",
+      "Colour",
+      "Melting temperature"
+     ],
+     "a": 0,
+     "why": "Higher hardness gives lower Archard wear.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A coating has a much larger thermal expansion coefficient than its substrate. On heating cycles it may:",
+     "o": [
+      "Crack or peel",
+      "Improve adhesion",
+      "Become stronger",
+      "Turn into metal"
+     ],
+     "a": 0,
+     "why": "Thermal mismatch stress.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each process to its purpose.",
+     "pairs": [
+      [
+       "Nitriding",
+       "Hard case on steel"
+      ],
+      [
+       "Galvanising",
+       "Sacrificial zinc coat"
+      ],
+      [
+       "PVD",
+       "Thin hard film deposition"
+      ],
+      [
+       "Anodising",
+       "Thicker oxide on aluminium"
+      ]
+     ],
+     "why": "Surface treatments.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by contact angle on water, smallest first.",
+     "items": [
+      "Clean glass (about 20°)",
+      "Plastic (about 90°)",
+      "PTFE (about 110°)",
+      "Lotus-like textured coating (above 150°)"
+     ],
+     "why": "Hydrophobicity increases.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do many fatigue cracks start at the surface, and how can surface engineering delay them?",
+     "rubric": [
+      [
+       "surface",
+       "highest stress",
+       "scratch",
+       "defect",
+       "notch",
+       "stress concentrat"
+      ],
+      [
+       "compressive",
+       "peen",
+       "harden",
+       "coating",
+       "residual",
+       "nitrid"
+      ]
+     ],
+     "min": 2,
+     "model": "Bending stresses are highest at the surface, where scratches and defects concentrate stress, so cracks start there. Compressive residual stress from peening or a hard case makes initiation harder.",
+     "why": "Surface controls fatigue life.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Langmuir coverage θ = KP/(1 + KP). If KP = 3, θ is:",
+     "o": [
+      "0.75",
+      "0.3",
+      "1.5",
+      "0.25"
+     ],
+     "a": 0,
+     "why": "3 ÷ 4.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a rough hydrophobic surface repel water better than a smooth one of the same chemistry?",
+     "o": [
+      "Air trapped in texture reduces contact",
+      "Roughness makes the surface magnetic",
+      "The rough surface is heavier",
+      "The rough surface is warmer"
+     ],
+     "a": 0,
+     "why": "Cassie–Baxter state.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which property is most important for a coating's adhesion?",
+     "o": [
+      "Clean, compatible interface",
+      "The colour of the coating",
+      "The thickness alone",
+      "The cost alone"
+     ],
+     "a": 0,
+     "why": "Bonding at the interface.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why surfaces matter and how we engineer them",
+    "model": "Wear, corrosion, wetting and fatigue start at the surface, so changing only the outer layer can improve a whole part. Coatings, hardening treatments and peening are common tools, but adhesion and thermal match are essential.",
+    "points": [
+     {
+      "k": [
+       "surface",
+       "wear",
+       "corrosion",
+       "fatigue",
+       "start"
+      ],
+      "ask": "Why focus on the surface?"
+     },
+     {
+      "k": [
+       "coating",
+       "harden",
+       "nitrid",
+       "anodis",
+       "peen",
+       "pvd"
+      ],
+      "ask": "What can be done?"
+     },
+     {
+      "k": [
+       "adhesion",
+       "thermal",
+       "match",
+       "crack",
+       "peel"
+      ],
+      "ask": "What can go wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Biomaterials",
+   "icon": "🦴",
+   "hook": "A hip implant must survive millions of steps inside a warm, salty, chemically active body for decades. What does a material need to be accepted and to last?",
+   "explain": [
+    "A biomaterial interacts with biological systems for a medical purpose. Biocompatibility means an appropriate host response in a specific application, not a universal property. Metals used include titanium alloys (Ti-6Al-4V), cobalt–chromium and stainless steel; polymers include UHMWPE for joint bearings, silicones and PLA; ceramics include alumina, zirconia and hydroxyapatite Ca₁₀(PO₄)₆(OH)₂, whose Ca/P ratio is 10/6 ≈ 1.67 and resembles bone mineral.",
+    "Mechanical match matters. Bone has a modulus of roughly 10–30 GPa, while titanium alloy is about 110 GPa and CoCr about 210 GPa. If an implant and bone deform together (equal strain), the load fraction carried by the implant is E_iA_i ÷ (E_iA_i + E_bA_b). A stiff implant carries more load and the bone, under-loaded, may resorb, called stress shielding.",
+    "Degradable polymers like PLA and PLGA break down by hydrolysis of ester bonds and are used in sutures and scaffolds. Proteins adsorb to a surface within seconds, shaping the cellular response; surface chemistry and topography matter. Corrosion releases ions, wear generates debris and sterilisation must not damage the material. Regulation and clinical trials ensure safety."
+   ],
+   "example": {
+    "q": "An implant (E = 110 GPa, area 1.0 cm²) sits parallel to bone (E = 20 GPa, area 4.0 cm²) under equal strain. What fraction of load does the implant carry?",
+    "steps": [
+     "Implant stiffness term: 110 × 1.0 = 110.",
+     "Bone term: 20 × 4.0 = 80.",
+     "Fraction = 110 ÷ (110 + 80) = 0.58."
+    ],
+    "a": "About 58%"
+   },
+   "analogies": {
+    "home": "A replacement part must fit its machine in size, strength and material.",
+    "farm": "A graft succeeds when the grafted branch matches the host tree.",
+    "sport": "Knee braces must flex like the joint they support.",
+    "tech": "A phone case shields electronics; a coating shields an implant from body fluids."
+   },
+   "mnemonic": "Biomaterial: safe, strong, matched, and stable for its job.",
+   "terms": [
+    [
+     "Biocompatibility",
+     "Appropriate host response in a specific application."
+    ],
+    [
+     "Stress shielding",
+     "Bone loss from being under-loaded by a stiff implant."
+    ],
+    [
+     "Hydroxyapatite",
+     "Calcium phosphate ceramic similar to bone mineral."
+    ],
+    [
+     "Scaffold",
+     "A porous structure that supports tissue growth."
+    ]
+   ],
+   "misc": {
+    "wrong": "A material that is non-toxic is automatically biocompatible.",
+    "right": "Biocompatibility depends on the application, including mechanical match, wear, degradation and the host response."
+   },
+   "limits": "Long-term performance depends on patient factors and surgical technique, and lab tests cannot reproduce all conditions.",
+   "trip": {
+    "wiki": "Biomaterial",
+    "prompt": "Find a table of implant materials and compare their stiffness with bone."
+   },
+   "sources": [
+    "Biomaterial",
+    "Hydroxyapatite",
+    "Stress shielding"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "For hydroxyapatite Ca₁₀(PO₄)₆(OH)₂, what is the Ca/P ratio (to two decimals)?",
+     "a": 1.67,
+     "tol": 0.01,
+     "why": "10 ÷ 6 = 1.667.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Implant: E = 110 GPa, area 1.0 cm². Bone: E = 20 GPa, area 4.0 cm². Both strain equally. What fraction of the load does the implant carry (two decimals)?",
+     "a": 0.58,
+     "tol": 0.01,
+     "why": "110 ÷ 190 = 0.579.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Stress shielding occurs when an implant is:",
+     "o": [
+      "Much stiffer than bone",
+      "Much softer than the bone",
+      "Magnetic in nature",
+      "Made to degrade quickly"
+     ],
+     "a": 0,
+     "why": "Bone is under-loaded.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "UHMWPE is widely used as:",
+     "o": [
+      "A joint bearing surface",
+      "A bone cement",
+      "A corrosion coating",
+      "A stent wire"
+     ],
+     "a": 0,
+     "why": "Low friction and wear resistant.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "PLA degrades in the body mainly by:",
+     "o": [
+      "Hydrolysis of ester bonds",
+      "Rusting of its surface",
+      "Melting at body temperature",
+      "Photolysis by light"
+     ],
+     "a": 0,
+     "why": "Water cleaves the esters.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is titanium alloy common in implants?",
+     "o": [
+      "Good corrosion resistance, strength and light weight",
+      "It is soft like rubber and bends easily",
+      "It is a ceramic that never corrodes",
+      "It dissolves safely in the blood"
+     ],
+     "a": 0,
+     "why": "Passive oxide film.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A material is biocompatible in a bone screw but not in a heart valve. This shows biocompatibility is:",
+     "o": [
+      "Application-specific",
+      "Universal for all uses",
+      "Impossible to measure",
+      "A matter of colour"
+     ],
+     "a": 0,
+     "why": "Context matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each biomaterial to its use.",
+     "pairs": [
+      [
+       "Hydroxyapatite coating",
+       "Bone bonding on implants"
+      ],
+      [
+       "Silicone",
+       "Soft tissue implants"
+      ],
+      [
+       "Ti-6Al-4V",
+       "Load-bearing implants"
+      ],
+      [
+       "PLGA",
+       "Dissolving sutures and scaffolds"
+      ]
+     ],
+     "why": "Material to function.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order by Young's modulus, lowest first (approx.).",
+     "items": [
+      "Soft tissue (MPa range)",
+      "Cortical bone (about 20 GPa)",
+      "Titanium alloy (about 110 GPa)",
+      "CoCr alloy (about 210 GPa)"
+     ],
+     "why": "Increasing stiffness.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why wear debris from an implant can be a clinical problem.",
+     "rubric": [
+      [
+       "particle",
+       "debris",
+       "fragment"
+      ],
+      [
+       "immune",
+       "inflammation",
+       "response",
+       "bone loss",
+       "osteolysis",
+       "loosening",
+       "macrophage"
+      ]
+     ],
+     "min": 2,
+     "model": "Wear particles trigger an inflammatory immune response that can cause bone loss around the implant and lead to loosening.",
+     "why": "Host response to debris.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "How can stress shielding be reduced?",
+     "o": [
+      "Use porous or lower-modulus implants",
+      "Use a much stiffer implant",
+      "Use a thicker metal plate",
+      "Remove part of the bone"
+     ],
+     "a": 0,
+     "why": "Match stiffness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the first layer of adsorbed proteins matter?",
+     "o": [
+      "Cells respond to the protein layer rather than the bare surface",
+      "It changes the colour of the implant",
+      "It heats the implant up",
+      "It only adds a little mass"
+     ],
+     "a": 0,
+     "why": "Biological interface.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A degradable scaffold should ideally degrade:",
+     "o": [
+      "At a rate matching tissue regrowth",
+      "Instantly, as soon as it is placed",
+      "Never, so that it stays",
+      "Only after ten years"
+     ],
+     "a": 0,
+     "why": "Support then handover.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What makes a good biomaterial",
+    "model": "A biomaterial must be accepted by the body for its specific job and must also have suitable strength, stiffness, wear and corrosion behaviour. A stiffness mismatch with bone can cause stress shielding, and degradable polymers are used when temporary support is needed.",
+    "points": [
+     {
+      "k": [
+       "biocompatib",
+       "body",
+       "host",
+       "accept"
+      ],
+      "ask": "What does biocompatible mean?"
+     },
+     {
+      "k": [
+       "stiff",
+       "modulus",
+       "bone",
+       "stress shielding",
+       "mismatch"
+      ],
+      "ask": "Why does stiffness matter?"
+     },
+     {
+      "k": [
+       "degrad",
+       "hydrolysis",
+       "wear",
+       "corrosion",
+       "debris"
+      ],
+      "ask": "What else can go wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Integrated materials discovery and design",
+   "icon": "🧭",
+   "hook": "Finding the right material used to take decades of trial and error. How can data, theory and experiments be combined to find one faster?",
+   "explain": [
+    "Design starts from function. Ashby's method turns requirements into a performance index to rank materials. For a light, stiff beam of fixed length and loading, minimise mass by maximising E^½ ÷ ρ. For a light stiff tie it is E ÷ ρ, and for a stiff plate E^⅓ ÷ ρ. With E in GPa and ρ in g/cm³, steel (200, 7.85) gives √200 ÷ 7.85 = 1.80, and aluminium (70, 2.7) gives 3.10, so aluminium makes a lighter beam of the same stiffness.",
+    "Discovery pipelines combine high-throughput computation (DFT databases), CALPHAD thermodynamic modelling, machine-learning screening and targeted experiments. A funnel narrows candidates: from 10 000 candidates, a 5% pass of a DFT screen leaves 500, and if 10% of those pass experiments, 50 remain. Models need cross-validation to detect overfitting, uncertainty estimates and data in standard, open formats. Autonomous labs and Bayesian optimisation choose the next experiment to learn the most.",
+    "Real design balances many objectives: stiffness, strength, cost, processing, supply, recyclability and life-cycle environmental impact, assessed with life-cycle assessment (LCA). Trade-offs have no single best answer, and Pareto-optimal sets show the best compromises. Ethical choices include sourcing of critical minerals, toxicity and end-of-life design for circularity."
+   ],
+   "example": {
+    "q": "Compare steel and aluminium for a light stiff beam using E^½ ÷ ρ (steel E = 200 GPa, ρ = 7.85 g/cm³; Al E = 70 GPa, ρ = 2.7 g/cm³).",
+    "steps": [
+     "Steel: √200 ÷ 7.85 = 14.14 ÷ 7.85 = 1.80.",
+     "Aluminium: √70 ÷ 2.7 = 8.37 ÷ 2.7 = 3.10.",
+     "Ratio Al : steel = 3.10 ÷ 1.80 = 1.72."
+    ],
+    "a": "Aluminium is about 1.7 times better"
+   },
+   "analogies": {
+    "home": "Choosing a kettle by weighing price, speed, safety and looks is multi-objective design.",
+    "farm": "A farmer selects seed by yield, drought tolerance and taste together.",
+    "city": "Planning a transport route balances time, cost and emissions.",
+    "tech": "Search engines rank millions of pages by combining many scores."
+   },
+   "mnemonic": "Function, constraint, objective, index: then screen, test, learn, repeat.",
+   "terms": [
+    [
+     "Performance index",
+     "A combination of properties ranking materials for a function."
+    ],
+    [
+     "High-throughput screening",
+     "Testing many candidates quickly, often by computer."
+    ],
+    [
+     "Pareto front",
+     "Set of designs where improving one goal worsens another."
+    ],
+    [
+     "Life-cycle assessment",
+     "Accounting for impacts from raw material to disposal."
+    ]
+   ],
+   "misc": {
+    "wrong": "Machine learning can replace understanding and experiments in materials discovery.",
+    "right": "Models need good data and physical insight, and predictions must be tested in the lab."
+   },
+   "limits": "Data are often sparse, biased towards successful results and measured under inconsistent conditions, limiting what models learn.",
+   "trip": {
+    "wiki": "Materials selection",
+    "prompt": "Find an Ashby chart and locate where metals, ceramics and polymers sit."
+   },
+   "sources": [
+    "Material selection",
+    "Materials informatics",
+    "Life-cycle assessment"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A screening funnel starts with 10 000 candidates. 5% pass a computational screen and 10% of those pass experiments. How many remain?",
+     "a": 50,
+     "tol": 0,
+     "why": "10 000 × 0.05 × 0.10 = 50.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For a light stiff beam the index is E^½ ÷ ρ. Steel (200 GPa, 7.85 g/cm³) and aluminium (70 GPa, 2.7 g/cm³): what is the ratio of the index of aluminium to steel (two decimals)?",
+     "a": 1.72,
+     "tol": 0.03,
+     "why": "3.10 ÷ 1.80 = 1.72.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which index applies to a light, stiff tie (tension member)?",
+     "o": [
+      "E ÷ ρ",
+      "E^½ ÷ ρ",
+      "E^⅓ ÷ ρ",
+      "ρ ÷ E"
+     ],
+     "a": 0,
+     "why": "Stiffness scales with E·A, mass with ρ·A.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A model fits training data perfectly but fails on new data. This is:",
+     "o": [
+      "Overfitting",
+      "Underfitting",
+      "Validation",
+      "Calibration"
+     ],
+     "a": 0,
+     "why": "Memorised noise.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A Pareto front shows:",
+     "o": [
+      "Best trade-offs between conflicting objectives",
+      "The hardest materials only",
+      "The cheapest materials only",
+      "Random designs"
+     ],
+     "a": 0,
+     "why": "No improvement without a loss.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is cross-validation used?",
+     "o": [
+      "To estimate how well a model predicts unseen data",
+      "To speed up the training",
+      "To remove some of the data",
+      "To colour the plots"
+     ],
+     "a": 0,
+     "why": "Held-out testing.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Life-cycle assessment helps designers by:",
+     "o": [
+      "Counting environmental impacts from production to disposal",
+      "Ranking materials by colour",
+      "Reducing the density of parts",
+      "Testing the hardness of parts"
+     ],
+     "a": 0,
+     "why": "Whole-life perspective.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pipeline predicts a promising compound but never synthesises it. The main shortcoming is:",
+     "o": [
+      "Predictions remain unverified",
+      "The compound is too heavy",
+      "Compounds cannot be predicted",
+      "It lacks a name"
+     ],
+     "a": 0,
+     "why": "Experimental validation is essential.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each tool to its role in discovery.",
+     "pairs": [
+      [
+       "DFT database",
+       "Predicts stability and properties"
+      ],
+      [
+       "CALPHAD",
+       "Models multicomponent phase equilibria"
+      ],
+      [
+       "Bayesian optimisation",
+       "Chooses the next experiment"
+      ],
+      [
+       "LCA",
+       "Assesses environmental impact"
+      ]
+     ],
+     "why": "Complementary tools.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain in a sentence or two why a performance index such as E^½ ÷ ρ helps when choosing a material.",
+     "rubric": [
+      [
+       "rank",
+       "compare",
+       "choose",
+       "select",
+       "best"
+      ],
+      [
+       "requirement",
+       "function",
+       "constraint",
+       "mass",
+       "weight",
+       "light",
+       "stiff"
+      ]
+     ],
+     "min": 2,
+     "model": "A performance index combines the properties that matter for a given function and constraint, such as stiffness and mass, into one number so that candidate materials can be ranked fairly.",
+     "why": "It links design requirements to material properties.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "text",
+     "q": "Give two reasons why choosing the material with the best single property is usually a poor design strategy.",
+     "rubric": [
+      [
+       "trade-off",
+       "trade off",
+       "compromise",
+       "multiple",
+       "several",
+       "conflict",
+       "balance"
+      ],
+      [
+       "cost",
+       "processing",
+       "manufactur",
+       "recycl",
+       "environment",
+       "other propert",
+       "supply",
+       "fatigue",
+       "corrosion"
+      ]
+     ],
+     "min": 2,
+     "model": "Real parts must meet several requirements at once, such as stiffness, cost, processability, corrosion resistance and recyclability, which often conflict, so the best overall compromise is chosen rather than the best single property.",
+     "why": "Multi-objective design.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a machine-learning model trained only on published successful experiments risk bias?",
+     "o": [
+      "Failed results are rarely reported",
+      "Successful data are too accurate to use",
+      "Papers always use different units",
+      "It reduces the number of features"
+     ],
+     "a": 0,
+     "why": "Publication bias skews training data.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why include recyclability early in design?",
+     "o": [
+      "End-of-life options depend on material choices made at the start",
+      "Recycling is only decorative",
+      "Material choice never affects it",
+      "Recycling raises the density"
+     ],
+     "a": 0,
+     "why": "Circular economy needs design-for-recycling.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How materials are chosen and discovered",
+    "model": "Design starts from the function, turns requirements into a performance index and ranks materials. Discovery combines computation, machine learning and experiments in a funnel, and the results must be validated. Real choices balance several goals, including cost and environmental impact.",
+    "points": [
+     {
+      "k": [
+       "function",
+       "requirement",
+       "performance index",
+       "ashby",
+       "constraint"
+      ],
+      "ask": "Where does design start?"
+     },
+     {
+      "k": [
+       "screen",
+       "computation",
+       "machine learning",
+       "experiment",
+       "validate"
+      ],
+      "ask": "How are new materials found?"
+     },
+     {
+      "k": [
+       "trade-off",
+       "cost",
+       "environment",
+       "recycl",
+       "life-cycle",
+       "pareto"
+      ],
+      "ask": "What else must be balanced?"
+     }
+    ]
+   }
+  }
+ ]
+}

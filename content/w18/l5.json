@@ -1,0 +1,2937 @@
+{
+ "world": 18,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced human physiology",
+   "icon": "📈",
+   "hook": "Your blood pressure holds steady as you stand up, run or sleep. Which feedback loops keep the pressure and the acidity of your blood so tightly controlled?",
+   "explain": [
+    "Physiology rests on negative feedback loops: a sensor detects a change, a control centre compares it with a set point, and an effector acts to reverse the change. Blood pressure is monitored by baroreceptors in the carotid arteries and aorta. If pressure falls on standing, the brainstem raises heart rate and narrows blood vessels; if it rises, the opposite happens. Over hours to days, the kidneys also regulate blood volume, aided by hormones such as renin-angiotensin-aldosterone and antidiuretic hormone.",
+    "Cardiac output = heart rate × stroke volume. Mean arterial pressure (MAP) is roughly diastolic pressure + one third of the pulse pressure (systolic minus diastolic), and reflects the average driving pressure for blood flow to organs. Perfusion of organs needs an adequate MAP, usually above about 65 mmHg.",
+    "Blood acidity is held in a narrow range: arterial pH 7.35 to 7.45. Buffers in the blood act within seconds, the lungs adjust carbon dioxide within minutes (breathing faster removes CO₂ and raises pH), and the kidneys adjust bicarbonate over hours to days. Typical adult arterial values used here: PaCO₂ 35 to 45 mmHg and bicarbonate 22 to 26 mmol/L."
+   ],
+   "example": {
+    "q": "A fictional adult has a heart rate of 70 beats/min and a stroke volume of 70 mL. What is the cardiac output in L/min?",
+    "steps": [
+     "Cardiac output = heart rate × stroke volume.",
+     "70 × 70 mL = 4900 mL per minute.",
+     "Convert: 4900 mL = 4.9 L."
+    ],
+    "a": "4.9 L/min"
+   },
+   "analogies": {
+    "home": "A thermostat compares room temperature with the set point and switches heating on or off.",
+    "city": "Water towers and pumps keep pressure steady while use changes through the day.",
+    "tech": "A cruise control compares speed with the target and adjusts the engine.",
+    "sea": "A ship's ballast tanks fill or empty to keep the ship level."
+   },
+   "mnemonic": "Sensor, set point, effector: S-S-E. Pressure = flow × resistance.",
+   "terms": [
+    [
+     "Negative feedback",
+     "A loop in which a change triggers a response that reverses the change."
+    ],
+    [
+     "Cardiac output",
+     "Heart rate × stroke volume, the volume pumped per minute."
+    ],
+    [
+     "Mean arterial pressure",
+     "The average pressure driving blood to organs."
+    ],
+    [
+     "Baroreceptor",
+     "A pressure sensor in the arteries that tells the brain about blood pressure."
+    ],
+    [
+     "Buffer",
+     "A chemical system that resists changes in pH."
+    ]
+   ],
+   "misc": {
+    "wrong": "The body keeps every variable at exactly the same value all the time.",
+    "right": "Variables fluctuate around a set point or normal range, and set points can shift in states such as exercise, fever or sleep."
+   },
+   "limits": "Normal values and thresholds differ with age, sex, altitude and disease, and simplified formulae such as MAP are approximations.",
+   "trip": {
+    "wiki": "Baroreflex",
+    "prompt": "Trace how a fall in blood pressure leads to a faster heart rate."
+   },
+   "sources": [
+    "Homeostasis",
+    "Cardiac output",
+    "Baroreflex"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A fictional adult has a heart rate of 80 beats/min and a stroke volume of 75 mL. What is the cardiac output in L/min?",
+     "a": 6,
+     "tol": 0.05,
+     "unit": "L/min",
+     "why": "80 × 75 = 6000 mL = 6 L/min.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Blood pressure is 120/80 mmHg. Using MAP = diastolic + one third of (systolic minus diastolic), what is the MAP, to the nearest mmHg?",
+     "a": 93,
+     "tol": 1,
+     "unit": "mmHg",
+     "why": "Pulse pressure = 40; one third ≈ 13.3; 80 + 13.3 ≈ 93 mmHg.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "On standing, blood pools in the legs and pressure briefly falls. What does the baroreflex do?",
+     "o": [
+      "Raises heart rate and narrows vessels",
+      "Lowers heart rate and widens vessels",
+      "Stops breathing to save oxygen",
+      "Makes the kidneys stop working at once"
+     ],
+     "a": 0,
+     "why": "The reflex restores pressure to the brain.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A negative feedback loop...",
+     "o": [
+      "Reverses a change to restore the set point",
+      "Amplifies a change until it grows very large",
+      "Is found only in the brain",
+      "Never occurs in the human body"
+     ],
+     "a": 0,
+     "why": "It opposes the deviation.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the normal arterial pH range?",
+     "o": [
+      "7.35 to 7.45",
+      "6.0 to 6.5, slightly acidic",
+      "7.8 to 8.2, slightly alkaline",
+      "5.0 to 5.5, like the skin surface"
+     ],
+     "a": 0,
+     "why": "Blood is slightly alkaline and tightly controlled.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient breathes very fast due to anxiety. What happens to blood CO₂ and pH?",
+     "o": [
+      "CO₂ falls and pH rises",
+      "CO₂ rises and pH falls",
+      "Both fall",
+      "Both stay fixed"
+     ],
+     "a": 0,
+     "why": "Over-breathing blows off CO₂, making blood more alkaline.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the negative feedback loop for a rise in blood pressure.",
+     "items": [
+      "Pressure rises",
+      "Baroreceptors detect stretch",
+      "Brainstem lowers heart rate and widens vessels",
+      "Pressure falls toward set point"
+     ],
+     "why": "Sensor, control centre, effector, correction.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the system to its role in acid-base balance.",
+     "pairs": [
+      [
+       "Buffers",
+       "Act within seconds"
+      ],
+      [
+       "Lungs",
+       "Adjust CO₂ over minutes"
+      ],
+      [
+       "Kidneys",
+       "Adjust bicarbonate over hours to days"
+      ],
+      [
+       "Brainstem",
+       "Controls breathing rate"
+      ]
+     ],
+     "why": "Three layers of control with different speeds.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient with severe bleeding has a pulse of 130 and a falling blood pressure. Why is the pulse fast?",
+     "o": [
+      "Reflex attempt to maintain cardiac output with less volume",
+      "The heart is resting and slow",
+      "It is a normal sleep effect",
+      "Blood has become thicker and slower"
+     ],
+     "a": 0,
+     "why": "Lower stroke volume is compensated by a faster rate until compensation fails.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a fast heart rate in a bleeding patient can be an early warning sign even if blood pressure is still normal.",
+     "rubric": [
+      [
+       "compensat",
+       "reflex",
+       "maintain",
+       "keep up"
+      ],
+      [
+       "pressure",
+       "output",
+       "perfusion",
+       "volume"
+      ],
+      [
+       "early",
+       "before",
+       "later",
+       "fall",
+       "fail"
+      ]
+     ],
+     "min": 2,
+     "model": "The body compensates for blood loss by raising the heart rate and narrowing vessels, which holds blood pressure up for a while, so tachycardia can appear before pressure falls.",
+     "why": "Compensation hides early shock.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fictional patient takes medicine that blocks the baroreflex response and feels faint on standing. What explains this?",
+     "o": [
+      "The reflex cannot raise heart rate and tone to correct the drop",
+      "The kidneys fail instantly on standing",
+      "Blood becomes more acidic at once",
+      "Leg muscles stop pumping blood back to the heart"
+     ],
+     "a": 0,
+     "why": "Postural hypotension can result when compensation is blunted.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A person with severe chronic lung disease has high CO₂ and normal pH over weeks. What explains the normal pH?",
+     "o": [
+      "The kidneys have retained bicarbonate to compensate",
+      "The lungs have become healthy again",
+      "CO₂ is not acidic at all",
+      "The body cannot tolerate pH changes so ignores them"
+     ],
+     "a": 0,
+     "why": "Renal compensation is slow and brings pH back toward normal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the body use both fast and slow control mechanisms for blood pressure and acidity?",
+     "rubric": [
+      [
+       "fast",
+       "immediate",
+       "second",
+       "minute",
+       "quick"
+      ],
+      [
+       "slow",
+       "hours",
+       "days",
+       "long-term",
+       "kidney"
+      ],
+      [
+       "different",
+       "complement",
+       "both",
+       "backup",
+       "cover"
+      ]
+     ],
+     "min": 2,
+     "model": "Fast reflexes and buffers prevent immediate danger, while slower kidney and hormonal mechanisms correct sustained disturbances, so the two together give both speed and long-term accuracy.",
+     "why": "Layered control improves safety.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Feedback control in the body",
+    "model": "The body keeps variables in a narrow range using negative feedback: a sensor detects change and an effector reverses it. Blood pressure is controlled by quick reflexes and by the kidneys over longer times. Blood pH is controlled by buffers, the lungs and the kidneys.",
+    "points": [
+     {
+      "k": [
+       "sensor",
+       "detect",
+       "feedback",
+       "set point"
+      ],
+      "ask": "What is negative feedback?"
+     },
+     {
+      "k": [
+       "baroreceptor",
+       "pressure",
+       "heart rate",
+       "vessel"
+      ],
+      "ask": "How is blood pressure controlled quickly?"
+     },
+     {
+      "k": [
+       "kidney",
+       "volume",
+       "slow",
+       "hormone"
+      ],
+      "ask": "What about long-term control?"
+     },
+     {
+      "k": [
+       "ph",
+       "acid",
+       "buffer",
+       "lung",
+       "co2",
+       "carbon dioxide"
+      ],
+      "ask": "How is blood acidity controlled?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Internal medicine",
+   "icon": "🏥",
+   "hook": "An older patient arrives with tiredness, a mild fever, a new cough and swollen ankles. Could one illness explain all of it?",
+   "explain": [
+    "Internal medicine looks after adults with complex, often multiple, conditions. Physicians combine the history, examination and tests and consider how conditions interact. A patient may have heart failure, diabetes and kidney disease at once, and a treatment for one may affect the others.",
+    "Common chronic conditions include hypertension, type 2 diabetes, chronic kidney disease, heart failure, asthma and COPD. Long-term care emphasises prevention, regular review, risk-factor control (smoking, diet, activity, blood pressure, glucose, cholesterol), vaccination and education. Medicines are reviewed regularly to avoid harm from polypharmacy.",
+    "Reasoning starts with the presenting problem, then asks what is the most dangerous cause, what is the most likely cause and what could explain several findings together. Frailty, memory problems and social situation change the best plan. Shared decision making with the patient is central: the aim is what matters to the person, which is not always the longest list of treatments."
+   ],
+   "example": {
+    "q": "A fictional older adult has breathlessness lying flat, swollen ankles and tiredness. What diagnosis comes to mind and how would a clinician test the idea?",
+    "steps": [
+     "Orthopnoea and leg swelling suggest fluid retention from heart failure.",
+     "Examination: raised neck veins, crackles at lung bases, swollen ankles.",
+     "Tests: blood tests (including a natriuretic peptide), ECG, chest X-ray and echocardiography."
+    ],
+    "a": "Possible heart failure; confirm with examination, blood tests, ECG, chest X-ray and echocardiography"
+   },
+   "analogies": {
+    "home": "A house may have problems in plumbing and wiring at once; fixing one can affect the other.",
+    "city": "Traffic, water and power depend on each other; changing one affects the rest.",
+    "farm": "A vet considers feed, water and housing together in a sick herd.",
+    "tech": "A system with several linked faults needs a whole-system view."
+   },
+   "mnemonic": "Think common, dangerous and linked: one illness or several?",
+   "terms": [
+    [
+     "Comorbidity",
+     "Having more than one health condition at once."
+    ],
+    [
+     "Polypharmacy",
+     "Taking many medicines, increasing risk of side effects and interactions."
+    ],
+    [
+     "Hypertension",
+     "Persistently high blood pressure."
+    ],
+    [
+     "Orthopnoea",
+     "Breathlessness when lying flat."
+    ],
+    [
+     "Frailty",
+     "Reduced reserve making a person vulnerable to stress."
+    ]
+   ],
+   "misc": {
+    "wrong": "Every symptom must be explained by a single diagnosis.",
+    "right": "Older and multi-morbid patients often have several contributing conditions, and medicines themselves may cause symptoms."
+   },
+   "limits": "Case summaries are simplified. Real diagnosis needs full assessment, and local guidelines set thresholds for treatment.",
+   "trip": {
+    "wiki": "Internal medicine",
+    "prompt": "Find three chronic diseases and one risk factor they share."
+   },
+   "sources": [
+    "Internal medicine",
+    "Heart failure",
+    "Multimorbidity"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Orthopnoea means...",
+     "o": [
+      "Breathlessness when lying flat",
+      "Chest pain felt at rest after exercise",
+      "Pain deep inside the bones",
+      "A skin rash across the chest"
+     ],
+     "a": 0,
+     "why": "It is typical of heart failure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Polypharmacy is...",
+     "o": [
+      "Taking many medicines, raising the risk of problems",
+      "A kind of large pharmacy",
+      "A new type of drug",
+      "An allergy to several foods"
+     ],
+     "a": 0,
+     "why": "More drugs increase interactions.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient with diabetes, heart failure and kidney disease needs a new medicine. What is the best approach?",
+     "o": [
+      "Consider all conditions and consult a senior and pharmacist",
+      "Choose a medicine for one condition only",
+      "Prescribe without checking other illnesses or kidney function",
+      "Stop all the patient's current medicines"
+     ],
+     "a": 0,
+     "why": "Treatments interact across conditions.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is shared decision making important in older patients?",
+     "o": [
+      "Goals and values affect which treatments are right",
+      "Older patients never want to make any choices",
+      "It is quicker for the clinic",
+      "Doctors must decide alone for older patients"
+     ],
+     "a": 0,
+     "why": "Treatment should match what matters to the person.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the chronic condition to a key long-term aim.",
+     "pairs": [
+      [
+       "Hypertension",
+       "Keep blood pressure controlled"
+      ],
+      [
+       "Type 2 diabetes",
+       "Keep glucose controlled and prevent complications"
+      ],
+      [
+       "Heart failure",
+       "Reduce fluid overload and symptoms"
+      ],
+      [
+       "COPD",
+       "Reduce flare-ups and slow decline"
+      ]
+     ],
+     "why": "Each needs long-term management.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient's swollen ankles started after a new medicine. What should be considered?",
+     "o": [
+      "A medicine side effect",
+      "Nothing; swelling is never linked to medicines",
+      "Only age, never a medicine",
+      "Only diet, never a medicine"
+     ],
+     "a": 0,
+     "why": "Some medicines cause fluid retention.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order a simple internal medicine approach.",
+     "items": [
+      "Listen to the presenting problem",
+      "List dangerous, likely and linked causes",
+      "Examine and test",
+      "Agree a plan with the patient"
+     ],
+     "why": "Reasoning then shared planning.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient suddenly becomes confused and has a fever and a cough. Why is this concerning in an older adult?",
+     "o": [
+      "Infection can present as confusion in the elderly",
+      "Confusion is always normal ageing",
+      "Fever never occurs in older adults",
+      "It is only a cold and needs no review"
+     ],
+     "a": 0,
+     "why": "Delirium may be the first sign of serious illness.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a risk-factor measure for cardiovascular disease?",
+     "o": [
+      "Smoking status",
+      "Shoe size",
+      "Hair length",
+      "Number of friends only"
+     ],
+     "a": 0,
+     "why": "Smoking, blood pressure, cholesterol, diabetes and inactivity matter.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why might a doctor reduce rather than add medicines for a frail patient?",
+     "rubric": [
+      [
+       "side effect",
+       "interaction",
+       "harm",
+       "polypharmacy",
+       "burden"
+      ],
+      [
+       "benefit",
+       "review",
+       "stop",
+       "necessary",
+       "goal"
+      ],
+      [
+       "frail",
+       "older",
+       "fall",
+       "risk"
+      ]
+     ],
+     "min": 2,
+     "model": "In a frail patient the harm of side effects and interactions may outweigh the benefit of some medicines, so a review that stops unnecessary drugs can be safer.",
+     "why": "Deprescribing balances benefit and harm.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fictional patient has breathlessness, leg swelling and a recent long flight with a painful swollen calf. Which dangerous cause must be considered?",
+     "o": [
+      "A clot in the leg and lung",
+      "Hay fever with itchy eyes",
+      "Sunburn from the flight",
+      "Hunger after a long journey"
+     ],
+     "a": 0,
+     "why": "Deep vein thrombosis and pulmonary embolism are time critical.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can treating a risk factor like high blood pressure matter even when the patient feels well?",
+     "o": [
+      "It prevents later stroke, heart and kidney disease",
+      "It cures the feeling of being well, nothing more",
+      "It has no value without symptoms",
+      "It only matters once symptoms have occurred"
+     ],
+     "a": 0,
+     "why": "Many risks are silent for years.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why one patient can have several diagnoses at the same time and what that means for clinicians.",
+     "rubric": [
+      [
+       "several",
+       "multiple",
+       "more than one",
+       "comorbid",
+       "multimorbid"
+      ],
+      [
+       "interact",
+       "affect",
+       "treatment",
+       "medicine",
+       "balance",
+       "review"
+      ],
+      [
+       "age",
+       "chronic",
+       "risk"
+      ]
+     ],
+     "min": 2,
+     "model": "Chronic conditions and ageing often coexist, so treatments for one may affect another, which means clinicians must review the whole patient and balance benefits and harms.",
+     "why": "Whole-person care.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Looking after adults with several conditions",
+    "model": "Internal medicine cares for adults with complex or multiple illnesses. Doctors consider which conditions are likely and dangerous, how treatments interact and what matters to the patient. Regular review prevents harm from too many medicines.",
+    "points": [
+     {
+      "k": [
+       "several",
+       "multiple",
+       "complex",
+       "chronic"
+      ],
+      "ask": "Who does internal medicine care for?"
+     },
+     {
+      "k": [
+       "interact",
+       "medicine",
+       "polypharmacy",
+       "review"
+      ],
+      "ask": "What are the risks of many medicines?"
+     },
+     {
+      "k": [
+       "patient",
+       "goal",
+       "value",
+       "choice",
+       "shared"
+      ],
+      "ask": "How do plans fit the patient?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Paediatrics",
+   "icon": "🧸",
+   "hook": "Why can't we simply treat a child as a small adult? What changes between a newborn and a teenager?",
+   "explain": [
+    "Children differ from adults in size, physiology, growth and development, and in the way they get ill. Babies have faster heart and breathing rates, a larger head relative to the body, and less reserve, so they can deteriorate quickly. Typical normal resting breathing rate: newborn about 30 to 60 per minute, infant about 25 to 50, young child about 20 to 30, older child about 15 to 25 (approximate). Normal ranges change with age, so clinicians use age-based charts.",
+    "Development moves through predictable stages: motor (sitting, walking), language, social and thinking skills. Growth is plotted on centile charts; the pattern over time matters more than a single point. Vaccination schedules protect children from serious infections.",
+    "Red flags in an unwell child include a very drowsy or floppy child, difficulty breathing, a fever in a baby under three months (needs urgent assessment), signs of dehydration (sunken soft spot, dry mouth, few wet nappies), a non-blanching rash with fever, and persistent vomiting. Parents' worries are important data. Children should be spoken to age-appropriately, and safeguarding concerns must be reported to the proper team. All cases here are fictional."
+   ],
+   "example": {
+    "q": "A fictional 6-week-old baby has a fever and is feeding poorly and sleepy. How urgent is this?",
+    "steps": [
+     "Fever in a young infant is a red flag because serious bacterial infection is possible.",
+     "Poor feeding and drowsiness add to concern.",
+     "This needs urgent senior assessment and tests."
+    ],
+    "a": "Urgent: fever in a very young infant with poor feeding needs senior assessment"
+   },
+   "analogies": {
+    "home": "Small cups hold less; a spill is a bigger fraction of the cup. Small bodies have less reserve.",
+    "nature": "A sapling reacts faster to drought than an old tree.",
+    "sport": "Training plans are age-matched; a child is not a small adult athlete.",
+    "city": "A narrow lane blocks faster than a wide road, as small airways do."
+   },
+   "mnemonic": "Children are not small adults: age-based norms, fast change, listen to parents.",
+   "terms": [
+    [
+     "Centile chart",
+     "A chart comparing a child's growth with others of the same age."
+    ],
+    [
+     "Developmental milestone",
+     "A skill typically gained at a certain age, such as walking."
+    ],
+    [
+     "Dehydration",
+     "A deficit of body water, which is more dangerous in small children."
+    ],
+    [
+     "Safeguarding",
+     "Protecting children from harm and neglect."
+    ]
+   ],
+   "misc": {
+    "wrong": "A child who is smiling cannot be seriously ill.",
+    "right": "Children can look well and then deteriorate quickly. Observations, age-based norms and parents' concerns all matter."
+   },
+   "limits": "Values here are approximate and clinical guidelines use finer age bands. Development varies and wide normal ranges exist.",
+   "trip": {
+    "wiki": "Pediatrics",
+    "prompt": "Find how growth charts are used and what a centile means."
+   },
+   "sources": [
+    "Pediatrics",
+    "Child development",
+    "Growth chart"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A normal resting breathing rate is generally...",
+     "o": [
+      "Higher in babies than in adults",
+      "Lower in babies than in adults",
+      "The same at all ages of life",
+      "Irrelevant to the assessment of a child"
+     ],
+     "a": 0,
+     "why": "Children breathe faster, and ranges are age-based.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a red flag in a fictional infant?",
+     "o": [
+      "Fever in a baby under 3 months",
+      "A smile at the parent",
+      "A soft toy in the cot",
+      "Wearing a new hat to the clinic"
+     ],
+     "a": 0,
+     "why": "Serious infection can hide behind few signs in young babies.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A growth centile chart is best used to...",
+     "o": [
+      "Follow the pattern of growth over time",
+      "Judge growth from one single reading alone",
+      "Give a diagnosis on its own",
+      "Work out the dose of medicines"
+     ],
+     "a": 0,
+     "why": "The trend matters more than a single point.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why can babies deteriorate quickly with dehydration?",
+     "o": [
+      "Small body size and low reserves",
+      "Their bodies are heavy and slow to respond",
+      "They are never thirsty",
+      "They cannot sweat at all"
+     ],
+     "a": 0,
+     "why": "Small fluid reserves are depleted quickly.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the sign to the concern.",
+     "pairs": [
+      [
+       "Sunken soft spot, dry mouth, few wet nappies",
+       "Dehydration"
+      ],
+      [
+       "Grunting, nasal flaring and rib recession",
+       "Respiratory distress"
+      ],
+      [
+       "Non-blanching rash with fever",
+       "Possible serious infection"
+      ],
+      [
+       "Floppy and hard to wake",
+       "Seriously unwell child"
+      ]
+     ],
+     "why": "Recognise warning patterns.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A parent says 'she is just not herself', though observations are only slightly abnormal. How should the junior respond?",
+     "o": [
+      "Take the concern seriously and seek senior input",
+      "Dismiss it since the numbers are nearly normal",
+      "Send them home immediately",
+      "Ignore the parent and trust the chart alone"
+     ],
+     "a": 0,
+     "why": "Parental concern is a valuable sign.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A child fails to meet several language milestones and is not responding to sounds. What is a sensible step?",
+     "o": [
+      "Arrange hearing and developmental assessment",
+      "Wait a few years and see",
+      "Blame the parents for not talking to the child enough",
+      "Do nothing as it is normal"
+     ],
+     "a": 0,
+     "why": "Early assessment, including hearing, helps support development.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the usual developmental sequence in motor skills.",
+     "items": [
+      "Holds head up",
+      "Sits without support",
+      "Crawls or shuffles",
+      "Walks"
+     ],
+     "why": "Typical sequence, with individual variation in timing.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional child has bruises that do not match the story told. What is the correct step?",
+     "o": [
+      "Follow safeguarding procedures and involve senior colleagues",
+      "Ignore it as normal childhood play",
+      "Confront the family alone in the room",
+      "Discuss it in the corridor with colleagues"
+     ],
+     "a": 0,
+     "why": "Safeguarding concerns must be escalated sensitively.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why children's vital sign ranges must be age-specific.",
+     "rubric": [
+      [
+       "age",
+       "size",
+       "baby",
+       "child",
+       "young"
+      ],
+      [
+       "faster",
+       "higher",
+       "different",
+       "change",
+       "grow"
+      ],
+      [
+       "misleading",
+       "wrong",
+       "miss",
+       "normal",
+       "abnormal"
+      ]
+     ],
+     "min": 2,
+     "model": "Heart and breathing rates are higher in young children and fall as they grow, so adult values would label normal children abnormal and could hide illness in others.",
+     "why": "Age-appropriate norms prevent errors.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A parent refuses a childhood vaccine after reading online worries. What is the best clinical approach?",
+     "o": [
+      "Listen, address worries with accurate information and respect dialogue",
+      "Shame the parent for being misled",
+      "Stop caring for the family",
+      "Vaccinate the child by force"
+     ],
+     "a": 0,
+     "why": "Respectful communication builds trust.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional teenager wants confidential advice. What is the guiding idea?",
+     "o": [
+      "Respect confidentiality and involve them in decisions, within law and safety limits",
+      "Tell everyone about the problem",
+      "Ignore the teenager's request",
+      "Only ever speak to the parents"
+     ],
+     "a": 0,
+     "why": "Adolescents' views and privacy matter, with safeguarding exceptions.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is it important to record height and weight over time in children?",
+     "rubric": [
+      [
+       "trend",
+       "pattern",
+       "over time",
+       "chart",
+       "centile"
+      ],
+      [
+       "growth",
+       "grow",
+       "falter",
+       "slow"
+      ],
+      [
+       "illness",
+       "nutrition",
+       "problem",
+       "early",
+       "detect"
+      ]
+     ],
+     "min": 2,
+     "model": "Plotting growth over time shows the trend, so a child who is dropping across centiles can be spotted early and investigated for illness or nutrition problems.",
+     "why": "Growth is a sensitive indicator of health.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why children are different",
+    "model": "Children are not small adults. Their normal heart and breathing rates are higher, they have less reserve and can become ill quickly. Doctors use age-based charts, listen to parents and watch for red flags such as fever in a very young baby.",
+    "points": [
+     {
+      "k": [
+       "age",
+       "small",
+       "not small adult",
+       "different"
+      ],
+      "ask": "How are children different?"
+     },
+     {
+      "k": [
+       "red flag",
+       "fever",
+       "drowsy",
+       "dehydrat",
+       "breath"
+      ],
+      "ask": "What warning signs matter?"
+     },
+     {
+      "k": [
+       "parent",
+       "listen",
+       "worry",
+       "concern"
+      ],
+      "ask": "Who gives useful information?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Obstetrics and gynaecology",
+   "icon": "🤰",
+   "hook": "Pregnancy lasts about 40 weeks and changes almost every system of the mother's body. How does a care team keep both mother and baby safe?",
+   "explain": [
+    "Obstetrics is the care of pregnancy, birth and the period after it; gynaecology is the care of the female reproductive system across life. A typical pregnancy lasts about 40 weeks from the last menstrual period and is divided into three trimesters. Antenatal care checks the mother's blood pressure, urine, weight, blood tests and the baby's growth and wellbeing, and offers vaccines and advice on nutrition, folic acid and warning signs.",
+    "The mother's body adapts: blood volume rises by about 40 to 50 percent, heart rate rises, the kidneys filter more, and hormones change. Blood pressure usually dips in mid-pregnancy. Common conditions include anaemia, nausea, gestational diabetes and high blood pressure. Pre-eclampsia, new high blood pressure with other signs such as protein in the urine after 20 weeks, can threaten both mother and baby and needs prompt specialist care.",
+    "Warning signs that need urgent assessment include heavy vaginal bleeding, severe headache with visual disturbance, severe abdominal pain, a sudden reduction in the baby's movements, fits, and fever with severe illness. Respectful, culturally sensitive, confidential care and informed choice are central. Skilled attendance at birth and access to emergency care greatly reduce maternal and newborn deaths worldwide. All cases here are fictional."
+   ],
+   "example": {
+    "q": "A fictional pregnant woman at 34 weeks has a severe headache, blurred vision and blood pressure of 165/110. What should the junior do?",
+    "steps": [
+     "New high blood pressure with severe headache and visual symptoms in late pregnancy suggests severe pre-eclampsia.",
+     "It is an emergency that can lead to fits and harm to mother and baby.",
+     "Call for senior obstetric help immediately."
+    ],
+    "a": "Treat as an obstetric emergency and call senior help immediately"
+   },
+   "analogies": {
+    "home": "A house under extension needs extra supports and regular checks.",
+    "city": "A growing city needs more water, power and roads, like the extra blood volume in pregnancy.",
+    "nature": "A seed needs steady soil and water to grow.",
+    "sea": "A ship carrying passengers needs extra checks and a skilled crew."
+   },
+   "mnemonic": "Check, support, watch for warning signs: BP, urine, baby's growth and movements.",
+   "terms": [
+    [
+     "Antenatal care",
+     "Regular health checks during pregnancy."
+    ],
+    [
+     "Trimester",
+     "One of three roughly three-month stages of pregnancy."
+    ],
+    [
+     "Pre-eclampsia",
+     "A pregnancy condition with new high blood pressure and other signs, which can be dangerous."
+    ],
+    [
+     "Gestational diabetes",
+     "High blood sugar first found in pregnancy."
+    ]
+   ],
+   "misc": {
+    "wrong": "A healthy pregnancy needs no checks.",
+    "right": "Antenatal care detects problems such as high blood pressure and anaemia early, when they can be managed."
+   },
+   "limits": "Care patterns differ across countries and cultures, and this stage gives only a clinical overview with fictional examples.",
+   "trip": {
+    "wiki": "Prenatal care",
+    "prompt": "Find what is checked at routine antenatal visits and why."
+   },
+   "sources": [
+    "Prenatal care",
+    "Pre-eclampsia",
+    "Maternal death"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A typical full-term pregnancy lasts about how many weeks from the last menstrual period?",
+     "a": 40,
+     "tol": 2,
+     "unit": "weeks",
+     "why": "About 40 weeks; full term is 37 to 42 weeks.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does antenatal care aim to do?",
+     "o": [
+      "Detect and manage problems early and support healthy pregnancy",
+      "Avoid all contact with doctors and midwives",
+      "Only measure the mother's height",
+      "Only prescribe vitamins to every woman"
+     ],
+     "a": 0,
+     "why": "Regular checks protect mother and baby.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which combination suggests pre-eclampsia in late pregnancy?",
+     "o": [
+      "High blood pressure and protein in the urine",
+      "Low pulse and constant thirst",
+      "Cough and a runny nose",
+      "Hunger and tiredness after meals"
+     ],
+     "a": 0,
+     "why": "New hypertension with other signs after 20 weeks.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does blood volume rise in pregnancy?",
+     "o": [
+      "To supply the placenta and prepare for blood loss at birth",
+      "To make the mother's bones grow",
+      "To cool the body in warm weather",
+      "Because the mother is dehydrated"
+     ],
+     "a": 0,
+     "why": "Increased volume supports the baby and protects the mother.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional pregnant woman reports that the baby's movements have much reduced. What should be done?",
+     "o": [
+      "Arrange urgent assessment",
+      "Advise waiting a week",
+      "Ignore it",
+      "Tell her to eat chocolate and wait"
+     ],
+     "a": 0,
+     "why": "Reduced movements can signal fetal distress.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the sign to the concern.",
+     "pairs": [
+      [
+       "Severe headache with visual disturbance in late pregnancy",
+       "Possible severe pre-eclampsia"
+      ],
+      [
+       "Heavy vaginal bleeding",
+       "Obstetric emergency"
+      ],
+      [
+       "Thirst and passing a lot of urine",
+       "Possible diabetes"
+      ],
+      [
+       "Pale and tired",
+       "Possible anaemia"
+      ]
+     ],
+     "why": "Recognise patterns that need action.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is confidentiality and respectful care especially important in obstetrics and gynaecology?",
+     "o": [
+      "Care involves sensitive and personal issues",
+      "Patients dislike being given any information",
+      "It saves time on the ward",
+      "It is not important in these areas"
+     ],
+     "a": 0,
+     "why": "Trust helps people seek care early.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of pregnancy care.",
+     "items": [
+      "Early pregnancy confirmation",
+      "Regular antenatal checks",
+      "Birth with skilled attendants",
+      "Postnatal checks for mother and baby"
+     ],
+     "why": "Continuous care from pregnancy to after birth.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A junior doctor sees a woman in labour with a rapidly worsening condition. What is best?",
+     "o": [
+      "Call senior obstetric and midwifery help urgently",
+      "Wait and see how labour goes on",
+      "Discharge her home to rest",
+      "Delay any call until the morning"
+     ],
+     "a": 0,
+     "why": "Obstetric emergencies are time critical.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why skilled attendance at birth and emergency care reduce maternal deaths.",
+     "rubric": [
+      [
+       "skilled",
+       "trained",
+       "midwife",
+       "doctor",
+       "attend"
+      ],
+      [
+       "emergency",
+       "complication",
+       "bleeding",
+       "recogni",
+       "treat"
+      ],
+      [
+       "quick",
+       "early",
+       "prompt",
+       "time",
+       "access"
+      ]
+     ],
+     "min": 2,
+     "model": "Trained attendants recognise and treat complications such as heavy bleeding or high blood pressure quickly, and access to emergency care means problems are managed before they become fatal.",
+     "why": "Timely care saves lives.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A pregnant woman is anxious about screening tests. What approach respects her autonomy?",
+     "o": [
+      "Explain benefits, limits and options, and support her choice",
+      "Make the choice for her to save worry",
+      "Withhold information so she is not upset",
+      "Rush the decision before she leaves the clinic"
+     ],
+     "a": 0,
+     "why": "Informed choice is central.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional pregnant woman with known high blood pressure misses antenatal visits because of distance and cost. What system response helps?",
+     "o": [
+      "Reduce barriers with community services, transport and outreach",
+      "Blame her for missing visits",
+      "Do nothing and accept the missed visits",
+      "Close the clinic that is too far away"
+     ],
+     "a": 0,
+     "why": "Equitable access improves outcomes.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is pre-eclampsia dangerous to both mother and baby?",
+     "rubric": [
+      [
+       "blood pressure",
+       "hypertension",
+       "placenta"
+      ],
+      [
+       "fit",
+       "seizure",
+       "stroke",
+       "organ",
+       "kidney",
+       "liver"
+      ],
+      [
+       "baby",
+       "growth",
+       "early birth",
+       "premature",
+       "fetus"
+      ]
+     ],
+     "min": 2,
+     "model": "It can cause seizures, stroke and organ damage in the mother, and reduce blood flow through the placenta, which affects the baby's growth and may require early delivery.",
+     "why": "Multi-system risks.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Caring for pregnancy safely",
+    "model": "Antenatal care checks the mother's blood pressure, blood and the baby's growth so problems are found early. Warning signs such as heavy bleeding, severe headache with visual problems or reduced baby movements need urgent help. Respectful, skilled care saves lives.",
+    "points": [
+     {
+      "k": [
+       "check",
+       "antenatal",
+       "blood pressure",
+       "growth"
+      ],
+      "ask": "What is checked in pregnancy?"
+     },
+     {
+      "k": [
+       "warning",
+       "bleeding",
+       "headache",
+       "movement",
+       "urgent"
+      ],
+      "ask": "What are warning signs?"
+     },
+     {
+      "k": [
+       "skilled",
+       "respect",
+       "birth",
+       "care"
+      ],
+      "ask": "What makes birth safer?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Neurology and psychiatry",
+   "icon": "🧠",
+   "hook": "A person suddenly cannot speak clearly. Another feels sad for months and cannot enjoy anything. Both involve the brain, so how do the specialties differ?",
+   "explain": [
+    "Neurology deals with diseases of the nervous system: stroke, epilepsy, migraine, Parkinson's disease, multiple sclerosis, dementia and nerve and muscle disorders. A neurological examination checks consciousness, speech, cranial nerves, strength, sensation, reflexes and coordination. Localising the lesion ('where is the problem?') comes before the question 'what is it?'.",
+    "Stroke may be due to a blocked brain artery (ischaemic) or bleeding (haemorrhagic). Time matters because brain tissue is lost each minute. Imaging (usually CT) is needed before some treatments. A seizure is a burst of abnormal electrical activity; first aid is protecting the person from injury, timing the event and calling for help if it lasts more than about five minutes.",
+    "Psychiatry deals with mental health conditions such as depression, anxiety disorders, bipolar disorder and psychosis. Assessment includes mood, thoughts, behaviour, sleep, appetite, functioning and risk to self or others. Clinicians ask directly and kindly about safety, without judgement, and escalate to a senior or crisis team when someone may be at risk. Mental illnesses are medical conditions; stigma delays help. Treatment may combine talking therapies, medicines, social support and lifestyle. All cases here are fictional."
+   ],
+   "example": {
+    "q": "A fictional adult has sudden left arm weakness and slurred speech that began 45 minutes ago. What is the priority?",
+    "steps": [
+     "This suggests a stroke (FAST positive).",
+     "Time is critical, so activate emergency pathways and note the time of onset.",
+     "Urgent brain imaging decides between clot and bleeding and guides treatment."
+    ],
+    "a": "Activate the stroke pathway, record onset time and get urgent brain imaging"
+   },
+   "analogies": {
+    "home": "A broken light could be the bulb, wiring or the fuse; neurologists localise the fault.",
+    "tech": "A network problem might be in the cable, router or server.",
+    "music": "A choir off-key could be one singer or the whole group; mood and thought disorders affect the whole performance.",
+    "nature": "A river can be blocked by a dam or burst a bank, like a clot or a bleed."
+   },
+   "mnemonic": "Neurology: where is the lesion? Psychiatry: how is the person functioning, and are they safe?",
+   "terms": [
+    [
+     "Lesion",
+     "A damaged or abnormal area of tissue."
+    ],
+    [
+     "Ischaemic stroke",
+     "A stroke caused by a blocked brain artery."
+    ],
+    [
+     "Seizure",
+     "A sudden burst of abnormal electrical activity in the brain."
+    ],
+    [
+     "Depression",
+     "A mood disorder with persistent low mood, loss of interest and reduced functioning."
+    ],
+    [
+     "Psychosis",
+     "A state in which a person loses contact with shared reality, for example by hearing voices."
+    ]
+   ],
+   "misc": {
+    "wrong": "Mental health problems are a personal weakness.",
+    "right": "They are health conditions with biological, psychological and social causes, and they respond to treatment and support."
+   },
+   "limits": "This overview simplifies many disorders. Diagnosis and treatment need trained clinicians, and anyone worried about their own safety should contact local emergency or crisis services.",
+   "trip": {
+    "wiki": "Stroke",
+    "prompt": "Find the difference between ischaemic and haemorrhagic stroke."
+   },
+   "sources": [
+    "Neurology",
+    "Stroke",
+    "Psychiatry"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "A stroke caused by a blocked artery is...",
+     "o": [
+      "Ischaemic",
+      "Haemorrhagic",
+      "Psychotic",
+      "Febrile"
+     ],
+     "a": 0,
+     "why": "Ischaemic means lack of blood supply.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional person has a seizure lasting more than 5 minutes. What should be done?",
+     "o": [
+      "Call emergency help and protect them from injury",
+      "Put something in their mouth to protect the tongue",
+      "Hold them down firmly until it stops",
+      "Wait an hour before calling anyone"
+     ],
+     "a": 0,
+     "why": "Prolonged seizures are emergencies; never put objects in the mouth.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Localising the lesion means...",
+     "o": [
+      "Working out where in the nervous system the problem is",
+      "Taking X-rays of the body only",
+      "Guessing which drug to give",
+      "Finding the patient's home address"
+     ],
+     "a": 0,
+     "why": "Signs point to the site of damage.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is time critical in stroke?",
+     "o": [
+      "Brain tissue is lost every minute without blood flow",
+      "Strokes disappear by themselves in time",
+      "Treatment is slower if given early",
+      "Hospitals are busy at night"
+     ],
+     "a": 0,
+     "why": "Rapid treatment saves function.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the condition to its feature.",
+     "pairs": [
+      [
+       "Migraine",
+       "Recurrent severe headache, often with light sensitivity"
+      ],
+      [
+       "Parkinson's disease",
+       "Tremor and slowness of movement"
+      ],
+      [
+       "Epilepsy",
+       "Recurrent seizures"
+      ],
+      [
+       "Depression",
+       "Persistent low mood and loss of interest"
+      ]
+     ],
+     "why": "Recognise typical features.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient with low mood asks if talking about it will make things worse. What is the evidence-informed approach?",
+     "o": [
+      "Ask directly and kindly about safety; this does not cause harm",
+      "Avoid the topic so as not to upset them",
+      "Change the subject to something lighter",
+      "Tell them to cheer up and think positive"
+     ],
+     "a": 0,
+     "why": "Asking about safety does not increase risk and allows help.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient says they are thinking of ending their life. What should the junior do?",
+     "o": [
+      "Stay with them, take it seriously and urgently involve a senior or crisis team",
+      "Reassure them and leave them alone",
+      "Keep it secret so they trust you",
+      "Promise to do nothing about it"
+     ],
+     "a": 0,
+     "why": "Safety first: never leave alone and escalate.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order a simple approach to a patient with acute weakness and slurred speech.",
+     "items": [
+      "Recognise stroke signs",
+      "Call emergency help and note time",
+      "Check airway, breathing, circulation and glucose",
+      "Urgent brain imaging"
+     ],
+     "why": "Recognition, activation, stabilisation, imaging.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional older person has gradually worsening memory over a year affecting daily life. This suggests...",
+     "o": [
+      "Possible dementia needing assessment",
+      "A normal tired day after a poor night of sleep",
+      "A stroke that started 5 minutes ago",
+      "A reflex of the spinal cord"
+     ],
+     "a": 0,
+     "why": "Progressive decline impacting function needs evaluation and exclusion of reversible causes.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why does stigma matter in mental health care?",
+     "rubric": [
+      [
+       "stigma",
+       "shame",
+       "judge",
+       "fear",
+       "discriminat"
+      ],
+      [
+       "delay",
+       "avoid",
+       "reluctant",
+       "late",
+       "not seek",
+       "hide"
+      ],
+      [
+       "help",
+       "treatment",
+       "care"
+      ]
+     ],
+     "min": 2,
+     "model": "Stigma makes people ashamed, so they delay or avoid seeking help and their condition can worsen; reducing stigma helps people get care sooner.",
+     "why": "Stigma is a barrier to treatment.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fictional patient with a long-term mental illness is also physically unwell. Why must physical symptoms be taken seriously?",
+     "o": [
+      "Physical illness is common and can be missed if blamed on the mental illness",
+      "They are exactly the same thing",
+      "Mental illness protects against physical illness",
+      "Physical symptoms never matter in these patients"
+     ],
+     "a": 0,
+     "why": "Diagnostic overshadowing leads to missed physical disease.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional confused patient with fever and a stiff neck. Why is this not a primary psychiatric problem until investigated?",
+     "o": [
+      "It may be meningitis or another serious physical cause",
+      "Confusion is always a psychiatric symptom",
+      "Fever always means the patient is anxious",
+      "It is probably just stress and can wait"
+     ],
+     "a": 0,
+     "why": "Organic causes of confusion must be excluded.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how a clinician balances respect for a patient's wishes with safety when the patient may be at risk.",
+     "rubric": [
+      [
+       "respect",
+       "listen",
+       "autonomy",
+       "wishes",
+       "collaborat"
+      ],
+      [
+       "safe",
+       "risk",
+       "protect",
+       "harm"
+      ],
+      [
+       "senior",
+       "team",
+       "law",
+       "escalat",
+       "capacity",
+       "crisis"
+      ]
+     ],
+     "min": 2,
+     "model": "The clinician listens and involves the person in choices while assessing risk, and if there is serious risk or lack of capacity they involve seniors and follow the law to keep the person safe.",
+     "why": "Autonomy and protection must be balanced.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Neurology and mental health",
+    "model": "Neurology studies diseases of the brain, nerves and muscles, such as stroke and epilepsy. Stroke is an emergency because brain cells die fast. Psychiatry studies mental health conditions such as depression. Clinicians ask kindly about safety and get help early.",
+    "points": [
+     {
+      "k": [
+       "brain",
+       "nerve",
+       "stroke",
+       "epilepsy"
+      ],
+      "ask": "What does neurology cover?"
+     },
+     {
+      "k": [
+       "fast",
+       "time",
+       "emergency",
+       "minutes"
+      ],
+      "ask": "Why is stroke urgent?"
+     },
+     {
+      "k": [
+       "mental",
+       "depression",
+       "mood",
+       "psychiatr"
+      ],
+      "ask": "What about mental health?"
+     },
+     {
+      "k": [
+       "safe",
+       "help",
+       "stigma",
+       "kind",
+       "senior"
+      ],
+      "ask": "How should we respond to someone struggling?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Surgery and perioperative care concepts",
+   "icon": "🔪",
+   "hook": "Surgery begins long before the first cut and ends long after the last stitch. What happens before, during and after an operation?",
+   "explain": [
+    "Perioperative care covers the whole surgical journey: preoperative assessment, anaesthesia and surgery, and postoperative recovery. Before an operation, the team confirms the diagnosis, the patient's fitness, medicines (some must be adjusted), allergies, and informed consent. Fasting before anaesthesia reduces the risk of stomach contents entering the lungs.",
+    "Anaesthesia makes the operation painless and safe: general anaesthesia produces unconsciousness; regional or local anaesthesia numbs part of the body. The anaesthetist monitors breathing, heart rate, oxygen, blood pressure and temperature throughout. Surgical safety checklists, such as confirming the right patient, right procedure and right site, and counting instruments, reduce errors.",
+    "After surgery, teams control pain, watch for complications (bleeding, infection, clots, breathing problems), encourage early movement and nutrition, and plan discharge. Infection prevention uses clean hands, sterile technique, and sometimes antibiotics given before the operation for selected operations. Not every problem needs surgery; the decision weighs benefit, risk and the patient's wishes, and emergency surgery follows different time pressures."
+   ],
+   "example": {
+    "q": "A fictional patient the day after an abdominal operation has a rising pulse, falling blood pressure and a swollen, tender abdomen. What is the concern and the action?",
+    "steps": [
+     "Rising pulse and falling BP after surgery suggest bleeding or sepsis.",
+     "A swollen, tender abdomen adds to concern.",
+     "This is an emergency; do ABCDE and call the surgical senior immediately."
+    ],
+    "a": "Possible postoperative bleeding or sepsis; assess ABCDE and call senior help immediately"
+   },
+   "analogies": {
+    "home": "Building work needs planning, safe tools and tidying afterwards.",
+    "sea": "A ship leaves port after checks and is monitored throughout the voyage.",
+    "tech": "A software update involves a backup, careful install and testing afterwards.",
+    "sport": "A match has a warm-up, the game and a cool-down."
+   },
+   "mnemonic": "Before, During, After: plan, protect, recover. Right patient, right site, right procedure.",
+   "terms": [
+    [
+     "Perioperative",
+     "Before, during and after an operation."
+    ],
+    [
+     "Anaesthesia",
+     "Medical control of pain and consciousness for a procedure."
+    ],
+    [
+     "Surgical safety checklist",
+     "A team checklist to prevent errors such as wrong-site surgery."
+    ],
+    [
+     "Postoperative complication",
+     "A problem arising after surgery, such as bleeding or infection."
+    ]
+   ],
+   "misc": {
+    "wrong": "The surgeon alone ensures a safe operation.",
+    "right": "Safe surgery depends on a team of surgeons, anaesthetists, nurses, theatre staff and checklists."
+   },
+   "limits": "Practice varies between hospitals and operations. This stage covers concepts only and gives no operative instructions or drug regimens.",
+   "trip": {
+    "wiki": "WHO Surgical Safety Checklist",
+    "prompt": "Find the three phases of the checklist and what is confirmed in each."
+   },
+   "sources": [
+    "Surgery",
+    "Anesthesia",
+    "WHO Surgical Safety Checklist"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Perioperative care covers...",
+     "o": [
+      "Before, during and after surgery",
+      "Only the operation itself",
+      "Only the recovery on the ward",
+      "Only the paperwork around surgery"
+     ],
+     "a": 0,
+     "why": "The whole surgical pathway.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is fasting required before general anaesthesia?",
+     "o": [
+      "To reduce the risk of stomach contents entering the lungs",
+      "To make the patient lighter for the surgeon",
+      "To avoid noise from the stomach",
+      "To help the stitches heal neatly"
+     ],
+     "a": 0,
+     "why": "Reflexes are reduced during anaesthesia.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A surgical safety checklist is used to...",
+     "o": [
+      "Prevent errors such as wrong patient or wrong site",
+      "Replace the surgeon's judgement",
+      "Replace the need for consent",
+      "Save time and nothing else"
+     ],
+     "a": 0,
+     "why": "It helps the team catch errors.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a postoperative complication?",
+     "o": [
+      "Wound infection",
+      "Good appetite on day two",
+      "Normal sleep through the night",
+      "A healthy pulse and colour"
+     ],
+     "a": 0,
+     "why": "Infection, bleeding, clots and breathing problems are possible.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "order",
+     "q": "Order the perioperative pathway.",
+     "items": [
+      "Preoperative assessment and consent",
+      "Anaesthesia",
+      "Surgery",
+      "Postoperative recovery"
+     ],
+     "why": "The standard sequence.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the team member to a role.",
+     "pairs": [
+      [
+       "Surgeon",
+       "Performs the operation"
+      ],
+      [
+       "Anaesthetist",
+       "Keeps the patient asleep and monitored"
+      ],
+      [
+       "Theatre nurse",
+       "Manages instruments and safety counts"
+      ],
+      [
+       "Pharmacist",
+       "Advises on medicines"
+      ]
+     ],
+     "why": "Teamwork is essential.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why encourage early movement after many operations?",
+     "o": [
+      "It helps prevent clots and chest infections",
+      "It prevents hunger on the ward",
+      "It stops the wound healing",
+      "It is a punishment for staying in bed too long"
+     ],
+     "a": 0,
+     "why": "Inactivity increases clot and lung risks.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient taking a blood-thinning medicine needs surgery. What is sensible?",
+     "o": [
+      "Review the medicine plan with the surgical and medical teams in advance",
+      "Ignore the medicine and operate as planned",
+      "Stop all the patient's medicines without advice",
+      "Operate regardless of the bleeding risk"
+     ],
+     "a": 0,
+     "why": "Medicines affect bleeding and must be planned.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A nurse notices the consent form lists a different side from the planned operation. What should she do?",
+     "o": [
+      "Stop and check with the team before proceeding",
+      "Say nothing and assume it will be fixed",
+      "Continue quietly with the preparation",
+      "Change the form secretly so that it matches the plan"
+     ],
+     "a": 0,
+     "why": "Anyone may stop the line to prevent wrong-site surgery.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a surgical decision involve weighing benefit and risk with the patient?",
+     "rubric": [
+      [
+       "benefit",
+       "gain",
+       "improve"
+      ],
+      [
+       "risk",
+       "complication",
+       "harm"
+      ],
+      [
+       "patient",
+       "choice",
+       "wish",
+       "consent",
+       "decide",
+       "informed"
+      ]
+     ],
+     "min": 3,
+     "model": "Surgery can bring benefit but carries risks such as bleeding and infection, so the patient needs enough information to weigh these against their own goals and give informed consent.",
+     "why": "Informed consent and shared decisions.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A frail older person has a problem that might be treated surgically or conservatively. What is the right approach?",
+     "o": [
+      "Discuss options, risks and goals with the patient and team",
+      "Always operate whatever the risks",
+      "Never operate on a frail person",
+      "Decide only by the patient's age"
+     ],
+     "a": 0,
+     "why": "Individualised decisions balance risk and goals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A junior notices an instrument count is incorrect at the end of an operation. What is correct?",
+     "o": [
+      "Speak up so it is resolved before closing",
+      "Assume it is fine and carry on with closing up",
+      "Wait until next week to mention it",
+      "Hide the problem to avoid trouble"
+     ],
+     "a": 0,
+     "why": "Retained items are a never-event preventable by counts.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is emergency surgery riskier than planned surgery?",
+     "rubric": [
+      [
+       "time",
+       "urgent",
+       "less preparation",
+       "no time",
+       "emergency"
+      ],
+      [
+       "unwell",
+       "unfit",
+       "full stomach",
+       "not optimised",
+       "sick"
+      ],
+      [
+       "risk",
+       "complication",
+       "harm"
+      ]
+     ],
+     "min": 2,
+     "model": "In an emergency there is little time to prepare, and patients are often already very unwell, so there are higher chances of complications.",
+     "why": "Less optimisation raises risk.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The surgical journey",
+    "model": "Perioperative care is the care before, during and after an operation. The team checks the patient is fit and consents, anaesthesia keeps the patient asleep and monitored, and after surgery they watch for complications. Safety checklists prevent errors.",
+    "points": [
+     {
+      "k": [
+       "before",
+       "assess",
+       "consent",
+       "fit"
+      ],
+      "ask": "What happens before surgery?"
+     },
+     {
+      "k": [
+       "anaesthe",
+       "asleep",
+       "monitor",
+       "pain"
+      ],
+      "ask": "What does the anaesthetist do?"
+     },
+     {
+      "k": [
+       "after",
+       "complication",
+       "bleed",
+       "infect",
+       "recover"
+      ],
+      "ask": "What do we watch for afterwards?"
+     },
+     {
+      "k": [
+       "checklist",
+       "team",
+       "safe"
+      ],
+      "ask": "How is it kept safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Cardiology and pulmonology",
+   "icon": "🫀",
+   "hook": "An ECG records the heart's electrical activity as a wavy line. What can a few small bumps tell a doctor about the whole heart?",
+   "explain": [
+    "The heart's rhythm starts in the sinoatrial (SA) node, spreads through the atria, pauses at the atrioventricular (AV) node and then spreads to the ventricles. On an ECG the P wave shows atrial activation, the QRS complex shows ventricular activation and the T wave shows ventricular recovery. The time between beats on the trace gives the heart rate; for example, a rate of 60 per minute means one beat every second.",
+    "Common cardiac problems include coronary artery disease (angina and heart attack), heart failure (the heart cannot pump enough for the body's needs), arrhythmias such as atrial fibrillation (irregular rhythm that raises stroke risk), and valve disease. Treatments combine medicines, procedures to open or bypass blocked arteries, devices such as pacemakers, and risk-factor control.",
+    "Pulmonology: asthma has reversible airway narrowing, COPD has persistent airflow limitation mostly from smoking, and pneumonia is lung infection. Spirometry measures how much and how fast air can be blown out; in obstructive disease the ratio of FEV₁ to FVC is reduced (below about 0.7). A pulmonary embolism is a clot in the lung arteries and causes sudden breathlessness or chest pain; it is an emergency. Oxygen is given to treat low oxygen levels, with care in some chronic lung disease."
+   ],
+   "example": {
+    "q": "A fictional patient's FEV₁ is 1.8 L and FVC is 3.0 L. What is the FEV₁/FVC ratio, and what does it suggest?",
+    "steps": [
+     "Ratio = 1.8 ÷ 3.0 = 0.6.",
+     "A ratio below about 0.7 suggests airflow obstruction.",
+     "Together with the history, it suggests COPD or asthma; reversibility testing helps tell them apart."
+    ],
+    "a": "0.6, which suggests airflow obstruction"
+   },
+   "analogies": {
+    "music": "An ECG is like sheet music for the heart's rhythm: a rhythm out of time suggests an arrhythmia.",
+    "city": "The SA node is like a traffic signal that sets the pace.",
+    "home": "A pump with a leaking valve wastes energy.",
+    "nature": "Asthma is like a narrowed stream; COPD is like a permanently silted channel."
+   },
+   "mnemonic": "P for atria, QRS for ventricles, T for recovery. FEV₁/FVC below 0.7 means obstruction.",
+   "terms": [
+    [
+     "Sinoatrial node",
+     "The heart's natural pacemaker."
+    ],
+    [
+     "Arrhythmia",
+     "An abnormal heart rhythm."
+    ],
+    [
+     "Atrial fibrillation",
+     "An irregular, often fast rhythm from the atria that raises stroke risk."
+    ],
+    [
+     "Spirometry",
+     "A test measuring how much and how fast air can be blown out."
+    ],
+    [
+     "Pulmonary embolism",
+     "A clot blocking an artery in the lungs."
+    ]
+   ],
+   "misc": {
+    "wrong": "An ECG shows how well the heart pumps.",
+    "right": "An ECG shows the heart's electrical activity; pump function is assessed by imaging such as echocardiography."
+   },
+   "limits": "ECG and spirometry interpretation needs context and training. Thresholds are guideline-based and vary slightly.",
+   "trip": {
+    "wiki": "Electrocardiography",
+    "prompt": "Locate the P wave, QRS complex and T wave on a normal trace."
+   },
+   "sources": [
+    "Electrocardiography",
+    "Atrial fibrillation",
+    "Spirometry"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "On an ECG, the QRS complex represents...",
+     "o": [
+      "Ventricular activation",
+      "Atrial activation",
+      "The volume of the lungs",
+      "The patient's breathing pattern"
+     ],
+     "a": 0,
+     "why": "P = atria, QRS = ventricles, T = recovery.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is the heart's natural pacemaker?",
+     "o": [
+      "Sinoatrial node",
+      "The aortic valve",
+      "The left lung",
+      "The diaphragm"
+     ],
+     "a": 0,
+     "why": "The SA node sets the rhythm.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "FEV₁ is 2.4 L and FVC is 4.0 L. What is the FEV₁/FVC ratio?",
+     "a": 0.6,
+     "tol": 0.01,
+     "why": "2.4 ÷ 4.0 = 0.6.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A ratio of 0.6 on spirometry in an adult most suggests...",
+     "o": [
+      "Obstructive airway disease",
+      "Normal lungs in a healthy adult",
+      "A heart attack in progress",
+      "Anaemia from low iron"
+     ],
+     "a": 0,
+     "why": "Below about 0.7 suggests obstruction.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does atrial fibrillation raise stroke risk?",
+     "o": [
+      "Blood can pool and form clots in the atria which may travel to the brain",
+      "It slows the brain's own signals",
+      "It dilates the lungs' airways",
+      "It lowers glucose in the blood"
+     ],
+     "a": 0,
+     "why": "Clots may embolise.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match the condition to its key feature.",
+     "pairs": [
+      [
+       "Asthma",
+       "Reversible airway narrowing"
+      ],
+      [
+       "COPD",
+       "Persistent airflow limitation"
+      ],
+      [
+       "Heart failure",
+       "Heart cannot meet the body's needs"
+      ],
+      [
+       "Pulmonary embolism",
+       "Clot in lung arteries"
+      ]
+     ],
+     "why": "Core features.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient has sudden breathlessness and sharp chest pain after a long period in bed. What must be considered?",
+     "o": [
+      "Pulmonary embolism, which is an emergency",
+      "Hay fever from pollen",
+      "Indigestion only, needing a simple antacid",
+      "Dehydration from too little water"
+     ],
+     "a": 0,
+     "why": "Immobility is a risk factor for clots.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the spread of the heartbeat signal.",
+     "items": [
+      "SA node fires",
+      "Atria contract",
+      "AV node delays the signal",
+      "Ventricles contract"
+     ],
+     "why": "The delay lets ventricles fill.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient with long-standing COPD and very high CO₂ is given a lot of oxygen. Why take care?",
+     "o": [
+      "In some patients, too much oxygen can reduce the drive to breathe and raise CO₂ further",
+      "Oxygen is always harmful to every patient",
+      "Oxygen causes a high fever",
+      "No care is needed with oxygen in any patient"
+     ],
+     "a": 0,
+     "why": "Target oxygen levels are set carefully for those at risk of CO₂ retention.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why an ECG alone cannot show how strongly the heart is pumping.",
+     "rubric": [
+      [
+       "electrical",
+       "signal",
+       "rhythm",
+       "activity"
+      ],
+      [
+       "pump",
+       "function",
+       "contract",
+       "strength",
+       "muscle"
+      ],
+      [
+       "echo",
+       "ultrasound",
+       "imaging",
+       "other test"
+      ]
+     ],
+     "min": 2,
+     "model": "An ECG records electrical activity and rhythm, not the mechanical pumping, so pump function is assessed with imaging such as an echocardiogram.",
+     "why": "Electrical and mechanical function differ.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fictional patient with an irregular pulse and palpitations is otherwise well. Which approach is sensible?",
+     "o": [
+      "Record an ECG, assess stroke risk and involve a senior",
+      "Ignore it as it is probably nothing",
+      "Reassure and discharge without any tests",
+      "Treat it as asthma with an inhaler"
+     ],
+     "a": 0,
+     "why": "Possible atrial fibrillation needs rhythm confirmation and stroke prevention planning.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A well-controlled asthmatic uses a reliever more and more each week. What does this suggest?",
+     "o": [
+      "Worsening control that needs review",
+      "Better control than before",
+      "No change in control",
+      "The asthma has been cured"
+     ],
+     "a": 0,
+     "why": "Increasing reliever use signals poor control.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between asthma and COPD in terms of reversibility and cause.",
+     "rubric": [
+      [
+       "asthma",
+       "reversible",
+       "variable",
+       "allerg"
+      ],
+      [
+       "copd",
+       "persistent",
+       "smok",
+       "progressive",
+       "not fully"
+      ],
+      [
+       "airway",
+       "narrow",
+       "obstruct",
+       "flow"
+      ]
+     ],
+     "min": 2,
+     "model": "Asthma has airway narrowing that is variable and largely reversible, often with allergic triggers, while COPD has persistent, progressive airflow limitation usually linked to smoking or other long-term exposures.",
+     "why": "Reversibility and cause differ.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The heart's rhythm and the lungs' airflow",
+    "model": "The heart's pacemaker, the SA node, starts each beat, and an ECG records this electrical signal. Spirometry measures airflow, and a low FEV₁/FVC ratio shows obstruction as in asthma or COPD. Sudden breathlessness with chest pain can be a clot in the lungs, which is an emergency.",
+    "points": [
+     {
+      "k": [
+       "sa node",
+       "pacemaker",
+       "electrical",
+       "ecg"
+      ],
+      "ask": "What does an ECG show?"
+     },
+     {
+      "k": [
+       "spirometry",
+       "airflow",
+       "fev",
+       "obstruct"
+      ],
+      "ask": "What does spirometry tell us?"
+     },
+     {
+      "k": [
+       "asthma",
+       "copd",
+       "reversible"
+      ],
+      "ask": "How do asthma and COPD differ?"
+     },
+     {
+      "k": [
+       "clot",
+       "embol",
+       "emergency",
+       "sudden"
+      ],
+      "ask": "What is an emergency?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Nephrology, endocrinology and gastroenterology",
+   "icon": "🧬",
+   "hook": "A patient has high blood sugar, swollen ankles and abdominal pain after meals. Which organs link these problems?",
+   "explain": [
+    "Nephrology: the kidneys filter blood; the estimated glomerular filtration rate (eGFR) estimates filtering ability. A normal eGFR is above about 90 mL/min/1.73 m²; chronic kidney disease is defined by reduced eGFR or kidney damage lasting more than three months. Causes include diabetes and high blood pressure. Acute kidney injury is a sudden fall in function, often in the context of illness, dehydration or medicines, and needs prompt recognition. Dangerous consequences include high potassium and fluid overload.",
+    "Endocrinology: Type 1 diabetes results from autoimmune loss of insulin-making cells; type 2 involves insulin resistance and reduced insulin production. Diagnosis uses blood glucose or HbA1c; HbA1c reflects average glucose over about 2 to 3 months, with 48 mmol/mol (6.5%) or higher a diagnostic threshold when confirmed. Diabetic ketoacidosis, an emergency in which a lack of insulin leads to acid build-up, shows with thirst, vomiting, fast deep breathing and drowsiness. Thyroid disease can speed up (overactive) or slow down (underactive) metabolism.",
+    "Gastroenterology: common problems are reflux, peptic ulcer, inflammatory bowel disease, gallstones, hepatitis and cirrhosis. Red flags include vomiting blood, black tarry stools, trouble swallowing, unexplained weight loss, jaundice (yellow skin and eyes) and severe constant abdominal pain. Liver tests and ultrasound help to separate liver from gallbladder or blockage causes."
+   ],
+   "example": {
+    "q": "A fictional person with type 1 diabetes has vomiting, fast deep breathing and drowsiness. Their blood glucose is very high. What is the concern?",
+    "steps": [
+     "Type 1 diabetes with vomiting, fast deep breathing and drowsiness suggests diabetic ketoacidosis.",
+     "It is a medical emergency with acid build-up and dehydration.",
+     "Call senior help urgently and start the emergency protocol."
+    ],
+    "a": "Diabetic ketoacidosis: an emergency needing urgent senior help"
+   },
+   "analogies": {
+    "home": "A filter in a water system clogs over time, like a kidney with reduced eGFR.",
+    "farm": "A farmer's pump needs the right fuel (insulin) to move water (glucose) into the fields (cells).",
+    "city": "A water treatment works, a power regulator and a food processing plant must all keep running.",
+    "tech": "A thermostat that is stuck high or low is like an overactive or underactive thyroid."
+   },
+   "mnemonic": "Kidney: filter and balance. Endocrine: hormones and glucose. Gut: digest and detox via the liver.",
+   "terms": [
+    [
+     "eGFR",
+     "An estimate of how well the kidneys filter blood."
+    ],
+    [
+     "HbA1c",
+     "A blood test reflecting average glucose over about 2 to 3 months."
+    ],
+    [
+     "Diabetic ketoacidosis",
+     "A dangerous acid build-up in diabetes from lack of insulin."
+    ],
+    [
+     "Jaundice",
+     "Yellow colouring of the skin and eyes from raised bilirubin."
+    ]
+   ],
+   "misc": {
+    "wrong": "Type 2 diabetes is only about eating sugar.",
+    "right": "It results from insulin resistance and reduced insulin production, influenced by genes, weight, activity and other factors."
+   },
+   "limits": "Thresholds and treatments vary by guideline and patient, and there are many types of kidney, hormone and gut disease not covered here.",
+   "trip": {
+    "wiki": "Chronic kidney disease",
+    "prompt": "Find the stages of kidney disease and what eGFR means."
+   },
+   "sources": [
+    "Chronic kidney disease",
+    "Diabetes",
+    "Diabetic ketoacidosis"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "eGFR estimates...",
+     "o": [
+      "How well the kidneys filter blood",
+      "How fast the heart beats",
+      "The level of blood sugar",
+      "The capacity of the lungs"
+     ],
+     "a": 0,
+     "why": "Glomerular filtration rate.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "HbA1c reflects...",
+     "o": [
+      "Average blood glucose over about 2 to 3 months",
+      "The meal eaten earlier today",
+      "Blood pressure over a week",
+      "The rhythm of the heart"
+     ],
+     "a": 0,
+     "why": "Glycated haemoglobin.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a red flag in the gut?",
+     "o": [
+      "Vomiting blood",
+      "Mild hunger",
+      "Occasional burping",
+      "A good appetite"
+     ],
+     "a": 0,
+     "why": "May signal upper GI bleeding.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Yellow skin and eyes (jaundice) suggest...",
+     "o": [
+      "Raised bilirubin from liver, gallbladder or blood problems",
+      "An excess of vitamin D",
+      "Hay fever or an allergy",
+      "A fracture of a long bone"
+     ],
+     "a": 0,
+     "why": "Bilirubin builds up.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match the condition to its main feature.",
+     "pairs": [
+      [
+       "Type 1 diabetes",
+       "Autoimmune loss of insulin-making cells"
+      ],
+      [
+       "Type 2 diabetes",
+       "Insulin resistance"
+      ],
+      [
+       "Acute kidney injury",
+       "Sudden fall in kidney function"
+      ],
+      [
+       "Gallstones",
+       "Hard deposits in the gallbladder"
+      ]
+     ],
+     "why": "Key mechanisms.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A fictional patient taking an anti-inflammatory painkiller, dehydrated from a stomach bug, passes very little urine. What should be considered?",
+     "o": [
+      "Acute kidney injury",
+      "Perfect kidney function",
+      "Excess insulin",
+      "Normal ageing"
+     ],
+     "a": 0,
+     "why": "Dehydration and some medicines can cause AKI.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A patient with chronic kidney disease has a potassium of 6.5 mmol/L (normal 3.5 to 5.0). What is the concern?",
+     "o": [
+      "Risk of dangerous heart rhythm problems needing urgent attention",
+      "Nothing to worry about",
+      "A normal result for kidney disease",
+      "A dangerously low blood sugar"
+     ],
+     "a": 0,
+     "why": "Severe hyperkalaemia is an emergency.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the typical path to diagnosing diabetes in an unwell fictional adult.",
+     "items": [
+      "Symptoms: thirst and passing a lot of urine",
+      "Blood glucose measured",
+      "HbA1c or repeat test to confirm",
+      "Plan for long-term care"
+     ],
+     "why": "Suspect, test, confirm, plan.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A diagnostic HbA1c threshold for diabetes is 48 mmol/mol. A fictional patient has 53 mmol/mol. By how many mmol/mol does it exceed the threshold?",
+     "a": 5,
+     "tol": 0,
+     "unit": "mmol/mol",
+     "why": "53 − 48 = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why high blood pressure and diabetes can damage the kidneys.",
+     "rubric": [
+      [
+       "small vessel",
+       "blood vessel",
+       "filter",
+       "glomerul",
+       "capillar"
+      ],
+      [
+       "damage",
+       "scar",
+       "injur",
+       "harm",
+       "leak"
+      ],
+      [
+       "time",
+       "years",
+       "long-term",
+       "chronic"
+      ]
+     ],
+     "min": 2,
+     "model": "Over years, high pressure and high glucose damage the tiny blood vessels and filters in the kidneys, causing scarring and a gradual loss of function.",
+     "why": "Microvascular damage.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A fictional patient with a long history of heavy alcohol use has jaundice, a swollen abdomen and confusion. What is the concern?",
+     "o": [
+      "Advanced liver disease needing urgent assessment",
+      "A mild cold with a cough",
+      "Hay fever in the summer",
+      "A muscle strain from lifting"
+     ],
+     "a": 0,
+     "why": "Cirrhosis with complications.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A person with diabetes avoids insulin because of fear of needles. What is the best approach?",
+     "o": [
+      "Explore the fear, offer support and explain options",
+      "Withhold care until they accept insulin",
+      "Shame them for being afraid",
+      "Ignore the fear and move on"
+     ],
+     "a": 0,
+     "why": "Empathy and education improve adherence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is a sudden reduction in urine output after surgery or illness important to report?",
+     "rubric": [
+      [
+       "kidney",
+       "renal",
+       "aki"
+      ],
+      [
+       "perfusion",
+       "dehydrat",
+       "shock",
+       "blood flow",
+       "low pressure"
+      ],
+      [
+       "urgent",
+       "report",
+       "early",
+       "warning",
+       "damage"
+      ]
+     ],
+     "min": 2,
+     "model": "Falling urine output can be an early sign that the kidneys are not getting enough blood flow or are injured, so early reporting allows treatment before lasting damage.",
+     "why": "Urine output is a sensitive sign.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Kidneys, hormones and the gut",
+    "model": "The kidneys filter blood, and eGFR shows how well. Diabetes is a problem with insulin that raises blood glucose, and ketoacidosis is an emergency. The gut and liver digest food; vomiting blood, black stools or jaundice are warning signs.",
+    "points": [
+     {
+      "k": [
+       "kidney",
+       "filter",
+       "egfr"
+      ],
+      "ask": "What do kidneys do?"
+     },
+     {
+      "k": [
+       "diabetes",
+       "insulin",
+       "glucose"
+      ],
+      "ask": "What is diabetes?"
+     },
+     {
+      "k": [
+       "ketoacidosis",
+       "emergency"
+      ],
+      "ask": "When is diabetes an emergency?"
+     },
+     {
+      "k": [
+       "gut",
+       "liver",
+       "jaundice",
+       "blood",
+       "red flag"
+      ],
+      "ask": "What are gut warning signs?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Evidence-based clinical decision-making",
+   "icon": "📚",
+   "hook": "A new treatment helps in a study, but the study had only twelve people and no comparison group. Should a hospital adopt it tomorrow?",
+   "explain": [
+    "Evidence-based medicine combines the best available research with clinical expertise and the patient's values. Studies sit on a hierarchy: systematic reviews and meta-analyses of randomised trials give the strongest evidence for treatments, then single randomised controlled trials, cohort and case-control studies, case series and expert opinion. Randomisation reduces confounding by balancing known and unknown factors between groups, and blinding reduces bias.",
+    "Key measures: absolute risk reduction (ARR) is the difference in event rates between groups; relative risk reduction (RRR) is ARR divided by the control risk; number needed to treat (NNT) = 1 ÷ ARR. A treatment with a big relative reduction may still help few people if the baseline risk is low. Confidence intervals show the precision of an estimate, and a p-value is the probability of seeing results at least this extreme if there were truly no effect; it does not measure the importance of an effect.",
+    "Appraise: Is the question clear? Were participants similar and allocated fairly? Were outcomes measured objectively? Were all participants followed up? Are the results precise and relevant to my patient? Also consider harms, cost and fairness, and conflicts of interest. Guidelines summarise evidence but need judgement for the individual patient, especially those underrepresented in trials such as the very old, children and pregnant people."
+   ],
+   "example": {
+    "q": "In a trial, 10% of the control group and 6% of the treated group have a stroke. What are ARR, RRR and NNT?",
+    "steps": [
+     "ARR = 10% − 6% = 4% = 0.04.",
+     "RRR = ARR ÷ control risk = 4 ÷ 10 = 40%.",
+     "NNT = 1 ÷ 0.04 = 25."
+    ],
+    "a": "ARR 4 percentage points, RRR 40%, NNT 25"
+   },
+   "analogies": {
+    "home": "A recipe tested on many kitchens is more reliable than one cook's boast.",
+    "sport": "A training method tested across many teams gives better evidence than a single success story.",
+    "city": "A new bus route tried in one street may not suit the whole city.",
+    "tech": "A software fix tested only on one machine may fail elsewhere."
+   },
+   "mnemonic": "Question, Evidence, Appraise, Apply, Assess: evidence plus expertise plus patient values.",
+   "terms": [
+    [
+     "Randomised controlled trial",
+     "A study in which participants are randomly allocated to treatment or comparison."
+    ],
+    [
+     "Absolute risk reduction",
+     "The difference in event risk between control and treated groups."
+    ],
+    [
+     "Number needed to treat",
+     "The number of people who must be treated for one to benefit: 1 ÷ ARR."
+    ],
+    [
+     "Confidence interval",
+     "A range of values likely to include the true effect."
+    ],
+    [
+     "Confounding",
+     "A mixing of effects that makes a link appear because of a third factor."
+    ]
+   ],
+   "misc": {
+    "wrong": "A statistically significant result always means an important treatment effect.",
+    "right": "Significance depends on sample size; the size of the effect, harms and relevance to the patient also matter."
+   },
+   "limits": "Evidence quality varies, trials may not include all patient groups, and guidelines may disagree. Judgement and patient preferences remain essential.",
+   "trip": {
+    "wiki": "Evidence-based medicine",
+    "prompt": "Look at the hierarchy of evidence and find where randomised trials sit."
+   },
+   "sources": [
+    "Evidence-based medicine",
+    "Randomized controlled trial",
+    "Number needed to treat"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "In a trial, 20% of controls and 15% of treated patients have an event. What is the ARR in percentage points?",
+     "a": 5,
+     "tol": 0.1,
+     "unit": "percentage points",
+     "why": "20 − 15 = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The ARR is 0.05. What is the NNT?",
+     "a": 20,
+     "tol": 0.1,
+     "why": "NNT = 1 ÷ 0.05 = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Control event rate is 10% and treated event rate is 5%. What is the RRR as a percentage?",
+     "a": 50,
+     "tol": 0.5,
+     "unit": "%",
+     "why": "ARR = 5; RRR = 5 ÷ 10 = 50%.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which provides the strongest evidence for a treatment effect?",
+     "o": [
+      "A systematic review of randomised trials",
+      "A single case report in a medical journal",
+      "Expert opinion alone",
+      "A patient testimonial online"
+     ],
+     "a": 0,
+     "why": "Combining well-conducted RCTs reduces bias and imprecision.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why randomise participants?",
+     "o": [
+      "To balance known and unknown factors between groups",
+      "To make the trial last longer",
+      "To please the doctors running it",
+      "To reduce the sample size needed"
+     ],
+     "a": 0,
+     "why": "It reduces confounding.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A drug halves a very rare event risk from 2 in 100,000 to 1 in 100,000. What is true?",
+     "o": [
+      "Relative reduction is large but absolute benefit is tiny",
+      "There is no benefit at all",
+      "The absolute benefit is large",
+      "The relative reduction is tiny"
+     ],
+     "a": 0,
+     "why": "RRR 50%, ARR 0.001 percentage points.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does blinding in a trial mean?",
+     "o": [
+      "Participants or assessors do not know who gets which treatment",
+      "Nobody is allowed to see the final results",
+      "The study has no control group at all",
+      "The trial is kept secret from regulators"
+     ],
+     "a": 0,
+     "why": "Blinding reduces bias in reporting and assessing outcomes.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A small study of twelve patients without a control group shows improvement. What is the best conclusion?",
+     "o": [
+      "It is weak evidence and needs better trials",
+      "The treatment is now fully proven to work",
+      "The treatment is useless",
+      "It should be adopted everywhere at once"
+     ],
+     "a": 0,
+     "why": "No control and small numbers limit reliability.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Order the evidence-based practice steps.",
+     "items": [
+      "Ask a clear question",
+      "Find the best evidence",
+      "Appraise its quality and relevance",
+      "Apply it with the patient's values and review the outcome"
+     ],
+     "why": "Ask, acquire, appraise, apply, assess.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do guidelines still need clinical judgement for an individual patient?",
+     "rubric": [
+      [
+       "individual",
+       "patient",
+       "person",
+       "particular"
+      ],
+      [
+       "trial",
+       "not included",
+       "different",
+       "excluded",
+       "average",
+       "population",
+       "older",
+       "child",
+       "pregnan"
+      ],
+      [
+       "value",
+       "preference",
+       "other condition",
+       "judgement",
+       "context"
+      ]
+     ],
+     "min": 2,
+     "model": "Guidelines summarise average results from trial populations, but the individual may differ, have other conditions or different preferences, so clinicians adapt recommendations to the person.",
+     "why": "Evidence informs, not dictates.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A company-funded trial reports only its positive outcomes. What is the concern?",
+     "o": [
+      "Reporting and funding bias may overstate benefit",
+      "No concern; reports are always complete",
+      "It is automatically correct because the company paid for it",
+      "The company is itself a doctor"
+     ],
+     "a": 0,
+     "why": "Selective reporting and conflicts of interest distort evidence.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "An observational study finds coffee drinkers live longer. What should you consider before concluding that coffee causes this?",
+     "o": [
+      "Confounding, such as other lifestyle differences",
+      "Nothing further needs to be considered",
+      "That coffee is itself a drug",
+      "That coffee is cheap to buy"
+     ],
+     "a": 0,
+     "why": "Association does not prove causation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why NNT and absolute risk are more informative for a patient than relative risk alone.",
+     "rubric": [
+      [
+       "absolute",
+       "actual",
+       "real",
+       "baseline"
+      ],
+      [
+       "relative",
+       "percent",
+       "exaggerate",
+       "misleading",
+       "big",
+       "large"
+      ],
+      [
+       "how many",
+       "number",
+       "benefit",
+       "chance",
+       "patient",
+       "decision"
+      ]
+     ],
+     "min": 2,
+     "model": "Relative reductions can sound impressive even when the baseline risk is tiny, whereas absolute risk and NNT show how many people actually benefit, helping patients weigh benefits against harms.",
+     "why": "Absolute numbers give context.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Using evidence to decide",
+    "model": "Evidence-based medicine combines the best research with a clinician's skill and the patient's values. Randomised trials give strong evidence. Absolute risk and NNT show how much a treatment really helps. Guidelines still need judgement for each patient.",
+    "points": [
+     {
+      "k": [
+       "research",
+       "evidence",
+       "trial"
+      ],
+      "ask": "What is evidence-based medicine?"
+     },
+     {
+      "k": [
+       "random",
+       "compare",
+       "control",
+       "bias"
+      ],
+      "ask": "Why are randomised trials strong?"
+     },
+     {
+      "k": [
+       "absolute",
+       "nnt",
+       "risk",
+       "benefit"
+      ],
+      "ask": "How do we see how much it helps?"
+     },
+     {
+      "k": [
+       "patient",
+       "value",
+       "judgement",
+       "individual"
+      ],
+      "ask": "What else matters?"
+     }
+    ]
+   }
+  }
+ ]
+}

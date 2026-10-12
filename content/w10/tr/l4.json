@@ -1,0 +1,1720 @@
+{
+ "world": 10,
+ "lang": "tr",
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Advanced grammar",
+   "icon": "🧬",
+   "hook": "In 'evlerimizden', how many pieces of meaning are packed into one word?",
+   "explain": [
+    "Turkish is agglutinative: suffixes are attached to the stem in a fixed order. 'Ev-ler-imiz-den' = house-PLURAL-our-FROM, 'from our houses'. For nouns the order is plural, possessive, case. For verbs it is roughly negation, tense, person: gel-me-di-m (I did not come).",
+    "Vowel harmony chooses the vowel of each suffix. Two-way harmony (e/a): -ler/-lar, -de/-da, -den/-dan. Four-way harmony (i, ı, u, ü): possessives and the past -di/-dı/-du/-dü. Suffix choice depends on the last vowel of the stem: front or back, rounded or unrounded. Consonants harmonise too: -de becomes -te after voiceless consonants."
+   ],
+   "mnemonic": "Ev-ler-imiz-den: one stem, three tiny trains.",
+   "items": [
+    [
+     "from our houses",
+     "evlerimizden",
+     ""
+    ],
+    [
+     "I did not come",
+     "gelmedim",
+     ""
+    ],
+    [
+     "in my books",
+     "kitaplarımda",
+     ""
+    ],
+    [
+     "our teachers",
+     "öğretmenlerimiz",
+     ""
+    ],
+    [
+     "his/her book",
+     "kitabı",
+     ""
+    ],
+    [
+     "to the schools",
+     "okullara",
+     ""
+    ],
+    [
+     "we came",
+     "geldik",
+     ""
+    ],
+    [
+     "you (pl.) went",
+     "gittiniz",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I did not come yesterday.",
+     [
+      "Ben",
+      "dün",
+      "gelmedim."
+     ]
+    ],
+    [
+     "We live in our houses.",
+     [
+      "Biz",
+      "evlerimizde",
+      "yaşıyoruz."
+     ]
+    ],
+    [
+     "The teachers came to the school.",
+     [
+      "Öğretmenler",
+      "okula",
+      "geldi."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What is the usual order of noun suffixes?",
+     "o": [
+      "Plural, possessive, case",
+      "Case, plural, possessive",
+      "Possessive, plural, case",
+      "Plural, case, possessive"
+     ],
+     "a": 0,
+     "why": "Example: ev-ler-im-de.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it 'okullara' and not 'okullere'?",
+     "o": [
+      "Turkish never uses e",
+      "The last vowel is back (a), so -a is used",
+      "It is an exception",
+      "Okul is plural"
+     ],
+     "a": 1,
+     "why": "Two-way harmony: back vowel takes a.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which form is correct for 'in our books'?",
+     "o": [
+      "kitaplardamız",
+      "kitaplarımızda",
+      "kitapımızlarda",
+      "kitaplarda"
+     ],
+     "a": 1,
+     "why": "Plural, possessive, then case.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the past of 'git' written 'gitti'?",
+     "o": [
+      "The verb is irregular",
+      "Turkish doubles consonants",
+      "Consonant harmony turns -di into -ti after t",
+      "It is a dialect"
+     ],
+     "a": 2,
+     "why": "Voiceless stem consonant requires -ti.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does harmony do in 'gelmedim' vs 'okumadım'?",
+     "o": [
+      "It changes the meaning",
+      "It adds a plural",
+      "It shows politeness",
+      "The vowel of -me/-ma and -di/-dı matches the stem"
+     ],
+     "a": 3,
+     "why": "Both suffixes harmonise with the stem.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Suffix order and harmony",
+    "model": "Turkish adds suffixes in a fixed order. Nouns take plural, possessive, case. Vowel harmony makes the vowel match the stem; consonant harmony changes d to t.",
+    "points": [
+     {
+      "k": [
+       "order",
+       "plural",
+       "possessive",
+       "case"
+      ],
+      "ask": "What is the order?"
+     },
+     {
+      "k": [
+       "harmony",
+       "vowel",
+       "match"
+      ],
+      "ask": "Why do vowels change?"
+     },
+     {
+      "k": [
+       "t",
+       "d",
+       "consonant"
+      ],
+      "ask": "What about consonants?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Turkish grammar",
+    "prompt": "Study agglutination and vowel harmony."
+   },
+   "sources": [
+    "Turkish grammar"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Complex sentence patterns",
+   "icon": "🔀",
+   "hook": "How can you say 'The book that I read' in Turkish when there is no word for 'that'?",
+   "explain": [
+    "Turkish relative clauses are built with participles placed before the noun. 'The book that I read' is 'okuduğum kitap' (read-I-participle book). The suffix -dığım marks a completed event; for future or unfulfilled events use -eceğim: 'okuyacağım kitap' (the book that I will read). The subject is marked by a possessive ending.",
+    "Other patterns: -ip joins actions ('Kalkıp gitti', he got up and left), -erek means 'by doing' ('Çalışarak öğrenir'), -ince means 'when' ('Eve gelince aradı', when he came home he called). 'Diye' introduces quoted thought or purpose: 'Gelecek diye bekledim' (I waited thinking he would come)."
+   ],
+   "mnemonic": "Before the noun, not after: the book-that-I-read.",
+   "items": [
+    [
+     "the book that I read",
+     "okuduğum kitap",
+     ""
+    ],
+    [
+     "the book that I will read",
+     "okuyacağım kitap",
+     ""
+    ],
+    [
+     "by working",
+     "çalışarak",
+     ""
+    ],
+    [
+     "when he came home",
+     "eve gelince",
+     ""
+    ],
+    [
+     "got up and left",
+     "kalkıp gitti",
+     ""
+    ],
+    [
+     "the person who came",
+     "gelen kişi",
+     ""
+    ],
+    [
+     "the film we watched",
+     "izlediğimiz film",
+     ""
+    ],
+    [
+     "because I was late",
+     "geç kaldığım için",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "The book I read was interesting.",
+     [
+      "Okuduğum",
+      "kitap",
+      "ilginçti."
+     ]
+    ],
+    [
+     "He learns by working.",
+     [
+      "O",
+      "çalışarak",
+      "öğreniyor."
+     ]
+    ],
+    [
+     "When I came home, I called her.",
+     [
+      "Eve",
+      "gelince",
+      "onu",
+      "aradım."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Where does a relative clause go in Turkish?",
+     "o": [
+      "After the noun",
+      "Before the noun",
+      "After the verb",
+      "At the end of the sentence"
+     ],
+     "a": 1,
+     "why": "Turkish places the participle clause before the noun.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which suffix means 'by doing'?",
+     "o": [
+      "-ince",
+      "-miş",
+      "-erek / -arak",
+      "-di"
+     ],
+     "a": 2,
+     "why": "Çalışarak is by working.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is 'okuduğum kitap' not 'kitap ki okudum'?",
+     "o": [
+      "'Ki' is rude",
+      "It is a mistake",
+      "Turkish uses participle clauses, not a relative pronoun",
+      "Okudum is a noun"
+     ],
+     "a": 2,
+     "why": "Participles replace English that/which.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does 'Eve gelince aradı' mean?",
+     "o": [
+      "He did not call",
+      "He came after calling",
+      "He called the house",
+      "When he or she came home, he or she called"
+     ],
+     "a": 3,
+     "why": "-ince means when.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which suffix suits an event that has not happened yet?",
+     "o": [
+      "-eceğim",
+      "-dığım",
+      "-erek",
+      "-ip"
+     ],
+     "a": 0,
+     "why": "-ecek marks the future in participles.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Complex sentences in Turkish",
+    "model": "Relative clauses use participles before the noun: okuduğum kitap. Converbs: -ip (and), -erek (by), -ince (when).",
+    "points": [
+     {
+      "k": [
+       "participle",
+       "before",
+       "noun"
+      ],
+      "ask": "Where do clauses go?"
+     },
+     {
+      "k": [
+       "erek",
+       "arak",
+       "by"
+      ],
+      "ask": "How do I say 'by doing'?"
+     },
+     {
+      "k": [
+       "ince",
+       "ınca",
+       "when"
+      ],
+      "ask": "How do I say 'when'?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Turkish grammar",
+    "prompt": "Notice participles in sentences."
+   },
+   "sources": [
+    "Turkish grammar"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Extended conversations",
+   "icon": "💬",
+   "hook": "How do you disagree politely in Turkish?",
+   "explain": [
+    "In a longer conversation, use fillers and polite openings: 'Bence' (I think), 'Bana göre' (according to me), 'Katılıyorum' (I agree), 'Katılmıyorum' (I disagree). To soften: 'Haklısın ama...' (You are right but...), 'Belki de' (Maybe).",
+    "Turn-taking markers: 'Peki' (well, OK), 'Yani' (I mean), 'Tamam' (OK), 'Şey' (um). For clarification: 'Ne demek istiyorsun?' (What do you mean?). The ending -dır adds formality or certainty: 'Öyledir' (That is so). Short echo questions: 'Gerçekten mi?' (Really?), 'Öyle mi?' (Is that so?)."
+   ],
+   "mnemonic": "Bence, ama, belki: opinion, contrast, softener.",
+   "items": [
+    [
+     "I think",
+     "bence",
+     ""
+    ],
+    [
+     "I agree",
+     "katılıyorum",
+     ""
+    ],
+    [
+     "I disagree",
+     "katılmıyorum",
+     ""
+    ],
+    [
+     "You are right",
+     "haklısın",
+     ""
+    ],
+    [
+     "What do you mean?",
+     "ne demek istiyorsun?",
+     ""
+    ],
+    [
+     "Really?",
+     "gerçekten mi?",
+     ""
+    ],
+    [
+     "I mean",
+     "yani",
+     ""
+    ],
+    [
+     "maybe",
+     "belki",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I think this is a good idea.",
+     [
+      "Bence",
+      "bu",
+      "iyi",
+      "bir",
+      "fikir."
+     ]
+    ],
+    [
+     "You are right, but I disagree.",
+     [
+      "Haklısın",
+      "ama",
+      "katılmıyorum."
+     ]
+    ],
+    [
+     "What do you mean?",
+     [
+      "Ne",
+      "demek",
+      "istiyorsun?"
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase softens disagreement?",
+     "o": [
+      "Hayır!",
+      "Saçma!",
+      "Haklısın ama...",
+      "Sus!"
+     ],
+     "a": 2,
+     "why": "Acknowledging first keeps politeness.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does 'Gerçekten mi?' show?",
+     "o": [
+      "Anger",
+      "A command",
+      "Thanks",
+      "Surprise or interest"
+     ],
+     "a": 3,
+     "why": "It is an echo question.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why add 'belki' to a statement?",
+     "o": [
+      "To make it a question",
+      "To show past",
+      "To show plural",
+      "To show uncertainty and soften"
+     ],
+     "a": 3,
+     "why": "Belki means maybe.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A friend says 'Yani...' and pauses. What is it?",
+     "o": [
+      "A filler meaning 'I mean'",
+      "A verb",
+      "A question",
+      "A noun"
+     ],
+     "a": 0,
+     "why": "Yani is a filler like I mean.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which reply is rude?",
+     "o": [
+      "Bence farklı düşünüyorum",
+      "Saçma konuşuyorsun",
+      "Katılmıyorum ama saygı duyuyorum",
+      "Belki haklısın"
+     ],
+     "a": 1,
+     "why": "The first is dismissive.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Extended conversations",
+    "model": "Use bence for I think and katılıyorum / katılmıyorum for agree and disagree. Soften with haklısın ama and belki.",
+    "points": [
+     {
+      "k": [
+       "bence",
+       "think"
+      ],
+      "ask": "How do I give an opinion?"
+     },
+     {
+      "k": [
+       "katıl",
+       "agree"
+      ],
+      "ask": "How do I agree or disagree?"
+     },
+     {
+      "k": [
+       "haklısın",
+       "ama",
+       "soften"
+      ],
+      "ask": "How do I disagree politely?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Turkish discourse",
+    "prompt": "Look at conversation markers."
+   },
+   "sources": [
+    "Turkish discourse"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Formal and informal registers",
+   "icon": "🎩",
+   "hook": "Why does Turkish have both 'sen' and 'siz' for one person?",
+   "explain": [
+    "Informal Turkish uses sen with friends, family and children. Formal Turkish uses siz with strangers, elders and officials: 'Nasılsınız?' The same plural form also marks respect. In an email: 'Sayın Bay Yılmaz,' (Dear Mr Yılmaz) ... 'Saygılarımla' (With respect).",
+    "Address terms also express respect: abla, abi, hanım, bey. 'Ahmet Bey' and 'Ayşe Hanım' add polite titles after the first name. In speech, Turkish uses 'Buyurun' (Please, go ahead), 'Rica ederim' (You are welcome). The ending -dir can mark formal statements: 'Toplantı yarındır'."
+   ],
+   "mnemonic": "Sen is a handshake you know; siz is a bow you respect.",
+   "items": [
+    [
+     "Dear (formal)",
+     "Sayın",
+     ""
+    ],
+    [
+     "With respect",
+     "Saygılarımla",
+     ""
+    ],
+    [
+     "Mr (after the name)",
+     "Bey",
+     ""
+    ],
+    [
+     "Mrs (after the name)",
+     "Hanım",
+     ""
+    ],
+    [
+     "Please go ahead",
+     "Buyurun",
+     ""
+    ],
+    [
+     "You are welcome",
+     "Rica ederim",
+     ""
+    ],
+    [
+     "How are you? (formal)",
+     "Nasılsınız?",
+     ""
+    ],
+    [
+     "Excuse me (formal)",
+     "Affedersiniz",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "Dear Mr Yılmaz, how are you?",
+     [
+      "Sayın",
+      "Yılmaz,",
+      "nasılsınız?"
+     ]
+    ],
+    [
+     "Mrs Ayşe, please come in.",
+     [
+      "Ayşe",
+      "Hanım,",
+      "buyurun",
+      "lütfen."
+     ]
+    ],
+    [
+     "With respect, we thank you.",
+     [
+      "Saygılarımla,",
+      "teşekkür",
+      "ederiz."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which pronoun is formal for one person?",
+     "o": [
+      "sen",
+      "o",
+      "biz",
+      "siz"
+     ],
+     "a": 3,
+     "why": "Siz is used for respect.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Where do Bey and Hanım go?",
+     "o": [
+      "After the first name",
+      "Before the name",
+      "Instead of the name",
+      "At the end of the sentence"
+     ],
+     "a": 0,
+     "why": "Ahmet Bey, Ayşe Hanım.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is 'Sayın' used in letters?",
+     "o": [
+      "It marks respectful address",
+      "It means friend",
+      "It is a verb",
+      "It is slang"
+     ],
+     "a": 0,
+     "why": "Sayın means Dear in formal letters.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is correct to a manager you meet first time?",
+     "o": [
+      "Nasılsın?",
+      "Nasılsınız?",
+      "Naber?",
+      "Ne var ne yok?"
+     ],
+     "a": 1,
+     "why": "Formal register uses siz.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do waiters say 'Buyurun'?",
+     "o": [
+      "It means goodbye",
+      "It means bill",
+      "It invites and offers service politely",
+      "It means no"
+     ],
+     "a": 2,
+     "why": "Buyurun means go ahead.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Registers in Turkish",
+    "model": "Sen is informal and siz is formal. Use Sayın, Bey, Hanım and Saygılarımla in formal writing.",
+    "points": [
+     {
+      "k": [
+       "sen",
+       "siz",
+       "formal"
+      ],
+      "ask": "When do I use siz?"
+     },
+     {
+      "k": [
+       "sayın",
+       "bey",
+       "hanım"
+      ],
+      "ask": "What titles do I use?"
+     },
+     {
+      "k": [
+       "saygılarımla",
+       "respect"
+      ],
+      "ask": "How do I end a formal letter?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Politeness in Turkish",
+    "prompt": "See how politeness is built."
+   },
+   "sources": [
+    "Politeness in Turkish"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Reading articles and literature",
+   "icon": "📰",
+   "hook": "How does a Turkish news headline differ from everyday speech?",
+   "explain": [
+    "Headlines often omit verbs or use compact noun phrases and the present tense for past events. Typical connectors: 'ancak' (however), 'ayrıca' (also), 'buna göre' (according to this), 'açıkladı' (announced). The izafet structure links nouns: 'Türkiye Cumhuriyeti' and 'şehir merkezi' (city centre): the second noun takes -i.",
+    "Literature: Yunus Emre wrote poetry in the 13th century, Nazım Hikmet became a major modern poet, and Orhan Pamuk won the Nobel Prize in Literature in 2006. When you read, find the subject, the final verb, and the case endings that tell you who did what to whom: 'Kediyi köpek kovaladı' (The dog chased the cat)."
+   ],
+   "mnemonic": "Find the verb at the end, then ask who did it to whom.",
+   "items": [
+    [
+     "however",
+     "ancak",
+     ""
+    ],
+    [
+     "also",
+     "ayrıca",
+     ""
+    ],
+    [
+     "announced",
+     "açıkladı",
+     ""
+    ],
+    [
+     "city centre",
+     "şehir merkezi",
+     ""
+    ],
+    [
+     "poet",
+     "şair",
+     ""
+    ],
+    [
+     "novel",
+     "roman",
+     ""
+    ],
+    [
+     "author",
+     "yazar",
+     ""
+    ],
+    [
+     "The dog chased the cat",
+     "Kediyi köpek kovaladı",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "The author wrote a new novel.",
+     [
+      "Yazar",
+      "yeni",
+      "bir",
+      "roman",
+      "yazdı."
+     ]
+    ],
+    [
+     "The poet read his poem.",
+     [
+      "Şair",
+      "şiirini",
+      "okudu."
+     ]
+    ],
+    [
+     "The minister made a statement.",
+     [
+      "Bakan",
+      "bir",
+      "açıklama",
+      "yaptı."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "What does the accusative -yi in 'Kediyi' show?",
+     "o": [
+      "The cat is the object",
+      "The cat is the subject",
+      "The cat is possessed",
+      "The cat is plural"
+     ],
+     "a": 0,
+     "why": "Accusative marks the definite object.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Who won the 2006 Nobel Prize in Literature?",
+     "o": [
+      "Yaşar Kemal",
+      "Orhan Pamuk",
+      "Nazım Hikmet",
+      "Yunus Emre"
+     ],
+     "a": 1,
+     "why": "Orhan Pamuk won in 2006.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In 'Kediyi köpek kovaladı', who chased whom?",
+     "o": [
+      "The cat chased the dog",
+      "The dog chased the cat",
+      "They chased each other",
+      "Unclear"
+     ],
+     "a": 1,
+     "why": "Case endings, not word order, show the roles.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does izafet add -i in 'şehir merkezi'?",
+     "o": [
+      "The first is plural",
+      "It is the past tense",
+      "The second noun marks possession",
+      "It is a verb"
+     ],
+     "a": 2,
+     "why": "Noun-noun compounds mark the second noun.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which connector signals contrast in a news article?",
+     "o": [
+      "ayrıca",
+      "buna göre",
+      "ve",
+      "ancak"
+     ],
+     "a": 3,
+     "why": "Ancak means however.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Reading Turkish texts",
+    "model": "Find the final verb first, then use case endings to see who did what. Izafet compounds mark the second noun with -i.",
+    "points": [
+     {
+      "k": [
+       "verb",
+       "end",
+       "last"
+      ],
+      "ask": "Where do I find the verb?"
+     },
+     {
+      "k": [
+       "case",
+       "accusative",
+       "object"
+      ],
+      "ask": "What do case endings do?"
+     },
+     {
+      "k": [
+       "izafet",
+       "compound",
+       "noun"
+      ],
+      "ask": "How are nouns linked?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Turkish literature",
+    "prompt": "Look at famous authors."
+   },
+   "sources": [
+    "Turkish literature"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Essay and correspondence writing",
+   "icon": "✉️",
+   "hook": "How do you begin and end a formal email in Turkish?",
+   "explain": [
+    "A formal email follows a pattern: greeting (Sayın Yetkili,), purpose (…ile ilgili yazıyorum), details, request (… rica ediyorum), thanks and closing (Saygılarımla,). Use the formal siz forms: 'Yardımcı olabilir misiniz?' (Could you help?).",
+    "For an opinion essay: introduction (giriş), development (gelişme), conclusion (sonuç). Linking: 'Öncelikle' (first of all), 'Ayrıca' (also), 'Sonuç olarak' (in conclusion). Use consistent tense and avoid slang. Check the harmony of every suffix and the apostrophe on proper names: Ankara'da, Ayşe'ye."
+   ],
+   "mnemonic": "Giriş, gelişme, sonuç: three parts, one clear path.",
+   "items": [
+    [
+     "Dear Sir/Madam",
+     "Sayın Yetkili",
+     ""
+    ],
+    [
+     "I am writing about",
+     "ile ilgili yazıyorum",
+     ""
+    ],
+    [
+     "I request",
+     "rica ediyorum",
+     ""
+    ],
+    [
+     "first of all",
+     "öncelikle",
+     ""
+    ],
+    [
+     "in conclusion",
+     "sonuç olarak",
+     ""
+    ],
+    [
+     "introduction",
+     "giriş",
+     ""
+    ],
+    [
+     "conclusion",
+     "sonuç",
+     ""
+    ],
+    [
+     "Best regards",
+     "Saygılarımla",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I am writing about the course.",
+     [
+      "Kurs",
+      "ile",
+      "ilgili",
+      "yazıyorum."
+     ]
+    ],
+    [
+     "I would like to ask for help.",
+     [
+      "Yardım",
+      "rica",
+      "ediyorum."
+     ]
+    ],
+    [
+     "In conclusion, I agree.",
+     [
+      "Sonuç",
+      "olarak,",
+      "katılıyorum."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which closing is appropriate for a formal email?",
+     "o": [
+      "Hadi bay",
+      "Saygılarımla",
+      "Öptüm",
+      "Naber"
+     ],
+     "a": 1,
+     "why": "Saygılarımla is formal.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which word starts a conclusion?",
+     "o": [
+      "Öncelikle",
+      "Ayrıca",
+      "Sonuç olarak",
+      "Belki"
+     ],
+     "a": 2,
+     "why": "It means in conclusion.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does 'Ankara'da' have an apostrophe?",
+     "o": [
+      "It is a possessive",
+      "It is a plural",
+      "Suffixes on proper names are separated",
+      "It is a dialect"
+     ],
+     "a": 2,
+     "why": "Turkish writes an apostrophe before suffixes on proper names.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which sentence is more polite?",
+     "o": [
+      "Yardım et.",
+      "Bana yardım.",
+      "Hemen yardım!",
+      "Yardımcı olabilir misiniz?"
+     ],
+     "a": 3,
+     "why": "The question form with siz is polite.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why should an essay have giriş, gelişme, sonuç?",
+     "o": [
+      "It makes the argument clear",
+      "It is a spelling rule",
+      "It shortens the text",
+      "It makes sentences past"
+     ],
+     "a": 0,
+     "why": "Structure supports clarity.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Writing letters and essays",
+    "model": "A formal email: Sayın Yetkili, purpose, request, thanks, Saygılarımla. Essays: giriş, gelişme, sonuç with öncelikle, ayrıca and sonuç olarak.",
+    "points": [
+     {
+      "k": [
+       "sayın",
+       "saygılarımla",
+       "formal"
+      ],
+      "ask": "How do I open and close?"
+     },
+     {
+      "k": [
+       "giriş",
+       "gelişme",
+       "sonuç"
+      ],
+      "ask": "What are the parts of an essay?"
+     },
+     {
+      "k": [
+       "apostrophe",
+       "proper name"
+      ],
+      "ask": "What about names?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Writing in Turkish",
+    "prompt": "Look at the structure of a formal letter."
+   },
+   "sources": [
+    "Writing in Turkish"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Translation fundamentals",
+   "icon": "🔁",
+   "hook": "Why can't you translate 'He' and 'She' word for word into Turkish?",
+   "explain": [
+    "Turkish has one third-person pronoun 'o' for he, she and it, and no articles or grammatical gender. When translating into English you must choose he or she from context. Going the other way, you add endings and reorder: 'I saw the film yesterday' becomes 'Dün filmi gördüm'.",
+    "Translation tips: do not translate word for word; move the verb to the end; check case endings; keep register (sen/siz). False friends: 'sempatik' means likeable, not sympathetic; 'aktüel' means current. Idioms such as 'Eline sağlık' (thanks to the cook) have no word-for-word English equivalent; always translate the meaning."
+   ],
+   "mnemonic": "Translate the meaning, not the words.",
+   "items": [
+    [
+     "he/she/it",
+     "o",
+     ""
+    ],
+    [
+     "I saw the film",
+     "Filmi gördüm",
+     ""
+    ],
+    [
+     "likeable (not sympathetic)",
+     "sempatik",
+     ""
+    ],
+    [
+     "current",
+     "aktüel",
+     ""
+    ],
+    [
+     "translation",
+     "çeviri",
+     ""
+    ],
+    [
+     "translator",
+     "çevirmen",
+     ""
+    ],
+    [
+     "meaning",
+     "anlam",
+     ""
+    ],
+    [
+     "context",
+     "bağlam",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "I saw the film yesterday.",
+     [
+      "Dün",
+      "filmi",
+      "gördüm."
+     ]
+    ],
+    [
+     "He is a translator.",
+     [
+      "O",
+      "bir",
+      "çevirmen."
+     ]
+    ],
+    [
+     "The translation is very good.",
+     [
+      "Çeviri",
+      "çok",
+      "iyi."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "How many third-person singular pronouns does Turkish have?",
+     "o": [
+      "Three",
+      "Two",
+      "One: o",
+      "None"
+     ],
+     "a": 2,
+     "why": "O covers he, she and it.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a false friend?",
+     "o": [
+      "A word with no meaning",
+      "A rude word",
+      "A borrowed word",
+      "A word that looks similar but has a different meaning"
+     ],
+     "a": 3,
+     "why": "Sempatik means likeable.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why must a translator choose he or she?",
+     "o": [
+      "Turkish has she only",
+      "Turkish has he only",
+      "English has no pronouns",
+      "English marks gender, Turkish does not"
+     ],
+     "a": 3,
+     "why": "The target language needs more information.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why change word order when translating into English?",
+     "o": [
+      "Turkish is SOV and English is SVO",
+      "The words are different",
+      "Verbs are different",
+      "English has no verbs"
+     ],
+     "a": 0,
+     "why": "Reordering follows the target grammar.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best strategy for an idiom?",
+     "o": [
+      "Translate word for word",
+      "Translate the meaning",
+      "Skip it",
+      "Use a dictionary only"
+     ],
+     "a": 1,
+     "why": "Idioms need equivalent meaning.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Translation basics",
+    "model": "Turkish uses o for he, she, it. Reorder SOV to SVO, check case endings, beware false friends, and translate meaning.",
+    "points": [
+     {
+      "k": [
+       "o",
+       "gender"
+      ],
+      "ask": "Does Turkish have gender?"
+     },
+     {
+      "k": [
+       "sov",
+       "svo",
+       "reorder"
+      ],
+      "ask": "What about word order?"
+     },
+     {
+      "k": [
+       "false friend",
+       "meaning"
+      ],
+      "ask": "What are false friends?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Translation",
+    "prompt": "See examples of false friends."
+   },
+   "sources": [
+    "Translation"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Regional varieties and cultural context",
+   "icon": "🗺️",
+   "hook": "Is the Turkish in Istanbul the same as the Turkish in the Black Sea region or in Cyprus?",
+   "explain": [
+    "Standard Turkish is based on the Istanbul dialect. Regional varieties include Black Sea speech, Aegean and Eastern Anatolian speech. They differ in intonation, vocabulary and some sounds, but speakers understand each other well. Turkish is also spoken in Northern Cyprus, in parts of the Balkans and by large communities in Germany and elsewhere.",
+    "Turkish is a member of the Turkic family, related to Azerbaijani, Turkmen, Kazakh and Uzbek. Azerbaijani is especially close to Turkish. Cultural context matters: hospitality (misafirperverlik), tea culture and kissing the hand of elders at holidays are traditional signs of respect."
+   ],
+   "mnemonic": "One standard, many voices.",
+   "items": [
+    [
+     "dialect",
+     "lehçe",
+     ""
+    ],
+    [
+     "accent",
+     "aksent",
+     ""
+    ],
+    [
+     "Black Sea",
+     "Karadeniz",
+     ""
+    ],
+    [
+     "language family",
+     "dil ailesi",
+     ""
+    ],
+    [
+     "hospitality",
+     "misafirperverlik",
+     ""
+    ],
+    [
+     "guest",
+     "misafir",
+     ""
+    ],
+    [
+     "holiday (religious/festival)",
+     "bayram",
+     ""
+    ],
+    [
+     "neighbour",
+     "komşu",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "Turkish is spoken in many countries.",
+     [
+      "Türkçe",
+      "birçok",
+      "ülkede",
+      "konuşulur."
+     ]
+    ],
+    [
+     "Guests are very important.",
+     [
+      "Misafir",
+      "çok",
+      "önemlidir."
+     ]
+    ],
+    [
+     "We celebrate the holiday together.",
+     [
+      "Bayramı",
+      "birlikte",
+      "kutluyoruz."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "On which dialect is Standard Turkish based?",
+     "o": [
+      "Black Sea",
+      "Eastern Anatolian",
+      "Cypriot",
+      "Istanbul"
+     ],
+     "a": 3,
+     "why": "Istanbul speech is the standard base.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which language is closest to Turkish?",
+     "o": [
+      "Azerbaijani",
+      "Arabic",
+      "Persian",
+      "Greek"
+     ],
+     "a": 0,
+     "why": "Azerbaijani is a Turkic language.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why can speakers of different Turkish dialects understand each other?",
+     "o": [
+      "They share grammar and most vocabulary",
+      "They all use one dialect",
+      "They know English",
+      "They do not"
+     ],
+     "a": 0,
+     "why": "Differences are mainly accent and some words.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which family does Turkish belong to?",
+     "o": [
+      "Semitic",
+      "Turkic",
+      "Slavic",
+      "Romance"
+     ],
+     "a": 1,
+     "why": "Turkish is Turkic.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "How should a learner treat dialect words?",
+     "o": [
+      "Avoid all dialects",
+      "Use only slang",
+      "Learn standard Turkish and notice regional forms",
+      "Ignore pronunciation"
+     ],
+     "a": 2,
+     "why": "Standard first, variety awareness second.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Turkish varieties",
+    "model": "Standard Turkish is based on Istanbul speech. Regional accents exist but are mutually understandable. Turkish belongs to the Turkic family.",
+    "points": [
+     {
+      "k": [
+       "istanbul",
+       "standard"
+      ],
+      "ask": "What is standard Turkish based on?"
+     },
+     {
+      "k": [
+       "turkic",
+       "azerbaijani"
+      ],
+      "ask": "Which languages are related?"
+     },
+     {
+      "k": [
+       "understand",
+       "mutual"
+      ],
+      "ask": "Can dialect speakers understand each other?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Turkic languages",
+    "prompt": "Compare Turkic languages."
+   },
+   "sources": [
+    "Turkic languages"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Structured debates and presentations",
+   "icon": "🎤",
+   "hook": "How do you structure a two-minute presentation in Turkish?",
+   "explain": [
+    "A presentation has an opening (Merhaba, bugün ... hakkında konuşacağım: Today I will talk about ...), main points (İlk olarak, ikinci olarak: First, second) and a close (Dinlediğiniz için teşekkür ederim: Thank you for listening). Eye contact and clear pauses help.",
+    "In a debate, use stance phrases: 'Bu görüşe katılmıyorum çünkü...' (I do not agree with this view because...). Rebuttal: 'Ancak şunu unutmamalıyız' (However, we should not forget...). Use 'siz' with the audience. Avoid fillers like 'yani' too often. Always end with a clear summary."
+   ],
+   "mnemonic": "Opening, three points, thank you.",
+   "items": [
+    [
+     "Today I will talk about",
+     "bugün ... hakkında konuşacağım",
+     ""
+    ],
+    [
+     "first of all",
+     "ilk olarak",
+     ""
+    ],
+    [
+     "second",
+     "ikinci olarak",
+     ""
+    ],
+    [
+     "I disagree with this view",
+     "bu görüşe katılmıyorum",
+     ""
+    ],
+    [
+     "however",
+     "ancak",
+     ""
+    ],
+    [
+     "we should not forget",
+     "unutmamalıyız",
+     ""
+    ],
+    [
+     "thank you for listening",
+     "dinlediğiniz için teşekkür ederim",
+     ""
+    ],
+    [
+     "questions",
+     "sorular",
+     ""
+    ]
+   ],
+   "sentences": [
+    [
+     "Today I will talk about water.",
+     [
+      "Bugün",
+      "su",
+      "hakkında",
+      "konuşacağım."
+     ]
+    ],
+    [
+     "I disagree with this view.",
+     [
+      "Bu",
+      "görüşe",
+      "katılmıyorum."
+     ]
+    ],
+    [
+     "Thank you for listening.",
+     [
+      "Dinlediğiniz",
+      "için",
+      "teşekkür",
+      "ederim."
+     ]
+    ]
+   ],
+   "gq": [
+    {
+     "t": "mc",
+     "q": "Which phrase ends a presentation?",
+     "o": [
+      "Dinlediğiniz için teşekkür ederim",
+      "Bugün ... hakkında konuşacağım",
+      "İlk olarak",
+      "Ancak"
+     ],
+     "a": 0,
+     "why": "It thanks the audience.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which phrase opens a rebuttal?",
+     "o": [
+      "Merhaba arkadaşlar",
+      "Ancak şunu unutmamalıyız",
+      "Güle güle",
+      "Hoş geldiniz"
+     ],
+     "a": 1,
+     "why": "It introduces a counterpoint.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why use siz with an audience?",
+     "o": [
+      "It is shorter",
+      "It shows respect",
+      "It is informal",
+      "It is a rule of grammar"
+     ],
+     "a": 1,
+     "why": "Public speaking uses formal address.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which structure is clearer?",
+     "o": [
+      "Random facts",
+      "Only conclusion",
+      "Opening, main points, conclusion",
+      "Only questions"
+     ],
+     "a": 2,
+     "why": "A clear structure helps the audience.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why avoid overusing 'yani'?",
+     "o": [
+      "It is rude",
+      "It is old",
+      "It is wrong",
+      "It sounds hesitant"
+     ],
+     "a": 3,
+     "why": "Too many fillers weaken a talk.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Presenting and debating",
+    "model": "Open with a topic statement, give your points with ilk olarak and ikinci olarak, and close with a thank you. In debate use katılmıyorum çünkü... and ancak....",
+    "points": [
+     {
+      "k": [
+       "opening",
+       "topic",
+       "hakkında"
+      ],
+      "ask": "How do I begin?"
+     },
+     {
+      "k": [
+       "ilk",
+       "ikinci",
+       "first",
+       "second"
+      ],
+      "ask": "How do I list points?"
+     },
+     {
+      "k": [
+       "teşekkür",
+       "thank"
+      ],
+      "ask": "How do I end?"
+     }
+    ]
+   },
+   "trip": {
+    "wiki": "Public speaking",
+    "prompt": "Look for examples of structure."
+   },
+   "sources": [
+    "Public speaking"
+   ]
+  }
+ ]
+}

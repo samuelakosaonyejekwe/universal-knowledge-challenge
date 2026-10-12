@@ -1,0 +1,2706 @@
+{
+ "world": 9,
+ "level": 5,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Multivariable calculus",
+   "icon": "⛰️",
+   "hook": "A hill's height depends on two coordinates, east and north. Standing on it, in which direction is the ground steepest, and how would you find the highest point?",
+   "explain": [
+    "A function of two variables f(x, y) assigns a height to each point of the plane. A partial derivative differentiates with respect to one variable while holding the other constant. For f = x²y + 3y, f_x = 2xy and f_y = x² + 3. The gradient ∇f = (f_x, f_y) points in the direction of steepest increase and has size equal to that steepest slope.",
+    "For f = x² + y², ∇f = (2x, 2y); at (3, 4) it is (6, 8) with magnitude 10. The directional derivative in the direction of a unit vector u is ∇f · u, so at (1, 2) in direction (1, 0) it is 2. At a local maximum or minimum, both partial derivatives are zero (a critical point). For f = x² + y² − 2x − 4y, f_x = 2x − 2 = 0 and f_y = 2y − 4 = 0 give (1, 2) with f = −5, a minimum because f increases in every direction.",
+    "A double integral adds up f over a region: the integral of xy over 0 ≤ x ≤ 1, 0 ≤ y ≤ 2 is (∫₀¹ x dx)(∫₀² y dy) = (1/2)(2) = 1. It gives the volume under the surface. When the region and function are suitable, the order of integration can be swapped (Fubini's theorem), and polar coordinates simplify circular regions."
+   ],
+   "example": {
+    "q": "Find and classify the critical point of f(x, y) = x² + y² − 2x − 4y.",
+    "steps": [
+     "Partial derivatives: f_x = 2x − 2 and f_y = 2y − 4.",
+     "Set both to zero: x = 1 and y = 2.",
+     "Second derivatives f_xx = 2, f_yy = 2, f_xy = 0, so the Hessian determinant is 4 > 0 and f_xx > 0: a minimum.",
+     "Value: f(1, 2) = 1 + 4 − 2 − 8 = −5."
+    ],
+    "a": "Minimum at (1, 2) with value −5"
+   },
+   "analogies": {
+    "nature": "A hill walker on a slope: the gradient points straight uphill and a contour line shows level ground.",
+    "city": "A weather map's pressure field has a gradient that points toward higher pressure, and wind is driven along it.",
+    "tech": "Training a machine-learning model follows the negative gradient of an error function.",
+    "sea": "Ocean depth is a function of latitude and longitude, and a sonar map shows its gradient."
+   },
+   "mnemonic": "Hold one variable still and differentiate the other. The gradient climbs; its negative descends.",
+   "terms": [
+    [
+     "Partial derivative",
+     "The derivative with respect to one variable while the others are held fixed."
+    ],
+    [
+     "Gradient",
+     "The vector of partial derivatives, pointing in the direction of steepest increase."
+    ],
+    [
+     "Critical point",
+     "A point where all partial derivatives are zero."
+    ],
+    [
+     "Double integral",
+     "An integral over a region of the plane, giving a volume under a surface."
+    ]
+   ],
+   "misc": {
+    "wrong": "If both partial derivatives are zero at a point, it must be a maximum or a minimum.",
+    "right": "It could be a saddle point, such as f = x² − y² at the origin. The second-derivative test is needed."
+   },
+   "trip": {
+    "wiki": "Gradient",
+    "prompt": "Find the contour-map picture and mark which way the gradient points."
+   },
+   "sources": [
+    "Partial derivative",
+    "Gradient",
+    "Multiple integral"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "For f(x, y) = x²y + 3y, what is f_x?",
+     "o": [
+      "x² + 3",
+      "2xy",
+      "2x + 3",
+      "x²"
+     ],
+     "a": 1,
+     "why": "Treat y as a constant and differentiate x²y.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The gradient of a function at a point points...",
+     "o": [
+      "In the direction of steepest increase",
+      "Along the contour line",
+      "In the direction of steepest decrease",
+      "Toward the origin"
+     ],
+     "a": 0,
+     "why": "The directional derivative is largest along the gradient.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the nature of the critical point of f = x² − y² at the origin?",
+     "o": [
+      "Minimum",
+      "Maximum",
+      "Not a critical point",
+      "Saddle point"
+     ],
+     "a": 3,
+     "why": "f increases along x and decreases along y.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is the gradient perpendicular to contour lines?",
+     "o": [
+      "Contours are always circles",
+      "The gradient is zero",
+      "Along a contour f does not change, so the directional derivative is zero there",
+      "Contours are steep"
+     ],
+     "a": 2,
+     "why": "∇f · u = 0 along a level curve, so ∇f is perpendicular to the tangent u.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Kai finds f_x = 0 and f_y = 0 at a point and concludes it is a maximum. What should he do?",
+     "o": [
+      "Nothing, he is right",
+      "Check second derivatives, since it might be a minimum or saddle",
+      "Check only f_x again",
+      "Differentiate once more in x only"
+     ],
+     "a": 1,
+     "why": "The second-derivative (Hessian) test classifies critical points.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The double integral of 1 over a region of area 6 equals...",
+     "o": [
+      "6",
+      "1",
+      "0",
+      "The perimeter"
+     ],
+     "a": 0,
+     "why": "It counts the area.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "For f = x² + y², find the magnitude of the gradient at (3, 4).",
+     "a": 10,
+     "tol": 0,
+     "why": "∇f = (6, 8) and its length is 10.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Evaluate the double integral of xy over 0 ≤ x ≤ 1, 0 ≤ y ≤ 2.",
+     "a": 1,
+     "tol": 0,
+     "why": "(1/2)(2) = 1.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the minimum value of f = x² + y² − 2x − 4y.",
+     "a": -5,
+     "tol": 0,
+     "why": "At (1, 2): 1 + 4 − 2 − 8 = −5.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a double integral can be computed as two single integrals one after the other.",
+     "rubric": [
+      [
+       "slice",
+       "strip",
+       "cross-section",
+       "slices",
+       "strips",
+       "fix"
+      ],
+      [
+       "inner",
+       "first",
+       "one variable",
+       "integrate in x",
+       "integrate in y",
+       "in turn"
+      ],
+      [
+       "outer",
+       "then",
+       "second",
+       "add up",
+       "sum",
+       "remaining"
+      ]
+     ],
+     "min": 2,
+     "model": "Fix one variable and integrate over the other to get the area of a slice, then integrate these slice areas over the remaining variable (Fubini). It works like adding up slices of volume.",
+     "why": "Iterated integrals build volume from slices.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "f(x, y) has gradient (2, −1) at a point. In which unit direction is the rate of change largest?",
+     "o": [
+      "(1, 0)",
+      "(−2, 1)/√5",
+      "(0, 1)",
+      "(2, −1)/√5"
+     ],
+     "a": 3,
+     "why": "The steepest increase is along the gradient, with rate √5.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the gradient descent method repeatedly move in the direction of −∇f to find a minimum?",
+     "rubric": [
+      [
+       "decrease",
+       "descent",
+       "downhill",
+       "lower",
+       "smaller",
+       "fastest"
+      ],
+      [
+       "steepest",
+       "quickest",
+       "most rapid"
+      ],
+      [
+       "minimum",
+       "gradient",
+       "negative",
+       "opposite",
+       "uphill"
+      ]
+     ],
+     "min": 2,
+     "model": "−∇f is the direction of steepest decrease, so small steps along it lower f fastest until the gradient is nearly zero (a local minimum).",
+     "why": "This is the core of many optimisation and learning algorithms.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A surface z = f(x, y) has f_x = 3 at a point. What does that mean?",
+     "o": [
+      "f is 3 at the point",
+      "The surface is flat",
+      "Moving east by a small amount changes f by about 3 times that amount",
+      "The slope north is 3"
+     ],
+     "a": 2,
+     "why": "The partial derivative is the rate along the x direction.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a partial derivative is",
+    "model": "When a function depends on several variables, a partial derivative tells how fast it changes when only one variable moves and the others stay fixed. For f = x²y, the partial in x treats y as a constant and gives 2xy. Together the partials form the gradient, which points uphill.",
+    "points": [
+     {
+      "k": [
+       "one variable",
+       "others fixed",
+       "constant",
+       "hold"
+      ],
+      "ask": "What do I do with the other variables?"
+     },
+     {
+      "k": [
+       "rate",
+       "change",
+       "slope",
+       "derivative"
+      ],
+      "ask": "What does it measure?"
+     },
+     {
+      "k": [
+       "gradient",
+       "uphill",
+       "steepest",
+       "vector"
+      ],
+      "ask": "How do the partials combine?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Linear algebra",
+   "icon": "🔲",
+   "hook": "A matrix stretches some special directions without turning them. What are those directions, and why do they decide whether a bridge, a population or a web page ranking settles down?",
+   "explain": [
+    "Linear algebra studies vectors and linear maps. A set of vectors is linearly independent if none is a combination of the others: (1, 2) and (2, 4) are dependent because (2, 4) = 2(1, 2). The rank of a matrix is the number of independent rows (or columns). The rank-nullity theorem says that for a map from n dimensions, rank + nullity = n, so a 3 × 3 matrix of rank 2 has a null space of dimension 1.",
+    "A square matrix A has an eigenvector v and eigenvalue λ if A v = λ v: the matrix only stretches v. Eigenvalues solve det(A − λI) = 0. For A = [[2, 1], [1, 2]], det = (2 − λ)² − 1 = 0 gives λ = 3 and λ = 1. For λ = 3 an eigenvector is (1, 1), since A(1, 1) = (3, 3). The sum of eigenvalues equals the trace (4) and their product the determinant (3).",
+    "A system A x = b has a unique solution when det A ≠ 0. If det A = 0 there are either none or infinitely many. Repeated application of A to a vector makes the component along the largest eigenvalue dominate, which explains long-run behaviour in population models and the PageRank idea."
+   ],
+   "example": {
+    "q": "Find the eigenvalues of A = [[2, 1], [1, 2]] and an eigenvector for the larger one.",
+    "steps": [
+     "Solve det(A − λI) = (2 − λ)² − 1 = 0.",
+     "(2 − λ)² = 1 gives λ = 3 or λ = 1.",
+     "For λ = 3 solve (A − 3I)v = 0: −v₁ + v₂ = 0, so v = (1, 1).",
+     "Check: A(1, 1) = (3, 3) = 3(1, 1)."
+    ],
+    "a": "λ = 3 and 1; eigenvector (1, 1)"
+   },
+   "analogies": {
+    "city": "Search engines rank pages using the dominant eigenvector of a link matrix.",
+    "nature": "A population with age classes settles to a growth rate given by the dominant eigenvalue.",
+    "music": "The natural vibration modes of a drum are eigenvectors, with frequencies tied to eigenvalues.",
+    "tech": "Principal component analysis finds directions of greatest variation as eigenvectors of a covariance matrix."
+   },
+   "mnemonic": "An eigenvector is a direction the matrix does not turn, only stretches by its eigenvalue.",
+   "terms": [
+    [
+     "Linear independence",
+     "No vector in the set is a combination of the others."
+    ],
+    [
+     "Rank",
+     "The number of independent rows or columns of a matrix."
+    ],
+    [
+     "Eigenvector",
+     "A non-zero vector v with A v = λ v."
+    ],
+    [
+     "Eigenvalue",
+     "The factor λ by which an eigenvector is stretched."
+    ]
+   ],
+   "misc": {
+    "wrong": "A matrix with determinant 0 must be the zero matrix.",
+    "right": "Determinant 0 means the map squashes space (rank deficient), as in [[1, 2], [2, 4]], not that the matrix is zero."
+   },
+   "trip": {
+    "wiki": "Eigenvalues and eigenvectors",
+    "prompt": "Find the animation of a shape being sheared and the direction that stays fixed."
+   },
+   "sources": [
+    "Eigenvalues and eigenvectors",
+    "Rank (linear algebra)",
+    "Rank–nullity theorem"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Are (1, 2) and (2, 4) linearly independent?",
+     "o": [
+      "Yes",
+      "No, one is a multiple of the other",
+      "Only in 3D",
+      "Only if scaled"
+     ],
+     "a": 1,
+     "why": "(2, 4) = 2(1, 2).",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A 3 × 3 matrix has rank 2. What is the dimension of its null space?",
+     "o": [
+      "1",
+      "0",
+      "2",
+      "3"
+     ],
+     "a": 0,
+     "why": "rank + nullity = 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If det A = 0 for a square matrix A, then...",
+     "o": [
+      "A is the identity",
+      "A has an inverse",
+      "All eigenvalues are 1",
+      "A has no inverse"
+     ],
+     "a": 3,
+     "why": "Zero determinant means non-invertible.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "For A v = λ v with v ≠ 0, v is...",
+     "o": [
+      "The inverse of A",
+      "A null vector only",
+      "An eigenvector of A",
+      "A determinant"
+     ],
+     "a": 2,
+     "why": "This is the defining equation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "The eigenvalues of [[2, 0], [0, 3]] are...",
+     "o": [
+      "0 and 5",
+      "2 and 3",
+      "5 and 6",
+      "1 and 1"
+     ],
+     "a": 1,
+     "why": "For a diagonal matrix the eigenvalues are the diagonal entries.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Mia says a matrix with eigenvalue 0 must be invertible. What is wrong?",
+     "o": [
+      "Eigenvalue 0 means det = 0, so it is not invertible",
+      "Nothing",
+      "Eigenvalues are always positive",
+      "The matrix must be diagonal"
+     ],
+     "a": 0,
+     "why": "The determinant is the product of the eigenvalues.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find det [[2, 1], [1, 2]].",
+     "a": 3,
+     "tol": 0,
+     "why": "4 − 1 = 3.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the larger eigenvalue of [[2, 1], [1, 2]].",
+     "a": 3,
+     "tol": 0,
+     "why": "(2 − λ)² = 1 gives λ = 1 or 3.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The eigenvalues of a 2 × 2 matrix are 5 and 2. What is its determinant?",
+     "a": 10,
+     "tol": 0,
+     "why": "The determinant is the product of the eigenvalues.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the eigenvalues of a matrix are found by solving det(A − λI) = 0.",
+     "rubric": [
+      [
+       "non-zero",
+       "nonzero",
+       "non zero",
+       "nontrivial",
+       "non-trivial"
+      ],
+      [
+       "singular",
+       "not invertible",
+       "determinant is zero",
+       "det",
+       "zero determinant"
+      ],
+      [
+       "(a − λi)v = 0",
+       "a v = λ v",
+       "null",
+       "solution",
+       "v"
+      ]
+     ],
+     "min": 2,
+     "model": "A v = λ v means (A − λI)v = 0 has a non-zero solution v. That happens only when A − λI is singular, i.e. its determinant is zero.",
+     "why": "The existence of a non-zero null vector requires a zero determinant.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A model x_{n+1} = A x_n has dominant eigenvalue 1.2 and others smaller in size. What happens to the long-run total?",
+     "o": [
+      "It stays constant",
+      "It shrinks",
+      "It oscillates",
+      "It grows by about 20% per step"
+     ],
+     "a": 3,
+     "why": "The dominant eigenvalue sets the long-run growth factor.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain how the system A x = b can have either no solution or infinitely many when det A = 0.",
+     "rubric": [
+      [
+       "rank",
+       "dimension",
+       "collapse",
+       "squash",
+       "not onto",
+       "columns"
+      ],
+      [
+       "consistent",
+       "b is",
+       "in the column space",
+       "image",
+       "span",
+       "lies in",
+       "not in"
+      ],
+      [
+       "infinite",
+       "many",
+       "free",
+       "null space",
+       "no solution",
+       "none",
+       "inconsistent"
+      ]
+     ],
+     "min": 2,
+     "model": "If det A = 0, A maps onto a smaller space. If b lies in that image there are infinitely many solutions (add null-space vectors); if b is not in the image there are none.",
+     "why": "The geometry of the image and null space explains both cases.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Trace of a 2 × 2 matrix is 7 and determinant is 10. What are the eigenvalues?",
+     "o": [
+      "7 and 10",
+      "3.5 and 3.5",
+      "5 and 2",
+      "1 and 6"
+     ],
+     "a": 2,
+     "why": "They sum to 7 and multiply to 10.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What an eigenvector is",
+    "model": "An eigenvector of a matrix is a direction that the matrix only stretches, without turning it. The stretch factor is the eigenvalue. For example the matrix [[2, 1], [1, 2]] stretches the direction (1, 1) by 3.",
+    "points": [
+     {
+      "k": [
+       "direction",
+       "vector",
+       "stretch",
+       "not turn"
+      ],
+      "ask": "What happens to an eigenvector?"
+     },
+     {
+      "k": [
+       "factor",
+       "scale",
+       "eigenvalue",
+       "stretch"
+      ],
+      "ask": "What is the eigenvalue?"
+     },
+     {
+      "k": [
+       "example",
+       "(1, 1)",
+       "3",
+       "matrix"
+      ],
+      "ask": "Can you show an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Ordinary differential equations",
+   "icon": "🔬",
+   "hook": "The rate at which a cup of tea cools depends on how much hotter it is than the room. How do we turn that sentence into an equation and then find the temperature at any time?",
+   "explain": [
+    "An ordinary differential equation (ODE) links a function to its derivatives. The simplest is dy/dx = ky: the rate is proportional to the amount. Its solution is y = Ae^(kx). With y(0) = 3 and k = 2, y = 3e^(2x) and y(1) = 3e² ≈ 22.17. Population growth, radioactive decay (k < 0) and Newton's law of cooling, d T/dt = −k(T − T_room), all fit this pattern.",
+    "Separable equations dy/dx = f(x)g(y) are solved by rearranging to ∫dy/g(y) = ∫f(x)dx. For second-order linear equations with constant coefficients, such as y'' − 3y' + 2y = 0, try y = e^(rx): r² − 3r + 2 = 0 gives r = 1 or 2, so the general solution is y = c₁eˣ + c₂e^(2x). The equation y'' + y = 0 has solutions cos x and sin x and models oscillation.",
+    "Many ODEs cannot be solved by formula, so we use numerical methods. Euler's method takes steps y_{n+1} = y_n + h f(x_n, y_n). For y' = y, y(0) = 1, h = 0.5 it gives y(0.5) = 1.5 and y(1) = 2.25, an underestimate of e ≈ 2.718. Smaller steps improve accuracy. An initial value problem needs enough conditions to fix the constants, and the existence and uniqueness theorem says a smooth equation has exactly one solution through the starting point."
+   ],
+   "example": {
+    "q": "Solve dy/dx = 2y with y(0) = 3 and find y(1).",
+    "steps": [
+     "Separate: dy/y = 2 dx.",
+     "Integrate: ln|y| = 2x + C, so y = Ae^(2x).",
+     "Use y(0) = 3: A = 3, so y = 3e^(2x).",
+     "y(1) = 3e² ≈ 3 × 7.389 = 22.17."
+    ],
+    "a": "y = 3e^(2x), y(1) ≈ 22.17"
+   },
+   "analogies": {
+    "nature": "A population with unlimited food grows by dP/dt = kP, but a logistic equation limits it.",
+    "city": "A hot drink in a cafe cools according to Newton's law of cooling.",
+    "tech": "A capacitor discharging through a resistor decays exponentially.",
+    "music": "A plucked string's motion obeys a second-order ODE with solutions like sines and cosines."
+   },
+   "mnemonic": "Rate proportional to amount gives an exponential. Rate proportional to a restoring force gives a wave.",
+   "terms": [
+    [
+     "ODE",
+     "An equation involving a function of one variable and its derivatives."
+    ],
+    [
+     "Initial value problem",
+     "An ODE with the starting value(s) given."
+    ],
+    [
+     "Separable equation",
+     "One where the variables can be moved to opposite sides."
+    ],
+    [
+     "Euler's method",
+     "A numerical method that follows the slope in small steps."
+    ]
+   ],
+   "misc": {
+    "wrong": "An ODE has a single solution function.",
+    "right": "The general solution has arbitrary constants; initial conditions pick one solution."
+   },
+   "limits": "Euler's method is simple but its error builds up; more accurate methods (such as Runge–Kutta) are used in practice.",
+   "trip": {
+    "wiki": "Ordinary differential equation",
+    "prompt": "Find the examples and one natural system modelled by an ODE."
+   },
+   "sources": [
+    "Ordinary differential equation",
+    "Euler method",
+    "Newton's law of cooling"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The solution of dy/dx = ky is...",
+     "o": [
+      "y = kx + A",
+      "y = Ae^(kx)",
+      "y = A sin kx",
+      "y = A/kx"
+     ],
+     "a": 1,
+     "why": "Differentiating Ae^(kx) gives kAe^(kx).",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "For dy/dt = −0.5y the solution...",
+     "o": [
+      "Decays exponentially",
+      "Grows exponentially",
+      "Oscillates",
+      "Is constant"
+     ],
+     "a": 0,
+     "why": "Negative k gives decay.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The general solution of y'' + y = 0 is...",
+     "o": [
+      "c₁eˣ + c₂e⁻ˣ",
+      "c₁x + c₂",
+      "c₁e^(ix) only",
+      "c₁ cos x + c₂ sin x"
+     ],
+     "a": 3,
+     "why": "Both cos x and sin x satisfy it and they are independent.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "For y'' − 3y' + 2y = 0, the characteristic equation is...",
+     "o": [
+      "r² + 3r + 2 = 0",
+      "r − 3 + 2 = 0",
+      "r² − 3r + 2 = 0",
+      "r³ = 2"
+     ],
+     "a": 2,
+     "why": "Substitute y = e^(rx).",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Euler's method for y' = y underestimate e^x?",
+     "o": [
+      "It uses the wrong equation",
+      "It uses the slope at the start of each step while the real slope increases",
+      "The step is too big only at x = 0",
+      "Euler's method is exact"
+     ],
+     "a": 1,
+     "why": "For a convex increasing curve the tangent at the start lies below the curve.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A cup at 90 degrees in a room at 20 degrees. Which model fits Newton's cooling?",
+     "o": [
+      "dT/dt = −k(T − 20)",
+      "dT/dt = −kT",
+      "dT/dt = k(T + 20)",
+      "dT/dt = −k"
+     ],
+     "a": 0,
+     "why": "The rate depends on the difference from room temperature.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Solve dy/dx = 2y with y(0) = 3. Find y(1) to 2 decimal places (e² ≈ 7.389).",
+     "a": 22.17,
+     "tol": 0.01,
+     "why": "3e² = 22.167.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For dy/dx = −3y with y(0) = 5, find y(0.5) to 2 decimal places (e^−1.5 ≈ 0.2231).",
+     "a": 1.12,
+     "tol": 0.01,
+     "why": "5 × 0.2231 = 1.1157.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use Euler's method with h = 0.5 for y' = y, y(0) = 1. Find the estimate for y(1).",
+     "a": 2.25,
+     "tol": 0,
+     "why": "y₁ = 1 + 0.5 = 1.5 and y₂ = 1.5 + 0.75 = 2.25.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why solving a separable ODE involves two integrals.",
+     "rubric": [
+      [
+       "separate",
+       "rearrange",
+       "move",
+       "sides",
+       "dy",
+       "dx"
+      ],
+      [
+       "integrate",
+       "integral",
+       "both sides",
+       "antiderivative"
+      ],
+      [
+       "constant",
+       "c",
+       "general",
+       "initial",
+       "y",
+       "x"
+      ]
+     ],
+     "min": 2,
+     "model": "Write the equation as (1/g(y)) dy = f(x) dx, then integrate each side with respect to its own variable and include a constant. Initial data fixes that constant.",
+     "why": "The method works by separating variables onto two sides.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A population grows by dP/dt = 0.03P with P(0) = 1000. Roughly how long to double (ln 2 ≈ 0.693)?",
+     "o": [
+      "33 years",
+      "10 years",
+      "69 years",
+      "23 years"
+     ],
+     "a": 3,
+     "why": "t = ln 2 ÷ 0.03 ≈ 23.1.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does a restoring force proportional to displacement (y'' = −ky) give oscillation rather than exponential growth?",
+     "rubric": [
+      [
+       "negative",
+       "minus",
+       "opposite",
+       "restor",
+       "pull back",
+       "toward"
+      ],
+      [
+       "acceler",
+       "second derivative",
+       "curvature",
+       "turn"
+      ],
+      [
+       "sin",
+       "cos",
+       "oscillat",
+       "repeat",
+       "periodic",
+       "wave"
+      ]
+     ],
+     "min": 2,
+     "model": "The acceleration points back toward equilibrium and is proportional to displacement. This makes the solution sines and cosines (periodic) rather than exponentials.",
+     "why": "The sign of the coefficient decides growth versus oscillation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two different initial conditions for dy/dx = y give solutions that...",
+     "o": [
+      "Always cross",
+      "Cross once",
+      "Never cross",
+      "Cross twice"
+     ],
+     "a": 2,
+     "why": "Uniqueness: only one solution passes through each point.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a differential equation says",
+    "model": "A differential equation links a quantity to how fast it changes. For example if the rate of change is proportional to the amount, the amount follows an exponential. Solving it gives a formula, and the starting value picks the exact curve.",
+    "points": [
+     {
+      "k": [
+       "rate",
+       "change",
+       "derivative"
+      ],
+      "ask": "What does the equation connect?"
+     },
+     {
+      "k": [
+       "exponential",
+       "proportional",
+       "e"
+      ],
+      "ask": "What kind of solution do we get?"
+     },
+     {
+      "k": [
+       "initial",
+       "starting",
+       "condition",
+       "constant"
+      ],
+      "ask": "How do I pick the exact curve?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Vector calculus",
+   "icon": "🌀",
+   "hook": "Water swirls round a plughole and air flows out of a balloon. How can mathematics tell whether a flow is spinning, spreading out, or neither, using only its formula?",
+   "explain": [
+    "A vector field F assigns a vector to each point, such as a velocity of a fluid. The divergence ∇·F measures how much the field spreads out from a point (source or sink). For F = (x, y, z), ∇·F = 1 + 1 + 1 = 3. The curl ∇×F measures local rotation: for F = (−y, x, 0), ∇×F = (0, 0, 2).",
+    "A line integral ∫F·dr adds up the component of F along a path, such as work done by a force. A field is conservative if F = ∇φ for some potential φ; then the line integral depends only on the endpoints and ∇×F = 0. For F = (y, x), φ = xy and the work from (0, 0) to (1, 1) is 1 − 0 = 1. A constant force (2, 3) along a displacement (4, 1) does work 2×4 + 3×1 = 11.",
+    "Big theorems link integrals over a region to integrals over its boundary. Green's theorem relates a circulation round a closed curve in the plane to a double integral of the curl: for F = (−y, x) around the unit circle the circulation is 2 × area = 2π. The divergence theorem says the outward flux of F through a closed surface equals the integral of ∇·F over the volume inside: for F = (x, y, z) and a sphere of radius 2 the flux is 3 × (4/3)π(2³) = 32π ≈ 100.5."
+   ],
+   "example": {
+    "q": "Find the divergence of F = (x², y², z²) at (1, 2, 3).",
+    "steps": [
+     "∇·F = ∂(x²)/∂x + ∂(y²)/∂y + ∂(z²)/∂z.",
+     "= 2x + 2y + 2z.",
+     "At (1, 2, 3): 2 + 4 + 6 = 12."
+    ],
+    "a": "12"
+   },
+   "analogies": {
+    "sea": "Whirlpools and eddies have nonzero curl, and a river flow tells the circulation.",
+    "nature": "Wind patterns around a storm have strong curl.",
+    "city": "Water flowing out of a fountain nozzle is a source: positive divergence.",
+    "tech": "Electromagnetic fields are described with divergence and curl in Maxwell's equations."
+   },
+   "mnemonic": "Divergence is spreading, curl is spinning, and the theorems trade the inside for the boundary.",
+   "terms": [
+    [
+     "Vector field",
+     "A rule assigning a vector to each point of space."
+    ],
+    [
+     "Divergence",
+     "A scalar measuring how much a field spreads out at a point."
+    ],
+    [
+     "Curl",
+     "A vector measuring local rotation of a field."
+    ],
+    [
+     "Conservative field",
+     "A field that is the gradient of a potential."
+    ]
+   ],
+   "misc": {
+    "wrong": "Zero divergence means the field is zero.",
+    "right": "A field can have zero divergence and be non-zero, for example a pure rotation (−y, x)."
+   },
+   "trip": {
+    "wiki": "Vector calculus",
+    "prompt": "Find the divergence theorem and the picture of flux through a closed surface."
+   },
+   "sources": [
+    "Vector calculus",
+    "Divergence theorem",
+    "Green's theorem"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The divergence of F = (x, y, z) is...",
+     "o": [
+      "0",
+      "3",
+      "x + y + z",
+      "1"
+     ],
+     "a": 1,
+     "why": "Each component contributes 1.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The curl of F = (−y, x, 0) is...",
+     "o": [
+      "(0, 0, 2)",
+      "(0, 0, 0)",
+      "(1, 1, 0)",
+      "2"
+     ],
+     "a": 0,
+     "why": "∂(x)/∂x − ∂(−y)/∂y = 1 + 1 = 2 in the z component.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A conservative field has...",
+     "o": [
+      "Zero divergence always",
+      "Nonzero curl",
+      "Closed paths with positive work",
+      "Line integrals that depend only on the end points"
+     ],
+     "a": 3,
+     "why": "Because F = ∇φ, ∫F·dr = φ(end) − φ(start).",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What does a positive divergence at a point indicate?",
+     "o": [
+      "A sink",
+      "A rotation",
+      "A source: field lines spread out",
+      "A conservative field"
+     ],
+     "a": 2,
+     "why": "Positive divergence is outward net flow.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Nia says the curl of (−y, x) is 0 because the field has zero divergence. What is wrong?",
+     "o": [
+      "Nothing",
+      "Divergence and curl measure different things",
+      "Curl is always 0 in 2D",
+      "Curl equals divergence"
+     ],
+     "a": 1,
+     "why": "(−y, x) has divergence 0 and curl 2.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The divergence theorem converts a flux integral over a closed surface into...",
+     "o": [
+      "A volume integral of the divergence",
+      "A line integral of the curl",
+      "A surface integral of the gradient",
+      "A double integral of the curl"
+     ],
+     "a": 0,
+     "why": "Flux out equals the total of sources inside.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "Find the divergence of F = (x², y², z²) at (1, 2, 3).",
+     "a": 12,
+     "tol": 0,
+     "why": "2x + 2y + 2z = 12.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A constant force (2, 3) acts along a displacement (4, 1). Find the work done.",
+     "a": 11,
+     "tol": 0,
+     "why": "F · d = 8 + 3 = 11.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the outward flux of F = (x, y, z) through a sphere of radius 2, to the nearest whole number (use π ≈ 3.1416).",
+     "a": 101,
+     "tol": 1,
+     "why": "Flux = 3 × (4/3)π × 8 = 32π ≈ 100.5.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the work done by a conservative force around a closed loop is zero.",
+     "rubric": [
+      [
+       "potential",
+       "φ",
+       "scalar function",
+       "energy"
+      ],
+      [
+       "end",
+       "start",
+       "same point",
+       "same position",
+       "endpoints",
+       "ends"
+      ],
+      [
+       "difference",
+       "minus",
+       "φ(end) − φ(start)",
+       "cancel",
+       "zero",
+       "independent of path"
+      ]
+     ],
+     "min": 2,
+     "model": "For a conservative field the work between two points is φ(end) − φ(start). On a closed loop start and end coincide, so the difference is zero.",
+     "why": "Path independence implies zero circulation around any closed loop.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A velocity field of an incompressible fluid has...",
+     "o": [
+      "Zero curl",
+      "Constant divergence of 1",
+      "Divergence equal to the curl",
+      "Zero divergence"
+     ],
+     "a": 3,
+     "why": "Incompressible means no net sources or sinks: ∇·v = 0.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Use Green's theorem to explain why the circulation of F = (−y, x) around the unit circle is 2π.",
+     "rubric": [
+      [
+       "curl",
+       "2"
+      ],
+      [
+       "area",
+       "π",
+       "unit disc",
+       "unit circle",
+       "disk"
+      ],
+      [
+       "double integral",
+       "integral",
+       "multiply",
+       "times",
+       "2π"
+      ]
+     ],
+     "min": 2,
+     "model": "In the plane, circulation equals the double integral of the curl over the region. The curl is 2 everywhere, and the area of the unit disc is π, so the circulation is 2π.",
+     "why": "Green's theorem links boundary circulation to interior curl.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The gradient of φ = x²y at (1, 2) is...",
+     "o": [
+      "(2, 1)",
+      "(1, 4)",
+      "(4, 1)",
+      "(4, 2)"
+     ],
+     "a": 2,
+     "why": "∇φ = (2xy, x²) = (4, 1).",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Divergence and curl",
+    "model": "Divergence tells how much a flow spreads out from a point, like water from a tap. Curl tells how much it spins around a point, like water in a whirlpool. Both are computed from the partial derivatives of the field.",
+    "points": [
+     {
+      "k": [
+       "spread",
+       "out",
+       "source",
+       "sink",
+       "expand"
+      ],
+      "ask": "What does divergence measure?"
+     },
+     {
+      "k": [
+       "spin",
+       "rotate",
+       "rotation",
+       "whirl",
+       "circulation"
+      ],
+      "ask": "What does curl measure?"
+     },
+     {
+      "k": [
+       "derivative",
+       "partial",
+       "field",
+       "compute"
+      ],
+      "ask": "How do you calculate them?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Discrete mathematics",
+   "icon": "🕸️",
+   "hook": "In a room of 13 people, must two share a birth month? How can we be sure without asking anyone, and what other counting and logic tools give that kind of certainty?",
+   "explain": [
+    "Discrete mathematics studies countable structures. Sets obey |A ∪ B| = |A| + |B| − |A ∩ B|. A set with n elements has 2ⁿ subsets, so a 5-element set has 32. The binomial coefficient C(n, k) counts k-element subsets, for example C(6, 3) = 20. The pigeonhole principle says that if more than n objects go into n boxes, some box has at least two: 13 people and 12 months.",
+    "Graph theory models networks of vertices and edges. The handshake lemma states that the sum of the degrees equals twice the number of edges, so the number of odd-degree vertices is even. The complete graph K₅ has C(5, 2) = 10 edges. A tree is a connected graph with no cycles and has n − 1 edges for n vertices.",
+    "Logic and recurrences are also central. A statement and its contrapositive are equivalent: \"if P then Q\" equals \"if not Q then not P\", but the converse \"if Q then P\" may be false. A recurrence like aₙ = 2aₙ₋₁ + 1 with a₀ = 0 gives 0, 1, 3, 7, 15, and has closed form aₙ = 2ⁿ − 1. Binary numbers are base 2: 1011₂ = 8 + 2 + 1 = 11."
+   ],
+   "example": {
+    "q": "A graph has 5 vertices, every pair joined by an edge (K₅). How many edges?",
+    "steps": [
+     "Each edge is a pair of vertices.",
+     "The number of pairs is C(5, 2) = (5 × 4) ÷ 2.",
+     "= 10.",
+     "Check with the handshake lemma: each vertex has degree 4, so the degree sum is 20 = 2 × 10."
+    ],
+    "a": "10 edges"
+   },
+   "analogies": {
+    "city": "A subway map is a graph: stations are vertices and tracks are edges.",
+    "tech": "Social networks are graphs, and shortest paths measure separation between users.",
+    "sport": "A knock-out tournament with n teams is a tree with n − 1 matches.",
+    "music": "Pick 13 notes from the 12 note names of the piano: two must share a name (pigeonhole)."
+   },
+   "mnemonic": "More pigeons than holes, so two must share. Degrees add to twice the edges.",
+   "terms": [
+    [
+     "Graph",
+     "A set of vertices joined by edges."
+    ],
+    [
+     "Degree",
+     "The number of edges meeting at a vertex."
+    ],
+    [
+     "Tree",
+     "A connected graph with no cycles."
+    ],
+    [
+     "Contrapositive",
+     "\"If not Q then not P\", logically equivalent to \"if P then Q\"."
+    ]
+   ],
+   "misc": {
+    "wrong": "If P implies Q, then Q implies P.",
+    "right": "The converse is not equivalent. Rain implies wet ground, but wet ground does not imply rain. The contrapositive is equivalent."
+   },
+   "trip": {
+    "wiki": "Pigeonhole principle",
+    "prompt": "Find the examples and try to think of one new application."
+   },
+   "sources": [
+    "Discrete mathematics",
+    "Graph theory",
+    "Pigeonhole principle"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "How many subsets does a set of 5 elements have?",
+     "o": [
+      "10",
+      "32",
+      "25",
+      "120"
+     ],
+     "a": 1,
+     "why": "2⁵ = 32.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "13 people are in a room. What must be true?",
+     "o": [
+      "Two share a birth month",
+      "Two share a birthday",
+      "All have different months",
+      "Two share a birth year"
+     ],
+     "a": 0,
+     "why": "Pigeonhole with 12 months.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is equivalent to \"if it rains the ground is wet\"?",
+     "o": [
+      "If the ground is wet it rained",
+      "If it does not rain the ground is dry",
+      "The ground is wet",
+      "If the ground is not wet it did not rain"
+     ],
+     "a": 3,
+     "why": "The contrapositive is equivalent.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A tree has 8 vertices. How many edges?",
+     "o": [
+      "8",
+      "9",
+      "7",
+      "6"
+     ],
+     "a": 2,
+     "why": "A tree has n − 1 edges.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A graph has vertices of degrees 3, 3, 3, 2. Is this possible?",
+     "o": [
+      "Yes",
+      "No, the degree sum 11 is odd",
+      "Only with loops removed",
+      "Only for a tree"
+     ],
+     "a": 1,
+     "why": "The degree sum must equal twice the edges, an even number.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "For two sets, |A ∪ B| = |A| + |B| − |A ∩ B| because...",
+     "o": [
+      "Elements in both sets would otherwise be counted twice",
+      "Subtraction is always needed",
+      "The sets are disjoint",
+      "The intersection is empty"
+     ],
+     "a": 0,
+     "why": "Inclusion-exclusion corrects double counting.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "How many edges does the complete graph K₅ have?",
+     "a": 10,
+     "tol": 0,
+     "why": "C(5, 2) = 10.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Compute C(6, 3).",
+     "a": 20,
+     "tol": 0,
+     "why": "6!/(3! 3!) = 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With a₀ = 0 and aₙ = 2aₙ₋₁ + 1, find a₄.",
+     "a": 15,
+     "tol": 0,
+     "why": "0, 1, 3, 7, 15.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Prove, or explain in words, why the number of people at a party who shake an odd number of hands is even.",
+     "rubric": [
+      [
+       "sum",
+       "total",
+       "add"
+      ],
+      [
+       "twice",
+       "2",
+       "double",
+       "edge",
+       "handshake",
+       "each shake counted"
+      ],
+      [
+       "even",
+       "odd",
+       "parity"
+      ]
+     ],
+     "min": 2,
+     "model": "Each handshake adds 1 to the hands count of two people, so the sum of everyone's counts is twice the number of handshakes, hence even. A sum of numbers is even only if the number of odd terms is even.",
+     "why": "This is the handshake lemma.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "In a group of 5 people each knows some others. Why must two people know the same number of others in the group?",
+     "o": [
+      "It is a coincidence",
+      "The numbers are always different",
+      "Everyone knows 2",
+      "Possible numbers are 0 to 4 but 0 and 4 cannot both occur, so pigeonhole applies"
+     ],
+     "a": 3,
+     "why": "With 5 people only 4 values are available, so two are equal.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Write the converse and contrapositive of \"if n is divisible by 4 then n is even\", and say which are true.",
+     "rubric": [
+      [
+       "converse",
+       "if n is even"
+      ],
+      [
+       "divisible by 4",
+       "4",
+       "false",
+       "not true",
+       "6"
+      ],
+      [
+       "contrapositive",
+       "if n is not even",
+       "odd",
+       "true"
+      ]
+     ],
+     "min": 2,
+     "model": "Converse: if n is even then n is divisible by 4, which is false (n = 6). Contrapositive: if n is odd then n is not divisible by 4, which is true.",
+     "why": "Only the contrapositive always matches the original statement.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The closed form of aₙ = 2aₙ₋₁ + 1 with a₀ = 0 is...",
+     "o": [
+      "2ⁿ",
+      "n²",
+      "2ⁿ − 1",
+      "2n − 1"
+     ],
+     "a": 2,
+     "why": "It gives 0, 1, 3, 7, 15.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The pigeonhole principle",
+    "model": "If you put more items into boxes than there are boxes, at least one box has more than one item. For example with 13 people and 12 months, two people must share a birth month. It proves that something must happen without finding it.",
+    "points": [
+     {
+      "k": [
+       "more",
+       "than",
+       "boxes",
+       "holes"
+      ],
+      "ask": "What is the condition?"
+     },
+     {
+      "k": [
+       "at least one",
+       "two",
+       "share"
+      ],
+      "ask": "What does it guarantee?"
+     },
+     {
+      "k": [
+       "example",
+       "13",
+       "12",
+       "months",
+       "socks"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Number theory and proof techniques",
+   "icon": "🔐",
+   "hook": "Computers keep your messages secret using arithmetic on remainders and prime numbers. Why are primes so important, and how can we be sure there are infinitely many?",
+   "explain": [
+    "Number theory studies integers. A prime has exactly two positive divisors (1 and itself). Every integer above 1 factorises uniquely into primes, so 36 = 2² × 3². The number of divisors of 36 is (2 + 1)(2 + 1) = 9. The Euclidean algorithm finds the greatest common divisor: gcd(48, 18) = gcd(18, 12) = gcd(12, 6) = 6.",
+    "Modular arithmetic works with remainders. a ≡ b (mod n) means n divides a − b. Days of the week are mod 7: 100 days after Monday is 100 mod 7 = 2 days later, a Wednesday. Powers cycle: 2³ = 8 ≡ 1 (mod 7), so 2¹⁰ = (2³)³ · 2 ≡ 2 (mod 7). Fermat's little theorem says that for a prime p not dividing a, a^(p−1) ≡ 1 (mod p). Public-key cryptography (RSA) relies on products of large primes being hard to factorise.",
+    "Proof is the heart of mathematics. A direct proof starts with assumptions and deduces the claim. A proof by contradiction assumes the opposite and reaches an impossibility: Euclid's proof that there are infinitely many primes assumes a finite list p₁, ..., pₙ, forms N = p₁ × ... × pₙ + 1 and sees that N has a prime factor not on the list. Induction proves statements for all n by a base case and a step: 1 + 2 + ... + n = n(n + 1)/2."
+   ],
+   "example": {
+    "q": "Find gcd(48, 18) with the Euclidean algorithm.",
+    "steps": [
+     "48 = 2 × 18 + 12, so gcd(48, 18) = gcd(18, 12).",
+     "18 = 1 × 12 + 6, so gcd(18, 12) = gcd(12, 6).",
+     "12 = 2 × 6 + 0, so the gcd is 6."
+    ],
+    "a": "6"
+   },
+   "analogies": {
+    "tech": "Online banking uses RSA, which depends on the difficulty of factorising a product of two large primes.",
+    "music": "Rhythms of 3 against 4 line up every 12 beats, which is the least common multiple.",
+    "city": "Traffic lights with cycles of 40 s and 60 s coincide every 120 s, the lcm.",
+    "nature": "Some cicadas emerge every 13 or 17 years, which are prime."
+   },
+   "mnemonic": "Every number is a unique product of primes. Remainders cycle, and a proof by contradiction shows no finite list can hold all primes.",
+   "terms": [
+    [
+     "Prime",
+     "An integer greater than 1 with exactly two positive divisors."
+    ],
+    [
+     "gcd",
+     "The greatest common divisor of two integers."
+    ],
+    [
+     "Congruence",
+     "a ≡ b (mod n) means n divides a − b."
+    ],
+    [
+     "Induction",
+     "A proof for all n using a base case and an inductive step."
+    ]
+   ],
+   "misc": {
+    "wrong": "A proof is just many examples that work.",
+    "right": "Examples cannot prove a general claim. n² + n + 41 is prime for n = 0 to 39 but fails at n = 40."
+   },
+   "trip": {
+    "wiki": "Euclid's theorem",
+    "prompt": "Find the proof that there are infinitely many primes and follow the contradiction."
+   },
+   "sources": [
+    "Number theory",
+    "Modular arithmetic",
+    "Mathematical induction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is a prime number?",
+     "o": [
+      "21",
+      "17",
+      "27",
+      "51"
+     ],
+     "a": 1,
+     "why": "21 = 3 × 7, 27 = 3 × 9 and 51 = 3 × 17.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "How many positive divisors does 36 have?",
+     "o": [
+      "9",
+      "6",
+      "8",
+      "12"
+     ],
+     "a": 0,
+     "why": "36 = 2² × 3², so (2 + 1)(2 + 1) = 9.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If today is Monday, what day is it 100 days later?",
+     "o": [
+      "Tuesday",
+      "Thursday",
+      "Monday",
+      "Wednesday"
+     ],
+     "a": 3,
+     "why": "100 mod 7 = 2 and Monday + 2 = Wednesday.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "To show that a claim \"true for all n\" is false, it is enough to...",
+     "o": [
+      "Give many examples where it works",
+      "Check n = 1 to 100",
+      "Find one counterexample",
+      "Prove it for n = 1"
+     ],
+     "a": 2,
+     "why": "One counterexample disproves a universal claim.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Liam says n² + n + 41 is prime for all n because it works for n = 0 to 39. What is wrong?",
+     "o": [
+      "Nothing",
+      "Examples do not prove it, and n = 40 gives 1681 = 41²",
+      "41 is not prime",
+      "It works for n = 40 too"
+     ],
+     "a": 1,
+     "why": "n = 40: 1600 + 40 + 41 = 1681 = 41².",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "In Euclid's proof, N = p₁ × ... × pₙ + 1 is used because...",
+     "o": [
+      "It leaves remainder 1 on division by each listed prime",
+      "It is always prime",
+      "It is always even",
+      "It is divisible by all primes"
+     ],
+     "a": 0,
+     "why": "So none of the listed primes divides N, so N has a prime factor not on the list.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Find gcd(48, 18).",
+     "a": 6,
+     "tol": 0,
+     "why": "Euclidean algorithm gives 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Compute 2¹⁰ mod 7.",
+     "a": 2,
+     "tol": 0,
+     "why": "1024 = 7 × 146 + 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find the inverse of 3 modulo 7 (the number x in 1 to 6 with 3x ≡ 1).",
+     "a": 5,
+     "tol": 0,
+     "why": "3 × 5 = 15 = 2 × 7 + 1.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain the structure of a proof by induction and why it proves the statement for all n.",
+     "rubric": [
+      [
+       "base",
+       "first case",
+       "n = 1",
+       "start"
+      ],
+      [
+       "assume",
+       "suppose",
+       "hypothesis",
+       "true for k",
+       "inductive"
+      ],
+      [
+       "k + 1",
+       "next",
+       "step",
+       "domino",
+       "chain",
+       "all n",
+       "therefore"
+      ]
+     ],
+     "min": 2,
+     "model": "Show the statement is true for the first case (base). Assume it for n = k and show it follows for n = k + 1. Then true for 1 gives 2, then 3, and so on for all n, like falling dominoes.",
+     "why": "The base case starts the chain, and the step keeps it going.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why does Euclid's proof not claim that N = p₁ × ... × pₙ + 1 is itself prime?",
+     "o": [
+      "N is always even",
+      "N is divisible by every listed prime",
+      "The proof is incomplete",
+      "N might be composite but its prime factors are not on the list"
+     ],
+     "a": 3,
+     "why": "For example 2 × 3 × 5 × 7 × 11 × 13 + 1 = 30031 = 59 × 509.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Show by induction that 1 + 2 + ... + n = n(n + 1)/2 in outline.",
+     "rubric": [
+      [
+       "n = 1",
+       "base",
+       "1 = 1",
+       "first"
+      ],
+      [
+       "assume",
+       "suppose",
+       "k(k + 1)/2",
+       "hypothesis"
+      ],
+      [
+       "k + 1",
+       "(k + 1)(k + 2)/2",
+       "add",
+       "next",
+       "step"
+      ]
+     ],
+     "min": 2,
+     "model": "Base: n = 1 gives 1 = 1·2/2. Step: assume the sum to k is k(k + 1)/2; adding (k + 1) gives (k + 1)(k + 2)/2, which is the formula for k + 1.",
+     "why": "Both base case and step are needed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does Fermat's little theorem imply 3⁶ ≡ 1 (mod 7)?",
+     "o": [
+      "7 is odd",
+      "3 is prime",
+      "7 is prime and 7 does not divide 3",
+      "6 is even"
+     ],
+     "a": 2,
+     "why": "a^(p−1) ≡ 1 (mod p) for prime p not dividing a.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What modular arithmetic is",
+    "model": "Modular arithmetic only cares about remainders after division by a number. On a clock, 13 o'clock is the same as 1. For mod 7, 100 days ahead is the same as 2 days ahead because 100 leaves remainder 2.",
+    "points": [
+     {
+      "k": [
+       "remainder",
+       "left over",
+       "divide"
+      ],
+      "ask": "What do we keep?"
+     },
+     {
+      "k": [
+       "clock",
+       "cycle",
+       "wrap",
+       "repeat",
+       "days"
+      ],
+      "ask": "Why does it wrap around?"
+     },
+     {
+      "k": [
+       "example",
+       "100",
+       "7",
+       "2",
+       "week"
+      ],
+      "ask": "Can you give an example?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Mathematical optimisation",
+   "icon": "🎯",
+   "hook": "You have 20 metres of fence and want the largest rectangular pen. And a factory has limited machines and wants the best mix of products. What do these problems have in common?",
+   "explain": [
+    "Optimisation finds the maximum or minimum of an objective function subject to constraints. With one variable, we differentiate and set f' = 0. For a perimeter of 20, area x(10 − x) is largest at x = 5. With a constraint, such as maximising xy subject to x + y = 10, we substitute y = 10 − x and get the same answer, 25.",
+    "Lagrange multipliers solve constrained problems without substitution: at the optimum ∇f = λ∇g. To minimise x² + y² on x + y = 2: (2x, 2y) = λ(1, 1) gives x = y = 1, minimum value 2. In linear programming both the objective and constraints are linear, and the optimum is at a vertex of the feasible region. Maximise 3x + 2y with x + y ≤ 4, x ≤ 3, x, y ≥ 0: the vertices (0, 0), (3, 0), (3, 1), (0, 4) give 0, 9, 11, 8, so the maximum is 11 at (3, 1).",
+    "Many problems are solved numerically. Gradient descent repeats x ← x − η f'(x): for f = x², x = 4 and η = 0.1 gives 4 − 0.1 × 8 = 3.2. Newton's method uses x ← x − f(x)/f'(x) to find roots: for f = x² − 2 from x = 1, it gives 1.5 and then 1.41667, close to √2. A function is convex if the line between two points of its graph lies above it; for convex functions any local minimum is the global minimum, which makes optimisation reliable."
+   ],
+   "example": {
+    "q": "Maximise 3x + 2y subject to x + y ≤ 4, x ≤ 3, x ≥ 0, y ≥ 0.",
+    "steps": [
+     "The optimum is at a vertex of the feasible region.",
+     "Vertices: (0, 0), (3, 0), (3, 1), (0, 4).",
+     "Values of 3x + 2y: 0, 9, 11, 8.",
+     "The maximum is 11 at (3, 1)."
+    ],
+    "a": "11 at (3, 1)"
+   },
+   "analogies": {
+    "farm": "A farmer chooses how much of two crops to plant to maximise profit with limited land and water.",
+    "city": "A delivery firm finds the shortest route visiting many stops.",
+    "tech": "Machine learning trains models by minimising a loss function by gradient descent.",
+    "sport": "A coach plans a training mix that maximises fitness within limited hours."
+   },
+   "mnemonic": "Differentiate for one variable, use Lagrange for a constraint, check the corners for a line problem.",
+   "terms": [
+    [
+     "Objective function",
+     "The quantity to be maximised or minimised."
+    ],
+    [
+     "Constraint",
+     "A condition the solution must satisfy."
+    ],
+    [
+     "Feasible region",
+     "The set of points satisfying all constraints."
+    ],
+    [
+     "Convex function",
+     "A function whose graph lies below the chord between any two of its points."
+    ]
+   ],
+   "misc": {
+    "wrong": "A point where the derivative is zero is the global maximum.",
+    "right": "It might be a local maximum, a minimum or an inflection. Check boundaries and the second derivative."
+   },
+   "trip": {
+    "wiki": "Mathematical optimization",
+    "prompt": "Find the picture of a feasible region and a linear objective moving to its last vertex."
+   },
+   "sources": [
+    "Mathematical optimization",
+    "Linear programming",
+    "Gradient descent"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which type of function has its optimum on a vertex of a feasible region?",
+     "o": [
+      "A circle",
+      "A linear objective with linear constraints",
+      "Any quadratic",
+      "A sine wave"
+     ],
+     "a": 1,
+     "why": "This is the key result of linear programming.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A rectangle has perimeter 20. Its area is greatest when it is...",
+     "o": [
+      "A square of side 5",
+      "A 1 by 9 rectangle",
+      "A 2 by 8 rectangle",
+      "A 4 by 6 rectangle"
+     ],
+     "a": 0,
+     "why": "x(10 − x) has maximum at x = 5.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "At a constrained optimum, the Lagrange condition says...",
+     "o": [
+      "f = g",
+      "∇f = 0 always",
+      "∇g = 0",
+      "∇f = λ∇g"
+     ],
+     "a": 3,
+     "why": "The gradients are parallel.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "For a convex function, a local minimum is...",
+     "o": [
+      "Possibly not the global minimum",
+      "Always zero",
+      "Also the global minimum",
+      "Impossible"
+     ],
+     "a": 2,
+     "why": "Convexity removes false valleys.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Sara maximises 3x + 2y and says the optimum could be in the middle of the feasible region. Why is that wrong?",
+     "o": [
+      "It could be, she is right",
+      "A linear function has no interior maximum, so it is on the boundary at a vertex",
+      "The region has no middle",
+      "Linear functions are constant"
+     ],
+     "a": 1,
+     "why": "A non-constant linear function can always be increased by moving in the direction of its gradient.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Gradient descent with a very large step size can...",
+     "o": [
+      "Overshoot and diverge",
+      "Always converge faster",
+      "Find the global maximum",
+      "Never move"
+     ],
+     "a": 0,
+     "why": "Too large a step can jump past the minimum.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Maximise xy subject to x + y = 10. What is the maximum value?",
+     "a": 25,
+     "tol": 0,
+     "why": "x(10 − x) is largest at x = 5, giving 25.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Maximise 3x + 2y subject to x + y ≤ 4, x ≤ 3, x, y ≥ 0.",
+     "a": 11,
+     "tol": 0,
+     "why": "Best vertex (3, 1) gives 11.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Gradient descent on f(x) = x² starts at x = 4 with step size 0.1. Find x after one step.",
+     "a": 3.2,
+     "tol": 0.001,
+     "why": "f'(4) = 8 and 4 − 0.8 = 3.2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Minimise x² + y² subject to x + y = 2 using Lagrange multipliers or substitution, and explain the result.",
+     "rubric": [
+      [
+       "1",
+       "x = y",
+       "(1, 1)",
+       "equal"
+      ],
+      [
+       "2",
+       "minimum value",
+       "value 2"
+      ],
+      [
+       "closest",
+       "nearest",
+       "distance",
+       "origin",
+       "symmetr"
+      ]
+     ],
+     "min": 2,
+     "model": "Substitute y = 2 − x: x² + (2 − x)² is minimised at x = 1, giving x = y = 1 and a minimum value of 2. It is the point of the line closest to the origin.",
+     "why": "Geometrically, we find the point on the line nearest the origin.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Newton's method on f(x) = x² − 2 from x = 1 gives which next estimate?",
+     "o": [
+      "2",
+      "1.25",
+      "1.414",
+      "1.5"
+     ],
+     "a": 3,
+     "why": "x₁ = 1 − (−1)/2 = 1.5.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why must you check the boundary and not only solve f'(x) = 0 when maximising on a closed interval?",
+     "rubric": [
+      [
+       "boundary",
+       "end",
+       "endpoint",
+       "edge",
+       "end point"
+      ],
+      [
+       "maximum",
+       "max",
+       "largest",
+       "optimum",
+       "extreme"
+      ],
+      [
+       "derivative",
+       "not zero",
+       "zero",
+       "stationary",
+       "flat",
+       "occur"
+      ]
+     ],
+     "min": 2,
+     "model": "On a closed interval the maximum can occur at an endpoint where the derivative is not zero. Compare values at stationary points and both endpoints.",
+     "why": "The extreme value theorem guarantees a maximum but not where.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A company finds a profit model with two local maxima. What is the best next step?",
+     "o": [
+      "Choose the one found first",
+      "Choose the larger x",
+      "Compare their values and also check the boundaries",
+      "Average them"
+     ],
+     "a": 2,
+     "why": "Only the global maximum is the best.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What optimisation means",
+    "model": "Optimisation means finding the best value of something, such as the biggest area or the lowest cost, while obeying limits. With one variable you differentiate and set the derivative to zero. With limits, you may need to check the edges too.",
+    "points": [
+     {
+      "k": [
+       "best",
+       "maximum",
+       "minimum",
+       "largest",
+       "smallest"
+      ],
+      "ask": "What are we looking for?"
+     },
+     {
+      "k": [
+       "derivative",
+       "zero",
+       "differentiate",
+       "slope"
+      ],
+      "ask": "How do we find it with calculus?"
+     },
+     {
+      "k": [
+       "limit",
+       "constraint",
+       "edge",
+       "boundary"
+      ],
+      "ask": "What about the limits?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Statistical hypothesis testing",
+   "icon": "🧪",
+   "hook": "A coin lands heads 60 times out of 100. Is it fair? How surprising must a result be before you stop blaming luck?",
+   "explain": [
+    "A hypothesis test starts with a null hypothesis H₀ (for example, the coin is fair, p = 0.5) and an alternative H₁. We compute a test statistic and ask how probable data at least this extreme would be if H₀ were true: that probability is the p-value. If it is below the significance level α (often 0.05) we reject H₀. We never \"prove\" H₀ true; we only fail to reject it.",
+    "For 60 heads in 100 tosses, under H₀ the mean is 50 and the standard deviation √(100 × 0.5 × 0.5) = 5, so z = (60 − 50)/5 = 2 and the two-sided p-value is about 0.046, just below 0.05. For a mean, z = (x̄ − μ₀)/(σ/√n): with x̄ = 52, μ₀ = 50, σ = 10 and n = 100, z = 2 again. If σ is unknown we use the t distribution, which has heavier tails for small samples.",
+    "Errors are possible: a Type I error rejects a true H₀ (probability α) and a Type II error fails to reject a false H₀ (probability β); power is 1 − β. A statistically significant result may be practically trivial, so we also report an effect size such as Cohen's d = (52 − 50)/10 = 0.2 (small). Running many tests inflates false positives, which is why corrections and pre-registration matter, and a p-value is not the probability that H₀ is true."
+   ],
+   "example": {
+    "q": "A sample of 100 has mean 52. H₀: μ = 50, σ = 10. Find the z statistic and decide at α = 0.05 (two-sided).",
+    "steps": [
+     "Standard error = 10/√100 = 1.",
+     "z = (52 − 50)/1 = 2.",
+     "The critical value for α = 0.05 two-sided is 1.96, and 2 > 1.96.",
+     "Reject H₀ (p ≈ 0.046), but the effect size d = 0.2 is small."
+    ],
+    "a": "z = 2; reject H₀ at 5%"
+   },
+   "analogies": {
+    "farm": "Testing whether a new fertiliser really raises yield, or whether the difference is just field-to-field variation.",
+    "sport": "Judging whether a player's hot streak is beyond what a normal shooting percentage would produce.",
+    "tech": "An A/B test compares click rates on two page designs.",
+    "city": "A health team checks whether a new bus route changes average commuting time."
+   },
+   "mnemonic": "Assume nothing special, then ask how surprising the data would be. Small p means surprise, not proof.",
+   "terms": [
+    [
+     "Null hypothesis",
+     "The default claim of no effect or no difference."
+    ],
+    [
+     "p-value",
+     "The probability of data at least this extreme if the null hypothesis is true."
+    ],
+    [
+     "Type I error",
+     "Rejecting a true null hypothesis."
+    ],
+    [
+     "Power",
+     "The probability of correctly rejecting a false null hypothesis."
+    ]
+   ],
+   "misc": {
+    "wrong": "A p-value of 0.03 means there is a 3% chance the null hypothesis is true.",
+    "right": "It means that if H₀ were true, data this extreme would occur about 3% of the time. It is not P(H₀)."
+   },
+   "limits": "Fixed cut-offs like 0.05 are conventions, and many statisticians recommend reporting estimates, intervals and effect sizes alongside or instead of simple significant/not significant verdicts.",
+   "trip": {
+    "wiki": "p-value",
+    "prompt": "Find the common misinterpretations list and compare it with your own understanding."
+   },
+   "sources": [
+    "Statistical hypothesis testing",
+    "p-value",
+    "Type I and type II errors"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "The null hypothesis usually states...",
+     "o": [
+      "The effect we hope to find",
+      "No effect or no difference",
+      "The sample mean",
+      "The p-value"
+     ],
+     "a": 1,
+     "why": "We test whether the data are inconsistent with it.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A p-value of 0.01 means...",
+     "o": [
+      "If H₀ were true, data this extreme would occur about 1% of the time",
+      "H₀ has a 1% probability of being true",
+      "The effect is large",
+      "The result is 99% certain"
+     ],
+     "a": 0,
+     "why": "It is a probability of data given H₀, not of H₀.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Rejecting a true null hypothesis is a...",
+     "o": [
+      "Type II error",
+      "Power",
+      "Confidence interval",
+      "Type I error"
+     ],
+     "a": 3,
+     "why": "Its probability is α.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "How does increasing the sample size usually affect power (for a real effect)?",
+     "o": [
+      "It decreases power",
+      "It has no effect",
+      "It increases power",
+      "It sets power to zero"
+     ],
+     "a": 2,
+     "why": "More data reduces the standard error, making real effects easier to detect.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Amir tests 20 unrelated variables at α = 0.05 and finds one significant. What is the best interpretation?",
+     "o": [
+      "The effect is certainly real",
+      "It may be a false positive from multiple testing",
+      "All 20 are real",
+      "α must be 0.5"
+     ],
+     "a": 1,
+     "why": "Expect about 1 false positive among 20 tests.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A huge study finds a significant difference of 0.01 kg in a weight-loss plan. What is the sensible conclusion?",
+     "o": [
+      "Statistically significant but practically negligible",
+      "A very effective plan",
+      "The plan has failed statistically",
+      "Effect sizes do not matter"
+     ],
+     "a": 0,
+     "why": "Large n can detect trivial effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Coin: 60 heads in 100, H₀: p = 0.5. Find the z statistic using SD = √(100 × 0.5 × 0.5).",
+     "a": 2,
+     "tol": 0,
+     "why": "(60 − 50)/5 = 2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "x̄ = 52, μ₀ = 50, σ = 10, n = 100. Find z.",
+     "a": 2,
+     "tol": 0,
+     "why": "SE = 1, so z = 2.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Find Cohen's d = (x̄ − μ₀)/σ for x̄ = 52, μ₀ = 50, σ = 10.",
+     "a": 0.2,
+     "tol": 0.001,
+     "why": "2/10 = 0.2.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why failing to reject H₀ does not prove H₀ is true.",
+     "rubric": [
+      [
+       "not enough",
+       "low power",
+       "small sample",
+       "insufficient",
+       "lack",
+       "absence"
+      ],
+      [
+       "evidence",
+       "data",
+       "proof",
+       "prove",
+       "show"
+      ],
+      [
+       "effect",
+       "difference",
+       "may exist",
+       "still",
+       "real",
+       "could"
+      ]
+     ],
+     "min": 2,
+     "model": "The data may be too limited (low power) to detect a real effect. Absence of evidence is not evidence of absence, so we only say there is not enough evidence against H₀.",
+     "why": "Not rejecting is not the same as accepting.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "With α = 0.05 and H₀ true, in a long run of tests what fraction would reject H₀?",
+     "o": [
+      "0%",
+      "About 95%",
+      "About 50%",
+      "About 5%"
+     ],
+     "a": 3,
+     "why": "That is the Type I error rate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A study reports p = 0.049 and another p = 0.051. Explain why treating them as completely different findings is problematic.",
+     "rubric": [
+      [
+       "arbitrary",
+       "threshold",
+       "cut-off",
+       "cutoff",
+       "line",
+       "convention"
+      ],
+      [
+       "similar",
+       "almost",
+       "same",
+       "tiny difference",
+       "close",
+       "nearly"
+      ],
+      [
+       "evidence",
+       "effect",
+       "continuous",
+       "strength",
+       "report"
+      ]
+     ],
+     "min": 2,
+     "model": "The threshold 0.05 is a convention. The two p-values show almost identical evidence, so treating one as a discovery and the other as nothing throws away information.",
+     "why": "Evidence is a continuum, not a switch.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Lowering α from 0.05 to 0.01 (everything else fixed) will...",
+     "o": [
+      "Reduce both",
+      "Increase both",
+      "Reduce Type I errors but increase Type II errors",
+      "Change neither"
+     ],
+     "a": 2,
+     "why": "A stricter standard rejects less often, including when H₀ is false.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a p-value means",
+    "model": "A p-value asks: if nothing special was going on, how likely would data at least this extreme be? If that is very small, we doubt the idea that nothing is going on. It does not tell the chance that the idea is true.",
+    "points": [
+     {
+      "k": [
+       "if",
+       "assume",
+       "null",
+       "nothing special",
+       "no effect"
+      ],
+      "ask": "What do we assume first?"
+     },
+     {
+      "k": [
+       "likely",
+       "probability",
+       "chance",
+       "extreme",
+       "surprising"
+      ],
+      "ask": "What does the number measure?"
+     },
+     {
+      "k": [
+       "not",
+       "does not",
+       "chance that",
+       "true",
+       "false"
+      ],
+      "ask": "What does it NOT tell us?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Regression, experimental design and Bayesian reasoning",
+   "icon": "🧠",
+   "hook": "A medical test is 90% accurate, yet a positive result may mean only a 15% chance of having the disease. How can that be, and what experiments let us trust data about cause?",
+   "explain": [
+    "Bayes' theorem updates beliefs with evidence: P(A | B) = P(B | A) P(A) / P(B). Suppose a disease affects 1% of people, a test is positive for 90% of those who have it and for 5% of those who do not. P(positive) = 0.01 × 0.9 + 0.99 × 0.05 = 0.009 + 0.0495 = 0.0585, so P(disease | positive) = 0.009/0.0585 ≈ 0.154. The low prevalence means most positives are false alarms. The prior probability matters.",
+    "In Bayesian statistics a prior distribution is combined with data to give a posterior. With a Beta(1, 1) (uniform) prior on a coin's heads probability and 7 heads in 10 tosses, the posterior is Beta(8, 4) with mean 8/12 ≈ 0.667. Multiple regression models y = β₀ + β₁x₁ + β₂x₂ + ε. Each coefficient is the change in y per unit change of that predictor holding the others fixed, which helps adjust for confounders, and R² is the share of variance explained (r = 0.8 gives R² = 0.64 for one predictor).",
+    "Good experimental design supports causal claims. Randomisation assigns units to treatments by chance so that confounders balance out on average. Control groups give a comparison, blocking reduces variation by grouping similar units, and blinding stops expectations affecting results. Observational data can show association, but only with strong design and assumptions can they support cause. Checking residual plots, avoiding extrapolation and reporting uncertainty are part of honest practice."
+   ],
+   "example": {
+    "q": "Disease prevalence 1%, test sensitivity 90%, false positive rate 5%. Find P(disease | positive).",
+    "steps": [
+     "P(D and +) = 0.01 × 0.9 = 0.009.",
+     "P(not D and +) = 0.99 × 0.05 = 0.0495.",
+     "P(+) = 0.009 + 0.0495 = 0.0585.",
+     "P(D | +) = 0.009/0.0585 ≈ 0.154."
+    ],
+    "a": "About 15.4%"
+   },
+   "analogies": {
+    "city": "A hospital screening programme must consider how rare a condition is when it interprets a positive result.",
+    "farm": "A randomised field trial assigns plots to seed types by chance.",
+    "tech": "A spam filter updates its belief that an email is spam using the words it contains (Bayes).",
+    "sport": "A coach compares a new training method with a control group, assigned at random."
+   },
+   "mnemonic": "Start with a prior, multiply by how well the data fit, then rescale to a posterior. Randomise to break confounding.",
+   "terms": [
+    [
+     "Prior",
+     "Probability assigned to a hypothesis before seeing the new data."
+    ],
+    [
+     "Posterior",
+     "Updated probability after combining prior and data."
+    ],
+    [
+     "Randomisation",
+     "Assigning treatments by chance."
+    ],
+    [
+     "Confounder",
+     "A variable that affects both the treatment and the outcome."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a test is 90% accurate, a positive result means a 90% chance of disease.",
+    "right": "That ignores prevalence. With a rare disease most positives are false positives, as Bayes' theorem shows."
+   },
+   "limits": "Bayesian results depend on the prior, which is a matter of debate when data are few. Frequentist and Bayesian approaches answer different questions, and both are widely used.",
+   "trip": {
+    "wiki": "Bayes' theorem",
+    "prompt": "Find the natural-frequency example (counting people) and compare it with the formula."
+   },
+   "sources": [
+    "Bayes' theorem",
+    "Design of experiments",
+    "Multiple linear regression"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "In Bayes' theorem, P(A | B) is read as...",
+     "o": [
+      "The probability of A and B",
+      "The probability of A given B",
+      "The probability of B given A",
+      "The probability of A or B"
+     ],
+     "a": 1,
+     "why": "The vertical bar means \"given\".",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does randomisation help in an experiment?",
+     "o": [
+      "It balances confounders between groups on average",
+      "It guarantees equal groups exactly",
+      "It removes all variation",
+      "It makes the sample larger"
+     ],
+     "a": 0,
+     "why": "Chance assignment breaks links between treatment and hidden factors.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In multiple regression, a coefficient of 2.0 on x₁ means...",
+     "o": [
+      "x₁ is twice as important",
+      "y equals 2 always",
+      "x₁ causes a 2 unit change",
+      "y changes by about 2 per unit of x₁ holding other predictors fixed"
+     ],
+     "a": 3,
+     "why": "It is a partial effect within the model.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The purpose of a control group is to...",
+     "o": [
+      "Make the study bigger",
+      "Remove randomness",
+      "Provide a comparison showing what happens without the treatment",
+      "Guarantee a significant result"
+     ],
+     "a": 2,
+     "why": "Without a comparison we cannot tell the effect of the treatment from other changes.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A rare disease test is 95% sensitive. Most positives are false alarms. Why?",
+     "o": [
+      "The test is broken",
+      "Healthy people greatly outnumber sick people, so even a small false positive rate produces many positives",
+      "Sensitivity is meaningless",
+      "Healthy people always test positive"
+     ],
+     "a": 1,
+     "why": "The base rate matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Ella finds that people who take vitamins live longer in an observational study and concludes vitamins extend life. What is the best response?",
+     "o": [
+      "Healthier people may choose vitamins; a randomised trial is needed",
+      "Agree, correlation proves cause",
+      "Vitamins shorten life",
+      "The data are invalid"
+     ],
+     "a": 0,
+     "why": "Confounding by lifestyle is likely.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Prevalence 1%, sensitivity 90%, false positive rate 5%. Find P(disease | positive) to 3 decimal places.",
+     "a": 0.154,
+     "tol": 0.001,
+     "why": "0.009/0.0585 = 0.1538.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A Beta(1, 1) prior and 7 heads in 10 tosses give a Beta(8, 4) posterior. Find its mean to 3 decimal places.",
+     "a": 0.667,
+     "tol": 0.001,
+     "why": "8/(8 + 4) = 0.6667.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A simple regression has correlation r = 0.8. What is R²?",
+     "a": 0.64,
+     "tol": 0.001,
+     "why": "0.8² = 0.64.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a rare disease can make a positive result mostly a false alarm even when the test is accurate.",
+     "rubric": [
+      [
+       "rare",
+       "few",
+       "low prevalence",
+       "low base rate",
+       "base rate",
+       "prior"
+      ],
+      [
+       "false positive",
+       "false alarm",
+       "healthy",
+       "not sick",
+       "no disease"
+      ],
+      [
+       "outnumber",
+       "many more",
+       "majority",
+       "most",
+       "large number",
+       "so many"
+      ]
+     ],
+     "min": 2,
+     "model": "Most people are healthy, so even a small false positive rate applied to the large healthy group produces more false positives than the true positives from the small sick group.",
+     "why": "Prevalence (the prior) controls the predictive value of a test.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A second independent positive test is taken after a first positive (prevalence 1% initially). The updated prior is about 15.4%. What is the new rough P(disease)?",
+     "o": [
+      "About 90%",
+      "About 15%",
+      "About 99%",
+      "About 77%"
+     ],
+     "a": 3,
+     "why": "Odds 0.1538/0.8462 ≈ 0.1818 times likelihood ratio 18 gives 3.27, so P ≈ 3.27/4.27 ≈ 0.766.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Compare randomised experiments and observational studies for claims about cause.",
+     "rubric": [
+      [
+       "random",
+       "assign",
+       "chance"
+      ],
+      [
+       "confound",
+       "hidden",
+       "lurking",
+       "third factor",
+       "bias"
+      ],
+      [
+       "observational",
+       "association",
+       "cannot",
+       "cause",
+       "causal",
+       "correlation"
+      ]
+     ],
+     "min": 2,
+     "model": "Randomisation balances known and unknown confounders so differences can be attributed to the treatment. Observational studies can show association, but hidden confounders may explain it, so causal claims need strong assumptions.",
+     "why": "Design, not just data size, determines whether cause can be inferred.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A regression of salary on years of experience fits well for 0 to 20 years. Predicting for 60 years is...",
+     "o": [
+      "Equally reliable",
+      "More reliable",
+      "Unreliable extrapolation",
+      "Exact"
+     ],
+     "a": 2,
+     "why": "The relationship may change outside the observed range.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Bayes' theorem in words",
+    "model": "Bayes' theorem tells you how to update the chance of something after new evidence. You start from how likely it was before (the prior), weigh how well the evidence fits, and get a new chance. Rare events stay fairly unlikely even after a positive test.",
+    "points": [
+     {
+      "k": [
+       "prior",
+       "before",
+       "start",
+       "base rate",
+       "prevalence"
+      ],
+      "ask": "What do I start with?"
+     },
+     {
+      "k": [
+       "evidence",
+       "data",
+       "test",
+       "new information"
+      ],
+      "ask": "What do I add?"
+     },
+     {
+      "k": [
+       "update",
+       "new",
+       "posterior",
+       "after"
+      ],
+      "ask": "What do I end up with?"
+     }
+    ]
+   }
+  }
+ ]
+}

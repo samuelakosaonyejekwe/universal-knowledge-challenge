@@ -1,0 +1,2802 @@
+{
+ "world": 4,
+ "level": 4,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Compressible aerodynamics",
+   "icon": "💥",
+   "hook": "A fast jet can be heard well after it passes, and at one speed it seems to hit an invisible wall of drag. What changes in the air near and above the speed of sound?",
+   "explain": [
+    "Air is compressible: its density changes when pressure changes. The effect is small below Mach 0.3 but grows as speed rises. Sound is a small pressure disturbance travelling at a = √(γRT), where γ = 1.4 for air, R = 287 J/(kg·K) and T is the absolute temperature. At 288.15 K (15 °C) a ≈ 340 m/s, and in the cold air at 11 km (216.65 K) a ≈ 295 m/s.",
+    "Mach number M = v ÷ a. The flow is subsonic for M < 1, transonic around M 0.8 to 1.2, supersonic above 1 and hypersonic above about 5. When air is brought to rest isentropically, its temperature rises to the total temperature T₀ = T(1 + 0.2M²) for γ = 1.4. In supersonic flow, disturbances cannot travel upstream, so the air meets the object suddenly through a shock wave.",
+    "A normal shock is a thin region where the flow goes from supersonic to subsonic, with a jump in pressure, density and temperature. For M₁ = 2 in air, the static pressure ratio is p₂/p₁ = 1 + (2γ/(γ+1))(M₁² − 1) = 4.5 and downstream M₂ ≈ 0.577. Total pressure falls across a shock, which is a source of wave drag. At subsonic speeds, the Prandtl-Glauert rule estimates compressibility effects: C_p = C_p0 ÷ √(1 − M²)."
+   ],
+   "example": {
+    "q": "Find the speed of sound at 11 km altitude where T = 216.65 K (γ = 1.4, R = 287 J/(kg·K)). What is the Mach number of an airliner at 250 m/s?",
+    "steps": [
+     "a = √(γRT) = √(1.4 × 287 × 216.65).",
+     "1.4 × 287 = 401.8; 401.8 × 216.65 ≈ 87 051; √87 051 ≈ 295.0 m/s.",
+     "M = 250 ÷ 295.0 ≈ 0.85."
+    ],
+    "a": "a ≈ 295 m/s; M ≈ 0.85"
+   },
+   "analogies": {
+    "sea": "A fast boat makes a V-shaped bow wave because the waves cannot get ahead of it. A supersonic aircraft makes a conical shock for the same reason.",
+    "city": "A crowd running down a corridor pushes those ahead of them in a sudden jam when it can't warn them in time.",
+    "sport": "A whip's crack is a small shock wave.",
+    "nature": "Thunder is the shock wave of lightning's sudden heating."
+   },
+   "mnemonic": "Sound speed grows with the square root of temperature; M is v over a; shocks jump everything up.",
+   "terms": [
+    [
+     "Mach number",
+     "Flight speed divided by the local speed of sound."
+    ],
+    [
+     "Shock wave",
+     "A thin region where pressure, density and temperature jump abruptly."
+    ],
+    [
+     "Total (stagnation) temperature",
+     "The temperature air would reach if brought to rest, T₀ = T(1 + 0.2M²)."
+    ],
+    [
+     "Wave drag",
+     "Drag caused by shock waves at transonic and supersonic speeds."
+    ],
+    [
+     "Critical Mach number",
+     "The flight Mach number at which the flow first reaches M = 1 somewhere on the body."
+    ]
+   ],
+   "misc": {
+    "wrong": "The speed of sound is a fixed value of 340 m/s everywhere.",
+    "right": "The speed of sound depends on temperature: it is about 340 m/s at 15 °C and about 295 m/s at 11 km where air is colder. Mach number is relative to the local value."
+   },
+   "limits": "The formulas here assume a perfect gas with γ = 1.4. At very high Mach numbers the air heats enough that γ changes and gas chemistry matters.",
+   "trip": {
+    "wiki": "Shock wave",
+    "prompt": "Find a schlieren photograph of a shock. What can you see around the nose of the bullet or model?"
+   },
+   "sources": [
+    "Compressible flow",
+    "Mach number",
+    "Shock wave"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Use a = √(γRT) with γ = 1.4, R = 287 J/(kg·K) and T = 216.65 K. What is the speed of sound in m/s?",
+     "a": 295,
+     "tol": 1,
+     "unit": "m/s",
+     "why": "a = √(1.4 × 287 × 216.65) = √87 051 ≈ 295.0 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "An aircraft flies at 250 m/s where the speed of sound is 295 m/s. What is its Mach number (2 decimals)?",
+     "a": 0.85,
+     "tol": 0.01,
+     "why": "M = 250 ÷ 295 = 0.847.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At M = 0.85 and static temperature 216.65 K, what is the total temperature T₀ = T(1 + 0.2M²) in kelvin?",
+     "a": 248,
+     "tol": 1,
+     "unit": "K",
+     "why": "1 + 0.2 × 0.7225 = 1.1445; 216.65 × 1.1445 ≈ 248.0 K.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Using Prandtl-Glauert, C_p = C_p0 ÷ √(1 − M²). If C_p0 = −0.5 at M = 0.6, what is C_p?",
+     "a": -0.625,
+     "tol": 0.01,
+     "why": "√(1 − 0.36) = 0.8, so C_p = −0.5 ÷ 0.8 = −0.625.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the speed of sound fall with altitude in the troposphere?",
+     "o": [
+      "The air temperature falls",
+      "The air pressure rises",
+      "Gravity grows stronger",
+      "The air density increases"
+     ],
+     "a": 0,
+     "why": "a = √(γRT) depends only on temperature for a perfect gas.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What happens to static pressure across a normal shock?",
+     "o": [
+      "It jumps up",
+      "It falls",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "A shock compresses the gas abruptly; for M₁ = 2 the pressure ratio is 4.5.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "After a normal shock, the flow is",
+     "o": [
+      "Subsonic",
+      "Supersonic",
+      "Hypersonic",
+      "At rest"
+     ],
+     "a": 0,
+     "why": "A normal shock always changes supersonic flow to subsonic flow.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why are the wings of a high-speed airliner swept back?",
+     "o": [
+      "To delay the local flow reaching M = 1 and reduce wave drag",
+      "To make the aircraft heavier and steadier in gusts",
+      "To fit more seats into the cabin",
+      "To produce more lift at low speed alone"
+     ],
+     "a": 0,
+     "why": "Sweep reduces the airflow component normal to the leading edge, which delays compressibility effects.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which flight speed is transonic?",
+     "o": [
+      "Mach 0.95",
+      "Mach 0.2",
+      "Mach 3",
+      "Mach 8"
+     ],
+     "a": 0,
+     "why": "Transonic flow occurs roughly between Mach 0.8 and 1.2, where subsonic and supersonic regions coexist.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a supersonic aircraft cannot 'warn' the air ahead of it and what this means for the flow.",
+     "rubric": [
+      [
+       "faster than sound",
+       "supersonic",
+       "faster than the speed of sound"
+      ],
+      [
+       "upstream",
+       "ahead",
+       "in front",
+       "warn"
+      ],
+      [
+       "shock",
+       "sudden",
+       "abrupt",
+       "jump"
+      ]
+     ],
+     "min": 2,
+     "model": "Pressure disturbances travel at the speed of sound, so when an aircraft is faster than that they cannot get ahead of it. The air in front is not warned and is forced to change suddenly through a shock wave.",
+     "why": "Information travels at sound speed, so supersonic flow has shocks.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A pilot flying at a constant true airspeed climbs from sea level into colder air. What happens to the Mach number?",
+     "o": [
+      "It increases because the speed of sound falls",
+      "It decreases because the speed of sound rises",
+      "It stays the same because only true speed matters",
+      "It becomes infinite once the air is colder"
+     ],
+     "a": 0,
+     "why": "M = v/a and a falls with temperature.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does total pressure fall across a shock even though no heat is added?",
+     "o": [
+      "A shock is irreversible and increases entropy",
+      "The shock removes mass from the flow, lowering pressure",
+      "Shocks cool the gas, so total pressure drops",
+      "Total pressure never changes across a shock"
+     ],
+     "a": 0,
+     "why": "The abrupt compression is not isentropic, so some stagnation pressure is lost.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can the local flow over a wing be supersonic even when the aircraft flies below Mach 1?",
+     "rubric": [
+      [
+       "accelerat",
+       "faster",
+       "speeds up",
+       "higher speed",
+       "suction"
+      ],
+      [
+       "upper",
+       "top",
+       "curved",
+       "surface"
+      ],
+      [
+       "critical",
+       "local",
+       "mach 1",
+       "m = 1",
+       "transonic"
+      ]
+     ],
+     "min": 2,
+     "model": "Air speeds up over the curved upper surface, so the local speed can exceed the flight speed. If it reaches the local speed of sound before the aircraft reaches Mach 1, there are pockets of supersonic flow ended by weak shocks, which is the transonic regime.",
+     "why": "The critical Mach number is below 1.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a shock wave is",
+    "model": "Sound travels at a set speed, so when an aircraft is faster than sound the air cannot get out of the way gradually. It is compressed in a very thin layer called a shock wave. Pressure, temperature and density jump up, and the flow behind a normal shock is slower than sound.",
+    "points": [
+     {
+      "k": [
+       "sound",
+       "speed of sound",
+       "mach"
+      ],
+      "ask": "Why is the speed of sound important?"
+     },
+     {
+      "k": [
+       "sudden",
+       "abrupt",
+       "thin",
+       "jump",
+       "layer"
+      ],
+      "ask": "How does the air change at a shock?"
+     },
+     {
+      "k": [
+       "pressure",
+       "temperature",
+       "density",
+       "slower",
+       "subsonic"
+      ],
+      "ask": "What properties change?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Boundary layers and flow separation",
+   "icon": "🧈",
+   "hook": "The air touching a wing's skin is stuck to it, yet a metre away it moves at 200 m/s. How does the flow connect these, and why can it suddenly leave the surface?",
+   "explain": [
+    "Air is viscous, so at the surface the fluid has zero speed relative to the wing (the no-slip condition). Within a thin region called the boundary layer the speed rises from zero to the free-stream value. The Reynolds number Re = ρvL ÷ μ compares inertial to viscous effects, with μ the dynamic viscosity (about 1.789 × 10⁻⁵ Pa·s for air at 15 °C).",
+    "The boundary layer begins laminar (smooth layers) and can change to turbulent (mixing). On a flat plate this happens near Re_x ≈ 5 × 10⁵. A turbulent layer has more skin friction but carries more energy near the wall, so it resists separation better. Dimples on a golf ball use this: a turbulent layer lets the flow stay attached longer and cuts pressure drag.",
+    "When pressure rises along the flow (an adverse pressure gradient), the slow air near the wall can stop or reverse and the flow separates from the surface. On a wing this happens as the angle of attack grows: lift falls and drag rises. This is a stall. Vortex generators, slats and flaps energise the flow to delay separation."
+   ],
+   "example": {
+    "q": "At what distance x from the leading edge of a flat plate does the boundary layer reach Re_x = 5×10⁵ in air at 10 m/s? (ρ = 1.225 kg/m³, μ = 1.789×10⁻⁵ Pa·s)",
+    "steps": [
+     "Re_x = ρvx ÷ μ, so x = Re_x μ ÷ (ρv).",
+     "x = 5×10⁵ × 1.789×10⁻⁵ ÷ (1.225 × 10).",
+     "x = 8.945 ÷ 12.25 ≈ 0.730 m."
+    ],
+    "a": "About 0.73 m"
+   },
+   "analogies": {
+    "sea": "Water at a river bank is nearly still while the middle flows fast.",
+    "home": "Dust stays on the blades of a fan: the air layer on the surface barely moves.",
+    "sport": "A cyclist drafting behind a rider in a slow, dragging air layer saves effort.",
+    "tech": "Golf balls have dimples because a rough surface triggers a turbulent layer."
+   },
+   "mnemonic": "Stuck at the wall, fast far away; laminar slips, turbulent clings; adverse gradients split.",
+   "terms": [
+    [
+     "Boundary layer",
+     "The thin layer next to a surface where viscosity slows the flow."
+    ],
+    [
+     "Reynolds number",
+     "Re = ρvL/μ, ratio of inertial to viscous effects."
+    ],
+    [
+     "Laminar flow",
+     "Smooth flow in layers with low friction."
+    ],
+    [
+     "Turbulent flow",
+     "Irregular, mixing flow with higher skin friction."
+    ],
+    [
+     "Flow separation",
+     "The boundary layer detaches from the surface, causing stall and pressure drag."
+    ]
+   ],
+   "misc": {
+    "wrong": "A turbulent boundary layer is always worse than a laminar one.",
+    "right": "Turbulent layers cause more skin friction but resist separation better. For a golf ball or a wing at high angle, turbulence can reduce total drag or delay a stall."
+   },
+   "limits": "Transition depends on roughness, pressure gradient and turbulence in the free stream, not on Re alone. The 5×10⁵ value is a typical flat-plate guide.",
+   "trip": {
+    "wiki": "Boundary layer",
+    "prompt": "Find the diagram of a boundary layer velocity profile. Where is the speed zero?"
+   },
+   "sources": [
+    "Boundary layer",
+    "Reynolds number",
+    "Flow separation"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Use ρ = 1.225 kg/m³, μ = 1.789×10⁻⁵ Pa·s, v = 50 m/s and L = 1.5 m. Find the Reynolds number in millions (give a value like 5.1).",
+     "a": 5.1,
+     "tol": 0.1,
+     "unit": "million",
+     "why": "Re = 1.225 × 50 × 1.5 ÷ 1.789×10⁻⁵ = 91.875 ÷ 1.789×10⁻⁵ ≈ 5.14×10⁶.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At what distance x does a flat plate in air at 10 m/s reach Re_x = 5×10⁵? Use ρ = 1.225 kg/m³ and μ = 1.789×10⁻⁵ Pa·s. Answer in metres.",
+     "a": 0.73,
+     "tol": 0.01,
+     "unit": "m",
+     "why": "x = Re μ ÷ (ρv) = 8.945 ÷ 12.25 = 0.730 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is the speed of the air touching the surface of a wing, relative to the wing?",
+     "o": [
+      "Zero",
+      "The free-stream speed",
+      "Twice the free-stream speed",
+      "The speed of sound"
+     ],
+     "a": 0,
+     "why": "The no-slip condition makes the fluid at the wall move with the wall.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a high Reynolds number mean?",
+     "o": [
+      "Inertial effects dominate over viscous effects",
+      "Viscous effects dominate over inertial effects",
+      "The air is at rest relative to the body",
+      "The flow is certainly subsonic"
+     ],
+     "a": 0,
+     "why": "Re compares ρvL (inertia) with μ (viscosity).",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which boundary layer resists separation better?",
+     "o": [
+      "Turbulent",
+      "Laminar",
+      "Both equally",
+      "Neither can separate"
+     ],
+     "a": 0,
+     "why": "Turbulent mixing brings energy toward the wall.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a golf ball dimpled?",
+     "o": [
+      "Dimples trigger a turbulent layer that delays separation and cuts drag",
+      "To look good on the golf course and for no other reason",
+      "To add weight so the ball lands more steadily",
+      "To reduce lift so that the ball does not float away"
+     ],
+     "a": 0,
+     "why": "A turbulent layer stays attached further round the ball, shrinking the wake.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A wing's angle of attack becomes very large and the flow separates from the upper surface. What happens to lift?",
+     "o": [
+      "It falls sharply (stall)",
+      "It doubles because more air is pushed down",
+      "It stays the same, only drag changes",
+      "It turns into extra drag and so is gained"
+     ],
+     "a": 0,
+     "why": "Separated flow cannot keep low pressure on the top surface.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What causes flow to separate from a surface?",
+     "o": [
+      "An adverse pressure gradient acting on slow air near the wall",
+      "A favourable pressure gradient pushing the flow along",
+      "Perfect inviscid flow with nothing at all to slow it",
+      "Zero viscosity in the thin layer next to the wall"
+     ],
+     "a": 0,
+     "why": "Rising pressure along the flow decelerates the low-energy air near the wall until it reverses.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order along a flat plate from the leading edge.",
+     "items": [
+      "Stagnation/attached start",
+      "Laminar boundary layer",
+      "Transition",
+      "Turbulent boundary layer"
+     ],
+     "why": "The flow begins attached and laminar, transitions at Re_x ≈ 5×10⁵, then becomes turbulent.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do vortex generators (small fins on a wing) help delay a stall?",
+     "rubric": [
+      [
+       "vortex",
+       "vortices",
+       "mix",
+       "mixing",
+       "turbulent",
+       "energy",
+       "energise",
+       "energize"
+      ],
+      [
+       "boundary layer",
+       "near the wall",
+       "surface",
+       "wall"
+      ],
+      [
+       "separat",
+       "stall",
+       "attached",
+       "delay"
+      ]
+     ],
+     "min": 2,
+     "model": "Vortex generators stir faster air from outside down into the slow boundary layer. The extra energy lets it fight the adverse pressure gradient longer, so separation is delayed.",
+     "why": "Mixing energises the boundary layer.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two flat plates are tested: plate A at 10 m/s and plate B at 20 m/s in the same air. Where does transition occur?",
+     "o": [
+      "Closer to the leading edge on plate B",
+      "Further back from the leading edge on plate B",
+      "At exactly the same place on both plates",
+      "Never on plate B, which stays smooth"
+     ],
+     "a": 0,
+     "why": "x = Re μ/(ρv), so doubling v halves the distance to transition.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement correctly links skin friction and pressure drag for a bluff body?",
+     "o": [
+      "Delaying separation lowers pressure drag but a turbulent layer raises skin friction",
+      "Pressure drag and skin friction are the same thing",
+      "Separation lowers every kind of drag at once, including friction",
+      "Skin friction is zero for every bluff body"
+     ],
+     "a": 0,
+     "why": "Total drag depends on the balance between friction and the size of the wake.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does the drag on a streamlined body come mainly from skin friction, while a flat plate facing the flow has mostly pressure drag?",
+     "rubric": [
+      [
+       "separat",
+       "wake",
+       "bluff",
+       "pressure"
+      ],
+      [
+       "streamline",
+       "attached",
+       "smooth",
+       "thin"
+      ],
+      [
+       "friction",
+       "viscous",
+       "surface"
+      ]
+     ],
+     "min": 2,
+     "model": "A streamlined body keeps the flow attached so the wake is small and pressure drag is low; skin friction dominates. A plate facing the flow separates the flow into a large wake, so the pressure difference between front and back gives most of the drag.",
+     "why": "Drag type depends on how much the flow separates.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "What a boundary layer is and why flow separates",
+    "model": "Air next to a surface is stuck to it, so there is a thin layer where the speed rises from zero to the outside speed. This is the boundary layer. If the pressure rises along the surface, the slow air near the wall can stop and reverse, so the flow separates and the wing stalls.",
+    "points": [
+     {
+      "k": [
+       "stuck",
+       "zero",
+       "no slip",
+       "no-slip",
+       "viscous",
+       "viscosity"
+      ],
+      "ask": "Why is the air next to the surface slow?"
+     },
+     {
+      "k": [
+       "thin",
+       "layer",
+       "boundary"
+      ],
+      "ask": "What is the boundary layer?"
+     },
+     {
+      "k": [
+       "pressure",
+       "gradient",
+       "rise",
+       "adverse"
+      ],
+      "ask": "What makes the flow separate?"
+     },
+     {
+      "k": [
+       "stall",
+       "lift",
+       "drop"
+      ],
+      "ask": "What does separation do to a wing?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Aircraft stability and control",
+   "icon": "🎚️",
+   "hook": "An aircraft can be flown 'hands off' for minutes and recover from gusts, but some fighter jets are designed to fall out of the sky without computer help. What is the design trade?",
+   "explain": [
+    "Static stability is the initial tendency after a disturbance: stable if it produces a restoring moment. For pitch, the aircraft is statically stable if the centre of gravity (CG) is ahead of the neutral point (NP), where the pitching moment does not change with angle of attack. The static margin is (x_NP − x_CG) ÷ c̄, expressed as a fraction of the mean chord; typical values are a few percent to about 25%.",
+    "Dynamic stability concerns how the motion develops in time. The long-period phugoid is a slow exchange of height and speed with a period of roughly T ≈ π√2 · V ÷ g. The short-period mode is a rapid pitch oscillation that must be well damped. In the lateral motions, Dutch roll is a coupled yaw-roll oscillation, and spiral mode is a slow divergence of bank.",
+    "The horizontal tail has a tail volume coefficient V_H = S_t l_t ÷ (S c̄), where S_t is tail area, l_t the tail arm, S wing area and c̄ mean chord. A larger V_H makes the aircraft more stable in pitch. High stability means less manoeuvrability, so relaxed-stability fighters use fly-by-wire computers to keep the aircraft controllable."
+   ],
+   "example": {
+    "q": "An aircraft has mean chord 2 m. Its neutral point is 1.10 m behind the wing's leading-edge reference and the CG is 0.80 m behind it. Find the static margin.",
+    "steps": [
+     "Static margin = (x_NP − x_CG) ÷ c̄.",
+     "= (1.10 − 0.80) ÷ 2.",
+     "= 0.30 ÷ 2 = 0.15."
+    ],
+    "a": "0.15 (15% of the mean chord, stable)"
+   },
+   "analogies": {
+    "sea": "A boat with a low centre of mass rights itself; a top-heavy boat flips.",
+    "sport": "A kayak is stable when wide and slow to turn; a racing kayak is narrow, quick and tippy.",
+    "home": "A weather vane points into the wind because its tail is behind the pivot.",
+    "tech": "A gyro-stabilised drone keeps level using continuous corrections."
+   },
+   "mnemonic": "CG ahead of NP: stable. Behind it: unstable. The static margin is the distance, over chord.",
+   "terms": [
+    [
+     "Static margin",
+     "(x_NP − x_CG) divided by mean chord."
+    ],
+    [
+     "Neutral point",
+     "The CG position at which the aircraft is neutrally stable in pitch."
+    ],
+    [
+     "Phugoid",
+     "A slow oscillation exchanging height and speed."
+    ],
+    [
+     "Dutch roll",
+     "A coupled yaw and roll oscillation."
+    ],
+    [
+     "Tail volume coefficient",
+     "V_H = S_t l_t/(S c̄)."
+    ]
+   ],
+   "misc": {
+    "wrong": "A statically stable aircraft always returns to its original flight condition.",
+    "right": "Static stability only gives a restoring tendency at first. Dynamic behaviour (damping) decides whether the motion dies away or grows."
+   },
+   "limits": "Formulas such as the phugoid period are approximations that assume simple conditions. Full stability analysis uses linearised equations of motion with many derivatives.",
+   "trip": {
+    "wiki": "Phugoid",
+    "prompt": "Find the animation or graph of the phugoid. What two quantities trade off?"
+   },
+   "sources": [
+    "Longitudinal stability",
+    "Phugoid",
+    "Dutch roll"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "An aircraft has mean chord 2 m, neutral point 1.10 m and centre of gravity 0.80 m from the same reference. What is the static margin as a fraction of chord?",
+     "a": 0.15,
+     "tol": 0.005,
+     "why": "(1.10 − 0.80) ÷ 2 = 0.15.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A tail has area 3 m² and arm 5 m. The wing area is 16 m² and the mean chord 2 m. What is the tail volume coefficient V_H = S_t l_t/(S c̄)?",
+     "a": 0.469,
+     "tol": 0.005,
+     "why": "3 × 5 ÷ (16 × 2) = 15 ÷ 32 = 0.469.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use T ≈ π√2 · V/g with V = 60 m/s and g = 9.81 m/s². What is the phugoid period in seconds?",
+     "a": 27.2,
+     "tol": 0.3,
+     "unit": "s",
+     "why": "T = 1.4142 × 3.1416 × 60 ÷ 9.81 ≈ 27.2 s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "The CG is moved ahead of the neutral point. What happens to pitch stability?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It does not change",
+      "The aircraft becomes unstable"
+     ],
+     "a": 0,
+     "why": "A larger static margin means a stronger restoring moment.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the phugoid?",
+     "o": [
+      "A slow oscillation in height and speed",
+      "A fast oscillation in pitch lasting a second or so",
+      "A combined yaw-and-roll oscillation",
+      "A control surface on the tail"
+     ],
+     "a": 0,
+     "why": "The phugoid is a long-period mode with nearly constant angle of attack.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A fighter is built with a small or negative static margin. What is the advantage?",
+     "o": [
+      "It can change its attitude very quickly",
+      "It needs no tail at all to stay steady",
+      "It is easier to fly by hand than a stable one",
+      "It uses less fuel in all conditions"
+     ],
+     "a": 0,
+     "why": "Low stability means large response to controls, but requires a flight control computer.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a large vertical tail (fin) improve?",
+     "o": [
+      "Directional (yaw) stability",
+      "Pitch stability only, not yaw",
+      "Lift at take-off and landing",
+      "The power produced by the engine"
+     ],
+     "a": 0,
+     "why": "The fin generates a restoring side force when the nose yaws.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each mode to its description.",
+     "pairs": [
+      [
+       "Phugoid",
+       "Slow exchange of height and speed"
+      ],
+      [
+       "Short period",
+       "Fast pitch oscillation"
+      ],
+      [
+       "Dutch roll",
+       "Coupled yaw and roll oscillation"
+      ],
+      [
+       "Spiral mode",
+       "Slow divergence of bank"
+      ]
+     ],
+     "why": "These are the standard dynamic modes of a conventional aircraft.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which aircraft is most stable in pitch?",
+     "o": [
+      "Static margin 0.25",
+      "Static margin 0.15",
+      "Static margin 0.05",
+      "Static margin −0.05"
+     ],
+     "a": 0,
+     "why": "A larger positive static margin gives a stronger restoring moment; a negative margin is unstable.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "A cargo is loaded far aft and the aircraft becomes difficult to control. Explain why using the idea of the static margin.",
+     "rubric": [
+      [
+       "cg",
+       "centre of gravity",
+       "center of gravity"
+      ],
+      [
+       "aft",
+       "back",
+       "rear",
+       "behind",
+       "moves back"
+      ],
+      [
+       "neutral point",
+       "static margin",
+       "less stable",
+       "unstable",
+       "decreases",
+       "reduc"
+      ]
+     ],
+     "min": 2,
+     "model": "Loading aft moves the CG backward toward or past the neutral point. The static margin shrinks or becomes negative, so the restoring moment in pitch is weak or reversed and the aircraft is hard or impossible to control.",
+     "why": "Pitch stability needs the CG ahead of the neutral point.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "An aircraft is statically stable but its oscillation slowly grows larger. How would you describe it?",
+     "o": [
+      "Statically stable but dynamically unstable",
+      "Statically unstable, because it returns toward trim at first",
+      "Neutrally stable, since the size never changes",
+      "Not an aircraft, because it is not steady"
+     ],
+     "a": 0,
+     "why": "A restoring tendency can overshoot and build up if damping is too low.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are the horizontal tail's area and arm both important for pitch stability?",
+     "o": [
+      "Restoring moment = tail force × arm",
+      "Only the area matters, never the arm",
+      "Only the colour matters, not the size",
+      "Neither of them has any effect at all"
+     ],
+     "a": 0,
+     "why": "Tail volume coefficient combines area and arm because moment is force times distance.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do airliners use yaw dampers even though they have fins?",
+     "rubric": [
+      [
+       "dutch roll",
+       "oscillat",
+       "wallow",
+       "yaw-roll"
+      ],
+      [
+       "damp",
+       "damping",
+       "suppress",
+       "reduce",
+       "comfort",
+       "passenger"
+      ]
+     ],
+     "min": 2,
+     "model": "At cruise a swept-wing airliner's Dutch roll can be lightly damped, producing a yaw-roll wobble that is uncomfortable. A yaw damper uses sensors and the rudder to add damping and suppress it.",
+     "why": "Static stability from the fin does not guarantee good damping.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Static stability and the static margin",
+    "model": "An aircraft is stable in pitch if it tends to return to its original angle after a gust. This works when the centre of gravity is ahead of the neutral point. The distance between them, divided by the mean chord, is the static margin; bigger margin means more stability but less agility.",
+    "points": [
+     {
+      "k": [
+       "return",
+       "restor",
+       "back"
+      ],
+      "ask": "What does stable mean in pitch?"
+     },
+     {
+      "k": [
+       "centre of gravity",
+       "cg",
+       "center of gravity"
+      ],
+      "ask": "Where should the CG be?"
+     },
+     {
+      "k": [
+       "neutral point",
+       "ahead",
+       "front"
+      ],
+      "ask": "Ahead of what?"
+     },
+     {
+      "k": [
+       "agility",
+       "manoeuvr",
+       "less",
+       "trade"
+      ],
+      "ask": "What do we give up for more stability?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Aircraft structures and stress analysis",
+   "icon": "🧱",
+   "hook": "A wing bends upward by a metre or more in turbulence on some airliners and does not break. How do engineers know how much load a structure can take?",
+   "explain": [
+    "Normal stress is σ = F ÷ A and shear stress is τ = F ÷ A acting along the surface. Strain is the relative change in length, ε = ΔL ÷ L. In the elastic range stress is proportional to strain (σ = Eε, with E the Young's modulus). Aluminium alloys have E ≈ 70 GPa. Beyond the yield stress the material deforms permanently.",
+    "For a beam such as a wing spar, the bending stress at distance c from the neutral axis is σ = M c ÷ I, where M is the bending moment and I the second moment of area. For a rectangle of width b and height h, I = b h³ ÷ 12. Doubling the depth h raises I by a factor of 8, which is why deep spars are efficient. The fuselage is a pressure vessel: for a thin-walled cylinder, hoop stress is σ = p r ÷ t.",
+    "Aircraft are designed using a flight envelope (V-n diagram) giving the load factors expected at each speed. The limit load is the highest expected in service; the ultimate load is typically 1.5 times that. Fatigue from repeated loading and corrosion mean structures follow damage-tolerance rules with inspection schedules."
+   ],
+   "example": {
+    "q": "A rectangular spar section has b = 0.05 m, h = 0.10 m and carries a bending moment of 2000 N·m. Find the maximum bending stress.",
+    "steps": [
+     "I = b h³ ÷ 12 = 0.05 × 0.001 ÷ 12 = 4.167×10⁻⁶ m⁴.",
+     "c = h/2 = 0.05 m.",
+     "σ = M c ÷ I = 2000 × 0.05 ÷ 4.167×10⁻⁶ = 24×10⁶ Pa = 24 MPa."
+    ],
+    "a": "24 MPa"
+   },
+   "analogies": {
+    "home": "A plank stands on its edge is stiffer than flat, as I grows with the cube of depth.",
+    "city": "Bridge girders are deep at the middle for the same reason.",
+    "sport": "A fishing rod bends when loaded and springs back if not overstressed.",
+    "farm": "A tall narrow beam in a barn roof carries more load than the same wood laid flat."
+   },
+   "mnemonic": "Stress is force over area; bending stress is M c over I; hoop is p r over t.",
+   "terms": [
+    [
+     "Stress",
+     "Force per unit area, in pascals."
+    ],
+    [
+     "Strain",
+     "Relative change in length."
+    ],
+    [
+     "Young's modulus",
+     "E, the ratio of stress to strain in the elastic range."
+    ],
+    [
+     "Yield stress",
+     "The stress at which permanent deformation begins."
+    ],
+    [
+     "Safety factor",
+     "Ratio of ultimate load to limit load, typically 1.5."
+    ]
+   ],
+   "misc": {
+    "wrong": "A structure fails only when the load is above its static strength.",
+    "right": "Repeated loads can cause fatigue cracks that fail a part at stresses well below the static strength."
+   },
+   "limits": "Closed-form formulas assume simple shapes and linear elastic materials. Real design uses finite element methods, tests and certification rules.",
+   "trip": {
+    "wiki": "Fatigue (material)",
+    "prompt": "Find a famous case of fatigue in aircraft. What was inspected afterward?"
+   },
+   "sources": [
+    "Stress (mechanics)",
+    "Fatigue (material)",
+    "Second moment of area"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A rectangular beam has width 0.05 m and depth 0.10 m. What is its second moment of area I = bh³/12 in m⁴? Give your answer in units of 10⁻⁶ m⁴.",
+     "a": 4.167,
+     "tol": 0.01,
+     "unit": "×10⁻⁶ m⁴",
+     "why": "0.05 × 0.1³ ÷ 12 = 0.05 × 0.001 ÷ 12 = 4.167×10⁻⁶.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The same beam carries a bending moment of 2000 N·m. Using σ = Mc/I with c = 0.05 m, what is the maximum stress in MPa?",
+     "a": 24,
+     "tol": 0.2,
+     "unit": "MPa",
+     "why": "σ = 2000 × 0.05 ÷ 4.167×10⁻⁶ = 24×10⁶ Pa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A thin-walled fuselage has radius 1.9 m, skin thickness 1.5 mm and a cabin pressure difference of 60 kPa. Using σ = pr/t, find the hoop stress in MPa.",
+     "a": 76,
+     "tol": 0.5,
+     "unit": "MPa",
+     "why": "60 000 × 1.9 ÷ 0.0015 = 7.6×10⁷ Pa = 76 MPa.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "If the depth of a rectangular beam is doubled, by what factor does I increase?",
+     "o": [
+      "8",
+      "2",
+      "4",
+      "16"
+     ],
+     "a": 0,
+     "why": "I ∝ h³, so 2³ = 8.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is the ultimate load in relation to the limit load?",
+     "o": [
+      "Typically 1.5 times larger",
+      "Equal to the limit load exactly",
+      "Half as large as the limit load",
+      "Ten times larger than the limit load"
+     ],
+     "a": 0,
+     "why": "The usual factor of safety in aircraft structures is 1.5.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In the elastic range, stress is proportional to",
+     "o": [
+      "Strain",
+      "Temperature",
+      "Colour",
+      "Time only"
+     ],
+     "a": 0,
+     "why": "σ = Eε is Hooke's law for materials.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A thin cabin skin is made thinner without changing pressure or radius. What happens to hoop stress?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "σ = pr/t, so less thickness means higher stress.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Stress",
+       "Force per area"
+      ],
+      [
+       "Strain",
+       "Relative change in length"
+      ],
+      [
+       "Young's modulus",
+       "Stiffness in the elastic range"
+      ],
+      [
+       "Yield stress",
+       "Start of permanent deformation"
+      ]
+     ],
+     "why": "These are the basic material mechanics terms.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why are aircraft structures inspected regularly even if they never exceed the design load?",
+     "rubric": [
+      [
+       "fatigue",
+       "crack",
+       "cracks",
+       "cyclic",
+       "repeated"
+      ],
+      [
+       "corrosion",
+       "damage",
+       "inspect",
+       "detect",
+       "grow",
+       "propagat"
+      ]
+     ],
+     "min": 1,
+     "model": "Repeated loading causes fatigue cracks that can start and grow at stresses below the static strength, and corrosion can weaken the metal. Regular inspections find damage before it becomes critical.",
+     "why": "Damage tolerance relies on detection.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the correct order of a structural design check?",
+     "o": [
+      "Loads, then stresses, then comparison with allowable values and safety factor, then test",
+      "Test the part first, then guess at the loads, then work out stresses",
+      "Paint the part first, then find the loads afterwards",
+      "Calculate the stresses, then ignore the loads and the safety factor"
+     ],
+     "a": 0,
+     "why": "Loads give stresses, which are compared with material allowables, then verified by testing.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why is a hollow tube more efficient than a solid rod in bending for the same mass?",
+     "o": [
+      "Material is placed farther from the neutral axis, increasing I",
+      "Hollow tubes are stronger in tension only, and not in bending at all",
+      "Air inside the tube carries part of the bending load",
+      "Solid rods carry no stress in their middle section"
+     ],
+     "a": 0,
+     "why": "Second moment of area grows with distance squared from the axis.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A wing spar is moved from flat to on-edge orientation, with the same cross-section 0.05 m × 0.10 m. The stress for the same moment changes by a factor of",
+     "o": [
+      "0.5 (halves)",
+      "It doubles (2)",
+      "It is unchanged (1)",
+      "It becomes four times larger (4)"
+     ],
+     "a": 0,
+     "why": "With bending stress σ = 6M/(b h²): flat (b = 0.10, h = 0.05) gives 6M/0.00025; on edge (b = 0.05, h = 0.10) gives 6M/0.0005. The on-edge stress is half as large.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the fuselage cross-section usually circular or nearly circular?",
+     "rubric": [
+      [
+       "pressure",
+       "pressurised",
+       "pressurized",
+       "hoop",
+       "cabin"
+      ],
+      [
+       "circle",
+       "circular",
+       "round",
+       "even",
+       "evenly",
+       "uniform",
+       "bending"
+      ],
+      [
+       "stress",
+       "load",
+       "carried"
+      ]
+     ],
+     "min": 2,
+     "model": "A pressurised fuselage is a pressure vessel. A circular section carries the internal pressure mainly in tension (hoop stress) and spreads it evenly, avoiding the bending that flat sides would suffer.",
+     "why": "Round shapes carry pressure efficiently.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Stress and bending in a wing spar",
+    "model": "Stress is force divided by area. A beam bends more when it is shallow and less when it is deep, because stiffness grows with the cube of the depth. Engineers compare stress to the material strength with a safety factor of about 1.5.",
+    "points": [
+     {
+      "k": [
+       "force",
+       "area",
+       "per"
+      ],
+      "ask": "What is stress?"
+     },
+     {
+      "k": [
+       "depth",
+       "deep",
+       "cube",
+       "height",
+       "taller"
+      ],
+      "ask": "Why are spars deep?"
+     },
+     {
+      "k": [
+       "safety",
+       "factor",
+       "1.5",
+       "margin"
+      ],
+      "ask": "How do engineers stay safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Gas turbine propulsion",
+   "icon": "⚙️",
+   "hook": "A modern jet engine squeezes air about thirty times before burning fuel in it. Why does squeezing first make the engine so much more efficient?",
+   "explain": [
+    "The ideal gas turbine follows the Brayton cycle: compression, constant-pressure heating, expansion, and exhaust. For an ideal cycle the thermal efficiency is η = 1 − 1 ÷ r_p^((γ−1)/γ), where r_p is the pressure ratio and γ = 1.4. With r_p = 30, η ≈ 0.62. Real engines reach lower values because of component losses, but the trend is clear: higher pressure ratio and higher turbine inlet temperature give better efficiency.",
+    "In an isentropic compressor the exit temperature is T₂ = T₁ r_p^((γ−1)/γ). For T₁ = 288.15 K and r_p = 30, T₂ ≈ 761 K. The temperature at the turbine inlet is limited by materials, and engines use cooling air and special alloys. Overall efficiency is the product of thermal efficiency and propulsive efficiency.",
+    "Propulsive efficiency is η_p = 2 ÷ (1 + v_e/v₀) for a simple jet, where v_e is the exhaust speed and v₀ the flight speed. It is high when the exhaust speed is close to the flight speed. This is why airliners use high-bypass turbofans (a large mass of air with a modest speed increase) while supersonic aircraft use low-bypass or afterburning engines."
+   ],
+   "example": {
+    "q": "Find the ideal Brayton thermal efficiency for a pressure ratio of 30 (γ = 1.4).",
+    "steps": [
+     "Exponent (γ−1)/γ = 0.4/1.4 = 0.2857.",
+     "30^0.2857 = e^(0.2857 × ln 30) = e^(0.9718) ≈ 2.643.",
+     "η = 1 − 1/2.643 = 1 − 0.378 = 0.622."
+    ],
+    "a": "About 62%"
+   },
+   "analogies": {
+    "sport": "A diver coils before a jump: stored compression gives a stronger launch.",
+    "home": "A bicycle pump heats up as it compresses air.",
+    "city": "A cold-start engine runs better as it warms. A hotter cycle allows more work.",
+    "tech": "A turbo in a car engine compresses incoming air to burn more fuel."
+   },
+   "mnemonic": "Higher pressure ratio, higher efficiency; match jet speed to flight speed for propulsion efficiency.",
+   "terms": [
+    [
+     "Brayton cycle",
+     "Ideal cycle of a gas turbine: compression, heating, expansion."
+    ],
+    [
+     "Pressure ratio",
+     "Compressor exit pressure divided by inlet pressure."
+    ],
+    [
+     "Turbine inlet temperature",
+     "Gas temperature entering the turbine, limited by materials."
+    ],
+    [
+     "Propulsive efficiency",
+     "Fraction of jet kinetic energy that does useful propulsive work."
+    ],
+    [
+     "Bypass ratio",
+     "Bypass mass flow divided by core mass flow."
+    ]
+   ],
+   "misc": {
+    "wrong": "A jet engine is most efficient when the exhaust is as fast as possible.",
+    "right": "A very fast exhaust wastes kinetic energy. Propulsive efficiency is highest when exhaust speed is only a little above flight speed."
+   },
+   "limits": "The ideal cycle ignores losses in compressor, combustor, turbine and nozzle. Real efficiencies are lower, and the numbers here are for illustration.",
+   "trip": {
+    "wiki": "Brayton cycle",
+    "prompt": "Find the pressure-volume or temperature-entropy diagram. Which paths are the compression and the expansion?"
+   },
+   "sources": [
+    "Brayton cycle",
+    "Turbofan",
+    "Propulsive efficiency"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Use η = 1 − r_p^(−0.2857). What is the ideal Brayton efficiency for r_p = 30? Give a fraction with two decimals.",
+     "a": 0.62,
+     "tol": 0.01,
+     "why": "30^0.2857 ≈ 2.643, so η = 1 − 0.378 = 0.62.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A compressor has inlet temperature 288.15 K and an ideal pressure ratio of 30. Use T₂ = T₁ r_p^0.2857 with r_p^0.2857 = 2.643. What is T₂ in kelvin?",
+     "a": 761,
+     "tol": 2,
+     "unit": "K",
+     "why": "288.15 × 2.643 ≈ 761.6 K.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A jet has exhaust speed 500 m/s and the aircraft flies at 250 m/s. Using η_p = 2/(1 + v_e/v₀), find the propulsive efficiency to 2 decimals.",
+     "a": 0.67,
+     "tol": 0.01,
+     "why": "v_e/v₀ = 2, so η_p = 2/3 = 0.667.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What limits the maximum turbine inlet temperature?",
+     "o": [
+      "The strength and melting limits of turbine materials",
+      "The colour of the fuel burned in the engine",
+      "The number of passengers who are on board",
+      "The pull of gravity on the turbine blades"
+     ],
+     "a": 0,
+     "why": "The gas can be hotter than the blade metal melts, so cooling and alloys limit it.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a high-bypass turbofan efficient at airliner speeds?",
+     "o": [
+      "It accelerates much more air by a smaller speed increase, which matches flight speed better",
+      "It burns no fuel at all while flying",
+      "It has no turbine, so there is nothing to wear out",
+      "It uses wings inside the engine to make extra lift"
+     ],
+     "a": 0,
+     "why": "Exhaust speed is close to flight speed, so less kinetic energy is wasted.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a higher pressure ratio improve ideal efficiency?",
+     "o": [
+      "The gas is expanded through a larger temperature drop in the turbine",
+      "It makes the engine lighter overall, whatever its size",
+      "It removes the drag from the airframe as well",
+      "Pressure cancels the thrust and saves fuel"
+     ],
+     "a": 0,
+     "why": "In the Brayton cycle efficiency depends only on pressure ratio through the temperature ratio.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which engine type is best for sustained supersonic flight?",
+     "o": [
+      "Low-bypass or afterburning turbofan or turbojet",
+      "A high-bypass turbofan with a very large fan",
+      "A piston engine driving a propeller",
+      "An unpowered glider with long thin wings"
+     ],
+     "a": 0,
+     "why": "At high speed the needed exhaust speed is high, so low bypass suits supersonic flight.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In the Brayton cycle, what comes immediately after compression?",
+     "o": [
+      "Heat addition at constant pressure",
+      "Expansion through the nozzle at once",
+      "Exhaust of the gas into the air",
+      "Intake of fresh air into the engine"
+     ],
+     "a": 0,
+     "why": "The sequence is compression, heating, expansion, exhaust.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why are turbine blades made with internal cooling passages and special alloys?",
+     "rubric": [
+      [
+       "hotter",
+       "temperature",
+       "melt",
+       "melting",
+       "heat",
+       "high temperature"
+      ],
+      [
+       "efficiency",
+       "efficient",
+       "thrust",
+       "power",
+       "more work"
+      ],
+      [
+       "cooling",
+       "cool",
+       "air",
+       "alloy",
+       "material"
+      ]
+     ],
+     "min": 2,
+     "model": "Higher turbine inlet temperatures give better efficiency and thrust, but the gas is hotter than the blade metal can survive. Cooling air passages and heat-resistant alloys keep the blades below their melting and creep limits.",
+     "why": "The cooling allows hotter, more efficient cycles.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each quantity to its meaning.",
+     "pairs": [
+      [
+       "Pressure ratio",
+       "Compressor exit pressure over inlet"
+      ],
+      [
+       "Bypass ratio",
+       "Bypass air over core air"
+      ],
+      [
+       "Propulsive efficiency",
+       "Useful power over jet kinetic power"
+      ],
+      [
+       "Thermal efficiency",
+       "Work output over heat input"
+      ]
+     ],
+     "why": "These are the efficiency measures of a gas turbine.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "For the same thrust, doubling the bypass ratio while keeping the core output the same, the exhaust speed of the whole jet",
+     "o": [
+      "Falls",
+      "Rises",
+      "Stays the same",
+      "Is not defined"
+     ],
+     "a": 0,
+     "why": "Thrust = ṁ(v_e − v₀); a larger ṁ needs a smaller velocity increase.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The overall efficiency of an engine is",
+     "o": [
+      "Thermal efficiency times propulsive efficiency",
+      "Thermal efficiency plus propulsive efficiency",
+      "Thermal efficiency divided by propulsive efficiency",
+      "Unrelated to either of the two efficiencies"
+     ],
+     "a": 0,
+     "why": "Overall efficiency = (propulsive power ÷ heat input) = η_th × η_p.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does thrust of a turbofan fall as the aircraft climbs even though it is cold at altitude?",
+     "rubric": [
+      [
+       "density",
+       "thin",
+       "thinner",
+       "less air",
+       "mass flow"
+      ],
+      [
+       "thrust",
+       "fall",
+       "falls",
+       "decrease",
+       "decreases",
+       "reduce"
+      ]
+     ],
+     "min": 2,
+     "model": "Thrust depends on the mass flow of air through the engine. At altitude the air density is much lower, so less mass flows through even though the colder air helps slightly. Net thrust falls.",
+     "why": "Mass flow ∝ density.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why compression makes jet engines efficient",
+    "model": "In a gas turbine the air is squeezed, then fuel is burned at nearly constant pressure, and the hot gas expands through a turbine. The higher the pressure ratio, the more of the heat can be turned into work. Propulsion is most efficient if the jet speed is close to the flight speed.",
+    "points": [
+     {
+      "k": [
+       "compress",
+       "squeeze",
+       "pressure ratio"
+      ],
+      "ask": "What does the compressor do?"
+     },
+     {
+      "k": [
+       "burn",
+       "heat",
+       "fuel"
+      ],
+      "ask": "What happens next?"
+     },
+     {
+      "k": [
+       "expand",
+       "turbine",
+       "work"
+      ],
+      "ask": "How is work extracted?"
+     },
+     {
+      "k": [
+       "bypass",
+       "speed",
+       "flight speed",
+       "exhaust"
+      ],
+      "ask": "How can propulsion be made efficient?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Rotorcraft flight dynamics",
+   "icon": "🌀",
+   "hook": "If a helicopter's engine fails, it can still land safely. How can the rotor keep turning with no power?",
+   "explain": [
+    "In hover, the rotor thrust equals the weight. Momentum theory gives the induced velocity v_i = √(T ÷ (2ρA)) and the ideal induced power P_i = T v_i. Real rotors need more: the figure of merit FM = ideal power ÷ actual power is typically about 0.6 to 0.75. For a hover with T = 19 620 N, ρ = 1.225 kg/m³ and A = 113.1 m², v_i = 8.41 m/s and P_i ≈ 165 kW.",
+    "In forward flight the rotor tilts so a part of its thrust provides propulsion. Translational lift is the extra efficiency gained as the rotor moves into undisturbed air, so less power is needed at moderate speed than in hover. Near the ground, ground effect also reduces the induced velocity. Control is by collective pitch (changing all blade angles together to alter thrust) and cyclic pitch (changing each blade's angle with its position to tilt the rotor disk).",
+    "In autorotation, the engine is disconnected and air flowing up through the rotor as the helicopter descends keeps it spinning. The stored energy in the rotor is used for a flare at the end to reduce the descent rate for landing. Helicopters are also affected by hazards such as retreating blade stall at high speed and vortex ring state in a steep, slow descent."
+   ],
+   "example": {
+    "q": "A helicopter has mass 2000 kg and rotor radius 6 m. Find the ideal hover induced power (g = 9.81 m/s², ρ = 1.225 kg/m³).",
+    "steps": [
+     "T = W = 2000 × 9.81 = 19 620 N.",
+     "A = π × 6² = 113.1 m²; v_i = √(19 620 ÷ (2 × 1.225 × 113.1)) = √70.8 ≈ 8.41 m/s.",
+     "P_i = T v_i = 19 620 × 8.41 ≈ 165 000 W = 165 kW."
+    ],
+    "a": "About 165 kW"
+   },
+   "analogies": {
+    "nature": "A sycamore seed spins as it falls, creating lift in autorotation.",
+    "sport": "A parachute slows a fall by catching air.",
+    "city": "A windmill generates power when wind turns it; in autorotation the air turns the rotor.",
+    "tech": "A drone tilts its rotor disk to move sideways."
+   },
+   "mnemonic": "Collective changes total thrust; cyclic tilts the disk; autorotation turns the air into spin.",
+   "terms": [
+    [
+     "Collective pitch",
+     "Changing the pitch of all blades together."
+    ],
+    [
+     "Cyclic pitch",
+     "Changing blade pitch as it goes round, to tilt the rotor."
+    ],
+    [
+     "Autorotation",
+     "Rotor driven by upward airflow in a descent with no engine power."
+    ],
+    [
+     "Figure of merit",
+     "Ideal hover power divided by actual power."
+    ],
+    [
+     "Translational lift",
+     "Extra lift efficiency as forward speed begins."
+    ]
+   ],
+   "misc": {
+    "wrong": "A helicopter with no engine power falls like a stone.",
+    "right": "Autorotation lets the rotor spin from the air passing up through it, so a pilot can control the descent and flare for landing."
+   },
+   "limits": "Momentum theory gives the ideal minimum power. Real flight dynamics are coupled between pitch, roll and yaw, and training is required to fly them. The game is educational, not pilot training.",
+   "trip": {
+    "wiki": "Autorotation",
+    "prompt": "Find the diagram showing airflow in autorotation. Which way does the air go through the rotor?"
+   },
+   "sources": [
+    "Autorotation",
+    "Helicopter flight controls",
+    "Disk loading"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A helicopter of mass 2000 kg hovers. Use g = 9.81 m/s². What rotor thrust is required in newtons?",
+     "a": 19620,
+     "tol": 10,
+     "unit": "N",
+     "why": "T = W = 2000 × 9.81 = 19 620 N.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The rotor has radius 6 m and the thrust is 19 620 N. Use v_i = √(T/(2ρA)), ρ = 1.225 kg/m³. What is v_i in m/s?",
+     "a": 8.41,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "A = 113.1 m²; 2ρA = 277.1; 19 620 ÷ 277.1 = 70.8; √70.8 = 8.41.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The ideal induced power is 165.1 kW and the figure of merit is 0.7. What is the actual hover power in kW?",
+     "a": 236,
+     "tol": 2,
+     "unit": "kW",
+     "why": "Actual power = ideal ÷ FM = 165.1 ÷ 0.7 ≈ 235.9 kW.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does the collective control change?",
+     "o": [
+      "The pitch of all blades together, changing total thrust",
+      "The pitch of each blade, changed as it goes round the disk",
+      "The tail rotor only, to turn the nose left or right",
+      "The fuel flow to the engine, changing its power"
+     ],
+     "a": 0,
+     "why": "Collective changes the thrust level for climb or descent.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does the cyclic control do?",
+     "o": [
+      "Tilts the rotor disk to move the helicopter in a direction",
+      "Starts the engine and spins up the rotor",
+      "Changes the cabin temperature during flight",
+      "Folds the blades back for storage"
+     ],
+     "a": 0,
+     "why": "Cyclic varies blade pitch around the disk to tilt the thrust.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In autorotation, what drives the rotor?",
+     "o": [
+      "Air flowing upward through the rotor as the helicopter descends",
+      "The tail rotor, which keeps spinning from the engine",
+      "A battery that runs the blades at low power",
+      "Gravity pulling the blades round like a handle"
+     ],
+     "a": 0,
+     "why": "Descending relative airflow keeps the rotor spinning, stored energy is used in the flare.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pilot near the ground in hover finds less power is needed than higher up. Which effect explains this?",
+     "o": [
+      "Ground effect reducing induced velocity",
+      "There is less gravity close to the ground",
+      "The blades are thicker near the ground",
+      "The tail rotor works better near the ground"
+     ],
+     "a": 0,
+     "why": "Near the ground, the downwash is constrained and the rotor works more efficiently.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "After an engine failure, what should the pilot do first to keep the rotor turning?",
+     "o": [
+      "Lower the collective",
+      "Raise the collective fully",
+      "Fold the blades",
+      "Switch off the tail rotor"
+     ],
+     "a": 0,
+     "why": "Lowering collective reduces blade pitch so the rotor speed does not decay and the upward airflow can drive it.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a helicopter needs less power at moderate forward speed than in a hover.",
+     "rubric": [
+      [
+       "translational",
+       "forward",
+       "moving",
+       "speed"
+      ],
+      [
+       "more air",
+       "undisturbed",
+       "fresh air",
+       "air mass",
+       "mass flow",
+       "induced"
+      ],
+      [
+       "less power",
+       "efficien",
+       "reduce",
+       "lower",
+       "less"
+      ]
+     ],
+     "min": 2,
+     "model": "In forward flight the rotor meets a larger mass of air each second, so it needs a smaller induced velocity (less wasted downwash) to give the same thrust. This reduces induced power, giving translational lift and a power minimum at moderate speed.",
+     "why": "Induced power falls with forward speed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each hazard or effect to its meaning.",
+     "pairs": [
+      [
+       "Retreating blade stall",
+       "Lack of airspeed on the slow side at high speed"
+      ],
+      [
+       "Vortex ring state",
+       "Descent into own downwash at low speed"
+      ],
+      [
+       "Ground effect",
+       "Reduced induced velocity near the ground"
+      ],
+      [
+       "Autorotation",
+       "Rotor driven by upward airflow"
+      ]
+     ],
+     "why": "These are core rotorcraft ideas.",
+     "d": 2,
+     "k": "recall"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "If the mass of a hovering helicopter increases by 20% with the same rotor, the ideal induced power increases by about",
+     "o": [
+      "31% (1.2^1.5)",
+      "20%, since power rises in direct proportion",
+      "44% (1.2²)",
+      "10%, half of the extra mass"
+     ],
+     "a": 0,
+     "why": "P ∝ T^1.5 for the same rotor and density, 1.2^1.5 ≈ 1.31.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the pilot of a helicopter lower the collective right away if the engine fails?",
+     "o": [
+      "To reduce blade pitch and keep rotor speed from decaying",
+      "To climb away from the ground and use up the momentum",
+      "To fold the blades back to cut drag",
+      "To increase the thrust so the engine restarts"
+     ],
+     "a": 0,
+     "why": "The rotor speed is needed to make lift; lowering collective lets air spin it up.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why can a steep, slow descent in a helicopter be dangerous (vortex ring state)?",
+     "rubric": [
+      [
+       "downwash",
+       "own",
+       "recirculat",
+       "vortex",
+       "ring"
+      ],
+      [
+       "lift",
+       "thrust",
+       "power",
+       "sink",
+       "sinks",
+       "descent"
+      ]
+     ],
+     "min": 2,
+     "model": "In vortex ring state the helicopter descends into its own downwash. The rotor recirculates this air, loses effective lift, and more power makes the sink rate worse rather than better.",
+     "why": "The usual recovery is to gain forward speed or change the flow.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a helicopter is controlled and how autorotation works",
+    "model": "Collective pitch changes the angle of all blades together to change thrust. Cyclic pitch changes the angle as each blade goes round so the rotor disk tilts and the helicopter moves sideways or forward. If the engine fails, upward airflow in a descent keeps the rotor turning, which is autorotation.",
+    "points": [
+     {
+      "k": [
+       "collective",
+       "all blades",
+       "together",
+       "thrust"
+      ],
+      "ask": "What does the collective do?"
+     },
+     {
+      "k": [
+       "cyclic",
+       "tilt",
+       "disk",
+       "direction"
+      ],
+      "ask": "What does the cyclic do?"
+     },
+     {
+      "k": [
+       "autorotation",
+       "air",
+       "upward",
+       "engine",
+       "spin"
+      ],
+      "ask": "What happens if the engine fails?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Aircraft systems and avionics",
+   "icon": "🖥️",
+   "hook": "A modern airliner is full of computers, yet the pilot still reads a speed from a simple tube in the airflow. What does the aircraft measure, and how does it decide what to trust?",
+   "explain": [
+    "The pitot-static system measures airspeed and altitude from pressure. A pitot tube faces the flow and senses total pressure p₀; static ports sense ambient pressure p. The difference is the dynamic pressure q = p₀ − p = ½ρv², so v = √(2q ÷ ρ). The altimeter converts static pressure to height using the standard atmosphere, so it must be set to a reference pressure.",
+    "Navigation uses inertial sensors, radio aids and satellite systems (GNSS). A GNSS receiver measures the travel time of signals from several satellites: distance = c × t with c = 3.0 × 10⁸ m/s. It needs at least four satellites to solve for three position coordinates and the receiver clock error. An autopilot compares the measured state with a target and moves control surfaces to reduce the error, using a feedback loop.",
+    "Safety-critical systems use redundancy: duplicated or triplicated sensors and computers, with voting. If three independent channels each fail with probability p during a flight, all three fail with probability p³. Designers also guard against common-cause faults that hit all channels at once, such as a blocked pitot tube or a software flaw, so they use different designs and monitor the data for disagreement."
+   ],
+   "example": {
+    "q": "A pitot-static system measures a pressure difference of 2205 Pa at sea level. Find the airspeed (ρ = 1.225 kg/m³).",
+    "steps": [
+     "q = ½ρv², so v = √(2q ÷ ρ).",
+     "v = √(2 × 2205 ÷ 1.225) = √3600.",
+     "v = 60 m/s."
+    ],
+    "a": "60 m/s"
+   },
+   "analogies": {
+    "city": "Three independent clocks that disagree: majority voting finds the wrong one.",
+    "home": "A thermostat compares the room temperature with a set value and switches the heater: feedback.",
+    "sport": "A runner's GPS watch needs satellite signals to find position.",
+    "sea": "A ship uses a compass, a log, GPS and radar together for navigation."
+   },
+   "mnemonic": "Pitot: total minus static equals q. Four satellites for three positions and a clock. Three channels, vote on the answer.",
+   "terms": [
+    [
+     "Pitot tube",
+     "A tube facing the flow that senses total pressure."
+    ],
+    [
+     "GNSS",
+     "Global navigation satellite systems, such as GPS."
+    ],
+    [
+     "Feedback control",
+     "Using the measured error to correct a system."
+    ],
+    [
+     "Redundancy",
+     "Duplicate systems so a single failure is survivable."
+    ],
+    [
+     "Common-cause failure",
+     "One fault that disables several redundant channels."
+    ]
+   ],
+   "misc": {
+    "wrong": "Triple redundancy means failure is impossible.",
+    "right": "Redundancy reduces random failures, but common-cause faults (like all pitot tubes icing over) can still disable all channels."
+   },
+   "limits": "The airspeed formula applies to incompressible flow. At high Mach numbers, compressibility corrections are needed. This is an educational overview, not an operations manual.",
+   "trip": {
+    "wiki": "Pitot tube",
+    "prompt": "Find the diagram of a pitot-static system. Which port senses total pressure?"
+   },
+   "sources": [
+    "Pitot tube",
+    "Global Positioning System",
+    "Avionics"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "A pitot-static system reads a pressure difference q = 2205 Pa at sea level (ρ = 1.225 kg/m³). What is the airspeed in m/s?",
+     "a": 60,
+     "tol": 0.3,
+     "unit": "m/s",
+     "why": "v = √(2 × 2205 ÷ 1.225) = √3600 = 60 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A GNSS signal takes 0.07 s to reach a receiver. With c = 3.0×10⁸ m/s, how far has it travelled in kilometres?",
+     "a": 21000,
+     "tol": 50,
+     "unit": "km",
+     "why": "d = 3.0×10⁸ × 0.07 = 2.1×10⁷ m = 21 000 km.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Three independent channels each fail with probability 0.1 in a flight. What is the probability that all three fail?",
+     "a": 0.001,
+     "tol": 0.0001,
+     "why": "0.1³ = 0.001.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does a pitot tube sense?",
+     "o": [
+      "Total pressure",
+      "Static pressure only",
+      "Temperature only",
+      "Fuel level"
+     ],
+     "a": 0,
+     "why": "It faces the flow and brings the air to rest, sensing total pressure.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a GNSS receiver need four satellites?",
+     "o": [
+      "To solve three position coordinates and the receiver clock error",
+      "One for each wheel on the landing gear",
+      "Because any three satellites always fail in practice",
+      "To avoid using any radio signals at all"
+     ],
+     "a": 0,
+     "why": "There are four unknowns: x, y, z and clock offset.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A pitot tube freezes over in flight. What is the likely effect on the airspeed reading?",
+     "o": [
+      "It becomes wrong and may not respond properly",
+      "It reads exactly right, since ice improves it",
+      "It reads the distance flown instead of speed",
+      "Only the altimeter is affected, not airspeed"
+     ],
+     "a": 0,
+     "why": "A blocked pitot gives incorrect total pressure, so airspeed is wrong. Heating and comparison between channels help detect this.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is the purpose of feedback in an autopilot?",
+     "o": [
+      "To reduce the error between the target and the measured state",
+      "To increase the noise in the measurements",
+      "To record music for the cabin crew to hear",
+      "To remove the pilot from the aircraft"
+     ],
+     "a": 0,
+     "why": "Feedback uses the difference between desired and actual to command the control surfaces.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each system to its main use.",
+     "pairs": [
+      [
+       "Pitot-static",
+       "Airspeed and altitude"
+      ],
+      [
+       "GNSS",
+       "Position from satellites"
+      ],
+      [
+       "Autopilot",
+       "Holds a flight path using feedback"
+      ],
+      [
+       "Inertial unit",
+       "Measures acceleration and rotation"
+      ]
+     ],
+     "why": "Each system provides a different piece of information.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In a feedback loop, what happens right after the sensors measure the state?",
+     "o": [
+      "The computer compares it with the target",
+      "The control surface moves at once",
+      "The target is changed by the sensor",
+      "The sensor is removed from the loop"
+     ],
+     "a": 0,
+     "why": "Measure, compare, command, act.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do critical systems use different designs for redundant channels, not just copies of the same one?",
+     "rubric": [
+      [
+       "common",
+       "same",
+       "identical",
+       "copy",
+       "all fail"
+      ],
+      [
+       "fault",
+       "flaw",
+       "bug",
+       "error",
+       "failure",
+       "fail"
+      ],
+      [
+       "different",
+       "dissimilar",
+       "diverse",
+       "independent",
+       "design"
+      ]
+     ],
+     "min": 2,
+     "model": "Identical copies can share the same design flaw or software bug, so one fault could disable all channels at once. Using dissimilar designs and independent sensors reduces the chance of a common-cause failure.",
+     "why": "Independence reduces common-cause risk.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two of three channels agree on airspeed 220 knots and the third reads 180. A voting system would",
+     "o": [
+      "Reject the third channel and use 220",
+      "Average all three and use 207 knots",
+      "Use the lowest value for safety, 180",
+      "Switch off the aircraft until it is checked"
+     ],
+     "a": 0,
+     "why": "Voting outvotes the odd channel but should also flag the discrepancy.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If sea-level air speed doubles, the pitot pressure difference changes by a factor of",
+     "o": [
+      "4",
+      "2",
+      "1",
+      "8"
+     ],
+     "a": 0,
+     "why": "q = ½ρv² grows with the square of speed.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why does an altimeter need to be set to a reference pressure before landing?",
+     "rubric": [
+      [
+       "pressure",
+       "qnh",
+       "reference",
+       "local"
+      ],
+      [
+       "weather",
+       "varies",
+       "vary",
+       "changes",
+       "different",
+       "day"
+      ],
+      [
+       "height",
+       "altitude",
+       "wrong",
+       "error",
+       "accurate"
+      ]
+     ],
+     "min": 2,
+     "model": "A barometric altimeter converts pressure to height using a standard atmosphere. Real sea-level pressure changes with the weather, so without setting the local reference the reading would be wrong.",
+     "why": "The pressure setting corrects for weather.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How an aircraft measures speed and position",
+    "model": "An aircraft measures airspeed with a tube facing the airflow: the pressure difference between that tube and the side ports tells the speed. Position comes from satellites whose signal travel times give distances. Important systems are duplicated and checked against each other.",
+    "points": [
+     {
+      "k": [
+       "pitot",
+       "tube",
+       "pressure",
+       "difference"
+      ],
+      "ask": "How does it measure airspeed?"
+     },
+     {
+      "k": [
+       "satellite",
+       "gps",
+       "gnss",
+       "time",
+       "signal"
+      ],
+      "ask": "How does it find its position?"
+     },
+     {
+      "k": [
+       "duplicate",
+       "redundan",
+       "backup",
+       "vote",
+       "check"
+      ],
+      "ask": "How does it stay safe if something fails?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Orbital mechanics",
+   "icon": "🪐",
+   "hook": "To raise a satellite from a low orbit to a high one, you fire your engine twice, and the satellite ends up slower than when it started. How is that possible?",
+   "explain": [
+    "Orbits obey Newton's gravity. For a circular orbit, v = √(GM ÷ r), with GM = 3.986 × 10¹⁴ m³/s² for Earth. For any orbit of semi-major axis a, the vis-viva equation gives the speed at distance r: v² = GM(2/r − 1/a). Energy per unit mass is −GM ÷ (2a). Kepler's third law gives the period T = 2π√(a³ ÷ GM). Escape speed is √2 times circular speed at the same radius.",
+    "A Hohmann transfer is a two-burn change between circular orbits: an elliptical path whose perigee touches the lower orbit and apogee the higher one. Going from 400 km altitude (r₁ = 6771 km) to geostationary radius (r₂ = 42 164 km), a = (r₁ + r₂)/2 = 24 467 km. The speed at perigee is 10.07 km/s versus 7.67 km/s circular, so Δv₁ ≈ 2.40 km/s. At apogee the speed is 1.62 km/s versus 3.07 km/s circular, so Δv₂ ≈ 1.46 km/s.",
+    "The total Δv is about 3.86 km/s and the transfer takes half of the ellipse period, about 5.3 hours. The satellite ends slower in the final orbit because the extra energy goes into height (potential energy). Plane changes are expensive: changing inclination is best done where the speed is lowest. Real missions also include perturbations from Earth's shape, the Moon, the Sun and drag."
+   ],
+   "example": {
+    "q": "Find the speed at perigee on the Hohmann transfer ellipse from r₁ = 6.771×10⁶ m to r₂ = 4.2164×10⁷ m.",
+    "steps": [
+     "a = (r₁ + r₂)/2 = 2.4468×10⁷ m.",
+     "v² = GM(2/r₁ − 1/a) = 3.986×10¹⁴ × (2.9538×10⁻⁷ − 4.087×10⁻⁸) ≈ 1.0145×10⁸.",
+     "v = √(1.0145×10⁸) ≈ 10 072 m/s."
+    ],
+    "a": "About 10.07 km/s"
+   },
+   "analogies": {
+    "sport": "A hammer thrower speeds up before release: a burn adds speed at one point.",
+    "sea": "A ship changing between shipping lanes needs two rudder moves to enter and leave the transfer path.",
+    "nature": "A comet speeds up near the Sun and slows far away.",
+    "tech": "A spacecraft gets 'free' speed using a planet's gravity (a gravity assist)."
+   },
+   "mnemonic": "Burn at perigee to raise apogee; burn at apogee to circularise.",
+   "terms": [
+    [
+     "Vis-viva equation",
+     "v² = GM(2/r − 1/a), speed at any point on an orbit."
+    ],
+    [
+     "Semi-major axis",
+     "Half the long axis of the ellipse, a."
+    ],
+    [
+     "Hohmann transfer",
+     "Two-burn elliptical transfer between circular orbits."
+    ],
+    [
+     "Delta-v (Δv)",
+     "The change in velocity a manoeuvre needs."
+    ],
+    [
+     "Escape speed",
+     "Speed needed to leave a gravity field: √2 × circular speed."
+    ]
+   ],
+   "misc": {
+    "wrong": "To catch up with a satellite ahead of you in the same orbit, speed up.",
+    "right": "Speeding up raises your orbit and makes you slower overall. To catch a target ahead, usually you first lower your orbit to move faster, then raise it."
+   },
+   "limits": "The two-body model ignores other masses and air drag. Real transfers are optimised with computers, and electric propulsion uses long spiral paths instead of impulsive burns.",
+   "trip": {
+    "wiki": "Hohmann transfer orbit",
+    "prompt": "Find the diagram. At which two points are the burns made?"
+   },
+   "sources": [
+    "Hohmann transfer orbit",
+    "Vis-viva equation",
+    "Kepler's laws of planetary motion"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "Use GM = 3.986×10¹⁴ m³/s² and r = 6.771×10⁶ m. What is the circular orbital speed in m/s?",
+     "a": 7673,
+     "tol": 10,
+     "unit": "m/s",
+     "why": "v = √(GM/r) = √(5.887×10⁷) ≈ 7673 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "For a Hohmann transfer from r₁ = 6.771×10⁶ m to r₂ = 4.2164×10⁷ m, the perigee speed is 10 072 m/s and the circular speed at r₁ is 7673 m/s. What is the first burn Δv₁ in m/s?",
+     "a": 2399,
+     "tol": 10,
+     "unit": "m/s",
+     "why": "Δv₁ = 10 072 − 7673 ≈ 2399 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "At apogee the transfer ellipse speed is 1617 m/s and the circular speed at r₂ is 3075 m/s. What is Δv₂ in m/s?",
+     "a": 1458,
+     "tol": 10,
+     "unit": "m/s",
+     "why": "3075 − 1617 = 1458 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "What is the escape speed at the radius where the circular speed is 7673 m/s? Use escape = √2 × circular, answer in m/s.",
+     "a": 10851,
+     "tol": 20,
+     "unit": "m/s",
+     "why": "1.4142 × 7673 ≈ 10 851 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "In a Hohmann transfer to a higher orbit, where is the first burn made?",
+     "o": [
+      "At the low-orbit point (perigee)",
+      "At the high-orbit point (apogee)",
+      "Halfway between the two orbits",
+      "Over the pole only, never elsewhere"
+     ],
+     "a": 0,
+     "why": "The burn at the low point raises the apogee to the target orbit.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "After circularising at the higher orbit, how is the satellite's speed compared with before?",
+     "o": [
+      "Slower",
+      "Faster",
+      "Exactly the same",
+      "Zero"
+     ],
+     "a": 0,
+     "why": "Circular speed falls as radius rises, even though the satellite gained energy.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A spacecraft in orbit fires its engine retrograde (against its motion). What happens to the opposite side of its orbit?",
+     "o": [
+      "The altitude there drops",
+      "The altitude there rises",
+      "It stays the same",
+      "It stops in space"
+     ],
+     "a": 0,
+     "why": "Slowing lowers the orbit on the opposite side of the burn.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which law links orbital period with the size of the orbit?",
+     "o": [
+      "Kepler's third law",
+      "Boyle's law",
+      "Ohm's law",
+      "Archimedes' principle"
+     ],
+     "a": 0,
+     "why": "T² ∝ a³.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which orbit has the longest period?",
+     "o": [
+      "The Moon's orbit",
+      "ISS at 400 km",
+      "GNSS orbit at about 20 200 km",
+      "Geostationary orbit"
+     ],
+     "a": 0,
+     "why": "Period rises with orbit size: about 1.5 h, 12 h, 24 h and 27 days.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a satellite in a higher circular orbit moves more slowly than one in a lower orbit even though it has more energy.",
+     "rubric": [
+      [
+       "gravity",
+       "weaker",
+       "weak",
+       "less",
+       "pull"
+      ],
+      [
+       "potential",
+       "height",
+       "energy",
+       "climb",
+       "altitude"
+      ],
+      [
+       "slower",
+       "speed",
+       "kinetic",
+       "lower speed",
+       "velocity"
+      ]
+     ],
+     "min": 2,
+     "model": "Gravity is weaker at greater distance, so a smaller speed is needed for a circular path. The extra energy supplied by the burns goes into potential energy from the higher altitude, while kinetic energy is lower.",
+     "why": "Total energy −GM/2a increases with a, but kinetic energy GM/2r decreases.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A spacecraft on a circular orbit wants to catch a target ahead of it in the same orbit. Which first move helps?",
+     "o": [
+      "Lower the orbit briefly so it moves faster around Earth",
+      "Speed up in the same orbit and drift up and away",
+      "Stop and wait for the target to return",
+      "Fire sideways only, without changing speed along the orbit"
+     ],
+     "a": 0,
+     "why": "A lower orbit has a shorter period, so the chaser catches up; then it raises the orbit to match.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a transfer's semi-major axis a is doubled, Kepler's third law says the period changes by a factor of about",
+     "o": [
+      "2.83",
+      "2",
+      "4",
+      "1.41"
+     ],
+     "a": 0,
+     "why": "T ∝ a^1.5, so 2^1.5 ≈ 2.83.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is changing the orbit's inclination so expensive in Δv?",
+     "rubric": [
+      [
+       "direction",
+       "vector",
+       "turn",
+       "rotate",
+       "plane",
+       "angle"
+      ],
+      [
+       "speed",
+       "velocity",
+       "large",
+       "high",
+       "fast",
+       "orbital speed"
+      ],
+      [
+       "lowest",
+       "slowest",
+       "apogee",
+       "high altitude",
+       "less"
+      ]
+     ],
+     "min": 2,
+     "model": "Changing the plane means changing the direction of the velocity vector, which at orbital speed costs a large Δv. It is cheapest where speed is lowest, such as at apogee of an elliptical orbit.",
+     "why": "Δv for a plane change = 2v sin(Δi/2).",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a Hohmann transfer works",
+    "model": "To move from a low circular orbit to a high one you fire your engine along your motion at the low point. This stretches your path into an ellipse that reaches the high orbit. At the top you fire again to make the orbit circular. You end up slower than you began, but with more energy.",
+    "points": [
+     {
+      "k": [
+       "fire",
+       "burn",
+       "engine",
+       "speed up"
+      ],
+      "ask": "What do you do at the low point?"
+     },
+     {
+      "k": [
+       "ellipse",
+       "elliptical",
+       "oval",
+       "stretch"
+      ],
+      "ask": "What path do you follow?"
+     },
+     {
+      "k": [
+       "circular",
+       "second",
+       "again",
+       "top",
+       "apogee"
+      ],
+      "ask": "What do you do at the top?"
+     },
+     {
+      "k": [
+       "slower",
+       "energy",
+       "higher"
+      ],
+      "ask": "Why are you slower at the end?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Rocket propulsion and launch trajectories",
+   "icon": "🚀",
+   "hook": "A rocket that is 90% propellant by mass still cannot reach orbit in one stage with ordinary propellants. Why do the numbers work out this way?",
+   "explain": [
+    "The thrust of a rocket is F = ṁ v_e + (p_e − p_a)A_e, where ṁ is the propellant flow rate, v_e the exhaust speed and the last term the pressure thrust. Specific impulse Isp = F ÷ (ṁ g₀) in seconds, so v_e = Isp g₀ for the effective exhaust speed. A typical hydrogen-oxygen engine has Isp in vacuum around 450 s; kerosene-oxygen is nearer 350 s.",
+    "The Tsiolkovsky rocket equation is Δv = v_e ln(m₀ ÷ m_f), where m₀ is the starting mass and m_f the mass after burning. It is logarithmic, so each extra bit of Δv costs exponentially more propellant. With Isp = 300 s (v_e = 2943 m/s, g₀ = 9.81 m/s²) and a mass ratio of 10, Δv ≈ 6.78 km/s. Reaching low orbit needs about 9.4 km/s, including roughly 1.5 to 2 km/s lost to gravity and drag.",
+    "Staging drops empty tanks and engines to avoid carrying them. A launch begins vertically to leave the dense air quickly, then pitches over in a gravity turn to build horizontal speed. Gravity loss is the time spent fighting gravity, so a higher thrust-to-weight ratio reduces it, while aerodynamic loads peak at 'max-Q'. The game's numbers are educational and not for real launch design."
+   ],
+   "example": {
+    "q": "An engine has Isp = 300 s. A stage has mass ratio m₀/m_f = 10. Find Δv (g₀ = 9.81 m/s²).",
+    "steps": [
+     "v_e = Isp × g₀ = 300 × 9.81 = 2943 m/s.",
+     "ln 10 = 2.3026.",
+     "Δv = 2943 × 2.3026 ≈ 6777 m/s."
+    ],
+    "a": "About 6.78 km/s"
+   },
+   "analogies": {
+    "sea": "A ship that must carry its own coal for a longer voyage needs more coal to carry the coal.",
+    "sport": "A relay team drops the baton-carrier who is tired: staging drops dead weight.",
+    "home": "Carrying water to a camp: part of what you carry is the water you use to carry it.",
+    "tech": "Electric thrusters give a very high exhaust speed but low thrust."
+   },
+   "mnemonic": "Δv = v_e ln(m₀/m_f): exhaust speed times the log of the mass ratio.",
+   "terms": [
+    [
+     "Specific impulse",
+     "Isp = F/(ṁ g₀), thrust per unit weight flow, in seconds."
+    ],
+    [
+     "Tsiolkovsky equation",
+     "Δv = v_e ln(m₀/m_f)."
+    ],
+    [
+     "Staging",
+     "Dropping spent stages to reduce mass."
+    ],
+    [
+     "Gravity turn",
+     "A trajectory that pitches over using gravity to curve the path."
+    ],
+    [
+     "Max-Q",
+     "The point of maximum dynamic pressure on ascent."
+    ]
+   ],
+   "misc": {
+    "wrong": "Orbit is just about getting high enough.",
+    "right": "Orbit is about speed. Low orbit needs about 7.7 km/s sideways; height is only a few hundred kilometres, so most of the Δv builds horizontal speed."
+   },
+   "limits": "The rocket equation assumes no external forces; real flights include gravity and drag losses. Isp varies with altitude as pressure thrust changes.",
+   "trip": {
+    "wiki": "Tsiolkovsky rocket equation",
+    "prompt": "Find the table of Isp values. Which propellant combination has the highest?"
+   },
+   "sources": [
+    "Tsiolkovsky rocket equation",
+    "Specific impulse",
+    "Gravity turn"
+   ],
+   "questions": [
+    {
+     "t": "num",
+     "q": "An engine has Isp = 300 s. Use g₀ = 9.81 m/s². What is the effective exhaust speed in m/s?",
+     "a": 2943,
+     "tol": 2,
+     "unit": "m/s",
+     "why": "v_e = 300 × 9.81 = 2943 m/s.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "With v_e = 2943 m/s and a mass ratio m₀/m_f = 10, what is Δv in m/s? (ln 10 = 2.3026)",
+     "a": 6777,
+     "tol": 10,
+     "unit": "m/s",
+     "why": "Δv = 2943 × 2.3026 ≈ 6777 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A rocket engine burns 250 kg/s of propellant with exhaust speed 3000 m/s. Ignoring pressure thrust, what is the thrust in kilonewtons?",
+     "a": 750,
+     "tol": 1,
+     "unit": "kN",
+     "why": "F = ṁ v_e = 250 × 3000 = 750 000 N = 750 kN.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A stage with Isp = 350 s (g₀ = 9.81 m/s²) must give Δv = 9400 m/s. What mass ratio m₀/m_f does it need? (to 1 decimal)",
+     "a": 15.5,
+     "tol": 0.3,
+     "why": "v_e = 3433.5; Δv/v_e = 2.738; e^2.738 ≈ 15.45.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What does a higher specific impulse mean?",
+     "o": [
+      "More thrust per unit of propellant flow weight, so more efficient",
+      "Less efficient use of propellant for the thrust made, so a worse engine",
+      "A heavier engine only, with no other change",
+      "A smaller exhaust speed from the nozzle"
+     ],
+     "a": 0,
+     "why": "Isp measures how effectively propellant is turned into momentum.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why does the rocket equation make high Δv expensive?",
+     "o": [
+      "Mass ratio grows exponentially with Δv/v_e",
+      "Fuel is expensive to buy and that raises the cost",
+      "Gravity grows stronger as the rocket rises",
+      "The equation is linear, so costs grow evenly"
+     ],
+     "a": 0,
+     "why": "m₀/m_f = e^(Δv/v_e).",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do orbital rockets use stages?",
+     "o": [
+      "To drop empty tank mass and so need less propellant for the same Δv",
+      "To look taller on the launch pad",
+      "To make the launch quieter for the neighbours",
+      "Because engines cannot burn for long periods"
+     ],
+     "a": 0,
+     "why": "Dropping dead mass improves the mass ratio of later stages.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does a rocket pitch over after launching vertically?",
+     "o": [
+      "To build the horizontal speed needed for orbit",
+      "To avoid pointing the rocket straight at the Sun",
+      "To save paint on the nose of the rocket",
+      "To make the flight path look better from the ground"
+     ],
+     "a": 0,
+     "why": "Orbit requires about 7.7 km/s sideways velocity.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which event happens first in a typical launch?",
+     "o": [
+      "Lift-off",
+      "Max-Q",
+      "Stage separation",
+      "Orbit insertion"
+     ],
+     "a": 0,
+     "why": "Lift-off is followed by max-Q, then stage separation, then orbital speed.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a higher thrust-to-weight ratio at lift-off reduces gravity losses.",
+     "rubric": [
+      [
+       "faster",
+       "quickly",
+       "sooner",
+       "less time",
+       "accelerate"
+      ],
+      [
+       "gravity",
+       "weight",
+       "pull"
+      ],
+      [
+       "loss",
+       "lose",
+       "waste",
+       "time"
+      ]
+     ],
+     "min": 2,
+     "model": "With higher thrust-to-weight, the rocket accelerates faster and spends less time climbing against gravity, so less of the propellant's Δv is lost holding the rocket up. A weak thrust wastes Δv hovering.",
+     "why": "Gravity loss = g × burn time (spent against gravity).",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Two engines have the same thrust. Engine B has twice the Isp of A. What is true about propellant flow?",
+     "o": [
+      "B uses half the propellant flow",
+      "B uses twice the propellant flow",
+      "They use the same propellant flow",
+      "B uses no propellant at all"
+     ],
+     "a": 0,
+     "why": "ṁ = F/(Isp g₀).",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A stage cannot reach its needed Δv with a mass ratio of 10 at Isp = 300 s. What are valid options?",
+     "o": [
+      "Add a stage or use a higher-Isp propellant",
+      "Remove the engines to save mass, then try again",
+      "Ignore gravity in the calculation",
+      "Carry less thrust only, with no other change"
+     ],
+     "a": 0,
+     "why": "Both increase effective Δv without an impossible mass ratio.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why is the rocket equation independent of the thrust level?",
+     "rubric": [
+      [
+       "no external",
+       "ignore",
+       "ignores",
+       "momentum",
+       "conservation",
+       "only depends",
+       "depends only"
+      ],
+      [
+       "exhaust",
+       "mass ratio",
+       "mass",
+       "v_e"
+      ],
+      [
+       "time",
+       "rate",
+       "how fast",
+       "thrust"
+      ]
+     ],
+     "min": 2,
+     "model": "It comes from conservation of momentum for the rocket and exhaust and depends only on the exhaust speed and the mass ratio. It does not include time or thrust, which matter only for gravity and drag losses.",
+     "why": "Losses are added separately.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "The rocket equation",
+    "model": "A rocket gains speed by throwing mass backward. The speed it gains equals the exhaust speed times the natural log of its start mass over its end mass. Because of the logarithm, each extra bit of speed needs much more propellant, so rockets use stages to drop dead weight.",
+    "points": [
+     {
+      "k": [
+       "exhaust",
+       "speed",
+       "throw",
+       "thrown"
+      ],
+      "ask": "What sets how effective the propellant is?"
+     },
+     {
+      "k": [
+       "mass ratio",
+       "start",
+       "end",
+       "log",
+       "logarithm",
+       "ln"
+      ],
+      "ask": "What else does the speed gained depend on?"
+     },
+     {
+      "k": [
+       "stage",
+       "staging",
+       "drop",
+       "dead weight",
+       "empty"
+      ],
+      "ask": "How do rockets get around this limit?"
+     }
+    ]
+   }
+  }
+ ]
+}

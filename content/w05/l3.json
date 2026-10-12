@@ -1,0 +1,2751 @@
+{
+ "world": 5,
+ "level": 3,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Ship resistance",
+   "icon": "🚤",
+   "hook": "A ferry doubles its speed. Does it need twice the engine power? Make a prediction first.",
+   "explain": [
+    "As a ship moves, the water and air push back. This total resistance R has several parts. Frictional resistance comes from water rubbing along the hull. Wave-making resistance is the energy used to create the ship's own waves. Form (pressure) resistance comes from the hull shape, and air resistance acts on the part above water.",
+    "The power needed just to tow the hull is the effective power P_E = R × V, with R in newtons and V in m/s giving watts. Resistance grows roughly with speed squared, so power grows roughly with speed cubed. Wave-making rises even faster at high speed, so the last few knots are very costly in fuel.",
+    "The Froude number Fr = V ÷ √(g L) compares speed with hull length. When Fr rises above about 0.3 wave-making grows strongly. Long slim hulls make smaller waves at a given speed, a smooth coating reduces friction, and a bulbous bow can cancel some waves. Less resistance means less fuel and less pollution."
+   ],
+   "example": {
+    "q": "A ship has total resistance 200 kN at 10 m/s. What is its effective power?",
+    "steps": [
+     "P_E = R × V.",
+     "200 000 N × 10 m/s = 2 000 000 W.",
+     "Convert: 2000 kW."
+    ],
+    "a": "2000 kW (2 MW)"
+   },
+   "analogies": {
+    "sport": "A cyclist feels the air push harder the faster they go, and needs much more effort for a small speed gain.",
+    "home": "Moving your hand slowly through bath water is easy; moving it fast is tiring, because resistance rises fast.",
+    "sea": "A canoe leaves a small wave, a big fast launch leaves a large wake. The wake is energy wasted.",
+    "tech": "A smooth hull coating works like a polished slide: less rubbing, less energy lost."
+   },
+   "mnemonic": "FWFA: Friction, Wave, Form, Air. Power = Resistance × Velocity.",
+   "terms": [
+    [
+     "Resistance",
+     "The total force of water and air opposing the ship's motion."
+    ],
+    [
+     "Effective power",
+     "Resistance times speed; the power needed to move the hull."
+    ],
+    [
+     "Froude number",
+     "V ÷ √(gL), a measure of speed relative to hull length."
+    ],
+    [
+     "Bulbous bow",
+     "A rounded bulge at the bow that reduces wave-making."
+    ]
+   ],
+   "misc": {
+    "wrong": "Double the speed needs double the power.",
+    "right": "Resistance rises about with speed squared, so power rises about with speed cubed: doubling speed takes roughly eight times the power."
+   },
+   "limits": "The square and cube rules are approximations. Real ships have friction that scales a little less than V², and wave resistance that changes sharply with speed.",
+   "trip": {
+    "wiki": "Froude number",
+    "prompt": "Find the part about ship hulls. What does a Froude number near 0.4 mean for wave-making?"
+   },
+   "sources": [
+    "Froude number",
+    "Bulbous bow",
+    "Hull (watercraft)"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which resistance comes from the water rubbing along the hull?",
+     "o": [
+      "Frictional resistance",
+      "Wave-making resistance",
+      "Air resistance",
+      "Form resistance"
+     ],
+     "a": 0,
+     "why": "Friction is caused by the water sliding along the surface.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is a bulbous bow for?",
+     "o": [
+      "Reducing wave-making resistance",
+      "Storing extra fuel at the front of the ship",
+      "Holding the anchor tight against the hull",
+      "Increasing friction so the ship turns more easily"
+     ],
+     "a": 0,
+     "why": "Its waves partly cancel the bow wave.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "If resistance is proportional to V², power is roughly proportional to...",
+     "o": [
+      "V³",
+      "V²",
+      "V",
+      "V⁴"
+     ],
+     "a": 0,
+     "why": "P = R × V, so V² × V = V³.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Slowing a container ship by about 10% ('slow steaming') cuts fuel use per hour by roughly a quarter. Why?",
+     "o": [
+      "Power falls roughly with the cube of speed",
+      "The ship gets lighter as it burns less fuel",
+      "The sea becomes calmer when ships go slower",
+      "Friction disappears completely at lower speeds"
+     ],
+     "a": 0,
+     "why": "0.9³ ≈ 0.73, so power needed falls by about 27%.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A hull grows a layer of barnacles and algae. What happens?",
+     "o": [
+      "Frictional resistance and fuel use rise",
+      "Resistance falls because the hull feels smoother",
+      "Nothing changes because the growth is so thin",
+      "Speed doubles as the growth pushes the water away"
+     ],
+     "a": 0,
+     "why": "A rough hull creates more friction, so more fuel is burnt. This also raises emissions.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A ship's resistance is 150 kN at 8 m/s. What is the effective power in kilowatts?",
+     "a": 1200,
+     "tol": 1,
+     "unit": "kW",
+     "why": "150 kN × 8 m/s = 1200 kW.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use g = 9.81 m/s². A ship of length 100 m moves at 10 m/s. Find the Froude number V/√(gL), to 2 decimal places.",
+     "a": 0.32,
+     "tol": 0.01,
+     "unit": "",
+     "why": "√(9.81 × 100) = 31.32; 10 ÷ 31.32 = 0.319.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Assume power ∝ V³. A ship speeds up from 10 to 12 m/s. By what factor does the power needed rise (2 decimal places)?",
+     "a": 1.73,
+     "tol": 0.01,
+     "unit": "×",
+     "why": "(12/10)³ = 1.728.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each resistance to its cause.",
+     "pairs": [
+      [
+       "Frictional",
+       "Water rubbing the hull"
+      ],
+      [
+       "Wave-making",
+       "Energy carried by the ship's own waves"
+      ],
+      [
+       "Air",
+       "Wind on the part above water"
+      ],
+      [
+       "Form",
+       "Pressure differences due to hull shape"
+      ]
+     ],
+     "why": "Each has a different physical origin.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why the last few knots of speed are very expensive in fuel.",
+     "rubric": [
+      [
+       "power",
+       "fuel",
+       "energy",
+       "engine"
+      ],
+      [
+       "cube",
+       "cubed",
+       "squared",
+       "increase quickly",
+       "rises fast",
+       "much more",
+       "wave"
+      ],
+      [
+       "resistance",
+       "drag",
+       "wave-making",
+       "waves"
+      ]
+     ],
+     "min": 2,
+     "model": "Resistance grows rapidly with speed, and wave-making rises even faster at high speed. Since power is resistance times speed, power grows roughly with the cube of speed or faster, so each extra knot needs far more fuel.",
+     "why": "Power ∝ R × V and R grows with V² or more.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A shipping company slows all its ships slightly. Which environmental effect is most likely?",
+     "o": [
+      "Lower fuel use and lower emissions per voyage",
+      "More emissions per voyage because the trip takes longer",
+      "No change in emissions because the engine is the same",
+      "More hull friction, so the ship burns more fuel"
+     ],
+     "a": 0,
+     "why": "Lower speed lowers power sharply, so a voyage uses less fuel overall even though it takes longer.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two hulls have the same displacement. Hull A is long and slim; hull B is short and wide. At the same speed, which usually has lower wave-making resistance?",
+     "o": [
+      "Hull A",
+      "Hull B",
+      "Equal",
+      "Neither makes waves"
+     ],
+     "a": 0,
+     "why": "A longer hull has a lower Froude number at the same speed, making smaller waves.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Why do model tests in a towing tank use the same Froude number as the real ship?",
+     "rubric": [
+      [
+       "wave",
+       "waves",
+       "gravity"
+      ],
+      [
+       "scale",
+       "model",
+       "similar",
+       "match",
+       "same"
+      ],
+      [
+       "resistance",
+       "force",
+       "prediction",
+       "predict"
+      ]
+     ],
+     "min": 2,
+     "model": "Wave-making is governed by gravity, so the model and ship must have the same Froude number for their wave patterns to be similar. Then the model's wave resistance can be scaled up to predict the ship's.",
+     "why": "Froude scaling keeps the ratio of inertial to gravity forces the same.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why a ship needs so much power to go faster",
+    "model": "Water and air push back on a ship. The pushing force rises quickly with speed, roughly with speed squared, and power is that force times speed, so power rises roughly with speed cubed. Ship waves take energy too.",
+    "points": [
+     {
+      "k": [
+       "resistance",
+       "drag",
+       "push back",
+       "friction"
+      ],
+      "ask": "What opposes the ship's motion?"
+     },
+     {
+      "k": [
+       "square",
+       "squared",
+       "quickly",
+       "faster"
+      ],
+      "ask": "How does that force change with speed?"
+     },
+     {
+      "k": [
+       "power",
+       "force times speed",
+       "cube",
+       "cubed"
+      ],
+      "ask": "How is power connected to the force?"
+     },
+     {
+      "k": [
+       "wave",
+       "waves",
+       "wake"
+      ],
+      "ask": "What about the waves the ship makes?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Ship propulsion",
+   "icon": "⚙️",
+   "hook": "A propeller spins inside the water. How does spinning blades push a giant ship forward?",
+   "explain": [
+    "A propeller works like a rotating wing. Each blade is shaped to push water backward. By Newton's third law the water pushes the blade, and the ship, forward. This push is the thrust.",
+    "Power flows from the engine to the water through steps, each losing some. Brake power at the engine passes through the gearbox and shaft to the propeller. The delivered power P_D at the propeller is related to the effective power by P_D = P_E ÷ η_D, where η_D is the quasi-propulsive coefficient, often about 0.6 to 0.7.",
+    "Propeller pitch is the distance it would advance in one turn in a solid. The ideal advance per second is pitch × revolutions per second, but water gives way, so a real propeller slips. If the blade pressure gets too low the water boils into bubbles: this is cavitation, which causes noise, vibration and damage to blades, and noise that harms marine life. Other devices include azimuth thrusters that rotate, water jets, and sails or rotor sails that save fuel."
+   ],
+   "example": {
+    "q": "A propeller has pitch 4 m and turns at 120 rpm. What is the ideal advance speed, with no slip?",
+    "steps": [
+     "120 rpm = 2 revolutions per second.",
+     "Advance per second = pitch × rev/s = 4 × 2 = 8.",
+     "Unit: m/s."
+    ],
+    "a": "8 m/s"
+   },
+   "analogies": {
+    "home": "A screw moves forward into wood by a set amount each turn. A propeller is like a screw in water, but water slips.",
+    "farm": "A tractor with wheelspin in mud moves less than its wheels turn, like propeller slip.",
+    "sport": "A rower's oar pushes water back to move the boat forward.",
+    "tech": "A drone's rotor pushes air down to lift. A propeller pushes water backward."
+   },
+   "mnemonic": "Push water back, ship goes forward; too much suction, cavitation.",
+   "terms": [
+    [
+     "Thrust",
+     "The forward force produced by the propeller."
+    ],
+    [
+     "Pitch",
+     "The theoretical advance of a propeller in one turn."
+    ],
+    [
+     "Slip",
+     "The difference between ideal advance and actual advance."
+    ],
+    [
+     "Cavitation",
+     "Bubbles forming where pressure is very low, damaging blades."
+    ]
+   ],
+   "misc": {
+    "wrong": "A bigger, faster propeller is always better.",
+    "right": "A propeller must match the ship and engine. Too small a blade area at high load causes cavitation, while a large slow propeller is usually more efficient."
+   },
+   "limits": "Real propeller design uses test charts and computer simulation. The pitch formula is an idealisation.",
+   "trip": {
+    "wiki": "Propeller",
+    "prompt": "Find a photo of cavitation damage. Where on the blade does it appear?"
+   },
+   "sources": [
+    "Propeller",
+    "Cavitation",
+    "Azimuth thruster"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which law explains why a propeller pushing water backward moves the ship forward?",
+     "o": [
+      "Newton's third law",
+      "Boyle's law about gas pressure and volume",
+      "Ohm's law about current and voltage",
+      "Hooke's law about springs stretching"
+     ],
+     "a": 0,
+     "why": "Action and reaction forces act between propeller and water.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is cavitation?",
+     "o": [
+      "Bubbles forming where pressure becomes very low",
+      "A type of rust that eats into steel blades",
+      "Water freezing on the surface of the blades",
+      "Oil leaking out of the engine into the sea"
+     ],
+     "a": 0,
+     "why": "Low pressure on the blade makes water vapour bubbles that collapse violently.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which problem is caused by cavitation?",
+     "o": [
+      "Blade damage, vibration and noise",
+      "Lower ship weight as the blades wear away",
+      "A cleaner hull as bubbles scrub the paint",
+      "Higher freeboard as the stern lifts up"
+     ],
+     "a": 0,
+     "why": "Collapsing bubbles erode the metal and make noise that can disturb whales and dolphins.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A tug pulling hard at low speed has a heavily loaded propeller. Why is it more prone to cavitation?",
+     "o": [
+      "High thrust on small blade area gives low pressure on the blades",
+      "The water around a tug is always much warmer",
+      "Its hull is longer than a normal ship hull",
+      "It has no rudder, so the water swirls badly"
+     ],
+     "a": 0,
+     "why": "High loading means more pressure difference across each blade.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can an azimuth thruster improve manoeuvring?",
+     "o": [
+      "It can turn through 360° to point thrust any way",
+      "It is lighter than water, so it floats up",
+      "It is fixed straight, so the ship steers well",
+      "It stops waves from reaching the stern"
+     ],
+     "a": 0,
+     "why": "It rotates, giving thrust in any direction without a rudder.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A ship needs an effective power of 2000 kW. The quasi-propulsive coefficient is 0.65. What delivered power is needed at the propeller, in kW (nearest whole number)?",
+     "a": 3077,
+     "tol": 5,
+     "unit": "kW",
+     "why": "P_D = 2000 ÷ 0.65 = 3076.9 kW.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A propeller of pitch 4 m turns at 120 rpm. With 10% slip, what is the real advance speed in m/s?",
+     "a": 7.2,
+     "tol": 0.05,
+     "unit": "m/s",
+     "why": "Ideal = 4 × 2 = 8 m/s; with 10% slip: 8 × 0.9 = 7.2 m/s.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the path of power from fuel to ship motion.",
+     "items": [
+      "Fuel burnt in the engine",
+      "Shaft and gearbox",
+      "Propeller turns",
+      "Water thrown astern, ship moves ahead"
+     ],
+     "why": "Energy flows through the drive train to the propeller, then to the water.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Thrust",
+       "Force pushing the ship forward"
+      ],
+      [
+       "Pitch",
+       "Ideal advance per turn"
+      ],
+      [
+       "Slip",
+       "Loss of advance"
+      ],
+      [
+       "Cavitation",
+       "Vapour bubbles on blades"
+      ]
+     ],
+     "why": "Four basic propeller words.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A fishing-protection area asks ships to slow down to reduce underwater noise. How does slowing help?",
+     "rubric": [
+      [
+       "cavitation",
+       "bubbles",
+       "propeller"
+      ],
+      [
+       "noise",
+       "sound",
+       "quiet",
+       "loud"
+      ],
+      [
+       "whale",
+       "dolphin",
+       "animals",
+       "marine life",
+       "fish",
+       "slower",
+       "less"
+      ]
+     ],
+     "min": 2,
+     "model": "Slowing the propeller reduces cavitation, which is the main source of underwater noise. Quieter ships cause less disturbance to whales, dolphins and fish that rely on sound.",
+     "why": "Propeller cavitation noise rises steeply with speed, so slowing protects marine life.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A rotor sail adds extra thrust from wind. What is a likely benefit?",
+     "o": [
+      "Less fuel burned on windy routes",
+      "More cavitation on the blades of the propeller",
+      "A heavier propeller that needs more power",
+      "Lower stability always, whatever the wind does"
+     ],
+     "a": 0,
+     "why": "Wind helps push the ship so the engine can do less.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A propeller slip of 0% would mean...",
+     "o": [
+      "Water does not give way; actual advance equals the pitch advance",
+      "Perfect efficiency",
+      "No thrust is produced",
+      "The ship is stopped"
+     ],
+     "a": 2,
+     "why": "A propeller produces thrust by accelerating water, which needs some slip. Zero slip means zero thrust.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do ship designers prefer a propeller with large diameter and low rpm when possible?",
+     "o": [
+      "It moves more water more gently, giving better efficiency",
+      "It is cheaper to paint",
+      "It always has no noise",
+      "It increases drag"
+     ],
+     "a": 0,
+     "why": "Accelerating a larger mass of water by a smaller amount wastes less energy.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a propeller moves a ship",
+    "model": "A propeller's blades are shaped like small wings. They push water backward, and by Newton's third law the water pushes the ship forward. If the blades suck too hard, bubbles form, called cavitation, which damages the blades and makes noise.",
+    "points": [
+     {
+      "k": [
+       "push",
+       "water",
+       "backward",
+       "back"
+      ],
+      "ask": "What does the propeller do to the water?"
+     },
+     {
+      "k": [
+       "newton",
+       "third",
+       "reaction",
+       "equal and opposite"
+      ],
+      "ask": "Why does that move the ship forward?"
+     },
+     {
+      "k": [
+       "cavitation",
+       "bubble",
+       "bubbles"
+      ],
+      "ask": "What goes wrong if it works too hard?"
+     },
+     {
+      "k": [
+       "noise",
+       "damage",
+       "vibration"
+      ],
+      "ask": "Why is that a problem?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Vessel stability and motions",
+   "icon": "🎢",
+   "hook": "Why does a ship roll gently on a long swell but sometimes lurch badly in waves that seem smaller?",
+   "explain": [
+    "A floating vessel can move in six ways: three translations (surge forward-back, sway sideways, heave up-down) and three rotations (roll about the long axis, pitch about the side-to-side axis, yaw about the vertical axis). Together these are the six degrees of freedom.",
+    "For roll, a ship behaves like a pendulum with a natural period T_φ = 2π k ÷ √(g × GM), where k is the radius of gyration (about 0.35 to 0.4 of the beam B) and GM is the metacentric height. Large GM gives short periods and snappy rolls; small GM gives slow, lazy rolls. If waves reach the ship at about the same period, resonance builds large rolls.",
+    "Stability also changes when weight moves. If a mass w is moved sideways a distance d on a ship of displacement Δ, the centre of gravity shifts by GG₁ = w × d ÷ Δ, and the ship heels to angle θ where tan θ = GG₁ ÷ GM. Shifting cargo, loose water on deck, strong wind and sharp turns can all produce dangerous heel, so ships carry stability booklets and loading computers."
+   ],
+   "example": {
+    "q": "50 t is moved 10 m sideways on a 5000 t ship with GM = 1.0 m. Find the heel angle.",
+    "steps": [
+     "GG₁ = w × d ÷ Δ = 50 × 10 ÷ 5000 = 0.1 m.",
+     "tan θ = 0.1 ÷ 1.0 = 0.1.",
+     "θ = tan⁻¹(0.1) ≈ 5.7°."
+    ],
+    "a": "About 5.7°"
+   },
+   "analogies": {
+    "home": "A child on a swing goes high if pushed at just the right rhythm. That is resonance, like waves matching a ship's roll period.",
+    "sport": "A skateboarder on a half-pipe rocks back and forth at a natural rhythm.",
+    "city": "A tall building sways in wind with a natural period, which designers try to avoid matching with wind gusts.",
+    "farm": "A trailer with a loose load of grain sloshing from side to side can start to lean badly."
+   },
+   "mnemonic": "Surge, Sway, Heave go straight; Roll, Pitch, Yaw rotate.",
+   "terms": [
+    [
+     "Heave",
+     "Up-and-down motion."
+    ],
+    [
+     "Roll",
+     "Rotation about the long axis, side to side."
+    ],
+    [
+     "Natural period",
+     "The time of one free oscillation of the ship."
+    ],
+    [
+     "Resonance",
+     "Large motion when forcing matches the natural period."
+    ]
+   ],
+   "misc": {
+    "wrong": "More stability always means a safer, more comfortable ship.",
+    "right": "Very high GM gives a short roll period, which is violent for people and cargo. Designers aim for enough but not too much stability."
+   },
+   "limits": "These are small-angle formulas for still water. Real ships in waves need computer calculations, and large heel needs the full GZ curve.",
+   "trip": {
+    "wiki": "Ship motions",
+    "prompt": "Find the diagram of the six degrees of freedom and label them on a picture of a ship."
+   },
+   "sources": [
+    "Ship motions",
+    "Metacentric height",
+    "Resonance"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which motion is rotation about the ship's long axis?",
+     "o": [
+      "Roll",
+      "Pitch",
+      "Yaw",
+      "Heave"
+     ],
+     "a": 0,
+     "why": "Roll is the side-to-side rotation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which motion is up-and-down movement of the whole ship?",
+     "o": [
+      "Heave",
+      "Sway",
+      "Surge",
+      "Yaw"
+     ],
+     "a": 0,
+     "why": "Heave is vertical translation.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A ship's GM increases. What happens to its natural roll period?",
+     "o": [
+      "It gets shorter",
+      "It gets longer",
+      "It stays the same",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "T = 2πk/√(g GM), so a larger GM gives a smaller T.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A ship has a natural roll period of 12 s. Waves arrive every 12 s. What risk does this create?",
+     "o": [
+      "Resonance and large roll",
+      "Zero roll because the two motions cancel out",
+      "Higher freeboard because the waves lift the hull",
+      "Faster speed because the waves push the ship"
+     ],
+     "a": 0,
+     "why": "Forcing at the natural period builds up large motions.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A captain can change heading to avoid resonant rolling. What does this change?",
+     "o": [
+      "The wave encounter period",
+      "The ship's GM, since the heading shifts the weight",
+      "The sea density around the hull",
+      "The ship's length at the waterline"
+     ],
+     "a": 0,
+     "why": "Heading changes how often crests meet the ship.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A beam B = 20 m, k = 0.35B and GM = 1.5 m. Use T = 2πk/√(g GM) with g = 9.81 m/s². Find the roll period in seconds (1 decimal place).",
+     "a": 11.5,
+     "tol": 0.1,
+     "unit": "s",
+     "why": "k = 7 m; √(9.81 × 1.5) = 3.836; T = 2π × 7 ÷ 3.836 = 11.47 s.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A 60 t load shifts 8 m sideways on a 4800 t ship. What is the shift in the centre of gravity GG₁ in metres?",
+     "a": 0.1,
+     "tol": 0.005,
+     "unit": "m",
+     "why": "60 × 8 ÷ 4800 = 0.1 m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "In the previous problem, GM = 0.8 m. Use tan θ = GG₁/GM. What is the heel angle θ in degrees (1 decimal place)?",
+     "a": 7.1,
+     "tol": 0.1,
+     "unit": "°",
+     "why": "tan θ = 0.1 ÷ 0.8 = 0.125; θ = 7.13°.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each motion to its type.",
+     "pairs": [
+      [
+       "Surge",
+       "Forward-backward translation"
+      ],
+      [
+       "Sway",
+       "Sideways translation"
+      ],
+      [
+       "Pitch",
+       "Bow up, bow down rotation"
+      ],
+      [
+       "Yaw",
+       "Turning about vertical axis"
+      ]
+     ],
+     "why": "Three translations and three rotations make up the six motions.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a crew securing cargo with lashings improves safety in rough seas.",
+     "rubric": [
+      [
+       "shift",
+       "move",
+       "slide",
+       "slip",
+       "loose"
+      ],
+      [
+       "heel",
+       "list",
+       "tilt",
+       "g",
+       "centre of gravity",
+       "stability",
+       "capsize"
+      ],
+      [
+       "safe",
+       "prevent",
+       "keep",
+       "hold",
+       "secure"
+      ]
+     ],
+     "min": 2,
+     "model": "If cargo moves in waves its weight shifts sideways, which moves the centre of gravity and can cause a dangerous heel. Lashings keep the weight where the stability calculation assumed.",
+     "why": "Stability calculations assume fixed cargo; shifting breaks that assumption.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A ship is heeled and the heel angle gets bigger each time a wave hits from the same side. Which action is best?",
+     "o": [
+      "Change heading or speed to change the encounter pattern",
+      "Add deck cargo high up to hold the ship down",
+      "Open the cargo doors to let water drain out",
+      "Stay on course and hope the waves soften"
+     ],
+     "a": 0,
+     "why": "Changing course and speed alters the wave encounter period and heel forces.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do cruise ships have fin stabilisers?",
+     "o": [
+      "They create forces that reduce roll",
+      "They add weight low down to keep the ship steady",
+      "They increase draught so the ship sits deeper",
+      "They lower the freeboard so waves wash off"
+     ],
+     "a": 0,
+     "why": "Fins act like underwater wings to resist rolling.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Heavy rain fills the open deck of a vessel and water floods the side to one side. Which risk grows?",
+     "o": [
+      "Loss of stability due to free-surface and added weight high up",
+      "Faster speed from the extra weight on deck",
+      "Better freeboard from the water on deck",
+      "Lower roll since the water holds the ship still"
+     ],
+     "a": 0,
+     "why": "Added weight high up and free water raise G and reduce effective GM.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why ships roll and when it is dangerous",
+    "model": "A ship rolls like a pendulum with its own natural period that depends on its GM. If waves arrive at about that same rhythm, rolls build up. Shifting cargo makes the ship lean and can be dangerous.",
+    "points": [
+     {
+      "k": [
+       "pendulum",
+       "swing",
+       "natural",
+       "period",
+       "rhythm"
+      ],
+      "ask": "How does a ship roll by itself?"
+     },
+     {
+      "k": [
+       "wave",
+       "resonance",
+       "match",
+       "same"
+      ],
+      "ask": "When do waves make it much worse?"
+     },
+     {
+      "k": [
+       "cargo",
+       "shift",
+       "weight",
+       "move"
+      ],
+      "ask": "What else can make it lean?"
+     },
+     {
+      "k": [
+       "lash",
+       "secure",
+       "tie",
+       "course",
+       "speed"
+      ],
+      "ask": "How can crews reduce the danger?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Offshore wave loading",
+   "icon": "🌊",
+   "hook": "A single vertical pipe stands in the sea. How would you calculate how hard waves push on it?",
+   "explain": [
+    "A wave pushes on a structure in two main ways. The drag force is like wind on a flag: water moving past the pipe pushes it. The inertia force comes from accelerating water, like pushing a heavy mass that is speeding up and slowing down. The Morison equation adds them for a slender vertical cylinder, per metre of length: F = ½ ρ C_D D u|u| + ρ C_M (π D² ÷ 4) a.",
+    "Here ρ = 1025 kg/m³, D is the pipe diameter, u is water velocity, a is water acceleration, C_D is the drag coefficient (about 1 for a rough cylinder) and C_M is the inertia coefficient (about 2). The Morison equation works when the member is slender, roughly D < λ ÷ 5. For a huge column, the structure changes the waves (diffraction) and other methods are needed.",
+    "Water velocity in a wave is largest at the surface and falls with depth. Drag is biggest when velocity peaks (under a crest) and inertia is biggest when acceleration peaks (between crest and trough), so the two forces are out of step in time. The total force on a platform is the sum over all members, and engineers use the design wave from storm statistics. Waves can also slam on decks, so decks are set above the crest."
+   ],
+   "example": {
+    "q": "A pile has D = 1 m. Water moves at 2 m/s. With C_D = 1.0 and ρ = 1025 kg/m³, find the drag force per metre length.",
+    "steps": [
+     "F = ½ ρ C_D D u².",
+     "= 0.5 × 1025 × 1.0 × 1 × 4.",
+     "= 2050 N per metre."
+    ],
+    "a": "2050 N/m"
+   },
+   "analogies": {
+    "home": "Holding your hand out of a moving car, the push on it is like drag, and it grows quickly with speed.",
+    "sport": "Catching a fast ball is a mix of the ball's speed and how quickly it slows in your hands.",
+    "city": "A bridge pier in a flowing river feels the water push all along its length.",
+    "tech": "Wind engineers use almost the same formulas for wind on a chimney."
+   },
+   "mnemonic": "Drag with velocity squared, inertia with acceleration: Morison adds two.",
+   "terms": [
+    [
+     "Morison equation",
+     "Wave force on a slender member = drag plus inertia."
+    ],
+    [
+     "Drag coefficient",
+     "A number describing how strongly flow pushes on a shape."
+    ],
+    [
+     "Design wave",
+     "A wave chosen from storm statistics to design a structure."
+    ],
+    [
+     "Diffraction",
+     "Waves bending around and changing near a large structure."
+    ]
+   ],
+   "misc": {
+    "wrong": "Wave force is highest when the water is highest.",
+    "right": "Drag peaks under the crest where velocity is highest, but inertia peaks when acceleration is greatest, at a different moment."
+   },
+   "limits": "The coefficients vary with roughness (like marine growth), Reynolds number and wave conditions. Engineers choose them from tests and standards, not a single exact value.",
+   "trip": {
+    "wiki": "Morison equation",
+    "prompt": "Find the equation on the page. Which term depends on acceleration?"
+   },
+   "sources": [
+    "Morison equation",
+    "Wave power",
+    "Airy wave theory"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which two parts make up the Morison force?",
+     "o": [
+      "Drag and inertia",
+      "Buoyancy and weight",
+      "Friction and heat",
+      "Lift and thrust"
+     ],
+     "a": 0,
+     "why": "Morison's equation is a sum of drag and inertia terms.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If water velocity doubles, drag force on a pile becomes...",
+     "o": [
+      "Four times bigger",
+      "Twice as big, since drag grows in a straight line",
+      "Half as big, since faster water slips past",
+      "Unchanged, since the pile does not move"
+     ],
+     "a": 0,
+     "why": "Drag ∝ u².",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Marine growth (mussels and algae) makes a pile rougher and fatter. What happens to wave load?",
+     "o": [
+      "It increases",
+      "It decreases",
+      "It stays equal",
+      "It becomes zero"
+     ],
+     "a": 0,
+     "why": "Growth increases D and the drag coefficient, so loads go up.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A very wide gravity-base column of D = 40 m stands in waves of wavelength 100 m. Why is Morison not suitable?",
+     "o": [
+      "It is not slender and changes the waves",
+      "It is too light to stay in place in waves",
+      "It has no mass to calculate the force from",
+      "Waves have no force on large columns at all"
+     ],
+     "a": 0,
+     "why": "D/λ = 0.4 is large, so diffraction matters.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why are platform decks placed above the highest expected crest?",
+     "o": [
+      "To avoid slamming loads on the deck",
+      "To save steel by making the legs shorter",
+      "To stay cool in the sun above the water",
+      "To catch more wind for the crew's power"
+     ],
+     "a": 0,
+     "why": "Waves hitting the underside of a deck cause large impact loads.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³, C_D = 1.0, D = 1 m and u = 2 m/s. Find the drag force per metre length in newtons.",
+     "a": 2050,
+     "tol": 5,
+     "unit": "N/m",
+     "why": "0.5 × 1025 × 1.0 × 1 × 2² = 2050 N/m.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Use ρ = 1025 kg/m³, C_M = 2, D = 1 m and a = 1 m/s². Find the inertia force per metre in newtons (nearest whole number). Take π = 3.1416.",
+     "a": 1610,
+     "tol": 5,
+     "unit": "N/m",
+     "why": "1025 × 2 × (π × 1² ÷ 4) × 1 = 1025 × 2 × 0.7854 = 1610 N/m.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pile feels 2050 N/m of drag over a 30 m submerged length. If the force is uniform, what is the total force in kilonewtons?",
+     "a": 61.5,
+     "tol": 0.1,
+     "unit": "kN",
+     "why": "2050 × 30 = 61 500 N = 61.5 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each term to its meaning.",
+     "pairs": [
+      [
+       "Drag",
+       "Force due to flow velocity"
+      ],
+      [
+       "Inertia",
+       "Force due to water acceleration"
+      ],
+      [
+       "Slender",
+       "Diameter small compared to wavelength"
+      ],
+      [
+       "Slamming",
+       "Impact of a wave on a deck"
+      ]
+     ],
+     "why": "These are the key ideas of wave loading.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Explain why wave forces on a platform are largest in a big storm even if the platform has not changed.",
+     "rubric": [
+      [
+       "velocity",
+       "speed",
+       "faster",
+       "u"
+      ],
+      [
+       "height",
+       "bigger",
+       "larger",
+       "more",
+       "stronger"
+      ],
+      [
+       "squared",
+       "increase",
+       "drag",
+       "force"
+      ]
+     ],
+     "min": 2,
+     "model": "Bigger storm waves have higher water velocities and accelerations, and drag rises with the square of velocity, so the load increases very quickly.",
+     "why": "Load grows non-linearly with wave size.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why do designers use a one-in-100-year design wave rather than average waves?",
+     "o": [
+      "Structures must survive rare extreme storms",
+      "Average waves are not real, only extremes are",
+      "It is cheaper to build for the average waves",
+      "Extreme waves never occur in the open sea"
+     ],
+     "a": 0,
+     "why": "Safety depends on surviving the worst expected event.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Cleaning marine growth from a platform leg does what to wave load?",
+     "o": [
+      "Reduces it",
+      "Raises it",
+      "No effect",
+      "Removes buoyancy"
+     ],
+     "a": 0,
+     "why": "Smaller diameter and lower roughness reduce drag.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "If a member's drag and inertia peaks occur at different times, the total peak force is...",
+     "o": [
+      "Less than the simple sum of both peaks",
+      "Exactly the sum of both peaks added together",
+      "Always zero because the two forces cancel",
+      "Larger than both added together, twice over"
+     ],
+     "a": 0,
+     "why": "They are out of phase, so peaks do not occur together.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How waves push on an offshore pile",
+    "model": "Waves push on a pile in two ways: drag, from the water speed, and inertia, from the water speeding up and slowing down. Together they give the Morison force. Bigger waves move faster, so the force grows much faster than the wave height.",
+    "points": [
+     {
+      "k": [
+       "drag",
+       "velocity",
+       "speed",
+       "flow"
+      ],
+      "ask": "What is the first kind of push?"
+     },
+     {
+      "k": [
+       "inertia",
+       "acceleration",
+       "accelerat"
+      ],
+      "ask": "What is the second kind?"
+     },
+     {
+      "k": [
+       "square",
+       "squared",
+       "quickly",
+       "faster"
+      ],
+      "ask": "How does force change when waves get bigger?"
+     },
+     {
+      "k": [
+       "storm",
+       "design",
+       "extreme"
+      ],
+      "ask": "Which waves do engineers design for?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Offshore structural concepts",
+   "icon": "🏝️",
+   "hook": "A platform in 50 m of water and one in 1500 m of water cannot be built the same way. Why not?",
+   "explain": [
+    "Offshore structures come in two families: fixed and floating. Fixed structures stand on the sea bed. A jacket is a steel lattice frame held by piles. A gravity-based structure (GBS) is a huge concrete base that stays in place by its own weight. Both are strong but become very expensive in deep water.",
+    "A compliant tower is a slim tower that bends with the waves. In deep water floating concepts take over. A semi-submersible has columns and pontoons below the surface. A spar is a deep vertical cylinder. A tension-leg platform (TLP) is a floating platform pulled down by vertical tendons so it hardly heaves. An FPSO (floating production, storage and offloading vessel) is a ship that processes and stores oil.",
+    "The choice depends on depth, waves, soil, field size, what is produced and cost. A TLP floats with excess buoyancy: buoyant force minus weight is the tendon pretension. If the tendons go slack, the platform loses control, so designers check this carefully. Wind turbines use their own concepts: monopiles in shallow water and floating foundations for deep sites."
+   ],
+   "example": {
+    "q": "A TLP displaces 70 000 m³ of sea water and its weight (mass) is 60 000 t. Find the total tendon pretension. (ρ = 1025 kg/m³, g = 9.81 m/s²)",
+    "steps": [
+     "Buoyant mass = 70 000 × 1025 = 71 750 000 kg = 71 750 t.",
+     "Excess = 71 750 − 60 000 = 11 750 t = 11 750 000 kg.",
+     "Force = 11 750 000 × 9.81 = 115 267 500 N."
+    ],
+    "a": "About 115 MN"
+   },
+   "analogies": {
+    "home": "A TLP is like a balloon held down by strings: the balloon pulls up, the strings keep it from moving.",
+    "sea": "An FPSO is a ship that is also a floating factory and storage tank.",
+    "farm": "A gravity base is like a heavy fence post set in a concrete block.",
+    "city": "A tall building uses deep foundations, like piles for a jacket."
+   },
+   "mnemonic": "Shallow: legs. Deep: float. Jacket, GBS, TLP, Spar, Semi, FPSO.",
+   "terms": [
+    [
+     "Jacket",
+     "Steel lattice platform frame fixed with piles."
+    ],
+    [
+     "TLP",
+     "Floating platform held by taut vertical tendons."
+    ],
+    [
+     "Spar",
+     "A floating platform shaped like a deep vertical cylinder."
+    ],
+    [
+     "FPSO",
+     "A ship-shaped unit that produces, stores and offloads oil."
+    ]
+   ],
+   "misc": {
+    "wrong": "Floating platforms are less safe because they float.",
+    "right": "Floating platforms are engineered with moorings, redundancy and strict rules, and they are chosen where fixed structures are not practical."
+   },
+   "limits": "The depth ranges where each concept is used are not sharp limits; they move with new technology and local conditions.",
+   "trip": {
+    "wiki": "Tension-leg platform",
+    "prompt": "Compare the pictures of a jacket, a TLP and a spar. How does each one stay in place?"
+   },
+   "sources": [
+    "Tension-leg platform",
+    "Spar (platform)",
+    "Floating production storage and offloading"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which structure is held in place by its own weight on the sea bed?",
+     "o": [
+      "Gravity-based structure",
+      "Spar, a deep floating cylinder",
+      "FPSO, a floating ship-shaped unit",
+      "TLP, held by tight vertical tendons"
+     ],
+     "a": 0,
+     "why": "A GBS relies on its mass and base area.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What keeps a TLP from heaving much?",
+     "o": [
+      "Taut vertical tendons",
+      "Anchors on slack chains",
+      "Sails",
+      "Wheels"
+     ],
+     "a": 0,
+     "why": "Tendons are stiff, so vertical motion is tiny.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a ship-shaped unit that stores oil?",
+     "o": [
+      "FPSO",
+      "Jacket",
+      "GBS",
+      "Monopile"
+     ],
+     "a": 0,
+     "why": "FPSO = floating production, storage and offloading.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A field is in 2000 m water. Why is a jacket unsuitable?",
+     "o": [
+      "It would be impractically tall and heavy",
+      "Jackets float away from their piles in deep water",
+      "Jackets are made of rubber and bend too much",
+      "Jackets need no piles, so they cannot stand up"
+     ],
+     "a": 0,
+     "why": "Fixed structures scale poorly with depth.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A TLP's tendon tension drops to zero in a big wave. What is the danger?",
+     "o": [
+      "The platform may lose its stiff restraint and move violently",
+      "It will fly away upward on the next wave",
+      "It will become a ship and sail off on its own",
+      "Nothing happens, because the tendons are never needed"
+     ],
+     "a": 0,
+     "why": "Slack tendons mean the platform is no longer pinned and may snap back.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A TLP displaces 70 000 m³ (ρ = 1025 kg/m³) and has a mass of 60 000 t. With g = 9.81 m/s², find the total tendon pretension in meganewtons (MN).",
+     "a": 115.3,
+     "tol": 0.3,
+     "unit": "MN",
+     "why": "(71 750 000 − 60 000 000) × 9.81 = 115.3 MN.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The pretension of 115.3 MN is shared equally between 4 tendons. What is the force on each, in MN (1 decimal place)?",
+     "a": 28.8,
+     "tol": 0.1,
+     "unit": "MN",
+     "why": "115.3 ÷ 4 = 28.8 MN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the steps for finding the force in each TLP tendon.",
+     "items": [
+      "Find the mass of sea water displaced",
+      "Subtract the platform mass",
+      "Multiply the excess mass by g",
+      "Share the force among the tendons"
+     ],
+     "why": "Buoyancy minus weight gives the excess force the tendons must hold, which is then split between them.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each concept to its description.",
+     "pairs": [
+      [
+       "Jacket",
+       "Steel frame on piles"
+      ],
+      [
+       "Spar",
+       "Deep floating cylinder"
+      ],
+      [
+       "Semi-submersible",
+       "Columns and pontoons"
+      ],
+      [
+       "Monopile",
+       "Single large steel tube foundation"
+      ]
+     ],
+     "why": "Each has a distinct form.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Give two factors an engineer considers when choosing between a fixed and a floating platform.",
+     "rubric": [
+      [
+       "depth",
+       "deep",
+       "water depth"
+      ],
+      [
+       "soil",
+       "sea bed",
+       "seabed",
+       "foundation"
+      ],
+      [
+       "wave",
+       "weather",
+       "environment",
+       "storm"
+      ],
+      [
+       "cost",
+       "field size",
+       "reserves",
+       "oil",
+       "money"
+      ]
+     ],
+     "min": 2,
+     "model": "Water depth is key since fixed structures get too big when deep. Soil conditions, waves and weather, field size and cost also matter.",
+     "why": "Concept selection balances depth, environment, soil and economics.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A spar has a very deep, narrow hull. What is the main benefit?",
+     "o": [
+      "Small heave motion because wave forces on the bottom are low",
+      "More heave, because the hull is long and deep",
+      "Lower draught, because the hull is so narrow",
+      "Easy to move to a new field once it is built"
+     ],
+     "a": 0,
+     "why": "Deep draught puts the bulk away from surface wave action.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A field is small and short-lived. Why might an FPSO be chosen?",
+     "o": [
+      "It can be moved and reused",
+      "It never leaves",
+      "It is cheap to fix forever",
+      "It requires no moorings"
+     ],
+     "a": 0,
+     "why": "A ship-shaped unit can leave when the field ends.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A monopile wind turbine foundation is suitable where...",
+     "o": [
+      "The water is relatively shallow and the soil can support piles",
+      "The water is 2000 m deep, which is ideal for piles",
+      "No soil exists, only bare rock on the sea bed",
+      "Ships never go near, so there is no danger"
+     ],
+     "a": 0,
+     "why": "Monopiles are used in shallow water up to a few tens of metres.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Choosing a platform type",
+    "model": "In shallow water platforms stand on the sea bed on legs or heavy bases. In deep water they float and are held in place by tendons or moorings. The choice depends on depth, waves, soil, and cost.",
+    "points": [
+     {
+      "k": [
+       "shallow",
+       "legs",
+       "jacket",
+       "bed",
+       "fixed"
+      ],
+      "ask": "What is used in shallow water?"
+     },
+     {
+      "k": [
+       "deep",
+       "float",
+       "floating"
+      ],
+      "ask": "What about deep water?"
+     },
+     {
+      "k": [
+       "tendon",
+       "mooring",
+       "moor",
+       "chain",
+       "anchor"
+      ],
+      "ask": "How do floating ones stay put?"
+     },
+     {
+      "k": [
+       "cost",
+       "wave",
+       "soil",
+       "depth"
+      ],
+      "ask": "What does the choice depend on?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Subsea pipeline fundamentals",
+   "icon": "🧪",
+   "hook": "A pipe on the sea bed carries gas at 15 times the pressure of a car tyre. How thick must the steel be so it does not burst?",
+   "explain": [
+    "A pressurised pipe tries to split along its length. The stress in the wall around the circumference is the hoop stress σ = p × D ÷ (2 × t), where p is internal pressure, D the diameter and t the wall thickness. Thicker walls or smaller diameter lower the stress. Designers keep σ below a fraction of the steel's yield strength, and add extra thickness for corrosion.",
+    "Outside the pipe, water pressure acts too. Deep, empty or low-pressure pipes may collapse or buckle, so external pressure checks matter. On the sea bed, pipes must also stay in place against currents, so concrete coating adds weight. Free spans, where the pipe bridges a dip, can vibrate in current and suffer fatigue.",
+    "Corrosion is controlled with coatings and cathodic protection from sacrificial anodes. Pigs, devices pushed through the pipe by the flow, clean it and inspect it. Pipes are laid by S-lay (a long ramp), J-lay (near-vertical, for deep water) or reel-lay (spooled steel pipe). Routes avoid reefs and fishing areas, and leak detection and shut-down valves protect the sea."
+   ],
+   "example": {
+    "q": "p = 15 MPa, D = 0.5 m and t = 0.02 m. Find the hoop stress.",
+    "steps": [
+     "σ = p D ÷ (2 t).",
+     "= 15 × 10⁶ × 0.5 ÷ (2 × 0.02).",
+     "= 7.5 × 10⁶ ÷ 0.04 = 187.5 × 10⁶ Pa."
+    ],
+    "a": "187.5 MPa"
+   },
+   "analogies": {
+    "home": "A balloon bursts first where the rubber is thinnest, as a pipe would at a thin spot.",
+    "farm": "A bucket with a band around it: the band feels tension from the water pushing outward, like hoop stress.",
+    "sport": "Cyclists pump tyres to high pressure, and strong tyres have thicker walls.",
+    "tech": "A pig is like a robot that travels along the pipe cleaning and checking."
+   },
+   "mnemonic": "Hoop stress = p D over 2 t: more pressure, bigger pipe, thinner wall means more stress.",
+   "terms": [
+    [
+     "Hoop stress",
+     "Stress around the circumference of a pressurised pipe."
+    ],
+    [
+     "Free span",
+     "A section of pipe that is not supported by the sea bed."
+    ],
+    [
+     "Cathodic protection",
+     "Protecting steel by making it the cathode, e.g. with anodes."
+    ],
+    [
+     "Pig",
+     "A device sent through a pipeline to clean or inspect it."
+    ]
+   ],
+   "misc": {
+    "wrong": "A thicker pipe is always better.",
+    "right": "Thicker pipe costs more, is heavier to lay, and may be harder to weld. Engineers choose the thickness the loads require, plus allowances."
+   },
+   "limits": "The hoop stress formula is for thin-walled pipes. Real codes include safety factors, temperature, external pressure and installation loads.",
+   "trip": {
+    "wiki": "Pipeline transport",
+    "prompt": "Find the section on subsea or offshore pipelines. How are they laid?"
+   },
+   "sources": [
+    "Submarine pipeline",
+    "Pigging",
+    "Cathodic protection"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "If a pipe's wall thickness doubles and everything else stays the same, hoop stress...",
+     "o": [
+      "Halves",
+      "Doubles",
+      "Stays the same",
+      "Quadruples"
+     ],
+     "a": 0,
+     "why": "σ = pD/(2t) is inversely proportional to t.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "What is a pig in a pipeline?",
+     "o": [
+      "A device sent through for cleaning or inspection",
+      "A kind of valve that closes the line in danger",
+      "A coating that protects the pipe from rust",
+      "An anchor that holds the pipe on the sea bed"
+     ],
+     "a": 0,
+     "why": "Pigs travel with the flow.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why is concrete coating added on some pipelines?",
+     "o": [
+      "Extra weight to hold them on the sea bed",
+      "To make them float up away from the sea bed",
+      "To make them hotter so the oil flows better",
+      "To block the flow of the gas inside the pipe"
+     ],
+     "a": 0,
+     "why": "Heavy coating resists current forces and protects the steel.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A free span in a strong current starts to vibrate. Which long-term damage is most likely?",
+     "o": [
+      "Fatigue cracking",
+      "Boiling of the steel in the warm current",
+      "Melting of the pipe wall at the vibrating span",
+      "Freezing of the oil inside during the vibration"
+     ],
+     "a": 0,
+     "why": "Repeated flow-induced vibration causes cyclic stress.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A small leak is detected in a gas pipeline. What is the safest first step?",
+     "o": [
+      "Shut in the line and notify the authorities",
+      "Wait to see if the leak grows before acting",
+      "Increase the pressure to push the leak shut",
+      "Ignore it because the leak is so small"
+     ],
+     "a": 0,
+     "why": "Stopping flow limits harm and allows a safe investigation.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "p = 12 MPa, D = 0.6 m, t = 0.015 m. Calculate hoop stress σ = pD/(2t) in MPa.",
+     "a": 240,
+     "tol": 1,
+     "unit": "MPa",
+     "why": "12 × 0.6 ÷ (2 × 0.015) = 7.2 ÷ 0.03 = 240 MPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The allowable hoop stress is 250 MPa, p = 12 MPa and D = 0.6 m. What is the minimum thickness t in mm (1 decimal place)?",
+     "a": 14.4,
+     "tol": 0.1,
+     "unit": "mm",
+     "why": "t = pD/(2σ) = 12 × 0.6 ÷ (2 × 250) = 0.0144 m = 14.4 mm.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A pipeline segment is 20 km long. A pig travels at 1.5 m/s. How many hours does a pig run take (1 decimal place)?",
+     "a": 3.7,
+     "tol": 0.1,
+     "unit": "h",
+     "why": "20 000 ÷ 1.5 = 13 333 s ÷ 3600 = 3.70 h.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each method to its purpose.",
+     "pairs": [
+      [
+       "S-lay",
+       "Pipe laid from a horizontal ramp"
+      ],
+      [
+       "J-lay",
+       "Near-vertical lay for deep water"
+      ],
+      [
+       "Reel-lay",
+       "Pipe spooled on a drum"
+      ],
+      [
+       "Anode",
+       "Protects against corrosion"
+      ]
+     ],
+     "why": "Different methods suit depths and pipe sizes.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why do operators put sacrificial anodes on subsea pipelines even when the pipe is coated?",
+     "rubric": [
+      [
+       "coating",
+       "damage",
+       "crack",
+       "holiday",
+       "gap",
+       "scratch",
+       "defect"
+      ],
+      [
+       "corrosion",
+       "rust",
+       "steel"
+      ],
+      [
+       "protect",
+       "anode",
+       "corrode",
+       "instead",
+       "sacrific"
+      ]
+     ],
+     "min": 2,
+     "model": "Coatings can be scratched or have small gaps. The anode corrodes instead of the steel, protecting it at those spots and extending the pipeline's life.",
+     "why": "Coating and cathodic protection work together as two layers of defence.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A pipeline is shut down and left empty at 2000 m depth. Which load should be checked?",
+     "o": [
+      "External pressure causing collapse or buckling",
+      "Internal burst from high pressure inside the pipe",
+      "Overheating of the steel while it sits empty",
+      "Melting of the pipe wall in the cold sea"
+     ],
+     "a": 0,
+     "why": "With nothing inside, the external water pressure acts alone.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A route is moved around a coral reef at extra cost. Why?",
+     "o": [
+      "To protect a sensitive habitat",
+      "Corals like pipes and grow best on them",
+      "It makes the pipe shorter and so cheaper",
+      "It reduces the pressure inside the pipe"
+     ],
+     "a": 0,
+     "why": "Environmental protection can justify a longer route.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Hoop stress is twice the longitudinal stress in a closed thin-walled pipe. What does that mean for design?",
+     "o": [
+      "Wall thickness is mainly governed by hoop stress",
+      "Longitudinal stress can always be ignored in pipes",
+      "Pipes are solid so stress does not matter",
+      "Thickness does not matter if the steel is strong"
+     ],
+     "a": 0,
+     "why": "σ_hoop = pD/2t and σ_long = pD/4t, so hoop is critical.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Why pipeline walls have to be thick enough",
+    "model": "Pressure inside a pipe pulls the wall apart around its circumference. The stress is pressure times diameter divided by twice the thickness. So engineers pick a thickness that keeps stress safely below the steel's strength, and add protection against corrosion.",
+    "points": [
+     {
+      "k": [
+       "pressure",
+       "inside",
+       "push"
+      ],
+      "ask": "What stresses the wall?"
+     },
+     {
+      "k": [
+       "thick",
+       "thickness",
+       "thicker"
+      ],
+      "ask": "What does wall thickness do?"
+     },
+     {
+      "k": [
+       "diameter",
+       "bigger",
+       "wide"
+      ],
+      "ask": "Does the pipe size matter?"
+     },
+     {
+      "k": [
+       "corrosion",
+       "coating",
+       "anode",
+       "rust"
+      ],
+      "ask": "What else protects it over the years?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Marine geotechnics",
+   "icon": "🪨",
+   "hook": "A heavy structure sits on the sea bed. What decides whether it sinks into the mud or stays put?",
+   "explain": [
+    "Marine geotechnics studies sea-bed soils. Soils are mainly clay (tiny, sticky particles), sand (larger grains) and silt in between. Clay strength is described by undrained shear strength s_u; sand strength depends on friction angle.",
+    "Soil is made of grains with water in the gaps. Effective stress σ' is the stress carried by the grains: σ' = σ − u, where u is the pore water pressure. Under water, the grains are lifted by buoyancy, so effective unit weight is γ' = γ_sat − γ_w, where γ_w ≈ 10 kN/m³. Soil strength depends on effective stress, which is why saturated sand can suddenly lose strength if the pore pressure rises during shaking (liquefaction).",
+    "A foundation resting on clay has a bearing capacity roughly q_u = N_c × s_u, with N_c about 6 for a circular or square footing (a stated assumption). The structure's load divided by its area must stay well below q_u, with a safety factor of at least 2 or 3. Surveys use boreholes, cone penetration tests and samples taken from ships."
+   ],
+   "example": {
+    "q": "Saturated soil has γ_sat = 18 kN/m³. Take γ_w = 10 kN/m³. Find the effective vertical stress at 5 m depth.",
+    "steps": [
+     "γ' = 18 − 10 = 8 kN/m³.",
+     "σ' = γ' × z = 8 × 5.",
+     "= 40 kPa."
+    ],
+    "a": "40 kPa"
+   },
+   "analogies": {
+    "home": "Wet sand at the beach is firm when still, but if you shake it hard it turns soupy, like liquefaction.",
+    "farm": "A tractor sinks into soft wet clay and not onto dry gravel.",
+    "sport": "Stud spacing on football boots spreads the load; a wide footing spreads a structure's weight.",
+    "sea": "A mud-mat is like snow-shoes: wide so you do not sink."
+   },
+   "mnemonic": "Soil carries load through grains: effective stress is total minus water.",
+   "terms": [
+    [
+     "Undrained shear strength",
+     "Strength of clay used for short-term loading, s_u."
+    ],
+    [
+     "Effective stress",
+     "Stress carried by the soil grains, total stress minus pore pressure."
+    ],
+    [
+     "Bearing capacity",
+     "The largest pressure a soil can carry before failure."
+    ],
+    [
+     "Liquefaction",
+     "Loss of strength in saturated soil when pore pressure rises."
+    ]
+   ],
+   "misc": {
+    "wrong": "Sea-bed soil is the same everywhere in an area.",
+    "right": "Soil can change quickly over short distances, so each site needs its own survey."
+   },
+   "limits": "Soil behaviour is complex and uncertain. Values like N_c depend on shape, depth and soil layers; designers use codes and safety factors.",
+   "trip": {
+    "wiki": "Soil mechanics",
+    "prompt": "Look for effective stress and bearing capacity. How is water involved?"
+   },
+   "sources": [
+    "Geotechnical engineering",
+    "Effective stress",
+    "Soil liquefaction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which soil is made of very small, sticky particles?",
+     "o": [
+      "Clay",
+      "Gravel",
+      "Coarse sand",
+      "Rock"
+     ],
+     "a": 0,
+     "why": "Clays are made of tiny plate-like particles.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What is effective stress?",
+     "o": [
+      "Stress carried by the soil grains",
+      "Stress carried by the water in the soil gaps only",
+      "Stress from the waves hitting the sea bed",
+      "Air pressure pressing on the soil surface"
+     ],
+     "a": 0,
+     "why": "σ' = total stress − pore pressure.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "A designer wants a foundation to carry a large load on weak clay. What helps?",
+     "o": [
+      "Increasing the footing area",
+      "Decreasing the footing area to make it deeper",
+      "Using lighter soil to spread the load",
+      "Removing the footing and resting the load on clay"
+     ],
+     "a": 0,
+     "why": "Larger area lowers the bearing pressure on the soil.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "During an earthquake, saturated loose sand loses strength. What is this called?",
+     "o": [
+      "Liquefaction",
+      "Consolidation",
+      "Corrosion",
+      "Cavitation"
+     ],
+     "a": 0,
+     "why": "Rising pore pressure cuts effective stress between grains.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why do designers use a safety factor on bearing capacity?",
+     "o": [
+      "Soil properties are uncertain and variable",
+      "Soil is always perfect, so the factor is a habit",
+      "Safety factors reduce the weight of the structure",
+      "It makes structures cheaper by using less steel"
+     ],
+     "a": 0,
+     "why": "Natural soils vary, so a margin protects against unknowns.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Take N_c = 6 and s_u = 30 kPa. What is the ultimate bearing capacity q_u = N_c s_u in kPa?",
+     "a": 180,
+     "tol": 0.5,
+     "unit": "kPa",
+     "why": "6 × 30 = 180 kPa.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "γ_sat = 18 kN/m³ and γ_w = 10 kN/m³. What is the effective vertical stress at a depth of 8 m in kPa?",
+     "a": 64,
+     "tol": 0.5,
+     "unit": "kPa",
+     "why": "(18 − 10) × 8 = 64 kPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A square mudmat 10 m × 10 m carries a load of 8 MN. What bearing pressure does it apply to the soil, in kPa?",
+     "a": 80,
+     "tol": 0.5,
+     "unit": "kPa",
+     "why": "8 000 kN ÷ 100 m² = 80 kPa.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the soil or term to its description.",
+     "pairs": [
+      [
+       "Clay",
+       "Tiny particles, strength given as s_u"
+      ],
+      [
+       "Sand",
+       "Larger grains, strength from friction"
+      ],
+      [
+       "Pore pressure",
+       "Pressure of water in the gaps"
+      ],
+      [
+       "Mudmat",
+       "Wide plate that spreads load"
+      ]
+     ],
+     "why": "Basic geotechnics vocabulary.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "The mudmat of 80 kPa sits on clay with capacity 180 kPa. Is this adequate? Explain using the safety factor.",
+     "rubric": [
+      [
+       "safety factor",
+       "factor",
+       "180",
+       "80",
+       "ratio",
+       "divide"
+      ],
+      [
+       "2",
+       "2.25",
+       "above",
+       "more than",
+       "greater",
+       "enough",
+       "adequate",
+       "yes"
+      ],
+      [
+       "capacity",
+       "bearing",
+       "fail",
+       "margin"
+      ]
+     ],
+     "min": 2,
+     "model": "The safety factor is 180 ÷ 80 = 2.25. If the required factor is about 2, the footing is adequate, but if the required factor is 3 it is not, so it depends on the design code and uncertainty.",
+     "why": "Safety factor = capacity ÷ applied pressure = 2.25.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Boreholes show soft clay under a planned heavy platform. What is a good design response?",
+     "o": [
+      "Use a wider base or piles to deeper stiffer layers",
+      "Use a smaller base to put less soil under load",
+      "Ignore the clay because platforms are heavy",
+      "Add more load to squeeze the clay firmer"
+     ],
+     "a": 0,
+     "why": "More area or deeper support improves safety.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does pile driving near a sensitive area need monitoring?",
+     "o": [
+      "Noise and vibration can harm marine animals and structures",
+      "Piles never make noise, but the sea bed shakes",
+      "It helps fish by stirring up food for them",
+      "It cools the soil and the water around it"
+     ],
+     "a": 0,
+     "why": "Underwater piling noise can disturb whales and fish.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A sea-bed slope is steep and made of soft clay. What is a risk?",
+     "o": [
+      "Submarine landslides",
+      "Higher tides on the coast beside the slope",
+      "Faster ships passing over the slope",
+      "Lower pressure in the water near the slope"
+     ],
+     "a": 0,
+     "why": "Soft sediment on slopes can slide, endangering pipelines.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Will a structure sink into the sea bed?",
+    "model": "Engineers check how strong the sea bed soil is, find the load per area from the structure, and make sure it is well below what the soil can carry, with a safety factor. A wider base spreads the load and helps.",
+    "points": [
+     {
+      "k": [
+       "soil",
+       "clay",
+       "sand",
+       "sea bed",
+       "seabed"
+      ],
+      "ask": "What do engineers study first?"
+     },
+     {
+      "k": [
+       "strength",
+       "bearing",
+       "carry"
+      ],
+      "ask": "What does the soil have to do?"
+     },
+     {
+      "k": [
+       "area",
+       "wide",
+       "spread",
+       "mudmat"
+      ],
+      "ask": "How can the base help?"
+     },
+     {
+      "k": [
+       "safety",
+       "factor",
+       "margin"
+      ],
+      "ask": "Why not use the full strength?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Mooring systems",
+   "icon": "⛓️",
+   "hook": "A floating platform weighing thousands of tonnes sits above 1000 m of water. What holds it from drifting away?",
+   "explain": [
+    "A mooring system holds a floating structure near its position against wind, waves and current. It has a fairlead on the vessel, lines of chain, steel wire or synthetic rope, and anchors on the sea bed.",
+    "In a catenary mooring the line hangs in a curve and part lies on the sea bed. Its weight gives a restoring force: when the vessel is pushed away, more line lifts off the bed and the pull grows. For a line with submerged weight w per metre in water depth d, the tension at the fairlead is T = H + w × d, where H is the horizontal tension. Taut mooring lines are stretched at an angle and use stretchy polyester rope, which works better in deep water.",
+    "Anchor types include drag-embedment anchors, suction piles (a large upturned bucket sucked into the clay), and driven piles. The strength of the line is the minimum breaking load (MBL). Design requires a safety factor, usually well above 1.5 for intact conditions and checks for one broken line. Mooring lines wear by fatigue and corrosion, so they are inspected."
+   ],
+   "example": {
+    "q": "A catenary line has w = 1500 N/m in d = 100 m of water. If H = 300 kN, find the fairlead tension.",
+    "steps": [
+     "Weight term: w × d = 1500 × 100 = 150 000 N = 150 kN.",
+     "T = H + w d = 300 + 150.",
+     "= 450 kN."
+    ],
+    "a": "450 kN"
+   },
+   "analogies": {
+    "home": "A hanging washing line sags: pull the ends apart and the sag lessens as the tension rises.",
+    "farm": "A tethered goat can wander a bit but the rope pulls it back, as moorings do.",
+    "sport": "A bungee cord stretches and then pulls back, like a taut polyester mooring.",
+    "sea": "A small boat at anchor swings with wind and tide."
+   },
+   "mnemonic": "T equals H plus w times d: tension at the top is pull sideways plus hanging weight.",
+   "terms": [
+    [
+     "Fairlead",
+     "The point on the vessel where a mooring line leaves it."
+    ],
+    [
+     "Catenary",
+     "The curve of a hanging line."
+    ],
+    [
+     "Suction pile",
+     "An anchor like an upturned bucket pushed into the sea bed by suction."
+    ],
+    [
+     "MBL",
+     "Minimum breaking load of a line."
+    ]
+   ],
+   "misc": {
+    "wrong": "A mooring holds the platform perfectly still.",
+    "right": "Moorings allow some motion (offset) and rely on restoring forces. Too stiff a system would break; too soft would allow drifting."
+   },
+   "limits": "The simple catenary formula ignores line stretch, current on the line and dynamic effects. Real analysis uses software that checks time histories.",
+   "trip": {
+    "wiki": "Mooring (watercraft)",
+    "prompt": "Find pictures of catenary and taut leg moorings. How do the lines meet the sea bed?"
+   },
+   "sources": [
+    "Mooring",
+    "Suction anchor",
+    "Catenary"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a fairlead?",
+     "o": [
+      "Where the line leaves the vessel",
+      "An anchor that grips the sea bed",
+      "A sail that catches the wind",
+      "A tide that rises up the hull"
+     ],
+     "a": 0,
+     "why": "It guides the mooring line off the vessel.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "In a catenary mooring, why does the restoring force grow when the vessel moves away?",
+     "o": [
+      "More line lifts off the sea bed, so more weight hangs",
+      "The anchor gets lighter",
+      "The sea gets thicker",
+      "The vessel gets heavier"
+     ],
+     "a": 0,
+     "why": "More hanging chain weight pulls back harder.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why use polyester rope in very deep water instead of a full chain?",
+     "o": [
+      "It is much lighter, so the line weight does not overload the vessel",
+      "It is thicker",
+      "It rusts faster",
+      "It is cheaper per weight"
+     ],
+     "a": 0,
+     "why": "Heavy chain in deep water adds great weight to the platform.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A suction pile is installed by...",
+     "o": [
+      "Pumping water out from inside the upturned bucket",
+      "Explosives",
+      "Dropping from the air",
+      "Welding"
+     ],
+     "a": 0,
+     "why": "Lower pressure inside pushes the bucket into the soil.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it checked that a platform still holds with one line broken?",
+     "o": [
+      "A single failure must not cause drift-off",
+      "Lines never break, so the check is only a rule",
+      "Platforms are light and drift in the wind anyway",
+      "Lines are free, so many can be added"
+     ],
+     "a": 0,
+     "why": "Redundancy protects against failure of a single line.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A line has submerged weight 1500 N/m and hangs through 100 m of water. If the horizontal tension is 300 kN, what is the fairlead tension in kN?",
+     "a": 450,
+     "tol": 1,
+     "unit": "kN",
+     "why": "T = H + w d = 300 + 150 = 450 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The maximum tension is 1000 kN and the line's minimum breaking load is 2700 kN. What is the safety factor MBL ÷ T (1 decimal place)?",
+     "a": 2.7,
+     "tol": 0.05,
+     "unit": "",
+     "why": "2700 ÷ 1000 = 2.7.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Chain of submerged weight 2000 N/m hangs 150 m from the sea bed to the fairlead. What is the vertical weight it adds in kN?",
+     "a": 300,
+     "tol": 1,
+     "unit": "kN",
+     "why": "2000 × 150 = 300 000 N = 300 kN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each anchor or line to its description.",
+     "pairs": [
+      [
+       "Drag anchor",
+       "Digs in when pulled horizontally"
+      ],
+      [
+       "Suction pile",
+       "Upturned bucket in clay"
+      ],
+      [
+       "Chain",
+       "Heavy, resists wear on the bed"
+      ],
+      [
+       "Polyester rope",
+       "Light and stretchy"
+      ]
+     ],
+     "why": "Different components suit different jobs.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "A mooring line near the sea bed shows scratches and thinning links. Explain why this matters and what to do.",
+     "rubric": [
+      [
+       "wear",
+       "abrasion",
+       "corrosion",
+       "fatigue",
+       "thin",
+       "weak"
+      ],
+      [
+       "break",
+       "fail",
+       "strength",
+       "capacity",
+       "snap"
+      ],
+      [
+       "replace",
+       "inspect",
+       "repair",
+       "change",
+       "monitor"
+      ]
+     ],
+     "min": 2,
+     "model": "Wear and corrosion reduce link thickness and strength, so the chain could break under storm tension and the platform might drift. It should be inspected and replaced before it fails.",
+     "why": "Mooring integrity depends on keeping line strength above the loads.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A platform is in a storm and one line is already slack. What does that tell us?",
+     "o": [
+      "Other lines carry more load",
+      "Everything is fine, because the slack line is resting",
+      "More tide is coming in from the sea",
+      "The anchor is heavier than it was planned to be"
+     ],
+     "a": 0,
+     "why": "Remaining lines share the force.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do mooring lines near the sea bed sometimes damage coral or seagrass?",
+     "o": [
+      "Swinging chains sweep the sea bed",
+      "Chains are magnetic and pull the coral up",
+      "They are too cold and so kill the coral",
+      "Fish pull them across the sea bed"
+     ],
+     "a": 0,
+     "why": "Sweeping lines scour habitats, so routes avoid sensitive areas.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What does a taut mooring system need that a catenary one does not?",
+     "o": [
+      "A strong vertical anchor that resists uplift",
+      "A heavier chain",
+      "A lighter vessel",
+      "No anchors"
+     ],
+     "a": 0,
+     "why": "Taut lines pull upward on the anchor, so the anchor must resist uplift.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a floating platform is held in place",
+    "model": "Lines of chain or rope connect the platform to anchors on the sea bed. When wind and waves push it away, the lines pull back harder. In a hanging line the weight of the chain helps, and lines are checked for wear.",
+    "points": [
+     {
+      "k": [
+       "line",
+       "chain",
+       "rope",
+       "anchor"
+      ],
+      "ask": "What connects it to the sea bed?"
+     },
+     {
+      "k": [
+       "pull back",
+       "restor",
+       "spring",
+       "harder"
+      ],
+      "ask": "What happens when it is pushed away?"
+     },
+     {
+      "k": [
+       "weight",
+       "hang",
+       "catenary"
+      ],
+      "ask": "Why does a hanging chain help?"
+     },
+     {
+      "k": [
+       "inspect",
+       "wear",
+       "break",
+       "safety factor",
+       "check"
+      ],
+      "ask": "How do we keep it safe?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Offshore installation fundamentals",
+   "icon": "🏗️",
+   "hook": "How do you lift a 500-tonne module onto a platform from a ship that is itself rocking on the waves?",
+   "explain": [
+    "Offshore installation moves large structures from a yard to the sea and fixes them in place. Common stages are load-out (moving onto a barge), sea fastening (securing for the voyage), transport, lifting or launching, and connection. Each stage has its own risks, weather limits and procedures.",
+    "Lifts are planned with a safety margin. Because the vessel and crane move, the load can jerk. The hook load is multiplied by a dynamic amplification factor (DAF), for example 1.3, to give the design load. Slings spread weight, and the tension in each depends on the angle: for two slings at angle θ to the horizontal, T = W ÷ (2 sin θ). Flat slings are stronger and more efficient than shallow ones.",
+    "The splash zone, where a lifted object enters or leaves the water, is dangerous because waves slam on the load. Heavy-lift vessels, jack-up vessels (which stand on legs) and float-overs (placing a deck by lowering a barge with ballast) are used. Piles may be driven with hammers, and noise controls like bubble curtains protect marine animals. A weather window is chosen using forecasts, and work stops if limits are exceeded."
+   ],
+   "example": {
+    "q": "A 500 t module is lifted with DAF = 1.3. Find the design hook load. (g = 9.81 m/s²)",
+    "steps": [
+     "Weight = 500 000 × 9.81 = 4 905 000 N.",
+     "Multiply by 1.3: 6 376 500 N.",
+     "= 6.38 MN."
+    ],
+    "a": "About 6.38 MN (650 t equivalent)"
+   },
+   "analogies": {
+    "home": "Carrying a heavy bag while walking, each step jerks the load. The extra effort is like the DAF.",
+    "farm": "A tractor lifting a bale on a bumpy field feels extra load from the bumps.",
+    "city": "A crane on a building site: workers wait if the wind is too strong.",
+    "sport": "A weightlifter needs the barbell steady; a rocking boat makes this much harder."
+   },
+   "mnemonic": "Plan, weather window, DAF, slings, splash zone: then lift.",
+   "terms": [
+    [
+     "DAF",
+     "Dynamic amplification factor; multiplier for motion effects on a lift."
+    ],
+    [
+     "Splash zone",
+     "The region where waves hit a load entering or leaving the water."
+    ],
+    [
+     "Weather window",
+     "A period with calm enough weather for the operation."
+    ],
+    [
+     "Sea fastening",
+     "Securing cargo on a vessel for sea transport."
+    ]
+   ],
+   "misc": {
+    "wrong": "If a lift is within the crane's rating on the dock, it is safe at sea.",
+    "right": "At sea the crane base moves with waves, so loads can be much higher than static weight. Sea state limits and a DAF are essential."
+   },
+   "limits": "DAF values depend on sea state, vessel and lifting method. Operations are simulated and may be stopped if forecast limits are passed.",
+   "trip": {
+    "wiki": "Offshore construction",
+    "prompt": "Look for pictures of a heavy-lift vessel lifting a module. Note the slings and spreader bars."
+   },
+   "sources": [
+    "Offshore construction",
+    "Heavy-lift ship",
+    "Jackup rig"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is sea fastening?",
+     "o": [
+      "Securing cargo on a vessel for the voyage",
+      "Painting the hulls to stop rust",
+      "Fishing with a long line from a ship",
+      "A type of anchor used in deep water"
+     ],
+     "a": 0,
+     "why": "Sea fastening keeps cargo from moving in waves.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "What does a DAF account for?",
+     "o": [
+      "Extra load from motion",
+      "The amount of salt in the water",
+      "The direction of the wind",
+      "The colour of the cargo"
+     ],
+     "a": 0,
+     "why": "It increases the static load to allow for dynamic effects.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "As sling angle to the horizontal gets smaller (shallower), tension in each sling...",
+     "o": [
+      "Increases",
+      "Decreases",
+      "Stays the same",
+      "Becomes zero"
+     ],
+     "a": 0,
+     "why": "T = W/(2 sin θ), and sin θ gets smaller at low angles.",
+     "d": 3,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "The forecast shows waves increasing above the limit in 3 hours, but the lift needs 5 hours. What should the team do?",
+     "o": [
+      "Wait for a longer weather window",
+      "Start anyway and finish the lift before the waves rise",
+      "Remove the slings and lower the load again",
+      "Ignore the forecast and use the first plan"
+     ],
+     "a": 0,
+     "why": "Operations must complete safely within the allowed weather.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do contractors use bubble curtains during pile driving?",
+     "o": [
+      "To reduce underwater noise that harms marine life",
+      "To warm the water and help the piles go in",
+      "To lift the piles up from the sea bed",
+      "To measure depth with a line of bubbles"
+     ],
+     "a": 0,
+     "why": "A curtain of rising bubbles absorbs part of the sound.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A 500 t module is lifted with DAF = 1.3 and g = 9.81 m/s². Find the design load in meganewtons (2 decimal places).",
+     "a": 6.38,
+     "tol": 0.02,
+     "unit": "MN",
+     "why": "500 000 × 9.81 × 1.3 = 6 376 500 N = 6.38 MN.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "Two slings each at 60° to the horizontal carry a 100 kN load: T = W/(2 sin 60°), sin 60° = 0.866. Find the tension in each sling in kN (1 decimal place).",
+     "a": 57.7,
+     "tol": 0.2,
+     "unit": "kN",
+     "why": "100 ÷ (2 × 0.866) = 57.7 kN.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "The same load of 100 kN is now carried by two slings at 30° to the horizontal (sin 30° = 0.5). Find the tension in each sling in kN.",
+     "a": 100,
+     "tol": 0.5,
+     "unit": "kN",
+     "why": "100 ÷ (2 × 0.5) = 100 kN. Shallower slings carry more tension.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Order the stages of an offshore installation.",
+     "items": [
+      "Load-out onto barge",
+      "Sea fastening",
+      "Transport to site",
+      "Lift or launch into place",
+      "Connection and commissioning"
+     ],
+     "why": "The module is secured before transport, then installed and connected.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is lowering a load through the splash zone especially risky?",
+     "rubric": [
+      [
+       "wave",
+       "waves",
+       "slam",
+       "splash"
+      ],
+      [
+       "load",
+       "force",
+       "jerk",
+       "snap",
+       "slack",
+       "impact"
+      ],
+      [
+       "sling",
+       "crane",
+       "vessel",
+       "motion",
+       "move"
+      ]
+     ],
+     "min": 2,
+     "model": "In the splash zone waves slam on the load and the vessel and crane are moving, so the sling forces can suddenly jump or go slack and snap tight. This causes big dynamic loads, so limits and slow, controlled lowering are used.",
+     "why": "Wave impact plus vessel motion produces large changing forces.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A lift plan uses a 1.0 DAF because it is done at the dock. The same lift is later moved offshore. What must change?",
+     "o": [
+      "Use a higher DAF and check sea-state limits",
+      "Nothing, since the load weight is the same",
+      "Remove the slings so the lift is lighter",
+      "Lift faster so the motion matters less"
+     ],
+     "a": 0,
+     "why": "Offshore motions cause higher dynamic loads.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A heavy-lift vessel's crane has a lower rated capacity at a longer outreach. Why?",
+     "o": [
+      "Longer reach gives a bigger overturning moment",
+      "Cranes shrink as the arm is stretched",
+      "Gravity weakens at a longer distance",
+      "The crane is lighter when it reaches out"
+     ],
+     "a": 0,
+     "why": "Moment = load × distance, and stability and structure limit it.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A marine mammal observer sees a whale near the pile-driving site. What is the correct action?",
+     "o": [
+      "Pause the noisy work until the whale has left the area",
+      "Increase hammer power to finish the job sooner",
+      "Continue as planned because whales are used to noise",
+      "Switch off all lights and keep working"
+     ],
+     "a": 0,
+     "why": "Stopping noise protects animals from harm.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How a heavy module is lifted at sea",
+    "model": "A crane lifts the module, but the ship moves with waves, so the load jerks and is higher than its weight. Engineers multiply the weight by a safety factor called DAF and choose a calm weather window. Slings and the splash zone need special care.",
+    "points": [
+     {
+      "k": [
+       "crane",
+       "lift",
+       "sling"
+      ],
+      "ask": "What lifts the module?"
+     },
+     {
+      "k": [
+       "wave",
+       "move",
+       "motion",
+       "rock"
+      ],
+      "ask": "Why is lifting at sea harder than on land?"
+     },
+     {
+      "k": [
+       "daf",
+       "factor",
+       "multiply",
+       "extra"
+      ],
+      "ask": "How do engineers allow for that?"
+     },
+     {
+      "k": [
+       "weather",
+       "forecast",
+       "window",
+       "calm"
+      ],
+      "ask": "When do they do the lift?"
+     }
+    ]
+   }
+  }
+ ]
+}

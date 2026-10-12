@@ -1,0 +1,2801 @@
+{
+ "world": 17,
+ "level": 2,
+ "stages": [
+  {
+   "n": 1,
+   "title": "Facts and opinions",
+   "icon": "⚖️",
+   "hook": "Is \"Football is the best sport\" a fact? Is \"Football is played with a round ball\" a fact? What is the difference?",
+   "explain": [
+    "A fact is a statement that can be checked and shown true or false. \"Lagos is in Nigeria\" is a fact. An opinion is what someone thinks or feels. \"Lagos is the best city\" is an opinion because people can honestly disagree.",
+    "Clue words help: best, worst, boring, beautiful, should and delicious often signal opinions. Numbers, dates, measurements and names often signal facts. But a statement with a number can still be false. A fact claim can be wrong; it is still a claim that can be checked.",
+    "A third kind is a prediction or belief about the future. We cannot check it yet. Good thinkers ask: how could I check this? If no check is possible, it is probably an opinion."
+   ],
+   "example": {
+    "q": "Sort: \"The Nile is about 6,650 km long.\" and \"The Nile is the most beautiful river.\"",
+    "steps": [
+     "Ask: can I check it? Length can be measured and found in reliable books.",
+     "Beautiful depends on feelings; people differ."
+    ],
+    "a": "The first is a fact claim; the second is an opinion."
+   },
+   "analogies": {
+    "home": "\"The soup has salt in it\" can be tested. \"The soup is tasty\" is a taste.",
+    "sport": "\"She scored 3 goals\" is on the scoresheet. \"She is the greatest\" is an opinion.",
+    "tech": "\"This phone has 128 GB\" is checkable. \"This phone is cool\" is not."
+   },
+   "mnemonic": "Fact: Can you Check it? Opinion: Others might not agree.",
+   "terms": [
+    [
+     "Fact",
+     "A statement that can be checked and is true."
+    ],
+    [
+     "Opinion",
+     "A view or feeling that people may share or not."
+    ],
+    [
+     "Claim",
+     "Something said to be true, which may need checking."
+    ],
+    [
+     "Verify",
+     "To check that something is true."
+    ]
+   ],
+   "misc": {
+    "wrong": "Opinions are bad and facts are always good.",
+    "right": "Opinions are fine when they are shown as opinions. The problem is mixing them up with facts. Also, a fact claim can be false."
+   },
+   "limits": "Some statements mix a fact and an opinion, like \"This lovely 5 km walk is easy.\" Split them into parts.",
+   "trip": {
+    "wiki": "Fact",
+    "prompt": "Look at the page. Find a sentence that is a fact and one that sounds like an opinion."
+   },
+   "sources": [
+    "Fact",
+    "Opinion",
+    "Fact-checking"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which statement is a fact?",
+     "o": [
+      "Water boils at 100 °C at sea level",
+      "Winter is the nicest season of the year",
+      "Maths is the most boring subject at school",
+      "Red is the prettiest colour in the world"
+     ],
+     "a": 0,
+     "why": "Boiling point can be measured and checked.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which statement is an opinion?",
+     "o": [
+      "Mangoes are the tastiest fruit",
+      "A mango is a fruit that grows in warm places",
+      "Mangoes grow on trees",
+      "A mango has one large stone inside it"
+     ],
+     "a": 0,
+     "why": "Tastiest depends on personal taste.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "\"Nobody likes broccoli.\" Why is it weak as a fact?",
+     "o": [
+      "Many people may like it, and we can ask them",
+      "It has no numbers in it",
+      "It is too short to be a real fact, whatever people say",
+      "It talks about food, and food claims can never be checked"
+     ],
+     "a": 0,
+     "why": "It claims something about everyone, and we can check by asking.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which word is a clue that a sentence may be an opinion?",
+     "o": [
+      "Wonderful",
+      "Seven",
+      "Tuesday",
+      "Kilometre"
+     ],
+     "a": 0,
+     "why": "Words like wonderful describe feelings.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"There are 7 days in a week.\" What is this?",
+     "o": [
+      "A fact",
+      "An opinion",
+      "A rumour",
+      "A guess about the future"
+     ],
+     "a": 0,
+     "why": "It is a true, checkable statement.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "\"The Earth has two moons.\" What is it?",
+     "o": [
+      "A false fact claim, because it can be checked",
+      "An opinion about the Moon",
+      "A true fact about the Earth",
+      "A prediction about the future"
+     ],
+     "a": 0,
+     "why": "It can be checked, and it is false: the Earth has one moon.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "\"This film is the best ever.\" How could you turn it into something checkable?",
+     "o": [
+      "Count how many awards or tickets it earned",
+      "Say it louder so that people believe it",
+      "Repeat it many times to the class",
+      "Add the word \"really\" before the word best"
+     ],
+     "a": 0,
+     "why": "Awards and ticket counts can be checked, but \"best\" still depends on views.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "match",
+     "q": "Match each sentence to its type.",
+     "pairs": [
+      [
+       "A triangle has 3 sides.",
+       "Fact"
+      ],
+      [
+       "Triangles are the nicest shape.",
+       "Opinion"
+      ],
+      [
+       "It will rain next year on this day.",
+       "Prediction"
+      ]
+     ],
+     "why": "Facts can be checked, opinions are feelings, and predictions are about the future.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for checking a claim.",
+     "items": [
+      "Read the claim",
+      "Ask how it could be checked",
+      "Look at a reliable source",
+      "Decide if it is true"
+     ],
+     "why": "Understand, plan a check, look, then decide.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain the difference between a fact and an opinion. Give an example of one of them.",
+     "rubric": [
+      [
+       "check",
+       "verify",
+       "test",
+       "prove",
+       "evidence"
+      ],
+      [
+       "feel",
+       "think",
+       "believe",
+       "opinion",
+       "view",
+       "agree",
+       "taste"
+      ],
+      [
+       "fact",
+       "true",
+       "measure"
+      ]
+     ],
+     "min": 2,
+     "model": "A fact can be checked and shown to be true or false, like the Sun is a star. An opinion is what someone feels or believes, like blue is the best colour, and people can disagree.",
+     "why": "The key idea is that facts can be checked, but opinions depend on views.",
+     "d": 2,
+     "k": "concept"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A leaflet says \"Our juice is 100% natural and delicious.\" Which part can you check?",
+     "o": [
+      "The 100% natural claim by reading the ingredients",
+      "Delicious, by repeating the word to friends",
+      "Nothing at all, since adverts are never checkable",
+      "Both parts are facts, because both are in print"
+     ],
+     "a": 0,
+     "why": "Ingredients lists can be read. Delicious is a taste.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A friend says \"Everyone knows spiders are dangerous.\" How would you test this fact claim?",
+     "rubric": [
+      [
+       "check",
+       "look",
+       "research",
+       "source",
+       "book",
+       "expert",
+       "evidence",
+       "ask"
+      ],
+      [
+       "some",
+       "most",
+       "few",
+       "harmless",
+       "dangerous",
+       "kinds",
+       "species"
+      ]
+     ],
+     "min": 2,
+     "model": "I would look in a reliable source, because only some spider species are harmful and most are not.",
+     "why": "Checking with a reliable source shows that the claim is too broad.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why can a true fact still be used to mislead?",
+     "o": [
+      "Only some facts are shown and others left out",
+      "Facts are always shown in full",
+      "Facts are really just opinions in disguise",
+      "True facts can never be used that way"
+     ],
+     "a": 0,
+     "why": "Choosing which facts to show can give a false picture.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Facts and opinions",
+    "model": "A fact is something we can check and show to be true or false. An opinion is what a person thinks or feels, and others may disagree. To tell them apart, ask: can I check it?",
+    "points": [
+     {
+      "k": [
+       "check",
+       "prove",
+       "test",
+       "true"
+      ],
+      "ask": "How do I know something is a fact?"
+     },
+     {
+      "k": [
+       "feel",
+       "think",
+       "believe",
+       "agree"
+      ],
+      "ask": "What is an opinion?"
+     },
+     {
+      "k": [
+       "example",
+       "best",
+       "boring",
+       "tasty",
+       "measure",
+       "number"
+      ],
+      "ask": "Can you give an example of each?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "title": "Evidence and explanations",
+   "icon": "🕵️",
+   "hook": "The cookies are gone, and there are crumbs on Leo's shirt. Did Leo take them? What else would you want to know?",
+   "explain": [
+    "Evidence is information that helps us decide if a claim is true. An explanation says why something happens. A good explanation fits the evidence we have.",
+    "Not all evidence is equal. Seeing something yourself, measurements and records are strong. A rumour or \"my friend said\" is weak, because it may be wrong. Strong evidence has been checked or can be checked by others.",
+    "Evidence can point to a claim without proving it. Crumbs on Leo's shirt fit the story that he ate cookies, but he might have sat on a table where someone else ate them. Careful thinkers ask: what other explanation fits this evidence?"
+   ],
+   "example": {
+    "q": "The grass is wet in the morning. Explanation A: it rained. Explanation B: dew formed. What evidence could separate them?",
+    "steps": [
+     "Check the road: if rain fell, roads and roofs would be wet too.",
+     "Check a weather record for rain.",
+     "If only the grass is wet, dew is likely."
+    ],
+    "a": "Look at other places and weather records to see which explanation fits all the evidence."
+   },
+   "analogies": {
+    "home": "Wet footprints on the floor are evidence someone came in from the rain.",
+    "nature": "Paw prints in mud are evidence an animal came by.",
+    "city": "A receipt is evidence you paid for something."
+   },
+   "mnemonic": "Evidence is the proof we see; explanation says why it came to be.",
+   "terms": [
+    [
+     "Evidence",
+     "Information that helps show if something is true."
+    ],
+    [
+     "Explanation",
+     "A reason why something happens or is true."
+    ],
+    [
+     "Reliable",
+     "Can be trusted because it is checked or consistent."
+    ],
+    [
+     "Alternative",
+     "Another possible explanation."
+    ]
+   ],
+   "misc": {
+    "wrong": "One piece of evidence is enough to be sure.",
+    "right": "One clue may fit several explanations. We look for more evidence."
+   },
+   "limits": "Even strong evidence can be misread, and new evidence can change an explanation.",
+   "trip": {
+    "wiki": "Evidence",
+    "prompt": "Look for a section that tells what kinds of evidence are used."
+   },
+   "sources": [
+    "Evidence",
+    "Explanation"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which is the strongest evidence that a plant needs light?",
+     "o": [
+      "Plants kept in the dark turned pale while others grew green",
+      "My uncle says plants love sunshine",
+      "It looks nice when plants sit in the sun",
+      "I read a rumour about it online"
+     ],
+     "a": 0,
+     "why": "A fair test gives strong evidence.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "What is evidence?",
+     "o": [
+      "Information that helps show if something is true",
+      "A kind of opinion we share",
+      "A guess made with no reason at all",
+      "A song played at a trial"
+     ],
+     "a": 0,
+     "why": "Evidence supports or weakens a claim.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A rumour is not strong evidence because...",
+     "o": [
+      "It may be wrong and nobody checked",
+      "It is quite long to read",
+      "It is interesting to talk about",
+      "It is very old and dusty"
+     ],
+     "a": 0,
+     "why": "Unchecked claims can be false.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Mia's bike tyre is flat. She finds a nail in it. What does this show?",
+     "o": [
+      "The nail is a likely explanation for the flat",
+      "The nail is only an opinion",
+      "She is just unlucky, for sure, and the nail is unrelated",
+      "Nothing at all can be told from it"
+     ],
+     "a": 0,
+     "why": "The nail fits the evidence, though it should be checked.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Two explanations both fit one clue. What is best?",
+     "o": [
+      "Look for more evidence",
+      "Pick the one you like best",
+      "Stop thinking and decide later",
+      "Flip a coin to choose between them"
+     ],
+     "a": 0,
+     "why": "More evidence helps tell them apart.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A seed packet says 8 of every 10 seeds sprout. You plant 50 seeds. How many do you expect to sprout?",
+     "a": 40,
+     "tol": 2,
+     "unit": "seeds",
+     "why": "8 ÷ 10 = 0.8, and 0.8 × 50 = 40. In real life the number may differ a little.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You see wet footprints leading into the house. Which explanation is best?",
+     "o": [
+      "Someone came in from outside after rain or from a wet place",
+      "The floor itself made the wet footprints",
+      "Footprints are always dry when they are made",
+      "A ghost walked in with wet feet"
+     ],
+     "a": 0,
+     "why": "It fits the evidence and is a common cause.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each source to how strong it is as evidence.",
+     "pairs": [
+      [
+       "A measurement with a ruler",
+       "Strong, because anyone can repeat it"
+      ],
+      [
+       "\"I heard from someone\"",
+       "Weak"
+      ],
+      [
+       "A record in a school book",
+       "Strong, because it can be checked"
+      ]
+     ],
+     "why": "Measurements and records can be checked.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put in order: think of explanations, collect evidence, choose the one that fits best.",
+     "items": [
+      "Notice something puzzling",
+      "Think of possible explanations",
+      "Collect evidence",
+      "Choose the explanation that fits best"
+     ],
+     "why": "Notice, guess, test, then choose.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Why should we look at more than one clue before we decide who did something?",
+     "rubric": [
+      [
+       "more",
+       "other",
+       "another",
+       "many",
+       "several",
+       "different"
+      ],
+      [
+       "clue",
+       "evidence",
+       "fit",
+       "explanation",
+       "sure",
+       "wrong"
+      ]
+     ],
+     "min": 2,
+     "model": "One clue may fit several explanations, so more clues help us rule out wrong ones and be more sure.",
+     "why": "Several pieces of evidence narrow down the possible explanations.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Kofi says \"My plants grew because I talked to them.\" What would make this a better test?",
+     "o": [
+      "Compare with plants that are not talked to but get the same light and water",
+      "Talk much louder to the plants each day",
+      "Ask friends to agree that it worked",
+      "Water only some of the plants each day, but not others"
+     ],
+     "a": 0,
+     "why": "A fair comparison with only one change shows more.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "An explanation fits one clue but not another. What should you do?",
+     "rubric": [
+      [
+       "change",
+       "new",
+       "look",
+       "another",
+       "reject",
+       "drop",
+       "rethink",
+       "revise"
+      ],
+      [
+       "evidence",
+       "clue",
+       "fit",
+       "explanation"
+      ]
+     ],
+     "min": 2,
+     "model": "I should consider that the explanation may be wrong and look for one that fits all the clues.",
+     "why": "An explanation that does not fit the evidence needs to be changed.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best reason to trust a claim?",
+     "o": [
+      "It is supported by evidence others can check",
+      "Many people keep repeating it everywhere",
+      "It is printed on a poster in the street",
+      "It sounds very sure when someone says it"
+     ],
+     "a": 0,
+     "why": "Repeating or sounding sure is not evidence.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Evidence and explanations",
+    "model": "Evidence is information that helps us decide if something is true. An explanation says why something happens. A good explanation fits all the evidence. If two explanations fit, we look for more evidence.",
+    "points": [
+     {
+      "k": [
+       "evidence",
+       "clue",
+       "proof",
+       "information"
+      ],
+      "ask": "What is evidence?"
+     },
+     {
+      "k": [
+       "explanation",
+       "why",
+       "reason"
+      ],
+      "ask": "What is an explanation?"
+     },
+     {
+      "k": [
+       "fit",
+       "more",
+       "check",
+       "another"
+      ],
+      "ask": "How do we choose between explanations?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "title": "Basic logic",
+   "icon": "🧮",
+   "hook": "All birds have feathers. A robin is a bird. What can you say about a robin?",
+   "explain": [
+    "Logic is the study of good reasoning. In logic we start with statements called premises and see what must follow. The result is a conclusion.",
+    "Here is a simple pattern: All dogs are animals. Rex is a dog. So Rex is an animal. If the premises are true, the conclusion must be true. This is called a valid argument.",
+    "Be careful: All dogs are animals does not mean all animals are dogs. Flipping a statement can give a mistake. Another useful idea is \"if... then...\". If it rains, the ground gets wet. If the ground is wet, it does not have to be rain."
+   ],
+   "example": {
+    "q": "All fruits have seeds. A pear is a fruit. What follows?",
+    "steps": [
+     "Premise 1: all fruits have seeds.",
+     "Premise 2: pear is a fruit.",
+     "So a pear has seeds."
+    ],
+    "a": "A pear has seeds (given the premises)."
+   },
+   "analogies": {
+    "home": "If the oven is on, the kitchen is warm. The oven is on, so the kitchen is warm.",
+    "farm": "All hens lay eggs (in this story). Bessie is a hen, so Bessie lays eggs.",
+    "tech": "If the password is right, the door unlocks. It did not unlock, so the password is not right."
+   },
+   "mnemonic": "If the premises are true and the reasoning is tight, the conclusion must be right.",
+   "terms": [
+    [
+     "Premise",
+     "A statement we start from."
+    ],
+    [
+     "Conclusion",
+     "What follows from the premises."
+    ],
+    [
+     "Valid",
+     "The conclusion must be true if the premises are."
+    ],
+    [
+     "If-then",
+     "A statement saying one thing leads to another."
+    ]
+   ],
+   "misc": {
+    "wrong": "If \"if A then B\" is true, then \"if B then A\" is also true.",
+    "right": "Not always. If it rains the ground is wet, but a wet ground does not prove it rained."
+   },
+   "limits": "Logic tells us what follows from the premises, not whether the premises are true.",
+   "trip": {
+    "wiki": "Logic",
+    "prompt": "Look for the idea of a premise and a conclusion on the page."
+   },
+   "sources": [
+    "Logic",
+    "Syllogism"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "All cats are mammals. Tom is a cat. What follows?",
+     "o": [
+      "Tom is a mammal",
+      "Tom is a dog",
+      "Tom has no fur",
+      "All mammals are cats"
+     ],
+     "a": 0,
+     "why": "Tom belongs to cats, and cats belong to mammals.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a premise?",
+     "o": [
+      "A statement we start from",
+      "A final answer and nothing else",
+      "A joke told at the start",
+      "A question we ask at the end"
+     ],
+     "a": 0,
+     "why": "Premises are the starting statements.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "If it rains, the match is cancelled. The match is not cancelled. What follows?",
+     "o": [
+      "It did not rain",
+      "It rained",
+      "The match is boring",
+      "It will rain tomorrow"
+     ],
+     "a": 0,
+     "why": "If rain always cancels the match, then no cancellation means no rain.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "All squares have four sides. Which is the right conclusion about shape Z, a square?",
+     "o": [
+      "Z has four sides",
+      "Z has five sides",
+      "Z is a circle",
+      "Z has no sides"
+     ],
+     "a": 0,
+     "why": "Z is a square, so it has four sides.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "All dogs are animals. So which statement also follows?",
+     "o": [
+      "Some animals are dogs",
+      "All animals are dogs",
+      "No dogs are animals",
+      "Animals cannot be dogs"
+     ],
+     "a": 0,
+     "why": "If all dogs are animals, some animals (dogs) are dogs.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Ana says: all roses are flowers, so all flowers are roses. What is wrong?",
+     "o": [
+      "Flowers include many other kinds",
+      "Roses are not really flowers at all",
+      "Nothing is wrong with what she says",
+      "Roses are always green in colour"
+     ],
+     "a": 0,
+     "why": "Reversing the statement gives a mistake.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "A valid argument means...",
+     "o": [
+      "If the premises are true, the conclusion is true",
+      "The premises are always true",
+      "The conclusion is funny enough to remember",
+      "It must have exactly three parts"
+     ],
+     "a": 0,
+     "why": "Validity is about the link, not the facts.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "match",
+     "q": "Match each statement to its role.",
+     "pairs": [
+      [
+       "All birds have feathers.",
+       "First premise"
+      ],
+      [
+       "A sparrow is a bird.",
+       "Second premise"
+      ],
+      [
+       "A sparrow has feathers.",
+       "Conclusion"
+      ]
+     ],
+     "why": "Two premises lead to the conclusion.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put in order the steps of this argument.",
+     "items": [
+      "All fish live in water",
+      "A trout is a fish",
+      "So a trout lives in water"
+     ],
+     "why": "Premises first, conclusion last.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "If the ground is wet, can we be sure it rained? Explain.",
+     "rubric": [
+      [
+       "no",
+       "not",
+       "cannot",
+       "can not",
+       "might",
+       "may",
+       "could"
+      ],
+      [
+       "other",
+       "sprinkler",
+       "hose",
+       "spill",
+       "river",
+       "another",
+       "something else"
+      ]
+     ],
+     "min": 2,
+     "model": "No, it may have been something else like a sprinkler or a spill, so wet ground does not prove rain.",
+     "why": "Other causes can also make the ground wet.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "All the apples in the box are red. This apple is red. Is it in the box?",
+     "o": [
+      "Not necessarily",
+      "Yes",
+      "No, never",
+      "Only if it is big"
+     ],
+     "a": 0,
+     "why": "Other red apples exist outside the box.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Explain what makes an argument valid.",
+     "rubric": [
+      [
+       "premise",
+       "true",
+       "given"
+      ],
+      [
+       "conclusion",
+       "follow",
+       "must",
+       "result"
+      ],
+      [
+       "valid",
+       "link",
+       "logic",
+       "sure"
+      ]
+     ],
+     "min": 2,
+     "model": "In a valid argument, if the premises are true then the conclusion must be true, because it follows from them.",
+     "why": "Validity is about whether the conclusion follows.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "The premises of an argument are false but the reasoning is valid. What can we say?",
+     "o": [
+      "The conclusion may still be false",
+      "The conclusion must be true anyway",
+      "The argument is really just a poem",
+      "The reasoning is now invalid because of it"
+     ],
+     "a": 0,
+     "why": "Valid reasoning from false premises gives no guarantee.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basic logic",
+    "model": "Logic is about what follows from statements. We start with premises and reach a conclusion. If the premises are true and the reasoning is valid, the conclusion must be true. Watch out for flipping if-then statements.",
+    "points": [
+     {
+      "k": [
+       "premise",
+       "start",
+       "statement"
+      ],
+      "ask": "What do we start with?"
+     },
+     {
+      "k": [
+       "conclusion",
+       "follow",
+       "result"
+      ],
+      "ask": "What do we get at the end?"
+     },
+     {
+      "k": [
+       "if",
+       "then",
+       "true",
+       "valid"
+      ],
+      "ask": "When can I trust it?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "title": "Problem-solving steps",
+   "icon": "🛠️",
+   "hook": "Your bicycle chain falls off. How would you work out what to do?",
+   "explain": [
+    "Problem solving is a way of working out what to do when the answer is not obvious. A good solver uses steps instead of rushing.",
+    "A well-known set of steps is: understand the problem, make a plan, carry out the plan, look back. First say the problem in your own words and note what you know and what you need. Then choose a plan: draw a picture, try a smaller case, make a table, work backwards, or guess and check. Then do it and check if it makes sense.",
+    "If one plan fails, try another. Each failed try tells you something. Looking back also helps you solve the next problem faster, because you learn which plans worked."
+   ],
+   "example": {
+    "q": "A book costs 120 coins. Amara has 75. How many more does she need?",
+    "steps": [
+     "Understand: she needs the difference.",
+     "Plan: subtract.",
+     "Do: 120 − 75 = 45.",
+     "Look back: 75 + 45 = 120, so it is right."
+    ],
+    "a": "45 coins"
+   },
+   "analogies": {
+    "home": "Cake not rising? Read the recipe again, find what you missed, and fix it.",
+    "sport": "A coach changes the plan when the first plan does not work.",
+    "city": "A bus is late. You check the map and find another route."
+   },
+   "mnemonic": "U-P-D-L: Understand, Plan, Do, Look back.",
+   "terms": [
+    [
+     "Strategy",
+     "A plan or method for solving a problem."
+    ],
+    [
+     "Check",
+     "Look back to see if the answer makes sense."
+    ],
+    [
+     "Draw a diagram",
+     "Make a picture of the problem."
+    ],
+    [
+     "Work backwards",
+     "Start at the end and go back step by step."
+    ]
+   ],
+   "misc": {
+    "wrong": "If I do not see the answer at once, I cannot solve it.",
+    "right": "Problem solving is mostly steps and trying plans. Most people need several tries."
+   },
+   "limits": "Steps like these help, but real problems may be messy, and you may go back and forth between the steps.",
+   "trip": {
+    "wiki": "Problem solving",
+    "prompt": "Find where the page lists steps for solving problems."
+   },
+   "sources": [
+    "Problem solving",
+    "George Pólya"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is the first step in solving a problem?",
+     "o": [
+      "Understand the problem",
+      "Guess the answer",
+      "Give up",
+      "Start calculating at once"
+     ],
+     "a": 0,
+     "why": "You need to know what is asked first.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Ela has 3 boxes with 6 pencils each. How many pencils in all?",
+     "o": [
+      "18",
+      "9",
+      "12",
+      "24"
+     ],
+     "a": 0,
+     "why": "3 × 6 = 18.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a problem-solving strategy?",
+     "o": [
+      "Draw a picture",
+      "Hide the problem",
+      "Wait for luck",
+      "Change the question to a joke"
+     ],
+     "a": 0,
+     "why": "A picture can make the problem clearer.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Your first plan fails. What is a good response?",
+     "o": [
+      "Try a different plan",
+      "Stop for good",
+      "Blame the problem",
+      "Repeat the same plan forever"
+     ],
+     "a": 0,
+     "why": "A new plan may work.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why do we look back at the end?",
+     "o": [
+      "To check the answer and learn for next time",
+      "To waste a little more time",
+      "To make the final answer look longer",
+      "To hide any mistakes we made"
+     ],
+     "a": 0,
+     "why": "Checking catches mistakes.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "A train leaves at 9:15 and the trip takes 2 hours 40 minutes. How many minutes after 9:00 does it arrive? (Arrival is 11:55.)",
+     "a": 175,
+     "tol": 0,
+     "unit": "minutes",
+     "why": "From 9:00 to 11:55 is 2 hours 55 min, so 120 + 55 = 175 minutes.",
+     "d": 3,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "You need 24 cookies and each tray holds 6. How many trays?",
+     "o": [
+      "4",
+      "6",
+      "3",
+      "5"
+     ],
+     "a": 0,
+     "why": "24 ÷ 6 = 4.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the problem-solving steps in order.",
+     "items": [
+      "Understand the problem",
+      "Make a plan",
+      "Carry out the plan",
+      "Look back and check"
+     ],
+     "why": "These are the four steps.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each strategy to what it does.",
+     "pairs": [
+      [
+       "Draw a diagram",
+       "Shows the problem as a picture"
+      ],
+      [
+       "Work backwards",
+       "Starts from the end"
+      ],
+      [
+       "Guess and check",
+       "Tries an answer then tests it"
+      ]
+     ],
+     "why": "Different strategies suit different problems.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "A friend gets a wrong answer. Why is it useful to check the answer by working it backwards?",
+     "rubric": [
+      [
+       "check",
+       "test",
+       "verify",
+       "back",
+       "reverse"
+      ],
+      [
+       "mistake",
+       "error",
+       "wrong",
+       "right",
+       "correct",
+       "catch"
+      ]
+     ],
+     "min": 2,
+     "model": "Working backwards from the answer shows if it fits the question, so you can catch mistakes.",
+     "why": "Checking is a key step.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "You must share 30 sweets among 4 friends. What is the best way to see what happens with the rest?",
+     "o": [
+      "Divide 30 by 4 and think about the remainder",
+      "Add 30 and 4 and see the total",
+      "Multiply 30 by 4 to get the share",
+      "Subtract 4 from 30 just one time"
+     ],
+     "a": 0,
+     "why": "30 ÷ 4 = 7 remainder 2, so each friend gets 7 and 2 are left.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A problem is too big. Describe a way to make it easier.",
+     "rubric": [
+      [
+       "smaller",
+       "small",
+       "parts",
+       "pieces",
+       "simpler",
+       "break",
+       "split",
+       "easier",
+       "steps"
+      ],
+      [
+       "try",
+       "draw",
+       "picture",
+       "example",
+       "plan"
+      ]
+     ],
+     "min": 2,
+     "model": "Break it into smaller parts or try a simpler version first, then put the answers together.",
+     "why": "Splitting a hard problem makes it manageable.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why is it useful to say the problem in your own words?",
+     "o": [
+      "It shows if you really understand it",
+      "It makes the problem shorter",
+      "It changes the answer you get",
+      "It is a rule that teachers made up"
+     ],
+     "a": 0,
+     "why": "If you cannot say it, you may not understand it.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Steps to solve problems",
+    "model": "To solve a problem, first understand it. Then make a plan, like drawing a picture or trying a smaller case. Then do the plan. At the end, look back and check that the answer makes sense.",
+    "points": [
+     {
+      "k": [
+       "understand",
+       "read",
+       "know"
+      ],
+      "ask": "What do I do first?"
+     },
+     {
+      "k": [
+       "plan",
+       "strategy",
+       "draw",
+       "try"
+      ],
+      "ask": "What do I do next?"
+     },
+     {
+      "k": [
+       "check",
+       "look back"
+      ],
+      "ask": "What do I do at the end?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "title": "Decision-making",
+   "icon": "🧭",
+   "hook": "You can pick one prize: a big toy now or two smaller ones next week. How do you choose?",
+   "explain": [
+    "A decision is a choice between options. Good decisions come from knowing what you want, listing options, and thinking about what might happen with each.",
+    "A helpful tool is a pros and cons list. Write the good points and the bad points of each option. Then ask which matter most. A \"pro\" that matters a lot can outweigh several small \"cons\".",
+    "Decisions have trade-offs: choosing one thing means giving up another. We often cannot know the result for sure, so we choose the option that seems best with the information we have. If the result is not good, we learn and decide better next time."
+   ],
+   "example": {
+    "q": "You can spend your 10 coins on a ball (10 coins) or save for a bike (50 coins). What do you consider?",
+    "steps": [
+     "Option A: the ball now, fun now.",
+     "Option B: save five times as long, but the bike lasts and may be more useful.",
+     "What matters to you decides."
+    ],
+    "a": "There is no one right answer; it depends on what you value and how long you can wait."
+   },
+   "analogies": {
+    "home": "Choosing between homework first or play first: each has a cost and a gain.",
+    "farm": "A farmer chooses to plant maize or beans depending on rain and price.",
+    "city": "You pick a short bus route that is crowded or a longer one with a seat."
+   },
+   "mnemonic": "List, weigh, choose, and learn: four steps, one at a turn.",
+   "terms": [
+    [
+     "Option",
+     "One of the choices you can make."
+    ],
+    [
+     "Pros and cons",
+     "Good points and bad points of an option."
+    ],
+    [
+     "Trade-off",
+     "Giving up one thing to get another."
+    ],
+    [
+     "Consequence",
+     "What happens because of a choice."
+    ]
+   ],
+   "misc": {
+    "wrong": "The best decision is the one that turns out well.",
+    "right": "A good decision uses the information you have, even if luck changes the result."
+   },
+   "limits": "Weighing pros and cons does not give a number. People may weigh things differently, and that is fine.",
+   "trip": {
+    "wiki": "Decision-making",
+    "prompt": "Find the page section about steps for making a decision."
+   },
+   "sources": [
+    "Decision-making",
+    "Trade-off"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is a trade-off?",
+     "o": [
+      "Giving up one thing to get another",
+      "A kind of swap meet at a market",
+      "A loud noise made by a lorry",
+      "A lucky guess about the future"
+     ],
+     "a": 0,
+     "why": "Choosing one option often costs another.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "A pros and cons list helps you...",
+     "o": [
+      "Compare the good and bad points of options",
+      "Skip thinking and just pick one",
+      "Hide the choices from other people",
+      "Pick one of them at random"
+     ],
+     "a": 0,
+     "why": "It organises your thinking.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Nia has 20 coins. A kite costs 15 coins and a book costs 12. She wants both. What is the problem?",
+     "o": [
+      "Together they cost more than she has",
+      "The kite is red and the book is blue",
+      "Books are heavy to carry home",
+      "The shop is a long way from her house"
+     ],
+     "a": 0,
+     "why": "15 + 12 = 27, which is more than 20.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a consequence of staying up very late before school?",
+     "o": [
+      "Feeling tired the next day",
+      "Becoming taller at once the next morning",
+      "Learning a new language overnight",
+      "Getting free sweets from the teacher"
+     ],
+     "a": 0,
+     "why": "Lack of sleep often makes us tired.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A decision turns out badly even though you thought it through. What does this show?",
+     "o": [
+      "Luck and missing information matter",
+      "You are always wrong when you decide",
+      "Thinking carefully is useless",
+      "Plans never work out for anyone"
+     ],
+     "a": 0,
+     "why": "We cannot know everything beforehand.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Two friends choose differently with the same list. Why?",
+     "o": [
+      "They value things differently",
+      "One of them must be wrong",
+      "One of them cannot read the list",
+      "Lists tell lies to people"
+     ],
+     "a": 0,
+     "why": "People weigh pros and cons differently.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "Option A gives 3 treats now. Option B gives 5 treats next week. How many more treats does option B give?",
+     "a": 2,
+     "tol": 0,
+     "unit": "treats",
+     "why": "5 − 3 = 2. Whether waiting is worth it is the decision.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the decision steps in order.",
+     "items": [
+      "Say what you want",
+      "List your options",
+      "Weigh pros and cons",
+      "Choose and later check the result"
+     ],
+     "why": "Goal first, choice later, then learn.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each word to its meaning.",
+     "pairs": [
+      [
+       "Option",
+       "A choice you could make"
+      ],
+      [
+       "Consequence",
+       "What happens afterwards"
+      ],
+      [
+       "Pro",
+       "A good point"
+      ]
+     ],
+     "why": "These are the building blocks of decisions.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Describe one thing you would think about before choosing between two options.",
+     "rubric": [
+      [
+       "pro",
+       "con",
+       "good",
+       "bad",
+       "benefit",
+       "cost",
+       "risk",
+       "advantage",
+       "disadvantage"
+      ],
+      [
+       "happen",
+       "result",
+       "consequence",
+       "outcome",
+       "after",
+       "future"
+      ],
+      [
+       "want",
+       "goal",
+       "matter",
+       "important",
+       "value"
+      ]
+     ],
+     "min": 2,
+     "model": "I would list the good and bad points of each option and think about what might happen afterwards and what matters most to me.",
+     "why": "Good decisions weigh options and consequences.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Why might waiting be better than choosing now?",
+     "o": [
+      "You might get more information",
+      "Time makes things cheaper always",
+      "Waiting is a rule",
+      "Options never change"
+     ],
+     "a": 0,
+     "why": "More information can improve a decision, though waiting may cost something too.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A friend chooses by always doing what the group does. What could go wrong?",
+     "rubric": [
+      [
+       "group",
+       "others",
+       "everyone",
+       "copy",
+       "follow"
+      ],
+      [
+       "wrong",
+       "different",
+       "not",
+       "own",
+       "want",
+       "needs",
+       "mistake"
+      ]
+     ],
+     "min": 2,
+     "model": "The group may want different things from my friend, so the choice may not fit their own needs.",
+     "why": "A good decision matches your own goals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best sign of a good decision process?",
+     "o": [
+      "You thought about options and consequences",
+      "You decided very fast without delay",
+      "You picked the loudest idea in the room",
+      "You did not think at all about it"
+     ],
+     "a": 0,
+     "why": "Process matters because results include luck.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Making decisions",
+    "model": "A decision is a choice between options. We list the options, think about what could happen with each, and weigh the good and bad points. Choosing one thing often means giving up another, which is called a trade-off.",
+    "points": [
+     {
+      "k": [
+       "option",
+       "choice",
+       "choose"
+      ],
+      "ask": "What are options?"
+     },
+     {
+      "k": [
+       "pro",
+       "con",
+       "good",
+       "bad",
+       "weigh"
+      ],
+      "ask": "How do I compare them?"
+     },
+     {
+      "k": [
+       "trade",
+       "give up",
+       "cost"
+      ],
+      "ask": "What do I lose when I choose?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "title": "Memory and recall",
+   "icon": "🗝️",
+   "hook": "Try to remember these five words for one minute: tree, boat, key, spoon, bell. Then look away. How many can you say?",
+   "explain": [
+    "Memory is how we keep and get back information. It has steps: taking something in, storing it and recalling it. We do not record like a camera. We rebuild memories each time, so they can change.",
+    "Some tricks help a lot. Active recall means testing yourself instead of just reading again. Spacing means studying a little on several days instead of all at once. Making pictures or stories, called mnemonics, also helps. For a list, a memory palace links each item to a place you know well, like rooms in your home.",
+    "But memory has limits. We forget, and that is normal, especially without practice. Sometimes we feel sure about a memory and are wrong. Feeling sure is not the same as being right."
+   ],
+   "example": {
+    "q": "You need to remember: milk, eggs, bread, rice. Use a story.",
+    "steps": [
+     "Picture a cow holding eggs.",
+     "The cow puts them on a loaf of bread.",
+     "The bread sits in a bowl of rice."
+    ],
+    "a": "A silly story links the four items and helps you recall them."
+   },
+   "analogies": {
+    "home": "Say the shopping list from memory, then check the paper. That is testing yourself.",
+    "music": "You learn a song by singing it again and again over days, not once for hours.",
+    "sport": "A player practises a move a little each day to remember it well."
+   },
+   "mnemonic": "Test, space, picture, place: four ways to hold a memory in its space.",
+   "terms": [
+    [
+     "Recall",
+     "Bringing a memory back without looking."
+    ],
+    [
+     "Spacing",
+     "Studying over several days."
+    ],
+    [
+     "Mnemonic",
+     "A trick to help remember."
+    ],
+    [
+     "Forgetting",
+     "Losing the ability to recall something."
+    ]
+   ],
+   "misc": {
+    "wrong": "If I feel sure about a memory, it must be right.",
+    "right": "Feeling sure is not the same as being right. Memories can change and be wrong."
+   },
+   "limits": "Memory-training games help you get better at the game; there is no good evidence they make you smarter in everything.",
+   "trip": {
+    "wiki": "Memory",
+    "prompt": "Find a section on how memories are formed or forgotten."
+   },
+   "sources": [
+    "Memory",
+    "Forgetting",
+    "Spaced repetition"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is active recall?",
+     "o": [
+      "Testing yourself without looking",
+      "Reading the notes again and again",
+      "Copying the notes out neatly",
+      "Sleeping on the book overnight"
+     ],
+     "a": 0,
+     "why": "Trying to remember strengthens memory.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is usually better for remembering?",
+     "o": [
+      "Study 20 minutes on 5 different days",
+      "Study for 100 minutes the night before a test",
+      "Study just once and then stop for good",
+      "Never test yourself on anything at all"
+     ],
+     "a": 0,
+     "why": "Spacing helps memories last longer.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is a silly picture or story useful?",
+     "o": [
+      "It links facts and makes them easier to recall",
+      "It is a rule teachers ask us to follow",
+      "It makes books much lighter to carry",
+      "It hides the facts so nobody sees them"
+     ],
+     "a": 0,
+     "why": "Pictures and links give more routes to the memory.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Tola is very sure she saw a red car, but a video shows it was blue. What does this show?",
+     "o": [
+      "Being sure does not mean being right",
+      "Videos are always wrong about colours",
+      "Tola is lying about what she saw",
+      "Cars sometimes change colour on their own"
+     ],
+     "a": 0,
+     "why": "Confidence and accuracy can differ.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Is forgetting always a bad sign?",
+     "o": [
+      "No, it is normal and happens to everyone",
+      "Yes, it means the brain is sick",
+      "Yes, it means you are lazy at school",
+      "No, it never happens to anyone"
+     ],
+     "a": 0,
+     "why": "Forgetting is normal; reviewing helps.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "In a memory palace you put items to remember...",
+     "o": [
+      "In places you know well, like rooms",
+      "On a blank paper and nowhere else",
+      "Inside a loud song only",
+      "Nowhere in particular, just anywhere"
+     ],
+     "a": 0,
+     "why": "Familiar places act as hooks.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "num",
+     "q": "A teacher says to review a lesson on day 1, 3 and 7. How many days pass between the first and last review?",
+     "a": 6,
+     "tol": 0,
+     "unit": "days",
+     "why": "7 − 1 = 6 days.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the memory steps in order.",
+     "items": [
+      "Take in information",
+      "Store it",
+      "Recall it later"
+     ],
+     "why": "We take in, store and then recall.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "match",
+     "q": "Match each trick to what it uses.",
+     "pairs": [
+      [
+       "Active recall",
+       "Testing yourself"
+      ],
+      [
+       "Spacing",
+       "Studying over several days"
+      ],
+      [
+       "Memory palace",
+       "Familiar places"
+      ]
+     ],
+     "why": "Each trick uses a different idea.",
+     "d": 2,
+     "k": "concept"
+    },
+    {
+     "t": "text",
+     "q": "Why is testing yourself better than only reading your notes again?",
+     "rubric": [
+      [
+       "recall",
+       "remember",
+       "retriev",
+       "try",
+       "test",
+       "quiz"
+      ],
+      [
+       "stronger",
+       "strengthen",
+       "better",
+       "practice",
+       "harder",
+       "sticks",
+       "stay",
+       "last"
+      ]
+     ],
+     "min": 2,
+     "model": "Trying to recall makes your brain work to find the memory, which makes it stronger than just looking at it again.",
+     "why": "Effortful retrieval strengthens memory.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A student reads the same page five times and feels sure she knows it. In the test she forgets much. Why?",
+     "o": [
+      "Reading feels easy, which can fool us into feeling sure",
+      "The test was unfair, as tests always are",
+      "The words in the book had changed",
+      "Reading is bad for remembering anything"
+     ],
+     "a": 0,
+     "why": "Familiarity feels like knowing, but recall is a different skill.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "A witness remembers something clearly, but their story differs from a video. What does this tell us about memory?",
+     "rubric": [
+      [
+       "memory",
+       "memories",
+       "remember"
+      ],
+      [
+       "change",
+       "wrong",
+       "mistake",
+       "rebuild",
+       "forget",
+       "error",
+       "differ",
+       "not always",
+       "accurate"
+      ]
+     ],
+     "min": 2,
+     "model": "Memory is rebuilt each time and can change, so a clear memory can still be wrong.",
+     "why": "Vivid does not mean accurate.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which claim about brain games is most accurate?",
+     "o": [
+      "Playing them improves the game but there is little evidence for wide gains",
+      "They make you smarter at everything you do",
+      "They fully stop you from forgetting things",
+      "They can replace the sleep that you need"
+     ],
+     "a": 0,
+     "why": "Skills often do not transfer widely.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "How to remember",
+    "model": "Memory has steps: taking in, storing and recalling. Good tricks include testing yourself, studying a little over several days, and making pictures or stories. Memory is not perfect. We forget, and we can be sure and still wrong.",
+    "points": [
+     {
+      "k": [
+       "test",
+       "recall",
+       "quiz",
+       "retriev"
+      ],
+      "ask": "What is a good way to practise?"
+     },
+     {
+      "k": [
+       "space",
+       "days",
+       "often",
+       "repeat"
+      ],
+      "ask": "How should I spread out learning?"
+     },
+     {
+      "k": [
+       "picture",
+       "story",
+       "link",
+       "place",
+       "palace"
+      ],
+      "ask": "How can I link facts?"
+     },
+     {
+      "k": [
+       "forget",
+       "wrong",
+       "sure",
+       "mistake"
+      ],
+      "ask": "Is memory always right?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "title": "Attention and concentration",
+   "icon": "🎯",
+   "hook": "A bee buzzes by while you read. Can you keep reading? How?",
+   "explain": [
+    "Attention is how we choose what to think about. We can only focus well on a few things at once. When we try to do two hard things, we often do each one worse.",
+    "Many things pull our attention: noise, screens, hunger and worries. We can help ourselves. Put away distractions, take a short break after about 20 or 30 minutes of work, drink water, get enough sleep and set one clear goal for the work.",
+    "Attention is also something we can notice. If your mind wanders, that is normal. The skill is to notice and bring it back. Practising focus in small steps helps over time."
+   ],
+   "example": {
+    "q": "You have 30 minutes of homework with a phone buzzing nearby. What can you do?",
+    "steps": [
+     "Notice the distraction.",
+     "Put the phone in another room.",
+     "Set a goal: finish page 1 in 15 minutes."
+    ],
+    "a": "Remove the distraction and set a clear small goal."
+   },
+   "analogies": {
+    "home": "Turn off the TV and sit at a table to read.",
+    "sport": "A goalkeeper ignores the noise of the crowd and watches the ball.",
+    "music": "A pianist looks at the notes and listens for each sound, not at the audience."
+   },
+   "mnemonic": "Notice, return, remove, repeat: the focus beat.",
+   "terms": [
+    [
+     "Attention",
+     "Choosing what to think about."
+    ],
+    [
+     "Distraction",
+     "Something that pulls attention away."
+    ],
+    [
+     "Focus",
+     "Keeping attention on one thing."
+    ],
+    [
+     "Multitasking",
+     "Trying to do several things at once."
+    ]
+   ],
+   "misc": {
+    "wrong": "I can do homework and watch a show and do both well.",
+    "right": "Switching between tasks costs time and often makes mistakes more likely."
+   },
+   "limits": "People differ in how easily they focus, and some find it hard for health reasons, so tips work differently for different people.",
+   "trip": {
+    "wiki": "Attention",
+    "prompt": "Find a part about what makes attention harder or easier."
+   },
+   "sources": [
+    "Attention",
+    "Distraction"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What is attention?",
+     "o": [
+      "Choosing what to think about",
+      "A kind of food for the brain",
+      "A habit about when we sleep",
+      "A loud noise that wakes us up"
+     ],
+     "a": 0,
+     "why": "We direct our minds to something.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Which is the best way to focus on reading?",
+     "o": [
+      "Put away your phone",
+      "Keep the TV on in the background",
+      "Chat with your friends as you read",
+      "Hop on one leg while you read"
+     ],
+     "a": 0,
+     "why": "Removing distractions helps.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Your mind wanders during study. What should you do?",
+     "o": [
+      "Notice it and gently return",
+      "Blame yourself and feel bad about it",
+      "Stop studying forever and give up",
+      "Switch to playing games instead"
+     ],
+     "a": 0,
+     "why": "Noticing and returning is the skill.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why is multitasking often a poor idea for hard tasks?",
+     "o": [
+      "Switching costs time and causes mistakes",
+      "It always saves time on hard tasks",
+      "It makes people grow taller",
+      "It is against the law in school"
+     ],
+     "a": 0,
+     "why": "The brain has to switch focus.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which helps attention?",
+     "o": [
+      "Enough sleep",
+      "Staying up all night",
+      "Skipping water",
+      "Loud noise"
+     ],
+     "a": 0,
+     "why": "Rest helps the brain focus.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "How long should a work block be before a short break, as a common tip?",
+     "o": [
+      "About 20 to 30 minutes",
+      "About 5 seconds at a time",
+      "About 10 hours without a pause",
+      "Never take a break at all"
+     ],
+     "a": 0,
+     "why": "Short blocks with breaks are a common study tip.",
+     "d": 2,
+     "k": "recall"
+    },
+    {
+     "t": "num",
+     "q": "You study 25 minutes, rest 5 minutes, and repeat that cycle 3 times. How many minutes in total?",
+     "a": 90,
+     "tol": 0,
+     "unit": "minutes",
+     "why": "25 + 5 = 30 minutes per cycle, and 30 × 3 = 90.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put these in order for starting study.",
+     "items": [
+      "Clear the desk",
+      "Put the phone away",
+      "Choose one goal",
+      "Start working"
+     ],
+     "why": "Prepare first and begin last.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each distraction to a fix.",
+     "pairs": [
+      [
+       "Phone buzzing",
+       "Put it away"
+      ],
+      [
+       "Noisy room",
+       "Move somewhere quiet"
+      ],
+      [
+       "Feeling hungry",
+       "Eat a snack first"
+      ]
+     ],
+     "why": "Fix the cause of the distraction.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "text",
+     "q": "Explain why trying to do two hard things at the same time can make both worse.",
+     "rubric": [
+      [
+       "switch",
+       "split",
+       "divide",
+       "share",
+       "both"
+      ],
+      [
+       "attention",
+       "focus",
+       "mind",
+       "brain"
+      ],
+      [
+       "mistake",
+       "slow",
+       "worse",
+       "harder",
+       "error",
+       "less"
+      ]
+     ],
+     "min": 2,
+     "model": "Our attention is limited, so when we split it between two hard tasks we switch back and forth and do each one slower with more mistakes.",
+     "why": "Attention is limited.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Sam says he studies best with the TV on. How could he test this?",
+     "o": [
+      "Compare results with the TV on and off",
+      "Ask his friends what they think only",
+      "Turn the TV up louder",
+      "Keep saying it more often"
+     ],
+     "a": 0,
+     "why": "A fair comparison can show the effect.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "Give two ways to help yourself focus on homework and say why they work.",
+     "rubric": [
+      [
+       "phone",
+       "tv",
+       "noise",
+       "quiet",
+       "distract",
+       "away",
+       "break",
+       "sleep",
+       "goal",
+       "water"
+      ],
+      [
+       "because",
+       "so",
+       "helps",
+       "reduce",
+       "less",
+       "focus",
+       "attention"
+      ]
+     ],
+     "min": 2,
+     "model": "Putting the phone away removes distractions, and a short break keeps the brain fresh, so focus is easier.",
+     "why": "Reducing distraction and resting both help.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a true statement about attention?",
+     "o": [
+      "It is limited, so choosing what to focus on matters",
+      "It has no limit at all",
+      "Only some lucky people have it",
+      "It can never be improved at all"
+     ],
+     "a": 0,
+     "why": "Attention is limited.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Paying attention",
+    "model": "Attention is choosing what to think about. It is limited, so doing many things at once makes each one worse. To focus, remove distractions, rest, and set one clear goal. If the mind wanders, notice it and bring it back.",
+    "points": [
+     {
+      "k": [
+       "limit",
+       "one",
+       "few",
+       "choose"
+      ],
+      "ask": "How much can I focus on?"
+     },
+     {
+      "k": [
+       "distract",
+       "phone",
+       "noise",
+       "tv"
+      ],
+      "ask": "What pulls my attention away?"
+     },
+     {
+      "k": [
+       "goal",
+       "break",
+       "sleep",
+       "remove",
+       "quiet"
+      ],
+      "ask": "What helps me focus?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "title": "Planning and goal setting",
+   "icon": "📅",
+   "hook": "You want to finish a big school project in two weeks. Where do you begin?",
+   "explain": [
+    "A goal is something you want to achieve. A good goal is clear and has a time limit. \"Read 10 pages by Friday\" is better than \"read more\".",
+    "A plan breaks a big goal into smaller steps. Put the steps in order and estimate how long each will take. Write them on a calendar or list, and tick them off. Do the most important or most urgent first, and leave a little spare time because things often take longer than we think.",
+    "Plans change. If something goes wrong, check the plan and adjust it. At the end, look back: what worked and what would you change?"
+   ],
+   "example": {
+    "q": "Your project is due in 14 days. It has 4 parts, each taking about 2 days. How many days of spare time are there?",
+    "steps": [
+     "Work needed: 4 × 2 = 8 days.",
+     "Time available: 14 days.",
+     "Spare: 14 − 8 = 6 days."
+    ],
+    "a": "6 days spare"
+   },
+   "analogies": {
+    "home": "Making a list of chores with times helps get ready for guests.",
+    "farm": "A farmer plans to plant before the rains, so seeds can grow.",
+    "sport": "An athlete trains in steps for months before a race."
+   },
+   "mnemonic": "Goal, steps, order, time; then tick, check, repeat in line.",
+   "terms": [
+    [
+     "Goal",
+     "Something you want to achieve."
+    ],
+    [
+     "Plan",
+     "A list of steps to reach a goal."
+    ],
+    [
+     "Deadline",
+     "The time by which a task must be finished."
+    ],
+    [
+     "Priority",
+     "What matters most or must come first."
+    ]
+   ],
+   "misc": {
+    "wrong": "A plan must never change.",
+    "right": "Good plans are changed when things change. We keep the goal but adjust the steps."
+   },
+   "limits": "People often underestimate how long tasks take, so extra time in a plan is wise.",
+   "trip": {
+    "wiki": "Time management",
+    "prompt": "Look for tips that help you plan your time."
+   },
+   "sources": [
+    "Time management",
+    "Goal setting"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "Which goal is clearest?",
+     "o": [
+      "Read 20 pages by Sunday",
+      "Read more soon, when you can",
+      "Be a better reader",
+      "Do something about reading"
+     ],
+     "a": 0,
+     "why": "It has a number and a time.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "What is a deadline?",
+     "o": [
+      "The time by which a task must be done",
+      "A kind of line drawn on a page",
+      "A short stick used in games",
+      "A holiday given by the school"
+     ],
+     "a": 0,
+     "why": "A deadline is a time limit.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "mc",
+     "q": "Why break a big goal into steps?",
+     "o": [
+      "Small steps are easier to do and check",
+      "It makes the goal even bigger",
+      "It hides the goal from you",
+      "It is always slower than doing it at once"
+     ],
+     "a": 0,
+     "why": "Small steps make progress clearer.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "You have a test tomorrow and a poster due next week. What is the priority?",
+     "o": [
+      "Study for the test",
+      "Make the poster that is due next week",
+      "Watch a film to relax first",
+      "Do nothing about either task yet"
+     ],
+     "a": 0,
+     "why": "The test is more urgent.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "A plan is not working. What should you do?",
+     "o": [
+      "Adjust the plan",
+      "Pretend it works",
+      "Quit at once",
+      "Blame others"
+     ],
+     "a": 0,
+     "why": "Adjust the steps and keep the goal.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "num",
+     "q": "You want to read a 120-page book in 10 days, the same number of pages each day. How many pages per day?",
+     "a": 12,
+     "tol": 0,
+     "unit": "pages",
+     "why": "120 ÷ 10 = 12.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Why leave spare time in a plan?",
+     "o": [
+      "Tasks often take longer than expected",
+      "So that you can end up doing less work",
+      "To make the plan look longer on paper",
+      "There is no real reason to do it"
+     ],
+     "a": 0,
+     "why": "Estimates are often too short.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "order",
+     "q": "Put the steps in order for planning.",
+     "items": [
+      "Set a clear goal",
+      "List the steps",
+      "Order the steps and give dates",
+      "Do the steps and check progress"
+     ],
+     "why": "Goal first, then steps, order, doing.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match the planning word to its meaning.",
+     "pairs": [
+      [
+       "Goal",
+       "What you want to achieve"
+      ],
+      [
+       "Step",
+       "A small part of the plan"
+      ],
+      [
+       "Priority",
+       "What comes first"
+      ]
+     ],
+     "why": "These are key ideas.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Why is \"write a good story by Friday, with 3 paragraphs written each day\" a better goal than \"write a story\"?",
+     "rubric": [
+      [
+       "clear",
+       "specific",
+       "number",
+       "time",
+       "date",
+       "friday",
+       "measure",
+       "check",
+       "exact"
+      ],
+      [
+       "plan",
+       "steps",
+       "know",
+       "track",
+       "progress",
+       "easy",
+       "tell"
+      ]
+     ],
+     "min": 2,
+     "model": "It is clear and has a time and amounts, so you can plan and see whether you are on track.",
+     "why": "Clear goals can be tracked.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "A friend does only the fun parts of a project first. What may happen?",
+     "o": [
+      "The important parts may run out of time",
+      "Everything finishes early and neatly",
+      "Nothing changes at all",
+      "The fun parts disappear from the project"
+     ],
+     "a": 0,
+     "why": "Priorities matter.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "You are behind on your plan. Explain what you might do.",
+     "rubric": [
+      [
+       "adjust",
+       "change",
+       "plan",
+       "replan",
+       "fix",
+       "update",
+       "revise"
+      ],
+      [
+       "priority",
+       "important",
+       "first",
+       "drop",
+       "extra",
+       "time",
+       "help",
+       "smaller",
+       "steps"
+      ]
+     ],
+     "min": 2,
+     "model": "I would adjust the plan, do the most important parts first and ask for help or drop extras.",
+     "why": "Adapt the plan to the situation.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why check at the end whether the plan worked?",
+     "o": [
+      "To learn and plan better next time",
+      "To pass the time until lunch",
+      "To change the past by doing it",
+      "To win a prize from the teacher"
+     ],
+     "a": 0,
+     "why": "Looking back improves future plans.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Planning and goals",
+    "model": "A good goal is clear and has a time limit. A plan breaks the goal into small steps in order. Put the most important first and leave spare time. If things change, adjust the plan.",
+    "points": [
+     {
+      "k": [
+       "goal",
+       "clear",
+       "time",
+       "deadline"
+      ],
+      "ask": "What makes a good goal?"
+     },
+     {
+      "k": [
+       "steps",
+       "small",
+       "break",
+       "order"
+      ],
+      "ask": "How do I make a plan?"
+     },
+     {
+      "k": [
+       "adjust",
+       "change",
+       "check"
+      ],
+      "ask": "What if things go wrong?"
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "title": "Basic strategic thinking",
+   "icon": "♟️",
+   "hook": "In a game of noughts and crosses (tic-tac-toe), why is the centre square a good first move?",
+   "explain": [
+    "Strategy means choosing actions to reach a goal, thinking about what other people will do. In a game, you do not just think about your own move. You think about your opponent's reply.",
+    "A basic strategic habit is to think a few steps ahead: if I do this, what can they do, and what then? Another is to look for moves that give you more than one way to win. A third is to block your opponent's best chance while keeping your own.",
+    "Strategy is also used when people cooperate, not just compete. A team plans together so each person's move helps the others. Some games are won by skill, and some partly by luck. Strategy helps most when you can make choices."
+   ],
+   "example": {
+    "q": "In noughts and crosses you have two in a row and an empty third square. The opponent also has two in a row with an empty third. It is your move. What do you do?",
+    "steps": [
+     "If you play your winning square, you win at once.",
+     "Blocking only matters if you cannot win first.",
+     "So take your winning square."
+    ],
+    "a": "Play the winning square: win now rather than block."
+   },
+   "analogies": {
+    "sport": "A football team defends together and counters when the other side loses the ball.",
+    "music": "In a band, each player listens so the parts fit together.",
+    "nature": "A heron stands still and waits for a fish to come close."
+   },
+   "mnemonic": "Look ahead, check their reply, win or block, then try.",
+   "terms": [
+    [
+     "Strategy",
+     "A plan of choices to reach a goal."
+    ],
+    [
+     "Opponent",
+     "The person you play against."
+    ],
+    [
+     "Block",
+     "Stop the other side from winning."
+    ],
+    [
+     "Cooperate",
+     "Work with others for a shared goal."
+    ]
+   ],
+   "misc": {
+    "wrong": "Strategy means being tricky or mean.",
+    "right": "Strategy means planning wisely. It can mean cooperating and fair play."
+   },
+   "limits": "Real life is often not a simple game, because goals can be unclear and rules can change.",
+   "trip": {
+    "wiki": "Strategy",
+    "prompt": "Find an example of strategy that is not a board game."
+   },
+   "sources": [
+    "Strategy",
+    "Tic-tac-toe"
+   ],
+   "questions": [
+    {
+     "t": "mc",
+     "q": "What does thinking ahead mean in a game?",
+     "o": [
+      "Considering your opponent's possible replies",
+      "Making a move at random each turn",
+      "Moving as fast as you can",
+      "Ignoring what is on the board"
+     ],
+     "a": 0,
+     "why": "Look at what happens after your move.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Why is blocking sometimes needed?",
+     "o": [
+      "To stop the opponent from winning",
+      "To end the game much sooner",
+      "To make more noise at the table",
+      "To use up more pieces on the board"
+     ],
+     "a": 0,
+     "why": "You stop their winning line.",
+     "d": 1,
+     "k": "concept"
+    },
+    {
+     "t": "mc",
+     "q": "Two moves, one gives two ways to win next turn. Which is stronger?",
+     "o": [
+      "The move with two ways to win",
+      "The move with none",
+      "The move with one way and a mistake",
+      "They are equal"
+     ],
+     "a": 0,
+     "why": "The opponent can only block one.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why do teammates need a shared plan?",
+     "o": [
+      "So their moves help each other",
+      "So they can each win alone",
+      "To make the rules longer to read",
+      "There is no real reason for it"
+     ],
+     "a": 0,
+     "why": "Cooperation uses shared goals.",
+     "d": 1,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "You can win this move or block theirs. What is usually best?",
+     "o": [
+      "Win",
+      "Block",
+      "Skip",
+      "Quit"
+     ],
+     "a": 0,
+     "why": "Winning ends the game in your favour.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "mc",
+     "q": "Which is a strategy?",
+     "o": [
+      "Plan three moves before moving",
+      "Play the first move you think of",
+      "Close your eyes",
+      "Never move"
+     ],
+     "a": 0,
+     "why": "Planning ahead is a strategy.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "num",
+     "q": "A tic-tac-toe board has 9 squares. After 3 moves are made, how many squares are empty?",
+     "a": 6,
+     "tol": 0,
+     "unit": "squares",
+     "why": "9 − 3 = 6.",
+     "d": 1,
+     "k": "apply"
+    },
+    {
+     "t": "order",
+     "q": "Put the strategic thinking steps in order.",
+     "items": [
+      "Look at the board",
+      "Think of your options",
+      "Predict the reply",
+      "Choose your move"
+     ],
+     "why": "Look, think, predict, choose.",
+     "d": 2,
+     "k": "apply"
+    },
+    {
+     "t": "match",
+     "q": "Match each word to its meaning.",
+     "pairs": [
+      [
+       "Opponent",
+       "The one you play against"
+      ],
+      [
+       "Block",
+       "Stop their winning line"
+      ],
+      [
+       "Cooperate",
+       "Work together"
+      ]
+     ],
+     "why": "Basic strategy words.",
+     "d": 1,
+     "k": "recall"
+    },
+    {
+     "t": "text",
+     "q": "Explain why a good player thinks about what the opponent will do.",
+     "rubric": [
+      [
+       "opponent",
+       "other",
+       "reply",
+       "response",
+       "them",
+       "player"
+      ],
+      [
+       "block",
+       "win",
+       "stop",
+       "plan",
+       "next",
+       "ahead",
+       "counter",
+       "predict",
+       "choose"
+      ]
+     ],
+     "min": 2,
+     "model": "The opponent's replies affect whether my plan works, so thinking ahead lets me block their chances and choose a move that still works.",
+     "why": "Strategy involves the choices of others.",
+     "d": 2,
+     "k": "reason"
+    }
+   ],
+   "panel": [
+    {
+     "t": "mc",
+     "q": "Which is a good first rule in a strategy game?",
+     "o": [
+      "Check for a win or a block before other moves",
+      "Move at random and hope it works out",
+      "Copy exactly whatever the opponent does",
+      "Always move the first piece you touch"
+     ],
+     "a": 0,
+     "why": "Immediate wins and threats come first.",
+     "d": 2,
+     "k": "reason"
+    },
+    {
+     "t": "text",
+     "q": "When is cooperating a better strategy than competing?",
+     "rubric": [
+      [
+       "together",
+       "team",
+       "shared",
+       "common",
+       "group",
+       "both",
+       "everyone"
+      ],
+      [
+       "goal",
+       "win",
+       "benefit",
+       "better",
+       "help",
+       "achieve",
+       "result"
+      ]
+     ],
+     "min": 2,
+     "model": "When the goal is shared, working together lets everyone achieve more than each person alone.",
+     "why": "Cooperation fits shared goals.",
+     "d": 3,
+     "k": "reason"
+    },
+    {
+     "t": "mc",
+     "q": "Why does luck matter in some games?",
+     "o": [
+      "Dice or cards bring chance, so strategy cannot control everything",
+      "Luck is always bad for every player",
+      "Strategy is useless in every game",
+      "Luck never matters in any game"
+     ],
+     "a": 0,
+     "why": "Chance affects outcomes in some games.",
+     "d": 3,
+     "k": "reason"
+    }
+   ],
+   "teach": {
+    "topic": "Basic strategy",
+    "model": "Strategy means planning your choices to reach a goal while thinking about what others will do. Think a few moves ahead, block threats, and look for moves with many ways to win. Teams cooperate with shared plans.",
+    "points": [
+     {
+      "k": [
+       "plan",
+       "ahead",
+       "think",
+       "choose"
+      ],
+      "ask": "What do I do in a strategy?"
+     },
+     {
+      "k": [
+       "opponent",
+       "other",
+       "reply",
+       "block"
+      ],
+      "ask": "Do I think about others?"
+     },
+     {
+      "k": [
+       "cooperate",
+       "team",
+       "together"
+      ],
+      "ask": "Is strategy only competing?"
+     }
+    ]
+   }
+  }
+ ]
+}
