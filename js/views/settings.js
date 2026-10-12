@@ -5,9 +5,11 @@ import { profile, device, save, signOut, deleteProfile, exportProfile, syncMeta 
 import { needsGuardian, guardianUnlocked, lockGuardian, correctAge, clearAgeLock, BANDS, can } from '../core/safety.js';
 import { listenSupported } from '../core/speech.js';
 import { kvClear } from '../core/idb.js';
+import { startMusic, stopMusic, setMusicVolume } from '../core/audio.js';
 import { TARGET_LANGS } from '../data/worlds.js';
 import LABS from '../labs/index.js';
 import { go, sectionTitle, guardianGate, confirmBox } from './ui.js';
+import { voiceCard, deviceCheck, deviceLockRow, normsExport } from './extras.js';
 import { changeLanguage, applySettings, installApp, isInstalled, rerender, setTheme } from '../app.js';
 
 function toggle(label, key, { guard = false, hint = '', onChange } = {}) {
@@ -59,14 +61,21 @@ export function settingsView(main) {
     choice('Letter spacing', 'spacing', [['normal', 'Normal'], ['wide', 'Wider (easier for some readers)']]), choice('Movement on screen', 'motion', [['on', 'On'], ['off', 'Reduced']]),
     toggle('Untimed mode', 'untimed', { hint: 'No clocks in duels. Leaderboards keep timed and untimed results apart, so this never counts against you.' }),
     toggle('Read aloud', 'voice', { hint: 'Your teacher\'s words are spoken as well as shown. All speech also appears as text.' }),
-    toggle('Sound effects', 'sound'), toggle('Background music', 'music', { hint: 'A calm soundtrack, different in every world.' })));
+    toggle('Sound effects', 'sound'), toggle('Background music', 'music', { hint: 'A calm soundtrack, different in every world.', onChange: () => (profile.settings.music ? startMusic(0) : stopMusic()) }),
+    (() => { const f = choice('Music volume', 'musicVolume', [['soft', 'Soft'], ['medium', 'Medium'], ['loud', 'Loud']]); f.addEventListener('click', () => setTimeout(setMusicVolume, 50)); return f; })(),
+    toggle('Focus tones for headphones', 'focusTones', { hint: 'Adds a very soft 10 Hz two-ear tone under the music. Some people find it calming; research on such tones is mixed, and it is not a treatment.' })));
 
   const out = h('div', { class: 'small mt', 'aria-live': 'polite' });
   const dl = h('button', { class: 'btn', onClick: () => downloadAll(dl, out) }, '⬇️ ', t('Download all lessons for offline play'));
   main.append(h('div', { class: 'card mt' }, sectionTitle('✈️', t('Install and offline')),
     h('p', { class: 'small muted' }, t('The game installs on computers, Android phones and tablets, iPhones and iPads. Once a lesson has been opened it works without the internet. Download everything here before a trip.')),
-    h('div', { class: 'row' }, isInstalled() ? h('span', { class: 'pill ok' }, '✔ ', t('Installed')) : h('button', { class: 'btn ghost', onClick: installApp }, '📲 ', t('Install on this device')), dl), out,
-    h('p', { class: 'tiny muted mt' }, t('Speaking answers aloud needs a browser with speech recognition (most Chrome, Edge and Safari versions) and usually an internet connection. Without it, every spoken task can be typed.'), ' ', listenSupported() ? '🎤 ' + t('Speech recognition is available here.') : '⌨️ ' + t('Speech recognition is not available in this browser.'))));
+    h('div', { class: 'row' }, isInstalled() ? h('span', { class: 'pill ok' }, '✔ ', t('Installed')) : h('button', { class: 'btn ghost', onClick: installApp }, '📲 ', t('Install on this device')), dl, h('button', { class: 'btn ghost', onClick: deviceCheck }, '🧪 ', t('Check this device'))), out));
+  main.append(voiceCard());
+  // Other addresses that serve the same game, in case the usual one is unreachable.
+  const sites = h('ul', { class: 'small' });
+  fetch('mirrors.json').then((r) => r.json()).then((m) => (m.sites || []).forEach((u) => sites.append(h('li', null, can('links') ? h('a', { href: u, target: '_blank', rel: 'noopener noreferrer' }, u) : u)))).catch(() => {});
+  main.append(h('div', { class: 'card mt' }, sectionTitle('🛟', t('If the game\'s address ever stops working')),
+    h('p', { class: 'small muted' }, t('An installed copy keeps working on this device with no website at all. The same game is also served from these addresses, and lesson files are fetched from back-up servers automatically.')), sites));
 
   // Guardian zone
   const gz = h('div', { class: 'card mt' }, sectionTitle('👪', t('Guardian zone')));
@@ -77,12 +86,13 @@ export function settingsView(main) {
       clear(inner);
       if (!guardianUnlocked()) { inner.append(h('button', { class: 'btn', onClick: () => guardianGate(drawInner) }, '🔒 ', t('Unlock with guardian PIN'))); return; }
       const num = (label, key, min, max, hint) => { const i = h('input', { class: 'input', type: 'number', min, max, value: p.settings[key], style: { maxWidth: '120px' } }); i.addEventListener('change', () => { p.settings[key] = Math.max(min, Math.min(max, +i.value || 0)); save(true); }); return h('label', { class: 'field' }, h('span', null, t(label)), i, h('span', { class: 'tiny muted' }, t(hint))); };
-      const y = h('input', { class: 'input', type: 'number', value: p.birth.y, style: { maxWidth: '120px' } }), m = h('input', { class: 'input', type: 'number', min: 1, max: 12, value: p.birth.m, style: { maxWidth: '90px' } });
+      const y = h('input', { class: 'input', type: 'number', value: p.birth.y, style: { maxWidth: '120px' } }), m = h('input', { class: 'input', type: 'number', min: 1, max: 12, value: p.birth.m, 'aria-label': t('Month'), style: { maxWidth: '90px' } }), dd = h('input', { class: 'input', type: 'number', min: 1, max: 31, value: p.birth.d || 1, 'aria-label': t('Day'), style: { maxWidth: '90px' } });
       inner.append(
         num('Break reminder every (minutes)', 'breakMins', 0, 120, '0 switches reminders off. 20–30 minutes is a healthy rhythm.'), num('Daily play limit (minutes)', 'dailyMins', 0, 600, '0 means no limit.'),
         toggle('Microphone for spoken answers', 'speech'), toggle('Live content from open sources', 'live', { hint: 'Encyclopedia entries, courses, research and data, filtered for young players.' }),
         toggle('Links to outside websites', 'links'), toggle('Challenge codes and tournaments', 'social', { hint: 'No chat, pseudonyms only.' }),
-        h('div', { class: 'field mt' }, h('span', null, t('Correct the date of birth')), h('div', { class: 'row' }, y, m, h('button', { class: 'btn ghost sm', onClick: () => { correctAge({ y: +y.value, m: +m.value }); clearAgeLock(); syncMeta(); toast(t('Age corrected. This change is recorded.')); rerender(); } }, t('Save'))), h('span', { class: 'tiny muted' }, t('Current account type') + ': ' + t(BANDS[p.band].account))),
+        h('div', { class: 'field mt' }, h('span', null, t('Correct the date of birth')), h('div', { class: 'row' }, dd, m, y, h('button', { class: 'btn ghost sm', onClick: () => { correctAge({ y: +y.value, m: +m.value, d: +dd.value }); clearAgeLock(); syncMeta(); toast(t('Age corrected. This change is recorded.')); rerender(); } }, t('Save'))), h('span', { class: 'tiny muted' }, t('Current account type') + ': ' + t(BANDS[p.band].account))),
+        deviceLockRow(drawInner),
         h('details', { class: 'small' }, h('summary', { class: 'bold' }, t('Safety record for this device')), h('table', { class: 'tbl' }, device.audit.slice(-20).reverse().map((a) => h('tr', null, h('td', { class: 'tiny' }, new Date(a.t).toLocaleString()), h('td', null, a.type))))),
         h('button', { class: 'btn ghost sm mt', onClick: () => { lockGuardian(); drawInner(); } }, '🔒 ', t('Lock again')));
     };
@@ -94,15 +104,19 @@ export function settingsView(main) {
   main.append(gz);
 
   main.append(h('div', { class: 'card mt' }, sectionTitle('🔐', t('Privacy and your data')),
-    h('ul', { class: 'small' }, ['Your profile and learning records are stored only on this device. There is no account server and nothing is sold or shared.', 'The game keeps a player name from its own list, your birth month and year (for the age band), your answers and progress, and your settings. Nothing else.', 'When live content or translation is on, your browser contacts open services such as Wikipedia directly. They receive the topic being looked up, not who you are.', 'Speech recognition is done by your browser\'s own speech service. The game does not record or store your voice.', 'There are no adverts, no purchases, no loot boxes and no gambling of any kind.'].map((x) => h('li', null, t(x)))),
+    h('ul', { class: 'small' }, ['Your profile and learning records are stored only on this device. There is no account server and nothing is sold or shared.', 'The game keeps a player name from its own list, your date of birth (for the age band), your answers and progress, and your settings. Nothing else.', 'When live content or translation is on, your browser contacts open services such as Wikipedia directly. They receive the topic being looked up, not who you are.', 'Speech recognition is done by your browser\'s own speech service. The game does not record or store your voice.', 'There are no adverts, no purchases, no loot boxes and no gambling of any kind.'].map((x) => h('li', null, t(x)))),
     h('div', { class: 'row' },
       h('button', { class: 'btn ghost', onClick: () => guardianGate(() => { const a = h('a', { href: URL.createObjectURL(new Blob([exportProfile()], { type: 'application/json' })), download: `${p.name.replace(/\s+/g, '-')}-knowledge-challenge.json` }); a.click(); toast(t('Saved. Open this file on another device to continue there.')); }) }, '💾 ', t('Export my player')),
       h('button', { class: 'btn ghost', onClick: () => kvClear('').then(() => toast(t('Saved live content and translations cleared.'))) }, '🧹 ', t('Clear saved live content')),
+      h('button', { class: 'btn ghost', onClick: () => guardianGate(normsExport) }, '📊 ', t('Share anonymous puzzle results')),
+      h('button', { class: 'btn ghost', onClick: () => go('class') }, '🏫 ', t('Classroom')),
       h('button', { class: 'btn ghost', onClick: () => go('rules') }, '📜 ', t('Game rules')), h('button', { class: 'btn ghost', onClick: () => go('about') }, '🧩 ', t('About you')),
       h('button', { class: 'btn ghost', onClick: () => { signOut(); go('welcome'); } }, '🚪 ', t('Sign out')),
       h('button', { class: 'btn bad', onClick: () => guardianGate(() => confirmBox(t('Delete this player?'), t('All progress for {name} on this device will be erased. This cannot be undone.', { name: p.name }), t('Delete'), () => { deleteProfile(p.id); go('welcome'); })) }, '🗑️ ', t('Delete my player')))));
 
-  main.append(h('div', { class: 'card mt small' }, sectionTitle('ℹ️', t('About this game')),
+  const reviewNote = h('p', null);
+  fetch('content/_review/index.json').then((r) => r.json()).then((v) => { reviewNote.textContent = t('Content checks: all {sets} lesson sets had an independent second check ({date}). {num} calculated answers were recomputed by program, {corrected} corrections were made, and {flag} specific claims are listed for human specialists to confirm.', v); }).catch(() => {});
+  main.append(h('div', { class: 'card mt small' }, sectionTitle('ℹ️', t('About this game')), reviewNote,
     h('p', null, t('The Universal Knowledge Challenge is an educational game. Its medicine world uses fictional patients and is not medical advice; its flight, marine and nuclear simulations are simplified teaching models, not training for real operation; completing the chess world does not confer an official title. Lesson content is written to be accurate and is intended to be reviewed by subject specialists; if you spot an error, tell your teacher.')),
     h('p', { class: 'muted' }, t('Version'), ' 1.0 · ', can('live') ? t('Live sources: Wikipedia, Wikiversity, Wikibooks, OpenAlex, Internet Archive, Open Library, NASA, USGS, Open-Meteo, World Bank, PubChem, GBIF, MusicBrainz, Art Institute of Chicago, PoetryDB, Lichess, Stack Exchange, GitHub.') : '')));
   modal;

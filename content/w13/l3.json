@@ -104,7 +104,7 @@
      "q": "A knight forks a rook and a queen. The queen is protected by a pawn, but the knight is not attacked. What is the result?",
      "o": [
       "White wins at least the exchange or the queen for the knight",
-      "Nothing happens because the queen is protected",
+      "Nothing happens, because the protected queen cannot be attacked by a knight",
       "The knight is captured by the pawn",
       "The game is a draw by repetition"
      ],
@@ -215,7 +215,7 @@
      "q": "Your knight can fork a king and a rook, but the knight lands on a square attacked by a pawn. What should you do?",
      "o": [
       "Do not play it unless you win more than the knight",
-      "Play it anyway, because forks always win material",
+      "Play it anyway, because forks always win material in the end",
       "Resign, since the knight is lost anyway",
       "Move the king first and fork later"
      ],
@@ -352,7 +352,7 @@
      "q": "What is a pin?",
      "o": [
       "A piece cannot move without exposing something more valuable behind it",
-      "One piece attacks two enemy pieces at once",
+      "One piece attacks two enemy pieces at once, usually with a knight or queen",
       "A pawn reaches the last rank",
       "A king that has no legal moves"
      ],
@@ -505,7 +505,7 @@
      "q": "What makes a skewer succeed even when the front piece is protected?",
      "o": [
       "The front piece is forced away and the one behind is lost",
-      "The back piece is the stronger one and moves first",
+      "The back piece is the stronger one and moves away from the line first",
       "The front piece may still move freely without any loss",
       "The defender is not allowed to move at all"
      ],
@@ -550,7 +550,7 @@
      "q": "A bishop is pinned against its king by an enemy bishop along a diagonal. Can it capture the pinning bishop?",
      "o": [
       "Yes, moving along the line of the pin is legal",
-      "No, a pinned piece can never move at all",
+      "No, a pinned piece can never move at all, even along the pin line",
       "Only if it is a queen",
       "Only on the first move of the game"
      ],
@@ -650,7 +650,7 @@
      "q": "What is a discovered attack?",
      "o": [
       "Moving a piece reveals an attack by another piece",
-      "A pawn promotes to a queen on the last rank",
+      "A pawn promotes to a queen on the last rank of the board",
       "A king captures an unprotected piece",
       "A piece is blocked by its own pawn"
      ],
@@ -679,7 +679,7 @@
      "q": "Why is a discovered check powerful?",
      "o": [
       "The opponent must answer the check, so the moving piece is free to do damage",
-      "The check can be answered by ignoring it for one move",
+      "The check can be answered by ignoring it for one move, as long as you take a piece",
       "It captures two pieces at the same time",
       "It ends the game as soon as it is played"
      ],
@@ -784,7 +784,7 @@
      "q": "Which front-piece move is best in a discovered check?",
      "o": [
       "One that also captures or attacks something valuable",
-      "A random move that hides the rook from view",
+      "A random move that hides the rook from view of the other player",
       "A move that blocks the line again at once",
       "A move by the king to the nearest safe square"
      ],
@@ -1058,7 +1058,7 @@
      "q": "Which of these is a double attack by two different pieces?",
      "o": [
       "A discovered attack that also attacks something",
-      "A single pawn move to the fourth rank",
+      "A single pawn move to the fourth rank that attacks nothing",
       "Castling on the queenside",
       "A resignation by the opponent"
      ],
@@ -1088,7 +1088,7 @@
      "q": "Why can one reply sometimes stop two threats?",
      "o": [
       "A single move can capture the attacker or defend both targets",
-      "The rules allow a player to make two moves in that case",
+      "The rules allow a player to make two moves in a row in that case",
       "Pawns can jump over the attacking piece to safety",
       "The two threats cancel each other out"
      ],
@@ -1244,7 +1244,7 @@
      "q": "What is a combination?",
      "o": [
       "A forcing series of moves that wins something",
-      "A pawn structure with three pawns in a chain",
+      "A pawn structure with three pawns in a long chain",
       "A way of castling on both sides",
       "A type of draw by repetition"
      ],
@@ -1260,7 +1260,7 @@
       "Giving up material for a bigger gain",
       "Losing a piece by accident",
       "Offering a draw to the opponent",
-      "Moving the king to a safe corner"
+      "Moving the king to a safe corner of the board"
      ],
      "a": 0,
      "why": "It is deliberate and usually forcing.",
@@ -1286,7 +1286,7 @@
      "q": "What is deflection?",
      "o": [
       "Forcing a defending piece away from its job",
-      "Moving a pawn to the fourth rank",
+      "Moving a pawn to the fourth rank to win space",
       "Giving a check with the queen",
       "Castling to protect the king"
      ],
@@ -1426,7 +1426,7 @@
      "q": "When is a combination a mistake?",
      "o": [
       "When the opponent has a defence you did not see",
-      "When it uses a queen and a rook together",
+      "When it uses a queen and a rook together in one attack",
       "When it begins with a check on the king",
       "When it sacrifices only a single pawn"
      ],
@@ -1544,7 +1544,7 @@
      "o": [
       "A pawn with no friendly pawns on the neighbouring files",
       "A pawn that stands on the edge of the board",
-      "A pawn that is attacked by an enemy piece",
+      "A pawn that is attacked by an enemy piece and cannot move",
       "A pawn on the seventh rank"
      ],
      "a": 0,
@@ -1557,7 +1557,7 @@
      "q": "White pawn on e5; the black pawns are on a7, b7, g7, h7. Is the e5 pawn a passed pawn?",
      "o": [
       "Yes, there are no black pawns on the d, e or f files",
-      "No, because there are black pawns on the board",
+      "No, because there are still black pawns on the board somewhere",
       "Only if it is on the seventh rank",
       "Only if it is protected by another pawn"
      ],
@@ -1682,7 +1682,7 @@
      "q": "You have an isolated pawn. A good plan is to...",
      "o": [
       "Keep it protected by pieces and use the active play it gives",
-      "Ignore it and hope the opponent does not notice",
+      "Ignore it and hope the opponent does not notice it for a long while",
       "Trade off all the pieces at once",
       "Sacrifice it for nothing"
      ],
@@ -1881,7 +1881,7 @@
      "o": [
       "It controls more squares and makes threats",
       "Knights are always worth more than rooks",
-      "Rooks cannot move once they are locked in",
+      "Rooks cannot move at all once they are locked in",
       "Knights cannot be captured by pawns"
      ],
      "a": 0,
@@ -1894,7 +1894,7 @@
      "q": "You are a pawn down but your opponent's king is exposed to an attack. What should you consider?",
      "o": [
       "The attack may be worth more than the pawn",
-      "Resign immediately because a pawn is lost",
+      "Resign immediately because a pawn is already lost",
       "Trade queens as soon as you can",
       "Ignore the exposed king"
      ],
@@ -1908,7 +1908,7 @@
      "q": "What is the bishop pair?",
      "o": [
       "Having both bishops while the opponent has fewer bishops",
-      "Two bishops standing on squares of one colour",
+      "Two bishops standing next to each other on squares of one colour",
       "A bishop and a pawn on adjacent squares",
       "Two bishops that have just been traded off"
      ],
@@ -1998,7 +1998,7 @@
      "q": "Two positions have equal material. What decides who is better?",
      "o": [
       "King safety, activity and structure",
-      "The colour of the pieces",
+      "The colour of the pieces each player has",
       "The number of moves played so far",
       "The names of the players"
      ],
@@ -2044,7 +2044,7 @@
      "o": [
       "To get a lasting initiative or attack",
       "To lose a game",
-      "To open the rook's file by accident",
+      "To open the rook's file by accident, with no plan",
       "No reason"
      ],
      "a": 0,
@@ -2179,7 +2179,7 @@
      "q": "What is the opposition?",
      "o": [
       "Kings face each other with one square between them",
-      "Kings standing on adjacent squares",
+      "Kings standing on adjacent squares, touching each other",
       "Kings standing on squares of the same colour",
       "Kings standing on the edge of the board"
      ],
@@ -2193,7 +2193,7 @@
      "q": "Why should the king come to the centre in the endgame?",
      "o": [
       "There are few pieces to attack it, and it can help pawns",
-      "It is a rule of the game once the queens leave",
+      "It is a rule of the game as soon as the queens leave the board",
       "The queen asks the king to come forward",
       "It is always safer on the edge, even in the endgame"
      ],
@@ -2222,7 +2222,7 @@
      "o": [
       "The defending king can reach the corner in front of the pawn",
       "Rook pawns cannot promote at all",
-      "Rook pawns are worth less than other pawns",
+      "Rook pawns are worth less than other pawns, so nobody tries to win",
       "Kings are not allowed to capture rook pawns"
      ],
      "a": 0,
@@ -2236,19 +2236,26 @@
      "rubric": [
       [
        "cannot",
-       "not",
-       "impossible"
+       "can't",
+       "not possible",
+       "impossible",
+       "no forced",
+       "never"
       ],
       [
        "force",
        "forced",
        "trap",
-       "corner"
+       "corner",
+       "cornered"
       ],
       [
-       "king",
        "escape",
-       "draw"
+       "draw",
+       "avoid",
+       "blunder",
+       "error",
+       "stalemate"
       ]
      ],
      "min": 2,
@@ -2290,7 +2297,7 @@
      "o": [
       "Check that you do not stalemate the opponent",
       "Hurry before the opponent finds a defence",
-      "Give up the queen to simplify",
+      "Give up the queen to simplify the ending quickly",
       "Move the king as far away as possible"
      ],
      "a": 0,
@@ -2481,7 +2488,7 @@
      "q": "A bishop on c1 wants to reach d1 in a single move. Why can it not?",
      "o": [
       "d1 is a light square and the bishop stays on dark squares",
-      "Bishops cannot move sideways because they are pinned",
+      "Bishops cannot move sideways because they are always pinned",
       "d1 is always occupied",
       "A bishop can move only two squares"
      ],
@@ -2591,7 +2598,7 @@
      "q": "Why is \"seeing the end\" important in calculation?",
      "o": [
       "A line can look good in the middle but lose at the end",
-      "Only the end of a line counts under the rules",
+      "Only the very end of a line counts under the rules of chess",
       "The middle of a line does not matter at all",
       "It is just a custom among strong players"
      ],

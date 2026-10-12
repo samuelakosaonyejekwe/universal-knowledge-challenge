@@ -134,7 +134,7 @@
      "q": "Why do \"il mange\" and \"ils mangent\" sound the same?",
      "o": [
       "The -ent ending is silent",
-      "They are the same word",
+      "They are the same word written twice",
       "The n is nasal",
       "Both are singular"
      ],
@@ -148,7 +148,7 @@
      "q": "A pupil writes \"les chat\". What does the error show?",
      "o": [
       "The plural is not marked on the article and noun",
-      "A wrong verb",
+      "The verb is missing, so the sentence has no real meaning",
       "A wrong accent",
       "An elision problem"
      ],
@@ -193,7 +193,7 @@
    "mnemonic": "Written letters carry grammar even when the ear hears nothing.",
    "trip": {
     "wiki": "French orthography",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "prompt": "Find the section on silent letters and note one reason the spelling stayed while the sound changed."
    }
   },
   {
@@ -299,7 +299,7 @@
      "q": "Why is it \"un petit chien\" but \"un chien noir\"?",
      "o": [
       "Petit is a short common adjective that goes before the noun",
-      "Noir is plural",
+      "Noir is a plural adjective, so it has to be placed after the noun",
       "Chien is feminine",
       "Colours are verbs"
      ],
@@ -315,7 +315,7 @@
      "q": "Why does ne become n' in \"Il n'aime pas\"?",
      "o": [
       "Ne drops its vowel before a vowel sound",
-      "It is a typo",
+      "It is a typing mistake that has become common",
       "Aime is feminine",
       "Pas is silent"
      ],
@@ -329,7 +329,7 @@
      "q": "In spoken French \"Je sais pas\" is common. What does it show?",
      "o": [
       "Ne is often dropped in speech",
-      "Pas is optional",
+      "Pas is optional and can be dropped in speech",
       "The sentence is a question",
       "It is not French"
      ],
@@ -340,15 +340,15 @@
     },
     {
      "t": "mc",
-     "q": "Why is \"Je ne mange pas de viande\" and not \"pas la viande\"?",
+     "q": "In \"Je ne mange pas de viande\", why is it \"de\" and not \"de la\"?",
      "o": [
-      "After a negative, un, une, du, des become de",
+      "After a negation, de replaces de la",
       "Because viande is plural",
-      "Because pas needs de",
-      "La is not a word"
+      "Because pas is followed by an article",
+      "Because de la is only for questions"
      ],
      "a": 0,
-     "why": "Indefinite and partitive articles become de after a negation.",
+     "why": "After a negation, the indefinite and partitive articles (un, une, du, de la, des) become de.",
      "d": 3,
      "k": "reason"
     }
@@ -388,7 +388,7 @@
    "mnemonic": "Ne ... pas: the verb sits in a sandwich.",
    "trip": {
     "wiki": "French grammar",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "prompt": "Find the word-order section and note where adjectives usually sit compared with English."
    }
   },
   {
@@ -474,7 +474,7 @@
      "q": "Choose the correct form: Nous ___ à Paris.",
      "o": [
       "allons",
-      "allez",
+      "allions",
       "vont",
       "vais"
      ],
@@ -488,7 +488,7 @@
      "q": "Why is \"ils ont\" different from \"ils sont\"?",
      "o": [
       "They are different verbs, avoir and être",
-      "They are the same verb",
+      "They are the same verb written in two different ways",
       "One is past",
       "One is a question"
      ],
@@ -532,7 +532,7 @@
      "q": "Why are the most frequent verbs usually irregular?",
      "o": [
       "They were used so often that they kept old forms",
-      "They are new",
+      "They are new words that have not been regularised yet",
       "They are invented",
       "They are rare"
      ],
@@ -577,7 +577,7 @@
    "mnemonic": "Être, avoir, aller, faire: the four verbs you must know by heart.",
    "trip": {
     "wiki": "French verbs",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "prompt": "Find the forms of être and avoir and write the nous form of each."
    }
   },
   {
@@ -679,7 +679,7 @@
      "q": "Why does \"son livre\" not show whether the owner is a man or a woman?",
      "o": [
       "Son agrees with the noun owned, not the owner",
-      "Son is only for men",
+      "Son is only used for men, so the owner is always male",
       "Livre is feminine",
       "Son is a plural"
      ],
@@ -695,7 +695,7 @@
      "q": "Why do we say \"ce livre\" but \"cet arbre\"?",
      "o": [
       "Cet is used before a vowel sound",
-      "Arbre is feminine",
+      "Arbre is a feminine noun, so cet is needed",
       "Cet is plural",
       "Ce means this one only"
      ],
@@ -723,7 +723,7 @@
      "q": "Why can a learner say \"sa mère\" for both \"his mother\" and \"her mother\"?",
      "o": [
       "Sa agrees with the noun mère, which is feminine",
-      "Sa is for women",
+      "Sa agrees with the owner, who is always a woman",
       "Sa is plural",
       "Mère is masculine"
      ],
@@ -762,14 +762,14 @@
     "model": "Use le, la or les with the gender and number of the noun. Add -s for most plurals, -x for -eau and -aux for -al. On is a common word for we."
    },
    "sources": [
-    "French nouns",
-    "French grammar"
+    "French grammar",
+    "Grammatical number"
    ],
    "hook": "In French, \"le\", \"la\" and \"les\" all mean \"the\". How do you pick the right one?",
    "mnemonic": "Le, la, les: masculine, feminine, many.",
    "trip": {
-    "wiki": "French nouns",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "wiki": "French grammar",
+    "prompt": "Find the section on gender or number and note one rule for making a plural."
    }
   },
   {
@@ -855,9 +855,9 @@
      "q": "Which is the most formal way to ask a question?",
      "o": [
       "Inversion: Aimes-tu la pizza?",
-      "Rising voice",
-      "Est-ce que",
-      "Adding oui"
+      "Rising voice: Tu aimes la pizza?",
+      "Est-ce que tu aimes la pizza?",
+      "Adding oui at the end"
      ],
      "a": 0,
      "why": "Inversion is common in writing and formal speech.",
@@ -885,7 +885,7 @@
      "q": "Why does \"Où habites-tu?\" have a hyphen?",
      "o": [
       "The verb and pronoun are inverted and joined",
-      "It is plural",
+      "The hyphen shows that the verb is in the plural form",
       "It is a name",
       "It is the future"
      ],
@@ -899,7 +899,7 @@
      "q": "Which answer fits \"Pourquoi tu pleures?\"",
      "o": [
       "Parce que j'ai peur",
-      "Quand je pleure",
+      "Quand je pleure, mais pas très souvent",
       "Où est la maison",
       "Qui est là"
      ],
@@ -913,7 +913,7 @@
      "q": "Why can intonation alone make a question in French?",
      "o": [
       "French word order stays the same, only the voice rises",
-      "French has no question marks",
+      "French has no question marks, so the voice must show it",
       "Verbs change",
       "It is always rude"
      ],
@@ -957,7 +957,7 @@
    "mnemonic": "Qui, quoi, où, quand, comment: the five key question words.",
    "trip": {
     "wiki": "French grammar",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "prompt": "Find the section on questions and note the three ways of asking one in French."
    }
   },
   {
@@ -1064,7 +1064,7 @@
      "q": "Why does \"jeune\" not change in \"une jeune fille\"?",
      "o": [
       "It already ends in -e",
-      "It is plural",
+      "It is a plural form, so it never changes",
       "It is a noun",
       "It is silent"
      ],
@@ -1094,7 +1094,7 @@
      "q": "Why is it \"un bel homme\"?",
      "o": [
       "Bel is used before a masculine noun starting with a vowel sound",
-      "Homme is feminine",
+      "Homme is a feminine noun, and bel is the feminine form of the word beau",
       "It is plural",
       "It is a mistake"
      ],
@@ -1108,7 +1108,7 @@
      "q": "Why is gentil pronounced differently from gentille?",
      "o": [
       "The final consonant sound appears in the feminine",
-      "They are spelled the same",
+      "They are spelled the same way, so they sound the same",
       "Gentil is plural",
       "The e is silent in gentil"
      ],
@@ -1146,14 +1146,14 @@
     "model": "Adjectives agree with the noun in French. Add e for feminine and s for plural. Adjectives ending in e do not change for feminine. Use il y a to say what is in a place."
    },
    "sources": [
-    "French adjective",
+    "Adjective",
     "French grammar"
    ],
    "hook": "How do you describe a tall girl and a tall boy? Does \"grand\" change?",
    "mnemonic": "Add e for girls, add s for many.",
    "trip": {
-    "wiki": "French adjective",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "wiki": "Adjective",
+    "prompt": "Find the section on agreement and note how an adjective can change with the noun it describes."
    }
   },
   {
@@ -1256,7 +1256,7 @@
      "q": "Why is it \"le premier mai\" but \"le deux mai\"?",
      "o": [
       "The first of the month uses an ordinal",
-      "The first is plural",
+      "The first is plural, so it needs a special number",
       "Premier means two",
       "There is no rule"
      ],
@@ -1272,7 +1272,7 @@
      "q": "What does \"Je me lève\" show about French routines?",
      "o": [
       "Reflexive verbs show actions done to oneself",
-      "They are past tenses",
+      "They are past tenses used for morning routines",
       "They are plurals",
       "They are negative"
      ],
@@ -1286,7 +1286,7 @@
      "q": "How is \"Il est midi et quart\" translated?",
      "o": [
       "It is quarter past twelve",
-      "It is quarter to twelve",
+      "It is quarter to twelve at noon",
       "It is half past twelve",
       "It is midnight"
      ],
@@ -1300,7 +1300,7 @@
      "q": "Why are days and months not capitalised in French?",
      "o": [
       "French capitalises only names and sentence starts",
-      "They are unimportant",
+      "They are unimportant words, so they are written small",
       "They are plurals",
       "They are verbs"
      ],
@@ -1345,7 +1345,7 @@
    "mnemonic": "Days start on lundi, which echoes lune, the moon.",
    "trip": {
     "wiki": "Date and time notation in France",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "prompt": "Find how dates and times are written in France and note one difference from your own country."
    }
   },
   {
@@ -1447,7 +1447,7 @@
      "q": "Why is it \"un kilo de pommes\" and not \"un kilo des pommes\"?",
      "o": [
       "After a quantity, de is used",
-      "Pommes is singular",
+      "Pommes is singular, so des cannot be used with it",
       "Des is only for people",
       "Kilo is feminine"
      ],
@@ -1463,7 +1463,7 @@
      "q": "Why do customers say \"Je voudrais\" instead of \"Je veux\"?",
      "o": [
       "It is more polite",
-      "It is past",
+      "It is the past tense of the verb vouloir",
       "It is plural",
       "It is slang"
      ],
@@ -1477,7 +1477,7 @@
      "q": "In a shop, which greeting is expected on entering?",
      "o": [
       "Bonjour",
-      "Salut",
+      "Salut tout le monde",
       "Hé",
       "Pardon"
      ],
@@ -1488,15 +1488,15 @@
     },
     {
      "t": "mc",
-     "q": "Why is the partitive needed in French but not in English?",
+     "q": "Why do we say \"Je mange du pain\" when English says just \"I eat bread\"?",
      "o": [
-      "French requires an article before every noun",
-      "English has no articles",
-      "French has no plurals",
-      "It marks the past"
+      "French uses the partitive article for an unspecified amount",
+      "English has no word for bread, so French needs du to name it",
+      "Pain is plural in French",
+      "Du marks the past"
      ],
      "a": 0,
-     "why": "English says \"I eat bread\", French needs du or des.",
+     "why": "French normally needs du, de la or des where English uses no article.",
      "d": 3,
      "k": "reason"
     }
@@ -1536,7 +1536,7 @@
    "mnemonic": "Du pain, de la soupe, des pommes: some of it.",
    "trip": {
     "wiki": "Bakery",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "prompt": "Find one product that a French bakery sells besides bread."
    }
   },
   {
@@ -1624,7 +1624,7 @@
      "q": "A friend asks \"Ça va?\" What is a good reply?",
      "o": [
       "Ça va bien, et toi?",
-      "Au revoir",
+      "Au revoir, à demain, mon ami",
       "Je m'appelle",
       "Il est midi"
      ],
@@ -1638,7 +1638,7 @@
      "q": "Why is \"Et toi?\" used with a friend and \"Et vous?\" with a stranger?",
      "o": [
       "It matches tu or vous",
-      "Toi is plural",
+      "Toi is plural and vous is singular here",
       "Vous is rude",
       "They are unrelated"
      ],
@@ -1668,7 +1668,7 @@
      "q": "Why is \"Bonne journée\" said when leaving?",
      "o": [
       "It wishes the other person a good day",
-      "It greets someone",
+      "It greets someone you have just met in the morning",
       "It means goodnight",
       "It means thank you"
      ],
@@ -1682,7 +1682,7 @@
      "q": "What makes a conversation sound polite in French?",
      "o": [
       "Greeting first, using vous when needed, and thanking",
-      "Starting with a question",
+      "Starting with a question about the other person's job",
       "Speaking fast",
       "Avoiding names"
      ],
@@ -1727,7 +1727,7 @@
    "mnemonic": "Ça va? Ça va! Et toi? is the first dance of any chat.",
    "trip": {
     "wiki": "Small talk",
-    "prompt": "Look for examples of this topic on the page and note one new thing you learn."
+    "prompt": "Find which subjects are usually avoided in small talk and note one."
    }
   }
  ]

@@ -18,7 +18,8 @@ export const BANDS = {
 
 export function ageFrom(birth, now = new Date()) {
   let age = now.getFullYear() - birth.y;
-  if (now.getMonth() + 1 < birth.m) age--;
+  const m = now.getMonth() + 1;
+  if (m < birth.m || (m === birth.m && now.getDate() < (birth.d || 1))) age--;
   return age;
 }
 export function bandFor(age) {
@@ -61,6 +62,36 @@ export async function checkGuardianPin(pin) {
   return ok;
 }
 export const guardianUnlocked = () => Date.now() < unlockedUntil;
+
+// Stronger than a PIN a child might overlook: the guardian can tie the lock to this device's own screen lock
+// (fingerprint, face or device PIN) through the platform passkey. The check is made by the device itself.
+const b64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+const unb64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+export async function deviceLockAvailable() {
+  try { return !!window.PublicKeyCredential && await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable(); } catch { return false; }
+}
+export async function addDeviceLock() {
+  const g = profile?.guardian; if (!g) return false;
+  try {
+    const cred = await navigator.credentials.create({ publicKey: {
+      challenge: crypto.getRandomValues(new Uint8Array(32)), rp: { name: 'Universal Knowledge Challenge' },
+      user: { id: new TextEncoder().encode(g.id), name: g.name, displayName: g.name },
+      pubKeyCredParams: [{ type: 'public-key', alg: -7 }, { type: 'public-key', alg: -257 }],
+      authenticatorSelection: { authenticatorAttachment: 'platform', userVerification: 'required', residentKey: 'discouraged' }, timeout: 60000,
+    } });
+    g.cred = b64(cred.rawId); save(true); audit('guardian-device-lock-added', { id: profile.id });
+    return true;
+  } catch { return false; }
+}
+export async function checkDeviceLock() {
+  const g = profile?.guardian; if (!g?.cred) return false;
+  try {
+    await navigator.credentials.get({ publicKey: { challenge: crypto.getRandomValues(new Uint8Array(32)), allowCredentials: [{ type: 'public-key', id: unb64(g.cred) }], userVerification: 'required', timeout: 60000 } });
+    unlockedUntil = Date.now() + 10 * 60000; audit('guardian-unlock-device', { id: profile.id });
+    return true;
+  } catch { audit('guardian-device-lock-failed', { id: profile.id }); return false; }
+}
+export function removeDeviceLock() { if (profile?.guardian) { delete profile.guardian.cred; save(true); audit('guardian-device-lock-removed', { id: profile.id }); } }
 export const lockGuardian = () => { unlockedUntil = 0; };
 
 // A guardian can correct an age that was entered wrongly. The change is recorded.

@@ -4,6 +4,7 @@ import { t } from '../core/i18n.js';
 import { profile, worldId, worldProgress } from '../core/store.js';
 import { world, LEVELS } from '../data/worlds.js';
 import { evaluate, DIMENSIONS, mastery } from '../engine/report.js';
+import { loadNorms } from '../engine/aptitude.js';
 import { can, BANDS } from '../core/safety.js';
 import { dueReviews } from '../core/srs.js';
 import { avatarEl } from '../core/avatar.js';
@@ -30,8 +31,9 @@ function activityChart() {
   return h('div', { html: s + `<text x="0" y="86" font-size="9" fill="#5b6585">−13 d</text><text x="280" y="86" font-size="9" fill="#5b6585" text-anchor="end">${t('today')}</text></svg>` });
 }
 
-export function dashboardView(main, [tab = 'summary', arg]) {
+export async function dashboardView(main, [tab = 'summary', arg]) {
   const p = profile;
+  await loadNorms();
   main.append(h('div', { class: 'hero row nowrap' }, avatarEl(p.avatar, { band: p.band, role: 'student', size: 'lg', cast: p.cast, emblem: Object.values(p.worlds).some((w) => w.completed.length) }),
     h('div', null, h('h1', null, p.name), h('div', { class: 'row' }, h('span', { class: 'pill' }, t(BANDS[p.band].account), ' ', t('account')), p.tampered ? h('span', { class: 'pill bad' }, t('Records were altered — competitions are off')) : null))));
   const tabs = [['summary', '📊', 'Summary'], ['detail', '🔍', 'Detail'], ['report', '🧭', 'My evaluation']];
@@ -85,7 +87,7 @@ export function dashboardView(main, [tab = 'summary', arg]) {
     const rc = h('div', { class: 'card mt' }, sectionTitle('🧩', t('Reasoning estimate')));
     if (!ev.range) rc.append(h('p', { class: 'small muted' }, t('Complete at least two level finals to see an estimate from your aptitude tests.')));
     else {
-      const showNumber = () => rc.append(h('div', { class: 'center' }, h('div', { class: 'huge' }, `${ev.range.lo}–${ev.range.hi}`), h('div', { class: 'small muted' }, t('Indicative range on the standard scale (average 100, standard deviation 15) · from {n} puzzles', { n: ev.range.n }))));
+      const showNumber = () => rc.append(h('div', { class: 'center' }, h('div', { class: 'huge' }, `${ev.range.lo}–${ev.range.hi}`), h('div', { class: 'small muted' }, ev.range.normed ? t('Range on the standard scale (average 100, standard deviation 15), compared with {players} players of your age group · from {n} puzzles', { n: ev.range.n, players: ev.range.players }) : t('Indicative range on the standard scale (average 100, standard deviation 15) · from {n} puzzles', { n: ev.range.n }))));
       rc.append(h('p', null, h('b', null, t(ev.range.label)), ' — ', t('based on your pattern, sequence and logic puzzles.')));
       if (can('iq-number')) showNumber();
       else if (p.guardian) rc.append(h('button', { class: 'btn ghost sm', onClick: (e) => guardianGate(() => { e.target.remove(); showNumber(); }) }, '🔒 ', t('Guardian: show the number range')));

@@ -42,23 +42,45 @@ const wikiHost = (code = lang) => `https://${langInfo(code).wiki}.wikipedia.org`
 const strip = (html) => String(html || '').replace(/<[^>]+>/g, '').replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&#039;/g, "'").replace(/\s+/g, ' ').trim();
 
 // ---------- encyclopedia (in the player's language when the article exists there) ----------
-export async function wikiSummary(title, code = lang) {
-  const res = await cached(`wiki|${code}|${title}`, 7 * 24 * HOUR, async () => {
-    let t = title, host = wikiHost(code);
-    if (code !== 'en') {
-      // Find the same article in the player's language through its interlanguage link.
-      try {
-        const j = await getJSON(`https://en.wikipedia.org/w/api.php?action=query&prop=langlinks&lllang=${langInfo(code).wiki}&titles=${encodeURIComponent(title)}&redirects=1&format=json&origin=*`);
-        const page = Object.values(j.query.pages)[0];
-        const ll = page?.langlinks?.[0]?.['*'];
-        if (ll) t = ll; else host = 'https://en.wikipedia.org';
-      } catch { host = 'https://en.wikipedia.org'; }
+// Finds the best-matching article for a topic that is not itself an article title
+// (for example "Structure–property–processing relationships" → "Materials science").
+async function wikiSearch(query, hint = '') {
+  const clean = query.replace(/[–—:()]/g, ' ').replace(/\s+/g, ' ').trim();
+  const out = [];
+  // With the subject as context first, so "Point of view" in the literature world finds the literary sense.
+  for (const q of [`${clean} ${hint}`.trim(), clean, clean.split(' ').slice(0, 3).join(' ') + ' ' + hint]) {
+    try {
+      const j = await getJSON(`https://en.wikipedia.org/w/api.php?action=query&list=search&srnamespace=0&srlimit=4&srsearch=${encodeURIComponent(q)}&format=json&origin=*`);
+      for (const r of j.query?.search || []) if (!/\(disambiguation\)|^List of /i.test(r.title) && !out.includes(r.title)) out.push(r.title);
+    } catch { /* try the next phrasing */ }
+    if (out.length >= 4) break;
+  }
+  return out;
+}
+async function summaryFor(title, code) {
+  let t = title, host = 'https://en.wikipedia.org';
+  if (code !== 'en') {
+    // Find the same article in the player's language through its interlanguage link.
+    try {
+      const j = await getJSON(`https://en.wikipedia.org/w/api.php?action=query&prop=langlinks&lllang=${langInfo(code).wiki}&titles=${encodeURIComponent(title)}&redirects=1&format=json&origin=*`);
+      const ll = Object.values(j.query.pages)[0]?.langlinks?.[0]?.['*'];
+      if (ll) { t = ll; host = wikiHost(code); }
+    } catch { /* stay with English */ }
+  }
+  const s = await getJSON(`${host}/api/rest_v1/page/summary/${encodeURIComponent(t.replace(/ /g, '_'))}?redirect=true`, ID);
+  if (s.type === 'disambiguation' || !s.extract) throw new Error('no usable article');
+  return { title: s.title, text: s.extract, img: s.thumbnail?.source || null, url: s.content_urls?.desktop?.page, source: 'Wikipedia', lang: host.includes('//en.') ? 'en' : code };
+}
+// `hint` is a word or two about the subject (the world), used only when a search is needed.
+export async function wikiSummary(title, code = lang, hint = '') {
+  const res = await cached(`wiki3|${code}|${hint}|${title}`, 7 * 24 * HOUR, async () => {
+    try { return [await summaryFor(title, code)]; } catch { /* not an article title: search for the closest one */ }
+    for (const found of await wikiSearch(title, hint)) {
+      try { return [{ ...(await summaryFor(found, code)), about: title }]; } catch { /* try the next candidate */ }
     }
-    const s = await getJSON(`${host}/api/rest_v1/page/summary/${encodeURIComponent(t.replace(/ /g, '_'))}?redirect=true`, ID);
-    if (s.type === 'disambiguation') throw new Error('disambiguation');
-    return [{ title: s.title, text: s.extract, img: s.thumbnail?.source || null, url: s.content_urls?.desktop?.page, source: 'Wikipedia', lang: host.includes('//en.') ? 'en' : code }];
+    throw new Error('nothing found');
   });
-  const it = filterItems(res.items)[0] || null;
+  let it = filterItems(res.items)[0] || null;
   return it ? { ...it, stale: res.stale, offline: res.offline } : null;
 }
 
@@ -86,7 +108,7 @@ const A = {
   },
   // Recorded lectures, seminars, interviews and webinars held by the Internet Archive.
   talks: (w) => async () => {
-    const q = `title:(${w.query.split(' ')[0]}) AND (lecture OR seminar OR webinar OR interview OR conference OR course) AND mediatype:(movies OR audio)`;
+    const q = `${w.query.split(" ")[0]} AND (lecture OR seminar OR webinar OR interview OR conference OR course) AND mediatype:(movies OR audio)`;
     const j = await getJSON(`https://archive.org/advancedsearch.php?q=${encodeURIComponent(q)}&fl[]=identifier&fl[]=title&fl[]=description&fl[]=year&fl[]=mediatype&sort[]=downloads+desc&rows=12&output=json`);
     return j.response.docs.map((d) => ({ title: d.title, text: strip([d.description].flat()[0] || '').slice(0, 220), meta: `${d.mediatype === 'audio' ? '🎧' : '🎬'} ${d.year || ''}`, url: `https://archive.org/details/${d.identifier}`, img: `https://archive.org/services/img/${d.identifier}`, source: 'Internet Archive' }));
   },

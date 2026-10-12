@@ -13,13 +13,13 @@
     "Credibility requires uncertainty quantification: errors from the mesh, the turbulence model, boundary conditions and the experiment itself. Standard cases such as the NASA Common Research Model in the Drag Prediction Workshops have shown scatter between codes of the order of tens of drag counts (one count is C_D = 0.0001), far larger than the design gains sought. Machine learning is being tested to correct RANS models, but physical consistency and generalisation are active research issues."
    ],
    "example": {
-    "q": "Kolmogorov length: ν = 1.46×10⁻⁵ m²/s and dissipation rate ε = 1 m²/s³. Find η. Then estimate how the DNS cost changes when Re rises from 10⁶ to 10⁷.",
+    "q": "Kolmogorov length: ν = 1.46×10⁻⁵ m²/s and dissipation rate ε = 1 m²/s³. Find η. Then estimate how the number of DNS grid points changes when Re rises from 10⁶ to 10⁷.",
     "steps": [
      "η = (ν³/ε)^¼ = ((1.46×10⁻⁵)³/1)^¼ = (3.11×10⁻¹⁵)^¼ ≈ 2.4×10⁻⁴ m.",
-     "Cost ∝ Re^(9/4).",
+     "Grid points ∝ Re^(9/4).",
      "Ratio = (10⁷/10⁶)^2.25 = 10^2.25 ≈ 178."
     ],
-    "a": "η ≈ 0.24 mm; cost rises about 178 times"
+    "a": "η ≈ 0.24 mm; grid points rise about 178 times"
    },
    "analogies": {
     "sea": "Ocean models resolve eddies of tens of kilometres and parametrise the small ones, like LES.",
@@ -147,7 +147,7 @@
     },
     {
      "t": "num",
-     "q": "DNS cost scales as Re^(9/4). By what factor does it increase if Re rises from 10⁶ to 10⁷?",
+     "q": "The number of grid points needed for DNS scales as Re^(9/4). By what factor does it increase if Re rises from 10⁶ to 10⁷?",
      "a": 178,
      "tol": 2,
      "why": "10^2.25 = 177.8.",
@@ -287,7 +287,6 @@
      {
       "k": [
        "cost",
-       "re",
        "reynolds",
        "grid points",
        "expensive"
@@ -377,7 +376,7 @@
    "sources": [
     "Hypersonic speed",
     "Atmospheric entry",
-    "Newtonian theory (aerodynamics)"
+    "Hypersonic flight"
    ],
    "questions": [
     {
@@ -487,7 +486,7 @@
       "Scramjet test at M 7",
       "Re-entry capsule at 7.5 km/s"
      ],
-     "why": "Concorde M 2; scramjet M 7 is about 2.3 km/s at altitude; the capsule is around M 25.",
+     "why": "Concorde cruised near Mach 2. A scramjet at Mach 7 flies at roughly 2 km/s at altitude. The capsule at 7.5 km/s is around Mach 25.",
      "d": 2,
      "k": "apply"
     },
@@ -999,7 +998,6 @@
    },
    "sources": [
     "Aeroelasticity",
-    "Flutter (aeroelasticity)",
     "Limit cycle"
    ],
    "questions": [
@@ -2522,7 +2520,7 @@
    "sources": [
     "Systems engineering",
     "Solar-powered aircraft",
-    "Space mission design"
+    "Space exploration"
    ],
    "questions": [
     {

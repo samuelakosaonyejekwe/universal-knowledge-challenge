@@ -28,9 +28,17 @@ export function fenBoard(fen) {
 }
 
 // ---------- marking ----------
+// A keyword counts when it appears as a word or the start of a word ("accelerat" matches "accelerating"),
+// never as letters buried inside another word ("no" must not match "know"). Very short keywords must be whole words.
 export function rubricHits(text, groups) {
-  const s = ' ' + norm(text) + ' ';
-  return groups.map((g) => g.some((k) => s.includes(norm(k))));
+  const s = ' ' + norm(text).replace(/[.\-/]/g, ' ').replace(/\s+/g, ' ') + ' ';
+  const has = (k) => {
+    const key = norm(k).replace(/[.\-/]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!key) return false;
+    if (/[\u3040-\u30ff\u3400-\u9fff]/.test(key)) return s.includes(key); // Chinese and Japanese are written without spaces
+    return key.length <= 3 ? s.includes(' ' + key + ' ') : s.includes(' ' + key);
+  };
+  return groups.map((g) => g.some(has));
 }
 export async function mark(item, given) {
   switch (item.t) {
@@ -41,7 +49,8 @@ export async function mark(item, given) {
       return { correct: Number.isFinite(v) && Math.abs(v - item.a) <= tol + 1e-12 };
     }
     case 'text': {
-      const english = await toEnglish(String(given || ''));
+      // A pack translated by people carries rubric keywords in its own language; otherwise mark through English.
+      const english = item.tl ? String(given || '') : await toEnglish(String(given || ''));
       const hits = rubricHits(english, item.rubric);
       const n = hits.filter(Boolean).length;
       return { correct: n >= item.min && norm(english).split(' ').length >= 3, hits, partial: n / item.rubric.length };

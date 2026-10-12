@@ -1285,9 +1285,9 @@
    "example": {
     "q": "White: Kg5, Qg1. Black: Kh8. White to move. Find a mate in two, which begins with a quiet move.",
     "steps": [
-     "Direct checks fail: Qg7+ is met by Kxg7 because the white king on g5 does not guard g7.",
-     "The quiet Kf6 guards g7 and takes squares away. Black's only move is Kh7 (Qg1 covers g8).",
-     "Then Qg7 is mate: the queen is protected by the king."
+     "Checks do not work: the white king on g5 blocks the queen's way up the g-file, so Qg7+ is impossible, and Qh2+ just lets Black step to g8.",
+     "The quiet Kf6 guards g7 and clears the g-file. Black's only legal move is Kh7 (the queen on g1 covers g8, and g7 is covered by queen and king).",
+     "Then Qg7 is mate: the queen is protected by the king on f6."
     ],
     "a": "Kf6, then Qg7#"
    },
@@ -1321,13 +1321,13 @@
     "right": "Quiet moves are often the key, so they must be in the candidate list."
    },
    "trip": {
-    "wiki": "Think Like a Grandmaster",
-    "prompt": "Find the summary of the analysis tree. What is the mistake the book warns about?"
+    "wiki": "Alexander Kotov",
+    "prompt": "Find what Kotov is best known for writing about. What is the calculation mistake his analysis-tree advice warns about?"
    },
    "sources": [
-    "Think Like a Grandmaster",
     "Alexander Kotov",
-    "Zugzwang"
+    "Zugzwang",
+    "Chess tactics"
    ],
    "questions": [
     {
@@ -1335,7 +1335,7 @@
      "q": "White Kg5, Qg1; Black Kh8; White to move. Which move forces mate in two?",
      "o": [
       "Kf6",
-      "Qg7+",
+      "Qa7",
       "Qh2+",
       "Kg6"
      ],
@@ -1347,15 +1347,15 @@
     },
     {
      "t": "mc",
-     "q": "Why does Qg7+ fail in that position?",
+     "q": "Why can White not play Qg7+ in that position?",
      "o": [
-      "The king on g5 does not guard g7, so Kxg7",
-      "Qg7+ is an illegal move because the king stands on g5",
-      "Qg7+ leads to stalemate for Black at once",
-      "The queen on g1 is pinned along the file"
+      "The white king on g5 blocks the g-file, so the queen cannot reach g7",
+      "A queen cannot move along a file, only along diagonals and ranks",
+      "Qg7+ would be stalemate for Black because the king has no move",
+      "The queen on g1 is pinned to the white king along the g-file"
      ],
      "a": 0,
-     "why": "The queen would be captured.",
+     "why": "The white king stands on g5, between the queen on g1 and the square g7, so the queen cannot get there. White first plays Kf6, which also clears the g-file.",
      "d": 3,
      "k": "reason",
      "fen": "7k/8/8/6K1/8/8/8/6Q1 w - - 0 1"
@@ -1635,7 +1635,7 @@
    "sources": [
     "Endgame tablebase",
     "Fifty-move rule",
-    "Vancura position"
+    "Rook and pawn versus rook endgame"
    ],
    "questions": [
     {

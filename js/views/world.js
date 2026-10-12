@@ -3,6 +3,8 @@ import { h, clear, modal, toast } from '../core/util.js';
 import { t, trInto, ENGLISH_NAMES, langInfo } from '../core/i18n.js';
 import { profile, wstate, save, worldId, worldLang, stageDone, levelProgress } from '../core/store.js';
 import { world, LEVELS, STAGE_REWARD, TARGET_LANGS } from '../data/worlds.js';
+import { pretranslate, translatedPack } from '../engine/content.js';
+import { lang as uiLang } from '../core/i18n.js';
 import curriculum from '../data/curriculum.js';
 import { cast } from '../core/names.js';
 import { can } from '../core/safety.js';
@@ -104,6 +106,17 @@ function journeyTab(body, wkey, w, ws, who) {
   const next = (() => { for (let s = 1; s <= 9; s++) if (!stageDone(wkey, ws.level, s)) return s; return 10; })();
   body.append(talk(who.teacher, next <= 9 ? `Ready for stage ${next}: "${curriculum[wid - 1][ws.level - 1][next - 1]}"?` : `You have finished all nine stages. ${who.master.short} is waiting for the championship.`),
     h('div', { class: 'row mb' }, h('button', { class: 'btn', onClick: () => go(next <= 9 ? `stage/${wkey}/${ws.level}/${next}` : `finale/${wkey}/${ws.level}`) }, '▶ ', next <= 9 ? t('Start stage {n}', { n: next }) : t('Enter the level final'))));
+  if (uiLang !== 'en' && !worldLang(wkey)) {
+    // One tap prepares the whole level in the player's language and keeps it on the device for offline play.
+    const status = h('span', { class: 'small muted' });
+    body.append(h('div', { class: 'card flat mb row' }, h('button', { class: 'btn ghost sm', onClick: async (e) => {
+      const b = e.currentTarget; b.disabled = true;
+      const r = await pretranslate(wkey, ws.level, (d, n) => { status.textContent = `${d} / ${n}`; }).catch(() => null);
+      b.disabled = false;
+      status.textContent = !r ? t('Could not prepare this level right now.') : r.total === 0 ? '✅ ' + t('This level is already in your language.') : r.translated >= r.total * 0.9 ? '✅ ' + t('Level {n} is ready in your language, including offline.', { n: ws.level }) : t('{a} of {b} texts prepared. The rest will be translated when you are online again.', { a: r.translated, b: r.total });
+    } }, '🌐 ', t('Prepare this level in my language')),
+      profile.band === 'adult' ? h('button', { class: 'btn ghost sm', title: t('For translators and schools'), onClick: async () => { status.textContent = '…'; const pk = await translatedPack(wkey, ws.level); const a = h('a', { href: URL.createObjectURL(new Blob([JSON.stringify(pk, null, 1)], { type: 'application/json' })), download: `l${ws.level}.json` }); a.click(); status.textContent = t('Saved. A translator can now correct this file; place it in content/_tr/{lang}/w{w}/ to ship it.', { lang: uiLang, w: String(wid).padStart(2, '0') }); } }, '📝 ', t('Export this level for a translator')) : null, status));
+  }
   const list = h('div', { class: 'levels' });
   for (const lv of LEVELS) {
     const done = ws.completed.includes(lv.n), current = lv.n === ws.level, open = done || current;
@@ -154,14 +167,14 @@ async function atlasTab(body, wid) {
   clear(body).append(h('p', { class: 'muted' }, t('Everything this world covers. Tap any topic for a live encyclopedia entry in your language.')),
     a.activities ? trInto(h('div', { class: 'note mb' }), a.activities) : null,
     a.sections.map((s) => h('details', { class: 'card', open: a.sections.length <= 2 }, h('summary', { class: 'bold' }, trInto(h('span'), s.name), ` (${s.items.length})`),
-      h('div', { class: 'row mt' }, s.items.map((it) => h('button', { class: 'chip', onClick: () => showTopic(it) }, trInto(h('span'), it)))))));
+      h('div', { class: 'row mt' }, s.items.map((it) => h('button', { class: 'chip', onClick: () => showTopic(it, '', world(wid).query.split(' ').slice(0, 2).join(' ')) }, trInto(h('span'), it)))))));
 }
-export async function showTopic(title, prompt = '') {
+export async function showTopic(title, prompt = '', hint = '') {
   const box = h('div', null, h('h2', null, title), loading());
   const close = modal(box);
-  const query = title.split(/[:(,]/)[0].trim();
-  const s = await wikiSummary(query).catch(() => null);
-  clear(box).append(h('h2', null, s?.title || title), prompt ? trInto(h('div', { class: 'note mb' }), '🔎 ' + prompt) : null);
+  const query = title.split(/[:(]/)[0].trim();
+  const s = await wikiSummary(query, undefined, hint).catch(() => null);
+  clear(box).append(h('h2', null, title), s && s.title !== title ? h('div', { class: 'small muted mb' }, t('Closest encyclopedia entry') + ': ', h('b', null, s.title)) : null, prompt ? trInto(h('div', { class: 'note mb' }), '🔎 ' + prompt) : null);
   if (!s) box.append(h('p', { class: 'muted' }, navigator.onLine ? t('No suitable entry was found for this topic.') : t('You are offline and this entry has not been saved yet.')));
   else {
     if (s.img) box.append(h('img', { src: s.img, alt: '', style: { borderRadius: '14px', maxHeight: '220px', display: 'block', margin: '0 auto .6rem' }, loading: 'lazy', referrerpolicy: 'no-referrer' }));

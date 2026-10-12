@@ -43,11 +43,11 @@ export function blankProfile(data) {
   return {
     id: uid(), v: 1, created: Date.now(),
     name: data.name, avatar: data.avatar, cast: data.cast || 0,
-    birth: data.birth, // { y, m } only — enough for an age band, nothing more
+    birth: data.birth, // { y, m, d } — used only to work out the age band; never leaves the device
     band: data.band, guardian: data.guardian || null, consent: data.consent || {},
     lang: data.lang || 'en', school: data.school || '', interests: data.interests || [],
     experience: null, learn: null, pledged: false,
-    settings: { sound: true, music: true, voice: true, untimed: data.band === 'tiny', size: 'm', contrast: 'normal', spacing: 'normal', motion: 'on', breakMins: data.band === 'tiny' || data.band === 'kid' ? 20 : 30, dailyMins: 0, links: data.band !== 'tiny' && data.band !== 'kid', live: true, speech: true, social: true },
+    settings: { sound: true, music: true, musicVolume: 'medium', voice: true, untimed: data.band === 'tiny', size: 'm', contrast: 'normal', spacing: 'normal', motion: 'on', breakMins: data.band === 'tiny' || data.band === 'kid' ? 20 : 30, dailyMins: 0, links: data.band !== 'tiny' && data.band !== 'kid', live: true, speech: true, social: true },
     worlds: {}, items: {}, reviews: {}, palace: {}, notes: {},
     stats: { kinds: { recall: [0, 0], concept: [0, 0], apply: [0, 0], reason: [0, 0] }, retention: [0, 0], ms: 0, days: {}, hints: 0, retriesWon: 0, modes: {} },
     aptitude: [], log: [], social: { results: [], coop: 0 }, tampered: false,

@@ -44,9 +44,9 @@ export default {
     const draw = () => {
       tray.replaceChildren(...queue.map((it, k) => h('button', {
         class: 'btn ' + (sel === k ? 'gold' : 'ghost'), type: 'button', 'aria-label': t(it[1]),
-        style: { fontSize: '2.2rem', minWidth: '72px', minHeight: '72px', padding: '.2rem' },
+        style: { minWidth: '84px', minHeight: '84px', padding: '.3rem .4rem', flexDirection: 'column', gap: '.1rem' },
         onClick: () => { sel = sel === k ? null : k; draw(); },
-      }, it[0])));
+      }, h('span', { style: { fontSize: '2.2rem', lineHeight: '1' } }, it[0]), h('span', { style: { fontSize: '.8rem' } }, t(it[1])))));
       bins.replaceChildren(...BINS.map(([k, ic, name, hint]) => h('button', {
         class: 'card', type: 'button', style: { minHeight: '140px', cursor: 'pointer', textAlign: 'center', border: '3px dashed var(--line)', padding: '.4rem' },
         'aria-label': t(name),

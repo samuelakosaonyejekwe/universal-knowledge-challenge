@@ -36,6 +36,7 @@ js/core/                  storage, safety, languages, audio, speech, avatars, na
 js/engine/                lesson loading, question marking, duel, aptitude, evaluation
 js/views/                 screens
 js/labs/                  one module per lab (see tools/LABS.md)
+js/vendor/, models/       speech runtime and open speech models for on-device recognition (see models/NOTICE.txt)
 js/data/                  worlds, curriculum titles, aspects atlas
 content/wNN/lK.json       lesson packs (see tools/CONTENT.md)
 i18n/<code>.json          interface translations
@@ -49,6 +50,8 @@ node tools/validate.mjs            # check every lesson pack against the format
 node tools/options.mjs stat content/w06   # check for give-away answer options
 node tools/build-index.mjs         # after adding labs, changing interface text, or editing any shipped file
 node tools/check-i18n.mjs          # check interface translations are complete
+node tools/review.mjs wiki content/w06    # check encyclopedia titles exist
+node tools/norms.mjs <folder>      # build age-band norms from pooled anonymous puzzle results
 ```
 
 `build-index.mjs` regenerates the lab catalogue, the list of interface strings and `precache.js` (whose version
@@ -65,17 +68,32 @@ The whole folder is the site. Publish it on any static host; the same files can 
 - Live material (encyclopedia entries, courses, research, data feeds) is requested by each player's browser directly
   from the source, so freshness never depends on the publisher's computer being switched on.
 
-## Honest limits
+## What is checked, and what still needs people
 
-- **No server.** Age assurance, guardian consent and permissions are enforced on the device. They are layered and
-  safe by default (no open chat, no public profiles, no contact with strangers), but they cannot prove identity.
-  Organisations that need verified ages should deploy on managed devices or add their own verified sign-on.
-- **Progress lives on the device.** Use *Settings → Export my player* to move to another device.
-- **Lesson translation** uses the browser's on-device translator where one exists, otherwise an online service with a
-  daily allowance, otherwise English. The interface itself is fully translated.
-- **Speech recognition** is provided by the browser; where it is missing every spoken task can be typed.
-- **Content review.** Lessons and answer keys were written to be accurate and are checked for format, but they have
-  not yet been reviewed by subject specialists or native-speaking language teachers. Treat that review as required
-  before formal classroom use — especially for medicine, nuclear engineering, history and the language paths.
-- **The reasoning estimate** is an un-normed indication from in-game puzzles, not an IQ test.
-- **The soundtrack** is designed to be calm; it is not a medical or neurological intervention.
+- **Content.** Every lesson set (31 sets: 19 worlds and 12 language paths) has had an independent second check:
+  calculated answers recomputed by program, chess positions verified with a chess library and endgame tablebases,
+  sound items computed from their notes, and every encyclopedia title confirmed to exist. The records — every
+  correction made and every specific claim left for a human specialist — are in `content/_review/`. This is a
+  machine second check, not peer review by subject specialists or native-speaking teachers; use the
+  `needsSpecialist` lists as the starting agenda for that review, especially for medicine, nuclear engineering,
+  history and the language paths.
+- **Browsers.** The full play-through is exercised automatically in Chromium (Chrome, Edge, Android), WebKit
+  (Safari, iPhone and iPad profiles) and Firefox, and sound output is measured in all three. Real devices differ, so
+  *Settings → Check this device* reports what actually works on the device in hand.
+- **Speech.** With the voice pack (Settings), spoken answers are recognised on the device in all 12 languages, in any
+  modern browser, offline. Without it the browser's own recogniser is used where one exists, and every spoken task
+  can be typed.
+- **Languages.** The interface ships in 12 languages. Lesson packs are authored in English; a level can be prepared in
+  the player's language with one tap and is then kept for offline use. Human-checked translations placed in
+  `content/_tr/<lang>/wNN/lK.json` are used automatically (run `node tools/build-index.mjs` after adding any).
+- **No server.** Accounts, consent, permissions and progress live on the device. Guardians can add the device's own
+  fingerprint/face/screen lock to their PIN. Schools can create class packs (teacher-managed student players) and
+  collect progress files; friends can play live device-to-device duels. None of this can prove a person's identity:
+  organisations that need verified ages should use managed devices or their own verified sign-on.
+- **The reasoning estimate** is an indication from in-game puzzles. It becomes a normed score only when pooled,
+  anonymous results from at least 100 players of an age band are built into `js/data/norms.json` with
+  `node tools/norms.mjs <folder>`. It is never an IQ test or a diagnosis.
+- **The soundtrack** is designed to be calm, with an optional soft two-ear 10 Hz tone for headphones. Research on such
+  tones is mixed; the game claims no effect on the brain.
+- **Hosting.** Installed copies need no host. Lesson and lab files fall back to the mirrors in `mirrors.json`, which
+  also lists other addresses that serve the whole game.

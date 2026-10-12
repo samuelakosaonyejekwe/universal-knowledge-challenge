@@ -1,0 +1,23 @@
+{ "set": "w04", "date": "2026-10-12", "method": "independent second check; numeric answers recomputed by script; encyclopedia titles verified",
+  "stages": 54, "items": 702, "numericRecomputed": 120, "corrected": 21,
+  "corrections": [
+    { "at": "l1 s7 explain/terms", "what": "'Average' was defined as 'the middle result' (that is the median); now 'add up the results, then divide by how many there are'" },
+    { "at": "l2 s9 explain", "what": "'the lighter the exhaust speed' corrected to 'the lower the exhaust speed' (rocket equation: lower v_e needs more propellant)" },
+    { "at": "l2 s5 panel[1]", "what": "typo \"darts' tail\" corrected to \"dart's tail\"" },
+    { "at": "l2 s3 questions[8]; l2 s5 questions[8]; l2 s8 panel[2]; l3 s2 panel[2]; l4 s4 questions[8]; l5 s2 panel[2]; l5 s6 panel[2]", "what": "text rubrics with min 1 could be passed by echoing the question's own wording (e.g. 'inspected', 'stable', 'landing', 'boundary layer'); min raised to 2 (l2 s5 q8 also gained gust/easy-to-fly/by-itself/turbulence synonyms)" },
+    { "at": "l2 s7 panel[1]", "what": "rubric stem 'out' matched 'about/without'; replaced with 'out of the back'" },
+    { "at": "l3 s1 teach.points[0], questions[8]; l5 s2 panel[2]; l5 s9 panel[2]", "what": "single-letter rubric stem 'q' (and 'eas') matched almost any text via substring marking; removed" },
+    { "at": "l3 s4 panel[2]", "what": "rubric group made of 'not'/'any' was satisfied by nearly any answer; replaced with 'any speed', 'regardless of speed', 'airspeed' etc." },
+    { "at": "l3 s8 questions[9]", "what": "rubric stems 'no'/'not' matched 'know', 'another' etc.; replaced with 'no air', 'no atmosphere', 'vacuum', 'thin', ..." },
+    { "at": "l4 s5 questions[5]", "what": "keyed reason 'larger temperature drop in the turbine' was a shaky explanation; key and why rewritten to the standard result (ideal Brayton efficiency 1 - T1/T2, heat added at higher temperature relative to rejection)" },
+    { "at": "l4 s9 teach.points[1]", "what": "rubric stem 'end' matched 'depend/send/extend'; replaced with 'final mass'" },
+    { "at": "l6 s1 example, questions[6], teach.points[1]", "what": "DNS 'cost' scaling Re^(9/4) is the number of grid points (total cost ~Re^3); wording corrected to grid points; stem 're' removed from teach keywords" },
+    { "at": "l6 s2 questions[8] why", "what": "scramjet at Mach 7 'about 2.3 km/s' corrected to 'roughly 2 km/s' (7 x ~295 m/s)" },
+    { "at": "l5 s2, l5 s6, l6 s2, l6 s4, l6 s9 sources", "what": "four non-existent Wikipedia titles replaced (Flutter (aeroelasticity) removed; Rotor (helicopter) -> Helicopter rotor; Newtonian theory (aerodynamics) -> Hypersonic flight; Space mission design -> Space exploration)" }
+  ],
+  "verified": "Lift is never explained by equal transit time: l1 s5, l2 s4, l3 s2 explicitly call it a myth and give top-air-arrives-first. Standard atmosphere (1.225 kg/m3, 101 325 Pa, 288.15 K, 6.5 K/km, 295.0 m/s at 11 km, rho 0.3639 at 11 km) correct. Sutton-Graves k = 1.7415e-4 (SI, Earth) correct and the 735 kW/m2 example recomputed. Rocket equation, Hohmann LEO-GEO (2.40 + 1.46 km/s), Earth-Mars (v_inf 2.95, dv 3.57 km/s, 259 d, 780 d), Allen-Eggers 13.8 g, Breguet 6021 km, Brayton 0.62, normal shock M=2 (4.5, 0.577, 0.721), all recomputed and match keys.",
+  "needsSpecialist": [
+    { "at": "l4 s3 / l5 s6", "what": "typical static-margin range 'a few percent to about 25%' and the hover phugoid being unstable for helicopters are standard but should be confirmed by a flight-dynamics specialist" },
+    { "at": "l6 s8", "what": "Allen-Eggers peak deceleration of 13.8 g for a 5 degree ballistic entry from 7.8 km/s is the formula's value; real ballistic entries differ, a specialist may want a caveat" },
+    { "at": "l5 s9 / l6 s7", "what": "max-Q 'about a minute in near the tropopause region' and 5-10% dv / 20-30% mass early margins are typical figures, not fixed standards" }
+  ] }

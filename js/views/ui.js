@@ -4,7 +4,7 @@ import { t, trInto, tr } from '../core/i18n.js';
 import { speak, stopSpeaking } from '../core/speech.js';
 import { avatarEl } from '../core/avatar.js';
 import { profile, addCredits, wstate, worldId } from '../core/store.js';
-import { checkGuardianPin, guardianUnlocked, needsGuardian } from '../core/safety.js';
+import { checkGuardianPin, guardianUnlocked, needsGuardian, checkDeviceLock } from '../core/safety.js';
 import { sfx } from '../core/audio.js';
 import { world, AWARD } from '../data/worlds.js';
 
@@ -60,6 +60,7 @@ export function guardianGate(onOk, reason = '') {
     h('label', { class: 'field' }, h('span', null, t('Guardian PIN')), input), msg,
     h('div', { class: 'row' },
       h('button', { class: 'btn', onClick: async () => { if (await checkGuardianPin(input.value)) { close(); onOk(); } else { msg.textContent = t('That PIN is not right.'); input.value = ''; } } }, t('Unlock')),
+      profile.guardian.cred ? h('button', { class: 'btn gold', onClick: async () => { if (await checkDeviceLock()) { close(); onOk(); } else msg.textContent = t('The screen lock was not confirmed.'); } }, '🔐 ', t('Use this device\'s screen lock')) : null,
       h('button', { class: 'btn ghost', onClick: () => close() }, t('Cancel')))));
 }
 

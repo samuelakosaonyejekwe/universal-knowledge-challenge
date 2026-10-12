@@ -269,7 +269,7 @@
       "An initial temperature profile",
       "Boundary conditions at both ends",
       "A final temperature at a later time",
-      "A value of k"
+      "A value for the thermal diffusivity constant k"
      ],
      "a": 2,
      "why": "Initial plus boundary data are enough; specifying the future would over-determine the problem.",
@@ -502,7 +502,8 @@
       [
        "forward",
        "first order",
-       "h "
+       "order 1",
+       "proportional to h"
       ]
      ],
      "min": 2,
@@ -686,7 +687,7 @@
      "o": [
       "K/2",
       "K",
-      "0",
+      "K/4",
       "2K"
      ],
      "a": 0,
@@ -742,7 +743,7 @@
      "o": [
       "Prediction on data not used to build it",
       "Fit to the data used to build it",
-      "Asking whether it looks complicated",
+      "How many parameters it contains and how clever it looks",
       "Agreement with expectation"
      ],
      "a": 0,
@@ -994,7 +995,7 @@
      "q": "Does Σ1/n converge?",
      "o": [
       "No, it diverges",
-      "Yes, to 1",
+      "Yes, because its terms tend to 0",
       "Yes, to π²/6",
       "Yes, to ln 2"
      ],
@@ -1007,7 +1008,7 @@
      "t": "mc",
      "q": "Does Σ1/n² converge?",
      "o": [
-      "No",
+      "No, it diverges like the harmonic series",
       "Yes, to 1",
       "Yes, to 2",
       "Yes, to π²/6"
@@ -1038,7 +1039,7 @@
       "0",
       "2πi",
       "2π",
-      "1"
+      "−2πi"
      ],
      "a": 1,
      "why": "The function has a pole at 0 with residue 1.",
@@ -1065,7 +1066,7 @@
      "o": [
       "f is increasing",
       "f is linear",
-      "f has no root",
+      "f has no root, because f(0) and f(1) differ",
       "f has a root in (0, 1)"
      ],
      "a": 3,
@@ -1178,7 +1179,7 @@
       "Continuity",
       "The Cauchy–Riemann equations",
       "Being defined everywhere",
-      "Having real inputs"
+      "Taking complex numbers as its inputs"
      ],
      "a": 1,
      "why": "u = x and v = −y give uₓ = 1 but vᵧ = −1.",
@@ -1287,7 +1288,7 @@
      "o": [
       "Commutativity",
       "Closure",
-      "Identity",
+      "Associativity of the operation",
       "Inverses"
      ],
      "a": 0,
@@ -1574,7 +1575,7 @@
      "o": [
       "A coffee cup and a doughnut (torus)",
       "A sphere and a torus",
-      "A disk and an annulus",
+      "A circle and a figure-eight drawn in the plane",
       "A circle and a line segment"
      ],
      "a": 0,
@@ -1617,7 +1618,7 @@
       "Exactly 180°",
       "Greater than 180°",
       "Less than 180°",
-      "Always 360°"
+      "Always greater than 360°"
      ],
      "a": 1,
      "why": "Positive curvature gives angle excess.",
@@ -1817,7 +1818,7 @@
    "icon": "🎲",
    "hook": "A drunken walker takes random steps left or right; a call centre receives random calls; a website visitor clicks from page to page. What mathematics describes systems that evolve at random through time?",
    "explain": [
-    "A stochastic process is a family of random variables indexed by time. A Markov chain has the property that the future depends on the present state only. It is defined by a transition matrix P, whose rows sum to 1. For P = [[0.9, 0.1], [0.5, 0.5]] the probability of staying in state 1 for two steps is 0.9 × 0.9 + 0.1 × 0.5 = 0.86. The stationary distribution π satisfies πP = π: here 0.1π₁ = 0.5π₂, so π = (5/6, 1/6). The long-run fraction of time in state 1 is 5/6, and the mean return time to state 1 is 1/π₁ = 1.2 steps.",
+    "A stochastic process is a family of random variables indexed by time. A Markov chain has the property that the future depends on the present state only. It is defined by a transition matrix P, whose rows sum to 1. For P = [[0.9, 0.1], [0.5, 0.5]] the probability of being in state 1 after two steps, starting in state 1, is 0.9 × 0.9 + 0.1 × 0.5 = 0.86. The stationary distribution π satisfies πP = π: here 0.1π₁ = 0.5π₂, so π = (5/6, 1/6). The long-run fraction of time in state 1 is 5/6, and the mean return time to state 1 is 1/π₁ = 1.2 steps.",
     "A simple symmetric random walk adds ±1 each step: the expected position is 0 and the variance after n steps is n, so the typical distance grows like √n. In the gambler's ruin problem a fair game starting with 3 and stopping at 0 or 10 reaches 10 with probability 3/10, since the expected fortune is a martingale (a fair game). Brownian motion is the continuous-time limit of random walks, with B_t having variance t, so B₄ has standard deviation 2.",
     "The Poisson process counts random events at rate λ: the number of events in time t is Poisson(λt) and waiting times are exponential with mean 1/λ. With λ = 3 per hour, the expected number in 2 hours is 6, the chance of no events in an hour is e⁻³ ≈ 0.0498 and the mean wait is 20 minutes. Waiting for the first success with probability p each trial takes on average 1/p trials: 5 for p = 0.2. Stochastic models underpin queues, finance, genetics and Monte Carlo methods, and the Markov property simplifies analysis but should be checked against data."
    ],
@@ -1903,7 +1904,7 @@
      "q": "In a Poisson process, the waiting time between events is...",
      "o": [
       "Normally distributed",
-      "Uniform",
+      "Uniformly distributed on [0, 1]",
       "Exponentially distributed",
       "Constant"
      ],
@@ -2233,7 +2234,7 @@
      "q": "Two models: A has AIC 26, B has AIC 27. Which is preferred by AIC?",
      "o": [
       "Model A, with a slightly lower value",
-      "Model B",
+      "Model B, since it has the better log-likelihood",
       "Neither",
       "Whichever has more parameters"
      ],

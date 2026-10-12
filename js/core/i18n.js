@@ -99,8 +99,11 @@ async function translate(text, from, to) {
   return out;
 }
 
+// Text that is already in the player's language (from a ready-translated lesson pack) is never translated again.
+const localText = new Set();
+export function markLocal(strings) { for (const x of strings) if (typeof x === 'string') localText.add(x); }
 // Lesson text → the player's language.
-export const tr = (text) => (lang === 'en' ? Promise.resolve(text) : translate(text, 'en', lang));
+export const tr = (text) => (lang === 'en' || localText.has(text) ? Promise.resolve(text) : translate(text, 'en', lang));
 // A typed or spoken answer → English, so rubrics written in English can mark it.
 export const toEnglish = (text) => (lang === 'en' ? Promise.resolve(text) : translate(text, lang, 'en'));
 

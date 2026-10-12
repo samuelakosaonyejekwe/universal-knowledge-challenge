@@ -6,20 +6,43 @@
 import { rngFrom } from './util.js';
 import { profile } from './store.js';
 
-let ctx = null, master = null, musicBus = null;
+let ctx = null, master = null, musicBus = null, meter = null;
+let wanted = null; // the soundtrack that should be playing once the browser allows sound
 function ac() {
   if (!ctx) {
     const AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return null;
     ctx = new AC();
-    master = ctx.createGain(); master.gain.value = 0.9; master.connect(ctx.destination);
+    // Everything passes through a gentle limiter so effects, notes and music can be clearly audible without distortion.
+    const limiter = ctx.createDynamicsCompressor();
+    limiter.threshold.value = -14; limiter.knee.value = 12; limiter.ratio.value = 6; limiter.attack.value = 0.005; limiter.release.value = 0.2;
+    master = ctx.createGain(); master.gain.value = 1;
+    meter = ctx.createAnalyser(); meter.fftSize = 1024;
+    master.connect(limiter); limiter.connect(meter); meter.connect(ctx.destination);
     musicBus = ctx.createGain(); musicBus.gain.value = 0; musicBus.connect(master);
+    ctx.addEventListener?.('statechange', () => { if (ctx.state === 'running' && wanted != null && !playing) startMusic(wanted); });
   }
-  if (ctx.state === 'suspended') ctx.resume();
+  if (ctx.state !== 'running') ctx.resume().catch(() => {});
   return ctx;
 }
-// Browsers only allow sound after a tap or key press.
-export function unlockAudio() { ac(); }
+// Browsers only allow sound after a tap, click or key press. This is called on every such gesture until sound is
+// running, and it restarts the soundtrack that was waiting.
+export function unlockAudio() {
+  const c = ac(); if (!c) return false;
+  if (c.state === 'running' && wanted != null && !playing) startMusic(wanted);
+  return c.state === 'running';
+}
+export const audioRunning = () => ctx?.state === 'running';
+// Current output level 0–1 (used by the device check and by tests).
+export function audioLevel() {
+  if (!meter) return 0;
+  const buf = new Float32Array(meter.fftSize); meter.getFloatTimeDomainData(buf);
+  let sum = 0; for (const v of buf) sum += v * v;
+  return Math.sqrt(sum / buf.length);
+}
+const MUSIC_LEVEL = { soft: 0.45, medium: 0.8, loud: 1.2 };
+const musicLevel = () => MUSIC_LEVEL[profile?.settings.musicVolume] ?? MUSIC_LEVEL.medium;
+export function setMusicVolume() { if (ctx && playing) musicBus.gain.setTargetAtTime(musicLevel(), ctx.currentTime, 0.2); }
 
 const midi = (n) => 440 * 2 ** ((n - 69) / 12);
 
@@ -42,7 +65,7 @@ const SFX = {
 export function sfx(name) {
   if (profile && !profile.settings.sound) return;
   const c = ac(); if (!c) return;
-  for (const [f, at, d] of SFX[name] || []) tone(f, c.currentTime + at, d, { type: 'triangle', gain: 0.14 });
+  for (const [f, at, d] of SFX[name] || []) tone(f, c.currentTime + at, d, { type: 'triangle', gain: 0.3 });
 }
 
 // Plays a sequence of MIDI notes; an inner array is a chord. Returns the total duration in seconds.
@@ -50,7 +73,7 @@ export function playNotes(notes, dur = 0.5, type = 'triangle') {
   const c = ac(); if (!c) return 0;
   let t = c.currentTime + 0.05;
   for (const n of notes) {
-    for (const m of [n].flat()) if (m != null) tone(midi(m), t, dur * 0.95, { type, gain: 0.2 / Math.sqrt([n].flat().length) });
+    for (const m of [n].flat()) if (m != null) tone(midi(m), t, dur * 0.95, { type, gain: 0.34 / Math.sqrt([n].flat().length) });
     t += dur;
   }
   return notes.length * dur;
@@ -60,7 +83,7 @@ export function playRhythm(beats, bpm = 96) {
   const c = ac(); if (!c) return 0;
   let t = c.currentTime + 0.05;
   const beat = 60 / bpm;
-  for (const b of beats) { tone(180, t, 0.07, { type: 'square', gain: 0.16, attack: 0.002 }); tone(900, t, 0.03, { type: 'square', gain: 0.07, attack: 0.002 }); t += b * beat; }
+  for (const b of beats) { tone(180, t, 0.07, { type: 'square', gain: 0.26, attack: 0.002 }); tone(900, t, 0.03, { type: 'square', gain: 0.12, attack: 0.002 }); t += b * beat; }
   return beats.reduce((a, b) => a + b, 0) * beat;
 }
 export function playItemAudio(au) {
@@ -75,13 +98,15 @@ const SCALES = [[0, 2, 4, 7, 9], [0, 3, 5, 7, 10], [0, 2, 5, 7, 9], [0, 2, 4, 7,
 let playing = null;
 
 export function startMusic(worldId) {
-  if (profile && !profile.settings.music) return stopMusic();
+  if (profile && !profile.settings.music) { wanted = null; return stopMusic(); }
+  wanted = worldId;
   const c = ac(); if (!c) return;
+  if (c.state !== 'running') return; // starts by itself on the first tap (see unlockAudio)
   if (playing?.id === worldId) return;
-  stopMusic();
+  stopMusic(true);
   const rng = rngFrom('music' + worldId);
   const scale = SCALES[worldId % SCALES.length];
-  const root = 48 + ((worldId * 5) % 12);                 // a different key for every world
+  const root = 53 + ((worldId * 5) % 12);                 // a different key for every world, in a range small speakers can play
   const bpm = 58 + (worldId % 6) * 3;                     // 58–73 beats per minute
   const beat = 60 / bpm;
   const voice = ['sine', 'triangle'][worldId % 2];
@@ -91,10 +116,11 @@ export function startMusic(worldId) {
   const lfo = c.createOscillator(), lfoGain = c.createGain();
   lfo.frequency.value = 10; lfoGain.gain.value = 0.1;
   lfo.connect(lfoGain).connect(trem.gain); lfo.start();
-  const lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 1500;
+  const lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
   bus.connect(trem).connect(lp).connect(musicBus);
   musicBus.gain.cancelScheduledValues(c.currentTime);
-  musicBus.gain.linearRampToValueAtTime(0.5, c.currentTime + 2.5);
+  musicBus.gain.setValueAtTime(Math.max(0.0001, musicBus.gain.value), c.currentTime);
+  musicBus.gain.linearRampToValueAtTime(musicLevel(), c.currentTime + 1.5);
 
   const motif = Array.from({ length: 8 }, () => Math.floor(rng() * scale.length));
   let bar = 0, next = c.currentTime + 0.2;
@@ -102,28 +128,43 @@ export function startMusic(worldId) {
     while (next < c.currentTime + 1.2) {
       const chordRoot = root + [0, 7, 9, 5][bar % 4] - (bar % 4 === 1 ? 12 : 0);
       // pad: root + fifth + a scale tone, slow attack
-      for (const iv of [0, 7, scale[2] + 12]) tone(midi(chordRoot + iv), next, beat * 4.2, { type: 'sine', gain: 0.06, dest: bus, attack: beat });
+      for (const iv of [0, 7, scale[2] + 12]) tone(midi(chordRoot + iv), next, beat * 4.2, { type: 'triangle', gain: 0.1, dest: bus, attack: beat * 0.8 });
       // melody: the world's own motif, varied a little each bar
       for (let i = 0; i < 4; i++) {
         if (rng() < 0.3) continue;
         const deg = motif[(bar * 2 + i) % motif.length] + (rng() < 0.2 ? 1 : 0);
         const note = root + 12 + scale[deg % scale.length] + (deg >= scale.length ? 12 : 0);
-        tone(midi(note), next + i * beat, beat * 1.6, { type: voice, gain: 0.075, dest: bus, attack: 0.04 });
+        tone(midi(note), next + i * beat, beat * 1.6, { type: voice, gain: 0.2, dest: bus, attack: 0.04 });
       }
-      if (bar % 2 === 0) tone(midi(chordRoot - 12), next, beat * 3.5, { type: 'triangle', gain: 0.07, dest: bus, attack: 0.08 });
+      if (bar % 2 === 0) tone(midi(chordRoot - 12), next, beat * 3.5, { type: 'triangle', gain: 0.14, dest: bus, attack: 0.08 });
       next += beat * 4; bar++;
     }
   };
+  // Optional focus tones for headphones: 200 Hz in the left ear and 210 Hz in the right, which the listener hears
+  // as a soft 10 Hz beat. Offered as a calm backdrop only — research on such tones is mixed and the game claims no effect.
+  const tones = [];
+  if (profile?.settings.focusTones && c.createStereoPanner) {
+    for (const [f, pan] of [[200, -1], [210, 1]]) {
+      const o = c.createOscillator(), g = c.createGain(), pn = c.createStereoPanner();
+      o.frequency.value = f; g.gain.value = 0.035; pn.pan.value = pan;
+      o.connect(g).connect(pn).connect(musicBus); o.start(); tones.push(o);
+    }
+  }
   schedule();
-  playing = { id: worldId, timer: setInterval(schedule, 400), bus, lfo };
+  playing = { id: worldId, timer: setInterval(schedule, 400), bus, lfo, tones };
 }
-export function stopMusic() {
+export function stopMusic(keepWanted = false) {
+  if (keepWanted !== true) wanted = null;
   if (!playing || !ctx) return;
   const p = playing; playing = null;
   clearInterval(p.timer);
-  musicBus.gain.cancelScheduledValues(ctx.currentTime);
-  musicBus.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.8);
-  setTimeout(() => { try { p.lfo.stop(); p.bus.disconnect(); } catch { /* already gone */ } }, 1000);
+  p.bus.gain.setValueAtTime(1, ctx.currentTime);
+  p.bus.gain.linearRampToValueAtTime(0.0001, ctx.currentTime + 0.6);
+  setTimeout(() => { try { p.lfo.stop(); p.bus.disconnect(); p.tones?.forEach((o) => o.stop()); } catch { /* already gone */ } }, 1000);
 }
 export const musicOn = () => !!playing;
-document.addEventListener('visibilitychange', () => { if (document.hidden) stopMusic(); });
+// Pause when the game is in the background; pick the soundtrack up again when the player returns.
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { const w = wanted; stopMusic(true); wanted = w; }
+  else if (wanted != null) { ac(); if (ctx?.state === 'running') startMusic(wanted); }
+});

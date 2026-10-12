@@ -147,17 +147,28 @@ export function ability(answers) {
   return Math.max(-4, Math.min(4, th));
 }
 
-// Maps ability onto the mean-100, SD-15 scale, relative to what the item design expects for the age band.
-// Returns a deliberately wide range; null until there is enough evidence.
+// Maps ability onto the mean-100, SD-15 scale.
+// If js/data/norms.json holds pooled results from enough real players of the same age band (built with
+// tools/norms.mjs), the score is placed against those players and reported as normed. Otherwise it is placed
+// against what the item design expects for the band and reported as an estimate. Always a range, never a point.
 const EXPECT = { tiny: -1.7, kid: -0.9, teen: -0.2, young: 0.15, adult: 0.3 };
+export let NORMS = null;
+export async function loadNorms() {
+  if (NORMS) return NORMS;
+  try { const r = await fetch('js/data/norms.json'); NORMS = r.ok ? await r.json() : {}; } catch { NORMS = {}; }
+  return NORMS;
+}
+export const NORM_MIN = 100; // players needed in a band before its norms are used
 export function reasoningRange(history, band) {
   const all = history.flatMap((h) => h.answers || []);
   if (all.length < 16) return null;
   const th = ability(all);
-  const z = (th - (EXPECT[band] ?? 0)) / 1.25;
+  const norm = NORMS?.bands?.[band];
+  const normed = !!norm && norm.n >= NORM_MIN && norm.sd > 0.2;
+  const z = normed ? (th - norm.mean) / norm.sd : (th - (EXPECT[band] ?? 0)) / 1.25;
   const mid = Math.round((100 + 15 * z) / 5) * 5;
   const half = all.length >= 48 ? 8 : all.length >= 30 ? 10 : 13;
   const lo = Math.max(70, mid - half), hi = Math.min(145, mid + half);
   const label = mid >= 130 ? 'Very high' : mid >= 120 ? 'High' : mid >= 110 ? 'Above average' : mid >= 90 ? 'Average' : mid >= 80 ? 'Developing' : 'Emerging';
-  return { lo, hi, mid, label, n: all.length };
+  return { lo, hi, mid, label, n: all.length, normed, players: normed ? norm.n : 0 };
 }

@@ -10,7 +10,7 @@
    "hook": "How would you describe today's weather to a friend in Turkish?",
    "explain": [
     "Weather words: hava (weather, also air), güneş (sun), yağmur (rain), kar (snow), rüzgâr (wind), bulut (cloud), sıcak (hot) and soğuk (cold). To ask, say 'Hava nasıl?' (How is the weather?). The answer: 'Hava çok sıcak' or 'Yağmur yağıyor' (It is raining).",
-    "Notice that Turkish uses a verb for precipitation: yağmur yağıyor (rain is falling), kar yağıyor (snow is falling). The word yağmak means to fall as rain or snow. Seasons are ilkbahar (spring), yaz (summer), sonbahar (autumn) and kış (winter). 'Kışın kar yağar' (It snows in winter) uses the ending -ın to mean 'in the season'."
+    "Notice that Turkish uses a verb for precipitation: yağmur yağıyor (rain is falling), kar yağıyor (snow is falling). The word yağmak means to fall as rain or snow. Seasons are ilkbahar (spring), yaz (summer), sonbahar (autumn) and kış (winter). 'Kışın kar yağar' (It snows in winter): kış and yaz take -ın (kışın, yazın), while ilkbahar and sonbahar take the usual -da (ilkbaharda, sonbaharda)."
    ],
    "mnemonic": "Yağmur yağıyor, kar yağıyor: the sky does the verb 'yağmak'.",
    "items": [
@@ -100,10 +100,10 @@
      "t": "mc",
      "q": "What does 'Hava nasıl?' ask?",
      "o": [
-      "What time is it?",
+      "What is the weather called?",
       "How is the weather?",
-      "Where is the air?",
-      "Who is cold?"
+      "Where is the weather today?",
+      "Who is outside in the cold?"
      ],
      "a": 1,
      "why": "Hava means weather and nasıl means how.",
@@ -116,10 +116,10 @@
      "t": "mc",
      "q": "Why is it 'Kışın kar yağar' for a general truth?",
      "o": [
-      "It is the past tense",
+      "It is the past tense, because winter has already ended",
       "The aorist -ar describes habits and general facts",
-      "It is the future tense",
-      "It is a command"
+      "It is the future tense, because snow comes later",
+      "It is an order telling the snow to fall"
      ],
      "a": 1,
      "why": "The aorist (geniş zaman) is used for general truths.",
@@ -136,7 +136,7 @@
       "-e"
      ],
      "a": 2,
-     "why": "-ın / -in on season names means during that season.",
+     "why": "Kış (winter) and yaz (summer) take -ın/-in to mean 'during that season': kışın, yazın. It is not the locative -de.",
      "d": 2,
      "k": "reason"
     },
@@ -144,9 +144,9 @@
      "t": "mc",
      "q": "A friend says 'Hava sıcak ama rüzgâr var'. What does this mean?",
      "o": [
-      "It is cold and no wind",
-      "It is raining",
-      "It is snowing",
+      "It is cold, and there is no wind at all",
+      "It is raining and the wind is strong",
+      "It is snowing and the air is hot",
       "It is hot, but there is wind"
      ],
      "a": 3,
@@ -157,7 +157,7 @@
    ],
    "teach": {
     "topic": "Weather in Turkish",
-    "model": "Use hava for weather. For rain and snow use the verb yağmak: yağmur yağıyor. Seasons end in -ın in time phrases: kışın.",
+    "model": "Use hava for weather. For rain and snow use the verb yağmak: yağmur yağıyor. Winter and summer take -ın: kışın (in winter), yazın (in summer).",
     "points": [
      {
       "k": [
@@ -291,10 +291,10 @@
      "t": "mc",
      "q": "How do you say 'I will read'?",
      "o": [
-      "okudum",
-      "okurum",
+      "okuyordum",
+      "okuyamam",
       "okuyacağım",
-      "okuyorum"
+      "okuyormuşum"
      ],
      "a": 2,
      "why": "The future is -acak plus the person ending.",
@@ -307,10 +307,10 @@
      "t": "mc",
      "q": "Why is it 'gittim' and not 'gitdim'?",
      "o": [
-      "Turkish forbids d",
-      "It is a typo",
+      "Turkish does not allow the letter d after t in verbs",
+      "It is a typing mistake and gitdim is also fine",
       "After a voiceless consonant -di becomes -ti",
-      "It is irregular only here"
+      "The verb git is irregular only in this one form"
      ],
      "a": 2,
      "why": "Voiceless t in git triggers -ti.",
@@ -321,9 +321,9 @@
      "t": "mc",
      "q": "Why is the k in -ecek / -acak written ğ in 'geleceğim'?",
      "o": [
-      "Because the verb is irregular",
-      "Because of English",
-      "Because k is silent",
+      "Because the verb gelmek is irregular in the future",
+      "Because ğ is the English way of writing k",
+      "Because the letter k is silent in this suffix",
       "Before a vowel ending the k softens to ğ"
      ],
      "a": 3,
@@ -333,7 +333,7 @@
     },
     {
      "t": "mc",
-     "q": "Which time word fits 'Yarın ... '?",
+     "q": "Which verb form completes 'Yarın ...' (Tomorrow I ...)?",
      "o": [
       "gideceğim",
       "gittim",
@@ -379,11 +379,11 @@
     ]
    },
    "trip": {
-    "wiki": "Turkish verb conjugation",
+    "wiki": "Turkish grammar",
     "prompt": "Look at the tense endings and their examples."
    },
    "sources": [
-    "Turkish verb conjugation"
+    "Turkish grammar"
    ]
   },
   {
@@ -428,7 +428,7 @@
      ""
     ],
     [
-     "when",
+     "time",
      "zaman",
      ""
     ],
@@ -486,9 +486,9 @@
      "t": "mc",
      "q": "Which word introduces a reason?",
      "o": [
-      "ama",
-      "ve",
-      "veya",
+      "ama (but)",
+      "ve (and)",
+      "veya (or)",
       "çünkü"
      ],
      "a": 3,
@@ -502,9 +502,9 @@
      "t": "mc",
      "q": "Why does 'Yağmur yağarsa' mean 'if it rains'?",
      "o": [
-      "Because yağmak means if",
-      "Because yağmur is a verb",
-      "It is the past tense",
+      "Because yağmak itself means 'if' in Turkish",
+      "Because yağmur is a verb in the past tense",
+      "Because the ending -ar always means a question",
       "The ending -sa marks a condition"
      ],
      "a": 3,
@@ -528,12 +528,12 @@
     },
     {
      "t": "mc",
-     "q": "'Yağmur yağdığı için ...' replaces which word?",
+     "q": "Which conjunction gives the same meaning as the ending in 'yağdığı için' (because it rained)?",
      "o": [
-      "ama",
+      "ama (but)",
       "çünkü",
-      "ve",
-      "eğer"
+      "ve (and)",
+      "eğer (if)"
      ],
      "a": 1,
      "why": "-dığı için and çünkü both give the reason.",
@@ -572,11 +572,11 @@
     ]
    },
    "trip": {
-    "wiki": "Turkish conjunctions",
+    "wiki": "Turkish grammar",
     "prompt": "Compare how Turkish uses endings and conjunctions."
    },
    "sources": [
-    "Turkish conjunctions"
+    "Turkish grammar"
    ]
   },
   {
@@ -665,9 +665,9 @@
      "t": "mc",
      "q": "What does the ending -miş suggest in a story?",
      "o": [
-      "It will happen",
-      "It is happening now",
-      "It is a question",
+      "It will happen soon",
+      "It is happening right now",
+      "It is a polite question",
       "It was told, reported"
      ],
      "a": 3,
@@ -680,9 +680,9 @@
      "q": "Which phrase opens many Turkish fairy tales?",
      "o": [
       "Bir varmış, bir yokmuş",
-      "Güle güle",
-      "Hoş geldiniz",
-      "Afiyet olsun"
+      "Hoş geldiniz, buyurun",
+      "Güle güle, hoşça kal",
+      "Afiyet olsun, çocuklar"
      ],
      "a": 0,
      "why": "It is the classic tale opening.",
@@ -696,9 +696,9 @@
      "q": "Why do tale tellers use -miş and not -di?",
      "o": [
       "They did not see events and report what is said",
-      "They are speaking to a child only",
-      "-di is never used",
-      "-miş is the future"
+      "They are speaking to children only, and -di is for adults",
+      "-di is never used in tales because it is too formal",
+      "-miş is the future and tales are about what comes next"
      ],
      "a": 0,
      "why": "Evidential -miş marks hearsay.",
@@ -709,10 +709,10 @@
      "t": "mc",
      "q": "A story says 'sonra ... en sonunda'. What does this show?",
      "o": [
-      "The cause",
+      "The cause of the events",
       "The order of events",
-      "The place",
-      "A question"
+      "The place of the story",
+      "A question to the reader"
      ],
      "a": 1,
      "why": "Time connectors give sequence.",
@@ -723,10 +723,10 @@
      "t": "mc",
      "q": "Nasreddin Hoca stories mainly use which technique?",
      "o": [
-      "Long legal speeches",
-      "Mathematical proofs",
+      "Long speeches in the language of the courts",
+      "Mathematical proofs that end in a puzzle",
       "Short humorous anecdotes with a twist",
-      "Scientific reports"
+      "Scientific reports about animals and plants"
      ],
      "a": 2,
      "why": "They are brief funny stories with a wise twist.",
@@ -868,10 +868,10 @@
      "t": "mc",
      "q": "Which question asks 'when'?",
      "o": [
-      "Nerede?",
+      "Nerede? (where)",
       "Ne zaman?",
-      "Kim?",
-      "Kaç?"
+      "Kimden? (from whom)",
+      "Kaç tane? (how many)"
      ],
      "a": 1,
      "why": "Ne zaman asks about time.",
@@ -884,10 +884,10 @@
      "t": "mc",
      "q": "Why is it 'üçte' and not 'üçde'?",
      "o": [
-      "Because the word is irregular",
+      "Because the word üç is irregular in Turkish",
       "After a voiceless consonant -de becomes -te",
-      "Because it is a verb",
-      "It is dialect"
+      "Because üç is a verb that takes a special ending",
+      "Because -de is only used in some dialects"
      ],
      "a": 1,
      "why": "Ç is voiceless, so -te is used.",
@@ -898,10 +898,10 @@
      "t": "mc",
      "q": "Which listening strategy helps most with a fast phone message?",
      "o": [
-      "Translate each word one by one",
-      "Ignore numbers",
+      "Translate each word one by one into English",
+      "Ignore the numbers and listen for the tune",
       "Listen first for who, what, where and when",
-      "Wait for the end only"
+      "Wait until the end and then decide what it meant"
      ],
      "a": 2,
      "why": "Key questions give the main idea.",
@@ -912,9 +912,9 @@
      "t": "mc",
      "q": "You hear 'Toplantı yarın sabah dokuzda'. When is it?",
      "o": [
-      "Today at nine at night",
-      "Next week",
-      "Yesterday morning",
+      "Today at nine o'clock in the evening",
+      "Next week on Monday at nine",
+      "Yesterday morning at about nine",
       "Tomorrow at nine in the morning"
      ],
      "a": 3,
@@ -955,11 +955,11 @@
     ]
    },
    "trip": {
-    "wiki": "Turkish listening",
+    "wiki": "Turkish phonology",
     "prompt": "Practise by listening to a short announcement."
    },
    "sources": [
-    "Turkish listening"
+    "Turkish phonology"
    ]
   },
   {
@@ -969,7 +969,7 @@
    "hook": "Why does the stress often fall on the last syllable in Turkish?",
    "explain": [
     "Turkish words are normally stressed on the last syllable: ma-SA, ki-TAP, ar-ka-DAŞ. When you add endings, the stress moves: masa, masaLAR, masalarIM. Some place names are exceptions, for example AN-ka-ra, with stress on the first syllable.",
-    "Speak in even beats and keep vowels pure: Turkish vowels do not glide like English. Practise ı and ö: 'ışık', 'göz'. Say ü like the French u (lips rounded). Question particles and negative -me/-ma shift the stress: gel-MEdi (he did not come)."
+    "Speak in even beats and keep vowels pure: Turkish vowels do not glide like English. Practise ı and ö: 'ışık', 'göz'. Say ü like the French u (lips rounded). The negative -me/-ma pulls the stress onto the syllable just before it: GEL-me-di (he did not come)."
    ],
    "mnemonic": "Last syllable is the loudest; when you add a suffix, the loud part moves.",
    "items": [
@@ -1035,8 +1035,8 @@
      "I like roses.",
      [
       "Ben",
-      "gülleri",
-      "seviyorum."
+      "gül",
+      "severim."
      ]
     ]
    ],
@@ -1059,10 +1059,10 @@
      "t": "mc",
      "q": "How should you say ü?",
      "o": [
-      "Like the English oo in moon",
-      "Like e",
+      "Like the English oo in 'moon', with the lips pushed forward",
+      "Like a short e, with the lips spread wide",
       "With rounded lips, like the French u",
-      "Like i"
+      "Like a dotted i, with the tongue pulled back"
      ],
      "a": 2,
      "why": "Ü is a front rounded vowel.",
@@ -1075,10 +1075,10 @@
      "t": "mc",
      "q": "What happens to stress when you add the plural: masa → masalar?",
      "o": [
-      "It stays on masa",
-      "It disappears",
+      "It stays on the first syllable: MA-sa-lar",
+      "It disappears when the plural ending is added",
       "It moves to the end: ma-sa-LAR",
-      "It goes to the first syllable"
+      "It jumps to the first syllable of the new word"
      ],
      "a": 2,
      "why": "Final stress moves with the suffix.",
@@ -1089,9 +1089,9 @@
      "t": "mc",
      "q": "A learner says 'gül' as 'gul'. What is the problem?",
      "o": [
-      "The consonant is wrong",
-      "The stress is wrong",
-      "The word is a verb",
+      "The consonant g is said like English j",
+      "The stress is on the wrong syllable here",
+      "The word has been shortened in speech",
       "The vowel ü is replaced by u"
      ],
      "a": 3,
@@ -1101,15 +1101,15 @@
     },
     {
      "t": "mc",
-     "q": "Why does 'gelmedi' have stress on 'me'?",
+     "q": "Where does the stress fall in 'gelmedi' (he did not come)?",
      "o": [
-      "The negative suffix pulls stress forward",
-      "It is irregular",
-      "All verbs stress the first syllable",
-      "It is a question"
+      "On gel, the syllable before the negative -me",
+      "On the last syllable, which is always stressed in Turkish",
+      "On the negative suffix -me itself, as in many languages",
+      "Nowhere: negative verbs are said without stress"
      ],
      "a": 0,
-     "why": "The negative -me- takes the stress.",
+     "why": "The negative suffix -me/-ma pulls the stress onto the syllable just before it, so the word is said GEL-me-di, not gel-me-DI.",
      "d": 3,
      "k": "reason"
     }
@@ -1267,9 +1267,9 @@
      "t": "mc",
      "q": "Why check -de and -te in your paragraph?",
      "o": [
-      "They mean different things",
-      "Turkish has no rules",
-      "It is only decoration",
+      "They mean different things, such as place and time",
+      "Turkish has no fixed rules for these endings",
+      "It is only a question of style, not of grammar",
       "The ending depends on the last sound of the word"
      ],
      "a": 3,
@@ -1282,9 +1282,9 @@
      "q": "Which order is logical for a morning routine?",
      "o": [
       "Önce kalktım, sonra kahvaltı yaptım, en sonunda okula gittim",
-      "En sonunda kalktım, önce okula gittim",
-      "Sonra kalktım, önce kahvaltı",
-      "Kahvaltı yaptım, kalktım, okula, sonra"
+      "En sonunda kalktım, önce okula gittim, sonra kahvaltı yaptım",
+      "Sonra kalktım, önce kahvaltı yaptım, en sonunda okula gittim",
+      "Kahvaltı yaptım, sonra kalktım, en sonunda okula gittim"
      ],
      "a": 0,
      "why": "Linking words show sequence.",
@@ -1295,10 +1295,10 @@
      "t": "mc",
      "q": "What makes a paragraph clear?",
      "o": [
-      "Only long words",
+      "Only very long words and complicated sentences",
       "Topic, details, linking words, ending",
-      "Only questions",
-      "No punctuation"
+      "Only questions that the reader must answer",
+      "No punctuation, so that the text flows quickly"
      ],
      "a": 1,
      "why": "Structure and connectors help the reader.",
@@ -1462,9 +1462,9 @@
      "q": "Why is 'Eline sağlık' not 'Thank you, your hand is healthy'?",
      "o": [
       "It is a fixed expression with a cultural meaning",
-      "It is grammatically wrong",
-      "It is slang",
-      "It is a question"
+      "It is grammatically wrong and should not be used",
+      "It is slang that only young people say",
+      "It is a question about a person's health"
      ],
      "a": 0,
      "why": "Idioms are learned as units.",
@@ -1600,11 +1600,11 @@
      ]
     ],
     [
-     "Where is the bus station?",
+     "Excuse me, where is the bus station?",
      [
-      "Otogar",
-      "nerede",
-      "acaba?"
+      "Affedersiniz,",
+      "otogar",
+      "nerede?"
      ]
     ],
     [
@@ -1653,10 +1653,10 @@
      "t": "mc",
      "q": "Why is it 'İzmir'e' and 'Ankara'ya'?",
      "o": [
-      "They are different cities",
+      "They are different cities with different grammar rules",
       "Ankara ends in a vowel, so a buffer y is added",
-      "Random",
-      "Ankara is a verb"
+      "The choice between e and ya is random",
+      "Ankara is a verb, so it takes the other ending"
      ],
      "a": 1,
      "why": "After a vowel -e/-a uses -ye/-ya.",
@@ -1667,10 +1667,10 @@
      "t": "mc",
      "q": "Which is the most polite way to start a request?",
      "o": [
-      "Hey, ...",
-      "Hadi, ...",
+      "Hey, bakar mısın, ...",
+      "Hadi, çabuk söyle, ...",
       "Affedersiniz, ...",
-      "Sen, ..."
+      "Sen, buraya gel, ..."
      ],
      "a": 2,
      "why": "Affedersiniz is polite.",
@@ -1681,9 +1681,9 @@
      "t": "mc",
      "q": "A hotel clerk asks 'Kaç gece?'. What do they want to know?",
      "o": [
-      "How much",
-      "What time",
-      "What name",
+      "How much it costs",
+      "At what time you leave",
+      "What your name is",
       "How many nights"
      ],
      "a": 3,

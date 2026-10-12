@@ -29,6 +29,7 @@ export function welcome(main) {
       profiles.length ? h('h3', null, t('Who is playing?')) : null,
       profiles.length ? h('div', { class: 'grid c3' }, profiles.map(([id, p]) => h('button', { class: 'card flat row', style: { cursor: 'pointer', textAlign: 'start' }, onClick: () => go('signin/' + id) }, avatarEl(p.avatar, { band: p.band, role: 'student' }), h('b', null, p.name)))) : null,
       h('button', { class: 'btn block', onClick: () => go('join') }, '✨ ', t('Create a new player')),
+      h('button', { class: 'btn ghost block', onClick: () => go('joinclass') }, '🏫 ', t('Join my class')),
       !isInstalled() ? h('button', { class: 'btn ghost block', onClick: installApp }, '📲 ', t('Install on this device')) : null,
       h('label', { class: 'btn ghost block' }, '📂 ', t('Bring a saved player from another device'), h('input', { type: 'file', accept: '.json,application/json', hidden: true, onChange: async (e) => { try { const id = importProfile(await e.target.files[0].text()); toast(t('Player added.')); go('signin/' + id); } catch { toast(t('That file is not a saved player.')); } } }))),
     h('div', { class: 'grid c3 mt' },
@@ -82,13 +83,16 @@ export function join(main) {
   // Neutral age screen: no hint about which answer changes what.
   function ageStep() {
     const now = new Date().getFullYear();
+    const d = h('select', { class: 'input', 'aria-label': t('Day') }, h('option', { value: '' }, t('Day')), Array.from({ length: 31 }, (_, i) => h('option', { value: i + 1 }, i + 1)));
     const m = h('select', { class: 'input', 'aria-label': t('Month') }, h('option', { value: '' }, t('Month')), Array.from({ length: 12 }, (_, i) => h('option', { value: i + 1 }, new Date(2000, i, 1).toLocaleString(lang, { month: 'long' }))));
-    const y = h('select', { class: 'input', 'aria-label': t('Year') }, h('option', { value: '' }, t('Year')), Array.from({ length: 100 }, (_, i) => h('option', { value: now - 3 - i }, now - 3 - i)));
-    box.append(sectionTitle('🎂', t('When were you born?')), h('p', { class: 'muted' }, t('We ask so the game looks and feels right for you. Only the month and year are kept, on this device.')),
-      h('div', { class: 'row' }, h('div', { class: 'grow' }, m), h('div', { class: 'grow' }, y)),
+    const y = h('select', { class: 'input', 'aria-label': t('Year') }, h('option', { value: '' }, t('Year')), Array.from({ length: 101 }, (_, i) => h('option', { value: now - i }, now - i)));
+    box.append(sectionTitle('🎂', t('When were you born?')), h('p', { class: 'muted' }, t('We ask so the game looks and feels right for you. Your date of birth is kept only on this device.')),
+      h('div', { class: 'row' }, h('div', { class: 'grow' }, d), h('div', { class: 'grow' }, m), h('div', { class: 'grow' }, y)),
       h('button', { class: 'btn mt', onClick: () => {
-        if (!m.value || !y.value) return toast(t('Please choose both.'));
-        const res = screenAge({ y: +y.value, m: +m.value });
+        if (!d.value || !m.value || !y.value) return toast(t('Please choose the day, month and year.'));
+        const date = new Date(+y.value, +m.value - 1, +d.value);
+        if (date.getMonth() !== +m.value - 1 || date > new Date()) return toast(t('That date does not exist. Please check it.'));
+        const res = screenAge({ y: +y.value, m: +m.value, d: +d.value });
         Object.assign(data, { birth: res.birth, band: res.band });
         if (!needsGuardian(res.band)) step++; // skip the guardian step for 16+
         next();

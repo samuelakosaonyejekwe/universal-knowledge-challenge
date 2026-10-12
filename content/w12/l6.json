@@ -659,14 +659,14 @@
    "hook": "If interest rates are higher at home than abroad, why doesn't everyone move their money home and earn more?",
    "explain": [
     "Covered interest parity (CIP) says that, with free capital flows and no risk of default, the forward exchange rate adjusts so that borrowing in one currency and lending in another earns no riskless profit: F = S·(1 + i) ÷ (1 + i*), where S and F are domestic-currency prices of foreign currency. Uncovered interest parity (UIP) says the expected depreciation of the higher-interest currency equals the interest differential: E[ΔS]/S ≈ i − i*. Empirically UIP often fails, which is the forward premium puzzle, suggesting risk premia or expectation errors.",
-    "The balance of payments records international transactions: the current account (trade, income, transfers) plus the financial account plus changes in official reserves sum to zero (with errors). A current account deficit must be financed by net capital inflows or reserve depletion. The real exchange rate q = S·P* ÷ P compares price levels.",
+    "The balance of payments records international transactions: the current account (trade, income, transfers) plus the financial account plus official financing sum to zero (with errors). Sign convention used here: official financing is entered as a positive number when the central bank draws reserves down (reserves fall) and as a negative number when reserves rise. A current account deficit must be financed by net capital inflows or reserve depletion. The real exchange rate q = S·P* ÷ P compares price levels.",
     "The Mundell-Fleming trilemma states that a country cannot simultaneously have a fixed exchange rate, free capital mobility and independent monetary policy. Economists disagree about the best regime and about the risks from volatile capital flows, especially for emerging economies with foreign-currency debt."
    ],
    "example": {
     "q": "Home is Zedland with i = 6%; Arboland has i* = 2%. The spot rate S = 2.5 Zeds per Arbo. Find the one-year forward rate under CIP. Also: if the current account is −30 and net private capital inflow is +20, what happens to official reserves? Real exchange rate with P* = 100 Arbo-basket price and P = 200 Zeds?",
     "steps": [
      "F = 2.5 × 1.06 ÷ 1.02 ≈ 2.598 Zeds per Arbo.",
-     "CA + financial account + change in reserves = 0 gives −30 + 20 + ΔR = 0, so 10 of official financing is needed: reserves fall by 10.",
+     "CA + financial account + official financing = 0, with official financing counted as positive when reserves fall. So −30 + 20 + F = 0 gives F = +10: reserves fall by 10.",
      "q = S·P* ÷ P = 2.5 × 100 ÷ 200 = 1.25."
     ],
     "a": "F ≈ 2.598; reserves fall by 10; q = 1.25"
@@ -736,10 +736,10 @@
     },
     {
      "t": "num",
-     "q": "Current account = −50, private net capital inflow = +30. By how much must official reserves fall?",
+     "q": "Current account = −50, private net capital inflow = +30. Official financing is counted as positive when reserves fall, and CA + financial account + official financing = 0. By how much must official reserves fall?",
      "a": 20,
      "tol": 0,
-     "why": "CA + financial + ΔR = 0 gives reserves supplying 20.",
+     "why": "−50 + 30 + F = 0 gives F = +20, so reserves fall by 20 (positive official financing means reserves are drawn down).",
      "d": 2,
      "k": "apply"
     },

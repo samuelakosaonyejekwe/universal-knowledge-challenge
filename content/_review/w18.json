@@ -1,0 +1,22 @@
+{
+ "set": "w18",
+ "date": "2026-10-12",
+ "method": "independent second check; every stage read in full; numeric answers recomputed by script; encyclopedia titles verified against English Wikipedia; clinical ranges (vitals, ABG, anion gap, eGFR, HbA1c, potassium, qSOFA, FEV1/FVC, PaO2/FiO2, GCS) checked against standard values",
+ "stages": 54,
+ "items": 702,
+ "numericRecomputed": 33,
+ "corrected": 56,
+ "corrections": [
+  { "at": "all levels, all stages with missing or incomplete limits (51 stages: l1 s2-s8, l2 s1-s7 and s9, l3 s1-s9, l4 s1-s9, l5 s1-s9, l6 s1-s9)", "what": "limits was absent or did not say that patients are fictional and that this is not medical advice; added to every stage (level 1 wording: patients are made up, this is a game, not advice). Short stage-specific limits sentences were written where limits was missing entirely." },
+  { "at": "l2 s6 questions[8]", "what": "ordering item put 'immune system fights back' after 'symptoms'; symptoms are partly caused by the immune response, so the order was arguable. Reordered to: germ enters, multiplies, immune system responds, symptoms may appear; why updated." },
+  { "at": "l4 s2 sources", "what": "'Medication safety' is not an English Wikipedia title; replaced with 'Medical error'" },
+  { "at": "l4 s3 trip.wiki", "what": "'Clinical reasoning' does not exist; replaced with 'Medical diagnosis' and prompt reworded to match the article" },
+  { "at": "l4 s8 sources", "what": "'ABCDE approach' does not exist; replaced with 'Advanced trauma life support'" },
+  { "at": "l6 s2 sources", "what": "'Sequential organ failure assessment' does not exist; replaced with 'SOFA score'" }
+ ],
+ "needsSpecialist": [
+  { "at": "l3 s4 questions[4]", "what": "SpO2 88 percent on room air is keyed as low and needing urgent attention for a general fictional adult; some chronic lung disease patients have lower target ranges (88 to 92 percent), but the question states no such condition. Fine as a general item; a clinician may wish to confirm the wording." },
+  { "at": "l3 s3 explain / l5 s3 explain", "what": "Age-banded respiratory-rate ranges (newborn 30-60, infant 25-50, young child 20-30, older child 15-25) are approximate and guideline bands differ; flagged as approximate in the text and limits, a paediatrician could confirm." },
+  { "at": "l6 s3 questions[8]", "what": "Tension pneumothorax item says 'needs immediate decompression by trained staff'; kept as concept only (no technique), a clinician should confirm that this level of detail is acceptable." }
+ ]
+}

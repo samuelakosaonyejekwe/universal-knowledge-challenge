@@ -1,0 +1,12 @@
+{ "set": "w13", "date": "2026-10-12", "method": "independent second check; every fen position and keyed move verified with python-chess (legality, check/mate/stalemate, mate-in-two search) and the Lichess 7-piece tablebase for the pawn and rook endings; numeric answers recomputed by script; encyclopedia titles verified; give-away options rebalanced with tools/options.mjs",
+  "stages": 54, "items": 702, "numericRecomputed": 43, "corrected": 6,
+  "corrections": [
+    { "at": "l6 s5 questions[1]", "what": "Asked why Qg7+ fails with 'the king on g5 does not guard g7, so Kxg7', but in that position (Kg5, Qg1) Qg7+ is not a legal move: the white king blocks the g-file. Question, options, key text and why rewritten (key stays at index 0)." },
+    { "at": "l6 s5 questions[0]", "what": "One distractor was the illegal move Qg7+; replaced with the legal Qa7 (Kf6 re-verified as the only mate in two)." },
+    { "at": "l6 s5 example", "what": "Worked example repeated the same error (Qg7+ met by Kxg7); steps rewritten to say the king blocks the queen's path; answer unchanged." },
+    { "at": "l1 s1 questions[2]", "what": "'a row of squares that goes up and down' contradicted the rank/file teaching (rows are ranks); reworded to 'a line of squares'." },
+    { "at": "l3 s8 questions[6]", "what": "Rubric group accepted bare 'not'; tightened so an empty answer cannot earn credit." },
+    { "at": "l6 s5 / s6 trip and sources", "what": "Replaced non-existent Wikipedia titles 'Think Like a Grandmaster' and 'Vancura position' with 'Alexander Kotov' / 'Chess tactics' and 'Rook and pawn versus rook endgame'." },
+    { "at": "all levels, 113 mc items", "what": "Give-away options: lengthened wrong options so the key is the single longest in 121 of 508 items (24%) instead of 233 (46%). Keys and indices unchanged." }
+  ],
+  "needsSpecialist": [] }

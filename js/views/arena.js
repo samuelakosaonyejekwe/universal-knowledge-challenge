@@ -10,6 +10,7 @@ import { loadLevel, duelSet, tiebreakSet } from '../engine/content.js';
 import { runSet, ask, timeFor } from '../engine/quiz.js';
 import { runDuel } from '../engine/duel.js';
 import { go, talk, sectionTitle, award, loading } from './ui.js';
+import { liveDuel } from './liveduel.js';
 
 const SALT = 'ukc-fairplay-1';
 const enc = (o) => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
@@ -18,13 +19,13 @@ const sign = (o) => hashStr(SALT + JSON.stringify(o)).toString(36);
 const PHRASES = ['Good game!', 'Well played!', 'That was close!', 'Great thinking!', 'Rematch?', 'Thank you for playing!'];
 
 // The same seed gives every player the same questions.
-async function seededSet(wkey, level, seed, n = 8) {
+export async function seededSet(wkey, level, seed, n = 8) {
   const pack = await loadLevel(wkey, level);
   const pool = pack.stages.flatMap((s) => s.questions.filter((q) => ['mc', 'num', 'order', 'match'].includes(q.t)));
   return shuffle(pool, rngFrom('seed' + seed)).slice(0, n);
 }
 const myWorlds = () => Object.entries(profile.worlds).filter(([, w]) => w.level > 0);
-function worldPicker(onPick) {
+export function worldPicker(onPick) {
   const mine = myWorlds();
   if (!mine.length) return h('div', { class: 'note' }, t('Start a world first — then you can compete in it.'));
   return h('div', { class: 'row' }, mine.map(([k, w]) => h('button', { class: 'chip', onClick: () => onPick(k, w.level) }, world(worldId(k)).em, ' ', t(world(worldId(k)).short), k.includes(':') ? ' · ' + k.split(':')[1] : '', ' · ', t('Level {n}', { n: w.level }))));
@@ -32,12 +33,12 @@ function worldPicker(onPick) {
 
 export function arenaView(main, [tab = 'practice', arg]) {
   main.append(h('div', { class: 'hero' }, h('h1', null, '⚔️ ', t('Arena')), h('p', { class: 'muted' }, t('Compete or cooperate. Matches are made by level, never by anything you can buy.'))));
-  const tabs = [['practice', '🥋', 'Practice duel'], ['team', '🤝', 'Team mission'], ['friend', '🎟️', 'Friend challenge'], ['pass', '🔄', 'Pass and play'], ['cup', '🏟️', 'Tournaments'], ['board', '🏅', 'Leaderboard']];
+  const tabs = [['practice', '🥋', 'Practice duel'], ['team', '🤝', 'Team mission'], ['live', '⚡', 'Live duel'], ['friend', '🎟️', 'Friend challenge'], ['pass', '🔄', 'Pass and play'], ['cup', '🏟️', 'Tournaments'], ['board', '🏅', 'Leaderboard']];
   main.append(h('div', { class: 'tabs mt' }, tabs.map(([k, e, l]) => h('button', { 'aria-selected': String(k === tab), onClick: () => go('arena/' + k) }, e, ' ', t(l)))));
   const body = h('div'); main.append(body);
   const social = can('social');
-  if (['friend', 'cup'].includes(tab) && !social) { body.append(h('div', { class: 'card' }, t('Challenge codes are switched off for this player. A guardian can switch them on in Settings.'))); return; }
-  ({ practice, team, friend, pass, cup, board })[tab]?.(body, arg);
+  if (['friend', 'cup', 'live'].includes(tab) && !social) { body.append(h('div', { class: 'card' }, t('Challenge codes are switched off for this player. A guardian can switch them on in Settings.'))); return; }
+  return ({ practice, team, friend, pass, cup, board, live: liveDuel })[tab]?.(body, arg);
 }
 
 // ---------- practice duel against a computer-controlled master ----------

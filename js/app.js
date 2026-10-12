@@ -1,7 +1,7 @@
 // App shell: routing, top bar with back/forward, bottom navigation, install, offline status, wellbeing breaks.
 import { h, clear, $, modal, toast, pick } from './core/util.js';
 import { t, setLang, LANGS } from './core/i18n.js';
-import { device, profile, resume, saveDevice, addTime, onChange, worldId } from './core/store.js';
+import { device, profile, resume, saveDevice, addTime, onChange, worldId, save } from './core/store.js';
 import { breakDue, tookBreak, dailyLimitReached, BREAK_IDEAS, checkGuardianPin } from './core/safety.js';
 import { unlockAudio, startMusic, stopMusic, sfx } from './core/audio.js';
 import { stopSpeaking } from './core/speech.js';
@@ -26,8 +26,10 @@ const routes = {
   dashboard: () => import('./views/dashboard.js').then((m) => m.dashboardView),
   settings: () => import('./views/settings.js').then((m) => m.settingsView),
   lab: () => import('./views/world.js').then((m) => m.labView),
+  class: () => import('./views/classroom.js').then((m) => m.classroomView),
+  joinclass: () => import('./views/classroom.js').then((m) => m.joinClass),
 };
-const OPEN = new Set(['welcome', 'join', 'signin']); // reachable without a profile
+const OPEN = new Set(['welcome', 'join', 'signin', 'joinclass']); // reachable without a profile
 
 const main = $('#main'), top = $('#top'), nav = $('#nav');
 let cleanup = null, currentWorld = null;
@@ -50,7 +52,7 @@ function drawTop() {
   top.append(h('button', { class: 'pill', title: dark ? t('Light mode') : t('Dark mode'), 'aria-label': dark ? t('Light mode') : t('Dark mode'), onClick: () => setTheme(dark ? 'light' : 'dark') }, dark ? '☀️' : '🌙'));
   if (profile) {
     if (w && profile.worlds[currentWorld]) top.append(h('span', { class: 'pill gold', title: t(w.credit) }, w.creditEm, ' ', String(profile.worlds[currentWorld].credits)));
-    const music = h('button', { class: 'pill', title: t('Music'), 'aria-label': t('Music'), 'aria-pressed': String(profile.settings.music), onClick: () => { profile.settings.music = !profile.settings.music; if (profile.settings.music && currentWorld) startMusic(worldId(currentWorld)); else stopMusic(); drawTop(); } }, profile.settings.music ? '🎵' : '🔇');
+    const music = h('button', { class: 'pill', title: t('Music'), 'aria-label': t('Music'), 'aria-pressed': String(profile.settings.music), onClick: () => { profile.settings.music = !profile.settings.music; if (profile.settings.music) startMusic(currentWorld ? worldId(currentWorld) : 0); else stopMusic(); save(); drawTop(); } }, profile.settings.music ? '🎵' : '🔇');
     const ava = avatarEl(profile.avatar, { band: profile.band, role: 'student', size: 'sm', emblem: Object.values(profile.worlds).some((x) => x.completed.length) });
     ava.setAttribute('role', 'button'); ava.tabIndex = 0; ava.title = profile.name; ava.style.cursor = 'pointer';
     ava.addEventListener('click', () => { location.hash = '#/dashboard'; });
@@ -87,7 +89,8 @@ async function route() {
   const w = currentWorld ? world(worldId(currentWorld)) : null;
   document.documentElement.style.setProperty('--pri', w ? w.c1 : '#4f5bd5');
   document.documentElement.style.setProperty('--pri2', w ? w.c2 : '#8a5cf6');
-  if (w && profile?.settings.music) startMusic(w.id); else stopMusic();
+  // Every world has its own soundtrack; the home screens share a calm theme of their own.
+  if (profile?.settings.music && !OPEN.has(name)) startMusic(w ? w.id : 0); else stopMusic();
   drawTop(); drawNav(name);
   clear(main).append(h('div', { class: 'spinner' }));
   scrollTo(0, 0);
@@ -159,8 +162,11 @@ async function boot() {
   const guess = (navigator.language || 'en').slice(0, 2).toLowerCase();
   await setLang(profile?.lang || device.lang || (LANGS.some((l) => l.code === guess) ? guess : 'en'));
   applySettings();
-  addEventListener('pointerdown', unlockAudio, { once: true });
-  addEventListener('keydown', unlockAudio, { once: true });
+  // Sound may only start after a tap or key press; keep trying on each one until the browser lets it run.
+  for (const ev of ['pointerdown', 'pointerup', 'touchend', 'click', 'keydown']) {
+    const fn = () => { if (unlockAudio()) removeEventListener(ev, fn, true); };
+    addEventListener(ev, fn, true);
+  }
   const bar = $('#offline');
   const net = () => { bar.hidden = navigator.onLine; bar.textContent = '✈️ ' + t('Offline — everything already on this device still works.'); };
   addEventListener('online', net); addEventListener('offline', net); net();

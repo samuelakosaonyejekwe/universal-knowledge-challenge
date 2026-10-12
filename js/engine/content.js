@@ -1,10 +1,11 @@
 // Loads lesson packs and builds question sets (practice, duel, tie-break, placement, diagnostic, review).
 import { rngFrom, shuffle, sample } from '../core/util.js';
 import { profile, worldId, worldLang } from '../core/store.js';
-import { ENGLISH_NAMES } from '../core/i18n.js';
+import { ENGLISH_NAMES, lang as uiLang, markLocal, tr } from '../core/i18n.js';
 import curriculum from '../data/curriculum.js';
 
 const packs = new Map();
+let trIndex = null; // list of ready-translated packs (content/_tr/index.json)
 const pad = (n) => String(n).padStart(2, '0');
 export const packUrl = (wkey, level) => {
   const lang = worldLang(wkey);
@@ -12,21 +13,64 @@ export const packUrl = (wkey, level) => {
 };
 export const stageTitle = (wkey, level, stage) => curriculum[worldId(wkey) - 1][level - 1][stage - 1];
 
+// Every text a learner reads in a stage (used to mark ready-translated packs and to pre-translate for offline use).
+function stageStrings(s) {
+  const out = [s.hook, ...(s.explain || []), s.mnemonic, s.limits, s.example?.q, ...(s.example?.steps || []), s.example?.a, ...Object.values(s.analogies || {}), s.misc?.wrong, s.misc?.right, s.trip?.prompt, s.title, s.teach?.topic, s.teach?.model, ...(s.teach?.points || []).map((p) => p.ask), ...(s.terms || []).flat()];
+  for (const q of [...(s.questions || []), ...(s.panel || []), ...(s.gq || [])]) out.push(q.q, q.why, q.model, ...(q.o || []), ...(q.joiner === undefined ? q.items || [] : []), ...(q.pairs || []).flat());
+  return out.filter((x) => typeof x === 'string' && x);
+}
+
+// Lesson packs are authored in English. A ready-translated pack, when one exists for the player's language
+// (content/_tr/<lang>/wNN/lK.json, same format, made with the translator workshop or by human translators), is
+// used as it is; otherwise the English pack is loaded and translated on the device as it is shown.
 export async function loadLevel(wkey, level) {
-  const key = `${wkey}|${level}`;
-  if (packs.has(key)) return packs.get(key);
-  const res = await fetch(packUrl(wkey, level));
-  if (!res.ok) throw new Error(`content ${key} unavailable (${res.status})`);
-  const raw = await res.json();
   const lang = worldLang(wkey);
-  const pack = { wkey, level, stages: raw.stages.map((s) => normalise(lang ? fromLanguageStage(s, lang) : s, wkey, level)) };
+  const key = `${wkey}|${level}|${lang ? '' : uiLang}`;
+  if (packs.has(key)) return packs.get(key);
+  let raw = null, tl = null;
+  if (!lang && uiLang !== 'en') {
+    const name = `${uiLang}/w${pad(worldId(wkey))}/l${level}`;
+    try {
+      trIndex ||= await (await fetch('content/_tr/index.json')).json();
+      if (trIndex.packs.includes(name)) { const r = await fetch(`content/_tr/${name}.json`); if (r.ok) { raw = await r.json(); tl = uiLang; } }
+    } catch { /* no ready-translated pack */ }
+  }
+  if (!raw) {
+    const res = await fetch(packUrl(wkey, level));
+    if (!res.ok) throw new Error(`content ${key} unavailable (${res.status})`);
+    raw = await res.json();
+  }
+  // Only packs checked by a human translator carry rubric keywords in their own language.
+  const pack = { wkey, level, tl, stages: raw.stages.map((s) => normalise(lang ? fromLanguageStage(s, lang) : s, wkey, level, raw.machine ? null : tl)) };
+  if (tl) for (const s of pack.stages) markLocal(stageStrings(s));
   packs.set(key, pack);
   return pack;
 }
+// Translates every text of a level now and keeps the results on the device, so the level reads instantly — and
+// offline — in the player's language afterwards. Returns { done, total, translated }.
+export async function pretranslate(wkey, level, onProgress) {
+  const pack = await loadLevel(wkey, level);
+  if (uiLang === 'en' || pack.tl) return { done: 0, total: 0, translated: 0 };
+  const all = [...new Set(pack.stages.flatMap(stageStrings))];
+  let done = 0, translated = 0;
+  for (const text of all) { const out = await tr(text); if (out !== text) translated++; done++; if (done % 5 === 0) onProgress?.(done, all.length); }
+  return { done, total: all.length, translated };
+}
+// The same level with every text replaced by its translation, in the ready-translated pack format (for the workshop).
+export async function translatedPack(wkey, level) {
+  const res = await fetch(packUrl(wkey, level)); const raw = await res.json();
+  const walk = async (v, k) => {
+    if (typeof v === 'string') return ['icon', 't', 'k', 'unit', 'fen', 'wiki', 'title'].includes(k) ? v : tr(v);
+    if (Array.isArray(v)) { const out = []; for (const x of v) out.push(await walk(x, k)); return out; }
+    if (v && typeof v === 'object') { const out = {}; for (const [kk, x] of Object.entries(v)) out[kk] = ['sources', 'au', 'rubric'].includes(kk) ? x : kk === 'k' && Array.isArray(x) ? x : await walk(x, kk); return out; }
+    return v;
+  };
+  return { ...(await walk(raw, '')), tl: uiLang, machine: true };
+}
 export const loadStage = async (wkey, level, stage) => (await loadLevel(wkey, level)).stages[stage - 1];
 
-function normalise(s, wkey, level) {
-  const tag = (list, prefix) => (list || []).map((q, i) => ({ ...q, id: `${wkey}|${level}|${s.n}|${prefix}${i}`, stage: s.n, level }));
+function normalise(s, wkey, level, tl = null) {
+  const tag = (list, prefix) => (list || []).map((q, i) => ({ ...q, tl: tl || undefined, id: `${wkey}|${level}|${s.n}|${prefix}${i}`, stage: s.n, level }));
   return { ...s, questions: tag(s.questions, 'q'), panel: tag(s.panel, 'p') };
 }
 
