@@ -141,47 +141,116 @@ export function lights(scene, { ambient = 0.75, sun = 1.6, color = 0xffffff } = 
   return { hemi, dir };
 }
 
-// A stylised character made of simple shapes. cfg: { seed } or { skin, hair, hairColor, outfit }.
-// opts: { role: 'student' | 'teacher' | 'master' | 'doctor' | 'layman' | 'peer', band, emblem }.
-// Returns a THREE.Group about 3 units tall with userData { head, armL, armR, emblem } for animation.
+const EYE_COLORS = ['#5b3a1e', '#6b4a2a', '#3f6b4f', '#3d6f9c', '#7a5a2e', '#4a4f6b'];
+const tint = (hex, amt) => { const c = new THREE.Color(hex); c.offsetHSL(0, 0, amt); return c; };
+
+// The face is painted in the same storybook style as the 2D portraits (large bright eyes with lashes and sparkles,
+// soft blush, a small nose and a smile) and wrapped onto the head.
+function faceTexture({ skin, eye, brow, role, young, sex = 'n' }) {
+  const W = 512, H = 256, c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d'), cx = W / 2, cy = H * 0.52;
+  const base = g.createLinearGradient(0, 0, 0, H); base.addColorStop(0, '#' + tint(skin, 0.06).getHexString()); base.addColorStop(1, '#' + tint(skin, -0.07).getHexString());
+  g.fillStyle = base; g.fillRect(0, 0, W, H);
+  const master = role === 'master', older = role !== 'student' && role !== 'peer';
+  const gap = young ? 31 : 29, erx = young ? 17 : older ? 12.5 : 14.5, ery = young ? 22 : older ? 14 : 17;
+  for (const sx of [-1, 1]) { g.fillStyle = 'rgba(255,110,140,' + (young ? 0.34 : 0.2) + ')'; g.beginPath(); g.ellipse(cx + sx * (gap + 14), cy + 30, 15, 9, 0, 0, 7); g.fill(); }
+  for (const sx of [-1, 1]) {
+    const x = cx + sx * gap, y = cy;
+    g.fillStyle = '#fff'; g.beginPath(); g.ellipse(x, y, erx, ery, 0, 0, 7); g.fill();
+    const ir = Math.min(erx, ery) * 0.8, ig = g.createRadialGradient(x, y + ir * 0.5, 1, x, y, ir);
+    ig.addColorStop(0, '#' + tint(eye, 0.28).getHexString()); ig.addColorStop(1, eye);
+    g.fillStyle = ig; g.beginPath(); g.arc(x + sx, y + 2, ir, 0, 7); g.fill();
+    g.fillStyle = '#1b1430'; g.beginPath(); g.arc(x + sx, y + 2, ir * 0.5, 0, 7); g.fill();
+    g.fillStyle = '#fff'; g.beginPath(); g.arc(x + 5, y - 5, erx * 0.3, 0, 7); g.fill(); g.beginPath(); g.arc(x - 5, y + 7, erx * 0.14, 0, 7); g.fill();
+    g.strokeStyle = '#231a33'; g.lineCap = 'round'; g.lineWidth = older ? 4 : 5;
+    g.beginPath(); g.moveTo(x - erx - 2, y - 3); g.quadraticCurveTo(x, y - ery - 8, x + erx + 2, y - 3); g.stroke();
+    if (sex === 'f' || (sex === 'n' && (!older || role === 'teacher'))) { g.lineWidth = sex === 'f' ? 4.5 : 3.5; g.beginPath(); g.moveTo(x + sx * (erx + 1), y - 4); g.lineTo(x + sx * (erx + 9), y - 11); g.stroke(); if (sex === 'f') { g.beginPath(); g.moveTo(x + sx * (erx - 3), y - 10); g.lineTo(x + sx * (erx + 4), y - 17); g.stroke(); } }
+    g.strokeStyle = brow; g.lineWidth = master ? 7 : sex === 'm' ? 7 : sex === 'f' ? 4 : 5;
+    g.beginPath();
+    if (master) { g.moveTo(x - sx * 19, y - ery - 6); g.lineTo(x + sx * 16, y - ery - 19); }
+    else { g.moveTo(x - 15, y - ery - 14); g.quadraticCurveTo(x, y - ery - 21, x + 15, y - ery - 14); }
+    g.stroke();
+  }
+  const line = '#' + tint(skin, -0.3).getHexString(), lip = '#' + tint(skin, -0.24).offsetHSL(-0.02, 0.15, 0).getHexString();
+  g.strokeStyle = line; g.lineWidth = 3; g.beginPath(); g.moveTo(cx - 4, cy + 24); g.quadraticCurveTo(cx, cy + 29, cx + 4, cy + 24); g.stroke();
+  g.strokeStyle = lip; g.lineWidth = 4.5; g.lineJoin = 'round';
+  if (master) { g.beginPath(); g.moveTo(cx - 17, cy + 43); g.quadraticCurveTo(cx + 3, cy + 50, cx + 20, cy + 38); g.stroke(); }
+  else { g.fillStyle = young ? '#fff' : lip; g.beginPath(); g.moveTo(cx - 19, cy + 40); g.quadraticCurveTo(cx, cy + (young ? 64 : 58), cx + 19, cy + 40); g.quadraticCurveTo(cx, cy + 47, cx - 19, cy + 40); g.closePath(); g.fill(); g.stroke(); }
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+  return tex;
+}
+
+// A storybook-style 3D character matching the 2D portraits: a large head with a painted face, sculpted hair with
+// a soft shine, and a rounded body with collar, hands and shoes.
+// cfg: { seed } or { skin, hair, hairColor, outfit }. opts: { role, band, emblem }.
+// Returns a THREE.Group about 3.4 units tall with userData { head, armL, armR, emblem, body } for animation.
 export function character(cfg = {}, opts = {}) {
   const rng = rngFrom('ava' + (cfg.seed ?? JSON.stringify(cfg)));
   const r = (n) => Math.floor(rng() * n);
-  const role = opts.role || 'student', young = opts.band === 'tiny' || opts.band === 'kid';
-  const skin = new THREE.Color(SKINS[cfg.skin ?? r(SKINS.length)]);
-  const hairStyle = cfg.hair ?? r(8);
-  const hairCol = new THREE.Color(HAIR_COLORS[cfg.hairColor ?? r(role === 'student' ? HAIR_COLORS.length : 6)]);
-  const outfit = new THREE.Color(OUTFITS[cfg.outfit ?? r(OUTFITS.length)]);
-  const mat = (c, o = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.65, metalness: 0.02, ...o });
+  const role = opts.role || 'student', band = opts.band || 'kid';
+  const older = role !== 'student' && role !== 'peer', young = band === 'tiny' || band === 'kid';
+  // the same choices, in the same order, as the 2D portrait, so both show the same person
+  const skinHex = SKINS[cfg.skin ?? r(SKINS.length)];
+  const style = cfg.hair ?? r(8);
+  const grey = older && rng() < 0.22;
+  const hairHex = grey ? '#c9ced8' : HAIR_COLORS[cfg.hairColor ?? r(role === 'student' ? HAIR_COLORS.length : 6)];
+  const outfitHex = role === 'doctor' ? '#ffffff' : OUTFITS[cfg.outfit ?? r(OUTFITS.length)];
+  const eye = EYE_COLORS[r(EYE_COLORS.length)];
+  const mat = (c, o = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.6, metalness: 0.02, ...o });
+  const skin = new THREE.Color(skinHex), hm = mat(hairHex, { roughness: 0.42 }), hm2 = mat(tint(hairHex, 0.12), { roughness: 0.35 });
+  const outfit = mat(outfitHex), trim = mat(tint(outfitHex, role === 'doctor' ? -0.12 : 0.2));
   const g = new THREE.Group();
-  const headR = young ? 0.78 : 0.66;
-  const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.62, 0.9, 6, 14), mat(role === 'doctor' ? 0xffffff : outfit)); body.position.y = 1.15; g.add(body);
-  const legs = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.42, 0.55, 14), mat(0x2a2f55)); legs.position.y = 0.28; g.add(legs);
-  const head = new THREE.Group(); head.position.y = 2.28 + (headR - 0.66);
-  head.add(new THREE.Mesh(new THREE.SphereGeometry(headR, 24, 18), mat(skin)));
-  for (const x of [-0.26, 0.26]) {
-    const white = new THREE.Mesh(new THREE.SphereGeometry(young ? 0.17 : 0.13, 12, 10), mat(0xffffff, { roughness: 0.3 })); white.position.set(x * (headR / 0.66), 0.06, headR * 0.86); head.add(white);
-    const pupil = new THREE.Mesh(new THREE.SphereGeometry(young ? 0.095 : 0.075, 10, 8), mat(0x1c1730, { roughness: 0.2 })); pupil.position.set(x * (headR / 0.66), 0.06, headR * 0.86 + (young ? 0.11 : 0.08)); head.add(pupil);
-  }
-  const smile = new THREE.Mesh(new THREE.TorusGeometry(0.2, 0.035, 6, 14, Math.PI), mat(0x7a2e2e)); smile.position.set(0, -0.22, headR * 0.9); smile.rotation.z = Math.PI; if (role === 'master') { smile.rotation.z = Math.PI * 1.08; smile.scale.set(0.8, 0.5, 1); } head.add(smile);
-  // hair
-  const hm = mat(role !== 'student' && role !== 'peer' && rng() < 0.25 ? 0xb9bfcc : hairCol, { roughness: 0.9 });
-  const cap = new THREE.Mesh(new THREE.SphereGeometry(headR * 1.04, 20, 14, 0, Math.PI * 2, 0, Math.PI * (hairStyle === 7 ? 0.36 : 0.5)), hm); cap.rotation.x = -0.25; head.add(cap);
-  if (hairStyle === 1 || hairStyle === 6) { const back = new THREE.Mesh(new THREE.CapsuleGeometry(headR * 0.82, 0.7, 4, 12), hm); back.position.set(0, -0.45, -0.28); head.add(back); }
-  if (hairStyle === 2) for (const [x, y] of [[-0.55, 0.3], [0.55, 0.3], [0, 0.72], [-0.36, 0.6], [0.36, 0.6]]) { const puff = new THREE.Mesh(new THREE.SphereGeometry(0.34, 10, 8), hm); puff.position.set(x, y, -0.05); head.add(puff); }
-  if (hairStyle === 3) { const bun = new THREE.Mesh(new THREE.SphereGeometry(0.28, 12, 10), hm); bun.position.set(0, headR + 0.12, -0.15); head.add(bun); }
-  if (hairStyle === 4) for (const x of [-1, 1]) { const tail = new THREE.Mesh(new THREE.CapsuleGeometry(0.14, 0.6, 4, 8), hm); tail.position.set(x * (headR + 0.05), -0.35, 0); head.add(tail); }
-  if (hairStyle === 5) for (let i = 0; i < 5; i++) { const spike = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.42, 6), hm); const a = (i - 2) * 0.42; spike.position.set(Math.sin(a) * headR * 0.8, headR * 0.92 * Math.cos(a * 0.6), 0.05); spike.rotation.z = -a; head.add(spike); }
-  if (role === 'teacher' || role === 'doctor') for (const x of [-0.26, 0.26]) { const rim = new THREE.Mesh(new THREE.TorusGeometry(0.2, 0.025, 6, 16), mat(0x1c1730)); rim.position.set(x * (headR / 0.66), 0.06, headR * 0.98); head.add(rim); }
-  if (role === 'layman') { const hat = new THREE.Mesh(new THREE.ConeGeometry(headR * 0.95, 0.6, 14), mat(outfit)); hat.position.y = headR * 0.98; head.add(hat); }
-  g.add(head);
-  const arm = (x) => { const a = new THREE.Group(); a.position.set(x * 0.72, 1.72, 0); const m = new THREE.Mesh(new THREE.CapsuleGeometry(0.16, 0.62, 4, 8), mat(role === 'doctor' ? 0xffffff : outfit)); m.position.y = -0.42; a.add(m); const hand = new THREE.Mesh(new THREE.SphereGeometry(0.17, 10, 8), mat(skin)); hand.position.y = -0.86; a.add(hand); a.rotation.z = x * 0.18; g.add(a); return a; };
+  const add = (parent, geo, m, x = 0, y = 0, z = 0, sx = 1, sy = 1, sz = 1) => { const o = new THREE.Mesh(geo, m); o.position.set(x, y, z); o.scale.set(sx, sy, sz); parent.add(o); return o; };
+  const ball = (rad, seg = 18) => new THREE.SphereGeometry(rad, seg, Math.max(10, seg - 4));
+
+  // body: rounded torso, collar, short legs, shoes
+  const body = add(g, new THREE.CapsuleGeometry(0.56, 0.62, 8, 18), outfit, 0, 1.05, 0, 1, 1, 0.82);
+  add(g, new THREE.TorusGeometry(0.36, 0.09, 8, 20), trim, 0, 1.68, 0.02).rotation.x = Math.PI / 2;
+  add(g, new THREE.SphereGeometry(0.2, 12, 10), mat(skin), 0, 1.72, 0);                                  // neck
+  for (const x of [-0.24, 0.24]) { add(g, new THREE.CapsuleGeometry(0.17, 0.26, 4, 10), mat(0x2f3566), x, 0.36, 0); add(g, ball(0.2, 12), mat(0x1d2140), x, 0.1, 0.1, 1, 0.6, 1.5); }
+  for (let i = 0; i < 2; i++) add(g, ball(0.045, 8), trim, 0, 1.3 - i * 0.3, 0.47);                         // buttons
+  const arm = (sx) => { const a = new THREE.Group(); a.position.set(sx * 0.6, 1.5, 0); add(a, new THREE.CapsuleGeometry(0.14, 0.52, 4, 10), outfit, 0, -0.36, 0); add(a, new THREE.TorusGeometry(0.14, 0.04, 6, 12), trim, 0, -0.66, 0).rotation.x = Math.PI / 2; add(a, ball(0.15, 12), mat(skin), 0, -0.78, 0); a.rotation.z = sx * 0.2; g.add(a); return a; };
   const armL = arm(-1), armR = arm(1);
-  if (role === 'master') { const cape = new THREE.Mesh(new THREE.ConeGeometry(1.0, 1.9, 16, 1, true, Math.PI * 0.5, Math.PI), mat(0x7a1f3d, { side: THREE.DoubleSide })); cape.position.set(0, 1.05, -0.15); g.add(cape); const collar = new THREE.Mesh(new THREE.TorusGeometry(0.52, 0.07, 6, 18), mat(0xffcf5c, { metalness: 0.5, roughness: 0.3 })); collar.position.y = 1.86; collar.rotation.x = Math.PI / 2; g.add(collar); }
-  if (role === 'teacher') { const tie = new THREE.Mesh(new THREE.ConeGeometry(0.13, 0.6, 4), mat(0xffffff)); tie.position.set(0, 1.4, 0.62); tie.rotation.x = Math.PI; g.add(tie); }
+
+  // head: big, with the painted face
+  const headR = young ? 0.92 : 0.82;
+  const head = new THREE.Group(); head.position.y = 1.78 + headR * 0.92;
+  const face = add(head, new THREE.SphereGeometry(headR, 40, 30), (() => { const map = faceTexture({ skin: skinHex, eye, brow: '#' + tint(hairHex, -0.2).getHexString(), role, young, sex: cfg.g || 'n' }); return new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: map, emissiveIntensity: 0.38, roughness: 0.8 }); })(), 0, 0, 0, 1, 1.04, 0.96);
+  face.rotation.y = -Math.PI / 2;
+  for (const x of [-1, 1]) add(head, ball(0.16, 12), mat(tint(skinHex, -0.04)), x * headR * 0.97, -0.02, 0, 0.6, 1, 0.8);   // ears
+  add(head, ball(0.06, 8), mat(tint(skinHex, -0.03)), 0, -0.1, headR * 0.95);                                              // nose
+
+  // hair: a cap over the crown plus a style on top
+  const R = headR * 1.06;
+  const crown = (thetaLen, tilt = -0.62) => { const o = add(head, new THREE.SphereGeometry(R, 32, 20, 0, Math.PI * 2, 0, thetaLen), hm, 0, 0.02, -0.02); o.rotation.x = tilt; return o; };
+  const lock = (x, y, z, rx, ry, rz, m = hm) => add(head, ball(1, 14), m, x, y, z, rx, ry, rz);
+  switch (style) {
+    case 0: crown(Math.PI * 0.46); lock(-0.3, headR * 0.86, headR * 0.42, 0.52, 0.18, 0.32, hm2).rotation.z = 0.35; lock(0.34, headR * 0.86, headR * 0.38, 0.4, 0.16, 0.3).rotation.z = -0.3; break;
+    case 1: crown(Math.PI * 0.47); lock(0, -0.55, -headR * 0.55, R * 0.92, 1.05, 0.5); for (const x of [-1, 1]) { lock(x * R * 0.92, -0.5, -0.05, 0.2, 0.9, 0.32); lock(x * R * 0.78, -1.15, -0.2, 0.17, 0.5, 0.26, hm2); } lock(-0.22, headR * 0.86, headR * 0.42, 0.5, 0.18, 0.3, hm2).rotation.z = 0.3; break;
+    case 2: crown(Math.PI * 0.45); for (let i = 0; i < 16; i++) { const an = (i / 16) * Math.PI * 2, ring = i % 2; lock(Math.cos(an) * R * (ring ? 0.95 : 0.6), headR * (ring ? 0.35 : 0.85) + (i % 3) * 0.05, Math.sin(an) * R * (ring ? 0.95 : 0.6) - 0.1, 0.34, 0.34, 0.34, i % 4 === 0 ? hm2 : hm); } lock(0, headR * 1.05, -0.05, 0.42, 0.36, 0.42); break;
+    case 3: crown(Math.PI * 0.46); lock(0, headR * 1.22, -0.12, 0.36, 0.34, 0.36, hm2); add(head, new THREE.TorusGeometry(0.25, 0.05, 6, 14), mat(0xff8fa3), 0, headR * 0.98, -0.1).rotation.x = Math.PI / 2; lock(-0.2, headR * 0.87, headR * 0.42, 0.46, 0.16, 0.3).rotation.z = 0.3; break;
+    case 4: crown(Math.PI * 0.46); for (const x of [-1, 1]) { for (let i = 0; i < 4; i++) lock(x * (R + 0.02 + i * 0.03), -0.25 - i * 0.36, 0.05, 0.2 - i * 0.02, 0.22, 0.2 - i * 0.02, i % 2 ? hm2 : hm); add(head, ball(0.1, 8), mat(0xffcf5c, { metalness: 0.4 }), x * R * 0.98, 0.02, 0.05); } lock(0, headR * 0.88, headR * 0.42, 0.5, 0.16, 0.3, hm2); break;
+    case 5: crown(Math.PI * 0.44); for (let i = 0; i < 9; i++) { const an = (i / 9) * Math.PI * 2; const sp = add(head, new THREE.ConeGeometry(0.2, 0.62, 7), i % 2 ? hm2 : hm, Math.cos(an) * R * 0.5, headR * 0.98, Math.sin(an) * R * 0.5 - 0.05); sp.rotation.set(Math.sin(an) * 0.5, 0, -Math.cos(an) * 0.5); } add(head, new THREE.ConeGeometry(0.22, 0.7, 7), hm2, 0, headR * 1.15, 0); break;
+    case 6: { const scarf = add(head, new THREE.SphereGeometry(R * 1.05, 32, 22, 0, Math.PI * 2, 0, Math.PI * 0.62), hm, 0, 0.02, -0.06); scarf.rotation.x = -0.5; lock(0, -headR * 0.95, -0.12, R * 0.98, 0.5, R * 0.9); lock(0, -headR * 0.7, headR * 0.62, 0.5, 0.26, 0.2, hm2); break; }
+    default: crown(Math.PI * 0.4, -0.5); break;
+  }
+
+  // what each role wears
+  if (role === 'teacher' || role === 'doctor') for (const x of [-1, 1]) { const rim = add(head, new THREE.TorusGeometry(headR * 0.25, 0.025, 6, 20), mat(0x2a2140), x * headR * 0.36, 0.02, headR * 0.93); rim.rotation.y = x * 0.32; }
+  if (role === 'teacher') { const tie = add(g, new THREE.ConeGeometry(0.11, 0.5, 4), mat(0xffffff), 0, 1.38, 0.47); tie.rotation.x = Math.PI; }
+  if (role === 'doctor') { const st = add(g, new THREE.TorusGeometry(0.3, 0.035, 6, 20, Math.PI * 1.2), mat(0x56618a), 0, 1.45, 0.42); st.rotation.z = Math.PI * 0.9; add(g, ball(0.08, 8), mat(0x8f9ac0, { metalness: 0.5 }), 0.22, 1.18, 0.5); }
+  if (role === 'layman') add(head, new THREE.ConeGeometry(headR * 0.8, 0.7, 18), outfit, 0, headR * 1.08, 0);
+  if (role === 'master') {
+    const cape = add(g, new THREE.ConeGeometry(1.05, 2.0, 22, 1, true, Math.PI * 0.5, Math.PI), mat(0x6b1a3a, { side: THREE.DoubleSide, roughness: 0.8 }), 0, 0.98, -0.12);
+    cape.userData.cape = true;
+    add(g, new THREE.TorusGeometry(0.44, 0.07, 8, 22), mat(0xffcf5c, { metalness: 0.6, roughness: 0.25 }), 0, 1.72, 0).rotation.x = Math.PI / 2;
+    add(g, new THREE.OctahedronGeometry(0.11), mat(0xffcf5c, { metalness: 0.6, roughness: 0.2, emissive: 0xffa800, emissiveIntensity: 0.4 }), 0, 1.55, 0.5);
+    for (const x of [-1, 1]) add(g, new THREE.ConeGeometry(0.22, 0.5, 4), mat(0x8a2450), x * 0.55, 1.75, -0.05).rotation.z = -x * 0.9;
+  }
+  g.add(head);
   // golden emblem on the uniform (hidden until earned)
-  const emblem = new THREE.Mesh(new THREE.OctahedronGeometry(0.2), new THREE.MeshStandardMaterial({ color: 0xf5b700, emissive: 0xf5b700, emissiveIntensity: 1.2, metalness: 0.7, roughness: 0.2 }));
-  emblem.position.set(0.3, 1.55, 0.6); emblem.visible = !!opts.emblem; g.add(emblem);
+  const emblem = add(g, new THREE.OctahedronGeometry(0.17), new THREE.MeshStandardMaterial({ color: 0xf5b700, emissive: 0xf5b700, emissiveIntensity: 1.2, metalness: 0.7, roughness: 0.2 }), 0.26, 1.42, 0.5);
+  emblem.visible = !!opts.emblem;
   g.userData = { head, armL, armR, emblem, body };
   return g;
 }

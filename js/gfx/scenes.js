@@ -80,7 +80,7 @@ export function mountJourney(host, { world, level, next, isDone, avatar, band, o
     nodes.push({ node, tag, s, open: done || now });
   }
   // the player stands on the next stage
-  const me = character(avatar, { role: 'student', band, emblem: next > 9 }); me.scale.setScalar(0.62);
+  const me = character(avatar, { role: 'student', band, emblem: next > 9 }); me.scale.setScalar(0.7);
   const at = nodes[Math.min(next, 10) - 1].node.position; me.position.set(at.x, at.y + 0.6, at.z); scene.add(me);
   const list = nodes.map((n) => n.node);
   const ctl = orbit(stage, { target: new THREE.Vector3(0, 5, 0), dist: 27, minDist: 12, maxDist: 44, pitch: 0.3, yaw: Math.atan2(at.x, at.z), autoSpin: 0.08,
@@ -88,7 +88,7 @@ export function mountJourney(host, { world, level, next, isDone, avatar, band, o
     onHover: (e, pick) => { const hit = pick(e, list); stage.el.style.cursor = hit && nodes[hit.object.userData.stage - 1].open ? 'pointer' : 'grab'; } });
   stage.onFrame((dt, time) => {
     for (const n of nodes) { if (n.s === next) n.node.scale.setScalar(1 + Math.sin(time * 4) * 0.12); if (n.s === 10) n.node.rotation.y += dt; }
-    me.position.y = at.y + 0.6 + Math.abs(Math.sin(time * 2.2)) * 0.18; me.rotation.y = ctl.state.yaw;
+    me.position.y = at.y + 0.6 + Math.abs(Math.sin(time * 2.2)) * 0.18; me.rotation.y = ctl.state.yaw; me.userData.head.rotation.z = Math.sin(time * 1.6) * 0.06;
     ctl.update(dt);
   });
   return { dispose: stage.dispose };
@@ -100,7 +100,7 @@ export function mountArena(host, { student, master, band, total }) {
   const stage = createStage(host, { height: (w) => Math.round(Math.max(190, Math.min(300, w * 0.48))), background: 0x17122b, alpha: false });
   stage.el.setAttribute('aria-label', t('Arena'));
   const { scene, camera } = stage;
-  const L = lights(scene, { ambient: 0.55, sun: 0.9 });
+  const L = lights(scene, { ambient: 0.85, sun: 1.1 });
   scene.add(stars(300, 90, 'arena'));
   const floorMat = new THREE.MeshStandardMaterial({ color: 0x3b2f66, emissive: 0x3b2f66, emissiveIntensity: 0.15, roughness: 0.6 });
   const floor = new THREE.Mesh(new THREE.CylinderGeometry(7.5, 8, 0.5, 44), floorMat); floor.position.y = -0.25; scene.add(floor);
@@ -111,8 +111,9 @@ export function mountArena(host, { student, master, band, total }) {
   const pillar = (x, c) => { const m = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1, 1.1), new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.5 })); m.position.set(x, 0, -3.4); m.scale.y = 0.05; scene.add(m); return m; };
   const pYou = pillar(-3.2, 0x3ddc97), pThem = pillar(3.2, 0xff6b8b);
   const spotY = new THREE.SpotLight(0xffffff, 60, 30, 0.5, 0.6); spotY.position.set(-3.2, 9, 4); spotY.target = you; const spotT = new THREE.SpotLight(0xffb3c6, 60, 30, 0.5, 0.6); spotT.position.set(3.2, 9, 4); spotT.target = them; scene.add(spotY, spotT);
-  you.scale.setScalar(1.25); them.scale.setScalar(1.25);
-  camera.position.set(0, 3.6, 10.5); camera.lookAt(0, 1.9, 0);
+  you.scale.setScalar(1.15); them.scale.setScalar(1.15);
+  you.rotation.y = 0.55; them.rotation.y = -0.55;
+  camera.position.set(0, 3.2, 11.2); camera.lookAt(0, 1.75, 0);
   let sy = 0, st = 0, won = null, glow = 0;
   const hop = { you: 0, them: 0 }, shake = { you: 0, them: 0 };
   const sparks = new THREE.Points(new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(new Float32Array(240 * 3), 3)), new THREE.PointsMaterial({ color: 0xffd76a, size: 0.22, transparent: true, opacity: 0 })); scene.add(sparks);
@@ -124,14 +125,14 @@ export function mountArena(host, { student, master, band, total }) {
       hop[k] = Math.max(0, hop[k] - dt * 2.2); shake[k] = Math.max(0, shake[k] - dt * 2.5);
       c.position.y = Math.sin(hop[k] * Math.PI) * 1.1; c.userData.head.rotation.y = Math.sin(time * 22) * 0.35 * shake[k];
       c.userData.armL.rotation.z = -0.18 - Math.sin(hop[k] * Math.PI) * 2.2; c.userData.armR.rotation.z = 0.18 + Math.sin(hop[k] * Math.PI) * 2.2;
-      c.userData.body.scale.y = 1 + Math.sin(time * 2 + (k === 'you' ? 0 : 1.5)) * 0.015;
+      c.userData.body.scale.y = 1 + Math.sin(time * 2 + (k === 'you' ? 0 : 1.5)) * 0.015; c.userData.head.rotation.z = Math.sin(time * 1.3 + (k === 'you' ? 0 : 2)) * 0.05;
     }
     if (won === true) {
       // the arena fills with light and a golden emblem appears on the student's uniform
       glow = Math.min(1, glow + dt * 0.7);
       scene.background.lerpColors(col(0x17122b), col(0xffe9a8), glow);
       floorMat.emissive.lerpColors(col(0x3b2f66), col(0xffc93c), glow); floorMat.emissiveIntensity = 0.15 + glow * 0.9;
-      L.hemi.intensity = 0.55 + glow * 1.6; spotY.intensity = 60 + glow * 240; spotY.color.set(0xfff0b8);
+      L.hemi.intensity = 0.85 + glow * 1.4; spotY.intensity = 60 + glow * 240; spotY.color.set(0xfff0b8);
       you.userData.emblem.visible = true; you.userData.emblem.rotation.y += dt * 3; you.userData.emblem.scale.setScalar(1 + glow * 1.4);
       if (hop.you <= 0) hop.you = 1;
       const pos = sparks.geometry.attributes.position; sparks.material.opacity = 1;

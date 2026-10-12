@@ -4,7 +4,7 @@ import { h, clear, toast, rngFrom, shuffle, uid } from '../core/util.js';
 import { t, LANGS, lang } from '../core/i18n.js';
 import { device, profile, createProfile, signIn, save, syncMeta, importProfile } from '../core/store.js';
 import { screenAge, needsGuardian, makeGuardian, BANDS } from '../core/safety.js';
-import { avatarEl, SKINS, HAIR_COLORS, OUTFITS, HAIR_STYLES, CAST_THEMES, randomAvatar } from '../core/avatar.js';
+import { avatarEl, SKINS, HAIR_COLORS, OUTFITS, HAIR_STYLES, CAST_THEMES, randomAvatar, TYPICAL_HAIR } from '../core/avatar.js';
 import { nameMenu } from '../core/names.js';
 import { speak, canSpeakLang } from '../core/speech.js';
 import { sfx } from '../core/audio.js';
@@ -14,6 +14,24 @@ import { changeLanguage, installApp, isInstalled, applySettings } from '../app.j
 
 const langPicker = () => h('div', { class: 'row center', role: 'group', 'aria-label': 'Language' }, LANGS.map((l) =>
   h('button', { class: 'chip' + (l.code === lang ? ' on' : ''), lang: l.code, onClick: () => changeLanguage(l.code) }, l.flag, ' ', l.name)));
+
+// "Male / Female / Rather not say": shapes how the character is drawn, and nothing else in the game.
+function lookChoice(av, redraw) {
+  const pick = (v) => { av.g = v; if (!TYPICAL_HAIR[v].includes(av.hair)) av.hair = TYPICAL_HAIR[v][0]; redraw(); };
+  return h('div', { class: 'field mt' }, h('span', null, t('My character is')),
+    h('div', { class: 'row', role: 'radiogroup' }, [['m', '👦', 'Male'], ['f', '👧', 'Female'], ['n', '🙂', 'Rather not say']].map(([v, e, label]) => h('button', { class: 'chip', role: 'radio', 'aria-checked': String((av.g || 'n') === v), 'aria-pressed': String((av.g || 'n') === v), onClick: () => pick(v) }, e, ' ', t(label)))),
+    h('span', { class: 'tiny muted' }, t('This only changes how your character is drawn. Every hair style and colour stays open to everyone, and lessons are the same for all.')));
+}
+
+// A short row of hair styles that suit the chosen look; "More styles" opens the rest.
+let moreHair = false;
+function hairPicker(av, band, cast, redraw) {
+  const typical = TYPICAL_HAIR[av.g || 'n'];
+  const list = moreHair || !typical.includes(av.hair) ? Array.from({ length: HAIR_STYLES }, (_, i) => i) : typical;
+  return h('div', { class: 'field' }, h('span', null, t('Hair style')), h('div', { class: 'row' },
+    list.map((i) => h('button', { class: 'chip', style: { padding: '3px', borderRadius: '50%' }, 'aria-label': `${t('Hair style')} ${i + 1}`, 'aria-pressed': String(av.hair === i), onClick: () => { av.hair = i; redraw(); } }, avatarEl({ ...av, hair: i }, { band, role: 'student', cast }))),
+    list.length < HAIR_STYLES ? h('button', { class: 'chip', onClick: () => { moreHair = true; redraw(); } }, '➕ ', t('More styles')) : null));
+}
 
 // ---------- welcome ----------
 export function welcome(main) {
@@ -151,13 +169,13 @@ export function join(main) {
     const drawPrev = () => clear(prev).append(avatarEl(data.avatar, { band: data.band, role: 'student', size: 'xl', cast: data.cast }), h('div', { class: 'col' }, avatarEl({ seed: seed + 't' }, { band: data.band, role: 'teacher', cast: data.cast }), avatarEl({ seed: seed + 'm' }, { band: data.band, role: 'master', cast: data.cast })));
     const swatches = (key, cols) => h('div', { class: 'row' }, cols.map((c, i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(data.avatar[key] === i), style: { background: c, width: '40px', height: '40px', padding: 0 }, onClick: () => { data.avatar[key] = i; draw(); } })));
     drawPrev();
-    box.append(sectionTitle('🧑‍🎨', t('Create your character')), prev,
-      h('div', { class: 'field mt' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
-      h('div', { class: 'field' }, h('span', null, t('Hair style')), h('div', { class: 'row' }, Array.from({ length: HAIR_STYLES }, (_, i) => h('button', { class: 'chip', style: { padding: '2px' }, 'aria-label': `${t('Hair style')} ${i + 1}`, 'aria-pressed': String(data.avatar.hair === i), onClick: () => { data.avatar.hair = i; draw(); } }, avatarEl({ ...data.avatar, hair: i }, { band: data.band, role: 'student', size: 'sm', cast: data.cast }))))),
+    box.append(sectionTitle('🧑‍🎨', t('Create your character')), prev, lookChoice(data.avatar, draw),
+      h('div', { class: 'field' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
+      hairPicker(data.avatar, data.band, data.cast, draw),
       h('div', { class: 'field' }, h('span', null, t('Hair colour')), swatches('hairColor', HAIR_COLORS)),
       h('div', { class: 'field' }, h('span', null, t('Uniform colour')), swatches('outfit', OUTFITS)),
       h('div', { class: 'field' }, h('span', null, t('Style of your teachers and masters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(data.cast === i), onClick: () => { data.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
-      h('div', { class: 'row' }, h('button', { class: 'btn ghost', onClick: () => { data.avatar = randomAvatar(); draw(); } }, '🎲 ', t('Surprise me')), h('button', { class: 'btn', onClick: next }, t('Continue'), ' →')));
+      h('div', { class: 'row' }, h('button', { class: 'btn ghost', onClick: () => { data.avatar = randomAvatar(Math.random, data.avatar.g || 'n'); draw(); } }, '🎲 ', t('Surprise me')), h('button', { class: 'btn', onClick: next }, t('Continue'), ' →')));
   }
 
   function finishStep() {
@@ -328,13 +346,14 @@ export function editLook(main) {
     const swatches = (key, cols) => h('div', { class: 'row' }, cols.map((c, i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(draft.avatar[key] === i), style: { background: c, width: '40px', height: '40px', padding: 0 }, onClick: () => { draft.avatar[key] = i; draw(); } })));
     clear(box).append(
       h('div', { class: 'row center' }, avatarEl(draft.avatar, { band: p.band, role: 'student', size: 'xl', cast: draft.cast, emblem: Object.values(p.worlds).some((w) => w.completed.length) }), h('div', { class: 'col' }, avatarEl({ seed: p.id + 't' }, { band: p.band, role: 'teacher', cast: draft.cast }), avatarEl({ seed: p.id + 'm' }, { band: p.band, role: 'master', cast: draft.cast }))),
-      h('div', { class: 'field mt' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
-      h('div', { class: 'field' }, h('span', null, t('Hair style')), h('div', { class: 'row' }, Array.from({ length: HAIR_STYLES }, (_, i) => h('button', { class: 'chip', style: { padding: '2px' }, 'aria-label': `${t('Hair style')} ${i + 1}`, 'aria-pressed': String(draft.avatar.hair === i), onClick: () => { draft.avatar.hair = i; draw(); } }, avatarEl({ ...draft.avatar, hair: i }, { band: p.band, role: 'student', size: 'sm', cast: draft.cast }))))),
+      lookChoice(draft.avatar, draw),
+      h('div', { class: 'field' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
+      hairPicker(draft.avatar, p.band, draft.cast, draw),
       h('div', { class: 'field' }, h('span', null, t('Hair colour')), swatches('hairColor', HAIR_COLORS)),
       h('div', { class: 'field' }, h('span', null, t('Uniform colour')), swatches('outfit', OUTFITS)),
       h('div', { class: 'field' }, h('span', null, t('Style of your teachers and masters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(draft.cast === i), onClick: () => { draft.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
       h('div', { class: 'row' },
-        h('button', { class: 'btn ghost', onClick: () => { draft.avatar = randomAvatar(); draw(); } }, '🎲 ', t('Surprise me')),
+        h('button', { class: 'btn ghost', onClick: () => { draft.avatar = randomAvatar(Math.random, draft.avatar.g || 'n'); draw(); } }, '🎲 ', t('Surprise me')),
         h('button', { class: 'btn', onClick: () => { p.avatar = { ...draft.avatar }; p.cast = draft.cast; save(true); syncMeta(); sfx('ok'); toast('✨ ' + t('Your new look is saved.')); go('dashboard'); } }, '💾 ', t('Save')),
         h('button', { class: 'btn ghost', onClick: () => history.length > 1 ? go('dashboard') : go('home') }, t('Cancel'))));
   };

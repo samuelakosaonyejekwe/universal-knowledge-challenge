@@ -19,31 +19,56 @@ function shade(hex, amt) {
   return '#' + [n >> 16, (n >> 8) & 255, n & 255].map((v) => ch(v).toString(16).padStart(2, '0')).join('');
 }
 
-// Hair drawn in two layers: `back` sits behind the head and shoulders, `front` frames the face.
-function hair(style, c, hi) {
-  const shine = (d) => `<path d="${d}" fill="none" stroke="${hi}" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>`;
+// Hair in two layers on a 200-unit canvas: `back` sits behind the head and shoulders, `front` frames the face.
+// Big, sweeping shapes with painted highlight strands, in the manner of classic hand-drawn animation.
+function hair(style, fill, hi, lo) {
+  const strand = (d, w = 4) => `<path d="${d}" fill="none" stroke="${hi}" stroke-width="${w}" stroke-linecap="round" opacity=".8"/>`;
+  const dark = (d, w = 3) => `<path d="${d}" fill="none" stroke="${lo}" stroke-width="${w}" stroke-linecap="round" opacity=".55"/>`;
   switch (style) {
-    case 0: return { back: `<path d="M24 46 C20 18 80 16 78 46 C78 56 74 60 72 62 L28 62 C24 58 24 52 24 46Z" fill="${c}"/>`,
-      front: `<path d="M25 44 C24 22 52 14 66 20 C76 24 79 36 76 46 C72 34 62 28 46 30 C36 31 28 36 25 44Z" fill="${c}"/>${shine('M36 27 C46 21 58 21 66 26')}` };
-    case 1: return { back: `<path d="M22 44 C16 10 84 10 78 44 C82 62 88 78 80 96 L20 96 C12 78 18 62 22 44Z" fill="${c}"/>${shine('M24 60 C20 72 20 84 23 93')}${shine('M78 62 C82 74 81 84 78 92')}`,
-      front: `<path d="M25 46 C22 22 46 14 60 18 C74 20 80 34 76 48 C72 36 64 30 54 30 C50 36 36 38 25 46Z" fill="${c}"/>${shine('M34 28 C42 22 54 21 62 24')}` };
-    case 2: return { back: `<g fill="${c}"><circle cx="50" cy="28" r="26"/><circle cx="26" cy="36" r="14"/><circle cx="74" cy="36" r="14"/><circle cx="24" cy="54" r="11"/><circle cx="76" cy="54" r="11"/><circle cx="36" cy="14" r="12"/><circle cx="64" cy="14" r="12"/></g>`,
-      front: `<path d="M27 42 C28 28 40 22 50 23 C60 22 72 28 73 42 C66 34 58 31 50 32 C42 31 34 34 27 42Z" fill="${c}"/><g fill="${hi}" opacity=".5"><circle cx="38" cy="16" r="3"/><circle cx="60" cy="12" r="3"/><circle cx="74" cy="30" r="2.6"/><circle cx="26" cy="32" r="2.6"/></g>` };
-    case 3: return { back: `<circle cx="50" cy="10" r="11" fill="${c}"/><path d="M24 46 C22 20 78 20 76 46 L72 58 L28 58Z" fill="${c}"/>`,
-      front: `<path d="M25 45 C24 24 44 17 54 18 C68 19 78 30 76 46 C70 36 62 30 50 31 C40 31 30 36 25 45Z" fill="${c}"/>${shine('M43 9 C47 5 54 5 57 9')}${shine('M36 27 C44 22 56 22 64 26')}<path d="M40 19 Q50 14 60 19" fill="none" stroke="#ff8fa3" stroke-width="2.6" stroke-linecap="round"/>` };
-    case 4: return { back: `<path d="M24 46 C22 18 78 18 76 46 L72 58 L28 58Z" fill="${c}"/><g fill="${c}"><ellipse cx="17" cy="62" rx="7" ry="9"/><ellipse cx="15" cy="78" rx="6.5" ry="8.5"/><ellipse cx="14" cy="92" rx="5.5" ry="7"/><ellipse cx="83" cy="62" rx="7" ry="9"/><ellipse cx="85" cy="78" rx="6.5" ry="8.5"/><ellipse cx="86" cy="92" rx="5.5" ry="7"/></g><g fill="#ffcf5c"><circle cx="19" cy="54" r="3.2"/><circle cx="81" cy="54" r="3.2"/></g>`,
-      front: `<path d="M25 45 C24 22 76 22 75 45 C68 32 58 29 50 36 C42 29 32 32 25 45Z" fill="${c}"/>${shine('M34 28 C40 23 46 23 50 28')}${shine('M54 27 C60 23 66 24 70 30')}` };
-    case 5: return { back: `<path d="M24 46 C22 22 78 22 76 46 L72 56 L28 56Z" fill="${c}"/>`,
-      front: `<path d="M24 46 L27 24 L34 32 L38 14 L46 28 L52 10 L57 27 L66 14 L68 30 L76 24 L76 46 C70 36 62 31 50 32 C38 31 30 36 24 46Z" fill="${c}"/>${shine('M40 20 L44 28')}${shine('M53 16 L55 26')}${shine('M65 20 L66 28')}` };
-    case 6: return { back: `<path d="M18 52 C10 10 90 10 82 52 C86 70 84 88 78 100 L22 100 C16 88 14 70 18 52Z" fill="${c}"/>`,
-      front: `<path d="M24 50 C20 22 80 22 76 50 C76 34 64 26 50 26 C36 26 24 34 24 50Z" fill="${c}"/><path d="M24 50 C24 66 34 78 50 80 C66 78 76 66 76 50 C78 70 68 86 50 88 C32 86 22 70 24 50Z" fill="${c}"/>${shine('M30 30 C40 22 60 22 70 30')}` };
-    default: return { back: `<path d="M26 44 C24 20 76 20 74 44 L72 52 L28 52Z" fill="${c}"/>`,
-      front: `<path d="M27 42 C27 24 73 24 73 42 C66 32 58 29 50 29 C42 29 34 32 27 42Z" fill="${c}"/>${shine('M38 27 C46 24 54 24 62 27')}` };
+    case 0: return { back: `<path d="M52 92 C44 34 156 34 148 92 L144 108 L56 108Z" fill="${fill}"/>`,
+      front: `<path d="M54 90 C48 50 92 30 124 40 C146 46 154 70 147 92 C140 72 126 62 104 63 C92 74 70 76 54 90Z" fill="${fill}"/>${strand('M68 58 C84 44 108 40 128 48', 5)}${strand('M62 74 C72 64 86 60 98 60', 3)}${dark('M104 63 C96 72 82 76 66 82')}` };
+    case 1: return { back: `<path d="M46 92 C30 22 170 22 154 92 C162 120 184 140 176 172 C172 186 180 194 168 200 L32 200 C20 194 28 186 24 172 C16 140 38 120 46 92Z" fill="${fill}"/>${strand('M34 132 C24 150 26 172 36 190', 5)}${strand('M166 130 C178 150 176 172 166 190', 5)}${dark('M44 120 C38 140 42 164 52 184', 4)}${dark('M156 120 C162 140 158 164 148 184', 4)}`,
+      front: `<path d="M56 94 C46 52 80 34 110 38 C140 40 156 66 147 94 C140 74 126 62 108 61 C98 78 76 82 56 94Z" fill="${fill}"/>${strand('M66 60 C82 44 108 40 130 50', 5)}${strand('M60 78 C70 66 84 62 98 61', 3)}${dark('M108 61 C100 74 84 80 68 86')}<path d="M146 90 C152 104 150 118 146 128 C142 116 142 102 146 90Z" fill="${fill}"/><path d="M54 90 C48 104 50 118 54 128 C58 116 58 102 54 90Z" fill="${fill}"/>` };
+    case 2: return { back: `<g fill="${fill}"><circle cx="100" cy="52" r="46"/><circle cx="56" cy="64" r="26"/><circle cx="144" cy="64" r="26"/><circle cx="48" cy="96" r="21"/><circle cx="152" cy="96" r="21"/><circle cx="72" cy="28" r="23"/><circle cx="128" cy="28" r="23"/><circle cx="100" cy="16" r="20"/></g>`,
+      front: `<g fill="${fill}"><circle cx="66" cy="70" r="13"/><circle cx="82" cy="60" r="13"/><circle cx="100" cy="57" r="13"/><circle cx="118" cy="60" r="13"/><circle cx="134" cy="70" r="13"/></g><g fill="${hi}" opacity=".6"><circle cx="76" cy="26" r="5"/><circle cx="118" cy="20" r="5"/><circle cx="146" cy="52" r="4.5"/><circle cx="52" cy="56" r="4.5"/><circle cx="96" cy="50" r="4"/><circle cx="124" cy="56" r="3.5"/></g>` };
+    case 3: return { back: `<circle cx="100" cy="24" r="21" fill="${fill}"/>${strand('M88 16 C94 8 108 8 113 16', 4)}<path d="M52 92 C46 40 154 40 148 92 L142 110 L58 110Z" fill="${fill}"/>`,
+      front: `<path d="M54 92 C50 54 86 40 100 50 C114 40 150 54 146 92 C136 72 120 62 100 66 C80 62 64 72 54 92Z" fill="${fill}"/>${strand('M64 66 C74 54 88 50 98 54', 4)}${strand('M104 54 C114 50 128 54 136 66', 4)}<path d="M82 40 Q100 30 118 40" fill="none" stroke="#ff7fa8" stroke-width="6" stroke-linecap="round"/>` };
+    case 4: return { back: `<path d="M52 92 C46 38 154 38 148 92 L142 110 L58 110Z" fill="${fill}"/><g fill="${fill}"><ellipse cx="38" cy="116" rx="13" ry="16"/><ellipse cx="34" cy="142" rx="12" ry="15"/><ellipse cx="32" cy="166" rx="11" ry="14"/><ellipse cx="31" cy="188" rx="9" ry="12"/><ellipse cx="162" cy="116" rx="13" ry="16"/><ellipse cx="166" cy="142" rx="12" ry="15"/><ellipse cx="168" cy="166" rx="11" ry="14"/><ellipse cx="169" cy="188" rx="9" ry="12"/></g>${strand('M30 110 C34 118 40 122 46 120', 3)}${strand('M27 136 C31 144 37 148 43 146', 3)}${strand('M170 110 C166 118 160 122 154 120', 3)}${strand('M173 136 C169 144 163 148 157 146', 3)}<g fill="#ffcf5c" stroke="#fff3c4"><circle cx="42" cy="100" r="6"/><circle cx="158" cy="100" r="6"/></g>`,
+      front: `<path d="M54 92 C50 46 150 46 146 92 C134 68 116 60 100 72 C84 60 66 68 54 92Z" fill="${fill}"/>${strand('M66 64 C76 54 90 54 98 62', 4)}${strand('M104 60 C114 54 126 56 134 66', 4)}` };
+    case 5: return { back: `<path d="M52 92 C46 44 154 44 148 92 L144 106 L56 106Z" fill="${fill}"/>`,
+      front: `<path d="M52 92 L56 50 L70 66 L76 30 L92 58 L102 22 L112 56 L128 30 L132 64 L146 50 L148 92 C138 72 120 63 100 65 C80 63 62 72 52 92Z" fill="${fill}"/>${strand('M79 40 L88 58', 4)}${strand('M103 32 L107 54', 4)}${strand('M127 40 L129 60', 4)}${dark('M60 60 L68 72')}` };
+    case 6: return { back: `<path d="M38 104 C20 14 180 14 162 104 C170 142 166 178 154 200 L46 200 C34 178 30 142 38 104Z" fill="${fill}"/>${strand('M50 54 C70 28 130 28 150 54', 5)}`,
+      front: `<path d="M50 102 C42 44 158 44 150 102 C150 70 128 54 100 54 C72 54 50 70 50 102Z" fill="${fill}"/><path d="M50 102 C52 134 72 158 100 162 C128 158 148 134 150 102 C156 144 136 178 100 182 C64 178 44 144 50 102Z" fill="${fill}"/>${dark('M62 150 C76 166 124 166 138 150', 3)}` };
+    default: return { back: `<path d="M54 88 C50 40 150 40 146 88 L142 100 L58 100Z" fill="${fill}"/>`,
+      front: `<path d="M56 84 C56 48 144 48 144 84 C132 66 116 59 100 59 C84 59 68 66 56 84Z" fill="${fill}"/>${strand('M76 56 C90 50 110 50 124 56', 4)}` };
   }
 }
 
-// cfg: { seed } or explicit { skin, hair, hairColor, outfit }. opts: { band, role, cast, emblem }.
-// An original storybook-animation look: large bright eyes, soft shading, flowing hair with highlights.
+// One large, bright eye: an almond shape with a shaded iris, deep pupil, two sparkles, a bold upper lid and lashes.
+function eyeSVG(id, x, y, sx, k, eye, sex, older, master) {
+  const w = 15.5 * k, up = 15 * k, down = 11 * k, ir = 10.2 * k;
+  const shape = `M${x - w} ${y} Q${x} ${y - up * 1.25} ${x + w} ${y - 1} Q${x} ${y + down * 1.3} ${x - w} ${y}Z`;
+  let s = `<clipPath id="${id}"><path d="${shape}"/></clipPath><path d="${shape}" fill="#fff"/>`;
+  s += `<g clip-path="url(#${id})"><circle cx="${x + sx * 1.2}" cy="${y + 0.5}" r="${ir}" fill="${eye}"/><circle cx="${x + sx * 1.2}" cy="${y + 3}" r="${ir * 0.72}" fill="${shade(eye, 0.35)}"/><circle cx="${x + sx * 1.2}" cy="${y + 0.5}" r="${ir * 0.46}" fill="#160f28"/>`
+    + `<path d="M${x - w} ${y - up} L${x + w} ${y - up} L${x + w} ${y - up * 0.42} Q${x} ${y - up * 0.9} ${x - w} ${y - up * 0.3}Z" fill="#1b1430" opacity=".16"/></g>`;
+  s += `<circle cx="${x + 4.6 * k}" cy="${y - 4.6 * k}" r="${3.6 * k}" fill="#fff"/><circle cx="${x - 4 * k}" cy="${y + 4.4 * k}" r="${1.7 * k}" fill="#fff" opacity=".9"/>`;
+  // bold upper lid sweeping out into a wing
+  const lid = master ? 4.6 : sex === 'm' ? 3.6 : older ? 3.4 : 4.2;
+  s += `<path d="M${x - w - 1} ${y + 1} Q${x} ${y - up * 1.32} ${x + w + 1} ${y - 1.5}" fill="none" stroke="#1b1430" stroke-width="${lid}" stroke-linecap="round"/>`;
+  s += `<path d="M${x - w * 0.7} ${y + down * 0.72} Q${x} ${y + down * 1.18} ${x + w * 0.8} ${y + down * 0.5}" fill="none" stroke="#1b1430" stroke-width="1.2" stroke-linecap="round" opacity=".45"/>`;
+  if (sex !== 'm' && !master) {
+    const ox = x + sx * (w + 1), oy = y - 1.5;
+    s += `<path d="M${ox} ${oy} q${sx * 5.5} -2.5 ${sx * 7.5} -7.5" fill="none" stroke="#1b1430" stroke-width="${sex === 'f' ? 3 : 2.4}" stroke-linecap="round"/>`;
+    if (sex === 'f') s += `<path d="M${x + sx * w * 0.62} ${y - up * 0.72} q${sx * 4} -3 ${sx * 5} -7.5" fill="none" stroke="#1b1430" stroke-width="2.2" stroke-linecap="round"/><path d="M${x + sx * w * 0.2} ${y - up * 0.98} q${sx * 2} -3 ${sx * 2.4} -6.5" fill="none" stroke="#1b1430" stroke-width="1.8" stroke-linecap="round"/>`;
+  }
+  // eyelid crease
+  s += `<path d="M${x - w * 0.8} ${y - up * 0.98} Q${x} ${y - up * 1.72} ${x + w * 0.9} ${y - up * 0.92}" fill="none" stroke="#1b1430" stroke-width="1.1" stroke-linecap="round" opacity=".28"/>`;
+  return s;
+}
+
+// cfg: { seed } or explicit { g, skin, hair, hairColor, outfit }. opts: { band, role, cast, emblem }.
+// An original portrait style in the tradition of classic hand-drawn animated films: very large luminous eyes,
+// a small nose, a heart-shaped face, and big sweeping hair with painted highlights.
 export function avatarSVG(cfg = {}, opts = {}) {
   const rng = rngFrom('ava' + (cfg.seed ?? JSON.stringify(cfg)));
   const r = (n) => Math.floor(rng() * n);
@@ -55,50 +80,53 @@ export function avatarSVG(cfg = {}, opts = {}) {
   const outfit = role === 'doctor' ? '#ffffff' : OUTFITS[cfg.outfit ?? r(OUTFITS.length)];
   const eye = EYES[r(EYES.length)];
   const theme = CAST_THEMES[(opts.cast ?? 0) % CAST_THEMES.length];
-  const tiny = band === 'tiny', kid = band === 'kid';
-  // The younger the player, the larger and rounder the eyes.
-  const ex = tiny ? 12.5 : 12, ey = 47, erx = tiny ? 6.6 : kid ? 6 : older ? 4.6 : 5.2, ery = tiny ? 7.8 : kid ? 7 : older ? 5 : 5.8;
+  const tiny = band === 'tiny', kid = band === 'kid', master = role === 'master';
+  // 'm' / 'f' / 'n' (rather not say): chosen by the player; it shapes the face a little — nothing else in the game.
+  const sex = cfg.g || (cfg.seed != null ? ['m', 'f', 'n'][r(3)] : 'n');
+  const k = tiny ? 1.16 : kid ? 1.08 : older ? 0.9 : 1;         // the younger the player, the bigger the eyes
   const id = 'a' + Math.floor(rng() * 1e9).toString(36);
-  const master = role === 'master';
-  const H = hair(style, hairCol, shade(hairCol, 0.45));
-  const lip = shade(skin, -0.38), line = shade(skin, -0.5);
-  let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-hidden="true"><defs>`
-    + `<radialGradient id="${id}b" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="${master ? '#5a4a9a' : theme.bg[0]}"/><stop offset="1" stop-color="${master ? '#1b1436' : theme.bg[1]}"/></radialGradient>`
-    + `<radialGradient id="${id}s" cx=".42" cy=".36" r=".75"><stop offset="0" stop-color="${shade(skin, 0.22)}"/><stop offset=".7" stop-color="${skin}"/><stop offset="1" stop-color="${shade(skin, -0.14)}"/></radialGradient>`
-    + `<linearGradient id="${id}o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(outfit, 0.18)}"/><stop offset="1" stop-color="${shade(outfit, -0.22)}"/></linearGradient>`
-    + `<radialGradient id="${id}i" cx=".5" cy=".7" r=".7"><stop offset="0" stop-color="${shade(eye, 0.45)}"/><stop offset="1" stop-color="${eye}"/></radialGradient></defs>`;
-  s += `<rect width="100" height="100" fill="url(#${id}b)"/>`;
-  if (!master) s += `<g fill="#fff" opacity=".55"><circle cx="14" cy="16" r="1.6"/><circle cx="86" cy="22" r="1.2"/><circle cx="90" cy="60" r="1.4"/><circle cx="9" cy="66" r="1.1"/></g>`;
+  const H = hair(style, `url(#${id}h)`, shade(hairCol, 0.5), shade(hairCol, -0.35));
+  const lip = sex === 'f' ? shade('#e0567a', skin === SKINS[4] || skin === SKINS[5] ? -0.25 : 0) : shade(skin, -0.36), line = shade(skin, -0.42);
+  const ex = 24, ey = 98;
+  let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-hidden="true"><defs>`
+    + `<radialGradient id="${id}b" cx=".5" cy=".3" r=".85"><stop offset="0" stop-color="${master ? '#6a58b8' : theme.bg[0]}"/><stop offset="1" stop-color="${master ? '#1b1436' : theme.bg[1]}"/></radialGradient>`
+    + `<radialGradient id="${id}s" cx=".45" cy=".38" r=".7"><stop offset="0" stop-color="${shade(skin, 0.2)}"/><stop offset=".72" stop-color="${skin}"/><stop offset="1" stop-color="${shade(skin, -0.16)}"/></radialGradient>`
+    + `<linearGradient id="${id}o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(outfit, 0.2)}"/><stop offset="1" stop-color="${shade(outfit, -0.25)}"/></linearGradient>`
+    + `<linearGradient id="${id}h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(hairCol, 0.22)}"/><stop offset=".45" stop-color="${hairCol}"/><stop offset="1" stop-color="${shade(hairCol, -0.28)}"/></linearGradient>`
+    + `<radialGradient id="${id}c"><stop offset="0" stop-color="#ff6f91" stop-opacity=".55"/><stop offset="1" stop-color="#ff6f91" stop-opacity="0"/></radialGradient></defs>`;
+  s += `<rect width="200" height="200" fill="url(#${id}b)"/>`;
+  if (!master) s += `<g fill="#fff" opacity=".6"><circle cx="24" cy="30" r="3"/><circle cx="176" cy="40" r="2.4"/><circle cx="182" cy="118" r="2.8"/><circle cx="16" cy="128" r="2.2"/><circle cx="160" cy="18" r="1.6"/><circle cx="36" cy="70" r="1.4"/></g>`;
   s += H.back;
   // shoulders and clothes
-  if (master) s += `<path d="M6 100 Q12 70 50 68 Q88 70 94 100Z" fill="#6b1a3a"/><path d="M28 100 L34 72 L50 68 L66 72 L72 100Z" fill="url(#${id}o)"/><path d="M34 72 L50 86 L66 72" fill="none" stroke="#ffcf5c" stroke-width="2.6" stroke-linejoin="round"/><path d="M30 70 L24 58 L40 68Z M70 70 L76 58 L60 68Z" fill="#8a2450"/><circle cx="50" cy="88" r="3.2" fill="#ffcf5c" stroke="#fff3c4"/>`;
-  else if (role === 'doctor') s += `<path d="M10 100 Q14 72 50 70 Q86 72 90 100Z" fill="url(#${id}o)" stroke="#d5dbec"/><path d="M42 71 L50 84 L58 71" fill="${OUTFITS[r(OUTFITS.length)]}"/><path d="M42 71 L36 100 M58 71 L64 100" stroke="#d5dbec" stroke-width="1.5"/><path d="M38 76 Q30 92 40 94" fill="none" stroke="#56618a" stroke-width="2.2" stroke-linecap="round"/><circle cx="41.5" cy="94" r="3" fill="#8f9ac0" stroke="#56618a"/>`;
-  else s += `<path d="M10 100 Q14 72 50 70 Q86 72 90 100Z" fill="url(#${id}o)"/><path d="M40 71 Q50 82 60 71 L57 69 Q50 76 43 69Z" fill="${shade(outfit, 0.4)}"/>`;
-  if (role === 'teacher') s += `<path d="M46 76 L50 80 L54 76 L52.5 98 L47.5 98Z" fill="#fff" opacity=".9"/>`;
-  // neck, ears, face
-  s += `<path d="M43 62 L43 73 Q50 78 57 73 L57 62Z" fill="${shade(skin, -0.12)}"/>`;
-  s += `<ellipse cx="25.5" cy="48" rx="4" ry="5.2" fill="${shade(skin, -0.06)}"/><ellipse cx="74.5" cy="48" rx="4" ry="5.2" fill="${shade(skin, -0.06)}"/>`;
-  s += `<path d="M26 43 C26 22 74 22 74 43 C74 58 63 71 50 71 C37 71 26 58 26 43Z" fill="url(#${id}s)"/>`;
-  s += `<ellipse cx="${50 - ex - 3}" cy="57.5" rx="5" ry="3" fill="#ff7f9a" opacity="${tiny || kid ? 0.42 : 0.26}"/><ellipse cx="${50 + ex + 3}" cy="57.5" rx="5" ry="3" fill="#ff7f9a" opacity="${tiny || kid ? 0.42 : 0.26}"/>`;
-  // eyes: white, shaded iris, pupil, two sparkles, lashes
+  if (master) s += `<path d="M10 200 Q22 150 100 146 Q178 150 190 200Z" fill="#6b1a3a"/><path d="M58 200 L68 152 L100 146 L132 152 L142 200Z" fill="url(#${id}o)"/><path d="M68 152 L100 180 L132 152" fill="none" stroke="#ffcf5c" stroke-width="5" stroke-linejoin="round"/><path d="M62 148 L46 118 L82 142Z M138 148 L154 118 L118 142Z" fill="#8a2450"/><circle cx="100" cy="184" r="6.5" fill="#ffcf5c" stroke="#fff3c4" stroke-width="2"/>`;
+  else if (role === 'doctor') s += `<path d="M20 200 Q28 156 100 152 Q172 156 180 200Z" fill="url(#${id}o)" stroke="#d5dbec" stroke-width="2"/><path d="M84 154 L100 178 L116 154" fill="${OUTFITS[r(OUTFITS.length)]}"/><path d="M84 154 L72 200 M116 154 L128 200" stroke="#d5dbec" stroke-width="3"/><path d="M76 162 Q58 190 80 196" fill="none" stroke="#56618a" stroke-width="4.4" stroke-linecap="round"/><circle cx="84" cy="196" r="6" fill="#8f9ac0" stroke="#56618a" stroke-width="2"/>`;
+  else s += `<path d="M22 200 Q30 158 100 154 Q170 158 178 200Z" fill="url(#${id}o)"/><path d="M78 156 Q100 182 122 156 L116 152 Q100 168 84 152Z" fill="${shade(outfit, 0.45)}"/>`;
+  if (role === 'teacher') s += `<path d="M93 166 L100 174 L107 166 L104 200 L96 200Z" fill="#fff" opacity=".92"/>`;
+  // slender neck with a soft shadow under the chin
+  s += `<path d="M87 134 L86 160 Q100 172 114 160 L113 134Z" fill="${shade(skin, -0.1)}"/><path d="M87 140 Q100 154 113 140 L113 134 L87 134Z" fill="${shade(skin, -0.24)}" opacity=".6"/>`;
+  s += `<ellipse cx="59" cy="102" rx="7.5" ry="10.5" fill="${shade(skin, -0.05)}"/><ellipse cx="141" cy="102" rx="7.5" ry="10.5" fill="${shade(skin, -0.05)}"/>`;
+  // face: heart-shaped, or a little squarer at the jaw
+  s += sex === 'm' ? `<path d="M60 90 C58 46 142 46 140 90 C140 116 128 140 110 148 L90 148 C72 140 60 116 60 90Z" fill="url(#${id}s)"/>`
+    : `<path d="M60 90 C58 46 142 46 140 90 C140 114 124 140 100 150 C76 140 60 114 60 90Z" fill="url(#${id}s)"/>`;
+  s += `<ellipse cx="${100 - ex - 8}" cy="120" rx="13" ry="9" fill="url(#${id}c)" opacity="${tiny || kid ? 1 : 0.7}"/><ellipse cx="${100 + ex + 8}" cy="120" rx="13" ry="9" fill="url(#${id}c)" opacity="${tiny || kid ? 1 : 0.7}"/>`;
+  s += eyeSVG(id + 'l', 100 - ex, ey, -1, k, eye, sex, older, master) + eyeSVG(id + 'r', 100 + ex, ey, 1, k, eye, sex, older, master);
+  // brows: soft tapered arches; masters arch theirs sharply
   for (const sx of [-1, 1]) {
-    const x = 50 + sx * ex;
-    s += `<ellipse cx="${x}" cy="${ey}" rx="${erx}" ry="${ery}" fill="#fff"/>`;
-    s += `<circle cx="${x + sx * 0.4}" cy="${ey + 0.8}" r="${Math.min(erx, ery) * 0.78}" fill="url(#${id}i)"/><circle cx="${x + sx * 0.4}" cy="${ey + 0.8}" r="${Math.min(erx, ery) * 0.4}" fill="#1b1430"/>`;
-    s += `<circle cx="${x + 1.9}" cy="${ey - 1.6}" r="${erx * 0.3}" fill="#fff"/><circle cx="${x - 1.6}" cy="${ey + 2.4}" r="${erx * 0.15}" fill="#fff" opacity=".9"/>`;
-    s += `<path d="M${x - erx - 0.6} ${ey - 1} Q${x} ${ey - ery - 2.6} ${x + erx + 0.6} ${ey - 1}" fill="none" stroke="#231a33" stroke-width="${older ? 1.5 : 1.9}" stroke-linecap="round"/>`;
-    if (!older || role === 'teacher') s += `<path d="M${x + sx * (erx + 0.4)} ${ey - 1.4} l${sx * 2.4} -2.2" stroke="#231a33" stroke-width="1.4" stroke-linecap="round"/>`;
-    // brows: masters arch theirs
-    s += master ? `<path d="M${x - sx * 7} ${ey - ery - 2.5} L${x + sx * 6} ${ey - ery - 7}" stroke="${shade(hairCol, -0.3)}" stroke-width="2.6" stroke-linecap="round"/>`
-      : `<path d="M${x - 5.5} ${ey - ery - 5} Q${x} ${ey - ery - 7.6} ${x + 5.5} ${ey - ery - 5}" fill="none" stroke="${shade(hairCol, -0.25)}" stroke-width="1.9" stroke-linecap="round" opacity=".85"/>`;
+    const x = 100 + sx * ex, by = ey - 15 * k * 1.72 - 4, bw = sex === 'm' ? 5 : sex === 'f' ? 3 : 3.8;
+    s += master ? `<path d="M${x - sx * 15} ${by + 9} L${x + sx * 14} ${by - 5}" stroke="${shade(hairCol, -0.4)}" stroke-width="5.5" stroke-linecap="round"/>`
+      : `<path d="M${x - sx * 14} ${by + 4} Q${x + sx * 2} ${by - 6} ${x + sx * 15} ${by + 1}" fill="none" stroke="${shade(hairCol, -0.35)}" stroke-width="${bw}" stroke-linecap="round" opacity=".9"/>`;
   }
-  s += `<path d="M48.6 55.5 Q50 57.2 51.4 55.5" fill="none" stroke="${line}" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>`;
-  s += master ? `<path d="M43.5 62 Q51 64.5 57.5 60" fill="none" stroke="${lip}" stroke-width="2" stroke-linecap="round"/>`
-    : `<path d="M43 61 Q50 ${tiny ? 69.5 : 67.5} 57 61 Q50 63.5 43 61Z" fill="${tiny || kid ? '#fff' : lip}" stroke="${lip}" stroke-width="1.6" stroke-linejoin="round"/>`;
+  // small upturned nose
+  s += `<path d="M97 114 Q100 119 104.5 115.5" fill="none" stroke="${line}" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>`;
+  // mouth
+  if (master) s += `<path d="M87 131 Q102 136 115 126" fill="none" stroke="${lip}" stroke-width="3.6" stroke-linecap="round"/>`;
+  else if (tiny || kid) s += `<path d="M86 127 Q100 145 114 127 Q100 132 86 127Z" fill="#7a2140" stroke="${lip}" stroke-width="2.6" stroke-linejoin="round"/><path d="M90 129.2 Q100 132.5 110 129.2 L109 131.5 Q100 134.5 91 131.5Z" fill="#fff"/><path d="M94 139 Q100 142.5 106 139 Q100 136 94 139Z" fill="#ff8fa3"/>`;
+  else if (sex === 'f') s += `<path d="M87 128 Q94 124.5 100 127 Q106 124.5 113 128 Q100 141 87 128Z" fill="${lip}"/><path d="M87 128 Q100 131.5 113 128" fill="none" stroke="${shade(lip, -0.3)}" stroke-width="1.4"/><path d="M95 133.5 Q100 135.5 105 133.5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".55"/>`;
+  else s += `<path d="M87 128 Q100 139 113 128" fill="none" stroke="${lip}" stroke-width="3.2" stroke-linecap="round"/><path d="M93 137 Q100 140 107 137" fill="none" stroke="${line}" stroke-width="1.4" stroke-linecap="round" opacity=".4"/>`;
   s += H.front;
-  if ((role === 'teacher' || role === 'doctor') && rng() < 0.65) s += `<g fill="rgba(255,255,255,.18)" stroke="#2a2140" stroke-width="1.6"><circle cx="${50 - ex}" cy="${ey}" r="${erx + 3}"/><circle cx="${50 + ex}" cy="${ey}" r="${erx + 3}"/><path d="M${50 - ex + erx + 3} ${ey} L${50 + ex - erx - 3} ${ey}" fill="none"/></g>`;
-  if (role === 'layman') s += `<path d="M22 32 Q50 2 78 32 L84 36 L16 36Z" fill="url(#${id}o)"/><path d="M16 36 L84 36" stroke="${shade(outfit, -0.3)}" stroke-width="2"/>`;
-  if (opts.emblem) s += `<g transform="translate(69 84)"><circle r="9.5" fill="#f5b700" stroke="#fff3c4" stroke-width="2"/><path d="M0 -5.8 L1.7 -1.8 L5.9 -1.8 L2.5 0.9 L3.7 5.2 L0 2.7 L-3.7 5.2 L-2.5 0.9 L-5.9 -1.8 L-1.7 -1.8Z" fill="#fff"/></g>`;
+  if ((role === 'teacher' || role === 'doctor') && rng() < 0.65) s += `<g fill="rgba(255,255,255,.16)" stroke="#2a2140" stroke-width="3"><circle cx="${100 - ex}" cy="${ey}" r="${19 * k}"/><circle cx="${100 + ex}" cy="${ey}" r="${19 * k}"/><path d="M${100 - ex + 19 * k} ${ey} L${100 + ex - 19 * k} ${ey}" fill="none"/></g>`;
+  if (role === 'layman') s += `<path d="M44 66 Q100 2 156 66 L168 72 L32 72Z" fill="url(#${id}o)"/><path d="M32 72 L168 72" stroke="${shade(outfit, -0.3)}" stroke-width="4" stroke-linecap="round"/>`;
+  if (opts.emblem) s += `<g transform="translate(140 170)"><circle r="19" fill="#f5b700" stroke="#fff3c4" stroke-width="4"/><path d="M0 -11.6 L3.4 -3.6 L11.8 -3.6 L5 1.8 L7.4 10.4 L0 5.4 L-7.4 10.4 L-5 1.8 L-11.8 -3.6 L-3.4 -3.6Z" fill="#fff"/></g>`;
   return s + '</svg>';
 }
 
@@ -108,7 +136,10 @@ export function avatarEl(cfg, opts = {}) {
   return el;
 }
 
-export function randomAvatar(rng = Math.random) {
+// Hair styles usually offered first for each choice; every style stays available to everyone.
+export const TYPICAL_HAIR = { m: [0, 5, 7, 2], f: [1, 3, 4, 2], n: [0, 1, 2, 5] };
+export function randomAvatar(rng = Math.random, g = 'n') {
   const r = (n) => Math.floor(rng() * n);
-  return { skin: r(SKINS.length), hair: r(HAIR_STYLES), hairColor: r(HAIR_COLORS.length), outfit: r(OUTFITS.length) };
+  const styles = TYPICAL_HAIR[g] || TYPICAL_HAIR.n;
+  return { g, skin: r(SKINS.length), hair: styles[r(styles.length)], hairColor: r(HAIR_COLORS.length), outfit: r(OUTFITS.length) };
 }
