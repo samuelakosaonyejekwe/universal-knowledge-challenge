@@ -15,7 +15,7 @@ import { avatarEl } from '../core/avatar.js';
 import { go, talk, me, sectionTitle, award, loading, contentMissing } from './ui.js';
 import { labForStage, mountLab } from './labhost.js';
 import { showTopic } from './world.js';
-import { rerender } from '../app.js';
+import { rerender, inPage, refreshNav } from '../app.js';
 
 const LOCI = ['🚪 Door', '🪟 Window', '🛋️ Sofa', '📚 Bookshelf', '🕰️ Clock', '🪴 Plant', '🖼️ Picture', '💡 Lamp', '🪜 Stairs', '🧺 Basket'];
 
@@ -60,7 +60,7 @@ export async function stageView(main, [wkey, L, S]) {
   }
   function show(i) {
     stopLab?.(); stopLab = null;
-    cur = i; drawBar(); clear(box); scrollTo(0, 0);
+    cur = i; drawBar(); clear(box); scrollTo(0, 0); refreshNav();
     if (i >= order.length) return duelGate();
     ({ discover, understand, encode, recall, experiment, apply, explain })[order[i]]();
   }
@@ -221,6 +221,7 @@ export async function stageView(main, [wkey, L, S]) {
         h('label', { class: 'row small' }, (() => { const c = h('input', { type: 'checkbox', checked: profile.settings.untimed }); c.addEventListener('change', () => { profile.settings.untimed = c.checked; save(); }); return c; })(), t('Untimed mode'))));
   }
   async function startDuel() {
+    inDuel = true; refreshNav();
     clear(box).append(loading());
     const [items, tiebreak] = await Promise.all([duelSet(wkey, level, stage, qopts), tiebreakSet(wkey, level, qopts)]);
     const timed = !profile.settings.untimed;
@@ -229,6 +230,7 @@ export async function stageView(main, [wkey, L, S]) {
     const res = await runDuel(host, { wkey, level, items, tiebreak, master: who.master, timed, voice: true });
     logEvent('duel', { w: wkey, level, stage, won: res.won, you: res.you, them: res.them, timed });
     const out = h('div', { class: 'mt' }); host.append(out);
+    inDuel = false; refreshNav();
     if (res.won) {
       const first = !ss.wins;
       ss.wins++; ss.best = Math.max(ss.best, res.you);
@@ -286,6 +288,12 @@ export async function stageView(main, [wkey, L, S]) {
     }
   }
 
+  // The top arrows step through the lesson first, then leave it.
+  let inDuel = false;
+  inPage.canBack = () => !inDuel && cur > 0;
+  inPage.canForward = () => !inDuel && cur < order.length && (ss.done || cur < ss.step);
+  inPage.back = () => { if (!inPage.canBack()) return false; show(cur - 1); return true; };
+  inPage.forward = () => { if (!inPage.canForward()) return false; show(cur + 1); return true; };
   if (ss.done) box.append(h('div', { class: 'note ok mb' }, '⭐ ', t('You have completed this stage. Revisit any part of it whenever you like.')));
   // A learner who beat the master but has not yet passed the doctors returns straight to the doctors.
   if (!ss.done && ss.wins > 0 && !ss.panel) { drawBar(); panel(); } else show(cur);

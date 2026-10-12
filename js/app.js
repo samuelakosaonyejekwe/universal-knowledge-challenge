@@ -35,15 +35,43 @@ const main = $('#main'), top = $('#top'), nav = $('#nav');
 let cleanup = null, currentWorld = null;
 
 // ---------- back / forward ----------
-let idx = history.state?.i ?? 0, maxIdx = +(sessionStorage.getItem('ukc.max') || idx);
-if (history.state?.i == null) history.replaceState({ i: idx }, '');
-addEventListener('popstate', (e) => { idx = e.state?.i ?? 0; });
-function pushed() { idx++; maxIdx = idx; sessionStorage.setItem('ukc.max', String(maxIdx)); history.replaceState({ i: idx }, ''); }
+// The game keeps its own list of the pages visited in this session, so the two arrows always know where they are —
+// whatever the browser's own history holds, and across reloads. A screen with steps inside it (a lesson) can also
+// hand the arrows its own "previous step" and "next step".
+const NAV_KEY = 'ukc.nav';
+const cleanHash = () => location.hash.replace(/^#\/?/, '');
+let trail = [], at = -1, navTarget = null, replacing = false;
+try { const saved = JSON.parse(sessionStorage.getItem(NAV_KEY) || 'null'); if (saved && Array.isArray(saved.trail)) { trail = saved.trail; at = saved.at; } } catch { /* start fresh */ }
+const saveTrail = () => { try { sessionStorage.setItem(NAV_KEY, JSON.stringify({ trail: trail.slice(-60), at: Math.min(at, 59) })); } catch { /* storage blocked */ } };
+export const inPage = { back: null, forward: null }; // set by a screen: functions that return true when they handled the arrow
+function track(hash) {
+  if (replacing) { replacing = false; if (at >= 0) trail[at] = hash; else { trail = [hash]; at = 0; } }
+  else if (navTarget !== null && hash === trail[navTarget]) at = navTarget;               // one of our arrows
+  else if (at > 0 && hash === trail[at - 1]) at--;                                         // the browser's own back
+  else if (at < trail.length - 1 && hash === trail[at + 1]) at++;                          // the browser's own forward
+  else if (hash !== trail[at]) { trail = trail.slice(0, at + 1); trail.push(hash); if (trail.length > 60) trail.shift(); at = trail.length - 1; }
+  navTarget = null; saveTrail();
+}
+function redirect(to) { replacing = true; location.replace('#/' + to); }
+const canBack = () => at > 0;
+const canForward = () => at < trail.length - 1;
+function goBack() {
+  if (inPage.back?.()) return refreshNav();
+  if (!canBack()) return;
+  navTarget = at - 1; location.hash = '#/' + trail[navTarget];
+}
+function goForward() {
+  if (inPage.forward?.()) return refreshNav();
+  if (!canForward()) return;
+  navTarget = at + 1; location.hash = '#/' + trail[navTarget];
+}
+export function refreshNav() { if (top.isConnected) drawTop(); }
+addEventListener('keydown', (e) => { if (e.altKey && e.key === 'ArrowLeft') { e.preventDefault(); goBack(); } if (e.altKey && e.key === 'ArrowRight') { e.preventDefault(); goForward(); } });
 
 function drawTop() {
   clear(top);
-  const back = h('button', { class: 'navbtn dir', title: t('Back'), 'aria-label': t('Back'), disabled: idx <= 0, onClick: () => history.back() }, '◀');
-  const fwd = h('button', { class: 'navbtn dir', title: t('Forward'), 'aria-label': t('Forward'), disabled: idx >= maxIdx, onClick: () => history.forward() }, '▶');
+  const back = h('button', { class: 'navbtn dir', title: t('Back'), 'aria-label': t('Back'), disabled: !(canBack() || inPage.canBack?.()), onClick: goBack }, '◀');
+  const fwd = h('button', { class: 'navbtn dir', title: t('Forward'), 'aria-label': t('Forward'), disabled: !(canForward() || inPage.canForward?.()), onClick: goForward }, '▶');
   const w = currentWorld ? world(worldId(currentWorld)) : null;
   const brand = h('button', { class: 'brand', onClick: () => { location.hash = profile ? '#/home' : '#/welcome'; } },
     h('img', { class: 'logo', src: 'icons/icon.svg', alt: '' }), h('span', null, w ? `${w.em} ${t(w.short)}` : t('Universal Knowledge Challenge')));
@@ -69,18 +97,17 @@ function drawNav(route) {
 }
 
 // ---------- routing ----------
-let lastHash = null;
 async function route() {
-  const hash = location.hash.replace(/^#\/?/, '');
-  if (lastHash !== null && history.state?.i == null) pushed();
-  lastHash = hash;
+  const hash = cleanHash();
+  track(hash);
+  inPage.back = inPage.forward = inPage.canBack = inPage.canForward = null;
   let [name, ...params] = hash.split('/').map(decodeURIComponent);
   if (!name) name = profile ? 'home' : 'welcome';
-  if (!profile && !OPEN.has(name)) { location.replace('#/welcome'); return; }
+  if (!profile && !OPEN.has(name)) { redirect('welcome'); return; }
   if (profile && !OPEN.has(name)) {
     // Everyone finishes the short first steps before the worlds open.
     const need = !profile.pledged ? 'rules' : !profile.learn ? 'learntest' : null;
-    if (need && name !== need && name !== 'about') { location.replace('#/' + need); return; }
+    if (need && name !== need && name !== 'about') { redirect(need); return; }
   }
   if (!routes[name]) name = profile ? 'home' : 'welcome';
   try { cleanup?.(); } catch (e) { console.error(e); }

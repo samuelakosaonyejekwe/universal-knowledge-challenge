@@ -9,6 +9,7 @@ import { cast, nameMenu } from '../core/names.js';
 import { loadLevel, duelSet, tiebreakSet } from '../engine/content.js';
 import { runSet, ask, timeFor } from '../engine/quiz.js';
 import { runDuel } from '../engine/duel.js';
+import { rerender } from '../app.js';
 import { go, talk, sectionTitle, award, loading } from './ui.js';
 import { liveDuel } from './liveduel.js';
 
@@ -56,7 +57,7 @@ function practice(body) {
       const res = await runDuel(host, { wkey, level, items, tiebreak, master: who.master, timed, voice: true });
       logEvent('practice-duel', { w: wkey, level, won: res.won, you: res.you, them: res.them, timed });
       if (res.won) { award(wkey, 'duel'); if (res.perfect) setTimeout(() => award(wkey, 'perfect'), 1200); }
-      host.append(h('div', { class: 'card center mt' }, h('h2', null, res.won ? '🏅 ' + t('Victory! {you} to {them}', { you: res.you, them: res.them }) : t('{you} to {them} — the master takes this one', { you: res.you, them: res.them })), h('button', { class: 'btn', onClick: () => go('arena/practice/' + Date.now()) }, t('Again'))));
+      host.append(h('div', { class: 'card center mt' }, h('h2', null, res.won ? '🏅 ' + t('Victory! {you} to {them}', { you: res.you, them: res.them }) : t('{you} to {them} — the master takes this one', { you: res.you, them: res.them })), h('button', { class: 'btn', onClick: () => rerender() }, t('Again'))));
     })));
 }
 
@@ -84,7 +85,7 @@ function team(body) {
       const ok = right >= Math.min(5, items.length - 1);
       if (ok) { profile.social.coop++; save(); award(wkey, 'coop'); }
       logEvent('coop', { w: wkey, level, right, n: items.length });
-      clear(host).append(h('div', { class: 'card center' }, h('div', { class: 'huge' }, ok ? '🎉' : '🌱'), h('h2', null, t('Team score: {a} of {b}', { a: right, b: items.length })), talk(who.peers[0], ok ? 'We did it together! Thanks for checking my answers.' : 'We nearly had it. Let us study a bit and try again — I learned from the ones we missed.', { role: 'peer' }), h('button', { class: 'btn', onClick: () => go('arena/team/' + Date.now()) }, t('Another mission'))));
+      clear(host).append(h('div', { class: 'card center' }, h('div', { class: 'huge' }, ok ? '🎉' : '🌱'), h('h2', null, t('Team score: {a} of {b}', { a: right, b: items.length })), talk(who.peers[0], ok ? 'We did it together! Thanks for checking my answers.' : 'We nearly had it. Let us study a bit and try again — I learned from the ones we missed.', { role: 'peer' }), h('button', { class: 'btn', onClick: () => rerender() }, t('Another mission'))));
     })));
 }
 
@@ -161,7 +162,7 @@ function pass(body) {
       }
       const [a, b] = scores;
       clear(out).append(h('div', { class: 'card center' }, h('h2', null, `${profile.name} ${a} — ${b} ${guest}`), h('p', { class: 'bold' }, a === b ? t('A tie — well matched!') : t('{name} wins this one. Good game!', { name: a > b ? profile.name : guest })),
-        h('div', { class: 'row center' }, PHRASES.slice(0, 4).map((p) => h('span', { class: 'chip' }, t(p)))), h('button', { class: 'btn mt', onClick: () => go('arena/pass/' + Date.now()) }, t('Again'))));
+        h('div', { class: 'row center' }, PHRASES.slice(0, 4).map((p) => h('span', { class: 'chip' }, t(p)))), h('button', { class: 'btn mt', onClick: () => rerender() }, t('Again'))));
     })), out);
 }
 

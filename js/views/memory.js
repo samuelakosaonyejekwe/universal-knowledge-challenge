@@ -7,6 +7,7 @@ import { dueReviews, upcomingReviews, recordReview, GAPS } from '../core/srs.js'
 import { reviewSet, itemById, stageTitle } from '../engine/content.js';
 import { runSet } from '../engine/quiz.js';
 import { HABITS, BREAK_IDEAS } from '../core/safety.js';
+import { rerender } from '../app.js';
 import { go, sectionTitle, loading } from './ui.js';
 
 const LOCI = ['🚪', '🪟', '🛋️', '📚', '🕰️', '🪴', '🖼️', '💡', '🪜', '🧺'];
@@ -39,7 +40,7 @@ export async function memoryView(main, [tab = 'reviews']) {
           recordReview(r.key, score);
           clear(host).append(h('div', { class: 'card center' }, h('div', { class: 'huge' }, score >= 0.8 ? '🌟' : score >= 0.5 ? '👍' : '🌱'), h('h3', null, t('{a} of {b} recalled', { a: res.filter((x) => x.correct).length, b: res.length })),
             h('p', { class: 'small' }, score >= 0.8 ? t('Strong memory — this will come back after a longer gap.') : score >= 0.5 ? t('Good. It will come back at the same gap.') : t('This one has faded a little. It will return tomorrow, and you can revisit the lesson any time.')),
-            h('div', { class: 'row center' }, score < 0.5 ? h('button', { class: 'btn ghost', onClick: () => go(`stage/${r.wkey}/${r.level}/${r.stage}`) }, t('Revisit the lesson')) : null, h('button', { class: 'btn', onClick: () => go('memory/reviews/' + Date.now()) }, t('More reviews')))));
+            h('div', { class: 'row center' }, score < 0.5 ? h('button', { class: 'btn ghost', onClick: () => go(`stage/${r.wkey}/${r.level}/${r.stage}`) }, t('Revisit the lesson')) : null, h('button', { class: 'btn', onClick: () => rerender() }, t('More reviews')))));
         } }, t('Review'))));
     }
     host.append(list);
@@ -55,7 +56,7 @@ export async function memoryView(main, [tab = 'reviews']) {
       const items = (await Promise.all(ids.slice(0, 8).map(itemById))).filter((q) => q && (qopts.text || q.t !== 'text'));
       if (!items.length) { clear(host).append(h('div', { class: 'card' }, t('This lesson pack is not on your device yet'))); return; }
       const res = await runSet(clear(host), items, { feedback: true, hints: 1, onAnswer: (it, a) => recordAnswer(it.id.split('|')[0], it, a.correct, { ms: a.ms }) });
-      clear(host).append(h('div', { class: 'card center' }, h('h3', null, t('{a} of {b} fixed', { a: res.filter((x) => x.correct).length, b: res.length })), h('button', { class: 'btn', onClick: () => go('memory/mistakes/' + Date.now()) }, t('Continue'))));
+      clear(host).append(h('div', { class: 'card center' }, h('h3', null, t('{a} of {b} fixed', { a: res.filter((x) => x.correct).length, b: res.length })), h('button', { class: 'btn', onClick: () => rerender() }, t('Continue'))));
     } }, '🔬 ', t('Work on my mistakes')));
   }
 
