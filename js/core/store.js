@@ -47,7 +47,7 @@ export function blankProfile(data) {
     band: data.band, guardian: data.guardian || null, consent: data.consent || {},
     lang: data.lang || 'en', school: data.school || '', interests: data.interests || [],
     experience: null, learn: null, pledged: false,
-    settings: { sound: true, music: true, musicVolume: 'medium', voice: true, untimed: data.band === 'tiny', size: 'm', contrast: 'normal', spacing: 'normal', motion: 'on', breakMins: data.band === 'tiny' || data.band === 'kid' ? 20 : 30, dailyMins: 0, links: data.band !== 'tiny' && data.band !== 'kid', live: true, speech: true, social: true },
+    settings: { gfx: 'auto', sound: true, music: true, musicVolume: 'medium', voice: true, untimed: data.band === 'tiny', size: 'm', contrast: 'normal', spacing: 'normal', motion: 'on', breakMins: data.band === 'tiny' || data.band === 'kid' ? 20 : 30, dailyMins: 0, links: data.band !== 'tiny' && data.band !== 'kid', live: true, speech: true, social: true },
     worlds: {}, items: {}, reviews: {}, palace: {}, notes: {},
     stats: { kinds: { recall: [0, 0], concept: [0, 0], apply: [0, 0], reason: [0, 0] }, retention: [0, 0], ms: 0, days: {}, hints: 0, retriesWon: 0, modes: {} },
     aptitude: [], log: [], social: { results: [], coop: 0 }, tampered: false,

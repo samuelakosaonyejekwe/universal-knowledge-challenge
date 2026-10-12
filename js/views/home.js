@@ -9,8 +9,10 @@ import { HABITS } from '../core/safety.js';
 import { go, progressBar } from './ui.js';
 import { stageTitle } from '../engine/content.js';
 import { isInstalled, installApp } from '../app.js';
+import { use3d, load3d } from '../gfx/use3d.js';
 
-export function home(main) {
+export async function home(main) {
+  let scene3d = null;
   const p = profile;
   const started = Object.entries(p.worlds).filter(([, w]) => w.level > 0).sort((a, b) => (b[1].last || 0) - (a[1].last || 0));
   const due = dueReviews();
@@ -45,6 +47,17 @@ export function home(main) {
       h('span', { class: 'num' }, String(w.id).padStart(2, '0'), fav.has(w.id) ? ' ♥' : ''), h('span', { class: 'em' }, w.em),
       h('span', null, h('span', { class: 'nm' }, t(w.short)), progressBar(prog)));
   });
-  main.append(h('h2', { class: 'mt' }, '🌍 ', t('The 20 worlds of knowledge')), h('div', { class: 'worlds' }, tiles));
+  main.append(h('h2', { class: 'mt' }, '🌍 ', t('The 20 worlds of knowledge')));
+  if (use3d()) {
+    // A universe to fly around: drag to turn, pinch or scroll to zoom, tap a world to travel there.
+    const space = h('div', { class: 'card', style: { padding: '.4rem', background: '#0b0f2a' } });
+    main.append(space, h('p', { class: 'small muted center mt' }, '🖐️ ', t('Drag to look around, pinch or scroll to zoom, tap a world to travel there.')));
+    try {
+      const { mountUniverse } = await load3d();
+      scene3d = window.__universe = mountUniverse(space, { progress: (id) => Math.max(worldProgress(String(id)), ...Object.keys(p.worlds).filter((k) => k.startsWith(id + ':')).map(worldProgress), 0), favourites: fav, onPick: (id) => go('world/' + id) });
+    } catch (e) { console.warn('3D unavailable', e); space.remove(); }
+    main.append(h('details', { class: 'mt', open: !scene3d }, h('summary', { class: 'bold' }, '📋 ', t('Show the worlds as a list')), h('div', { class: 'worlds mt' }, tiles)));
+  } else main.append(h('div', { class: 'worlds' }, tiles));
   if (!isInstalled()) main.append(h('div', { class: 'card mt row between' }, h('div', null, h('b', null, '📲 ', t('Install the game')), h('div', { class: 'small muted' }, t('Add it to your phone, tablet or computer and play offline.'))), h('button', { class: 'btn sm', onClick: installApp }, t('Install'))));
+  return () => scene3d?.dispose();
 }

@@ -14,6 +14,7 @@ modern browser on computers, Android and iOS, installs to the home screen, and w
 | Structure | 6 levels × 10 stages per world = 1,200 stages; World Languages has 12 separate language paths |
 | Each stage | Discover → Understand → Remember → Recall → Experiment → Apply → Explain → Master Duel → College of Doctors |
 | Each level final | Championship duel → teach a beginner → aptitude test |
+| 3D | A WebGL universe of the 20 worlds to fly around, a 3D journey mountain per level, 3D characters and a 3D duel arena (three.js, bundled; switchable in Settings) |
 | Labs | 60 interactive labs, virtual trips and studios (3 per world), each stating what its model leaves out |
 | Languages | Interface in English, French, Spanish, Arabic, Russian, Hebrew, Italian, Greek, Turkish, Portuguese, Chinese, Japanese |
 | Live knowledge | Fetched by the player's own browser from open sources, cached for offline use |
@@ -35,6 +36,7 @@ js/app.js                 shell, routing, install, wellbeing timers
 js/core/                  storage, safety, languages, audio, speech, avatars, names, live sources, spaced review
 js/engine/                lesson loading, question marking, duel, aptitude, evaluation
 js/views/                 screens
+js/gfx/                   3D scenes (universe, journey mountain, duel arena) and the 3D toolkit
 js/labs/                  one module per lab (see tools/LABS.md)
 js/vendor/, models/       speech runtime and open speech models for on-device recognition (see models/NOTICE.txt)
 js/data/                  worlds, curriculum titles, aspects atlas

@@ -59,6 +59,7 @@ export function settingsView(main) {
     h('div', { class: 'field' }, h('span', null, t('Theme')), themeRow, h('span', { class: 'tiny muted' }, t('Automatic follows your device. You can also switch with the sun and moon button at the top.'))),
     choice('Text size', 'size', [['m', 'Normal'], ['l', 'Large'], ['xl', 'Extra large']]), choice('Contrast', 'contrast', [['normal', 'Normal'], ['high', 'High contrast']]),
     choice('Letter spacing', 'spacing', [['normal', 'Normal'], ['wide', 'Wider (easier for some readers)']]), choice('Movement on screen', 'motion', [['on', 'On'], ['off', 'Reduced']]),
+    choice('3D graphics', 'gfx', [['auto', 'Automatic'], ['on', 'On'], ['off', 'Off']]),
     toggle('Untimed mode', 'untimed', { hint: 'No clocks in duels. Leaderboards keep timed and untimed results apart, so this never counts against you.' }),
     toggle('Read aloud', 'voice', { hint: 'Your teacher\'s words are spoken as well as shown. All speech also appears as text.' }),
     toggle('Sound effects', 'sound'), toggle('Background music', 'music', { hint: 'A calm soundtrack, different in every world.', onChange: () => (profile.settings.music ? startMusic(0) : stopMusic()) }),

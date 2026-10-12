@@ -12,6 +12,7 @@ import { channel, CHANNELS, wikiSummary } from '../core/live.js';
 import { go, talk, sectionTitle, progressBar, creditPill, loading } from './ui.js';
 import { labsFor, mountLab } from './labhost.js';
 import { rerender } from '../app.js';
+import { use3d, load3d, autoDispose } from '../gfx/use3d.js';
 
 const stageIcon = (n) => ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨'][n - 1];
 
@@ -116,6 +117,15 @@ function journeyTab(body, wkey, w, ws, who) {
       status.textContent = !r ? t('Could not prepare this level right now.') : r.total === 0 ? '✅ ' + t('This level is already in your language.') : r.translated >= r.total * 0.9 ? '✅ ' + t('Level {n} is ready in your language, including offline.', { n: ws.level }) : t('{a} of {b} texts prepared. The rest will be translated when you are online again.', { a: r.translated, b: r.total });
     } }, '🌐 ', t('Prepare this level in my language')),
       profile.band === 'adult' ? h('button', { class: 'btn ghost sm', title: t('For translators and schools'), onClick: async () => { status.textContent = '…'; const pk = await translatedPack(wkey, ws.level); const a = h('a', { href: URL.createObjectURL(new Blob([JSON.stringify(pk, null, 1)], { type: 'application/json' })), download: `l${ws.level}.json` }); a.click(); status.textContent = t('Saved. A translator can now correct this file; place it in content/_tr/{lang}/w{w}/ to ship it.', { lang: uiLang, w: String(wid).padStart(2, '0') }); } }, '📝 ', t('Export this level for a translator')) : null, status));
+  }
+  if (use3d()) {
+    // The level as a mountain to climb: tap a glowing stage to enter it.
+    const peak = h('div', { class: 'card mb', style: { padding: '.4rem', background: '#10163a' } });
+    body.append(peak);
+    load3d().then(({ mountJourney }) => {
+      const sc = mountJourney(peak, { world: w, level: ws.level, next, isDone: (s) => (s === 10 ? ws.completed.includes(ws.level) : stageDone(wkey, ws.level, s)), avatar: profile.avatar, band: profile.band, onPick: (s) => go(s <= 9 ? `stage/${wkey}/${ws.level}/${s}` : `finale/${wkey}/${ws.level}`) });
+      autoDispose(peak, sc.dispose);
+    }).catch(() => peak.remove());
   }
   const list = h('div', { class: 'levels' });
   for (const lv of LEVELS) {

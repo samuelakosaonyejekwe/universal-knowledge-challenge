@@ -9,6 +9,7 @@ import { speak } from '../core/speech.js';
 import { avatarEl } from '../core/avatar.js';
 import { profile, recordAnswer } from '../core/store.js';
 import { LEVELS } from '../data/worlds.js';
+import { use3d, load3d, autoDispose } from '../gfx/use3d.js';
 
 export const POINTS = 5, WIN_MIN = 50;
 
@@ -47,6 +48,13 @@ export async function runDuel(host, opts) {
       h('div', { class: 'side' }, avatarEl({ seed: master.seed }, { band: profile.band, role: 'master', cast: profile.cast }), h('div', null, master.short), themScore, themDots)),
     line, stage);
   clear(host).append(arena);
+  // The 3D arena: both characters on stage, score pillars that rise, and light that floods in on victory.
+  let scene3d = null;
+  if (use3d()) {
+    const view = h('div', { style: { marginBottom: '.6rem' } });
+    arena.prepend(view);
+    try { scene3d = (await load3d()).mountArena(view, { student: profile.avatar, master: { seed: master.seed }, band: profile.band, total }); autoDispose(view, scene3d.dispose); } catch { view.remove(); }
+  }
 
   const say = (text) => {
     clear(line).append(avatarEl({ seed: master.seed }, { band: profile.band, role: 'master', cast: profile.cast, size: 'sm' }), h('div', { class: 'bubble' }, h('span', { class: 'who' }, master.name), trInto(h('span'), text)));
@@ -68,6 +76,7 @@ export async function runDuel(host, opts) {
     youDots.children[i].className = r.correct ? 'y' : 'n';
     themDots.children[i].className = m ? 'y' : 'n';
     youScore.textContent = you; themScore.textContent = them;
+    scene3d?.answer(r.correct, m);
     results.push({ item, ...r, master: m });
     recordAnswer(wkey, item, r.correct, { ms: r.ms, mode: timed ? 'timed' : 'untimed' });
   }
@@ -79,6 +88,7 @@ export async function runDuel(host, opts) {
   }
   const perfect = results.filter((r) => !r.sudden).every((r) => r.correct);
   clear(stage);
+  scene3d?.finish(won);
   if (won) {
     arena.classList.add('lit'); sfx('win'); confetti();
     say(GRACIOUS[Math.floor(Math.random() * GRACIOUS.length)]);

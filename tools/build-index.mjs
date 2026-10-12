@@ -59,7 +59,7 @@ const trPacks = existsSync(trRoot) ? walk('content/_tr').filter((f) => /\/w\d\d\
 writeFileSync(join(trRoot, 'index.json'), JSON.stringify({ packs: trPacks }) + '\n');
 
 // ---- precache manifest
-const shell = ['', 'index.html', 'manifest.webmanifest', 'mirrors.json', 'css/app.css', ...walk('icons'), ...walk('js').filter((f) => (!f.startsWith('js/labs/w') && !f.startsWith('js/vendor/') && f !== 'js/core/voice-worker.js' && !f.endsWith('.json')) || f === 'js/data/aspects.json' || f === 'js/data/norms.json')].map((f) => f.replace(/\\/g, '/'));
+const shell = ['', 'index.html', 'manifest.webmanifest', 'mirrors.json', 'css/app.css', 'js/vendor/three.module.min.js', ...walk('icons'), ...walk('js').filter((f) => (!f.startsWith('js/labs/w') && !f.startsWith('js/vendor/') && f !== 'js/core/voice-worker.js' && !f.endsWith('.json')) || f === 'js/data/aspects.json' || f === 'js/data/norms.json')].map((f) => f.replace(/\\/g, '/'));
 const hash = createHash('sha256');
 for (const f of [...shell.filter(Boolean), 'sw.js', ...walk('js/labs'), ...(existsSync(join(root, 'i18n')) ? walk('i18n') : []), ...walk('content')]) hash.update(f).update(readFileSync(join(root, f)));
 const version = hash.digest('hex').slice(0, 12);
