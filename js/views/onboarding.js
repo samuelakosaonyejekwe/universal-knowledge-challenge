@@ -166,7 +166,7 @@ export function join(main) {
 
   function lookStep() {
     const prev = h('div', { class: 'row center' });
-    const drawPrev = () => clear(prev).append(avatarEl(data.avatar, { band: data.band, role: 'student', size: 'xl', cast: data.cast }), h('div', { class: 'col' }, avatarEl({ seed: seed + 't' }, { band: data.band, role: 'teacher', cast: data.cast }), avatarEl({ seed: seed + 'm' }, { band: data.band, role: 'master', cast: data.cast })));
+    const drawPrev = () => clear(prev).append(avatarEl(data.avatar, { band: data.band, role: 'student', size: 'xl', cast: data.cast }));
     const swatches = (key, cols) => h('div', { class: 'row' }, cols.map((c, i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(data.avatar[key] === i), style: { background: c, width: '40px', height: '40px', padding: 0 }, onClick: () => { data.avatar[key] = i; draw(); } })));
     drawPrev();
     box.append(sectionTitle('🧑‍🎨', t('Create your character')), prev, lookChoice(data.avatar, draw),
@@ -345,7 +345,7 @@ export function editLook(main) {
   const draw = () => {
     const swatches = (key, cols) => h('div', { class: 'row' }, cols.map((c, i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(draft.avatar[key] === i), style: { background: c, width: '40px', height: '40px', padding: 0 }, onClick: () => { draft.avatar[key] = i; draw(); } })));
     clear(box).append(
-      h('div', { class: 'row center' }, avatarEl(draft.avatar, { band: p.band, role: 'student', size: 'xl', cast: draft.cast, emblem: Object.values(p.worlds).some((w) => w.completed.length) }), h('div', { class: 'col' }, avatarEl({ seed: p.id + 't' }, { band: p.band, role: 'teacher', cast: draft.cast }), avatarEl({ seed: p.id + 'm' }, { band: p.band, role: 'master', cast: draft.cast }))),
+      h('div', { class: 'row center' }, avatarEl(draft.avatar, { band: p.band, role: 'student', size: 'xl', cast: draft.cast, emblem: Object.values(p.worlds).some((w) => w.completed.length) })),
       lookChoice(draft.avatar, draw),
       h('div', { class: 'field' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
       hairPicker(draft.avatar, p.band, draft.cast, draw),
