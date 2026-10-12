@@ -23,6 +23,13 @@ function lookChoice(av, redraw) {
     h('span', { class: 'tiny muted' }, t('This only changes how your character is drawn. Every hair style and colour stays open to everyone, and lessons are the same for all.')));
 }
 
+// A short row of colours: a handful of favourites, plus the player's current one if it is not among them.
+const SHORT = { hairColor: [0, 1, 3, 4], outfit: [0, 1, 3, 5, 6] };
+function swatchRow(av, key, cols, redraw) {
+  const pick = SHORT[key] ? [...new Set([...SHORT[key], av[key]])].filter((i) => i != null && i < cols.length).sort((a, b) => a - b) : cols.map((_, i) => i);
+  return h('div', { class: 'row' }, pick.map((i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(av[key] === i), style: { background: cols[i], width: '44px', height: '44px', padding: 0 }, onClick: () => { av[key] = i; redraw(); } })));
+}
+
 // A short row of hair styles that suit the chosen look; "More styles" opens the rest.
 let moreHair = false;
 function hairPicker(av, band, cast, redraw) {
@@ -167,7 +174,7 @@ export function join(main) {
   function lookStep() {
     const prev = h('div', { class: 'row center' });
     const drawPrev = () => clear(prev).append(avatarEl(data.avatar, { band: data.band, role: 'student', size: 'xl', cast: data.cast }));
-    const swatches = (key, cols) => h('div', { class: 'row' }, cols.map((c, i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(data.avatar[key] === i), style: { background: c, width: '40px', height: '40px', padding: 0 }, onClick: () => { data.avatar[key] = i; draw(); } })));
+    const swatches = (key, cols) => swatchRow(data.avatar, key, cols, draw);
     drawPrev();
     box.append(sectionTitle('🧑‍🎨', t('Create your character')), prev, lookChoice(data.avatar, draw),
       h('div', { class: 'field' }, h('span', null, t('Skin')), swatches('skin', SKINS)),
@@ -343,7 +350,7 @@ export function editLook(main) {
   const box = h('div', { class: 'card', style: { maxWidth: '640px', margin: '0 auto' } });
   main.append(h('div', { class: 'hero mb' }, h('h1', null, '🧑‍🎨 ', t('Change my character')), h('p', { class: 'muted' }, t('Try as many looks as you like. Nothing changes until you press Save.'))), box);
   const draw = () => {
-    const swatches = (key, cols) => h('div', { class: 'row' }, cols.map((c, i) => h('button', { class: 'chip', 'aria-label': `${key} ${i + 1}`, 'aria-pressed': String(draft.avatar[key] === i), style: { background: c, width: '40px', height: '40px', padding: 0 }, onClick: () => { draft.avatar[key] = i; draw(); } })));
+    const swatches = (key, cols) => swatchRow(draft.avatar, key, cols, draw);
     clear(box).append(
       h('div', { class: 'row center' }, avatarEl(draft.avatar, { band: p.band, role: 'student', size: 'xl', cast: draft.cast, emblem: Object.values(p.worlds).some((w) => w.completed.length) })),
       lookChoice(draft.avatar, draw),

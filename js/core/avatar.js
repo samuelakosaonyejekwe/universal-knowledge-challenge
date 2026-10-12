@@ -142,5 +142,6 @@ export const TYPICAL_HAIR = { m: [0, 5, 7, 2], f: [1, 3, 4, 2], n: [0, 1, 2, 5] 
 export function randomAvatar(rng = Math.random, g = 'n') {
   const r = (n) => Math.floor(rng() * n);
   const styles = TYPICAL_HAIR[g] || TYPICAL_HAIR.n;
-  return { g, skin: r(SKINS.length), hair: styles[r(styles.length)], hairColor: r(HAIR_COLORS.length), outfit: r(OUTFITS.length) };
+  const hairs = [0, 1, 3, 4], outfits = [0, 1, 3, 5, 6];   // the colours offered in the pickers
+  return { g, skin: r(SKINS.length), hair: styles[r(styles.length)], hairColor: hairs[r(hairs.length)], outfit: outfits[r(outfits.length)] };
 }
