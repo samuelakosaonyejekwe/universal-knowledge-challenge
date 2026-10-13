@@ -6,9 +6,11 @@ export const SKINS = ['#fde0c8', '#f3c6a0', '#e0a878', '#c68652', '#9a5f38', '#6
 export const HAIR_COLORS = ['#1f1a17', '#4a2f1d', '#8a5a2b', '#d9a441', '#b5432e', '#5b6170', '#7b4bd6', '#1d8fa8'];
 export const OUTFITS = ['#4f5bd5', '#17a673', '#e0662a', '#d6336c', '#8a5cf6', '#1f8fe5', '#f5b700', '#2f9e44'];
 export const HAIR_STYLES = 8;
+// Four undersea settings for the portraits. Every character lives in a magical ocean world of coral, pearls,
+// shells, sea plants and sparkling water.
 export const CAST_THEMES = [
-  { name: 'Storybook', em: '📖', bg: ['#ffe9f3', '#ffd0e4'] }, { name: 'Explorer', em: '🧭', bg: ['#e3f7e8', '#c4ecd0'] },
-  { name: 'Starship', em: '🚀', bg: ['#dfe6ff', '#c3ccff'] }, { name: 'Classic', em: '🎓', bg: ['#fff3d6', '#ffe2a6'] },
+  { name: 'Sunny lagoon', em: '🐚', bg: ['#c9f7f1', '#2fb7c8'], plant: '#1f9d7a', coral: '#ff7f8e' }, { name: 'Coral reef', em: '🪸', bg: ['#ffe6da', '#f27fa8'], plant: '#2a9d8f', coral: '#ff9f43' },
+  { name: 'Kelp forest', em: '🌿', bg: ['#dcfad8', '#2fa58a'], plant: '#17805f', coral: '#ff6f91' }, { name: 'Moonlit deep', em: '🌙', bg: ['#c4ccff', '#4a55c4'], plant: '#3a8fb7', coral: '#c77dff' },
 ];
 
 const EYES = ['#5b3a1e', '#6b4a2a', '#3f6b4f', '#3d6f9c', '#7a5a2e', '#4a4f6b'];
@@ -43,6 +45,30 @@ function hair(style, fill, hi, lo) {
     default: return { back: `<path d="M54 88 C50 40 150 40 146 88 L142 100 L58 100Z" fill="${fill}"/>`,
       front: `<path d="M56 84 C56 48 144 48 144 84 C132 66 116 59 100 59 C84 59 68 66 56 84Z" fill="${fill}"/>${strand('M76 56 C90 50 110 50 124 56', 4)}` };
   }
+}
+
+// ----- ocean pieces -----
+const pearl = (x, y, rr = 3) => `<circle cx="${x}" cy="${y}" r="${rr}" fill="#fffaf2" stroke="#e8d9c8" stroke-width=".8"/><circle cx="${x - rr * 0.3}" cy="${y - rr * 0.35}" r="${rr * 0.32}" fill="#fff"/>`;
+function shell(x, y, rr, c) {
+  const ribs = [-0.62, -0.32, 0, 0.32, 0.62].map((k) => `<path d="M${x} ${y + rr * 0.5} L${x + k * rr * 1.25} ${y - rr * 0.82}" stroke="${shade(c, -0.25)}" stroke-width="${Math.max(1, rr * 0.09)}" stroke-linecap="round"/>`).join('');
+  return `<path d="M${x - rr} ${y - rr * 0.1} C${x - rr * 1.05} ${y - rr * 1.15} ${x + rr * 1.05} ${y - rr * 1.15} ${x + rr} ${y - rr * 0.1} L${x + rr * 0.28} ${y + rr * 0.55} L${x - rr * 0.28} ${y + rr * 0.55}Z" fill="${c}" stroke="${shade(c, -0.3)}" stroke-width="${Math.max(1, rr * 0.08)}" stroke-linejoin="round"/>${ribs}<path d="M${x - rr * 0.6} ${y - rr * 0.7} Q${x} ${y - rr * 1.05} ${x + rr * 0.3} ${y - rr * 0.85}" fill="none" stroke="#fff" stroke-width="${rr * 0.1}" stroke-linecap="round" opacity=".6"/>`;
+}
+function starfish(x, y, rr, c, rot = 0) {
+  const pts = Array.from({ length: 10 }, (_, i) => { const a = (i * Math.PI) / 5 - Math.PI / 2, q = i % 2 ? rr * 0.46 : rr; return `${(x + Math.cos(a) * q).toFixed(1)},${(y + Math.sin(a) * q).toFixed(1)}`; }).join(' ');
+  return `<g transform="rotate(${rot} ${x} ${y})"><polygon points="${pts}" fill="${c}" stroke="${shade(c, -0.28)}" stroke-width="${rr * 0.12}" stroke-linejoin="round"/><circle cx="${x}" cy="${y}" r="${rr * 0.16}" fill="#fff" opacity=".7"/></g>`;
+}
+const coralSprig = (x, y, k, c) => `<g fill="none" stroke="${c}" stroke-linecap="round" stroke-linejoin="round" stroke-width="${5 * k}"><path d="M${x} ${y} v${-26 * k}"/><path d="M${x} ${y - 12 * k} q${-9 * k} ${-4 * k} ${-10 * k} ${-16 * k}"/><path d="M${x} ${y - 17 * k} q${9 * k} ${-3 * k} ${11 * k} ${-14 * k}"/><path d="M${x - 9 * k} ${y - 22 * k} q${-6 * k} ${-1 * k} ${-7 * k} ${-8 * k}"/></g>`;
+const kelp = (x, hgt, c, lean) => `<path d="M${x} 200 C${x + lean} ${200 - hgt * 0.3} ${x - lean} ${200 - hgt * 0.6} ${x + lean * 0.6} ${200 - hgt}" fill="none" stroke="${c}" stroke-width="9" stroke-linecap="round" opacity=".85"/><path d="M${x + 8} 200 C${x + 8 - lean} ${200 - hgt * 0.25} ${x + 8 + lean} ${200 - hgt * 0.5} ${x + 4} ${200 - hgt * 0.74}" fill="none" stroke="${shade(c, 0.25)}" stroke-width="6" stroke-linecap="round" opacity=".8"/>`;
+const bubble = (x, y, rr) => `<circle cx="${x}" cy="${y}" r="${rr}" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.85)" stroke-width="1.2"/><path d="M${x - rr * 0.5} ${y - rr * 0.25} a${rr * 0.55} ${rr * 0.55} 0 0 1 ${rr * 0.45} ${-rr * 0.45}" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>`;
+// Sparkling water behind every portrait: light rays, sea plants, a coral branch and rising bubbles.
+function seaScene(id, theme, master, rng) {
+  const plant = master ? '#27406f' : theme.plant, cor = master ? '#b05cff' : theme.coral;
+  let o = `<rect width="200" height="200" fill="url(#${id}b)"/>`;
+  o += `<g fill="#fff" opacity="${master ? 0.07 : 0.16}"><path d="M30 0 L70 0 L26 200 L-20 200Z"/><path d="M96 0 L122 0 L150 200 L104 200Z"/><path d="M160 0 L182 0 L230 200 L196 200Z"/></g>`;
+  o += kelp(10, 92 + rng() * 26, plant, 14) + kelp(178, 78 + rng() * 26, plant, -13) + coralSprig(30, 200, 1.05, cor) + coralSprig(166, 202, 0.8, shade(cor, 0.15));
+  for (const [x, y, rr] of [[22, 34, 5.5], [34, 18, 3], [176, 26, 4.5], [186, 62, 3], [168, 96, 2.4], [14, 88, 2.6], [150, 12, 2.2]]) o += bubble(x + rng() * 4, y + rng() * 4, rr);
+  if (master) o += `<g fill="#9be7ff" opacity=".85"><circle cx="24" cy="58" r="2.2"/><circle cx="178" cy="84" r="2"/><circle cx="160" cy="34" r="1.6"/></g>`;
+  return o;
 }
 
 // One large, bright eye: an almond shape with a shaded iris, deep pupil, two sparkles, a bold upper lid and lashes.
@@ -95,14 +121,26 @@ export function avatarSVG(cfg = {}, opts = {}) {
     + `<linearGradient id="${id}o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(outfit, 0.2)}"/><stop offset="1" stop-color="${shade(outfit, -0.25)}"/></linearGradient>`
     + `<linearGradient id="${id}h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(hairCol, 0.22)}"/><stop offset=".45" stop-color="${hairCol}"/><stop offset="1" stop-color="${shade(hairCol, -0.28)}"/></linearGradient>`
     + `<radialGradient id="${id}c"><stop offset="0" stop-color="#ff6f91" stop-opacity=".55"/><stop offset="1" stop-color="#ff6f91" stop-opacity="0"/></radialGradient></defs>`;
-  s += `<rect width="200" height="200" fill="url(#${id}b)"/>`;
-  if (!master) s += `<g fill="#fff" opacity=".6"><circle cx="24" cy="30" r="3"/><circle cx="176" cy="40" r="2.4"/><circle cx="182" cy="118" r="2.8"/><circle cx="16" cy="128" r="2.2"/><circle cx="160" cy="18" r="1.6"/><circle cx="36" cy="70" r="1.4"/></g>`;
+  s += seaScene(id, theme, master, rng);
   s += H.back;
-  // shoulders and clothes
-  if (master) s += `<path d="M10 200 Q22 150 100 146 Q178 150 190 200Z" fill="#6b1a3a"/><path d="M58 200 L68 152 L100 146 L132 152 L142 200Z" fill="url(#${id}o)"/><path d="M68 152 L100 180 L132 152" fill="none" stroke="#ffcf5c" stroke-width="5" stroke-linejoin="round"/><path d="M62 148 L46 118 L82 142Z M138 148 L154 118 L118 142Z" fill="#8a2450"/><circle cx="100" cy="184" r="6.5" fill="#ffcf5c" stroke="#fff3c4" stroke-width="2"/>`;
-  else if (role === 'doctor') s += `<path d="M20 200 Q28 156 100 152 Q172 156 180 200Z" fill="url(#${id}o)" stroke="#d5dbec" stroke-width="2"/><path d="M84 154 L100 178 L116 154" fill="${OUTFITS[r(OUTFITS.length)]}"/><path d="M84 154 L72 200 M116 154 L128 200" stroke="#d5dbec" stroke-width="3"/><path d="M76 162 Q58 190 80 196" fill="none" stroke="#56618a" stroke-width="4.4" stroke-linecap="round"/><circle cx="84" cy="196" r="6" fill="#8f9ac0" stroke="#56618a" stroke-width="2"/>`;
-  else s += `<path d="M22 200 Q30 158 100 154 Q170 158 178 200Z" fill="url(#${id}o)"/><path d="M78 156 Q100 182 122 156 L116 152 Q100 168 84 152Z" fill="${shade(outfit, 0.45)}"/>`;
-  if (role === 'teacher') s += `<path d="M93 166 L100 174 L107 166 L104 200 L96 200Z" fill="#fff" opacity=".92"/>`;
+  // clothes of the sea: a scalloped shell collar, pearls, and something special for each role
+  const scallops = (y, c) => [58, 76, 94, 112, 130].map((x, i) => `<path d="M${x} ${y + Math.abs(i - 2) * -3 + 4} a9 9 0 0 0 18 0Z" fill="${c}" stroke="${shade(c, -0.22)}" stroke-width="1.2"/>`).join('');
+  const necklace = (y0) => [-22, -15, -7.5, 0, 7.5, 15, 22].map((dx) => pearl(100 + dx, y0 + 10 - (dx * dx) / 55, 2.6)).join('');
+  if (master) {
+    // the proud master of the deep: a tall fan collar, a dark cloak and a glowing pearl clasp
+    s += `<path d="M34 170 C20 120 54 96 70 132 L100 150 L130 132 C146 96 180 120 166 170Z" fill="#3c1f6e" stroke="#7b4bd6" stroke-width="2.5"/><g stroke="#7b4bd6" stroke-width="1.6" opacity=".8"><path d="M44 160 L66 128"/><path d="M36 140 L60 124"/><path d="M156 160 L134 128"/><path d="M164 140 L140 124"/></g>`;
+    s += `<path d="M10 200 Q22 152 100 148 Q178 152 190 200Z" fill="#2a1650"/><path d="M58 200 L68 154 L100 148 L132 154 L142 200Z" fill="url(#${id}o)"/><path d="M68 154 L100 182 L132 154" fill="none" stroke="#ffcf5c" stroke-width="4.5" stroke-linejoin="round"/>`;
+    s += `<circle cx="100" cy="184" r="9" fill="#9be7ff" opacity=".35"/>${pearl(100, 184, 6)}`;
+  } else if (role === 'doctor') {
+    // the healer: a sea-foam coat with a shell badge
+    s += `<path d="M20 200 Q28 158 100 154 Q172 158 180 200Z" fill="#f4fffd" stroke="#bfe6e0" stroke-width="2"/><path d="M84 156 L100 180 L116 156" fill="#5fd3c4"/><path d="M84 156 L72 200 M116 156 L128 200" stroke="#bfe6e0" stroke-width="3"/>`;
+    s += shell(134, 184, 9, '#7fe0d2') + `<path d="M134 178 v8 M130 182 h8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>` + necklace(150);
+  } else {
+    s += `<path d="M22 200 Q30 160 100 156 Q170 160 178 200Z" fill="url(#${id}o)"/>` + scallops(160, shade(outfit, 0.42));
+    if (role === 'teacher') s += `<path d="M40 200 C44 174 70 160 100 176 C130 160 156 174 160 200Z" fill="${theme.plant}" opacity=".9"/><path d="M100 176 V200" stroke="${shade(theme.plant, -0.25)}" stroke-width="2"/>` + necklace(152) + shell(100, 172, 7, '#ffd9a8');
+    else if (role === 'layman') s += necklace(150);
+    else s += necklace(150) + shell(100, 170, 6.5, role === 'peer' ? '#ffc2d4' : '#ffe1a8');
+  }
   // slender neck with a soft shadow under the chin
   s += `<path d="M87 134 L86 160 Q100 172 114 160 L113 134Z" fill="${shade(skin, -0.1)}"/><path d="M87 140 Q100 154 113 140 L113 134 L87 134Z" fill="${shade(skin, -0.24)}" opacity=".6"/>`;
   s += `<ellipse cx="59" cy="102" rx="7.5" ry="10.5" fill="${shade(skin, -0.05)}"/><ellipse cx="141" cy="102" rx="7.5" ry="10.5" fill="${shade(skin, -0.05)}"/>`;
@@ -126,7 +164,26 @@ export function avatarSVG(cfg = {}, opts = {}) {
   else s += `<path d="M87 128 Q100 139 113 128" fill="none" stroke="${lip}" stroke-width="3.2" stroke-linecap="round"/><path d="M93 137 Q100 140 107 137" fill="none" stroke="${line}" stroke-width="1.4" stroke-linecap="round" opacity=".4"/>`;
   s += H.front;
   if ((role === 'teacher' || role === 'doctor') && rng() < 0.65) s += `<g fill="rgba(255,255,255,.16)" stroke="#2a2140" stroke-width="3"><circle cx="${100 - ex}" cy="${ey}" r="${19 * k}"/><circle cx="${100 + ex}" cy="${ey}" r="${19 * k}"/><path d="M${100 - ex + 19 * k} ${ey} L${100 + ex - 19 * k} ${ey}" fill="none"/></g>`;
-  if (role === 'layman') s += `<path d="M44 66 Q100 2 156 66 L168 72 L32 72Z" fill="url(#${id}o)"/><path d="M32 72 L168 72" stroke="${shade(outfit, -0.3)}" stroke-width="4" stroke-linecap="round"/>`;
+  // what each role wears in its hair
+  if (master) {
+    // a tall crown of branching coral tipped with pearls
+    const cc = '#ff5f8f';
+    s += `<path d="M62 62 Q100 44 138 62" fill="none" stroke="#ffcf5c" stroke-width="6" stroke-linecap="round"/>`
+      + [[72, 58, 0.9, -8], [86, 52, 1.15, -3], [100, 50, 1.4, 0], [114, 52, 1.15, 3], [128, 58, 0.9, 8]].map(([x, y, kk, rot]) => `<g transform="rotate(${rot} ${x} ${y})">${coralSprig(x, y, kk * 0.72, cc)}${pearl(x, y - 26 * kk * 0.72 - 3, 2.6)}</g>`).join('') + pearl(100, 52, 4);
+  } else if (role === 'teacher') {
+    // the wise guide: a pearl circlet with a little coral at the centre
+    s += `<path d="M62 64 Q100 46 138 64" fill="none" stroke="#ffcf5c" stroke-width="4.5" stroke-linecap="round"/>` + [-30, -20, -10, 10, 20, 30].map((dx) => pearl(100 + dx, 56.5 + (dx * dx) / 130, 2.6)).join('') + coralSprig(100, 54, 0.5, theme.coral) + pearl(100, 55, 3.6);
+  } else if (role === 'doctor') {
+    s += `<path d="M62 64 Q100 48 138 64" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>` + starfish(100, 53, 9, '#5fd3c4') + `<path d="M100 49.5 v7 M96.5 53 h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>`;
+  } else if (role === 'layman') {
+    // the curious newcomer: a big scallop-shell cap and a bubble of questions
+    s += shell(100, 50, 44, '#ffb38a') + `<path d="M58 64 Q100 78 142 64" fill="none" stroke="${shade('#ffb38a', -0.3)}" stroke-width="3" stroke-linecap="round"/>` + bubble(160, 44, 13) + `<text x="160" y="50" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">?</text>`;
+  } else if (role === 'peer') {
+    s += shell(140, 70, 9, '#ffc2d4');
+  } else {
+    // the young adventurer: a starfish or a shell tucked into the hair
+    s += sex === 'm' ? shell(138, 66, 9, '#ffe1a8') : starfish(140, 66, 12, '#ff8a5c', 12) + (sex === 'f' ? pearl(126, 58, 2.8) + pearl(150, 80, 2.4) : '');
+  }
   if (opts.emblem) s += `<g transform="translate(140 170)"><circle r="19" fill="#f5b700" stroke="#fff3c4" stroke-width="4"/><path d="M0 -11.6 L3.4 -3.6 L11.8 -3.6 L5 1.8 L7.4 10.4 L0 5.4 L-7.4 10.4 L-5 1.8 L-11.8 -3.6 L-3.4 -3.6Z" fill="#fff"/></g>`;
   return s + '</svg>';
 }

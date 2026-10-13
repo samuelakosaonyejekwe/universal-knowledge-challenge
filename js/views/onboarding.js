@@ -181,7 +181,7 @@ export function join(main) {
       hairPicker(data.avatar, data.band, data.cast, draw),
       h('div', { class: 'field' }, h('span', null, t('Hair colour')), swatches('hairColor', HAIR_COLORS)),
       h('div', { class: 'field' }, h('span', null, t('Uniform colour')), swatches('outfit', OUTFITS)),
-      h('div', { class: 'field' }, h('span', null, t('Style of your teachers and masters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(data.cast === i), onClick: () => { data.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
+      h('div', { class: 'field' }, h('span', null, t('Undersea setting for the characters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(data.cast === i), onClick: () => { data.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
       h('div', { class: 'row' }, h('button', { class: 'btn ghost', onClick: () => { data.avatar = randomAvatar(Math.random, data.avatar.g || 'n'); draw(); } }, '🎲 ', t('Surprise me')), h('button', { class: 'btn', onClick: next }, t('Continue'), ' →')));
   }
 
@@ -358,7 +358,7 @@ export function editLook(main) {
       hairPicker(draft.avatar, p.band, draft.cast, draw),
       h('div', { class: 'field' }, h('span', null, t('Hair colour')), swatches('hairColor', HAIR_COLORS)),
       h('div', { class: 'field' }, h('span', null, t('Uniform colour')), swatches('outfit', OUTFITS)),
-      h('div', { class: 'field' }, h('span', null, t('Style of your teachers and masters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(draft.cast === i), onClick: () => { draft.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
+      h('div', { class: 'field' }, h('span', null, t('Undersea setting for the characters')), h('div', { class: 'row' }, CAST_THEMES.map((c, i) => h('button', { class: 'chip', 'aria-pressed': String(draft.cast === i), onClick: () => { draft.cast = i; draw(); } }, c.em, ' ', t(c.name))))),
       h('div', { class: 'row' },
         h('button', { class: 'btn ghost', onClick: () => { draft.avatar = randomAvatar(Math.random, draft.avatar.g || 'n'); draw(); } }, '🎲 ', t('Surprise me')),
         h('button', { class: 'btn', onClick: () => { p.avatar = { ...draft.avatar }; p.cast = draft.cast; save(true); syncMeta(); sfx('ok'); toast('✨ ' + t('Your new look is saved.')); go('dashboard'); } }, '💾 ', t('Save')),

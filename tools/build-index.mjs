@@ -33,6 +33,7 @@ for (const f of src) {
 // Strings passed to t() indirectly (arrays of labels, data tables). They are listed in files as plain literals
 // inside arrays, so collect quoted literals from the lines that carry a "// i18n" marker or known data modules.
 const { WORLDS, LEVELS, CONTEXTS, STEPS } = await import(pathToFileURL(join(root, 'js/data/worlds.js')).href);
+for (const n of ['Sunny lagoon', 'Coral reef', 'Kelp forest', 'Moonlit deep']) strings.add(n);
 for (const w of WORLDS) [w.name, w.short, w.credit, w.mentor, w.feature].forEach((s) => strings.add(s));
 for (const l of LEVELS) { strings.add(l.name); strings.add(l.about); }
 for (const c of CONTEXTS) strings.add(c[2]);

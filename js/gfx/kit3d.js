@@ -237,17 +237,36 @@ export function character(cfg = {}, opts = {}) {
     default: crown(Math.PI * 0.4, -0.5); break;
   }
 
-  // what each role wears
+  // what each role wears: the same ocean pieces as in the portraits — pearls, shells, coral and starfish
+  const pearlM = mat(0xfffaf2, { roughness: 0.25, metalness: 0.1 }), coralM = mat(0xff5f8f, { roughness: 0.5 }), goldM = mat(0xffcf5c, { metalness: 0.6, roughness: 0.25 });
+  for (let i = 0; i < 9; i++) { const an = Math.PI * (0.12 + (i / 8) * 0.76); add(g, ball(0.055, 8), pearlM, Math.cos(an) * 0.4, 1.6 - Math.sin(an) * 0.1, Math.sin(an) * 0.36 + 0.06); }   // pearl necklace
+  const topY = headR * 1.02;
+  const sprig = (x, z, hgt) => { add(head, new THREE.CapsuleGeometry(0.05, hgt, 3, 8), coralM, x, topY + hgt / 2, z); const br = add(head, new THREE.CapsuleGeometry(0.04, hgt * 0.5, 3, 8), coralM, x + 0.09, topY + hgt * 0.7, z); br.rotation.z = -0.6; add(head, ball(0.06, 8), pearlM, x, topY + hgt + 0.1, z); };
   if (role === 'teacher' || role === 'doctor') for (const x of [-1, 1]) { const rim = add(head, new THREE.TorusGeometry(headR * 0.25, 0.025, 6, 20), mat(0x2a2140), x * headR * 0.36, 0.02, headR * 0.93); rim.rotation.y = x * 0.32; }
-  if (role === 'teacher') { const tie = add(g, new THREE.ConeGeometry(0.11, 0.5, 4), mat(0xffffff), 0, 1.38, 0.47); tie.rotation.x = Math.PI; }
-  if (role === 'doctor') { const st = add(g, new THREE.TorusGeometry(0.3, 0.035, 6, 20, Math.PI * 1.2), mat(0x56618a), 0, 1.45, 0.42); st.rotation.z = Math.PI * 0.9; add(g, ball(0.08, 8), mat(0x8f9ac0, { metalness: 0.5 }), 0.22, 1.18, 0.5); }
-  if (role === 'layman') add(head, new THREE.ConeGeometry(headR * 0.8, 0.7, 18), outfit, 0, headR * 1.08, 0);
-  if (role === 'master') {
-    const cape = add(g, new THREE.ConeGeometry(1.05, 2.0, 22, 1, true, Math.PI * 0.5, Math.PI), mat(0x6b1a3a, { side: THREE.DoubleSide, roughness: 0.8 }), 0, 0.98, -0.12);
-    cape.userData.cape = true;
-    add(g, new THREE.TorusGeometry(0.44, 0.07, 8, 22), mat(0xffcf5c, { metalness: 0.6, roughness: 0.25 }), 0, 1.72, 0).rotation.x = Math.PI / 2;
-    add(g, new THREE.OctahedronGeometry(0.11), mat(0xffcf5c, { metalness: 0.6, roughness: 0.2, emissive: 0xffa800, emissiveIntensity: 0.4 }), 0, 1.55, 0.5);
-    for (const x of [-1, 1]) add(g, new THREE.ConeGeometry(0.22, 0.5, 4), mat(0x8a2450), x * 0.55, 1.75, -0.05).rotation.z = -x * 0.9;
+  if (role === 'teacher') {                                             // pearl circlet with a little coral
+    const band = add(head, new THREE.TorusGeometry(headR * 0.9, 0.04, 6, 30), goldM, 0, headR * 0.52, 0); band.rotation.x = Math.PI / 2 - 0.25;
+    for (let i = -2; i <= 2; i++) add(head, ball(0.06, 8), pearlM, Math.sin(i * 0.3) * headR * 0.9, headR * 0.6 + Math.abs(i) * 0.02, Math.cos(i * 0.3) * headR * 0.86);
+    sprig(0, headR * 0.5, 0.28);
+    add(g, new THREE.SphereGeometry(0.62, 16, 10, 0, Math.PI * 2, 0, Math.PI * 0.5), mat(0x1f9d7a, { side: THREE.DoubleSide }), 0, 1.3, 0, 1, 0.55, 0.9);   // kelp shawl
+  }
+  if (role === 'doctor') {                                              // healer's band with a sea-star
+    const band = add(head, new THREE.TorusGeometry(headR * 0.9, 0.045, 6, 30), mat(0xffffff), 0, headR * 0.52, 0); band.rotation.x = Math.PI / 2 - 0.25;
+    add(head, new THREE.OctahedronGeometry(0.14), mat(0x5fd3c4), 0, headR * 0.66, headR * 0.82, 1, 1, 0.5);
+    add(g, ball(0.1, 10), mat(0x7fe0d2), 0.26, 1.22, 0.47, 1, 0.9, 0.5);
+  }
+  if (role === 'layman') { const cap = add(head, new THREE.SphereGeometry(headR * 1.05, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.42), mat(0xffb38a), 0, headR * 0.3, -0.04); cap.rotation.x = -0.35; for (let i = -2; i <= 2; i++) { const rib = add(head, new THREE.CapsuleGeometry(0.025, headR * 0.9, 3, 6), mat(0xd9825c), i * 0.2, headR * 0.98, 0.1 - Math.abs(i) * 0.04); rib.rotation.x = -1.0; rib.rotation.z = -i * 0.22; } }
+  if (role === 'peer') add(head, ball(0.14, 10), mat(0xffc2d4), headR * 0.78, headR * 0.5, headR * 0.4, 1, 0.9, 0.5);
+  if (role === 'student') {                                             // a starfish or a shell tucked into the hair
+    if (cfg.g === 'm') add(head, ball(0.14, 10), mat(0xffe1a8), headR * 0.78, headR * 0.52, headR * 0.4, 1, 0.9, 0.5);
+    else { const star = add(head, new THREE.OctahedronGeometry(0.19), mat(0xff8a5c), headR * 0.74, headR * 0.55, headR * 0.45, 1, 1, 0.45); star.rotation.z = 0.5; }
+  }
+  if (role === 'master') {                                              // tall coral crown, fan collar, pearl clasp
+    const band = add(head, new THREE.TorusGeometry(headR * 0.86, 0.05, 6, 30), goldM, 0, headR * 0.6, 0); band.rotation.x = Math.PI / 2 - 0.2;
+    for (const [x, hgt] of [[-0.5, 0.26], [-0.25, 0.36], [0, 0.46], [0.25, 0.36], [0.5, 0.26]]) sprig(x * headR, headR * 0.28 - Math.abs(x) * 0.2, hgt);
+    add(g, new THREE.ConeGeometry(1.05, 2.0, 22, 1, true, Math.PI * 0.5, Math.PI), mat(0x2a1650, { side: THREE.DoubleSide, roughness: 0.8 }), 0, 0.98, -0.12);
+    const fan = add(g, new THREE.CircleGeometry(0.95, 20, 0, Math.PI), mat(0x3c1f6e, { side: THREE.DoubleSide }), 0, 1.55, -0.32); fan.rotation.x = -0.25;
+    add(g, new THREE.TorusGeometry(0.44, 0.06, 8, 22), goldM, 0, 1.72, 0).rotation.x = Math.PI / 2;
+    add(g, ball(0.11, 10), mat(0xfffaf2, { emissive: 0x9be7ff, emissiveIntensity: 0.5, roughness: 0.2 }), 0, 1.5, 0.5);
   }
   g.add(head);
   // golden emblem on the uniform (hidden until earned)
