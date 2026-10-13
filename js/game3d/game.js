@@ -23,22 +23,25 @@ import { createNpc } from './npc.js';
 import { createWorld, buildCourse, decorateWorld } from './world.js';
 import { createHud } from './hud.js';
 import { groundBelow, rayCast } from './collide.js';
+import { picturesFor } from './picture.js';
+import { wikiSummary } from '../core/live.js';
+import { can } from '../core/safety.js';
 import { live, clearLive } from '../core/live3d.js';
 
 const CRYSTALS = 5, SEGMENTS = 7, TABLETS = 2;
 
 // Text written in English inside world files: a translation shipped with the game is used when there is one
 // (i18n/worlds/<language>.json); anything else is translated on the device in the background.
-const cache = new Map(), shipped = {};
+const cache = new Map(), shipped = {}, english = new Map();     // english: translated line → the English it came from
 export async function loadWorldText() {
   if (lang === 'en' || shipped[lang]) return;
   try { const r = await fetch(`i18n/worlds/${lang}.json`); shipped[lang] = r.ok ? await r.json() : {}; } catch { shipped[lang] = {}; }
 }
 function tx(text) {
   if (lang === 'en' || !text) return text;
-  const ready = shipped[lang]?.[text]; if (ready) return ready;
+  const ready = shipped[lang]?.[text]; if (ready) { english.set(ready, text); return ready; }
   const key = lang + '|' + text;
-  if (!cache.has(key)) { cache.set(key, text); tr(text).then((o) => cache.set(key, o)).catch(() => {}); }
+  if (!cache.has(key)) { cache.set(key, text); tr(text).then((o) => { cache.set(key, o); english.set(o, text); }).catch(() => {}); }
   return cache.get(key);
 }
 
@@ -84,7 +87,7 @@ export function startGame(host, opts) {
   const peers = [person(who.peers[0], 'peer', null, S.midNodes), person(who.peers[1], 'peer', null, S.simNodes)];
   const doctors = who.doctors.map((d, i) => { const n = person(d, 'doctor', S.doctors[i], null, { wander: false, yaw: Math.PI }); n.full = d.name; return n; });
   const npcs = [guide, rival, ...peers, ...doctors];
-  k.sign(`${stage.icon || w.em} ${tx(stage.title)}`, S.guide[0] * 0.4, 3.4, 6.2, { size: 0.55 });
+  const titleSign = k.sign(`${stage.icon || w.em} ${tx(stage.title)}`, S.guide[0] * 0.4, 3.4, 6.2, { size: 0.55 });
   let talkingTo = null;
 
   // ----- HUD -----
@@ -108,14 +111,66 @@ export function startGame(host, opts) {
   }
   for (const o of level.orbs) if (ex.orbs.includes(o.i)) { o.taken = true; o.g.visible = false; }
 
+  // ----- the projector: whatever is being talked about is shown, not just said -----
+  // A screen stands beside the speakers. For each line it shows large pictures of the things mentioned (and their
+  // names), a photograph from the lesson's own encyclopedia sources when the device is online, and the same things
+  // drift past in the air. A line with nothing to picture shows the lesson's symbol and the key word it is about.
+  const show = { group: null, tex: null, g2: null, photos: [], flyers: [] };
+  function projector() {
+    if (show.group) return show;
+    const g = new THREE.Group(), c = document.createElement('canvas'); c.width = 1280; c.height = 720;
+    show.g2 = c.getContext('2d'); show.tex = new THREE.CanvasTexture(c); show.tex.colorSpace = THREE.SRGBColorSpace; show.tex.anisotropy = 8;
+    const frame = new THREE.Mesh(new THREE.BoxGeometry(3.56, 2.06, 0.1), k.mat(def.theme.metal || '#39406b', { metalness: 0.4, roughness: 0.4 })); frame.position.y = 2.25; frame.castShadow = true;
+    const face = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 1.9), new THREE.MeshBasicMaterial({ map: show.tex, toneMapped: false })); face.position.set(0, 2.25, 0.056);
+    for (const sx of [-1.5, 1.5]) { const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.07, 1.3, 8), k.mat(def.theme.metal || '#39406b')); leg.position.set(sx, 0.65, 0); g.add(leg); }
+    const lampGlow = glow(def.theme.glow || '#ffd76a', 5.5, 0.22); lampGlow.position.set(0, 2.25, 0.3);
+    g.add(frame, face, lampGlow); g.visible = false; level.root.add(g); show.group = g;
+    return show;
+  }
+  function showLine(line) {
+    const src = english.get(line) || line, pics = picturesFor(src), g2 = projector().g2, W = 1280, H = 720;
+    const bg = g2.createLinearGradient(0, 0, W, H); bg.addColorStop(0, w.c1); bg.addColorStop(1, w.c2); g2.fillStyle = bg; g2.fillRect(0, 0, W, H);
+    g2.fillStyle = 'rgba(255,255,255,.14)'; for (let i = 0; i < 7; i++) { g2.beginPath(); g2.arc((i * 211) % W, (i * 137) % H, 60 + (i * 37) % 90, 0, 7); g2.fill(); }
+    const photo = show.photos.find((ph) => ph.words.some((x) => src.toLowerCase().includes(x))) || (show.photos.length && pics.length < 2 ? show.photos[show.n++ % show.photos.length] : null);
+    const left = photo ? W * 0.56 : W;
+    g2.textAlign = 'center'; g2.textBaseline = 'middle';
+    if (pics.length) {
+      const size = Math.min(300, (left - 80) / pics.length * 0.82), gapX = left / pics.length;
+      pics.forEach((pc, i) => { const x = gapX * (i + 0.5); g2.font = `${size}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`; g2.fillText(pc.em, x, H * 0.43); g2.font = `800 ${Math.min(64, size * 0.24)}px ui-rounded, system-ui, sans-serif`; g2.fillStyle = '#fff'; g2.shadowColor = 'rgba(0,0,0,.45)'; g2.shadowBlur = 10; g2.fillText(tx(pc.word), x, H * 0.43 + size * 0.68, gapX - 24); g2.shadowBlur = 0; });
+    } else {
+      // nothing to picture: the lesson's own symbol and the key word this line is closest to
+      const terms = stage.terms || [], term = terms.find(([a]) => src.toLowerCase().includes(String(a).toLowerCase())) || terms[show.n++ % Math.max(1, terms.length)];
+      g2.font = '260px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif'; g2.fillText(stage.icon || w.em, left / 2, H * 0.38);
+      if (term) { g2.fillStyle = '#fff'; g2.shadowColor = 'rgba(0,0,0,.45)'; g2.shadowBlur = 10; g2.font = '800 70px ui-rounded, system-ui, sans-serif'; g2.fillText(tx(term[0]), left / 2, H * 0.72, left - 60); g2.font = '600 34px ui-rounded, system-ui, sans-serif'; g2.fillText(tx(term[1]), left / 2, H * 0.84, left - 60); g2.shadowBlur = 0; }
+    }
+    if (photo) {
+      const pw = W * 0.4, phh = H * 0.76, px = W * 0.57, py = H * 0.08, im = photo.img, sc = Math.max(pw / im.width, phh / im.height), sw = pw / sc, sh = phh / sc;
+      g2.fillStyle = '#fff'; g2.fillRect(px - 10, py - 10, pw + 20, phh + 74);
+      try { g2.drawImage(im, (im.width - sw) / 2, (im.height - sh) / 2, sw, sh, px, py, pw, phh); } catch { /* picture not usable */ }
+      g2.fillStyle = '#1c2340'; g2.font = '700 30px ui-rounded, system-ui, sans-serif'; g2.fillText(photo.title, px + pw / 2, py + phh + 32, pw);
+    }
+    show.tex.needsUpdate = true;
+    // the same things drift past in the air above the speakers
+    if (!calm && pics.length && show.group.visible) pics.forEach((pc, i) => { const sp = sprite(pc.em, { size: 0.95 }); const G = show.group; sp.position.set(G.position.x, G.position.y + 4.2 + i * 0.35, G.position.z); level.root.add(sp); show.flyers.push({ sp, t: -i * 0.35, from: -4 - i, y: G.position.y + 4.1 + (i % 2) * 0.6, yaw: G.rotation.y }); });
+  }
+  // photographs for this stage, fetched once (only when live content is allowed and the device is online)
+  let photosAsked = false;
+  function loadPhotos() {
+    if (photosAsked || !navigator.onLine || profile.settings.live === false || !can('live')) return; photosAsked = true; show.n = 0;
+    for (const title of (stage.sources || []).slice(0, 3)) wikiSummary(title).then((it) => { if (!it?.img) return; const im = new Image(); im.crossOrigin = 'anonymous'; im.onload = () => show.photos.push({ img: im, title: it.title || title, words: String(title).toLowerCase().split(/\s+/).filter((x) => x.length > 3) }); im.src = it.img; }).catch(() => {});
+  }
+
   // ----- talking -----
   async function talkTo(npc, lines, mood) {
     talkingTo = npc; ctrl.frozen = true; input.state.locked = false; if (mood) npc.mood = mood;
     rig.lookAt(new THREE.Vector3(npc.pos[0], npc.pos[1] + 1.5, npc.pos[2]));
     const mid = new THREE.Vector3((npc.pos[0] + ctrl.pos[0]) / 2, npc.pos[1] + 1.25, (npc.pos[2] + ctrl.pos[2]) / 2);
     const side = new THREE.Vector3(-(npc.pos[2] - ctrl.pos[2]), 0, npc.pos[0] - ctrl.pos[0]).normalize();
-    cam.cut(mid.clone().addScaledVector(side, 4.2).add(new THREE.Vector3(0, 0.7, 0)), mid, { dur: 0.9, hold: Infinity });
-    await hud.dialogue({ name: npc.name }, lines, { onLine: (i, on) => { npc.speaking = on; } });
+    // the projector stands behind the two of them, facing the camera
+    const P = projector(); P.group.position.set(mid.x - side.x * 2.4, Math.min(npc.pos[1], ctrl.pos[1]) + 0.35, mid.z - side.z * 2.4); P.group.rotation.y = Math.atan2(side.x, side.z); P.group.visible = true;
+    cam.cut(mid.clone().addScaledVector(side, 6.2).add(new THREE.Vector3(0, 1.2, 0)), mid.clone().add(new THREE.Vector3(0, 0.75, 0)), { dur: 0.9, hold: Infinity });
+    await hud.dialogue({ name: npc.name }, lines, { onLine: (i, on) => { npc.speaking = on; if (on) showLine(lines[i]); } });
+    P.group.visible = false; for (const f of show.flyers) f.sp.removeFromParent(); show.flyers.length = 0;
     npc.speaking = false; talkingTo = null; ctrl.frozen = false; rig.lookAt(null); cam.release(); npc.mood = 'neutral';
   }
 
@@ -213,7 +268,7 @@ export function startGame(host, opts) {
     inst.group.visible = true; open = inst; sim = inst.sim;
     // what stands on the simulation floor is solid too (walked round, not through)
     { level.root.updateMatrixWorld(true); const bb = new THREE.Box3().setFromObject(inst.group), cx = S.pad[0], cz = S.pad[2];
-      if (!padSolid) { padSolid = { type: 'box', min: [0, 0, 0], max: [0, 0, 0] }; level.solids.push(padSolid); }
+      if (!padSolid) { padSolid = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], scenery: true }; level.solids.push(padSolid); }
       padSolid.min = [Math.max(cx - 3.7, bb.min.x), S.pad[1], Math.max(cz - 3.0, bb.min.z)]; padSolid.max = [Math.min(cx + 3.7, bb.max.x), Math.max(S.pad[1] + 0.5, Math.min(S.pad[1] + 5, bb.max.y)), Math.min(cz + 3.0, bb.max.z)];
       if (!(padSolid.max[0] > padSolid.min[0] && padSolid.max[2] > padSolid.min[2])) { padSolid.min = [cx, S.pad[1], cz]; padSolid.max = [cx, S.pad[1], cz]; } }
     body.append(inst.controls, h('details', { class: 'small mt' }, h('summary', { class: 'bold' }, sdef.kind === 'validated' ? '📐 ' + t('Checked scientific model') : '🎈 ' + t('Simplified model'), ' — ', t('what it includes and leaves out')), h('p', { class: 'muted' }, tx(sdef.model))));
@@ -238,6 +293,7 @@ export function startGame(host, opts) {
   // ----- the lesson: the teacher explains in the world, with the worked example and a picture from life -----
   let analogy = 0;
   async function lesson() {
+    loadPhotos();
     const keys = Object.keys(stage.analogies || {}), known = (profile.experience?.contexts || []).filter((x) => keys.includes(x)), order = [...known, ...keys.filter((x) => !known.includes(x))];
     const lines = [];
     if (!ex.met) lines.push(...story.intro);
@@ -544,7 +600,7 @@ export function startGame(host, opts) {
       if (d < auto.arrive || auto.stuck > 1.6 || auto.t > 14) { const then = d < auto.arrive + 0.6 ? auto.then : null; auto = null; ctrl.update(dt, { move: { x: 0, y: 0 }, run: false, jump: false, jumpPressed: false }, cam.state.yaw); then?.(); }
       else {
         let jump = false;
-        if (ctrl.body.grounded) { const ax = p[0] + dx / d * 0.95, az = p[2] + dz / d * 0.95, below = groundBelow(level.solids, ax, p[1] + 0.45, az), above = groundBelow(level.solids, ax, p[1] + 2.2, az); jump = below < p[1] - 0.6 || above > p[1] + 0.43; }
+        if (ctrl.body.grounded) { const firm = level.solids.filter((q) => !q.scenery && !q.dynamic), ax = p[0] + dx / d * 0.95, az = p[2] + dz / d * 0.95, below = groundBelow(firm, ax, p[1] + 0.45, az), above = groundBelow(firm, ax, p[1] + 2.2, az); jump = below < p[1] - 0.6 || above > p[1] + 0.43; }
         ctrl.update(dt, { move: { x: -dx / d, y: dz / d }, run: d > 4, jump: jump || !ctrl.body.grounded, jumpPressed: jump }, Math.PI);
       }
     } else { auto = null; ctrl.update(dt, { move: inp.move, run: inp.run, jump: inp.jump, jumpPressed: pendingJump }, cam.state.yaw); }
@@ -552,7 +608,13 @@ export function startGame(host, opts) {
     // people do not walk through one another: the player is eased out of anyone's personal space, and others step back
     for (const n of npcs) {
       const dx = p[0] - n.pos[0], dz = p[2] - n.pos[2], d = Math.hypot(dx, dz), keep = 0.78;
-      if (d < keep && Math.abs(p[1] - n.pos[1]) < 1.6 && !race) { const ux = d > 1e-4 ? dx / d : 1, uz = d > 1e-4 ? dz / d : 0, push = keep - d; const gy = groundBelow(level.solids, p[0] + ux * push, p[1] + 0.6, p[2] + uz * push, 0.2); if (gy > p[1] - 0.5) { p[0] += ux * push; p[2] += uz * push; } else if (n.state !== 'hold') { n.pos[0] -= ux * push; n.pos[2] -= uz * push; } }
+      if (d < keep && Math.abs(p[1] - n.pos[1]) < 1.6 && !race) {
+        const ux = d > 1e-4 ? dx / d : 1, uz = d > 1e-4 ? dz / d : 0, push = keep - d;
+        // someone free to move steps aside for the player; someone standing their ground (the master, a doctor) does not
+        const yieldTo = n.state !== 'hold' && talkingTo !== n && groundBelow(level.solids, n.pos[0] - ux * push, n.pos[1] + 0.6, n.pos[2] - uz * push, 0.2) > n.pos[1] - 0.5 ? 0.8 : 0;
+        n.pos[0] -= ux * push * yieldTo; n.pos[2] -= uz * push * yieldTo;
+        const mine = push * (1 - yieldTo); if (groundBelow(level.solids, p[0] + ux * mine, p[1] + 0.6, p[2] + uz * mine, 0.2) > p[1] - 0.5) { p[0] += ux * mine; p[2] += uz * mine; }
+      }
     }
     for (let a = 0; a < npcs.length; a++) for (let c = a + 1; c < npcs.length; c++) { const A = npcs[a], B = npcs[c], dx = A.pos[0] - B.pos[0], dz = A.pos[2] - B.pos[2], d = Math.hypot(dx, dz); if (d < 0.75 && d > 1e-4 && Math.abs(A.pos[1] - B.pos[1]) < 1.6 && A.state !== 'hold' && B.state !== 'hold') { const k2 = (0.75 - d) / 2 / d; A.pos[0] += dx * k2; A.pos[2] += dz * k2; B.pos[0] -= dx * k2; B.pos[2] -= dz * k2; } }
     for (const n of npcs) n.update(dt, p, talkingTo);
@@ -577,6 +639,7 @@ export function startGame(host, opts) {
     level.frame(dt, time, p);
     if (open) open.sim.frame?.(dt, time, simOpen); else sims.get('main')?.sim.frame?.(dt, time, false);
     for (const part of [...lanes.me.parts, ...lanes.them.parts]) part.scale.lerp(ONE, Math.min(1, dt * 8));
+    for (let i = show.flyers.length - 1; i >= 0; i--) { const f = show.flyers[i]; f.t += dt; const u = f.from + Math.max(0, f.t) * 1.9, G = show.group; f.sp.visible = f.t > 0; f.sp.position.set(G.position.x + Math.cos(f.yaw) * u, f.y + Math.sin(f.t * 5) * 0.14, G.position.z - Math.sin(f.yaw) * u); if (u > 5) { f.sp.removeFromParent(); f.sp.material.map?.dispose(); f.sp.material.dispose(); show.flyers.splice(i, 1); } }
     for (let i = sparks.length - 1; i >= 0; i--) {
       const s = sparks[i], a = s.p.geometry.attributes.position; s.life -= dt * 1.1;
       for (let j = 0; j < s.vel.length; j++) { s.vel[j][1] -= 9 * dt; a.setXYZ(j, a.getX(j) + s.vel[j][0] * dt, a.getY(j) + s.vel[j][1] * dt, a.getZ(j) + s.vel[j][2] * dt); }
@@ -601,11 +664,11 @@ export function startGame(host, opts) {
       const bn = level.spots.benchAt; offer(bn.x, bn.y + 1, bn.z - 0.8, 1.6, t('Open the lab bench'), openBench);
       const po = level.spots.portal; if (po.open && Math.hypot(p[0] - po.x, p[2] - po.z) < 1.3 && Math.abs(p[1] - po.y) < 1.5) finish();
     }
-    if (hud.panelOpen) { const r = hud.panelEl.getBoundingClientRect(); if (r.width < eng.size.w * 0.8) eng.setInset(Math.round(r.width), 0); else eng.setInset(0, Math.round(Math.min(r.height, eng.size.h * 0.72))); } else eng.setInset(0, 0);
+    if (hud.panelOpen) { const r = hud.panelEl.getBoundingClientRect(); if (r.width < eng.size.w * 0.8) eng.setInset(Math.round(r.width), 0); else eng.setInset(0, Math.round(Math.min(r.height, eng.size.h * 0.72))); } else if (hud.talking) eng.setInset(0, Math.round(eng.size.h * 0.3)); else eng.setInset(0, 0);      // speech sits at the bottom: the speakers and the projector move up into the clear part
     // the beacon stands on the next thing to do; a pointer at the edge of the screen shows the way when it is out of view
-    const tg = nextTarget(), mark = beacon.userData.mark && beacon.userData.mark.until > performance.now() ? beacon.userData.mark : null, show = mark || tg;
-    beacon.visible = !!show && !simOpen && !race;
-    if (show) { beacon.position.set(show.x, show.y, show.z); beacon.userData.arrow.position.y = 3.3 + Math.sin(time * 4) * 0.25; beacon.userData.ring.scale.setScalar(1 + Math.sin(time * 3) * 0.12); beacon.userData.arrow.visible = !mark; }
+    const tg = nextTarget(), mark = beacon.userData.mark && beacon.userData.mark.until > performance.now() ? beacon.userData.mark : null, spot = mark || tg;
+    beacon.visible = !!spot && !simOpen && !race && !hud.talking; titleSign.visible = !hud.talking;
+    if (spot) { beacon.position.set(spot.x, spot.y, spot.z); beacon.userData.arrow.position.y = 3.3 + Math.sin(time * 4) * 0.25; beacon.userData.ring.scale.setScalar(1 + Math.sin(time * 3) * 0.12); beacon.userData.arrow.visible = !mark; }
     if (tg && !hud.busy && !race) {
       const v = wayV.set(tg.x, tg.y + 2.2, tg.z).project(eng.camera), dist = Math.hypot(tg.x - p[0], tg.z - p[2]), behind = v.z > 1, w = eng.size.w, hgt = eng.size.h;
       let sx = (v.x + 1) / 2 * w, sy = (1 - v.y) / 2 * hgt; if (behind) { sx = w - sx; sy = hgt - 40; }
@@ -615,7 +678,7 @@ export function startGame(host, opts) {
     } else hud.way(null);
     for (const tgk of tags) {
       if (tgk.follow) tgk.sp.position.set(tgk.follow.c[0], tgk.follow.c[1] + 1.6, tgk.follow.c[2]); else if (tgk.body) tgk.sp.position.set(tgk.body.position.x, tgk.body.position.y + 1.1, tgk.body.position.z);
-      const q = tgk.sp.position, dd = Math.hypot(q.x - p[0], q.z - p[2]); tgk.sp.visible = !simOpen && dd < (tgk.near || 15) && dd > 1.2 && Math.abs(q.y - p[1]) < 9 && !(tgk.hide && tgk.hide());
+      const q = tgk.sp.position, dd = Math.hypot(q.x - p[0], q.z - p[2]); tgk.sp.visible = !simOpen && !hud.talking && dd < (tgk.near || 15) && dd > 1.2 && Math.abs(q.y - p[1]) < 9 && !(tgk.hide && tgk.hide());
     }
     if (++mapTick % 10 === 0) hud.map((g2, W2) => {
       // a small map of the islands: you, the other characters and the next thing to do
@@ -655,6 +718,6 @@ export function startGame(host, opts) {
     onExit?.(reason);
   }
   // for automated play-testing and profiling
-  window.__ukc3d = { nextTarget, autoTo, get auto() { return auto; }, things, dbg, eng, ctrl, cam, level, hud, input, physics, ex, ss, npcs, guide, rival, peers, doctors, lanes, spots: S, get sim() { return open ? open.sim : sims.get('main')?.sim; }, get race() { return race; }, openSim, openSimDef, startDuel, collect, hostView, tapsOpen: () => (open ? open.taps : []), simGroup: () => (open ? open.group : null) };
+  window.__ukc3d = { show, showLine, nextTarget, autoTo, get auto() { return auto; }, things, dbg, eng, ctrl, cam, level, hud, input, physics, ex, ss, npcs, guide, rival, peers, doctors, lanes, spots: S, get sim() { return open ? open.sim : sims.get('main')?.sim; }, get race() { return race; }, openSim, openSimDef, startDuel, collect, hostView, get padBox() { return padSolid; }, tapsOpen: () => (open ? open.taps : []), simGroup: () => (open ? open.group : null) };
   return { dispose: () => leave(null) };
 }

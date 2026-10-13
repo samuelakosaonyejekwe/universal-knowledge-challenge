@@ -116,14 +116,14 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
       const m = mesh(new THREE.BoxGeometry(size, size, size), mat(color), x, y, z);
       mesh(new THREE.BoxGeometry(size * 1.02, size * 0.12, size * 1.02), mat(th.accent), 0, 0, 0, m);
       const body = physics.box(m, [size, size, size], [x, y + size / 2 + 0.02, z], { mass });
-      const s = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, body }; level.solids.push(s); level.dynamic.push(s);
+      const s = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, body, home: [x, y + size / 2 + 0.02, z] }; level.solids.push(s); level.dynamic.push(s);
       return body;
     },
     ball(x, y, z, r = 0.45, { mass = 1.5, color = th.accent } = {}) {
       const m = mesh(new THREE.SphereGeometry(r, 20, 14), mat(color, { roughness: 0.35 }), x, y, z);
       mesh(new THREE.TorusGeometry(r * 1.005, r * 0.07, 6, 24), mat('#ffffff'), 0, 0, 0, m);
       const body = physics.ball(m, r, [x, y + r + 0.02, z], { mass });
-      const sld = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, body }; level.solids.push(sld); level.dynamic.push(sld);
+      const sld = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, noStand: true, body, home: [x, y + r + 0.02, z] }; level.solids.push(sld); level.dynamic.push(sld);
       return body;
     },
     // A swing gate on a hinge: walk into it to push it open. yaw = direction the closed gate spans.
@@ -136,7 +136,7 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
       mesh(new THREE.CylinderGeometry(0.11, 0.13, h + 0.5, 10), mat(th.stone), px, y + (h + 0.5) / 2, pz);
       physics.hinge(body, [px, y + h / 2 + 0.15, pz], [0, 1, 0]);
       solid({ type: 'cyl', x: px, z: pz, r: 0.16, y0: y, y1: y + h + 0.5 });
-      const sld = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, body, thin: true }; level.solids.push(sld); level.dynamic.push(sld);
+      const sld = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, noStand: true, body, thin: true }; level.solids.push(sld); level.dynamic.push(sld);
       return body;
     },
     // A weight hanging on a rope from (x, y, z): bump it and it swings.
@@ -262,7 +262,7 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
       m.s.mesh.position.set(c[0], c[1] - m.h / 2, c[2]);
       m.s.body.position.set(c[0], c[1] - m.h / 2, c[2]); m.s.body.velocity.set(m.s.delta[0] / dt, m.s.delta[1] / dt, m.s.delta[2] / dt);
     }
-    for (const s of level.dynamic) { const b = s.body; b.updateAABB(); s.min = [b.aabb.lowerBound.x, b.aabb.lowerBound.y, b.aabb.lowerBound.z]; s.max = [b.aabb.upperBound.x, b.aabb.upperBound.y, b.aabb.upperBound.z]; if (b.position.y < level.killY) { b.position.y = 30; b.velocity.set(0, 0, 0); } }
+    for (const s of level.dynamic) { const b = s.body; b.updateAABB(); s.min = [b.aabb.lowerBound.x, b.aabb.lowerBound.y, b.aabb.lowerBound.z]; s.max = [b.aabb.upperBound.x, b.aabb.upperBound.y, b.aabb.upperBound.z]; if (b.position.y < level.killY && s.home) { b.position.set(s.home[0], s.home[1] + 0.5, s.home[2]); b.velocity.set(0, 0, 0); b.angularVelocity.set(0, 0, 0); b.quaternion.set(0, 0, 0, 1); } }       // something pushed off the edge reappears where it started
   };
   // Per-frame update: scenery animation, crystals, particles, and the sun's shadow following the player.
   level.frame = (dt, t, focus) => {
@@ -411,7 +411,7 @@ export function keyPoints(S, level) {
   const lane = (a, b, y) => { const L = Math.hypot(b[0] - a[0], b[1] - a[1]); for (let d = 0; d <= L; d += 0.7) add(a[0] + (b[0] - a[0]) * d / L, y, a[1] + (b[1] - a[1]) * d / L, 0.8); };
   const first = S.legs[0], out = first.hops ? first.hops[0] : first.board; lane([S.spawn[0], S.spawn[2]], [S.guide[0], S.guide[2]], 0); lane([0, 0], out, 0); lane([S.guide[0], S.guide[2]], out, 0);
   lane(S.midIn, [S.mid[0], S.mid[2]], S.mid[1]); lane([S.mid[0], S.mid[2]], [S.float[0], S.float[1]], S.mid[1]); lane(S.farIn, [S.ladder[0], S.ladder[1] - 1.2], S.far[1]);
-  lane([S.sim[0] - Math.sign(S.sim[0] - S.far[0]) * 7, S.sim[2]], [S.sim[0], S.sim[2] - 3.6], S.sim[1]); lane([S.sim[0], S.sim[2] - 3.6], [bn.x, bn.z - 0.85], S.sim[1]); lane([S.sim[0] - 4.6, S.sim[2] - 3.4], [S.sim[0] - 4.6, S.sim[2] + 6], S.sim[1]); lane([S.sim[0] - 4.6, S.sim[2] + 6], [S.sim[0], S.sim[2] + 7.6], S.sim[1]);
+  lane([S.sim[0] - Math.sign(S.sim[0] - S.far[0]) * 7, S.sim[2]], [S.sim[0], S.sim[2] - 3.6], S.sim[1]); lane([S.sim[0], S.sim[2] - 3.6], [bn.x, bn.z - 0.85], S.sim[1]); lane([S.sim[0] - 4.6, S.sim[2] - 3.4], [S.sim[0] - 4.6, S.sim[2] + 5], S.sim[1]); lane([S.sim[0] - 4.6, S.sim[2] + 5], [S.sim[0] - 1, S.sim[2] + 7], S.sim[1]); lane([S.sim[0] - 1, S.sim[2] + 7], [S.sim[0], S.sim[2] + 7.4], S.sim[1]);
   lane([S.arena[0], S.arena[2] - 6.8], [S.arena[0], S.arena[2]], S.arena[1]); lane([S.arena[0], S.arena[2]], [S.rival[0] - 1.6, S.rival[2] - 1.2], S.arena[1]);
   // from each island's way in to the things on it that the mission sends the player to
   for (const tb of level.tablets) { const isle = [S.home, S.mid, S.far, S.sim, S.arena, S.end].reduce((b, q) => (Math.hypot(q[0] - tb.x, q[2] - tb.z) < Math.hypot(b[0] - tb.x, b[2] - tb.z) ? q : b)); lane([isle[0], isle[2]], [tb.x + Math.sin(tb.yaw) * 1.2, tb.z + Math.cos(tb.yaw) * 1.2], tb.y); }
@@ -474,7 +474,8 @@ function solidify(k, S, scenery, firstAnim) {
     const ground = groundBelow(level.solids.filter((q) => !q.scenery), cx, box.max.y + 0.3, cz, 0.05);
     if (!(ground > -1e6) || box.min.y - ground > 0.85 || box.max.y - ground < 0.32 || Math.max(sx, sz) > 7 || Math.max(sx, sz) < 0.14) return;
     const round = Math.min(sx, sz) / Math.max(sx, sz) > 0.62;
-    const sld = round ? { type: 'cyl', x: cx, z: cz, r: Math.max(sx, sz) / 2 * 0.88, y0: ground, y1: box.max.y, scenery: true } : { type: 'box', min: [box.min.x + 0.03, ground, box.min.z + 0.03], max: [box.max.x - 0.03, box.max.y, box.max.z - 0.03], scenery: true };
+    const hx = Math.max(0.08, sx / 2 - 0.03), hz = Math.max(0.08, sz / 2 - 0.03);        // never thinner than a plank
+    const sld = round ? { type: 'cyl', x: cx, z: cz, r: Math.max(0.1, Math.max(sx, sz) / 2 * 0.88), y0: ground, y1: box.max.y, scenery: true } : { type: 'box', min: [cx - hx, ground, cz - hz], max: [cx + hx, box.max.y, cz + hz], scenery: true };
     // never on a spot the game needs free (a point counts when it is at the object's own ground level)
     for (const [px, py, pz, pr] of keep) {
       if (py != null && Math.abs(py - ground) > 1.2) continue;

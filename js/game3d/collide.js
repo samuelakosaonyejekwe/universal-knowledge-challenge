@@ -42,7 +42,7 @@ export function moveBody(b, solids, dt, { step = 0.42 } = {}) {
   const y0 = p[1];
   let y1 = y0 + v[1] * dt, ground = null;
   for (const s of solids) {
-    if (!overlaps(s, p[0], p[2], b.r * 0.8)) continue;
+    if (s.noStand || !overlaps(s, p[0], p[2], b.r * 0.8)) continue;       // some things (a ball, a swinging gate) can be pushed but not stood on
     const T = topOf(s), B = bottomOf(s), rise = s.delta ? Math.abs(s.delta[1]) : 0;
     if (v[1] <= 0 && y0 >= T - 0.06 - rise && y1 <= T) { y1 = T; ground = s; }
     else if (v[1] > 0 && y0 + b.h <= B + 0.02 + rise && y1 + b.h > B) { y1 = B - b.h; v[1] = 0; }
@@ -56,7 +56,7 @@ export function moveBody(b, solids, dt, { step = 0.42 } = {}) {
       if (p[1] >= T - 1e-3 || p[1] + b.h <= B) continue;
       const hit = pushOut(s, p[0], p[2], b.r);
       if (!hit) continue;
-      if ((ground || wasGrounded) && v[1] <= 0 && T - p[1] <= step) { p[1] = T; ground = s; continue; }   // a small step up
+      if (!s.noStand && (ground || wasGrounded) && v[1] <= 0 && T - p[1] <= step) { p[1] = T; ground = s; continue; }   // a small step up
       p[0] += hit.nx * hit.depth; p[2] += hit.nz * hit.depth;
       b.wall = s;
     }
@@ -68,7 +68,7 @@ export function moveBody(b, solids, dt, { step = 0.42 } = {}) {
 // The height of the highest solid top at or below `y` under the point (x, z); -Infinity when there is none.
 export function groundBelow(solids, x, y, z, r = 0.05) {
   let best = -Infinity;
-  for (const s of solids) { const T = topOf(s); if (T <= y + 0.01 && T > best && overlaps(s, x, z, r)) best = T; }
+  for (const s of solids) { if (s.noStand) continue; const T = topOf(s); if (T <= y + 0.01 && T > best && overlaps(s, x, z, r)) best = T; }
   return best;
 }
 
