@@ -182,7 +182,7 @@ export default {
     ground: '#dc8fae', ground2: '#eaa9c2', side: '#7a4a8f', stone: '#f3e1ea', accent: '#c2255c', glow: '#ff9ed2', metal: '#5b3f8c', wood: '#a8643c', leaf: '#58b88a', water: '#6fb8e8', crate: '#845ef7',
     sun: '#ffd9b0', sunPower: 2.3, ambient: 1.3, skyLight: '#ffe3f1', groundLight: '#7a4a8f', sunDir: [-0.7, 0.45, 0.5], particles: 'notes',
   },
-  layout: { mirror: -1, stones: 5, rise: 0.4, towerH: 4.5 },
+  layout: { shape: 'descent', mirror: -1, stones: 5, rise: 0.4, towerH: 4.5 },
   story: {
     title: 'The Market of Many Voices',
     crystal: 'word lanterns', crystalEm: '🏮',

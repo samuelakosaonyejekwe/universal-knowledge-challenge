@@ -50,7 +50,9 @@ export async function runDuel(host, opts) {
   clear(host).append(arena);
   // The 3D arena: both characters on stage, score pillars that rise, and light that floods in on victory.
   let scene3d = null;
-  if (use3d()) {
+  // A caller that already has a 3D scene (the adventure) shows the duel there instead.
+  if (opts.scene) scene3d = opts.scene;
+  else if (use3d()) {
     const view = h('div', { style: { marginBottom: '.6rem' } });
     arena.prepend(view);
     try { scene3d = (await load3d()).mountArena(view, { student: profile.avatar, master: { seed: master.seed }, band: profile.band, total }); autoDispose(view, scene3d.dispose); } catch { view.remove(); }
@@ -67,6 +69,7 @@ export async function runDuel(host, opts) {
 
   for (let i = 0; i < total; i++) {
     const item = items[i];
+    opts.before?.(item);
     const { el, done } = ask(item, { feedback: false, timed: timed ? timeFor(item) : 0, voice, label: `${t('Question')} ${i + 1} / ${total}` });
     clear(stage).append(el);
     const r = await done;
@@ -107,6 +110,7 @@ async function suddenDeath(stage, say, opts, results) {
   while (true) {
     const item = pool.length ? pool.shift() : opts.items[round % opts.items.length];
     round++;
+    opts.before?.(item);
     const { el, done } = ask(item, { feedback: false, timed: 0, voice: opts.voice, label: `${t('Sudden death')} · ${t('Round')} ${round}` });
     clear(stage).append(el);
     const r = await done;

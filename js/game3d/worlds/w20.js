@@ -255,7 +255,7 @@ export default {
     ground: '#efe2c0', ground2: '#c9dc9a', side: '#b89a78', stone: '#f6eedb', accent: '#6741d9', glow: '#ffb92e', metal: '#7a5a8c', wood: '#8a5a3a', leaf: '#7fb069', water: '#7fd3e6', crate: '#f2c078',
     sun: '#ffe0a3', sunPower: 2.5, ambient: 1.45, skyLight: '#fff3d6', groundLight: '#d9b38c', sunDir: [-0.6, 0.55, 0.5], particles: 'sparks',
   },
-  layout: { mirror: -1, stones: 4, rise: 0.6, towerH: 4.5 },
+  layout: { shape: 'descent', mirror: -1, stones: 4, rise: 0.6, towerH: 4.5 },
   story: {
     title: 'The Lantern Council',
     crystal: 'question lanterns', crystalEm: '🏮',

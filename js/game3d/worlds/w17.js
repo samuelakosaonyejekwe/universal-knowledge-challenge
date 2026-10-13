@@ -174,7 +174,7 @@ export default {
     ground: '#d5e9f0', ground2: '#eaf6fa', side: '#7fb6c9', stone: '#f4f8fb', accent: '#7048e8', glow: '#22c3dd', metal: '#7f9aab', wood: '#6f8aa0', leaf: '#7fe0d0', water: '#4cc9e8', crate: '#b9a7f5',
     sun: '#f4fdff', sunPower: 2.5, ambient: 1.3, skyLight: '#dff8ff', groundLight: '#9fd0e0', sunDir: [-0.55, 0.85, 0.3], particles: 'snow',
   },
-  layout: { mirror: -1, stones: 5, rise: 0.4, towerH: 6.5 },
+  layout: { shape: 'hook', mirror: -1, stones: 5, rise: 0.4, towerH: 6.5 },
   story: {
     title: 'The Labyrinth of Reason',
     crystal: 'thinking prisms', crystalEm: '🔷',

@@ -400,3 +400,11 @@ html.g3d-on, html.g3d-on body { overflow: hidden; }
 @media (min-width: 1000px) { .worlds { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 @media (min-width: 2100px) { .worlds { grid-template-columns: repeat(10, minmax(0, 1fr)); } }
 .grid.c4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+/* On phones the answer buttons stay in reach at the bottom of the screen, however long the question is. */
+@media (max-width: 720px), (pointer: coarse) {
+  #main .q-actions { position: sticky; bottom: calc(var(--nav-h) + var(--vv-gap, 0px) + env(safe-area-inset-bottom, 0px) + .4rem); z-index: 5; background: color-mix(in srgb, var(--card) 94%, transparent); backdrop-filter: blur(6px); padding: .5rem; margin-inline: -.5rem; border-radius: 14px; }
+  .g3d-panel .q-actions { position: sticky; bottom: 0; z-index: 5; background: var(--card); padding: .5rem 0; }
+}
+
+.g3d-panel.wide { width: min(46rem, 100vw); }
+.g3d-panel .arena { box-shadow: none; padding: 0; }

@@ -167,7 +167,7 @@ export default {
     ground: '#e3ebf5', ground2: '#f3f7fc', side: '#8a9cc0', stone: '#f1f5fb', accent: '#7a4be0', glow: '#6fe8ff', metal: '#8d9bb8', wood: '#c6d0e4', leaf: '#57c9a6', water: '#3fc6e8', crate: '#c9b3f5',
     sun: '#dfeaff', sunPower: 1.7, ambient: 1.4, skyLight: '#bff3ff', groundLight: '#6a58c0', sunDir: [-0.4, 0.85, 0.5], particles: 'dust',
   },
-  layout: { mirror: -1, stones: 5, rise: 0.4, towerH: 4.5 },
+  layout: { shape: 'line', mirror: -1, stones: 5, rise: 0.4, towerH: 4.5 },
   story: {
     title: 'The Nuclear Safety Academy',
     crystal: 'safety badges', crystalEm: '🛡️',

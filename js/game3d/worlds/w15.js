@@ -168,7 +168,7 @@ export default {
     ground: '#f4efe8', ground2: '#ffe1ec', side: '#d9b3e6', stone: '#f2eef7', accent: '#ae3ec9', glow: '#f06595', metal: '#8d7aa8', wood: '#c98f5a', leaf: '#63c69a', water: '#7fd3f0', crate: '#ffd8a8',
     sun: '#fff6dc', sunPower: 2.2, ambient: 1.2, skyLight: '#fff0fa', groundLight: '#e7c6f2', sunDir: [-0.4, 1, 0.5], particles: 'leaves',
   },
-  layout: { mirror: -1, stones: 5, rise: 0.4, towerH: 4.5 },
+  layout: { shape: 'descent', mirror: -1, stones: 5, rise: 0.4, towerH: 4.5 },
   story: {
     title: 'The Gallery of Lost Colours',
     crystal: 'colour drops', crystalEm: '🎨',
@@ -212,7 +212,7 @@ export default {
       k.mesh(new THREE.BoxGeometry(0.85, 0.24, 0.4), k.mat(b, { roughness: 0.4 }), x, y + 1.82, z).rotation.set(0.15, 0.6, 0.3);
       return k.mesh(new THREE.TorusGeometry(0.3, 0.09, 8, 20), k.mat(c, { roughness: 0.4 }), x, y + 2.4, z);
     };
-    const hoopA = sculpture(5, mid[1], mid[2] + 0.4, [paints[0], paints[1], paints[2]]), hoopB = sculpture(S.end[0] + 3.2, S.end[1], S.end[2] - 0.6, [paints[4], paints[5], paints[1]]);
+    const hoopA = sculpture(5, mid[1], mid[2] + 0.4, [paints[0], paints[1], paints[2]]), hoopB = sculpture(S.end[0] + 2.2, S.end[1], S.end[2] - 3.6, [paints[4], paints[5], paints[1]]);
     k.animate((dt) => { hoopA.rotation.y += dt * 0.7; hoopB.rotation.y -= dt * 0.7; });
     // picture frames hanging in the air beside the route
     const lz = mid[2] + 11.6, frames = [[5.6, 3.4, 17, -0.5, 0, 5], [-8.2, mid[1] + 3.6, lz - 1, 0.9, 3, 1], [8.4, mid[1] + 4.2, lz + 3, -0.9, 4, 2]].map(([x, y, z, yaw, a, b], i) => {

@@ -266,7 +266,7 @@ export default {
     leaf: '#2f9e44', water: '#4dabf7', crate: '#ffa94d',
     sun: '#fff7e0', sunPower: 2.6, ambient: 1.5, skyLight: '#e3f3ff', groundLight: '#7cc36a', sunDir: [-0.4, 1, 0.3], particles: 'leaves',
   },
-  layout: { mirror: -1, spawnZ: 1.5, stones: 5, rise: 0.4, towerH: 4.5 },
+  layout: { shape: 'chain', mirror: -1, spawnZ: 1.5, stones: 5, rise: 0.4, towerH: 4.5 },
   story: {
     title: 'Mayor for a Day',
     crystal: 'neighbour notes', crystalEm: '📝',

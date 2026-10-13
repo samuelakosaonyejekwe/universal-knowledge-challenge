@@ -167,7 +167,7 @@ export default {
     ground: '#cdbb9c', ground2: '#ddcdb0', side: '#8c7358', stone: '#e8dfcb', accent: '#0b7285', glow: '#ffd43b', metal: '#5c6b73', wood: '#a8703c', leaf: '#5fbf5a', water: '#3bc9db', crate: '#e8a85a',
     sun: '#fff4d6', sunPower: 2.7, ambient: 1.5, skyLight: '#dff9ff', groundLight: '#b89a6a', sunDir: [-0.45, 1, 0.3], particles: 'leaves',
   },
-  layout: { mirror: -1, stones: 4, rise: 0.35, towerH: 4.5 },
+  layout: { shape: 'hook', mirror: -1, stones: 4, rise: 0.35, towerH: 4.5 },
   story: {
     title: 'The Riverside Token Market',
     crystal: 'market tokens', crystalEm: '🪙',

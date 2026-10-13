@@ -2,10 +2,15 @@
 // everything the player does to the lesson (questions, key ideas, the simulation and the knowledge challenge).
 import { h, rngFrom, toast, confetti, shuffle } from '../core/util.js';
 import { t, tr, trInto, lang } from '../core/i18n.js';
-import { save, recordAnswer, logEvent } from '../core/store.js';
+import { save, recordAnswer, logEvent, worldId } from '../core/store.js';
 import { sfx, holdMusic } from '../core/audio.js';
-import { ask, timeFor } from '../engine/quiz.js';
-import { LEVELS } from '../data/worlds.js';
+import { ask, rubricHits } from '../engine/quiz.js';
+import { runDuel } from '../engine/duel.js';
+import { duelSet, tiebreakSet, panelSet } from '../engine/content.js';
+import { scheduleStage } from '../core/srs.js';
+import { toEnglish } from '../core/i18n.js';
+import { STAGE_REWARD, CONTEXTS } from '../data/worlds.js';
+import { labsFor, mountLab } from '../views/labhost.js';
 import * as labkit from '../core/labkit.js';
 import { award } from '../views/ui.js';
 import { THREE, sprite, glow } from '../gfx/kit3d.js';
@@ -15,15 +20,21 @@ import { createInput } from './input.js';
 import { createRig } from './rig.js';
 import { createController, createFollowCamera } from './player.js';
 import { createNpc } from './npc.js';
-import { createWorld, buildCourse } from './world.js';
+import { createWorld, buildCourse, decorateWorld } from './world.js';
 import { createHud } from './hud.js';
 
-const CRYSTALS = 5, SEGMENTS = 6;
+const CRYSTALS = 5, SEGMENTS = 7, TABLETS = 2;
 
-// Text written in English inside world files is translated in the background and used from then on.
-const cache = new Map();
+// Text written in English inside world files: a translation shipped with the game is used when there is one
+// (i18n/worlds/<language>.json); anything else is translated on the device in the background.
+const cache = new Map(), shipped = {};
+export async function loadWorldText() {
+  if (lang === 'en' || shipped[lang]) return;
+  try { const r = await fetch(`i18n/worlds/${lang}.json`); shipped[lang] = r.ok ? await r.json() : {}; } catch { shipped[lang] = {}; }
+}
 function tx(text) {
   if (lang === 'en' || !text) return text;
+  const ready = shipped[lang]?.[text]; if (ready) return ready;
   const key = lang + '|' + text;
   if (!cache.has(key)) { cache.set(key, text); tr(text).then((o) => cache.set(key, o)).catch(() => {}); }
   return cache.get(key);
@@ -31,7 +42,8 @@ function tx(text) {
 
 // opts: { wkey, world, def, level, stageN, stage (lesson), items (questions), who (cast), profile, onExit(reason) }
 export function startGame(host, opts) {
-  const { wkey, world: w, def, level: lv, stageN, stage, who, profile, onExit } = opts;
+  const { wkey, world: w, def, level: lv, stageN, stage, who, profile, onExit, ss, textOK } = opts;
+  const qopts = { text: textOK && profile.band !== 'tiny', say: false };
   const rng = rngFrom(`g3d|${wkey}|${lv}|${stageN}`);
   const calm = profile.settings.motion === 'off' || matchMedia('(prefers-reduced-motion: reduce)').matches;
   const eng = createEngine(host, { quality: profile.settings.g3dq || 'auto', calm });
@@ -39,12 +51,13 @@ export function startGame(host, opts) {
   const physics = createPhysics();
   const level = createWorld(eng, physics, def, { rng });
   const k = level.kit, S = buildCourse(k, def.layout || {});
-  def.decorate?.(k, S);
+  decorateWorld(k, def, S);
   const story = def.story;
 
   // progress for this stage's mission is kept with the profile
   const all = (profile.notes.explore ||= {});
-  const ex = (all[`${wkey}|${lv}|${stageN}`] ||= { orbs: [], sim: false, race: false, met: false, done: 0, read: [] });
+  const ex = (all[`${wkey}|${lv}|${stageN}`] ||= { orbs: [], sim: false, met: false, done: 0, read: [] });
+  const reach = (n) => { if (n > ss.step) ss.step = n; };          // the same step counter the flat lesson pages use
   const persist = () => save();
 
   // ----- characters -----
@@ -66,7 +79,9 @@ export function startGame(host, opts) {
   const rival = person(who.master, 'master', S.rival, null, { wander: false, yaw: Math.PI }); rival.pose = 'think';
   const hints = shuffle([...(stage.terms || []).map(([a, b]) => `${a}: ${b}`), ...Object.values(stage.analogies || {}), stage.mnemonic].filter(Boolean), rng);
   const peers = [person(who.peers[0], 'peer', null, S.midNodes), person(who.peers[1], 'peer', null, S.simNodes)];
-  const npcs = [guide, rival, ...peers];
+  const doctors = who.doctors.map((d, i) => { const n = person(d, 'doctor', S.doctors[i], null, { wander: false, yaw: Math.PI }); n.full = d.name; return n; });
+  const npcs = [guide, rival, ...peers, ...doctors];
+  k.sign(`${stage.icon || w.em} ${tx(stage.title)}`, S.guide[0] * 0.4, 3.4, 6.2, { size: 0.55 });
   let talkingTo = null;
 
   // ----- HUD -----
@@ -74,16 +89,19 @@ export function startGame(host, opts) {
   const names = { guide: guide.name, rival: rival.name, crystal: tx(story.crystal) };
   function goals() {
     const got = ex.orbs.length, steps = [
-      [t('Talk to {name}', { name: names.guide }), ex.met],
+      [t('Hear the lesson from {name}', { name: names.guide }), !!ss.lesson],
+      [t('Read {n} tablets', { n: TABLETS }), ex.read.length >= TABLETS],
       [t('Collect {n} of {total}: {thing}', { n: Math.min(got, CRYSTALS), total: CRYSTALS, thing: tx(story.crystal) }), got >= CRYSTALS],
-      [t('Run the simulation at the console'), ex.sim],
-      [t('Win the challenge against {name}', { name: names.rival }), ex.race],
+      [t('Run the simulation at the console'), !!ss.lab],
+      [t('Explain it to {name}', { name: peers[0].name }), !!ss.explained],
+      [t('Beat {name} in the Master Duel', { name: names.rival }), ss.wins > 0],
+      [t('Satisfy the College of Doctors'), !!ss.done],
       [t('Step through the portal'), false],
     ];
-    const now = steps.findIndex((s) => !s[1]);
-    hud.goals(steps.map(([text, done], i) => ({ text, done, now: i === now })));
+    const now = steps.findIndex((x) => !x[1]);
+    hud.goals(steps.map(([text, done], n) => ({ text, done, now: n === now })));
     hud.count(`${story.crystalEm || '💎'} ${got}/${CRYSTALS}`);
-    if (level.spots.portal) level.spots.portal.open = ex.race;
+    if (level.spots.portal) level.spots.portal.open = !!ss.done;
   }
   for (const o of level.orbs) if (ex.orbs.includes(o.i)) { o.taken = true; o.g.visible = false; }
 
@@ -102,10 +120,10 @@ export function startGame(host, opts) {
   const pool = opts.items.slice(); let qi = 0;
   const dbg = { item: null };
   const nextItem = () => pool[qi++ % pool.length];
-  function question(item, { timed = 0, closable = true } = {}) {
+  function question(item, { timed = 0, closable = true, hints = 1, label } = {}) {
     return new Promise((resolve) => {
       dbg.item = item;
-      const { el, done } = ask(item, { feedback: true, hints: timed ? 0 : 1, timed, context: { terms: stage.terms, mnemonic: stage.mnemonic } });
+      const { el, done } = ask(item, { feedback: true, hints, timed, label, context: { terms: stage.terms, mnemonic: stage.mnemonic } });
       let settled = false;
       hud.panel(t('Question'), el, { closable, onClose: () => { if (!settled) { settled = true; resolve(null); } } });
       done.then((r) => { if (settled) return; settled = true; recordAnswer(wkey, item, r.correct, { ms: r.ms, mode: 'explore' }); resolve(r); hud.closePanel(); });
@@ -114,15 +132,18 @@ export function startGame(host, opts) {
 
   async function collect(o) {
     ctrl.frozen = true; rig.once('use');
-    const r = await question(nextItem());
+    const recall = ex.orbs.length < 2, item = nextItem();
+    const r = await question(item, { hints: recall ? 0 : stageN <= 3 ? 3 : stageN <= 6 ? 2 : 1 });
     ctrl.frozen = false;
     if (!r) return;
     if (r.correct) {
-      o.taken = true; o.g.visible = false; ex.orbs.push(o.i); persist(); sfx('coin'); burst(o.g.position, def.theme.glow || '#ffd76a');
+      o.taken = true; o.g.visible = false; ex.orbs.push(o.i); sfx('coin'); burst(o.g.position, def.theme.glow || '#ffd76a');
       rig.setFace('happy'); rig.once('cheer', () => rig.setFace('neutral'));
+      if (item.d === 3 && !r.hints && !ss.hard) { ss.hard = true; award(wkey, 'hard'); }
       logEvent('explore', { w: wkey, what: 'crystal', n: ex.orbs.length });
-      if (ex.orbs.length === CRYSTALS) hud.banner('✨ ' + t('All found! Now run the simulation.'));
-      goals();
+      if (ex.orbs.length === 2) reach(4);
+      if (ex.orbs.length === CRYSTALS) { ss.practice = Math.max(ss.practice || 0, 1); reach(6); hud.banner('✨ ' + t('All found!')); }
+      persist(); goals();
     } else { sfx('no'); rig.setFace('sad'); setTimeout(() => rig.setFace('neutral'), 1500); hud.tip(t('Not yet. Read a tablet or ask a classmate, then try this crystal again.')); }
   }
 
@@ -133,7 +154,7 @@ export function startGame(host, opts) {
     else body.append(h('h3', null, '🧠 ', t('Memory hook')), trInto(h('p'), stage.mnemonic || stage.hook));
     if (stage.misc && n === 0) body.append(h('div', { class: 'note mt' }, h('b', null, t('Careful') + ': '), trInto(h('span'), stage.misc.right)));
     body.append(h('button', { class: 'btn sm mt', type: 'button', onClick: () => hud.closePanel() }, t('OK')));
-    if (!ex.read.includes(tb.i)) { ex.read.push(tb.i); persist(); }
+    if (!ex.read.includes(tb.i)) { ex.read.push(tb.i); if (ex.read.length >= TABLETS) reach(3); persist(); goals(); }
     hud.panel('📖 ' + t('Key idea'), body);
   }
 
@@ -172,7 +193,7 @@ export function startGame(host, opts) {
         },
         say: (text) => { sim.says = tx(text); sim.saysEl?.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), sim.says)); },
         complete(score = 1, note = '') {
-          const first = !ex.sim; ex.sim = true; ex.simBest = Math.max(ex.simBest || 0, score); persist(); sfx('ok');
+          const first = !ex.sim; ex.sim = true; ex.simBest = Math.max(ex.simBest || 0, score); ss.lab = true; reach(5); persist(); sfx('ok');
           logEvent('explore', { w: wkey, what: 'sim', score });
           if (first) { award(wkey, 'experiment'); rig.setFace('happy'); setTimeout(() => rig.setFace('neutral'), 2500); hud.banner('🔬 ' + t('Simulation complete!')); } else toast('✅ ' + t('Mission complete!'));
           goals();
@@ -184,7 +205,64 @@ export function startGame(host, opts) {
     hud.panel('🔬 ' + tx(sdef.title), body, { onClose: () => { quiet?.(); simOpen = false; ctrl.frozen = false; rig.reach(null); cam.release(); } });
   }
 
-  // ----- the knowledge challenge: two bridges of light race across the gap -----
+  // ----- the lesson: the teacher explains in the world, with the worked example and a picture from life -----
+  let analogy = 0;
+  async function lesson() {
+    const keys = Object.keys(stage.analogies || {}), known = (profile.experience?.contexts || []).filter((x) => keys.includes(x)), order = [...known, ...keys.filter((x) => !known.includes(x))];
+    const lines = [];
+    if (!ex.met) lines.push(...story.intro);
+    if (!ss.lesson) lines.push(stage.hook);
+    lines.push(...stage.explain);
+    if (order.length) { const key = order[analogy++ % order.length], c = CONTEXTS.find((x) => x[0] === key); lines.push(`${c ? c[1] + ' ' : ''}Think of it like this. ${stage.analogies[key]}`); }
+    if (stage.example && !ss.lesson) lines.push(`Let us work one through together. ${stage.example.q}`, ...stage.example.steps, `So the answer is: ${stage.example.a}`);
+    if (stage.misc) lines.push(`A common mix-up: "${stage.misc.wrong}" What is really going on: ${stage.misc.right}`);
+    if (!ss.lesson) lines.push(`Now make it yours. Read the tablets, find the ${CRYSTALS} ${story.crystal}, run the simulation, and explain it to ${peers[0].name}. Then the master will accept your challenge.`);
+    await talkTo(guide, lines.map(tx));
+    ex.met = true;
+    if (!ss.lesson) { ss.lesson = true; award(wkey, 'lesson'); }
+    reach(2); persist(); goals();
+  }
+
+  // ----- explain it to a classmate -----
+  async function explainTo(npc) {
+    const tc = stage.teach;
+    await talkTo(npc, [tx(`I am stuck. Can you explain it to me? ${tc.topic}. Use an example if you can.`)]);
+    ctrl.frozen = true; talkingTo = npc;
+    const area = h('textarea', { class: 'input', rows: 5, placeholder: t('Explain in your own words…'), 'aria-label': t('Your explanation') });
+    const out = h('div', { class: 'mt', 'aria-live': 'polite' });
+    const done = () => { if (!ss.explained) { ss.explained = true; ss.ready = true; award(wkey, 'investigation'); logEvent('ready', { w: wkey, level: lv, stage: stageN }); } reach(7); persist(); goals(); npc.mood = 'happy'; hud.closePanel(); talkTo(npc, [tx('Oh! Now I see it. Thank you — you explain it better than the book.')]); };
+    const check = h('button', { class: 'btn', type: 'button', onClick: async () => {
+      if (area.value.trim().split(/\s+/).length < 5) return toast(t('Say a little more — at least a full sentence.'));
+      check.disabled = true; out.replaceChildren();
+      if (!textOK) {
+        out.append(h('div', { class: 'note' }, h('b', null, t('Compare your explanation with this one') + ': '), trInto(h('span'), tc.model)), h('p', { class: 'small mt' }, t('Did yours cover the same ideas?')),
+          h('div', { class: 'row' }, h('button', { class: 'btn ok', type: 'button', onClick: done }, t('Yes, mostly')), h('button', { class: 'btn ghost', type: 'button', onClick: () => { check.disabled = false; out.replaceChildren(); } }, t('Not yet — let me improve it'))));
+        return;
+      }
+      const hits = rubricHits(await toEnglish(area.value), tc.points.map((p) => p.k)), ok = hits.filter(Boolean).length / hits.length >= 0.5;
+      recordAnswer(wkey, { k: 'concept', id: `${wkey}|${lv}|${stageN}|t` }, ok);
+      if (ok) return done();
+      const missing = tc.points.filter((_, n) => !hits[n]);
+      out.append(h('div', { class: 'note warn' }, h('b', null, t('To make it even better, also answer') + ': '), h('ul', null, missing.slice(0, 2).map((p) => trInto(h('li'), p.ask)))),
+        h('details', { class: 'small mt' }, h('summary', null, t('See a model explanation')), trInto(h('p'), tc.model)),
+        h('div', { class: 'row mt' }, h('button', { class: 'btn ghost sm', type: 'button', onClick: done }, t('Continue anyway'))));
+      check.disabled = false;
+    } }, t('Check my explanation'));
+    hud.panel('🗣️ ' + t('Explain'), h('div', null, trInto(h('p', { class: 'bold' }), tc.topic), area, h('div', { class: 'row mt' }, check), out), { onClose: () => { ctrl.frozen = false; talkingTo = null; } });
+    dbg.teach = tc;
+  }
+
+  // ----- the lab bench: this world's hands-on labs, used without leaving the world -----
+  function openBench() {
+    const labs = labsFor(worldId(wkey)); let running = null;
+    const body = h('div');
+    const list = () => { running?.stop(); running = null; body.replaceChildren(h('p', { class: 'small muted' }, t('Every lab says what its model leaves out.')), ...labs.map((l) => h('button', { class: 'card flat', type: 'button', style: { display: 'block', width: '100%', textAlign: 'start', cursor: 'pointer', marginBottom: '.5rem' }, onClick: () => run(l) }, h('b', null, l.icon, ' ', tx(l.title)), h('div', { class: 'small' }, tx(l.goal))))); };
+    const run = (l) => { running = mountLab(l, { wkey, level: lv, teacher: who.teacher, onComplete: () => { ss.lab = true; reach(5); persist(); goals(); } }); body.replaceChildren(h('button', { class: 'btn ghost sm mb', type: 'button', onClick: list }, '← ', t('Labs & trips')), running.el); };
+    list(); ctrl.frozen = true;
+    hud.panel('🧪 ' + t('Labs & trips'), body, { wide: true, onClose: () => { running?.stop(); ctrl.frozen = false; } });
+  }
+
+  // ----- the Master Duel: the official duel, shown as two bridges of light growing across the gap -----
   const gap = S.gap, segLen = (gap.z1 - gap.z0) / SEGMENTS;
   const lanes = { me: { x: S.raceStart[0], n: 0, parts: [], solids: [], color: '#3ddc97' }, them: { x: S.rivalStart[0], n: 0, parts: [], solids: [], color: '#ff6b8b' } };
   function setBridge(lane, n) {
@@ -192,65 +270,81 @@ export function startGame(host, opts) {
     while (lane.parts.length < n) {
       const i = lane.parts.length, z = gap.z0 + segLen * (i + 0.5);
       const m = k.mesh(new THREE.BoxGeometry(1.7, 0.22, segLen * 0.96), k.lit(lane.color, 0.8, { transparent: true, opacity: 0.9 }), lane.x, gap.y - 0.11, z); m.scale.set(0.01, 1, 0.01); m.castShadow = false;
-      const s = { type: 'box', min: [lane.x - 0.85, gap.y - 0.22, z - segLen / 2], max: [lane.x + 0.85, gap.y, z + segLen / 2] };
-      lane.parts.push(m); lane.solids.push(s); level.solids.push(s); burst(m.position, lane.color, 14);
+      const sld = { type: 'box', min: [lane.x - 0.85, gap.y - 0.22, z - segLen / 2], max: [lane.x + 0.85, gap.y, z + segLen / 2] };
+      lane.parts.push(m); lane.solids.push(sld); level.solids.push(sld); burst(m.position, lane.color, 14);
     }
-    while (lane.parts.length > n) { lane.parts.pop().removeFromParent(); const s = lane.solids.pop(); level.solids.splice(level.solids.indexOf(s), 1); }
+    while (lane.parts.length > n) { lane.parts.pop().removeFromParent(); const sld = lane.solids.pop(); level.solids.splice(level.solids.indexOf(sld), 1); }
     lane.n = n;
   }
   let race = null;
-  if (ex.race) setBridge(lanes.me, SEGMENTS);
-  async function startRace() {
-    if (ex.orbs.length < CRYSTALS || !ex.sim) { await talkTo(rival, [tx(story.notReady || 'You are not ready for me. Bring every crystal and finish the simulation first.')]); return; }
+  if (ss.wins > 0) setBridge(lanes.me, SEGMENTS);
+  const ready = () => ss.done || (ss.lesson && ex.orbs.length >= CRYSTALS && ss.lab && ss.explained);
+  async function startDuel() {
+    if (!ready()) { await talkTo(rival, [tx(story.notReady || 'You are not ready for me. Finish every step with your teacher first.')]); return; }
     await talkTo(rival, story.rival.map(tx));
     setBridge(lanes.me, 0); setBridge(lanes.them, 0);
     ctrl.place(S.raceStart[0], S.raceStart[1] + 0.05, S.raceStart[2], 0); rival.place(S.rivalStart[0], S.rivalStart[1], S.rivalStart[2], 0); rival.pose = null;
-    race = { on: true, mine: 0, theirs: 0, round: 0 };
+    race = { on: true };
     const midZ = (gap.z0 + gap.z1) / 2;
     cam.cut(new THREE.Vector3(gap.x - 14, gap.y + 5.5, midZ - 3), new THREE.Vector3(gap.x, gap.y + 0.8, midZ - 1), { dur: 1.4, hold: Infinity });
-    const master = LEVELS[lv - 1].master;
-    const score = h('div', { class: 'g3d-score' });
-    const drawScore = () => score.replaceChildren(h('span', { class: 'me' }, `${profile.name} ${'▰'.repeat(race.mine)}${'▱'.repeat(SEGMENTS - race.mine)}`), h('span', { class: 'them' }, `${rival.name} ${'▰'.repeat(race.theirs)}${'▱'.repeat(SEGMENTS - race.theirs)}`));
-    while (race.mine < SEGMENTS && race.theirs < SEGMENTS) {
-      race.round++; drawScore();
-      // strategy: a steady step, or a bold double step against a shorter clock
-      const bold = await new Promise((res) => {
-        const body = h('div', null, score, h('p', null, t('Choose how to build your bridge for this question.')),
-          h('div', { class: 'row' }, h('button', { class: 'btn', type: 'button', onClick: () => res(false) }, '🛡️ ', t('Steady: 1 piece')), h('button', { class: 'btn gold', type: 'button', onClick: () => res(true) }, '⚡ ', t('Bold: 2 pieces, less time'))),
-          h('p', { class: 'small muted' }, t('A wrong bold answer costs one piece.')));
-        hud.panel('⚔️ ' + t('Round {n}', { n: race.round }), body, { closable: false });
-      });
-      const item = nextItem();
-      const r = await question(item, { timed: profile.settings.untimed ? 0 : Math.round(timeFor(item) * (bold ? 0.5 : 1)), closable: false });
-      const ok = !!r?.correct, themOK = rng() < master;
-      if (ok) race.mine += bold ? 2 : 1; else if (bold) race.mine -= 1;
-      if (themOK) race.theirs += 1;
-      race.mine = Math.max(0, Math.min(SEGMENTS, race.mine)); race.theirs = Math.min(SEGMENTS, race.theirs);
-      if (race.mine >= SEGMENTS && race.theirs >= SEGMENTS) race.theirs = SEGMENTS - 1;      // the player answered first
-      setBridge(lanes.me, race.mine); setBridge(lanes.them, race.theirs);
-      sfx(ok ? 'ok' : 'no'); rig.setFace(ok ? 'happy' : 'sad'); rival.mood = themOK ? 'happy' : 'sad'; cam.state.shake = ok ? 0.5 : 0;
-      await new Promise((res) => setTimeout(res, 1500));
-      rig.setFace('neutral'); rival.mood = 'neutral';
-    }
-    const won = race.mine >= SEGMENTS;
-    logEvent('explore', { w: wkey, what: 'race', won, rounds: race.round });
-    race.on = false;
-    if (won) {
-      const first = !ex.race; ex.race = true; persist(); sfx('win'); if (!calm) confetti(60);
-      rig.setFace('happy'); rig.once('cheer', () => rig.setFace('neutral')); rival.pose = 'sad';
-      if (first) award(wkey, 'duel');
-      setBridge(lanes.them, 0);
-      await new Promise((res) => setTimeout(res, 1600));
+    const host = h('div');
+    hud.panel('⚔️ ' + t('Master Duel'), host, { closable: false });
+    const [items, tiebreak] = await Promise.all([duelSet(wkey, lv, stageN, qopts), tiebreakSet(wkey, lv, qopts)]);
+    dbg.duel = items; ss.tries++; persist();
+    let you = 0, them = 0;
+    const res = await runDuel(host, { wkey, level: lv, items, tiebreak, master: who.master, timed: !profile.settings.untimed, voice: false,
+      scene: {
+        answer(youOK, themOK) { if (youOK) you++; if (themOK) them++; setBridge(lanes.me, Math.floor(you / 2)); setBridge(lanes.them, Math.floor(them / 2)); rig.setFace(youOK ? 'happy' : 'sad'); rival.mood = themOK ? 'happy' : 'sad'; if (youOK) cam.state.shake = 0.4; setTimeout(() => { rig.setFace('neutral'); rival.mood = 'neutral'; }, 1400); },
+        finish() {},
+      },
+      before: (item) => { dbg.item = item; } });
+    logEvent('duel', { w: wkey, level: lv, stage: stageN, won: res.won, you: res.you, them: res.them, timed: !profile.settings.untimed, in3d: true });
+    hud.closePanel(); race.on = false;
+    if (res.won) {
+      const first = !ss.wins; ss.wins++; ss.best = Math.max(ss.best, res.you); if (ss.tries > 1 && first) profile.stats.retriesWon++;
+      persist(); if (!calm) confetti(60);
+      setBridge(lanes.me, SEGMENTS); setBridge(lanes.them, 0);
+      rig.emblem.visible = true; rig.setFace('happy'); rig.once('cheer', () => rig.setFace('neutral')); rival.pose = 'sad';
+      if (first) { award(wkey, 'stage', STAGE_REWARD[stageN - 1]); if (res.perfect) setTimeout(() => award(wkey, 'perfect'), 1200); } else award(wkey, 'duel');
+      hud.banner('🏅 ' + t('Victory! {you} to {them}', { you: res.you, them: res.them }), 3.5);
+      await new Promise((r) => setTimeout(r, 1800));
       rival.place(S.rival[0], S.rival[1], S.rival[2], Math.PI); cam.release(); race = null;
       await talkTo(rival, story.win.map(tx)); rival.pose = 'think';
-      hud.banner('🌉 ' + t('Your bridge is complete. The portal is open!'), 4);
+      if (!ss.done) hud.tip(t('Cross your bridge. The College of Doctors is waiting on the far side.'), 8);
     } else {
-      sfx('lose'); rival.pose = 'cheer'; rig.setFace('sad');
-      await new Promise((res) => setTimeout(res, 1800));
-      setBridge(lanes.me, 0); setBridge(lanes.them, 0);
+      rival.pose = 'cheer'; rig.setFace('sad');
+      await new Promise((r) => setTimeout(r, 1800));
+      setBridge(lanes.me, ss.wins > 0 ? SEGMENTS : 0); setBridge(lanes.them, 0);
       ctrl.place(S.arena[0], S.arena[1] + 0.05, S.arena[2], 0); rival.place(S.rival[0], S.rival[1], S.rival[2], Math.PI); rival.pose = 'think'; rig.setFace('neutral');
       cam.release(); race = null;
-      await talkTo(rival, story.lose.map(tx));
+      await talkTo(rival, [...story.lose.map(tx), tx(res.you < 50 ? `You scored ${res.you}. You need at least 50 and more than me.` : `So close: ${res.you} to ${res.them}.`)]);
+      hud.tip(t('Nobody is out of this game. Hear the lesson again, practise, then challenge the master with new questions.'), 9);
+    }
+    goals();
+  }
+
+  // ----- the College of Doctors: three searching questions on the portal island -----
+  async function college(first) {
+    if (!(ss.wins > 0)) { await talkTo(first, [tx('The College hears only those who have beaten the master. Come back when your bridge is built.')]); return; }
+    if (ss.done) { await talkTo(first, [tx('The College is satisfied. Your understanding runs deeper than the answers.')]); return; }
+    await talkTo(first, [tx('Three doctors each ask one searching question. Answer at least two well to pass. Take your time and explain your reasoning.')]);
+    ctrl.frozen = true;
+    const items = await panelSet(wkey, lv, stageN, ss.panelTries || 0, qopts);
+    let right = 0;
+    for (let n = 0; n < items.length; n++) {
+      const doc = doctors[n % doctors.length]; talkingTo = doc;
+      const r = await question(items[n], { closable: false, hints: 0, label: `${doc.full} ${t('asks')}` });
+      if (r?.correct) right++;
+    }
+    talkingTo = null; ctrl.frozen = false; ss.panelTries = (ss.panelTries || 0) + 1;
+    if (right >= 2) {
+      ss.panel = true; ss.done = true; save(true); scheduleStage(wkey, lv, stageN);
+      if (!calm) confetti(90); sfx('win'); doctors.forEach((d) => { d.pose = 'cheer'; d.mood = 'happy'; });
+      hud.banner('🎓 ' + t('Stage complete!'), 3.5);
+      await talkTo(doctors[0], [tx('The College is satisfied. Your understanding runs deeper than the answers.'), tx('The portal is open. Step through when you are ready.')]);
+    } else {
+      persist();
+      await talkTo(doctors[1], [tx('Not yet. You know the answers, but we need to hear the reasoning behind them. Read our explanations, then face us again — the questions will change.')]);
     }
     goals();
   }
@@ -259,13 +353,12 @@ export function startGame(host, opts) {
     if (done) return; done = true;
     ctrl.frozen = true; ex.done++; persist(); sfx('win'); if (!calm) confetti(90);
     rig.emblem.visible = true; rig.setFace('happy'); ctrl.pose = 'cheer';
-    award(wkey, 'investigation');
     logEvent('explore', { w: wkey, what: 'mission', level: lv, stage: stageN });
     const body = h('div', null,
       h('p', null, tx(story.outro)),
-      h('ul', { class: 'small' }, h('li', null, `${story.crystalEm || '💎'} ${ex.orbs.length}/${CRYSTALS}`), h('li', null, '🔬 ', t('Simulation complete!')), h('li', null, '⚔️ ', t('Challenge won'))),
-      h('div', { class: 'row mt' }, h('button', { class: 'btn', type: 'button', onClick: () => leave('lesson') }, '▶ ', t('Start stage {n}', { n: stageN })), h('button', { class: 'btn ghost', type: 'button', onClick: () => leave('done') }, t('Back to the world'))));
-    hud.panel('🏆 ' + t('Mission complete!'), body, { closable: false });
+      h('p', { class: 'small muted' }, t('This stage will come back for short reviews after about 1, 3, 7, 14 and 30 days to keep it in long-term memory.')),
+      h('div', { class: 'row mt' }, stageN < 9 ? h('button', { class: 'btn', type: 'button', onClick: () => leave('next') }, t('Next stage'), ' →') : h('button', { class: 'btn gold', type: 'button', onClick: () => leave('final') }, '🏆 ', t('Go to the level final')), h('button', { class: 'btn ghost', type: 'button', onClick: () => leave('done') }, t('Back to the map'))));
+    hud.panel('🎓 ' + t('Stage complete!'), body, { closable: false });
   }
   let done = false;
 
@@ -303,11 +396,10 @@ export function startGame(host, opts) {
     physics.step();
     if (race) {
       // run to the end of the bridge built so far
-      const targetZ = S.raceStart[2] + 0.4 + (gap.z0 - S.raceStart[2] - 0.9) * Math.min(1, lanes.me.n) + Math.max(0, lanes.me.n - 0.5) * segLen;
-      const go = p[2] < targetZ - 0.15 ? 1 : 0;
+      const end = (lane, startZ) => startZ + 0.4 + (gap.z0 - startZ - 0.9) * Math.min(1, lane.n) + Math.max(0, lane.n - 0.5) * segLen;
+      const go = p[2] < end(lanes.me, S.raceStart[2]) - 0.15 ? 1 : 0;
       ctrl.frozen = false; ctrl.update(dt, { move: { x: Math.max(-1, Math.min(1, (p[0] - lanes.me.x) * 2)) * go, y: go }, run: true, jump: false, jumpPressed: false }, Math.PI); ctrl.frozen = true;
-      const tz = S.rivalStart[2] + 0.4 + (gap.z0 - S.rivalStart[2] - 0.9) * Math.min(1, lanes.them.n) + Math.max(0, lanes.them.n - 0.5) * segLen;
-      if (rival.pos[2] < tz - 0.1) { rival.pos[2] += 5 * dt; rival.pose = 'run'; rival.rig.speed = 1; } else if (rival.pose === 'run') rival.pose = null;
+      if (rival.pos[2] < end(lanes.them, S.rivalStart[2]) - 0.1) { rival.pos[2] += 5 * dt; rival.pose = 'run'; rival.rig.speed = 1; } else if (rival.pose === 'run') rival.pose = null;
     } else ctrl.update(dt, { move: inp.move, run: inp.run, jump: inp.jump, jumpPressed: pendingJump }, cam.state.yaw);
     pendingJump = false;
     for (const n of npcs) n.update(dt, p, talkingTo);
@@ -339,18 +431,17 @@ export function startGame(host, opts) {
     if (!hud.busy && !race && !done) {
       for (const o of level.orbs) if (!o.taken) offer(o.x, o.y, o.z, 1.9, t('Collect: {thing}', { thing: tx(story.crystal) }), () => collect(o));
       for (const tb of level.tablets) offer(tb.x, tb.y + 1, tb.z, 1.9, t('Read the tablet'), () => readTablet(tb));
-      offer(guide.pos[0], guide.pos[1] + 1, guide.pos[2], 2.6, t('Talk to {name}', { name: guide.name }), async () => {
-        const lines = !ex.met ? [...story.intro, stage.hook, `Find the ${CRYSTALS} ${story.crystal} — each one opens when you answer its question.`] : ex.race ? [story.afterRace || 'The portal is open. Go on — you have earned it!'] : ex.sim ? [story.afterSim] : ex.orbs.length >= CRYSTALS ? [story.afterCrystals] : [story.remind || `Keep looking for the ${story.crystal}. Read the tablets when a question is hard.`];
-        await talkTo(guide, lines.map(tx)); if (!ex.met) { ex.met = true; persist(); goals(); }
-      });
-      peers.forEach((n, i) => offer(n.pos[0], n.pos[1] + 1, n.pos[2], 2.4, t('Talk to {name}', { name: n.name }), () => talkTo(n, [tx(hints.length ? hints[(i + (n.told = (n.told || 0) + 1)) % hints.length] : stage.hook)])));
-      offer(rival.pos[0], rival.pos[1] + 1, rival.pos[2], 2.8, ex.race ? t('Talk to {name}', { name: rival.name }) : t('Challenge {name}', { name: rival.name }), () => (ex.race ? talkTo(rival, story.win.map(tx)) : startRace()));
+      offer(guide.pos[0], guide.pos[1] + 1, guide.pos[2], 2.6, ss.lesson ? t('Hear the lesson again') : t('Talk to {name}', { name: guide.name }), lesson);
+      peers.forEach((n, i) => offer(n.pos[0], n.pos[1] + 1, n.pos[2], 2.4, i === 0 && ss.lesson && !ss.explained ? t('Explain it to {name}', { name: n.name }) : t('Talk to {name}', { name: n.name }), () => (i === 0 && ss.lesson && !ss.explained ? explainTo(n) : talkTo(n, [tx(hints.length ? hints[(i + (n.told = (n.told || 0) + 1)) % hints.length] : stage.hook)]))));
+      offer(rival.pos[0], rival.pos[1] + 1, rival.pos[2], 2.8, t('Challenge {name}', { name: rival.name }), startDuel);
+      for (const d of doctors) offer(d.pos[0], d.pos[1] + 1, d.pos[2], 2.4, t('Talk to {name}', { name: d.name }), () => college(d));
       const con = level.spots.console; offer(con.x, con.y + 1, con.z - 0.9, 1.8, t('Use the console'), openSim);
+      const bn = level.spots.benchAt; offer(bn.x, bn.y + 1, bn.z - 0.8, 1.6, t('Open the lab bench'), openBench);
       const po = level.spots.portal; if (po.open && Math.hypot(p[0] - po.x, p[2] - po.z) < 1.3 && Math.abs(p[1] - po.y) < 1.5) finish();
     }
     if (hud.panelOpen) { const r = hud.panelEl.getBoundingClientRect(); if (r.width < eng.size.w * 0.8) eng.setInset(Math.round(r.width), 0); else eng.setInset(0, Math.round(Math.min(r.height, eng.size.h * 0.72))); } else eng.setInset(0, 0);
     hud.prompt(best?.[0], best?.[1]);
-    if (inp.actPressed && !hud.busy) hud.act();
+    if (inp.actPressed) { if (hud.talking) hud.advance?.(); else if (!hud.busy) hud.act(); }
     if (wasBusy && !hud.busy) eng.el.focus({ preventScroll: true });
     wasBusy = hud.busy;
   });
@@ -370,6 +461,6 @@ export function startGame(host, opts) {
     onExit?.(reason);
   }
   // for automated play-testing and profiling
-  window.__ukc3d = { dbg, eng, ctrl, cam, level, hud, input, physics, ex, npcs, guide, rival, lanes, spots: S, get sim() { return sim; }, get race() { return race; }, openSim, startRace, collect };
+  window.__ukc3d = { dbg, eng, ctrl, cam, level, hud, input, physics, ex, ss, npcs, guide, rival, peers, doctors, lanes, spots: S, get sim() { return sim; }, get race() { return race; }, openSim, startDuel, collect };
   return { dispose: () => leave(null) };
 }

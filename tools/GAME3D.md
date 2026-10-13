@@ -60,7 +60,7 @@ export default {
   theme: { sky: [top, middle, horizon], fog, fogNear, fogFar, ground, ground2, side, stone, accent, glow, metal, wood,
            leaf, water, crate, sun, sunPower, ambient, skyLight, groundLight, sunDir: [x, y, z],
            particles: 'stars' | 'bubbles' | 'leaves' | 'sparks' | 'snow' | 'dust' | 'notes' },
-  layout: { mirror: 1 | -1, stones: 3–5, rise: 0.35–0.6, towerH: 4–7, spawnZ: −5 (start point; move it forward if scenery stands behind it) },
+  layout: { shape: 'line' | 'hook' | 'zigzag' | 'chain' | 'descent', mirror: 1 | -1, stones: 3–5, rise: 0.35–0.6, towerH: 4–7, spawnZ: −5 (start point; move it forward if scenery stands behind it) },
   story: { title, crystal (plural noun, lower case), crystalEm, intro: [..], remind, afterCrystals, afterSim,
            notReady, rival: [..], win: [..], lose: [..], outro },
   decorate(k, S) { … },     // scenery only this world has
@@ -95,7 +95,7 @@ Budget: about 60 meshes of scenery per world; share materials; no textures loade
 Built on the open floor in front of the console. `ctx.group` is a `THREE.Group` at the floor centre; +Z faces the
 viewer, +Y is up; use x −3.5…3.5, y 0…5, z −2.5…2.5. The player watches from about 10 m.
 
-`ctx`: `THREE`, `CANNON`, `physics`, `group`, `level` (1–6), `lang` (the language being learnt in World 10, else null),
+`ctx`: `THREE`, `CANNON`, `physics`, `onTap(object, fn)`, `group`, `level` (1–6), `lang` (the language being learnt in World 10, else null),
 `band` (age band), `rng`, `calm` (reduced motion), `mat`, `lit`, `sprite`, `glow`, and
 
 - `ctx.ui.slider({ label, min, max, step, value, unit, onInput })` → `{ value, set(v) }`
@@ -110,6 +110,35 @@ tests call it and then step the simulation until `ctx.complete` fires (within 90
 
 Rules: at least two controls and one readout; harder goals at higher `ctx.level`; the goal must not complete before
 the player acts; give real units and numbers; say what the model leaves out; nothing frightening, violent or unsafe to copy.
+
+## 3D labs (`js/game3d/labs/<lab id>.js`)
+
+Each of the 60 hands-on labs also has a 3D version, opened at the lab bench on the simulation island and built on the
+same floor as the world's main simulation. A 3D lab file is a simulation exactly as described above, with a few extras:
+
+```js
+export function selfTest() { … }            // required when kind is 'validated'
+export default {
+  id: 'w03-seesaw', world: 3, levels: [1, 2],    // same id, world and levels as js/labs/<id>.js
+  title, goal, kind: 'validated' | 'simplified', model,
+  mount(ctx) { … return { step, frame, autoplay, dispose }; },
+};
+```
+
+- No imports. Copy any data or formulas the lab needs from `js/labs/<id>.js`; keep the same learning goal, the same
+  numbers and the same honesty about what the model leaves out.
+- The scene must be genuinely three-dimensional: objects with depth that move, turn, fall, fill, grow or light up in
+  response to the player — not a flat picture on a board. Use `ctx.physics` (cannon-es) where real falling, rolling or
+  balancing helps.
+- `ctx.onTap(object3D, (object, point) => …)` — the player can tap or click a 3D object (a chess square, a tile, a
+  door, an atom). Register every tappable mesh; `object` is the one registered, `point` a `THREE.Vector3` in the
+  group's space. Give tappable things a generous size (0.35 m or more). Everything that can be done by tapping must
+  also be possible with the panel controls (keyboard and switch users), or be driven by them.
+- `ctx.level` is the player's level; the lab should offer the task that suits it (the 2D lab's `levels` list says
+  which levels it was written for; outside that range use the nearest).
+- `autoplay()` must complete the goal through the same code paths the player's taps and controls use.
+- Sounds: only through the page's own audio if you must, guarded by `typeof AudioContext !== 'undefined'`; soft sine
+  tones with a 15 ms fade-in and fade-out, and never while `ctx.calm`.
 
 ## Checks
 

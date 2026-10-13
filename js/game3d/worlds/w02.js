@@ -172,7 +172,7 @@ export default {
     ground: '#3aa878', ground2: '#5fcf8c', side: '#14594f', stone: '#cfe6da', accent: '#0e9f8e', glow: '#d7ff7a', metal: '#8a6a2f', wood: '#9a6b3f', leaf: '#44c96b', water: '#35d6c4', crate: '#f2c14e',
     sun: '#fff3c2', sunPower: 2.3, ambient: 1.3, skyLight: '#d6fff0', groundLight: '#1d6b52', sunDir: [-0.4, 0.9, 0.5], particles: 'bubbles',
   },
-  layout: { mirror: M, stones: 5, rise: 0.4, towerH: 4.5 },
+  layout: { shape: 'hook', mirror: M, stones: 5, rise: 0.4, towerH: 4.5 },
   story: {
     title: 'The Garden of Glowing Flasks',
     crystal: 'element seeds', crystalEm: '🌱',

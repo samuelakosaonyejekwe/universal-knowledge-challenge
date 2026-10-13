@@ -133,7 +133,7 @@ export default {
     ground: '#e9d6a4', ground2: '#f4e6bd', side: '#3f8493', stone: '#c8d8dc', accent: '#0d6fb8', glow: '#9df3ff', metal: '#2c5870', wood: '#a9744a', leaf: '#3bbf9a', water: '#19b8c9', crate: '#f2a23a',
     sun: '#fff0cf', sunPower: 2.3, ambient: 1.4, skyLight: '#dcfcff', groundLight: '#2f7f8f', sunDir: [-0.6, 0.55, 0.5], particles: 'bubbles',
   },
-  layout: { mirror: -1, stones: 3, rise: 0.45, towerH: 4.5 },
+  layout: { shape: 'descent', mirror: -1, stones: 3, rise: 0.45, towerH: 4.5 },
   story: {
     title: 'The Deepwater Mission',
     crystal: 'tide pearls', crystalEm: '🐚',

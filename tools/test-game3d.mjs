@@ -35,13 +35,35 @@ globalThis.Element = class { }; globalThis.window = globalThis; globalThis.match
 globalThis.localStorage = { getItem: () => null, setItem() {}, removeItem() {} }; globalThis.sessionStorage = globalThis.localStorage;
 const THREE = await import('../js/vendor/three.module.min.js');
 const { createPhysics, CANNON } = await import('../js/game3d/physics.js');
-const { createWorld, buildCourse } = await import('../js/game3d/world.js');
+const { createWorld, buildCourse, decorateWorld } = await import('../js/game3d/world.js');
 const { sprite, glow } = await import('../js/gfx/kit3d.js');
+// Every place a character must stand or walk has to be free of scenery: the start, the guide, tablets, the console,
+// the lab bench, the ladder, landing points, the arena, the doctors, the portal, every waypoint and the lines between them.
+function audit(lvl, S) {
+  const solids = lvl.solids.filter((s) => !s.dynamic), bad = [];
+  const blocked = (x, y, z, r = 0.32) => solids.some((s) => { const T = s.type === 'cyl' ? s.y1 : s.max[1], B = s.type === 'cyl' ? s.y0 : s.min[1]; if (T <= y + 0.3 || B >= y + 1.5) return false; if (s.type === 'cyl') return Math.hypot(x - s.x, z - s.z) < s.r + r; const cx = Math.max(s.min[0], Math.min(s.max[0], x)), cz = Math.max(s.min[2], Math.min(s.max[2], z)); return Math.hypot(x - cx, z - cz) < r; });
+  const what = (x, y, z, r = 0.32) => { const s = solids.find((s) => { const T = s.type === 'cyl' ? s.y1 : s.max[1], B = s.type === 'cyl' ? s.y0 : s.min[1]; if (T <= y + 0.3 || B >= y + 1.5) return false; if (s.type === 'cyl') return Math.hypot(x - s.x, z - s.z) < s.r + r; const cx = Math.max(s.min[0], Math.min(s.max[0], x)), cz = Math.max(s.min[2], Math.min(s.max[2], z)); return Math.hypot(x - cx, z - cz) < r; }); return s.type === 'cyl' ? `round thing r ${s.r.toFixed(2)} at ${s.x.toFixed(1)}, ${s.z.toFixed(1)}` : `block ${s.min.map((v) => v.toFixed(1))} … ${s.max.map((v) => v.toFixed(1))}`; };
+  const need = (name, x, y, z, r) => { if (blocked(x, y, z, r)) bad.push(`${name} (${x.toFixed(1)}, ${z.toFixed(1)}) by ${what(x, y, z, r)}`); };
+  need('start', S.spawn[0], 0, S.spawn[2]); need('guide', S.guide[0], S.guide[1], S.guide[2]);
+  const con = S.console; need('console front', con.x, con.y, con.z - 0.95); need('bench front', S.benchAt.x, S.benchAt.y, S.benchAt.z - 0.85);
+  need('ladder foot', S.ladder[0], S.far[1], S.ladder[1] - 0.05, 0.25); need('middle island entry', S.midIn[0], S.mid[1], S.midIn[1]); need('far island entry', S.farIn[0], S.far[1], S.farIn[1]);
+  need('arena centre', S.arena[0], S.arena[1], S.arena[2]); need('rival', S.rival[0], S.rival[1], S.rival[2]); need('duel start', S.raceStart[0], S.raceStart[1], S.raceStart[2]); need('master start', S.rivalStart[0], S.rivalStart[1], S.rivalStart[2]);
+  S.doctors.forEach((p, i) => need('doctor ' + (i + 1), p[0], p[1], p[2])); need('portal', S.portal.x, S.portal.y, S.portal.z - 0.9);
+  for (let a = 0; a < 12; a++) for (const r of [1.5, 3, 4.2]) need('simulation floor', S.pad[0] + Math.cos(a * Math.PI / 6) * r, S.pad[1], S.pad[2] + Math.sin(a * Math.PI / 6) * r, 0.1);
+  lvl.tablets.forEach((t, i) => { let free = 0; for (let a = 0; a < 8; a++) if (!blocked(t.x + Math.cos(a * Math.PI / 4) * 1.3, t.y, t.z + Math.sin(a * Math.PI / 4) * 1.3)) free++; if (free < 3) bad.push(`tablet ${i + 1} is boxed in`); });
+  lvl.orbs.forEach((o, i) => { let free = 0; for (let a = 0; a < 8; a++) for (const r of [0, 0.9]) if (!blocked(o.x + Math.cos(a * Math.PI / 4) * r, o.y - 1.1, o.z + Math.sin(a * Math.PI / 4) * r)) free++; if (free < 6) bad.push(`crystal ${i + 1} is boxed in`); });
+  lvl.nodes.forEach((n, i) => need('waypoint ' + i, n[0], n[1], n[2]));
+  for (const [a, b] of lvl.links) { const A = lvl.nodes[a], B = lvl.nodes[b], L = Math.hypot(B[0] - A[0], B[2] - A[2]); for (let d = 0.5; d < L; d += 0.5) if (blocked(A[0] + (B[0] - A[0]) * d / L, A[1], A[2] + (B[2] - A[2]) * d / L, 0.25)) { bad.push(`walk ${a}→${b} is blocked`); break; } }
+  for (const leg of S.legs) if (leg.board) { need('boarding point', leg.board[0], groundBelow(solids, leg.board[0], 99, leg.board[1]), leg.board[1], 0.25); }
+  return bad;
+}
+
 function tryWorld(d, level) {
   const eng = { scene: new THREE.Scene(), quality: { particles: 1 }, calm: false };
   const physics = createPhysics(), lvl = createWorld(eng, physics, d, {});
   const S = buildCourse(lvl.kit, d.layout || {});
-  d.decorate(lvl.kit, S);
+  decorateWorld(lvl.kit, d, S);
+  const blockedAt = audit(lvl, S);
   for (let i = 0; i < 120; i++) { lvl.step(1 / 60); physics.step(); } lvl.frame(1 / 60, 2, [0, 0, 0]);
   let score = null; const el = { append() {}, appendChild: (x) => x, querySelector: () => null };
   const control = (o) => { let v = o?.value; return { el, get value() { return v; }, set(x) { v = x; o?.onInput?.(x); } }; };
@@ -56,6 +78,7 @@ function tryWorld(d, level) {
   for (let i = 0; i < 60 * 90 && score == null; i++) { sim.step?.(1 / 60); if (i % 2 === 0) sim.frame?.(1 / 30, 5 + i / 60, true); }
   sim.dispose?.();
   const controls = made.sliders + made.buttons + made.choices;
+  if (blockedAt.length) return { ok: false, detail: 'scenery in the way: ' + blockedAt.slice(0, 6).join('; ') };
   return { ok: score != null && early == null && controls >= 2 && made.reads >= 1 && lvl.orbs.length === 5, detail: `level ${level}: ${score == null ? 'autoplay never completed the goal within 90 s' : early != null ? 'completed before the player did anything' : `score ${score}`}, ${controls} controls, ${made.reads} readouts, ${lvl.solids.length} solids` };
 }
 
@@ -69,6 +92,36 @@ for (const f of readdirSync(join(root, 'js/game3d/worlds')).filter((x) => /^w\d\
   if (typeof m.selfTest === 'function') { const r = m.selfTest(); ok(`${f} model check`, r.ok, r.detail); }
   else ok(`${f} model check`, d.sim?.kind !== 'validated', 'a validated simulation must export selfTest()');
   for (const level of [1, 6]) { let r; try { r = tryWorld(d, level); } catch (e) { r = { ok: false, detail: String(e.stack || e).split('\n').slice(0, 3).join(' | ') }; } ok(`${f} builds and its simulation can be completed`, r.ok, r.detail); }
+}
+// every 3D lab: complete, mountable at each of its levels, finishable through autoplay(), and its model checked
+import { existsSync } from 'node:fs';
+const labDir = join(root, 'js/game3d/labs');
+function tryLab(d, level) {
+  const eng = { scene: new THREE.Scene(), quality: { particles: 1 }, calm: false }, physics = createPhysics(), lvl = createWorld(eng, physics, { theme: { sky: ['#fff', '#eee', '#ddd'], ground: '#8c8', side: '#484', stone: '#aaa', accent: '#48f' } }, {});
+  let score = null; const el = { append() {}, appendChild: (x) => x, querySelector: () => null };
+  const control = (o) => { let v = o?.value; return { el, get value() { return v; }, set(x) { v = x; o?.onInput?.(x); } }; };
+  const made = { controls: 0, reads: 0, taps: 0 }, group = new THREE.Group();
+  const sim = d.mount({ THREE, CANNON, group, level, lang: 'es', band: 'teen', rng: Math.random, calm: false, physics, t: (x) => x, mat: lvl.kit.mat, lit: lvl.kit.lit, sprite, glow,
+    onTap: (o, fn) => { if (!o || typeof fn !== 'function') throw new Error('onTap needs an object and a function'); made.taps++; },
+    ui: { el, slider: (o) => { made.controls++; return control(o); }, button: () => { made.controls++; return el; }, readout: () => { made.reads++; return { el, set() {} }; }, choice: (opts, v, fn) => { made.controls++; let cur = v; return { el, get value() { return cur; }, set(x) { cur = x; fn?.(x); } }; }, note: () => el },
+    say() {}, complete: (s = 1) => { score = Math.max(score ?? 0, s); } }) || {};
+  for (let i = 0; i < 240; i++) { sim.step?.(1 / 60); physics.step(); if (i % 2 === 0) sim.frame?.(1 / 30, i / 60, true); }
+  const early = score;
+  if (typeof sim.autoplay !== 'function') return { ok: false, detail: 'autoplay() is missing' };
+  sim.autoplay();
+  for (let i = 0; i < 60 * 120 && score == null; i++) { sim.step?.(1 / 60); physics.step(); if (i % 2 === 0) sim.frame?.(1 / 30, 4 + i / 60, true); }
+  sim.dispose?.();
+  let meshes = 0, deep = false; const box = new THREE.Box3().setFromObject(group), size = box.getSize(new THREE.Vector3());
+  group.traverse((o) => { if (o.isMesh || o.isLine || o.isPoints || o.isSprite) meshes++; }); deep = size.z > 0.4 && size.x > 0.4 && size.y > 0.4;
+  return { ok: score != null && early == null && made.controls >= 2 && made.reads >= 1 && meshes >= 8 && deep, detail: `level ${level}: ${score == null ? 'autoplay never completed the goal within 120 s' : early != null ? 'completed before the player did anything' : `score ${score}`}, ${made.controls} controls, ${made.reads} readouts, ${made.taps} tappable, ${meshes} objects, ${size.x.toFixed(1)}×${size.y.toFixed(1)}×${size.z.toFixed(1)} m${deep ? '' : ' (not three-dimensional enough)'}` };
+}
+if (existsSync(labDir)) for (const f of readdirSync(labDir).filter((x) => /^w\d\d-.*\.js$/.test(x) && (!only || x.startsWith(only))).sort()) {
+  const m = await import(pathToFileURL(join(labDir, f)).href), d = m.default, id = f.replace(/\.js$/, '');
+  const missing = ['id', 'world', 'levels', 'title', 'goal', 'kind', 'model', 'mount'].filter((k) => d?.[k] == null);
+  ok(`lab ${f} is complete`, !missing.length && d.id === id && existsSync(join(root, 'js/labs', f)) && ['validated', 'simplified'].includes(d.kind), missing.join(', ') || (d.id !== id ? 'id does not match the file name' : ''));
+  if (missing.length) continue;
+  if (typeof m.selfTest === 'function') { const r = m.selfTest(); ok(`lab ${f} model check`, r.ok, r.detail); } else ok(`lab ${f} model check`, d.kind !== 'validated', 'a validated lab must export selfTest()');
+  for (const level of [...new Set([d.levels[0], d.levels[d.levels.length - 1]])]) { let r; try { r = tryLab(d, level); } catch (e) { r = { ok: false, detail: String(e.stack || e).split('\n').slice(0, 3).join(' | ') }; } ok(`lab ${f} can be completed`, r.ok, r.detail); }
 }
 console.log(fails ? `\n${fails} check(s) failed` : '\nAll checks passed');
 process.exit(fails ? 1 : 0);

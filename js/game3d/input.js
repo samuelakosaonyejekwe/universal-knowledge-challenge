@@ -73,7 +73,7 @@ export function createInput(el, overlay) {
       if (touch.x || touch.y) { x = touch.x; y = touch.y; }
       run = run || touch.run; jump = jump || touch.jump;
       const gp = [...(navigator.getGamepads?.() || [])].find((g) => g && g.connected);
-      if (gp && !st.locked) {
+      if (gp) {
         const ax = dead(gp.axes[0] || 0), ay = dead(gp.axes[1] || 0);
         if (ax || ay) { x = ax; y = -ay; st.device = 'pad'; }
         st.look.x += dead(gp.axes[2] || 0) * 2.6 * dt; st.look.y += dead(gp.axes[3] || 0) * 1.8 * dt;
@@ -84,7 +84,7 @@ export function createInput(el, overlay) {
         if (b(12)) st.zoom -= 4 * dt; if (b(13)) st.zoom += 4 * dt;
       }
       const m = Math.hypot(x, y); if (m > 1) { x /= m; y /= m; }
-      if (st.locked) { x = y = 0; run = jump = false; edge.jump = edge.act = false; }
+      if (st.locked) { x = y = 0; run = jump = false; edge.jump = false; if (st.device !== 'pad') edge.act = false; st.look.x = st.look.y = 0; }      // a controller's action button still moves dialogue on
       st.move.x = x; st.move.y = y; st.run = run; st.jump = jump;
       st.jumpPressed = edge.jump; st.actPressed = edge.act; st.pausePressed = edge.pause;
       edge.jump = edge.act = edge.pause = false;

@@ -166,7 +166,7 @@ export default {
     ground: '#b9713c', ground2: '#d08b4c', side: '#6b3a24', stone: '#dab78c', accent: '#e0662a', glow: '#ffc94d', metal: '#8a5a2b', wood: '#7a4a2a', leaf: '#93ad4c', water: '#3fa7a0', crate: '#f5a524',
     sun: '#ffc890', sunPower: 2.4, ambient: 1.2, skyLight: '#ffdcb4', groundLight: '#6b3a24', sunDir: [-0.7, 0.6, 0.3], particles: 'sparks',
   },
-  layout: { mirror: -1, stones: 4, rise: 0.55, towerH: 6.5 },
+  layout: { shape: 'zigzag', mirror: -1, stones: 4, rise: 0.55, towerH: 6.5 },
   story: {
     title: 'The Sunset Skyworks',
     crystal: 'brass cogs', crystalEm: '⚙️',

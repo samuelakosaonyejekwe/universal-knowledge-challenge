@@ -39,7 +39,7 @@ export function selfTest() {
   return { ok: drift < 1e-3 && moved < 1e-9 && Math.abs(T - T0) / T0 < 1e-3, detail: `V drift ${(drift * 100).toExponential(1)} % over 50 years, balance point (${b.x}, ${b.y}) moved ${moved.toExponential(1)} animals, small swing ${T.toFixed(4)} years (theory ${T0.toFixed(4)})` };
 }
 
-const LAYOUT = { mirror: -1, stones: 5, rise: 0.4, towerH: 6.5 };
+const LAYOUT = { shape: 'line', mirror: -1, stones: 5, rise: 0.4, towerH: 6.5 };
 
 const sim = {
   title: 'Meadow in balance',

@@ -106,8 +106,10 @@ function journeyTab(body, wkey, w, ws, who) {
   const wid = worldId(wkey);
   const next = (() => { for (let s = 1; s <= 9; s++) if (!stageDone(wkey, ws.level, s)) return s; return 10; })();
   body.append(talk(who.teacher, next <= 9 ? `Ready for stage ${next}: "${curriculum[wid - 1][ws.level - 1][next - 1]}"?` : `You have finished all nine stages. ${who.master.short} is waiting for the championship.`),
-    h('div', { class: 'row mb' }, h('button', { class: 'btn', onClick: () => go(next <= 9 ? `stage/${wkey}/${ws.level}/${next}` : `finale/${wkey}/${ws.level}`) }, '▶ ', next <= 9 ? t('Start stage {n}', { n: next }) : t('Enter the level final')),
-      use3d() ? h('button', { class: 'btn gold', onClick: () => go(`explore/${wkey}`) }, '🎮 ', t('Explore this world in 3D')) : null));
+    // The 3D world is the main way to play a stage; the flat pages remain for devices and players that prefer them.
+    h('div', { class: 'row mb' },
+      next <= 9 && use3d() ? h('button', { class: 'btn gold', onClick: () => go(`explore/${wkey}/${next}`) }, '🎮 ', t('Play stage {n} in the 3D world', { n: next })) : null,
+      h('button', { class: next <= 9 && use3d() ? 'btn ghost' : 'btn', onClick: () => go(next <= 9 ? `stage/${wkey}/${ws.level}/${next}` : `finale/${wkey}/${ws.level}`) }, '▶ ', next > 9 ? t('Enter the level final') : use3d() ? t('Play it on flat pages') : t('Start stage {n}', { n: next }))));
   if (uiLang !== 'en' && !worldLang(wkey)) {
     // One tap prepares the whole level in the player's language and keeps it on the device for offline play.
     const status = h('span', { class: 'small muted' });
@@ -124,7 +126,7 @@ function journeyTab(body, wkey, w, ws, who) {
     const peak = h('div', { class: 'card mb', style: { padding: '.4rem', background: '#10163a' } });
     body.append(peak);
     load3d().then(({ mountJourney }) => {
-      const sc = mountJourney(peak, { world: w, level: ws.level, next, isDone: (s) => (s === 10 ? ws.completed.includes(ws.level) : stageDone(wkey, ws.level, s)), avatar: profile.avatar, band: profile.band, onPick: (s) => go(s <= 9 ? `stage/${wkey}/${ws.level}/${s}` : `finale/${wkey}/${ws.level}`) });
+      const sc = mountJourney(peak, { world: w, level: ws.level, next, isDone: (s) => (s === 10 ? ws.completed.includes(ws.level) : stageDone(wkey, ws.level, s)), avatar: profile.avatar, band: profile.band, onPick: (s) => go(s <= 9 ? `explore/${wkey}/${s}` : `finale/${wkey}/${ws.level}`) });
       autoDispose(peak, sc.dispose);
     }).catch(() => peak.remove());
   }

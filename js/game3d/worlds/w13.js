@@ -136,7 +136,7 @@ export default {
     ground: '#ddd7ca', ground2: '#cbc4b4', side: '#868e96', stone: '#ece7dc', accent: '#343a40', glow: '#ffc94d', metal: '#3b4046', wood: '#5a3d2b', leaf: '#3f8f5a', water: '#8fc7e8', crate: '#c9a36a',
     sun: '#fff4dc', sunPower: 2.0, ambient: 1.15, skyLight: '#f1f5fa', groundLight: '#aaa396', sunDir: [-0.45, 1, 0.3], particles: 'dust',
   },
-  layout: { mirror: -1, stones: 5, rise: 0.4, towerH: 6 },
+  layout: { shape: 'zigzag', mirror: -1, stones: 5, rise: 0.4, towerH: 6 },
   story: {
     title: 'The Grandmaster Arena',
     crystal: 'golden pawns', crystalEm: '♟️',

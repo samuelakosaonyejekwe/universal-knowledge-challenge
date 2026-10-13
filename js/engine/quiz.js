@@ -97,7 +97,7 @@ export function ask(item, opts = {}) {
   const done = new Promise((r) => { resolveDone = r; });
   const el = h('div', { class: 'q-card' });
   const body = h('div');
-  const actions = h('div', { class: 'row mt' });
+  const actions = h('div', { class: 'row mt q-actions' });
   const fb = h('div', { class: 'mt', 'aria-live': 'polite' });
   const checkBtn = h('button', { class: 'btn', type: 'button', disabled: true }, t('Check answer'));
   const setReady = (ok) => { checkBtn.disabled = !ok || locked; };
@@ -285,7 +285,7 @@ export async function runSet(host, items, opts = {}) {
     const o = typeof opts === 'function' ? opts(item, i) : opts;
     const { el, done } = ask(item, { ...o, label: o.label ?? `${i + 1} / ${items.length}` });
     clear(host).append(el);
-    el.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
+    el.scrollIntoView?.({ block: 'nearest' });
     const r = await done;
     results.push({ item, ...r });
     o.onAnswer?.(item, r, i);

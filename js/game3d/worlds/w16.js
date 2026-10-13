@@ -223,7 +223,7 @@ export default {
     ground: '#d9c79a', ground2: '#8fae6a', side: '#5b4a36', stone: '#bfae8c', accent: '#5f3dc4', glow: '#ffc55c', metal: '#4a3f5c', wood: '#8a5a3a', leaf: '#1f6f6b', water: '#3b5bdb', crate: '#d9a05b',
     sun: '#ffd2a1', sunPower: 1.9, ambient: 1.2, skyLight: '#c9d6ff', groundLight: '#6b5a3a', sunDir: [-0.6, 0.55, 0.4], particles: 'leaves',
   },
-  layout: { mirror: -1, spawnZ: 1.5, stones: 4, rise: 0.5, towerH: 6 },
+  layout: { shape: 'line', mirror: -1, spawnZ: 1.5, stones: 4, rise: 0.5, towerH: 6 },
   story: {
     title: 'The Living Library',
     crystal: 'story pages', crystalEm: '📜',

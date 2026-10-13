@@ -202,7 +202,7 @@ export default {
     ground: '#63d8c0', ground2: '#8eead4', side: '#b02a5b', stone: '#fff1e0', accent: '#d6336c', glow: '#ffe066', metal: '#5f3dc4', wood: '#f76707', leaf: '#51cf66', water: '#4dabf7', crate: '#ffa94d',
     sun: '#fff3d6', sunPower: 2.5, ambient: 1.5, skyLight: '#ffe3f0', groundLight: '#ff9d6c', sunDir: [-0.4, 1, 0.3], particles: 'bubbles',
   },
-  layout: { mirror: -1, stones: 3, rise: 0.5, towerH: 6.5 },
+  layout: { shape: 'chain', mirror: -1, stones: 3, rise: 0.5, towerH: 6.5 },
   story: {
     title: 'The Number Labyrinth',
     crystal: 'number keys', crystalEm: '🗝️',

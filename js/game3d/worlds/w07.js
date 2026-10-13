@@ -139,7 +139,7 @@ export default {
     ground: '#4fb65c', ground2: '#7cc93d', side: '#8b6b47', stone: '#cdc6b0', accent: '#1b9c5a', glow: '#ffe07a', metal: '#5b6470', wood: '#9a6a3c', leaf: '#2f9e55', water: '#35b6e8', crate: '#e0a860',
     sun: '#fff3cf', sunPower: 2.6, ambient: 1.35, skyLight: '#e2f4ff', groundLight: '#5d8a4a', sunDir: [-0.45, 1, 0.3], particles: 'leaves',
   },
-  layout: { mirror: -1, stones: 4, rise: 0.6, towerH: 6 },
+  layout: { shape: 'hook', mirror: -1, stones: 4, rise: 0.6, towerH: 6 },
   story: {
     title: 'The High Meadow Expedition',
     crystal: 'compass stones', crystalEm: '🧭',

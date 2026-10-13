@@ -161,7 +161,7 @@ export default {
     ground: '#8fbf6a', ground2: '#a9d17e', side: '#a3503f', stone: '#f3d9c0', accent: '#e64980', glow: '#ffc46b', metal: '#b8862f', wood: '#8a4b2a', leaf: '#5fae5a', water: '#4fb8c4', crate: '#fd7e14',
     sun: '#ffb07a', sunPower: 2.3, ambient: 1.2, skyLight: '#ffd6c4', groundLight: '#8a3b4a', sunDir: [0.6, 0.5, 0.6], particles: 'notes',
   },
-  layout: { mirror: -1, stones: 3, rise: 0.55, towerH: 4.5 },
+  layout: { shape: 'chain', mirror: -1, stones: 3, rise: 0.55, towerH: 4.5 },
   story: {
     title: 'The Twilight Concert Garden',
     crystal: 'tuning bells', crystalEm: '🔔',

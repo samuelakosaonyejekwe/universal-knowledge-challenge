@@ -1,7 +1,7 @@
 // The animated character: one skinned body driven by a skeleton, blended animation clips, a face that blinks,
 // talks and shows feelings, and inverse kinematics for reaching and looking.
 // The head, hair and role pieces are the same ones as the storybook portraits (gfx/kit3d.js), so every person
-// looks like themselves everywhere in the game. The body is generated in code, not sculpted by an artist.
+// looks like themselves everywhere in the game. The body is shaped in code, ring by ring, not sculpted by an artist.
 import { THREE, character as portrait3d, faceTexture } from '../gfx/kit3d.js';
 
 // name, parent, offset from parent in the rest pose (metres; the character faces +Z and is about 1.65 m tall)
@@ -15,40 +15,75 @@ const BONES = [
 const IDX = Object.fromEntries(BONES.map((b, i) => [b[0], i]));
 
 // ---------- the skinned body ----------
-function bodyGeometry(colors) {
+// One continuous mesh shaped ring by ring: neck, collar, shoulders, chest, waist, belt and hem; arms with sleeves,
+// cuffs and hands with thumbs; legs, socks and shoes with soles and toe caps. Every vertex is bound to one or two
+// bones, so elbows, knees, shoulders and the waist bend smoothly. look: { sex, sleeves: 'short' | 'long' }.
+function bodyGeometry(colors, look = {}) {
   const pos = [], col = [], si = [], sw = [], index = [];
   const c = (hex) => new THREE.Color(hex);
   const vert = (x, y, z, color, b0, b1 = b0, w1 = 0) => { pos.push(x, y, z); col.push(color.r, color.g, color.b); si.push(IDX[b0], IDX[b1], 0, 0); sw.push(1 - w1, w1, 0, 0); return pos.length / 3 - 1; };
-  // A tube through rings [{ y, rx, rz, b0, b1, w1, color }] centred on (cx, cz), closed at both ends.
-  const tube = (cx, cz, rings, seg = 12) => {
+  // A tube through rings [{ y, rx, rz, b0, b1, w1, color, dz }] centred on (cx, cz), closed at both ends.
+  const tube = (cx, cz, rings, seg = 14) => {
     const start = pos.length / 3;
-    for (const r of rings) for (let k = 0; k < seg; k++) { const a = (k / seg) * Math.PI * 2; vert(cx + Math.cos(a) * r.rx, r.y, cz + Math.sin(a) * (r.rz ?? r.rx), r.color, r.b0, r.b1, r.w1); }
+    for (const r of rings) for (let k = 0; k < seg; k++) { const a = (k / seg) * Math.PI * 2; vert(cx + Math.cos(a) * r.rx, r.y, cz + (r.dz || 0) + Math.sin(a) * (r.rz ?? r.rx), r.color, r.b0, r.b1, r.w1); }
     for (let i = 0; i < rings.length - 1; i++) for (let k = 0; k < seg; k++) { const a = start + i * seg + k, b = start + i * seg + (k + 1) % seg, d = a + seg, e = b + seg; index.push(a, b, d, b, e, d); }
     const f = rings[0], l = rings[rings.length - 1];
-    const cap0 = vert(cx, f.y, cz, f.color, f.b0, f.b1, f.w1), cap1 = vert(cx, l.y, cz, l.color, l.b0, l.b1, l.w1);
-    for (let k = 0; k < seg; k++) { index.push(cap0, start + (k + 1) % seg, start + k); const s = start + (rings.length - 1) * seg; index.push(cap1, s + k, s + (k + 1) % seg); }
+    const cap0 = vert(cx, f.y, cz + (f.dz || 0), f.color, f.b0, f.b1, f.w1), cap1 = vert(cx, l.y, cz + (l.dz || 0), l.color, l.b0, l.b1, l.w1);
+    for (let k = 0; k < seg; k++) { index.push(cap0, start + (k + 1) % seg, start + k); const e = start + (rings.length - 1) * seg; index.push(cap1, e + k, e + (k + 1) % seg); }
   };
-  const blob = (x, y, z, rx, ry, rz, color, bone, seg = 10) => {
-    const start = pos.length / 3, rows = 7;
-    for (let i = 0; i <= rows; i++) { const v = (i / rows) * Math.PI; for (let k = 0; k < seg; k++) { const a = (k / seg) * Math.PI * 2; vert(x + Math.sin(v) * Math.cos(a) * rx, y + Math.cos(v) * ry, z + Math.sin(v) * Math.sin(a) * rz, color, bone); } }
+  const blob = (x, y, z, rx, ry, rz, color, bone, seg = 12, b1 = bone, w1 = 0) => {
+    const start = pos.length / 3, rows = 8;
+    for (let i = 0; i <= rows; i++) { const v = (i / rows) * Math.PI; for (let k = 0; k < seg; k++) { const a = (k / seg) * Math.PI * 2; vert(x + Math.sin(v) * Math.cos(a) * rx, y + Math.cos(v) * ry, z + Math.sin(v) * Math.sin(a) * rz, color, bone, b1, w1); } }
     for (let i = 0; i < rows; i++) for (let k = 0; k < seg; k++) { const a = start + i * seg + k, b = start + i * seg + (k + 1) % seg; index.push(a, b, a + seg, b, b + seg, a + seg); }
   };
-  const outfit = c(colors.outfit), trim = c(colors.outfit).offsetHSL(0, 0, colors.outfit === '#ffffff' ? -0.12 : 0.18), skin = c(colors.skin), legs = c('#2f3566'), shoe = c('#1d2140');
-  const R = (y, rx, rz, color, b0, b1, w1) => ({ y, rx, rz, color, b0, b1, w1 });
-  // tunic with a flared hem, then the neck (rings listed from the top down so the faces point outwards)
-  tube(0, 0, [R(1.12, 0.055, 0.055, skin, 'neck'), R(1.045, 0.062, 0.06, skin, 'neck', 'chest', 0.5), R(1.035, 0.1, 0.085, trim, 'chest'), R(0.99, 0.185, 0.125, outfit, 'chest'), R(0.87, 0.2, 0.14, outfit, 'chest', 'spine', 0.4), R(0.74, 0.185, 0.135, outfit, 'spine', 'hips', 0.5), R(0.62, 0.2, 0.15, outfit, 'hips'), R(0.5, 0.235, 0.18, outfit, 'hips'), R(0.47, 0.24, 0.185, trim, 'hips')], 16);
+  const white = colors.outfit === '#ffffff';
+  const outfit = c(colors.outfit), dark = c(colors.outfit).offsetHSL(0, 0.02, white ? -0.1 : -0.1), trim = c(colors.outfit).offsetHSL(0, 0, white ? -0.14 : 0.2), skin = c(colors.skin), skinD = c(colors.skin).offsetHSL(0, 0.02, -0.05);
+  const legs = c('#2f3566'), belt = c('#27294d'), sock = c('#f4f4fa'), shoe = c('#fafaff'), sole = c('#1d2140'), gold = c('#f5c542');
+  const R = (y, rx, rz, color, b0, b1, w1, dz) => ({ y, rx, rz, color, b0, b1, w1, dz });
+  const skirt = look.sex === 'f', short = look.sleeves === 'short';
+  // neck, collar, shoulders, chest, waist, belt, hem (listed from the top down so the faces point outwards)
+  tube(0, 0, [
+    R(1.13, 0.05, 0.05, skin, 'neck'), R(1.085, 0.053, 0.052, skin, 'neck'), R(1.06, 0.056, 0.054, skinD, 'neck', 'chest', 0.5),
+    R(1.062, 0.088, 0.078, trim, 'chest'), R(1.04, 0.108, 0.09, trim, 'chest'), R(1.03, 0.1, 0.084, outfit, 'chest'),
+    R(1.012, 0.165, 0.108, outfit, 'chest'), R(0.985, 0.195, 0.126, outfit, 'chest'), R(0.94, 0.204, 0.137, outfit, 'chest', 'spine', 0.15, 0.004),
+    R(0.87, 0.198, 0.138, outfit, 'chest', 'spine', 0.45, 0.004), R(0.8, 0.186, 0.132, outfit, 'spine', 'hips', 0.3), R(0.735, 0.18, 0.128, dark, 'spine', 'hips', 0.6),
+    R(0.69, 0.186, 0.133, outfit, 'hips'), R(0.672, 0.194, 0.139, belt, 'hips'), R(0.644, 0.194, 0.139, belt, 'hips'), R(0.636, 0.2, 0.148, outfit, 'hips'),
+    ...(skirt ? [R(0.56, 0.235, 0.185, outfit, 'hips'), R(0.47, 0.268, 0.215, outfit, 'hips'), R(0.4, 0.292, 0.238, trim, 'hips'), R(0.39, 0.27, 0.22, dark, 'hips')]
+      : [R(0.56, 0.222, 0.168, outfit, 'hips'), R(0.5, 0.232, 0.178, outfit, 'hips'), R(0.474, 0.236, 0.182, trim, 'hips'), R(0.466, 0.212, 0.162, dark, 'hips')]),
+  ], 20);
+  blob(0, 0.658, 0.142, 0.03, 0.022, 0.012, gold, 'hips', 8);                                         // belt buckle
+  for (const y of [0.93, 0.84, 0.76]) blob(0, y, 0.136 + (y > 0.9 ? 0.004 : 0), 0.014, 0.014, 0.008, trim, y > 0.8 ? 'chest' : 'spine', 6);   // buttons
   for (const [s, side] of [[-1, 'L'], [1, 'R']]) {
-    const A = 'arm' + side, F = 'fore' + side, H = 'hand' + side, Lg = 'leg' + side, Sh = 'shin' + side, Ft = 'foot' + side;
-    tube(s * 0.2, 0, [R(1.02, 0.05, 0.05, outfit, A, 'chest', 0.5), R(0.99, 0.078, 0.078, outfit, A), R(0.9, 0.07, 0.07, outfit, A), R(0.83, 0.064, 0.064, outfit, A, F, 0.2), R(0.79, 0.062, 0.062, outfit, A, F, 0.5), R(0.75, 0.06, 0.06, outfit, A, F, 0.8), R(0.66, 0.056, 0.056, outfit, F), R(0.63, 0.062, 0.062, trim, F), R(0.61, 0.06, 0.06, trim, F, H, 0.5)]);
-    blob(s * 0.2, 0.575, 0, 0.062, 0.068, 0.062, skin, H);
-    tube(s * 0.1, 0, [R(0.56, 0.095, 0.095, legs, Lg, 'hips', 0.4), R(0.48, 0.092, 0.092, legs, Lg), R(0.36, 0.08, 0.08, legs, Lg, Sh, 0.2), R(0.29, 0.076, 0.076, legs, Lg, Sh, 0.5), R(0.23, 0.072, 0.072, legs, Lg, Sh, 0.8), R(0.12, 0.066, 0.066, legs, Sh), R(0.06, 0.064, 0.064, legs, Sh, Ft, 0.5)]);
-    blob(s * 0.1, 0.045, 0.035, 0.078, 0.05, 0.13, shoe, Ft);
+    const A = 'arm' + side, F = 'fore' + side, H = 'hand' + side, Lg = 'leg' + side, Sh = 'shin' + side, Ft = 'foot' + side, ax = s * 0.2;
+    blob(ax - s * 0.008, 0.995, 0, 0.086, 0.082, 0.084, outfit, A, 12, 'chest', 0.45);               // rounded shoulder
+    tube(ax, 0, [
+      R(1.0, 0.07, 0.07, outfit, A), R(0.95, 0.076, 0.076, outfit, A), R(0.89, 0.07, 0.07, outfit, A),
+      ...(short ? [R(0.868, 0.073, 0.073, trim, A), R(0.86, 0.06, 0.06, skinD, A), R(0.83, 0.056, 0.056, skin, A, F, 0.2), R(0.79, 0.055, 0.055, skin, A, F, 0.5), R(0.75, 0.054, 0.054, skin, A, F, 0.8), R(0.68, 0.05, 0.05, skin, F), R(0.625, 0.044, 0.044, skin, F), R(0.61, 0.042, 0.042, skin, F, H, 0.5)]
+        : [R(0.83, 0.064, 0.064, outfit, A, F, 0.2), R(0.79, 0.063, 0.063, outfit, A, F, 0.5), R(0.75, 0.061, 0.061, outfit, A, F, 0.8), R(0.67, 0.058, 0.058, outfit, F), R(0.648, 0.066, 0.066, trim, F), R(0.626, 0.066, 0.066, trim, F), R(0.618, 0.046, 0.046, skinD, F, H, 0.5)]),
+    ]);
+    blob(ax, 0.572, 0.004, 0.05, 0.058, 0.036, skin, H);                                              // palm
+    blob(ax, 0.522, 0.008, 0.046, 0.04, 0.03, skin, H);                                               // fingers, gently curled
+    blob(ax - s * 0.012, 0.572, 0.04, 0.02, 0.034, 0.02, skin, H, 8);                                 // thumb
+    tube(s * 0.1, 0, [R(0.57, 0.096, 0.096, legs, Lg, 'hips', 0.4), R(0.5, 0.094, 0.094, legs, Lg), R(0.4, 0.084, 0.084, legs, Lg), R(0.34, 0.08, 0.08, legs, Lg, Sh, 0.2), R(0.29, 0.078, 0.078, legs, Lg, Sh, 0.5, 0.004), R(0.24, 0.074, 0.074, legs, Lg, Sh, 0.8), R(0.17, 0.07, 0.072, legs, Sh), R(0.135, 0.068, 0.068, legs, Sh), R(0.13, 0.058, 0.058, sock, Sh), R(0.085, 0.056, 0.056, sock, Sh, Ft, 0.5)]);
+    blob(s * 0.1, 0.02, 0.04, 0.084, 0.022, 0.142, sole, Ft);                                         // sole
+    blob(s * 0.1, 0.058, 0.03, 0.078, 0.05, 0.125, shoe, Ft);                                         // shoe upper
+    blob(s * 0.1, 0.05, 0.125, 0.062, 0.036, 0.05, trim, Ft, 10);                                     // toe cap
+    blob(s * 0.1, 0.092, 0.07, 0.03, 0.012, 0.04, trim, Ft, 8);                                       // laces
   }
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
   g.setAttribute('skinIndex', new THREE.Uint16BufferAttribute(si, 4)); g.setAttribute('skinWeight', new THREE.Float32BufferAttribute(sw, 4));
   g.setIndex(index); g.computeVertexNormals();
   return g;
+}
+// The body material: soft cloth with a gentle rim of light along its edges, so the figure reads clearly
+// against any sky.
+function bodyMaterial() {
+  const m = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.66, metalness: 0.02 });
+  m.onBeforeCompile = (shader) => {
+    shader.fragmentShader = shader.fragmentShader.replace('#include <opaque_fragment>', 'float rim = pow(1.0 - clamp(dot(normalize(normal), normalize(vViewPosition)), 0.0, 1.0), 2.6);\n  outgoingLight += diffuseColor.rgb * rim * 0.55 + vec3(rim * 0.06);\n  #include <opaque_fragment>');
+  };
+  return m;
 }
 
 // ---------- animation clips (made once, shared by every character) ----------
@@ -106,7 +141,7 @@ export function createRig(cfg = {}, opts = {}) {
   const bones = {};
   for (const [name, parent, x, y, z] of BONES) { const b = new THREE.Bone(); b.name = name; b.position.set(x, y, z); bones[name] = b; if (parent) bones[parent].add(b); }
   const skeleton = new THREE.Skeleton(BONES.map((b) => bones[b[0]]));
-  const mesh = new THREE.SkinnedMesh(bodyGeometry(U.colors), new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.62, metalness: 0.02 }));
+  const mesh = new THREE.SkinnedMesh(bodyGeometry(U.colors, { sex: cfg.g, sleeves: role === 'student' || role === 'peer' || role === 'layman' ? 'short' : 'long' }), bodyMaterial());
   mesh.castShadow = true; mesh.frustumCulled = false;
   const group = new THREE.Group();
   group.add(bones.root, mesh);

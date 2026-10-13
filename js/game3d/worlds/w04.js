@@ -164,7 +164,7 @@ export default {
     ground: '#86cf86', ground2: '#a3dd9c', side: '#b9a98f', stone: '#e8eef5', accent: '#1f8fe5', glow: '#ffd23f', metal: '#5b6b82', wood: '#c08a4e', leaf: '#4fbf73', water: '#5ad1ff', crate: '#ffb057',
     sun: '#fffbe8', sunPower: 2.8, ambient: 1.5, skyLight: '#e3f5ff', groundLight: '#9fc7e8', sunDir: [0.25, 1, 0.2], particles: 'dust',
   },
-  layout: { mirror: -1, stones: 5, rise: 0.4, towerH: 6.5 },
+  layout: { shape: 'chain', mirror: -1, stones: 5, rise: 0.4, towerH: 6.5 },
   story: {
     title: 'The Flight Academy',
     crystal: 'wing badges', crystalEm: '🛩️',

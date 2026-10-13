@@ -149,7 +149,7 @@ export default {
     ground: '#d9a35a', ground2: '#e8bd77', side: '#a8641c', stone: '#e3c898', accent: '#1c8f8a', glow: '#ffd27a', metal: '#8a6a3c', wood: '#8a5a2e', leaf: '#7f9a45', water: '#2fa6b5', crate: '#c98d4a',
     sun: '#ffd2a0', sunPower: 2.4, ambient: 1.2, skyLight: '#ffe6c2', groundLight: '#a8641c', sunDir: [0.6, 0.5, -0.6], particles: 'dust',
   },
-  layout: { mirror: -1, stones: 5, rise: 0.4, towerH: 6 },
+  layout: { shape: 'zigzag', mirror: -1, stones: 5, rise: 0.4, towerH: 6 },
   story: {
     title: 'The Archive in the Dunes',
     crystal: 'hour stones', crystalEm: '⏳',

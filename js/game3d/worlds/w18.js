@@ -162,7 +162,7 @@ export default {
     ground: '#9fe3c0', ground2: '#bdf0d6', side: '#f0c9b8', stone: '#fbfbf8', accent: '#ff8787', glow: '#ff6b6b', metal: '#8ea3b5', wood: '#c99a6b', leaf: '#51cf66', water: '#74c0fc', crate: '#fff0e6',
     sun: '#fff7e0', sunPower: 2.5, ambient: 1.5, skyLight: '#ffffff', groundLight: '#bfe8d2', sunDir: [-0.4, 1, 0.35], particles: 'leaves',
   },
-  layout: { mirror: -1, stones: 3, rise: 0.35, towerH: 4.5 },
+  layout: { shape: 'zigzag', mirror: -1, stones: 3, rise: 0.35, towerH: 4.5 },
   story: {
     title: 'The Sunny Teaching Hospital',
     crystal: 'heart badges', crystalEm: '❤️',

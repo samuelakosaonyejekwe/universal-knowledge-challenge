@@ -105,7 +105,7 @@ export default {
     ground: '#5560c9', ground2: '#6a74dd', side: '#2a2d6b', stone: '#9097d8', accent: '#8a5cf6', glow: '#ffd76a', metal: '#39406b', wood: '#b98045', leaf: '#3fd0b0', water: '#3d7bf0', crate: '#c9a0ff',
     sun: '#ffe2c4', sunPower: 2.0, ambient: 1.25, skyLight: '#b9c4ff', groundLight: '#3a2c7a', sunDir: [0.5, 0.9, -0.4], particles: 'stars',
   },
-  layout: { mirror: 1, stones: 4, rise: 0.5, towerH: 5.5 },
+  layout: { shape: 'line', mirror: 1, stones: 4, rise: 0.5, towerH: 5.5 },
   story: {
     title: 'The Starfall Observatory',
     crystal: 'star lenses', crystalEm: '🔭',
@@ -134,7 +134,7 @@ export default {
     k.prop('column', -4.6, mid[1], mid[2] + 3.4, { solid: true }); k.prop('crystal', 2, mid[1], mid[2] + 4, { s: 0.9 });
     // far islands, the tower beacon and the launch pad
     k.prop('lamp', -4.5, S.far[1], S.far[2] - 2.5); k.prop('lamp', 4.5, S.far[1], S.far[2] - 2.5); k.prop('ring', 0, S.far[1] + 6.2, S.far[2] + 3.2, { s: 0.8 });
-    k.prop('pillar', S.sim[0] - 5.2, S.sim[1], S.sim[2] + 5, { solid: true }); k.prop('pillar', S.sim[0] + 5.4, S.sim[1], S.sim[2] - 4.4, { solid: true }); k.prop('banner', S.sim[0] - 5.8, S.sim[1], S.sim[2] - 2.5);
+    k.prop('pillar', S.sim[0] - 5.2, S.sim[1], S.sim[2] + 5, { solid: true }); k.prop('pillar', S.sim[0] + 6.4, S.sim[1], S.sim[2] - 1.6, { solid: true }); k.prop('banner', S.sim[0] - 5.8, S.sim[1], S.sim[2] - 2.5);
     for (const a of [0.6, 2.2, 3.9, 5.4]) k.prop('lamp', S.arena[0] + Math.cos(a) * 6, S.arena[1], S.arena[2] + Math.sin(a) * 6, { color: '#b08cff' });
     k.prop('arch', S.end[0], S.end[1], S.end[2] - 3.4, { s: 0.9 });
     // a ringed giant and a moon hang in the sky
