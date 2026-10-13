@@ -3,7 +3,7 @@ import { h, rngFrom, toast } from '../core/util.js';
 import { t, tr, lang } from '../core/i18n.js';
 import { profile, save, worldLang, logEvent } from '../core/store.js';
 import { speak } from '../core/speech.js';
-import { sfx } from '../core/audio.js';
+import { sfx, holdMusic } from '../core/audio.js';
 import LABS from '../labs/index.js';
 import { award } from './ui.js';
 
@@ -66,6 +66,8 @@ export function mountLab(meta, { wkey, level, teacher, onComplete }) {
     h('p', { class: 'lab-goal mt' }, '🎯 ', labT(meta.goal)), says, root,
     h('details', { class: 'mt small' }, h('summary', { class: 'bold' }, 'ℹ️ ', t('What this model leaves out')), h('p', { class: 'muted' }, labT(meta.limits))));
   let stop = () => {}, alive = true, completions = 0;
+  // labs that play notes, rhythms or speech sounds of their own are heard without the soundtrack underneath
+  const quiet = /^(w14-|w16-metre|w10-sound-studio)/.test(meta.id) ? holdMusic() : null;
   const api = {
     level, lang: worldLang(wkey) || 'es', rng: rngFrom(`${meta.id}|${profile.id}|${Date.now()}`),
     reducedMotion: profile.settings.motion === 'off' || matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -99,5 +101,5 @@ export function mountLab(meta, { wkey, level, teacher, onComplete }) {
       const inner = stop; stop = () => { mo.disconnect(); inner(); };
     } catch (e) { console.error(e); root.append(h('div', { class: 'note bad' }, t('This lab could not start on this device.'))); }
   }).catch(() => root.append(h('div', { class: 'note bad' }, t('This lab is not on your device yet. Connect once to download it.'))));
-  return { el, stop: () => { alive = false; try { stop(); } catch (e) { console.error(e); } } };
+  return { el, stop: () => { alive = false; quiet?.(); try { stop(); } catch (e) { console.error(e); } } };
 }

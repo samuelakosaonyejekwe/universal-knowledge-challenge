@@ -112,7 +112,7 @@ const sim = {
       try {
         audio = audio || new AudioContext(); if (audio.state === 'suspended') audio.resume();
         const osc = audio.createOscillator(), gain = audio.createGain(), t0 = audio.currentTime;
-        osc.type = 'triangle'; osc.frequency.value = Math.max(40, Math.min(4000, f));
+        osc.type = 'sine'; osc.frequency.value = Math.max(40, Math.min(4000, f));
         gain.gain.setValueAtTime(0.0001, t0); gain.gain.exponentialRampToValueAtTime(0.1, t0 + 0.015); gain.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.5);
         osc.connect(gain); gain.connect(audio.destination); osc.start(t0); osc.stop(t0 + 1.6);
       } catch (e) { audio = null; }

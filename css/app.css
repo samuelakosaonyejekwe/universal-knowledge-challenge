@@ -318,9 +318,9 @@ html { scroll-padding-top: calc(var(--top-h) + 12px); scroll-padding-bottom: cal
   /* Lists of cards flow into columns instead of one long strip. */
   .levels { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
   .worlds { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
-  #main[data-route="settings"], #main[data-route="rules"] { column-count: 2; column-gap: 1rem; }
-  #main[data-route="settings"] > *, #main[data-route="rules"] > * { break-inside: avoid; margin: 0 0 1rem; max-width: none; }
-  #main[data-route="settings"] > .hero, #main[data-route="rules"] > .hero, #main[data-route="rules"] > .grid { column-span: all; }
+  #main[data-route="settings"] { column-count: 2; column-gap: 1rem; }
+  #main[data-route="settings"] > * { break-inside: avoid; margin: 0 0 1rem; max-width: none; }
+  #main[data-route="settings"] > .hero { column-span: all; }
   /* A lesson with its companion panel alongside. */
   .stage-wide { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 1rem; align-items: start; }
   .stage-wide:has(.stage-aside[hidden]) { grid-template-columns: minmax(0, 1fr); }
@@ -382,3 +382,21 @@ html.g3d-on, html.g3d-on body { overflow: hidden; }
 .g3d-touch.running .run { background: rgba(255, 215, 106, .75); color: #3a2a00; }
 @media (pointer: coarse) { .g3d-touch { display: block; } .g3d-prompt kbd { display: none; } .g3d-prompt { bottom: calc(170px + env(safe-area-inset-bottom)); } }
 @media (max-width: 640px) { .g3d-panel { top: auto; width: 100vw; max-height: 72dvh; border-radius: 18px 18px 0 0; box-shadow: 0 -8px 30px rgba(0, 0, 0, .35); } .g3d-goals li:not(.now) { display: none; } }
+
+/* ---------- balanced rows: a short last row stretches to fill the width instead of leaving a hole ---------- */
+.grid.c2, .grid.c3 { display: flex; flex-wrap: wrap; }
+.grid.c2 > * { flex: 1 1 260px; min-width: 0; }
+.grid.c3 > * { flex: 1 1 200px; min-width: 0; }
+@media (min-width: 900px) {
+  /* the pledge uses the whole width: the promises on one side, the tick box and button beside them */
+  #main[data-route="rules"] > .card.tint { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 2.5rem; align-items: center; }
+  #main[data-route="rules"] > .card.tint > * { grid-column: 1; }
+  #main[data-route="rules"] > .card.tint > label { grid-column: 2; grid-row: 1; align-self: end; font-size: 1.1rem; }
+  #main[data-route="rules"] > .card.tint > .btn { grid-column: 2; grid-row: 2; align-self: start; justify-self: stretch; margin-top: .6rem; }
+}
+/* twenty worlds always make full rows: 2, 4, 5 or 10 across */
+.worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 620px) { .worlds { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .worlds { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (min-width: 2100px) { .worlds { grid-template-columns: repeat(10, minmax(0, 1fr)); } }
+.grid.c4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }

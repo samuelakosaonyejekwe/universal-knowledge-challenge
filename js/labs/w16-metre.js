@@ -51,8 +51,8 @@ export default {
       const t0 = ac.currentTime + 0.05;
       for (let i = 0; i < 10; i++) {
         const o = ac.createOscillator(), g = ac.createGain(), s = t0 + i * 0.3, strong = i % 2 === 1;
-        o.type = 'triangle'; o.frequency.value = strong ? 330 : 220;
-        g.gain.setValueAtTime(strong ? 0.4 : 0.1, s); g.gain.exponentialRampToValueAtTime(0.001, s + (strong ? 0.22 : 0.12));
+        o.type = 'sine'; o.frequency.value = strong ? 330 : 220;
+        g.gain.setValueAtTime(0.0001, s); g.gain.exponentialRampToValueAtTime(strong ? 0.3 : 0.09, s + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, s + (strong ? 0.26 : 0.16));
         o.connect(g); g.connect(ac.destination); o.start(s); o.stop(s + 0.3);
         const id = setTimeout(() => { timers.delete(id); sylEls.forEach((el, k) => { el.style.outline = k === i ? '3px solid var(--gold)' : ''; }); }, 50 + i * 300);
         timers.add(id);

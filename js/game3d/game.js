@@ -3,7 +3,7 @@
 import { h, rngFrom, toast, confetti, shuffle } from '../core/util.js';
 import { t, tr, trInto, lang } from '../core/i18n.js';
 import { save, recordAnswer, logEvent } from '../core/store.js';
-import { sfx } from '../core/audio.js';
+import { sfx, holdMusic } from '../core/audio.js';
 import { ask, timeFor } from '../engine/quiz.js';
 import { LEVELS } from '../data/worlds.js';
 import * as labkit from '../core/labkit.js';
@@ -143,9 +143,10 @@ export function startGame(host, opts) {
   function openSim() {
     const con = level.spots.console;
     ctrl.frozen = true; simOpen = true;
+    const quiet = def.id === 10 || def.id === 14 ? holdMusic() : null;       // these simulations make sounds of their own
     rig.reach(new THREE.Vector3(con.x + 0.15, con.y + 1.08, con.z - 0.1));
-    const back = 8.2 * Math.max(1, 1.25 / Math.max(0.45, (eng.size.w - Math.min(eng.size.w * 0.5, 432)) / eng.size.h));    // further back on narrow screens
-    cam.cut(new THREE.Vector3(S.pad[0], S.pad[1] + 3.3, S.pad[2] - back), new THREE.Vector3(S.pad[0], S.pad[1] + 2.2, S.pad[2]), { dur: 1.1, hold: Infinity });
+    const back = 10 * Math.max(1, 1.25 / Math.max(0.45, (eng.size.w - Math.min(eng.size.w * 0.5, 432)) / eng.size.h));    // further back on narrow screens
+    cam.cut(new THREE.Vector3(S.pad[0], S.pad[1] + 3.9, S.pad[2] - back), new THREE.Vector3(S.pad[0], S.pad[1] + 2.3, S.pad[2]), { dur: 1.1, hold: Infinity });
     const body = h('div', { class: 'g3d-sim' });
     const sdef = def.sim;
     const saysEl = h('div', { 'aria-live': 'polite' });
@@ -180,7 +181,7 @@ export function startGame(host, opts) {
       sim = { says: '', saysEl, controlsEl: controls };
       Object.assign(sim, sdef.mount(ctx) || {});
     } else { sim.saysEl = saysEl; controls.replaceWith(sim.controlsEl); if (sim.says) saysEl.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), sim.says)); }
-    hud.panel('🔬 ' + tx(sdef.title), body, { onClose: () => { simOpen = false; ctrl.frozen = false; rig.reach(null); cam.release(); } });
+    hud.panel('🔬 ' + tx(sdef.title), body, { onClose: () => { quiet?.(); simOpen = false; ctrl.frozen = false; rig.reach(null); cam.release(); } });
   }
 
   // ----- the knowledge challenge: two bridges of light race across the gap -----

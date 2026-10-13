@@ -60,7 +60,7 @@ export default {
   theme: { sky: [top, middle, horizon], fog, fogNear, fogFar, ground, ground2, side, stone, accent, glow, metal, wood,
            leaf, water, crate, sun, sunPower, ambient, skyLight, groundLight, sunDir: [x, y, z],
            particles: 'stars' | 'bubbles' | 'leaves' | 'sparks' | 'snow' | 'dust' | 'notes' },
-  layout: { mirror: 1 | -1, stones: 3–5, rise: 0.35–0.6, towerH: 4–7 },
+  layout: { mirror: 1 | -1, stones: 3–5, rise: 0.35–0.6, towerH: 4–7, spawnZ: −5 (start point; move it forward if scenery stands behind it) },
   story: { title, crystal (plural noun, lower case), crystalEm, intro: [..], remind, afterCrystals, afterSim,
            notReady, rival: [..], win: [..], lose: [..], outro },
   decorate(k, S) { … },     // scenery only this world has

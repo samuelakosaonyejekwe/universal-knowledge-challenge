@@ -235,13 +235,13 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
 // ---------- the shared course ----------
 // Every world is laid out as one adventure route with the same milestones, so the reusable systems (movement,
 // crystals, simulation, challenge arena, portal) work everywhere; each world moves, recolours and furnishes it.
-// lay: { mirror (−1 | 1), stones (3–5), rise, lagoon, towerH }. Fills level.spots and returns them.
+// lay: { mirror (−1 | 1), stones (3–5), rise, towerH, spawnZ (where the player starts on the home island) }. Fills level.spots and returns them.
 export function buildCourse(k, lay = {}) {
   const { level, theme: th } = k, m = lay.mirror || 1, rise = lay.rise ?? 0.5, n = lay.stones || 4, TH = lay.towerH ?? 5.5;
   const S = level.spots;
   // 1. home island: where the guide waits
   k.island(0, 0, 0, 9.5);
-  S.spawn = [0, 0.05, -5, 0]; S.guide = [2.2 * m, 0, 2.5]; S.home = [0, 0, 0];
+  S.spawn = [0, 0.05, lay.spawnZ ?? -5, 0]; S.guide = [2.2 * m, 0, 2.5]; S.home = [0, 0, 0];
   const homeNodes = [[2.2 * m, 2.5], [-4 * m, 1], [-2 * m, -5], [4.5 * m, -3], [5 * m, 4.5], [-3.5 * m, 5.5]].map(([x, z]) => k.node(x, 0, z));
   homeNodes.forEach((a, i) => homeNodes.forEach((b, j) => { if (j > i) k.link(a, b); }));
   S.homeNodes = homeNodes;

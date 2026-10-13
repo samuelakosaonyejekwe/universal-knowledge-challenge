@@ -52,7 +52,7 @@ export default {
     }
     function env(when, peak, dur) {
       const g = ac.createGain();
-      g.gain.setValueAtTime(peak, when); g.gain.exponentialRampToValueAtTime(0.001, when + dur);
+      g.gain.setValueAtTime(0.0001, when); g.gain.exponentialRampToValueAtTime(peak, when + 0.006); g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
       g.connect(ac.destination); return g;
     }
     function hiss(when, peak, dur, freq) {
