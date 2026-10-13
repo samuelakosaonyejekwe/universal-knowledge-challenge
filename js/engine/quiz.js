@@ -1,5 +1,6 @@
 // Renders one question, collects a typed, tapped or spoken answer, and marks it against its key or rubric.
 import { h, add, shuffle, norm, similar, parseNumber, clear } from '../core/util.js';
+import { live } from '../core/live3d.js';
 import { t, trInto, toEnglish, lang } from '../core/i18n.js';
 import { speak, listen, canListen, canSpeakLang, stopListening } from '../core/speech.js';
 import { sfx, playItemAudio } from '../core/audio.js';
@@ -283,12 +284,14 @@ export async function runSet(host, items, opts = {}) {
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     const o = typeof opts === 'function' ? opts(item, i) : opts;
+    live.before?.(item);
     const { el, done } = ask(item, { ...o, label: o.label ?? `${i + 1} / ${items.length}` });
     clear(host).append(el);
     el.scrollIntoView?.({ block: 'nearest' });
     const r = await done;
     results.push({ item, ...r });
     o.onAnswer?.(item, r, i);
+    live.answer?.(!!r.correct, i, items.length);
   }
   return results;
 }

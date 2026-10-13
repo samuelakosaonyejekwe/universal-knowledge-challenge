@@ -22,6 +22,7 @@ import { createController, createFollowCamera } from './player.js';
 import { createNpc } from './npc.js';
 import { createWorld, buildCourse, decorateWorld } from './world.js';
 import { createHud } from './hud.js';
+import { live, clearLive } from '../core/live3d.js';
 
 const CRYSTALS = 5, SEGMENTS = 7, TABLETS = 2;
 
@@ -59,6 +60,7 @@ export function startGame(host, opts) {
   const ex = (all[`${wkey}|${lv}|${stageN}`] ||= { orbs: [], sim: false, met: false, done: 0, read: [] });
   const reach = (n) => { if (n > ss.step) ss.step = n; };          // the same step counter the flat lesson pages use
   const persist = () => save();
+  const sparks = [];
 
   // ----- characters -----
   const rig = createRig(profile.avatar, { role: 'student', band: profile.band, emblem: ex.done > 0 });
@@ -158,29 +160,34 @@ export function startGame(host, opts) {
     hud.panel('📖 ' + t('Key idea'), body);
   }
 
-  // ----- the simulation console -----
-  let sim = null, simOpen = false;
-  const pad = new THREE.Group(); pad.position.set(S.pad[0], S.pad[1], S.pad[2]); pad.rotation.y = Math.PI; level.root.add(pad);
-  function openSim() {
+  // ----- simulations: the world's own (at the console) and the 3D labs (at the bench) share one floor -----
+  const sims = new Map();           // key → { group, sim, controls, says, taps }
+  let sim = null, simOpen = false, open = null;
+  const padRoot = new THREE.Group(); padRoot.position.set(S.pad[0], S.pad[1], S.pad[2]); padRoot.rotation.y = Math.PI; level.root.add(padRoot);
+  function openSimDef(sdef, key) {
     const con = level.spots.console;
     ctrl.frozen = true; simOpen = true;
-    const quiet = def.id === 10 || def.id === 14 ? holdMusic() : null;       // these simulations make sounds of their own
+    const quiet = def.id === 10 || def.id === 14 ? holdMusic() : null;       // these make sounds of their own
     rig.reach(new THREE.Vector3(con.x + 0.15, con.y + 1.08, con.z - 0.1));
     const back = 10 * Math.max(1, 1.25 / Math.max(0.45, (eng.size.w - Math.min(eng.size.w * 0.5, 432)) / eng.size.h));    // further back on narrow screens
     cam.cut(new THREE.Vector3(S.pad[0], S.pad[1] + 3.9, S.pad[2] - back), new THREE.Vector3(S.pad[0], S.pad[1] + 2.3, S.pad[2]), { dur: 1.1, hold: Infinity });
     const body = h('div', { class: 'g3d-sim' });
-    const sdef = def.sim;
     const saysEl = h('div', { 'aria-live': 'polite' });
     body.append(h('p', { class: 'lab-goal' }, '🎯 ', tx(sdef.goal)), saysEl);
-    const controls = h('div', { class: 'lab' }); body.append(controls);
-    body.append(h('details', { class: 'small mt' }, h('summary', { class: 'bold' }, sdef.kind === 'validated' ? '📐 ' + t('Checked scientific model') : '🎈 ' + t('Simplified model'), ' — ', t('what it includes and leaves out')), h('p', { class: 'muted' }, tx(sdef.model))));
-    if (!sim) {
+    let inst = sims.get(key);
+    for (const other of sims.values()) other.group.visible = false;
+    if (!inst) {
+      const group = new THREE.Group(); padRoot.add(group);
+      const controls = h('div', { class: 'lab' });
+      inst = { group, controls, says: '', saysEl, taps: [], sim: {} }; sims.set(key, inst);
+      const me = inst;
       const ctx = {
-        THREE, CANNON, group: pad, level: lv, lang: opts.lang || null, band: profile.band, rng, calm, physics, t: tx, mat: k.mat, lit: k.lit, sprite, glow,
+        THREE, CANNON, group, level: lv, lang: opts.lang || null, band: profile.band, rng, calm, physics, t: tx, mat: k.mat, lit: k.lit, sprite, glow,
+        onTap: (object, fn) => { me.taps.push({ object, fn }); },
         ui: {
           el: controls,
           // set(v) moves the control and tells the simulation, exactly as if the player had moved it
-          slider: (o) => { const s = labkit.slider({ ...o, label: tx(o.label) }); controls.append(s.el); return { el: s.el, get value() { return s.value; }, set(v) { s.set(v); o.onInput?.(s.value); } }; },
+          slider: (o) => { const sl = labkit.slider({ ...o, label: tx(o.label) }); controls.append(sl.el); return { el: sl.el, get value() { return sl.value; }, set(v) { sl.set(v); o.onInput?.(sl.value); } }; },
           button: (label, fn, cls) => { const b = labkit.button(tx(label), fn, cls); controls.append(b); return b; },
           readout: (label, v) => { const r = labkit.readout(tx(label), v); (controls.querySelector('.g3d-reads:last-child') || controls.appendChild(h('div', { class: 'row g3d-reads' }))).append(r.el); return r; },
           choice: (options, v, fn) => {
@@ -191,19 +198,33 @@ export function startGame(host, opts) {
           },
           note: (text) => { const p = h('p', { class: 'small muted' }, tx(text)); controls.append(p); return p; },
         },
-        say: (text) => { sim.says = tx(text); sim.saysEl?.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), sim.says)); },
-        complete(score = 1, note = '') {
-          const first = !ex.sim; ex.sim = true; ex.simBest = Math.max(ex.simBest || 0, score); ss.lab = true; reach(5); persist(); sfx('ok');
-          logEvent('explore', { w: wkey, what: 'sim', score });
+        say: (text) => { me.says = tx(text); me.saysEl?.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), me.says)); },
+        complete(score = 1) {
+          const first = !ex.sims?.[key]; (ex.sims ||= {})[key] = Math.max(ex.sims[key] || 0, score); ex.sim = true; ss.lab = true; reach(5); persist(); sfx('ok');
+          logEvent('explore', { w: wkey, what: 'sim', id: key, score });
           if (first) { award(wkey, 'experiment'); rig.setFace('happy'); setTimeout(() => rig.setFace('neutral'), 2500); hud.banner('🔬 ' + t('Simulation complete!')); } else toast('✅ ' + t('Mission complete!'));
           goals();
         },
       };
-      sim = { says: '', saysEl, controlsEl: controls };
-      Object.assign(sim, sdef.mount(ctx) || {});
-    } else { sim.saysEl = saysEl; controls.replaceWith(sim.controlsEl); if (sim.says) saysEl.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), sim.says)); }
-    hud.panel('🔬 ' + tx(sdef.title), body, { onClose: () => { quiet?.(); simOpen = false; ctrl.frozen = false; rig.reach(null); cam.release(); } });
+      try { Object.assign(inst.sim, sdef.mount(ctx) || {}); } catch (e) { console.error(e); controls.append(h('div', { class: 'note bad' }, t('This lab could not start on this device.'))); }
+    } else { inst.saysEl = saysEl; if (inst.says) saysEl.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), inst.says)); }
+    inst.group.visible = true; open = inst; sim = inst.sim;
+    body.append(inst.controls, h('details', { class: 'small mt' }, h('summary', { class: 'bold' }, sdef.kind === 'validated' ? '📐 ' + t('Checked scientific model') : '🎈 ' + t('Simplified model'), ' — ', t('what it includes and leaves out')), h('p', { class: 'muted' }, tx(sdef.model))));
+    hud.panel('🔬 ' + tx(sdef.title), body, { onClose: () => { quiet?.(); simOpen = false; open = null; ctrl.frozen = false; rig.reach(null); cam.release(); } });
   }
+  const openSim = () => openSimDef(def.sim, 'main');
+  // tapping a 3D object in an open simulation
+  const tapRay = new THREE.Raycaster(), tapAt = new THREE.Vector2(); let tapDown = null;
+  const onDown = (e) => { tapDown = [e.clientX, e.clientY]; };
+  const onUp = (e) => {
+    if (!simOpen || !open || !tapDown || Math.hypot(e.clientX - tapDown[0], e.clientY - tapDown[1]) > 8 || !open.taps.length) return;
+    const r = eng.el.getBoundingClientRect(); tapAt.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    tapRay.setFromCamera(tapAt, eng.camera);
+    const hit = tapRay.intersectObjects(open.taps.map((x) => x.object), true)[0]; if (!hit) return;
+    const owner = open.taps.find((x) => { for (let o = hit.object; o; o = o.parent) if (o === x.object) return true; return false; });
+    if (owner) { sfx('tap'); owner.fn(owner.object, open.group.worldToLocal(hit.point.clone())); }
+  };
+  eng.el.addEventListener('pointerdown', onDown); eng.el.addEventListener('pointerup', onUp);
 
   // ----- the lesson: the teacher explains in the world, with the worked example and a picture from life -----
   let analogy = 0;
@@ -252,12 +273,17 @@ export function startGame(host, opts) {
     dbg.teach = tc;
   }
 
-  // ----- the lab bench: this world's hands-on labs, used without leaving the world -----
+  // ----- the lab bench: this world's hands-on labs, built in 3D on the simulation floor -----
   function openBench() {
     const labs = labsFor(worldId(wkey)); let running = null;
     const body = h('div');
     const list = () => { running?.stop(); running = null; body.replaceChildren(h('p', { class: 'small muted' }, t('Every lab says what its model leaves out.')), ...labs.map((l) => h('button', { class: 'card flat', type: 'button', style: { display: 'block', width: '100%', textAlign: 'start', cursor: 'pointer', marginBottom: '.5rem' }, onClick: () => run(l) }, h('b', null, l.icon, ' ', tx(l.title)), h('div', { class: 'small' }, tx(l.goal))))); };
-    const run = (l) => { running = mountLab(l, { wkey, level: lv, teacher: who.teacher, onComplete: () => { ss.lab = true; reach(5); persist(); goals(); } }); body.replaceChildren(h('button', { class: 'btn ghost sm mb', type: 'button', onClick: list }, '← ', t('Labs & trips')), running.el); };
+    const run = async (l) => {
+      // the 3D version when there is one; the flat version otherwise
+      let lab3d = null; try { lab3d = (await import(`./labs/${l.id}.js`)).default; } catch { /* not built in 3D */ }
+      if (lab3d) { hud.closePanel(); openSimDef(lab3d, l.id); return; }
+      running = mountLab(l, { wkey, level: lv, teacher: who.teacher, onComplete: () => { ss.lab = true; reach(5); persist(); goals(); } }); body.replaceChildren(h('button', { class: 'btn ghost sm mb', type: 'button', onClick: list }, '← ', t('Labs & trips')), running.el);
+    };
     list(); ctrl.frozen = true;
     hud.panel('🧪 ' + t('Labs & trips'), body, { wide: true, onClose: () => { running?.stop(); ctrl.frozen = false; } });
   }
@@ -362,8 +388,41 @@ export function startGame(host, opts) {
   }
   let done = false;
 
+  // ----- whole screens acted out in the world: the level final, entry tests, the arena and the memory book -----
+  const HOSTED = { final: ['🏆', 'The level final'], placement: ['🔑', 'Entry test'], arena: ['⚔️', 'Arena'], memory: ['🧠', 'Memory'] };
+  let beginner = null, solo = 0;
+  async function hostView(kind, params) {
+    const mod = await (kind === 'arena' ? import('../views/arena.js') : kind === 'memory' ? import('../views/memory.js') : import('../views/finale.js'));
+    const view = { final: mod.finaleView, placement: mod.placementView, arena: mod.arenaView, memory: mod.memoryView }[kind];
+    const body = h('div'); ctrl.frozen = true; solo = 0;
+    const duelCam = () => { const midZ = (gap.z0 + gap.z1) / 2; cam.cut(new THREE.Vector3(gap.x - 14, gap.y + 5.5, midZ - 3), new THREE.Vector3(gap.x, gap.y + 0.8, midZ - 1), { dur: 1.2, hold: Infinity }); };
+    let you = 0, them = 0, per = 2;
+    live.scene = {
+      start(total) { you = them = 0; per = Math.max(1, total); setBridge(lanes.me, 0); setBridge(lanes.them, 0); ctrl.place(S.raceStart[0], S.raceStart[1] + 0.05, S.raceStart[2], 0); rival.place(S.rivalStart[0], S.rivalStart[1], S.rivalStart[2], 0); rival.pose = null; race = { on: true }; duelCam(); },
+      answer(youOK, themOK) { if (youOK) you++; if (themOK) them++; setBridge(lanes.me, Math.floor(you * SEGMENTS / per)); setBridge(lanes.them, Math.floor(them * SEGMENTS / per)); rig.setFace(youOK ? 'happy' : 'sad'); rival.mood = themOK ? 'happy' : 'sad'; if (youOK) cam.state.shake = 0.4; setTimeout(() => { rig.setFace('neutral'); rival.mood = 'neutral'; }, 1400); },
+      finish(won) { if (won) { setBridge(lanes.me, SEGMENTS); setBridge(lanes.them, 0); rig.emblem.visible = true; rig.setFace('happy'); rival.pose = 'sad'; if (!calm) confetti(60); } else { rival.pose = 'cheer'; rig.setFace('sad'); } setTimeout(() => { race = null; ctrl.frozen = true; rig.setFace('neutral'); }, 2500); },
+    };
+    // a test or review without an opponent: every right answer lays one more piece of the player's own bridge
+    live.answer = (correct, n, total) => { if (race) return; if (correct) { solo++; setBridge(lanes.me, Math.min(SEGMENTS, Math.ceil(solo * SEGMENTS / Math.max(1, total)))); rig.setFace('happy'); rig.once('cheer', () => rig.setFace('neutral')); burst(rig.group.position.clone().add(new THREE.Vector3(0, 1.4, 0)), def.theme.glow || '#ffd76a', 18); } else { rig.setFace('sad'); setTimeout(() => rig.setFace('neutral'), 1200); } if (n === total - 1) solo = 0; };
+    live.step = (name) => {
+      if (name === 'teach') {
+        // the beginner comes to stand with the player
+        if (!beginner) { beginner = person(who.layman, 'layman', [S.arena[0] + 1.3, S.arena[1], S.arena[2] + 0.4], null, { wander: false, yaw: -1.2 }); npcs.push(beginner); }
+        ctrl.place(S.arena[0] - 0.9, S.arena[1] + 0.05, S.arena[2] + 0.4, 1.2); ctrl.pose = 'talk'; talkingTo = beginner; beginner.speaking = true;
+        const mid = new THREE.Vector3(S.arena[0] + 0.2, S.arena[1] + 1.2, S.arena[2] + 0.4); cam.cut(mid.clone().add(new THREE.Vector3(0, 0.8, -4.6)), mid, { dur: 1.1, hold: Infinity });
+      } else if (name === 'aptitude') { talkingTo = null; if (beginner) { beginner.speaking = false; beginner.mood = 'happy'; beginner.pose = 'cheer'; } ctrl.pose = 'think'; }
+      else if (name === 'passed') { ctrl.pose = 'cheer'; rig.setFace('happy'); rig.emblem.visible = true; sfx('win'); if (!calm) confetti(120); level.spots.portal.open = true; }
+      else if (name === 'failed') { ctrl.pose = 'sad'; rig.setFace('sad'); }
+    };
+    live.tab = (name, tab) => { hud.closePanel(true); hostView(name, [tab]); };
+    live.before = (item) => { dbg.item = item; };
+    if (kind !== 'memory') { ctrl.place(S.arena[0], S.arena[1] + 0.05, S.arena[2] - 1.5, 0); cam.state.yaw = Math.PI; }
+    hud.panel(`${HOSTED[kind][0]} ${t(HOSTED[kind][1])}`, body, { wide: true, onClose: (silent) => { if (!silent) leave('done'); } });
+    hud.goals([{ text: t(HOSTED[kind][1]), now: true }]); hud.count('');
+    try { await view(body, params); } catch (e) { console.error(e); body.append(h('div', { class: 'note bad' }, String(e.message || e))); }
+  }
+
   // ----- small bursts of sparks -----
-  const sparks = [];
   function burst(at, color, n = 26) {
     if (calm) return;
     const geo = new THREE.BufferGeometry(), pos = new Float32Array(n * 3), vel = [];
@@ -393,6 +452,8 @@ export function startGame(host, opts) {
     level.step(dt);
     const p = ctrl.pos;
     bumper.velocity.set((p[0] - prev[0]) / dt, 0, (p[2] - prev[2]) / dt); bumper.position.set(p[0], p[1] + 0.55, p[2]); prev = [p[0], p[1], p[2]];
+    // resting objects doze to save work; anything the player comes close to is woken so it can be pushed
+    for (const bd of physics.world.bodies) if (bd.mass > 0 && bd.sleepState !== 0 && Math.abs(bd.position.x - p[0]) < 1.6 && Math.abs(bd.position.z - p[2]) < 1.6 && Math.abs(bd.position.y - p[1]) < 2.5) bd.wakeUp();
     physics.step();
     if (race) {
       // run to the end of the bridge built so far
@@ -403,7 +464,7 @@ export function startGame(host, opts) {
     } else ctrl.update(dt, { move: inp.move, run: inp.run, jump: inp.jump, jumpPressed: pendingJump }, cam.state.yaw);
     pendingJump = false;
     for (const n of npcs) n.update(dt, p, talkingTo);
-    if (simOpen) sim?.step?.(dt);
+    if (simOpen) open?.sim.step?.(dt);
   });
   ctrl.onLand = (v) => { sfx('tap'); if (v < -14) cam.state.shake = 0.6; };
   ctrl.onRespawn = () => { hud.flash(); hud.tip(t('Careful! You are back on solid ground.')); };
@@ -417,7 +478,7 @@ export function startGame(host, opts) {
     cam.update(dt, p, input.takeLook());
     physics.sync();
     level.frame(dt, time, p);
-    sim?.frame?.(dt, time, simOpen);
+    if (open) open.sim.frame?.(dt, time, simOpen); else sims.get('main')?.sim.frame?.(dt, time, false);
     for (const part of [...lanes.me.parts, ...lanes.them.parts]) part.scale.lerp(ONE, Math.min(1, dt * 8));
     for (let i = sparks.length - 1; i >= 0; i--) {
       const s = sparks[i], a = s.p.geometry.attributes.position; s.life -= dt * 1.1;
@@ -428,7 +489,10 @@ export function startGame(host, opts) {
     // what can the player do here?
     let best = null, bestD = Infinity;
     const offer = (x, y, z, range, label, fn) => { const d = Math.hypot(p[0] - x, (p[1] + 0.9 - y) * 0.6, p[2] - z); if (d < range && d < bestD) { bestD = d; best = [label, fn]; } };
-    if (!hud.busy && !race && !done) {
+    if (opts.host?.kind === 'memory' && !hud.busy) {
+      for (const L of opts.loci) offer(L.x, 1, L.z, 2.0, `${L.em} ${t(L.name)}`, () => hud.panel(`${L.em} ${t(L.name)}`, h('div', null, L.mine.length ? h('ul', null, L.mine.map((c) => h('li', null, h('b', null, tx(c.title)), ' — ', c.cue))) : h('p', { class: 'muted' }, t('Nothing is stored here yet. In a lesson, the Remember step lets you place an idea on this object.')), h('button', { class: 'btn sm mt', type: 'button', onClick: () => hud.closePanel() }, t('OK')))));
+      offer(guide.pos[0], guide.pos[1] + 1, guide.pos[2], 2.6, t('Open my memory book'), () => hostView('memory', ['reviews']));
+    } else if (!hud.busy && !race && !done && !opts.host) {
       for (const o of level.orbs) if (!o.taken) offer(o.x, o.y, o.z, 1.9, t('Collect: {thing}', { thing: tx(story.crystal) }), () => collect(o));
       for (const tb of level.tablets) offer(tb.x, tb.y + 1, tb.z, 1.9, t('Read the tablet'), () => readTablet(tb));
       offer(guide.pos[0], guide.pos[1] + 1, guide.pos[2], 2.6, ss.lesson ? t('Hear the lesson again') : t('Talk to {name}', { name: guide.name }), lesson);
@@ -449,18 +513,26 @@ export function startGame(host, opts) {
 
   goals();
   eng.start(); eng.el.focus({ preventScroll: true });
-  if (!ex.met) { hud.tip(input.state.device === 'touch' ? t('Use the left stick to walk. Drag the picture to look around.') : t('Walk with W A S D or the arrow keys. Press Space to jump and E to use things.'), 9); hud.banner(`${w.em} ${tx(story.title)}`, 3.5); }
+  if (opts.host?.kind === 'memory') {
+    // the ten places of the memory palace stand in a ring; each shows the pictures the player has stored there
+    const LOCI = [['🚪', 'Door'], ['🪟', 'Window'], ['🛋️', 'Sofa'], ['📚', 'Bookshelf'], ['🕰️', 'Clock'], ['🪴', 'Plant'], ['🖼️', 'Picture'], ['💡', 'Lamp'], ['🪜', 'Stairs'], ['🧺', 'Basket']];
+    const kept = Object.entries(profile.palace || {}).flatMap(([wk, list]) => list.map((x) => ({ ...x, wk })));
+    opts.loci = LOCI.map(([em, name], i) => { const a = (i / LOCI.length) * Math.PI * 2, x = Math.sin(a) * 6.6, z = Math.cos(a) * 6.6; k.prop('pillar', x, 0, z, { s: 0.55 }); const sp = k.sign(em, x, 2.3, z, { size: 0.9, bg: null }); const mine = kept.filter((c) => c.locus === i && c.cue); if (mine.length) k.sign(String(mine.length), x + 0.5, 2.9, z, { size: 0.4 }); return { x, z, em, name, mine, sp }; });
+  }
+  if (opts.host && opts.host.kind !== 'memory') hostView(opts.host.kind, opts.host.params);
+  if (!ex.met && !opts.host) { hud.tip(input.state.device === 'touch' ? t('Use the left stick to walk. Drag the picture to look around.') : t('Walk with W A S D or the arrow keys. Press Space to jump and E to use things.'), 9); hud.banner(`${w.em} ${tx(story.title)}`, 3.5); }
 
   let gone = false;
   function leave(reason) {
     if (gone) return; gone = true;
     window.removeEventListener('keydown', onKey);
-    try { sim?.dispose?.(); } catch (e) { console.error(e); }
+    eng.el.removeEventListener('pointerdown', onDown); eng.el.removeEventListener('pointerup', onUp); clearLive();
+    for (const inst of sims.values()) { try { inst.sim.dispose?.(); } catch (e) { console.error(e); } }
     hud.dispose(); input.dispose(); npcs.forEach((n) => n.rig.dispose()); rig.dispose(); level.dispose(); eng.dispose(); ui.remove();
     delete window.__ukc3d;
     onExit?.(reason);
   }
   // for automated play-testing and profiling
-  window.__ukc3d = { dbg, eng, ctrl, cam, level, hud, input, physics, ex, ss, npcs, guide, rival, peers, doctors, lanes, spots: S, get sim() { return sim; }, get race() { return race; }, openSim, startDuel, collect };
+  window.__ukc3d = { dbg, eng, ctrl, cam, level, hud, input, physics, ex, ss, npcs, guide, rival, peers, doctors, lanes, spots: S, get sim() { return open ? open.sim : sims.get('main')?.sim; }, get race() { return race; }, openSim, openSimDef, startDuel, collect, hostView, tapsOpen: () => (open ? open.taps : []), simGroup: () => (open ? open.group : null) };
   return { dispose: () => leave(null) };
 }

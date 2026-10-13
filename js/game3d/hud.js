@@ -58,7 +58,7 @@ export function createHud(root, { onExit, onPause }) {
       clear(panel).append(h('div', { class: 'row between' }, h('h2', null, title), closable ? h('button', { class: 'g3d-btn', type: 'button', 'aria-label': t('Close'), onClick: () => hud.closePanel() }, '✕') : null), body);
       panel.hidden = false; panel.scrollTop = 0;
     },
-    closePanel() { if (panel.hidden) return; panel.hidden = true; clear(panel); const f = panelClose; panelClose = null; f?.(); },
+    closePanel(silent) { if (panel.hidden) return; panel.hidden = true; clear(panel); const f = panelClose; panelClose = null; f?.(silent); },
     // settings: { quality, calm, stats() }, handlers: { setQuality, setCalm, resume }
     menu(state, on) {
       const pick = (label, value, options, fn) => h('label', { class: 'g3d-opt' }, h('span', null, label), h('select', { class: 'input', onChange: (e) => fn(e.target.value) }, options.map(([v, text]) => h('option', { value: v, selected: v === value }, text))));

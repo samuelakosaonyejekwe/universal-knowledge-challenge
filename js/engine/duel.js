@@ -10,6 +10,7 @@ import { avatarEl } from '../core/avatar.js';
 import { profile, recordAnswer } from '../core/store.js';
 import { LEVELS } from '../data/worlds.js';
 import { use3d, load3d, autoDispose } from '../gfx/use3d.js';
+import { live } from '../core/live3d.js';
 
 export const POINTS = 5, WIN_MIN = 50;
 
@@ -51,7 +52,7 @@ export async function runDuel(host, opts) {
   // The 3D arena: both characters on stage, score pillars that rise, and light that floods in on victory.
   let scene3d = null;
   // A caller that already has a 3D scene (the adventure) shows the duel there instead.
-  if (opts.scene) scene3d = opts.scene;
+  if (opts.scene || live.scene) { scene3d = opts.scene || live.scene; scene3d.start?.(total); }
   else if (use3d()) {
     const view = h('div', { style: { marginBottom: '.6rem' } });
     arena.prepend(view);
@@ -69,7 +70,7 @@ export async function runDuel(host, opts) {
 
   for (let i = 0; i < total; i++) {
     const item = items[i];
-    opts.before?.(item);
+    (opts.before || live.before)?.(item);
     const { el, done } = ask(item, { feedback: false, timed: timed ? timeFor(item) : 0, voice, label: `${t('Question')} ${i + 1} / ${total}` });
     clear(stage).append(el);
     const r = await done;
@@ -110,7 +111,7 @@ async function suddenDeath(stage, say, opts, results) {
   while (true) {
     const item = pool.length ? pool.shift() : opts.items[round % opts.items.length];
     round++;
-    opts.before?.(item);
+    (opts.before || live.before)?.(item);
     const { el, done } = ask(item, { feedback: false, timed: 0, voice: opts.voice, label: `${t('Sudden death')} · ${t('Round')} ${round}` });
     clear(stage).append(el);
     const r = await done;

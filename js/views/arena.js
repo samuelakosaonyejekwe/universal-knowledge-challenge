@@ -1,6 +1,8 @@
 // Arena: practice duels, friend challenges by code, pass-and-play, tournaments, team missions and leaderboards.
 // There is no chat anywhere. Players are known only by pseudonyms and can exchange preset friendly phrases.
 import { h, clear, toast, rngFrom, shuffle, hashStr, pick } from '../core/util.js';
+import { live } from '../core/live3d.js';
+import { use3d } from '../gfx/use3d.js';
 import { t, trInto } from '../core/i18n.js';
 import { profile, device, save, worldId, wstate, recordAnswer, logEvent } from '../core/store.js';
 import { world, WORLDS, LEVELS } from '../data/worlds.js';
@@ -35,7 +37,8 @@ export function worldPicker(onPick) {
 export function arenaView(main, [tab = 'practice', arg]) {
   main.append(h('div', { class: 'hero' }, h('h1', null, '⚔️ ', t('Arena')), h('p', { class: 'muted' }, t('Compete or cooperate. Matches are made by level, never by anything you can buy.'))));
   const tabs = [['practice', '🥋', 'Practice duel'], ['team', '🤝', 'Team mission'], ['live', '⚡', 'Live duel'], ['friend', '🎟️', 'Friend challenge'], ['pass', '🔄', 'Pass and play'], ['cup', '🏟️', 'Tournaments'], ['board', '🏅', 'Leaderboard']];
-  main.append(h('div', { class: 'tabs mt' }, tabs.map(([k, e, l]) => h('button', { 'aria-selected': String(k === tab), onClick: () => go('arena/' + k) }, e, ' ', t(l)))));
+  main.append(h('div', { class: 'tabs mt' }, tabs.map(([k, e, l]) => h('button', { 'aria-selected': String(k === tab), onClick: () => (live.tab ? live.tab('arena', k) : go('arena/' + k)) }, e, ' ', t(l)))));
+  if (!live.tab && use3d()) { const recent = Object.entries(profile.worlds || {}).filter(([, v]) => v.level).sort((a, b) => (b[1].last || 0) - (a[1].last || 0))[0]; if (recent) main.append(h('div', { class: 'row mt' }, h('button', { class: 'btn gold', onClick: () => go(`explore/${recent[0]}/arena`) }, '🎮 ', t('Enter the 3D arena')))); }
   const body = h('div'); main.append(body);
   const social = can('social');
   if (['friend', 'cup', 'live'].includes(tab) && !social) { body.append(h('div', { class: 'card' }, t('Challenge codes are switched off for this player. A guardian can switch them on in Settings.'))); return; }

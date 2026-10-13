@@ -92,12 +92,12 @@ function chooseLevel(main, wkey, w, who) {
   main.append(h('div', { class: 'card mt' }, talk(who.teacher, 'Where shall we begin? If you start at Level 1 there is no test. To start higher, I need to see that you know the level below.'),
     h('div', { class: 'grid c2 mt' },
       h('button', { class: 'btn block', onClick: () => start(1) }, '🌱 ', t('Start from the beginning (Level 1)')),
-      h('button', { class: 'btn gold block', onClick: () => go(`placement/${wkey}/find`) }, '🧭 ', t('Find my level with a short check'))),
+      h('button', { class: 'btn gold block', onClick: () => go(use3d() ? `explore/${wkey}/placement/find` : `placement/${wkey}/find`) }, '🧭 ', t('Find my level with a short check'))),
     h('h3', { class: 'mt' }, t('Or ask to join a level')),
     h('div', { class: 'levels' }, LEVELS.slice(1).map((lv) => {
       const fails = ws.placeFails[lv.n] || 0;
       return h('div', { class: 'level-card row between' }, h('div', null, h('b', null, t('Level {n}', { n: lv.n }), ' — ', t(lv.name)), h('div', { class: 'small muted' }, t(lv.about)), fails ? h('div', { class: 'tiny' }, t('Entry tests not passed: {n} of 3', { n: fails })) : null),
-        h('button', { class: 'btn sm', disabled: fails >= 3, onClick: () => go(`placement/${wkey}/${lv.n}`) }, fails >= 3 ? t('Closed for now') : t('Take the entry test')));
+        h('button', { class: 'btn sm', disabled: fails >= 3, onClick: () => go(use3d() ? `explore/${wkey}/placement/${lv.n}` : `placement/${wkey}/${lv.n}`) }, fails >= 3 ? t('Closed for now') : t('Take the entry test')));
     }))));
 }
 
@@ -109,7 +109,7 @@ function journeyTab(body, wkey, w, ws, who) {
     // The 3D world is the main way to play a stage; the flat pages remain for devices and players that prefer them.
     h('div', { class: 'row mb' },
       next <= 9 && use3d() ? h('button', { class: 'btn gold', onClick: () => go(`explore/${wkey}/${next}`) }, '🎮 ', t('Play stage {n} in the 3D world', { n: next })) : null,
-      h('button', { class: next <= 9 && use3d() ? 'btn ghost' : 'btn', onClick: () => go(next <= 9 ? `stage/${wkey}/${ws.level}/${next}` : `finale/${wkey}/${ws.level}`) }, '▶ ', next > 9 ? t('Enter the level final') : use3d() ? t('Play it on flat pages') : t('Start stage {n}', { n: next }))));
+      h('button', { class: next <= 9 && use3d() ? 'btn ghost' : 'btn', onClick: () => go(next <= 9 ? `stage/${wkey}/${ws.level}/${next}` : use3d() ? `explore/${wkey}/final` : `finale/${wkey}/${ws.level}`) }, '▶ ', next > 9 ? t('Enter the level final') : use3d() ? t('Play it on flat pages') : t('Start stage {n}', { n: next }))));
   if (uiLang !== 'en' && !worldLang(wkey)) {
     // One tap prepares the whole level in the player's language and keeps it on the device for offline play.
     const status = h('span', { class: 'small muted' });
@@ -126,7 +126,7 @@ function journeyTab(body, wkey, w, ws, who) {
     const peak = h('div', { class: 'card mb', style: { padding: '.4rem', background: '#10163a' } });
     body.append(peak);
     load3d().then(({ mountJourney }) => {
-      const sc = mountJourney(peak, { world: w, level: ws.level, next, isDone: (s) => (s === 10 ? ws.completed.includes(ws.level) : stageDone(wkey, ws.level, s)), avatar: profile.avatar, band: profile.band, onPick: (s) => go(s <= 9 ? `explore/${wkey}/${s}` : `finale/${wkey}/${ws.level}`) });
+      const sc = mountJourney(peak, { world: w, level: ws.level, next, isDone: (s) => (s === 10 ? ws.completed.includes(ws.level) : stageDone(wkey, ws.level, s)), avatar: profile.avatar, band: profile.band, onPick: (s) => go(s <= 9 ? `explore/${wkey}/${s}` : `explore/${wkey}/final`) });
       autoDispose(peak, sc.dispose);
     }).catch(() => peak.remove());
   }
@@ -143,7 +143,7 @@ function journeyTab(body, wkey, w, ws, who) {
     path.append(h('button', { class: 'node duel' + (done ? ' done' : current && next === 10 ? ' now' : ''), disabled: !(current && next === 10), title: c.master.name, 'aria-label': t('Level final'), onClick: () => go(`finale/${wkey}/${lv.n}`) }, done ? '🏆' : '⚔️', h('span', { class: 'n' }, '+1500')));
     list.append(h('div', { class: 'level-card' + (current ? ' current' : '') + (!open ? ' locked' : '') },
       h('div', { class: 'row between' }, h('div', null, h('b', null, t('Level {n}', { n: lv.n }), ' — ', t(lv.name)), h('div', { class: 'small muted' }, t(lv.about))),
-        done ? h('span', { class: 'pill ok' }, '✔ ', t('Mastered')) : current ? h('span', { class: 'pill' }, t('You are here')) : lv.n > ws.level ? h('button', { class: 'btn ghost sm', disabled: (ws.placeFails[lv.n] || 0) >= 3, onClick: () => go(`placement/${wkey}/${lv.n}`) }, '🔑 ', t('Entry test')) : h('span', { class: 'pill' }, t('Open to revisit'))),
+        done ? h('span', { class: 'pill ok' }, '✔ ', t('Mastered')) : current ? h('span', { class: 'pill' }, t('You are here')) : lv.n > ws.level ? h('button', { class: 'btn ghost sm', disabled: (ws.placeFails[lv.n] || 0) >= 3, onClick: () => go(use3d() ? `explore/${wkey}/placement/${lv.n}` : `placement/${wkey}/${lv.n}`) }, '🔑 ', t('Entry test')) : h('span', { class: 'pill' }, t('Open to revisit'))),
       h('div', { class: 'row small mt' }, h('span', null, '👩‍🏫 ', c.teacher.name), h('span', null, '⚔️ ', c.master.name)),
       open ? progressBar(levelProgress(wkey, lv.n) / 10, 'ok') : null, path));
   }

@@ -13,6 +13,7 @@ import { sfx } from '../core/audio.js';
 import { avatarEl } from '../core/avatar.js';
 import { go, talk, sectionTitle, award, loading, contentMissing, progressBar } from './ui.js';
 import { rerender } from '../app.js';
+import { live } from '../core/live3d.js';
 
 export async function finaleView(main, [wkey, L]) {
   const level = +L, wid = worldId(wkey), w = world(wid), ws = wstate(wkey);
@@ -43,7 +44,7 @@ export async function finaleView(main, [wkey, L]) {
       reset(level);
       msg = 'This level needs another journey. You will meet it again with a different teacher, a different master and fresh questions. Your credits stay with you.';
     }
-    logEvent('level-failed', { w: wkey, level, why, fails });
+    logEvent('level-failed', { w: wkey, level, why, fails }); live.step?.('failed');
     save(true);
     box.append(h('div', { class: 'card mt' }, talk(who.teacher, msg), h('button', { class: 'btn mt', onClick: () => go('world/' + wkey) }, t('Back to the map'))));
   }
@@ -60,6 +61,7 @@ export async function finaleView(main, [wkey, L]) {
   }
 
   async function duel() {
+    live.step?.('duel');
     clear(box).append(loading());
     let items, tiebreak;
     try { [items, tiebreak] = await Promise.all([duelSet(wkey, level, 10, qopts), tiebreakSet(wkey, level, qopts)]); } catch { clear(box).append(contentMissing(rerender)); return; }
@@ -81,6 +83,7 @@ export async function finaleView(main, [wkey, L]) {
 
   // The learner must pass on what they know: a beginner asks, listens, and keeps asking until they understand.
   async function teach() {
+    live.step?.('teach');
     clear(box).append(loading());
     const topics = await teachTopics(wkey, level, 3);
     const lay = who.layman;
@@ -142,6 +145,7 @@ export async function finaleView(main, [wkey, L]) {
   }
 
   async function aptitude() {
+    live.step?.('aptitude');
     const items = buildAptitude(level, profile.band, `${profile.id}|${wkey}|${level}|${Date.now()}`);
     const host = h('div', { class: 'mt' });
     clear(box).append(h('div', { class: 'card mt' }, sectionTitle('🧩', t('Aptitude test')), h('p', { class: 'small' }, t('{n} puzzles: number patterns, picture patterns and logic. There is nothing to memorise — just look for the rule.', { n: items.length }))), host);
@@ -153,7 +157,7 @@ export async function finaleView(main, [wkey, L]) {
     for (const r of res) recordAnswer(wkey, { k: 'reason' }, r.correct);
     logEvent('aptitude', { w: wkey, level, score: right, n: answers.length });
     if (frac >= aptitudePass(profile.band)) {
-      ws.completed.push(level); delete ws.finale[level]; ws.levelFails[level] = 0;
+      ws.completed.push(level); delete ws.finale[level]; ws.levelFails[level] = 0; live.step?.('passed');
       const last = level === 6;
       if (last) ws.champion = true; else ws.level = level + 1;
       save(true); confetti(120); sfx('win');

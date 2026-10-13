@@ -1,5 +1,7 @@
 // Memory: spaced reviews, the Mistake Review Laboratory, the Memory Palace, and healthy learning habits.
 import { h, clear, dayNum } from '../core/util.js';
+import { live } from '../core/live3d.js';
+import { use3d } from '../gfx/use3d.js';
 import { t, trInto, canMarkText } from '../core/i18n.js';
 import { profile, save, worldId, recordAnswer } from '../core/store.js';
 import { world } from '../data/worlds.js';
@@ -15,7 +17,8 @@ const LOCI = ['🚪', '🪟', '🛋️', '📚', '🕰️', '🪴', '🖼️', '
 export async function memoryView(main, [tab = 'reviews']) {
   main.append(h('div', { class: 'hero' }, h('h1', null, '🧠 ', t('Memory')), h('p', { class: 'muted' }, t('Recall it, space it out, link it to pictures — and what you learn stays.'))));
   const tabs = [['reviews', '🔁', 'Reviews'], ['mistakes', '🧪', 'Mistake Lab'], ['palace', '🏛️', 'Memory Palace'], ['habits', '🌱', 'Habits']];
-  main.append(h('div', { class: 'tabs mt' }, tabs.map(([k, e, l]) => h('button', { 'aria-selected': String(k === tab), onClick: () => go('memory/' + k) }, e, ' ', t(l)))));
+  main.append(h('div', { class: 'tabs mt' }, tabs.map(([k, e, l]) => h('button', { 'aria-selected': String(k === tab), onClick: () => (live.tab ? live.tab('memory', k) : go('memory/' + k)) }, e, ' ', t(l)))));
+  if (!live.tab && use3d()) { const recent = Object.entries(profile.worlds || {}).filter(([, v]) => v.level).sort((a, b) => (b[1].last || 0) - (a[1].last || 0))[0]; if (recent) main.append(h('div', { class: 'row mt' }, h('button', { class: 'btn gold', onClick: () => go(`explore/${recent[0]}/memory`) }, '🎮 ', t('Walk my memory palace in 3D')))); }
   const body = h('div'); main.append(body);
   const textOK = await canMarkText();
   const qopts = { text: textOK && profile.band !== 'tiny' };
