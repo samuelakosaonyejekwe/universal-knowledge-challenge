@@ -19,6 +19,17 @@ modern browser on computers, Android and iOS, installs to the home screen, and w
 | Languages | Interface in English, French, Spanish, Arabic, Russian, Hebrew, Italian, Greek, Turkish, Portuguese, Chinese, Japanese |
 | Live knowledge | Fetched by the player's own browser from open sources, cached for offline use |
 
+## The 3D adventure
+
+Every world can also be explored as a third-person 3D adventure (the gold **Explore this world in 3D** button on a
+world's Journey page, or `#/explore/<world>`). The player walks, runs, jumps, climbs, swims and rides platforms across
+floating islands, meets the level's teacher, classmates and master as animated characters, collects five crystals by
+answering the current stage's questions, operates that world's own simulation, and wins a bridge-building knowledge
+challenge to open the portal. It works with keyboard and mouse, a game controller, or touch, and offline.
+
+It is built on the three.js already in the project plus cannon-es for rigid bodies; there is still no build step.
+How it is put together, the technical decisions, and how to add or change a world are in `tools/GAME3D.md`.
+
 ## Play it locally
 
 ```
@@ -71,6 +82,9 @@ The whole folder is the site. Publish it on any static host; the same files can 
   from the source, so freshness never depends on the publisher's computer being switched on.
 
 ## What is checked, and what still needs people
+
+- `node tools/test-game3d.mjs` checks the 3D adventure without a browser: collision and movement, route finding, that every world builds, that every simulation can be completed, and each scientific model against a known result.
+- The 3D characters are generated in code (a skinned body on a skeleton with blended animation); they are not artist-sculpted models. The 3D adventure has been played end to end by an automated player in desktop Chromium with software rendering; it has not been played on real phones or measured on real graphics hardware.
 
 - **Content.** Every lesson set (31 sets: 19 worlds and 12 language paths) has had an independent second check:
   calculated answers recomputed by program, chess positions verified with a chess library and endgame tablebases,

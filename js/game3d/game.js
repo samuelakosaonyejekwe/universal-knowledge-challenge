@@ -144,7 +144,7 @@ export function startGame(host, opts) {
     const con = level.spots.console;
     ctrl.frozen = true; simOpen = true;
     rig.reach(new THREE.Vector3(con.x + 0.15, con.y + 1.08, con.z - 0.1));
-    const back = 9.6 * Math.max(1, 1.25 / Math.max(0.45, (eng.size.w - Math.min(eng.size.w * 0.5, 432)) / eng.size.h));    // further back on narrow screens
+    const back = 8.2 * Math.max(1, 1.25 / Math.max(0.45, (eng.size.w - Math.min(eng.size.w * 0.5, 432)) / eng.size.h));    // further back on narrow screens
     cam.cut(new THREE.Vector3(S.pad[0], S.pad[1] + 3.3, S.pad[2] - back), new THREE.Vector3(S.pad[0], S.pad[1] + 2.2, S.pad[2]), { dur: 1.1, hold: Infinity });
     const body = h('div', { class: 'g3d-sim' });
     const sdef = def.sim;
@@ -157,10 +157,16 @@ export function startGame(host, opts) {
         THREE, CANNON, group: pad, level: lv, lang: opts.lang || null, band: profile.band, rng, calm, physics, t: tx, mat: k.mat, lit: k.lit, sprite, glow,
         ui: {
           el: controls,
-          slider: (o) => { const s = labkit.slider({ ...o, label: tx(o.label) }); controls.append(s.el); return s; },
+          // set(v) moves the control and tells the simulation, exactly as if the player had moved it
+          slider: (o) => { const s = labkit.slider({ ...o, label: tx(o.label) }); controls.append(s.el); return { el: s.el, get value() { return s.value; }, set(v) { s.set(v); o.onInput?.(s.value); } }; },
           button: (label, fn, cls) => { const b = labkit.button(tx(label), fn, cls); controls.append(b); return b; },
           readout: (label, v) => { const r = labkit.readout(tx(label), v); (controls.querySelector('.g3d-reads:last-child') || controls.appendChild(h('div', { class: 'row g3d-reads' }))).append(r.el); return r; },
-          choice: (options, v, fn) => { const c = labkit.choice(options.map(([a, b]) => [a, tx(b)]), v, fn); controls.append(c.el); return c; },
+          choice: (options, v, fn) => {
+            let cur = v; const row = h('div', { class: 'lab-row', role: 'radiogroup' });
+            const draw = () => row.replaceChildren(...options.map(([val, text]) => h('button', { class: 'chip' + (val === cur ? ' on' : ''), type: 'button', role: 'radio', 'aria-checked': String(val === cur), onClick: () => { cur = val; draw(); fn?.(val); } }, tx(text))));
+            draw(); controls.append(row);
+            return { el: row, get value() { return cur; }, set(val) { cur = val; draw(); fn?.(val); } };
+          },
           note: (text) => { const p = h('p', { class: 'small muted' }, tx(text)); controls.append(p); return p; },
         },
         say: (text) => { sim.says = tx(text); sim.saysEl?.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), sim.says)); },
