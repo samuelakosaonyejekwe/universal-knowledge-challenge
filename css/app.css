@@ -339,3 +339,46 @@ html { scroll-padding-top: calc(var(--top-h) + 12px); scroll-padding-bottom: cal
 @media (min-width: 900px) { #main { padding-bottom: calc(2.5rem + var(--vv-gap, 0px)); } }
 html { scroll-padding-bottom: calc(var(--nav-h) + 20px); }
 @media (min-width: 900px) { html { scroll-padding-bottom: 24px; } }
+
+/* ---------- the 3D adventure ---------- */
+html.g3d-on, html.g3d-on body { overflow: hidden; }
+.g3d { position: fixed; inset: 0; z-index: 70; background: #0b0f2a; touch-action: none; user-select: none; -webkit-user-select: none; }
+.g3d-canvas { display: block; width: 100%; height: 100%; outline: none; touch-action: none; }
+.g3d-ui { position: absolute; inset: 0; pointer-events: none; color: #fff; font-family: var(--font); }
+.g3d-ui > * { pointer-events: auto; }
+.g3d-top { position: absolute; top: max(.6rem, env(safe-area-inset-top)); left: .6rem; right: .6rem; display: flex; gap: .6rem; align-items: flex-start; pointer-events: none; }
+.g3d-top > * { pointer-events: auto; }
+.g3d-btn { width: 44px; height: 44px; border-radius: 14px; border: 0; background: rgba(14, 18, 48, .72); color: #fff; font-size: 1.1rem; cursor: pointer; backdrop-filter: blur(6px); flex: none; }
+.g3d-panel .g3d-btn { background: var(--soft); color: var(--ink); }
+.g3d-mission { background: rgba(14, 18, 48, .62); backdrop-filter: blur(6px); border-radius: 14px; padding: .45rem .7rem; max-width: min(24rem, 62vw); }
+.g3d-goals { list-style: none; margin: 0; padding: 0; font-size: .82rem; line-height: 1.45; }
+.g3d-goals li { opacity: .62; } .g3d-goals li.now { opacity: 1; font-weight: 800; color: #ffe08a; } .g3d-goals li.done { opacity: .8; color: #8ff0c0; }
+.g3d-count { margin-inline-start: auto; background: rgba(14, 18, 48, .72); border-radius: 14px; padding: .55rem .8rem; font-weight: 800; backdrop-filter: blur(6px); }
+.g3d-prompt { position: absolute; left: 50%; bottom: calc(22% + env(safe-area-inset-bottom)); transform: translateX(-50%); background: #fff; color: #1c2340; border: 0; border-radius: 999px; padding: .6rem 1.1rem; font: inherit; font-weight: 800; box-shadow: 0 6px 0 rgba(0, 0, 0, .25); cursor: pointer; max-width: 90vw; }
+.g3d-prompt kbd, .g3d-keys kbd { background: #1c2340; color: #fff; border-radius: 6px; padding: .05rem .4rem; font: inherit; font-size: .8em; }
+.g3d-prompt[hidden], .g3d-say[hidden], .g3d-panel[hidden], .g3d-banner[hidden], .g3d-menu[hidden], .g3d-tip[hidden] { display: none; }
+.g3d-tip { position: absolute; left: 50%; top: 22%; transform: translateX(-50%); background: rgba(14, 18, 48, .78); border-radius: 14px; padding: .55rem .9rem; font-size: .9rem; max-width: min(34rem, 90vw); text-align: center; pointer-events: none; }
+.g3d-banner { position: absolute; left: 50%; top: 34%; transform: translateX(-50%); font-size: clamp(1.3rem, 4vw, 2.2rem); font-weight: 900; text-align: center; text-shadow: 0 3px 0 rgba(0, 0, 0, .45), 0 0 24px rgba(0, 0, 0, .5); pointer-events: none; width: 92vw; animation: g3d-pop .45s ease-out; }
+@keyframes g3d-pop { from { transform: translateX(-50%) scale(.6); opacity: 0; } }
+.g3d-say { position: absolute; left: 50%; bottom: max(1rem, env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(44rem, 94vw); background: #fff; color: #1c2340; border-radius: 18px; padding: .8rem 1rem; box-shadow: 0 8px 30px rgba(0, 0, 0, .4); }
+.g3d-say p { margin: .25rem 0 .6rem; font-size: 1.05rem; } .g3d-say b { color: var(--pri); }
+.g3d-panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(27rem, 100vw); overflow-y: auto; background: var(--card); color: var(--ink); padding: 1rem; box-shadow: -8px 0 30px rgba(0, 0, 0, .35); overscroll-behavior: contain; user-select: text; -webkit-user-select: text; }
+[dir="rtl"] .g3d-panel { right: auto; left: 0; }
+.g3d-panel h2 { margin: 0 0 .5rem; font-size: 1.1rem; }
+.g3d-panel .q-card { box-shadow: none; padding: 0; border: 0; }
+.g3d-reads { gap: .4rem; flex-wrap: wrap; margin: .4rem 0; }
+.g3d-score { display: grid; gap: .2rem; font-weight: 800; font-size: .9rem; margin-bottom: .6rem; } .g3d-score .me { color: #12996a; } .g3d-score .them { color: #d6336c; }
+.g3d-menu { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(8, 10, 30, .6); padding: 1rem; overflow: auto; }
+.g3d-menu .card { width: min(30rem, 100%); color: var(--ink); } .g3d-keys { display: grid; gap: .25rem; margin: .6rem 0; }
+.g3d-opt { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin: .5rem 0; } .g3d-opt select { max-width: 60%; }
+.g3d-fade { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none !important; transition: opacity .35s; } .g3d-fade.on { opacity: .8; transition: none; }
+.g3d-touch { display: none; position: absolute; inset: auto 0 0 0; height: 0; pointer-events: none; }
+.g3d-touch > * { pointer-events: auto; position: absolute; }
+.g3d-stick { left: max(1rem, env(safe-area-inset-left)); bottom: calc(1.2rem + env(safe-area-inset-bottom)); width: 124px; height: 124px; border-radius: 50%; background: rgba(255, 255, 255, .16); border: 2px solid rgba(255, 255, 255, .4); touch-action: none; }
+.g3d-stick i { position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px; border-radius: 50%; background: rgba(255, 255, 255, .8); }
+.g3d-tb { width: 68px; height: 68px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, .5); background: rgba(255, 255, 255, .2); color: #fff; font-size: 1.6rem; font-weight: 900; touch-action: none; }
+.g3d-tb.jump { right: max(1rem, env(safe-area-inset-right)); bottom: calc(1.6rem + env(safe-area-inset-bottom)); }
+.g3d-tb.run { right: calc(max(1rem, env(safe-area-inset-right)) + 80px); bottom: calc(.8rem + env(safe-area-inset-bottom)); width: 56px; height: 56px; }
+.g3d-touch.running .run { background: rgba(255, 215, 106, .75); color: #3a2a00; }
+@media (pointer: coarse) { .g3d-touch { display: block; } .g3d-prompt kbd { display: none; } .g3d-prompt { bottom: calc(170px + env(safe-area-inset-bottom)); } }
+@media (max-width: 640px) { .g3d-panel { top: auto; width: 100vw; max-height: 72dvh; border-radius: 18px 18px 0 0; box-shadow: 0 -8px 30px rgba(0, 0, 0, .35); } .g3d-goals li:not(.now) { display: none; } }

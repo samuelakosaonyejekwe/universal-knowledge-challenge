@@ -27,6 +27,7 @@ const routes = {
   dashboard: () => import('./views/dashboard.js').then((m) => m.dashboardView),
   settings: () => import('./views/settings.js').then((m) => m.settingsView),
   lab: () => import('./views/world.js').then((m) => m.labView),
+  explore: () => import('./views/explore.js').then((m) => m.exploreView),
   class: () => import('./views/classroom.js').then((m) => m.classroomView),
   joinclass: () => import('./views/classroom.js').then((m) => m.joinClass),
 };
@@ -113,7 +114,7 @@ async function route() {
   if (!routes[name]) name = profile ? 'home' : 'welcome';
   try { cleanup?.(); } catch (e) { console.error(e); }
   cleanup = null; stopSpeaking();
-  currentWorld = ['world', 'stage', 'finale', 'placement', 'lab'].includes(name) ? params[0] : null;
+  currentWorld = ['world', 'stage', 'finale', 'placement', 'lab', 'explore'].includes(name) ? params[0] : null;
   const w = currentWorld ? world(worldId(currentWorld)) : null;
   document.documentElement.style.setProperty('--pri', w ? w.c1 : '#4f5bd5');
   document.documentElement.style.setProperty('--pri2', w ? w.c2 : '#8a5cf6');

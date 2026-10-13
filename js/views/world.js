@@ -106,7 +106,8 @@ function journeyTab(body, wkey, w, ws, who) {
   const wid = worldId(wkey);
   const next = (() => { for (let s = 1; s <= 9; s++) if (!stageDone(wkey, ws.level, s)) return s; return 10; })();
   body.append(talk(who.teacher, next <= 9 ? `Ready for stage ${next}: "${curriculum[wid - 1][ws.level - 1][next - 1]}"?` : `You have finished all nine stages. ${who.master.short} is waiting for the championship.`),
-    h('div', { class: 'row mb' }, h('button', { class: 'btn', onClick: () => go(next <= 9 ? `stage/${wkey}/${ws.level}/${next}` : `finale/${wkey}/${ws.level}`) }, '▶ ', next <= 9 ? t('Start stage {n}', { n: next }) : t('Enter the level final'))));
+    h('div', { class: 'row mb' }, h('button', { class: 'btn', onClick: () => go(next <= 9 ? `stage/${wkey}/${ws.level}/${next}` : `finale/${wkey}/${ws.level}`) }, '▶ ', next <= 9 ? t('Start stage {n}', { n: next }) : t('Enter the level final')),
+      use3d() ? h('button', { class: 'btn gold', onClick: () => go(`explore/${wkey}`) }, '🎮 ', t('Explore this world in 3D')) : null));
   if (uiLang !== 'en' && !worldLang(wkey)) {
     // One tap prepares the whole level in the player's language and keeps it on the device for offline play.
     const status = h('span', { class: 'small muted' });

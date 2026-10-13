@@ -146,7 +146,8 @@ const tint = (hex, amt) => { const c = new THREE.Color(hex); c.offsetHSL(0, 0, a
 
 // The face is painted in the same storybook style as the 2D portraits (large bright eyes with lashes and sparkles,
 // soft blush, a small nose and a smile) and wrapped onto the head.
-function faceTexture({ skin, eye, brow, role, young, sex = 'n' }) {
+// expr: 'neutral' | 'blink' | 'happy' | 'wow' | 'sad' | 'talk' — the same face with a different look, for animation.
+export function faceTexture({ skin, eye, brow, role, young, sex = 'n', expr = 'neutral' }) {
   const W = 512, H = 256, c = document.createElement('canvas'); c.width = W; c.height = H;
   const g = c.getContext('2d'), cx = W / 2, cy = H * 0.52;
   const base = g.createLinearGradient(0, 0, 0, H); base.addColorStop(0, '#' + tint(skin, 0.06).getHexString()); base.addColorStop(1, '#' + tint(skin, -0.07).getHexString());
@@ -156,6 +157,9 @@ function faceTexture({ skin, eye, brow, role, young, sex = 'n' }) {
   for (const sx of [-1, 1]) { g.fillStyle = 'rgba(255,110,140,' + (young ? 0.34 : 0.2) + ')'; g.beginPath(); g.ellipse(cx + sx * (gap + 14), cy + 30, 15, 9, 0, 0, 7); g.fill(); }
   for (const sx of [-1, 1]) {
     const x = cx + sx * gap, y = cy;
+    if (expr === 'blink' || expr === 'happy') {                       // closed eyes: a soft lid line (curving up when happy)
+      g.strokeStyle = '#231a33'; g.lineCap = 'round'; g.lineWidth = 5; g.beginPath(); g.moveTo(x - erx, y + 2); g.quadraticCurveTo(x, y + (expr === 'happy' ? -ery * 0.7 : ery * 0.45), x + erx, y + 2); g.stroke();
+    } else {
     g.fillStyle = '#fff'; g.beginPath(); g.ellipse(x, y, erx, ery, 0, 0, 7); g.fill();
     const ir = Math.min(erx, ery) * 0.8, ig = g.createRadialGradient(x, y + ir * 0.5, 1, x, y, ir);
     ig.addColorStop(0, '#' + tint(eye, 0.28).getHexString()); ig.addColorStop(1, eye);
@@ -165,16 +169,21 @@ function faceTexture({ skin, eye, brow, role, young, sex = 'n' }) {
     g.strokeStyle = '#231a33'; g.lineCap = 'round'; g.lineWidth = older ? 4 : 5;
     g.beginPath(); g.moveTo(x - erx - 2, y - 3); g.quadraticCurveTo(x, y - ery - 8, x + erx + 2, y - 3); g.stroke();
     if (sex === 'f' || (sex === 'n' && (!older || role === 'teacher'))) { g.lineWidth = sex === 'f' ? 4.5 : 3.5; g.beginPath(); g.moveTo(x + sx * (erx + 1), y - 4); g.lineTo(x + sx * (erx + 9), y - 11); g.stroke(); if (sex === 'f') { g.beginPath(); g.moveTo(x + sx * (erx - 3), y - 10); g.lineTo(x + sx * (erx + 4), y - 17); g.stroke(); } }
+    }
     g.strokeStyle = brow; g.lineWidth = master ? 7 : sex === 'm' ? 7 : sex === 'f' ? 4 : 5;
     g.beginPath();
     if (master) { g.moveTo(x - sx * 19, y - ery - 6); g.lineTo(x + sx * 16, y - ery - 19); }
+    else if (expr === 'sad') { g.moveTo(x - sx * 15, y - ery - 20); g.lineTo(x + sx * 15, y - ery - 11); }
+    else if (expr === 'wow') { g.moveTo(x - 15, y - ery - 20); g.quadraticCurveTo(x, y - ery - 29, x + 15, y - ery - 20); }
     else { g.moveTo(x - 15, y - ery - 14); g.quadraticCurveTo(x, y - ery - 21, x + 15, y - ery - 14); }
     g.stroke();
   }
   const line = '#' + tint(skin, -0.3).getHexString(), lip = '#' + tint(skin, -0.24).offsetHSL(-0.02, 0.15, 0).getHexString();
   g.strokeStyle = line; g.lineWidth = 3; g.beginPath(); g.moveTo(cx - 4, cy + 24); g.quadraticCurveTo(cx, cy + 29, cx + 4, cy + 24); g.stroke();
   g.strokeStyle = lip; g.lineWidth = 4.5; g.lineJoin = 'round';
-  if (master) { g.beginPath(); g.moveTo(cx - 17, cy + 43); g.quadraticCurveTo(cx + 3, cy + 50, cx + 20, cy + 38); g.stroke(); }
+  if (expr === 'wow' || expr === 'talk') { g.fillStyle = '#5a2233'; g.beginPath(); g.ellipse(cx, cy + 47, expr === 'wow' ? 10 : 13, expr === 'wow' ? 13 : 8, 0, 0, 7); g.fill(); g.stroke(); }
+  else if (expr === 'sad') { g.beginPath(); g.moveTo(cx - 15, cy + 51); g.quadraticCurveTo(cx, cy + 39, cx + 15, cy + 51); g.stroke(); }
+  else if (master && expr !== 'happy') { g.beginPath(); g.moveTo(cx - 17, cy + 43); g.quadraticCurveTo(cx + 3, cy + 50, cx + 20, cy + 38); g.stroke(); }
   else { g.fillStyle = young ? '#fff' : lip; g.beginPath(); g.moveTo(cx - 19, cy + 40); g.quadraticCurveTo(cx, cy + (young ? 64 : 58), cx + 19, cy + 40); g.quadraticCurveTo(cx, cy + 47, cx - 19, cy + 40); g.closePath(); g.fill(); g.stroke(); }
   const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
   return tex;
@@ -215,7 +224,8 @@ export function character(cfg = {}, opts = {}) {
   // head: big, with the painted face
   const headR = young ? 0.92 : 0.82;
   const head = new THREE.Group(); head.position.y = 1.78 + headR * 0.92;
-  const face = add(head, new THREE.SphereGeometry(headR, 40, 30), (() => { const map = faceTexture({ skin: skinHex, eye, brow: '#' + tint(hairHex, -0.2).getHexString(), role, young, sex: cfg.g || 'n' }); return new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: map, emissiveIntensity: 0.38, roughness: 0.8 }); })(), 0, 0, 0, 1, 1.04, 0.96);
+  const faceArgs = { skin: skinHex, eye, brow: '#' + tint(hairHex, -0.2).getHexString(), role, young, sex: cfg.g || 'n' };
+  const face = add(head, new THREE.SphereGeometry(headR, 40, 30), (() => { const map = faceTexture(faceArgs); return new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: map, emissiveIntensity: 0.38, roughness: 0.8 }); })(), 0, 0, 0, 1, 1.04, 0.96);
   face.rotation.y = -Math.PI / 2;
   for (const x of [-1, 1]) add(head, ball(0.16, 12), mat(tint(skinHex, -0.04)), x * headR * 0.97, -0.02, 0, 0.6, 1, 0.8);   // ears
   add(head, ball(0.06, 8), mat(tint(skinHex, -0.03)), 0, -0.1, headR * 0.95);                                              // nose
@@ -272,7 +282,7 @@ export function character(cfg = {}, opts = {}) {
   // golden emblem on the uniform (hidden until earned)
   const emblem = add(g, new THREE.OctahedronGeometry(0.17), new THREE.MeshStandardMaterial({ color: 0xf5b700, emissive: 0xf5b700, emissiveIntensity: 1.2, metalness: 0.7, roughness: 0.2 }), 0.26, 1.42, 0.5);
   emblem.visible = !!opts.emblem;
-  g.userData = { head, armL, armR, emblem, body };
+  g.userData = { head, armL, armR, emblem, body, face, faceArgs, headR, colors: { skin: skinHex, outfit: outfitHex, hair: hairHex } };
   return g;
 }
 
