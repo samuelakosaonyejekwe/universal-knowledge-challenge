@@ -26,6 +26,36 @@ function labT(text) {
   return text;
 }
 
+// Every picture a learner can tap gets its name written underneath, so nobody has to guess what a picture means.
+// A lab can name its own pictures (aria-label or title); common symbols are named here.
+const NAMES = { '📦': 'box', '➕': 'add', '➖': 'remove', '−': 'less', '-': 'less', '+': 'more', '✔': 'check', '✓': 'check', '◀': 'back', '▶': 'next', '▲': 'up', '▼': 'down', '⭐': 'star', '🔴': 'red', '🔵': 'blue', '🟢': 'green', '🟡': 'yellow', '🟣': 'purple', '🟠': 'orange', '🌳': 'tree', '🏠': 'home', '🖌️': 'dig', '🖌': 'dig', '🔊': 'listen', '🔁': 'again', '🗑️': 'clear', '↺': 'start again', '🎲': 'random', '▶️': 'play', '⏸': 'pause', '⏹': 'stop' };
+const hasWords = (x) => /[\p{L}\p{N}]/u.test(x);
+function nameFor(el) {
+  const own = el.getAttribute('aria-label') || el.title || '';
+  if (own && !/\d/.test(own)) return own;                       // numbered cells of a grid get the picture's general name instead
+  // name each picture in the control ("➕ 📦" → "add box"; "📦📦" → "2 × box")
+  const parts = [];
+  for (const tok of (el.textContent || '').trim().split(/\s+/)) {
+    const chars = [...tok].filter((c) => c !== '\ufe0f' && c !== '\ufe0e');
+    const base = NAMES[tok] || NAMES[chars[0]] || NAMES[chars[0] + '\ufe0f'];
+    if (!base) return '';
+    const count = chars.filter((c) => c === chars[0]).length;
+    parts.push(count > 1 ? `${count} × ${base}` : base);
+  }
+  return parts.join(' ');
+}
+function captionPictures(root, labT) {
+  for (const el of root.querySelectorAll('button, [role="button"], [role="radio"], .chip, .tok, .opt')) {
+    if (el.dataset.cap !== undefined || el.closest('.board')) continue;
+    const txt = (el.textContent || '').trim();
+    if (!txt || hasWords(txt)) continue;
+    if (el.parentElement && el.parentElement.children.length > 20) { el.dataset.cap = ''; continue; }   // large grids
+    const name = nameFor(el);
+    el.dataset.cap = name ? labT(name) : '';
+    if (name && !el.getAttribute('aria-label')) el.setAttribute('aria-label', labT(name));
+  }
+}
+
 // Returns { el, stop }. onComplete(score, note) fires each time the learner achieves the lab's mission.
 export function mountLab(meta, { wkey, level, teacher, onComplete }) {
   const root = h('div', { class: 'lab' });
@@ -62,7 +92,12 @@ export function mountLab(meta, { wkey, level, teacher, onComplete }) {
   };
   import(`../labs/${meta.id}.js`).then((m) => {
     if (!alive) return;
-    try { stop = m.default.mount(root, api) || (() => {}); } catch (e) { console.error(e); root.append(h('div', { class: 'note bad' }, t('This lab could not start on this device.'))); }
+    try {
+      stop = m.default.mount(root, api) || (() => {});
+      captionPictures(root, labT);
+      const mo = new MutationObserver(() => captionPictures(root, labT)); mo.observe(root, { childList: true, subtree: true });
+      const inner = stop; stop = () => { mo.disconnect(); inner(); };
+    } catch (e) { console.error(e); root.append(h('div', { class: 'note bad' }, t('This lab could not start on this device.'))); }
   }).catch(() => root.append(h('div', { class: 'note bad' }, t('This lab is not on your device yet. Connect once to download it.'))));
   return { el, stop: () => { alive = false; try { stop(); } catch (e) { console.error(e); } } };
 }

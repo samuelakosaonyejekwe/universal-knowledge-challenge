@@ -81,7 +81,7 @@ export function predict({ question, unit = '', truth, tolerance = 0.1, onResult 
     out.textContent = `${err <= tolerance ? '✅' : '🔁'} ${fmt(real)} ${unit}`;
     onResult?.(err);
   };
-  return h('div', { class: 'lab-row' }, h('span', { class: 'lab-goal' }, question), input, h('span', null, unit), button('✔', check), out);
+  return h('div', { class: 'lab-row' }, h('span', { class: 'lab-goal' }, question), input, h('span', null, unit), button('✔ Check', check), out);
 }
 
 // Tidy number formatting for readouts.
