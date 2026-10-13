@@ -96,18 +96,30 @@ import { rayCast } from './collide.js';
 export function createFollowCamera(camera, level, { dist = 6.2, minDist = 2.4, maxDist = 12, pitch = 0.32, yaw = Math.PI } = {}) {
   const st = { yaw, pitch, dist, want: dist, target: new THREE.Vector3(), shake: 0, calm: false };
   let shot = null;       // a cinematic move: { from, to, lookFrom, lookTo, t, dur, hold, done }
+  let orb = null;        // circling a point: { c, yaw, pitch, dist, min, max, home }
   const look = new THREE.Vector3(), pos = new THREE.Vector3();
   const ease = (t) => t * t * (3 - 2 * t);
   return {
     state: st,
     // A cinematic shot: glide to `pos` looking at `at`, hold, then hand back to the player (or stay with hold = Infinity).
     cut(to, at, { dur = 1.2, hold = 0, done } = {}) { shot = { from: camera.position.clone(), to: to.clone(), lookFrom: look.clone(), lookTo: at.clone(), t: 0, dur: st.calm ? 0.01 : dur, hold, done }; },
-    release() { shot = null; },
+    release() { shot = null; orb = null; },
+    // Circle a point: drag or the view buttons turn and tilt, zoom moves in and out, pan slides the point itself.
+    orbitAt(c, { yaw = st.yaw, pitch = 0.3, dist = 9, min = 3, max = 40 } = {}) { shot = null; orb = { c: c.clone(), yaw, pitch, dist, min, max, home: { c: c.clone(), yaw, pitch, dist } }; },
+    get orbiting() { return !!orb; }, get orbit() { return orb; },
+    pan(dx, dz) { if (orb) { orb.c.x += dx; orb.c.z += dz; } },
+    reset() { if (orb) { orb.c.copy(orb.home.c); orb.yaw = orb.home.yaw; orb.pitch = orb.home.pitch; orb.dist = orb.home.dist; } else { st.pitch = 0.32; st.want = 6.2; } },
     get busy() { return !!shot; },
     update(dt, targetPos, lookInput) {
       st.yaw -= lookInput.x; st.pitch = Math.max(-0.35, Math.min(1.25, st.pitch + lookInput.y));
       st.want = Math.max(minDist, Math.min(maxDist, st.want + lookInput.zoom));
       st.target.lerp(v.set(targetPos[0], targetPos[1] + 1.25, targetPos[2]), st.calm ? 1 : Math.min(1, dt * 12));
+      if (orb && !shot) {
+        orb.yaw -= lookInput.x; orb.pitch = Math.max(0.03, Math.min(1.45, orb.pitch + lookInput.y)); orb.dist = Math.max(orb.min, Math.min(orb.max, orb.dist + lookInput.zoom));
+        const cp = Math.cos(orb.pitch); pos.set(orb.c.x + cp * Math.sin(orb.yaw) * orb.dist, orb.c.y + Math.sin(orb.pitch) * orb.dist, orb.c.z + cp * Math.cos(orb.yaw) * orb.dist);
+        camera.position.lerp(pos, st.calm ? 1 : Math.min(1, dt * 7)); look.lerp(orb.c, st.calm ? 1 : Math.min(1, dt * 7)); camera.lookAt(look);
+        return;
+      }
       if (shot) {
         shot.t += dt; const k = ease(Math.min(1, shot.t / shot.dur));
         camera.position.lerpVectors(shot.from, shot.to, k); look.lerpVectors(shot.lookFrom, shot.lookTo, k); camera.lookAt(look);

@@ -1,5 +1,5 @@
 // The game's 3D scenes: the universe of 20 worlds, the journey mountain of a level, and the duel arena.
-import { THREE, createStage, orbit, sprite, stars, lights, character, glow, planetTexture } from './kit3d.js';
+import { THREE, createStage, orbit, sprite, stars, lights, character, glow, planetTexture, viewPad } from './kit3d.js';
 import { WORLDS } from '../data/worlds.js';
 import { t } from '../core/i18n.js';
 
@@ -42,6 +42,7 @@ export function mountUniverse(host, { progress, favourites = new Set(), onPick }
   const ctl = orbit(stage, { dist: 58, minDist: 14, maxDist: 100, pitch: 0.8, autoSpin: 0.05,
     onTap: (e, pick) => { const hit = pick(e, balls); if (!hit || picked) return; picked = true; const p = planets.find((x) => x.ball === hit.object) || planets.find((x) => x.w.id === hit.object.parent?.userData?.world); ctl.flyTo(p.g.position, 10, () => onPick(p.w.id)); },
     onHover: (e, pick) => { stage.el.style.cursor = pick(e, balls) ? 'pointer' : 'grab'; } });
+  viewPad(host, ctl, { minDist: 14, maxDist: 100, labels: { up: t('Tilt up'), down: t('Tilt down'), left: t('Turn left'), right: t('Turn right'), zoomIn: t('Zoom in'), zoomOut: t('Zoom out'), reset: t('Reset the view') } });
   stage.onFrame((dt, time) => {
     for (const [i, p] of planets.entries()) {
       p.ball.rotation.y += dt * (0.22 + (i % 5) * 0.05); p.g.position.y = p.base.y + Math.sin(time * 0.6 + i) * 0.35; p.icon.position.y = p.size + 1.5 + Math.sin(time * 1.4 + i) * 0.15;
@@ -86,6 +87,7 @@ export function mountJourney(host, { world, level, next, isDone, avatar, band, o
   const ctl = orbit(stage, { target: new THREE.Vector3(0, 5, 0), dist: 27, minDist: 12, maxDist: 44, pitch: 0.3, yaw: Math.atan2(at.x, at.z), autoSpin: 0.08,
     onTap: (e, pick) => { const hit = pick(e, list); if (!hit) return; const n = nodes[hit.object.userData.stage - 1]; if (n.open) onPick(n.s); },
     onHover: (e, pick) => { const hit = pick(e, list); stage.el.style.cursor = hit && nodes[hit.object.userData.stage - 1].open ? 'pointer' : 'grab'; } });
+  viewPad(host, ctl, { minDist: 12, maxDist: 44, labels: { up: t('Tilt up'), down: t('Tilt down'), left: t('Turn left'), right: t('Turn right'), zoomIn: t('Zoom in'), zoomOut: t('Zoom out'), reset: t('Reset the view') } });
   stage.onFrame((dt, time) => {
     for (const n of nodes) { if (n.s === next) n.node.scale.setScalar(1 + Math.sin(time * 4) * 0.12); if (n.s === 10) n.node.rotation.y += dt; }
     me.position.y = at.y + 0.6 + Math.abs(Math.sin(time * 2.2)) * 0.18; me.rotation.y = ctl.state.yaw; me.userData.head.rotation.z = Math.sin(time * 1.6) * 0.06;

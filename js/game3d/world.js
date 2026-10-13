@@ -4,6 +4,7 @@
 // crates, gates, crystals, tablets, consoles, portals and scenery. See tools/GAME3D.md for the world contract.
 import { THREE, sprite, glow } from '../gfx/kit3d.js';
 import { CANNON } from './physics.js';
+import { groundBelow } from './collide.js';
 
 const col = (c) => new THREE.Color(c);
 
@@ -13,25 +14,48 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
   const root = new THREE.Group(); scene.add(root);
 
   // ----- sky, fog and light -----
-  const skyC = document.createElement('canvas'); skyC.width = 4; skyC.height = 256;
-  const sg = skyC.getContext('2d'), grad = sg.createLinearGradient(0, 0, 0, 256);
+  const skyC = document.createElement('canvas'); skyC.width = 8; skyC.height = 1024;
+  const sg = skyC.getContext('2d'), grad = sg.createLinearGradient(0, 0, 0, 1024);
   grad.addColorStop(0, th.sky[0]); grad.addColorStop(0.55, th.sky[1]); grad.addColorStop(1, th.sky[2] || th.sky[1]);
-  sg.fillStyle = grad; sg.fillRect(0, 0, 4, 256);
+  sg.fillStyle = grad; sg.fillRect(0, 0, 8, 1024);
   const skyTex = new THREE.CanvasTexture(skyC); skyTex.colorSpace = THREE.SRGBColorSpace;
-  const sky = new THREE.Mesh(new THREE.SphereGeometry(96, 24, 16), new THREE.MeshBasicMaterial({ map: skyTex, side: THREE.BackSide, fog: false, depthWrite: false }));
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(96, 48, 32), new THREE.MeshBasicMaterial({ map: skyTex, side: THREE.BackSide, fog: false, depthWrite: false }));
   root.add(sky);
+  // the sky also lights the world: every material picks up its colours as soft reflections
+  if (eng.renderer) { try { const pm = new THREE.PMREMGenerator(eng.renderer), envScene = new THREE.Scene(); envScene.add(new THREE.Mesh(sky.geometry, sky.material)); scene.environment = pm.fromScene(envScene, 0.05).texture; pm.dispose(); } catch { /* plain lighting */ } }
+  // the sky is alive: a dark sky is strewn with stars, a bright one carries a slow drift of soft cloud
+  const skyTop = col(th.sky[0]), dark = skyTop.r * 0.3 + skyTop.g * 0.5 + skyTop.b * 0.2 < 0.3;
+  let dome = null;
+  if (dark) {
+    const n = 1400, sp = new Float32Array(n * 3), sc2 = new Float32Array(n * 3);
+    for (let i = 0; i < n; i++) { const u = rng() * 1.1 - 0.1, a = rng() * Math.PI * 2, s2 = Math.sqrt(Math.max(0, 1 - u * u)); sp.set([90 * s2 * Math.cos(a), 90 * u, 90 * s2 * Math.sin(a)], i * 3); const w = 0.75 + rng() * 0.25; sc2.set([w, w * (0.9 + rng() * 0.1), 1], i * 3); }
+    const sgeo = new THREE.BufferGeometry(); sgeo.setAttribute('position', new THREE.BufferAttribute(sp, 3)); sgeo.setAttribute('color', new THREE.BufferAttribute(sc2, 3));
+    dome = new THREE.Points(sgeo, new THREE.PointsMaterial({ size: 0.55, vertexColors: true, transparent: true, opacity: 0.95, fog: false, depthWrite: false, sizeAttenuation: true })); dome.frustumCulled = false;
+  } else {
+    const cc = document.createElement('canvas'); cc.width = 1024; cc.height = 512; const cg = cc.getContext('2d');
+    for (let i = 0; i < 46; i++) { const cx = rng() * 1024, cy = 150 + rng() * 150, n2 = 5 + Math.floor(rng() * 6); for (let j = 0; j < n2; j++) { const r = 16 + rng() * 34, x = cx + (rng() - 0.5) * 120, y = cy + (rng() - 0.5) * 22, gr = cg.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, 'rgba(255,255,255,.5)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); cg.fillStyle = gr; for (const dx of [0, -1024, 1024]) { cg.beginPath(); cg.arc(x + dx, y, r, 0, 7); cg.fill(); } } }
+    const ct = new THREE.CanvasTexture(cc); ct.colorSpace = THREE.SRGBColorSpace; ct.wrapS = THREE.RepeatWrapping;
+    dome = new THREE.Mesh(new THREE.SphereGeometry(93, 48, 24), new THREE.MeshBasicMaterial({ map: ct, transparent: true, opacity: 0.85, side: THREE.BackSide, fog: false, depthWrite: false, color: col(th.cloud || '#ffffff') }));
+  }
+  root.add(dome);
+  // a sun (or moon) hangs in the sky where the light comes from
+  const sunDisc = glow(th.sun || '#fff4dd', 34, 0.95); sunDisc.material.fog = false; root.add(sunDisc);
+  // a speckled texture gives the ground some grain; each island tints it with its own colour
+  const grainC = document.createElement('canvas'); grainC.width = grainC.height = 128;
+  { const gg = grainC.getContext('2d'); gg.fillStyle = '#e9e9e9'; gg.fillRect(0, 0, 128, 128); for (let i = 0; i < 900; i++) { const v = 200 + Math.floor(rng() * 55); gg.fillStyle = `rgba(${v},${v},${v},${0.25 + rng() * 0.5})`; gg.beginPath(); gg.arc(rng() * 128, rng() * 128, 0.6 + rng() * 2.2, 0, 7); gg.fill(); } for (let i = 0; i < 260; i++) { gg.fillStyle = `rgba(120,120,120,${0.12 + rng() * 0.2})`; gg.beginPath(); gg.arc(rng() * 128, rng() * 128, 0.5 + rng() * 1.6, 0, 7); gg.fill(); } }
+  const grain = new THREE.CanvasTexture(grainC); grain.colorSpace = THREE.SRGBColorSpace; grain.wrapS = grain.wrapT = THREE.RepeatWrapping; grain.repeat.set(5, 5);
   scene.fog = new THREE.Fog(col(th.fog || th.sky[1]), th.fogNear ?? 45, th.fogFar ?? 150);
-  const hemi = new THREE.HemisphereLight(col(th.skyLight || '#ffffff'), col(th.groundLight || th.side || '#445'), th.ambient ?? 1.15);
+  const hemi = new THREE.HemisphereLight(col(th.skyLight || '#ffffff'), col(th.groundLight || th.side || '#445'), (th.ambient ?? 1.15) * (eng.renderer ? 0.82 : 1));
   const sun = new THREE.DirectionalLight(col(th.sun || '#fff4dd'), th.sunPower ?? 2.2);
-  sun.castShadow = true; sun.shadow.bias = -0.0006; sun.shadow.normalBias = 0.03;
-  const sc = sun.shadow.camera; sc.left = sc.bottom = -22; sc.right = sc.top = 22; sc.near = 1; sc.far = 90;
+  sun.castShadow = true; sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.025; sun.shadow.radius = 3.5; sun.shadow.blurSamples = 16;
+  const sc = sun.shadow.camera; sc.left = sc.bottom = -18; sc.right = sc.top = 18; sc.near = 1; sc.far = 90;
   root.add(hemi, sun, sun.target);
   const sunDir = new THREE.Vector3(...(th.sunDir || [0.45, 1, -0.35])).normalize();
   eng.onQuality = (q) => { if (q.shadowMap) { sun.shadow.mapSize.set(q.shadowMap, q.shadowMap); sun.shadow.map?.dispose(); sun.shadow.map = null; } };
 
   // ----- shared materials and shapes -----
-  const mats = new Map();
-  const mat = (color, o = {}) => { const key = color + JSON.stringify(o); if (!mats.has(key)) mats.set(key, new THREE.MeshStandardMaterial({ color: col(color), roughness: 0.78, metalness: 0.02, ...o })); return mats.get(key); };
+  const mats = new Map(); let gemMat = null;
+  const mat = (color, o = {}) => { const key = color + JSON.stringify(o); if (!mats.has(key)) mats.set(key, new THREE.MeshStandardMaterial({ color: col(color), roughness: 0.78, metalness: 0.02, envMapIntensity: 0.6, ...o })); return mats.get(key); };
   const lit = (color, power = 1.2, o = {}) => mat(color, { emissive: col(color), emissiveIntensity: power, roughness: 0.35, ...o });
   const mesh = (geo, material, x = 0, y = 0, z = 0, parent = root) => { const m = new THREE.Mesh(geo, material); m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; parent.add(m); return m; };
   const solid = (s) => { level.solids.push(s); physics.addSolid(s); return s; };
@@ -45,11 +69,11 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
     // A round floating island whose top is at height y.
     island(x, y, z, r, { h = 3.2, top = th.ground, side = th.side } = {}) {
       const g = new THREE.Group(); g.position.set(x, y, z); root.add(g);
-      mesh(new THREE.CylinderGeometry(r, r * 0.97, 0.5, 40), mat(top), 0, -0.25, 0, g).castShadow = false;
-      mesh(new THREE.CylinderGeometry(r * 0.97, r * 0.62, h - 0.5, 28), mat(side, { flatShading: true }), 0, -0.5 - (h - 0.5) / 2, 0, g);
+      mesh(new THREE.CylinderGeometry(r, r * 0.97, 0.5, 72), [mat(top), mat(top, { map: grain, bumpMap: grain, bumpScale: 0.9 }), mat(top)], 0, -0.25, 0, g).castShadow = false;
+      mesh(new THREE.CylinderGeometry(r * 0.97, r * 0.62, h - 0.5, 40), mat(side, { flatShading: true }), 0, -0.5 - (h - 0.5) / 2, 0, g);
       mesh(new THREE.ConeGeometry(r * 0.62, r * 0.9, 20), mat(side, { flatShading: true }), 0, -h - r * 0.45, 0, g).rotation.x = Math.PI;
       // a ring of lighter ground and a few tufts make the top less flat
-      const ring = mesh(new THREE.RingGeometry(r * 0.55, r * 0.93, 40), mat(th.ground2 || th.ground, { roughness: 1 }), 0, 0.012, 0, g); ring.rotation.x = -Math.PI / 2; ring.castShadow = false;
+      const ring = mesh(new THREE.RingGeometry(r * 0.55, r * 0.93, 40), mat(th.ground2 || th.ground, { roughness: 1, map: grain }), 0, 0.012, 0, g); ring.rotation.x = -Math.PI / 2; ring.castShadow = false;
       return solid({ type: 'cyl', x, z, r, y0: y - h, y1: y, group: g });
     },
     // A block whose top is at height y (x, z is its centre).
@@ -78,9 +102,13 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
     },
     // A pool of water to swim in: centre (x, z), size w × d, surface at height y.
     water(x, z, w, d, y, { depth = 2.2, color = th.water || '#2fb5e6' } = {}) {
-      const m = mesh(new THREE.BoxGeometry(w, depth, d), new THREE.MeshStandardMaterial({ color: col(color), transparent: true, opacity: 0.62, roughness: 0.12, metalness: 0.1 }), x, y - depth / 2, z);
+      // glassy water that mirrors the sky, with ripples running across its surface
+      const wm = new THREE.MeshStandardMaterial({ color: col(color), transparent: true, opacity: 0.7, roughness: 0.05, metalness: 0.35, envMapIntensity: 1.3 });
+      const clock = { value: 0 };
+      wm.onBeforeCompile = (sh) => { sh.uniforms.uWave = clock; sh.vertexShader = 'uniform float uWave;\n' + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n  if (normal.y > 0.5) transformed.y += sin(position.x * 1.7 + uWave * 1.6) * 0.045 + cos(position.z * 2.1 + uWave * 1.2) * 0.04;'); };
+      const m = mesh(new THREE.BoxGeometry(w, depth, d, 28, 1, 28), wm, x, y - depth / 2, z);
       m.castShadow = false; m.renderOrder = 2;
-      level.animated.push((dt, t) => { m.position.y = y - depth / 2 + Math.sin(t * 1.3) * 0.03; });
+      level.animated.push((dt, t) => { clock.value = t; m.position.y = y - depth / 2 + Math.sin(t * 1.3) * 0.03; });
       level.zones.push({ type: 'water', min: [x - w / 2, y - depth - 3, z - d / 2], max: [x + w / 2, y, z + d / 2] });
     },
     // A crate that can be pushed, stacked and stood on.
@@ -94,7 +122,9 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
     ball(x, y, z, r = 0.45, { mass = 1.5, color = th.accent } = {}) {
       const m = mesh(new THREE.SphereGeometry(r, 20, 14), mat(color, { roughness: 0.35 }), x, y, z);
       mesh(new THREE.TorusGeometry(r * 1.005, r * 0.07, 6, 24), mat('#ffffff'), 0, 0, 0, m);
-      return physics.ball(m, r, [x, y + r + 0.02, z], { mass });
+      const body = physics.ball(m, r, [x, y + r + 0.02, z], { mass });
+      const sld = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, body }; level.solids.push(sld); level.dynamic.push(sld);
+      return body;
     },
     // A swing gate on a hinge: walk into it to push it open. yaw = direction the closed gate spans.
     gate(x, y, z, { w = 2.2, h = 1.3, yaw = 0, color = th.wood || '#b98045' } = {}) {
@@ -105,6 +135,8 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
       const px = x - Math.cos(yaw) * w / 2, pz = z + Math.sin(yaw) * w / 2;
       mesh(new THREE.CylinderGeometry(0.11, 0.13, h + 0.5, 10), mat(th.stone), px, y + (h + 0.5) / 2, pz);
       physics.hinge(body, [px, y + h / 2 + 0.15, pz], [0, 1, 0]);
+      solid({ type: 'cyl', x: px, z: pz, r: 0.16, y0: y, y1: y + h + 0.5 });
+      const sld = { type: 'box', min: [0, 0, 0], max: [0, 0, 0], dynamic: true, body, thin: true }; level.solids.push(sld); level.dynamic.push(sld);
       return body;
     },
     // A weight hanging on a rope from (x, y, z): bump it and it swings.
@@ -120,7 +152,9 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
     // A knowledge crystal to collect.
     orb(x, y, z) {
       const g = new THREE.Group(); g.position.set(x, y + 1.1, z); root.add(g);
-      const gem = mesh(new THREE.OctahedronGeometry(0.38), lit(th.glow || '#ffd76a', 1.5, { metalness: 0.3 }), 0, 0, 0, g); gem.scale.y = 1.35;
+      // a cut gem: glassy, glinting and softly glowing from within
+      gemMat ||= new THREE.MeshPhysicalMaterial({ color: col(th.glow || '#ffd76a'), emissive: col(th.glow || '#ffd76a'), emissiveIntensity: 1.25, roughness: 0.12, metalness: 0.15, clearcoat: 1, clearcoatRoughness: 0.08, iridescence: 0.8, iridescenceIOR: 1.6, flatShading: true, envMapIntensity: 1.6 });
+      const gem = mesh(new THREE.OctahedronGeometry(0.38, 1), gemMat, 0, 0, 0, g); gem.scale.y = 1.35;
       const halo = glow(th.glow || '#ffd76a', 2.6, 0.75); g.add(halo);
       const beam = mesh(new THREE.CylinderGeometry(0.05, 0.3, 1.1, 10, 1, true), new THREE.MeshBasicMaterial({ color: col(th.glow || '#ffd76a'), transparent: true, opacity: 0.25, depthWrite: false, side: THREE.DoubleSide }), 0, -0.6, 0, g); beam.castShadow = false;
       const o = { g, gem, x, y: y + 1.1, z, taken: false, i: level.orbs.length }; level.orbs.push(o);
@@ -132,7 +166,8 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
       mesh(new THREE.BoxGeometry(1.0, 0.25, 0.5), mat(th.stone), 0, 0.125, 0, g);
       const face = mesh(new THREE.BoxGeometry(0.9, 1.15, 0.1), lit(th.accent, 0.55), 0, 0.9, 0, g); face.rotation.x = -0.18;
       const mark = sprite('📖', { size: 0.5 }); mark.position.set(0, 1.85, 0); g.add(mark);
-      const tb = { g, x, y, z, i: level.tablets.length, mark }; level.tablets.push(tb);
+      solid({ type: 'cyl', x, z, r: 0.42, y0: y, y1: y + 1.5 });
+      const tb = { g, x, y, z, yaw, i: level.tablets.length, mark }; level.tablets.push(tb);
       return tb;
     },
     // The console that runs this world's simulation; `pad` is the open floor where the simulation is built.
@@ -151,6 +186,8 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
       const ring = mesh(new THREE.TorusGeometry(1.5, 0.16, 12, 40), lit(th.glow || '#ffd76a', 0.4), 0, 1.9, 0, g);
       const disc = mesh(new THREE.CircleGeometry(1.42, 40), new THREE.MeshBasicMaterial({ color: col(th.glow || '#ffd76a'), transparent: true, opacity: 0.12, side: THREE.DoubleSide, depthWrite: false }), 0, 1.9, 0, g); disc.castShadow = false;
       mesh(new THREE.BoxGeometry(3.4, 0.3, 1), mat(th.stone), 0, 0.15, 0, g);
+      solid({ type: 'box', min: [x - 1.7, y, z - 0.5], max: [x + 1.7, y + 0.3, z + 0.5] });
+      for (const sx of [-1.58, 1.58]) solid({ type: 'cyl', x: x + sx, z, r: 0.2, y0: y, y1: y + 2.2 });
       const p = { g, ring, disc, x, y, z, open: false }; level.spots.portal = p;
       level.animated.push((dt, t) => { disc.material.opacity = p.open ? 0.55 + Math.sin(t * 3) * 0.15 : 0.1; ring.material.emissiveIntensity = p.open ? 1.6 : 0.3; if (p.open) disc.rotation.z += dt * 0.8; });
       return p;
@@ -212,7 +249,7 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
   const N = Math.round(260 * eng.quality.particles * (eng.calm ? 0.3 : 1));
   const pp = new Float32Array(N * 3), seeds = Array.from({ length: N }, () => [rng() * 40 - 20, rng() * 16 - 3, rng() * 40 - 20, rng() * 6]);
   const pgeo = new THREE.BufferGeometry(); pgeo.setAttribute('position', new THREE.BufferAttribute(pp, 3));
-  const points = new THREE.Points(pgeo, new THREE.PointsMaterial({ color: col(th.glow || '#ffffff'), size: psize, transparent: true, opacity: 0.8, depthWrite: false, sizeAttenuation: true }));
+  const points = new THREE.Points(pgeo, new THREE.PointsMaterial({ color: col(th.glow || '#ffffff'), size: psize, transparent: true, opacity: 0.8, depthWrite: false, sizeAttenuation: true, blending: ['stars', 'sparks', 'bubbles', 'notes'].includes(th.particles) ? THREE.AdditiveBlending : THREE.NormalBlending }));
   points.frustumCulled = false; root.add(points);
 
   level.kit = k; level.root = root;
@@ -232,7 +269,7 @@ export function createWorld(eng, physics, def, { rng = Math.random } = {}) {
     for (const f of level.animated) f(dt, t);
     for (const o of level.orbs) { if (o.taken) continue; o.g.position.y = o.y + Math.sin(t * 2 + o.i) * 0.14; o.gem.rotation.y += dt * 1.6; }
     for (const tb of level.tablets) tb.mark.position.y = 1.85 + Math.sin(t * 2.2 + tb.i) * 0.07;
-    sky.position.set(focus[0], 0, focus[2]);
+    sky.position.set(focus[0], 0, focus[2]); dome.position.set(focus[0], 0, focus[2]); dome.rotation.y = t * (dark ? 0.004 : 0.012); sunDisc.position.set(focus[0] + sunDir.x * 88, focus[1] + sunDir.y * 88, focus[2] + sunDir.z * 88);
     sun.target.position.set(focus[0], focus[1], focus[2]); sun.position.set(focus[0] + sunDir.x * 40, focus[1] + sunDir.y * 40, focus[2] + sunDir.z * 40);
     for (let i = 0; i < N; i++) {
       const s = seeds[i]; let y = s[1] + ((t * drift + s[3]) % 16); y = ((y + 3) % 16 + 16) % 16 - 3;
@@ -304,7 +341,7 @@ export function buildCourse(k, lay = {}) {
   midNodes.forEach((a, i) => midNodes.forEach((b, j) => { if (j > i) k.link(a, b); })); S.midNodes = midNodes;
   k.tablet(midX + 4.3 * m, midY, midZ + 1.5, -1.3 * m);
   k.pendulum(midX - 3.6 * m, midY + 3.6, midZ - 3.2, 2.6);
-  k.mesh(new k.THREE.CylinderGeometry(0.1, 0.14, 3.7, 8), k.mat(th.stone), midX - 4.6 * m, midY + 1.85, midZ - 3.2); k.mesh(new k.THREE.BoxGeometry(1.3, 0.12, 0.12), k.mat(th.stone), midX - 4.05 * m, midY + 3.62, midZ - 3.2);
+  k.mesh(new k.THREE.CylinderGeometry(0.1, 0.14, 3.7, 8), k.mat(th.stone), midX - 4.6 * m, midY + 1.85, midZ - 3.2); level.solids.push({ type: 'cyl', x: midX - 4.6 * m, z: midZ - 3.2, r: 0.16, y0: midY, y1: midY + 3.7 }); k.mesh(new k.THREE.BoxGeometry(1.3, 0.12, 0.12), k.mat(th.stone), midX - 4.05 * m, midY + 3.62, midZ - 3.2);
   // 3. the lagoon: swim across (a crystal floats in the middle) or ride the raft
   const d2 = dir(sh.a2), wy = midY - 0.45, pool = at(M, d2, 11.7), F = at(M, d2, 23.8), farX = F[0], farZ = F[1];
   k.block(pool[0], wy - 2.2, pool[1], 18, 0.8, 18, { color: th.side });
@@ -349,25 +386,55 @@ export function buildCourse(k, lay = {}) {
 // scenery is carried along with the island it was placed beside, so nothing is left floating where an island used to be.
 const dummy = new Proxy(function () {}, { get: (t, p) => (p === 'length' ? 0 : p === Symbol.toPrimitive ? () => 0 : dummy), apply: () => dummy, construct: () => dummy, set: () => true });
 function lineSpots(lay, theme) {
-  const level = { spots: {}, movers: [], nodes: [], links: [] };
+  const level = { spots: {}, movers: [], nodes: [], links: [], solids: [], tablets: [], orbs: [] };
   const fake = new Proxy({}, { get: (t, p) => (p === 'level' ? level : p === 'theme' ? theme : p === 'node' ? () => level.nodes.push(0) - 1 : dummy) });
   return buildCourse(fake, { ...lay, shape: 'line' });
 }
+// The places that must stay free for the game to be playable; scenery never becomes solid on top of them.
+export function keyPoints(S, level) {
+  const pts = [], add = (x, y, z, r = 0.75) => pts.push([x, y, z, r]);
+  add(S.spawn[0], S.spawn[1], S.spawn[2], 1.1); add(S.guide[0], S.guide[1], S.guide[2], 1.0);
+  const c = S.console, bn = S.benchAt, po = S.portal;
+  add(c.x, c.y, c.z - 0.95, 0.9); add(bn.x, bn.y, bn.z - 0.85, 0.8); add(S.ladder[0], S.far[1], S.ladder[1] - 0.05, 0.8); add(S.ladder[0], S.far[1], S.ladder[1] - 1.2, 0.8);
+  add(S.midIn[0], S.mid[1], S.midIn[1], 1.0); add(S.farIn[0], S.far[1], S.farIn[1], 1.0);
+  add(S.arena[0], S.arena[1], S.arena[2], 1.4); add(S.rival[0], S.rival[1], S.rival[2], 0.9);
+  for (let z = S.arena[2] - 6; z <= S.gap.z0 + 0.5; z += 0.8) for (const x of [S.raceStart[0], S.rivalStart[0], S.arena[0]]) add(x, S.arena[1], z, 0.75);
+  for (const d of S.doctors) add(d[0], d[1], d[2], 0.8);
+  for (let z = S.gap.z1 - 0.5; z <= po.z - 0.6; z += 0.7) for (const x of [S.raceStart[0], S.end[0]]) add(x, S.end[1], z, 0.7);
+  for (let a = 0; a < 16; a++) for (const r of [0, 1.5, 3, 4.3]) add(S.pad[0] + Math.cos(a * Math.PI / 8) * r, S.pad[1], S.pad[2] + Math.sin(a * Math.PI / 8) * r, 0.4);
+  for (const tb of level.tablets) add(tb.x + Math.sin(tb.yaw) * 1.2, tb.y, tb.z + Math.cos(tb.yaw) * 1.2, 0.8);
+  for (const o of level.orbs) add(o.x, o.y - 1.1, o.z, 1.0);
+  for (const n of level.nodes) add(n[0], n[1], n[2], 0.7);
+  for (const [a, b] of level.links) { const A = level.nodes[a], B = level.nodes[b], L = Math.hypot(B[0] - A[0], B[2] - A[2]); for (let d = 0.5; d < L; d += 0.5) add(A[0] + (B[0] - A[0]) * d / L, A[1], A[2] + (B[2] - A[2]) * d / L, 0.55); }
+  for (const leg of S.legs) { if (leg.board) { add(leg.board[0], null, leg.board[1], 0.9); add(leg.exit[0], null, leg.exit[1], 0.9); } for (const h of leg.hops || []) add(h[0], null, h[1], 0.9); }
+  // the way on from each island: from its middle to where the route leaves it
+  const lane = (a, b, y) => { const L = Math.hypot(b[0] - a[0], b[1] - a[1]); for (let d = 0; d <= L; d += 0.7) add(a[0] + (b[0] - a[0]) * d / L, y, a[1] + (b[1] - a[1]) * d / L, 0.8); };
+  const first = S.legs[0], out = first.hops ? first.hops[0] : first.board; lane([S.spawn[0], S.spawn[2]], [S.guide[0], S.guide[2]], 0); lane([0, 0], out, 0); lane([S.guide[0], S.guide[2]], out, 0);
+  lane(S.midIn, [S.mid[0], S.mid[2]], S.mid[1]); lane([S.mid[0], S.mid[2]], [S.float[0], S.float[1]], S.mid[1]); lane(S.farIn, [S.ladder[0], S.ladder[1] - 1.2], S.far[1]);
+  lane([S.sim[0] - Math.sign(S.sim[0] - S.far[0]) * 7, S.sim[2]], [S.sim[0], S.sim[2] - 3.6], S.sim[1]); lane([S.sim[0], S.sim[2] - 3.6], [bn.x, bn.z - 0.85], S.sim[1]); lane([S.sim[0] - 4.6, S.sim[2] - 3.4], [S.sim[0] - 4.6, S.sim[2] + 6], S.sim[1]); lane([S.sim[0] - 4.6, S.sim[2] + 6], [S.sim[0], S.sim[2] + 7.6], S.sim[1]);
+  lane([S.arena[0], S.arena[2] - 6.8], [S.arena[0], S.arena[2]], S.arena[1]); lane([S.arena[0], S.arena[2]], [S.rival[0] - 1.6, S.rival[2] - 1.2], S.arena[1]);
+  // from each island's way in to the things on it that the mission sends the player to
+  for (const tb of level.tablets) { const isle = [S.home, S.mid, S.far, S.sim, S.arena, S.end].reduce((b, q) => (Math.hypot(q[0] - tb.x, q[2] - tb.z) < Math.hypot(b[0] - tb.x, b[2] - tb.z) ? q : b)); lane([isle[0], isle[2]], [tb.x + Math.sin(tb.yaw) * 1.2, tb.z + Math.cos(tb.yaw) * 1.2], tb.y); }
+  const liftLeg = S.legs.find((l) => l.lift);
+  for (const o of level.orbs) { const y = o.y - 1.1; if (Math.abs(y) < 0.3) lane([0, 0], [o.x, o.z], 0); else if (Math.abs(y - S.sim[1]) < 0.3 && Math.hypot(o.x - S.sim[0], o.z - S.sim[2]) < 8) { lane(liftLeg.exit, [liftLeg.exit[0], S.sim[2] - 4.4], y); lane([liftLeg.exit[0], S.sim[2] - 4.4], [o.x, S.sim[2] - 4.4], y); lane([o.x, S.sim[2] - 4.4], [o.x, o.z], y); } }
+  lane(liftLeg.exit, [S.sim[0], S.sim[2] - 3.6], S.sim[1]);
+  return pts;
+}
+
 export function decorateWorld(k, def, S) {
   const level = k.level, lay = def.layout || {};
-  if (S.shape === 'line') { def.decorate?.(k, S); return; }
-  const L = lineSpots(lay, k.theme), isles = [['home', 9.5], ['mid', 6.2], ['far', 6.6], ['sim', 7.4], ['arena', 7], ['end', 4.6]];
+  const L = S.shape === 'line' ? S : lineSpots(lay, k.theme), isles = [['home', 9.5], ['mid', 6.2], ['far', 6.6], ['sim', 7.4], ['arena', 7], ['end', 4.6]];
   const carriers = isles.map(([key, r]) => { const g = new k.THREE.Group(), d = [S[key][0] - L[key][0], S[key][1] - L[key][1], S[key][2] - L[key][2]]; g.position.set(d[0], d[1], d[2]); k.root.add(g); return { g, d, at: L[key], r }; });
   // the island (on the straight route) that a point belongs to
   const carry = (x, z) => carriers.reduce((best, c) => { const dist = Math.hypot(x - c.at[0], z - c.at[2]) - c.r; return dist < best[0] ? [dist, c] : best; }, [Infinity, carriers[0]])[1];
-  const marked = new Set(level.solids);
+  const marked = new Set(level.solids), scenery = [], firstAnim = level.animated.length;
   const moved = (fn) => (...a) => { const before = level.solids.length, out = fn(...a); for (const sld of level.solids.slice(before)) marked.add(sld); return out; };
   const dk = Object.create(k);
-  dk.mesh = (geo, material, x = 0, y = 0, z = 0, parent) => k.mesh(geo, material, x, y, z, parent || carry(x, z).g);
-  dk.add = (o) => { carry(o.position.x, o.position.z).g.add(o); return o; };
+  dk.mesh = (geo, material, x = 0, y = 0, z = 0, parent) => { const o = k.mesh(geo, material, x, y, z, parent || carry(x, z).g); if (!parent) scenery.push(o); return o; };
+  dk.add = (o) => { carry(o.position.x, o.position.z).g.add(o); scenery.push(o); return o; };
   dk.sign = (text, x, y, z, o) => { const sp = k.sign(text, x, y, z, o); carry(x, z).g.add(sp); return sp; };
-  dk.prop = (kind, x, y, z, o = {}) => k.prop(kind, x, y, z, { ...o, into: carry(x, z).g });
-  dk.root = { add: (...os) => { for (const o of os) carry(o.position.x, o.position.z).g.add(o); } };
+  dk.prop = (kind, x, y, z, o = {}) => { const g = k.prop(kind, x, y, z, { ...o, solid: false, into: carry(x, z).g }); scenery.push(g); return g; };
+  dk.root = { add: (...os) => { for (const o of os) { carry(o.position.x, o.position.z).g.add(o); scenery.push(o); } } };
   for (const name of ['island', 'block', 'crate', 'ball', 'pendulum', 'gate']) dk[name] = moved((x, y, z, ...rest) => { const d = carry(x, z).d; return k[name](x + d[0], y + d[1], z + d[2], ...rest); });
   dk.mover = moved((a, b, ...rest) => { const d = carry(a[0], a[2]).d; return k.mover([a[0] + d[0], a[1] + d[1], a[2] + d[2]], [b[0] + d[0], b[1] + d[1], b[2] + d[2]], ...rest); });
   // the spots the scenery was designed around, as they are on the straight route
@@ -380,4 +447,41 @@ export function decorateWorld(k, def, S) {
     if (sld.type === 'cyl') { sld.x += d[0]; sld.z += d[2]; sld.y0 += d[1]; sld.y1 += d[1]; } else for (const q of [0, 1, 2]) { sld.min[q] += d[q]; sld.max[q] += d[q]; }
     if (sld.body) { sld.body.position.x += d[0]; sld.body.position.y += d[1]; sld.body.position.z += d[2]; }
   }
+  solidify(k, S, scenery, firstAnim);
+}
+
+// Nothing in the world is a ghost: every piece of scenery that stands on the ground where people walk gets a solid
+// body of its own shape and size, so the player and the other characters walk round it. Things overhead (leaves,
+// arch tops, signs), flat things underfoot, things that move by themselves, and far-off sky scenery are left alone,
+// and nothing is made solid on a spot the game needs free.
+function solidify(k, S, scenery, firstAnim) {
+  const { level, THREE, physics } = k, keep = keyPoints(S, level), box = new THREE.Box3(), v = new THREE.Vector3();
+  k.root.updateMatrixWorld(true);
+  const meshes = [];
+  for (const o of scenery) o.traverse?.((m) => { if (m.isMesh && !m.isInstancedMesh && m.geometry && m.visible && m.material && !(Array.isArray(m.material) ? m.material[0] : m.material).depthWrite === false) meshes.push(m); });
+  const centre = (m) => { if (!m.geometry.boundingBox) m.geometry.computeBoundingBox(); return box.copy(m.geometry.boundingBox).applyMatrix4(m.matrixWorld).getCenter(v).clone(); };
+  const start = meshes.map(centre);
+  // let the world's own animations run for a moment: whatever moves is not an obstacle fixed in place
+  for (let t = 0.3; t < 3.2; t += 0.3) for (let i = firstAnim; i < level.animated.length; i++) { try { level.animated[i](0.3, t); } catch { /* needs the live game */ } }
+  k.root.updateMatrixWorld(true);
+  let made = 0;
+  meshes.forEach((m, i) => {
+    const mat = Array.isArray(m.material) ? m.material[0] : m.material;
+    if (mat.fog === false || (mat.transparent && mat.opacity < 0.35)) return;
+    if (centre(m).distanceTo(start[i]) > 0.25) return;
+    box.copy(m.geometry.boundingBox).applyMatrix4(m.matrixWorld);
+    const sx = box.max.x - box.min.x, sz = box.max.z - box.min.z, cx = (box.min.x + box.max.x) / 2, cz = (box.min.z + box.max.z) / 2;
+    const ground = groundBelow(level.solids.filter((q) => !q.scenery), cx, box.max.y + 0.3, cz, 0.05);
+    if (!(ground > -1e6) || box.min.y - ground > 0.85 || box.max.y - ground < 0.32 || Math.max(sx, sz) > 7 || Math.max(sx, sz) < 0.14) return;
+    const round = Math.min(sx, sz) / Math.max(sx, sz) > 0.62;
+    const sld = round ? { type: 'cyl', x: cx, z: cz, r: Math.max(sx, sz) / 2 * 0.88, y0: ground, y1: box.max.y, scenery: true } : { type: 'box', min: [box.min.x + 0.03, ground, box.min.z + 0.03], max: [box.max.x - 0.03, box.max.y, box.max.z - 0.03], scenery: true };
+    // never on a spot the game needs free (a point counts when it is at the object's own ground level)
+    for (const [px, py, pz, pr] of keep) {
+      if (py != null && Math.abs(py - ground) > 1.2) continue;
+      if (py == null && groundBelow(level.solids.filter((q) => !q.scenery), px, 99, pz, 0.05) - ground > 1.2) continue;
+      if (round ? Math.hypot(px - cx, pz - cz) < sld.r + pr * 0.6 : Math.hypot(px - Math.max(sld.min[0], Math.min(sld.max[0], px)), pz - Math.max(sld.min[2], Math.min(sld.max[2], pz))) < pr * 0.6) return;
+    }
+    level.solids.push(sld); physics.addSolid(sld); made++;
+  });
+  level.sceneryBodies = made;
 }

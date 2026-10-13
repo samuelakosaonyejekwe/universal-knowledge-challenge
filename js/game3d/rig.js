@@ -130,7 +130,7 @@ function clips() {
 }
 
 const SCALE = { tiny: 0.8, kid: 0.88, teen: 0.96, young: 1, adult: 1 };
-const v1 = new THREE.Vector3(), v2 = new THREE.Vector3(), v3 = new THREE.Vector3(), q1 = new THREE.Quaternion(), q2 = new THREE.Quaternion(), DOWN = new THREE.Vector3(0, -1, 0);
+const lookE = new THREE.Euler(), v1 = new THREE.Vector3(), v2 = new THREE.Vector3(), v3 = new THREE.Vector3(), q1 = new THREE.Quaternion(), q2 = new THREE.Quaternion(), DOWN = new THREE.Vector3(0, -1, 0);
 
 // cfg: avatar config ({ seed } or the player's choices). opts: { role, band, emblem }.
 // Returns { group, bones, play(name, fade), once(name), setFace(expr), say(on), lookAt(point|null), reach(point|null),
@@ -199,9 +199,12 @@ export function createRig(cfg = {}, opts = {}) {
       if (lookW > 0.01 && look) {
         bones.neck.updateWorldMatrix(true, false);
         v1.copy(look); bones.neck.worldToLocal(v1);
-        const yaw = Math.max(-1.1, Math.min(1.1, Math.atan2(v1.x, v1.z))), pitch = Math.max(-0.6, Math.min(0.6, -Math.atan2(v1.y - 0.3, Math.hypot(v1.x, v1.z))));
-        q1.setFromEuler(new THREE.Euler(pitch * 0.5, yaw * 0.5, 0, 'YXZ'));
-        bones.neck.quaternion.slerp(q2.copy(bones.neck.quaternion).multiply(q1), lookW); bones.head.quaternion.slerp(q2.copy(bones.head.quaternion).multiply(q1), lookW);
+        // a gentle turn, shared between neck and head; it fades away when the point is very close or behind
+        const flat = Math.hypot(v1.x, v1.z), close = Math.max(0, Math.min(1, (flat - 0.35) / 0.6)), front = v1.z > -0.1 ? 1 : 0;
+        const yaw = Math.max(-0.75, Math.min(0.75, Math.atan2(v1.x, Math.max(0.05, v1.z)))), pitch = Math.max(-0.3, Math.min(0.3, -Math.atan2(v1.y - 0.3, Math.max(0.6, flat))));
+        q1.setFromEuler(lookE.set(pitch * 0.5, yaw * 0.5, 0, 'YXZ'));
+        const w = lookW * close * front;
+        bones.neck.quaternion.slerp(q2.copy(bones.neck.quaternion).multiply(q1), w); bones.head.quaternion.slerp(q2.copy(bones.head.quaternion).multiply(q1), w);
       }
       // reach: two-bone inverse kinematics puts the right hand on a point
       reachW += ((reach ? 1 : 0) - reachW) * Math.min(1, dt * 8);

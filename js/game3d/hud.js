@@ -14,10 +14,19 @@ export function createHud(root, { onExit, onPause }) {
   const fade = h('div', { class: 'g3d-fade' });
   const menu = h('div', { class: 'g3d-menu', hidden: true, role: 'dialog' });
   const tip = h('div', { class: 'g3d-tip', hidden: true });
+  const wayArrow = h('i', null, '➤'), wayText = h('span'), way = h('div', { class: 'g3d-way', hidden: true, 'aria-hidden': 'true' }, wayArrow, wayText);
+  const mapC = h('canvas', { class: 'g3d-map', width: 132, height: 132, role: 'img', 'aria-label': t('Map') }), mapG = mapC.getContext('2d');
+  // a strip that always says how to play
+  const keys = h('div', { class: 'g3d-strip' }, h('span', null, h('kbd', null, 'W A S D'), ' ', t('Move')), h('span', null, h('kbd', null, 'Space'), ' ', t('Jump')), h('span', null, h('kbd', null, 'Shift'), ' ', t('Run')), h('span', null, h('kbd', null, 'E'), ' ', t('Use, talk, collect')), h('span', null, '🖱️ ', t('Click or tap a thing to go to it.')));
   const top = h('div', { class: 'g3d-top' },
     h('button', { class: 'g3d-btn', type: 'button', 'aria-label': t('Pause'), title: t('Pause'), onClick: () => onPause() }, '⏸'),
     h('div', { class: 'g3d-mission' }, goals), count);
-  root.append(fade, top, tip, prompt, say, panel, banner, menu);
+  // the view pad: turn, tilt, zoom, reset, and "look around" (pan the camera anywhere, then come back)
+  const held = new Set();
+  const vb = (name, label, title, cls = '') => { const b = h('button', { class: 'g3d-vb ' + cls, type: 'button', title, 'aria-label': title }, label); const on = (e) => { e.preventDefault(); b.setPointerCapture?.(e.pointerId); held.add(name); hud.onView?.(name, true); }, off = () => held.delete(name); b.addEventListener('pointerdown', on); b.addEventListener('pointerup', off); b.addEventListener('pointercancel', off); b.addEventListener('pointerleave', off); b.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { held.add(name); hud.onView?.(name, true); setTimeout(off, 180); } }); return b; };
+  const lookBtn = vb('free', '🔭', t('Look around'), 'wide');
+  const view = h('div', { class: 'g3d-view', role: 'group', 'aria-label': t('View') }, vb('up', '▲', t('Tilt up'), 'u'), vb('left', '◀', t('Turn left'), 'l'), vb('reset', '⟲', t('Reset the view'), 'c'), vb('right', '▶', t('Turn right'), 'r'), vb('down', '▼', t('Tilt down'), 'd'), vb('in', '＋', t('Zoom in'), 'zi'), vb('out', '－', t('Zoom out'), 'zo'), lookBtn);
+  root.append(fade, top, mapC, keys, view, way, tip, prompt, say, panel, banner, menu);
   let act = null, panelClose = null;
   prompt.addEventListener('click', () => act?.());
 
@@ -26,7 +35,14 @@ export function createHud(root, { onExit, onPause }) {
     get busy() { return !say.hidden || !panel.hidden || !menu.hidden; },
     get panelOpen() { return !panel.hidden; }, get talking() { return !say.hidden; }, get menuOpen() { return !menu.hidden; },
     // list: [{ text, done, now }]
-    goals(list) { clear(goals).append(...list.map((g) => h('li', { class: g.done ? 'done' : g.now ? 'now' : '' }, h('span', null, g.done ? '✔' : g.now ? '➤' : '○'), ' ', g.text))); },
+    goals(list) { clear(goals).append(...list.map((g) => h('li', { class: g.done ? 'done' : g.now ? 'now' : '' }, h('span', null, g.done ? '✔' : g.now ? '➤' : '○'), ' ', g.text, g.now && hud.onShow ? h('button', { class: 'g3d-show', type: 'button', onClick: () => hud.onShow() }, '👁 ', t('Show me')) : null))); },
+    onShow: null, onView: null, held,
+    // shows that the camera is roaming free (the button then brings it back to the character)
+    looking(on) { lookBtn.classList.toggle('on', on); lookBtn.textContent = on ? '🧍' : '🔭'; lookBtn.title = on ? t('Back to my character') : t('Look around'); },
+    viewShown(v) { view.hidden = !v; },
+    // The pointer to the next thing to do: { x, y (screen), angle (when it is off screen), text } or null.
+    way(o) { const hide = !o || hud.busy; way.hidden = hide; mapC.hidden = keys.hidden = hud.busy; if (hide) return; way.style.transform = `translate(${Math.round(o.x)}px, ${Math.round(o.y)}px) translate(-50%, -50%)`; wayText.textContent = o.text; wayArrow.style.transform = `rotate(${o.angle == null ? 90 : (o.angle * 180) / Math.PI}deg)`; way.classList.toggle('edge', o.angle != null); },
+    map(draw) { if (!mapC.hidden) draw(mapG, mapC.width); },
     count(text) { count.textContent = text; },
     // The one thing the player can do right now. key: the keyboard hint.
     prompt(text, fn) { act = fn || null; if (!text || hud.busy) { prompt.hidden = true; return; } if (prompt.dataset.text !== text) { prompt.dataset.text = text; clear(prompt).append(h('kbd', null, 'E'), ' ', text); } prompt.hidden = false; },
@@ -68,7 +84,7 @@ export function createHud(root, { onExit, onPause }) {
           h('div', null, h('kbd', null, 'W A S D'), ' ', t('Move')), h('div', null, h('kbd', null, 'Shift'), ' ', t('Run')), h('div', null, h('kbd', null, 'Space'), ' ', t('Jump')),
           h('div', null, h('kbd', null, 'E'), ' ', t('Use, talk, collect')), h('div', null, '🖱️ ', t('Drag to look around, wheel to zoom')), h('div', null, '🎮 ', t('A game controller also works')),
           h('div', null, '📱 ', t('On a touch screen: left stick to move, drag the picture to look'))),
-        pick(t('Picture quality'), state.quality, [['auto', t('Automatic')], ['low', t('Low (fastest)')], ['medium', t('Medium')], ['high', t('High')]], on.setQuality),
+        pick(t('Picture quality'), state.quality, [['auto', t('Automatic')], ['low', t('Low (fastest)')], ['medium', t('Medium')], ['high', t('High')], ['ultra', t('Ultra (sharpest, for strong graphics cards)')]], on.setQuality),
         pick(t('Movement on screen'), state.calm ? 'off' : 'on', [['on', t('On')], ['off', t('Reduced')]], (v) => on.setCalm(v === 'off')),
         h('p', { class: 'tiny muted' }, state.stats),
         h('div', { class: 'row' }, h('button', { class: 'btn', type: 'button', onClick: on.resume }, '▶ ', t('Keep playing')), h('button', { class: 'btn ghost', type: 'button', onClick: onExit }, t('Leave this world')))));

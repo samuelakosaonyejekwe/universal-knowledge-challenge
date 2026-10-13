@@ -13,7 +13,8 @@ export function createInput(el, overlay) {
   const typing = (e) => /^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName || '') || e.target?.isContentEditable;
 
   on(window, 'keydown', (e) => {
-    if (typing(e) || st.locked) return;
+    if (typing(e)) return;
+    if (st.locked && !['KeyQ', 'KeyR', 'Equal', 'Minus', 'NumpadAdd', 'NumpadSubtract', 'KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) return;
     const k = e.code;
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(k)) e.preventDefault();
     if (!keys.has(k)) { if (k === 'Space') edge.jump = true; if (k === 'KeyE' || k === 'Enter') edge.act = true; if (k === 'Escape' || k === 'KeyP') edge.pause = true; }
@@ -70,6 +71,7 @@ export function createInput(el, overlay) {
       let y = (keys.has('KeyW') || keys.has('ArrowUp') ? 1 : 0) - (keys.has('KeyS') || keys.has('ArrowDown') ? 1 : 0);
       let run = keys.has('ShiftLeft') || keys.has('ShiftRight'), jump = keys.has('Space');
       if (keys.has('KeyQ')) st.look.x -= 2.2 * dt; if (keys.has('KeyR')) st.look.x += 2.2 * dt;
+      if (keys.has('Equal') || keys.has('NumpadAdd')) st.zoom -= 6 * dt; if (keys.has('Minus') || keys.has('NumpadSubtract')) st.zoom += 6 * dt;
       if (touch.x || touch.y) { x = touch.x; y = touch.y; }
       run = run || touch.run; jump = jump || touch.jump;
       const gp = [...(navigator.getGamepads?.() || [])].find((g) => g && g.connected);
@@ -84,7 +86,8 @@ export function createInput(el, overlay) {
         if (b(12)) st.zoom -= 4 * dt; if (b(13)) st.zoom += 4 * dt;
       }
       const m = Math.hypot(x, y); if (m > 1) { x /= m; y /= m; }
-      if (st.locked) { x = y = 0; run = jump = false; edge.jump = false; if (st.device !== 'pad') edge.act = false; st.look.x = st.look.y = 0; }      // a controller's action button still moves dialogue on
+      if (st.locked) { x = y = 0; run = jump = false; edge.jump = false; if (st.device !== 'pad') edge.act = false; }      // a controller's action button still moves dialogue on
+      st.raw = { x: (keys.has('KeyD') || keys.has('ArrowRight') ? 1 : 0) - (keys.has('KeyA') || keys.has('ArrowLeft') ? 1 : 0) + (touch.x || 0), y: (keys.has('KeyW') || keys.has('ArrowUp') ? 1 : 0) - (keys.has('KeyS') || keys.has('ArrowDown') ? 1 : 0) + (touch.y || 0) };
       st.move.x = x; st.move.y = y; st.run = run; st.jump = jump;
       st.jumpPressed = edge.jump; st.actPressed = edge.act; st.pausePressed = edge.pause;
       edge.jump = edge.act = edge.pause = false;

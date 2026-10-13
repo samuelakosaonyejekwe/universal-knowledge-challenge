@@ -408,3 +408,26 @@ html.g3d-on, html.g3d-on body { overflow: hidden; }
 
 .g3d-panel.wide { width: min(46rem, 100vw); }
 .g3d-panel .arena { box-shadow: none; padding: 0; }
+
+/* guidance in the 3D world: the way pointer, the map, the control strip and "show me" */
+.g3d-way { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: .35rem; background: rgba(14, 18, 48, .78); color: #ffe08a; font-weight: 800; font-size: .82rem; padding: .28rem .6rem; border-radius: 999px; pointer-events: none !important; white-space: nowrap; will-change: transform; }
+.g3d-way i { font-style: normal; display: inline-block; } .g3d-way.edge { background: #ffd76a; color: #2a2140; }
+.g3d-way[hidden], .g3d-map[hidden], .g3d-strip[hidden] { display: none; }
+.g3d-map { position: absolute; right: .6rem; top: calc(max(.6rem, env(safe-area-inset-top)) + 3.2rem); width: 132px; height: 132px; border-radius: 16px; background: rgba(14, 18, 48, .55); backdrop-filter: blur(4px); pointer-events: none !important; }
+.g3d-strip { position: absolute; left: .6rem; bottom: max(.6rem, env(safe-area-inset-bottom)); display: flex; flex-wrap: wrap; gap: .3rem .8rem; background: rgba(14, 18, 48, .6); border-radius: 12px; padding: .35rem .7rem; font-size: .75rem; max-width: min(46rem, 60vw); pointer-events: none !important; }
+.g3d-strip kbd { background: #fff; color: #1c2340; border-radius: 5px; padding: 0 .35rem; font: inherit; font-weight: 800; }
+.g3d-show { margin-inline-start: .5rem; border: 0; border-radius: 999px; background: #ffd76a; color: #2a2140; font: inherit; font-size: .72rem; font-weight: 800; padding: .08rem .5rem; cursor: pointer; }
+@media (pointer: coarse) { .g3d-strip { display: none; } }
+@media (max-width: 640px) { .g3d-map { width: 92px; height: 92px; } }
+/* the view pad: turn, tilt, zoom, reset and look around (3D adventure and the older 3D scenes) */
+.g3d-view, .viewpad { position: absolute; right: .6rem; bottom: calc(max(.6rem, env(safe-area-inset-bottom)) + 0rem); display: grid; grid-template-columns: repeat(3, 40px); grid-template-areas: ". u ." "l c r" ". d ." "zo zi zi" "w w w"; gap: 4px; z-index: 3; }
+.g3d-view[hidden] { display: none; }
+.g3d-vb { height: 40px; border: 0; border-radius: 12px; background: rgba(14, 18, 48, .72); color: #fff; font-size: 1rem; font-weight: 900; cursor: pointer; touch-action: none; backdrop-filter: blur(6px); }
+.g3d-vb:active, .g3d-vb.on { background: #ffd76a; color: #2a2140; }
+.g3d-vb.u { grid-area: u; } .g3d-vb.l { grid-area: l; } .g3d-vb.c { grid-area: c; } .g3d-vb.r { grid-area: r; } .g3d-vb.d { grid-area: d; } .g3d-vb.zi { grid-area: zi; } .g3d-vb.zo { grid-area: zo; } .g3d-vb.wide { grid-area: w; }
+.viewpad { grid-template-areas: ". u ." "l c r" ". d ." "zo zi zi"; bottom: .6rem; }
+.has-viewpad { position: relative; }
+@media (pointer: coarse) { .g3d-view { bottom: calc(118px + env(safe-area-inset-bottom)); right: max(.6rem, env(safe-area-inset-right)); grid-template-columns: repeat(3, 36px); } .g3d-view .g3d-vb { height: 36px; } }
+body:has(.g3d-panel:not([hidden])) .g3d-view { right: calc(min(27rem, 100vw) + .6rem); }
+body:has(.g3d-panel.wide:not([hidden])) .g3d-view { display: none; }
+@media (max-width: 640px) { body:has(.g3d-panel:not([hidden])) .g3d-view { right: .6rem; bottom: calc(72dvh + .4rem); grid-template-areas: "l u r zi" "c d zo w"; grid-template-columns: repeat(4, 36px); } }

@@ -2,7 +2,7 @@
 // (wait → walk → wait, attend to the player when near, talk) and finds its way over the level's waypoints.
 // Nothing here needs a network connection or an AI service.
 import { THREE } from '../gfx/kit3d.js';
-import { route, groundBelow } from './collide.js';
+import { route, groundBelow, pushOut, topOf, bottomOf } from './collide.js';
 
 // opts: { nodes: [indices it may visit], at: [x, y, z], speed, wander (bool), name, role, lines }
 export function createNpc(rig, level, opts = {}) {
@@ -28,6 +28,8 @@ export function createNpc(rig, level, opts = {}) {
         else { pos[0] += (tx / td) * sp * dt; pos[2] += (tz / td) * sp * dt; face(Math.atan2(tx, tz), dt * 6); moving = true; rig.speed = sp / 3.3 * 1.6; }
         const gy = groundBelow(level.solids, pos[0], pos[1] + 1, pos[2]); if (gy > -1e6) pos[1] += (gy - pos[1]) * Math.min(1, dt * 12);
       } else if (n.wander) { n.timer -= dt; if (n.timer <= 0) { const pick = opts.nodes[Math.floor(Math.random() * opts.nodes.length)]; if (pick !== n.here) n.goTo(pick); else n.timer = 1.5; } }
+      // other characters are solid too: they are eased out of anything they would otherwise walk into
+      if (n.state !== 'hold') for (const sld of level.solids) { if (topOf(sld) <= pos[1] + 0.35 || bottomOf(sld) >= pos[1] + 1.4) continue; const hit = pushOut(sld, pos[0], pos[2], 0.3); if (hit) { pos[0] += hit.nx * hit.depth; pos[2] += hit.nz * hit.depth; } }
       rig.group.position.set(pos[0], pos[1], pos[2]); rig.group.rotation.y = n.yaw;
       rig.play(talking ? 'talk' : moving ? 'walk' : n.pose || 'idle', 0.25);
       rig.say(talking && n.speaking);

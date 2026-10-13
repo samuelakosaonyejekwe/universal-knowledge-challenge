@@ -22,6 +22,7 @@ import { createController, createFollowCamera } from './player.js';
 import { createNpc } from './npc.js';
 import { createWorld, buildCourse, decorateWorld } from './world.js';
 import { createHud } from './hud.js';
+import { groundBelow, rayCast } from './collide.js';
 import { live, clearLive } from '../core/live3d.js';
 
 const CRYSTALS = 5, SEGMENTS = 7, TABLETS = 2;
@@ -162,7 +163,7 @@ export function startGame(host, opts) {
 
   // ----- simulations: the world's own (at the console) and the 3D labs (at the bench) share one floor -----
   const sims = new Map();           // key → { group, sim, controls, says, taps }
-  let sim = null, simOpen = false, open = null;
+  let sim = null, simOpen = false, open = null, padSolid = null;
   const padRoot = new THREE.Group(); padRoot.position.set(S.pad[0], S.pad[1], S.pad[2]); padRoot.rotation.y = Math.PI; level.root.add(padRoot);
   function openSimDef(sdef, key) {
     const con = level.spots.console;
@@ -170,7 +171,8 @@ export function startGame(host, opts) {
     const quiet = def.id === 10 || def.id === 14 ? holdMusic() : null;       // these make sounds of their own
     rig.reach(new THREE.Vector3(con.x + 0.15, con.y + 1.08, con.z - 0.1));
     const back = 10 * Math.max(1, 1.25 / Math.max(0.45, (eng.size.w - Math.min(eng.size.w * 0.5, 432)) / eng.size.h));    // further back on narrow screens
-    cam.cut(new THREE.Vector3(S.pad[0], S.pad[1] + 3.9, S.pad[2] - back), new THREE.Vector3(S.pad[0], S.pad[1] + 2.3, S.pad[2]), { dur: 1.1, hold: Infinity });
+    free = false; hud.looking(false);
+    cam.orbitAt(new THREE.Vector3(S.pad[0], S.pad[1] + 2.3, S.pad[2]), { yaw: Math.PI, pitch: 0.16, dist: back, min: 3.5, max: 26 });     // drag or use the view pad to circle the simulation
     const body = h('div', { class: 'g3d-sim' });
     const saysEl = h('div', { 'aria-live': 'polite' });
     body.append(h('p', { class: 'lab-goal' }, '🎯 ', tx(sdef.goal)), saysEl);
@@ -209,6 +211,11 @@ export function startGame(host, opts) {
       try { Object.assign(inst.sim, sdef.mount(ctx) || {}); } catch (e) { console.error(e); controls.append(h('div', { class: 'note bad' }, t('This lab could not start on this device.'))); }
     } else { inst.saysEl = saysEl; if (inst.says) saysEl.replaceChildren(h('div', { class: 'note mb' }, h('b', null, guide.name + ': '), inst.says)); }
     inst.group.visible = true; open = inst; sim = inst.sim;
+    // what stands on the simulation floor is solid too (walked round, not through)
+    { level.root.updateMatrixWorld(true); const bb = new THREE.Box3().setFromObject(inst.group), cx = S.pad[0], cz = S.pad[2];
+      if (!padSolid) { padSolid = { type: 'box', min: [0, 0, 0], max: [0, 0, 0] }; level.solids.push(padSolid); }
+      padSolid.min = [Math.max(cx - 3.7, bb.min.x), S.pad[1], Math.max(cz - 3.0, bb.min.z)]; padSolid.max = [Math.min(cx + 3.7, bb.max.x), Math.max(S.pad[1] + 0.5, Math.min(S.pad[1] + 5, bb.max.y)), Math.min(cz + 3.0, bb.max.z)];
+      if (!(padSolid.max[0] > padSolid.min[0] && padSolid.max[2] > padSolid.min[2])) { padSolid.min = [cx, S.pad[1], cz]; padSolid.max = [cx, S.pad[1], cz]; } }
     body.append(inst.controls, h('details', { class: 'small mt' }, h('summary', { class: 'bold' }, sdef.kind === 'validated' ? '📐 ' + t('Checked scientific model') : '🎈 ' + t('Simplified model'), ' — ', t('what it includes and leaves out')), h('p', { class: 'muted' }, tx(sdef.model))));
     hud.panel('🔬 ' + tx(sdef.title), body, { onClose: () => { quiet?.(); simOpen = false; open = null; ctrl.frozen = false; rig.reach(null); cam.release(); } });
   }
@@ -217,7 +224,9 @@ export function startGame(host, opts) {
   const tapRay = new THREE.Raycaster(), tapAt = new THREE.Vector2(); let tapDown = null;
   const onDown = (e) => { tapDown = [e.clientX, e.clientY]; };
   const onUp = (e) => {
-    if (!simOpen || !open || !tapDown || Math.hypot(e.clientX - tapDown[0], e.clientY - tapDown[1]) > 8 || !open.taps.length) return;
+    if (!tapDown || Math.hypot(e.clientX - tapDown[0], e.clientY - tapDown[1]) > 8) return;
+    if (!simOpen) { worldTap(e); return; }
+    if (!open || !open.taps.length) return;
     const r = eng.el.getBoundingClientRect(); tapAt.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
     tapRay.setFromCamera(tapAt, eng.camera);
     const hit = tapRay.intersectObjects(open.taps.map((x) => x.object), true)[0]; if (!hit) return;
@@ -437,7 +446,7 @@ export function startGame(host, opts) {
     if (hud.menuOpen) { hud.closeMenu(); eng.pause(false); return; }
     eng.pause(true);
     const s = eng.stats;
-    hud.menu({ quality: profile.settings.g3dq || 'auto', calm: cam.state.calm, stats: `${Math.round(s.fps)} fps · ${s.calls} draw calls · ${Math.round(s.triangles / 1000)}k triangles · ${s.tier}` }, {
+    hud.menu({ quality: profile.settings.g3dq || 'auto', calm: cam.state.calm, stats: `${Math.round(s.fps)} fps · ${s.calls} draw calls · ${Math.round(s.triangles / 1000)}k triangles · ${s.tier}${eng.glow ? ' · glow' : ''}` }, {
       setQuality: (q) => { profile.settings.g3dq = q; persist(); eng.setQuality(q); },
       setCalm: (v) => { cam.state.calm = v; eng.calm = v; },
       resume: () => { hud.closeMenu(); eng.pause(false); eng.el.focus({ preventScroll: true }); },
@@ -446,8 +455,74 @@ export function startGame(host, opts) {
   const onKey = (e) => { if ((e.code === 'Escape' || e.code === 'KeyP') && eng.paused) { e.preventDefault(); pause(); } else if ((e.code === 'Enter' || e.code === 'KeyE') && hud.talking && !/^(INPUT|TEXTAREA|BUTTON)$/.test(e.target.tagName)) hud.advance?.(); };
   window.addEventListener('keydown', onKey);
 
+  // ----- guidance: what to do next is always pointed out, named, and one click away -----
+  const things = [];                 // everything that can be used this frame: { x, y, z, range, label, fn }
+  const beacon = new THREE.Group(); level.root.add(beacon);
+  { const c = new THREE.Color(def.theme.glow || '#ffd76a');
+    const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.5, 9, 14, 1, true), new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0.2, depthWrite: false, side: THREE.DoubleSide, fog: false })); beam.position.y = 4.5;
+    const ring = new THREE.Mesh(new THREE.RingGeometry(0.75, 0.95, 36), new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0.85, depthWrite: false, side: THREE.DoubleSide })); ring.rotation.x = -Math.PI / 2; ring.position.y = 0.06;
+    const arrow = sprite('▼', { size: 0.8, color: '#' + c.getHexString() }); arrow.position.y = 3.3;
+    beacon.add(beam, ring, arrow); beacon.userData = { ring, arrow }; }
+  const nearest = (list) => list.reduce((b, o) => { const d = Math.hypot(o.x - ctrl.pos[0], o.z - ctrl.pos[2]) + Math.abs((o.y ?? 0) - ctrl.pos[1]) * 2; return d < b[0] ? [d, o] : b; }, [Infinity, null])[1];
+  // The one thing the mission asks for next: { x, y (ground), z, label }.
+  function nextTarget() {
+    if (opts.host || done) return null;
+    const at = (n, label) => ({ x: n.pos[0], y: n.pos[1], z: n.pos[2], label });
+    if (!ss.lesson) return at(guide, t('Talk to {name}', { name: guide.name }));
+    if (ex.read.length < TABLETS) { const tb = nearest(level.tablets.filter((x) => !ex.read.includes(x.i))); if (tb) return { x: tb.x, y: tb.y, z: tb.z, label: t('Read the tablet') }; }
+    if (ex.orbs.length < CRYSTALS) { const o = nearest(level.orbs.filter((x) => !x.taken)); if (o) return { x: o.x, y: o.y - 1.1, z: o.z, label: t('Collect: {thing}', { thing: tx(story.crystal) }) }; }
+    if (!ss.lab) { const c = level.spots.console; return { x: c.x, y: c.y, z: c.z - 0.9, label: t('Use the console') }; }
+    if (!ss.explained) return at(peers[0], t('Explain it to {name}', { name: peers[0].name }));
+    if (!(ss.wins > 0)) return at(rival, t('Challenge {name}', { name: rival.name }));
+    if (!ss.done) return at(doctors[0], t('Talk to {name}', { name: doctors[0].name }));
+    const po = level.spots.portal; return { x: po.x, y: po.y, z: po.z, label: t('Step through the portal') };
+  }
+  // small name tags on the things that can be used; they appear as the player comes near
+  const tags = [];
+  const tag = (text, x, y, z, hide) => { const sp = k.sign(text, x, y, z, { size: 0.34 }); sp.visible = false; tags.push({ sp, x, y, z, hide }); };
+  for (const tb of level.tablets) tag('📖 ' + t('Read the tablet'), tb.x, tb.y + 2.4, tb.z, () => ex.read.includes(tb.i));
+  for (const o of level.orbs) tag(`${story.crystalEm || '💎'} ${t('Collect: {thing}', { thing: tx(story.crystal) })}`, o.x, o.y + 1.0, o.z, () => o.taken);
+  { const c = level.spots.console, bn = level.spots.benchAt, po = level.spots.portal, L = S.ladder;
+    tag('🔬 ' + t('Use the console'), c.x, c.y + 1.9, c.z); tag('🧪 ' + t('Labs & trips'), bn.x, bn.y + 2.3, bn.z); tag('🚪 ' + t('Step through the portal'), po.x, po.y + 4, po.z, () => !ss.done);
+    tag('🪜 ' + t('Climb'), L[0], S.far[1] + 2.2, L[1] - 0.4); tag('🏊 ' + t('Swim'), S.float[0] + 2.5, S.mid[1] + 0.7, S.float[1]);
+    for (const mv of level.movers) { const sp = k.sign('⇄ ' + t('Ride'), 0, 0, 0, { size: 0.34 }); sp.visible = false; tags.push({ sp, follow: mv }); }
+    for (const d of level.dynamic) { const sp = k.sign('👋 ' + t('Push me'), 0, 0, 0, { size: 0.3 }); sp.visible = false; tags.push({ sp, body: d.body, near: 6 }); } }
+  // click or tap a thing (or a spot on the same ground) and the character walks there
+  let auto = null;
+  function autoTo(x, z, arrive, then) {
+    const p0 = ctrl.pos, L = Math.hypot(x - p0[0], z - p0[2]);
+    for (let d = 0.6; d < L - 0.3; d += 0.6) { const gx = p0[0] + (x - p0[0]) * d / L, gz = p0[2] + (z - p0[2]) * d / L, gy = groundBelow(level.solids, gx, p0[1] + 1.2, gz, 0.2); if (gy < p0[1] - 1.3) { hud.tip(t('Too far to walk straight there. Follow the path.'), 3); return false; } }
+    auto = { x, z, arrive, then, t: 0, best: L, stuck: 0 }; return true;
+  }
+  const worldTap = (e) => {
+    if (simOpen || hud.busy || race || done || ctrl.frozen || (opts.host && opts.host.kind !== 'memory')) return;
+    const r = eng.el.getBoundingClientRect(), v = new THREE.Vector3(); let pick = null, bestPx = 70;
+    for (const th of things) { v.set(th.x, th.y, th.z).project(eng.camera); if (v.z > 1) continue; const px = Math.hypot(r.left + (v.x + 1) / 2 * r.width - e.clientX, r.top + (1 - v.y) / 2 * r.height - e.clientY); if (px < bestPx) { bestPx = px; pick = th; } }
+    if (pick) { sfx('tap'); autoTo(pick.x, pick.z, Math.max(0.9, pick.range * 0.6), () => { if (!hud.busy) pick.fn(); }); return; }
+    // otherwise: the spot on the ground under the pointer
+    tapAt.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); tapRay.setFromCamera(tapAt, eng.camera);
+    const o = tapRay.ray.origin, d = tapRay.ray.direction, hitT = rayCast(level.solids, [o.x, o.y, o.z], [d.x, d.y, d.z], 60);
+    if (hitT < 60) { const hx = o.x + d.x * hitT, hy = o.y + d.y * hitT, hz = o.z + d.z * hitT; if (Math.abs(hy - ctrl.pos[1]) < 1.4) { beacon.userData.mark = { x: hx, y: hy, z: hz, until: performance.now() + 1500 }; autoTo(hx, hz, 0.35); } }
+  };
+  function showMe() {
+    const tg = nextTarget(); if (!tg || cam.busy || hud.busy) return;
+    const from = new THREE.Vector3(ctrl.pos[0] - tg.x, 0, ctrl.pos[2] - tg.z); if (from.lengthSq() < 1) from.set(0, 0, -1); from.normalize();
+    cam.cut(new THREE.Vector3(tg.x + from.x * 9, tg.y + 6, tg.z + from.z * 9), new THREE.Vector3(tg.x, tg.y + 1, tg.z), { dur: 1.1, hold: 1.8 });
+  }
+  hud.onShow = showMe;
+  // "look around": the camera leaves the character and can be turned, zoomed and panned anywhere in the world
+  let free = false;
+  hud.onView = (name) => {
+    if (name === 'reset') { cam.reset(); return; }
+    if (name !== 'free' || simOpen || race || hud.talking) return;
+    free = !free; hud.looking(free); auto = null;
+    if (free) { cam.orbitAt(new THREE.Vector3(ctrl.pos[0], ctrl.pos[1] + 1.2, ctrl.pos[2]), { yaw: cam.state.yaw, pitch: Math.max(0.35, cam.state.pitch), dist: Math.max(10, cam.state.dist), min: 3, max: 90 }); hud.tip(t('Look around: drag to turn, use the arrows or W A S D to slide the view, + and − to zoom. Press 🧍 to come back.'), 7); }
+    else cam.release();
+  };
+
   // ----- the loop -----
-  let pendingJump = false, inp = input.state, prev = [...ctrl.pos], wasBusy = false;
+  let pendingJump = false, inp = input.state, prev = [...ctrl.pos], wasBusy = false, mapTick = 0;
+  const wayV = new THREE.Vector3();
   eng.onFixed((dt) => {
     level.step(dt);
     const p = ctrl.pos;
@@ -461,17 +536,39 @@ export function startGame(host, opts) {
       const go = p[2] < end(lanes.me, S.raceStart[2]) - 0.15 ? 1 : 0;
       ctrl.frozen = false; ctrl.update(dt, { move: { x: Math.max(-1, Math.min(1, (p[0] - lanes.me.x) * 2)) * go, y: go }, run: true, jump: false, jumpPressed: false }, Math.PI); ctrl.frozen = true;
       if (rival.pos[2] < end(lanes.them, S.rivalStart[2]) - 0.1) { rival.pos[2] += 5 * dt; rival.pose = 'run'; rival.rig.speed = 1; } else if (rival.pose === 'run') rival.pose = null;
-    } else ctrl.update(dt, { move: inp.move, run: inp.run, jump: inp.jump, jumpPressed: pendingJump }, cam.state.yaw);
+    } else if (free) { ctrl.update(dt, { move: { x: 0, y: 0 }, run: false, jump: false, jumpPressed: false }, cam.state.yaw);
+    } else if (auto && !ctrl.frozen && Math.hypot(inp.move.x, inp.move.y) < 0.2 && !pendingJump) {
+      // walking to the thing that was clicked: steer straight at it, hop small gaps and steps on the way
+      const dx = auto.x - p[0], dz = auto.z - p[2], d = Math.hypot(dx, dz); auto.t += dt;
+      if (d < auto.best - 0.05) { auto.best = d; auto.stuck = 0; } else auto.stuck += dt;
+      if (d < auto.arrive || auto.stuck > 1.6 || auto.t > 14) { const then = d < auto.arrive + 0.6 ? auto.then : null; auto = null; ctrl.update(dt, { move: { x: 0, y: 0 }, run: false, jump: false, jumpPressed: false }, cam.state.yaw); then?.(); }
+      else {
+        let jump = false;
+        if (ctrl.body.grounded) { const ax = p[0] + dx / d * 0.95, az = p[2] + dz / d * 0.95, below = groundBelow(level.solids, ax, p[1] + 0.45, az), above = groundBelow(level.solids, ax, p[1] + 2.2, az); jump = below < p[1] - 0.6 || above > p[1] + 0.43; }
+        ctrl.update(dt, { move: { x: -dx / d, y: dz / d }, run: d > 4, jump: jump || !ctrl.body.grounded, jumpPressed: jump }, Math.PI);
+      }
+    } else { auto = null; ctrl.update(dt, { move: inp.move, run: inp.run, jump: inp.jump, jumpPressed: pendingJump }, cam.state.yaw); }
     pendingJump = false;
+    // people do not walk through one another: the player is eased out of anyone's personal space, and others step back
+    for (const n of npcs) {
+      const dx = p[0] - n.pos[0], dz = p[2] - n.pos[2], d = Math.hypot(dx, dz), keep = 0.78;
+      if (d < keep && Math.abs(p[1] - n.pos[1]) < 1.6 && !race) { const ux = d > 1e-4 ? dx / d : 1, uz = d > 1e-4 ? dz / d : 0, push = keep - d; const gy = groundBelow(level.solids, p[0] + ux * push, p[1] + 0.6, p[2] + uz * push, 0.2); if (gy > p[1] - 0.5) { p[0] += ux * push; p[2] += uz * push; } else if (n.state !== 'hold') { n.pos[0] -= ux * push; n.pos[2] -= uz * push; } }
+    }
+    for (let a = 0; a < npcs.length; a++) for (let c = a + 1; c < npcs.length; c++) { const A = npcs[a], B = npcs[c], dx = A.pos[0] - B.pos[0], dz = A.pos[2] - B.pos[2], d = Math.hypot(dx, dz); if (d < 0.75 && d > 1e-4 && Math.abs(A.pos[1] - B.pos[1]) < 1.6 && A.state !== 'hold' && B.state !== 'hold') { const k2 = (0.75 - d) / 2 / d; A.pos[0] += dx * k2; A.pos[2] += dz * k2; B.pos[0] -= dx * k2; B.pos[2] -= dz * k2; } }
     for (const n of npcs) n.update(dt, p, talkingTo);
     if (simOpen) open?.sim.step?.(dt);
   });
   ctrl.onLand = (v) => { sfx('tap'); if (v < -14) cam.state.shake = 0.6; };
+  eng.onLost = () => hud.tip(t('The picture was interrupted. It will return in a moment.'), 8);
   ctrl.onRespawn = () => { hud.flash(); hud.tip(t('Careful! You are back on solid ground.')); };
 
   eng.onFrame((dt, time) => {
     input.state.locked = hud.busy && !race;
     inp = input.poll(dt);
+    // the view pad's buttons act for as long as they are held
+    { const H = hud.held, L = input.state.look; if (H.has('left')) L.x -= 1.9 * dt; if (H.has('right')) L.x += 1.9 * dt; if (H.has('up')) L.y += 1.2 * dt; if (H.has('down')) L.y -= 1.2 * dt; if (H.has('in')) input.state.zoom -= 9 * dt; if (H.has('out')) input.state.zoom += 9 * dt; }
+    if (free) { const o = cam.orbit, raw = input.state.raw || { x: 0, y: 0 }; if (o) { const sp = Math.max(6, o.dist * 0.9) * dt, fx = -Math.sin(o.yaw), fz = -Math.cos(o.yaw); cam.pan((fx * raw.y - fz * raw.x) * sp, (fz * raw.y + fx * raw.x) * sp); } inp.move.x = inp.move.y = 0; inp.jumpPressed = false; }
+    hud.viewShown(!hud.talking && !hud.menuOpen);
     if (inp.jumpPressed) pendingJump = true;
     if (inp.pausePressed && !hud.panelOpen && !hud.talking) pause();
     const p = ctrl.pos;
@@ -488,7 +585,8 @@ export function startGame(host, opts) {
     }
     // what can the player do here?
     let best = null, bestD = Infinity;
-    const offer = (x, y, z, range, label, fn) => { const d = Math.hypot(p[0] - x, (p[1] + 0.9 - y) * 0.6, p[2] - z); if (d < range && d < bestD) { bestD = d; best = [label, fn]; } };
+    things.length = 0;
+    const offer = (x, y, z, range, label, fn) => { things.push({ x, y, z, range, label, fn }); const d = Math.hypot(p[0] - x, (p[1] + 0.9 - y) * 0.6, p[2] - z); if (d < range && d < bestD) { bestD = d; best = [label, fn]; } };
     if (opts.host?.kind === 'memory' && !hud.busy) {
       for (const L of opts.loci) offer(L.x, 1, L.z, 2.0, `${L.em} ${t(L.name)}`, () => hud.panel(`${L.em} ${t(L.name)}`, h('div', null, L.mine.length ? h('ul', null, L.mine.map((c) => h('li', null, h('b', null, tx(c.title)), ' — ', c.cue))) : h('p', { class: 'muted' }, t('Nothing is stored here yet. In a lesson, the Remember step lets you place an idea on this object.')), h('button', { class: 'btn sm mt', type: 'button', onClick: () => hud.closePanel() }, t('OK')))));
       offer(guide.pos[0], guide.pos[1] + 1, guide.pos[2], 2.6, t('Open my memory book'), () => hostView('memory', ['reviews']));
@@ -504,6 +602,30 @@ export function startGame(host, opts) {
       const po = level.spots.portal; if (po.open && Math.hypot(p[0] - po.x, p[2] - po.z) < 1.3 && Math.abs(p[1] - po.y) < 1.5) finish();
     }
     if (hud.panelOpen) { const r = hud.panelEl.getBoundingClientRect(); if (r.width < eng.size.w * 0.8) eng.setInset(Math.round(r.width), 0); else eng.setInset(0, Math.round(Math.min(r.height, eng.size.h * 0.72))); } else eng.setInset(0, 0);
+    // the beacon stands on the next thing to do; a pointer at the edge of the screen shows the way when it is out of view
+    const tg = nextTarget(), mark = beacon.userData.mark && beacon.userData.mark.until > performance.now() ? beacon.userData.mark : null, show = mark || tg;
+    beacon.visible = !!show && !simOpen && !race;
+    if (show) { beacon.position.set(show.x, show.y, show.z); beacon.userData.arrow.position.y = 3.3 + Math.sin(time * 4) * 0.25; beacon.userData.ring.scale.setScalar(1 + Math.sin(time * 3) * 0.12); beacon.userData.arrow.visible = !mark; }
+    if (tg && !hud.busy && !race) {
+      const v = wayV.set(tg.x, tg.y + 2.2, tg.z).project(eng.camera), dist = Math.hypot(tg.x - p[0], tg.z - p[2]), behind = v.z > 1, w = eng.size.w, hgt = eng.size.h;
+      let sx = (v.x + 1) / 2 * w, sy = (1 - v.y) / 2 * hgt; if (behind) { sx = w - sx; sy = hgt - 40; }
+      const on = !behind && sx > 60 && sx < w - 60 && sy > 90 && sy < hgt - 110;
+      const cx = Math.max(64, Math.min(w - 64, sx)), cy = Math.max(96, Math.min(hgt - 120, sy));
+      hud.way(dist > 3 ? { x: cx, y: cy, angle: on ? null : Math.atan2(sy - cy, sx - cx), text: `${tg.label} · ${Math.round(dist)} m` } : null);
+    } else hud.way(null);
+    for (const tgk of tags) {
+      if (tgk.follow) tgk.sp.position.set(tgk.follow.c[0], tgk.follow.c[1] + 1.6, tgk.follow.c[2]); else if (tgk.body) tgk.sp.position.set(tgk.body.position.x, tgk.body.position.y + 1.1, tgk.body.position.z);
+      const q = tgk.sp.position, dd = Math.hypot(q.x - p[0], q.z - p[2]); tgk.sp.visible = !simOpen && dd < (tgk.near || 15) && dd > 1.2 && Math.abs(q.y - p[1]) < 9 && !(tgk.hide && tgk.hide());
+    }
+    if (++mapTick % 10 === 0) hud.map((g2, W2) => {
+      // a small map of the islands: you, the other characters and the next thing to do
+      const isles = level.solids.filter((sl) => sl.type === 'cyl' && sl.r > 1.4); let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9; for (const sl of isles) { x0 = Math.min(x0, sl.x - sl.r); x1 = Math.max(x1, sl.x + sl.r); z0 = Math.min(z0, sl.z - sl.r); z1 = Math.max(z1, sl.z + sl.r); }
+      const sc = (W2 - 12) / Math.max(x1 - x0, z1 - z0), ox = 6 + (W2 - 12 - (x1 - x0) * sc) / 2, oz = 6 + (W2 - 12 - (z1 - z0) * sc) / 2, X = (x) => ox + (x1 - x) * sc, Z = (z) => oz + (z1 - z) * sc;
+      g2.clearRect(0, 0, W2, W2); g2.fillStyle = 'rgba(255,255,255,.55)'; for (const sl of isles) { g2.beginPath(); g2.arc(X(sl.x), Z(sl.z), Math.max(1.5, sl.r * sc), 0, 7); g2.fill(); }
+      g2.fillStyle = '#9fd0ff'; for (const n of npcs) { g2.beginPath(); g2.arc(X(n.pos[0]), Z(n.pos[2]), 2, 0, 7); g2.fill(); }
+      if (tg) { g2.fillStyle = '#ffd76a'; g2.beginPath(); g2.arc(X(tg.x), Z(tg.z), 4 + Math.sin(time * 5), 0, 7); g2.fill(); }
+      g2.fillStyle = '#ff5f8f'; g2.beginPath(); g2.arc(X(p[0]), Z(p[2]), 3.5, 0, 7); g2.fill(); g2.strokeStyle = '#fff'; g2.lineWidth = 1.5; g2.stroke();
+    });
     hud.prompt(best?.[0], best?.[1]);
     if (inp.actPressed) { if (hud.talking) hud.advance?.(); else if (!hud.busy) hud.act(); }
     if (wasBusy && !hud.busy) eng.el.focus({ preventScroll: true });
@@ -520,7 +642,7 @@ export function startGame(host, opts) {
     opts.loci = LOCI.map(([em, name], i) => { const a = (i / LOCI.length) * Math.PI * 2, x = Math.sin(a) * 6.6, z = Math.cos(a) * 6.6; k.prop('pillar', x, 0, z, { s: 0.55 }); const sp = k.sign(em, x, 2.3, z, { size: 0.9, bg: null }); const mine = kept.filter((c) => c.locus === i && c.cue); if (mine.length) k.sign(String(mine.length), x + 0.5, 2.9, z, { size: 0.4 }); return { x, z, em, name, mine, sp }; });
   }
   if (opts.host && opts.host.kind !== 'memory') hostView(opts.host.kind, opts.host.params);
-  if (!ex.met && !opts.host) { hud.tip(input.state.device === 'touch' ? t('Use the left stick to walk. Drag the picture to look around.') : t('Walk with W A S D or the arrow keys. Press Space to jump and E to use things.'), 9); hud.banner(`${w.em} ${tx(story.title)}`, 3.5); }
+  if (!ex.met && !opts.host) { hud.tip((input.state.device === 'touch' ? t('Use the left stick to walk. Drag the picture to look around.') : t('Walk with W A S D or the arrow keys. Press Space to jump and E to use things.')) + ' ' + t('Click or tap a thing to go to it.'), 11); hud.banner(`${w.em} ${tx(story.title)}`, 3.5); }
 
   let gone = false;
   function leave(reason) {
@@ -533,6 +655,6 @@ export function startGame(host, opts) {
     onExit?.(reason);
   }
   // for automated play-testing and profiling
-  window.__ukc3d = { dbg, eng, ctrl, cam, level, hud, input, physics, ex, ss, npcs, guide, rival, peers, doctors, lanes, spots: S, get sim() { return open ? open.sim : sims.get('main')?.sim; }, get race() { return race; }, openSim, openSimDef, startDuel, collect, hostView, tapsOpen: () => (open ? open.taps : []), simGroup: () => (open ? open.group : null) };
+  window.__ukc3d = { nextTarget, autoTo, get auto() { return auto; }, things, dbg, eng, ctrl, cam, level, hud, input, physics, ex, ss, npcs, guide, rival, peers, doctors, lanes, spots: S, get sim() { return open ? open.sim : sims.get('main')?.sim; }, get race() { return race; }, openSim, openSimDef, startDuel, collect, hostView, tapsOpen: () => (open ? open.taps : []), simGroup: () => (open ? open.group : null) };
   return { dispose: () => leave(null) };
 }

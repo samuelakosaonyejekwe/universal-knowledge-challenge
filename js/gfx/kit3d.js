@@ -6,6 +6,10 @@ import { SKINS, HAIR_COLORS, OUTFITS } from '../core/avatar.js';
 
 export { THREE };
 
+// How finely pictures are painted: 1 for small or slow screens, 2 for high definition (faces, labels, planets).
+let DETAIL = 1, ANISO = 4;
+export function setDetail(detail = 1, aniso = 4) { DETAIL = detail; ANISO = aniso; }
+
 export function webglOK() {
   try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch { return false; }
 }
@@ -103,20 +107,41 @@ export function orbit(stage, { target = new THREE.Vector3(), dist = 30, minDist 
   };
 }
 
+// A pad of view buttons for a stage with orbit controls: turn, tilt, zoom and reset, each acting while held.
+// labels: { up, down, left, right, zoomIn, zoomOut, reset } (already in the player's language).
+export function viewPad(host, ctl, { minDist = 8, maxDist = 80, labels = {} } = {}) {
+  const st = ctl.state, home = { yaw: st.yaw, pitch: st.pitch, dist: st.dist }, held = new Set();
+  host.classList.add('has-viewpad');
+  const pad = document.createElement('div'); pad.className = 'viewpad'; pad.setAttribute('role', 'group');
+  for (const [name, text, cls, title] of [['up', '▲', 'u', labels.up], ['left', '◀', 'l', labels.left], ['reset', '⟲', 'c', labels.reset], ['right', '▶', 'r', labels.right], ['down', '▼', 'd', labels.down], ['in', '＋', 'zi', labels.zoomIn], ['out', '－', 'zo', labels.zoomOut]]) {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'g3d-vb ' + cls; b.textContent = text; if (title) { b.title = title; b.setAttribute('aria-label', title); }
+    const on = (e) => { e.preventDefault(); e.stopPropagation(); if (name === 'reset') { st.yaw = home.yaw; st.pitch = home.pitch; st.dist = home.dist; } else held.add(name); }, off = () => held.delete(name);
+    b.addEventListener('pointerdown', on); b.addEventListener('pointerup', off); b.addEventListener('pointerleave', off); b.addEventListener('pointercancel', off);
+    b.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { on(e); setTimeout(off, 200); } });
+    pad.append(b);
+  }
+  host.append(pad);
+  let last = performance.now(), raf = 0;
+  const tick = (now) => { const dt = Math.min(0.05, (now - last) / 1000); last = now; if (held.has('left')) st.yaw += 1.6 * dt; if (held.has('right')) st.yaw -= 1.6 * dt; if (held.has('up')) st.pitch = Math.min(1.2, st.pitch + dt); if (held.has('down')) st.pitch = Math.max(-0.15, st.pitch - dt); if (held.has('in')) st.dist = Math.max(minDist, st.dist * (1 - 0.9 * dt)); if (held.has('out')) st.dist = Math.min(maxDist, st.dist * (1 + 0.9 * dt)); if (pad.isConnected) raf = requestAnimationFrame(tick); };
+  raf = requestAnimationFrame(tick);
+  return pad;
+}
+
 // A flat picture (emoji and/or text) that always faces the camera.
 export function sprite(text, { size = 2, color = '#ffffff', bg = null, font = 96, bold = true, label = '' } = {}) {
+  font = Math.round(font * (DETAIL > 1 ? 1.5 : 1));                 // sharper lettering in high definition
   const c = document.createElement('canvas');
   const g = c.getContext('2d');
   const lines = [text, label].filter(Boolean);
   g.font = `${bold ? '800 ' : ''}${font}px ui-rounded, system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
   const w = Math.ceil(Math.max(...lines.map((l, i) => g.measureText(l).width * (i ? 0.42 : 1))) + font * 0.5);
-  c.width = Math.min(1024, Math.max(64, w)); c.height = Math.ceil(font * (label ? 1.95 : 1.35));
+  c.width = Math.min(2048, Math.max(64, w)); c.height = Math.ceil(font * (label ? 1.95 : 1.35));
   if (bg) { g.fillStyle = bg; const r = c.height / 2.4; g.beginPath(); g.roundRect ? g.roundRect(0, 0, c.width, c.height, r) : g.rect(0, 0, c.width, c.height); g.fill(); }
   g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = color;
   g.font = `${bold ? '800 ' : ''}${font}px ui-rounded, system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
   g.fillText(text, c.width / 2, font * 0.7, c.width - 8);
   if (label) { g.font = `800 ${Math.round(font * 0.4)}px ui-rounded, system-ui, sans-serif`; g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 8; g.fillText(label, c.width / 2, font * 1.5, c.width - 8); }
-  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = ANISO;
   const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
   s.scale.set(size * (c.width / c.height), size, 1);
   return s;
@@ -148,8 +173,8 @@ const tint = (hex, amt) => { const c = new THREE.Color(hex); c.offsetHSL(0, 0, a
 // soft blush, a small nose and a smile) and wrapped onto the head.
 // expr: 'neutral' | 'blink' | 'happy' | 'wow' | 'sad' | 'talk' — the same face with a different look, for animation.
 export function faceTexture({ skin, eye, brow, role, young, sex = 'n', expr = 'neutral' }) {
-  const W = 512, H = 256, c = document.createElement('canvas'); c.width = W; c.height = H;
-  const g = c.getContext('2d'), cx = W / 2, cy = H * 0.52;
+  const W = 512, H = 256, c = document.createElement('canvas'); c.width = W * DETAIL; c.height = H * DETAIL;
+  const g = c.getContext('2d'), cx = W / 2, cy = H * 0.52; g.scale(DETAIL, DETAIL);
   const base = g.createLinearGradient(0, 0, 0, H); base.addColorStop(0, '#' + tint(skin, 0.06).getHexString()); base.addColorStop(1, '#' + tint(skin, -0.07).getHexString());
   g.fillStyle = base; g.fillRect(0, 0, W, H);
   const master = role === 'master', older = role !== 'student' && role !== 'peer';
@@ -185,7 +210,7 @@ export function faceTexture({ skin, eye, brow, role, young, sex = 'n', expr = 'n
   else if (expr === 'sad') { g.beginPath(); g.moveTo(cx - 15, cy + 51); g.quadraticCurveTo(cx, cy + 39, cx + 15, cy + 51); g.stroke(); }
   else if (master && expr !== 'happy') { g.beginPath(); g.moveTo(cx - 17, cy + 43); g.quadraticCurveTo(cx + 3, cy + 50, cx + 20, cy + 38); g.stroke(); }
   else { g.fillStyle = young ? '#fff' : lip; g.beginPath(); g.moveTo(cx - 19, cy + 40); g.quadraticCurveTo(cx, cy + (young ? 64 : 58), cx + 19, cy + 40); g.quadraticCurveTo(cx, cy + 47, cx - 19, cy + 40); g.closePath(); g.fill(); g.stroke(); }
-  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = ANISO;
   return tex;
 }
 
