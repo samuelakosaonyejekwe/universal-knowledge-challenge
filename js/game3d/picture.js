@@ -1,4 +1,4 @@
-// Pictures for what a character is talking about. When someone says "a bird and a plane both have wings", the
+// Pictures for what a character is talking about. When someone says that a bird and a plane both have wings, the
 // projector beside them shows a bird, a plane and wings. The words are matched in the lesson's original English,
 // so the pictures are the same whatever language the player reads.
 

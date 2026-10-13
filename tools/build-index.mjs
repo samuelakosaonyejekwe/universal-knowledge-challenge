@@ -45,6 +45,7 @@ for (const f of src) {
   // only keep it if the same literal is not obviously code (no slashes, braces at ends, or CSS).
   for (const m of text.matchAll(lit)) {
     const s = (m[1] ?? m[2]).replace(/\\(['"`\\])/g, '$1');
+    if (/Emoji\b/.test(s)) continue;                 // font names, not words for the player
     if (/^[A-Z“‘]/.test(s) && /[a-z]/.test(s) && !/^[A-Z][a-zA-Z]+$/.test(s) && !/[<>{}=;]|^\w+\/|\.js$|^M\d|^#/.test(s.replace(/\{[a-z]+\}/g, ''))) strings.add(s);
     else if (/^[a-z]/.test(s) && /\s/.test(s) && s.length > 8 && /^[a-z ,'’.!?—–-]+$/i.test(s) && !/^(class|aria|data|row |col |btn|card|note|small|tiny|grid|pill|chip|hero|field|input|lab)/.test(s) && !/\b(px|rem|solid|none|auto)\b/.test(s)) strings.add(s);
   }
