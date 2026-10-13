@@ -120,6 +120,7 @@ async function route() {
   // Every world has its own soundtrack; the home screens share a calm theme of their own.
   if (profile?.settings.music && !OPEN.has(name)) startMusic(w ? w.id : 0); else stopMusic();
   drawTop(); drawNav(name);
+  main.dataset.route = name;
   clear(main).append(h('div', { class: 'spinner' }));
   scrollTo(0, 0);
   try {
@@ -183,6 +184,16 @@ function limitScreen() {
     h('p', { class: 'note' }, t(pick(BREAK_IDEAS))),
     profile.guardian ? h('div', { class: 'row center' }, input, h('button', { class: 'btn ghost sm', onClick: async () => { if (await checkGuardianPin(input.value)) { profile.settings.dailyMins = 0; close(); toast(t('Limit lifted for today.')); } } }, t('Guardian: allow more time'))) : h('button', { class: 'btn', onClick: () => close() }, t('OK'))), { dismiss: false });
 }
+
+// Some phone browsers show less of the page than they lay out (their own toolbars cover part of it). Measure that
+// difference and add exactly that much room under the page — no more — so the last button is always reachable
+// without leaving a blank band on devices that do not need it.
+function fitViewport() {
+  const seen = window.visualViewport?.height || innerHeight;
+  const gap = Math.max(0, Math.round(document.documentElement.clientHeight - seen));
+  document.documentElement.style.setProperty('--vv-gap', Math.min(gap, 260) + 'px');
+}
+addEventListener('resize', fitViewport); window.visualViewport?.addEventListener('resize', fitViewport); fitViewport();
 
 // ---------- boot ----------
 async function boot() {

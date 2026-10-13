@@ -46,7 +46,15 @@ export async function stageView(main, [wkey, L, S]) {
     h('h1', { class: 'mt' }, st.icon, ' ', trInto(h('span'), st.title)));
   const bar = h('div', { class: 'tabs' });
   const box = h('div');
-  main.append(bar, box);
+  // On wide screens a companion panel sits beside the lesson: the key words, the memory hook and quick links.
+  // It steps aside whenever the learner is being tested, so it never gives answers away.
+  const aside = h('aside', { class: 'stage-aside' },
+    h('div', { class: 'card' }, h('div', { class: 'row nowrap' }, avatarEl({ seed: who.teacher.seed }, { band: profile.band, role: 'teacher', cast: profile.cast }), h('div', null, h('b', null, who.teacher.name), h('div', { class: 'tiny muted' }, t(who.teacher.title)))),
+      h('div', { class: 'small mt' }, t('I am here whenever you need another explanation.'))),
+    st.terms?.length ? h('div', { class: 'card' }, h('div', { class: 'bold mb' }, '🔑 ', t('Key words')), st.terms.map(([term, def]) => h('div', { class: 'term mb' }, h('b', null, st.lang ? term : trInto(h('span'), term)), h('div', { class: 'small' }, trInto(h('span'), def))))) : null,
+    h('div', { class: 'card' }, h('div', { class: 'bold mb' }, '🧩 ', t('Memory hook')), trInto(h('div', { class: 'small' }), st.mnemonic)),
+    st.trip ? h('div', { class: 'card' }, h('div', { class: 'bold mb' }, '🧳 ', t('Virtual trip')), trInto(h('div', { class: 'small mb' }), st.trip.prompt), h('button', { class: 'btn ghost sm', onClick: () => showTopic(st.trip.wiki, st.trip.prompt) }, t('Take a virtual trip'))) : null);
+  main.append(bar, h('div', { class: 'stage-wide' }, box, aside));
 
   function drawBar() {
     clear(bar);
@@ -61,6 +69,7 @@ export async function stageView(main, [wkey, L, S]) {
   function show(i) {
     stopLab?.(); stopLab = null;
     cur = i; drawBar(); clear(box); scrollTo(0, 0); refreshNav();
+    aside.hidden = !['understand', 'encode', 'experiment', 'apply'].includes(order[i]);
     if (i >= order.length) return duelGate();
     ({ discover, understand, encode, recall, experiment, apply, explain })[order[i]]();
   }
@@ -221,7 +230,7 @@ export async function stageView(main, [wkey, L, S]) {
         h('label', { class: 'row small' }, (() => { const c = h('input', { type: 'checkbox', checked: profile.settings.untimed }); c.addEventListener('change', () => { profile.settings.untimed = c.checked; save(); }); return c; })(), t('Untimed mode'))));
   }
   async function startDuel() {
-    inDuel = true; refreshNav();
+    inDuel = true; refreshNav(); aside.hidden = true;
     clear(box).append(loading());
     const [items, tiebreak] = await Promise.all([duelSet(wkey, level, stage, qopts), tiebreakSet(wkey, level, qopts)]);
     const timed = !profile.settings.untimed;
@@ -259,6 +268,7 @@ export async function stageView(main, [wkey, L, S]) {
 
   // 9 — the College of Doctors drills nuanced understanding
   async function panel() {
+    aside.hidden = true;
     clear(box).append(loading());
     ss.panelTries = ss.panelTries || 0;
     const items = await panelSet(wkey, level, stage, ss.panelTries, qopts);
